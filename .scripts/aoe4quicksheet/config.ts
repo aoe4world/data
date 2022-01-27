@@ -1,6 +1,6 @@
 import { MappedSheetColumn } from "./types";
 
-export const SHEET_ID = "11UqzJOet3apOT1wrFAd3a5yX2dxeKURpAmT_7VV1i-w";
+export const SHEET_ID = "1LG0We2pTFZsbFm_k1SKLix8gxSq_9n5R_Ic3G2tVzBg";
 export const SHEET_TAB_NAME = `MEGA+List+All+Stats`;
 export const SHEET_API_KEY = process.env.AOE4_GOOGLE_SHEET_API_KEY;
 

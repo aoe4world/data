@@ -23,9 +23,7 @@ async function mergeJsonFile(file: string, data: any) {
   if (fs.existsSync(file)) {
     data = merge(await readJsonFile(file), data);
   }
-  fs.writeFile(file, JSON.stringify(data, null, 2), { encoding: "utf8" }, (err) => {
-    if (err) throw err;
-  });
+  writeJson(file, data, { log: false });
 }
 
 function makeDir(dir: string) {
@@ -45,4 +43,11 @@ function merge(target = {}, source = {}) {
   });
 
   return target;
+}
+
+export function writeJson(file: string, data: any, { log }: { log: boolean } = { log: true }) {
+  return fs.writeFile(file, JSON.stringify(data, null, 2), { encoding: "utf8" }, (err) => {
+    if (err) throw err;
+    else if (log) console.info(`Wrote ${file}`);
+  });
 }

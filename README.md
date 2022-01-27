@@ -18,21 +18,11 @@ Both the format and the data itself are open source, anyone can improve/correct 
   "baseId": "man-at-arms",
   "name": "Man-at-Arms",
   "age": 4,
-  "civs": [
-    "en",
-    "hr",
-    "fr",
-    "de",
-    "ab",
-    "mo",
-    "ru"
-  ],
+  "civs": ["en", "hr", "fr", "de", "ab", "mo", "ru"],
   "description": "Tough infantry with good damage.\n\n+ High armor\n\n- Slow movement",
   "icon": "https://data.aoe4world.com/images/units/man-at-arms-4.png",
   "class": "Heavy",
-  "classes": [
-    "Heavy Melee Infantry"
-  ],
+  "classes": ["Heavy Melee Infantry"],
   "unique": false,
   "hitpoints": 180,
   "movement": {
@@ -68,27 +58,23 @@ Both the format and the data itself are open source, anyone can improve/correct 
     "ranged": 5,
     "fire": 0
   },
-  "producedBy": [
-    "barrack"
-  ]
+  "producedBy": ["barrack"]
 }
-
 ```
-
 
 ## Coverage
 
-| Category            | Status                   |
-| ------------------- | ------------------------ |
-| Land Units          | ✅ Done                  |
-| Naval Units         | 🕑 Next up               |
-| Buildings           | 💭 Deciding on structure |
-| Technologies        |                          |
-| Upgrades            |                          |
-| Passive Civ Bonuses |                          |
-
+| Category                                                | Status                   |
+| ------------------------------------------------------- | ------------------------ |
+| [Land Units](https://data.aoe4world.com/units/all.json) | ✅ Done                  |
+| Naval Units                                             | 🕑 Next up               |
+| Buildings                                               | 💭 Deciding on structure |
+| Technologies                                            |                          |
+| Upgrades                                                |                          |
+| Passive Civ Bonuses                                     |                          |
 
 ### Conventions
+
 The format in which data is stored follows the following conventions:
 
 - All units are stored in their own file as a json object.
@@ -97,7 +83,9 @@ The format in which data is stored follows the following conventions:
 - All objects have an `age` field, a number 1-4 representing dark - imperial.
 - All stats such as ranged armor, movement speed, etc. are using the numbers are they are displayed in the game UI (which is different from the game files).
 - Objects are nested and grouped in logical ways, rather than having a flat list.
+
 #### Naming
+
 - All **unit names** follow the consistent `{base-name}-{age}(-{variation})` format. For example, the base archer is called `archer-2`, the Veteran Archer is just `archer-3`.
 - **Improved units** (i.e. faster or cheaper) results in a **variation**. For example, while most civs have the `villager-1`, the English has the `villager-1-english` variant, which has ranged attack, while HRE has faster produced and cheaper `villager-4-palace-of-swabia`. In the same way, the French has buffed `arbeletrier-4-keep-influence` unit.
 - All commonly available or shared units are stored in the main folder, i.e. `/units/villager-1.json`, only **truly unique units** or variations are stored in the civ specific folder, i.e. `/units/mongols/mangudai-2.json`.
@@ -116,12 +104,16 @@ Currently data is pulled in from the manually curated [AOE 4 Quicksheet](https:/
 - `.scripts/aoe4-quicksheet/workarounds.ts` contain unit specific transformations
 
 #### Image Sync Script
+
 `yarn sync-images` loops over all unit files and sees if an image with a similair name exists in `/images`, if it does, it will set the icon field for that unit with the hosted url location and update the json file.
+
+#### Compile Script
+
+`yarn build` will compile index and bulk json files based on the unit files.
 
 ### Adding new scripts
 
 Can be added in a subfolder of `.scripts`, ideally using TypeScript. Common functionalitiy is stored in `.scripts/lib`
-
 
 ---
 
