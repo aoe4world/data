@@ -1,6 +1,6 @@
 import { civAbbr } from "./civs";
 
-type ItemClass = "light" | "heavy" | "infantry" | "cavalry" | "naval" | "ranged" | "siege" | "melee" | "fire";
+export type ItemClass = "light" | "heavy" | "infantry" | "cavalry" | "naval" | "ranged" | "siege" | "melee" | "fire";
 
 export type Item = {
   id: ItemId;
@@ -30,7 +30,7 @@ export type Item = {
   };
 };
 
-type Object = Item & {
+export type Object = Item & {
   weapons: Weapon[];
   armor: Armor[];
 
@@ -67,7 +67,7 @@ export type Upgrade = Item & {
   unlocks: ItemId;
 };
 
-type Weapon = {
+export type Weapon = {
   id?: ItemId;
   type: "melee" | "charge" | "ranged" | "siege" | "fire";
   damage: number;
@@ -79,7 +79,7 @@ type Weapon = {
   };
 };
 
-type Modifier = {
+export type Modifier = {
   property: ModifyableProperty;
   target: { class: ItemClass[]; id: ItemId[] };
   effect: "multiply" | "increase" | "decrease";
@@ -91,9 +91,9 @@ export type Armor = {
   value: number;
 };
 
-type ItemId = string;
+export type ItemId = string;
 
-type ModifyableProperty =
+export type ModifyableProperty =
   | "hitpoints"
   | "meleeArmor"
   | "rangedArmor"
@@ -115,3 +115,13 @@ type ModifyableProperty =
   | "woodGatherRate"
   | "populationCost"
   | "buildTime";
+
+export type UnifiedItem = {
+  id: ItemId;
+  name: string;
+  civs: civAbbr[];
+  variations: Item[];
+  classes: ItemClass[];
+  icon?: string;
+  description?: string;
+};
