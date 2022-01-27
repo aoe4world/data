@@ -25,7 +25,13 @@ export function transformSheetUnitWithWorkaround(u: MappedSheetUnit) {
 }
 
 export function filterOutUnsupportedRows(u: MappedSheetUnit) {
-  return u.genre == "Land Unit";
+  return (
+    u.genre == "Land Unit" &&
+    // Filter out Burgrave Palace units because there's nothing special about them
+    !(u.displayName as string).includes("(5 units)") &&
+    // Filter out Khaganate spawn as it is not a unit
+    !(u.displayName as string).includes("Khaganate Units")
+  );
 }
 
 export const ignoredIds = [
@@ -33,5 +39,4 @@ export const ignoredIds = [
   "scout-2-1", // Duplicate ovoo scout entries that can also be created at stable
   "scout-3-1",
   "scout-4-1",
-  "khaganate-units-4",
 ];

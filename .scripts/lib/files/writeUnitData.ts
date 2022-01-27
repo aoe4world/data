@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs, { mkdir } from "fs";
 import path from "path";
 import { Unit } from "../types/units";
 import { CIVILIZATIONS } from "../config/civs";
@@ -48,6 +48,7 @@ function merge(target = {}, source = {}) {
 }
 
 export function writeJson(file: string, data: any, { log }: { log: boolean } = { log: true }) {
+  makeDir(path.dirname(file));
   return fs.writeFile(file, JSON.stringify(data, null, 2), { encoding: "utf8" }, (err) => {
     if (err) throw err;
     else if (log) console.info(`Wrote ${file}`);
