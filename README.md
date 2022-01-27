@@ -1,2 +1,136 @@
-# data
-Data on AOE4 civs, units, buildings and more in an open community-curated format.
+# AoE4 World Data
+
+Hosted data on all AoE 4 units in a developer friendly format.
+
+## Goal
+
+Provide statically hosted data on all units, buildings, technologies, upgrades and other games objects in a json format which developers can use. Use these files to speed up your creation of awesome tools, charts and other apps!
+
+Both the format and the data itself are open source, anyone can improve/correct it or add other useful properties. Additionally, automations and scripts could update data by reading game files or other sources.
+
+### Example
+
+```json
+{
+  "id": "man-at-arms-4",
+  "baseId": "man-at-arms",
+  "name": "Man-at-Arms",
+  "age": 4,
+  "civs": [
+    "en",
+    "hr",
+    "fr",
+    "de",
+    "ab",
+    "mo",
+    "ru"
+  ],
+  "description": "Tough infantry with good damage.\n\n+ High armor\n\n- Slow movement",
+  "class": "Heavy",
+  "classes": [
+    "Heavy Melee Infantry"
+  ],
+  "unique": false,
+  "hitpoints": 180,
+  "movement": {
+    "speed": 1.13
+  },
+  "costs": {
+    "food": 100,
+    "wood": 0,
+    "stone": 0,
+    "gold": 20,
+    "total": 120,
+    "popcap": 1,
+    "time": 22
+  },
+  "attack": {
+    "melee": 14,
+    "ranged": 0,
+    "siege": 0,
+    "fire": 16,
+    "speed": 1.25,
+    "dps": 11.2
+  },
+  "range": {
+    "min": 0,
+    "max": 0.3
+  },
+  "vision": {
+    "lineOfSight": 36,
+    "heightOfSight": 10
+  },
+  "armor": {
+    "melee": 5,
+    "ranged": 5,
+    "fire": 0
+  },
+  "producedBy": [
+    "barrack"
+  ]
+}
+
+```
+
+## Coverage
+
+| Category            | Status                   |
+| ------------------- | ------------------------ |
+| Land Units          | ✅ Done                  |
+| Naval Units         | 🕑 Next up               |
+| Buildings           | 💭 Deciding on structure |
+| Technologies        |                          |
+| Upgrades            |                          |
+| Passive Civ Bonuses |                          |
+
+In addition we plan on including all icons for units.
+
+### Conventions
+The format in which data is stored follows the following conventions:
+
+- All units are stored in their own file as a json object.
+- Each object has an `id` (string) which is unique across the project and the same as the file name, see [naming](#naming). Units of the same type share the same `baseId`.
+- Each file includes a `civs` array which contains the abbreviated civ names which the unit is available for.
+- All objects have an `age` field, a number 1-4 representing dark - imperial.
+- All stats such as ranged armor, movement speed, etc. are using the numbers are they are displayed in the game UI (which is different from the game files).
+- Objects are nested and grouped in logical ways, rather than having a flat list.
+#### Naming
+- All **unit names** follow the consistent `{base-name}-{age}(-{variation})` format. For example, the base archer is called `archer-2`, the Veteran Archer is just `archer-3`.
+- **Improved units** (i.e. faster or cheaper) results in a **variation**. For example, while most civs have the `villager-1`, the English has the `villager-1-english` variant, which has ranged attack, while HRE has faster produced and cheaper `villager-4-palace-of-swabia`. In the same way, the French has buffed `arbeletrier-4-keep-influence` unit.
+- All commonly available or shared units are stored in the main folder, i.e. `/units/villager-1.json`, only **truly unique units** or variations are stored in the civ specific folder, i.e. `/units/mongols/mangudai-2.json`.
+
+---
+
+## Contributing and development
+
+Feel free to open PRs or issues for data that is incorrect or missing, if possible please provide a rationale or source. Even more helpful, add automations or scripts inside the `./.scripts` folder which can update the data automatically. At the games current state, data is in a large part gathered by playing the game. For this reason, any automations for now are tools to help us create the files rather than a single source of truth.
+
+#### AOE 4 Quicksheet Sync
+
+Currently data is pulled in from the manually curated [AOE 4 Quicksheet](https://docs.google.com/spreadsheets/d/1LG0We2pTFZsbFm_k1SKLix8gxSq_9n5R_Ic3G2tVzBg/edit?pli=1#gid=1093682765). To sync the data you will need to a (free) [Google API Key](https://developers.google.com/sheets/api/guides/authorizing#APIKey) which you can set using the environment variable `AOE4_GOOGLE_SHEET_API_KEY`. Then run `yarn install && yarn run sync-quicksheet` to update the data.
+
+- `.scripts/aoe4-quicksheet/sync.ts` contains the main mapping of data to our standard format.
+- `.scripts/aoe4-quicksheet/workarounds.ts` contain unit specific transformations
+
+### Adding new scripts
+
+Can be added in a subfolder of `.scripts`, ideally using TypeScript. Common functionalitiy is stored in the root of `.scripts`
+
+
+---
+
+## Credits
+
+Initial data genoursly provided and collected by [u/-MugenNoSora-](https://www.reddit.com/u/-MugenNoSora-) in the [AOE 4 Quicksheet](https://docs.google.com/spreadsheets/d/1LG0We2pTFZsbFm_k1SKLix8gxSq_9n5R_Ic3G2tVzBg/edit?pli=1#gid=1093682765) with help from [u/massrieen](https://www.reddit.com/user/massrieen). Repository created and maintained by [Robert van Hoesel](https://github.com/robertvanhoesel).
+
+## License and rights
+
+All of this data is open source, you may use it in your projects, websites and apps. However, Microsoft owns the Copyright on the game, and for this reason you can't use this data in commercial contexts, excepts as described in Microsoft's [Game Content Usage Rules](https://www.xbox.com/en-US/developers/rules). Whenever you are using the data in this repository or other media from Age of Empires 4, please make sure to abide by the rules.
+
+> Age Of Empires 4 © Microsoft Corporation.
+> Aoe4world/data was created under Microsoft's "[Game Content Usage Rules](https://www.xbox.com/en-US/developers/rules)" using assets from Age Of Empires 4, and it is not endorsed by or affiliated with Microsoft.
+
+### Related projects
+
+- [aoemods/attrib](https://github.com/aoemods/attrib)
+- [AlexOcampos/aoe4treetechstatic](https://github.com/AlexOcampos/aoe4treetechstatic)
