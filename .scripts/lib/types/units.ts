@@ -9,6 +9,8 @@ export type StandardUnitFormat = {
 
   description: string;
 
+  icon?: string;
+
   civs: civAbbr[];
 
   class: string;

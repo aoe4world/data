@@ -1,6 +1,6 @@
 # AoE4 World Data
 
-Hosted data on all AoE 4 units in a developer friendly format.
+Hosted data and icons on all AoE 4 units in a developer friendly format.
 
 ## Goal
 
@@ -9,6 +9,8 @@ Provide statically hosted data on all units, buildings, technologies, upgrades a
 Both the format and the data itself are open source, anyone can improve/correct it or add other useful properties. Additionally, automations and scripts could update data by reading game files or other sources.
 
 ### Example
+
+[man-at-arms-4.json](./units/common/man-at-arms-4.json)
 
 ```json
 {
@@ -26,6 +28,7 @@ Both the format and the data itself are open source, anyone can improve/correct 
     "ru"
   ],
   "description": "Tough infantry with good damage.\n\n+ High armor\n\n- Slow movement",
+  "icon": "https://data.aoe4world.com/images/units/man-at-arms-4.png",
   "class": "Heavy",
   "classes": [
     "Heavy Melee Infantry"
@@ -72,6 +75,7 @@ Both the format and the data itself are open source, anyone can improve/correct 
 
 ```
 
+
 ## Coverage
 
 | Category            | Status                   |
@@ -83,7 +87,6 @@ Both the format and the data itself are open source, anyone can improve/correct 
 | Upgrades            |                          |
 | Passive Civ Bonuses |                          |
 
-In addition we plan on including all icons for units.
 
 ### Conventions
 The format in which data is stored follows the following conventions:
@@ -112,9 +115,12 @@ Currently data is pulled in from the manually curated [AOE 4 Quicksheet](https:/
 - `.scripts/aoe4-quicksheet/sync.ts` contains the main mapping of data to our standard format.
 - `.scripts/aoe4-quicksheet/workarounds.ts` contain unit specific transformations
 
+#### Image Sync Script
+`yarn sync-images` loops over all unit files and sees if an image with a similair name exists in `/images`, if it does, it will set the icon field for that unit with the hosted url location and update the json file.
+
 ### Adding new scripts
 
-Can be added in a subfolder of `.scripts`, ideally using TypeScript. Common functionalitiy is stored in the root of `.scripts`
+Can be added in a subfolder of `.scripts`, ideally using TypeScript. Common functionalitiy is stored in `.scripts/lib`
 
 
 ---

@@ -1,14 +1,14 @@
 import fetch from "node-fetch";
-import { StandardUnitFormat } from "../types/units";
-import { civAbbr } from "../types/civs";
-import { CIVILIZATIONS } from "../config/civs";
+import { StandardUnitFormat } from "../lib/types/units";
+import { civAbbr } from "../lib/types/civs";
+import { CIVILIZATIONS } from "../lib/config/civs";
 import { COLUMN_MAP, SHEET_ID, SHEET_TAB_NAME, SHEET_API_KEY } from "./config";
 import { MappedSheetColumn, MappedSheetUnit } from "./types";
-import { mergeUnit } from "../write/writeUnitData";
-import { slugify, getStringWithAlphanumericLike, getStringOutsideParenthesis, getStringBetweenParenthesis } from "../utils/string";
-import { transformRomanAgeToNumber, interpolateGameString } from "../utils/game";
+import { mergeUnit } from "../lib/files/writeUnitData";
+import { slugify, getStringWithAlphanumericLike, getStringOutsideParenthesis, getStringBetweenParenthesis } from "../lib/utils/string";
+import { transformRomanAgeToNumber, interpolateGameString } from "../lib/utils/game";
 import { filterOutUnsupportedRows, ignoredIds, transformSheetUnitWithWorkaround } from "./workarounds";
-import { round } from "../utils/number";
+import { round } from "../lib/utils/number";
 
 getUnitData().then((data) => {
   data

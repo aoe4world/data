@@ -1,4 +1,4 @@
-import { transformRomanAgeToNumber } from "../utils/game";
+import { transformRomanAgeToNumber } from "../lib/utils/game";
 import { MappedSheetUnit } from "./types";
 
 export function transformSheetUnitWithWorkaround(u: MappedSheetUnit) {

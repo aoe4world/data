@@ -1,20 +1,19 @@
 import fs from "fs";
 import path from "path";
-
 import { StandardUnitFormat } from "../types/units";
 import { CIVILIZATIONS } from "../config/civs";
-
-const unitsFolder = "../../units";
+import { FOLDERS } from "../config";
+import { readJsonFile } from "./readUnitData";
 
 export async function mergeUnit(unit: StandardUnitFormat) {
   if (unit.unique) {
     unit.civs.forEach((c) => {
-      const dir = path.join(__dirname, unitsFolder, CIVILIZATIONS[c].slug);
+      const dir = path.join(FOLDERS.UNITS.DATA, CIVILIZATIONS[c].slug);
       makeDir(dir);
       mergeJsonFile(path.join(dir, `${unit.id}.json`), unit);
     });
   } else {
-    const dir = path.join(__dirname, unitsFolder, "common");
+    const dir = path.join(FOLDERS.UNITS.DATA, "common");
     makeDir(dir);
     mergeJsonFile(path.join(dir, `${unit.id}.json`), unit);
   }
@@ -27,11 +26,6 @@ async function mergeJsonFile(file: string, data: any) {
   fs.writeFile(file, JSON.stringify(data, null, 2), { encoding: "utf8" }, (err) => {
     if (err) throw err;
   });
-}
-
-async function readJsonFile(file: string) {
-  const data = await fs.promises.readFile(file, "utf8");
-  return JSON.parse(data);
 }
 
 function makeDir(dir: string) {
