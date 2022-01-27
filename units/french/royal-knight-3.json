@@ -1,13 +1,13 @@
 {
   "id": "royal-knight-3",
   "baseId": "royal-knight",
+  "type": "unit",
   "name": "Royal Knight ",
   "age": 3,
   "civs": [
     "fr"
   ],
   "description": "Gain bonus damage for 3 seconds after charging. Effective against most units.\n\n+ Heavy armor\n\n+ Strong in melee combat\n\n- Countered by Spearmen and Crossbowmen",
-  "class": "Heavy",
   "classes": [
     "Heavy Melee Cavalry"
   ],
@@ -25,26 +25,47 @@
     "popcap": 1,
     "time": 35
   },
-  "attack": {
-    "melee": 24,
-    "ranged": 0,
-    "siege": 0,
-    "fire": 16,
-    "speed": 1.38,
-    "dps": 17.4
-  },
-  "range": {
-    "min": 0,
-    "max": 0.3
-  },
-  "vision": {
-    "lineOfSight": 28,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 4,
-    "ranged": 4,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "melee",
+      "damage": 24,
+      "speed": 1.38,
+      "range": {
+        "min": 0,
+        "max": 0.3
+      }
+    },
+    {
+      "type": "melee",
+      "damage": 24,
+      "speed": 1.38,
+      "range": {
+        "min": 0,
+        "max": 0.3
+      }
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 4
+    },
+    {
+      "type": "melee",
+      "value": 4
+    },
+    {
+      "type": "ranged",
+      "value": 4
+    },
+    {
+      "type": "melee",
+      "value": 4
+    }
+  ],
+  "sight": {
+    "line": 28,
+    "height": 10
   },
   "producedBy": [
     "stable"

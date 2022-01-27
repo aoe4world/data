@@ -1,13 +1,13 @@
 {
   "id": "tower-elephant-4",
   "baseId": "tower-elephant",
+  "type": "unit",
   "name": "Tower Elephant ",
   "age": 4,
   "civs": [
     "de"
   ],
   "description": "Powerful ranged cavalry that can fire while moving.\n\n+ High health\n\n+ Mounted with powerful archers\n\n+ Capable of attacking Stone Walls\n\n- Slow movement speed",
-  "class": "None",
   "classes": [
     "Ranged Cavalry",
     "Elephant"
@@ -26,26 +26,39 @@
     "popcap": 3,
     "time": 60
   },
-  "attack": {
-    "melee": 0,
-    "ranged": 30,
-    "siege": 0,
-    "fire": 0,
-    "speed": 1.25,
-    "dps": 24
-  },
-  "range": {
-    "min": 0,
-    "max": 5
-  },
-  "vision": {
-    "lineOfSight": 36,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 0,
-    "ranged": 4,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "ranged",
+      "damage": 30,
+      "speed": 1.25,
+      "range": {
+        "min": 0,
+        "max": 5
+      }
+    },
+    {
+      "type": "ranged",
+      "damage": 30,
+      "speed": 1.25,
+      "range": {
+        "min": 0,
+        "max": 5
+      }
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 4
+    },
+    {
+      "type": "ranged",
+      "value": 4
+    }
+  ],
+  "sight": {
+    "line": 36,
+    "height": 10
   },
   "producedBy": [
     "archery-range"

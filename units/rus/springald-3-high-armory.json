@@ -1,13 +1,13 @@
 {
   "id": "springald-3-high-armory",
   "baseId": "springald",
+  "type": "unit",
   "name": "Springald ",
   "age": 3,
   "civs": [
     "ru"
   ],
   "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n\n+ Long range\n\n+ Bonus damage vs siege engines\n\n- Trivial damage vs. buildings",
-  "class": "Siege",
   "classes": [
     "Siege"
   ],
@@ -25,26 +25,39 @@
     "popcap": 3,
     "time": 30
   },
-  "attack": {
-    "melee": 0,
-    "ranged": 30,
-    "siege": 0,
-    "fire": 0,
-    "speed": 4,
-    "dps": 7.5
-  },
-  "range": {
-    "min": 1.3,
-    "max": 10
-  },
-  "vision": {
-    "lineOfSight": 56,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 0,
-    "ranged": 8,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "ranged",
+      "damage": 30,
+      "speed": 4,
+      "range": {
+        "min": 1.3,
+        "max": 10
+      }
+    },
+    {
+      "type": "ranged",
+      "damage": 30,
+      "speed": 4,
+      "range": {
+        "min": 1.3,
+        "max": 10
+      }
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 8
+    },
+    {
+      "type": "ranged",
+      "value": 8
+    }
+  ],
+  "sight": {
+    "line": 56,
+    "height": 10
   },
   "producedBy": [
     "siege-workshop"

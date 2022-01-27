@@ -1,6 +1,7 @@
 {
   "id": "crossbowman-4",
   "baseId": "crossbowman",
+  "type": "unit",
   "name": "Crossbowman",
   "age": 4,
   "civs": [
@@ -13,7 +14,6 @@
     "ru"
   ],
   "description": "Powerful all-purpose ranged infantry.\n\n+ High damage\n\n- High cost\n\n- Slow movement speed",
-  "class": "Light",
   "classes": [
     "Light Ranged Infantry"
   ],
@@ -31,26 +31,30 @@
     "popcap": 1,
     "time": 22
   },
-  "attack": {
-    "melee": 0,
-    "ranged": 15,
-    "siege": 0,
-    "fire": 0,
-    "speed": 2,
-    "dps": 7.5
-  },
-  "range": {
-    "min": 0,
-    "max": 5
-  },
-  "vision": {
-    "lineOfSight": 40,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 0,
-    "ranged": 0,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "ranged",
+      "damage": 15,
+      "speed": 2,
+      "range": {
+        "min": 0,
+        "max": 5
+      }
+    },
+    {
+      "type": "ranged",
+      "damage": 15,
+      "speed": 2,
+      "range": {
+        "min": 0,
+        "max": 5
+      }
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "line": 40,
+    "height": 10
   },
   "producedBy": [
     "archery-range"

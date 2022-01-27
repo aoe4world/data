@@ -1,13 +1,13 @@
 {
   "id": "khan-3",
   "baseId": "khan",
+  "type": "unit",
   "name": "Khan ",
   "age": 3,
   "civs": [
     "mo"
   ],
   "description": "Potent ranged cavalry leader able to ignite Signal Arrows to improve the combat capabilities of nearby military units. Reappears at a Town Center if killed.\n\n+ Vision of a Scout\n\n+ Herds sheep\n\n+ High utility in large armies\n\n+ Automatically improves as the Ages are advanced\n\n- Only a single Khan per Mongol Civilization at a time",
-  "class": "Light",
   "classes": [
     "Light Ranged Cavalry"
   ],
@@ -25,26 +25,47 @@
     "popcap": 1,
     "time": 120
   },
-  "attack": {
-    "melee": 0,
-    "ranged": 12,
-    "siege": 0,
-    "fire": 0,
-    "speed": 1.88,
-    "dps": 6.4
-  },
-  "range": {
-    "min": 0,
-    "max": 7
-  },
-  "vision": {
-    "lineOfSight": 55,
-    "heightOfSight": 501
-  },
-  "armor": {
-    "melee": 1,
-    "ranged": 1,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "ranged",
+      "damage": 12,
+      "speed": 1.88,
+      "range": {
+        "min": 0,
+        "max": 7
+      }
+    },
+    {
+      "type": "ranged",
+      "damage": 12,
+      "speed": 1.88,
+      "range": {
+        "min": 0,
+        "max": 7
+      }
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 1
+    },
+    {
+      "type": "melee",
+      "value": 1
+    },
+    {
+      "type": "ranged",
+      "value": 1
+    },
+    {
+      "type": "melee",
+      "value": 1
+    }
+  ],
+  "sight": {
+    "line": 55,
+    "height": 501
   },
   "producedBy": [
     "town-center"

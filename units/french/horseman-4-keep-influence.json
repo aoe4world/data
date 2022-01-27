@@ -1,13 +1,13 @@
 {
   "id": "horseman-4-keep-influence",
   "baseId": "horseman",
+  "type": "unit",
   "name": "Horseman ",
   "age": 4,
   "civs": [
     "fr"
   ],
   "description": "Mobile cavalry effective at raiding and flanking.\n\n+ High movement speed\n\n- Weak vs melee units",
-  "class": "Light",
   "classes": [
     "Light Melee Cavalry"
   ],
@@ -25,26 +25,39 @@
     "popcap": 1,
     "time": 18
   },
-  "attack": {
-    "melee": 13,
-    "ranged": 0,
-    "siege": 0,
-    "fire": 20,
-    "speed": 1.62,
-    "dps": 8
-  },
-  "range": {
-    "min": 0,
-    "max": 0.3
-  },
-  "vision": {
-    "lineOfSight": 28,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 0,
-    "ranged": 2,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "melee",
+      "damage": 13,
+      "speed": 1.62,
+      "range": {
+        "min": 0,
+        "max": 0.3
+      }
+    },
+    {
+      "type": "melee",
+      "damage": 13,
+      "speed": 1.62,
+      "range": {
+        "min": 0,
+        "max": 0.3
+      }
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 2
+    },
+    {
+      "type": "ranged",
+      "value": 2
+    }
+  ],
+  "sight": {
+    "line": 28,
+    "height": 10
   },
   "producedBy": [
     "stable"

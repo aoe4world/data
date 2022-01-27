@@ -1,13 +1,13 @@
 {
   "id": "cannon-4",
   "baseId": "cannon",
+  "type": "unit",
   "name": "Cannon ",
   "age": 4,
   "civs": [
     "fr"
   ],
   "description": "Most powerful siege cannon. Excellent against buildings or any stubborn targets.\n\n+ Bonus damage to buildings",
-  "class": "Siege",
   "classes": [
     "Siege",
     "Gunpowder"
@@ -26,26 +26,39 @@
     "popcap": 3,
     "time": 45
   },
-  "attack": {
-    "melee": 0,
-    "ranged": 0,
-    "siege": 200,
-    "fire": 0,
-    "speed": 5.25,
-    "dps": 38.1
-  },
-  "range": {
-    "min": 3.8,
-    "max": 10
-  },
-  "vision": {
-    "lineOfSight": 56,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 0,
-    "ranged": 12,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "siege",
+      "damage": 200,
+      "speed": 5.25,
+      "range": {
+        "min": 3.8,
+        "max": 10
+      }
+    },
+    {
+      "type": "siege",
+      "damage": 200,
+      "speed": 5.25,
+      "range": {
+        "min": 3.8,
+        "max": 10
+      }
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 12
+    },
+    {
+      "type": "ranged",
+      "value": 12
+    }
+  ],
+  "sight": {
+    "line": 56,
+    "height": 10
   },
   "producedBy": [
     "siege-workshop"

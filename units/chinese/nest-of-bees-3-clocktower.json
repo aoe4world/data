@@ -1,13 +1,13 @@
 {
   "id": "nest-of-bees-3-clocktower",
   "baseId": "nest-of-bees",
+  "type": "unit",
   "name": "Nest of Bees ",
   "age": 3,
   "civs": [
     "ch"
   ],
   "description": "Innovative field weapon capable of firing a barrage of rockets to damage defensive positions and clumped enemy troops.\n\n+ Good area of effect damage against most targets\n\n- Slowest movement speed\n\n- Weak if surrounded",
-  "class": "Siege",
   "classes": [
     "Siege",
     "Gunpowder"
@@ -26,26 +26,39 @@
     "popcap": 3,
     "time": 40
   },
-  "attack": {
-    "melee": 0,
-    "ranged": 0,
-    "siege": 80,
-    "fire": 0,
-    "speed": 5.5,
-    "dps": 14.5
-  },
-  "range": {
-    "min": 3,
-    "max": 8
-  },
-  "vision": {
-    "lineOfSight": 64,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 0,
-    "ranged": 8,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "siege",
+      "damage": 80,
+      "speed": 5.5,
+      "range": {
+        "min": 3,
+        "max": 8
+      }
+    },
+    {
+      "type": "siege",
+      "damage": 80,
+      "speed": 5.5,
+      "range": {
+        "min": 3,
+        "max": 8
+      }
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 8
+    },
+    {
+      "type": "ranged",
+      "value": 8
+    }
+  ],
+  "sight": {
+    "line": 64,
+    "height": 10
   },
   "producedBy": [
     "astronomical-clocktower"

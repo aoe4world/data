@@ -1,13 +1,13 @@
 {
   "id": "palace-guard-3",
   "baseId": "palace-guard",
+  "type": "unit",
   "name": "Palace Guard ",
   "age": 3,
   "civs": [
     "ch"
   ],
   "description": "Tough infantry with good damage. Move faster than Men-At-Arms, but with reduced armor.\n\n+ Armored\n\n- Countered by Crossbowmen, Knights, and Lancers",
-  "class": "Heavy",
   "classes": [
     "Heavy Melee Infantry"
   ],
@@ -25,26 +25,47 @@
     "popcap": 1,
     "time": 22
   },
-  "attack": {
-    "melee": 12,
-    "ranged": 0,
-    "siege": 0,
-    "fire": 16,
-    "speed": 1.25,
-    "dps": 9.6
-  },
-  "range": {
-    "min": 0,
-    "max": 0.3
-  },
-  "vision": {
-    "lineOfSight": 36,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 3,
-    "ranged": 3,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "melee",
+      "damage": 12,
+      "speed": 1.25,
+      "range": {
+        "min": 0,
+        "max": 0.3
+      }
+    },
+    {
+      "type": "melee",
+      "damage": 12,
+      "speed": 1.25,
+      "range": {
+        "min": 0,
+        "max": 0.3
+      }
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 3
+    },
+    {
+      "type": "melee",
+      "value": 3
+    },
+    {
+      "type": "ranged",
+      "value": 3
+    },
+    {
+      "type": "melee",
+      "value": 3
+    }
+  ],
+  "sight": {
+    "line": 36,
+    "height": 10
   },
   "producedBy": [
     "barrack"

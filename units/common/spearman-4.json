@@ -1,6 +1,7 @@
 {
   "id": "spearman-4",
   "baseId": "spearman",
+  "type": "unit",
   "name": "Spearman",
   "age": 4,
   "civs": [
@@ -14,7 +15,6 @@
     "ru"
   ],
   "description": "Infantry best used against mounted units.\n\n+ Anti-cavalry specialist\n\n- Susceptible to light ranged attacks\n\n- Weak against armored infantry",
-  "class": "Light",
   "classes": [
     "Light Melee Infantry"
   ],
@@ -32,26 +32,30 @@
     "popcap": 1,
     "time": 15
   },
-  "attack": {
-    "melee": 11,
-    "ranged": 0,
-    "siege": 0,
-    "fire": 20,
-    "speed": 1.75,
-    "dps": 6.3
-  },
-  "range": {
-    "min": 0,
-    "max": 0.3
-  },
-  "vision": {
-    "lineOfSight": 36,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 0,
-    "ranged": 0,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "melee",
+      "damage": 11,
+      "speed": 1.75,
+      "range": {
+        "min": 0,
+        "max": 0.3
+      }
+    },
+    {
+      "type": "melee",
+      "damage": 11,
+      "speed": 1.75,
+      "range": {
+        "min": 0,
+        "max": 0.3
+      }
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "line": 36,
+    "height": 10
   },
   "producedBy": [
     "barrack"

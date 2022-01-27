@@ -10,13 +10,13 @@
     {
       "id": "archer-2-ovoo",
       "baseId": "archer",
+      "type": "unit",
       "name": "Archer ",
       "age": 2,
       "civs": [
         "mo"
       ],
       "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n\n+ High rate of fire\n\n- Weak vs armored targets",
-      "class": "Light",
       "classes": [
         "Light Ranged Infantry"
       ],
@@ -34,26 +34,30 @@
         "popcap": 2,
         "time": 15
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 5,
-        "siege": 0,
-        "fire": 0,
-        "speed": 1.5,
-        "dps": 3.3
-      },
-      "range": {
-        "min": 0,
-        "max": 5
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 5,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 5,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -63,13 +67,13 @@
     {
       "id": "archer-3-ovoo",
       "baseId": "archer",
+      "type": "unit",
       "name": "Archer ",
       "age": 3,
       "civs": [
         "mo"
       ],
       "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n\n+ High rate of fire\n\n- Weak vs armored targets",
-      "class": "Light",
       "classes": [
         "Light Ranged Infantry"
       ],
@@ -87,26 +91,30 @@
         "popcap": 2,
         "time": 15
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 7,
-        "siege": 0,
-        "fire": 0,
-        "speed": 1.5,
-        "dps": 4.7
-      },
-      "range": {
-        "min": 0,
-        "max": 5
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 7,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 7,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -116,13 +124,13 @@
     {
       "id": "archer-4-ovoo",
       "baseId": "archer",
+      "type": "unit",
       "name": "Archer ",
       "age": 4,
       "civs": [
         "mo"
       ],
       "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n\n+ High rate of fire\n\n- Weak vs armored targets",
-      "class": "Light",
       "classes": [
         "Light Ranged Infantry"
       ],
@@ -140,26 +148,30 @@
         "popcap": 2,
         "time": 15
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 8,
-        "siege": 0,
-        "fire": 0,
-        "speed": 1.5,
-        "dps": 5.3
-      },
-      "range": {
-        "min": 0,
-        "max": 5
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 8,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 8,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -169,13 +181,13 @@
     {
       "id": "bombard-4-ovoo",
       "baseId": "bombard",
+      "type": "unit",
       "name": "Bombard ",
       "age": 4,
       "civs": [
         "mo"
       ],
       "description": "Intimidating siege gun excellent against buildings or any stubborn targets.\n\n+ High damage\n\n- Must be set up to fire",
-      "class": "Siege",
       "classes": [
         "Siege",
         "Gunpowder"
@@ -194,26 +206,39 @@
         "popcap": 6,
         "time": 45
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 0,
-        "siege": 170,
-        "fire": 0,
-        "speed": 4.25,
-        "dps": 40
-      },
-      "range": {
-        "min": 3.8,
-        "max": 10
-      },
-      "vision": {
-        "lineOfSight": 56,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 12,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "siege",
+          "damage": 170,
+          "speed": 4.25,
+          "range": {
+            "min": 3.8,
+            "max": 10
+          }
+        },
+        {
+          "type": "siege",
+          "damage": 170,
+          "speed": 4.25,
+          "range": {
+            "min": 3.8,
+            "max": 10
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 12
+        },
+        {
+          "type": "ranged",
+          "value": 12
+        }
+      ],
+      "sight": {
+        "line": 56,
+        "height": 10
       },
       "producedBy": [
         "siege-workshop"
@@ -223,13 +248,13 @@
     {
       "id": "crossbowman-3-ovoo",
       "baseId": "crossbowman",
+      "type": "unit",
       "name": "Crossbowman ",
       "age": 3,
       "civs": [
         "mo"
       ],
       "description": "Powerful all-purpose ranged infantry.\n\n+ High damage\n\n- High cost\n\n- Slow movement speed",
-      "class": "Light",
       "classes": [
         "Light Ranged Infantry"
       ],
@@ -247,26 +272,30 @@
         "popcap": 2,
         "time": 22
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 12,
-        "siege": 0,
-        "fire": 0,
-        "speed": 2,
-        "dps": 6
-      },
-      "range": {
-        "min": 0,
-        "max": 5
-      },
-      "vision": {
-        "lineOfSight": 40,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 12,
+          "speed": 2,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 12,
+          "speed": 2,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 40,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -276,13 +305,13 @@
     {
       "id": "crossbowman-4-ovoo",
       "baseId": "crossbowman",
+      "type": "unit",
       "name": "Crossbowman ",
       "age": 4,
       "civs": [
         "mo"
       ],
       "description": "Powerful all-purpose ranged infantry.\n\n+ High damage\n\n- High cost\n\n- Slow movement speed",
-      "class": "Light",
       "classes": [
         "Light Ranged Infantry"
       ],
@@ -300,26 +329,30 @@
         "popcap": 2,
         "time": 22
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 15,
-        "siege": 0,
-        "fire": 0,
-        "speed": 2,
-        "dps": 7.5
-      },
-      "range": {
-        "min": 0,
-        "max": 5
-      },
-      "vision": {
-        "lineOfSight": 40,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 15,
+          "speed": 2,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 15,
+          "speed": 2,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 40,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -329,13 +362,13 @@
     {
       "id": "handcannoneer-4-ovoo",
       "baseId": "handcannoneer",
+      "type": "unit",
       "name": "Handcannoneer ",
       "age": 4,
       "civs": [
         "mo"
       ],
       "description": "Powerful all-purpose ranged infantry.\n\n+ High damage\n\n- High cost\n\n- Slow movement speed",
-      "class": "Light",
       "classes": [
         "Light Ranged Gunpowder Infantry"
       ],
@@ -353,26 +386,30 @@
         "popcap": 2,
         "time": 35
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 35,
-        "siege": 0,
-        "fire": 0,
-        "speed": 2,
-        "dps": 17.5
-      },
-      "range": {
-        "min": 0,
-        "max": 4
-      },
-      "vision": {
-        "lineOfSight": 32,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 35,
+          "speed": 2,
+          "range": {
+            "min": 0,
+            "max": 4
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 35,
+          "speed": 2,
+          "range": {
+            "min": 0,
+            "max": 4
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 32,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -382,13 +419,13 @@
     {
       "id": "horseman-1",
       "baseId": "horseman",
+      "type": "unit",
       "name": "Horseman ",
       "age": 1,
       "civs": [
         "mo"
       ],
       "description": "Mobile cavalry effective at raiding and flanking.\n\n+ High movement speed\n\n- Weak vs melee units",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -406,26 +443,39 @@
         "popcap": 1,
         "time": 22
       },
-      "attack": {
-        "melee": 7,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 10,
-        "speed": 1.62,
-        "dps": 4.3
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 28,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 1,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 7,
+          "speed": 1.62,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 7,
+          "speed": 1.62,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 1
+        },
+        {
+          "type": "ranged",
+          "value": 1
+        }
+      ],
+      "sight": {
+        "line": 28,
+        "height": 10
       },
       "producedBy": [
         "stable"
@@ -435,13 +485,13 @@
     {
       "id": "horseman-2-ovoo",
       "baseId": "horseman",
+      "type": "unit",
       "name": "Horseman ",
       "age": 2,
       "civs": [
         "mo"
       ],
       "description": "Mobile cavalry effective at raiding and flanking.\n\n+ High movement speed\n\n- Weak vs melee units",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -459,26 +509,39 @@
         "popcap": 2,
         "time": 22
       },
-      "attack": {
-        "melee": 9,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 13,
-        "speed": 1.62,
-        "dps": 5.6
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 28,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 2,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.62,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.62,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 2
+        },
+        {
+          "type": "ranged",
+          "value": 2
+        }
+      ],
+      "sight": {
+        "line": 28,
+        "height": 10
       },
       "producedBy": [
         "stable"
@@ -488,13 +551,13 @@
     {
       "id": "horseman-3-ovoo",
       "baseId": "horseman",
+      "type": "unit",
       "name": "Horseman ",
       "age": 3,
       "civs": [
         "mo"
       ],
       "description": "Mobile cavalry effective at raiding and flanking.\n\n+ High movement speed\n\n- Weak vs melee units",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -512,26 +575,39 @@
         "popcap": 2,
         "time": 22
       },
-      "attack": {
-        "melee": 11,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 16,
-        "speed": 1.62,
-        "dps": 6.8
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 28,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 2,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.62,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.62,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 2
+        },
+        {
+          "type": "ranged",
+          "value": 2
+        }
+      ],
+      "sight": {
+        "line": 28,
+        "height": 10
       },
       "producedBy": [
         "stable"
@@ -541,13 +617,13 @@
     {
       "id": "horseman-4-ovoo",
       "baseId": "horseman",
+      "type": "unit",
       "name": "Horseman ",
       "age": 4,
       "civs": [
         "mo"
       ],
       "description": "Mobile cavalry effective at raiding and flanking.\n\n+ High movement speed\n\n- Weak vs melee units",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -565,26 +641,39 @@
         "popcap": 2,
         "time": 22
       },
-      "attack": {
-        "melee": 13,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 20,
-        "speed": 1.62,
-        "dps": 8
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 28,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 2,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 13,
+          "speed": 1.62,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 13,
+          "speed": 1.62,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 2
+        },
+        {
+          "type": "ranged",
+          "value": 2
+        }
+      ],
+      "sight": {
+        "line": 28,
+        "height": 10
       },
       "producedBy": [
         "stable"
@@ -594,13 +683,13 @@
     {
       "id": "horseman-ovoo-1",
       "baseId": "horseman-ovoo",
+      "type": "unit",
       "name": "Horseman Ovoo",
       "age": 1,
       "civs": [
         "mo"
       ],
       "description": "Mobile cavalry effective at raiding and flanking.\n\n+ High movement speed\n\n- Weak vs melee units",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -618,26 +707,26 @@
         "popcap": 2,
         "time": 22
       },
-      "attack": {
-        "melee": 7,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 10,
-        "speed": 1.62,
-        "dps": 4.3
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 28,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 1,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 7,
+          "speed": 1.62,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 1
+        }
+      ],
+      "sight": {
+        "line": 28,
+        "height": 10
       },
       "producedBy": [
         "stable"
@@ -646,13 +735,13 @@
     {
       "id": "khaganate-units-4",
       "baseId": "khaganate-units",
+      "type": "unit",
       "name": "Khaganate Units ",
       "age": 4,
       "civs": [
         "mo"
       ],
       "description": "Spawns a cavalry army of Horsemen, Mangudai, or Lancers every 90 seconds.",
-      "class": "Mixed",
       "classes": [
         ""
       ],
@@ -670,26 +759,11 @@
         "popcap": 0,
         "time": 90
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 0,
-        "speed": 0,
-        "dps": 0
-      },
-      "range": {
-        "min": 0,
-        "max": 0
-      },
-      "vision": {
-        "lineOfSight": 0,
-        "heightOfSight": 0
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [],
+      "armor": [],
+      "sight": {
+        "line": 0,
+        "height": 0
       },
       "producedBy": [
         "khaganate-palace"
@@ -698,13 +772,13 @@
     {
       "id": "khan-1",
       "baseId": "khan",
+      "type": "unit",
       "name": "Khan ",
       "age": 1,
       "civs": [
         "mo"
       ],
       "description": "Potent ranged cavalry leader able to ignite Signal Arrows to improve the combat capabilities of nearby military units. Reappears at a Town Center if killed.\n\n+ Vision of a Scout\n\n+ Herds sheep\n\n+ High utility in large armies\n\n+ Automatically improves as the Ages are advanced\n\n- Only a single Khan per Mongol Civilization at a time",
-      "class": "Light",
       "classes": [
         "Light Ranged Cavalry"
       ],
@@ -722,26 +796,30 @@
         "popcap": 1,
         "time": 120
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 2,
-        "siege": 0,
-        "fire": 0,
-        "speed": 1.88,
-        "dps": 1.1
-      },
-      "range": {
-        "min": 0,
-        "max": 5
-      },
-      "vision": {
-        "lineOfSight": 41,
-        "heightOfSight": 501
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 2,
+          "speed": 1.88,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 2,
+          "speed": 1.88,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 41,
+        "height": 501
       },
       "producedBy": [
         "town-center"
@@ -751,13 +829,13 @@
     {
       "id": "khan-2",
       "baseId": "khan",
+      "type": "unit",
       "name": "Khan ",
       "age": 2,
       "civs": [
         "mo"
       ],
       "description": "Potent ranged cavalry leader able to ignite Signal Arrows to improve the combat capabilities of nearby military units. Reappears at a Town Center if killed.\n\n+ Vision of a Scout\n\n+ Herds sheep\n\n+ High utility in large armies\n\n+ Automatically improves as the Ages are advanced\n\n- Only a single Khan per Mongol Civilization at a time",
-      "class": "Light",
       "classes": [
         "Light Ranged Cavalry"
       ],
@@ -775,26 +853,30 @@
         "popcap": 1,
         "time": 120
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 4,
-        "siege": 0,
-        "fire": 0,
-        "speed": 1.88,
-        "dps": 2.1
-      },
-      "range": {
-        "min": 0,
-        "max": 6
-      },
-      "vision": {
-        "lineOfSight": 50,
-        "heightOfSight": 501
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 4,
+          "speed": 1.88,
+          "range": {
+            "min": 0,
+            "max": 6
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 4,
+          "speed": 1.88,
+          "range": {
+            "min": 0,
+            "max": 6
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 50,
+        "height": 501
       },
       "producedBy": [
         "town-center"
@@ -804,13 +886,13 @@
     {
       "id": "khan-3",
       "baseId": "khan",
+      "type": "unit",
       "name": "Khan ",
       "age": 3,
       "civs": [
         "mo"
       ],
       "description": "Potent ranged cavalry leader able to ignite Signal Arrows to improve the combat capabilities of nearby military units. Reappears at a Town Center if killed.\n\n+ Vision of a Scout\n\n+ Herds sheep\n\n+ High utility in large armies\n\n+ Automatically improves as the Ages are advanced\n\n- Only a single Khan per Mongol Civilization at a time",
-      "class": "Light",
       "classes": [
         "Light Ranged Cavalry"
       ],
@@ -828,26 +910,47 @@
         "popcap": 1,
         "time": 120
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 12,
-        "siege": 0,
-        "fire": 0,
-        "speed": 1.88,
-        "dps": 6.4
-      },
-      "range": {
-        "min": 0,
-        "max": 7
-      },
-      "vision": {
-        "lineOfSight": 55,
-        "heightOfSight": 501
-      },
-      "armor": {
-        "melee": 1,
-        "ranged": 1,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 12,
+          "speed": 1.88,
+          "range": {
+            "min": 0,
+            "max": 7
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 12,
+          "speed": 1.88,
+          "range": {
+            "min": 0,
+            "max": 7
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 1
+        },
+        {
+          "type": "melee",
+          "value": 1
+        },
+        {
+          "type": "ranged",
+          "value": 1
+        },
+        {
+          "type": "melee",
+          "value": 1
+        }
+      ],
+      "sight": {
+        "line": 55,
+        "height": 501
       },
       "producedBy": [
         "town-center"
@@ -857,13 +960,13 @@
     {
       "id": "khan-4",
       "baseId": "khan",
+      "type": "unit",
       "name": "Khan ",
       "age": 4,
       "civs": [
         "mo"
       ],
       "description": "Potent ranged cavalry leader able to ignite Signal Arrows to improve the combat capabilities of nearby military units. Reappears at a Town Center if killed.\n\n+ Vision of a Scout\n\n+ Herds sheep\n\n+ High utility in large armies\n\n+ Automatically improves as the Ages are advanced\n\n- Only a single Khan per Mongol Civilization at a time",
-      "class": "Light",
       "classes": [
         "Light Ranged Cavalry"
       ],
@@ -881,26 +984,47 @@
         "popcap": 1,
         "time": 120
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 24,
-        "siege": 0,
-        "fire": 0,
-        "speed": 1.88,
-        "dps": 12.8
-      },
-      "range": {
-        "min": 0,
-        "max": 7
-      },
-      "vision": {
-        "lineOfSight": 60,
-        "heightOfSight": 501
-      },
-      "armor": {
-        "melee": 2,
-        "ranged": 2,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 24,
+          "speed": 1.88,
+          "range": {
+            "min": 0,
+            "max": 7
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 24,
+          "speed": 1.88,
+          "range": {
+            "min": 0,
+            "max": 7
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 2
+        },
+        {
+          "type": "melee",
+          "value": 2
+        },
+        {
+          "type": "ranged",
+          "value": 2
+        },
+        {
+          "type": "melee",
+          "value": 2
+        }
+      ],
+      "sight": {
+        "line": 60,
+        "height": 501
       },
       "producedBy": [
         "town-center"
@@ -910,13 +1034,13 @@
     {
       "id": "lancer-3-ovoo",
       "baseId": "lancer",
+      "type": "unit",
       "name": "Lancer ",
       "age": 3,
       "civs": [
         "mo"
       ],
       "description": "Expensive cavalry with a powerful charge.\n\n+ Heavy armor\n\n+ Strong in melee combat\n\n- Countered by Spearmen and Crossbowmen",
-      "class": "Heavy",
       "classes": [
         "Heavy Melee Cavalry"
       ],
@@ -934,26 +1058,47 @@
         "popcap": 2,
         "time": 35
       },
-      "attack": {
-        "melee": 24,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 16,
-        "speed": 1.38,
-        "dps": 17.4
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 28,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 4,
-        "ranged": 4,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 24,
+          "speed": 1.38,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 24,
+          "speed": 1.38,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 4
+        },
+        {
+          "type": "melee",
+          "value": 4
+        },
+        {
+          "type": "ranged",
+          "value": 4
+        },
+        {
+          "type": "melee",
+          "value": 4
+        }
+      ],
+      "sight": {
+        "line": 28,
+        "height": 10
       },
       "producedBy": [
         "stable"
@@ -963,13 +1108,13 @@
     {
       "id": "lancer-4-ovoo",
       "baseId": "lancer",
+      "type": "unit",
       "name": "Lancer ",
       "age": 4,
       "civs": [
         "mo"
       ],
       "description": "Expensive cavalry with a powerful charge.\n\n+ Heavy armor\n\n+ Strong in melee combat\n\n- Countered by Spearmen and Crossbowmen",
-      "class": "Heavy",
       "classes": [
         "Heavy Melee Cavalry"
       ],
@@ -987,26 +1132,47 @@
         "popcap": 2,
         "time": 35
       },
-      "attack": {
-        "melee": 29,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 20,
-        "speed": 1.38,
-        "dps": 21
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 28,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 5,
-        "ranged": 5,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 29,
+          "speed": 1.38,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 29,
+          "speed": 1.38,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 5
+        },
+        {
+          "type": "melee",
+          "value": 5
+        },
+        {
+          "type": "ranged",
+          "value": 5
+        },
+        {
+          "type": "melee",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "line": 28,
+        "height": 10
       },
       "producedBy": [
         "stable"
@@ -1016,13 +1182,13 @@
     {
       "id": "man-at-arms-3-ovoo",
       "baseId": "man-at-arms",
+      "type": "unit",
       "name": "Man-at-Arms ",
       "age": 3,
       "civs": [
         "mo"
       ],
       "description": "Tough infantry with good damage.\n\n+ High armor\n\n- Slow movement",
-      "class": "Heavy",
       "classes": [
         "Heavy Melee Infantry"
       ],
@@ -1040,26 +1206,47 @@
         "popcap": 2,
         "time": 22
       },
-      "attack": {
-        "melee": 12,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 13,
-        "speed": 1.25,
-        "dps": 9.6
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 4,
-        "ranged": 4,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 12,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 12,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 4
+        },
+        {
+          "type": "melee",
+          "value": 4
+        },
+        {
+          "type": "ranged",
+          "value": 4
+        },
+        {
+          "type": "melee",
+          "value": 4
+        }
+      ],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "barrack"
@@ -1069,13 +1256,13 @@
     {
       "id": "man-at-arms-4-ovoo",
       "baseId": "man-at-arms",
+      "type": "unit",
       "name": "Man-at-Arms ",
       "age": 4,
       "civs": [
         "mo"
       ],
       "description": "Tough infantry with good damage.\n\n+ High armor\n\n- Slow movement",
-      "class": "Heavy",
       "classes": [
         "Heavy Melee Infantry"
       ],
@@ -1093,26 +1280,47 @@
         "popcap": 2,
         "time": 22
       },
-      "attack": {
-        "melee": 14,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 16,
-        "speed": 1.25,
-        "dps": 11.2
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 5,
-        "ranged": 5,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 14,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 14,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 5
+        },
+        {
+          "type": "melee",
+          "value": 5
+        },
+        {
+          "type": "ranged",
+          "value": 5
+        },
+        {
+          "type": "melee",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "barrack"
@@ -1122,13 +1330,13 @@
     {
       "id": "mangonel-3-ovoo",
       "baseId": "mangonel",
+      "type": "unit",
       "name": "Mangonel ",
       "age": 3,
       "civs": [
         "mo"
       ],
       "description": "Fires multiple projectiles dealing damage in an area.\n\n+ Effective against massed units\n\n- Must be set up to fire",
-      "class": "Siege",
       "classes": [
         "Siege"
       ],
@@ -1146,26 +1354,37 @@
         "popcap": 6,
         "time": 40
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 0,
-        "speed": 6.75,
-        "dps": 5.3
-      },
-      "range": {
-        "min": 3,
-        "max": 9
-      },
-      "vision": {
-        "lineOfSight": 52,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 8,
-        "fire": 0
+      "weapons": [
+        {
+          "damage": 36,
+          "speed": 6.75,
+          "range": {
+            "min": 3,
+            "max": 9
+          }
+        },
+        {
+          "damage": 36,
+          "speed": 6.75,
+          "range": {
+            "min": 3,
+            "max": 9
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 8
+        },
+        {
+          "type": "ranged",
+          "value": 8
+        }
+      ],
+      "sight": {
+        "line": 52,
+        "height": 10
       },
       "producedBy": [
         "siege-workshop"
@@ -1175,13 +1394,13 @@
     {
       "id": "mangudai-2-ovoo",
       "baseId": "mangudai",
+      "type": "unit",
       "name": "Mangudai ",
       "age": 2,
       "civs": [
         "mo"
       ],
       "description": "Confounding mobile ranged cavalry that can fire while moving.\n\n+ High rate of fire\n\n- Low weapon range",
-      "class": "Light",
       "classes": [
         "Light Ranged Cavalry"
       ],
@@ -1199,26 +1418,30 @@
         "popcap": 2,
         "time": 30
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 7,
-        "siege": 0,
-        "fire": 0,
-        "speed": 1.25,
-        "dps": 5.6
-      },
-      "range": {
-        "min": 0,
-        "max": 3.5
-      },
-      "vision": {
-        "lineOfSight": 34,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 7,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 3.5
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 7,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 3.5
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 34,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -1228,13 +1451,13 @@
     {
       "id": "mangudai-2",
       "baseId": "mangudai",
+      "type": "unit",
       "name": "Mangudai ",
       "age": 2,
       "civs": [
         "mo"
       ],
       "description": "Confounding mobile ranged cavalry that can fire while moving.\n\n+ High rate of fire\n\n- Low weapon range",
-      "class": "Light",
       "classes": [
         "Light Ranged Cavalry"
       ],
@@ -1252,26 +1475,30 @@
         "popcap": 1,
         "time": 30
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 7,
-        "siege": 0,
-        "fire": 0,
-        "speed": 1.25,
-        "dps": 5.6
-      },
-      "range": {
-        "min": 0,
-        "max": 3.5
-      },
-      "vision": {
-        "lineOfSight": 34,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 7,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 3.5
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 7,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 3.5
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 34,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -1281,13 +1508,13 @@
     {
       "id": "mangudai-3-ovoo",
       "baseId": "mangudai",
+      "type": "unit",
       "name": "Mangudai ",
       "age": 3,
       "civs": [
         "mo"
       ],
       "description": "Confounding mobile ranged cavalry that can fire while moving.\n\n+ High rate of fire\n\n- Low weapon range",
-      "class": "Light",
       "classes": [
         "Light Ranged Cavalry"
       ],
@@ -1305,26 +1532,30 @@
         "popcap": 2,
         "time": 30
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 9,
-        "siege": 0,
-        "fire": 0,
-        "speed": 1.25,
-        "dps": 7.2
-      },
-      "range": {
-        "min": 0,
-        "max": 3.5
-      },
-      "vision": {
-        "lineOfSight": 34,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 9,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 3.5
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 9,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 3.5
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 34,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -1334,13 +1565,13 @@
     {
       "id": "mangudai-3",
       "baseId": "mangudai",
+      "type": "unit",
       "name": "Mangudai ",
       "age": 3,
       "civs": [
         "mo"
       ],
       "description": "Confounding mobile ranged cavalry that can fire while moving.\n\n+ High rate of fire\n\n- Low weapon range",
-      "class": "Light",
       "classes": [
         "Light Ranged Cavalry"
       ],
@@ -1358,26 +1589,30 @@
         "popcap": 1,
         "time": 30
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 9,
-        "siege": 0,
-        "fire": 0,
-        "speed": 1.25,
-        "dps": 7.2
-      },
-      "range": {
-        "min": 0,
-        "max": 3.5
-      },
-      "vision": {
-        "lineOfSight": 34,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 9,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 3.5
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 9,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 3.5
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 34,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -1387,13 +1622,13 @@
     {
       "id": "mangudai-4-ovoo",
       "baseId": "mangudai",
+      "type": "unit",
       "name": "Mangudai ",
       "age": 4,
       "civs": [
         "mo"
       ],
       "description": "Confounding mobile ranged cavalry that can fire while moving.\n\n+ High rate of fire\n\n- Low weapon range",
-      "class": "Light",
       "classes": [
         "Light Ranged Cavalry"
       ],
@@ -1411,26 +1646,30 @@
         "popcap": 2,
         "time": 30
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 10,
-        "siege": 0,
-        "fire": 0,
-        "speed": 1.25,
-        "dps": 8
-      },
-      "range": {
-        "min": 0,
-        "max": 3.5
-      },
-      "vision": {
-        "lineOfSight": 34,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 10,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 3.5
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 10,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 3.5
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 34,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -1440,13 +1679,13 @@
     {
       "id": "mangudai-4",
       "baseId": "mangudai",
+      "type": "unit",
       "name": "Mangudai ",
       "age": 4,
       "civs": [
         "mo"
       ],
       "description": "Confounding mobile ranged cavalry that can fire while moving.\n\n+ High rate of fire\n\n- Low weapon range",
-      "class": "Light",
       "classes": [
         "Light Ranged Cavalry"
       ],
@@ -1464,26 +1703,30 @@
         "popcap": 1,
         "time": 30
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 10,
-        "siege": 0,
-        "fire": 0,
-        "speed": 1.25,
-        "dps": 8
-      },
-      "range": {
-        "min": 0,
-        "max": 3.5
-      },
-      "vision": {
-        "lineOfSight": 34,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 10,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 3.5
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 10,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 3.5
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 34,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -1493,13 +1736,13 @@
     {
       "id": "scout-1-ovoo",
       "baseId": "scout",
+      "type": "unit",
       "name": "Scout ",
       "age": 1,
       "civs": [
         "mo"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n\n+ Able to see into Stealth Forests\n\n+ High movement speed\n\n- Very weak in combat",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -1517,26 +1760,30 @@
         "popcap": 2,
         "time": 20
       },
-      "attack": {
-        "melee": 4,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 10,
-        "speed": 3.75,
-        "dps": 1.1
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 41,
-        "heightOfSight": 501
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 41,
+        "height": 501
       },
       "producedBy": [
         "town-center"
@@ -1546,13 +1793,13 @@
     {
       "id": "scout-2-ovoo",
       "baseId": "scout",
+      "type": "unit",
       "name": "Scout ",
       "age": 2,
       "civs": [
         "mo"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n\n+ Able to see into Stealth Forests\n\n+ High movement speed\n\n- Very weak in combat",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -1570,26 +1817,30 @@
         "popcap": 2,
         "time": 20
       },
-      "attack": {
-        "melee": 4,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 13,
-        "speed": 3.75,
-        "dps": 1.1
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 41,
-        "heightOfSight": 501
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 41,
+        "height": 501
       },
       "producedBy": [
         "town-center"
@@ -1599,13 +1850,13 @@
     {
       "id": "scout-3-ovoo",
       "baseId": "scout",
+      "type": "unit",
       "name": "Scout ",
       "age": 3,
       "civs": [
         "mo"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n\n+ Able to see into Stealth Forests\n\n+ High movement speed\n\n- Very weak in combat",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -1623,26 +1874,30 @@
         "popcap": 2,
         "time": 20
       },
-      "attack": {
-        "melee": 4,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 16,
-        "speed": 3.75,
-        "dps": 1.1
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 41,
-        "heightOfSight": 501
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 41,
+        "height": 501
       },
       "producedBy": [
         "town-center"
@@ -1652,13 +1907,13 @@
     {
       "id": "scout-4-ovoo",
       "baseId": "scout",
+      "type": "unit",
       "name": "Scout ",
       "age": 4,
       "civs": [
         "mo"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n\n+ Able to see into Stealth Forests\n\n+ High movement speed\n\n- Very weak in combat",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -1676,26 +1931,30 @@
         "popcap": 2,
         "time": 20
       },
-      "attack": {
-        "melee": 4,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 20,
-        "speed": 3.75,
-        "dps": 1.1
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 41,
-        "heightOfSight": 501
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 41,
+        "height": 501
       },
       "producedBy": [
         "town-center"
@@ -1705,13 +1964,13 @@
     {
       "id": "shaman-3-ovoo",
       "baseId": "shaman",
+      "type": "unit",
       "name": "Shaman ",
       "age": 3,
       "civs": [
         "mo"
       ],
       "description": "Support unit with no combat capability. Can pick up Relics, convert enemy units, and capture Sacred Sites.\n\n+ Heals friendly units\n\n- Slow movement speed",
-      "class": "Religious",
       "classes": [
         "Religious"
       ],
@@ -1729,26 +1988,11 @@
         "popcap": 2,
         "time": 45
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 0,
-        "speed": 0,
-        "dps": 0
-      },
-      "range": {
-        "min": 0,
-        "max": 0
-      },
-      "vision": {
-        "lineOfSight": 30,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [],
+      "armor": [],
+      "sight": {
+        "line": 30,
+        "height": 10
       },
       "producedBy": [
         "prayer-tent"
@@ -1758,13 +2002,13 @@
     {
       "id": "shaman-3",
       "baseId": "shaman",
+      "type": "unit",
       "name": "Shaman",
       "age": 3,
       "civs": [
         "mo"
       ],
       "description": "Support unit with no combat capability. Can pick up Relics, convert enemy units, and capture Sacred Sites.\n\n+ Heals friendly units\n\n- Slow movement speed",
-      "class": "Religious",
       "classes": [
         "Religious"
       ],
@@ -1782,26 +2026,11 @@
         "popcap": 1,
         "time": 45
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 0,
-        "speed": 0,
-        "dps": 0
-      },
-      "range": {
-        "min": 0,
-        "max": 0
-      },
-      "vision": {
-        "lineOfSight": 30,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [],
+      "armor": [],
+      "sight": {
+        "line": 30,
+        "height": 10
       },
       "producedBy": [
         "prayer-tent"
@@ -1811,13 +2040,13 @@
     {
       "id": "spearman-1-ovoo",
       "baseId": "spearman",
+      "type": "unit",
       "name": "Spearman ",
       "age": 1,
       "civs": [
         "mo"
       ],
       "description": "Infantry best used against mounted units.\n\n+ Anti-cavalry specialist\n\n- Susceptible to light ranged attacks\n\n- Weak against armored infantry",
-      "class": "Light",
       "classes": [
         "Light Melee Infantry"
       ],
@@ -1835,26 +2064,30 @@
         "popcap": 2,
         "time": 15
       },
-      "attack": {
-        "melee": 6,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 10,
-        "speed": 1.75,
-        "dps": 3.4
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 6,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 6,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "barrack"
@@ -1864,13 +2097,13 @@
     {
       "id": "spearman-2-ovoo",
       "baseId": "spearman",
+      "type": "unit",
       "name": "Spearman ",
       "age": 2,
       "civs": [
         "mo"
       ],
       "description": "Infantry best used against mounted units.\n\n+ Anti-cavalry specialist\n\n- Susceptible to light ranged attacks\n\n- Weak against armored infantry",
-      "class": "Light",
       "classes": [
         "Light Melee Infantry"
       ],
@@ -1888,26 +2121,30 @@
         "popcap": 2,
         "time": 15
       },
-      "attack": {
-        "melee": 8,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 13,
-        "speed": 1.75,
-        "dps": 4.6
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 8,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 8,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "barrack"
@@ -1917,13 +2154,13 @@
     {
       "id": "spearman-3-ovoo",
       "baseId": "spearman",
+      "type": "unit",
       "name": "Spearman ",
       "age": 3,
       "civs": [
         "mo"
       ],
       "description": "Infantry best used against mounted units.\n\n+ Anti-cavalry specialist\n\n- Susceptible to light ranged attacks\n\n- Weak against armored infantry",
-      "class": "Light",
       "classes": [
         "Light Melee Infantry"
       ],
@@ -1941,26 +2178,30 @@
         "popcap": 2,
         "time": 15
       },
-      "attack": {
-        "melee": 9,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 16,
-        "speed": 1.75,
-        "dps": 5.1
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "barrack"
@@ -1970,13 +2211,13 @@
     {
       "id": "spearman-4-ovoo",
       "baseId": "spearman",
+      "type": "unit",
       "name": "Spearman ",
       "age": 4,
       "civs": [
         "mo"
       ],
       "description": "Infantry best used against mounted units.\n\n+ Anti-cavalry specialist\n\n- Susceptible to light ranged attacks\n\n- Weak against armored infantry",
-      "class": "Light",
       "classes": [
         "Light Melee Infantry"
       ],
@@ -1994,26 +2235,30 @@
         "popcap": 2,
         "time": 15
       },
-      "attack": {
-        "melee": 11,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 20,
-        "speed": 1.75,
-        "dps": 6.3
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "barrack"
@@ -2023,13 +2268,13 @@
     {
       "id": "springald-3-ovoo",
       "baseId": "springald",
+      "type": "unit",
       "name": "Springald ",
       "age": 3,
       "civs": [
         "mo"
       ],
       "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n\n+ Long range\n\n+ Bonus damage vs siege engines\n\n- Trivial damage vs. buildings",
-      "class": "Siege",
       "classes": [
         "Siege"
       ],
@@ -2047,26 +2292,39 @@
         "popcap": 6,
         "time": 30
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 30,
-        "siege": 0,
-        "fire": 0,
-        "speed": 4,
-        "dps": 7.5
-      },
-      "range": {
-        "min": 1.3,
-        "max": 10
-      },
-      "vision": {
-        "lineOfSight": 56,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 8,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 30,
+          "speed": 4,
+          "range": {
+            "min": 1.3,
+            "max": 10
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 30,
+          "speed": 4,
+          "range": {
+            "min": 1.3,
+            "max": 10
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 8
+        },
+        {
+          "type": "ranged",
+          "value": 8
+        }
+      ],
+      "sight": {
+        "line": 56,
+        "height": 10
       },
       "producedBy": [
         "siege-workshop"
@@ -2076,13 +2334,13 @@
     {
       "id": "traction-trebuchet-3-ovoo",
       "baseId": "traction-trebuchet",
+      "type": "unit",
       "name": "Traction Trebuchet ",
       "age": 3,
       "civs": [
         "mo"
       ],
       "description": "Powerful siege engine effective at destroying buildings and walls over a long distance.\n\n+ Bonus damage vs buildings\n\n+ High mobility\n\n- Must be set up to fire\n\n- Inaccurate against units",
-      "class": "Siege",
       "classes": [
         "Siege"
       ],
@@ -2100,26 +2358,39 @@
         "popcap": 6,
         "time": 35
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 0,
-        "siege": 100,
-        "fire": 0,
-        "speed": 9.5,
-        "dps": 10.5
-      },
-      "range": {
-        "min": 2.8,
-        "max": 13
-      },
-      "vision": {
-        "lineOfSight": 68,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 8,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "siege",
+          "damage": 100,
+          "speed": 9.5,
+          "range": {
+            "min": 2.8,
+            "max": 13
+          }
+        },
+        {
+          "type": "siege",
+          "damage": 100,
+          "speed": 9.5,
+          "range": {
+            "min": 2.8,
+            "max": 13
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 8
+        },
+        {
+          "type": "ranged",
+          "value": 8
+        }
+      ],
+      "sight": {
+        "line": 68,
+        "height": 10
       },
       "producedBy": [
         "siege-workshop"
@@ -2129,13 +2400,13 @@
     {
       "id": "traction-trebuchet-3",
       "baseId": "traction-trebuchet",
+      "type": "unit",
       "name": "Traction Trebuchet ",
       "age": 3,
       "civs": [
         "mo"
       ],
       "description": "Powerful siege engine effective at destroying buildings and walls over a long distance.\n\n+ Bonus damage vs buildings\n\n+ High mobility\n\n- Must be set up to fire\n\n- Inaccurate against units",
-      "class": "Siege",
       "classes": [
         "Siege"
       ],
@@ -2153,26 +2424,39 @@
         "popcap": 3,
         "time": 35
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 0,
-        "siege": 100,
-        "fire": 0,
-        "speed": 9.5,
-        "dps": 10.5
-      },
-      "range": {
-        "min": 2.8,
-        "max": 13
-      },
-      "vision": {
-        "lineOfSight": 68,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 8,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "siege",
+          "damage": 100,
+          "speed": 9.5,
+          "range": {
+            "min": 2.8,
+            "max": 13
+          }
+        },
+        {
+          "type": "siege",
+          "damage": 100,
+          "speed": 9.5,
+          "range": {
+            "min": 2.8,
+            "max": 13
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 8
+        },
+        {
+          "type": "ranged",
+          "value": 8
+        }
+      ],
+      "sight": {
+        "line": 68,
+        "height": 10
       },
       "producedBy": [
         "siege-workshop"
@@ -2182,13 +2466,13 @@
     {
       "id": "trader-2-ovoo",
       "baseId": "trader",
+      "type": "unit",
       "name": "Trader ",
       "age": 2,
       "civs": [
         "mo"
       ],
       "description": "Traders generate Gold when assigned to trade with a Trade Post or another player’s Market. Once assigned to trade, the Trader makes repeated trips between its Home Market and the Trade Target. You can assign a new Home Market if you wish to.",
-      "class": "Economic",
       "classes": [
         "Worker",
         "Cavalry"
@@ -2207,26 +2491,11 @@
         "popcap": 2,
         "time": 35
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 0,
-        "speed": 0,
-        "dps": 0
-      },
-      "range": {
-        "min": 0,
-        "max": 0
-      },
-      "vision": {
-        "lineOfSight": 35,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [],
+      "armor": [],
+      "sight": {
+        "line": 35,
+        "height": 10
       },
       "producedBy": [
         "market"
@@ -2236,13 +2505,13 @@
     {
       "id": "trader-2-the-silver-tree",
       "baseId": "trader",
+      "type": "unit",
       "name": "Trader",
       "age": 2,
       "civs": [
         "mo"
       ],
       "description": "Traders generate Gold when assigned to trade with a Trade Post or another player’s Market. Once assigned to trade, the Trader makes repeated trips between its Home Market and the Trade Target. You can assign a new Home Market if you wish to.",
-      "class": "Economic",
       "classes": [
         "Worker",
         "Cavalry"
@@ -2261,26 +2530,11 @@
         "popcap": 1,
         "time": 17
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 0,
-        "speed": 0,
-        "dps": 0
-      },
-      "range": {
-        "min": 0,
-        "max": 0
-      },
-      "vision": {
-        "lineOfSight": 35,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [],
+      "armor": [],
+      "sight": {
+        "line": 35,
+        "height": 10
       },
       "producedBy": [
         "the-silver-tree"
@@ -2290,13 +2544,13 @@
     {
       "id": "villager-1-ovoo",
       "baseId": "villager",
+      "type": "unit",
       "name": "Villager ",
       "age": 1,
       "civs": [
         "mo"
       ],
       "description": "Gathers Wood, Food, Stone, and Gold. Builds and repairs buildings and can repair siege engines and naval units.\n\n- Weak in combat",
-      "class": "Economic",
       "classes": [
         "Worker"
       ],
@@ -2314,26 +2568,30 @@
         "popcap": 2,
         "time": 20
       },
-      "attack": {
-        "melee": 6,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 10,
-        "speed": 3.75,
-        "dps": 1.6
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 28,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 6,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 6,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 28,
+        "height": 10
       },
       "producedBy": [
         "town-center"
@@ -2343,6 +2601,7 @@
     {
       "id": "archer-2",
       "baseId": "archer",
+      "type": "unit",
       "name": "Archer",
       "age": 2,
       "civs": [
@@ -2355,7 +2614,6 @@
         "ru"
       ],
       "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n\n+ High rate of fire\n\n- Weak vs armored targets",
-      "class": "Light",
       "classes": [
         "Light Ranged Infantry"
       ],
@@ -2373,26 +2631,30 @@
         "popcap": 1,
         "time": 15
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 5,
-        "siege": 0,
-        "fire": 0,
-        "speed": 1.5,
-        "dps": 3.3
-      },
-      "range": {
-        "min": 0,
-        "max": 5
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 5,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 5,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -2402,6 +2664,7 @@
     {
       "id": "archer-3",
       "baseId": "archer",
+      "type": "unit",
       "name": "Archer",
       "age": 3,
       "civs": [
@@ -2414,7 +2677,6 @@
         "ru"
       ],
       "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n\n+ High rate of fire\n\n- Weak vs armored targets",
-      "class": "Light",
       "classes": [
         "Light Ranged Infantry"
       ],
@@ -2432,26 +2694,30 @@
         "popcap": 1,
         "time": 15
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 7,
-        "siege": 0,
-        "fire": 0,
-        "speed": 1.5,
-        "dps": 4.7
-      },
-      "range": {
-        "min": 0,
-        "max": 5
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 7,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 7,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -2461,6 +2727,7 @@
     {
       "id": "archer-4",
       "baseId": "archer",
+      "type": "unit",
       "name": "Archer",
       "age": 4,
       "civs": [
@@ -2473,7 +2740,6 @@
         "ru"
       ],
       "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n\n+ High rate of fire\n\n- Weak vs armored targets",
-      "class": "Light",
       "classes": [
         "Light Ranged Infantry"
       ],
@@ -2491,26 +2757,30 @@
         "popcap": 1,
         "time": 15
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 8,
-        "siege": 0,
-        "fire": 0,
-        "speed": 1.5,
-        "dps": 5.3
-      },
-      "range": {
-        "min": 0,
-        "max": 5
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 8,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 8,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -2520,6 +2790,7 @@
     {
       "id": "battering-ram-2",
       "baseId": "battering-ram",
+      "type": "unit",
       "name": "Battering Ram",
       "age": 2,
       "civs": [
@@ -2532,7 +2803,6 @@
         "ru"
       ],
       "description": "Durable infantry transport effective against buildings and walls.\n\n+ High ranged armor\n\n+ High health\n\n- Can only attack buildings\n\n- Slow movement speed",
-      "class": "Siege",
       "classes": [
         "Siege"
       ],
@@ -2550,26 +2820,39 @@
         "popcap": 1,
         "time": 80
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 0,
-        "siege": 200,
-        "fire": 0,
-        "speed": 5,
-        "dps": 40
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 30,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 30,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "siege",
+          "damage": 200,
+          "speed": 5,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "siege",
+          "damage": 200,
+          "speed": 5,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 30
+        },
+        {
+          "type": "ranged",
+          "value": 30
+        }
+      ],
+      "sight": {
+        "line": 30,
+        "height": 10
       },
       "producedBy": [
         "infantry-units"
@@ -2579,6 +2862,7 @@
     {
       "id": "bombard-4",
       "baseId": "bombard",
+      "type": "unit",
       "name": "Bombard",
       "age": 4,
       "civs": [
@@ -2592,7 +2876,6 @@
         "ru"
       ],
       "description": "Intimidating siege gun excellent against buildings or any stubborn targets.\n\n+ High damage\n\n- Must be set up to fire",
-      "class": "Siege",
       "classes": [
         "Siege",
         "Gunpowder"
@@ -2611,26 +2894,39 @@
         "popcap": 3,
         "time": 45
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 0,
-        "siege": 170,
-        "fire": 0,
-        "speed": 4.25,
-        "dps": 40
-      },
-      "range": {
-        "min": 3.8,
-        "max": 10
-      },
-      "vision": {
-        "lineOfSight": 56,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 12,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "siege",
+          "damage": 170,
+          "speed": 4.25,
+          "range": {
+            "min": 3.8,
+            "max": 10
+          }
+        },
+        {
+          "type": "siege",
+          "damage": 170,
+          "speed": 4.25,
+          "range": {
+            "min": 3.8,
+            "max": 10
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 12
+        },
+        {
+          "type": "ranged",
+          "value": 12
+        }
+      ],
+      "sight": {
+        "line": 56,
+        "height": 10
       },
       "producedBy": [
         "siege-workshop"
@@ -2640,6 +2936,7 @@
     {
       "id": "crossbowman-3",
       "baseId": "crossbowman",
+      "type": "unit",
       "name": "Crossbowman",
       "age": 3,
       "civs": [
@@ -2652,7 +2949,6 @@
         "ru"
       ],
       "description": "Powerful all-purpose ranged infantry.\n\n+ High damage\n\n- High cost\n\n- Slow movement speed",
-      "class": "Light",
       "classes": [
         "Light Ranged Infantry"
       ],
@@ -2670,26 +2966,30 @@
         "popcap": 1,
         "time": 22
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 12,
-        "siege": 0,
-        "fire": 0,
-        "speed": 2,
-        "dps": 6
-      },
-      "range": {
-        "min": 0,
-        "max": 5
-      },
-      "vision": {
-        "lineOfSight": 40,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 12,
+          "speed": 2,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 12,
+          "speed": 2,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 40,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -2699,6 +2999,7 @@
     {
       "id": "crossbowman-4",
       "baseId": "crossbowman",
+      "type": "unit",
       "name": "Crossbowman",
       "age": 4,
       "civs": [
@@ -2711,7 +3012,6 @@
         "ru"
       ],
       "description": "Powerful all-purpose ranged infantry.\n\n+ High damage\n\n- High cost\n\n- Slow movement speed",
-      "class": "Light",
       "classes": [
         "Light Ranged Infantry"
       ],
@@ -2729,26 +3029,30 @@
         "popcap": 1,
         "time": 22
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 15,
-        "siege": 0,
-        "fire": 0,
-        "speed": 2,
-        "dps": 7.5
-      },
-      "range": {
-        "min": 0,
-        "max": 5
-      },
-      "vision": {
-        "lineOfSight": 40,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 15,
+          "speed": 2,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 15,
+          "speed": 2,
+          "range": {
+            "min": 0,
+            "max": 5
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 40,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -2758,6 +3062,7 @@
     {
       "id": "handcannoneer-4",
       "baseId": "handcannoneer",
+      "type": "unit",
       "name": "Handcannoneer",
       "age": 4,
       "civs": [
@@ -2770,7 +3075,6 @@
         "mo"
       ],
       "description": "Powerful all-purpose ranged infantry.\n\n+ High damage\n\n- High cost\n\n- Slow movement speed",
-      "class": "Light",
       "classes": [
         "Light Ranged Gunpowder Infantry"
       ],
@@ -2788,26 +3092,30 @@
         "popcap": 1,
         "time": 35
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 35,
-        "siege": 0,
-        "fire": 0,
-        "speed": 2,
-        "dps": 17.5
-      },
-      "range": {
-        "min": 0,
-        "max": 4
-      },
-      "vision": {
-        "lineOfSight": 32,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 35,
+          "speed": 2,
+          "range": {
+            "min": 0,
+            "max": 4
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 35,
+          "speed": 2,
+          "range": {
+            "min": 0,
+            "max": 4
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 32,
+        "height": 10
       },
       "producedBy": [
         "archery-range"
@@ -2817,6 +3125,7 @@
     {
       "id": "horseman-2",
       "baseId": "horseman",
+      "type": "unit",
       "name": "Horseman",
       "age": 2,
       "civs": [
@@ -2830,7 +3139,6 @@
         "ru"
       ],
       "description": "Mobile cavalry effective at raiding and flanking.\n\n+ High movement speed\n\n- Weak vs melee units",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -2848,26 +3156,39 @@
         "popcap": 1,
         "time": 22
       },
-      "attack": {
-        "melee": 9,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 13,
-        "speed": 1.62,
-        "dps": 5.6
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 28,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 2,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.62,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.62,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 2
+        },
+        {
+          "type": "ranged",
+          "value": 2
+        }
+      ],
+      "sight": {
+        "line": 28,
+        "height": 10
       },
       "producedBy": [
         "stable"
@@ -2877,6 +3198,7 @@
     {
       "id": "horseman-3",
       "baseId": "horseman",
+      "type": "unit",
       "name": "Horseman",
       "age": 3,
       "civs": [
@@ -2890,7 +3212,6 @@
         "ru"
       ],
       "description": "Mobile cavalry effective at raiding and flanking.\n\n+ High movement speed\n\n- Weak vs melee units",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -2908,26 +3229,39 @@
         "popcap": 1,
         "time": 22
       },
-      "attack": {
-        "melee": 11,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 16,
-        "speed": 1.62,
-        "dps": 6.8
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 28,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 2,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.62,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.62,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 2
+        },
+        {
+          "type": "ranged",
+          "value": 2
+        }
+      ],
+      "sight": {
+        "line": 28,
+        "height": 10
       },
       "producedBy": [
         "stable"
@@ -2937,6 +3271,7 @@
     {
       "id": "horseman-4",
       "baseId": "horseman",
+      "type": "unit",
       "name": "Horseman",
       "age": 4,
       "civs": [
@@ -2950,7 +3285,6 @@
         "ru"
       ],
       "description": "Mobile cavalry effective at raiding and flanking.\n\n+ High movement speed\n\n- Weak vs melee units",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -2968,26 +3302,39 @@
         "popcap": 1,
         "time": 22
       },
-      "attack": {
-        "melee": 13,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 20,
-        "speed": 1.62,
-        "dps": 8
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 28,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 2,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 13,
+          "speed": 1.62,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 13,
+          "speed": 1.62,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 2
+        },
+        {
+          "type": "ranged",
+          "value": 2
+        }
+      ],
+      "sight": {
+        "line": 28,
+        "height": 10
       },
       "producedBy": [
         "stable"
@@ -2997,6 +3344,7 @@
     {
       "id": "lancer-3",
       "baseId": "lancer",
+      "type": "unit",
       "name": "Lancer",
       "age": 3,
       "civs": [
@@ -3006,7 +3354,6 @@
         "mo"
       ],
       "description": "Expensive cavalry with a powerful charge.\n\n+ Heavy armor\n\n+ Strong in melee combat\n\n- Countered by Spearmen and Crossbowmen",
-      "class": "Heavy",
       "classes": [
         "Heavy Melee Cavalry"
       ],
@@ -3024,26 +3371,47 @@
         "popcap": 1,
         "time": 35
       },
-      "attack": {
-        "melee": 24,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 16,
-        "speed": 1.38,
-        "dps": 17.4
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 28,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 4,
-        "ranged": 4,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 24,
+          "speed": 1.38,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 24,
+          "speed": 1.38,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 4
+        },
+        {
+          "type": "melee",
+          "value": 4
+        },
+        {
+          "type": "ranged",
+          "value": 4
+        },
+        {
+          "type": "melee",
+          "value": 4
+        }
+      ],
+      "sight": {
+        "line": 28,
+        "height": 10
       },
       "producedBy": [
         "stable"
@@ -3053,6 +3421,7 @@
     {
       "id": "lancer-4",
       "baseId": "lancer",
+      "type": "unit",
       "name": "Lancer",
       "age": 4,
       "civs": [
@@ -3062,7 +3431,6 @@
         "mo"
       ],
       "description": "Expensive cavalry with a powerful charge.\n\n+ Heavy armor\n\n+ Strong in melee combat\n\n- Countered by Spearmen and Crossbowmen",
-      "class": "Heavy",
       "classes": [
         "Heavy Melee Cavalry"
       ],
@@ -3080,26 +3448,47 @@
         "popcap": 1,
         "time": 35
       },
-      "attack": {
-        "melee": 29,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 20,
-        "speed": 1.38,
-        "dps": 21
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 28,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 5,
-        "ranged": 5,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 29,
+          "speed": 1.38,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 29,
+          "speed": 1.38,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 5
+        },
+        {
+          "type": "melee",
+          "value": 5
+        },
+        {
+          "type": "ranged",
+          "value": 5
+        },
+        {
+          "type": "melee",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "line": 28,
+        "height": 10
       },
       "producedBy": [
         "stable"
@@ -3109,6 +3498,7 @@
     {
       "id": "man-at-arms-3",
       "baseId": "man-at-arms",
+      "type": "unit",
       "name": "Man-at-Arms",
       "age": 3,
       "civs": [
@@ -3121,7 +3511,6 @@
         "ru"
       ],
       "description": "Tough infantry with good damage.\n\n+ High armor\n\n- Slow movement",
-      "class": "Heavy",
       "classes": [
         "Heavy Melee Infantry"
       ],
@@ -3139,26 +3528,47 @@
         "popcap": 1,
         "time": 22
       },
-      "attack": {
-        "melee": 12,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 13,
-        "speed": 1.25,
-        "dps": 9.6
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 4,
-        "ranged": 4,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 12,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 12,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 4
+        },
+        {
+          "type": "melee",
+          "value": 4
+        },
+        {
+          "type": "ranged",
+          "value": 4
+        },
+        {
+          "type": "melee",
+          "value": 4
+        }
+      ],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "barrack"
@@ -3168,6 +3578,7 @@
     {
       "id": "man-at-arms-4",
       "baseId": "man-at-arms",
+      "type": "unit",
       "name": "Man-at-Arms",
       "age": 4,
       "civs": [
@@ -3180,7 +3591,6 @@
         "ru"
       ],
       "description": "Tough infantry with good damage.\n\n+ High armor\n\n- Slow movement",
-      "class": "Heavy",
       "classes": [
         "Heavy Melee Infantry"
       ],
@@ -3198,26 +3608,47 @@
         "popcap": 1,
         "time": 22
       },
-      "attack": {
-        "melee": 14,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 16,
-        "speed": 1.25,
-        "dps": 11.2
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 5,
-        "ranged": 5,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 14,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 14,
+          "speed": 1.25,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 5
+        },
+        {
+          "type": "melee",
+          "value": 5
+        },
+        {
+          "type": "ranged",
+          "value": 5
+        },
+        {
+          "type": "melee",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "barrack"
@@ -3227,6 +3658,7 @@
     {
       "id": "mangonel-3",
       "baseId": "mangonel",
+      "type": "unit",
       "name": "Mangonel",
       "age": 3,
       "civs": [
@@ -3240,7 +3672,6 @@
         "ru"
       ],
       "description": "Fires multiple projectiles dealing damage in an area.\n\n+ Effective against massed units\n\n- Must be set up to fire",
-      "class": "Siege",
       "classes": [
         "Siege"
       ],
@@ -3258,26 +3689,37 @@
         "popcap": 3,
         "time": 40
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 0,
-        "speed": 6.75,
-        "dps": 5.3
-      },
-      "range": {
-        "min": 3,
-        "max": 9
-      },
-      "vision": {
-        "lineOfSight": 52,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 8,
-        "fire": 0
+      "weapons": [
+        {
+          "damage": 36,
+          "speed": 6.75,
+          "range": {
+            "min": 3,
+            "max": 9
+          }
+        },
+        {
+          "damage": 36,
+          "speed": 6.75,
+          "range": {
+            "min": 3,
+            "max": 9
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 8
+        },
+        {
+          "type": "ranged",
+          "value": 8
+        }
+      ],
+      "sight": {
+        "line": 52,
+        "height": 10
       },
       "producedBy": [
         "siege-workshop"
@@ -3287,6 +3729,7 @@
     {
       "id": "scout-1",
       "baseId": "scout",
+      "type": "unit",
       "name": "Scout",
       "age": 1,
       "civs": [
@@ -3300,7 +3743,6 @@
         "ru"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n\n+ Able to see into Stealth Forests\n\n+ High movement speed\n\n- Very weak in combat",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -3318,26 +3760,30 @@
         "popcap": 1,
         "time": 20
       },
-      "attack": {
-        "melee": 4,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 10,
-        "speed": 3.75,
-        "dps": 1.1
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 41,
-        "heightOfSight": 501
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 41,
+        "height": 501
       },
       "producedBy": [
         "town-center"
@@ -3347,6 +3793,7 @@
     {
       "id": "scout-2-stable",
       "baseId": "scout",
+      "type": "unit",
       "name": "Scout",
       "age": 2,
       "civs": [
@@ -3360,7 +3807,6 @@
         "ru"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n\n+ Able to see into Stealth Forests\n\n+ High movement speed\n\n- Very weak in combat",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -3378,26 +3824,30 @@
         "popcap": 1,
         "time": 20
       },
-      "attack": {
-        "melee": 4,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 13,
-        "speed": 3.75,
-        "dps": 1.1
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 41,
-        "heightOfSight": 501
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 41,
+        "height": 501
       },
       "producedBy": [
         "stable"
@@ -3407,6 +3857,7 @@
     {
       "id": "scout-2",
       "baseId": "scout",
+      "type": "unit",
       "name": "Scout",
       "age": 2,
       "civs": [
@@ -3420,7 +3871,6 @@
         "ru"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n\n+ Able to see into Stealth Forests\n\n+ High movement speed\n\n- Very weak in combat",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -3438,26 +3888,30 @@
         "popcap": 1,
         "time": 20
       },
-      "attack": {
-        "melee": 4,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 13,
-        "speed": 3.75,
-        "dps": 1.1
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 41,
-        "heightOfSight": 501
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 41,
+        "height": 501
       },
       "producedBy": [
         "town-center"
@@ -3467,6 +3921,7 @@
     {
       "id": "scout-3-stable",
       "baseId": "scout",
+      "type": "unit",
       "name": "Scout",
       "age": 3,
       "civs": [
@@ -3480,7 +3935,6 @@
         "ru"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n\n+ Able to see into Stealth Forests\n\n+ High movement speed\n\n- Very weak in combat",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -3498,26 +3952,30 @@
         "popcap": 1,
         "time": 20
       },
-      "attack": {
-        "melee": 4,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 16,
-        "speed": 3.75,
-        "dps": 1.1
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 41,
-        "heightOfSight": 501
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 41,
+        "height": 501
       },
       "producedBy": [
         "stable"
@@ -3527,6 +3985,7 @@
     {
       "id": "scout-3",
       "baseId": "scout",
+      "type": "unit",
       "name": "Scout",
       "age": 3,
       "civs": [
@@ -3540,7 +3999,6 @@
         "ru"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n\n+ Able to see into Stealth Forests\n\n+ High movement speed\n\n- Very weak in combat",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -3558,26 +4016,30 @@
         "popcap": 1,
         "time": 20
       },
-      "attack": {
-        "melee": 4,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 16,
-        "speed": 3.75,
-        "dps": 1.1
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 41,
-        "heightOfSight": 501
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 41,
+        "height": 501
       },
       "producedBy": [
         "town-center"
@@ -3587,6 +4049,7 @@
     {
       "id": "scout-4-stable",
       "baseId": "scout",
+      "type": "unit",
       "name": "Scout",
       "age": 4,
       "civs": [
@@ -3600,7 +4063,6 @@
         "ru"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n\n+ Able to see into Stealth Forests\n\n+ High movement speed\n\n- Very weak in combat",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -3618,26 +4080,30 @@
         "popcap": 1,
         "time": 20
       },
-      "attack": {
-        "melee": 4,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 20,
-        "speed": 3.75,
-        "dps": 1.1
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 41,
-        "heightOfSight": 501
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 41,
+        "height": 501
       },
       "producedBy": [
         "stable"
@@ -3647,6 +4113,7 @@
     {
       "id": "scout-4",
       "baseId": "scout",
+      "type": "unit",
       "name": "Scout",
       "age": 4,
       "civs": [
@@ -3660,7 +4127,6 @@
         "ru"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n\n+ Able to see into Stealth Forests\n\n+ High movement speed\n\n- Very weak in combat",
-      "class": "Light",
       "classes": [
         "Light Melee Cavalry"
       ],
@@ -3678,26 +4144,30 @@
         "popcap": 1,
         "time": 20
       },
-      "attack": {
-        "melee": 4,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 20,
-        "speed": 3.75,
-        "dps": 1.1
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 41,
-        "heightOfSight": 501
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 4,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 41,
+        "height": 501
       },
       "producedBy": [
         "town-center"
@@ -3707,6 +4177,7 @@
     {
       "id": "siege-tower-2",
       "baseId": "siege-tower",
+      "type": "unit",
       "name": "Siege Tower",
       "age": 2,
       "civs": [
@@ -3720,7 +4191,6 @@
         "ru"
       ],
       "description": "Tall infantry transport with no combat capability. Allows garrisoned infantry to be unloaded directly onto Stone Walls.\n\n+ High ranged armor\n\n- Cannot attack\n\n- Slow movement speed",
-      "class": "Siege",
       "classes": [
         "Siege"
       ],
@@ -3738,26 +4208,20 @@
         "popcap": 3,
         "time": 45
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 0,
-        "speed": 0,
-        "dps": 0
-      },
-      "range": {
-        "min": 0,
-        "max": 0
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 8,
-        "fire": 0
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 8
+        },
+        {
+          "type": "ranged",
+          "value": 8
+        }
+      ],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "infantry-units"
@@ -3767,6 +4231,7 @@
     {
       "id": "spearman-1",
       "baseId": "spearman",
+      "type": "unit",
       "name": "Spearman",
       "age": 1,
       "civs": [
@@ -3779,7 +4244,6 @@
         "ru"
       ],
       "description": "Infantry best used against mounted units.\n\n+ Anti-cavalry specialist\n\n- Susceptible to light ranged attacks\n\n- Weak against armored infantry",
-      "class": "Light",
       "classes": [
         "Light Melee Infantry"
       ],
@@ -3797,26 +4261,30 @@
         "popcap": 1,
         "time": 15
       },
-      "attack": {
-        "melee": 6,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 10,
-        "speed": 1.75,
-        "dps": 3.4
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 6,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 6,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "barrack"
@@ -3826,6 +4294,7 @@
     {
       "id": "spearman-2",
       "baseId": "spearman",
+      "type": "unit",
       "name": "Spearman",
       "age": 2,
       "civs": [
@@ -3839,7 +4308,6 @@
         "ru"
       ],
       "description": "Infantry best used against mounted units.\n\n+ Anti-cavalry specialist\n\n- Susceptible to light ranged attacks\n\n- Weak against armored infantry",
-      "class": "Light",
       "classes": [
         "Light Melee Infantry"
       ],
@@ -3857,26 +4325,30 @@
         "popcap": 1,
         "time": 15
       },
-      "attack": {
-        "melee": 8,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 13,
-        "speed": 1.75,
-        "dps": 4.6
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 8,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 8,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "barrack"
@@ -3886,6 +4358,7 @@
     {
       "id": "spearman-3",
       "baseId": "spearman",
+      "type": "unit",
       "name": "Spearman",
       "age": 3,
       "civs": [
@@ -3899,7 +4372,6 @@
         "ru"
       ],
       "description": "Infantry best used against mounted units.\n\n+ Anti-cavalry specialist\n\n- Susceptible to light ranged attacks\n\n- Weak against armored infantry",
-      "class": "Light",
       "classes": [
         "Light Melee Infantry"
       ],
@@ -3917,26 +4389,30 @@
         "popcap": 1,
         "time": 15
       },
-      "attack": {
-        "melee": 9,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 16,
-        "speed": 1.75,
-        "dps": 5.1
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "barrack"
@@ -3946,6 +4422,7 @@
     {
       "id": "spearman-4",
       "baseId": "spearman",
+      "type": "unit",
       "name": "Spearman",
       "age": 4,
       "civs": [
@@ -3959,7 +4436,6 @@
         "ru"
       ],
       "description": "Infantry best used against mounted units.\n\n+ Anti-cavalry specialist\n\n- Susceptible to light ranged attacks\n\n- Weak against armored infantry",
-      "class": "Light",
       "classes": [
         "Light Melee Infantry"
       ],
@@ -3977,26 +4453,30 @@
         "popcap": 1,
         "time": 15
       },
-      "attack": {
-        "melee": 11,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 20,
-        "speed": 1.75,
-        "dps": 6.3
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 36,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
       },
       "producedBy": [
         "barrack"
@@ -4006,6 +4486,7 @@
     {
       "id": "springald-3",
       "baseId": "springald",
+      "type": "unit",
       "name": "Springald",
       "age": 3,
       "civs": [
@@ -4019,7 +4500,6 @@
         "ru"
       ],
       "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n\n+ Long range\n\n+ Bonus damage vs siege engines\n\n- Trivial damage vs. buildings",
-      "class": "Siege",
       "classes": [
         "Siege"
       ],
@@ -4037,26 +4517,39 @@
         "popcap": 3,
         "time": 30
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 30,
-        "siege": 0,
-        "fire": 0,
-        "speed": 4,
-        "dps": 7.5
-      },
-      "range": {
-        "min": 1.3,
-        "max": 10
-      },
-      "vision": {
-        "lineOfSight": 56,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 8,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 30,
+          "speed": 4,
+          "range": {
+            "min": 1.3,
+            "max": 10
+          }
+        },
+        {
+          "type": "ranged",
+          "damage": 30,
+          "speed": 4,
+          "range": {
+            "min": 1.3,
+            "max": 10
+          }
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 8
+        },
+        {
+          "type": "ranged",
+          "value": 8
+        }
+      ],
+      "sight": {
+        "line": 56,
+        "height": 10
       },
       "producedBy": [
         "siege-workshop"
@@ -4066,6 +4559,7 @@
     {
       "id": "trader-2",
       "baseId": "trader",
+      "type": "unit",
       "name": "Trader",
       "age": 2,
       "civs": [
@@ -4078,7 +4572,6 @@
         "ru"
       ],
       "description": "Traders generate Gold when assigned to trade with a Trade Post or another player’s Market. Once assigned to trade, the Trader makes repeated trips between its Home Market and the Trade Target. You can assign a new Home Market if you wish to.",
-      "class": "Economic",
       "classes": [
         "Worker",
         "Cavalry"
@@ -4097,26 +4590,11 @@
         "popcap": 1,
         "time": 35
       },
-      "attack": {
-        "melee": 0,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 0,
-        "speed": 0,
-        "dps": 0
-      },
-      "range": {
-        "min": 0,
-        "max": 0
-      },
-      "vision": {
-        "lineOfSight": 35,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [],
+      "armor": [],
+      "sight": {
+        "line": 35,
+        "height": 10
       },
       "producedBy": [
         "market"
@@ -4126,6 +4604,7 @@
     {
       "id": "villager-1",
       "baseId": "villager",
+      "type": "unit",
       "name": "Villager",
       "age": 1,
       "civs": [
@@ -4137,7 +4616,6 @@
         "ru"
       ],
       "description": "Gathers Wood, Food, Stone, and Gold. Builds and repairs buildings and can repair siege engines and naval units.\n\n- Weak in combat",
-      "class": "Economic",
       "classes": [
         "Worker"
       ],
@@ -4155,26 +4633,30 @@
         "popcap": 1,
         "time": 20
       },
-      "attack": {
-        "melee": 6,
-        "ranged": 0,
-        "siege": 0,
-        "fire": 10,
-        "speed": 3.75,
-        "dps": 1.6
-      },
-      "range": {
-        "min": 0,
-        "max": 0.3
-      },
-      "vision": {
-        "lineOfSight": 28,
-        "heightOfSight": 10
-      },
-      "armor": {
-        "melee": 0,
-        "ranged": 0,
-        "fire": 0
+      "weapons": [
+        {
+          "type": "melee",
+          "damage": 6,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        },
+        {
+          "type": "melee",
+          "damage": 6,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 0.3
+          }
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 28,
+        "height": 10
       },
       "producedBy": [
         "town-center"

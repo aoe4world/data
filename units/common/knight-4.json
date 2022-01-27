@@ -1,6 +1,7 @@
 {
   "id": "knight-4",
   "baseId": "knight",
+  "type": "unit",
   "name": "Knight",
   "age": 4,
   "civs": [
@@ -9,7 +10,6 @@
     "ru"
   ],
   "description": "Expensive cavalry with a powerful charge.\n\n+ Heavy armor\n\n+ Strong in melee combat\n\n- Countered by Spearmen and Crossbowmen",
-  "class": "Heavy",
   "classes": [
     "Heavy Melee Cavalry"
   ],
@@ -27,26 +27,47 @@
     "popcap": 1,
     "time": 35
   },
-  "attack": {
-    "melee": 29,
-    "ranged": 0,
-    "siege": 0,
-    "fire": 20,
-    "speed": 1.38,
-    "dps": 21
-  },
-  "range": {
-    "min": 0,
-    "max": 0.3
-  },
-  "vision": {
-    "lineOfSight": 28,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 5,
-    "ranged": 5,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "melee",
+      "damage": 29,
+      "speed": 1.38,
+      "range": {
+        "min": 0,
+        "max": 0.3
+      }
+    },
+    {
+      "type": "melee",
+      "damage": 29,
+      "speed": 1.38,
+      "range": {
+        "min": 0,
+        "max": 0.3
+      }
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 5
+    },
+    {
+      "type": "melee",
+      "value": 5
+    },
+    {
+      "type": "ranged",
+      "value": 5
+    },
+    {
+      "type": "melee",
+      "value": 5
+    }
+  ],
+  "sight": {
+    "line": 28,
+    "height": 10
   },
   "producedBy": [
     "stable"

@@ -1,13 +1,13 @@
 {
   "id": "traction-trebuchet-3",
   "baseId": "traction-trebuchet",
+  "type": "unit",
   "name": "Traction Trebuchet ",
   "age": 3,
   "civs": [
     "mo"
   ],
   "description": "Powerful siege engine effective at destroying buildings and walls over a long distance.\n\n+ Bonus damage vs buildings\n\n+ High mobility\n\n- Must be set up to fire\n\n- Inaccurate against units",
-  "class": "Siege",
   "classes": [
     "Siege"
   ],
@@ -25,26 +25,39 @@
     "popcap": 3,
     "time": 35
   },
-  "attack": {
-    "melee": 0,
-    "ranged": 0,
-    "siege": 100,
-    "fire": 0,
-    "speed": 9.5,
-    "dps": 10.5
-  },
-  "range": {
-    "min": 2.8,
-    "max": 13
-  },
-  "vision": {
-    "lineOfSight": 68,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 0,
-    "ranged": 8,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "siege",
+      "damage": 100,
+      "speed": 9.5,
+      "range": {
+        "min": 2.8,
+        "max": 13
+      }
+    },
+    {
+      "type": "siege",
+      "damage": 100,
+      "speed": 9.5,
+      "range": {
+        "min": 2.8,
+        "max": 13
+      }
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 8
+    },
+    {
+      "type": "ranged",
+      "value": 8
+    }
+  ],
+  "sight": {
+    "line": 68,
+    "height": 10
   },
   "producedBy": [
     "siege-workshop"

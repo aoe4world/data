@@ -1,6 +1,7 @@
 {
   "id": "man-at-arms-4",
   "baseId": "man-at-arms",
+  "type": "unit",
   "name": "Man-at-Arms",
   "age": 4,
   "civs": [
@@ -13,7 +14,6 @@
     "ru"
   ],
   "description": "Tough infantry with good damage.\n\n+ High armor\n\n- Slow movement",
-  "class": "Heavy",
   "classes": [
     "Heavy Melee Infantry"
   ],
@@ -31,26 +31,47 @@
     "popcap": 1,
     "time": 22
   },
-  "attack": {
-    "melee": 14,
-    "ranged": 0,
-    "siege": 0,
-    "fire": 16,
-    "speed": 1.25,
-    "dps": 11.2
-  },
-  "range": {
-    "min": 0,
-    "max": 0.3
-  },
-  "vision": {
-    "lineOfSight": 36,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 5,
-    "ranged": 5,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "melee",
+      "damage": 14,
+      "speed": 1.25,
+      "range": {
+        "min": 0,
+        "max": 0.3
+      }
+    },
+    {
+      "type": "melee",
+      "damage": 14,
+      "speed": 1.25,
+      "range": {
+        "min": 0,
+        "max": 0.3
+      }
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 5
+    },
+    {
+      "type": "melee",
+      "value": 5
+    },
+    {
+      "type": "ranged",
+      "value": 5
+    },
+    {
+      "type": "melee",
+      "value": 5
+    }
+  ],
+  "sight": {
+    "line": 36,
+    "height": 10
   },
   "producedBy": [
     "barrack"
