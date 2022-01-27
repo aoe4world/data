@@ -18,12 +18,13 @@ Both the format and the data itself are open source, anyone can improve/correct 
 {
   "id": "man-at-arms-4",
   "baseId": "man-at-arms",
+  "type": "unit",
   "name": "Man-at-Arms",
   "age": 4,
   "civs": ["en", "hr", "fr", "de", "ab", "mo", "ru"],
   "description": "Tough infantry with good damage.\n\n+ High armor\n\n- Slow movement",
   "icon": "https://data.aoe4world.com/images/units/man-at-arms-4.png",
-  "class": "Heavy",
+  "producedBy": ["barrack"],
   "classes": ["Heavy Melee Infantry"],
   "unique": false,
   "hitpoints": 180,
@@ -39,28 +40,31 @@ Both the format and the data itself are open source, anyone can improve/correct 
     "popcap": 1,
     "time": 22
   },
-  "attack": {
-    "melee": 14,
-    "ranged": 0,
-    "siege": 0,
-    "fire": 16,
-    "speed": 1.25,
-    "dps": 11.2
-  },
-  "range": {
-    "min": 0,
-    "max": 0.3
-  },
-  "vision": {
-    "lineOfSight": 36,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 5,
-    "ranged": 5,
-    "fire": 0
-  },
-  "producedBy": ["barrack"]
+  "weapons": [
+    {
+      "type": "melee",
+      "damage": 14,
+      "speed": 1.25,
+      "range": {
+        "min": 0,
+        "max": 0.3
+      }
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 5
+    },
+    {
+      "type": "melee",
+      "value": 5
+    }
+  ],
+  "sight": {
+    "line": 36,
+    "height": 10
+  }
 }
 ```
 
@@ -108,11 +112,12 @@ For convenience we create a few bigger JSON files that group units of the same c
 | Collection            | List                                 | Unified                                              |
 | --------------------- | ------------------------------------ | ---------------------------------------------------- |
 | All units in the game | [all.json](./units/all.json)         | [all-unified.json](./units/all-unified.json)         |
-| English               | [english.json](./units/english.json) | [english-unified.json](./units/english-unified.json) |
-| Holy Roman Empire     | [hre.json](./units/hre.json)         | [hre-unified.json](./units/hre-unified.json)         |
-| French                | [french.json](./units/french.json)   | [french-unified.json](./units/french-unified.json)   |
+| Abbasid | [abbasid.json](./units/abbasid.json) | [abbasid-unified.json](./units/abbasid-unified.json) |
 | Chinese               | [chinese.json](./units/chinese.json) | [chinese-unified.json](./units/chinese-unified.json) |
 | Delhi Sultanate       | [delhi.json](./units/delhi.json)     | [delhi-unified.json](./units/delhi-unified.json)     |
+| English               | [english.json](./units/english.json) | [english-unified.json](./units/english-unified.json) |
+| French                | [french.json](./units/french.json)   | [french-unified.json](./units/french-unified.json)   |
+| Holy Roman Empire     | [hre.json](./units/hre.json)         | [hre-unified.json](./units/hre-unified.json)         |
 | Mongols               | [mongols.json](./units/mongols.json) | [mongols-unified.json](./units/mongols-unified.json) |
 | Rus                   | [rus.json](./units/rus.json)         | [rus-unified.json](./units/rus-unified.json)         |
 
