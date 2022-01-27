@@ -37,8 +37,10 @@ function merge(target = {}, source = {}) {
   Object.entries(source).forEach(([key, sourceValue]) => {
     const targetValue = target[key];
 
-    if (Array.isArray(targetValue) && Array.isArray(sourceValue)) target[key] = targetValue.concat(sourceValue.filter((item) => !targetValue.includes(item)));
-    else if (isObject(targetValue) && isObject(sourceValue)) target[key] = merge(Object.assign({}, targetValue), sourceValue);
+    if (Array.isArray(targetValue) && Array.isArray(sourceValue)) {
+      const targetValues = targetValue.map((x) => JSON.stringify(x));
+      target[key] = targetValue.concat(sourceValue.filter((x) => !targetValues.includes(JSON.stringify(x))));
+    } else if (isObject(targetValue) && isObject(sourceValue)) target[key] = merge(Object.assign({}, targetValue), sourceValue);
     else target[key] = sourceValue;
   });
 
