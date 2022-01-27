@@ -72,3 +72,10 @@ export const COLUMN_MAP: (string | [string, MappedSheetColumn])[] = [
   "",
   "Credits, Notes, Legend",
 ];
+
+export const attackTypeMap = {
+  Ranged: "ranged",
+  Melee: "melee",
+  True: "siege",
+  Fire: "fire",
+};

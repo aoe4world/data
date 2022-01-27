@@ -1,8 +1,8 @@
 import fetch from "node-fetch";
-import { StandardUnitFormat } from "../lib/types/units";
+import { Unit } from "../lib/types/units";
 import { civAbbr } from "../lib/types/civs";
 import { CIVILIZATIONS } from "../lib/config/civs";
-import { COLUMN_MAP, SHEET_ID, SHEET_TAB_NAME, SHEET_API_KEY } from "./config";
+import { COLUMN_MAP, SHEET_ID, SHEET_TAB_NAME, SHEET_API_KEY, attackTypeMap } from "./config";
 import { MappedSheetColumn, MappedSheetUnit } from "./types";
 import { mergeUnit } from "../lib/files/writeUnitData";
 import { slugify, getStringWithAlphanumericLike, getStringOutsideParenthesis, getStringBetweenParenthesis } from "../lib/utils/string";
@@ -18,7 +18,7 @@ getUnitData().then((data) => {
     .filter((x) => !ignoredIds.includes(x.id))
     .forEach((unit) => {
       console.log(`Imported ${unit.id}`);
-      mergeUnit(unit);
+      mergeUnit(unit, { merge: false });
     });
 });
 
@@ -58,22 +58,26 @@ async function getUnitData(): Promise<MappedSheetUnit[]> {
   }
 }
 
-function mapSheetUnitToStandardFormat(unitData: MappedSheetUnit): StandardUnitFormat {
-  const classes = (unitData.gameClassification as string).split(",").map((x) => x.trim());
+function mapSheetUnitToStandardFormat(unitData: MappedSheetUnit): Unit {
+  // Todo, classes should be parsed and matched against a list of classes
+  const classes = (unitData.gameClassification as string).split(",").map((x) => getStringWithAlphanumericLike(x.trim())) as any[];
+
   const normalizedName = getStringWithAlphanumericLike(getStringOutsideParenthesis(unitData.displayName));
   const civs = Object.values(CIVILIZATIONS).reduce((acc, civ) => ((unitData[civ.abbr as MappedSheetColumn] as string)?.length > 1 ? [...acc, civ.abbr] : acc), [] as civAbbr[]);
   const age = transformRomanAgeToNumber(unitData.age as string);
   const id = getUniqueID(unitData, normalizedName);
 
-  let unit: StandardUnitFormat = {
+  let unit: Unit = {
     id: id,
     baseId: slugify(normalizedName),
+    type: "unit",
     name: normalizedName,
     age,
     civs,
+
     description: interpolateGameString(unitData.description as string, String(unitData.descriptionValues ?? "")?.split(",")),
-    class: String(unitData.class),
     classes,
+
     unique: ["Unique"].includes(unitData.occurance as string) || civs.length == 1,
 
     hitpoints: +unitData.hitpoints,
@@ -92,29 +96,31 @@ function mapSheetUnitToStandardFormat(unitData: MappedSheetUnit): StandardUnitFo
       time: +unitData.buildTime,
     },
 
-    attack: {
-      melee: unitData.attackType == "Melee" ? +unitData.totalAttack : 0,
-      ranged: unitData.attackType == "Ranged" ? +unitData.totalAttack : 0,
-      siege: unitData.attackType == "True" ? +unitData.totalAttack : 0,
-      fire: +unitData.torchAttack,
-      speed: round(+unitData.attackSpeed, 2),
-      dps: round(+unitData.damagePerSecond, 1),
-    },
+    weapons: +unitData.totalAttack
+      ? [
+          {
+            type: attackTypeMap[unitData.attackType as string],
+            damage: +unitData.totalAttack,
+            speed: +unitData.attackSpeed,
+            range: +unitData.maxRange
+              ? {
+                  min: round(+unitData.minRange, 1),
+                  max: round(+unitData.maxRange, 1),
+                }
+              : undefined,
+          },
+        ]
+      : [],
 
-    range: {
-      min: round(+unitData.minRange, 1),
-      max: round(+unitData.maxRange, 1),
-    },
+    armor: [
+      +unitData.rangedArmor && { type: "ranged", value: +unitData.rangedArmor },
+      +unitData.meleeArmor && { type: "melee", value: +unitData.meleeArmor },
+      +unitData.fireArmor && { type: "fire", value: +unitData.fireArmor },
+    ].filter((x) => x) as Unit["armor"],
 
-    vision: {
-      lineOfSight: +unitData.lineOfSight,
-      heightOfSight: +unitData.heightOfSight,
-    },
-
-    armor: {
-      melee: +unitData.meleeArmor,
-      ranged: +unitData.rangedArmor,
-      fire: +unitData.fireArmor,
+    sight: {
+      line: +unitData.lineOfSight,
+      height: +unitData.heightOfSight,
     },
 
     producedBy: [slugify(getStringWithAlphanumericLike(unitData.producedBy))],
