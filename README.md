@@ -1,6 +1,8 @@
 # AoE4 World Data
-
 Hosted data and icons on all AoE 4 units in a developer friendly format.
+
+[ [GitHub](https://github.com/aoe4world/data) ]
+
 
 ## Goal
 
@@ -61,6 +63,10 @@ Both the format and the data itself are open source, anyone can improve/correct 
   "producedBy": ["barrack"]
 }
 ```
+
+> **Important**
+> This project is in its early days. The data format might change slightly, we recommend downloading the JSON files or reference a specific commit if you're including them at runtime ([example](https://raw.githubusercontent.com/aoe4world/data/e99075d09c6d825919a740302982d8879c7bed7d/units/all.json))
+
 
 ## Coverage
 
