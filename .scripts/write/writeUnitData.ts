@@ -14,7 +14,7 @@ export async function mergeUnit(unit: StandardUnitFormat) {
       mergeJsonFile(path.join(dir, `${unit.id}.json`), unit);
     });
   } else {
-    const dir = path.join(__dirname, unitsFolder);
+    const dir = path.join(__dirname, unitsFolder, "common");
     makeDir(dir);
     mergeJsonFile(path.join(dir, `${unit.id}.json`), unit);
   }
