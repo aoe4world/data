@@ -1,32 +1,38 @@
 import fetch from "node-fetch";
-import { Unit } from "../lib/types/units";
+import { Item, Technology, Unit } from "../lib/types/units";
 import { civAbbr } from "../lib/types/civs";
 import { CIVILIZATIONS } from "../lib/config/civs";
 import { COLUMN_MAP, SHEET_ID, SHEET_TAB_NAME, SHEET_API_KEY, attackTypeMap } from "./config";
-import { MappedSheetColumn, MappedSheetUnit } from "./types";
-import { mergeUnit } from "../lib/files/writeUnitData";
+import { MappedSheetColumn, MappedSheetItem } from "./types";
+import { mergeItem } from "../lib/files/writeData";
 import { slugify, getStringWithAlphanumericLike, getStringOutsideParenthesis, getStringBetweenParenthesis } from "../lib/utils/string";
 import { transformRomanAgeToNumber, interpolateGameString } from "../lib/utils/game";
-import { filterOutUnsupportedRows, ignoredIds, transformSheetUnitWithWorkaround } from "./workarounds";
+import { filterOutUnsupportedRows, ignoredIds, mapItemProducedBy, transformSheetUnitWithWorkaround } from "./workarounds";
 import { round } from "../lib/utils/number";
+import { ITEM_TYPES } from "../lib/config";
 
-getUnitData().then((data) => {
-  data
+const typeMap = {
+  unit: ITEM_TYPES.UNITS,
+  technology: ITEM_TYPES.TECHNOLOGIES,
+  buildings: ITEM_TYPES.BUILDINGS,
+};
+
+getItemData().then((data) => {
+  const items = data
     .filter(filterOutUnsupportedRows)
-    .map(transformSheetUnitWithWorkaround)
-    .map(mapSheetUnitToStandardFormat)
-    .filter((x) => !ignoredIds.includes(x.id))
-    .forEach((unit) => {
-      console.log(`Imported ${unit.id}`);
-      mergeUnit(unit, { merge: false });
-    });
+    .flatMap(transformSheetUnitWithWorkaround)
+    .map(mapSheetItemToItem)
+    .filter((x) => !ignoredIds.includes(x.id));
+
+  console.log(`Imported ${items.length} items`);
+  items.forEach((item) => mergeItem(item, typeMap[item.type], { merge: false, log: false }));
 });
 
-async function getUnitData(): Promise<MappedSheetUnit[]> {
+async function getItemData(): Promise<MappedSheetItem[]> {
   try {
     if (!SHEET_API_KEY) throw new Error("No sheet api key provided, set as env variable `AOE4_GOOGLE_SHEET_API_KEY`");
     const res = await fetch(
-      `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_TAB_NAME}?key=${SHEET_API_KEY ?? "sdfs"}&valueRenderOption=UNFORMATTED_VALUE&majorDimension=ROWS`
+      `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_TAB_NAME}?key=${SHEET_API_KEY}&valueRenderOption=UNFORMATTED_VALUE&majorDimension=ROWS`
     );
     if (!res.ok) {
       try {
@@ -45,29 +51,29 @@ async function getUnitData(): Promise<MappedSheetUnit[]> {
 
     return data["values"]
       .slice(1) //exclude header row
-      .map((row: (string | number)[]): MappedSheetUnit => {
-        let unitData: Record<MappedSheetColumn, string | number> = {} as any;
+      .map((row: (string | number)[]): MappedSheetItem => {
+        let itemData: Record<MappedSheetColumn, string | number> = {} as any;
         columns.forEach((_, index: number) => {
           // If the collumn is configured to be mapped, take the data out
-          if (Array.isArray(COLUMN_MAP[index])) unitData[COLUMN_MAP[index][1] as MappedSheetColumn] = row[index];
+          if (Array.isArray(COLUMN_MAP[index])) itemData[COLUMN_MAP[index][1] as MappedSheetColumn] = row[index];
         });
-        return unitData;
+        return itemData;
       });
   } catch (e) {
     throw new Error(`Failed to import sheet ${e}`);
   }
 }
 
-function mapSheetUnitToStandardFormat(unitData: MappedSheetUnit): Unit {
+function mapSheetItemToItem(data: MappedSheetItem): Unit | Technology | Item {
   // Todo, classes should be parsed and matched against a list of classes
-  const classes = (unitData.gameClassification as string).split(",").map((x) => getStringWithAlphanumericLike(x.trim())) as any[];
+  const classes = (data.gameClassification as string).split(",").map((x) => getStringWithAlphanumericLike(x.trim())) as any[];
 
-  const normalizedName = getStringWithAlphanumericLike(getStringOutsideParenthesis(unitData.displayName));
-  const civs = Object.values(CIVILIZATIONS).reduce((acc, civ) => ((unitData[civ.abbr as MappedSheetColumn] as string)?.length > 1 ? [...acc, civ.abbr] : acc), [] as civAbbr[]);
-  const age = transformRomanAgeToNumber(unitData.age as string);
-  const id = getUniqueID(unitData, normalizedName);
+  const normalizedName = getStringWithAlphanumericLike(getStringOutsideParenthesis(data.displayName));
+  const civs = Object.values(CIVILIZATIONS).reduce((acc, civ) => ((data[civ.abbr as MappedSheetColumn] as string)?.length > 1 ? [...acc, civ.abbr] : acc), [] as civAbbr[]);
+  const age = transformRomanAgeToNumber(data.age as string);
+  const id = getUniqueID(data, normalizedName);
 
-  let unit: Unit = {
+  let item: Item = {
     id: id,
     baseId: slugify(normalizedName),
     type: "unit",
@@ -75,63 +81,79 @@ function mapSheetUnitToStandardFormat(unitData: MappedSheetUnit): Unit {
     age,
     civs,
 
-    description: interpolateGameString(unitData.description as string, String(unitData.descriptionValues ?? "")?.split(",")),
+    description: interpolateGameString(data.description as string, String(data.descriptionValues ?? "")?.split(",")),
     classes,
 
-    unique: ["Unique"].includes(unitData.occurance as string) || civs.length == 1,
-
-    hitpoints: +unitData.hitpoints,
-
-    movement: {
-      speed: round(+unitData.moveSpeed, 2),
-    },
+    unique: ["Unique"].includes(data.occurance as string) || civs.length == 1,
 
     costs: {
-      food: +unitData.food,
-      wood: +unitData.wood,
-      stone: +unitData.stone,
-      gold: +unitData.gold,
-      total: +unitData.totalCost,
-      popcap: +unitData.population,
-      time: +unitData.buildTime,
+      food: +data.food,
+      wood: +data.wood,
+      stone: +data.stone,
+      gold: +data.gold,
+      total: +data.totalCost,
+      popcap: +data.population,
+      time: +data.buildTime,
     },
 
-    weapons: +unitData.totalAttack
-      ? [
-          {
-            type: attackTypeMap[unitData.attackType as string],
-            damage: +unitData.totalAttack,
-            speed: +unitData.attackSpeed,
-            range: +unitData.maxRange
-              ? {
-                  min: round(+unitData.minRange, 1),
-                  max: round(+unitData.maxRange, 1),
-                }
-              : undefined,
-          },
-        ]
-      : [],
-
-    armor: [
-      +unitData.rangedArmor && { type: "ranged", value: +unitData.rangedArmor },
-      +unitData.meleeArmor && { type: "melee", value: +unitData.meleeArmor },
-      +unitData.fireArmor && { type: "fire", value: +unitData.fireArmor },
-    ].filter((x) => x) as Unit["armor"],
-
-    sight: {
-      line: +unitData.lineOfSight,
-      height: +unitData.heightOfSight,
-    },
-
-    producedBy: [slugify(getStringWithAlphanumericLike(unitData.producedBy))],
+    producedBy: [slugify(getStringWithAlphanumericLike(data.producedBy))],
   };
 
-  return unit;
+  if (["Land Unit", "Water Unit"].includes(data.genre as string)) {
+    const unit: Unit = {
+      ...item,
+      type: "unit",
+      hitpoints: +data.hitpoints,
+
+      movement: {
+        speed: round(+data.moveSpeed, 2),
+      },
+
+      weapons: +data.totalAttack
+        ? [
+            {
+              type: attackTypeMap[data.attackType as string],
+              damage: +data.totalAttack,
+              speed: +data.attackSpeed,
+              range: +data.maxRange
+                ? {
+                    min: round(+data.minRange, 1),
+                    max: round(+data.maxRange, 1),
+                  }
+                : undefined,
+            },
+          ]
+        : [],
+
+      armor: [
+        +data.rangedArmor && { type: "ranged", value: +data.rangedArmor },
+        +data.meleeArmor && { type: "melee", value: +data.meleeArmor },
+        +data.fireArmor && { type: "fire", value: +data.fireArmor },
+      ].filter((x) => x) as Unit["armor"],
+
+      sight: {
+        line: +data.lineOfSight,
+        height: +data.heightOfSight,
+      },
+    };
+
+    return unit;
+  } else if (data.genre == "Technology") {
+    item.producedBy = mapItemProducedBy(data, item.producedBy);
+
+    let tech: Technology = {
+      ...item,
+      type: "technology",
+    };
+    return tech;
+  } else {
+    return item;
+  }
 }
 
 const ids = new Set<string>();
 
-function getUniqueID(u: MappedSheetUnit, normalizedName: string) {
+function getUniqueID(u: MappedSheetItem, normalizedName: string) {
   const baseId =
     (u.strongId as string) ?? // strongly provided ID from sheet or transformation, always attempt this first
     `${slugify(normalizedName)}-${transformRomanAgeToNumber(u.age as string)}`; // Otherwise format id using lowercase-slugified-{age} 'horse-archer-3

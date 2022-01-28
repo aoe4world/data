@@ -1,21 +1,21 @@
 import fs, { mkdir } from "fs";
 import path from "path";
-import { Unit } from "../types/units";
+import { Item, Unit } from "../types/units";
 import { CIVILIZATIONS } from "../config/civs";
-import { FOLDERS } from "../config";
-import { readJsonFile } from "./readUnitData";
+import { FOLDERS, ITEM_TYPES } from "../config";
+import { readJsonFile } from "./readData";
 
-export async function mergeUnit(unit: Unit, { merge }: { merge: boolean } = { merge: true }) {
-  if (unit.unique) {
-    unit.civs.forEach((c) => {
-      const dir = path.join(FOLDERS.UNITS.DATA, CIVILIZATIONS[c].slug);
+export async function mergeItem(item: Item, type: ITEM_TYPES, { merge, log }: { merge: boolean; log: boolean } = { merge: true, log: true }) {
+  if (item.unique) {
+    item.civs.forEach((c) => {
+      const dir = path.join(FOLDERS[type].DATA, CIVILIZATIONS[c].slug);
       makeDir(dir);
-      (merge ? mergeJsonFile : writeJson)(path.join(dir, `${unit.id}.json`), unit);
+      (merge ? mergeJsonFile : writeJson)(path.join(dir, `${item.id}.json`), item, { log });
     });
   } else {
-    const dir = path.join(FOLDERS.UNITS.DATA, "common");
+    const dir = path.join(FOLDERS[type].DATA, "common");
     makeDir(dir);
-    (merge ? mergeJsonFile : writeJson)(path.join(dir, `${unit.id}.json`), unit);
+    (merge ? mergeJsonFile : writeJson)(path.join(dir, `${item.id}.json`), item, { log });
   }
 }
 

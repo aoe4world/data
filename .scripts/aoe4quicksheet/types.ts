@@ -1,4 +1,4 @@
-export type MappedSheetUnit = Record<MappedSheetColumn, string | number>;
+export type MappedSheetItem = Record<MappedSheetColumn, string | number>;
 
 export type MappedSheetColumn =
   | "id"

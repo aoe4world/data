@@ -1,23 +1,23 @@
 import fs from "fs";
 import path from "path";
-import { Unit } from "../types/units";
+import { Item, Unit } from "../types/units";
 import { CIVILIZATIONS } from "../config/civs";
-import { FOLDERS } from "../config";
+import { FOLDERS, ITEM_TYPES } from "../config";
 
-export async function getAllUnits() {
-  const units: Promise<Unit>[] = [];
+export async function getAllItems<T extends Item>(type: ITEM_TYPES) {
+  const items: Promise<T>[] = [];
   [...Object.values(CIVILIZATIONS).map((c) => c.slug), "common"].forEach((folder) => {
     console.info(`Reading units from ${folder} folder`);
-    const dir = path.join(FOLDERS.UNITS.DATA, folder);
+    const dir = path.join(FOLDERS[type].DATA, folder);
     if (!fs.existsSync(dir)) return console.info(`${dir} does not exist`);
     fs.readdirSync(dir).forEach((file) => {
       if (file.endsWith(".json")) {
-        const unit = readJsonFile(path.join(dir, file));
-        if (unit) units.push(unit as Promise<Unit>);
+        const item = readJsonFile(path.join(dir, file));
+        if (item) items.push(item as Promise<T>);
       }
     });
   });
-  return Promise.all(units);
+  return Promise.all(items);
 }
 
 export async function readJsonFile(file: string) {
