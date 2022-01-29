@@ -1,8 +1,8 @@
 import path from "path";
-import { FOLDERS } from "./lib/config";
+import { FOLDERS, ITEM_TYPES } from "./lib/config";
 import { CIVILIZATIONS } from "./lib/config/civs";
-import { getAllUnits } from "./lib/files/readUnitData";
-import { writeJson } from "./lib/files/writeUnitData";
+import { getAllItems } from "./lib/files/readData";
+import { writeJson } from "./lib/files/writeData";
 import { unifyItems } from "./lib/utils/items";
 
 const meta = {
@@ -10,19 +10,27 @@ const meta = {
   __version__: "0.0.2",
 };
 
-/** Creates index files for units */
 (async () => {
-  const units = await getAllUnits();
-  writeJson;
-  const unified = unifyItems(units);
+  [
+    ITEM_TYPES.UNITS,
+    ITEM_TYPES.TECHNOLOGIES,
+    // ITEM_TYPES.BUILDINGS
+  ].forEach((type) => compile(type));
+})();
 
-  writeJson(path.join(FOLDERS.UNITS.DATA, "all.json"), { ...meta, data: units });
-  writeJson(path.join(FOLDERS.UNITS.DATA, "all-unified.json"), { ...meta, data: unified });
-  unified.forEach((u) => writeJson(path.join(FOLDERS.UNITS.DATA, `unified/${u.id}.json`), Object.assign({}, meta, u), { log: false }));
+/** Creates index files for units */
+async function compile(type: ITEM_TYPES) {
+  const items = await getAllItems(type);
+  writeJson;
+  const unified = unifyItems(items);
+
+  writeJson(path.join(FOLDERS[type].DATA, "all.json"), { ...meta, data: items });
+  writeJson(path.join(FOLDERS[type].DATA, "all-unified.json"), { ...meta, data: unified });
+  unified.forEach((u) => writeJson(path.join(FOLDERS[type].DATA, `unified/${u.id}.json`), Object.assign({}, meta, u), { log: false }));
 
   Object.values(CIVILIZATIONS).forEach((civ) => {
-    const civUnits = units.filter((u) => u.civs.includes(civ.abbr));
-    writeJson(path.join(FOLDERS.UNITS.DATA, `${civ.slug}.json`), { ...meta, civ: civ, data: civUnits });
-    writeJson(path.join(FOLDERS.UNITS.DATA, `${civ.slug}-unified.json`), { ...meta, civ: civ, data: unifyItems(civUnits) });
+    const civItems = items.filter((u) => u.civs.includes(civ.abbr));
+    writeJson(path.join(FOLDERS[type].DATA, `${civ.slug}.json`), { ...meta, civ: civ, data: civItems });
+    writeJson(path.join(FOLDERS[type].DATA, `${civ.slug}-unified.json`), { ...meta, civ: civ, data: unifyItems(civItems) });
   });
-})();
+}

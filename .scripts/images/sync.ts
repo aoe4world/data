@@ -1,32 +1,40 @@
 import fs from "fs";
 import path from "path";
-import { CDN_HOST, FOLDERS } from "../lib/config";
-import { getAllUnits } from "../lib/files/readUnitData";
-import { mergeUnit } from "../lib/files/writeUnitData";
+import { CDN_HOST, FOLDERS, IMAGE_FOLDER, ITEM_TYPES } from "../lib/config";
+import { getAllItems } from "../lib/files/readData";
+import { mergeItem } from "../lib/files/writeData";
 
 (async () => {
+  [
+    ITEM_TYPES.UNITS,
+    ITEM_TYPES.TECHNOLOGIES,
+    // ITEM_TYPES.BUILDINGS
+  ].forEach((type) => syncImages(type));
+})();
+
+async function syncImages(type: ITEM_TYPES) {
   const notFound: string[] = [];
-  const units = await getAllUnits();
-  units.forEach((unit) => {
-    let imageAttempts = [`${unit.id}.png`, `${unit.baseId}.png`, ...[1, 2, 3, 4].map((i) => `${unit.baseId}-${i}.png`)];
-    while (!imageExists(imageAttempts[0] + "") && imageAttempts.length > 0) imageAttempts.shift();
+  const units = await getAllItems(type);
+  units.forEach((item) => {
+    let imageAttempts = [`${item.id}.png`, `${item.baseId}.png`, ...[1, 2, 3, 4].map((i) => `${item.baseId}-${i}.png`)];
+    while (!imageExists(imageAttempts[0] + "", type) && imageAttempts.length > 0) imageAttempts.shift();
 
     if (imageAttempts.length > 0) {
       const image = imageAttempts[0];
-      console.log(`Found image for ${unit.id} => ${image}`);
-      unit.icon = `${CDN_HOST}/images/units/${image}`;
-      mergeUnit(unit);
+      // console.log(`Found image for ${item.id} => ${image}`);
+      item.icon = `${CDN_HOST}/${IMAGE_FOLDER}/${FOLDERS[type].SLUG}/${image}`;
+      mergeItem(item, type);
     } else {
-      console.log(`Could not find image for ${unit.id}`);
-      notFound.push(unit.id);
+      console.log(`Could not find image for ${item.id} // ${item.baseId}`);
+      notFound.push(item.id);
     }
   });
   if (notFound.length > 0) {
     console.log(`Could not find images for:`);
     console.log(notFound);
   }
-})();
+}
 
-function imageExists(image: string) {
-  return fs.existsSync(path.join(FOLDERS.UNITS.IMG, image));
+function imageExists(image: string, type: ITEM_TYPES) {
+  return fs.existsSync(path.join(FOLDERS[type].IMG, image));
 }

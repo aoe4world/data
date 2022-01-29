@@ -26,5 +26,6 @@ export const getStringOutsideParenthesis = (str: string | number) => {
 export function getStringWithAlphanumericLike(str: string | number) {
   return String(str)
     .replace(/[^A-Za-zÀ-ÖØ-öø-ÿ0-9\s\-]/g, "")
-    .replace(/\s+/g, " ");
+    .replace(/\s+/g, " ")
+    .trim();
 }
