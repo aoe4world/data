@@ -1,8 +1,8 @@
 # AoE4 World Data
+
 Hosted data and icons on all AoE 4 units in a developer friendly format.
 
 [ [GitHub](https://github.com/aoe4world/data) ]
-
 
 ## Goal
 
@@ -18,12 +18,13 @@ Both the format and the data itself are open source, anyone can improve/correct 
 {
   "id": "man-at-arms-4",
   "baseId": "man-at-arms",
+  "type": "unit",
   "name": "Man-at-Arms",
   "age": 4,
   "civs": ["en", "hr", "fr", "de", "ab", "mo", "ru"],
   "description": "Tough infantry with good damage.\n\n+ High armor\n\n- Slow movement",
   "icon": "https://data.aoe4world.com/images/units/man-at-arms-4.png",
-  "class": "Heavy",
+  "producedBy": ["barrack"],
   "classes": ["Heavy Melee Infantry"],
   "unique": false,
   "hitpoints": 180,
@@ -39,34 +40,36 @@ Both the format and the data itself are open source, anyone can improve/correct 
     "popcap": 1,
     "time": 22
   },
-  "attack": {
-    "melee": 14,
-    "ranged": 0,
-    "siege": 0,
-    "fire": 16,
-    "speed": 1.25,
-    "dps": 11.2
-  },
-  "range": {
-    "min": 0,
-    "max": 0.3
-  },
-  "vision": {
-    "lineOfSight": 36,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 5,
-    "ranged": 5,
-    "fire": 0
-  },
-  "producedBy": ["barrack"]
+  "weapons": [
+    {
+      "type": "melee",
+      "damage": 14,
+      "speed": 1.25,
+      "range": {
+        "min": 0,
+        "max": 0.3
+      }
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 5
+    },
+    {
+      "type": "melee",
+      "value": 5
+    }
+  ],
+  "sight": {
+    "line": 36,
+    "height": 10
+  }
 }
 ```
 
 > **Important**
 > This project is in its early days. The data format might change slightly, we recommend downloading the JSON files or reference a specific commit if you're including them at runtime ([example](https://raw.githubusercontent.com/aoe4world/data/e99075d09c6d825919a740302982d8879c7bed7d/units/all.json))
-
 
 ## Coverage
 
@@ -83,7 +86,7 @@ Both the format and the data itself are open source, anyone can improve/correct 
 
 The format in which data is stored follows the following conventions:
 
-- All units are stored in their own file as a json object.
+- All units and each unit variations are stored in their own file as a json object.
 - Each object has an `id` (string) which is unique across the project and the same as the file name, see [naming](#naming). Units of the same type share the same `baseId`.
 - Each file includes a `civs` array which contains the abbreviated civ names which the unit is available for.
 - All objects have an `age` field, a number 1-4 representing dark - imperial.
@@ -94,7 +97,29 @@ The format in which data is stored follows the following conventions:
 
 - All **unit names** follow the consistent `{base-name}-{age}(-{variation})` format. For example, the base archer is called `archer-2`, the Veteran Archer is just `archer-3`.
 - **Improved units** (i.e. faster or cheaper) results in a **variation**. For example, while most civs have the `villager-1`, the English has the `villager-1-english` variant, which has ranged attack, while HRE has faster produced and cheaper `villager-4-palace-of-swabia`. In the same way, the French has buffed `arbeletrier-4-keep-influence` unit.
-- All commonly available or shared units are stored in the main folder, i.e. `/units/villager-1.json`, only **truly unique units** or variations are stored in the civ specific folder, i.e. `/units/mongols/mangudai-2.json`.
+- All commonly available or shared units are stored in the common folder, i.e. `/units/common/villager-1.json`, only **truly unique units** or variations are stored in the civ specific folder, i.e. `/units/mongols/mangudai-2.json`.
+
+### Unified Units
+
+While there are may variations of units (i.e. a stronger unit in each age, cheaper production from certain buildings, buffed units) you may want to refer by them as their core unit. All units are stored in a unified format, which contains info on the unit with a `variations` array of all different versions of that unit.
+
+Unified units are generated from their variations and stored in [./units/unified](./units/unified)
+
+### Collections
+
+For convenience we create a few bigger JSON files that group units of the same civ together, in both a normal array and a unified format.
+
+| Collection            | List                                 | Unified                                              |
+| --------------------- | ------------------------------------ | ---------------------------------------------------- |
+| All units in the game | [all.json](./units/all.json)         | [all-unified.json](./units/all-unified.json)         |
+| Abbasid | [abbasid.json](./units/abbasid.json) | [abbasid-unified.json](./units/abbasid-unified.json) |
+| Chinese               | [chinese.json](./units/chinese.json) | [chinese-unified.json](./units/chinese-unified.json) |
+| Delhi Sultanate       | [delhi.json](./units/delhi.json)     | [delhi-unified.json](./units/delhi-unified.json)     |
+| English               | [english.json](./units/english.json) | [english-unified.json](./units/english-unified.json) |
+| French                | [french.json](./units/french.json)   | [french-unified.json](./units/french-unified.json)   |
+| Holy Roman Empire     | [hre.json](./units/hre.json)         | [hre-unified.json](./units/hre-unified.json)         |
+| Mongols               | [mongols.json](./units/mongols.json) | [mongols-unified.json](./units/mongols-unified.json) |
+| Rus                   | [rus.json](./units/rus.json)         | [rus-unified.json](./units/rus-unified.json)         |
 
 ---
 

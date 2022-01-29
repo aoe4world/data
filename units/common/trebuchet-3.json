@@ -1,6 +1,7 @@
 {
   "id": "trebuchet-3",
   "baseId": "trebuchet",
+  "type": "unit",
   "name": "Trebuchet",
   "age": 3,
   "civs": [
@@ -13,7 +14,6 @@
     "ru"
   ],
   "description": "Powerful siege engine effective at destroying buildings and walls over a great distance.\n\n+ Bonus damage vs buildings\n\n- Must be set up to fire\n\n- Inaccurate against units",
-  "class": "Siege",
   "classes": [
     "Siege"
   ],
@@ -31,26 +31,26 @@
     "popcap": 3,
     "time": 40
   },
-  "attack": {
-    "melee": 0,
-    "ranged": 0,
-    "siege": 150,
-    "fire": 0,
-    "speed": 12.5,
-    "dps": 12
-  },
-  "range": {
-    "min": 2.8,
-    "max": 16
-  },
-  "vision": {
-    "lineOfSight": 80,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 0,
-    "ranged": 8,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "siege",
+      "damage": 150,
+      "speed": 12.5,
+      "range": {
+        "min": 2.8,
+        "max": 16
+      }
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 8
+    }
+  ],
+  "sight": {
+    "line": 80,
+    "height": 10
   },
   "producedBy": [
     "siege-workshop"

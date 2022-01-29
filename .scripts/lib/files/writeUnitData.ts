@@ -1,21 +1,21 @@
-import fs from "fs";
+import fs, { mkdir } from "fs";
 import path from "path";
-import { StandardUnitFormat } from "../types/units";
+import { Unit } from "../types/units";
 import { CIVILIZATIONS } from "../config/civs";
 import { FOLDERS } from "../config";
 import { readJsonFile } from "./readUnitData";
 
-export async function mergeUnit(unit: StandardUnitFormat) {
+export async function mergeUnit(unit: Unit, { merge }: { merge: boolean } = { merge: true }) {
   if (unit.unique) {
     unit.civs.forEach((c) => {
       const dir = path.join(FOLDERS.UNITS.DATA, CIVILIZATIONS[c].slug);
       makeDir(dir);
-      mergeJsonFile(path.join(dir, `${unit.id}.json`), unit);
+      (merge ? mergeJsonFile : writeJson)(path.join(dir, `${unit.id}.json`), unit);
     });
   } else {
     const dir = path.join(FOLDERS.UNITS.DATA, "common");
     makeDir(dir);
-    mergeJsonFile(path.join(dir, `${unit.id}.json`), unit);
+    (merge ? mergeJsonFile : writeJson)(path.join(dir, `${unit.id}.json`), unit);
   }
 }
 
@@ -37,8 +37,10 @@ function merge(target = {}, source = {}) {
   Object.entries(source).forEach(([key, sourceValue]) => {
     const targetValue = target[key];
 
-    if (Array.isArray(targetValue) && Array.isArray(sourceValue)) target[key] = targetValue.concat(sourceValue.filter((item) => !targetValue.includes(item)));
-    else if (isObject(targetValue) && isObject(sourceValue)) target[key] = merge(Object.assign({}, targetValue), sourceValue);
+    if (Array.isArray(targetValue) && Array.isArray(sourceValue)) {
+      const targetValues = targetValue.map((x) => JSON.stringify(x));
+      target[key] = targetValue.concat(sourceValue.filter((x) => !targetValues.includes(JSON.stringify(x))));
+    } else if (isObject(targetValue) && isObject(sourceValue)) target[key] = merge(Object.assign({}, targetValue), sourceValue);
     else target[key] = sourceValue;
   });
 
@@ -46,6 +48,7 @@ function merge(target = {}, source = {}) {
 }
 
 export function writeJson(file: string, data: any, { log }: { log: boolean } = { log: true }) {
+  makeDir(path.dirname(file));
   return fs.writeFile(file, JSON.stringify(data, null, 2), { encoding: "utf8" }, (err) => {
     if (err) throw err;
     else if (log) console.info(`Wrote ${file}`);

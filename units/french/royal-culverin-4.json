@@ -1,13 +1,13 @@
 {
   "id": "royal-culverin-4",
   "baseId": "royal-culverin",
+  "type": "unit",
   "name": "Royal Culverin",
   "age": 4,
   "civs": [
     "fr"
   ],
   "description": "Long-range cannon made for destroying siege equipment.\n\n+ Bonus damage to siege weapons\n\n+ Attacks without having to set up\n\n- Low damage to buildings",
-  "class": "Siege",
   "classes": [
     "Siege",
     "Gunpowder"
@@ -26,26 +26,26 @@
     "popcap": 3,
     "time": 45
   },
-  "attack": {
-    "melee": 0,
-    "ranged": 102,
-    "siege": 0,
-    "fire": 0,
-    "speed": 4.25,
-    "dps": 24
-  },
-  "range": {
-    "min": 1.3,
-    "max": 12
-  },
-  "vision": {
-    "lineOfSight": 64,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 0,
-    "ranged": 15,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "ranged",
+      "damage": 102,
+      "speed": 4.25,
+      "range": {
+        "min": 1.3,
+        "max": 12
+      }
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 15
+    }
+  ],
+  "sight": {
+    "line": 64,
+    "height": 10
   },
   "producedBy": [
     "college-of-artillery"

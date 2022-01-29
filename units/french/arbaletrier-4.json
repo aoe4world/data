@@ -1,13 +1,13 @@
 {
   "id": "arbaletrier-4",
   "baseId": "arbaletrier",
+  "type": "unit",
   "name": "Arbalétrier ",
   "age": 4,
   "civs": [
     "fr"
   ],
   "description": "High damage ranged unit with a defensive pavise shield. Best used when supported by others.\n\n+ Anti-armor specialist\n\n+ Comes with melee armor\n\n- Low health\n\n",
-  "class": "Light",
   "classes": [
     "Light Ranged Infantry"
   ],
@@ -25,26 +25,26 @@
     "popcap": 1,
     "time": 22
   },
-  "attack": {
-    "melee": 0,
-    "ranged": 15,
-    "siege": 0,
-    "fire": 0,
-    "speed": 2,
-    "dps": 7.5
-  },
-  "range": {
-    "min": 0,
-    "max": 5
-  },
-  "vision": {
-    "lineOfSight": 40,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 2,
-    "ranged": 0,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "ranged",
+      "damage": 15,
+      "speed": 2,
+      "range": {
+        "min": 0,
+        "max": 5
+      }
+    }
+  ],
+  "armor": [
+    {
+      "type": "melee",
+      "value": 2
+    }
+  ],
+  "sight": {
+    "line": 40,
+    "height": 10
   },
   "producedBy": [
     "archery-range"

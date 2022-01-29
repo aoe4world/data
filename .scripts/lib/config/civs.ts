@@ -34,7 +34,7 @@ export const CIVILIZATIONS: Record<civAbbr, civConfig> = {
   mo: {
     name: "Mongols",
     abbr: "mo",
-    slug: "mongol",
+    slug: "mongols",
   },
   ru: {
     name: "Rus",

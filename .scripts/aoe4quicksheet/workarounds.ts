@@ -17,7 +17,7 @@ export function transformSheetUnitWithWorkaround(u: MappedSheetUnit) {
     // 2. Fix Abbassid traders showing first, give special name like villagers
     else if (u.displayName == "Trader" && u.ab) u.strongId = `trader-${transformRomanAgeToNumber(u.age as string)}-abbasid`;
     // 3. Rename all units produced at Ovoo
-    else if (u.mo && u.displayName.includes("(x2)")) u.displayName = u.displayName.replace("(x2)", "(Ovoo)");
+    else if (u.mo && u.displayName.includes("(x2)")) u.displayName = u.displayName.replace("(Early)", "").replace("(x2)", "(Ovoo)");
     // 4. Remove chinese Dynasties from Spirit Way units
     else if (u.ch && u.displayName.includes("(Spirit Way)")) u.displayName = u.displayName.replace("(Song)", "").replace("(Yuan)", "").replace("(Ming)", "");
   }
@@ -25,7 +25,13 @@ export function transformSheetUnitWithWorkaround(u: MappedSheetUnit) {
 }
 
 export function filterOutUnsupportedRows(u: MappedSheetUnit) {
-  return u.genre == "Land Unit";
+  return (
+    u.genre == "Land Unit" &&
+    // Filter out Burgrave Palace units because there's nothing special about them
+    !(u.displayName as string).includes("(5 units)") &&
+    // Filter out Khaganate spawn as it is not a unit
+    !(u.displayName as string).includes("Khaganate Units")
+  );
 }
 
 export const ignoredIds = [

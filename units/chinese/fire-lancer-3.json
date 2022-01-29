@@ -1,13 +1,13 @@
 {
   "id": "fire-lancer-3",
   "baseId": "fire-lancer",
+  "type": "unit",
   "name": "Fire Lancer ",
   "age": 3,
   "civs": [
     "ch"
   ],
   "description": "Unarmored cavalry wielding explosive-tipped lances for an impressive charge attack.\n\n+ Charge deals area damage\n\n+ Effective raiding unit against buildings and siege engines\n\n- Weak in melee combat",
-  "class": "Light",
   "classes": [
     "Light Melee Cavalry"
   ],
@@ -25,26 +25,21 @@
     "popcap": 1,
     "time": 22
   },
-  "attack": {
-    "melee": 11,
-    "ranged": 0,
-    "siege": 0,
-    "fire": 36,
-    "speed": 1.62,
-    "dps": 6.8
-  },
-  "range": {
-    "min": 0,
-    "max": 0.3
-  },
-  "vision": {
-    "lineOfSight": 45,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 0,
-    "ranged": 0,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "melee",
+      "damage": 11,
+      "speed": 1.62,
+      "range": {
+        "min": 0,
+        "max": 0.3
+      }
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "line": 45,
+    "height": 10
   },
   "producedBy": [
     "stable"

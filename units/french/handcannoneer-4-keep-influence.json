@@ -1,13 +1,13 @@
 {
   "id": "handcannoneer-4-keep-influence",
   "baseId": "handcannoneer",
+  "type": "unit",
   "name": "Handcannoneer ",
   "age": 4,
   "civs": [
     "fr"
   ],
   "description": "Powerful all-purpose ranged infantry.\n\n+ High damage\n\n- High cost\n\n- Slow movement speed",
-  "class": "Light",
   "classes": [
     "Light Ranged Gunpowder Infantry"
   ],
@@ -25,26 +25,21 @@
     "popcap": 1,
     "time": 35
   },
-  "attack": {
-    "melee": 0,
-    "ranged": 35,
-    "siege": 0,
-    "fire": 0,
-    "speed": 2,
-    "dps": 17.5
-  },
-  "range": {
-    "min": 0,
-    "max": 4
-  },
-  "vision": {
-    "lineOfSight": 32,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 0,
-    "ranged": 0,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "ranged",
+      "damage": 35,
+      "speed": 2,
+      "range": {
+        "min": 0,
+        "max": 4
+      }
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "line": 32,
+    "height": 10
   },
   "producedBy": [
     "archery-range"

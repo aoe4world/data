@@ -1,6 +1,7 @@
 {
   "id": "scout-3-stable",
   "baseId": "scout",
+  "type": "unit",
   "name": "Scout",
   "age": 3,
   "civs": [
@@ -14,7 +15,6 @@
     "ru"
   ],
   "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n\n+ Able to see into Stealth Forests\n\n+ High movement speed\n\n- Very weak in combat",
-  "class": "Light",
   "classes": [
     "Light Melee Cavalry"
   ],
@@ -32,26 +32,21 @@
     "popcap": 1,
     "time": 20
   },
-  "attack": {
-    "melee": 4,
-    "ranged": 0,
-    "siege": 0,
-    "fire": 16,
-    "speed": 3.75,
-    "dps": 1.1
-  },
-  "range": {
-    "min": 0,
-    "max": 0.3
-  },
-  "vision": {
-    "lineOfSight": 41,
-    "heightOfSight": 501
-  },
-  "armor": {
-    "melee": 0,
-    "ranged": 0,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "melee",
+      "damage": 4,
+      "speed": 3.75,
+      "range": {
+        "min": 0,
+        "max": 0.3
+      }
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "line": 41,
+    "height": 501
   },
   "producedBy": [
     "stable"

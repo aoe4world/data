@@ -1,13 +1,13 @@
 {
   "id": "villager-3-french",
   "baseId": "villager",
+  "type": "unit",
   "name": "Villager",
   "age": 3,
   "civs": [
     "fr"
   ],
   "description": "Gathers Wood, Food, Stone, and Gold. Builds and repairs buildings and can repair siege engines and naval units.\n\n- Weak in combat",
-  "class": "Economic",
   "classes": [
     "Worker"
   ],
@@ -25,26 +25,21 @@
     "popcap": 1,
     "time": 16
   },
-  "attack": {
-    "melee": 6,
-    "ranged": 0,
-    "siege": 0,
-    "fire": 10,
-    "speed": 3.75,
-    "dps": 1.6
-  },
-  "range": {
-    "min": 0,
-    "max": 0.3
-  },
-  "vision": {
-    "lineOfSight": 28,
-    "heightOfSight": 10
-  },
-  "armor": {
-    "melee": 0,
-    "ranged": 0,
-    "fire": 0
+  "weapons": [
+    {
+      "type": "melee",
+      "damage": 6,
+      "speed": 3.75,
+      "range": {
+        "min": 0,
+        "max": 0.3
+      }
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "line": 28,
+    "height": 10
   },
   "producedBy": [
     "town-center"
