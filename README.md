@@ -24,7 +24,7 @@ Both the format and the data itself are open source, anyone can improve/correct 
   "civs": ["en", "hr", "fr", "de", "ab", "mo", "ru"],
   "description": "Tough infantry with good damage.\n\n+ High armor\n\n- Slow movement",
   "icon": "https://data.aoe4world.com/images/units/man-at-arms-4.png",
-  "producedBy": ["barrack"],
+  "producedBy": ["barrack", "burgrave-palace"],
   "classes": ["Heavy Melee Infantry"],
   "unique": false,
   "hitpoints": 180,
@@ -78,7 +78,7 @@ Both the format and the data itself are open source, anyone can improve/correct 
 | [Land Units](https://data.aoe4world.com/units/all.json) | ✅ Done                  |
 | Naval Units                                             | 🕑 Next up               |
 | Buildings                                               | 💭 Deciding on structure |
-| Technologies                                            |                          |
+| Technologies                                            | ✅ Done, pending effects |
 | Upgrades                                                |                          |
 | Passive Civ Bonuses                                     |                          |
 
@@ -96,12 +96,12 @@ The format in which data is stored follows the following conventions:
 #### Naming
 
 - All **unit names** follow the consistent `{base-name}-{age}(-{variation})` format. For example, the base archer is called `archer-2`, the Veteran Archer is just `archer-3`.
-- **Improved units** (i.e. faster or cheaper) results in a **variation**. For example, while most civs have the `villager-1`, the English has the `villager-1-english` variant, which has ranged attack, while HRE has faster produced and cheaper `villager-4-palace-of-swabia`. In the same way, the French has buffed `arbeletrier-4-keep-influence` unit.
+- **Improved units** (i.e. more damage or hp) results in a **variation**. For example, while most civs have the `villager-1`, the English has the `villager-1-english` variant, which has ranged attack, while HRE has faster produced and cheaper `villager-4-palace-of-swabia`. In the same way, the Chinese has the buffed `bombard-4-clocktower` unit.
 - All commonly available or shared units are stored in the common folder, i.e. `/units/common/villager-1.json`, only **truly unique units** or variations are stored in the civ specific folder, i.e. `/units/mongols/mangudai-2.json`.
 
 ### Unified Units
 
-While there are may variations of units (i.e. a stronger unit in each age, cheaper production from certain buildings, buffed units) you may want to refer by them as their core unit. All units are stored in a unified format, which contains info on the unit with a `variations` array of all different versions of that unit.
+While there may be variations of units (i.e. a stronger unit in each age) you may want to refer by them as their core unit. All units are stored in a unified format, which contains info on the unit with a `variations` array of all different versions of that unit.
 
 Unified units are generated from their variations and stored in [./units/unified](./units/unified)
 
@@ -112,7 +112,7 @@ For convenience we create a few bigger JSON files that group units of the same c
 | Collection            | List                                 | Unified                                              |
 | --------------------- | ------------------------------------ | ---------------------------------------------------- |
 | All units in the game | [all.json](./units/all.json)         | [all-unified.json](./units/all-unified.json)         |
-| Abbasid | [abbasid.json](./units/abbasid.json) | [abbasid-unified.json](./units/abbasid-unified.json) |
+| Abbasid               | [abbasid.json](./units/abbasid.json) | [abbasid-unified.json](./units/abbasid-unified.json) |
 | Chinese               | [chinese.json](./units/chinese.json) | [chinese-unified.json](./units/chinese-unified.json) |
 | Delhi Sultanate       | [delhi.json](./units/delhi.json)     | [delhi-unified.json](./units/delhi-unified.json)     |
 | English               | [english.json](./units/english.json) | [english-unified.json](./units/english-unified.json) |

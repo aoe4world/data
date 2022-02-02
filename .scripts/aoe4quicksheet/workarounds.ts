@@ -45,13 +45,20 @@ export function transformSheetUnitWithWorkaround(i: MappedSheetItem) {
 // First we map/normalize production buildings above, then this creates an array of buildings
 export function mapItemProducedBy(data: MappedSheetItem, producedBy: string[]): Technology["producedBy"] {
   if (data.ru && data.producedBy == "Mill") producedBy.push("hunting-cabin", "high-trade-house");
+
   if (data.mo && (data.displayName as string).includes("(Improved)") && ["Mining Camp", "Mill", "Lumber Camp"].includes(data.producedBy as string))
     producedBy = ["ger", "steppe-redoubt"];
   else if (data.mo && ["Mining Camp", "Mill", "Lumber Camp"].includes(data.producedBy as string)) producedBy.push("ger", "steppe-redoubt");
+
   if (data.de && data.producedBy == "University") producedBy.push("madrasa");
-  if (data.hr && (data.displayName as string).includes("Barracks")) producedBy.push("burgrave-palace");
+
+  if (data.hr && (data.producedBy as string).includes("Blacksmith")) producedBy.push("meinwerk-palace");
+  if (data.hr && (data.producedBy as string).includes("Barracks")) producedBy.push("burgrave-palace");
+
   if (data.fr && (data.producedBy as string).includes("Stable")) producedBy.push("school-of-cavalry");
   if (data.fr && (data.producedBy as string).includes("Keep")) producedBy.push("red-palace");
+
+  if (data.en && (data.producedBy as string).includes("Blacksmith") && (data.displayName as string).includes("Villager")) producedBy.push("kings-palace");
 
   // if (data.mo && data.producedBy == "University") item.producedBy.push("blacksmith");
   // Whep, this doesn't really map well, since it can only be produced by blacksmith for mongols.
@@ -67,7 +74,15 @@ export function filterOutUnsupportedRows(u: MappedSheetItem) {
     // Filter out Burgrave Palace units because there's nothing special about them
     !(u.displayName as string).includes("(5 units)") &&
     // Filter out Khaganate spawn as it is not a unit
-    !(u.displayName as string).includes("Khaganate Units")
+    // !(u.displayName as string).includes("Khaganate Units") &&
+    !(u.strongId as string).endsWith("-ovoo") &&
+    !(u.strongId as string).endsWith("-ovoo-stable") &&
+    !(u.strongId as string).endsWith("-5-units") &&
+    !(u.strongId as string).endsWith("-school-of-cavalry") &&
+    !(u.strongId as string).endsWith("-keep-influence") &&
+    !(u.strongId as string).endsWith("-spirit-way") &&
+    !(u.strongId as string).endsWith("-high-armory") &&
+    !(u.strongId as string).endsWith("-meinwerk-palace")
   );
 }
 
@@ -76,6 +91,7 @@ export const ignoredIds = [
   "scout-2-1", // Duplicate ovoo scout entries that can also be created at stable
   "scout-3-1",
   "scout-4-1",
+  // "wynguard-army-4",
 
   // Added as alt production building
   "chivalry-2-school-of-cavalry",

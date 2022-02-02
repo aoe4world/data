@@ -68,6 +68,7 @@ export const COLUMN_MAP: (string | [string, MappedSheetColumn])[] = [
   ["File Description", "description"],
   "To-Do / Comment",
   ["Code Name", "gameFileName"],
+  ["Unique ID", "strongId"],
   "",
   "",
   "Credits, Notes, Legend",
