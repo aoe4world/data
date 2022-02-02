@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 import { Item, Technology, Unit } from "../lib/types/units";
 import { civAbbr } from "../lib/types/civs";
 import { CIVILIZATIONS } from "../lib/config/civs";
-import { COLUMN_MAP, SHEET_ID, SHEET_TAB_NAME, SHEET_API_KEY, attackTypeMap } from "./config";
+import { COLUMN_MAP, SHEET_ID, SHEET_TAB_NAME, SHEET_API_KEY, attackTypeMap, bonusDamageMap } from "./config";
 import { MappedSheetColumn, MappedSheetItem } from "./types";
 import { mergeItem } from "../lib/files/writeData";
 import { slugify, getStringWithAlphanumericLike, getStringOutsideParenthesis, getStringBetweenParenthesis } from "../lib/utils/string";
@@ -121,6 +121,17 @@ function mapSheetItemToItem(data: MappedSheetItem): Unit | Technology | Item {
                     max: round(+data.maxRange, 1),
                   }
                 : undefined,
+              ...(data.bonusAttack && {
+                modifiers: [
+                  {
+                    property: `${attackTypeMap[data.attackType as string]}Attack`,
+                    target: bonusDamageMap[data.bonusAgainst as string],
+                    effect: "increase",
+                    value: +data.bonusAttack,
+                    type: "passive",
+                  },
+                ],
+              }),
             },
           ]
         : [],

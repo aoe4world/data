@@ -1,6 +1,21 @@
 import { civAbbr } from "./civs";
 
-export type ItemClass = "light" | "heavy" | "infantry" | "cavalry" | "naval" | "ranged" | "siege" | "melee" | "fire";
+export type ItemClass =
+  | "light"
+  | "heavy"
+  | "infantry"
+  | "cavalry"
+  | "naval"
+  | "ranged"
+  | "siege"
+  | "melee"
+  | "fire"
+  | "structure"
+  | "transport"
+  | "support"
+  | "wall"
+  | "tower"
+  | "gate";
 
 export type Item = {
   id: ItemId;
@@ -81,9 +96,11 @@ export type Weapon = {
 
 export type Modifier = {
   property: ModifyableProperty;
-  target: { class: ItemClass[]; id: ItemId[] };
-  effect: "multiply" | "increase" | "decrease";
+  target?: { class: ItemClass[]; id: ItemId[] };
+  select?: { class: ItemClass[]; id: ItemId[] };
+  effect: "multiply" | "change";
   value: number;
+  type: "passive" | "ability" | "influence";
 };
 
 export type Armor = {
@@ -97,6 +114,9 @@ export type ModifyableProperty =
   | "hitpoints"
   | "meleeArmor"
   | "rangedArmor"
+  | "meleeAttack"
+  | "rangedAttack"
+  | "siegeAttack"
   | "fireArmor"
   | "moveSpeed"
   | "attackSpeed"
@@ -105,6 +125,8 @@ export type ModifyableProperty =
   | "heightOfSight"
   | "lineOfSight"
   | "carryCapacity"
+  | "huntGatherRate"
+  | "huntCarryCapacity"
   | "foodCost"
   | "foodGatherRate"
   | "goldCost"
@@ -114,13 +136,15 @@ export type ModifyableProperty =
   | "woodCost"
   | "woodGatherRate"
   | "populationCost"
+  | "healingRate"
+  | "repairRate"
   | "buildTime";
 
-export type UnifiedItem = {
+export type UnifiedItem<T extends Item = Item> = {
   id: ItemId;
   name: string;
   civs: civAbbr[];
-  variations: Item[];
+  variations: T[];
   classes: ItemClass[];
   icon?: string;
   description?: string;

@@ -80,3 +80,17 @@ export const attackTypeMap = {
   True: "siege",
   Fire: "fire",
 };
+
+export const bonusDamageMap = {
+  "vs Light Melee Infantry": { class: [["light", "melee", "infantry"]] },
+  "vs Building": { class: [["building"]] },
+  "vs Siege": { class: [["siege"]] },
+  "vs Heavy": { class: [["heavy"]] },
+  "vs Ranged": { class: [["ranged"]] },
+  "vs Scout": { id: ["scout", "khan"] },
+  "vs Cavalry": { class: [["cavalry"]] },
+  "vs Incendiary Ship": { class: [["incendiary", "ship"]] },
+  "vs Warship": { class: [["warship"]] },
+  "vs War Ship": { class: [["warship"]] },
+  "vs Ship": { class: [["ship"]] },
+};

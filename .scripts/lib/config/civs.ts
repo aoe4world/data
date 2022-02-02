@@ -42,3 +42,14 @@ export const CIVILIZATIONS: Record<civAbbr, civConfig> = {
     slug: "rus",
   },
 };
+
+export enum CIV_ABBR {
+  EN = "en",
+  HR = "hr",
+  FR = "fr",
+  CH = "ch",
+  DE = "de",
+  AB = "ab",
+  MO = "mo",
+  RU = "ru",
+}
