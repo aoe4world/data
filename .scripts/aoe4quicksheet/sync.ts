@@ -126,7 +126,7 @@ function mapSheetItemToItem(data: MappedSheetItem): Unit | Technology | Item {
                   {
                     property: `${attackTypeMap[data.attackType as string]}Attack`,
                     target: bonusDamageMap[data.bonusAgainst as string],
-                    effect: "increase",
+                    effect: "change",
                     value: +data.bonusAttack,
                     type: "passive",
                   },

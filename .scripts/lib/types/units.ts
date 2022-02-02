@@ -96,8 +96,8 @@ export type Weapon = {
 
 export type Modifier = {
   property: ModifyableProperty;
-  target?: { class: ItemClass[]; id: ItemId[] };
-  select?: { class: ItemClass[]; id: ItemId[] };
+  target?: { class?: ItemClass[][]; id?: ItemId[] };
+  select?: { class?: ItemClass[][]; id?: ItemId[] };
   effect: "multiply" | "change";
   value: number;
   type: "passive" | "ability" | "influence";
