@@ -32,7 +32,7 @@ export const COLUMN_MAP: (string | [string, MappedSheetColumn])[] = [
   ["Total", "totalCost"],
   ["Time", "buildTime"],
   ["Pop.", "population"],
-  "Garr.",
+  ["Garr.", "garrison"],
   "Speed",
   ["Move", "moveSpeed"],
   ["HP", "hitpoints"],

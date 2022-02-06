@@ -5,11 +5,7 @@ import { getAllItems } from "../lib/files/readData";
 import { mergeItem } from "../lib/files/writeData";
 
 (async () => {
-  [
-    ITEM_TYPES.UNITS,
-    ITEM_TYPES.TECHNOLOGIES,
-    // ITEM_TYPES.BUILDINGS
-  ].forEach((type) => syncImages(type));
+  [ITEM_TYPES.UNITS, ITEM_TYPES.TECHNOLOGIES, ITEM_TYPES.BUILDINGS].forEach((type) => syncImages(type));
 })();
 
 async function syncImages(type: ITEM_TYPES) {
@@ -31,7 +27,7 @@ async function syncImages(type: ITEM_TYPES) {
   });
   if (notFound.length > 0) {
     console.log(`Could not find images for:`);
-    console.log(notFound);
+    console.log(notFound.sort().join("\n"));
   }
 }
 

@@ -21,10 +21,10 @@ export type ItemClass =
   | "gate"
   | "worker";
 
-export type Item = {
+export interface Item {
   id: ItemId;
   baseId: ItemId;
-  type: "unit" | "structure" | "technology" | "upgrade";
+  type: "unit" | "building" | "technology" | "upgrade";
   civs: civAbbr[];
   classes: ItemClass[];
 
@@ -47,9 +47,9 @@ export type Item = {
     popcap?: number;
     total: number;
   };
-};
+}
 
-export type Object = Item & {
+export interface PhysicalItem extends Item {
   weapons: Weapon[];
   armor: Armor[];
 
@@ -59,34 +59,36 @@ export type Object = Item & {
     line: number;
     height: number;
   };
-};
+}
 
-export type Unit = Object & {
+export interface Unit extends PhysicalItem {
   type: "unit";
   movement: {
     speed: number;
   };
-};
+}
 
 // Todo, may add material properties, units/objects that can be garrisoned, etc.
-export type Structure = Object & {
-  type: "structure";
+export interface Building extends PhysicalItem {
+  type: "building";
   garrison?: {
     capacity: number;
   };
-};
 
-export type Technology = Item & {
+  popcapIncrease?: number;
+}
+
+export interface Technology extends Item {
   type: "technology";
   effects?: Modifier;
-};
+}
 
-export type Upgrade = Item & {
+export interface Upgrade extends Item {
   type: "upgrade";
   unlocks: ItemId;
-};
+}
 
-export type Weapon = {
+export interface Weapon {
   id?: ItemId;
   type: "melee" | "charge" | "ranged" | "siege" | "fire";
   damage: number;
@@ -96,7 +98,7 @@ export type Weapon = {
     min: number;
     max: number;
   };
-};
+}
 
 export type Modifier = {
   property: ModifyableProperty;
@@ -145,7 +147,7 @@ export type ModifyableProperty =
   | "repairRate"
   | "buildTime";
 
-export type UnifiedItem<T extends Item = Item> = {
+export interface UnifiedItem<T extends Item = Item> {
   id: ItemId;
   name: string;
   civs: civAbbr[];
@@ -153,4 +155,4 @@ export type UnifiedItem<T extends Item = Item> = {
   classes: ItemClass[];
   icon?: string;
   description?: string;
-};
+}

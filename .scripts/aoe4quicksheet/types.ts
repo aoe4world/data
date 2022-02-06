@@ -23,6 +23,7 @@ export type MappedSheetColumn =
   | "totalCost"
   | "buildTime"
   | "population"
+  | "garrison"
   | "moveSpeed"
   | "hitpoints"
   | "hitpointsPerResource"

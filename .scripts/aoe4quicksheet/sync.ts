@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-import { Item, Technology, Unit } from "../lib/types/units";
+import { Item, PhysicalItem, Building, Technology, Unit } from "../lib/types/units";
 import { civAbbr } from "../lib/types/civs";
 import { CIVILIZATIONS } from "../lib/config/civs";
 import { COLUMN_MAP, SHEET_ID, SHEET_TAB_NAME, SHEET_API_KEY, attackTypeMap, bonusDamageMap } from "./config";
@@ -14,7 +14,7 @@ import { ITEM_TYPES } from "../lib/config";
 const typeMap = {
   unit: ITEM_TYPES.UNITS,
   technology: ITEM_TYPES.TECHNOLOGIES,
-  buildings: ITEM_TYPES.BUILDINGS,
+  building: ITEM_TYPES.BUILDINGS,
 };
 
 getItemData().then((data) => {
@@ -71,11 +71,12 @@ function mapSheetItemToItem(data: MappedSheetItem): Unit | Technology | Item {
   const normalizedName = getStringWithAlphanumericLike(getStringOutsideParenthesis(data.displayName));
   const civs = Object.values(CIVILIZATIONS).reduce((acc, civ) => ((data[civ.abbr as MappedSheetColumn] as string)?.length > 1 ? [...acc, civ.abbr] : acc), [] as civAbbr[]);
   const age = transformRomanAgeToNumber(data.age as string);
-  const id = getUniqueID(data, normalizedName);
+  const id = getUniqueID(data, normalizedName, civs);
+  const baseId = data.strongId ? (data.strongId as string).match(/([a-z-]*)-/)?.[1] ?? slugify(normalizedName) : slugify(normalizedName);
 
   let item: Item = {
     id: id,
-    baseId: slugify(normalizedName),
+    baseId,
     type: "unit",
     name: normalizedName,
     age,
@@ -101,52 +102,23 @@ function mapSheetItemToItem(data: MappedSheetItem): Unit | Technology | Item {
 
   if (["Land Unit", "Water Unit"].includes(data.genre as string)) {
     const unit: Unit = {
-      ...item,
+      ...parseObjectProperties(item, data),
       type: "unit",
-      hitpoints: +data.hitpoints,
-
       movement: {
         speed: round(+data.moveSpeed, 2),
       },
-
-      weapons: +data.totalAttack
-        ? [
-            {
-              type: attackTypeMap[data.attackType as string],
-              damage: +data.totalAttack,
-              speed: +data.attackSpeed,
-              range: +data.maxRange
-                ? {
-                    min: round(+data.minRange, 1),
-                    max: round(+data.maxRange, 1),
-                  }
-                : undefined,
-              ...(data.bonusAttack && {
-                modifiers: [
-                  {
-                    property: `${attackTypeMap[data.attackType as string]}Attack`,
-                    target: bonusDamageMap[data.bonusAgainst as string],
-                    effect: "change",
-                    value: +data.bonusAttack,
-                    type: "passive",
-                  },
-                ],
-              }),
-            },
-          ]
-        : [],
-
-      armor: [
-        +data.rangedArmor && { type: "ranged", value: +data.rangedArmor },
-        +data.meleeArmor && { type: "melee", value: +data.meleeArmor },
-        +data.fireArmor && { type: "fire", value: +data.fireArmor },
-      ].filter((x) => x) as Unit["armor"],
-
-      sight: {
-        line: +data.lineOfSight,
-        height: +data.heightOfSight,
-      },
     };
+
+    return unit;
+  } else if (["Structure"].includes(data.genre as string)) {
+    const unit: Building = {
+      ...parseObjectProperties(item, data),
+      type: "building",
+    };
+
+    if (+data.garrison > 0) unit.garrison = { capacity: +data.garrison };
+    // Somehow the popcap increase is stored in the same columns as the popcap costs
+    if (+data.population > 0) unit.popcapIncrease = +data.population;
 
     return unit;
   } else if (data.genre == "Technology") {
@@ -162,9 +134,54 @@ function mapSheetItemToItem(data: MappedSheetItem): Unit | Technology | Item {
   }
 }
 
+function parseObjectProperties(item: Item, data: MappedSheetItem): PhysicalItem {
+  return {
+    ...item,
+    hitpoints: +data.hitpoints,
+
+    weapons: +data.totalAttack
+      ? [
+          {
+            type: attackTypeMap[data.attackType as string],
+            damage: +data.totalAttack,
+            speed: +data.attackSpeed,
+            range: +data.maxRange
+              ? {
+                  min: round(+data.minRange, 1),
+                  max: round(+data.maxRange, 1),
+                }
+              : undefined,
+            ...(data.bonusAttack && {
+              modifiers: [
+                {
+                  property: `${attackTypeMap[data.attackType as string]}Attack`,
+                  target: bonusDamageMap[data.bonusAgainst as string],
+                  effect: "change",
+                  value: +data.bonusAttack,
+                  type: "passive",
+                },
+              ],
+            }),
+          },
+        ]
+      : [],
+
+    armor: [
+      +data.rangedArmor && { type: "ranged", value: +data.rangedArmor },
+      +data.meleeArmor && { type: "melee", value: +data.meleeArmor },
+      +data.fireArmor && { type: "fire", value: +data.fireArmor },
+    ].filter((x) => x) as Unit["armor"],
+
+    sight: {
+      line: +data.lineOfSight,
+      height: +data.heightOfSight,
+    },
+  };
+}
+
 const ids = new Set<string>();
 
-function getUniqueID(u: MappedSheetItem, normalizedName: string) {
+function getUniqueID(u: MappedSheetItem, normalizedName: string, civs: civAbbr[]): string {
   const baseId =
     (u.strongId as string) ?? // strongly provided ID from sheet or transformation, always attempt this first
     `${slugify(normalizedName)}-${transformRomanAgeToNumber(u.age as string)}`; // Otherwise format id using lowercase-slugified-{age} 'horse-archer-3
@@ -172,8 +189,10 @@ function getUniqueID(u: MappedSheetItem, normalizedName: string) {
     // If we already have this unit, attempt some variations
     let id = baseId;
     const variation = getStringWithAlphanumericLike(getStringBetweenParenthesis(u.displayName));
-    if (variation.length) id = `${baseId}-${slugify(variation)}`;
     // 'bombard-2-clocktower`
+    if (variation.length) id = `${baseId}-${slugify(variation)}`;
+    // 'dock-2-chinese'
+    else if (u.producedBy == "Villager" && civs.length == 1) id = `${baseId}-${CIVILIZATIONS[civs[0]].slug}`;
     else id = `${baseId}-${slugify(getStringWithAlphanumericLike(u.producedBy))}`; // `trader-2-silver-tree`
 
     if (ids.has(id)) {
