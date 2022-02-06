@@ -5,7 +5,10 @@ export type ItemClass =
   | "heavy"
   | "infantry"
   | "cavalry"
-  | "naval"
+  | "ship"
+  | "attack"
+  | "incendiary"
+  | "warship"
   | "ranged"
   | "siege"
   | "melee"
@@ -15,7 +18,8 @@ export type ItemClass =
   | "support"
   | "wall"
   | "tower"
-  | "gate";
+  | "gate"
+  | "worker";
 
 export type Item = {
   id: ItemId;

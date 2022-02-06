@@ -161,6 +161,254 @@
       "icon": "https://data.aoe4world.com/images/units/knight-2.png"
     },
     {
+      "id": "lodya-attack-ship-2",
+      "baseId": "lodya-attack-ship",
+      "type": "unit",
+      "name": "Lodya Attack Ship",
+      "age": 2,
+      "civs": [
+        "ru"
+      ],
+      "description": "Crewed with Archers.\nThe Lodya can be converted to any other type of ship.",
+      "classes": [
+        "Archer Ship"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 0,
+        "wood": 120,
+        "stone": 0,
+        "gold": 60,
+        "total": 180,
+        "popcap": 2,
+        "time": 35
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "hitpoints": 400,
+      "movement": {
+        "speed": 1.5
+      },
+      "weapons": [
+        {
+          "type": "ranged",
+          "damage": 40,
+          "speed": 2.25,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "incendiary",
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 8,
+              "type": "passive"
+            }
+          ]
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 3
+        }
+      ],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "icon": "https://data.aoe4world.com/images/units/lodya-attack-ship.png"
+    },
+    {
+      "id": "lodya-demolition-ship-3",
+      "baseId": "lodya-demolition-ship",
+      "type": "unit",
+      "name": "Lodya Demolition Ship",
+      "age": 3,
+      "civs": [
+        "ru"
+      ],
+      "description": "Explodes when killed damaging any units in the area, and setting fire to ships and structures.\nThe Lodya can be converted to any other type of ship.",
+      "classes": [
+        "Incendiary Ship"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 0,
+        "wood": 160,
+        "stone": 0,
+        "gold": 80,
+        "total": 240,
+        "popcap": 2,
+        "time": 35
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "hitpoints": 250,
+      "movement": {
+        "speed": 1.5
+      },
+      "weapons": [
+        {
+          "type": "fire",
+          "damage": 300,
+          "speed": 1,
+          "range": {
+            "min": 0,
+            "max": 2
+          },
+          "modifiers": [
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "warship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 200,
+              "type": "passive"
+            }
+          ]
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 32,
+        "height": 10
+      },
+      "icon": "https://data.aoe4world.com/images/units/lodya-demolition-ship.png"
+    },
+    {
+      "id": "lodya-fishing-boat-1",
+      "baseId": "lodya-fishing-boat",
+      "type": "unit",
+      "name": "Lodya Fishing Boat",
+      "age": 1,
+      "civs": [
+        "ru"
+      ],
+      "description": "Small boat that gathers Food from either Deep Water Fish or Shoreline Fish. Does not require a Dock to drop off gathered Food.\n- No combat\nThe Lodya Fishing Boat can be converted to any other type of ship.",
+      "classes": [
+        "Worker",
+        "Ship"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 0,
+        "wood": 60,
+        "stone": 0,
+        "gold": 0,
+        "total": 60,
+        "popcap": 1,
+        "time": 25
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "hitpoints": 125,
+      "movement": {
+        "speed": 1.5
+      },
+      "weapons": [],
+      "armor": [],
+      "sight": {
+        "line": 32,
+        "height": 10
+      },
+      "icon": "https://data.aoe4world.com/images/units/lodya-fishing-boat.png"
+    },
+    {
+      "id": "lodya-trade-ship-2",
+      "baseId": "lodya-trade-ship",
+      "type": "unit",
+      "name": "Lodya Trade Ship",
+      "age": 2,
+      "civs": [
+        "ru"
+      ],
+      "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. Once assigned to trade, the Trade Ship will make repeated trips between its home Dock and the trade target. You can assign a new home Dock if you wish to.\nThe Lodya can be converted to any other type of ship.",
+      "classes": [
+        "Worker",
+        "Ship"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 0,
+        "wood": 300,
+        "stone": 0,
+        "gold": 100,
+        "total": 400,
+        "popcap": 2,
+        "time": 60
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "hitpoints": 300,
+      "movement": {
+        "speed": 1.5
+      },
+      "weapons": [],
+      "armor": [],
+      "sight": {
+        "line": 32,
+        "height": 10
+      },
+      "icon": "https://data.aoe4world.com/images/units/lodya-trade-ship.png"
+    },
+    {
+      "id": "lodya-transport-ship-2",
+      "baseId": "lodya-transport-ship",
+      "type": "unit",
+      "name": "Lodya Transport Ship",
+      "age": 2,
+      "civs": [
+        "ru"
+      ],
+      "description": "Can be garrisoned by any unit. Allows garrisoned units to be transport across water.\nThe Lodya can be converted to any other type of ship.",
+      "classes": [
+        "Ship"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 0,
+        "total": 100,
+        "popcap": 2,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "hitpoints": 600,
+      "movement": {
+        "speed": 1.5
+      },
+      "weapons": [],
+      "armor": [],
+      "sight": {
+        "line": 32,
+        "height": 10
+      },
+      "icon": "https://data.aoe4world.com/images/units/lodya-transport-ship.png"
+    },
+    {
       "id": "scout-1-hunting-cabin",
       "baseId": "scout",
       "type": "unit",

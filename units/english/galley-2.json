@@ -1,0 +1,69 @@
+{
+  "id": "galley-2",
+  "baseId": "galley",
+  "type": "unit",
+  "name": "Galley",
+  "age": 2,
+  "civs": [
+    "en"
+  ],
+  "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+  "classes": [
+    "Attack Ship"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 0,
+    "wood": 180,
+    "stone": 0,
+    "gold": 180,
+    "total": 360,
+    "popcap": 4,
+    "time": 40
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "hitpoints": 550,
+  "movement": {
+    "speed": 1.38
+  },
+  "weapons": [
+    {
+      "type": "ranged",
+      "damage": 60,
+      "speed": 1.95,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "incendiary",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ]
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 5
+    }
+  ],
+  "sight": {
+    "line": 40,
+    "height": 10
+  },
+  "icon": "https://data.aoe4world.com/images/units/galley.png"
+}

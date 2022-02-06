@@ -1,0 +1,70 @@
+{
+  "id": "baghlah-3",
+  "baseId": "baghlah",
+  "type": "unit",
+  "name": "Baghlah",
+  "age": 3,
+  "civs": [
+    "de",
+    "ab"
+  ],
+  "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+  "classes": [
+    "Attack Ship"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 240,
+    "stone": 0,
+    "gold": 180,
+    "total": 420,
+    "popcap": 4,
+    "time": 45
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "hitpoints": 900,
+  "movement": {
+    "speed": 1.25
+  },
+  "weapons": [
+    {
+      "type": "ranged",
+      "damage": 100,
+      "speed": 3.25,
+      "range": {
+        "min": 0,
+        "max": 5
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "incendiary",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 5,
+          "type": "passive"
+        }
+      ]
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 5
+    }
+  ],
+  "sight": {
+    "line": 44,
+    "height": 10
+  },
+  "icon": "https://data.aoe4world.com/images/units/baghlah.png"
+}

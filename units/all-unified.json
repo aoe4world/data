@@ -3,6 +3,487 @@
   "__version__": "0.0.2",
   "data": [
     {
+      "id": "carrack",
+      "name": "Carrack",
+      "civs": [
+        "en",
+        "hr",
+        "fr"
+      ],
+      "classes": [
+        "Warship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/carrack.png",
+      "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
+      "variations": [
+        {
+          "id": "carrack-4",
+          "baseId": "carrack",
+          "type": "unit",
+          "name": "Carrack",
+          "age": 4,
+          "civs": [
+            "en"
+          ],
+          "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
+          "classes": [
+            "Warship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 390,
+            "stone": 0,
+            "gold": 270,
+            "total": 660,
+            "popcap": 6,
+            "time": 60
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 1400,
+          "movement": {
+            "speed": 0.88
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 210,
+              "speed": 4.5,
+              "range": {
+                "min": 0,
+                "max": 9
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 50,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 5
+            }
+          ],
+          "sight": {
+            "line": 52,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/carrack.png"
+        },
+        {
+          "id": "carrack-4-dock",
+          "baseId": "carrack",
+          "type": "unit",
+          "name": "Carrack",
+          "age": 4,
+          "civs": [
+            "hr",
+            "fr"
+          ],
+          "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
+          "classes": [
+            "Warship"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 390,
+            "stone": 0,
+            "gold": 270,
+            "total": 660,
+            "popcap": 6,
+            "time": 60
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 1400,
+          "movement": {
+            "speed": 0.88
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 210,
+              "speed": 4.5,
+              "range": {
+                "min": 0,
+                "max": 8
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 50,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 5
+            }
+          ],
+          "sight": {
+            "line": 52,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/carrack.png"
+        }
+      ]
+    },
+    {
+      "id": "galley",
+      "name": "Galley",
+      "civs": [
+        "en",
+        "hr"
+      ],
+      "classes": [
+        "Attack Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/galley.png",
+      "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+      "variations": [
+        {
+          "id": "galley-2",
+          "baseId": "galley",
+          "type": "unit",
+          "name": "Galley",
+          "age": 2,
+          "civs": [
+            "en"
+          ],
+          "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+          "classes": [
+            "Attack Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 180,
+            "stone": 0,
+            "gold": 180,
+            "total": 360,
+            "popcap": 4,
+            "time": 40
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 550,
+          "movement": {
+            "speed": 1.38
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 60,
+              "speed": 1.95,
+              "range": {
+                "min": 0,
+                "max": 6
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "incendiary",
+                        "ship"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 10,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 5
+            }
+          ],
+          "sight": {
+            "line": 40,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/galley.png"
+        },
+        {
+          "id": "galley-2-dock",
+          "baseId": "galley",
+          "type": "unit",
+          "name": "Galley",
+          "age": 2,
+          "civs": [
+            "hr"
+          ],
+          "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+          "classes": [
+            "Attack Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 180,
+            "stone": 0,
+            "gold": 180,
+            "total": 360,
+            "popcap": 4,
+            "time": 40
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 550,
+          "movement": {
+            "speed": 1.38
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 60,
+              "speed": 1.95,
+              "range": {
+                "min": 0,
+                "max": 5
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "incendiary",
+                        "ship"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 10,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 5
+            }
+          ],
+          "sight": {
+            "line": 40,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/galley.png"
+        }
+      ]
+    },
+    {
+      "id": "hulk",
+      "name": "Hulk",
+      "civs": [
+        "en",
+        "hr",
+        "fr"
+      ],
+      "classes": [
+        "Attack Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/hulk.png",
+      "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+      "variations": [
+        {
+          "id": "hulk-3",
+          "baseId": "hulk",
+          "type": "unit",
+          "name": "Hulk",
+          "age": 3,
+          "civs": [
+            "en"
+          ],
+          "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+          "classes": [
+            "Attack Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 300,
+            "stone": 0,
+            "gold": 240,
+            "total": 540,
+            "popcap": 4,
+            "time": 45
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 1000,
+          "movement": {
+            "speed": 1.13
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 100,
+              "speed": 3.95,
+              "range": {
+                "min": 0,
+                "max": 7
+              }
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 6
+            }
+          ],
+          "sight": {
+            "line": 42,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/hulk.png"
+        },
+        {
+          "id": "hulk-3-dock",
+          "baseId": "hulk",
+          "type": "unit",
+          "name": "Hulk",
+          "age": 3,
+          "civs": [
+            "hr"
+          ],
+          "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+          "classes": [
+            "Attack Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 300,
+            "stone": 0,
+            "gold": 240,
+            "total": 540,
+            "popcap": 4,
+            "time": 45
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 1000,
+          "movement": {
+            "speed": 1.13
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 100,
+              "speed": 3.95,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 6
+            }
+          ],
+          "sight": {
+            "line": 42,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/hulk.png"
+        },
+        {
+          "id": "hulk-2",
+          "baseId": "hulk",
+          "type": "unit",
+          "name": "Hulk",
+          "age": 2,
+          "civs": [
+            "fr"
+          ],
+          "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+          "classes": [
+            "Attack Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 300,
+            "stone": 0,
+            "gold": 240,
+            "total": 540,
+            "popcap": 4,
+            "time": 45
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 1000,
+          "movement": {
+            "speed": 1.13
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 100,
+              "speed": 3.95,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 2
+            }
+          ],
+          "sight": {
+            "line": 42,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/hulk.png"
+        }
+      ]
+    },
+    {
       "id": "longbowman",
       "name": "Longbowman",
       "civs": [
@@ -1516,6 +1997,73 @@
       ]
     },
     {
+      "id": "galleass",
+      "name": "Galleass",
+      "civs": [
+        "fr"
+      ],
+      "classes": [
+        "Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/galleass.png",
+      "description": "Forward mount bombard can do heavy damage to any target.",
+      "variations": [
+        {
+          "id": "galleass-3",
+          "baseId": "galleass",
+          "type": "unit",
+          "name": "Galleass",
+          "age": 3,
+          "civs": [
+            "fr"
+          ],
+          "description": "Forward mount bombard can do heavy damage to any target.",
+          "classes": [
+            "Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 360,
+            "stone": 0,
+            "gold": 300,
+            "total": 660,
+            "popcap": 6,
+            "time": 50
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 1200,
+          "movement": {
+            "speed": 1
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 130,
+              "speed": 5,
+              "range": {
+                "min": 0,
+                "max": 8
+              }
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 3
+            }
+          ],
+          "sight": {
+            "line": 48,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/galleass.png"
+        }
+      ]
+    },
+    {
       "id": "royal-cannon",
       "name": "Royal Cannon",
       "civs": [
@@ -2122,6 +2670,157 @@
       ]
     },
     {
+      "id": "baochuan",
+      "name": "Baochuan",
+      "civs": [
+        "ch",
+        "mo"
+      ],
+      "classes": [
+        "Warship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/baochuan.png",
+      "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
+      "variations": [
+        {
+          "id": "baochuan-4",
+          "baseId": "baochuan",
+          "type": "unit",
+          "name": "Baochuan",
+          "age": 4,
+          "civs": [
+            "ch"
+          ],
+          "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
+          "classes": [
+            "Warship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 480,
+            "stone": 0,
+            "gold": 480,
+            "total": 960,
+            "popcap": 6,
+            "time": 49
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 2000,
+          "movement": {
+            "speed": 0.75
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 336,
+              "speed": 6.5,
+              "range": {
+                "min": 0,
+                "max": 9
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 50,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 6
+            }
+          ],
+          "sight": {
+            "line": 52,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/baochuan.png"
+        },
+        {
+          "id": "baochuan-4-dock",
+          "baseId": "baochuan",
+          "type": "unit",
+          "name": "Baochuan",
+          "age": 4,
+          "civs": [
+            "mo"
+          ],
+          "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
+          "classes": [
+            "Warship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 480,
+            "stone": 0,
+            "gold": 480,
+            "total": 960,
+            "popcap": 6,
+            "time": 60
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 2000,
+          "movement": {
+            "speed": 0.75
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 280,
+              "speed": 6.5,
+              "range": {
+                "min": 0,
+                "max": 9
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 50,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 6
+            }
+          ],
+          "sight": {
+            "line": 52,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/baochuan.png"
+        }
+      ]
+    },
+    {
       "id": "bombard",
       "name": "Bombard",
       "civs": [
@@ -2285,6 +2984,147 @@
             "height": 10
           },
           "icon": "https://data.aoe4world.com/images/units/bombard-4.png"
+        }
+      ]
+    },
+    {
+      "id": "explosive-junk",
+      "name": "Explosive Junk",
+      "civs": [
+        "ch",
+        "mo"
+      ],
+      "classes": [
+        "Incendiary Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/explosive-junk.png",
+      "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area, and setting fire to nearby ships and structures.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+      "variations": [
+        {
+          "id": "explosive-junk-3",
+          "baseId": "explosive-junk",
+          "type": "unit",
+          "name": "Explosive Junk",
+          "age": 3,
+          "civs": [
+            "ch"
+          ],
+          "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area, and setting fire to nearby ships and structures.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+          "classes": [
+            "Incendiary Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 160,
+            "stone": 0,
+            "gold": 80,
+            "total": 240,
+            "popcap": 2,
+            "time": 29
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 200,
+          "movement": {
+            "speed": 1.5
+          },
+          "weapons": [
+            {
+              "type": "fire",
+              "damage": 300,
+              "speed": 1,
+              "range": {
+                "min": 0,
+                "max": 2
+              },
+              "modifiers": [
+                {
+                  "property": "fireAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "warship"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 200,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [],
+          "sight": {
+            "line": 32,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/explosive-junk.png"
+        },
+        {
+          "id": "explosive-junk-3-dock",
+          "baseId": "explosive-junk",
+          "type": "unit",
+          "name": "Explosive Junk",
+          "age": 3,
+          "civs": [
+            "mo"
+          ],
+          "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area, and setting fire to nearby ships and structures.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+          "classes": [
+            "Incendiary Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 160,
+            "stone": 0,
+            "gold": 80,
+            "total": 240,
+            "popcap": 2,
+            "time": 35
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 200,
+          "movement": {
+            "speed": 1.5
+          },
+          "weapons": [
+            {
+              "type": "fire",
+              "damage": 300,
+              "speed": 1,
+              "range": {
+                "min": 0,
+                "max": 2
+              },
+              "modifiers": [
+                {
+                  "property": "fireAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "warship"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 200,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [],
+          "sight": {
+            "line": 32,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/explosive-junk.png"
         }
       ]
     },
@@ -2509,6 +3349,89 @@
             "height": 10
           },
           "icon": "https://data.aoe4world.com/images/units/imperial-official.png"
+        }
+      ]
+    },
+    {
+      "id": "junk",
+      "name": "Junk",
+      "civs": [
+        "ch"
+      ],
+      "classes": [
+        "Archer Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/junk.png",
+      "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from Blacksmith upgrades",
+      "variations": [
+        {
+          "id": "junk-2",
+          "baseId": "junk",
+          "type": "unit",
+          "name": "Junk",
+          "age": 2,
+          "civs": [
+            "ch"
+          ],
+          "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from Blacksmith upgrades",
+          "classes": [
+            "Archer Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 120,
+            "stone": 0,
+            "gold": 90,
+            "total": 210,
+            "popcap": 4,
+            "time": 29
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 650,
+          "movement": {
+            "speed": 1.5
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 32,
+              "speed": 1.95,
+              "range": {
+                "min": 0,
+                "max": 5
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "incendiary",
+                        "ship"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 8,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 2
+            }
+          ],
+          "sight": {
+            "line": 38,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/junk.png"
         }
       ]
     },
@@ -3090,6 +4013,400 @@
       ]
     },
     {
+      "id": "trade-ship",
+      "name": "Trade Ship",
+      "civs": [
+        "ch",
+        "en",
+        "hr",
+        "fr",
+        "de",
+        "ab",
+        "mo"
+      ],
+      "classes": [
+        "Worker",
+        "Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/trade-ship.png",
+      "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. Once assigned to trade, the Trade Ship will make repeated trips between its home Dock and the trade target. You can assign a new home Dock if you wish to.\n- No combat",
+      "variations": [
+        {
+          "id": "trade-ship-2-chinese-dock",
+          "baseId": "trade-ship",
+          "type": "unit",
+          "name": "Trade Ship",
+          "age": 2,
+          "civs": [
+            "ch"
+          ],
+          "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. Once assigned to trade, the Trade Ship will make repeated trips between its home Dock and the trade target. You can assign a new home Dock if you wish to.\n- No combat",
+          "classes": [
+            "Worker",
+            "Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 300,
+            "stone": 0,
+            "gold": 100,
+            "total": 400,
+            "popcap": 2,
+            "time": 49
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 300,
+          "movement": {
+            "speed": 1.5
+          },
+          "weapons": [],
+          "armor": [],
+          "sight": {
+            "line": 32,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/trade-ship.png"
+        },
+        {
+          "id": "trade-ship-2",
+          "baseId": "trade-ship",
+          "type": "unit",
+          "name": "Trade Ship",
+          "age": 2,
+          "civs": [
+            "en",
+            "hr",
+            "fr",
+            "de",
+            "ab",
+            "mo"
+          ],
+          "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. Once assigned to trade, the Trade Ship will make repeated trips between its home Dock and the trade target. You can assign a new home Dock if you wish to.\n- No combat",
+          "classes": [
+            "Worker",
+            "Ship"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 300,
+            "stone": 0,
+            "gold": 100,
+            "total": 400,
+            "popcap": 2,
+            "time": 60
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 300,
+          "movement": {
+            "speed": 1.5
+          },
+          "weapons": [],
+          "armor": [],
+          "sight": {
+            "line": 32,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/trade-ship.png"
+        }
+      ]
+    },
+    {
+      "id": "fishing-boat",
+      "name": "Fishing Boat",
+      "civs": [
+        "ch",
+        "de",
+        "en",
+        "hr",
+        "fr",
+        "ab",
+        "mo"
+      ],
+      "classes": [
+        "Worker",
+        "Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/fishing-boat.png",
+      "description": "Small boat that gathers Food from either Deep Water Fish or Shoreline Fish. Drops off gathered resources at the Dock.\n+ Can repair\n- No combat",
+      "variations": [
+        {
+          "id": "trade-ship-2-chinese",
+          "baseId": "fishing-boat",
+          "type": "unit",
+          "name": "Fishing Boat",
+          "age": 1,
+          "civs": [
+            "ch"
+          ],
+          "description": "Small boat that gathers Food from either Deep Water Fish or Shoreline Fish. Drops off gathered resources at the Dock.\n+ Can repair\n- No combat",
+          "classes": [
+            "Worker",
+            "Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 75,
+            "stone": 0,
+            "gold": 0,
+            "total": 75,
+            "popcap": 1,
+            "time": 20
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 125,
+          "movement": {
+            "speed": 1.5
+          },
+          "weapons": [],
+          "armor": [],
+          "sight": {
+            "line": 32,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/fishing-boat.png"
+        },
+        {
+          "id": "trade-ship-2-delhi",
+          "baseId": "fishing-boat",
+          "type": "unit",
+          "name": "Fishing Boat",
+          "age": 1,
+          "civs": [
+            "de"
+          ],
+          "description": "Small boat that gathers Food from either Deep Water Fish or Shoreline Fish. Drops off gathered resources at the Dock.\n+ Can repair\n- No combat",
+          "classes": [
+            "Worker",
+            "Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 75,
+            "stone": 0,
+            "gold": 0,
+            "total": 75,
+            "popcap": 1,
+            "time": 25
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 125,
+          "movement": {
+            "speed": 1.5
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 7,
+              "speed": 1.75,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            }
+          ],
+          "armor": [],
+          "sight": {
+            "line": 32,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/fishing-boat.png"
+        },
+        {
+          "id": "fishing-boat-1",
+          "baseId": "fishing-boat",
+          "type": "unit",
+          "name": "Fishing Boat",
+          "age": 1,
+          "civs": [
+            "en",
+            "hr",
+            "fr",
+            "ab",
+            "mo"
+          ],
+          "description": "Small boat that gathers Food from either Deep Water Fish or Shoreline Fish. Drops off gathered resources at the Dock.\n+ Can repair\n- No combat",
+          "classes": [
+            "Worker",
+            "Ship"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 75,
+            "stone": 0,
+            "gold": 0,
+            "total": 75,
+            "popcap": 1,
+            "time": 25
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 125,
+          "movement": {
+            "speed": 1.5
+          },
+          "weapons": [],
+          "armor": [],
+          "sight": {
+            "line": 32,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/fishing-boat.png"
+        }
+      ]
+    },
+    {
+      "id": "transport-ship",
+      "name": "Transport Ship",
+      "civs": [
+        "ch",
+        "mo",
+        "en",
+        "hr",
+        "fr",
+        "de",
+        "ab"
+      ],
+      "classes": [
+        "Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/transport-ship.png",
+      "description": "Large oared vessel able to transport land units across water.\n+ Can be garrisoned by any unit\n- No combat",
+      "variations": [
+        {
+          "id": "transport-ship-2-chinese",
+          "baseId": "transport-ship",
+          "type": "unit",
+          "name": "Transport Ship",
+          "age": 2,
+          "civs": [
+            "ch"
+          ],
+          "description": "Large oared vessel able to transport land units across water.\n+ Can be garrisoned by any unit\n- No combat",
+          "classes": [
+            "Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 0,
+            "total": 100,
+            "popcap": 2,
+            "time": 16
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 600,
+          "movement": {
+            "speed": 1.5
+          },
+          "weapons": [],
+          "armor": [],
+          "sight": {
+            "line": 32,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/transport-ship.png"
+        },
+        {
+          "id": "transport-ship-2-mongols",
+          "baseId": "transport-ship",
+          "type": "unit",
+          "name": "Transport Ship",
+          "age": 2,
+          "civs": [
+            "mo"
+          ],
+          "description": "Large oared vessel able to transport land units across water.\n+ Can be garrisoned by any unit\n- No combat",
+          "classes": [
+            "Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 0,
+            "total": 100,
+            "popcap": 2,
+            "time": 20
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 900,
+          "movement": {
+            "speed": 1.73
+          },
+          "weapons": [],
+          "armor": [],
+          "sight": {
+            "line": 32,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/transport-ship.png"
+        },
+        {
+          "id": "transport-ship-2",
+          "baseId": "transport-ship",
+          "type": "unit",
+          "name": "Transport Ship",
+          "age": 2,
+          "civs": [
+            "en",
+            "hr",
+            "fr",
+            "de",
+            "ab"
+          ],
+          "description": "Large oared vessel able to transport land units across water.\n+ Can be garrisoned by any unit\n- No combat",
+          "classes": [
+            "Ship"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 0,
+            "total": 100,
+            "popcap": 2,
+            "time": 20
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 600,
+          "movement": {
+            "speed": 1.5
+          },
+          "weapons": [],
+          "armor": [],
+          "sight": {
+            "line": 32,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/transport-ship.png"
+        }
+      ]
+    },
+    {
       "id": "trebuchet",
       "name": "Trebuchet",
       "civs": [
@@ -3248,6 +4565,127 @@
             "height": 10
           },
           "icon": "https://data.aoe4world.com/images/units/trebuchet-3.png"
+        }
+      ]
+    },
+    {
+      "id": "war-junk",
+      "name": "War Junk",
+      "civs": [
+        "ch",
+        "mo"
+      ],
+      "classes": [
+        "Attack Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/war-junk.png",
+      "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+      "variations": [
+        {
+          "id": "war-junk-3",
+          "baseId": "war-junk",
+          "type": "unit",
+          "name": "War Junk",
+          "age": 3,
+          "civs": [
+            "ch"
+          ],
+          "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+          "classes": [
+            "Attack Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 300,
+            "stone": 0,
+            "gold": 210,
+            "total": 510,
+            "popcap": 4,
+            "time": 37
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 900,
+          "movement": {
+            "speed": 1
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 120,
+              "speed": 4.5,
+              "range": {
+                "min": 0,
+                "max": 6.5
+              }
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 6
+            }
+          ],
+          "sight": {
+            "line": 44,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/war-junk.png"
+        },
+        {
+          "id": "war-junk-3-dock",
+          "baseId": "war-junk",
+          "type": "unit",
+          "name": "War Junk",
+          "age": 3,
+          "civs": [
+            "mo"
+          ],
+          "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+          "classes": [
+            "Attack Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 300,
+            "stone": 0,
+            "gold": 210,
+            "total": 510,
+            "popcap": 4,
+            "time": 45
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 900,
+          "movement": {
+            "speed": 1
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 120,
+              "speed": 4.5,
+              "range": {
+                "min": 0,
+                "max": 6.5
+              }
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 6
+            }
+          ],
+          "sight": {
+            "line": 44,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/war-junk.png"
         }
       ]
     },
@@ -5031,6 +6469,89 @@
       ]
     },
     {
+      "id": "light-junk",
+      "name": "Light Junk",
+      "civs": [
+        "mo"
+      ],
+      "classes": [
+        "Archer Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/light-junk.png",
+      "description": "Light war vessel armed with a crew of archers.\n+ Increased maneuverability and speed.\n+ Benefits from Blacksmith upgrades.",
+      "variations": [
+        {
+          "id": "light-junk-2",
+          "baseId": "light-junk",
+          "type": "unit",
+          "name": "Light Junk",
+          "age": 2,
+          "civs": [
+            "mo"
+          ],
+          "description": "Light war vessel armed with a crew of archers.\n+ Increased maneuverability and speed.\n+ Benefits from Blacksmith upgrades.",
+          "classes": [
+            "Archer Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 120,
+            "stone": 0,
+            "gold": 90,
+            "total": 210,
+            "popcap": 2,
+            "time": 35
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 400,
+          "movement": {
+            "speed": 1.63
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 30,
+              "speed": 0.95,
+              "range": {
+                "min": 0,
+                "max": 4
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "incendiary",
+                        "ship"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 10,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 3
+            }
+          ],
+          "sight": {
+            "line": 40,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/light-junk.png"
+        }
+      ]
+    },
+    {
       "id": "mangudai",
       "name": "Mangudai",
       "civs": [
@@ -5620,6 +7141,326 @@
             "height": 10
           },
           "icon": "https://data.aoe4world.com/images/units/knight-4.png"
+        }
+      ]
+    },
+    {
+      "id": "lodya-attack-ship",
+      "name": "Lodya Attack Ship",
+      "civs": [
+        "ru"
+      ],
+      "classes": [
+        "Archer Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/lodya-attack-ship.png",
+      "description": "Crewed with Archers.\nThe Lodya can be converted to any other type of ship.",
+      "variations": [
+        {
+          "id": "lodya-attack-ship-2",
+          "baseId": "lodya-attack-ship",
+          "type": "unit",
+          "name": "Lodya Attack Ship",
+          "age": 2,
+          "civs": [
+            "ru"
+          ],
+          "description": "Crewed with Archers.\nThe Lodya can be converted to any other type of ship.",
+          "classes": [
+            "Archer Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 120,
+            "stone": 0,
+            "gold": 60,
+            "total": 180,
+            "popcap": 2,
+            "time": 35
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 400,
+          "movement": {
+            "speed": 1.5
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 40,
+              "speed": 2.25,
+              "range": {
+                "min": 0,
+                "max": 5
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "incendiary",
+                        "ship"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 8,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 3
+            }
+          ],
+          "sight": {
+            "line": 36,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/lodya-attack-ship.png"
+        }
+      ]
+    },
+    {
+      "id": "lodya-demolition-ship",
+      "name": "Lodya Demolition Ship",
+      "civs": [
+        "ru"
+      ],
+      "classes": [
+        "Incendiary Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/lodya-demolition-ship.png",
+      "description": "Explodes when killed damaging any units in the area, and setting fire to ships and structures.\nThe Lodya can be converted to any other type of ship.",
+      "variations": [
+        {
+          "id": "lodya-demolition-ship-3",
+          "baseId": "lodya-demolition-ship",
+          "type": "unit",
+          "name": "Lodya Demolition Ship",
+          "age": 3,
+          "civs": [
+            "ru"
+          ],
+          "description": "Explodes when killed damaging any units in the area, and setting fire to ships and structures.\nThe Lodya can be converted to any other type of ship.",
+          "classes": [
+            "Incendiary Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 160,
+            "stone": 0,
+            "gold": 80,
+            "total": 240,
+            "popcap": 2,
+            "time": 35
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 250,
+          "movement": {
+            "speed": 1.5
+          },
+          "weapons": [
+            {
+              "type": "fire",
+              "damage": 300,
+              "speed": 1,
+              "range": {
+                "min": 0,
+                "max": 2
+              },
+              "modifiers": [
+                {
+                  "property": "fireAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "warship"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 200,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [],
+          "sight": {
+            "line": 32,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/lodya-demolition-ship.png"
+        }
+      ]
+    },
+    {
+      "id": "lodya-fishing-boat",
+      "name": "Lodya Fishing Boat",
+      "civs": [
+        "ru"
+      ],
+      "classes": [
+        "Worker",
+        "Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/lodya-fishing-boat.png",
+      "description": "Small boat that gathers Food from either Deep Water Fish or Shoreline Fish. Does not require a Dock to drop off gathered Food.\n- No combat\nThe Lodya Fishing Boat can be converted to any other type of ship.",
+      "variations": [
+        {
+          "id": "lodya-fishing-boat-1",
+          "baseId": "lodya-fishing-boat",
+          "type": "unit",
+          "name": "Lodya Fishing Boat",
+          "age": 1,
+          "civs": [
+            "ru"
+          ],
+          "description": "Small boat that gathers Food from either Deep Water Fish or Shoreline Fish. Does not require a Dock to drop off gathered Food.\n- No combat\nThe Lodya Fishing Boat can be converted to any other type of ship.",
+          "classes": [
+            "Worker",
+            "Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 60,
+            "stone": 0,
+            "gold": 0,
+            "total": 60,
+            "popcap": 1,
+            "time": 25
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 125,
+          "movement": {
+            "speed": 1.5
+          },
+          "weapons": [],
+          "armor": [],
+          "sight": {
+            "line": 32,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/lodya-fishing-boat.png"
+        }
+      ]
+    },
+    {
+      "id": "lodya-trade-ship",
+      "name": "Lodya Trade Ship",
+      "civs": [
+        "ru"
+      ],
+      "classes": [
+        "Worker",
+        "Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/lodya-trade-ship.png",
+      "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. Once assigned to trade, the Trade Ship will make repeated trips between its home Dock and the trade target. You can assign a new home Dock if you wish to.\nThe Lodya can be converted to any other type of ship.",
+      "variations": [
+        {
+          "id": "lodya-trade-ship-2",
+          "baseId": "lodya-trade-ship",
+          "type": "unit",
+          "name": "Lodya Trade Ship",
+          "age": 2,
+          "civs": [
+            "ru"
+          ],
+          "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. Once assigned to trade, the Trade Ship will make repeated trips between its home Dock and the trade target. You can assign a new home Dock if you wish to.\nThe Lodya can be converted to any other type of ship.",
+          "classes": [
+            "Worker",
+            "Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 300,
+            "stone": 0,
+            "gold": 100,
+            "total": 400,
+            "popcap": 2,
+            "time": 60
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 300,
+          "movement": {
+            "speed": 1.5
+          },
+          "weapons": [],
+          "armor": [],
+          "sight": {
+            "line": 32,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/lodya-trade-ship.png"
+        }
+      ]
+    },
+    {
+      "id": "lodya-transport-ship",
+      "name": "Lodya Transport Ship",
+      "civs": [
+        "ru"
+      ],
+      "classes": [
+        "Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/lodya-transport-ship.png",
+      "description": "Can be garrisoned by any unit. Allows garrisoned units to be transport across water.\nThe Lodya can be converted to any other type of ship.",
+      "variations": [
+        {
+          "id": "lodya-transport-ship-2",
+          "baseId": "lodya-transport-ship",
+          "type": "unit",
+          "name": "Lodya Transport Ship",
+          "age": 2,
+          "civs": [
+            "ru"
+          ],
+          "description": "Can be garrisoned by any unit. Allows garrisoned units to be transport across water.\nThe Lodya can be converted to any other type of ship.",
+          "classes": [
+            "Ship"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 0,
+            "total": 100,
+            "popcap": 2,
+            "time": 20
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 600,
+          "movement": {
+            "speed": 1.5
+          },
+          "weapons": [],
+          "armor": [],
+          "sight": {
+            "line": 32,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/lodya-transport-ship.png"
         }
       ]
     },
@@ -6595,6 +8436,91 @@
       ]
     },
     {
+      "id": "baghlah",
+      "name": "Baghlah",
+      "civs": [
+        "de",
+        "ab"
+      ],
+      "classes": [
+        "Attack Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/baghlah.png",
+      "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+      "variations": [
+        {
+          "id": "baghlah-3",
+          "baseId": "baghlah",
+          "type": "unit",
+          "name": "Baghlah",
+          "age": 3,
+          "civs": [
+            "de",
+            "ab"
+          ],
+          "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+          "classes": [
+            "Attack Ship"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 240,
+            "stone": 0,
+            "gold": 180,
+            "total": 420,
+            "popcap": 4,
+            "time": 45
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 900,
+          "movement": {
+            "speed": 1.25
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 100,
+              "speed": 3.25,
+              "range": {
+                "min": 0,
+                "max": 5
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "incendiary",
+                        "ship"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 5,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 5
+            }
+          ],
+          "sight": {
+            "line": 44,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/baghlah.png"
+        }
+      ]
+    },
+    {
       "id": "crossbowman",
       "name": "Crossbowman",
       "civs": [
@@ -6839,6 +8765,170 @@
       ]
     },
     {
+      "id": "dhow",
+      "name": "Dhow",
+      "civs": [
+        "de",
+        "ab"
+      ],
+      "classes": [
+        "Archer Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/dhow.png",
+      "description": "Light war vessel armed with a crew of archers.\n+ Increased maneuverability and speed.\n+ Benefits from Blacksmith upgrades.",
+      "variations": [
+        {
+          "id": "dhow-2",
+          "baseId": "dhow",
+          "type": "unit",
+          "name": "Dhow",
+          "age": 2,
+          "civs": [
+            "de",
+            "ab"
+          ],
+          "description": "Light war vessel armed with a crew of archers.\n+ Increased maneuverability and speed.\n+ Benefits from Blacksmith upgrades.",
+          "classes": [
+            "Archer Ship"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 180,
+            "stone": 0,
+            "gold": 90,
+            "total": 270,
+            "popcap": 2,
+            "time": 40
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 500,
+          "movement": {
+            "speed": 1.88
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 32,
+              "speed": 2,
+              "range": {
+                "min": 0,
+                "max": 3.8
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "incendiary",
+                        "ship"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 8,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 4
+            }
+          ],
+          "sight": {
+            "line": 38,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/dhow.png"
+        }
+      ]
+    },
+    {
+      "id": "explosive-dhow",
+      "name": "Explosive Dhow",
+      "civs": [
+        "de",
+        "ab"
+      ],
+      "classes": [
+        "Incendiary Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/explosive-dhow.png",
+      "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area, and setting fire to nearby ships and structures.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+      "variations": [
+        {
+          "id": "explosive-dhow-3",
+          "baseId": "explosive-dhow",
+          "type": "unit",
+          "name": "Explosive Dhow",
+          "age": 3,
+          "civs": [
+            "de",
+            "ab"
+          ],
+          "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area, and setting fire to nearby ships and structures.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+          "classes": [
+            "Incendiary Ship"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 160,
+            "stone": 0,
+            "gold": 80,
+            "total": 240,
+            "popcap": 2,
+            "time": 35
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 250,
+          "movement": {
+            "speed": 1.63
+          },
+          "weapons": [
+            {
+              "type": "fire",
+              "damage": 500,
+              "speed": 1,
+              "range": {
+                "min": 0,
+                "max": 1
+              },
+              "modifiers": [
+                {
+                  "property": "fireAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "warship"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 200,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [],
+          "sight": {
+            "line": 32,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/explosive-dhow.png"
+        }
+      ]
+    },
+    {
       "id": "handcannoneer",
       "name": "Handcannoneer",
       "civs": [
@@ -6909,6 +8999,87 @@
             "height": 10
           },
           "icon": "https://data.aoe4world.com/images/units/handcannoneer-4.png"
+        }
+      ]
+    },
+    {
+      "id": "demolition-ship",
+      "name": "Demolition Ship",
+      "civs": [
+        "en",
+        "hr",
+        "fr"
+      ],
+      "classes": [
+        "Incendiary Ship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/demolition-ship.png",
+      "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area, and setting fire to nearby ships and structures.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+      "variations": [
+        {
+          "id": "hulk-2-french",
+          "baseId": "demolition-ship",
+          "type": "unit",
+          "name": "Demolition Ship",
+          "age": 3,
+          "civs": [
+            "en",
+            "hr",
+            "fr"
+          ],
+          "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area, and setting fire to nearby ships and structures.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+          "classes": [
+            "Incendiary Ship"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 160,
+            "stone": 0,
+            "gold": 80,
+            "total": 240,
+            "popcap": 2,
+            "time": 35
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 200,
+          "movement": {
+            "speed": 1.5
+          },
+          "weapons": [
+            {
+              "type": "fire",
+              "damage": 300,
+              "speed": 1,
+              "range": {
+                "min": 0,
+                "max": 2
+              },
+              "modifiers": [
+                {
+                  "property": "fireAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "warship"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 200,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [],
+          "sight": {
+            "line": 32,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/demolition-ship.png"
         }
       ]
     },
@@ -7473,6 +9644,90 @@
             "height": 10
           },
           "icon": "https://data.aoe4world.com/images/units/spearman-4.png"
+        }
+      ]
+    },
+    {
+      "id": "xebec",
+      "name": "Xebec",
+      "civs": [
+        "de",
+        "ab"
+      ],
+      "classes": [
+        "Warship"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/xebec.png",
+      "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
+      "variations": [
+        {
+          "id": "xebec-4",
+          "baseId": "xebec",
+          "type": "unit",
+          "name": "Xebec",
+          "age": 4,
+          "civs": [
+            "de",
+            "ab"
+          ],
+          "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
+          "classes": [
+            "Warship"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 480,
+            "stone": 0,
+            "gold": 300,
+            "total": 780,
+            "popcap": 6,
+            "time": 60
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "hitpoints": 1700,
+          "movement": {
+            "speed": 0.88
+          },
+          "weapons": [
+            {
+              "type": "ranged",
+              "damage": 240,
+              "speed": 5.5,
+              "range": {
+                "min": 0,
+                "max": 8
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 50,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 5
+            }
+          ],
+          "sight": {
+            "line": 48,
+            "height": 10
+          },
+          "icon": "https://data.aoe4world.com/images/units/xebec.png"
         }
       ]
     }

@@ -76,7 +76,7 @@ Both the format and the data itself are open source, anyone can improve/correct 
 | Category                                                | Status                   |
 | ------------------------------------------------------- | ------------------------ |
 | [Land Units](https://data.aoe4world.com/units/all.json) | ✅ Done                  |
-| Naval Units                                             | 🕑 Next up               |
+| Naval Units                                             | ✅ Done                  |
 | Buildings                                               | 💭 Deciding on structure |
 | Technologies                                            | ✅ Done, pending effects |
 | Upgrades                                                |                          |
