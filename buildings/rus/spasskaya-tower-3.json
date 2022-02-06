@@ -1,0 +1,72 @@
+{
+  "id": "spasskaya-tower-3",
+  "baseId": "spasskaya-tower",
+  "type": "building",
+  "name": "Spasskaya Tower",
+  "age": 3,
+  "civs": [
+    "ru"
+  ],
+  "description": "Acts as a Keep with all weapon emplacements already in place and with increased health.",
+  "classes": [
+    "Age IV - Defensive Landmark"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 2400,
+    "wood": 0,
+    "stone": 0,
+    "gold": 1200,
+    "total": 3600,
+    "popcap": 0,
+    "time": 250
+  },
+  "producedBy": [
+    "villager"
+  ],
+  "hitpoints": 8000,
+  "weapons": [
+    {
+      "type": "ranged",
+      "damage": 36,
+      "speed": 0.38,
+      "range": {
+        "min": 0,
+        "max": 8
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 25,
+          "type": "passive"
+        }
+      ]
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 50
+    },
+    {
+      "type": "fire",
+      "value": 5
+    }
+  ],
+  "sight": {
+    "line": 25,
+    "height": 8
+  },
+  "garrison": {
+    "capacity": 20
+  },
+  "icon": "https://data.aoe4world.com/images/buildings/spasskaya-tower.png"
+}

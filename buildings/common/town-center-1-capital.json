@@ -1,0 +1,74 @@
+{
+  "id": "town-center-1-capital",
+  "baseId": "town-center",
+  "type": "building",
+  "name": "Town Center",
+  "age": 1,
+  "civs": [
+    "hr",
+    "fr",
+    "de",
+    "ab",
+    "mo",
+    "ru"
+  ],
+  "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
+  "classes": [
+    "Economy Population Building"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "total": 0,
+    "popcap": 10,
+    "time": 0
+  },
+  "producedBy": [
+    "map-generation"
+  ],
+  "hitpoints": 7000,
+  "weapons": [
+    {
+      "type": "ranged",
+      "damage": 8,
+      "speed": 1,
+      "range": {
+        "min": 0,
+        "max": 8
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 25,
+          "type": "passive"
+        }
+      ]
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 50
+    }
+  ],
+  "sight": {
+    "line": 52,
+    "height": 10
+  },
+  "garrison": {
+    "capacity": 20
+  },
+  "popcapIncrease": 10,
+  "icon": "https://data.aoe4world.com/images/buildings/town-center.png"
+}

@@ -1,0 +1,77 @@
+{
+  "id": "keep-3",
+  "baseId": "keep",
+  "type": "building",
+  "name": "Keep",
+  "age": 3,
+  "civs": [
+    "en",
+    "hr",
+    "fr",
+    "de",
+    "ab",
+    "ru"
+  ],
+  "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.",
+  "classes": [
+    "Defensive Building"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 800,
+    "gold": 0,
+    "total": 800,
+    "popcap": 0,
+    "time": 120
+  },
+  "producedBy": [
+    "villager"
+  ],
+  "hitpoints": 5000,
+  "weapons": [
+    {
+      "type": "ranged",
+      "damage": 36,
+      "speed": 0.38,
+      "range": {
+        "min": 0,
+        "max": 8
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 25,
+          "type": "passive"
+        }
+      ]
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 50
+    },
+    {
+      "type": "fire",
+      "value": 5
+    }
+  ],
+  "sight": {
+    "line": 41,
+    "height": 501
+  },
+  "garrison": {
+    "capacity": 15
+  },
+  "icon": "https://data.aoe4world.com/images/buildings/keep.png"
+}

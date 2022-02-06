@@ -77,7 +77,7 @@ Both the format and the data itself are open source, anyone can improve/correct 
 | ------------------------------------------------------- | ------------------------ |
 | [Land Units](https://data.aoe4world.com/units/all.json) | ✅ Done                  |
 | Naval Units                                             | ✅ Done                  |
-| Buildings                                               | 💭 Deciding on structure |
+| Buildings                                               | ✅ Done                  |
 | Technologies                                            | ✅ Done, pending effects |
 | Upgrades                                                |                          |
 | Passive Civ Bonuses                                     |                          |
