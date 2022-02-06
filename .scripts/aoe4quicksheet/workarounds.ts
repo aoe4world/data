@@ -75,23 +75,25 @@ export function filterOutUnsupportedRows(u: MappedSheetItem) {
     !(u.displayName as string).includes("(5 units)") &&
     // Filter out Khaganate spawn as it is not a unit
     // !(u.displayName as string).includes("Khaganate Units") &&
-    !(u.strongId as string).endsWith("-ovoo") &&
-    !(u.strongId as string).endsWith("-ovoo-stable") &&
-    !(u.strongId as string).endsWith("-5-units") &&
-    !(u.strongId as string).endsWith("-school-of-cavalry") &&
-    !(u.strongId as string).endsWith("-keep-influence") &&
-    !(u.strongId as string).endsWith("-spirit-way") &&
-    !(u.strongId as string).endsWith("-high-armory") &&
-    !(u.strongId as string).endsWith("-meinwerk-palace")
+    !(u.strongId as string)?.endsWith("-ovoo") &&
+    !(u.strongId as string)?.endsWith("-ovoo-stable") &&
+    !(u.strongId as string)?.endsWith("-5-units") &&
+    !(u.strongId as string)?.endsWith("-school-of-cavalry") &&
+    !(u.strongId as string)?.endsWith("-keep-influence") &&
+    !(u.strongId as string)?.endsWith("-spirit-way") &&
+    !(u.strongId as string)?.endsWith("-high-armory") &&
+    !(u.strongId as string)?.endsWith("-meinwerk-palace")
   );
 }
 
 export const ignoredIds = [
+  "khaganate-units-4",
+  "wynguard-army-4",
   "villager-2-english",
+  "scout-1-stable", // Duplicate ovoo scout entries that can also be created at stable
   "scout-2-1", // Duplicate ovoo scout entries that can also be created at stable
   "scout-3-1",
   "scout-4-1",
-  // "wynguard-army-4",
 
   // Added as alt production building
   "chivalry-2-school-of-cavalry",

@@ -117,6 +117,7 @@ export type ModifyableProperty =
   | "meleeAttack"
   | "rangedAttack"
   | "siegeAttack"
+  | "fireAttack"
   | "fireArmor"
   | "moveSpeed"
   | "attackSpeed"

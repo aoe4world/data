@@ -74,7 +74,7 @@ export const COLUMN_MAP: (string | [string, MappedSheetColumn])[] = [
   "Credits, Notes, Legend",
 ];
 
-export const attackTypeMap = {
+export const attackTypeMap: Record<string, "siege" | "melee" | "ranged" | "fire"> = {
   Ranged: "ranged",
   Melee: "melee",
   True: "siege",
