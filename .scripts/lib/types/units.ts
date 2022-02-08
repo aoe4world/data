@@ -13,12 +13,19 @@ export type ItemClass =
   | "siege"
   | "melee"
   | "fire"
+  | "religious"
+  | "gunpowder"
   | "structure"
+  | "building"
   | "transport"
   | "support"
   | "wall"
   | "tower"
   | "gate"
+  | "landmark"
+  | "wonder"
+  | "technology"
+  | "hunt"
   | "worker";
 
 export interface Item {
@@ -27,6 +34,7 @@ export interface Item {
   type: "unit" | "building" | "technology" | "upgrade";
   civs: civAbbr[];
   classes: ItemClass[];
+  displayClasses: string[];
 
   name: string;
   age: number;
@@ -117,6 +125,7 @@ export type Armor = {
 export type ItemId = string;
 
 export type ModifyableProperty =
+  | "unknown" // Complex effects not easily incoded in buffed stats
   | "hitpoints"
   | "meleeArmor"
   | "rangedArmor"
@@ -138,6 +147,7 @@ export type ModifyableProperty =
   | "foodGatherRate"
   | "goldCost"
   | "goldGatherRate"
+  | "goldGeneration"
   | "stoneCost"
   | "stoneGatherRate"
   | "woodCost"
@@ -145,14 +155,20 @@ export type ModifyableProperty =
   | "populationCost"
   | "healingRate"
   | "repairRate"
-  | "buildTime";
+  | "maxPopulation"
+  | "buildTime"
+  | "productionSpeed"
+  | "areaOfEffect";
 
 export interface UnifiedItem<T extends Item = Item> {
   id: ItemId;
   name: string;
   civs: civAbbr[];
   variations: T[];
+  type: T["type"];
+  minAge: number;
   classes: ItemClass[];
+  displayClasses: string[];
   icon?: string;
   description?: string;
 }

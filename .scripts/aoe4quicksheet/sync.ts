@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-import { Item, PhysicalItem, Building, Technology, Unit } from "../lib/types/units";
+import { Item, PhysicalItem, Building, Technology, Unit, ItemClass } from "../lib/types/units";
 import { civAbbr } from "../lib/types/civs";
 import { CIVILIZATIONS } from "../lib/config/civs";
 import { COLUMN_MAP, SHEET_ID, SHEET_TAB_NAME, SHEET_API_KEY, attackTypeMap, bonusDamageMap } from "./config";
@@ -66,7 +66,13 @@ async function getItemData(): Promise<MappedSheetItem[]> {
 
 function mapSheetItemToItem(data: MappedSheetItem): Unit | Technology | Item {
   // Todo, classes should be parsed and matched against a list of classes
-  const classes = (data.gameClassification as string).split(",").map((x) => getStringWithAlphanumericLike(x.trim())) as any[];
+  const displayClasses = (data.gameClassification as string).split(",").map((x) => x.trim());
+  const classes = displayClasses.flatMap((x) =>
+    x
+      .split(" ")
+      .map((y) => getStringWithAlphanumericLike(y.trim()).toLowerCase())
+      .filter((x) => !["-", "13", "23", "33"].includes(x) && !!x)
+  ) as ItemClass[];
 
   const normalizedName = getStringWithAlphanumericLike(getStringOutsideParenthesis(data.displayName));
   const civs = Object.values(CIVILIZATIONS).reduce((acc, civ) => ((data[civ.abbr as MappedSheetColumn] as string)?.length > 1 ? [...acc, civ.abbr] : acc), [] as civAbbr[]);
@@ -84,6 +90,7 @@ function mapSheetItemToItem(data: MappedSheetItem): Unit | Technology | Item {
 
     description: interpolateGameString(data.description as string, String(data.descriptionValues ?? "")?.split(",")),
     classes,
+    displayClasses,
 
     unique: ["Unique"].includes(data.occurance as string) || civs.length == 1,
 

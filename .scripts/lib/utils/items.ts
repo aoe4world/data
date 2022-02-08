@@ -9,8 +9,11 @@ export function unifyItems(items: Item[]): UnifiedItem[] {
         acc[id] = {
           id: id,
           name: item.name,
+          type: item.type,
           civs: item.civs,
+          displayClasses: item.displayClasses ?? [],
           classes: item.classes,
+          minAge: item.age,
           icon: item.icon,
           description: item.description,
           variations: [item],
@@ -19,6 +22,8 @@ export function unifyItems(items: Item[]): UnifiedItem[] {
         acc[id].variations.push(item);
         acc[id].civs = uniqueArray([...acc[id].civs, ...item.civs]);
         acc[id].classes = uniqueArray([...acc[id].classes, ...item.classes]);
+        acc[id].displayClasses = uniqueArray([...acc[id].displayClasses, ...(item.displayClasses ?? [])]);
+        acc[id].minAge = Math.min(acc[id].minAge, item.age);
       }
 
       return acc;
