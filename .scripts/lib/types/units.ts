@@ -164,6 +164,7 @@ export interface UnifiedItem<T extends Item = Item> {
   id: ItemId;
   name: string;
   civs: civAbbr[];
+  unique: boolean;
   variations: T[];
   type: T["type"];
   minAge: number;
