@@ -93,4 +93,6 @@ export const bonusDamageMap = {
   "vs Warship": { class: [["warship"]] },
   "vs War Ship": { class: [["warship"]] },
   "vs Ship": { class: [["ship"]] },
+  "vs Building & Ship": { class: [["ship"], ["building"]] },
+  "vs Siege & Ship": { class: [["ship"], ["siege"]] },
 };
