@@ -128,7 +128,7 @@ function mapSheetItemToItem(data: MappedSheetItem): Unit | Technology | Item {
     if (+data.population > 0) unit.popcapIncrease = +data.population;
 
     return unit;
-  } else if (data.genre == "Technology") {
+  } else if ((data.genre == "Technology", "Empl.")) {
     item.producedBy = mapItemProducedBy(data, item.producedBy);
 
     let tech: Technology = {

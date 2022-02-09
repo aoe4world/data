@@ -116,7 +116,7 @@ export type Modifier = {
   select?: { class?: ItemClass[][]; id?: ItemId[] };
   effect: "multiply" | "change";
   value: number;
-  type: "passive" | "ability" | "influence";
+  type: "passive" | "ability" | "influence" | "bonus";
 };
 
 export type Armor = {
