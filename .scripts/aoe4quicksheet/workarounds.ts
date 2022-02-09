@@ -39,6 +39,9 @@ export function transformSheetUnitWithWorkaround(i: MappedSheetItem) {
     if (civExclusive(i, "fr") && i.occurance != "Unique") i.displayName += " (French)";
     if (civExclusive(i, "ch") && i.occurance != "Unique") i.displayName += " (Chinese)";
   }
+
+  if ((i.producedBy as string).toLowerCase().includes("barrack")) i.producedBy = "Barracks";
+
   return i;
 }
 
@@ -50,10 +53,10 @@ export function mapItemProducedBy(data: MappedSheetItem, producedBy: string[]): 
     producedBy = ["ger", "steppe-redoubt"];
   else if (data.mo && ["Mining Camp", "Mill", "Lumber Camp"].includes(data.producedBy as string)) producedBy.push("ger", "steppe-redoubt");
 
-  if (data.de && data.producedBy == "University") producedBy.push("madrasa");
+  if ((data.de || data.ab) && data.producedBy == "University") producedBy.push("madrasa");
 
   if (data.hr && (data.producedBy as string).includes("Blacksmith")) producedBy.push("meinwerk-palace");
-  if (data.hr && (data.producedBy as string).includes("Barracks")) producedBy.push("burgrave-palace");
+  if (data.hr && (data.producedBy as string).includes("Barrack")) producedBy.push("burgrave-palace");
 
   if (data.fr && (data.producedBy as string).includes("Stable")) producedBy.push("school-of-cavalry");
   if (data.fr && (data.producedBy as string).includes("Keep")) producedBy.push("red-palace");

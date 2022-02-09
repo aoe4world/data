@@ -24,8 +24,10 @@ export type ItemClass =
   | "gate"
   | "landmark"
   | "wonder"
+  | "military"
   | "technology"
   | "hunt"
+  | "defensive"
   | "worker";
 
 export interface Item {
