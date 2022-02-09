@@ -78,6 +78,7 @@ export const attackTypeMap: Record<string, "siege" | "melee" | "ranged" | "fire"
   Ranged: "ranged",
   Melee: "melee",
   True: "siege",
+  Siege: "siege",
   Fire: "fire",
 };
 
