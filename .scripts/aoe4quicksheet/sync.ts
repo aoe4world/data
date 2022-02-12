@@ -116,6 +116,26 @@ function mapSheetItemToItem(data: MappedSheetItem): Unit | Technology | Item {
       },
     };
 
+    if (data.torchAttack)
+      unit.weapons.push({
+        type: "fire",
+        damage: +data.torchAttack,
+        speed: +data.torchAttackSpeed,
+        range: {
+          max: 4,
+          min: 0,
+        },
+        modifiers: [
+          {
+            property: "fireAttack",
+            target: { class: [["siege"]] },
+            effect: "change",
+            value: ["horseman", "camel-rider", "fire-lancer", "lancer", "knight", "royal-knight"].includes(unit.baseId) ? 20 : 10,
+            type: "passive",
+          },
+        ],
+      });
+
     return unit;
   } else if (["Structure"].includes(data.genre as string)) {
     const unit: Building = {
