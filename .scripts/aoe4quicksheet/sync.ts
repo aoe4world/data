@@ -124,8 +124,12 @@ function mapSheetItemToItem(data: MappedSheetItem): Unit | Technology | Item {
     };
 
     if (+data.garrison > 0) unit.garrison = { capacity: +data.garrison };
+
     // Somehow the popcap increase is stored in the same columns as the popcap costs
-    if (+data.population > 0) unit.popcapIncrease = +data.population;
+    if (+data.population > 0) {
+      unit.popcapIncrease = +data.population;
+      unit.costs.popcap = undefined;
+    }
 
     return unit;
   } else if ((data.genre == "Technology", "Empl.")) {
