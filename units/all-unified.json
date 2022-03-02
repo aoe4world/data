@@ -1914,62 +1914,6 @@
       ]
     },
     {
-      "id": "wynguard-army",
-      "name": "Wynguard Army",
-      "type": "unit",
-      "civs": [
-        "en"
-      ],
-      "unique": true,
-      "displayClasses": [],
-      "classes": [
-        "Mixed Force Army"
-      ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/units/wynguard-army.png",
-      "description": "Produces an army including one each of Longbowman, Spearman, Man-at-Arms, Knight, and Trebuchet.",
-      "variations": [
-        {
-          "id": "wynguard-army-4",
-          "baseId": "wynguard-army",
-          "type": "unit",
-          "name": "Wynguard Army",
-          "age": 4,
-          "civs": [
-            "en"
-          ],
-          "description": "Produces an army including one each of Longbowman, Spearman, Man-at-Arms, Knight, and Trebuchet.",
-          "classes": [
-            "Mixed Force Army"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 100,
-            "wood": 100,
-            "stone": 0,
-            "gold": 200,
-            "total": 400,
-            "popcap": 7,
-            "time": 75
-          },
-          "producedBy": [
-            "wynguard-palace"
-          ],
-          "hitpoints": 0,
-          "movement": {
-            "speed": 0
-          },
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "line": 0,
-            "height": 0
-          },
-          "icon": "https://data.aoe4world.com/images/units/wynguard-army.png"
-        }
-      ]
-    },
-    {
       "id": "landsknecht",
       "name": "Landsknecht",
       "type": "unit",
@@ -2319,7 +2263,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 6,
+                  "value": 9,
                   "type": "passive"
                 }
               ]
@@ -2392,7 +2336,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 8,
+                  "value": 11,
                   "type": "passive"
                 }
               ]
@@ -4053,9 +3997,7 @@
       ],
       "classes": [
         "worker",
-        "ship",
-        "Worker",
-        "Ship"
+        "ship"
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/units/fishing-boat.png",
@@ -4119,55 +4061,6 @@
             "ship"
           ],
           "displayClasses": [
-            "Worker",
-            "Ship"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 75,
-            "stone": 0,
-            "gold": 0,
-            "total": 75,
-            "popcap": 1,
-            "time": 25
-          },
-          "producedBy": [
-            "dock"
-          ],
-          "hitpoints": 125,
-          "weapons": [
-            {
-              "type": "ranged",
-              "damage": 7,
-              "speed": 1.75,
-              "range": {
-                "min": 0,
-                "max": 4
-              }
-            }
-          ],
-          "armor": [],
-          "sight": {
-            "line": 32,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.5
-          },
-          "icon": "https://data.aoe4world.com/images/units/fishing-boat.png"
-        },
-        {
-          "id": "trade-ship-2-delhi",
-          "baseId": "fishing-boat",
-          "type": "unit",
-          "name": "Fishing Boat",
-          "age": 1,
-          "civs": [
-            "de"
-          ],
-          "description": "Small boat that gathers Food from either Deep Water Fish or Shoreline Fish. Drops off gathered resources at the Dock.\n+ Can repair\n- No combat",
-          "classes": [
             "Worker",
             "Ship"
           ],
@@ -4482,259 +4375,6 @@
             "speed": 1.5
           },
           "icon": "https://data.aoe4world.com/images/units/junk.png"
-        }
-      ]
-    },
-    {
-      "id": "mangonel",
-      "name": "Mangonel",
-      "type": "unit",
-      "civs": [
-        "ch",
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "mo",
-        "ru"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Siege"
-      ],
-      "classes": [
-        "siege"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/mangonel.png",
-      "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
-      "variations": [
-        {
-          "id": "mangonel-3-clocktower",
-          "baseId": "mangonel",
-          "type": "unit",
-          "name": "Mangonel",
-          "age": 3,
-          "civs": [
-            "ch"
-          ],
-          "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
-          "classes": [
-            "siege"
-          ],
-          "displayClasses": [
-            "Siege"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 400,
-            "stone": 0,
-            "gold": 200,
-            "total": 600,
-            "popcap": 3,
-            "time": 40
-          },
-          "producedBy": [
-            "astronomical-clocktower"
-          ],
-          "hitpoints": 360,
-          "weapons": [
-            {
-              "type": "siege",
-              "damage": 36,
-              "speed": 6.75,
-              "range": {
-                "min": 3,
-                "max": 9
-              },
-              "modifiers": [
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "ship"
-                      ],
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 24,
-                  "type": "passive"
-                }
-              ]
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 8
-            }
-          ],
-          "sight": {
-            "line": 52,
-            "height": 10
-          },
-          "movement": {
-            "speed": 0.75
-          },
-          "icon": "https://data.aoe4world.com/images/units/mangonel.png"
-        },
-        {
-          "id": "mangonel-3-clocktower",
-          "baseId": "mangonel",
-          "type": "unit",
-          "name": "Mangonel",
-          "age": 3,
-          "civs": [],
-          "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
-          "classes": [
-            "siege"
-          ],
-          "displayClasses": [
-            "Siege"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 400,
-            "stone": 0,
-            "gold": 200,
-            "total": 600,
-            "popcap": 3,
-            "time": 40
-          },
-          "producedBy": [
-            "astronomical-clocktower"
-          ],
-          "hitpoints": 360,
-          "weapons": [
-            {
-              "type": "siege",
-              "damage": 36,
-              "speed": 6.75,
-              "range": {
-                "min": 3,
-                "max": 9
-              },
-              "modifiers": [
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "ship"
-                      ],
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 24,
-                  "type": "passive"
-                }
-              ]
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 8
-            }
-          ],
-          "sight": {
-            "line": 52,
-            "height": 10
-          },
-          "movement": {
-            "speed": 0.75
-          },
-          "icon": "https://data.aoe4world.com/images/units/mangonel.png"
-        },
-        {
-          "id": "mangonel-3",
-          "baseId": "mangonel",
-          "type": "unit",
-          "name": "Mangonel",
-          "age": 3,
-          "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
-          "classes": [
-            "siege"
-          ],
-          "displayClasses": [
-            "Siege"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 400,
-            "stone": 0,
-            "gold": 200,
-            "total": 600,
-            "popcap": 3,
-            "time": 40
-          },
-          "producedBy": [
-            "siege-workshop"
-          ],
-          "hitpoints": 240,
-          "weapons": [
-            {
-              "type": "siege",
-              "damage": 36,
-              "speed": 6.75,
-              "range": {
-                "min": 3,
-                "max": 9
-              },
-              "modifiers": [
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "ship"
-                      ],
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 24,
-                  "type": "passive"
-                }
-              ]
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 8
-            }
-          ],
-          "sight": {
-            "line": 52,
-            "height": 10
-          },
-          "movement": {
-            "speed": 0.75
-          },
-          "icon": "https://data.aoe4world.com/images/units/mangonel-3.png"
         }
       ]
     },
@@ -5271,8 +4911,6 @@
         "Ship"
       ],
       "classes": [
-        "Worker",
-        "Ship",
         "worker",
         "ship"
       ],
@@ -5280,45 +4918,6 @@
       "icon": "https://data.aoe4world.com/images/units/trade-ship.png",
       "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. Once assigned to trade, the Trade Ship will make repeated trips between its home Dock and the trade target. You can assign a new home Dock if you wish to.\n- No combat",
       "variations": [
-        {
-          "id": "trade-ship-2-chinese-dock",
-          "baseId": "trade-ship",
-          "type": "unit",
-          "name": "Trade Ship",
-          "age": 2,
-          "civs": [
-            "ch"
-          ],
-          "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. Once assigned to trade, the Trade Ship will make repeated trips between its home Dock and the trade target. You can assign a new home Dock if you wish to.\n- No combat",
-          "classes": [
-            "Worker",
-            "Ship"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 300,
-            "stone": 0,
-            "gold": 100,
-            "total": 400,
-            "popcap": 2,
-            "time": 49
-          },
-          "producedBy": [
-            "dock"
-          ],
-          "hitpoints": 300,
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "line": 32,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.5
-          },
-          "icon": "https://data.aoe4world.com/images/units/trade-ship.png"
-        },
         {
           "id": "trade-ship-2-chinese",
           "baseId": "trade-ship",
@@ -10888,8 +10487,7 @@
       ],
       "classes": [
         "incendiary",
-        "ship",
-        "Incendiary Ship"
+        "ship"
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/units/demolition-ship.png",
@@ -10932,71 +10530,6 @@
             {
               "type": "fire",
               "damage": 400,
-              "speed": 1,
-              "range": {
-                "min": 0,
-                "max": 2
-              },
-              "modifiers": [
-                {
-                  "property": "fireAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "warship"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 200,
-                  "type": "passive"
-                }
-              ]
-            }
-          ],
-          "armor": [],
-          "sight": {
-            "line": 32,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.5
-          },
-          "icon": "https://data.aoe4world.com/images/units/demolition-ship.png"
-        },
-        {
-          "id": "hulk-2-french",
-          "baseId": "demolition-ship",
-          "type": "unit",
-          "name": "Demolition Ship",
-          "age": 3,
-          "civs": [
-            "en",
-            "hr",
-            "fr"
-          ],
-          "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area, and setting fire to nearby ships and structures.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
-          "classes": [
-            "Incendiary Ship"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 160,
-            "stone": 0,
-            "gold": 80,
-            "total": 240,
-            "popcap": 2,
-            "time": 35
-          },
-          "producedBy": [
-            "dock"
-          ],
-          "hitpoints": 200,
-          "weapons": [
-            {
-              "type": "fire",
-              "damage": 300,
               "speed": 1,
               "range": {
                 "min": 0,
@@ -11506,6 +11039,112 @@
             "speed": 1.63
           },
           "icon": "https://data.aoe4world.com/images/units/lancer-4.png"
+        }
+      ]
+    },
+    {
+      "id": "mangonel",
+      "name": "Mangonel",
+      "type": "unit",
+      "civs": [
+        "en",
+        "hr",
+        "fr",
+        "de",
+        "ab",
+        "mo",
+        "ru"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Siege"
+      ],
+      "classes": [
+        "siege"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/mangonel-3.png",
+      "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
+      "variations": [
+        {
+          "id": "mangonel-3",
+          "baseId": "mangonel",
+          "type": "unit",
+          "name": "Mangonel",
+          "age": 3,
+          "civs": [
+            "en",
+            "hr",
+            "fr",
+            "de",
+            "ab",
+            "mo",
+            "ru"
+          ],
+          "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
+          "classes": [
+            "siege"
+          ],
+          "displayClasses": [
+            "Siege"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 400,
+            "stone": 0,
+            "gold": 200,
+            "total": 600,
+            "popcap": 3,
+            "time": 40
+          },
+          "producedBy": [
+            "siege-workshop"
+          ],
+          "hitpoints": 240,
+          "weapons": [
+            {
+              "type": "siege",
+              "damage": 36,
+              "speed": 6.75,
+              "range": {
+                "min": 3,
+                "max": 9
+              },
+              "modifiers": [
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "ship"
+                      ],
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 24,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 8
+            }
+          ],
+          "sight": {
+            "line": 52,
+            "height": 10
+          },
+          "movement": {
+            "speed": 0.75
+          },
+          "icon": "https://data.aoe4world.com/images/units/mangonel-3.png"
         }
       ]
     },

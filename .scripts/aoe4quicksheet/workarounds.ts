@@ -47,6 +47,8 @@ export function transformSheetUnitWithWorkaround(i: MappedSheetItem) {
 
 // First we map/normalize production buildings above, then this creates an array of buildings
 export function mapItemProducedBy(data: MappedSheetItem, producedBy: string[]): Technology["producedBy"] {
+  if (data.strongId == "villager-1-english") producedBy.push("kings-palace");
+
   if (data.ru && data.producedBy == "Mill") producedBy.push("hunting-cabin", "high-trade-house");
 
   if (data.mo && (data.displayName as string).includes("(Improved)") && ["Mining Camp", "Mill", "Lumber Camp"].includes(data.producedBy as string))
@@ -98,7 +100,7 @@ export const ignoredIds = [
   "scout-2-1", // Duplicate ovoo scout entries that can also be created at stable
   "scout-3-1",
   "scout-4-1",
-
+  "mangonel-3-clocktower",
   // Added as alt production building
   "chivalry-2-school-of-cavalry",
   "cantled-saddles-3-school-of-cavalry",

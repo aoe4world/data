@@ -844,100 +844,6 @@
       ]
     },
     {
-      "id": "mangonel",
-      "name": "Mangonel",
-      "type": "unit",
-      "civs": [
-        "ch"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Siege"
-      ],
-      "classes": [
-        "siege"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/mangonel.png",
-      "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
-      "variations": [
-        {
-          "id": "mangonel-3-clocktower",
-          "baseId": "mangonel",
-          "type": "unit",
-          "name": "Mangonel",
-          "age": 3,
-          "civs": [
-            "ch"
-          ],
-          "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
-          "classes": [
-            "siege"
-          ],
-          "displayClasses": [
-            "Siege"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 400,
-            "stone": 0,
-            "gold": 200,
-            "total": 600,
-            "popcap": 3,
-            "time": 40
-          },
-          "producedBy": [
-            "astronomical-clocktower"
-          ],
-          "hitpoints": 360,
-          "weapons": [
-            {
-              "type": "siege",
-              "damage": 36,
-              "speed": 6.75,
-              "range": {
-                "min": 3,
-                "max": 9
-              },
-              "modifiers": [
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "ship"
-                      ],
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 24,
-                  "type": "passive"
-                }
-              ]
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 8
-            }
-          ],
-          "sight": {
-            "line": 52,
-            "height": 10
-          },
-          "movement": {
-            "speed": 0.75
-          },
-          "icon": "https://data.aoe4world.com/images/units/mangonel.png"
-        }
-      ]
-    },
-    {
       "id": "nest-of-bees",
       "name": "Nest of Bees",
       "type": "unit",
@@ -1464,8 +1370,6 @@
         "Ship"
       ],
       "classes": [
-        "Worker",
-        "Ship",
         "worker",
         "ship"
       ],
@@ -1473,45 +1377,6 @@
       "icon": "https://data.aoe4world.com/images/units/trade-ship.png",
       "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. Once assigned to trade, the Trade Ship will make repeated trips between its home Dock and the trade target. You can assign a new home Dock if you wish to.\n- No combat",
       "variations": [
-        {
-          "id": "trade-ship-2-chinese-dock",
-          "baseId": "trade-ship",
-          "type": "unit",
-          "name": "Trade Ship",
-          "age": 2,
-          "civs": [
-            "ch"
-          ],
-          "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. Once assigned to trade, the Trade Ship will make repeated trips between its home Dock and the trade target. You can assign a new home Dock if you wish to.\n- No combat",
-          "classes": [
-            "Worker",
-            "Ship"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 300,
-            "stone": 0,
-            "gold": 100,
-            "total": 400,
-            "popcap": 2,
-            "time": 49
-          },
-          "producedBy": [
-            "dock"
-          ],
-          "hitpoints": 300,
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "line": 32,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.5
-          },
-          "icon": "https://data.aoe4world.com/images/units/trade-ship.png"
-        },
         {
           "id": "trade-ship-2-chinese",
           "baseId": "trade-ship",
