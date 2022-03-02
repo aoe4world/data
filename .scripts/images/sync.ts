@@ -12,7 +12,7 @@ async function syncImages(type: ITEM_TYPES) {
   const notFound: string[] = [];
   const units = await getAllItems(type);
   units.forEach((item) => {
-    let imageAttempts = [`${item.id}.png`, `${item.baseId}.png`, ...[1, 2, 3, 4].map((i) => `${item.baseId}-${i}.png`)];
+    let imageAttempts = [`${item.id}.png`, `${item.baseId.replace("-improved", "")}.png`, `${item.baseId}.png`, ...[1, 2, 3, 4].map((i) => `${item.baseId}-${i}.png`)];
     while (!imageExists(imageAttempts[0] + "", type) && imageAttempts.length > 0) imageAttempts.shift();
 
     if (imageAttempts.length > 0) {

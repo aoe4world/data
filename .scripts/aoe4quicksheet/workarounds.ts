@@ -28,6 +28,8 @@ export function transformSheetUnitWithWorkaround(i: MappedSheetItem) {
     else if (i.displayName.includes("Armored Beast ")) i.displayName = "Armored Beasts";
     // 6. Rename "Economy Wing" to "Economic Wing"
     else if (i.displayName.includes("Economy Wing")) i.displayName = i.displayName.replace("Economy Wing", "Economic Wing");
+
+    if (i.displayName.includes("(Improved)")) i.displayName = "Improved " + i.displayName.replace("(Improved)", "");
   }
 
   // 7. Rename "Mining Camp/Ger €", "Milll/Hunting Cabin/Ger", etc to "Mining Camp" and "Mill"
