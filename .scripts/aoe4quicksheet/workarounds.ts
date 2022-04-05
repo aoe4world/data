@@ -30,6 +30,9 @@ export function transformSheetUnitWithWorkaround(i: MappedSheetItem) {
     else if (i.displayName.includes("Economy Wing")) i.displayName = i.displayName.replace("Economy Wing", "Economic Wing");
 
     if (i.displayName.includes("(Improved)")) i.displayName = "Improved " + i.displayName.replace("(Improved)", "");
+
+    // Transform Abbasid House of Wisdom wings to buildings instead of research as this fits better in player's expectation
+    if (i.displayName.includes("Wing") && i.ab) i.genre = "Structure";
   }
 
   // 7. Rename "Mining Camp/Ger €", "Milll/Hunting Cabin/Ger", etc to "Mining Camp" and "Mill"
