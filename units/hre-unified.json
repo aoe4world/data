@@ -50,7 +50,7 @@
             "stone": 0,
             "gold": 180,
             "total": 360,
-            "popcap": 4,
+            "popcap": 3,
             "time": 40
           },
           "producedBy": [
@@ -144,7 +144,7 @@
             "stone": 0,
             "gold": 240,
             "total": 540,
-            "popcap": 4,
+            "popcap": 3,
             "time": 45
           },
           "producedBy": [
@@ -352,6 +352,389 @@
             "speed": 1.25
           },
           "icon": "https://data.aoe4world.com/images/units/landsknecht-4.png"
+        }
+      ]
+    },
+    {
+      "id": "man-at-arms",
+      "name": "Man-at-Arms",
+      "type": "unit",
+      "civs": [
+        "hr",
+        "en",
+        "fr",
+        "de",
+        "ab",
+        "mo",
+        "ru"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Heavy Melee Infantry"
+      ],
+      "classes": [
+        "heavy",
+        "melee",
+        "infantry"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/man-at-arms-2.png",
+      "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
+      "variations": [
+        {
+          "id": "man-at-arms-2",
+          "baseId": "man-at-arms",
+          "type": "unit",
+          "name": "Man-at-Arms",
+          "age": 2,
+          "civs": [
+            "hr"
+          ],
+          "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
+          "classes": [
+            "heavy",
+            "melee",
+            "infantry"
+          ],
+          "displayClasses": [
+            "Heavy Melee Infantry"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 100,
+            "wood": 0,
+            "stone": 0,
+            "gold": 20,
+            "total": 120,
+            "popcap": 1,
+            "time": 22
+          },
+          "producedBy": [
+            "barracks"
+          ],
+          "hitpoints": 120,
+          "weapons": [
+            {
+              "type": "melee",
+              "damage": 10,
+              "speed": 1.25,
+              "range": {
+                "min": 0,
+                "max": 0.3
+              }
+            },
+            {
+              "type": "fire",
+              "damage": 10,
+              "speed": 2,
+              "range": {
+                "max": 4,
+                "min": 0
+              },
+              "modifiers": [
+                {
+                  "property": "fireAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "siege"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 10,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 3
+            },
+            {
+              "type": "melee",
+              "value": 3
+            }
+          ],
+          "sight": {
+            "line": 36,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.13
+          },
+          "icon": "https://data.aoe4world.com/images/units/man-at-arms-2.png"
+        },
+        {
+          "id": "man-at-arms-2",
+          "baseId": "man-at-arms",
+          "type": "unit",
+          "name": "Man-at-Arms",
+          "age": 2,
+          "civs": [
+            "en",
+            "hr"
+          ],
+          "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
+          "classes": [
+            "heavy",
+            "melee",
+            "infantry"
+          ],
+          "displayClasses": [
+            "Heavy Melee Infantry"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 100,
+            "wood": 0,
+            "stone": 0,
+            "gold": 20,
+            "total": 120,
+            "popcap": 1,
+            "time": 22
+          },
+          "producedBy": [
+            "barracks"
+          ],
+          "hitpoints": 120,
+          "weapons": [
+            {
+              "type": "melee",
+              "damage": 10,
+              "speed": 1.25,
+              "range": {
+                "min": 0,
+                "max": 0.3
+              }
+            },
+            {
+              "type": "fire",
+              "damage": 10,
+              "speed": 2,
+              "range": {
+                "max": 4,
+                "min": 0
+              },
+              "modifiers": [
+                {
+                  "property": "fireAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "siege"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 10,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 3
+            },
+            {
+              "type": "melee",
+              "value": 3
+            }
+          ],
+          "sight": {
+            "line": 36,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.13
+          },
+          "icon": "https://data.aoe4world.com/images/units/man-at-arms-2.png"
+        },
+        {
+          "id": "man-at-arms-3",
+          "baseId": "man-at-arms",
+          "type": "unit",
+          "name": "Man-at-Arms",
+          "age": 3,
+          "civs": [
+            "hr",
+            "fr",
+            "de",
+            "ab",
+            "mo",
+            "ru"
+          ],
+          "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
+          "classes": [
+            "heavy",
+            "melee",
+            "infantry"
+          ],
+          "displayClasses": [
+            "Heavy Melee Infantry"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 100,
+            "wood": 0,
+            "stone": 0,
+            "gold": 20,
+            "total": 120,
+            "popcap": 1,
+            "time": 22
+          },
+          "producedBy": [
+            "barracks"
+          ],
+          "hitpoints": 155,
+          "weapons": [
+            {
+              "type": "melee",
+              "damage": 12,
+              "speed": 1.25,
+              "range": {
+                "min": 0,
+                "max": 0.3
+              }
+            },
+            {
+              "type": "fire",
+              "damage": 13,
+              "speed": 2,
+              "range": {
+                "max": 4,
+                "min": 0
+              },
+              "modifiers": [
+                {
+                  "property": "fireAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "siege"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 10,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 4
+            },
+            {
+              "type": "melee",
+              "value": 4
+            }
+          ],
+          "sight": {
+            "line": 36,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.13
+          },
+          "icon": "https://data.aoe4world.com/images/units/man-at-arms-3.png"
+        },
+        {
+          "id": "man-at-arms-4",
+          "baseId": "man-at-arms",
+          "type": "unit",
+          "name": "Man-at-Arms",
+          "age": 4,
+          "civs": [
+            "hr",
+            "fr",
+            "de",
+            "ab",
+            "mo",
+            "ru"
+          ],
+          "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
+          "classes": [
+            "heavy",
+            "melee",
+            "infantry"
+          ],
+          "displayClasses": [
+            "Heavy Melee Infantry"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 100,
+            "wood": 0,
+            "stone": 0,
+            "gold": 20,
+            "total": 120,
+            "popcap": 1,
+            "time": 22
+          },
+          "producedBy": [
+            "barracks"
+          ],
+          "hitpoints": 180,
+          "weapons": [
+            {
+              "type": "melee",
+              "damage": 14,
+              "speed": 1.25,
+              "range": {
+                "min": 0,
+                "max": 0.3
+              }
+            },
+            {
+              "type": "fire",
+              "damage": 16,
+              "speed": 2,
+              "range": {
+                "max": 4,
+                "min": 0
+              },
+              "modifiers": [
+                {
+                  "property": "fireAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "siege"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 10,
+                  "type": "passive"
+                }
+              ]
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 5
+            },
+            {
+              "type": "melee",
+              "value": 5
+            }
+          ],
+          "sight": {
+            "line": 36,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.13
+          },
+          "icon": "https://data.aoe4world.com/images/units/man-at-arms-4.png"
         }
       ]
     },
@@ -2256,305 +2639,6 @@
       ]
     },
     {
-      "id": "man-at-arms",
-      "name": "Man-at-Arms",
-      "type": "unit",
-      "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "mo",
-        "ru"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Heavy Melee Infantry"
-      ],
-      "classes": [
-        "heavy",
-        "melee",
-        "infantry"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/man-at-arms-2.png",
-      "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
-      "variations": [
-        {
-          "id": "man-at-arms-2",
-          "baseId": "man-at-arms",
-          "type": "unit",
-          "name": "Man-at-Arms",
-          "age": 2,
-          "civs": [
-            "en",
-            "hr"
-          ],
-          "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
-          "classes": [
-            "heavy",
-            "melee",
-            "infantry"
-          ],
-          "displayClasses": [
-            "Heavy Melee Infantry"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 100,
-            "wood": 0,
-            "stone": 0,
-            "gold": 20,
-            "total": 120,
-            "popcap": 1,
-            "time": 22
-          },
-          "producedBy": [
-            "barracks"
-          ],
-          "hitpoints": 120,
-          "weapons": [
-            {
-              "type": "melee",
-              "damage": 10,
-              "speed": 1.25,
-              "range": {
-                "min": 0,
-                "max": 0.3
-              }
-            },
-            {
-              "type": "fire",
-              "damage": 10,
-              "speed": 2,
-              "range": {
-                "max": 4,
-                "min": 0
-              },
-              "modifiers": [
-                {
-                  "property": "fireAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "siege"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ]
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 3
-            },
-            {
-              "type": "melee",
-              "value": 3
-            }
-          ],
-          "sight": {
-            "line": 36,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.13
-          },
-          "icon": "https://data.aoe4world.com/images/units/man-at-arms-2.png"
-        },
-        {
-          "id": "man-at-arms-3",
-          "baseId": "man-at-arms",
-          "type": "unit",
-          "name": "Man-at-Arms",
-          "age": 3,
-          "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
-          "classes": [
-            "heavy",
-            "melee",
-            "infantry"
-          ],
-          "displayClasses": [
-            "Heavy Melee Infantry"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 100,
-            "wood": 0,
-            "stone": 0,
-            "gold": 20,
-            "total": 120,
-            "popcap": 1,
-            "time": 22
-          },
-          "producedBy": [
-            "barracks"
-          ],
-          "hitpoints": 155,
-          "weapons": [
-            {
-              "type": "melee",
-              "damage": 12,
-              "speed": 1.25,
-              "range": {
-                "min": 0,
-                "max": 0.3
-              }
-            },
-            {
-              "type": "fire",
-              "damage": 13,
-              "speed": 2,
-              "range": {
-                "max": 4,
-                "min": 0
-              },
-              "modifiers": [
-                {
-                  "property": "fireAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "siege"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ]
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 4
-            },
-            {
-              "type": "melee",
-              "value": 4
-            }
-          ],
-          "sight": {
-            "line": 36,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.13
-          },
-          "icon": "https://data.aoe4world.com/images/units/man-at-arms-3.png"
-        },
-        {
-          "id": "man-at-arms-4",
-          "baseId": "man-at-arms",
-          "type": "unit",
-          "name": "Man-at-Arms",
-          "age": 4,
-          "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
-          "classes": [
-            "heavy",
-            "melee",
-            "infantry"
-          ],
-          "displayClasses": [
-            "Heavy Melee Infantry"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 100,
-            "wood": 0,
-            "stone": 0,
-            "gold": 20,
-            "total": 120,
-            "popcap": 1,
-            "time": 22
-          },
-          "producedBy": [
-            "barracks"
-          ],
-          "hitpoints": 180,
-          "weapons": [
-            {
-              "type": "melee",
-              "damage": 14,
-              "speed": 1.25,
-              "range": {
-                "min": 0,
-                "max": 0.3
-              }
-            },
-            {
-              "type": "fire",
-              "damage": 16,
-              "speed": 2,
-              "range": {
-                "max": 4,
-                "min": 0
-              },
-              "modifiers": [
-                {
-                  "property": "fireAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "siege"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ]
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 5
-            },
-            {
-              "type": "melee",
-              "value": 5
-            }
-          ],
-          "sight": {
-            "line": 36,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.13
-          },
-          "icon": "https://data.aoe4world.com/images/units/man-at-arms-4.png"
-        }
-      ]
-    },
-    {
       "id": "mangonel",
       "name": "Mangonel",
       "type": "unit",
@@ -2729,8 +2813,8 @@
           "weapons": [
             {
               "type": "melee",
-              "damage": 4,
-              "speed": 3.75,
+              "damage": 2,
+              "speed": 2,
               "range": {
                 "min": 0,
                 "max": 0.3
@@ -2827,8 +2911,8 @@
           "weapons": [
             {
               "type": "melee",
-              "damage": 4,
-              "speed": 3.75,
+              "damage": 2,
+              "speed": 2,
               "range": {
                 "min": 0,
                 "max": 0.3
@@ -2925,8 +3009,8 @@
           "weapons": [
             {
               "type": "melee",
-              "damage": 4,
-              "speed": 3.75,
+              "damage": 2,
+              "speed": 2,
               "range": {
                 "min": 0,
                 "max": 0.3
@@ -3023,8 +3107,8 @@
           "weapons": [
             {
               "type": "melee",
-              "damage": 4,
-              "speed": 3.75,
+              "damage": 2,
+              "speed": 2,
               "range": {
                 "min": 0,
                 "max": 0.3
@@ -3121,8 +3205,8 @@
           "weapons": [
             {
               "type": "melee",
-              "damage": 4,
-              "speed": 3.75,
+              "damage": 2,
+              "speed": 2,
               "range": {
                 "min": 0,
                 "max": 0.3
@@ -3219,8 +3303,8 @@
           "weapons": [
             {
               "type": "melee",
-              "damage": 4,
-              "speed": 3.75,
+              "damage": 2,
+              "speed": 2,
               "range": {
                 "min": 0,
                 "max": 0.3
@@ -3317,8 +3401,8 @@
           "weapons": [
             {
               "type": "melee",
-              "damage": 4,
-              "speed": 3.75,
+              "damage": 2,
+              "speed": 2,
               "range": {
                 "min": 0,
                 "max": 0.3
