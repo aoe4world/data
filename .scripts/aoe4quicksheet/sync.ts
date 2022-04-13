@@ -186,7 +186,7 @@ function parseObjectProperties(item: Item, data: MappedSheetItem): PhysicalItem 
               modifiers: [
                 {
                   property: `${attackTypeMap[data.attackType as string]}Attack`,
-                  target: bonusDamageMap[data.bonusAgainst as string],
+                  target: bonusDamageMap[data.bonusAgainst as string] ?? {},
                   effect: "change",
                   value: +data.bonusAttack,
                   type: "passive",
