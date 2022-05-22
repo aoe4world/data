@@ -80,7 +80,7 @@ export function mapItemProducedBy(data: MappedSheetItem, producedBy: string[]): 
 
 export function filterOutUnsupportedRows(u: MappedSheetItem) {
   return (
-    ["Land Unit", "Technology", "Water Unit", "Structure", "Empl."].includes(u.genre as string) &&
+    ["Land Unit", "Technology", "Water Unit", "Structure", "Empl.", "Upgrade"].includes(u.genre as string) &&
     // Filter out Burgrave Palace units because there's nothing special about them
     !(u.displayName as string).includes("(5 units)") &&
     // Filter out Khaganate spawn as it is not a unit

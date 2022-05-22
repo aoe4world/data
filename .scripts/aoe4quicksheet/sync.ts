@@ -1,20 +1,22 @@
 import fetch from "node-fetch";
-import { Item, PhysicalItem, Building, Technology, Unit, ItemClass } from "../lib/types/units";
+import { Item, PhysicalItem, Building, Technology, Unit, ItemClass, Upgrade } from "../lib/types/units";
 import { civAbbr } from "../lib/types/civs";
 import { CIVILIZATIONS } from "../lib/config/civs";
 import { COLUMN_MAP, SHEET_ID, SHEET_TAB_NAME, SHEET_API_KEY, attackTypeMap, bonusDamageMap } from "./config";
 import { MappedSheetColumn, MappedSheetItem } from "./types";
-import { mergeItem } from "../lib/files/writeData";
+import { mergeItem, writeJson } from "../lib/files/writeData";
 import { slugify, getStringWithAlphanumericLike, getStringOutsideParenthesis, getStringBetweenParenthesis } from "../lib/utils/string";
 import { transformRomanAgeToNumber, interpolateGameString } from "../lib/utils/game";
 import { filterOutUnsupportedRows, ignoredIds, mapItemProducedBy, transformSheetUnitWithWorkaround } from "./workarounds";
 import { round } from "../lib/utils/number";
 import { ITEM_TYPES } from "../lib/config";
+import { readJsonFile } from "../lib/files/readData";
 
 const typeMap = {
   unit: ITEM_TYPES.UNITS,
   technology: ITEM_TYPES.TECHNOLOGIES,
   building: ITEM_TYPES.BUILDINGS,
+  upgrade: ITEM_TYPES.UPGRADES,
 };
 
 getItemData().then((data) => {
@@ -28,7 +30,11 @@ getItemData().then((data) => {
   items.forEach((item) => mergeItem(item, typeMap[item.type], { merge: false, log: false }));
 });
 
-async function getItemData(): Promise<MappedSheetItem[]> {
+async function getItemData(useLocalCache = false): Promise<MappedSheetItem[]> {
+  if (useLocalCache)
+    try {
+      return readJsonFile("./.temp/quicksheet.json");
+    } catch {}
   try {
     if (!SHEET_API_KEY) throw new Error("No sheet api key provided, set as env variable `AOE4_GOOGLE_SHEET_API_KEY`");
     const res = await fetch(
@@ -49,7 +55,7 @@ async function getItemData(): Promise<MappedSheetItem[]> {
     if (!COLUMN_MAP.every((x, i) => x == columns[i] || x[0] == columns[i]))
       throw new Error("Column config does not match columns in sheet, please review and update the positions of columns in ./config.ts");
 
-    return data["values"]
+    const formattedData = data["values"]
       .slice(1) //exclude header row
       .map((row: (string | number)[]): MappedSheetItem => {
         let itemData: Record<MappedSheetColumn, string | number> = {} as any;
@@ -59,6 +65,9 @@ async function getItemData(): Promise<MappedSheetItem[]> {
         });
         return itemData;
       });
+
+    writeJson("./.temp/quicksheet.json", formattedData);
+    return formattedData;
   } catch (e) {
     throw new Error(`Failed to import sheet ${e}`);
   }
@@ -78,8 +87,8 @@ function mapSheetItemToItem(data: MappedSheetItem): Unit | Technology | Item {
   const civs = Object.values(CIVILIZATIONS).reduce((acc, civ) => ((data[civ.abbr as MappedSheetColumn] as string)?.length > 1 ? [...acc, civ.abbr] : acc), [] as civAbbr[]);
   const age = transformRomanAgeToNumber(data.age as string);
   const id = getUniqueID(data, normalizedName, civs);
-  const baseId = data.strongId ? (data.strongId as string).match(/([a-z-]*)-/)?.[1] ?? slugify(normalizedName) : slugify(normalizedName);
-
+  let baseId = data.strongId ? (data.strongId as string).match(/([a-z-]*)-/)?.[1] ?? slugify(normalizedName) : slugify(normalizedName);
+  if (String(data.strongId).startsWith("upgrade-")) baseId = String(data.strongId).match(/.*-\d/)?.[0] ?? baseId;
   let item: Item = {
     id: id,
     baseId,
@@ -115,6 +124,17 @@ function mapSheetItemToItem(data: MappedSheetItem): Unit | Technology | Item {
         speed: round(+data.moveSpeed, 2),
       },
     };
+
+    if (baseId == "mangonel")
+      unit.weapons[0].modifiers?.push({
+        property: "siegeAttack",
+        target: {
+          class: [["ranged"]],
+        },
+        effect: "multiply",
+        value: 1.5,
+        type: "passive",
+      });
 
     if (data.torchAttack)
       unit.weapons.push({
@@ -152,7 +172,15 @@ function mapSheetItemToItem(data: MappedSheetItem): Unit | Technology | Item {
     }
 
     return unit;
-  } else if ((data.genre == "Technology", "Empl.")) {
+  } else if (["Upgrade"].includes(data.genre as string)) {
+    item.type = "upgrade";
+    const upgrade: Upgrade = {
+      ...item,
+      type: "upgrade",
+      unlocks: id.replace("upgrade-", ""),
+    };
+    return upgrade;
+  } else if (["Technology", "Empl."].includes(data.genre as string)) {
     item.producedBy = mapItemProducedBy(data, item.producedBy);
 
     let tech: Technology = {

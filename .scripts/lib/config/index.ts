@@ -20,10 +20,16 @@ export const FOLDERS = {
     DATA: path.join(ROOT_FOLDER, "buildings"),
     IMG: path.join(IMG_PATH, "buildings"),
   },
+  UPGRADES: {
+    SLUG: "upgrades",
+    DATA: path.join(ROOT_FOLDER, "upgrades"),
+    IMG: path.join(IMG_PATH, "upgrades"),
+  },
 };
 
 export enum ITEM_TYPES {
   UNITS = "UNITS",
   TECHNOLOGIES = "TECHNOLOGIES",
   BUILDINGS = "BUILDINGS",
+  UPGRADES = "UPGRADES",
 }
