@@ -184,11 +184,11 @@
       "producedBy": [
         "siege-workshop"
       ],
-      "hitpoints": 320,
+      "hitpoints": 190,
       "weapons": [
         {
           "type": "siege",
-          "damage": 200,
+          "damage": 100,
           "speed": 5.25,
           "range": {
             "min": 3.8,
@@ -208,7 +208,7 @@
                 ]
               },
               "effect": "change",
-              "value": 400,
+              "value": 500,
               "type": "passive"
             }
           ]
@@ -217,7 +217,7 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 12
+          "value": 30
         }
       ],
       "sight": {
@@ -373,11 +373,11 @@
       "producedBy": [
         "siege-workshop"
       ],
-      "hitpoints": 320,
+      "hitpoints": 190,
       "weapons": [
         {
           "type": "siege",
-          "damage": 240,
+          "damage": 120,
           "speed": 5.25,
           "range": {
             "min": 3.8,
@@ -397,7 +397,7 @@
                 ]
               },
               "effect": "change",
-              "value": 440,
+              "value": 600,
               "type": "passive"
             }
           ]
@@ -406,7 +406,7 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 12
+          "value": 30
         }
       ],
       "sight": {
@@ -449,7 +449,7 @@
       "producedBy": [
         "college-of-artillery"
       ],
-      "hitpoints": 480,
+      "hitpoints": 220,
       "weapons": [
         {
           "type": "ranged",
@@ -465,15 +465,25 @@
               "target": {
                 "class": [
                   [
-                    "ship"
-                  ],
-                  [
                     "siege"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 204,
+              "value": 120,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 240,
               "type": "passive"
             }
           ]
@@ -482,7 +492,7 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 15
+          "value": 20
         }
       ],
       "sight": {
@@ -544,21 +554,7 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 20,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [
@@ -630,21 +626,7 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 20,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [
@@ -716,21 +698,7 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 20,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [
@@ -783,7 +751,7 @@
       "producedBy": [
         "college-of-artillery"
       ],
-      "hitpoints": 576,
+      "hitpoints": 350,
       "weapons": [
         {
           "type": "ranged",
@@ -797,7 +765,7 @@
       ],
       "armor": [
         {
-          "type": "fire",
+          "type": "melee",
           "value": 10
         }
       ],
@@ -912,7 +880,7 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 2,
               "type": "passive"
             }
           ]
@@ -987,7 +955,7 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 2,
               "type": "passive"
             }
           ]
@@ -1062,7 +1030,7 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 2,
               "type": "passive"
             }
           ]
@@ -1137,7 +1105,7 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 2,
               "type": "passive"
             }
           ]
@@ -1684,7 +1652,7 @@
       "producedBy": [
         "archery-range"
       ],
-      "hitpoints": 150,
+      "hitpoints": 130,
       "weapons": [
         {
           "type": "ranged",
@@ -1767,6 +1735,19 @@
               "effect": "change",
               "value": 9,
               "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
             }
           ]
         },
@@ -1778,21 +1759,7 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 20,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [
@@ -1871,6 +1838,19 @@
               "effect": "change",
               "value": 11,
               "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
             }
           ]
         },
@@ -1882,27 +1862,13 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 20,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [
         {
           "type": "ranged",
-          "value": 2
+          "value": 3
         }
       ],
       "sight": {
@@ -1975,6 +1941,19 @@
               "effect": "change",
               "value": 13,
               "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
             }
           ]
         },
@@ -1986,27 +1965,13 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 20,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [
         {
           "type": "ranged",
-          "value": 2
+          "value": 4
         }
       ],
       "sight": {
@@ -2073,21 +2038,7 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [
@@ -2164,21 +2115,7 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [
@@ -2235,7 +2172,7 @@
       "producedBy": [
         "siege-workshop"
       ],
-      "hitpoints": 240,
+      "hitpoints": 140,
       "weapons": [
         {
           "type": "siege",
@@ -2271,8 +2208,8 @@
                   ]
                 ]
               },
-              "effect": "multiply",
-              "value": 1.5,
+              "effect": "change",
+              "value": 18,
               "type": "passive"
             }
           ]
@@ -2281,7 +2218,7 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 8
+          "value": 20
         }
       ],
       "sight": {
@@ -2319,7 +2256,7 @@
         "gold": 150,
         "total": 150,
         "popcap": 1,
-        "time": 45
+        "time": 30
       },
       "producedBy": [
         "monastery"
@@ -2368,7 +2305,7 @@
       "producedBy": [
         "siege-workshop"
       ],
-      "hitpoints": 480,
+      "hitpoints": 350,
       "weapons": [
         {
           "type": "ranged",
@@ -2382,7 +2319,7 @@
       ],
       "armor": [
         {
-          "type": "fire",
+          "type": "melee",
           "value": 10
         }
       ],
@@ -2466,21 +2403,7 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [],
@@ -2564,21 +2487,7 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [],
@@ -2662,21 +2571,7 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [],
@@ -2760,21 +2655,7 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [],
@@ -2858,21 +2739,7 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [],
@@ -2956,21 +2823,7 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [],
@@ -3054,21 +2907,7 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [],
@@ -3205,21 +3044,7 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [],
@@ -3304,21 +3129,7 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [],
@@ -3403,21 +3214,7 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [],
@@ -3502,21 +3299,7 @@
             "max": 4,
             "min": 0
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ]
+          "modifiers": []
         }
       ],
       "armor": [],
@@ -3565,7 +3348,7 @@
       "producedBy": [
         "siege-workshop"
       ],
-      "hitpoints": 200,
+      "hitpoints": 125,
       "weapons": [
         {
           "type": "ranged",
@@ -3589,7 +3372,7 @@
                 ]
               },
               "effect": "change",
-              "value": 90,
+              "value": 70,
               "type": "passive"
             }
           ]
@@ -3598,7 +3381,7 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 8
+          "value": 20
         }
       ],
       "sight": {
@@ -3624,7 +3407,7 @@
         "ab",
         "mo"
       ],
-      "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. Once assigned to trade, the Trade Ship will make repeated trips between its home Dock and the trade target. You can assign a new home Dock if you wish to.\n- No combat",
+      "description": "Trade Ships generate Gold and Wood when assigned to a trade route with a Coastal Trade Post or a Market near the shore. Once assigned to trade, the Trade Ship will make repeated trips between its home Dock and the trade target. You can assign a new home Dock if you wish to.\n- No combat",
       "classes": [
         "worker",
         "ship"
@@ -3787,11 +3570,11 @@
       "producedBy": [
         "siege-workshop"
       ],
-      "hitpoints": 400,
+      "hitpoints": 210,
       "weapons": [
         {
           "type": "siege",
-          "damage": 100,
+          "damage": 50,
           "speed": 12.5,
           "range": {
             "min": 2.8,
@@ -3811,7 +3594,7 @@
                 ]
               },
               "effect": "change",
-              "value": 450,
+              "value": 500,
               "type": "passive"
             }
           ]
@@ -3820,7 +3603,7 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 8
+          "value": 20
         }
       ],
       "sight": {

@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-import { Item, PhysicalItem, Building, Technology, Unit, ItemClass, Upgrade } from "../lib/types/units";
+import { Item, PhysicalItem, Building, Technology, Unit, ItemClass, Upgrade, Modifier } from "../lib/types/units";
 import { civAbbr } from "../lib/types/civs";
 import { CIVILIZATIONS } from "../lib/config/civs";
 import { COLUMN_MAP, SHEET_ID, SHEET_TAB_NAME, SHEET_API_KEY, attackTypeMap, bonusDamageMap } from "./config";
@@ -65,7 +65,7 @@ async function getItemData(useLocalCache = false): Promise<MappedSheetItem[]> {
         });
         return itemData;
       });
-
+    console.log(formattedData);
     writeJson("./.temp/quicksheet.json", formattedData);
     return formattedData;
   } catch (e) {
@@ -125,17 +125,6 @@ function mapSheetItemToItem(data: MappedSheetItem): Unit | Technology | Item {
       },
     };
 
-    if (baseId == "mangonel")
-      unit.weapons[0].modifiers?.push({
-        property: "siegeAttack",
-        target: {
-          class: [["ranged"]],
-        },
-        effect: "multiply",
-        value: 1.5,
-        type: "passive",
-      });
-
     if (data.torchAttack)
       unit.weapons.push({
         type: "fire",
@@ -145,18 +134,10 @@ function mapSheetItemToItem(data: MappedSheetItem): Unit | Technology | Item {
           max: 4,
           min: 0,
         },
-        modifiers: [
-          {
-            property: "fireAttack",
-            target: { class: [["siege"]] },
-            effect: "change",
-            value: ["horseman", "camel-rider", "fire-lancer", "lancer", "knight", "royal-knight"].includes(unit.baseId) ? 20 : 10,
-            type: "passive",
-          },
-        ],
+        modifiers: [],
       });
 
-    return unit;
+    return addUnitSpecificData(unit, data);
   } else if (["Structure"].includes(data.genre as string)) {
     const unit: Building = {
       ...parseObjectProperties(item, data),
@@ -210,17 +191,7 @@ function parseObjectProperties(item: Item, data: MappedSheetItem): PhysicalItem 
                   max: round(+data.maxRange, 1),
                 }
               : undefined,
-            ...(data.bonusAttack && {
-              modifiers: [
-                {
-                  property: `${attackTypeMap[data.attackType as string]}Attack`,
-                  target: bonusDamageMap[data.bonusAgainst as string] ?? {},
-                  effect: "change",
-                  value: +data.bonusAttack,
-                  type: "passive",
-                },
-              ],
-            }),
+            ...(data.bonusAttack && { modifiers: getBonusAttackModifiers(data.bonusAgainst as string, data.bonusAttack as string, data.attackType as string) }),
           },
         ]
       : [],
@@ -270,4 +241,35 @@ function getUniqueID(u: MappedSheetItem, normalizedName: string, civs: civAbbr[]
     ids.add(baseId);
     return baseId;
   }
+}
+
+function addUnitSpecificData(unit: Unit, raw: MappedSheetItem): Unit {
+  // Season 2 Villagers Torch Bonus damage vs Siege reduced from +10 to +2
+  if (unit.baseId == "villager") {
+    const weapon = unit.weapons.find((x) => x.type == "fire");
+    if (weapon) {
+      weapon.modifiers ??= [];
+      weapon.modifiers.push({
+        property: "fireAttack",
+        target: { class: [["siege"]] },
+        effect: "change",
+        value: 2,
+        type: "passive",
+      });
+    }
+  }
+
+  return unit;
+}
+
+function getBonusAttackModifiers(bonusAgainst: string, bonusAttack: string, attackType: string): Modifier[] {
+  const target = bonusAgainst.split(",").map((x) => x.trim());
+  const damage = bonusAttack.split(",").map((x) => +x);
+  return target.map((t, i) => ({
+    property: `${attackTypeMap[attackType]}Attack`,
+    target: bonusDamageMap[t] ?? {},
+    effect: "change",
+    value: +damage[i],
+    type: "passive",
+  }));
 }
