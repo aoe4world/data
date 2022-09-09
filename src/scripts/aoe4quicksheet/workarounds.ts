@@ -1,7 +1,7 @@
-import { CIVILIZATIONS } from "../lib/config/civs";
-import { civAbbr } from "../lib/types/civs";
-import { Technology } from "../lib/types/units";
-import { transformRomanAgeToNumber } from "../lib/utils/game";
+import { CIVILIZATIONS } from "../../lib/config/civs";
+import { transformRomanAgeToNumber } from "../../lib/utils/game";
+import { civAbbr } from "../../types/civs";
+import { Technology } from "../../types/items";
 import { MappedSheetItem } from "./types";
 const civAbbrs = Object.keys(CIVILIZATIONS);
 

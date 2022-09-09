@@ -1,4 +1,4 @@
-import { civConfig, civAbbr } from "../types/civs";
+import { civConfig, civAbbr } from "../../types/civs";
 
 export const CIVILIZATIONS: Record<civAbbr, civConfig> = {
   en: {
@@ -53,3 +53,14 @@ export enum CIV_ABBR {
   MO = "mo",
   RU = "ru",
 }
+
+export const CIVILIZATION_BY_SLUG = {
+  english: CIVILIZATIONS.en,
+  hre: CIVILIZATIONS.hr,
+  french: CIVILIZATIONS.fr,
+  chinese: CIVILIZATIONS.ch,
+  delhi: CIVILIZATIONS.de,
+  abbasid: CIVILIZATIONS.ab,
+  mongols: CIVILIZATIONS.mo,
+  rus: CIVILIZATIONS.ru,
+};

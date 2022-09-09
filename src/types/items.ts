@@ -90,7 +90,7 @@ export interface Building extends PhysicalItem {
 
 export interface Technology extends Item {
   type: "technology";
-  effects?: Modifier;
+  effects?: Modifier[];
 }
 
 export interface Upgrade extends Item {
@@ -175,3 +175,17 @@ export interface UnifiedItem<T extends Item = Item> {
   icon?: string;
   description?: string;
 }
+
+export enum ITEMS {
+  UNITS = "units",
+  BUILDINGS = "buildings",
+  TECHNOLOGIES = "technologies",
+  UPGRADES = "upgrades",
+}
+
+export type ItemTypes = {
+  [ITEMS.UNITS]: Unit;
+  [ITEMS.TECHNOLOGIES]: Technology;
+  [ITEMS.BUILDINGS]: Building;
+  [ITEMS.UPGRADES]: Upgrade;
+};

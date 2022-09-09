@@ -1,6 +1,6 @@
 import fs, { mkdir } from "fs";
 import path from "path";
-import { Item, Unit } from "../types/units";
+import { Item, Unit } from "../../types/items";
 import { CIVILIZATIONS } from "../config/civs";
 import { FOLDERS, ITEM_TYPES } from "../config";
 import { readJsonFile } from "./readData";

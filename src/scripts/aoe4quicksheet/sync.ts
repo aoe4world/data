@@ -1,16 +1,16 @@
 import fetch from "node-fetch";
-import { Item, PhysicalItem, Building, Technology, Unit, ItemClass, Upgrade, Modifier } from "../lib/types/units";
-import { civAbbr } from "../lib/types/civs";
-import { CIVILIZATIONS } from "../lib/config/civs";
+import { Item, PhysicalItem, Building, Technology, Unit, ItemClass, Upgrade, Modifier } from "../../types/items";
+import { CIVILIZATIONS } from "../../lib/config/civs";
+import { civAbbr } from "../../types/civs";
 import { COLUMN_MAP, SHEET_ID, SHEET_TAB_NAME, SHEET_API_KEY, attackTypeMap, bonusDamageMap } from "./config";
 import { MappedSheetColumn, MappedSheetItem } from "./types";
-import { mergeItem, writeJson } from "../lib/files/writeData";
-import { slugify, getStringWithAlphanumericLike, getStringOutsideParenthesis, getStringBetweenParenthesis } from "../lib/utils/string";
-import { transformRomanAgeToNumber, interpolateGameString } from "../lib/utils/game";
+import { mergeItem, writeJson } from "../../lib/files/writeData";
+import { slugify, getStringWithAlphanumericLike, getStringOutsideParenthesis, getStringBetweenParenthesis } from "../../lib/utils/string";
+import { transformRomanAgeToNumber, interpolateGameString } from "../../lib/utils/game";
 import { filterOutUnsupportedRows, ignoredIds, mapItemProducedBy, transformSheetUnitWithWorkaround } from "./workarounds";
-import { round } from "../lib/utils/number";
-import { ITEM_TYPES } from "../lib/config";
-import { readJsonFile } from "../lib/files/readData";
+import { ITEM_TYPES } from "../../lib/config";
+import { readJsonFile } from "../../lib/files/readData";
+import { round } from "../../lib/utils/number";
 
 const typeMap = {
   unit: ITEM_TYPES.UNITS,

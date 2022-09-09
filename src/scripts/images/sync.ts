@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
-import { CDN_HOST, FOLDERS, IMAGE_FOLDER, ITEM_TYPES } from "../lib/config";
-import { getAllItems } from "../lib/files/readData";
-import { mergeItem } from "../lib/files/writeData";
+import { ITEM_TYPES, CDN_HOST, IMAGE_FOLDER, FOLDERS } from "../../lib/config";
+import { getAllItems } from "../../lib/files/readData";
+import { mergeItem } from "../../lib/files/writeData";
 
 (async () => {
   [ITEM_TYPES.UNITS, ITEM_TYPES.TECHNOLOGIES, ITEM_TYPES.BUILDINGS, ITEM_TYPES.UPGRADES].forEach((type) => syncImages(type));

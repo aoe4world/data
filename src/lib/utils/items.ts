@@ -1,4 +1,4 @@
-import { Item, ItemId, UnifiedItem } from "../types/units";
+import { Item, ItemId, UnifiedItem } from "../../types/items";
 import { uniqueArray } from "./array";
 
 export function unifyItems(items: Item[]): UnifiedItem[] {
