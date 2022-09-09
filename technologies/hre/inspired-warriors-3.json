@@ -28,5 +28,75 @@
   "producedBy": [
     "monastery"
   ],
-  "icon": "https://data.aoe4world.com/images/technologies/inspired-warriors.png"
+  "icon": "https://data.aoe4world.com/images/technologies/inspired-warriors.png",
+  "effects": [
+    {
+      "property": "rangedArmor",
+      "select": {
+        "class": [
+          [
+            "cavalry"
+          ],
+          [
+            "infantry"
+          ]
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "influence"
+    },
+    {
+      "property": "meleeArmor",
+      "select": {
+        "class": [
+          [
+            "cavalry"
+          ],
+          [
+            "infantry"
+          ]
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "influence"
+    },
+    {
+      "property": "meleeAttack",
+      "select": {
+        "class": [
+          [
+            "cavalry",
+            "melee"
+          ],
+          [
+            "infantry",
+            "melee"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.15,
+      "type": "influence"
+    },
+    {
+      "property": "rangedAttack",
+      "select": {
+        "class": [
+          [
+            "cavalry",
+            "ranged"
+          ],
+          [
+            "infantry",
+            "ranged"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.15,
+      "type": "influence"
+    }
+  ]
 }

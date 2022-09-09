@@ -37,5 +37,29 @@
     "ger",
     "steppe-redoubt"
   ],
-  "icon": "https://data.aoe4world.com/images/technologies/wheelbarrow.png"
+  "icon": "https://data.aoe4world.com/images/technologies/wheelbarrow.png",
+  "effects": [
+    {
+      "property": "carryCapacity",
+      "select": {
+        "id": [
+          "villager"
+        ]
+      },
+      "effect": "change",
+      "value": 5,
+      "type": "passive"
+    },
+    {
+      "property": "moveSpeed",
+      "select": {
+        "id": [
+          "villager"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.15,
+      "type": "passive"
+    }
+  ]
 }

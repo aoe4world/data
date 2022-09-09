@@ -34,5 +34,66 @@
     "keep",
     "red-palace"
   ],
-  "icon": "https://data.aoe4world.com/images/technologies/springald-emplacement.png"
+  "icon": "https://data.aoe4world.com/images/technologies/springald-emplacement.png",
+  "effects": [
+    {
+      "property": "rangedAttack",
+      "select": {
+        "id": [
+          "wooden-fortress",
+          "outpost",
+          "keep"
+        ]
+      },
+      "effect": "change",
+      "value": 40,
+      "type": "passive"
+    },
+    {
+      "property": "maxRange",
+      "select": {
+        "id": [
+          "wooden-fortress",
+          "outpost",
+          "keep"
+        ]
+      },
+      "effect": "change",
+      "value": 9,
+      "type": "passive"
+    },
+    {
+      "property": "rangedAttack",
+      "select": {
+        "id": [
+          "wooden-fortress",
+          "outpost",
+          "keep"
+        ]
+      },
+      "target": {
+        "class": [
+          [
+            "ship"
+          ]
+        ]
+      },
+      "effect": "change",
+      "value": 40,
+      "type": "bonus"
+    },
+    {
+      "property": "attackSpeed",
+      "select": {
+        "id": [
+          "wooden-fortress",
+          "outpost",
+          "keep"
+        ]
+      },
+      "effect": "change",
+      "value": 4.5,
+      "type": "passive"
+    }
+  ]
 }

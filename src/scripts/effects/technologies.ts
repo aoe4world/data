@@ -1332,24 +1332,24 @@ export const technologyModifiers: Record<string, Modifier[]> = {
   ],
 
   "herbal-medicine": [
-    // Increase the healing rate of religious units by +100%.
+    // Increase the healing rate of religious units by +60%.
     {
       property: "healingRate",
       select: common.allReligiousUnits,
       effect: "multiply",
-      value: 2,
+      value: 1.6,
       type: "passive",
     },
   ],
 
   "herbal-medicine-improved": [
-    // Increase the healing rate of religious units by +150%.
-    // If Herbal Medicine has already been researched, increase it by + 50 % instead.
+    // Increase the healing rate of religious units by +120%.
+    // If Herbal Medicine has already been researched, increase it by + 60 % instead.
     {
       property: "healingRate",
       select: common.allReligiousUnits,
       effect: "multiply",
-      value: 1.333, // 2 / 1.5
+      value: 1.666, // 2 / 1.2
       type: "passive",
     },
   ],

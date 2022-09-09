@@ -49,7 +49,25 @@
       "producedBy": [
         "prayer-tent"
       ],
-      "icon": "https://data.aoe4world.com/images/technologies/piety.png"
+      "icon": "https://data.aoe4world.com/images/technologies/piety.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "id": [
+              "prelate",
+              "monk",
+              "scholar",
+              "shaman",
+              "imam",
+              "warrior-monk"
+            ]
+          },
+          "effect": "change",
+          "value": 20,
+          "type": "passive"
+        }
+      ]
     }
   ]
 }

@@ -33,5 +33,35 @@
   "producedBy": [
     "dock"
   ],
-  "icon": "https://data.aoe4world.com/images/technologies/navigator-lookout.png"
+  "icon": "https://data.aoe4world.com/images/technologies/navigator-lookout.png",
+  "effects": [
+    {
+      "property": "lineOfSight",
+      "select": {
+        "class": [
+          [
+            "ship",
+            "attack"
+          ],
+          [
+            "ship",
+            "archer"
+          ],
+          [
+            "ship",
+            "incendiary"
+          ],
+          [
+            "warship"
+          ]
+        ],
+        "id": [
+          "galleass"
+        ]
+      },
+      "effect": "change",
+      "value": 4,
+      "type": "passive"
+    }
+  ]
 }

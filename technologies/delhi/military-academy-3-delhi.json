@@ -28,5 +28,34 @@
   "producedBy": [
     "blacksmith"
   ],
-  "icon": "https://data.aoe4world.com/images/technologies/military-academy.png"
+  "icon": "https://data.aoe4world.com/images/technologies/military-academy.png",
+  "effects": [
+    {
+      "property": "buildTime",
+      "select": {
+        "class": [
+          [
+            "infantry"
+          ],
+          [
+            "melee",
+            "cavalry"
+          ],
+          [
+            "ranged",
+            "cavalry"
+          ],
+          [
+            "siege"
+          ],
+          [
+            "transport"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.75,
+      "type": "passive"
+    }
+  ]
 }
