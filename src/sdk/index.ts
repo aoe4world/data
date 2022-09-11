@@ -18,7 +18,7 @@ const units = new ItemList<Unit>(...(allUnits.data as UnifiedItem<Unit>[]));
 const buildings = new ItemList<Building>(...(allBuildings.data as UnifiedItem<Building>[]));
 const technologies = new ItemList<Technology>(...(allTechnologies.data as UnifiedItem<Technology>[]));
 const upgrades = new ItemList<Item>(...(allUpgrades.data as UnifiedItem<Item>[]));
-const civilizations: Record<CivAbbr, CivInfo> & { Get: typeof GetCiv } = { ab, ch, de, en, fr, hr, mo, ru, Get: GetCiv };
+const civilizations: Record<CivAbbr, CivInfo> & { Get: typeof GetCiv; list: CivInfo[] } = { ab, ch, de, en, fr, hr, mo, ru, Get: GetCiv, list: [ab, ch, de, en, fr, hr, mo, ru] };
 
 function GetCiv(slug: CivSlug | CivAbbr) {
   return {
