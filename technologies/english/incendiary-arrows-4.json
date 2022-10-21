@@ -1,0 +1,68 @@
+{
+  "id": "incendiary-arrows-4",
+  "baseId": "incendiary-arrows",
+  "type": "technology",
+  "name": "Incendiary Arrows",
+  "pbgid": 127838,
+  "attribName": "upgrade_ranged_incendiary",
+  "age": 4,
+  "civs": [
+    "en"
+  ],
+  "description": "Increase the damage of ranged units by +20%. Does not apply to gunpowder units.",
+  "classes": [
+    "ranged",
+    "technology"
+  ],
+  "displayClasses": [
+    "Ranged Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 300,
+    "stone": 0,
+    "gold": 700,
+    "total": 1000,
+    "popcap": 0,
+    "time": 90
+  },
+  "producedBy": [
+    "university"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/incendiary-arrows-4.png",
+  "effects": [
+    {
+      "property": "rangedAttack",
+      "select": {
+        "class": [
+          [
+            "ranged",
+            "cavalry"
+          ]
+        ],
+        "id": [
+          "longbowman",
+          "zhuge-nu",
+          "archer",
+          "arbaletrier",
+          "crossbowman",
+          "town-center",
+          "keep",
+          "outpost",
+          "stone-wall-tower",
+          "barbican-of-the-sun",
+          "berkshire-palace",
+          "elzbach-palace",
+          "kremlin",
+          "spasskaya-tower",
+          "red-palace",
+          "the-white-tower"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.2,
+      "type": "passive"
+    }
+  ]
+}

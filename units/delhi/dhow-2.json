@@ -1,0 +1,91 @@
+{
+  "id": "dhow-2",
+  "baseId": "dhow",
+  "type": "unit",
+  "name": "Dhow",
+  "pbgid": 2033847,
+  "attribName": "unit_naval_dhow_2_sul",
+  "age": 2,
+  "civs": [
+    "de"
+  ],
+  "description": "Light war vessel armed with a crew of archers.\n+ Increased maneuverability and speed.\n+ Benefits from ranged damage Blacksmith technology",
+  "classes": [
+    "archer",
+    "ship"
+  ],
+  "displayClasses": [
+    "Archer Ship"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 180,
+    "stone": 0,
+    "gold": 90,
+    "total": 270,
+    "popcap": 2,
+    "time": 40
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/dhow-2.png",
+  "hitpoints": 500,
+  "weapons": [
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 10,
+      "speed": 2.5,
+      "range": {
+        "min": 0,
+        "max": 3.75
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "fireship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "fire": 0.25,
+        "winddown": 0.5,
+        "reload": 1.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 4
+      },
+      "attribName": "weapon_naval_dhow_arrow_sul",
+      "pbgid": 2037053
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 4
+    }
+  ],
+  "sight": {
+    "line": 44,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.875
+  }
+}

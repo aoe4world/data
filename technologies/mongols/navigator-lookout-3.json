@@ -1,0 +1,64 @@
+{
+  "id": "navigator-lookout-3",
+  "baseId": "navigator-lookout",
+  "type": "technology",
+  "name": "Navigator Lookout",
+  "pbgid": 196925,
+  "attribName": "upgrade_naval_navigator",
+  "age": 3,
+  "civs": [
+    "mo"
+  ],
+  "description": "Increase the sight range of military ships by +4.",
+  "classes": [
+    "naval",
+    "technology"
+  ],
+  "displayClasses": [
+    "Naval Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 75,
+    "wood": 0,
+    "stone": 0,
+    "gold": 200,
+    "total": 275,
+    "popcap": 0,
+    "time": 60
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/navigator-lookout-3.png",
+  "effects": [
+    {
+      "property": "lineOfSight",
+      "select": {
+        "class": [
+          [
+            "ship",
+            "attack"
+          ],
+          [
+            "ship",
+            "archer"
+          ],
+          [
+            "ship",
+            "incendiary"
+          ],
+          [
+            "warship"
+          ]
+        ],
+        "id": [
+          "galleass"
+        ]
+      },
+      "effect": "change",
+      "value": 4,
+      "type": "passive"
+    }
+  ]
+}

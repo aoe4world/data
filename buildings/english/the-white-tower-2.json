@@ -3,6 +3,8 @@
   "baseId": "the-white-tower",
   "type": "building",
   "name": "The White Tower",
+  "pbgid": 166270,
+  "attribName": "building_landmark_age2_white_tower_eng",
   "age": 2,
   "civs": [
     "en"
@@ -11,6 +13,7 @@
   "classes": [
     "age",
     "iii",
+    "-",
     "defensive",
     "landmark"
   ],
@@ -30,12 +33,14 @@
   "producedBy": [
     "villager"
   ],
+  "icon": "https://data.aoe4world.com/images/buildings/the-white-tower-2.png",
   "hitpoints": 5000,
   "weapons": [
     {
+      "name": "Bow",
       "type": "ranged",
-      "damage": 36,
-      "speed": 0.38,
+      "damage": 12,
+      "speed": 0.625,
       "range": {
         "min": 0,
         "max": 8
@@ -46,7 +51,8 @@
           "target": {
             "class": [
               [
-                "ship"
+                "naval",
+                "unit"
               ]
             ]
           },
@@ -54,7 +60,22 @@
           "value": 25,
           "type": "passive"
         }
-      ]
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.125,
+        "fire": 0.25,
+        "winddown": 0,
+        "reload": 0.25,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 3
+      },
+      "attribName": "weapon_keep_arrows_a",
+      "pbgid": 127372
     }
   ],
   "armor": [
@@ -72,7 +93,14 @@
     "height": 501
   },
   "garrison": {
-    "capacity": 20
+    "capacity": 20,
+    "classes": [
+      "infantry",
+      "villager",
+      "infantry ranged",
+      "monk",
+      "cavalry"
+    ]
   },
-  "icon": "https://data.aoe4world.com/images/buildings/the-white-tower.png"
+  "influences": []
 }

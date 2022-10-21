@@ -1,0 +1,50 @@
+{
+  "id": "fertilization-3",
+  "baseId": "fertilization",
+  "type": "technology",
+  "name": "Fertilization",
+  "pbgid": 171292,
+  "attribName": "upgrade_econ_resource_food_harvest_rate_3",
+  "age": 3,
+  "civs": [
+    "mo"
+  ],
+  "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
+  "classes": [
+    "food",
+    "gathering",
+    "technology",
+    "2/3"
+  ],
+  "displayClasses": [
+    "Food Gathering Technology 2/3"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 150,
+    "stone": 0,
+    "gold": 350,
+    "total": 500,
+    "popcap": 0,
+    "time": 75
+  },
+  "producedBy": [
+    "ger",
+    "steppe-redoubt"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/fertilization-3.png",
+  "effects": [
+    {
+      "property": "foodGatherRate",
+      "select": {
+        "id": [
+          "villager"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.15,
+      "type": "passive"
+    }
+  ]
+}

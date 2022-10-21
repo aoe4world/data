@@ -2,12 +2,14 @@
   "id": "royal-knight-4",
   "baseId": "royal-knight",
   "type": "unit",
-  "name": "Royal Knight",
+  "name": "Elite Royal Knight",
+  "pbgid": 132280,
+  "attribName": "unit_knight_4_fre",
   "age": 4,
   "civs": [
     "fr"
   ],
-  "description": "Gain bonus damage for 3 seconds after charging. Effective against most units.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen",
+  "description": "Gain bonus damage for 5 seconds after charging. Effective against most units.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen",
   "classes": [
     "heavy",
     "melee",
@@ -27,37 +29,66 @@
     "time": 35
   },
   "producedBy": [
+    "school-of-cavalry",
     "stable"
   ],
+  "icon": "https://data.aoe4world.com/images/units/royal-knight-4.png",
   "hitpoints": 270,
   "weapons": [
     {
+      "name": "Sword",
       "type": "melee",
       "damage": 29,
-      "speed": 1.38,
+      "speed": 1.5625,
       "range": {
         "min": 0,
-        "max": 0.3
-      }
+        "max": 0.2875
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "fire": 0.1875,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0.875
+      },
+      "attribName": "weapon_knight_4",
+      "pbgid": 127822
     },
     {
+      "name": "Torch",
       "type": "fire",
-      "damage": 20,
-      "speed": 2,
+      "damage": 10,
+      "speed": 2.25,
       "range": {
-        "max": 4,
-        "min": 0
+        "min": 0,
+        "max": 1
       },
-      "modifiers": []
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "fire": 0.25,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch_horseman",
+      "pbgid": 127935
     }
   ],
   "armor": [
     {
-      "type": "ranged",
+      "type": "melee",
       "value": 5
     },
     {
-      "type": "melee",
+      "type": "ranged",
       "value": 5
     }
   ],
@@ -66,7 +97,6 @@
     "height": 10
   },
   "movement": {
-    "speed": 1.63
-  },
-  "icon": "https://data.aoe4world.com/images/units/royal-knight-4.png"
+    "speed": 1.625
+  }
 }

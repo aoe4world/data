@@ -1,0 +1,92 @@
+{
+  "id": "armored-hull-3",
+  "baseId": "armored-hull",
+  "type": "technology",
+  "name": "Armored Hull",
+  "pbgid": 196879,
+  "attribName": "upgrade_naval_armored_hull",
+  "age": 3,
+  "civs": [
+    "en"
+  ],
+  "description": "Increase the armor of all military ships by +2.",
+  "classes": [
+    "naval",
+    "technology"
+  ],
+  "displayClasses": [
+    "Naval Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 150,
+    "wood": 0,
+    "stone": 0,
+    "gold": 250,
+    "total": 400,
+    "popcap": 0,
+    "time": 60
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/armored-hull-3.png",
+  "effects": [
+    {
+      "property": "rangedArmor",
+      "select": {
+        "class": [
+          [
+            "ship",
+            "attack"
+          ],
+          [
+            "ship",
+            "archer"
+          ],
+          [
+            "ship",
+            "incendiary"
+          ],
+          [
+            "warship"
+          ]
+        ],
+        "id": [
+          "galleass"
+        ]
+      },
+      "effect": "change",
+      "value": 2,
+      "type": "passive"
+    },
+    {
+      "property": "meleeArmor",
+      "select": {
+        "class": [
+          [
+            "ship",
+            "attack"
+          ],
+          [
+            "ship",
+            "archer"
+          ],
+          [
+            "ship",
+            "incendiary"
+          ],
+          [
+            "warship"
+          ]
+        ],
+        "id": [
+          "galleass"
+        ]
+      },
+      "effect": "change",
+      "value": 2,
+      "type": "passive"
+    }
+  ]
+}

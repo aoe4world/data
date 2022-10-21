@@ -3,6 +3,8 @@
   "baseId": "battering-ram",
   "type": "unit",
   "name": "Battering Ram",
+  "pbgid": 199681,
+  "attribName": "unit_ram_3_abb",
   "age": 1,
   "civs": [
     "ab"
@@ -14,7 +16,7 @@
   "displayClasses": [
     "Siege"
   ],
-  "unique": true,
+  "unique": false,
   "costs": {
     "food": 0,
     "wood": 250,
@@ -25,33 +27,51 @@
     "time": 80
   },
   "producedBy": [
-    "infantry-units"
+    "spearman",
+    "man-at-arms",
+    "archer",
+    "crossbowman",
+    "handcannoneer"
   ],
+  "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
   "hitpoints": 420,
   "weapons": [
     {
+      "name": "Ram",
       "type": "siege",
       "damage": 200,
-      "speed": 5,
+      "speed": 5.5,
       "range": {
         "min": 0,
-        "max": 0.3
+        "max": 0.2875
       },
       "modifiers": [
         {
           "property": "siegeAttack",
           "target": {
-            "id": [
-              "stone-wall",
-              "palisade-wall",
-              "fortified-palisade-wall"
+            "class": [
+              [
+                "wall"
+              ]
             ]
           },
           "effect": "change",
           "value": 100,
           "type": "passive"
         }
-      ]
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.625,
+        "fire": 0.5,
+        "winddown": 0.375,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 4
+      },
+      "attribName": "weapon_ram_3",
+      "pbgid": 108918
     }
   ],
   "armor": [
@@ -67,5 +87,13 @@
   "movement": {
     "speed": 0.75
   },
-  "icon": "https://data.aoe4world.com/images/units/battering-ram.png"
+  "garrison": {
+    "capacity": 16,
+    "classes": [
+      "infantry",
+      "villager",
+      "infantry ranged",
+      "monk"
+    ]
+  }
 }

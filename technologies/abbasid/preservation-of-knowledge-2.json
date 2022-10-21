@@ -3,6 +3,8 @@
   "baseId": "preservation-of-knowledge",
   "type": "technology",
   "name": "Preservation of Knowledge",
+  "pbgid": 201795,
+  "attribName": "upgrade_cul_cheaper_research_abb",
   "age": 2,
   "civs": [
     "ab"
@@ -18,8 +20,8 @@
   ],
   "unique": true,
   "costs": {
-    "food": 50,
-    "wood": 0,
+    "food": 0,
+    "wood": 50,
     "stone": 0,
     "gold": 125,
     "total": 175,
@@ -27,12 +29,25 @@
     "time": 30
   },
   "producedBy": [
-    "culture-wing"
+    "house-of-wisdom"
   ],
-  "icon": "https://data.aoe4world.com/images/technologies/preservation-of-knowledge.png",
+  "icon": "https://data.aoe4world.com/images/technologies/preservation-of-knowledge-2.png",
   "effects": [
     {
       "property": "goldCost",
+      "select": {
+        "class": [
+          [
+            "technology"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.7,
+      "type": "passive"
+    },
+    {
+      "property": "foodCost",
       "select": {
         "class": [
           [

@@ -14,11 +14,12 @@
   "classes": [
     "age",
     "iv",
+    "-",
     "defensive",
     "landmark"
   ],
   "minAge": 3,
-  "icon": "https://data.aoe4world.com/images/buildings/red-palace.png",
+  "icon": "https://data.aoe4world.com/images/buildings/red-palace-3.png",
   "description": "Acts as a Keep. Features high-damage arbalest emplacements. Each garrisoned unit adds an additional arbalest.",
   "variations": [
     {
@@ -26,6 +27,8 @@
       "baseId": "red-palace",
       "type": "building",
       "name": "Red Palace",
+      "pbgid": 132787,
+      "attribName": "building_landmark_age2_la_chateau_rouge_fre",
       "age": 3,
       "civs": [
         "fr"
@@ -34,6 +37,7 @@
       "classes": [
         "age",
         "iv",
+        "-",
         "defensive",
         "landmark"
       ],
@@ -53,15 +57,17 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/red-palace-3.png",
       "hitpoints": 5000,
       "weapons": [
         {
+          "name": "Arbalest",
           "type": "ranged",
-          "damage": 180,
-          "speed": 1.38,
+          "damage": 60,
+          "speed": 1.5625,
           "range": {
             "min": 0,
-            "max": 8
+            "max": 10
           },
           "modifiers": [
             {
@@ -69,15 +75,31 @@
               "target": {
                 "class": [
                   [
-                    "ship"
+                    "naval",
+                    "unit"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 25,
+              "value": 50,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0.0625,
+            "windup": 0.25,
+            "fire": 0.25,
+            "winddown": 0,
+            "reload": 1,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 2
+          },
+          "attribName": "weapon_keep_arbalest_a",
+          "pbgid": 1907157
         }
       ],
       "armor": [
@@ -91,13 +113,22 @@
         }
       ],
       "sight": {
-        "line": 25,
-        "height": 8
+        "line": 50,
+        "height": 501
       },
       "garrison": {
-        "capacity": 15
+        "capacity": 15,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk",
+          "cavalry"
+        ]
       },
-      "icon": "https://data.aoe4world.com/images/buildings/red-palace.png"
+      "influences": [
+        "Archery Range and Stable unit costs reduced by -20%."
+      ]
     }
   ]
 }

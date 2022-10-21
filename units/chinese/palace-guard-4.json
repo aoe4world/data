@@ -2,7 +2,9 @@
   "id": "palace-guard-4",
   "baseId": "palace-guard",
   "type": "unit",
-  "name": "Palace Guard",
+  "name": "Elite Palace Guard",
+  "pbgid": 137574,
+  "attribName": "unit_manatarms_4_chi",
   "age": 4,
   "civs": [
     "ch"
@@ -24,40 +26,68 @@
     "gold": 20,
     "total": 120,
     "popcap": 1,
-    "time": 22
+    "time": 22.5
   },
   "producedBy": [
     "barracks"
   ],
+  "icon": "https://data.aoe4world.com/images/units/palace-guard-4.png",
   "hitpoints": 180,
   "weapons": [
     {
+      "name": "Guandao",
       "type": "melee",
       "damage": 14,
-      "speed": 1.25,
+      "speed": 1.4375,
       "range": {
         "min": 0,
-        "max": 0.3
-      }
+        "max": 0.295
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "fire": 0.1875,
+        "winddown": 0.75,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_manatarms_4_chi",
+      "pbgid": 137339
     },
     {
+      "name": "Torch",
       "type": "fire",
-      "damage": 20,
-      "speed": 2,
+      "damage": 10,
+      "speed": 2.25,
       "range": {
-        "max": 4,
-        "min": 0
+        "min": 0,
+        "max": 1
       },
-      "modifiers": []
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "fire": 0.25,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch",
+      "pbgid": 123518
     }
   ],
   "armor": [
     {
-      "type": "ranged",
+      "type": "melee",
       "value": 4
     },
     {
-      "type": "melee",
+      "type": "ranged",
       "value": 4
     }
   ],
@@ -66,7 +96,6 @@
     "height": 10
   },
   "movement": {
-    "speed": 1.38
-  },
-  "icon": "https://data.aoe4world.com/images/units/palace-guard-4.png"
+    "speed": 1.375
+  }
 }

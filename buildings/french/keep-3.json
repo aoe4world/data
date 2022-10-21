@@ -1,0 +1,106 @@
+{
+  "id": "keep-3",
+  "baseId": "keep",
+  "type": "building",
+  "name": "Keep",
+  "pbgid": 132678,
+  "attribName": "building_defense_keep_fre",
+  "age": 3,
+  "civs": [
+    "fr"
+  ],
+  "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.",
+  "classes": [
+    "defensive",
+    "building"
+  ],
+  "displayClasses": [
+    "Defensive Building"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 800,
+    "gold": 0,
+    "total": 800,
+    "popcap": 0,
+    "time": 140
+  },
+  "producedBy": [
+    "villager"
+  ],
+  "icon": "https://data.aoe4world.com/images/buildings/keep-3.png",
+  "hitpoints": 5000,
+  "weapons": [
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 12,
+      "speed": 0.625,
+      "range": {
+        "min": 0,
+        "max": 8
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 25,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.125,
+        "fire": 0.25,
+        "winddown": 0,
+        "reload": 0.25,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 3
+      },
+      "attribName": "weapon_keep_arrows_a",
+      "pbgid": 127372
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 50
+    },
+    {
+      "type": "fire",
+      "value": 5
+    }
+  ],
+  "sight": {
+    "line": 41,
+    "height": 501
+  },
+  "garrison": {
+    "capacity": 15,
+    "classes": [
+      "infantry",
+      "villager",
+      "infantry ranged",
+      "monk",
+      "cavalry",
+      "khan"
+    ]
+  },
+  "influences": [
+    "Archery Range and Stable unit costs reduced by -20%."
+  ]
+}

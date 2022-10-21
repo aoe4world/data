@@ -14,26 +14,30 @@
   "classes": [
     "age",
     "iv",
+    "-",
     "defensive",
     "landmark"
   ],
   "minAge": 3,
-  "icon": "https://data.aoe4world.com/images/buildings/spasskaya-tower.png",
-  "description": "Acts as a Keep with all weapon emplacements already in place and with increased health. Unlocks the building of Stone Walls",
+  "icon": "https://data.aoe4world.com/images/buildings/spasskaya-tower-3.png",
+  "description": "Acts as a Keep with all weapon emplacements and increased health.\nUnlocks the building of Stone Walls, Stone Gates, and Stone Wall Towers.",
   "variations": [
     {
       "id": "spasskaya-tower-3",
       "baseId": "spasskaya-tower",
       "type": "building",
       "name": "Spasskaya Tower",
+      "pbgid": 133434,
+      "attribName": "building_landmark_age3_spassakaya_tower_control_rus",
       "age": 3,
       "civs": [
         "ru"
       ],
-      "description": "Acts as a Keep with all weapon emplacements already in place and with increased health. Unlocks the building of Stone Walls",
+      "description": "Acts as a Keep with all weapon emplacements and increased health.\nUnlocks the building of Stone Walls, Stone Gates, and Stone Wall Towers.",
       "classes": [
         "age",
         "iv",
+        "-",
         "defensive",
         "landmark"
       ],
@@ -53,15 +57,17 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/spasskaya-tower-3.png",
       "hitpoints": 8000,
       "weapons": [
         {
+          "name": "Cannon",
           "type": "ranged",
-          "damage": 36,
-          "speed": 0.38,
+          "damage": 70,
+          "speed": 7,
           "range": {
             "min": 0,
-            "max": 8
+            "max": 10
           },
           "modifiers": [
             {
@@ -69,15 +75,28 @@
               "target": {
                 "class": [
                   [
-                    "ship"
+                    "naval",
+                    "unit"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 25,
+              "value": 70,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 1,
+            "reload": 5.5,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_keep_cannon",
+          "pbgid": 185624
         }
       ],
       "armor": [
@@ -91,13 +110,20 @@
         }
       ],
       "sight": {
-        "line": 25,
-        "height": 8
+        "line": 41,
+        "height": 501
       },
       "garrison": {
-        "capacity": 20
+        "capacity": 20,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk",
+          "cavalry"
+        ]
       },
-      "icon": "https://data.aoe4world.com/images/buildings/spasskaya-tower.png"
+      "influences": []
     }
   ]
 }

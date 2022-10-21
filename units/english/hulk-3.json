@@ -3,6 +3,8 @@
   "baseId": "hulk",
   "type": "unit",
   "name": "Hulk",
+  "pbgid": 193114,
+  "attribName": "unit_naval_combat_ship_2_eng",
   "age": 3,
   "civs": [
     "en"
@@ -15,35 +17,49 @@
   "displayClasses": [
     "Attack Ship"
   ],
-  "unique": true,
+  "unique": false,
   "costs": {
+    "gold": 216,
+    "wood": 270,
     "food": 0,
-    "wood": 300,
     "stone": 0,
-    "gold": 240,
-    "total": 540,
-    "popcap": 3,
+    "total": 486,
     "time": 45
   },
   "producedBy": [
     "dock"
   ],
+  "icon": "https://data.aoe4world.com/images/units/hulk-2.png",
   "hitpoints": 1000,
   "weapons": [
     {
+      "name": "Ballista",
       "type": "ranged",
       "damage": 100,
-      "speed": 3.95,
+      "speed": 4,
       "range": {
         "min": 0,
-        "max": 7
-      }
+        "max": 6
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0.25,
+        "windup": 0.25,
+        "fire": 0.25,
+        "winddown": 0.5,
+        "reload": 2.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_naval_combat_ship_crossbow_western",
+      "pbgid": 2034159
     }
   ],
   "armor": [
     {
       "type": "ranged",
-      "value": 6
+      "value": 5
     }
   ],
   "sight": {
@@ -51,7 +67,6 @@
     "height": 10
   },
   "movement": {
-    "speed": 1.13
-  },
-  "icon": "https://data.aoe4world.com/images/units/hulk.png"
+    "speed": 1.125
+  }
 }

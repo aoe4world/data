@@ -8,15 +8,17 @@
   },
   "data": [
     {
-      "id": "archery-range-2-chinese",
+      "id": "archery-range-2",
       "baseId": "archery-range",
       "type": "building",
       "name": "Archery Range",
+      "pbgid": 145531,
+      "attribName": "building_unit_ranged_control_chi",
       "age": 2,
       "civs": [
         "ch"
       ],
-      "description": "Produces ranged infantry units.",
+      "description": "Produces ranged infantry units.\nGenerates tax each time a unit or research is produced.",
       "classes": [
         "military",
         "building"
@@ -24,7 +26,7 @@
       "displayClasses": [
         "Military Building"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 150,
@@ -37,6 +39,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/archery-range-2.png",
       "hitpoints": 1500,
       "weapons": [],
       "armor": [
@@ -49,21 +52,26 @@
         "line": 25,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/archery-range.png"
+      "influences": [
+        "Buildings generate +100% tax while within the influence of the Imperial Academy."
+      ]
     },
     {
       "id": "astronomical-clocktower-2",
       "baseId": "astronomical-clocktower",
       "type": "building",
       "name": "Astronomical Clocktower",
+      "pbgid": 145548,
+      "attribName": "building_landmark_age2_clocktower_control_chi",
       "age": 2,
       "civs": [
         "ch"
       ],
-      "description": "The Astronomical Clocktower allows production of superior siege engines.",
+      "description": "Acts as a Siege Workshop and produces sieges engines with +50% health.",
       "classes": [
         "age",
         "iii",
+        "-",
         "military",
         "landmark"
       ],
@@ -83,6 +91,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/astronomical-clocktower-2.png",
       "hitpoints": 5000,
       "weapons": [],
       "armor": [
@@ -95,21 +104,26 @@
         "line": 25,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/astronomical-clocktower.png"
+      "influences": [
+        "Buildings generate +100% tax while within the influence of the Imperial Academy."
+      ]
     },
     {
       "id": "barbican-of-the-sun-1",
       "baseId": "barbican-of-the-sun",
       "type": "building",
       "name": "Barbican of the Sun",
+      "pbgid": 145550,
+      "attribName": "building_landmark_age1_gatehouse_control_chi",
       "age": 1,
       "civs": [
         "ch"
       ],
-      "description": "Fires a long range hand cannon and adds arrowslits while garrisoned. Offers vision into stealth forests. Can add Springald and Cannon emplacements.",
+      "description": "Fires a long range hand cannon and adds arrowslits while garrisoned. Can be upgraded with weaponry and offers vision into Stealth Forests.",
       "classes": [
         "age",
         "ii",
+        "-",
         "defensive",
         "landmark"
       ],
@@ -129,12 +143,14 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/barbican-of-the-sun-1.png",
       "hitpoints": 5000,
       "weapons": [
         {
+          "name": "Handcannon",
           "type": "ranged",
           "damage": 25,
-          "speed": 3,
+          "speed": 3.25,
           "range": {
             "min": 0,
             "max": 8
@@ -145,7 +161,8 @@
               "target": {
                 "class": [
                   [
-                    "ship"
+                    "naval",
+                    "unit"
                   ]
                 ]
               },
@@ -153,7 +170,475 @@
               "value": 25,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0,
+            "reload": 3,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_barbican_handcannon_chi",
+          "pbgid": 206717
+        },
+        {
+          "name": "Springald",
+          "type": "ranged",
+          "damage": 40,
+          "speed": 4.5,
+          "range": {
+            "min": 0,
+            "max": 9
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 40,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0.25,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 3.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_keep_springald",
+          "pbgid": 127373
+        },
+        {
+          "name": "Cannon",
+          "type": "ranged",
+          "damage": 70,
+          "speed": 7,
+          "range": {
+            "min": 0,
+            "max": 10
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 70,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 1,
+            "reload": 5.5,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_keep_cannon",
+          "pbgid": 185624
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 6
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 25,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "fire": 0,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_outpost_arrows_garrison",
+          "pbgid": 171016
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 6
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 25,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "fire": 0,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_outpost_arrows_garrison",
+          "pbgid": 171016
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 6
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 25,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "fire": 0,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_outpost_arrows_garrison",
+          "pbgid": 171016
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 6
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 25,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "fire": 0,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_outpost_arrows_garrison",
+          "pbgid": 171016
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 6
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 25,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "fire": 0,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_outpost_arrows_garrison",
+          "pbgid": 171016
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 6
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 25,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "fire": 0,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_outpost_arrows_garrison",
+          "pbgid": 171016
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 6
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 25,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "fire": 0,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_outpost_arrows_garrison",
+          "pbgid": 171016
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 6
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 25,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "fire": 0,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_outpost_arrows_garrison",
+          "pbgid": 171016
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 6
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 25,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "fire": 0,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_outpost_arrows_garrison",
+          "pbgid": 171016
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.75,
+          "range": {
+            "min": 0,
+            "max": 6
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 25,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "fire": 0,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_outpost_arrows_garrison",
+          "pbgid": 171016
         }
       ],
       "armor": [
@@ -167,20 +652,29 @@
         "height": 501
       },
       "garrison": {
-        "capacity": 10
+        "capacity": 10,
+        "classes": [
+          "infantry",
+          "infantry ranged",
+          "villager",
+          "monk",
+          "cavalry"
+        ]
       },
-      "icon": "https://data.aoe4world.com/images/buildings/barbican-of-the-sun.png"
+      "influences": []
     },
     {
-      "id": "barracks-1-chinese",
+      "id": "barracks-1",
       "baseId": "barracks",
       "type": "building",
       "name": "Barracks",
+      "pbgid": 145521,
+      "attribName": "building_unit_infantry_control_chi",
       "age": 1,
       "civs": [
         "ch"
       ],
-      "description": "Produces melee infantry units.",
+      "description": "Produces melee infantry units.\nGenerates tax each time a unit or research is produced.",
       "classes": [
         "military",
         "building"
@@ -188,7 +682,7 @@
       "displayClasses": [
         "Military Building"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 150,
@@ -201,6 +695,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/barracks-1.png",
       "hitpoints": 1500,
       "weapons": [],
       "armor": [
@@ -213,18 +708,22 @@
         "line": 25,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/barracks.png"
+      "influences": [
+        "Buildings generate +100% tax while within the influence of the Imperial Academy."
+      ]
     },
     {
-      "id": "blacksmith-2-chinese",
+      "id": "blacksmith-2",
       "baseId": "blacksmith",
       "type": "building",
       "name": "Blacksmith",
+      "pbgid": 145515,
+      "attribName": "building_tech_unit_infantry_control_chi",
       "age": 2,
       "civs": [
         "ch"
       ],
-      "description": "Houses technology to improve infantry and cavalry.",
+      "description": "Houses technology to improve infantry and cavalry.\nGenerates tax each time a technology completes.",
       "classes": [
         "technology",
         "building"
@@ -232,7 +731,7 @@
       "displayClasses": [
         "Technology Building"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 150,
@@ -245,6 +744,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/blacksmith-2.png",
       "hitpoints": 1500,
       "weapons": [],
       "armor": [
@@ -257,65 +757,48 @@
         "line": 25,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/blacksmith.png"
+      "influences": [
+        "Buildings generate +100% tax while within the influence of the Imperial Academy."
+      ]
     },
     {
-      "id": "capital-town-center-1-chinese",
+      "id": "capital-town-center-1",
       "baseId": "capital-town-center",
       "type": "building",
       "name": "Capital Town Center",
+      "pbgid": 181134,
+      "attribName": "building_town_center_capital_chi",
       "age": 1,
       "civs": [
         "ch"
       ],
-      "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
+      "description": "All Resources can be dropped off here. Produces Villagers, Scouts, and Officials and increases your maximum Population. Adds additional attacks while garrisoned.",
       "classes": [
         "economy",
+        "&",
         "population",
-        "building"
+        "building",
+        "landmark"
       ],
       "displayClasses": [
-        "Economy & Population Building"
+        "Economy & Population Building",
+        "Landmark"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
         "gold": 0,
+        "wood": 0,
+        "food": 0,
+        "stone": 0,
         "total": 0,
         "time": 0
       },
       "producedBy": [
-        "map-generation"
+        "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
       "hitpoints": 7000,
-      "weapons": [
-        {
-          "type": "ranged",
-          "damage": 25,
-          "speed": 5.64,
-          "range": {
-            "min": 0,
-            "max": 8
-          },
-          "modifiers": [
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "ship"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 25,
-              "type": "passive"
-            }
-          ]
-        }
-      ],
+      "weapons": [],
       "armor": [
         {
           "type": "ranged",
@@ -327,23 +810,33 @@
         "height": 10
       },
       "garrison": {
-        "capacity": 15
+        "capacity": 15,
+        "classes": [
+          "villager",
+          "infantry",
+          "monk",
+          "cavalry",
+          "infantry ranged",
+          "khan"
+        ]
       },
-      "popcapIncrease": 10,
-      "icon": "https://data.aoe4world.com/images/buildings/capital-town-center.png"
+      "influences": []
     },
     {
-      "id": "dock-1-chinese",
+      "id": "dock-1",
       "baseId": "dock",
       "type": "building",
       "name": "Dock",
+      "pbgid": 193145,
+      "attribName": "building_unit_naval_chi",
       "age": 1,
       "civs": [
         "ch"
       ],
-      "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.",
+      "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three fishing ships.\nGenerates Tax each time a unit or research is produced.",
       "classes": [
         "military",
+        "&",
         "economy",
         "building",
         "trade",
@@ -353,7 +846,7 @@
         "Military & Economy Building",
         "Trade Site"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 150,
@@ -366,6 +859,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/dock-1.png",
       "hitpoints": 1500,
       "weapons": [],
       "armor": [
@@ -379,15 +873,22 @@
         "height": 8
       },
       "garrison": {
-        "capacity": 3
+        "capacity": 3,
+        "classes": [
+          "fishing ship"
+        ]
       },
-      "icon": "https://data.aoe4world.com/images/buildings/dock.png"
+      "influences": [
+        "Buildings generate +100% tax while within the influence of the Imperial Academy."
+      ]
     },
     {
       "id": "enclave-of-the-emperor-4",
       "baseId": "enclave-of-the-emperor",
       "type": "building",
       "name": "Enclave of the Emperor",
+      "pbgid": 145552,
+      "attribName": "building_wonder_age4_forbidden_control_chi",
       "age": 4,
       "civs": [
         "ch"
@@ -412,6 +913,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/enclave-of-the-emperor-4.png",
       "hitpoints": 5000,
       "weapons": [],
       "armor": [
@@ -424,13 +926,15 @@
         "line": 25,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/enclave-of-the-emperor.png"
+      "influences": []
     },
     {
-      "id": "farm-1-chinese",
+      "id": "farm-1",
       "baseId": "farm",
       "type": "building",
       "name": "Farm",
+      "pbgid": 145512,
+      "attribName": "building_resource_farm_chi",
       "age": 1,
       "civs": [
         "ch"
@@ -445,7 +949,7 @@
         "Food Source",
         "Building"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 75,
@@ -458,6 +962,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/farm-1.png",
       "hitpoints": 300,
       "weapons": [],
       "armor": [
@@ -470,14 +975,16 @@
         "line": 0,
         "height": 0
       },
-      "icon": "https://data.aoe4world.com/images/buildings/farm.png"
+      "influences": []
     },
     {
-      "id": "granary-2",
+      "id": "granary-1",
       "baseId": "granary",
       "type": "building",
       "name": "Granary",
-      "age": 2,
+      "pbgid": 156481,
+      "attribName": "building_dynasty_granary_control_chi",
+      "age": 1,
       "civs": [
         "ch"
       ],
@@ -497,11 +1004,12 @@
         "gold": 0,
         "total": 150,
         "popcap": 0,
-        "time": 17
+        "time": 18
       },
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/granary-1.png",
       "hitpoints": 1500,
       "weapons": [],
       "armor": [
@@ -514,21 +1022,26 @@
         "line": 15,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/granary.png"
+      "influences": [
+        "Buildings generate +100% tax while within the influence of the Imperial Academy."
+      ]
     },
     {
       "id": "great-wall-gatehouse-3",
       "baseId": "great-wall-gatehouse",
       "type": "building",
       "name": "Great Wall Gatehouse",
+      "pbgid": 145549,
+      "attribName": "building_landmark_age3_great_wall_control_chi",
       "age": 3,
       "civs": [
         "ch"
       ],
-      "description": "Must be built over Stone Walls.\ncomes with a Nest of Bees emplacement that fires a burst of 16 arrows . All troops on walls deal  +25% ranged damage.",
+      "description": "Must be built over Stone Walls.\nComes with a Nest of Bees emplacement and provides +25% ranged damage to all units on walls.",
       "classes": [
         "age",
         "iv",
+        "-",
         "defensive",
         "landmark"
       ],
@@ -548,8 +1061,51 @@
       "producedBy": [
         "villager"
       ],
-      "hitpoints": 5000,
-      "weapons": [],
+      "icon": "https://data.aoe4world.com/images/buildings/great-wall-gatehouse-3.png",
+      "hitpoints": 7500,
+      "weapons": [
+        {
+          "name": "Rocket Arrow",
+          "type": "siege",
+          "damage": 15,
+          "speed": 6.5,
+          "range": {
+            "min": 0,
+            "max": 10
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 4,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 2,
+            "reload": 4,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 16
+          },
+          "attribName": "weapon_great_wall_bees_chi",
+          "pbgid": 2076648
+        }
+      ],
       "armor": [
         {
           "type": "ranged",
@@ -557,16 +1113,18 @@
         }
       ],
       "sight": {
-        "line": 25,
+        "line": 40,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/great-wall-gatehouse.png"
+      "influences": []
     },
     {
-      "id": "house-1-chinese",
+      "id": "house-1",
       "baseId": "house",
       "type": "building",
       "name": "House",
+      "pbgid": 145511,
+      "attribName": "building_house_control_chi",
       "age": 1,
       "civs": [
         "ch"
@@ -579,18 +1137,20 @@
       "displayClasses": [
         "Population Building"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 50,
         "stone": 0,
         "gold": 0,
         "total": 50,
+        "popcap": 0,
         "time": 8
       },
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/house-1.png",
       "hitpoints": 750,
       "weapons": [],
       "armor": [
@@ -603,22 +1163,24 @@
         "line": 15,
         "height": 8
       },
-      "popcapIncrease": 10,
-      "icon": "https://data.aoe4world.com/images/buildings/house.png"
+      "influences": []
     },
     {
       "id": "imperial-academy-1",
       "baseId": "imperial-academy",
       "type": "building",
       "name": "Imperial Academy",
+      "pbgid": 145539,
+      "attribName": "building_landmark_age1_academy_control_chi",
       "age": 1,
       "civs": [
         "ch"
       ],
-      "description": "Nearby buildings generate +100% Tax Gold. Can train Imperial Officials.",
+      "description": "Nearby buildings generate +100% Tax Gold. Imperial Officials can drop off taxes at this building.",
       "classes": [
         "age",
         "ii",
+        "-",
         "economic",
         "landmark"
       ],
@@ -638,6 +1200,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/imperial-academy-1.png",
       "hitpoints": 5000,
       "weapons": [],
       "armor": [
@@ -647,24 +1210,27 @@
         }
       ],
       "sight": {
-        "line": 28,
+        "line": 25,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/imperial-academy.png"
+      "influences": []
     },
     {
       "id": "imperial-palace-2",
       "baseId": "imperial-palace",
       "type": "building",
       "name": "Imperial Palace",
+      "pbgid": 145547,
+      "attribName": "building_landmark_age2_palace_control_chi",
       "age": 2,
       "civs": [
         "ch"
       ],
-      "description": "Has large sight radius. Activate to view location of enemy Villagers, Traders, Trade Ships, Fishing Ships and Officials for 10 seconds.",
+      "description": "Has a large sight radius. Activate to view location of enemy workers for 10 seconds.",
       "classes": [
         "age",
         "iii",
+        "-",
         "economic",
         "landmark"
       ],
@@ -684,6 +1250,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/imperial-palace-2.png",
       "hitpoints": 5000,
       "weapons": [],
       "armor": [
@@ -696,13 +1263,15 @@
         "line": 110,
         "height": 5000
       },
-      "icon": "https://data.aoe4world.com/images/buildings/imperial-palace.png"
+      "influences": []
     },
     {
-      "id": "keep-3-chinese",
+      "id": "keep-3",
       "baseId": "keep",
       "type": "building",
       "name": "Keep",
+      "pbgid": 144648,
+      "attribName": "building_defense_keep_chi",
       "age": 3,
       "civs": [
         "ch"
@@ -715,7 +1284,7 @@
       "displayClasses": [
         "Defensive Building"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 0,
@@ -723,17 +1292,19 @@
         "gold": 0,
         "total": 800,
         "popcap": 0,
-        "time": 105
+        "time": 140
       },
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/keep-3.png",
       "hitpoints": 5000,
       "weapons": [
         {
+          "name": "Bow",
           "type": "ranged",
-          "damage": 150,
-          "speed": 3,
+          "damage": 10,
+          "speed": 2.625,
           "range": {
             "min": 0,
             "max": 8
@@ -744,7 +1315,8 @@
               "target": {
                 "class": [
                   [
-                    "ship"
+                    "naval",
+                    "unit"
                   ]
                 ]
               },
@@ -752,7 +1324,22 @@
               "value": 25,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0.375,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_keep_arrows_garrison",
+          "pbgid": 171261
         }
       ],
       "armor": [
@@ -770,20 +1357,32 @@
         "height": 501
       },
       "garrison": {
-        "capacity": 15
+        "capacity": 15,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk",
+          "cavalry",
+          "khan"
+        ]
       },
-      "icon": "https://data.aoe4world.com/images/buildings/keep.png"
+      "influences": [
+        "Buildings generate +100% tax while within the influence of the Imperial Academy."
+      ]
     },
     {
-      "id": "lumber-camp-1-chinese",
+      "id": "lumber-camp-1",
       "baseId": "lumber-camp",
       "type": "building",
       "name": "Lumber Camp",
+      "pbgid": 144678,
+      "attribName": "building_econ_wood_control_chi",
       "age": 1,
       "civs": [
         "ch"
       ],
-      "description": "Villagers can drop off Wood at this building. Houses technologies to improve Wood gathering.",
+      "description": "Villagers can drop off Wood at this building. Houses technologies to improve Wood gathering.\nGenerates tax each time a resource is dropped off.",
       "classes": [
         "economy",
         "building"
@@ -791,7 +1390,7 @@
       "displayClasses": [
         "Economy Building"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 50,
@@ -804,6 +1403,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/lumber-camp-1.png",
       "hitpoints": 750,
       "weapons": [],
       "armor": [
@@ -816,18 +1416,22 @@
         "line": 15,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/lumber-camp.png"
+      "influences": [
+        "Buildings generate +100% tax while within the influence of the Imperial Academy."
+      ]
     },
     {
-      "id": "market-2-chinese",
+      "id": "market-2",
       "baseId": "market",
       "type": "building",
       "name": "Market",
+      "pbgid": 144675,
+      "attribName": "building_econ_market_control_chi",
       "age": 2,
       "civs": [
         "ch"
       ],
-      "description": "Allows the buying and selling of resources and produces the Trader.",
+      "description": "Allows the buying and selling of resources and produces the Trader. Generates tax each time a Trader drops off Gold.",
       "classes": [
         "economy",
         "building",
@@ -838,7 +1442,7 @@
         "Economy Building",
         "Trade Site"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 100,
@@ -851,6 +1455,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/market-2.png",
       "hitpoints": 1000,
       "weapons": [],
       "armor": [
@@ -863,18 +1468,22 @@
         "line": 25,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/market.png"
+      "influences": [
+        "Buildings generate +100% tax while within the influence of the Imperial Academy."
+      ]
     },
     {
-      "id": "mill-1-chinese",
+      "id": "mill-1",
       "baseId": "mill",
       "type": "building",
       "name": "Mill",
+      "pbgid": 144662,
+      "attribName": "building_econ_food_control_chi",
       "age": 1,
       "civs": [
         "ch"
       ],
-      "description": "Villagers can drop off Food at this building. Houses technologies to improve Food gathering.",
+      "description": "Villagers can drop off Food at this building. Houses technologies to improve Food gathering.\nGenerates tax each time a resource is dropped off.",
       "classes": [
         "economy",
         "building"
@@ -882,7 +1491,7 @@
       "displayClasses": [
         "Economy Building"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 50,
@@ -895,6 +1504,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/mill-1.png",
       "hitpoints": 750,
       "weapons": [],
       "armor": [
@@ -907,18 +1517,22 @@
         "line": 15,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/mill.png"
+      "influences": [
+        "Buildings generate +100% tax while within the influence of the Imperial Academy."
+      ]
     },
     {
-      "id": "mining-camp-1-chinese",
+      "id": "mining-camp-1",
       "baseId": "mining-camp",
       "type": "building",
       "name": "Mining Camp",
+      "pbgid": 144677,
+      "attribName": "building_econ_mining_camp_control_chi",
       "age": 1,
       "civs": [
         "ch"
       ],
-      "description": "Villagers can drop off Stone and Gold at this building. Houses technologies to improve mining.",
+      "description": "Villagers can drop off Stone and Gold at this building. Houses technologies to improve mining.\nGenerates tax each time a resource is dropped off.",
       "classes": [
         "economy",
         "building"
@@ -926,7 +1540,7 @@
       "displayClasses": [
         "Economy Building"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 50,
@@ -939,6 +1553,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/mining-camp-1.png",
       "hitpoints": 750,
       "weapons": [],
       "armor": [
@@ -951,18 +1566,22 @@
         "line": 15,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/mining-camp.png"
+      "influences": [
+        "Buildings generate +100% tax while within the influence of the Imperial Academy."
+      ]
     },
     {
-      "id": "monastery-3-chinese",
+      "id": "monastery-3",
       "baseId": "monastery",
       "type": "building",
       "name": "Monastery",
+      "pbgid": 145535,
+      "attribName": "building_unit_religious_control_chi",
       "age": 3,
       "civs": [
         "ch"
       ],
-      "description": "Produces religious units and houses religious technologies. Starting in the Castle Age (III), religious units can pick up Relics and place 3 of them in this building to generate Gold.",
+      "description": "Produces religious units. \nGenerates tax each time a unit or research is produced.\nIn the Castle Age (III), religious units can carry Relics from this building to Sacred Sites in order to generate Gold.",
       "classes": [
         "religious",
         "building"
@@ -970,7 +1589,7 @@
       "displayClasses": [
         "Religious Building"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 200,
@@ -983,6 +1602,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/monastery-3.png",
       "hitpoints": 2100,
       "weapons": [],
       "armor": [
@@ -995,13 +1615,17 @@
         "line": 25,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/monastery.png"
+      "influences": [
+        "Buildings generate +100% tax while within the influence of the Imperial Academy."
+      ]
     },
     {
-      "id": "outpost-1-chinese",
+      "id": "outpost-1",
       "baseId": "outpost",
       "type": "building",
       "name": "Outpost",
+      "pbgid": 144652,
+      "attribName": "building_defense_outpost_chi",
       "age": 1,
       "civs": [
         "ch"
@@ -1014,7 +1638,7 @@
       "displayClasses": [
         "Defensive Building"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 100,
@@ -1022,11 +1646,12 @@
         "gold": 0,
         "total": 100,
         "popcap": 0,
-        "time": 30
+        "time": 60
       },
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/outpost-1.png",
       "hitpoints": 750,
       "weapons": [],
       "armor": [
@@ -1040,27 +1665,36 @@
         "height": 501
       },
       "garrison": {
-        "capacity": 5
+        "capacity": 5,
+        "classes": [
+          "infantry",
+          "infantry ranged",
+          "villager",
+          "monk",
+          "cavalry",
+          "khan"
+        ]
       },
-      "icon": "https://data.aoe4world.com/images/buildings/outpost.png"
+      "influences": []
     },
     {
-      "id": "pagoda-3",
+      "id": "pagoda-1",
       "baseId": "pagoda",
       "type": "building",
       "name": "Pagoda",
-      "age": 3,
+      "pbgid": 156488,
+      "attribName": "building_dynasty_pagoda_control_chi",
+      "age": 1,
       "civs": [
         "ch"
       ],
-      "description": "A Relic can be placed in the Pagoda. Generates 100 Gold and  50 Food, Wood and Stone every  50 seconds. \nGenerates tax over time.",
+      "description": "Religious units can pick up Relics and place them in the Pagoda to generate +50 Gold, +25 Food, Wood, and Stone every 30 seconds.",
       "classes": [
         "religious",
-        "economy",
         "building"
       ],
       "displayClasses": [
-        "Religious & Economy Building"
+        "Religious Building"
       ],
       "unique": true,
       "costs": {
@@ -1075,6 +1709,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/pagoda-1.png",
       "hitpoints": 2100,
       "weapons": [],
       "armor": [
@@ -1087,13 +1722,15 @@
         "line": 25,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/pagoda.png"
+      "influences": []
     },
     {
-      "id": "palisade-gate-1-chinese",
+      "id": "palisade-gate-1",
       "baseId": "palisade-gate",
       "type": "building",
       "name": "Palisade Gate",
+      "pbgid": 144656,
+      "attribName": "building_defense_palisade_gate_chi",
       "age": 1,
       "civs": [
         "ch"
@@ -1106,7 +1743,7 @@
       "displayClasses": [
         "Defensive Building"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 25,
@@ -1114,11 +1751,12 @@
         "gold": 0,
         "total": 25,
         "popcap": 0,
-        "time": 5
+        "time": 7
       },
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/palisade-gate-1.png",
       "hitpoints": 1500,
       "weapons": [],
       "armor": [
@@ -1131,18 +1769,67 @@
         "line": 20,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/palisade-gate.png"
+      "influences": []
     },
     {
-      "id": "siege-workshop-3-chinese",
+      "id": "palisade-wall-1",
+      "baseId": "palisade-wall",
+      "type": "building",
+      "name": "Palisade Wall",
+      "pbgid": 144653,
+      "attribName": "building_defense_palisade_bastion_chi",
+      "age": 1,
+      "civs": [
+        "ch"
+      ],
+      "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 15 Wood, with each additional section costing 5 Wood.",
+      "classes": [
+        "defensive",
+        "building"
+      ],
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 5,
+        "stone": 0,
+        "gold": 0,
+        "total": 5,
+        "popcap": 0,
+        "time": 3
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/palisade-wall-1.png",
+      "hitpoints": 1500,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 6,
+        "height": 8
+      },
+      "influences": []
+    },
+    {
+      "id": "siege-workshop-3",
       "baseId": "siege-workshop",
       "type": "building",
       "name": "Siege Workshop",
+      "pbgid": 145536,
+      "attribName": "building_unit_siege_control_chi",
       "age": 3,
       "civs": [
         "ch"
       ],
-      "description": "Produces siege engines and powerful gunpowder units.",
+      "description": "Produces siege engines and powerful gunpowder units.\nGenerates tax each time a unit is produced.",
       "classes": [
         "military",
         "building"
@@ -1150,7 +1837,7 @@
       "displayClasses": [
         "Military Building"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 300,
@@ -1163,6 +1850,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/siege-workshop-3.png",
       "hitpoints": 2100,
       "weapons": [],
       "armor": [
@@ -1175,21 +1863,26 @@
         "line": 25,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/siege-workshop.png"
+      "influences": [
+        "Buildings generate +100% tax while within the influence of the Imperial Academy."
+      ]
     },
     {
       "id": "spirit-way-3",
       "baseId": "spirit-way",
       "type": "building",
       "name": "Spirit Way",
+      "pbgid": 145538,
+      "attribName": "building_landmark_age3_spirit_way_control_chi",
       "age": 3,
       "civs": [
         "ch"
       ],
-      "description": "All buildings can create previously achieved dynasty units. Houses technologies to upgrade dynasty units which can be researched for -50% cost and  50% of research time \nWhen a dynasty unit dies, all nearby units will receive +20% attack speed and +20 health over 10 seconds",
+      "description": "Dynasty related technology can be researched here for -50% cost and +100% research speed.\nWhen a dynasty unit is killed nearby units will receive +20% attack speed and +20 health over 10 seconds.",
       "classes": [
         "age",
         "iv",
+        "-",
         "military",
         "landmark"
       ],
@@ -1209,6 +1902,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/spirit-way-3.png",
       "hitpoints": 5000,
       "weapons": [],
       "armor": [
@@ -1221,18 +1915,20 @@
         "line": 25,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/spirit-way.png"
+      "influences": []
     },
     {
-      "id": "stable-2-chinese",
+      "id": "stable-2",
       "baseId": "stable",
       "type": "building",
       "name": "Stable",
+      "pbgid": 145520,
+      "attribName": "building_unit_cavalry_control_chi",
       "age": 2,
       "civs": [
         "ch"
       ],
-      "description": "Produces cavalry military units.",
+      "description": "Produces cavalry military units.\nGenerates tax each time a unit or research is produced.",
       "classes": [
         "military",
         "building"
@@ -1240,7 +1936,7 @@
       "displayClasses": [
         "Military Building"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 150,
@@ -1253,6 +1949,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/stable-2.png",
       "hitpoints": 1500,
       "weapons": [],
       "armor": [
@@ -1265,325 +1962,22 @@
         "line": 25,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/stable.png"
+      "influences": [
+        "Buildings generate +100% tax while within the influence of the Imperial Academy."
+      ]
     },
     {
-      "id": "stone-wall-gate-2-chinese",
-      "baseId": "stone-wall-gate",
-      "type": "building",
-      "name": "Stone Wall Gate",
-      "age": 2,
-      "civs": [
-        "ch"
-      ],
-      "description": "Heavy defensive gate. Must be built on a Stone Wall segment.\nInfantry can use the gate to access the top of the walls.",
-      "classes": [
-        "defensive",
-        "building"
-      ],
-      "displayClasses": [
-        "Defensive Building"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 50,
-        "gold": 0,
-        "total": 50,
-        "popcap": 0,
-        "time": 15
-      },
-      "producedBy": [
-        "villager"
-      ],
-      "hitpoints": 3000,
-      "weapons": [],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 50
-        }
-      ],
-      "sight": {
-        "line": 25,
-        "height": 8
-      },
-      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-gate.png"
-    },
-    {
-      "id": "stone-wall-tower-2-chinese",
-      "baseId": "stone-wall-tower",
-      "type": "building",
-      "name": "Stone Wall Tower",
-      "age": 2,
-      "civs": [
-        "ch"
-      ],
-      "description": "Heavy defensive tower that fires a springald. Must be built on a Stone Wall segment.\nInfantry can use the tower to access the top of the walls.",
-      "classes": [
-        "defensive",
-        "building"
-      ],
-      "displayClasses": [
-        "Defensive Building"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 300,
-        "gold": 0,
-        "total": 300,
-        "popcap": 0,
-        "time": 120
-      },
-      "producedBy": [
-        "villager"
-      ],
-      "hitpoints": 3000,
-      "weapons": [
-        {
-          "type": "ranged",
-          "damage": 60,
-          "speed": 6.25,
-          "range": {
-            "min": 0,
-            "max": 9
-          },
-          "modifiers": [
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "ship"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 50,
-              "type": "passive"
-            }
-          ]
-        }
-      ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 50
-        }
-      ],
-      "sight": {
-        "line": 60,
-        "height": 501
-      },
-      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-tower.png"
-    },
-    {
-      "id": "town-center-2-chinese",
-      "baseId": "town-center",
-      "type": "building",
-      "name": "Town Center",
-      "age": 2,
-      "civs": [
-        "ch"
-      ],
-      "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
-      "classes": [
-        "economy",
-        "population",
-        "building"
-      ],
-      "displayClasses": [
-        "Economy & Population Building"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 400,
-        "stone": 300,
-        "gold": 0,
-        "total": 700,
-        "time": 60
-      },
-      "producedBy": [
-        "villager"
-      ],
-      "hitpoints": 2400,
-      "weapons": [],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 50
-        }
-      ],
-      "sight": {
-        "line": 52,
-        "height": 10
-      },
-      "garrison": {
-        "capacity": 10
-      },
-      "popcapIncrease": 10,
-      "icon": "https://data.aoe4world.com/images/buildings/town-center.png"
-    },
-    {
-      "id": "university-4-chinese",
-      "baseId": "university",
-      "type": "building",
-      "name": "University",
-      "age": 4,
-      "civs": [
-        "ch"
-      ],
-      "description": "Houses advanced technology that benefit the civilization.",
-      "classes": [
-        "technology",
-        "building"
-      ],
-      "displayClasses": [
-        "Technology Building"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 450,
-        "stone": 0,
-        "gold": 0,
-        "total": 450,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "villager"
-      ],
-      "hitpoints": 2100,
-      "weapons": [],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 50
-        }
-      ],
-      "sight": {
-        "line": 25,
-        "height": 8
-      },
-      "icon": "https://data.aoe4world.com/images/buildings/university.png"
-    },
-    {
-      "id": "village-1",
-      "baseId": "village",
-      "type": "building",
-      "name": "Village",
-      "age": 1,
-      "civs": [
-        "ch"
-      ],
-      "description": "Increases maximum Population by 40.",
-      "classes": [
-        "population",
-        "defensive",
-        "building"
-      ],
-      "displayClasses": [
-        "Population & Defensive Building"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 125,
-        "stone": 0,
-        "gold": 0,
-        "total": 125,
-        "time": 15
-      },
-      "producedBy": [
-        "villager"
-      ],
-      "hitpoints": 1500,
-      "weapons": [],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 50
-        }
-      ],
-      "sight": {
-        "line": 18,
-        "height": 8
-      },
-      "garrison": {
-        "capacity": 10
-      },
-      "popcapIncrease": 40,
-      "icon": "https://data.aoe4world.com/images/buildings/village.png"
-    },
-    {
-      "id": "palisade-wall-1",
-      "baseId": "palisade-wall",
-      "type": "building",
-      "name": "Palisade Wall",
-      "age": 1,
-      "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab"
-      ],
-      "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 15 Wood, with each additional section costing  5 Wood.",
-      "classes": [
-        "defensive",
-        "building"
-      ],
-      "displayClasses": [
-        "Defensive Building"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 5,
-        "stone": 0,
-        "gold": 0,
-        "total": 5,
-        "popcap": 0,
-        "time": 4
-      },
-      "producedBy": [
-        "villager"
-      ],
-      "hitpoints": 1500,
-      "weapons": [],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 50
-        }
-      ],
-      "sight": {
-        "line": 6,
-        "height": 8
-      },
-      "icon": "https://data.aoe4world.com/images/buildings/palisade-wall.png"
-    },
-    {
-      "id": "stone-wall-2",
+      "id": "stone-wall-1",
       "baseId": "stone-wall",
       "type": "building",
       "name": "Stone Wall",
-      "age": 2,
+      "pbgid": 144658,
+      "attribName": "building_defense_wall_bastion_chi",
+      "age": 1,
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab"
+        "ch"
       ],
-      "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take -66% less damage from ranged attacks and their range is increased by  +2.",
+      "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 66% less damage from ranged attacks and their range is increased by +2.",
       "classes": [
         "defensive",
         "building"
@@ -1599,11 +1993,12 @@
         "gold": 0,
         "total": 15,
         "popcap": 0,
-        "time": 16
+        "time": 11
       },
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-1.png",
       "hitpoints": 3500,
       "weapons": [],
       "armor": [
@@ -1616,7 +2011,354 @@
         "line": 6,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/stone-wall.png"
+      "influences": []
+    },
+    {
+      "id": "stone-wall-2",
+      "baseId": "stone-wall",
+      "type": "building",
+      "name": "Stone Wall",
+      "pbgid": 144659,
+      "attribName": "building_defense_wall_chi",
+      "age": 2,
+      "civs": [
+        "ch"
+      ],
+      "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 66% less damage from ranged attacks and their range is increased by +2.",
+      "classes": [
+        "defensive",
+        "building"
+      ],
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 15,
+        "gold": 0,
+        "total": 15,
+        "popcap": 0,
+        "time": 11
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-2.png",
+      "hitpoints": 3500,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 6,
+        "height": 8
+      },
+      "influences": []
+    },
+    {
+      "id": "stone-wall-gate-2",
+      "baseId": "stone-wall-gate",
+      "type": "building",
+      "name": "Stone Wall Gate",
+      "pbgid": 144660,
+      "attribName": "building_defense_wall_gate_chi",
+      "age": 2,
+      "civs": [
+        "ch"
+      ],
+      "description": "Heavy defensive gate. Must be built on a Stone Wall segment.\nInfantry can use the gate to access the top of the walls.",
+      "classes": [
+        "defensive",
+        "building"
+      ],
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 50,
+        "gold": 0,
+        "total": 50,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-gate-2.png",
+      "hitpoints": 3000,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 25,
+        "height": 8
+      },
+      "influences": []
+    },
+    {
+      "id": "stone-wall-tower-2",
+      "baseId": "stone-wall-tower",
+      "type": "building",
+      "name": "Stone Wall Tower",
+      "pbgid": 144657,
+      "attribName": "building_defense_tower_chi",
+      "age": 2,
+      "civs": [
+        "ch"
+      ],
+      "description": "Heavy defensive tower that fires a springald. Must be built on a Stone Wall segment.\nInfantry can use the tower to access the top of the walls.",
+      "classes": [
+        "defensive",
+        "building"
+      ],
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 300,
+        "gold": 0,
+        "total": 300,
+        "popcap": 0,
+        "time": 80
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-tower-2.png",
+      "hitpoints": 3000,
+      "weapons": [
+        {
+          "name": "Springald",
+          "type": "ranged",
+          "damage": 60,
+          "speed": 6.25,
+          "range": {
+            "min": 0,
+            "max": 9
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 50,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0.25,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 5,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_walltower_springald",
+          "pbgid": 134820
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 60,
+        "height": 501
+      },
+      "influences": []
+    },
+    {
+      "id": "town-center-2",
+      "baseId": "town-center",
+      "type": "building",
+      "name": "Town Center",
+      "pbgid": 137295,
+      "attribName": "building_town_center_chi",
+      "age": 2,
+      "civs": [
+        "ch"
+      ],
+      "description": "All Resources can be dropped off here. Produces Villagers, Scouts, and Officials and increases your maximum Population. Adds additional attacks while garrisoned.",
+      "classes": [
+        "economy",
+        "&",
+        "population",
+        "building"
+      ],
+      "displayClasses": [
+        "Economy & Population Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 400,
+        "stone": 300,
+        "gold": 0,
+        "total": 700,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-2.png",
+      "hitpoints": 2500,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 52,
+        "height": 10
+      },
+      "garrison": {
+        "capacity": 10,
+        "classes": [
+          "villager",
+          "infantry",
+          "monk",
+          "cavalry",
+          "infantry ranged",
+          "khan"
+        ]
+      },
+      "influences": []
+    },
+    {
+      "id": "university-4",
+      "baseId": "university",
+      "type": "building",
+      "name": "University",
+      "pbgid": 145519,
+      "attribName": "building_tech_university_control_chi",
+      "age": 4,
+      "civs": [
+        "ch"
+      ],
+      "description": "Houses advanced technology that benefits the civilization.\nGenerates tax each time a technology completes.",
+      "classes": [
+        "technology",
+        "building"
+      ],
+      "displayClasses": [
+        "Technology Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 450,
+        "stone": 0,
+        "gold": 0,
+        "total": 450,
+        "popcap": 0,
+        "time": 30
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/university-4.png",
+      "hitpoints": 2100,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 25,
+        "height": 8
+      },
+      "influences": [
+        "Buildings generate +100% tax while within the influence of the Imperial Academy."
+      ]
+    },
+    {
+      "id": "village-1",
+      "baseId": "village",
+      "type": "building",
+      "name": "Village",
+      "pbgid": 156484,
+      "attribName": "building_dynasty_village_control_chi",
+      "age": 1,
+      "civs": [
+        "ch"
+      ],
+      "description": "Increases maximum Population by 40.",
+      "classes": [
+        "population",
+        "&",
+        "defensive",
+        "building"
+      ],
+      "displayClasses": [
+        "Population & Defensive Building"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 0,
+        "wood": 125,
+        "stone": 0,
+        "gold": 0,
+        "total": 125,
+        "popcap": 0,
+        "time": 15
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/village-1.png",
+      "hitpoints": 1500,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 15,
+        "height": 8
+      },
+      "garrison": {
+        "capacity": 10,
+        "classes": [
+          "infantry",
+          "infantry ranged",
+          "villager",
+          "monk"
+        ]
+      },
+      "influences": []
     }
   ]
 }

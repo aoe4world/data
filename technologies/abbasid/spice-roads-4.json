@@ -1,0 +1,47 @@
+{
+  "id": "spice-roads-4",
+  "baseId": "spice-roads",
+  "type": "technology",
+  "name": "Spice Roads",
+  "pbgid": 201753,
+  "attribName": "upgrade_trade_gold_income_abb",
+  "age": 4,
+  "civs": [
+    "ab"
+  ],
+  "description": "Increase the Gold income from Traders and Trade Ships by +30%.",
+  "classes": [
+    "trade",
+    "technology"
+  ],
+  "displayClasses": [
+    "Trade Technology"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 0,
+    "wood": 300,
+    "stone": 0,
+    "gold": 700,
+    "total": 1000,
+    "popcap": 0,
+    "time": 90
+  },
+  "producedBy": [
+    "house-of-wisdom"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/spice-roads-4.png",
+  "effects": [
+    {
+      "property": "goldGatherRate",
+      "select": {
+        "id": [
+          "traders"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.3,
+      "type": "passive"
+    }
+  ]
+}

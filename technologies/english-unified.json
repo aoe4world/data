@@ -8,496 +8,11 @@
   },
   "data": [
     {
-      "id": "admiralty",
-      "name": "Admiralty",
+      "id": "acid-distillation",
+      "name": "Acid Distillation",
       "type": "technology",
       "civs": [
         "en"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "classes": [
-        "naval",
-        "technology"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/admiralty.png",
-      "description": "Provides +1 range to all combat ships.",
-      "variations": [
-        {
-          "id": "admiralty-2",
-          "baseId": "admiralty",
-          "type": "technology",
-          "name": "Admiralty",
-          "age": 2,
-          "civs": [
-            "en"
-          ],
-          "description": "Provides +1 range to all combat ships.",
-          "classes": [
-            "naval",
-            "technology"
-          ],
-          "displayClasses": [
-            "Naval Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 50,
-            "wood": 0,
-            "stone": 0,
-            "gold": 125,
-            "total": 175,
-            "popcap": 0,
-            "time": 45
-          },
-          "producedBy": [
-            "dock"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/admiralty.png"
-        }
-      ]
-    },
-    {
-      "id": "armor-clad",
-      "name": "Armor Clad",
-      "type": "technology",
-      "civs": [
-        "en"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Man-at-Arms Technology"
-      ],
-      "classes": [
-        "man-at-arms",
-        "technology"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/armor-clad.png",
-      "description": "Increase the ranged and melee armor of Men-at-Arms by +2.",
-      "variations": [
-        {
-          "id": "armor-clad-3",
-          "baseId": "armor-clad",
-          "type": "technology",
-          "name": "Armor Clad",
-          "age": 3,
-          "civs": [
-            "en"
-          ],
-          "description": "Increase the ranged and melee armor of Men-at-Arms by +2.",
-          "classes": [
-            "man-at-arms",
-            "technology"
-          ],
-          "displayClasses": [
-            "Man-at-Arms Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 100,
-            "wood": 0,
-            "stone": 0,
-            "gold": 250,
-            "total": 350,
-            "popcap": 0,
-            "time": 30
-          },
-          "producedBy": [
-            "barracks"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/armor-clad.png",
-          "effects": [
-            {
-              "property": "rangedArmor",
-              "select": {
-                "id": [
-                  "man-at-arms"
-                ]
-              },
-              "effect": "change",
-              "value": 2,
-              "type": "passive"
-            },
-            {
-              "property": "meleeArmor",
-              "select": {
-                "id": [
-                  "man-at-arms"
-                ]
-              },
-              "effect": "change",
-              "value": 2,
-              "type": "passive"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "arrow-volley",
-      "name": "Arrow Volley",
-      "type": "technology",
-      "civs": [
-        "en"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Longbowman Ability Unlock"
-      ],
-      "classes": [
-        "longbowman",
-        "ability",
-        "unlock"
-      ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/arrow-volley.png",
-      "description": "Longbowmen gain Arrow Volley, an activated ability that increases Longbowmen attack speed by +70%.",
-      "variations": [
-        {
-          "id": "arrow-volley-4",
-          "baseId": "arrow-volley",
-          "type": "technology",
-          "name": "Arrow Volley",
-          "age": 4,
-          "civs": [
-            "en"
-          ],
-          "description": "Longbowmen gain Arrow Volley, an activated ability that increases Longbowmen attack speed by +70%.",
-          "classes": [
-            "longbowman",
-            "ability",
-            "unlock"
-          ],
-          "displayClasses": [
-            "Longbowman Ability Unlock"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 150,
-            "stone": 0,
-            "gold": 350,
-            "total": 500,
-            "popcap": 0,
-            "time": 60
-          },
-          "producedBy": [
-            "archery-range"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/arrow-volley.png",
-          "effects": [
-            {
-              "property": "attackSpeed",
-              "select": {
-                "id": [
-                  "longbowman"
-                ]
-              },
-              "effect": "multiply",
-              "value": 1.7,
-              "type": "ability"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "enclosures",
-      "name": "Enclosures",
-      "type": "technology",
-      "civs": [
-        "en"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Farm Technology"
-      ],
-      "classes": [
-        "farm",
-        "technology"
-      ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/enclosures.png",
-      "description": "Each Farm Enclosure being worked by a Villager generates +1 Gold every  3.5 seconds.",
-      "variations": [
-        {
-          "id": "enclosures-4",
-          "baseId": "enclosures",
-          "type": "technology",
-          "name": "Enclosures",
-          "age": 4,
-          "civs": [
-            "en"
-          ],
-          "description": "Each Farm Enclosure being worked by a Villager generates +1 Gold every  3.5 seconds.",
-          "classes": [
-            "farm",
-            "technology"
-          ],
-          "displayClasses": [
-            "Farm Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 150,
-            "stone": 0,
-            "gold": 350,
-            "total": 500,
-            "popcap": 0,
-            "time": 60
-          },
-          "producedBy": [
-            "mill"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/enclosures.png",
-          "effects": [
-            {
-              "property": "goldGatherRate",
-              "select": {
-                "id": [
-                  "villager",
-                  "farm"
-                ]
-              },
-              "effect": "change",
-              "value": 0.29,
-              "type": "influence"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "network-of-citadels",
-      "name": "Network of Citadels",
-      "type": "technology",
-      "civs": [
-        "en"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Defensive Technology"
-      ],
-      "classes": [
-        "defensive",
-        "technology"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/network-of-citadels.png",
-      "description": "Increase the Network of Castles attack speed bonus from +25% to  +50%.",
-      "variations": [
-        {
-          "id": "network-of-citadels-3",
-          "baseId": "network-of-citadels",
-          "type": "technology",
-          "name": "Network of Citadels",
-          "age": 3,
-          "civs": [
-            "en"
-          ],
-          "description": "Increase the Network of Castles attack speed bonus from +25% to  +50%.",
-          "classes": [
-            "defensive",
-            "technology"
-          ],
-          "displayClasses": [
-            "Defensive Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 75,
-            "gold": 200,
-            "total": 275,
-            "popcap": 0,
-            "time": 45
-          },
-          "producedBy": [
-            "keep"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/network-of-citadels.png",
-          "effects": [
-            {
-              "property": "attackSpeed",
-              "select": {
-                "class": [
-                  [
-                    "infantry"
-                  ]
-                ]
-              },
-              "target": {
-                "class": [
-                  [
-                    "infantry"
-                  ],
-                  [
-                    "cavalry"
-                  ],
-                  [
-                    "building"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 1.2,
-              "type": "bonus"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "setup-camp",
-      "name": "Setup Camp",
-      "type": "technology",
-      "civs": [
-        "en"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Longbowman Ability Unlock"
-      ],
-      "classes": [
-        "longbowman",
-        "ability",
-        "unlock"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/setup-camp.png",
-      "description": "Longbowmen gain the ability to Setup Camp, which heals them for +1 health every  1 seconds.",
-      "variations": [
-        {
-          "id": "setup-camp-2",
-          "baseId": "setup-camp",
-          "type": "technology",
-          "name": "Setup Camp",
-          "age": 2,
-          "civs": [
-            "en"
-          ],
-          "description": "Longbowmen gain the ability to Setup Camp, which heals them for +1 health every  1 seconds.",
-          "classes": [
-            "longbowman",
-            "ability",
-            "unlock"
-          ],
-          "displayClasses": [
-            "Longbowman Ability Unlock"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 25,
-            "wood": 0,
-            "stone": 0,
-            "gold": 75,
-            "total": 100,
-            "popcap": 0,
-            "time": 45
-          },
-          "producedBy": [
-            "archery-range"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/setup-camp.png",
-          "effects": [
-            {
-              "property": "hitpoints",
-              "select": {
-                "id": [
-                  "longbowman"
-                ]
-              },
-              "effect": "change",
-              "value": 1,
-              "type": "ability"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "shattering-projectiles",
-      "name": "Shattering Projectiles",
-      "type": "technology",
-      "civs": [
-        "en"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Trebuchet Technology"
-      ],
-      "classes": [
-        "trebuchet",
-        "technology"
-      ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/shattering-projectiles.png",
-      "description": "Trebuchet projectiles shatter on impact, increasing their area of effect.",
-      "variations": [
-        {
-          "id": "shattering-projectiles-4",
-          "baseId": "shattering-projectiles",
-          "type": "technology",
-          "name": "Shattering Projectiles",
-          "age": 4,
-          "civs": [
-            "en"
-          ],
-          "description": "Trebuchet projectiles shatter on impact, increasing their area of effect.",
-          "classes": [
-            "trebuchet",
-            "technology"
-          ],
-          "displayClasses": [
-            "Trebuchet Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 300,
-            "stone": 0,
-            "gold": 700,
-            "total": 1000,
-            "popcap": 0,
-            "time": 90
-          },
-          "producedBy": [
-            "siege-workshop"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/shattering-projectiles.png",
-          "effects": [
-            {
-              "property": "areaOfEffect",
-              "select": {
-                "id": [
-                  "trebuchet"
-                ]
-              },
-              "effect": "change",
-              "value": 1,
-              "type": "passive"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "acid-distilization",
-      "name": "Acid Distilization",
-      "type": "technology",
-      "civs": [
-        "en",
-        "hr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
       ],
       "unique": false,
       "displayClasses": [
@@ -505,30 +20,29 @@
       ],
       "classes": [
         "mining",
-        "technology"
+        "technology",
+        "2/3"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/acid-distilization.png",
-      "description": "Increase Villagers' gathering rate for Gold and Stone by +15%.",
+      "icon": "https://data.aoe4world.com/images/technologies/acid-distillation-3.png",
+      "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
       "variations": [
         {
-          "id": "acid-distilization-3",
-          "baseId": "acid-distilization",
+          "id": "acid-distillation-3",
+          "baseId": "acid-distillation",
           "type": "technology",
-          "name": "Acid Distilization",
+          "name": "Acid Distillation",
+          "pbgid": 171823,
+          "attribName": "upgrade_econ_resource_gold_harvest_rate_3",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
-          "description": "Increase Villagers' gathering rate for Gold and Stone by +15%.",
+          "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
           "classes": [
             "mining",
-            "technology"
+            "technology",
+            "2/3"
           ],
           "displayClasses": [
             "Mining Technology 2/3"
@@ -544,11 +58,9 @@
             "time": 75
           },
           "producedBy": [
-            "mining-camp",
-            "ger",
-            "steppe-redoubt"
+            "mining-camp"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/acid-distilization.png",
+          "icon": "https://data.aoe4world.com/images/technologies/acid-distillation-3.png",
           "effects": [
             {
               "property": "goldGatherRate",
@@ -581,11 +93,7 @@
       "name": "Additional Sails",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -596,7 +104,7 @@
         "technology"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/additional-sails.png",
+      "icon": "https://data.aoe4world.com/images/technologies/additional-sails-2.png",
       "description": "Increase the movement speed of all ships by +15%.",
       "variations": [
         {
@@ -604,13 +112,11 @@
           "baseId": "additional-sails",
           "type": "technology",
           "name": "Additional Sails",
+          "pbgid": 196905,
+          "attribName": "upgrade_naval_addsails",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the movement speed of all ships by +15%.",
           "classes": [
@@ -633,7 +139,7 @@
           "producedBy": [
             "dock"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/additional-sails.png",
+          "icon": "https://data.aoe4world.com/images/technologies/additional-sails-2.png",
           "effects": [
             {
               "property": "moveSpeed",
@@ -660,12 +166,7 @@
       "name": "Adjustable Crossbars",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -676,7 +177,7 @@
         "technology"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/adjustable-crossbars.png",
+      "icon": "https://data.aoe4world.com/images/technologies/adjustable-crossbars-4.png",
       "description": "Reduce the reload time of Mangonels by -25%.",
       "variations": [
         {
@@ -684,14 +185,11 @@
           "baseId": "adjustable-crossbars",
           "type": "technology",
           "name": "Adjustable Crossbars",
+          "pbgid": 130999,
+          "attribName": "upgrade_siege_adjustable_crossbar",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Reduce the reload time of Mangonels by -25%.",
           "classes": [
@@ -714,7 +212,7 @@
           "producedBy": [
             "siege-workshop"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/adjustable-crossbars.png",
+          "icon": "https://data.aoe4world.com/images/technologies/adjustable-crossbars-4.png",
           "effects": [
             {
               "property": "attackSpeed",
@@ -732,17 +230,67 @@
       ]
     },
     {
+      "id": "admiralty",
+      "name": "Admiralty",
+      "type": "technology",
+      "civs": [
+        "en"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "classes": [
+        "naval",
+        "technology"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/technologies/admiralty-2.png",
+      "description": "Increase the range of combat ships by +1.",
+      "variations": [
+        {
+          "id": "admiralty-2",
+          "baseId": "admiralty",
+          "type": "technology",
+          "name": "Admiralty",
+          "pbgid": 2033826,
+          "attribName": "upgrade_naval_shipwrights_eng",
+          "age": 2,
+          "civs": [
+            "en"
+          ],
+          "description": "Increase the range of combat ships by +1.",
+          "classes": [
+            "naval",
+            "technology"
+          ],
+          "displayClasses": [
+            "Naval Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 50,
+            "wood": 0,
+            "stone": 0,
+            "gold": 125,
+            "total": 175,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/admiralty-2.png",
+          "effects": []
+        }
+      ]
+    },
+    {
       "id": "angled-surfaces",
       "name": "Angled Surfaces",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -751,10 +299,11 @@
       "classes": [
         "ranged",
         "armor",
-        "technology"
+        "technology",
+        "3/3"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/angled-surfaces.png",
+      "icon": "https://data.aoe4world.com/images/technologies/angled-surfaces-4.png",
       "description": "Increase the ranged armor of all non-siege units by +1.",
       "variations": [
         {
@@ -762,21 +311,18 @@
           "baseId": "angled-surfaces",
           "type": "technology",
           "name": "Angled Surfaces",
+          "pbgid": 188268,
+          "attribName": "upgrade_ranged_armor_iii",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the ranged armor of all non-siege units by +1.",
           "classes": [
             "ranged",
             "armor",
-            "technology"
+            "technology",
+            "3/3"
           ],
           "displayClasses": [
             "Ranged Armor Technology 3/3"
@@ -792,10 +338,9 @@
             "time": 60
           },
           "producedBy": [
-            "blacksmith",
-            "meinwerk-palace"
+            "blacksmith"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/angled-surfaces.png",
+          "icon": "https://data.aoe4world.com/images/technologies/angled-surfaces-4.png",
           "effects": [
             {
               "property": "rangedArmor",
@@ -818,16 +363,90 @@
       ]
     },
     {
+      "id": "armor-clad",
+      "name": "Armor Clad",
+      "type": "technology",
+      "civs": [
+        "en"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Man-at-Arms Technology"
+      ],
+      "classes": [
+        "man-at-arms",
+        "technology"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/armor-clad-3.png",
+      "description": "Increase the ranged and melee armor of Men-at-Arms by +2.",
+      "variations": [
+        {
+          "id": "armor-clad-3",
+          "baseId": "armor-clad",
+          "type": "technology",
+          "name": "Armor Clad",
+          "pbgid": 2014110,
+          "attribName": "upgrade_armor_clad_eng",
+          "age": 3,
+          "civs": [
+            "en"
+          ],
+          "description": "Increase the ranged and melee armor of Men-at-Arms by +2.",
+          "classes": [
+            "man-at-arms",
+            "technology"
+          ],
+          "displayClasses": [
+            "Man-at-Arms Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 100,
+            "wood": 0,
+            "stone": 0,
+            "gold": 250,
+            "total": 350,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "barracks"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/armor-clad-3.png",
+          "effects": [
+            {
+              "property": "rangedArmor",
+              "select": {
+                "id": [
+                  "man-at-arms"
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "passive"
+            },
+            {
+              "property": "meleeArmor",
+              "select": {
+                "id": [
+                  "man-at-arms"
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "armored-hull",
       "name": "Armored Hull",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -838,7 +457,7 @@
         "technology"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/armored-hull.png",
+      "icon": "https://data.aoe4world.com/images/technologies/armored-hull-3.png",
       "description": "Increase the armor of all military ships by +2.",
       "variations": [
         {
@@ -846,14 +465,11 @@
           "baseId": "armored-hull",
           "type": "technology",
           "name": "Armored Hull",
+          "pbgid": 196879,
+          "attribName": "upgrade_naval_armored_hull",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the armor of all military ships by +2.",
           "classes": [
@@ -876,7 +492,7 @@
           "producedBy": [
             "dock"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/armored-hull.png",
+          "icon": "https://data.aoe4world.com/images/technologies/armored-hull-3.png",
           "effects": [
             {
               "property": "rangedArmor",
@@ -939,16 +555,82 @@
       ]
     },
     {
-      "id": "arrow-slits",
-      "name": "Arrow Slits",
+      "id": "arrow-volley",
+      "name": "Arrow Volley",
       "type": "technology",
       "civs": [
-        "en",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo"
+        "en"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Longbowman Ability Unlock"
+      ],
+      "classes": [
+        "longbowman",
+        "ability",
+        "unlock"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/arrow-volley-4.png",
+      "description": "Longbowmen gain Arrow Volley, an activated ability that increases Longbowmen attack speed by +70%.",
+      "variations": [
+        {
+          "id": "arrow-volley-4",
+          "baseId": "arrow-volley",
+          "type": "technology",
+          "name": "Arrow Volley",
+          "pbgid": 202556,
+          "attribName": "upgrade_ranged_longbow_arrow_volley_eng",
+          "age": 4,
+          "civs": [
+            "en"
+          ],
+          "description": "Longbowmen gain Arrow Volley, an activated ability that increases Longbowmen attack speed by +70%.",
+          "classes": [
+            "longbowman",
+            "ability",
+            "unlock"
+          ],
+          "displayClasses": [
+            "Longbowman Ability Unlock"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 150,
+            "stone": 0,
+            "gold": 350,
+            "total": 500,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "council-hall",
+            "archery-range"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/arrow-volley-4.png",
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "id": [
+                  "longbowman"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.6,
+              "type": "ability"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arrowslits",
+      "name": "Arrowslits",
+      "type": "technology",
+      "civs": [
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -959,24 +641,21 @@
         "emplacement"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/arrow-slits.png",
-      "description": "Add defensive arrowslits to this structure.",
+      "icon": "https://data.aoe4world.com/images/technologies/arrowslits-2.png",
+      "description": "Add defensive arrowslits to this structure and increase garrison arrow range by +1. Only one weapon emplacement can be added.",
       "variations": [
         {
-          "id": "arrow-slits-2",
-          "baseId": "arrow-slits",
+          "id": "arrowslits-2",
+          "baseId": "arrowslits",
           "type": "technology",
-          "name": "Arrow Slits",
+          "name": "Arrowslits",
+          "pbgid": 127325,
+          "attribName": "upgrade_outpost_arrowslits",
           "age": 2,
           "civs": [
-            "en",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo"
+            "en"
           ],
-          "description": "Add defensive arrowslits to this structure.",
+          "description": "Add defensive arrowslits to this structure and increase garrison arrow range by +1. Only one weapon emplacement can be added.",
           "classes": [
             "weapon",
             "emplacement"
@@ -997,53 +676,10 @@
           "producedBy": [
             "outpost"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/arrow-slits.png",
+          "icon": "https://data.aoe4world.com/images/technologies/arrowslits-2.png",
           "effects": [
             {
-              "property": "rangedAttack",
-              "select": {
-                "id": [
-                  "wooden-fortress",
-                  "outpost"
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            },
-            {
-              "property": "maxRange",
-              "select": {
-                "id": [
-                  "wooden-fortress",
-                  "outpost"
-                ]
-              },
-              "effect": "change",
-              "value": 8,
-              "type": "passive"
-            },
-            {
-              "property": "rangedAttack",
-              "select": {
-                "id": [
-                  "wooden-fortress",
-                  "outpost"
-                ]
-              },
-              "target": {
-                "class": [
-                  [
-                    "ship"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 25,
-              "type": "bonus"
-            },
-            {
-              "property": "attackSpeed",
+              "property": "unknown",
               "select": {
                 "id": [
                   "wooden-fortress",
@@ -1063,13 +699,7 @@
       "name": "Balanced Projectiles",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1078,10 +708,11 @@
       "classes": [
         "ranged",
         "damage",
-        "technology"
+        "technology",
+        "2/3"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/balanced-projectiles.png",
+      "icon": "https://data.aoe4world.com/images/technologies/balanced-projectiles-3.png",
       "description": "Increase the ranged damage of all non-siege units and buildings by +1.",
       "variations": [
         {
@@ -1089,21 +720,18 @@
           "baseId": "balanced-projectiles",
           "type": "technology",
           "name": "Balanced Projectiles",
+          "pbgid": 188270,
+          "attribName": "upgrade_ranged_damage_ii",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the ranged damage of all non-siege units and buildings by +1.",
           "classes": [
             "ranged",
             "damage",
-            "technology"
+            "technology",
+            "2/3"
           ],
           "displayClasses": [
             "Ranged Damage Technology 2/3"
@@ -1119,10 +747,9 @@
             "time": 60
           },
           "producedBy": [
-            "blacksmith",
-            "meinwerk-palace"
+            "blacksmith"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/balanced-projectiles.png",
+          "icon": "https://data.aoe4world.com/images/technologies/balanced-projectiles-3.png",
           "effects": [
             {
               "property": "rangedAttack",
@@ -1158,11 +785,7 @@
       "name": "Biology",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "ch",
-        "ab",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1173,7 +796,7 @@
         "technology"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/biology.png",
+      "icon": "https://data.aoe4world.com/images/technologies/biology-4.png",
       "description": "Increase the health of all cavalry by +20%.",
       "variations": [
         {
@@ -1181,13 +804,11 @@
           "baseId": "biology",
           "type": "technology",
           "name": "Biology",
+          "pbgid": 127850,
+          "attribName": "upgrade_tech_university_biology",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "ch",
-            "ab",
-            "ru"
+            "en"
           ],
           "description": "Increase the health of all cavalry by +20%.",
           "classes": [
@@ -1208,10 +829,9 @@
             "time": 90
           },
           "producedBy": [
-            "university",
-            "madrasa"
+            "university"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/biology.png",
+          "icon": "https://data.aoe4world.com/images/technologies/biology-4.png",
           "effects": [
             {
               "property": "hitpoints",
@@ -1235,13 +855,7 @@
       "name": "Bloomery",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1250,10 +864,11 @@
       "classes": [
         "melee",
         "damage",
-        "technology"
+        "technology",
+        "1/3"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/bloomery.png",
+      "icon": "https://data.aoe4world.com/images/technologies/bloomery-2.png",
       "description": "Increase the melee damage of all non-siege units by +1.",
       "variations": [
         {
@@ -1261,21 +876,18 @@
           "baseId": "bloomery",
           "type": "technology",
           "name": "Bloomery",
+          "pbgid": 187694,
+          "attribName": "upgrade_melee_damage_i",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the melee damage of all non-siege units by +1.",
           "classes": [
             "melee",
             "damage",
-            "technology"
+            "technology",
+            "1/3"
           ],
           "displayClasses": [
             "Melee Damage Technology 1/3"
@@ -1291,10 +903,9 @@
             "time": 60
           },
           "producedBy": [
-            "blacksmith",
-            "meinwerk-palace"
+            "blacksmith"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/bloomery.png",
+          "icon": "https://data.aoe4world.com/images/technologies/bloomery-2.png",
           "effects": [
             {
               "property": "meleeAttack",
@@ -1318,13 +929,7 @@
       "name": "Boiling Oil",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1335,7 +940,7 @@
         "technology"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/boiling-oil.png",
+      "icon": "https://data.aoe4world.com/images/technologies/boiling-oil-3.png",
       "description": "Towers and Keeps gain a boiling oil attack against nearby units that deals 30 damage.",
       "variations": [
         {
@@ -1343,15 +948,11 @@
           "baseId": "boiling-oil",
           "type": "technology",
           "name": "Boiling Oil",
+          "pbgid": 128447,
+          "attribName": "upgrade_tech_university_murder_holes_4",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Towers and Keeps gain a boiling oil attack against nearby units that deals 30 damage.",
           "classes": [
@@ -1372,10 +973,11 @@
             "time": 90
           },
           "producedBy": [
+            "the-white-tower",
             "keep",
-            "red-palace"
+            "berkshire-palace"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/boiling-oil.png",
+          "icon": "https://data.aoe4world.com/images/technologies/boiling-oil-3.png",
           "effects": [
             {
               "property": "unknown",
@@ -1401,16 +1003,10 @@
     },
     {
       "id": "cannon-emplacement",
-      "name": "Cannon",
+      "name": "Cannon Emplacement",
       "type": "technology",
       "civs": [
-        "en",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "ru",
-        "mo"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1421,117 +1017,19 @@
         "emplacement"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/cannon-emplacement.png",
+      "icon": "https://data.aoe4world.com/images/technologies/cannon-emplacement-4.png",
       "description": "Add a defensive cannon emplacement to this structure.",
       "variations": [
-        {
-          "id": "cannon-emplacement-4-keep",
-          "baseId": "cannon-emplacement",
-          "type": "technology",
-          "name": "Cannon",
-          "age": 4,
-          "civs": [
-            "en",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "ru"
-          ],
-          "description": "Add a defensive cannon emplacement to this structure.",
-          "classes": [
-            "weapon",
-            "emplacement"
-          ],
-          "displayClasses": [
-            "Weapon Emplacement"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 300,
-            "gold": 75,
-            "total": 375,
-            "popcap": 0,
-            "time": 30
-          },
-          "producedBy": [
-            "keep",
-            "red-palace"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/cannon-emplacement.png",
-          "effects": [
-            {
-              "property": "rangedAttack",
-              "select": {
-                "id": [
-                  "outpost",
-                  "keep"
-                ]
-              },
-              "effect": "change",
-              "value": 70,
-              "type": "passive"
-            },
-            {
-              "property": "maxRange",
-              "select": {
-                "id": [
-                  "outpost",
-                  "keep"
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            },
-            {
-              "property": "rangedAttack",
-              "select": {
-                "id": [
-                  "outpost",
-                  "keep"
-                ]
-              },
-              "target": {
-                "class": [
-                  [
-                    "ship"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 70,
-              "type": "bonus"
-            },
-            {
-              "property": "attackSpeed",
-              "select": {
-                "id": [
-                  "outpost",
-                  "keep"
-                ]
-              },
-              "effect": "change",
-              "value": 7,
-              "type": "passive"
-            }
-          ]
-        },
         {
           "id": "cannon-emplacement-4",
           "baseId": "cannon-emplacement",
           "type": "technology",
-          "name": "Cannon",
+          "name": "Cannon Emplacement",
+          "pbgid": 185626,
+          "attribName": "upgrade_keep_cannon",
           "age": 4,
           "civs": [
-            "en",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo"
+            "en"
           ],
           "description": "Add a defensive cannon emplacement to this structure.",
           "classes": [
@@ -1549,66 +1047,31 @@
             "gold": 75,
             "total": 375,
             "popcap": 0,
-            "time": 30
+            "time": 60
           },
           "producedBy": [
-            "outpost"
+            "the-white-tower",
+            "keep",
+            "berkshire-palace"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/cannon-emplacement.png",
+          "icon": "https://data.aoe4world.com/images/technologies/cannon-emplacement-4.png",
           "effects": [
             {
-              "property": "rangedAttack",
+              "property": "unknown",
               "select": {
                 "id": [
                   "outpost",
-                  "keep"
+                  "keep",
+                  "berkshire-palace",
+                  "elzbach-palace",
+                  "kremlin",
+                  "spasskaya-tower",
+                  "red-palace",
+                  "the-white-tower"
                 ]
               },
               "effect": "change",
-              "value": 70,
-              "type": "passive"
-            },
-            {
-              "property": "maxRange",
-              "select": {
-                "id": [
-                  "outpost",
-                  "keep"
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            },
-            {
-              "property": "rangedAttack",
-              "select": {
-                "id": [
-                  "outpost",
-                  "keep"
-                ]
-              },
-              "target": {
-                "class": [
-                  [
-                    "ship"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 70,
-              "type": "bonus"
-            },
-            {
-              "property": "attackSpeed",
-              "select": {
-                "id": [
-                  "outpost",
-                  "keep"
-                ]
-              },
-              "effect": "change",
-              "value": 7,
+              "value": 1,
               "type": "passive"
             }
           ]
@@ -1620,12 +1083,7 @@
       "name": "Chaser Cannons",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1636,7 +1094,7 @@
         "technology"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/chaser-cannons.png",
+      "icon": "https://data.aoe4world.com/images/technologies/chaser-cannons-4.png",
       "description": "Increase the weapon range of Warships by +1 tiles.",
       "variations": [
         {
@@ -1644,14 +1102,11 @@
           "baseId": "chaser-cannons",
           "type": "technology",
           "name": "Chaser Cannons",
+          "pbgid": 196881,
+          "attribName": "upgrade_naval_galley_cannon",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the weapon range of Warships by +1 tiles.",
           "classes": [
@@ -1674,7 +1129,7 @@
           "producedBy": [
             "dock"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/chaser-cannons.png",
+          "icon": "https://data.aoe4world.com/images/technologies/chaser-cannons-4.png",
           "effects": [
             {
               "property": "maxRange",
@@ -1698,12 +1153,7 @@
       "name": "Chemistry",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1714,7 +1164,7 @@
         "technology"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/chemistry.png",
+      "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
       "description": "Increase the damage of gunpowder units by +20%.",
       "variations": [
         {
@@ -1722,14 +1172,11 @@
           "baseId": "chemistry",
           "type": "technology",
           "name": "Chemistry",
+          "pbgid": 124734,
+          "attribName": "upgrade_siege_chemistry",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "ru"
+            "en"
           ],
           "description": "Increase the damage of gunpowder units by +20%.",
           "classes": [
@@ -1750,10 +1197,9 @@
             "time": 90
           },
           "producedBy": [
-            "university",
-            "madrasa"
+            "university"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/chemistry.png",
+          "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
           "effects": [
             {
               "property": "rangedAttack",
@@ -1796,12 +1242,7 @@
       "name": "Court Architects",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1812,7 +1253,7 @@
         "technology"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/court-architects.png",
+      "icon": "https://data.aoe4world.com/images/technologies/court-architects-4.png",
       "description": "Increase the health of all buildings by +30%.",
       "variations": [
         {
@@ -1820,14 +1261,11 @@
           "baseId": "court-architects",
           "type": "technology",
           "name": "Court Architects",
+          "pbgid": 128427,
+          "attribName": "upgrade_tech_university_architecture_4",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "ru"
+            "en"
           ],
           "description": "Increase the health of all buildings by +30%.",
           "classes": [
@@ -1848,10 +1286,9 @@
             "time": 90
           },
           "producedBy": [
-            "university",
-            "madrasa"
+            "university"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/court-architects.png",
+          "icon": "https://data.aoe4world.com/images/technologies/court-architects-4.png",
           "effects": [
             {
               "property": "hitpoints",
@@ -1881,12 +1318,7 @@
       "name": "Crosscut Saw",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1895,31 +1327,30 @@
       "classes": [
         "wood",
         "gathering",
-        "technology"
+        "technology",
+        "3/3"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/crosscut-saw.png",
-      "description": "Increase Villagers' gathering rate for Wood by +15%.",
+      "icon": "https://data.aoe4world.com/images/technologies/crosscut-saw-4.png",
+      "description": "Increase Villagers' gathering rate for Wood by 15%.",
       "variations": [
         {
           "id": "crosscut-saw-4",
           "baseId": "crosscut-saw",
           "type": "technology",
           "name": "Crosscut Saw",
+          "pbgid": 171837,
+          "attribName": "upgrade_econ_resource_wood_harvest_rate_4",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
-          "description": "Increase Villagers' gathering rate for Wood by +15%.",
+          "description": "Increase Villagers' gathering rate for Wood by 15%.",
           "classes": [
             "wood",
             "gathering",
-            "technology"
+            "technology",
+            "3/3"
           ],
           "displayClasses": [
             "Wood Gathering Technology 3/3"
@@ -1935,11 +1366,9 @@
             "time": 75
           },
           "producedBy": [
-            "lumber-camp",
-            "ger",
-            "steppe-redoubt"
+            "lumber-camp"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/crosscut-saw.png",
+          "icon": "https://data.aoe4world.com/images/technologies/crosscut-saw-4.png",
           "effects": [
             {
               "property": "woodGatherRate",
@@ -1961,12 +1390,7 @@
       "name": "Cupellation",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1974,30 +1398,29 @@
       ],
       "classes": [
         "mining",
-        "technology"
+        "technology",
+        "3/3"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/cupellation.png",
-      "description": "Increase Villagers' gathering rate for Gold and Stone by +15%.",
+      "icon": "https://data.aoe4world.com/images/technologies/cupellation-4.png",
+      "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
       "variations": [
         {
           "id": "cupellation-4",
           "baseId": "cupellation",
           "type": "technology",
           "name": "Cupellation",
+          "pbgid": 171824,
+          "attribName": "upgrade_econ_resource_gold_harvest_rate_4",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
-          "description": "Increase Villagers' gathering rate for Gold and Stone by +15%.",
+          "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
           "classes": [
             "mining",
-            "technology"
+            "technology",
+            "3/3"
           ],
           "displayClasses": [
             "Mining Technology 3/3"
@@ -2013,11 +1436,9 @@
             "time": 75
           },
           "producedBy": [
-            "mining-camp",
-            "ger",
-            "steppe-redoubt"
+            "mining-camp"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/cupellation.png",
+          "icon": "https://data.aoe4world.com/images/technologies/cupellation-4.png",
           "effects": [
             {
               "property": "goldGatherRate",
@@ -2050,13 +1471,7 @@
       "name": "Damascus Steel",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -2065,10 +1480,11 @@
       "classes": [
         "melee",
         "damage",
-        "technology"
+        "technology",
+        "3/3"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/damascus-steel.png",
+      "icon": "https://data.aoe4world.com/images/technologies/damascus-steel-4.png",
       "description": "Increase the melee damage of all non-siege units by +1.",
       "variations": [
         {
@@ -2076,21 +1492,18 @@
           "baseId": "damascus-steel",
           "type": "technology",
           "name": "Damascus Steel",
+          "pbgid": 188010,
+          "attribName": "upgrade_melee_damage_iii",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the melee damage of all non-siege units by +1.",
           "classes": [
             "melee",
             "damage",
-            "technology"
+            "technology",
+            "3/3"
           ],
           "displayClasses": [
             "Melee Damage Technology 3/3"
@@ -2106,10 +1519,9 @@
             "time": 60
           },
           "producedBy": [
-            "blacksmith",
-            "meinwerk-palace"
+            "blacksmith"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/damascus-steel.png",
+          "icon": "https://data.aoe4world.com/images/technologies/damascus-steel-4.png",
           "effects": [
             {
               "property": "meleeAttack",
@@ -2133,13 +1545,7 @@
       "name": "Decarbonization",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -2148,10 +1554,11 @@
       "classes": [
         "melee",
         "damage",
-        "technology"
+        "technology",
+        "2/3"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/decarbonization.png",
+      "icon": "https://data.aoe4world.com/images/technologies/decarbonization-3.png",
       "description": "Increase the melee damage of all non-siege units by +1.",
       "variations": [
         {
@@ -2159,21 +1566,18 @@
           "baseId": "decarbonization",
           "type": "technology",
           "name": "Decarbonization",
+          "pbgid": 187997,
+          "attribName": "upgrade_melee_damage_ii",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the melee damage of all non-siege units by +1.",
           "classes": [
             "melee",
             "damage",
-            "technology"
+            "technology",
+            "2/3"
           ],
           "displayClasses": [
             "Melee Damage Technology 2/3"
@@ -2189,10 +1593,9 @@
             "time": 60
           },
           "producedBy": [
-            "blacksmith",
-            "meinwerk-palace"
+            "blacksmith"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/decarbonization.png",
+          "icon": "https://data.aoe4world.com/images/technologies/decarbonization-3.png",
           "effects": [
             {
               "property": "meleeAttack",
@@ -2212,16 +1615,11 @@
       ]
     },
     {
-      "id": "double-broadaxe",
-      "name": "Double Broadaxe",
+      "id": "double-broadax",
+      "name": "Double Broadax",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -2230,31 +1628,30 @@
       "classes": [
         "wood",
         "gathering",
-        "technology"
+        "technology",
+        "1/3"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/double-broadaxe.png",
-      "description": "Increase Villagers' gathering rate for Wood by +15%.",
+      "icon": "https://data.aoe4world.com/images/technologies/double-broadax-2.png",
+      "description": "Increase Villagers' gathering rate for Wood by 15%.",
       "variations": [
         {
-          "id": "double-broadaxe-2",
-          "baseId": "double-broadaxe",
+          "id": "double-broadax-2",
+          "baseId": "double-broadax",
           "type": "technology",
-          "name": "Double Broadaxe",
+          "name": "Double Broadax",
+          "pbgid": 128070,
+          "attribName": "upgrade_econ_resource_wood_harvest_rate_2",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
-          "description": "Increase Villagers' gathering rate for Wood by +15%.",
+          "description": "Increase Villagers' gathering rate for Wood by 15%.",
           "classes": [
             "wood",
             "gathering",
-            "technology"
+            "technology",
+            "1/3"
           ],
           "displayClasses": [
             "Wood Gathering Technology 1/3"
@@ -2270,11 +1667,9 @@
             "time": 75
           },
           "producedBy": [
-            "lumber-camp",
-            "ger",
-            "steppe-redoubt"
+            "lumber-camp"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/double-broadaxe.png",
+          "icon": "https://data.aoe4world.com/images/technologies/double-broadax-2.png",
           "effects": [
             {
               "property": "woodGatherRate",
@@ -2296,11 +1691,7 @@
       "name": "Drift Nets",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -2309,30 +1700,28 @@
       "classes": [
         "fishing",
         "technology",
-        "22"
+        "2/2"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/drift-nets.png",
-      "description": "Increase the gathering rate of Fishing Ships by +15% and their carry capacity by  +20.",
+      "icon": "https://data.aoe4world.com/images/technologies/drift-nets-3.png",
+      "description": "Increase the gathering rate of Fishing Ships by +15% and their carry capacity by +20.",
       "variations": [
         {
           "id": "drift-nets-3",
           "baseId": "drift-nets",
           "type": "technology",
           "name": "Drift Nets",
+          "pbgid": 2033746,
+          "attribName": "upgrade_econ_drift_nets",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
-          "description": "Increase the gathering rate of Fishing Ships by +15% and their carry capacity by  +20.",
+          "description": "Increase the gathering rate of Fishing Ships by +15% and their carry capacity by +20.",
           "classes": [
             "fishing",
             "technology",
-            "22"
+            "2/2"
           ],
           "displayClasses": [
             "Fishing Technology 2/2"
@@ -2350,17 +1739,30 @@
           "producedBy": [
             "dock"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/drift-nets.png",
+          "icon": "https://data.aoe4world.com/images/technologies/drift-nets-3.png",
           "effects": [
             {
-              "property": "goldGatherRate",
+              "property": "foodGatherRate",
               "select": {
                 "id": [
-                  "ships"
+                  "fishing-boat",
+                  "lodya-fishing-boat"
                 ]
               },
               "effect": "multiply",
               "value": 1.15,
+              "type": "passive"
+            },
+            {
+              "property": "carryCapacity",
+              "select": {
+                "id": [
+                  "fishing-boat",
+                  "lodya-fishing-boat"
+                ]
+              },
+              "effect": "change",
+              "value": 20,
               "type": "passive"
             }
           ]
@@ -2372,12 +1774,7 @@
       "name": "Elite Army Tactics",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -2389,7 +1786,7 @@
         "technology"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/elite-army-tactics.png",
+      "icon": "https://data.aoe4world.com/images/technologies/elite-army-tactics-4.png",
       "description": "Increase the health of all melee infantry by +20% and their damage by +20%.",
       "variations": [
         {
@@ -2397,14 +1794,11 @@
           "baseId": "elite-army-tactics",
           "type": "technology",
           "name": "Elite Army Tactics",
+          "pbgid": 190779,
+          "attribName": "upgrade_manatarms_elite_army_tactics",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "ru"
+            "en"
           ],
           "description": "Increase the health of all melee infantry by +20% and their damage by +20%.",
           "classes": [
@@ -2426,10 +1820,9 @@
             "time": 90
           },
           "producedBy": [
-            "university",
-            "madrasa"
+            "university"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/elite-army-tactics.png",
+          "icon": "https://data.aoe4world.com/images/technologies/elite-army-tactics-4.png",
           "effects": [
             {
               "property": "hitpoints",
@@ -2464,16 +1857,80 @@
       ]
     },
     {
+      "id": "enclosures",
+      "name": "Enclosures",
+      "type": "technology",
+      "civs": [
+        "en"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Farm Technology"
+      ],
+      "classes": [
+        "farm",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/enclosures-4.png",
+      "description": "Each Farm Enclosure being worked by a Villager generates +1 Gold every 3.5 seconds.",
+      "variations": [
+        {
+          "id": "enclosures-4",
+          "baseId": "enclosures",
+          "type": "technology",
+          "name": "Enclosures",
+          "pbgid": 202557,
+          "attribName": "upgrade_farm_improved_enclosures_eng",
+          "age": 4,
+          "civs": [
+            "en"
+          ],
+          "description": "Each Farm Enclosure being worked by a Villager generates +1 Gold every 3.5 seconds.",
+          "classes": [
+            "farm",
+            "technology"
+          ],
+          "displayClasses": [
+            "Farm Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 150,
+            "stone": 0,
+            "gold": 350,
+            "total": 500,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "mill"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/enclosures-4.png",
+          "effects": [
+            {
+              "property": "goldGatherRate",
+              "select": {
+                "id": [
+                  "villager",
+                  "farm"
+                ]
+              },
+              "effect": "change",
+              "value": 0.29,
+              "type": "influence"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "explosives",
       "name": "Explosives",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -2485,7 +1942,7 @@
         "technology"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/explosives.png",
+      "icon": "https://data.aoe4world.com/images/technologies/explosives-4.png",
       "description": "Increase the damage of Incendiary Ships by +40%.",
       "variations": [
         {
@@ -2493,14 +1950,11 @@
           "baseId": "explosives",
           "type": "technology",
           "name": "Explosives",
+          "pbgid": 196883,
+          "attribName": "upgrade_naval_explosives",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the damage of Incendiary Ships by +40%.",
           "classes": [
@@ -2524,7 +1978,7 @@
           "producedBy": [
             "dock"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/explosives.png",
+          "icon": "https://data.aoe4world.com/images/technologies/explosives-4.png",
           "effects": [
             {
               "property": "fireAttack",
@@ -2549,11 +2003,7 @@
       "name": "Extended Lines",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -2562,30 +2012,28 @@
       "classes": [
         "fishing",
         "technology",
-        "12"
+        "1/2"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/extended-lines.png",
-      "description": "Increase the gathering rate of Fishing Ships by +20% and their carry capacity by  +10.",
+      "icon": "https://data.aoe4world.com/images/technologies/extended-lines-2.png",
+      "description": "Increase the gathering rate of Fishing Ships by +20% and their carry capacity by +10.",
       "variations": [
         {
           "id": "extended-lines-2",
           "baseId": "extended-lines",
           "type": "technology",
           "name": "Extended Lines",
+          "pbgid": 2033745,
+          "attribName": "upgrade_econ_extended_lines",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
-          "description": "Increase the gathering rate of Fishing Ships by +20% and their carry capacity by  +10.",
+          "description": "Increase the gathering rate of Fishing Ships by +20% and their carry capacity by +10.",
           "classes": [
             "fishing",
             "technology",
-            "12"
+            "1/2"
           ],
           "displayClasses": [
             "Fishing Technology 1/2"
@@ -2603,7 +2051,7 @@
           "producedBy": [
             "dock"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/extended-lines.png",
+          "icon": "https://data.aoe4world.com/images/technologies/extended-lines-2.png",
           "effects": [
             {
               "property": "foodGatherRate",
@@ -2625,8 +2073,8 @@
                   "lodya-fishing-boat"
                 ]
               },
-              "effect": "multiply",
-              "value": 1.1,
+              "effect": "change",
+              "value": 10,
               "type": "passive"
             }
           ]
@@ -2638,11 +2086,7 @@
       "name": "Extra Ballista",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -2654,7 +2098,7 @@
         "technology"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/extra-ballista.png",
+      "icon": "https://data.aoe4world.com/images/technologies/extra-ballista-3.png",
       "description": "Adds a swivel ballista to Attack Ships.\nSwivel ballistae can fire in any direction and deal 15 damage.",
       "variations": [
         {
@@ -2662,13 +2106,11 @@
           "baseId": "extra-ballista",
           "type": "technology",
           "name": "Extra Ballista",
+          "pbgid": 196876,
+          "attribName": "upgrade_naval_forecastle",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Adds a swivel ballista to Attack Ships.\nSwivel ballistae can fire in any direction and deal 15 damage.",
           "classes": [
@@ -2692,7 +2134,7 @@
           "producedBy": [
             "dock"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/extra-ballista.png",
+          "icon": "https://data.aoe4world.com/images/technologies/extra-ballista-3.png",
           "effects": [
             {
               "property": "rangedAttack",
@@ -2717,12 +2159,7 @@
       "name": "Fertilization",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -2731,31 +2168,30 @@
       "classes": [
         "food",
         "gathering",
-        "technology"
+        "technology",
+        "2/3"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/fertilization.png",
-      "description": "Increase Villagers' gathering rate for Food by +15%.",
+      "icon": "https://data.aoe4world.com/images/technologies/fertilization-3.png",
+      "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
       "variations": [
         {
           "id": "fertilization-3",
           "baseId": "fertilization",
           "type": "technology",
           "name": "Fertilization",
+          "pbgid": 171292,
+          "attribName": "upgrade_econ_resource_food_harvest_rate_3",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
-          "description": "Increase Villagers' gathering rate for Food by +15%.",
+          "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
           "classes": [
             "food",
             "gathering",
-            "technology"
+            "technology",
+            "2/3"
           ],
           "displayClasses": [
             "Food Gathering Technology 2/3"
@@ -2771,13 +2207,9 @@
             "time": 75
           },
           "producedBy": [
-            "mill",
-            "hunting-cabin",
-            "high-trade-house",
-            "ger",
-            "steppe-redoubt"
+            "mill"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/fertilization.png",
+          "icon": "https://data.aoe4world.com/images/technologies/fertilization-3.png",
           "effects": [
             {
               "property": "foodGatherRate",
@@ -2799,13 +2231,7 @@
       "name": "Fitted Leatherwork",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -2814,10 +2240,11 @@
       "classes": [
         "melee",
         "armor",
-        "technology"
+        "technology",
+        "1/3"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/fitted-leatherwork.png",
+      "icon": "https://data.aoe4world.com/images/technologies/fitted-leatherwork-2.png",
       "description": "Increase the melee armor of all non-siege units by +1.",
       "variations": [
         {
@@ -2825,21 +2252,18 @@
           "baseId": "fitted-leatherwork",
           "type": "technology",
           "name": "Fitted Leatherwork",
+          "pbgid": 188116,
+          "attribName": "upgrade_melee_armor_i",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the melee armor of all non-siege units by +1.",
           "classes": [
             "melee",
             "armor",
-            "technology"
+            "technology",
+            "1/3"
           ],
           "displayClasses": [
             "Melee Armor Technology 1/3"
@@ -2855,10 +2279,9 @@
             "time": 60
           },
           "producedBy": [
-            "blacksmith",
-            "meinwerk-palace"
+            "blacksmith"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/fitted-leatherwork.png",
+          "icon": "https://data.aoe4world.com/images/technologies/fitted-leatherwork-2.png",
           "effects": [
             {
               "property": "meleeArmor",
@@ -2885,12 +2308,7 @@
       "name": "Forestry",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -2901,7 +2319,7 @@
         "technology"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/technologies/forestry.png",
+      "icon": "https://data.aoe4world.com/images/technologies/forestry-1.png",
       "description": "Double the rate at which Villagers chop down trees.",
       "variations": [
         {
@@ -2909,14 +2327,11 @@
           "baseId": "forestry",
           "type": "technology",
           "name": "Forestry",
+          "pbgid": 171999,
+          "attribName": "upgrade_econ_resource_wood_fell_rate_1",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Double the rate at which Villagers chop down trees.",
           "classes": [
@@ -2937,11 +2352,9 @@
             "time": 45
           },
           "producedBy": [
-            "lumber-camp",
-            "ger",
-            "steppe-redoubt"
+            "lumber-camp"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/forestry.png",
+          "icon": "https://data.aoe4world.com/images/technologies/forestry-1.png",
           "effects": [
             {
               "property": "unknown",
@@ -2963,11 +2376,7 @@
       "name": "Fortify Outpost",
       "type": "technology",
       "civs": [
-        "en",
-        "fr",
-        "ch",
-        "de",
-        "ab"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -2978,23 +2387,21 @@
         "emplacement"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/fortify-outpost.png",
-      "description": "Add +1000 health and  +5 fire armor to this Outpost.",
+      "icon": "https://data.aoe4world.com/images/technologies/fortify-outpost-2.png",
+      "description": "Add +1000 health and +5 fire armor to this Outpost.",
       "variations": [
         {
           "id": "fortify-outpost-2",
           "baseId": "fortify-outpost",
           "type": "technology",
           "name": "Fortify Outpost",
+          "pbgid": 127331,
+          "attribName": "upgrade_outpost_stone",
           "age": 2,
           "civs": [
-            "en",
-            "fr",
-            "ch",
-            "de",
-            "ab"
+            "en"
           ],
-          "description": "Add +1000 health and  +5 fire armor to this Outpost.",
+          "description": "Add +1000 health and +5 fire armor to this Outpost.",
           "classes": [
             "defensive",
             "emplacement"
@@ -3015,7 +2422,7 @@
           "producedBy": [
             "outpost"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/fortify-outpost.png",
+          "icon": "https://data.aoe4world.com/images/technologies/fortify-outpost-2.png",
           "effects": [
             {
               "property": "hitpoints",
@@ -3029,18 +2436,7 @@
               "type": "passive"
             },
             {
-              "property": "rangedArmor",
-              "select": {
-                "id": [
-                  "outpost"
-                ]
-              },
-              "effect": "change",
-              "value": 5,
-              "type": "passive"
-            },
-            {
-              "property": "meleeArmor",
+              "property": "fireArmor",
               "select": {
                 "id": [
                   "outpost"
@@ -3059,12 +2455,7 @@
       "name": "Geometry",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -3075,7 +2466,7 @@
         "technology"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/geometry.png",
+      "icon": "https://data.aoe4world.com/images/technologies/geometry-4.png",
       "description": "Increase the damage of Rams and Trebuchets +30%.",
       "variations": [
         {
@@ -3083,14 +2474,11 @@
           "baseId": "geometry",
           "type": "technology",
           "name": "Geometry",
+          "pbgid": 127863,
+          "attribName": "upgrade_siege_mathematics",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "ru"
+            "en"
           ],
           "description": "Increase the damage of Rams and Trebuchets +30%.",
           "classes": [
@@ -3113,14 +2501,15 @@
           "producedBy": [
             "siege-workshop"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/geometry.png",
+          "icon": "https://data.aoe4world.com/images/technologies/geometry-4.png",
           "effects": [
             {
               "property": "siegeAttack",
               "select": {
                 "id": [
                   "battering-ram",
-                  "trebuchet"
+                  "counterweight-trebuchet",
+                  "traction-trebuchet"
                 ]
               },
               "effect": "multiply",
@@ -3136,13 +2525,7 @@
       "name": "Greased Axles",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -3153,7 +2536,7 @@
         "technology"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/greased-axles.png",
+      "icon": "https://data.aoe4world.com/images/technologies/greased-axles-3.png",
       "description": "Increase the movement speed of siege engines by +15%.",
       "variations": [
         {
@@ -3161,15 +2544,11 @@
           "baseId": "greased-axles",
           "type": "technology",
           "name": "Greased Axles",
+          "pbgid": 191268,
+          "attribName": "upgrade_siege_weapon_speed",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the movement speed of siege engines by +15%.",
           "classes": [
@@ -3192,7 +2571,7 @@
           "producedBy": [
             "siege-workshop"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/greased-axles.png",
+          "icon": "https://data.aoe4world.com/images/technologies/greased-axles-3.png",
           "effects": [
             {
               "property": "moveSpeed",
@@ -3204,7 +2583,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.15,
+              "value": 0.8999999999999999,
               "type": "passive"
             }
           ]
@@ -3216,13 +2595,7 @@
       "name": "Herbal Medicine",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -3233,7 +2606,7 @@
         "technology"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/herbal-medicine.png",
+      "icon": "https://data.aoe4world.com/images/technologies/herbal-medicine-3.png",
       "description": "Increase the healing rate of religious units by +60%.",
       "variations": [
         {
@@ -3241,15 +2614,11 @@
           "baseId": "herbal-medicine",
           "type": "technology",
           "name": "Herbal Medicine",
+          "pbgid": 129401,
+          "attribName": "upgrade_unit_religious_herbal_medicine_4",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the healing rate of religious units by +60%.",
           "classes": [
@@ -3270,9 +2639,9 @@
             "time": 45
           },
           "producedBy": [
-            "mosquemonasteryprayer-tent"
+            "monastery"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/herbal-medicine.png",
+          "icon": "https://data.aoe4world.com/images/technologies/herbal-medicine-3.png",
           "effects": [
             {
               "property": "healingRate",
@@ -3299,12 +2668,7 @@
       "name": "Horticulture",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -3313,31 +2677,30 @@
       "classes": [
         "food",
         "gathering",
-        "technology"
+        "technology",
+        "1/3"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/horticulture.png",
-      "description": "Increase Villagers' gathering rate for Food by +15%.",
+      "icon": "https://data.aoe4world.com/images/technologies/horticulture-2.png",
+      "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
       "variations": [
         {
           "id": "horticulture-2",
           "baseId": "horticulture",
           "type": "technology",
           "name": "Horticulture",
+          "pbgid": 128049,
+          "attribName": "upgrade_econ_resource_food_harvest_rate_2",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
-          "description": "Increase Villagers' gathering rate for Food by +15%.",
+          "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
           "classes": [
             "food",
             "gathering",
-            "technology"
+            "technology",
+            "1/3"
           ],
           "displayClasses": [
             "Food Gathering Technology 1/3"
@@ -3353,13 +2716,9 @@
             "time": 75
           },
           "producedBy": [
-            "mill",
-            "hunting-cabin",
-            "high-trade-house",
-            "ger",
-            "steppe-redoubt"
+            "mill"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/horticulture.png",
+          "icon": "https://data.aoe4world.com/images/technologies/horticulture-2.png",
           "effects": [
             {
               "property": "foodGatherRate",
@@ -3381,12 +2740,7 @@
       "name": "Incendiary Arrows",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -3397,24 +2751,21 @@
         "technology"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/incendiary-arrows.png",
-      "description": "Increase the damage of ranged units and buildings by +20%. Does not apply to gunpowder units.",
+      "icon": "https://data.aoe4world.com/images/technologies/incendiary-arrows-4.png",
+      "description": "Increase the damage of ranged units by +20%. Does not apply to gunpowder units.",
       "variations": [
         {
           "id": "incendiary-arrows-4",
           "baseId": "incendiary-arrows",
           "type": "technology",
           "name": "Incendiary Arrows",
+          "pbgid": 127838,
+          "attribName": "upgrade_ranged_incendiary",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "ru"
+            "en"
           ],
-          "description": "Increase the damage of ranged units and buildings by +20%. Does not apply to gunpowder units.",
+          "description": "Increase the damage of ranged units by +20%. Does not apply to gunpowder units.",
           "classes": [
             "ranged",
             "technology"
@@ -3433,10 +2784,9 @@
             "time": 90
           },
           "producedBy": [
-            "university",
-            "madrasa"
+            "university"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/incendiary-arrows.png",
+          "icon": "https://data.aoe4world.com/images/technologies/incendiary-arrows-4.png",
           "effects": [
             {
               "property": "rangedAttack",
@@ -3479,13 +2829,7 @@
       "name": "Insulated Helm",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -3494,10 +2838,11 @@
       "classes": [
         "melee",
         "armor",
-        "technology"
+        "technology",
+        "2/3"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/insulated-helm.png",
+      "icon": "https://data.aoe4world.com/images/technologies/insulated-helm-3.png",
       "description": "Increase the melee armor of all non-siege units by +1.",
       "variations": [
         {
@@ -3505,21 +2850,18 @@
           "baseId": "insulated-helm",
           "type": "technology",
           "name": "Insulated Helm",
+          "pbgid": 188121,
+          "attribName": "upgrade_melee_armor_ii",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the melee armor of all non-siege units by +1.",
           "classes": [
             "melee",
             "armor",
-            "technology"
+            "technology",
+            "2/3"
           ],
           "displayClasses": [
             "Melee Armor Technology 2/3"
@@ -3535,10 +2877,9 @@
             "time": 60
           },
           "producedBy": [
-            "blacksmith",
-            "meinwerk-palace"
+            "blacksmith"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/insulated-helm.png",
+          "icon": "https://data.aoe4world.com/images/technologies/insulated-helm-3.png",
           "effects": [
             {
               "property": "meleeArmor",
@@ -3565,13 +2906,7 @@
       "name": "Iron Undermesh",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -3580,10 +2915,11 @@
       "classes": [
         "ranged",
         "armor",
-        "technology"
+        "technology",
+        "1/3"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/iron-undermesh.png",
+      "icon": "https://data.aoe4world.com/images/technologies/iron-undermesh-2.png",
       "description": "Increase the ranged armor of all non-siege units by +1.",
       "variations": [
         {
@@ -3591,21 +2927,18 @@
           "baseId": "iron-undermesh",
           "type": "technology",
           "name": "Iron Undermesh",
+          "pbgid": 188266,
+          "attribName": "upgrade_ranged_armor_i",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the ranged armor of all non-siege units by +1.",
           "classes": [
             "ranged",
             "armor",
-            "technology"
+            "technology",
+            "1/3"
           ],
           "displayClasses": [
             "Ranged Armor Technology 1/3"
@@ -3621,10 +2954,9 @@
             "time": 60
           },
           "producedBy": [
-            "blacksmith",
-            "meinwerk-palace"
+            "blacksmith"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/iron-undermesh.png",
+          "icon": "https://data.aoe4world.com/images/technologies/iron-undermesh-2.png",
           "effects": [
             {
               "property": "rangedArmor",
@@ -3651,12 +2983,7 @@
       "name": "Lumber Preservation",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -3665,31 +2992,30 @@
       "classes": [
         "wood",
         "gathering",
-        "technology"
+        "technology",
+        "2/3"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/lumber-preservation.png",
-      "description": "Increase Villagers' gathering rate for Wood by +15%.",
+      "icon": "https://data.aoe4world.com/images/technologies/lumber-preservation-3.png",
+      "description": "Increase Villagers' gathering rate for Wood by 15%.",
       "variations": [
         {
           "id": "lumber-preservation-3",
           "baseId": "lumber-preservation",
           "type": "technology",
           "name": "Lumber Preservation",
+          "pbgid": 171836,
+          "attribName": "upgrade_econ_resource_wood_harvest_rate_3",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
-          "description": "Increase Villagers' gathering rate for Wood by +15%.",
+          "description": "Increase Villagers' gathering rate for Wood by 15%.",
           "classes": [
             "wood",
             "gathering",
-            "technology"
+            "technology",
+            "2/3"
           ],
           "displayClasses": [
             "Wood Gathering Technology 2/3"
@@ -3705,11 +3031,9 @@
             "time": 75
           },
           "producedBy": [
-            "lumber-camp",
-            "ger",
-            "steppe-redoubt"
+            "lumber-camp"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/lumber-preservation.png",
+          "icon": "https://data.aoe4world.com/images/technologies/lumber-preservation-3.png",
           "effects": [
             {
               "property": "woodGatherRate",
@@ -3731,13 +3055,7 @@
       "name": "Master Smiths",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -3746,10 +3064,11 @@
       "classes": [
         "melee",
         "armor",
-        "technology"
+        "technology",
+        "3/3"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/master-smiths.png",
+      "icon": "https://data.aoe4world.com/images/technologies/master-smiths-4.png",
       "description": "Increase the melee armor of all non-siege units by +1.",
       "variations": [
         {
@@ -3757,21 +3076,18 @@
           "baseId": "master-smiths",
           "type": "technology",
           "name": "Master Smiths",
+          "pbgid": 188122,
+          "attribName": "upgrade_melee_armor_iii",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the melee armor of all non-siege units by +1.",
           "classes": [
             "melee",
             "armor",
-            "technology"
+            "technology",
+            "3/3"
           ],
           "displayClasses": [
             "Melee Armor Technology 3/3"
@@ -3787,10 +3103,9 @@
             "time": 60
           },
           "producedBy": [
-            "blacksmith",
-            "meinwerk-palace"
+            "blacksmith"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/master-smiths.png",
+          "icon": "https://data.aoe4world.com/images/technologies/master-smiths-4.png",
           "effects": [
             {
               "property": "meleeArmor",
@@ -3817,13 +3132,7 @@
       "name": "Military Academy",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -3834,25 +3143,21 @@
         "technology"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/military-academy.png",
-      "description": "Reduce the time it takes to produce infantry, cavalry, siege, and transport units at buildings by -25%.\nDoes not affect religious units or other support units.",
+      "icon": "https://data.aoe4world.com/images/technologies/military-academy-3.png",
+      "description": "Reduce the time it takes to produce infantry, cavalry, siege, and transport units at buildings by 25%.\nDoes not affect religious units or other support units.",
       "variations": [
         {
           "id": "military-academy-3",
           "baseId": "military-academy",
           "type": "technology",
           "name": "Military Academy",
+          "pbgid": 128454,
+          "attribName": "upgrade_tech_military_academy",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
-          "description": "Reduce the time it takes to produce infantry, cavalry, siege, and transport units at buildings by -25%.\nDoes not affect religious units or other support units.",
+          "description": "Reduce the time it takes to produce infantry, cavalry, siege, and transport units at buildings by 25%.\nDoes not affect religious units or other support units.",
           "classes": [
             "production",
             "technology"
@@ -3871,10 +3176,9 @@
             "time": 60
           },
           "producedBy": [
-            "blacksmith",
-            "meinwerk-palace"
+            "blacksmith"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/military-academy.png",
+          "icon": "https://data.aoe4world.com/images/technologies/military-academy-3.png",
           "effects": [
             {
               "property": "buildTime",
@@ -3912,12 +3216,7 @@
       "name": "Navigator Lookout",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -3928,7 +3227,7 @@
         "technology"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/navigator-lookout.png",
+      "icon": "https://data.aoe4world.com/images/technologies/navigator-lookout-3.png",
       "description": "Increase the sight range of military ships by +4.",
       "variations": [
         {
@@ -3936,14 +3235,11 @@
           "baseId": "navigator-lookout",
           "type": "technology",
           "name": "Navigator Lookout",
+          "pbgid": 196925,
+          "attribName": "upgrade_naval_navigator",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the sight range of military ships by +4.",
           "classes": [
@@ -3966,7 +3262,7 @@
           "producedBy": [
             "dock"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/navigator-lookout.png",
+          "icon": "https://data.aoe4world.com/images/technologies/navigator-lookout-3.png",
           "effects": [
             {
               "property": "lineOfSight",
@@ -4001,17 +3297,96 @@
       ]
     },
     {
+      "id": "network-of-citadels",
+      "name": "Network of Citadels",
+      "type": "technology",
+      "civs": [
+        "en"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Defensive Technology"
+      ],
+      "classes": [
+        "defensive",
+        "technology"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/network-of-citadels-3.png",
+      "description": "Increase the Network of Castles attack speed bonus from +25% to +50%.",
+      "variations": [
+        {
+          "id": "network-of-citadels-3",
+          "baseId": "network-of-citadels",
+          "type": "technology",
+          "name": "Network of Citadels",
+          "pbgid": 2014204,
+          "attribName": "upgrade_network_of_citadels_eng",
+          "age": 3,
+          "civs": [
+            "en"
+          ],
+          "description": "Increase the Network of Castles attack speed bonus from +25% to +50%.",
+          "classes": [
+            "defensive",
+            "technology"
+          ],
+          "displayClasses": [
+            "Defensive Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 75,
+            "gold": 200,
+            "total": 275,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "the-white-tower",
+            "keep",
+            "berkshire-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/network-of-citadels-3.png",
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ]
+              },
+              "target": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ],
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.5,
+              "type": "bonus"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "piety",
       "name": "Piety",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -4022,7 +3397,7 @@
         "technology"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/piety.png",
+      "icon": "https://data.aoe4world.com/images/technologies/piety-4.png",
       "description": "Increase the health of religious units by +40.",
       "variations": [
         {
@@ -4030,15 +3405,11 @@
           "baseId": "piety",
           "type": "technology",
           "name": "Piety",
+          "pbgid": 129403,
+          "attribName": "upgrade_unit_religious_piety_4",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the health of religious units by +40.",
           "classes": [
@@ -4059,9 +3430,9 @@
             "time": 45
           },
           "producedBy": [
-            "mosquemonasteryprayer-tent"
+            "monastery"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/piety.png",
+          "icon": "https://data.aoe4world.com/images/technologies/piety-4.png",
           "effects": [
             {
               "property": "hitpoints",
@@ -4088,13 +3459,7 @@
       "name": "Platecutter Point",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -4103,10 +3468,11 @@
       "classes": [
         "ranged",
         "damage",
-        "technology"
+        "technology",
+        "3/3"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/platecutter-point.png",
+      "icon": "https://data.aoe4world.com/images/technologies/platecutter-point-4.png",
       "description": "Increase the ranged damage of all non-siege units and buildings by +1.",
       "variations": [
         {
@@ -4114,21 +3480,18 @@
           "baseId": "platecutter-point",
           "type": "technology",
           "name": "Platecutter Point",
+          "pbgid": 188271,
+          "attribName": "upgrade_ranged_damage_iii",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the ranged damage of all non-siege units and buildings by +1.",
           "classes": [
             "ranged",
             "damage",
-            "technology"
+            "technology",
+            "3/3"
           ],
           "displayClasses": [
             "Ranged Damage Technology 3/3"
@@ -4144,10 +3507,9 @@
             "time": 60
           },
           "producedBy": [
-            "blacksmith",
-            "meinwerk-palace"
+            "blacksmith"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/platecutter-point.png",
+          "icon": "https://data.aoe4world.com/images/technologies/platecutter-point-4.png",
           "effects": [
             {
               "property": "rangedAttack",
@@ -4183,12 +3545,7 @@
       "name": "Precision Cross-Breeding",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -4197,31 +3554,30 @@
       "classes": [
         "food",
         "gathering",
-        "technology"
+        "technology",
+        "3/3"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/precision-cross-breeding.png",
-      "description": "Increase Villagers' gathering rate for Food by +15%.",
+      "icon": "https://data.aoe4world.com/images/technologies/precision-cross-breeding-4.png",
+      "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
       "variations": [
         {
           "id": "precision-cross-breeding-4",
           "baseId": "precision-cross-breeding",
           "type": "technology",
           "name": "Precision Cross-Breeding",
+          "pbgid": 171293,
+          "attribName": "upgrade_econ_resource_food_harvest_rate_4",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
-          "description": "Increase Villagers' gathering rate for Food by +15%.",
+          "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
           "classes": [
             "food",
             "gathering",
-            "technology"
+            "technology",
+            "3/3"
           ],
           "displayClasses": [
             "Food Gathering Technology 3/3"
@@ -4237,13 +3593,9 @@
             "time": 75
           },
           "producedBy": [
-            "mill",
-            "hunting-cabin",
-            "high-trade-house",
-            "ger",
-            "steppe-redoubt"
+            "mill"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/precision-cross-breeding.png",
+          "icon": "https://data.aoe4world.com/images/technologies/precision-cross-breeding-4.png",
           "effects": [
             {
               "property": "foodGatherRate",
@@ -4265,13 +3617,7 @@
       "name": "Professional Scouts",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -4282,25 +3628,21 @@
         "technology"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/professional-scouts.png",
-      "description": "Scouts gain the ability to carry animal carcasses and +200% damage against wild animals.",
+      "icon": "https://data.aoe4world.com/images/technologies/professional-scouts-2.png",
+      "description": "Scouts gain the ability to carry animal carcasses and +100% damage against wild animals.\nScouts move -35% slower while carrying and cannot pick up Boar.",
       "variations": [
         {
           "id": "professional-scouts-2",
           "baseId": "professional-scouts",
           "type": "technology",
           "name": "Professional Scouts",
+          "pbgid": 127933,
+          "attribName": "upgrade_scout_forester",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
-          "description": "Scouts gain the ability to carry animal carcasses and +200% damage against wild animals.",
+          "description": "Scouts gain the ability to carry animal carcasses and +100% damage against wild animals.\nScouts move -35% slower while carrying and cannot pick up Boar.",
           "classes": [
             "hunting",
             "technology"
@@ -4319,13 +3661,9 @@
             "time": 75
           },
           "producedBy": [
-            "mill",
-            "hunting-cabin",
-            "high-trade-house",
-            "ger",
-            "steppe-redoubt"
+            "mill"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/professional-scouts.png",
+          "icon": "https://data.aoe4world.com/images/technologies/professional-scouts-2.png",
           "effects": [
             {
               "property": "huntCarryCapacity",
@@ -4353,7 +3691,7 @@
                 ]
               },
               "effect": "change",
-              "value": 9,
+              "value": 2,
               "type": "bonus"
             }
           ]
@@ -4365,13 +3703,7 @@
       "name": "Roller Shutter Triggers",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -4382,25 +3714,21 @@
         "technology"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/roller-shutter-triggers.png",
-      "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by  +25%.",
+      "icon": "https://data.aoe4world.com/images/technologies/roller-shutter-triggers-4.png",
+      "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
       "variations": [
         {
           "id": "roller-shutter-triggers-4",
           "baseId": "roller-shutter-triggers",
           "type": "technology",
           "name": "Roller Shutter Triggers",
+          "pbgid": 127938,
+          "attribName": "upgrade_siege_roller_trigger",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
-          "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by  +25%.",
+          "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
           "classes": [
             "springald",
             "technology"
@@ -4421,7 +3749,7 @@
           "producedBy": [
             "siege-workshop"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/roller-shutter-triggers.png",
+          "icon": "https://data.aoe4world.com/images/technologies/roller-shutter-triggers-4.png",
           "effects": [
             {
               "property": "maxRange",
@@ -4450,16 +3778,150 @@
       ]
     },
     {
+      "id": "setup-camp",
+      "name": "Setup Camp",
+      "type": "technology",
+      "civs": [
+        "en"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Longbowman Ability Unlock"
+      ],
+      "classes": [
+        "longbowman",
+        "ability",
+        "unlock"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/technologies/setup-camp-2.png",
+      "description": "Longbowmen gain the ability to Setup Camp, which heals them for +1 health every 1 seconds.",
+      "variations": [
+        {
+          "id": "setup-camp-2",
+          "baseId": "setup-camp",
+          "type": "technology",
+          "name": "Setup Camp",
+          "pbgid": 202553,
+          "attribName": "upgrade_longbow_make_camp_eng",
+          "age": 2,
+          "civs": [
+            "en"
+          ],
+          "description": "Longbowmen gain the ability to Setup Camp, which heals them for +1 health every 1 seconds.",
+          "classes": [
+            "longbowman",
+            "ability",
+            "unlock"
+          ],
+          "displayClasses": [
+            "Longbowman Ability Unlock"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 25,
+            "wood": 0,
+            "stone": 0,
+            "gold": 75,
+            "total": 100,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "council-hall",
+            "archery-range"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/setup-camp-2.png",
+          "effects": [
+            {
+              "property": "healingRate",
+              "select": {
+                "id": [
+                  "longbowman"
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "ability"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shattering-projectiles",
+      "name": "Shattering Projectiles",
+      "type": "technology",
+      "civs": [
+        "en"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Trebuchet Technology"
+      ],
+      "classes": [
+        "trebuchet",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/shattering-projectiles-4.png",
+      "description": "Trebuchet projectiles shatter on impact, increasing their area of effect.",
+      "variations": [
+        {
+          "id": "shattering-projectiles-4",
+          "baseId": "shattering-projectiles",
+          "type": "technology",
+          "name": "Shattering Projectiles",
+          "pbgid": 202558,
+          "attribName": "upgrade_trebuchet_aoe_eng",
+          "age": 4,
+          "civs": [
+            "en"
+          ],
+          "description": "Trebuchet projectiles shatter on impact, increasing their area of effect.",
+          "classes": [
+            "trebuchet",
+            "technology"
+          ],
+          "displayClasses": [
+            "Trebuchet Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 300,
+            "stone": 0,
+            "gold": 700,
+            "total": 1000,
+            "popcap": 0,
+            "time": 90
+          },
+          "producedBy": [
+            "siege-workshop"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/shattering-projectiles-4.png",
+          "effects": [
+            {
+              "property": "areaOfEffect",
+              "select": {
+                "id": [
+                  "counterweight-trebuchet"
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "siege-engineering",
       "name": "Siege Engineering",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -4471,7 +3933,7 @@
         "unlock"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/siege-engineering.png",
+      "icon": "https://data.aoe4world.com/images/technologies/siege-engineering-2.png",
       "description": "Melee and ranged infantry can construct Siege Towers and Battering Rams in the field.",
       "variations": [
         {
@@ -4479,14 +3941,11 @@
           "baseId": "siege-engineering",
           "type": "technology",
           "name": "Siege Engineering",
+          "pbgid": 127860,
+          "attribName": "upgrade_siege_engineers",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Melee and ranged infantry can construct Siege Towers and Battering Rams in the field.",
           "classes": [
@@ -4505,13 +3964,12 @@
             "gold": 125,
             "total": 175,
             "popcap": 0,
-            "time": 45
+            "time": 30
           },
           "producedBy": [
-            "blacksmith",
-            "meinwerk-palace"
+            "blacksmith"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/siege-engineering.png",
+          "icon": "https://data.aoe4world.com/images/technologies/siege-engineering-2.png",
           "effects": [
             {
               "property": "unknown",
@@ -4535,13 +3993,7 @@
       "name": "Siege Works",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -4552,25 +4004,21 @@
         "technology"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/siege-works.png",
-      "description": "Increase the health of siege engines by +20% and their ranged armor by  +10.",
+      "icon": "https://data.aoe4world.com/images/technologies/siege-works-4.png",
+      "description": "Increase the health of siege engines by +20% and their ranged armor by +10.",
       "variations": [
         {
           "id": "siege-works-4",
           "baseId": "siege-works",
           "type": "technology",
           "name": "Siege Works",
+          "pbgid": 127859,
+          "attribName": "upgrade_siege_works",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
-          "description": "Increase the health of siege engines by +20% and their ranged armor by  +10.",
+          "description": "Increase the health of siege engines by +20% and their ranged armor by +10.",
           "classes": [
             "siege",
             "technology"
@@ -4589,10 +4037,9 @@
             "time": 90
           },
           "producedBy": [
-            "university",
-            "madrasa"
+            "university"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/siege-works.png",
+          "icon": "https://data.aoe4world.com/images/technologies/siege-works-4.png",
           "effects": [
             {
               "property": "hitpoints",
@@ -4629,12 +4076,7 @@
       "name": "Specialized Pick",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -4642,30 +4084,29 @@
       ],
       "classes": [
         "mining",
-        "technology"
+        "technology",
+        "1/3"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/specialized-pick.png",
-      "description": "Increase Villagers' gathering rate for Gold and Stone by +15%.",
+      "icon": "https://data.aoe4world.com/images/technologies/specialized-pick-2.png",
+      "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
       "variations": [
         {
           "id": "specialized-pick-2",
           "baseId": "specialized-pick",
           "type": "technology",
           "name": "Specialized Pick",
+          "pbgid": 171822,
+          "attribName": "upgrade_econ_resource_gold_harvest_rate_2",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
-          "description": "Increase Villagers' gathering rate for Gold and Stone by +15%.",
+          "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
           "classes": [
             "mining",
-            "technology"
+            "technology",
+            "1/3"
           ],
           "displayClasses": [
             "Mining Technology 1/3"
@@ -4681,11 +4122,9 @@
             "time": 75
           },
           "producedBy": [
-            "mining-camp",
-            "ger",
-            "steppe-redoubt"
+            "mining-camp"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/specialized-pick.png",
+          "icon": "https://data.aoe4world.com/images/technologies/specialized-pick-2.png",
           "effects": [
             {
               "property": "goldGatherRate",
@@ -4715,16 +4154,10 @@
     },
     {
       "id": "springald-emplacement",
-      "name": "Springald",
+      "name": "Springald Emplacement",
       "type": "technology",
       "civs": [
-        "en",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "ru",
-        "mo"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -4735,121 +4168,19 @@
         "emplacement"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/springald-emplacement.png",
+      "icon": "https://data.aoe4world.com/images/technologies/springald-emplacement-3.png",
       "description": "Add a defensive springald emplacement to this structure.",
       "variations": [
-        {
-          "id": "springald-emplacement-3-keep",
-          "baseId": "springald-emplacement",
-          "type": "technology",
-          "name": "Springald",
-          "age": 3,
-          "civs": [
-            "en",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "ru"
-          ],
-          "description": "Add a defensive springald emplacement to this structure.",
-          "classes": [
-            "weapon",
-            "emplacement"
-          ],
-          "displayClasses": [
-            "Weapon Emplacement"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 125,
-            "gold": 50,
-            "total": 175,
-            "popcap": 0,
-            "time": 30
-          },
-          "producedBy": [
-            "keep",
-            "red-palace"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/springald-emplacement.png",
-          "effects": [
-            {
-              "property": "rangedAttack",
-              "select": {
-                "id": [
-                  "wooden-fortress",
-                  "outpost",
-                  "keep"
-                ]
-              },
-              "effect": "change",
-              "value": 40,
-              "type": "passive"
-            },
-            {
-              "property": "maxRange",
-              "select": {
-                "id": [
-                  "wooden-fortress",
-                  "outpost",
-                  "keep"
-                ]
-              },
-              "effect": "change",
-              "value": 9,
-              "type": "passive"
-            },
-            {
-              "property": "rangedAttack",
-              "select": {
-                "id": [
-                  "wooden-fortress",
-                  "outpost",
-                  "keep"
-                ]
-              },
-              "target": {
-                "class": [
-                  [
-                    "ship"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 40,
-              "type": "bonus"
-            },
-            {
-              "property": "attackSpeed",
-              "select": {
-                "id": [
-                  "wooden-fortress",
-                  "outpost",
-                  "keep"
-                ]
-              },
-              "effect": "change",
-              "value": 4.5,
-              "type": "passive"
-            }
-          ]
-        },
         {
           "id": "springald-emplacement-3",
           "baseId": "springald-emplacement",
           "type": "technology",
-          "name": "Springald",
+          "name": "Springald Emplacement",
+          "pbgid": 127371,
+          "attribName": "upgrade_keep_springald",
           "age": 3,
           "civs": [
-            "en",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo"
+            "en"
           ],
           "description": "Add a defensive springald emplacement to this structure.",
           "classes": [
@@ -4870,67 +4201,29 @@
             "time": 30
           },
           "producedBy": [
-            "outpost"
+            "the-white-tower",
+            "keep",
+            "berkshire-palace"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/springald-emplacement.png",
+          "icon": "https://data.aoe4world.com/images/technologies/springald-emplacement-3.png",
           "effects": [
             {
-              "property": "rangedAttack",
+              "property": "unknown",
               "select": {
                 "id": [
                   "wooden-fortress",
                   "outpost",
-                  "keep"
+                  "keep",
+                  "berkshire-palace",
+                  "elzbach-palace",
+                  "kremlin",
+                  "spasskaya-tower",
+                  "red-palace",
+                  "the-white-tower"
                 ]
               },
               "effect": "change",
-              "value": 40,
-              "type": "passive"
-            },
-            {
-              "property": "maxRange",
-              "select": {
-                "id": [
-                  "wooden-fortress",
-                  "outpost",
-                  "keep"
-                ]
-              },
-              "effect": "change",
-              "value": 9,
-              "type": "passive"
-            },
-            {
-              "property": "rangedAttack",
-              "select": {
-                "id": [
-                  "wooden-fortress",
-                  "outpost",
-                  "keep"
-                ]
-              },
-              "target": {
-                "class": [
-                  [
-                    "ship"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 40,
-              "type": "bonus"
-            },
-            {
-              "property": "attackSpeed",
-              "select": {
-                "id": [
-                  "wooden-fortress",
-                  "outpost",
-                  "keep"
-                ]
-              },
-              "effect": "change",
-              "value": 4.5,
+              "value": 1,
               "type": "passive"
             }
           ]
@@ -4942,13 +4235,7 @@
       "name": "Steeled Arrow",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -4957,10 +4244,11 @@
       "classes": [
         "ranged",
         "damage",
-        "technology"
+        "technology",
+        "1/3"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/steeled-arrow.png",
+      "icon": "https://data.aoe4world.com/images/technologies/steeled-arrow-2.png",
       "description": "Increase the ranged damage of all non-siege units and buildings by +1.",
       "variations": [
         {
@@ -4968,21 +4256,18 @@
           "baseId": "steeled-arrow",
           "type": "technology",
           "name": "Steeled Arrow",
+          "pbgid": 188269,
+          "attribName": "upgrade_ranged_damage_i",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the ranged damage of all non-siege units and buildings by +1.",
           "classes": [
             "ranged",
             "damage",
-            "technology"
+            "technology",
+            "1/3"
           ],
           "displayClasses": [
             "Ranged Damage Technology 1/3"
@@ -4998,10 +4283,9 @@
             "time": 60
           },
           "producedBy": [
-            "blacksmith",
-            "meinwerk-palace"
+            "blacksmith"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/steeled-arrow.png",
+          "icon": "https://data.aoe4world.com/images/technologies/steeled-arrow-2.png",
           "effects": [
             {
               "property": "rangedAttack",
@@ -5037,12 +4321,7 @@
       "name": "Survival Techniques",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -5053,7 +4332,7 @@
         "technology"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/technologies/survival-techniques.png",
+      "icon": "https://data.aoe4world.com/images/technologies/survival-techniques-1.png",
       "description": "Increase Villagers' hunted meat gather rate by +15%.",
       "variations": [
         {
@@ -5061,14 +4340,11 @@
           "baseId": "survival-techniques",
           "type": "technology",
           "name": "Survival Techniques",
+          "pbgid": 203467,
+          "attribName": "upgrade_econ_villager_hunting_gear_1",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase Villagers' hunted meat gather rate by +15%.",
           "classes": [
@@ -5089,13 +4365,9 @@
             "time": 25
           },
           "producedBy": [
-            "mill",
-            "hunting-cabin",
-            "high-trade-house",
-            "ger",
-            "steppe-redoubt"
+            "mill"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/survival-techniques.png",
+          "icon": "https://data.aoe4world.com/images/technologies/survival-techniques-1.png",
           "effects": [
             {
               "property": "huntGatherRate",
@@ -5117,13 +4389,7 @@
       "name": "Textiles",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -5134,7 +4400,7 @@
         "technology"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/textiles.png",
+      "icon": "https://data.aoe4world.com/images/technologies/textiles-2.png",
       "description": "Increase Villagers' health by +25.",
       "variations": [
         {
@@ -5142,15 +4408,11 @@
           "baseId": "textiles",
           "type": "technology",
           "name": "Textiles",
+          "pbgid": 2045367,
+          "attribName": "upgrade_villager_health",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase Villagers' health by +25.",
           "classes": [
@@ -5162,8 +4424,8 @@
           ],
           "unique": false,
           "costs": {
-            "food": 0,
-            "wood": 50,
+            "food": 50,
+            "wood": 0,
             "stone": 0,
             "gold": 100,
             "total": 150,
@@ -5171,9 +4433,11 @@
             "time": 20
           },
           "producedBy": [
-            "town-center"
+            "capital-town-center",
+            "town-center",
+            "kings-palace"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/textiles.png",
+          "icon": "https://data.aoe4world.com/images/technologies/textiles-2.png",
           "effects": [
             {
               "property": "hitpoints",
@@ -5195,13 +4459,7 @@
       "name": "Tithe Barns",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -5212,7 +4470,7 @@
         "technology"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/tithe-barns.png",
+      "icon": "https://data.aoe4world.com/images/technologies/tithe-barns-4.png",
       "description": "Relics placed in a Monastery provide an income of +30 Food, +30 Wood, and +30 Stone every minute.",
       "variations": [
         {
@@ -5220,15 +4478,11 @@
           "baseId": "tithe-barns",
           "type": "technology",
           "name": "Tithe Barns",
+          "pbgid": 129407,
+          "attribName": "upgrade_unit_religious_tithe_barn_4",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Relics placed in a Monastery provide an income of +30 Food, +30 Wood, and +30 Stone every minute.",
           "classes": [
@@ -5249,9 +4503,9 @@
             "time": 60
           },
           "producedBy": [
-            "mosquemonasteryprayer-tent"
+            "monastery"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/tithe-barns.png",
+          "icon": "https://data.aoe4world.com/images/technologies/tithe-barns-4.png",
           "effects": [
             {
               "property": "unknown",
@@ -5276,13 +4530,7 @@
       "name": "Wedge Rivets",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -5291,10 +4539,11 @@
       "classes": [
         "ranged",
         "armor",
-        "technology"
+        "technology",
+        "2/3"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/wedge-rivets.png",
+      "icon": "https://data.aoe4world.com/images/technologies/wedge-rivets-3.png",
       "description": "Increase the ranged armor of all non-siege units by +1.",
       "variations": [
         {
@@ -5302,21 +4551,18 @@
           "baseId": "wedge-rivets",
           "type": "technology",
           "name": "Wedge Rivets",
+          "pbgid": 188267,
+          "attribName": "upgrade_ranged_armor_ii",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Increase the ranged armor of all non-siege units by +1.",
           "classes": [
             "ranged",
             "armor",
-            "technology"
+            "technology",
+            "2/3"
           ],
           "displayClasses": [
             "Ranged Armor Technology 2/3"
@@ -5332,10 +4578,9 @@
             "time": 60
           },
           "producedBy": [
-            "blacksmith",
-            "meinwerk-palace"
+            "blacksmith"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/wedge-rivets.png",
+          "icon": "https://data.aoe4world.com/images/technologies/wedge-rivets-3.png",
           "effects": [
             {
               "property": "rangedArmor",
@@ -5362,12 +4607,7 @@
       "name": "Wheelbarrow",
       "type": "technology",
       "civs": [
-        "en",
-        "hr",
-        "ch",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -5378,24 +4618,21 @@
         "technology"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/technologies/wheelbarrow.png",
-      "description": "Increase the carry capacity of Villagers by +5 and their movement speed by  +15%.",
+      "icon": "https://data.aoe4world.com/images/technologies/wheelbarrow-1.png",
+      "description": "Increase the carry capacity of Villagers by +5 and their movement speed by +15%.",
       "variations": [
         {
           "id": "wheelbarrow-1",
           "baseId": "wheelbarrow",
           "type": "technology",
           "name": "Wheelbarrow",
+          "pbgid": 129091,
+          "attribName": "upgrade_unit_town_center_wheelbarrow_1",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "ch",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
-          "description": "Increase the carry capacity of Villagers by +5 and their movement speed by  +15%.",
+          "description": "Increase the carry capacity of Villagers by +5 and their movement speed by +15%.",
           "classes": [
             "villager",
             "technology"
@@ -5414,13 +4651,9 @@
             "time": 90
           },
           "producedBy": [
-            "mill",
-            "hunting-cabin",
-            "high-trade-house",
-            "ger",
-            "steppe-redoubt"
+            "mill"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/wheelbarrow.png",
+          "icon": "https://data.aoe4world.com/images/technologies/wheelbarrow-1.png",
           "effects": [
             {
               "property": "carryCapacity",

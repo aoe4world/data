@@ -5,12 +5,12 @@
   "name": "Keep",
   "type": "building",
   "civs": [
-    "ch",
-    "en",
-    "hr",
-    "fr",
-    "de",
     "ab",
+    "ch",
+    "de",
+    "en",
+    "fr",
+    "hr",
     "ru"
   ],
   "unique": false,
@@ -22,19 +22,21 @@
     "building"
   ],
   "minAge": 3,
-  "icon": "https://data.aoe4world.com/images/buildings/keep.png",
-  "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.",
+  "icon": "https://data.aoe4world.com/images/buildings/keep-3.png",
+  "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.\nNetwork of Castles Bonus: Triggers an alarm when an enemy approaches, causing nearby units to fire faster while the alarm is active.",
   "variations": [
     {
-      "id": "keep-3-chinese",
+      "id": "keep-3",
       "baseId": "keep",
       "type": "building",
       "name": "Keep",
+      "pbgid": 166243,
+      "attribName": "building_defense_keep_eng",
       "age": 3,
       "civs": [
-        "ch"
+        "en"
       ],
-      "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.",
+      "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.\nNetwork of Castles Bonus: Triggers an alarm when an enemy approaches, causing nearby units to fire faster while the alarm is active.",
       "classes": [
         "defensive",
         "building"
@@ -42,7 +44,7 @@
       "displayClasses": [
         "Defensive Building"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 0,
@@ -50,17 +52,19 @@
         "gold": 0,
         "total": 800,
         "popcap": 0,
-        "time": 105
+        "time": 140
       },
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/keep-3.png",
       "hitpoints": 5000,
       "weapons": [
         {
+          "name": "Bow",
           "type": "ranged",
-          "damage": 150,
-          "speed": 3,
+          "damage": 12,
+          "speed": 0.625,
           "range": {
             "min": 0,
             "max": 8
@@ -71,7 +75,8 @@
               "target": {
                 "class": [
                   [
-                    "ship"
+                    "naval",
+                    "unit"
                   ]
                 ]
               },
@@ -79,7 +84,22 @@
               "value": 25,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.125,
+            "fire": 0.25,
+            "winddown": 0,
+            "reload": 0.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_keep_arrows_a",
+          "pbgid": 127372
         }
       ],
       "armor": [
@@ -97,22 +117,557 @@
         "height": 501
       },
       "garrison": {
-        "capacity": 15
+        "capacity": 15,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk",
+          "cavalry",
+          "khan"
+        ]
       },
-      "icon": "https://data.aoe4world.com/images/buildings/keep.png"
+      "influences": []
     },
     {
       "id": "keep-3",
       "baseId": "keep",
       "type": "building",
       "name": "Keep",
+      "pbgid": 134923,
+      "attribName": "building_defense_keep_hre",
       "age": 3,
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
+        "hr"
+      ],
+      "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.\nPrelates can place a Relic within to generate Gold and improve the buildings armor, damage, weapon range and sight range.",
+      "classes": [
+        "defensive",
+        "building"
+      ],
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 800,
+        "gold": 0,
+        "total": 800,
+        "popcap": 0,
+        "time": 140
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/keep-3.png",
+      "hitpoints": 5000,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 12,
+          "speed": 0.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 25,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.125,
+            "fire": 0.25,
+            "winddown": 0,
+            "reload": 0.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_keep_arrows_a",
+          "pbgid": 127372
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        },
+        {
+          "type": "fire",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "line": 41,
+        "height": 501
+      },
+      "garrison": {
+        "capacity": 15,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk",
+          "cavalry",
+          "khan"
+        ]
+      },
+      "influences": [
+        "Buildings gain the Emergency Repairs ability while within the influence of a Town Center."
+      ]
+    },
+    {
+      "id": "keep-3",
+      "baseId": "keep",
+      "type": "building",
+      "name": "Keep",
+      "pbgid": 132678,
+      "attribName": "building_defense_keep_fre",
+      "age": 3,
+      "civs": [
+        "fr"
+      ],
+      "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.",
+      "classes": [
+        "defensive",
+        "building"
+      ],
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 800,
+        "gold": 0,
+        "total": 800,
+        "popcap": 0,
+        "time": 140
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/keep-3.png",
+      "hitpoints": 5000,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 12,
+          "speed": 0.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 25,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.125,
+            "fire": 0.25,
+            "winddown": 0,
+            "reload": 0.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_keep_arrows_a",
+          "pbgid": 127372
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        },
+        {
+          "type": "fire",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "line": 41,
+        "height": 501
+      },
+      "garrison": {
+        "capacity": 15,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk",
+          "cavalry",
+          "khan"
+        ]
+      },
+      "influences": [
+        "Archery Range and Stable unit costs reduced by -20%."
+      ]
+    },
+    {
+      "id": "keep-3",
+      "baseId": "keep",
+      "type": "building",
+      "name": "Keep",
+      "pbgid": 144648,
+      "attribName": "building_defense_keep_chi",
+      "age": 3,
+      "civs": [
+        "ch"
+      ],
+      "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.",
+      "classes": [
+        "defensive",
+        "building"
+      ],
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 800,
+        "gold": 0,
+        "total": 800,
+        "popcap": 0,
+        "time": 140
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/keep-3.png",
+      "hitpoints": 5000,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 10,
+          "speed": 2.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 25,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.375,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_keep_arrows_garrison",
+          "pbgid": 171261
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        },
+        {
+          "type": "fire",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "line": 41,
+        "height": 501
+      },
+      "garrison": {
+        "capacity": 15,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk",
+          "cavalry",
+          "khan"
+        ]
+      },
+      "influences": [
+        "Buildings generate +100% tax while within the influence of the Imperial Academy."
+      ]
+    },
+    {
+      "id": "keep-3",
+      "baseId": "keep",
+      "type": "building",
+      "name": "Keep",
+      "pbgid": 135794,
+      "attribName": "building_defense_keep_control_sul",
+      "age": 3,
+      "civs": [
+        "de"
+      ],
+      "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.",
+      "classes": [
+        "defensive",
+        "building"
+      ],
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 800,
+        "gold": 0,
+        "total": 800,
+        "popcap": 0,
+        "time": 140
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/keep-3.png",
+      "hitpoints": 5000,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 12,
+          "speed": 0.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 25,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.125,
+            "fire": 0.25,
+            "winddown": 0,
+            "reload": 0.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_keep_arrows_a",
+          "pbgid": 127372
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        },
+        {
+          "type": "fire",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "line": 41,
+        "height": 501
+      },
+      "garrison": {
+        "capacity": 15,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk",
+          "cavalry",
+          "khan"
+        ]
+      },
+      "influences": [
+        "The research rate of buildings within influence of a Mosque or a Madrasa is increased by 12.5% for each garrisoned Scholar in all Mosques and Madrasas."
+      ]
+    },
+    {
+      "id": "keep-3",
+      "baseId": "keep",
+      "type": "building",
+      "name": "Keep",
+      "pbgid": 199622,
+      "attribName": "building_defense_keep_control_abb",
+      "age": 3,
+      "civs": [
+        "ab"
+      ],
+      "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.",
+      "classes": [
+        "defensive",
+        "building"
+      ],
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 800,
+        "gold": 0,
+        "total": 800,
+        "popcap": 0,
+        "time": 140
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/keep-3.png",
+      "hitpoints": 5000,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 12,
+          "speed": 0.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 25,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.125,
+            "fire": 0.25,
+            "winddown": 0,
+            "reload": 0.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_keep_arrows_a",
+          "pbgid": 127372
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        },
+        {
+          "type": "fire",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "line": 41,
+        "height": 501
+      },
+      "garrison": {
+        "capacity": 15,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk",
+          "cavalry",
+          "khan"
+        ]
+      },
+      "influences": [
+        "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+      ]
+    },
+    {
+      "id": "keep-3",
+      "baseId": "keep",
+      "type": "building",
+      "name": "Keep",
+      "pbgid": 133437,
+      "attribName": "building_defense_keep_control_rus",
+      "age": 3,
+      "civs": [
         "ru"
       ],
       "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.",
@@ -136,12 +691,14 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/keep-3.png",
       "hitpoints": 5000,
       "weapons": [
         {
+          "name": "Bow",
           "type": "ranged",
-          "damage": 36,
-          "speed": 0.38,
+          "damage": 12,
+          "speed": 0.625,
           "range": {
             "min": 0,
             "max": 8
@@ -152,7 +709,8 @@
               "target": {
                 "class": [
                   [
-                    "ship"
+                    "naval",
+                    "unit"
                   ]
                 ]
               },
@@ -160,7 +718,22 @@
               "value": 25,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.125,
+            "fire": 0.25,
+            "winddown": 0,
+            "reload": 0.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_keep_arrows_a",
+          "pbgid": 127372
         }
       ],
       "armor": [
@@ -178,9 +751,17 @@
         "height": 501
       },
       "garrison": {
-        "capacity": 15
+        "capacity": 15,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk",
+          "cavalry",
+          "khan"
+        ]
       },
-      "icon": "https://data.aoe4world.com/images/buildings/keep.png"
+      "influences": []
     }
   ]
 }

@@ -1,0 +1,105 @@
+{
+  "id": "bombard-4",
+  "baseId": "bombard",
+  "type": "unit",
+  "name": "Bombard",
+  "pbgid": 166392,
+  "attribName": "unit_bombard_4_eng",
+  "age": 4,
+  "civs": [
+    "en"
+  ],
+  "description": "Intimidating siege gun excellent against buildings or any stubborn targets.\n+ High damage\n- Must be set up to fire",
+  "classes": [
+    "siege",
+    "gunpowder"
+  ],
+  "displayClasses": [
+    "Siege",
+    "Gunpowder"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 400,
+    "stone": 0,
+    "gold": 600,
+    "total": 1000,
+    "popcap": 3,
+    "time": 45
+  },
+  "producedBy": [
+    "the-white-tower",
+    "siege-workshop",
+    "keep",
+    "berkshire-palace"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/bombard-4.png",
+  "hitpoints": 240,
+  "weapons": [
+    {
+      "name": "Cannon",
+      "type": "siege",
+      "damage": 100,
+      "speed": 5.25,
+      "range": {
+        "min": 3.75,
+        "max": 10
+      },
+      "modifiers": [
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 410,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 410,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.25,
+        "windup": 0,
+        "fire": 0.25,
+        "winddown": 0,
+        "reload": 4.75,
+        "setup": 0,
+        "teardown": 0.5,
+        "cooldown": 0
+      },
+      "attribName": "weapon_bombard_4",
+      "pbgid": 127728
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 30
+    }
+  ],
+  "sight": {
+    "line": 56,
+    "height": 10
+  },
+  "movement": {
+    "speed": 0.625
+  }
+}

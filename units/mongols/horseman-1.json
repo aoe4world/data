@@ -2,7 +2,9 @@
   "id": "horseman-1",
   "baseId": "horseman",
   "type": "unit",
-  "name": "Horseman",
+  "name": "Early Horseman",
+  "pbgid": 129569,
+  "attribName": "unit_horseman_1_mon",
   "age": 1,
   "civs": [
     "mo"
@@ -16,7 +18,7 @@
   "displayClasses": [
     "Light Melee Cavalry"
   ],
-  "unique": true,
+  "unique": false,
   "costs": {
     "food": 100,
     "wood": 20,
@@ -24,20 +26,23 @@
     "gold": 0,
     "total": 120,
     "popcap": 1,
-    "time": 22
+    "time": 22.5
   },
   "producedBy": [
-    "stable"
+    "stable",
+    "khaganate-palace"
   ],
+  "icon": "https://data.aoe4world.com/images/units/horseman-1.png",
   "hitpoints": 100,
   "weapons": [
     {
+      "name": "Saber",
       "type": "melee",
       "damage": 7,
-      "speed": 1.75,
+      "speed": 1.8125,
       "range": {
         "min": 0,
-        "max": 0.3
+        "max": 0.2875
       },
       "modifiers": [
         {
@@ -66,17 +71,42 @@
           "value": 10,
           "type": "passive"
         }
-      ]
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "fire": 0.1875,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.125
+      },
+      "attribName": "weapon_horseman_1_mon",
+      "pbgid": 206011
     },
     {
+      "name": "Torch",
       "type": "fire",
       "damage": 10,
-      "speed": 2,
+      "speed": 2.25,
       "range": {
-        "max": 4,
-        "min": 0
+        "min": 0,
+        "max": 1
       },
-      "modifiers": []
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "fire": 0.25,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch_horseman_mon",
+      "pbgid": 135190
     }
   ],
   "armor": [
@@ -90,7 +120,6 @@
     "height": 10
   },
   "movement": {
-    "speed": 1.88
-  },
-  "icon": "https://data.aoe4world.com/images/units/horseman-1.png"
+    "speed": 1.875
+  }
 }

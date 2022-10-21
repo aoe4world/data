@@ -7,7 +7,7 @@
   "civs": [
     "mo"
   ],
-  "unique": true,
+  "unique": false,
   "displayClasses": [
     "Archer Ship"
   ],
@@ -16,19 +16,21 @@
     "ship"
   ],
   "minAge": 2,
-  "icon": "https://data.aoe4world.com/images/units/light-junk.png",
-  "description": "Light war vessel armed with a crew of archers.\n+ Increased maneuverability and speed.\n+ Benefits from Blacksmith upgrades.",
+  "icon": "https://data.aoe4world.com/images/units/light-junk-2.png",
+  "description": "Light war vessel armed with a crew of archers.\n+ Increased maneuverability and speed.\n+ Benefits from ranged damage Blacksmith technology",
   "variations": [
     {
       "id": "light-junk-2",
       "baseId": "light-junk",
       "type": "unit",
       "name": "Light Junk",
+      "pbgid": 2033751,
+      "attribName": "unit_naval_light_junk_2_mon",
       "age": 2,
       "civs": [
         "mo"
       ],
-      "description": "Light war vessel armed with a crew of archers.\n+ Increased maneuverability and speed.\n+ Benefits from Blacksmith upgrades.",
+      "description": "Light war vessel armed with a crew of archers.\n+ Increased maneuverability and speed.\n+ Benefits from ranged damage Blacksmith technology",
       "classes": [
         "archer",
         "ship"
@@ -36,7 +38,7 @@
       "displayClasses": [
         "Archer Ship"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 120,
@@ -49,12 +51,14 @@
       "producedBy": [
         "dock"
       ],
+      "icon": "https://data.aoe4world.com/images/units/light-junk-2.png",
       "hitpoints": 400,
       "weapons": [
         {
+          "name": "Bow",
           "type": "ranged",
-          "damage": 30,
-          "speed": 0.95,
+          "damage": 10,
+          "speed": 2.25,
           "range": {
             "min": 0,
             "max": 4
@@ -65,8 +69,8 @@
               "target": {
                 "class": [
                   [
-                    "incendiary",
-                    "ship"
+                    "naval",
+                    "fireship"
                   ]
                 ]
               },
@@ -74,7 +78,22 @@
               "value": 10,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.75,
+            "reload": 1.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_naval_light_junk_arrow_mon",
+          "pbgid": 2033754
         }
       ],
       "armor": [
@@ -88,9 +107,8 @@
         "height": 10
       },
       "movement": {
-        "speed": 1.63
-      },
-      "icon": "https://data.aoe4world.com/images/units/light-junk.png"
+        "speed": 1.625
+      }
     }
   ]
 }

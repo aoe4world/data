@@ -1,0 +1,125 @@
+{
+  "id": "horseman-4",
+  "baseId": "horseman",
+  "type": "unit",
+  "name": "Elite Horseman",
+  "pbgid": 136251,
+  "attribName": "unit_horseman_4_mon",
+  "age": 4,
+  "civs": [
+    "mo"
+  ],
+  "description": "Mobile cavalry effective at raiding and flanking.\n+ High movement speed\n- Weak vs melee units",
+  "classes": [
+    "light",
+    "melee",
+    "cavalry"
+  ],
+  "displayClasses": [
+    "Light Melee Cavalry"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 100,
+    "wood": 20,
+    "stone": 0,
+    "gold": 0,
+    "total": 120,
+    "popcap": 1,
+    "time": 22.5
+  },
+  "producedBy": [
+    "stable",
+    "khaganate-palace"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/horseman-4.png",
+  "hitpoints": 180,
+  "weapons": [
+    {
+      "name": "Saber",
+      "type": "melee",
+      "damage": 13,
+      "speed": 1.8125,
+      "range": {
+        "min": 0,
+        "max": 0.2875
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "ranged"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 13,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "fire": 0.1875,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.125
+      },
+      "attribName": "weapon_horseman_4_mon",
+      "pbgid": 206014
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.25,
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "fire": 0.25,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch_horseman_mon",
+      "pbgid": 135190
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 4
+    }
+  ],
+  "sight": {
+    "line": 28,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.875
+  }
+}

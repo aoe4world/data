@@ -1,0 +1,92 @@
+{
+  "id": "clocktower-nest-of-bees-3",
+  "baseId": "clocktower-nest-of-bees",
+  "type": "unit",
+  "name": "Clocktower Nest of Bees",
+  "pbgid": 206827,
+  "attribName": "unit_nest_of_bees_4_clocktower_chi",
+  "age": 3,
+  "civs": [
+    "ch"
+  ],
+  "description": "Innovative field weapon capable of firing a barrage of rockets to damage defensive positions and clumped enemy troops.\n+ Good area of effect damage against most targets\n- Slowest movement speed\n- Weak if surrounded",
+  "classes": [
+    "siege",
+    "gunpowder"
+  ],
+  "displayClasses": [
+    "Siege",
+    "Gunpowder"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 0,
+    "wood": 300,
+    "stone": 0,
+    "gold": 300,
+    "total": 600,
+    "popcap": 3,
+    "time": 40
+  },
+  "producedBy": [
+    "astronomical-clocktower"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/clocktower-nest-of-bees-4.png",
+  "hitpoints": 210,
+  "weapons": [
+    {
+      "name": "Rocket Arrow",
+      "type": "siege",
+      "damage": 8,
+      "speed": 5.5,
+      "range": {
+        "min": 3,
+        "max": 8
+      },
+      "modifiers": [
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 4,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.25,
+        "windup": 0,
+        "fire": 0.25,
+        "winddown": 2,
+        "reload": 3,
+        "setup": 0.125,
+        "teardown": 0.5,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 8
+      },
+      "attribName": "weapon_nest_of_bees_4_chi",
+      "pbgid": 166609
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 20
+    }
+  ],
+  "sight": {
+    "line": 64,
+    "height": 10
+  },
+  "movement": {
+    "speed": 0.8125
+  }
+}

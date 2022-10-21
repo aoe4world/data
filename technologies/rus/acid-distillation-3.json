@@ -1,0 +1,59 @@
+{
+  "id": "acid-distillation-3",
+  "baseId": "acid-distillation",
+  "type": "technology",
+  "name": "Acid Distillation",
+  "pbgid": 171823,
+  "attribName": "upgrade_econ_resource_gold_harvest_rate_3",
+  "age": 3,
+  "civs": [
+    "ru"
+  ],
+  "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
+  "classes": [
+    "mining",
+    "technology",
+    "2/3"
+  ],
+  "displayClasses": [
+    "Mining Technology 2/3"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 150,
+    "stone": 0,
+    "gold": 350,
+    "total": 500,
+    "popcap": 0,
+    "time": 75
+  },
+  "producedBy": [
+    "mining-camp"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/acid-distillation-3.png",
+  "effects": [
+    {
+      "property": "goldGatherRate",
+      "select": {
+        "id": [
+          "villager"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.15,
+      "type": "passive"
+    },
+    {
+      "property": "stoneGatherRate",
+      "select": {
+        "id": [
+          "villager"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.15,
+      "type": "passive"
+    }
+  ]
+}

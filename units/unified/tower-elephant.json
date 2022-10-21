@@ -17,133 +17,17 @@
     "cavalry",
     "elephant"
   ],
-  "minAge": 3,
-  "icon": "https://data.aoe4world.com/images/units/tower-elephant-3.png",
+  "minAge": 4,
+  "icon": "https://data.aoe4world.com/images/units/tower-elephant-4.png",
   "description": "Powerful ranged cavalry that can fire while moving.\n+ High health\n+ Mounted with powerful archers\n+ Capable of attacking Stone Walls\n- Slow movement speed",
   "variations": [
-    {
-      "id": "tower-elephant-3",
-      "baseId": "tower-elephant",
-      "type": "unit",
-      "name": "Tower Elephant",
-      "age": 3,
-      "civs": [
-        "de"
-      ],
-      "description": "Powerful ranged cavalry that can fire while moving.\n+ High health\n+ Mounted with powerful archers\n+ Capable of attacking Stone Walls\n- Slow movement speed",
-      "classes": [
-        "ranged",
-        "cavalry",
-        "elephant"
-      ],
-      "displayClasses": [
-        "Ranged Cavalry",
-        "Elephant"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 400,
-        "wood": 0,
-        "stone": 0,
-        "gold": 600,
-        "total": 1000,
-        "popcap": 3,
-        "time": 60
-      },
-      "producedBy": [
-        "archery-range"
-      ],
-      "hitpoints": 600,
-      "weapons": [
-        {
-          "type": "ranged",
-          "damage": 30,
-          "speed": 1.25,
-          "range": {
-            "min": 0,
-            "max": 5
-          }
-        }
-      ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 7
-        }
-      ],
-      "sight": {
-        "line": 36,
-        "height": 10
-      },
-      "movement": {
-        "speed": 0.88
-      },
-      "icon": "https://data.aoe4world.com/images/units/tower-elephant-3.png"
-    },
-    {
-      "id": "tower-elephant-4-palace-of-the-sultan",
-      "baseId": "tower-elephant",
-      "type": "unit",
-      "name": "Tower Elephant",
-      "age": 4,
-      "civs": [
-        "de"
-      ],
-      "description": "Powerful ranged cavalry that can fire while moving.\n+ High health\n+ Mounted with powerful archers\n+ Capable of attacking Stone Walls\n- Slow movement speed",
-      "classes": [
-        "ranged",
-        "cavalry",
-        "elephant"
-      ],
-      "displayClasses": [
-        "Ranged Cavalry",
-        "Elephant"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "total": 0,
-        "popcap": 3,
-        "time": 199
-      },
-      "producedBy": [
-        "palace-of-the-sultan"
-      ],
-      "hitpoints": 600,
-      "weapons": [
-        {
-          "type": "ranged",
-          "damage": 30,
-          "speed": 1.25,
-          "range": {
-            "min": 0,
-            "max": 5
-          }
-        }
-      ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 7
-        }
-      ],
-      "sight": {
-        "line": 36,
-        "height": 10
-      },
-      "movement": {
-        "speed": 0.88
-      },
-      "icon": "https://data.aoe4world.com/images/units/tower-elephant.png"
-    },
     {
       "id": "tower-elephant-4",
       "baseId": "tower-elephant",
       "type": "unit",
       "name": "Tower Elephant",
+      "pbgid": 136091,
+      "attribName": "unit_war_elephant_tower_4_sul",
       "age": 4,
       "civs": [
         "de"
@@ -169,18 +53,94 @@
         "time": 60
       },
       "producedBy": [
-        "archery-range"
+        "archery-range",
+        "palace-of-the-sultan"
       ],
+      "icon": "https://data.aoe4world.com/images/units/tower-elephant-4.png",
       "hitpoints": 600,
       "weapons": [
         {
-          "type": "ranged",
+          "name": "Tusks",
+          "type": "melee",
           "damage": 30,
-          "speed": 1.25,
+          "speed": 2.9375,
+          "range": {
+            "min": 0,
+            "max": 1
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "fire": 0.1875,
+            "winddown": 2,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_tower_war_elephant_melee_sul",
+          "pbgid": 2024371
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 15,
+          "speed": 1.5,
           "range": {
             "min": 0,
             "max": 5
-          }
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.5,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_war_elephant_tower_archer_4_sul",
+          "pbgid": 136204
+        },
+        {
+          "name": "Crossbow",
+          "type": "ranged",
+          "damage": 15,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "heavy"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 11,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.5,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_war_elephant_tower_crossbow_4_sul",
+          "pbgid": 181352
         }
       ],
       "armor": [
@@ -194,9 +154,8 @@
         "height": 10
       },
       "movement": {
-        "speed": 0.88
-      },
-      "icon": "https://data.aoe4world.com/images/units/tower-elephant-4.png"
+        "speed": 0.875
+      }
     }
   ]
 }

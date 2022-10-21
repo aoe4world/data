@@ -6,11 +6,11 @@
   "type": "unit",
   "civs": [
     "ab",
-    "en",
-    "hr",
-    "fr",
     "ch",
     "de",
+    "en",
+    "fr",
+    "hr",
     "mo",
     "ru"
   ],
@@ -22,17 +22,19 @@
     "siege"
   ],
   "minAge": 1,
-  "icon": "https://data.aoe4world.com/images/units/siege-tower.png",
+  "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
   "description": "Tall infantry transport with no combat capability. Allows garrisoned infantry to be unloaded directly onto Stone Walls.\n+ High ranged armor\n- Cannot attack\n- Slow movement speed",
   "variations": [
     {
-      "id": "siege-tower-1",
+      "id": "siege-tower-2",
       "baseId": "siege-tower",
       "type": "unit",
       "name": "Siege Tower",
-      "age": 1,
+      "pbgid": 166309,
+      "attribName": "unit_siege_tower_3_eng",
+      "age": 2,
       "civs": [
-        "ab"
+        "en"
       ],
       "description": "Tall infantry transport with no combat capability. Allows garrisoned infantry to be unloaded directly onto Stone Walls.\n+ High ranged armor\n- Cannot attack\n- Slow movement speed",
       "classes": [
@@ -41,19 +43,24 @@
       "displayClasses": [
         "Siege"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 125,
         "stone": 0,
         "gold": 0,
         "total": 125,
-        "popcap": 3,
+        "popcap": 1,
         "time": 45
       },
       "producedBy": [
-        "infantry-units"
+        "spearman",
+        "man-at-arms",
+        "longbowman",
+        "crossbowman",
+        "handcannoneer"
       ],
+      "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
       "hitpoints": 480,
       "weapons": [],
       "armor": [
@@ -67,24 +74,396 @@
         "height": 10
       },
       "movement": {
-        "speed": 0.63
+        "speed": 0.625
       },
-      "icon": "https://data.aoe4world.com/images/units/siege-tower.png"
+      "garrison": {
+        "capacity": 8,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk"
+        ]
+      }
     },
     {
       "id": "siege-tower-2",
       "baseId": "siege-tower",
       "type": "unit",
       "name": "Siege Tower",
+      "pbgid": 134700,
+      "attribName": "unit_siege_tower_3_hre",
       "age": 2,
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
+        "hr"
+      ],
+      "description": "Tall infantry transport with no combat capability. Allows garrisoned infantry to be unloaded directly onto Stone Walls.\n+ High ranged armor\n- Cannot attack\n- Slow movement speed",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 125,
+        "stone": 0,
+        "gold": 0,
+        "total": 125,
+        "popcap": 1,
+        "time": 45
+      },
+      "producedBy": [
+        "spearman",
+        "man-at-arms",
+        "landsknecht",
+        "archer",
+        "crossbowman",
+        "handcannoneer"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
+      "hitpoints": 480,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 8
+        }
+      ],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.625
+      },
+      "garrison": {
+        "capacity": 8,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk"
+        ]
+      }
+    },
+    {
+      "id": "siege-tower-2",
+      "baseId": "siege-tower",
+      "type": "unit",
+      "name": "Siege Tower",
+      "pbgid": 132290,
+      "attribName": "unit_siege_tower_3_fre",
+      "age": 2,
+      "civs": [
+        "fr"
+      ],
+      "description": "Tall infantry transport with no combat capability. Allows garrisoned infantry to be unloaded directly onto Stone Walls.\n+ High ranged armor\n- Cannot attack\n- Slow movement speed",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 125,
+        "stone": 0,
+        "gold": 0,
+        "total": 125,
+        "popcap": 1,
+        "time": 45
+      },
+      "producedBy": [
+        "spearman",
+        "man-at-arms",
+        "archer",
+        "arbaletrier",
+        "handcannoneer"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
+      "hitpoints": 480,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 8
+        }
+      ],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.625
+      },
+      "garrison": {
+        "capacity": 8,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk"
+        ]
+      }
+    },
+    {
+      "id": "siege-tower-2",
+      "baseId": "siege-tower",
+      "type": "unit",
+      "name": "Siege Tower",
+      "pbgid": 137529,
+      "attribName": "unit_siege_tower_3_chi",
+      "age": 2,
+      "civs": [
+        "ch"
+      ],
+      "description": "Tall infantry transport with no combat capability. Allows garrisoned infantry to be unloaded directly onto Stone Walls.\n+ High ranged armor\n- Cannot attack\n- Slow movement speed",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 125,
+        "stone": 0,
+        "gold": 0,
+        "total": 125,
+        "popcap": 1,
+        "time": 45
+      },
+      "producedBy": [
+        "spearman",
+        "palace-guard",
+        "archer",
+        "crossbowman",
+        "grenadier",
+        "zhuge-nu",
+        "handcannoneer"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
+      "hitpoints": 480,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 8
+        }
+      ],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.625
+      },
+      "garrison": {
+        "capacity": 8,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk"
+        ]
+      }
+    },
+    {
+      "id": "siege-tower-2",
+      "baseId": "siege-tower",
+      "type": "unit",
+      "name": "Siege Tower",
+      "pbgid": 135953,
+      "attribName": "unit_siege_tower_3_sul",
+      "age": 2,
+      "civs": [
+        "de"
+      ],
+      "description": "Tall infantry transport with no combat capability. Allows garrisoned infantry to be unloaded directly onto Stone Walls.\n+ High ranged armor\n- Cannot attack\n- Slow movement speed",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 125,
+        "stone": 0,
+        "gold": 0,
+        "total": 125,
+        "popcap": 1,
+        "time": 45
+      },
+      "producedBy": [
+        "spearman",
+        "man-at-arms",
+        "archer",
+        "crossbowman",
+        "handcannoneer"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
+      "hitpoints": 480,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 8
+        }
+      ],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.625
+      },
+      "garrison": {
+        "capacity": 8,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk"
+        ]
+      }
+    },
+    {
+      "id": "siege-tower-1",
+      "baseId": "siege-tower",
+      "type": "unit",
+      "name": "Siege Tower",
+      "pbgid": 199685,
+      "attribName": "unit_siege_tower_3_abb",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "Tall infantry transport with no combat capability. Allows garrisoned infantry to be unloaded directly onto Stone Walls.\n+ High ranged armor\n- Cannot attack\n- Slow movement speed",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 125,
+        "stone": 0,
+        "gold": 0,
+        "total": 125,
+        "popcap": 1,
+        "time": 45
+      },
+      "producedBy": [
+        "spearman",
+        "man-at-arms",
+        "archer",
+        "crossbowman",
+        "handcannoneer"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
+      "hitpoints": 480,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 8
+        }
+      ],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.625
+      },
+      "garrison": {
+        "capacity": 8,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk"
+        ]
+      }
+    },
+    {
+      "id": "siege-tower-2",
+      "baseId": "siege-tower",
+      "type": "unit",
+      "name": "Siege Tower",
+      "pbgid": 129972,
+      "attribName": "unit_siege_tower_3_mon",
+      "age": 2,
+      "civs": [
+        "mo"
+      ],
+      "description": "Tall infantry transport with no combat capability. Allows garrisoned infantry to be unloaded directly onto Stone Walls.\n+ High ranged armor\n- Cannot attack\n- Slow movement speed",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 125,
+        "stone": 0,
+        "gold": 0,
+        "total": 125,
+        "popcap": 1,
+        "time": 45
+      },
+      "producedBy": [
+        "spearman",
+        "man-at-arms",
+        "archer",
+        "crossbowman",
+        "handcannoneer"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
+      "hitpoints": 480,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 8
+        }
+      ],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.625
+      },
+      "garrison": {
+        "capacity": 8,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk"
+        ]
+      }
+    },
+    {
+      "id": "siege-tower-2",
+      "baseId": "siege-tower",
+      "type": "unit",
+      "name": "Siege Tower",
+      "pbgid": 133340,
+      "attribName": "unit_siege_tower_3_rus",
+      "age": 2,
+      "civs": [
         "ru"
       ],
       "description": "Tall infantry transport with no combat capability. Allows garrisoned infantry to be unloaded directly onto Stone Walls.\n+ High ranged armor\n- Cannot attack\n- Slow movement speed",
@@ -101,12 +480,17 @@
         "stone": 0,
         "gold": 0,
         "total": 125,
-        "popcap": 3,
+        "popcap": 1,
         "time": 45
       },
       "producedBy": [
-        "infantry-units"
+        "spearman",
+        "man-at-arms",
+        "archer",
+        "crossbowman",
+        "streltsy"
       ],
+      "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
       "hitpoints": 480,
       "weapons": [],
       "armor": [
@@ -120,9 +504,17 @@
         "height": 10
       },
       "movement": {
-        "speed": 0.63
+        "speed": 0.625
       },
-      "icon": "https://data.aoe4world.com/images/units/siege-tower-2.png"
+      "garrison": {
+        "capacity": 8,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk"
+        ]
+      }
     }
   ]
 }

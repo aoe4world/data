@@ -3,11 +3,13 @@
   "baseId": "galley",
   "type": "unit",
   "name": "Galley",
+  "pbgid": 193930,
+  "attribName": "unit_naval_war_galley_3_eng",
   "age": 2,
   "civs": [
     "en"
   ],
-  "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from Blacksmith upgrades",
+  "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from ranged damage Blacksmith technology",
   "classes": [
     "archer",
     "ship"
@@ -15,28 +17,29 @@
   "displayClasses": [
     "Archer Ship"
   ],
-  "unique": true,
+  "unique": false,
   "costs": {
+    "gold": 162,
+    "wood": 162,
     "food": 0,
-    "wood": 180,
     "stone": 0,
-    "gold": 180,
-    "total": 360,
-    "popcap": 3,
+    "total": 324,
     "time": 40
   },
   "producedBy": [
     "dock"
   ],
+  "icon": "https://data.aoe4world.com/images/units/galley-3.png",
   "hitpoints": 550,
   "weapons": [
     {
+      "name": "Bow",
       "type": "ranged",
-      "damage": 60,
-      "speed": 1.95,
+      "damage": 10,
+      "speed": 2,
       "range": {
         "min": 0,
-        "max": 6
+        "max": 5
       },
       "modifiers": [
         {
@@ -44,8 +47,8 @@
           "target": {
             "class": [
               [
-                "incendiary",
-                "ship"
+                "naval",
+                "fireship"
               ]
             ]
           },
@@ -53,7 +56,59 @@
           "value": 10,
           "type": "passive"
         }
-      ]
+      ],
+      "durations": {
+        "aim": 0.25,
+        "windup": 0.25,
+        "fire": 0.25,
+        "winddown": 0.5,
+        "reload": 0.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 6
+      },
+      "attribName": "weapon_naval_arrow_ship_arrow_western",
+      "pbgid": 2034308
+    },
+    {
+      "name": "Bombard",
+      "type": "ranged",
+      "damage": 70,
+      "speed": 7.25,
+      "range": {
+        "min": 0,
+        "max": 7.5
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 30,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.25,
+        "windup": 0,
+        "fire": 0.25,
+        "winddown": 1.75,
+        "reload": 5,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_naval_war_galley_bombard",
+      "pbgid": 196870
     }
   ],
   "armor": [
@@ -67,7 +122,6 @@
     "height": 10
   },
   "movement": {
-    "speed": 1.38
-  },
-  "icon": "https://data.aoe4world.com/images/units/galley.png"
+    "speed": 1.375
+  }
 }

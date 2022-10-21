@@ -8,7 +8,7 @@
     "ch",
     "mo"
   ],
-  "unique": true,
+  "unique": false,
   "displayClasses": [
     "Incendiary Ship"
   ],
@@ -17,19 +17,21 @@
     "ship"
   ],
   "minAge": 3,
-  "icon": "https://data.aoe4world.com/images/units/explosive-junk.png",
-  "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area, and setting fire to nearby ships and structures.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+  "icon": "https://data.aoe4world.com/images/units/explosive-junk-3.png",
+  "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
   "variations": [
     {
       "id": "explosive-junk-3",
       "baseId": "explosive-junk",
       "type": "unit",
       "name": "Explosive Junk",
+      "pbgid": 193112,
+      "attribName": "unit_naval_fireship_3_chi",
       "age": 3,
       "civs": [
         "ch"
       ],
-      "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area, and setting fire to nearby ships and structures.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+      "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
       "classes": [
         "incendiary",
         "ship"
@@ -37,7 +39,7 @@
       "displayClasses": [
         "Incendiary Ship"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 160,
@@ -45,17 +47,19 @@
         "gold": 80,
         "total": 240,
         "popcap": 2,
-        "time": 29
+        "time": 30
       },
       "producedBy": [
         "dock"
       ],
+      "icon": "https://data.aoe4world.com/images/units/explosive-junk-3.png",
       "hitpoints": 200,
       "weapons": [
         {
+          "name": "Incendiaries",
           "type": "fire",
           "damage": 400,
-          "speed": 1,
+          "speed": 0.25,
           "range": {
             "min": 0,
             "max": 2
@@ -66,6 +70,7 @@
               "target": {
                 "class": [
                   [
+                    "naval",
                     "warship"
                   ]
                 ]
@@ -74,7 +79,57 @@
               "value": 200,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_fireship_asian",
+          "pbgid": 2033820
+        },
+        {
+          "name": "Explosives",
+          "type": "fire",
+          "damage": 560,
+          "speed": 0.25,
+          "range": {
+            "min": 0,
+            "max": 2
+          },
+          "modifiers": [
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "warship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 280,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_fireship_explosive_asian",
+          "pbgid": 2033822
         }
       ],
       "armor": [],
@@ -84,19 +139,20 @@
       },
       "movement": {
         "speed": 1.5
-      },
-      "icon": "https://data.aoe4world.com/images/units/explosive-junk.png"
+      }
     },
     {
-      "id": "explosive-junk-3-dock",
+      "id": "explosive-junk-3",
       "baseId": "explosive-junk",
       "type": "unit",
       "name": "Explosive Junk",
+      "pbgid": 193132,
+      "attribName": "unit_naval_fireship_3_mon",
       "age": 3,
       "civs": [
         "mo"
       ],
-      "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area, and setting fire to nearby ships and structures.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+      "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
       "classes": [
         "incendiary",
         "ship"
@@ -104,7 +160,7 @@
       "displayClasses": [
         "Incendiary Ship"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 160,
@@ -117,12 +173,14 @@
       "producedBy": [
         "dock"
       ],
+      "icon": "https://data.aoe4world.com/images/units/explosive-junk-3.png",
       "hitpoints": 200,
       "weapons": [
         {
+          "name": "Incendiaries",
           "type": "fire",
           "damage": 400,
-          "speed": 1,
+          "speed": 0.25,
           "range": {
             "min": 0,
             "max": 2
@@ -133,6 +191,7 @@
               "target": {
                 "class": [
                   [
+                    "naval",
                     "warship"
                   ]
                 ]
@@ -141,7 +200,57 @@
               "value": 200,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_fireship_asian",
+          "pbgid": 2033820
+        },
+        {
+          "name": "Explosives",
+          "type": "fire",
+          "damage": 560,
+          "speed": 0.25,
+          "range": {
+            "min": 0,
+            "max": 2
+          },
+          "modifiers": [
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "warship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 280,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_fireship_explosive_asian",
+          "pbgid": 2033822
         }
       ],
       "armor": [],
@@ -151,8 +260,7 @@
       },
       "movement": {
         "speed": 1.5
-      },
-      "icon": "https://data.aoe4world.com/images/units/explosive-junk.png"
+      }
     }
   ]
 }

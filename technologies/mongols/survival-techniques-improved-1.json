@@ -2,12 +2,14 @@
   "id": "survival-techniques-improved-1",
   "baseId": "survival-techniques-improved",
   "type": "technology",
-  "name": "Improved Survival Techniques",
+  "name": "Survival Techniques (Improved)",
+  "pbgid": 203469,
+  "attribName": "upgrade_econ_villager_hunting_gear_1_improved_mon",
   "age": 1,
   "civs": [
     "mo"
   ],
-  "description": "Increase Villagers' hunted gather rate by +22.5%.\nIf Survival Techniques has already been researched, increase Villagers' hunted meat gather rate by  +7.5% instead.",
+  "description": "Increase Villagers' hunted meat gather rate by +20%.\nIf Survival Techniques has already been researched, increase hunted meat gather rate by +5% instead.",
   "classes": [
     "hunting",
     "technology"
@@ -19,30 +21,18 @@
   "costs": {
     "food": 0,
     "wood": 25,
-    "stone": 150,
+    "stone": 100,
     "gold": 75,
-    "total": 250,
+    "total": 200,
     "popcap": 0,
     "time": 25
   },
   "producedBy": [
-    "mill",
     "ger",
     "steppe-redoubt"
   ],
-  "icon": "https://data.aoe4world.com/images/technologies/survival-techniques.png",
+  "icon": "https://data.aoe4world.com/images/technologies/survival-techniques-improved-1.png",
   "effects": [
-    {
-      "property": "huntCarryCapacity",
-      "select": {
-        "id": [
-          "villager"
-        ]
-      },
-      "effect": "change",
-      "value": 10,
-      "type": "passive"
-    },
     {
       "property": "huntGatherRate",
       "select": {
@@ -51,7 +41,7 @@
         ]
       },
       "effect": "multiply",
-      "value": 1.0434,
+      "value": 1.04,
       "type": "passive"
     }
   ]

@@ -1,0 +1,86 @@
+{
+  "id": "stone-wall-tower-2",
+  "baseId": "stone-wall-tower",
+  "type": "building",
+  "name": "Stone Wall Tower",
+  "pbgid": 132684,
+  "attribName": "building_defense_tower_fre",
+  "age": 2,
+  "civs": [
+    "fr"
+  ],
+  "description": "Heavy defensive tower that fires a springald. Must be built on a Stone Wall segment.\nInfantry can use the tower to access the top of the walls.",
+  "classes": [
+    "defensive",
+    "building"
+  ],
+  "displayClasses": [
+    "Defensive Building"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 300,
+    "gold": 0,
+    "total": 300,
+    "popcap": 0,
+    "time": 90
+  },
+  "producedBy": [
+    "villager"
+  ],
+  "icon": "https://data.aoe4world.com/images/buildings/stone-wall-tower-2.png",
+  "hitpoints": 3000,
+  "weapons": [
+    {
+      "name": "Springald",
+      "type": "ranged",
+      "damage": 60,
+      "speed": 6.25,
+      "range": {
+        "min": 0,
+        "max": 9
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 50,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.25,
+        "windup": 0.25,
+        "fire": 0.25,
+        "winddown": 0.5,
+        "reload": 5,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_walltower_springald",
+      "pbgid": 134820
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 50
+    }
+  ],
+  "sight": {
+    "line": 60,
+    "height": 501
+  },
+  "influences": []
+}

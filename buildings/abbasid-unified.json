@@ -8,194 +8,300 @@
   },
   "data": [
     {
-      "id": "culture-wing",
-      "name": "Culture Wing",
+      "id": "archery-range",
+      "name": "Archery Range",
       "type": "building",
       "civs": [
         "ab"
       ],
-      "unique": true,
+      "unique": false,
       "displayClasses": [
-        "Advance to Age II",
-        "Advance to Age III",
-        "Advance to Age IV",
-        "Unlock Technology"
+        "Military Building"
       ],
       "classes": [
-        "advance",
-        "to",
-        "age",
-        "ii",
-        "iii",
-        "iv",
-        "unlock",
-        "technology"
+        "military",
+        "building"
       ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/culture-wing.png",
-      "description": "Constructs the Culture Wing.\nThe following cultural technologies become available:\n• Preservation of Knowledge (Feudal Age)\n• Medical Centers (Castle Age)\n• Faith (Imperial Age)",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/buildings/archery-range-2.png",
+      "description": "Produces ranged infantry units.",
       "variations": [
         {
-          "id": "culture-wing-1",
-          "baseId": "culture-wing",
+          "id": "archery-range-2",
+          "baseId": "archery-range",
           "type": "building",
-          "name": "Culture Wing",
-          "age": 1,
-          "civs": [
-            "ab"
-          ],
-          "description": "Constructs the Culture Wing.\nThe following cultural technologies become available:\n• Preservation of Knowledge (Feudal Age)\n• Medical Centers (Castle Age)\n• Faith (Imperial Age)",
-          "classes": [
-            "advance",
-            "to",
-            "age",
-            "ii"
-          ],
-          "displayClasses": [
-            "Advance to Age II"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 400,
-            "wood": 0,
-            "stone": 0,
-            "gold": 200,
-            "total": 600,
-            "popcap": 0,
-            "time": 120
-          },
-          "producedBy": [
-            "house-of-wisdom"
-          ],
-          "hitpoints": 0,
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "line": 0,
-            "height": 0
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/culture-wing.png"
-        },
-        {
-          "id": "culture-wing-2",
-          "baseId": "culture-wing",
-          "type": "building",
-          "name": "Culture Wing",
+          "name": "Archery Range",
+          "pbgid": 199645,
+          "attribName": "building_unit_ranged_control_abb",
           "age": 2,
           "civs": [
             "ab"
           ],
-          "description": "Constructs the Culture Wing.\nThe following cultural technologies become available:\n• Preservation of Knowledge (Feudal Age)\n• Medical Centers (Castle Age)\n• Faith (Imperial Age)",
+          "description": "Produces ranged infantry units.",
           "classes": [
-            "advance",
-            "to",
-            "age",
-            "iii"
+            "military",
+            "building"
           ],
           "displayClasses": [
-            "Advance to Age III"
+            "Military Building"
           ],
-          "unique": true,
+          "unique": false,
           "costs": {
-            "food": 1200,
-            "wood": 0,
+            "food": 0,
+            "wood": 150,
             "stone": 0,
-            "gold": 600,
-            "total": 1800,
+            "gold": 0,
+            "total": 150,
             "popcap": 0,
-            "time": 120
+            "time": 30
           },
           "producedBy": [
-            "house-of-wisdom"
+            "villager"
           ],
-          "hitpoints": 0,
+          "icon": "https://data.aoe4world.com/images/buildings/archery-range-2.png",
+          "hitpoints": 1500,
           "weapons": [],
-          "armor": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
           "sight": {
-            "line": 0,
-            "height": 0
+            "line": 25,
+            "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/culture-wing.png"
-        },
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "barracks",
+      "name": "Barracks",
+      "type": "building",
+      "civs": [
+        "ab"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Military Building"
+      ],
+      "classes": [
+        "military",
+        "building"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/buildings/barracks-1.png",
+      "description": "Produces melee infantry units.",
+      "variations": [
         {
-          "id": "culture-wing-3",
-          "baseId": "culture-wing",
+          "id": "barracks-1",
+          "baseId": "barracks",
           "type": "building",
-          "name": "Culture Wing",
-          "age": 3,
+          "name": "Barracks",
+          "pbgid": 199643,
+          "attribName": "building_unit_infantry_control_abb",
+          "age": 1,
           "civs": [
             "ab"
           ],
-          "description": "Constructs the Culture Wing.\nThe following cultural technologies become available:\n• Preservation of Knowledge (Feudal Age)\n• Medical Centers (Castle Age)\n• Faith (Imperial Age)",
+          "description": "Produces melee infantry units.",
           "classes": [
-            "advance",
-            "to",
-            "age",
-            "iv"
+            "military",
+            "building"
           ],
           "displayClasses": [
-            "Advance to Age IV"
+            "Military Building"
           ],
-          "unique": true,
+          "unique": false,
           "costs": {
-            "food": 2400,
-            "wood": 0,
+            "food": 0,
+            "wood": 150,
             "stone": 0,
-            "gold": 1200,
-            "total": 3600,
+            "gold": 0,
+            "total": 150,
             "popcap": 0,
-            "time": 120
+            "time": 30
           },
           "producedBy": [
-            "house-of-wisdom"
+            "villager"
           ],
-          "hitpoints": 0,
+          "icon": "https://data.aoe4world.com/images/buildings/barracks-1.png",
+          "hitpoints": 1500,
           "weapons": [],
-          "armor": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
           "sight": {
-            "line": 0,
-            "height": 0
+            "line": 25,
+            "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/culture-wing.png"
-        },
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "blacksmith",
+      "name": "Blacksmith",
+      "type": "building",
+      "civs": [
+        "ab"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Technology Building"
+      ],
+      "classes": [
+        "technology",
+        "building"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/buildings/blacksmith-2.png",
+      "description": "Houses technology to improve infantry and cavalry.",
+      "variations": [
         {
-          "id": "culture-wing-4",
-          "baseId": "culture-wing",
+          "id": "blacksmith-2",
+          "baseId": "blacksmith",
           "type": "building",
-          "name": "Culture Wing",
-          "age": 4,
+          "name": "Blacksmith",
+          "pbgid": 199637,
+          "attribName": "building_tech_unit_infantry_control_abb",
+          "age": 2,
           "civs": [
             "ab"
           ],
-          "description": "Constructs the Culture Wing.\nThe following cultural technologies become available:\n• Preservation of Knowledge (Feudal Age)\n• Medical Centers (Castle Age)\n• Faith (Imperial Age)",
+          "description": "Houses technology to improve infantry and cavalry.",
           "classes": [
-            "unlock",
-            "technology"
+            "technology",
+            "building"
           ],
           "displayClasses": [
-            "Unlock Technology"
+            "Technology Building"
           ],
-          "unique": true,
+          "unique": false,
           "costs": {
-            "food": 2400,
-            "wood": 0,
+            "food": 0,
+            "wood": 150,
             "stone": 0,
-            "gold": 1200,
-            "total": 3600,
+            "gold": 0,
+            "total": 150,
             "popcap": 0,
-            "time": 120
+            "time": 25
           },
           "producedBy": [
-            "house-of-wisdom"
+            "villager"
           ],
-          "hitpoints": 0,
+          "icon": "https://data.aoe4world.com/images/buildings/blacksmith-2.png",
+          "hitpoints": 1500,
           "weapons": [],
-          "armor": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
           "sight": {
-            "line": 0,
-            "height": 0
+            "line": 25,
+            "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/culture-wing.png"
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "capital-town-center",
+      "name": "Capital Town Center",
+      "type": "building",
+      "civs": [
+        "ab"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Economy & Population Building",
+        "Landmark"
+      ],
+      "classes": [
+        "economy",
+        "&",
+        "population",
+        "building",
+        "landmark"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
+      "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
+      "variations": [
+        {
+          "id": "capital-town-center-1",
+          "baseId": "capital-town-center",
+          "type": "building",
+          "name": "Capital Town Center",
+          "pbgid": 199640,
+          "attribName": "building_town_center_capital_abb",
+          "age": 1,
+          "civs": [
+            "ab"
+          ],
+          "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
+          "classes": [
+            "economy",
+            "&",
+            "population",
+            "building",
+            "landmark"
+          ],
+          "displayClasses": [
+            "Economy & Population Building",
+            "Landmark"
+          ],
+          "unique": false,
+          "costs": {
+            "gold": 0,
+            "wood": 0,
+            "food": 0,
+            "stone": 0,
+            "total": 0,
+            "time": 0
+          },
+          "producedBy": [
+            "villager"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
+          "hitpoints": 7000,
+          "weapons": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
+          "sight": {
+            "line": 52,
+            "height": 10
+          },
+          "garrison": {
+            "capacity": 15,
+            "classes": [
+              "villager",
+              "infantry",
+              "monk",
+              "cavalry",
+              "infantry ranged",
+              "khan"
+            ]
+          },
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
         }
       ]
     },
@@ -206,34 +312,38 @@
       "civs": [
         "ab"
       ],
-      "unique": true,
+      "unique": false,
       "displayClasses": [
         "Military & Economy Building",
         "Trade Site"
       ],
       "classes": [
         "military",
+        "&",
         "economy",
         "building",
         "trade",
         "site"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/dock.png",
-      "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.",
+      "icon": "https://data.aoe4world.com/images/buildings/dock-1.png",
+      "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three fishing ships.",
       "variations": [
         {
           "id": "dock-1",
           "baseId": "dock",
           "type": "building",
           "name": "Dock",
+          "pbgid": 199644,
+          "attribName": "building_unit_naval_abb",
           "age": 1,
           "civs": [
             "ab"
           ],
-          "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.",
+          "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three fishing ships.",
           "classes": [
             "military",
+            "&",
             "economy",
             "building",
             "trade",
@@ -243,7 +353,7 @@
             "Military & Economy Building",
             "Trade Site"
           ],
-          "unique": true,
+          "unique": false,
           "costs": {
             "food": 0,
             "wood": 75,
@@ -256,6 +366,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/dock-1.png",
           "hitpoints": 1500,
           "weapons": [],
           "armor": [
@@ -269,201 +380,156 @@
             "height": 8
           },
           "garrison": {
-            "capacity": 3
+            "capacity": 3,
+            "classes": [
+              "fishing ship"
+            ]
           },
-          "icon": "https://data.aoe4world.com/images/buildings/dock.png"
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
         }
       ]
     },
     {
-      "id": "economic-wing",
-      "name": "Economic Wing",
+      "id": "farm",
+      "name": "Farm",
       "type": "building",
       "civs": [
         "ab"
       ],
-      "unique": true,
+      "unique": false,
       "displayClasses": [
-        "Advance to Age II",
-        "Advance to Age III",
-        "Advance to Age IV",
-        "Unlock Technology"
+        "Food Source",
+        "Building"
       ],
       "classes": [
-        "advance",
-        "to",
-        "age",
-        "ii",
-        "iii",
-        "iv",
-        "unlock",
-        "technology"
+        "food",
+        "source",
+        "building"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/economic-wing.png",
-      "description": "Constructs the Economic Wing.\nThe following economic technologies become available:\n• Fresh Foodstuffs (Feudal Age)\n• Agriculture (Castle Age)\n• Improved Processing (Imperial Age)",
+      "icon": "https://data.aoe4world.com/images/buildings/farm-1.png",
+      "description": "Harvestable Food source. Use a Villager to gather Food from the Farm.\nOnly one Villager can work each Farm.",
       "variations": [
         {
-          "id": "economic-wing-1",
-          "baseId": "economic-wing",
+          "id": "farm-1",
+          "baseId": "farm",
           "type": "building",
-          "name": "Economic Wing",
+          "name": "Farm",
+          "pbgid": 199636,
+          "attribName": "building_resource_farm_control_abb",
           "age": 1,
           "civs": [
             "ab"
           ],
-          "description": "Constructs the Economic Wing.\nThe following economic technologies become available:\n• Fresh Foodstuffs (Feudal Age)\n• Agriculture (Castle Age)\n• Improved Processing (Imperial Age)",
+          "description": "Harvestable Food source. Use a Villager to gather Food from the Farm.\nOnly one Villager can work each Farm.",
           "classes": [
-            "advance",
-            "to",
-            "age",
-            "ii"
+            "food",
+            "source",
+            "building"
           ],
           "displayClasses": [
-            "Advance to Age II"
+            "Food Source",
+            "Building"
           ],
-          "unique": true,
+          "unique": false,
           "costs": {
-            "food": 400,
-            "wood": 0,
+            "food": 0,
+            "wood": 75,
             "stone": 0,
-            "gold": 200,
-            "total": 600,
+            "gold": 0,
+            "total": 75,
             "popcap": 0,
-            "time": 120
+            "time": 6
           },
           "producedBy": [
-            "house-of-wisdom"
+            "villager"
           ],
-          "hitpoints": 0,
+          "icon": "https://data.aoe4world.com/images/buildings/farm-1.png",
+          "hitpoints": 300,
           "weapons": [],
-          "armor": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
           "sight": {
             "line": 0,
             "height": 0
           },
-          "icon": "https://data.aoe4world.com/images/buildings/economic-wing.png"
-        },
+          "influences": []
+        }
+      ]
+    },
+    {
+      "id": "house",
+      "name": "House",
+      "type": "building",
+      "civs": [
+        "ab"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Population Building"
+      ],
+      "classes": [
+        "population",
+        "building"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/buildings/house-1.png",
+      "description": "Increases your maximum Population.",
+      "variations": [
         {
-          "id": "economic-wing-2",
-          "baseId": "economic-wing",
+          "id": "house-1",
+          "baseId": "house",
           "type": "building",
-          "name": "Economic Wing",
-          "age": 2,
+          "name": "House",
+          "pbgid": 199635,
+          "attribName": "building_house_control_abb",
+          "age": 1,
           "civs": [
             "ab"
           ],
-          "description": "Constructs the Economic Wing.\nThe following economic technologies become available:\n• Fresh Foodstuffs (Feudal Age)\n• Agriculture (Castle Age)\n• Improved Processing (Imperial Age)",
+          "description": "Increases your maximum Population.",
           "classes": [
-            "advance",
-            "to",
-            "age",
-            "iii"
+            "population",
+            "building"
           ],
           "displayClasses": [
-            "Advance to Age III"
+            "Population Building"
           ],
-          "unique": true,
+          "unique": false,
           "costs": {
-            "food": 1200,
-            "wood": 0,
+            "food": 0,
+            "wood": 50,
             "stone": 0,
-            "gold": 600,
-            "total": 1800,
+            "gold": 0,
+            "total": 50,
             "popcap": 0,
-            "time": 120
+            "time": 15
           },
           "producedBy": [
-            "house-of-wisdom"
+            "villager"
           ],
-          "hitpoints": 0,
+          "icon": "https://data.aoe4world.com/images/buildings/house-1.png",
+          "hitpoints": 750,
           "weapons": [],
-          "armor": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
           "sight": {
-            "line": 0,
-            "height": 0
+            "line": 15,
+            "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/economic-wing.png"
-        },
-        {
-          "id": "economic-wing-3",
-          "baseId": "economic-wing",
-          "type": "building",
-          "name": "Economic Wing",
-          "age": 3,
-          "civs": [
-            "ab"
-          ],
-          "description": "Constructs the Economic Wing.\nThe following economic technologies become available:\n• Fresh Foodstuffs (Feudal Age)\n• Agriculture (Castle Age)\n• Improved Processing (Imperial Age)",
-          "classes": [
-            "advance",
-            "to",
-            "age",
-            "iv"
-          ],
-          "displayClasses": [
-            "Advance to Age IV"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 2400,
-            "wood": 0,
-            "stone": 0,
-            "gold": 1200,
-            "total": 3600,
-            "popcap": 0,
-            "time": 120
-          },
-          "producedBy": [
-            "house-of-wisdom"
-          ],
-          "hitpoints": 0,
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "line": 0,
-            "height": 0
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/economic-wing.png"
-        },
-        {
-          "id": "economic-wing-4",
-          "baseId": "economic-wing",
-          "type": "building",
-          "name": "Economic Wing",
-          "age": 4,
-          "civs": [
-            "ab"
-          ],
-          "description": "Constructs the Economic Wing.\nThe following economic technologies become available:\n• Fresh Foodstuffs (Feudal Age)\n• Agriculture (Castle Age)\n• Improved Processing (Imperial Age)",
-          "classes": [
-            "unlock",
-            "technology"
-          ],
-          "displayClasses": [
-            "Unlock Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 2400,
-            "wood": 0,
-            "stone": 0,
-            "gold": 1200,
-            "total": 3600,
-            "popcap": 0,
-            "time": 120
-          },
-          "producedBy": [
-            "house-of-wisdom"
-          ],
-          "hitpoints": 0,
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "line": 0,
-            "height": 0
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/economic-wing.png"
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
         }
       ]
     },
@@ -476,87 +542,26 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Wing (Knowledge",
-        "Culture",
-        "Economic",
-        "Military)",
         "Technology Building",
         "Landmark"
       ],
       "classes": [
-        "wing",
-        "knowledge",
-        "culture",
-        "economic",
-        "military",
         "technology",
         "building",
         "landmark"
       ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/house-of-wisdom.png",
-      "description": "None.",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/buildings/house-of-wisdom-2.png",
+      "description": "Contains civilization technology for the Abbasid Dynasty.\nAbbasids advance in Ages through the House of Wisdom. Construct wings to advance to the next Age and gain additional technology.",
       "variations": [
         {
-          "id": "house-of-wisdom-1-wing",
+          "id": "house-of-wisdom-2",
           "baseId": "house-of-wisdom",
           "type": "building",
           "name": "House of Wisdom",
-          "age": 1,
-          "civs": [
-            "ab"
-          ],
-          "description": "None.",
-          "classes": [
-            "wing",
-            "knowledge",
-            "culture",
-            "economic",
-            "military"
-          ],
-          "displayClasses": [
-            "Wing (Knowledge",
-            "Culture",
-            "Economic",
-            "Military)"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 400,
-            "wood": 0,
-            "stone": 0,
-            "gold": 200,
-            "total": 600,
-            "popcap": 0,
-            "time": 120
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 7000,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            },
-            {
-              "type": "fire",
-              "value": 5
-            }
-          ],
-          "sight": {
-            "line": 25,
-            "height": 8
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/house-of-wisdom.png"
-        },
-        {
-          "id": "house-of-wisdom-1",
-          "baseId": "house-of-wisdom",
-          "type": "building",
-          "name": "House of Wisdom",
-          "age": 1,
+          "pbgid": 199772,
+          "attribName": "building_house_of_wisdom_control_abb",
+          "age": 2,
           "civs": [
             "ab"
           ],
@@ -583,6 +588,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/house-of-wisdom-2.png",
           "hitpoints": 2000,
           "weapons": [],
           "armor": [
@@ -599,1169 +605,9 @@
             "line": 25,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/house-of-wisdom.png"
-        },
-        {
-          "id": "house-of-wisdom-2-wing",
-          "baseId": "house-of-wisdom",
-          "type": "building",
-          "name": "House of Wisdom",
-          "age": 2,
-          "civs": [
-            "ab"
-          ],
-          "description": "None.",
-          "classes": [
-            "wing",
-            "knowledge",
-            "culture",
-            "economic",
-            "military"
-          ],
-          "displayClasses": [
-            "Wing (Knowledge",
-            "Culture",
-            "Economic",
-            "Military)"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 1200,
-            "wood": 0,
-            "stone": 0,
-            "gold": 600,
-            "total": 1800,
-            "popcap": 0,
-            "time": 120
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 12000,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            },
-            {
-              "type": "fire",
-              "value": 5
-            }
-          ],
-          "sight": {
-            "line": 25,
-            "height": 8
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/house-of-wisdom.png"
-        },
-        {
-          "id": "house-of-wisdom-3-wing",
-          "baseId": "house-of-wisdom",
-          "type": "building",
-          "name": "House of Wisdom",
-          "age": 3,
-          "civs": [
-            "ab"
-          ],
-          "description": "None.",
-          "classes": [
-            "wing",
-            "knowledge",
-            "culture",
-            "economic",
-            "military"
-          ],
-          "displayClasses": [
-            "Wing (Knowledge",
-            "Culture",
-            "Economic",
-            "Military)"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 2400,
-            "wood": 0,
-            "stone": 0,
-            "gold": 1200,
-            "total": 3600,
-            "popcap": 0,
-            "time": 120
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 17000,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            },
-            {
-              "type": "fire",
-              "value": 5
-            }
-          ],
-          "sight": {
-            "line": 25,
-            "height": 8
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/house-of-wisdom.png"
-        },
-        {
-          "id": "house-of-wisdom-4-wing",
-          "baseId": "house-of-wisdom",
-          "type": "building",
-          "name": "House of Wisdom",
-          "age": 4,
-          "civs": [
-            "ab"
-          ],
-          "description": "None.",
-          "classes": [
-            "wing",
-            "knowledge",
-            "culture",
-            "economic",
-            "military"
-          ],
-          "displayClasses": [
-            "Wing (Knowledge",
-            "Culture",
-            "Economic",
-            "Military)"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 2400,
-            "wood": 0,
-            "stone": 0,
-            "gold": 1200,
-            "total": 3600,
-            "popcap": 0,
-            "time": 120
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 22000,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            },
-            {
-              "type": "fire",
-              "value": 5
-            }
-          ],
-          "sight": {
-            "line": 25,
-            "height": 8
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/house-of-wisdom.png"
-        }
-      ]
-    },
-    {
-      "id": "military-wing",
-      "name": "Military Wing",
-      "type": "building",
-      "civs": [
-        "ab"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Advance to Age II",
-        "Advance to Age III",
-        "Advance to Age IV",
-        "Unlock Technology"
-      ],
-      "classes": [
-        "advance",
-        "to",
-        "age",
-        "ii",
-        "iii",
-        "iv",
-        "unlock",
-        "technology"
-      ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/military-wing.png",
-      "description": "Constructs the Military Wing.\nThe following military technologies become available:\n• Camel Support (Feudal Age)\n• Camel Rider Shields (Castle Age)\n• Boot Camp (Imperial Age)",
-      "variations": [
-        {
-          "id": "military-wing-1",
-          "baseId": "military-wing",
-          "type": "building",
-          "name": "Military Wing",
-          "age": 1,
-          "civs": [
-            "ab"
-          ],
-          "description": "Constructs the Military Wing.\nThe following military technologies become available:\n• Camel Support (Feudal Age)\n• Camel Rider Shields (Castle Age)\n• Boot Camp (Imperial Age)",
-          "classes": [
-            "advance",
-            "to",
-            "age",
-            "ii"
-          ],
-          "displayClasses": [
-            "Advance to Age II"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 400,
-            "wood": 0,
-            "stone": 0,
-            "gold": 200,
-            "total": 600,
-            "popcap": 0,
-            "time": 120
-          },
-          "producedBy": [
-            "house-of-wisdom"
-          ],
-          "hitpoints": 0,
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "line": 0,
-            "height": 0
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/military-wing.png"
-        },
-        {
-          "id": "military-wing-2",
-          "baseId": "military-wing",
-          "type": "building",
-          "name": "Military Wing",
-          "age": 2,
-          "civs": [
-            "ab"
-          ],
-          "description": "Constructs the Military Wing.\nThe following military technologies become available:\n• Camel Support (Feudal Age)\n• Camel Rider Shields (Castle Age)\n• Boot Camp (Imperial Age)",
-          "classes": [
-            "advance",
-            "to",
-            "age",
-            "iii"
-          ],
-          "displayClasses": [
-            "Advance to Age III"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 1200,
-            "wood": 0,
-            "stone": 0,
-            "gold": 600,
-            "total": 1800,
-            "popcap": 0,
-            "time": 120
-          },
-          "producedBy": [
-            "house-of-wisdom"
-          ],
-          "hitpoints": 0,
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "line": 0,
-            "height": 0
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/military-wing.png"
-        },
-        {
-          "id": "military-wing-3",
-          "baseId": "military-wing",
-          "type": "building",
-          "name": "Military Wing",
-          "age": 3,
-          "civs": [
-            "ab"
-          ],
-          "description": "Constructs the Military Wing.\nThe following military technologies become available:\n• Camel Support (Feudal Age)\n• Camel Rider Shields (Castle Age)\n• Boot Camp (Imperial Age)",
-          "classes": [
-            "advance",
-            "to",
-            "age",
-            "iv"
-          ],
-          "displayClasses": [
-            "Advance to Age IV"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 2400,
-            "wood": 0,
-            "stone": 0,
-            "gold": 1200,
-            "total": 3600,
-            "popcap": 0,
-            "time": 120
-          },
-          "producedBy": [
-            "house-of-wisdom"
-          ],
-          "hitpoints": 0,
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "line": 0,
-            "height": 0
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/military-wing.png"
-        },
-        {
-          "id": "military-wing-4",
-          "baseId": "military-wing",
-          "type": "building",
-          "name": "Military Wing",
-          "age": 4,
-          "civs": [
-            "ab"
-          ],
-          "description": "Constructs the Military Wing.\nThe following military technologies become available:\n• Camel Support (Feudal Age)\n• Camel Rider Shields (Castle Age)\n• Boot Camp (Imperial Age)",
-          "classes": [
-            "unlock",
-            "technology"
-          ],
-          "displayClasses": [
-            "Unlock Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 2400,
-            "wood": 0,
-            "stone": 0,
-            "gold": 1200,
-            "total": 3600,
-            "popcap": 0,
-            "time": 120
-          },
-          "producedBy": [
-            "house-of-wisdom"
-          ],
-          "hitpoints": 0,
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "line": 0,
-            "height": 0
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/military-wing.png"
-        }
-      ]
-    },
-    {
-      "id": "mosque",
-      "name": "Mosque",
-      "type": "building",
-      "civs": [
-        "ab"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Religious Building"
-      ],
-      "classes": [
-        "religious",
-        "building"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/buildings/mosque.png",
-      "description": "Produces religious units and houses religious technologies. Starting in the Castle Age (III), religious units can pick up Relics and place 3 of them in this building to generate Gold.",
-      "variations": [
-        {
-          "id": "mosque-3",
-          "baseId": "mosque",
-          "type": "building",
-          "name": "Mosque",
-          "age": 3,
-          "civs": [
-            "ab"
-          ],
-          "description": "Produces religious units and houses religious technologies. Starting in the Castle Age (III), religious units can pick up Relics and place 3 of them in this building to generate Gold.",
-          "classes": [
-            "religious",
-            "building"
-          ],
-          "displayClasses": [
-            "Religious Building"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 200,
-            "stone": 0,
-            "gold": 0,
-            "total": 200,
-            "popcap": 0,
-            "time": 25
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 2100,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "sight": {
-            "line": 25,
-            "height": 8
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/mosque.png"
-        }
-      ]
-    },
-    {
-      "id": "prayer-hall-of-uqba",
-      "name": "Prayer Hall of Uqba",
-      "type": "building",
-      "civs": [
-        "ab"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Wonder"
-      ],
-      "classes": [
-        "wonder"
-      ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/buildings/prayer-hall-of-uqba.png",
-      "description": "Build and defend a Wonder to secure victory. Rival civilizations will be aware of its construction and seek to destroy it.",
-      "variations": [
-        {
-          "id": "prayer-hall-of-uqba-4",
-          "baseId": "prayer-hall-of-uqba",
-          "type": "building",
-          "name": "Prayer Hall of Uqba",
-          "age": 4,
-          "civs": [
-            "ab"
-          ],
-          "description": "Build and defend a Wonder to secure victory. Rival civilizations will be aware of its construction and seek to destroy it.",
-          "classes": [
-            "wonder"
-          ],
-          "displayClasses": [
-            "Wonder"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 6000,
-            "wood": 6000,
-            "stone": 6000,
-            "gold": 6000,
-            "total": 24000,
-            "popcap": 0,
-            "time": 600
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 5000,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "sight": {
-            "line": 25,
-            "height": 8
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/prayer-hall-of-uqba.png"
-        }
-      ]
-    },
-    {
-      "id": "trade-wing",
-      "name": "Trade Wing",
-      "type": "building",
-      "civs": [
-        "ab"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Advance to Age II",
-        "Advance to Age III",
-        "Advance to Age IV",
-        "Unlock Technology"
-      ],
-      "classes": [
-        "advance",
-        "to",
-        "age",
-        "ii",
-        "iii",
-        "iv",
-        "unlock",
-        "technology"
-      ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/trade-wing.png",
-      "description": "Constructs the Trade Wing.\nThe following trade technologies become available:\n• Spice Roads (Feudal Age)\n• Armored Caravans (Castle Age)\n• Grand Bazaar (Imperial Age)",
-      "variations": [
-        {
-          "id": "trade-wing-1",
-          "baseId": "trade-wing",
-          "type": "building",
-          "name": "Trade Wing",
-          "age": 1,
-          "civs": [
-            "ab"
-          ],
-          "description": "Constructs the Trade Wing.\nThe following trade technologies become available:\n• Spice Roads (Feudal Age)\n• Armored Caravans (Castle Age)\n• Grand Bazaar (Imperial Age)",
-          "classes": [
-            "advance",
-            "to",
-            "age",
-            "ii"
-          ],
-          "displayClasses": [
-            "Advance to Age II"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 400,
-            "wood": 0,
-            "stone": 0,
-            "gold": 200,
-            "total": 600,
-            "popcap": 0,
-            "time": 120
-          },
-          "producedBy": [
-            "house-of-wisdom"
-          ],
-          "hitpoints": 0,
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "line": 0,
-            "height": 0
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/trade-wing.png"
-        },
-        {
-          "id": "trade-wing-2",
-          "baseId": "trade-wing",
-          "type": "building",
-          "name": "Trade Wing",
-          "age": 2,
-          "civs": [
-            "ab"
-          ],
-          "description": "Constructs the Trade Wing.\nThe following trade technologies become available:\n• Spice Roads (Feudal Age)\n• Armored Caravans (Castle Age)\n• Grand Bazaar (Imperial Age)",
-          "classes": [
-            "advance",
-            "to",
-            "age",
-            "iii"
-          ],
-          "displayClasses": [
-            "Advance to Age III"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 1200,
-            "wood": 0,
-            "stone": 0,
-            "gold": 600,
-            "total": 1800,
-            "popcap": 0,
-            "time": 120
-          },
-          "producedBy": [
-            "house-of-wisdom"
-          ],
-          "hitpoints": 0,
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "line": 0,
-            "height": 0
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/trade-wing.png"
-        },
-        {
-          "id": "trade-wing-3",
-          "baseId": "trade-wing",
-          "type": "building",
-          "name": "Trade Wing",
-          "age": 3,
-          "civs": [
-            "ab"
-          ],
-          "description": "Constructs the Trade Wing.\nThe following trade technologies become available:\n• Spice Roads (Feudal Age)\n• Armored Caravans (Castle Age)\n• Grand Bazaar (Imperial Age)",
-          "classes": [
-            "advance",
-            "to",
-            "age",
-            "iv"
-          ],
-          "displayClasses": [
-            "Advance to Age IV"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 2400,
-            "wood": 0,
-            "stone": 0,
-            "gold": 1200,
-            "total": 3600,
-            "popcap": 0,
-            "time": 120
-          },
-          "producedBy": [
-            "house-of-wisdom"
-          ],
-          "hitpoints": 0,
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "line": 0,
-            "height": 0
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/trade-wing.png"
-        },
-        {
-          "id": "trade-wing-4",
-          "baseId": "trade-wing",
-          "type": "building",
-          "name": "Trade Wing",
-          "age": 4,
-          "civs": [
-            "ab"
-          ],
-          "description": "Constructs the Trade Wing.\nThe following trade technologies become available:\n• Spice Roads (Feudal Age)\n• Armored Caravans (Castle Age)\n• Grand Bazaar (Imperial Age)",
-          "classes": [
-            "unlock",
-            "technology"
-          ],
-          "displayClasses": [
-            "Unlock Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 2400,
-            "wood": 0,
-            "stone": 0,
-            "gold": 1200,
-            "total": 3600,
-            "popcap": 0,
-            "time": 120
-          },
-          "producedBy": [
-            "house-of-wisdom"
-          ],
-          "hitpoints": 0,
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "line": 0,
-            "height": 0
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/trade-wing.png"
-        }
-      ]
-    },
-    {
-      "id": "archery-range",
-      "name": "Archery Range",
-      "type": "building",
-      "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "mo",
-        "ru"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Military Building"
-      ],
-      "classes": [
-        "military",
-        "building"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/archery-range.png",
-      "description": "Produces ranged infantry units.",
-      "variations": [
-        {
-          "id": "archery-range-2",
-          "baseId": "archery-range",
-          "type": "building",
-          "name": "Archery Range",
-          "age": 2,
-          "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Produces ranged infantry units.",
-          "classes": [
-            "military",
-            "building"
-          ],
-          "displayClasses": [
-            "Military Building"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 150,
-            "stone": 0,
-            "gold": 0,
-            "total": 150,
-            "popcap": 0,
-            "time": 30
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 1500,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "sight": {
-            "line": 25,
-            "height": 8
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/archery-range.png"
-        }
-      ]
-    },
-    {
-      "id": "barracks",
-      "name": "Barracks",
-      "type": "building",
-      "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "mo",
-        "ru"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Military Building"
-      ],
-      "classes": [
-        "military",
-        "building"
-      ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/barracks.png",
-      "description": "Produces melee infantry units.",
-      "variations": [
-        {
-          "id": "barracks-1",
-          "baseId": "barracks",
-          "type": "building",
-          "name": "Barracks",
-          "age": 1,
-          "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Produces melee infantry units.",
-          "classes": [
-            "military",
-            "building"
-          ],
-          "displayClasses": [
-            "Military Building"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 150,
-            "stone": 0,
-            "gold": 0,
-            "total": 150,
-            "popcap": 0,
-            "time": 30
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 1500,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "sight": {
-            "line": 25,
-            "height": 8
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/barracks.png"
-        }
-      ]
-    },
-    {
-      "id": "blacksmith",
-      "name": "Blacksmith",
-      "type": "building",
-      "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "mo",
-        "ru"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Technology Building"
-      ],
-      "classes": [
-        "technology",
-        "building"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/blacksmith.png",
-      "description": "Houses technology to improve infantry and cavalry.",
-      "variations": [
-        {
-          "id": "blacksmith-2",
-          "baseId": "blacksmith",
-          "type": "building",
-          "name": "Blacksmith",
-          "age": 2,
-          "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Houses technology to improve infantry and cavalry.",
-          "classes": [
-            "technology",
-            "building"
-          ],
-          "displayClasses": [
-            "Technology Building"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 150,
-            "stone": 0,
-            "gold": 0,
-            "total": 150,
-            "popcap": 0,
-            "time": 25
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 1500,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "sight": {
-            "line": 25,
-            "height": 8
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/blacksmith.png"
-        }
-      ]
-    },
-    {
-      "id": "capital-town-center",
-      "name": "Capital Town Center",
-      "type": "building",
-      "civs": [
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "mo",
-        "ru"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Economy & Population Building"
-      ],
-      "classes": [
-        "economy",
-        "population",
-        "building"
-      ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/capital-town-center.png",
-      "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
-      "variations": [
-        {
-          "id": "capital-town-center-1",
-          "baseId": "capital-town-center",
-          "type": "building",
-          "name": "Capital Town Center",
-          "age": 1,
-          "civs": [
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
-          "classes": [
-            "economy",
-            "population",
-            "building"
-          ],
-          "displayClasses": [
-            "Economy & Population Building"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "total": 0,
-            "time": 0
-          },
-          "producedBy": [
-            "map-generation"
-          ],
-          "hitpoints": 7000,
-          "weapons": [
-            {
-              "type": "ranged",
-              "damage": 8,
-              "speed": 1.88,
-              "range": {
-                "min": 0,
-                "max": 8
-              },
-              "modifiers": [
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "ship"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 25,
-                  "type": "passive"
-                }
-              ]
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "sight": {
-            "line": 52,
-            "height": 10
-          },
-          "garrison": {
-            "capacity": 15
-          },
-          "popcapIncrease": 10,
-          "icon": "https://data.aoe4world.com/images/buildings/capital-town-center.png"
-        }
-      ]
-    },
-    {
-      "id": "farm",
-      "name": "Farm",
-      "type": "building",
-      "civs": [
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "ru"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Food Source",
-        "Building"
-      ],
-      "classes": [
-        "food",
-        "source",
-        "building"
-      ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/farm.png",
-      "description": "Harvestable Food source. Use a Villager to gather Food from the Farm.\nOnly one Villager can work each Farm.",
-      "variations": [
-        {
-          "id": "farm-1",
-          "baseId": "farm",
-          "type": "building",
-          "name": "Farm",
-          "age": 1,
-          "civs": [
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "ru"
-          ],
-          "description": "Harvestable Food source. Use a Villager to gather Food from the Farm.\nOnly one Villager can work each Farm.",
-          "classes": [
-            "food",
-            "source",
-            "building"
-          ],
-          "displayClasses": [
-            "Food Source",
-            "Building"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 75,
-            "stone": 0,
-            "gold": 0,
-            "total": 75,
-            "popcap": 0,
-            "time": 6
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 300,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "sight": {
-            "line": 0,
-            "height": 0
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/farm.png"
-        }
-      ]
-    },
-    {
-      "id": "house",
-      "name": "House",
-      "type": "building",
-      "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "ru"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Population Building"
-      ],
-      "classes": [
-        "population",
-        "building"
-      ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/house.png",
-      "description": "Increases your maximum Population.",
-      "variations": [
-        {
-          "id": "house-1",
-          "baseId": "house",
-          "type": "building",
-          "name": "House",
-          "age": 1,
-          "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "ru"
-          ],
-          "description": "Increases your maximum Population.",
-          "classes": [
-            "population",
-            "building"
-          ],
-          "displayClasses": [
-            "Population Building"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 50,
-            "stone": 0,
-            "gold": 0,
-            "total": 50,
-            "time": 15
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 750,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "sight": {
-            "line": 15,
-            "height": 8
-          },
-          "popcapIncrease": 10,
-          "icon": "https://data.aoe4world.com/images/buildings/house.png"
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
         }
       ]
     },
@@ -1770,12 +616,7 @@
       "name": "Keep",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "ru"
+        "ab"
       ],
       "unique": false,
       "displayClasses": [
@@ -1786,7 +627,7 @@
         "building"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/buildings/keep.png",
+      "icon": "https://data.aoe4world.com/images/buildings/keep-3.png",
       "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.",
       "variations": [
         {
@@ -1794,14 +635,11 @@
           "baseId": "keep",
           "type": "building",
           "name": "Keep",
+          "pbgid": 199622,
+          "attribName": "building_defense_keep_control_abb",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "ru"
+            "ab"
           ],
           "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.",
           "classes": [
@@ -1824,12 +662,14 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/keep-3.png",
           "hitpoints": 5000,
           "weapons": [
             {
+              "name": "Bow",
               "type": "ranged",
-              "damage": 36,
-              "speed": 0.38,
+              "damage": 12,
+              "speed": 0.625,
               "range": {
                 "min": 0,
                 "max": 8
@@ -1840,7 +680,8 @@
                   "target": {
                     "class": [
                       [
-                        "ship"
+                        "naval",
+                        "unit"
                       ]
                     ]
                   },
@@ -1848,7 +689,22 @@
                   "value": 25,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.125,
+                "fire": 0.25,
+                "winddown": 0,
+                "reload": 0.25,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "burst": {
+                "count": 3
+              },
+              "attribName": "weapon_keep_arrows_a",
+              "pbgid": 127372
             }
           ],
           "armor": [
@@ -1866,9 +722,19 @@
             "height": 501
           },
           "garrison": {
-            "capacity": 15
+            "capacity": 15,
+            "classes": [
+              "infantry",
+              "villager",
+              "infantry ranged",
+              "monk",
+              "cavalry",
+              "khan"
+            ]
           },
-          "icon": "https://data.aoe4world.com/images/buildings/keep.png"
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
         }
       ]
     },
@@ -1877,11 +743,7 @@
       "name": "Lumber Camp",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "de",
-        "ab",
-        "ru"
+        "ab"
       ],
       "unique": false,
       "displayClasses": [
@@ -1892,7 +754,7 @@
         "building"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/lumber-camp.png",
+      "icon": "https://data.aoe4world.com/images/buildings/lumber-camp-1.png",
       "description": "Villagers can drop off Wood at this building. Houses technologies to improve Wood gathering.",
       "variations": [
         {
@@ -1900,13 +762,11 @@
           "baseId": "lumber-camp",
           "type": "building",
           "name": "Lumber Camp",
+          "pbgid": 199634,
+          "attribName": "building_econ_wood_control_abb",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "de",
-            "ab",
-            "ru"
+            "ab"
           ],
           "description": "Villagers can drop off Wood at this building. Houses technologies to improve Wood gathering.",
           "classes": [
@@ -1929,6 +789,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/lumber-camp-1.png",
           "hitpoints": 750,
           "weapons": [],
           "armor": [
@@ -1941,7 +802,9 @@
             "line": 15,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/lumber-camp.png"
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
         }
       ]
     },
@@ -1950,7 +813,6 @@
       "name": "Madrasa",
       "type": "building",
       "civs": [
-        "de",
         "ab"
       ],
       "unique": false,
@@ -1962,7 +824,7 @@
         "building"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/buildings/madrasa.png",
+      "icon": "https://data.aoe4world.com/images/buildings/madrasa-4.png",
       "description": "Houses advanced technology that benefit the civilization.",
       "variations": [
         {
@@ -1970,9 +832,10 @@
           "baseId": "madrasa",
           "type": "building",
           "name": "Madrasa",
+          "pbgid": 199639,
+          "attribName": "building_tech_university_control_abb",
           "age": 4,
           "civs": [
-            "de",
             "ab"
           ],
           "description": "Houses advanced technology that benefit the civilization.",
@@ -1996,6 +859,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/madrasa-4.png",
           "hitpoints": 2100,
           "weapons": [],
           "armor": [
@@ -2008,7 +872,9 @@
             "line": 25,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/madrasa.png"
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
         }
       ]
     },
@@ -2017,13 +883,7 @@
       "name": "Market",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "ab"
       ],
       "unique": false,
       "displayClasses": [
@@ -2037,7 +897,7 @@
         "site"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/market.png",
+      "icon": "https://data.aoe4world.com/images/buildings/market-2.png",
       "description": "Allows the buying and selling of resources and produces the Trader.",
       "variations": [
         {
@@ -2045,15 +905,11 @@
           "baseId": "market",
           "type": "building",
           "name": "Market",
+          "pbgid": 199632,
+          "attribName": "building_econ_market_control_abb",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "ab"
           ],
           "description": "Allows the buying and selling of resources and produces the Trader.",
           "classes": [
@@ -2079,6 +935,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/market-2.png",
           "hitpoints": 1000,
           "weapons": [],
           "armor": [
@@ -2091,7 +948,9 @@
             "line": 25,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/market.png"
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
         }
       ]
     },
@@ -2100,9 +959,6 @@
       "name": "Mill",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "de",
         "ab"
       ],
       "unique": false,
@@ -2114,22 +970,21 @@
         "building"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/mill.png",
-      "description": "Villagers can drop off Food at this building. Houses technologies to improve Food gathering.",
+      "icon": "https://data.aoe4world.com/images/buildings/mill-1.png",
+      "description": "Villagers can drop off Food at this building. Houses technologies to improve Food gathering.\nConstructing the Mill near Berry Bushes increases the amount of Food available by +100.",
       "variations": [
         {
           "id": "mill-1",
           "baseId": "mill",
           "type": "building",
           "name": "Mill",
+          "pbgid": 199631,
+          "attribName": "building_econ_food_control_abb",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "de",
             "ab"
           ],
-          "description": "Villagers can drop off Food at this building. Houses technologies to improve Food gathering.",
+          "description": "Villagers can drop off Food at this building. Houses technologies to improve Food gathering.\nConstructing the Mill near Berry Bushes increases the amount of Food available by +100.",
           "classes": [
             "economy",
             "building"
@@ -2150,6 +1005,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/mill-1.png",
           "hitpoints": 750,
           "weapons": [],
           "armor": [
@@ -2162,7 +1018,9 @@
             "line": 15,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/mill.png"
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
         }
       ]
     },
@@ -2171,11 +1029,7 @@
       "name": "Mining Camp",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "de",
-        "ab",
-        "ru"
+        "ab"
       ],
       "unique": false,
       "displayClasses": [
@@ -2186,7 +1040,7 @@
         "building"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/mining-camp.png",
+      "icon": "https://data.aoe4world.com/images/buildings/mining-camp-1.png",
       "description": "Villagers can drop off Stone and Gold at this building. Houses technologies to improve mining.",
       "variations": [
         {
@@ -2194,13 +1048,11 @@
           "baseId": "mining-camp",
           "type": "building",
           "name": "Mining Camp",
+          "pbgid": 199633,
+          "attribName": "building_econ_mining_camp_control_abb",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "de",
-            "ab",
-            "ru"
+            "ab"
           ],
           "description": "Villagers can drop off Stone and Gold at this building. Houses technologies to improve mining.",
           "classes": [
@@ -2223,6 +1075,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/mining-camp-1.png",
           "hitpoints": 750,
           "weapons": [],
           "armor": [
@@ -2235,7 +1088,79 @@
             "line": 15,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/mining-camp.png"
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mosque",
+      "name": "Mosque",
+      "type": "building",
+      "civs": [
+        "ab"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Religious Building"
+      ],
+      "classes": [
+        "religious",
+        "building"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/buildings/mosque-3.png",
+      "description": "Produces religious units and houses religious technologies. Starting in the Castle Age (III), religious units can pick up Relics and place them in this building to generate Gold.",
+      "variations": [
+        {
+          "id": "mosque-3",
+          "baseId": "mosque",
+          "type": "building",
+          "name": "Mosque",
+          "pbgid": 199646,
+          "attribName": "building_unit_religious_control_abb",
+          "age": 3,
+          "civs": [
+            "ab"
+          ],
+          "description": "Produces religious units and houses religious technologies. Starting in the Castle Age (III), religious units can pick up Relics and place them in this building to generate Gold.",
+          "classes": [
+            "religious",
+            "building"
+          ],
+          "displayClasses": [
+            "Religious Building"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 200,
+            "stone": 0,
+            "gold": 0,
+            "total": 200,
+            "popcap": 0,
+            "time": 25
+          },
+          "producedBy": [
+            "villager"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/mosque-3.png",
+          "hitpoints": 2100,
+          "weapons": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
+          "sight": {
+            "line": 25,
+            "height": 8
+          },
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
         }
       ]
     },
@@ -2244,10 +1169,6 @@
       "name": "Outpost",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
         "ab"
       ],
       "unique": false,
@@ -2259,7 +1180,7 @@
         "building"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/outpost.png",
+      "icon": "https://data.aoe4world.com/images/buildings/outpost-1.png",
       "description": "Offers extensive line of sight. Can be upgraded with weaponry and fortifications. Attacks while garrisoned.",
       "variations": [
         {
@@ -2267,12 +1188,10 @@
           "baseId": "outpost",
           "type": "building",
           "name": "Outpost",
+          "pbgid": 199623,
+          "attribName": "building_defense_outpost_control_abb",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
             "ab"
           ],
           "description": "Offers extensive line of sight. Can be upgraded with weaponry and fortifications. Attacks while garrisoned.",
@@ -2296,6 +1215,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/outpost-1.png",
           "hitpoints": 750,
           "weapons": [],
           "armor": [
@@ -2309,9 +1229,19 @@
             "height": 501
           },
           "garrison": {
-            "capacity": 5
+            "capacity": 5,
+            "classes": [
+              "infantry",
+              "infantry ranged",
+              "villager",
+              "monk",
+              "cavalry",
+              "khan"
+            ]
           },
-          "icon": "https://data.aoe4world.com/images/buildings/outpost.png"
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
         }
       ]
     },
@@ -2320,10 +1250,6 @@
       "name": "Palisade Gate",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
         "ab"
       ],
       "unique": false,
@@ -2335,7 +1261,7 @@
         "building"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/palisade-gate.png",
+      "icon": "https://data.aoe4world.com/images/buildings/palisade-gate-1.png",
       "description": "Light defensive gate. Must be built on a Palisade Wall segment.",
       "variations": [
         {
@@ -2343,12 +1269,10 @@
           "baseId": "palisade-gate",
           "type": "building",
           "name": "Palisade Gate",
+          "pbgid": 199625,
+          "attribName": "building_defense_palisade_gate_abb",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
             "ab"
           ],
           "description": "Light defensive gate. Must be built on a Palisade Wall segment.",
@@ -2372,6 +1296,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/palisade-gate-1.png",
           "hitpoints": 1500,
           "weapons": [],
           "armor": [
@@ -2384,7 +1309,7 @@
             "line": 20,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/palisade-gate.png"
+          "influences": []
         }
       ]
     },
@@ -2393,11 +1318,6 @@
       "name": "Palisade Wall",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
         "ab"
       ],
       "unique": false,
@@ -2409,24 +1329,21 @@
         "building"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/palisade-wall.png",
-      "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 15 Wood, with each additional section costing  5 Wood.",
+      "icon": "https://data.aoe4world.com/images/buildings/palisade-wall-1.png",
+      "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 15 Wood, with each additional section costing 5 Wood.",
       "variations": [
         {
           "id": "palisade-wall-1",
           "baseId": "palisade-wall",
           "type": "building",
           "name": "Palisade Wall",
+          "pbgid": 199624,
+          "attribName": "building_defense_palisade_bastion_abb",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
             "ab"
           ],
-          "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 15 Wood, with each additional section costing  5 Wood.",
+          "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 15 Wood, with each additional section costing 5 Wood.",
           "classes": [
             "defensive",
             "building"
@@ -2447,6 +1364,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/palisade-wall-1.png",
           "hitpoints": 1500,
           "weapons": [],
           "armor": [
@@ -2459,7 +1377,75 @@
             "line": 6,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/palisade-wall.png"
+          "influences": []
+        }
+      ]
+    },
+    {
+      "id": "prayer-hall-of-uqba",
+      "name": "Prayer Hall of Uqba",
+      "type": "building",
+      "civs": [
+        "ab"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Wonder"
+      ],
+      "classes": [
+        "wonder"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/buildings/prayer-hall-of-uqba-4.png",
+      "description": "Build and defend a Wonder to secure victory. Rival civilizations will be aware of its construction and seek to destroy it.",
+      "variations": [
+        {
+          "id": "prayer-hall-of-uqba-4",
+          "baseId": "prayer-hall-of-uqba",
+          "type": "building",
+          "name": "Prayer Hall of Uqba",
+          "pbgid": 199648,
+          "attribName": "building_wonder_age4_great_mosque_control_abb",
+          "age": 4,
+          "civs": [
+            "ab"
+          ],
+          "description": "Build and defend a Wonder to secure victory. Rival civilizations will be aware of its construction and seek to destroy it.",
+          "classes": [
+            "wonder"
+          ],
+          "displayClasses": [
+            "Wonder"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 6000,
+            "wood": 6000,
+            "stone": 6000,
+            "gold": 6000,
+            "total": 24000,
+            "popcap": 0,
+            "time": 600
+          },
+          "producedBy": [
+            "villager"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/prayer-hall-of-uqba-4.png",
+          "hitpoints": 5000,
+          "weapons": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
+          "sight": {
+            "line": 25,
+            "height": 8
+          },
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
         }
       ]
     },
@@ -2468,13 +1454,7 @@
       "name": "Siege Workshop",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "ab"
       ],
       "unique": false,
       "displayClasses": [
@@ -2485,7 +1465,7 @@
         "building"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/buildings/siege-workshop.png",
+      "icon": "https://data.aoe4world.com/images/buildings/siege-workshop-3.png",
       "description": "Produces siege engines and powerful gunpowder units.",
       "variations": [
         {
@@ -2493,15 +1473,11 @@
           "baseId": "siege-workshop",
           "type": "building",
           "name": "Siege Workshop",
+          "pbgid": 199647,
+          "attribName": "building_unit_siege_control_abb",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "ab"
           ],
           "description": "Produces siege engines and powerful gunpowder units.",
           "classes": [
@@ -2524,6 +1500,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/siege-workshop-3.png",
           "hitpoints": 2100,
           "weapons": [],
           "armor": [
@@ -2536,7 +1513,9 @@
             "line": 25,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/siege-workshop.png"
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
         }
       ]
     },
@@ -2545,12 +1524,7 @@
       "name": "Stable",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "ru"
+        "ab"
       ],
       "unique": false,
       "displayClasses": [
@@ -2561,7 +1535,7 @@
         "building"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/stable.png",
+      "icon": "https://data.aoe4world.com/images/buildings/stable-2.png",
       "description": "Produces cavalry military units.",
       "variations": [
         {
@@ -2569,14 +1543,11 @@
           "baseId": "stable",
           "type": "building",
           "name": "Stable",
+          "pbgid": 199642,
+          "attribName": "building_unit_cavalry_control_abb",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "ru"
+            "ab"
           ],
           "description": "Produces cavalry military units.",
           "classes": [
@@ -2599,6 +1570,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/stable-2.png",
           "hitpoints": 1500,
           "weapons": [],
           "armor": [
@@ -2611,7 +1583,9 @@
             "line": 25,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/stable.png"
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
         }
       ]
     },
@@ -2620,11 +1594,6 @@
       "name": "Stone Wall",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
         "ab"
       ],
       "unique": false,
@@ -2635,25 +1604,22 @@
         "defensive",
         "building"
       ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/stone-wall.png",
-      "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take -66% less damage from ranged attacks and their range is increased by  +2.",
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-1.png",
+      "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 66% less damage from ranged attacks and their range is increased by +2.",
       "variations": [
         {
-          "id": "stone-wall-2",
+          "id": "stone-wall-1",
           "baseId": "stone-wall",
           "type": "building",
           "name": "Stone Wall",
-          "age": 2,
+          "pbgid": 199628,
+          "attribName": "building_defense_wall_bastion_abb",
+          "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
             "ab"
           ],
-          "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take -66% less damage from ranged attacks and their range is increased by  +2.",
+          "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 66% less damage from ranged attacks and their range is increased by +2.",
           "classes": [
             "defensive",
             "building"
@@ -2674,6 +1640,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/stone-wall-1.png",
           "hitpoints": 3500,
           "weapons": [],
           "armor": [
@@ -2686,7 +1653,54 @@
             "line": 6,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/stone-wall.png"
+          "influences": []
+        },
+        {
+          "id": "stone-wall-2",
+          "baseId": "stone-wall",
+          "type": "building",
+          "name": "Stone Wall",
+          "pbgid": 199630,
+          "attribName": "building_defense_wall_abb",
+          "age": 2,
+          "civs": [
+            "ab"
+          ],
+          "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 66% less damage from ranged attacks and their range is increased by +2.",
+          "classes": [
+            "defensive",
+            "building"
+          ],
+          "displayClasses": [
+            "Defensive Building"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 15,
+            "gold": 0,
+            "total": 15,
+            "popcap": 0,
+            "time": 16
+          },
+          "producedBy": [
+            "villager"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/stone-wall-2.png",
+          "hitpoints": 3500,
+          "weapons": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
+          "sight": {
+            "line": 6,
+            "height": 8
+          },
+          "influences": []
         }
       ]
     },
@@ -2695,9 +1709,6 @@
       "name": "Stone Wall Gate",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
         "ab"
       ],
       "unique": false,
@@ -2709,7 +1720,7 @@
         "building"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-gate.png",
+      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-gate-2.png",
       "description": "Heavy defensive gate. Must be built on a Stone Wall segment.\nInfantry can use the gate to access the top of the walls.",
       "variations": [
         {
@@ -2717,11 +1728,10 @@
           "baseId": "stone-wall-gate",
           "type": "building",
           "name": "Stone Wall Gate",
+          "pbgid": 199629,
+          "attribName": "building_defense_wall_gate_abb",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
             "ab"
           ],
           "description": "Heavy defensive gate. Must be built on a Stone Wall segment.\nInfantry can use the gate to access the top of the walls.",
@@ -2745,6 +1755,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/stone-wall-gate-2.png",
           "hitpoints": 3000,
           "weapons": [],
           "armor": [
@@ -2757,7 +1768,7 @@
             "line": 25,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/stone-wall-gate.png"
+          "influences": []
         }
       ]
     },
@@ -2766,10 +1777,6 @@
       "name": "Stone Wall Tower",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
         "ab"
       ],
       "unique": false,
@@ -2781,7 +1788,7 @@
         "building"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-tower.png",
+      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-tower-2.png",
       "description": "Heavy defensive tower that fires a springald. Must be built on a Stone Wall segment.\nInfantry can use the tower to access the top of the walls.",
       "variations": [
         {
@@ -2789,12 +1796,10 @@
           "baseId": "stone-wall-tower",
           "type": "building",
           "name": "Stone Wall Tower",
+          "pbgid": 199627,
+          "attribName": "building_defense_tower_abb",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
             "ab"
           ],
           "description": "Heavy defensive tower that fires a springald. Must be built on a Stone Wall segment.\nInfantry can use the tower to access the top of the walls.",
@@ -2818,9 +1823,11 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/stone-wall-tower-2.png",
           "hitpoints": 3000,
           "weapons": [
             {
+              "name": "Springald",
               "type": "ranged",
               "damage": 60,
               "speed": 6.25,
@@ -2834,7 +1841,8 @@
                   "target": {
                     "class": [
                       [
-                        "ship"
+                        "naval",
+                        "unit"
                       ]
                     ]
                   },
@@ -2842,7 +1850,19 @@
                   "value": 50,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0.25,
+                "windup": 0.25,
+                "fire": 0.25,
+                "winddown": 0.5,
+                "reload": 5,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_walltower_springald",
+              "pbgid": 134820
             }
           ],
           "armor": [
@@ -2855,7 +1875,7 @@
             "line": 60,
             "height": 501
           },
-          "icon": "https://data.aoe4world.com/images/buildings/stone-wall-tower.png"
+          "influences": []
         }
       ]
     },
@@ -2864,11 +1884,7 @@
       "name": "Town Center",
       "type": "building",
       "civs": [
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "ru"
+        "ab"
       ],
       "unique": false,
       "displayClasses": [
@@ -2876,11 +1892,12 @@
       ],
       "classes": [
         "economy",
+        "&",
         "population",
         "building"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/town-center.png",
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-2.png",
       "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
       "variations": [
         {
@@ -2888,17 +1905,16 @@
           "baseId": "town-center",
           "type": "building",
           "name": "Town Center",
+          "pbgid": 199641,
+          "attribName": "building_town_center_abb",
           "age": 2,
           "civs": [
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "ru"
+            "ab"
           ],
           "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
           "classes": [
             "economy",
+            "&",
             "population",
             "building"
           ],
@@ -2912,12 +1928,14 @@
             "stone": 300,
             "gold": 0,
             "total": 700,
+            "popcap": 0,
             "time": 120
           },
           "producedBy": [
             "villager"
           ],
-          "hitpoints": 2400,
+          "icon": "https://data.aoe4world.com/images/buildings/town-center-2.png",
+          "hitpoints": 2500,
           "weapons": [],
           "armor": [
             {
@@ -2930,10 +1948,19 @@
             "height": 10
           },
           "garrison": {
-            "capacity": 10
+            "capacity": 10,
+            "classes": [
+              "villager",
+              "infantry",
+              "monk",
+              "cavalry",
+              "infantry ranged",
+              "khan"
+            ]
           },
-          "popcapIncrease": 10,
-          "icon": "https://data.aoe4world.com/images/buildings/town-center.png"
+          "influences": [
+            "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+          ]
         }
       ]
     }

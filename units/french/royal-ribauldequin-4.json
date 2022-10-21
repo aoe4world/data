@@ -3,6 +3,8 @@
   "baseId": "royal-ribauldequin",
   "type": "unit",
   "name": "Royal Ribauldequin",
+  "pbgid": 1905982,
+  "attribName": "unit_ribauldequin_4_royal_fre",
   "age": 4,
   "civs": [
     "fr"
@@ -16,7 +18,7 @@
     "Siege",
     "Gunpowder"
   ],
-  "unique": true,
+  "unique": false,
   "costs": {
     "food": 0,
     "wood": 400,
@@ -29,16 +31,34 @@
   "producedBy": [
     "college-of-artillery"
   ],
+  "icon": "https://data.aoe4world.com/images/units/royal-ribauldequin-4.png",
   "hitpoints": 350,
   "weapons": [
     {
+      "name": "Ribauldequin",
       "type": "ranged",
-      "damage": 250,
-      "speed": 5.45,
+      "damage": 50,
+      "speed": 3.875,
       "range": {
         "min": 0,
-        "max": 3.8
-      }
+        "max": 3.75
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0.625,
+        "windup": 0,
+        "fire": 0.25,
+        "winddown": 1,
+        "reload": 2,
+        "setup": 0.125,
+        "teardown": 0.125,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 12
+      },
+      "attribName": "weapon_ribauldequin_4_royal_fre",
+      "pbgid": 1905979
     }
   ],
   "armor": [
@@ -52,7 +72,6 @@
     "height": 10
   },
   "movement": {
-    "speed": 0.88
-  },
-  "icon": "https://data.aoe4world.com/images/units/royal-ribauldequin.png"
+    "speed": 0.875
+  }
 }

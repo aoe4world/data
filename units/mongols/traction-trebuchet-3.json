@@ -3,6 +3,8 @@
   "baseId": "traction-trebuchet",
   "type": "unit",
   "name": "Traction Trebuchet",
+  "pbgid": 174217,
+  "attribName": "unit_trebuchet_4_tr_field_construct_mon",
   "age": 3,
   "civs": [
     "mo"
@@ -14,7 +16,7 @@
   "displayClasses": [
     "Siege"
   ],
-  "unique": true,
+  "unique": false,
   "costs": {
     "food": 0,
     "wood": 400,
@@ -22,19 +24,25 @@
     "gold": 150,
     "total": 550,
     "popcap": 3,
-    "time": 35
+    "time": 80
   },
   "producedBy": [
-    "siege-workshop"
+    "spearman",
+    "man-at-arms",
+    "archer",
+    "crossbowman",
+    "handcannoneer"
   ],
+  "icon": "https://data.aoe4world.com/images/units/traction-trebuchet-3.png",
   "hitpoints": 190,
   "weapons": [
     {
+      "name": "Trebuchet",
       "type": "siege",
       "damage": 50,
       "speed": 9.5,
       "range": {
-        "min": 2.8,
+        "min": 2.75,
         "max": 13
       },
       "modifiers": [
@@ -43,9 +51,6 @@
           "target": {
             "class": [
               [
-                "ship"
-              ],
-              [
                 "building"
               ]
             ]
@@ -53,8 +58,34 @@
           "effect": "change",
           "value": 250,
           "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 250,
+          "type": "passive"
         }
-      ]
+      ],
+      "durations": {
+        "aim": 0.25,
+        "windup": 1.875,
+        "fire": 0.25,
+        "winddown": 6.125,
+        "reload": 1,
+        "setup": 0.5,
+        "teardown": 0.5,
+        "cooldown": 0
+      },
+      "attribName": "weapon_trebuchet_4_traction",
+      "pbgid": 127504
     }
   ],
   "armor": [
@@ -68,7 +99,6 @@
     "height": 10
   },
   "movement": {
-    "speed": 0.88
-  },
-  "icon": "https://data.aoe4world.com/images/units/traction-trebuchet.png"
+    "speed": 0.875
+  }
 }

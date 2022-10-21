@@ -21,26 +21,30 @@
       "classes": [
         "age",
         "ii",
+        "-",
         "religious",
         "landmark"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/abbey-of-kings.png",
-      "description": "Heals all nearby friendly units that are out of combat by +6 every  1 seconds.",
+      "icon": "https://data.aoe4world.com/images/buildings/abbey-of-kings-1.png",
+      "description": "Heals all nearby friendly units that are out of combat by +6 every %2.1% seconds.",
       "variations": [
         {
           "id": "abbey-of-kings-1",
           "baseId": "abbey-of-kings",
           "type": "building",
           "name": "Abbey of Kings",
+          "pbgid": 166274,
+          "attribName": "building_landmark_age1_westminster_abbey_eng",
           "age": 1,
           "civs": [
             "en"
           ],
-          "description": "Heals all nearby friendly units that are out of combat by +6 every  1 seconds.",
+          "description": "Heals all nearby friendly units that are out of combat by +6 every %2.1% seconds.",
           "classes": [
             "age",
             "ii",
+            "-",
             "religious",
             "landmark"
           ],
@@ -60,6 +64,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/abbey-of-kings-1.png",
           "hitpoints": 5000,
           "weapons": [],
           "armor": [
@@ -72,7 +77,143 @@
             "line": 25,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/abbey-of-kings.png"
+          "influences": []
+        }
+      ]
+    },
+    {
+      "id": "archery-range",
+      "name": "Archery Range",
+      "type": "building",
+      "civs": [
+        "en"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Military Building"
+      ],
+      "classes": [
+        "military",
+        "building"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/buildings/archery-range-2.png",
+      "description": "Produces ranged infantry units.",
+      "variations": [
+        {
+          "id": "archery-range-2",
+          "baseId": "archery-range",
+          "type": "building",
+          "name": "Archery Range",
+          "pbgid": 166266,
+          "attribName": "building_unit_ranged_control_eng",
+          "age": 2,
+          "civs": [
+            "en"
+          ],
+          "description": "Produces ranged infantry units.",
+          "classes": [
+            "military",
+            "building"
+          ],
+          "displayClasses": [
+            "Military Building"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 150,
+            "stone": 0,
+            "gold": 0,
+            "total": 150,
+            "popcap": 0,
+            "time": 30
+          },
+          "producedBy": [
+            "villager"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/archery-range-2.png",
+          "hitpoints": 1500,
+          "weapons": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
+          "sight": {
+            "line": 25,
+            "height": 8
+          },
+          "influences": []
+        }
+      ]
+    },
+    {
+      "id": "barracks",
+      "name": "Barracks",
+      "type": "building",
+      "civs": [
+        "en"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Military Building"
+      ],
+      "classes": [
+        "military",
+        "building"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/buildings/barracks-1.png",
+      "description": "Produces melee infantry units.",
+      "variations": [
+        {
+          "id": "barracks-1",
+          "baseId": "barracks",
+          "type": "building",
+          "name": "Barracks",
+          "pbgid": 166265,
+          "attribName": "building_unit_infantry_control_eng",
+          "age": 1,
+          "civs": [
+            "en"
+          ],
+          "description": "Produces melee infantry units.",
+          "classes": [
+            "military",
+            "building"
+          ],
+          "displayClasses": [
+            "Military Building"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 150,
+            "stone": 0,
+            "gold": 0,
+            "total": 150,
+            "popcap": 0,
+            "time": 30
+          },
+          "producedBy": [
+            "villager"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/barracks-1.png",
+          "hitpoints": 1500,
+          "weapons": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
+          "sight": {
+            "line": 25,
+            "height": 8
+          },
+          "influences": []
         }
       ]
     },
@@ -90,11 +231,12 @@
       "classes": [
         "age",
         "iv",
+        "-",
         "defensive",
         "landmark"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/buildings/berkshire-palace.png",
+      "icon": "https://data.aoe4world.com/images/buildings/berkshire-palace-3.png",
       "description": "Acts as a Keep with all the behaviors, technology, and bonuses. Berkshire Palace has +50% greater weapon range and double the number of arrowslits.",
       "variations": [
         {
@@ -102,6 +244,8 @@
           "baseId": "berkshire-palace",
           "type": "building",
           "name": "Berkshire Palace",
+          "pbgid": 166272,
+          "attribName": "building_landmark_age3_windsor_castle_eng",
           "age": 3,
           "civs": [
             "en"
@@ -110,6 +254,7 @@
           "classes": [
             "age",
             "iv",
+            "-",
             "defensive",
             "landmark"
           ],
@@ -129,15 +274,17 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/berkshire-palace-3.png",
           "hitpoints": 5000,
           "weapons": [
             {
+              "name": "Bow",
               "type": "ranged",
-              "damage": 72,
-              "speed": 0.38,
+              "damage": 12,
+              "speed": 0.625,
               "range": {
                 "min": 0,
-                "max": 12
+                "max": 16
               },
               "modifiers": [
                 {
@@ -145,7 +292,8 @@
                   "target": {
                     "class": [
                       [
-                        "ship"
+                        "naval",
+                        "unit"
                       ]
                     ]
                   },
@@ -153,7 +301,22 @@
                   "value": 25,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.125,
+                "fire": 0.25,
+                "winddown": 0,
+                "reload": 0.25,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "burst": {
+                "count": 6
+              },
+              "attribName": "weapon_keep_arrows_a",
+              "pbgid": 127372
             }
           ],
           "armor": [
@@ -171,9 +334,84 @@
             "height": 501
           },
           "garrison": {
-            "capacity": 20
+            "capacity": 20,
+            "classes": [
+              "infantry",
+              "villager",
+              "infantry ranged",
+              "monk",
+              "cavalry"
+            ]
           },
-          "icon": "https://data.aoe4world.com/images/buildings/berkshire-palace.png"
+          "influences": []
+        }
+      ]
+    },
+    {
+      "id": "blacksmith",
+      "name": "Blacksmith",
+      "type": "building",
+      "civs": [
+        "en"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Technology Building"
+      ],
+      "classes": [
+        "technology",
+        "building"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/buildings/blacksmith-2.png",
+      "description": "Houses technology to improve infantry and cavalry.",
+      "variations": [
+        {
+          "id": "blacksmith-2",
+          "baseId": "blacksmith",
+          "type": "building",
+          "name": "Blacksmith",
+          "pbgid": 131476,
+          "attribName": "building_tech_unit_infantry_control_eng",
+          "age": 2,
+          "civs": [
+            "en"
+          ],
+          "description": "Houses technology to improve infantry and cavalry.",
+          "classes": [
+            "technology",
+            "building"
+          ],
+          "displayClasses": [
+            "Technology Building"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 150,
+            "stone": 0,
+            "gold": 0,
+            "total": 150,
+            "popcap": 0,
+            "time": 25
+          },
+          "producedBy": [
+            "villager"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/blacksmith-2.png",
+          "hitpoints": 1500,
+          "weapons": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
+          "sight": {
+            "line": 25,
+            "height": 8
+          },
+          "influences": []
         }
       ]
     },
@@ -184,24 +422,29 @@
       "civs": [
         "en"
       ],
-      "unique": true,
+      "unique": false,
       "displayClasses": [
-        "Economy & Population Building"
+        "Economy & Population Building",
+        "Landmark"
       ],
       "classes": [
         "economy",
+        "&",
         "population",
-        "building"
+        "building",
+        "landmark"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/capital-town-center.png",
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
       "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your Population. Adds additional attacks while garrisoned.\nNetwork of Castles Bonus: Triggers an alarm when an enemy approaches, causing nearby units and defensive buildings to fire faster while the alarm is active.",
       "variations": [
         {
-          "id": "capital-town-center-1-english",
+          "id": "capital-town-center-1",
           "baseId": "capital-town-center",
           "type": "building",
           "name": "Capital Town Center",
+          "pbgid": 173632,
+          "attribName": "building_town_center_capital_eng",
           "age": 1,
           "civs": [
             "en"
@@ -209,51 +452,30 @@
           "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your Population. Adds additional attacks while garrisoned.\nNetwork of Castles Bonus: Triggers an alarm when an enemy approaches, causing nearby units and defensive buildings to fire faster while the alarm is active.",
           "classes": [
             "economy",
+            "&",
             "population",
-            "building"
+            "building",
+            "landmark"
           ],
           "displayClasses": [
-            "Economy & Population Building"
+            "Economy & Population Building",
+            "Landmark"
           ],
-          "unique": true,
+          "unique": false,
           "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
             "gold": 0,
+            "wood": 0,
+            "food": 0,
+            "stone": 0,
             "total": 0,
             "time": 0
           },
           "producedBy": [
-            "map-generation"
+            "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
           "hitpoints": 7000,
-          "weapons": [
-            {
-              "type": "ranged",
-              "damage": 16,
-              "speed": 1.88,
-              "range": {
-                "min": 0,
-                "max": 8
-              },
-              "modifiers": [
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "ship"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 25,
-                  "type": "passive"
-                }
-              ]
-            }
-          ],
+          "weapons": [],
           "armor": [
             {
               "type": "ranged",
@@ -265,16 +487,23 @@
             "height": 10
           },
           "garrison": {
-            "capacity": 15
+            "capacity": 15,
+            "classes": [
+              "villager",
+              "infantry",
+              "monk",
+              "cavalry",
+              "infantry ranged",
+              "khan"
+            ]
           },
-          "popcapIncrease": 10,
-          "icon": "https://data.aoe4world.com/images/buildings/capital-town-center.png"
+          "influences": []
         }
       ]
     },
     {
       "id": "cathedral-of-st-thomas",
-      "name": "Cathedral of St Thomas",
+      "name": "Cathedral of St. Thomas",
       "type": "building",
       "civs": [
         "en"
@@ -287,14 +516,16 @@
         "wonder"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/buildings/cathedral-of-st-thomas.png",
+      "icon": "https://data.aoe4world.com/images/buildings/cathedral-of-st-thomas-4.png",
       "description": "Build and defend a Wonder to secure victory. Rival civilizations will be aware of its construction and seek to destroy it.",
       "variations": [
         {
           "id": "cathedral-of-st-thomas-4",
           "baseId": "cathedral-of-st-thomas",
           "type": "building",
-          "name": "Cathedral of St Thomas",
+          "name": "Cathedral of St. Thomas",
+          "pbgid": 180287,
+          "attribName": "building_wonder_age4_canterbury_cathedral_eng",
           "age": 4,
           "civs": [
             "en"
@@ -319,6 +550,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/cathedral-of-st-thomas-4.png",
           "hitpoints": 5000,
           "weapons": [],
           "armor": [
@@ -331,7 +563,7 @@
             "line": 25,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/cathedral-of-st-thomas.png"
+          "influences": []
         }
       ]
     },
@@ -349,11 +581,12 @@
       "classes": [
         "age",
         "ii",
+        "-",
         "military",
         "landmark"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/council-hall.png",
+      "icon": "https://data.aoe4world.com/images/buildings/council-hall-1.png",
       "description": "Produce Longbowmen at +100% speed from the Landmark.\nContains Longbowmen upgrades.",
       "variations": [
         {
@@ -361,6 +594,8 @@
           "baseId": "council-hall",
           "type": "building",
           "name": "Council Hall",
+          "pbgid": 166269,
+          "attribName": "building_landmark_age1_westminster_hall_eng",
           "age": 1,
           "civs": [
             "en"
@@ -369,6 +604,7 @@
           "classes": [
             "age",
             "ii",
+            "-",
             "military",
             "landmark"
           ],
@@ -388,6 +624,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/council-hall-1.png",
           "hitpoints": 5000,
           "weapons": [],
           "armor": [
@@ -400,619 +637,7 @@
             "line": 25,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/council-hall.png"
-        }
-      ]
-    },
-    {
-      "id": "farm",
-      "name": "Farm",
-      "type": "building",
-      "civs": [
-        "en"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Food Source",
-        "Building"
-      ],
-      "classes": [
-        "food",
-        "source",
-        "building"
-      ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/farm.png",
-      "description": "Harvestable Food source. Use a Villager to gather Food from the Farm.\nOnly one Villager can work each Farm.",
-      "variations": [
-        {
-          "id": "farm-1-english",
-          "baseId": "farm",
-          "type": "building",
-          "name": "Farm",
-          "age": 1,
-          "civs": [
-            "en"
-          ],
-          "description": "Harvestable Food source. Use a Villager to gather Food from the Farm.\nOnly one Villager can work each Farm.",
-          "classes": [
-            "food",
-            "source",
-            "building"
-          ],
-          "displayClasses": [
-            "Food Source",
-            "Building"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 37,
-            "stone": 0,
-            "gold": 0,
-            "total": 37,
-            "popcap": 0,
-            "time": 6
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 300,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "sight": {
-            "line": 0,
-            "height": 0
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/farm.png"
-        }
-      ]
-    },
-    {
-      "id": "kings-palace",
-      "name": "Kings Palace",
-      "type": "building",
-      "civs": [
-        "en"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Age III - Economic Landmark"
-      ],
-      "classes": [
-        "age",
-        "iii",
-        "economic",
-        "landmark"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/kings-palace.png",
-      "description": "Acts as a Town Center with all the behaviors, technology, units, and bonuses.",
-      "variations": [
-        {
-          "id": "kings-palace-2",
-          "baseId": "kings-palace",
-          "type": "building",
-          "name": "Kings Palace",
-          "age": 2,
-          "civs": [
-            "en"
-          ],
-          "description": "Acts as a Town Center with all the behaviors, technology, units, and bonuses.",
-          "classes": [
-            "age",
-            "iii",
-            "economic",
-            "landmark"
-          ],
-          "displayClasses": [
-            "Age III - Economic Landmark"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 1200,
-            "wood": 0,
-            "stone": 0,
-            "gold": 600,
-            "total": 1800,
-            "time": 220
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 2500,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "sight": {
-            "line": 25,
-            "height": 8
-          },
-          "garrison": {
-            "capacity": 10
-          },
-          "popcapIncrease": 10,
-          "icon": "https://data.aoe4world.com/images/buildings/kings-palace.png"
-        }
-      ]
-    },
-    {
-      "id": "the-white-tower",
-      "name": "The White Tower",
-      "type": "building",
-      "civs": [
-        "en"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Age III - Defensive Landmark"
-      ],
-      "classes": [
-        "age",
-        "iii",
-        "defensive",
-        "landmark"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/the-white-tower.png",
-      "description": "Acts as a Keep with all the behaviors, technology, and bonuses.",
-      "variations": [
-        {
-          "id": "the-white-tower-2",
-          "baseId": "the-white-tower",
-          "type": "building",
-          "name": "The White Tower",
-          "age": 2,
-          "civs": [
-            "en"
-          ],
-          "description": "Acts as a Keep with all the behaviors, technology, and bonuses.",
-          "classes": [
-            "age",
-            "iii",
-            "defensive",
-            "landmark"
-          ],
-          "displayClasses": [
-            "Age III - Defensive Landmark"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 1200,
-            "wood": 0,
-            "stone": 0,
-            "gold": 600,
-            "total": 1800,
-            "popcap": 0,
-            "time": 220
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 5000,
-          "weapons": [
-            {
-              "type": "ranged",
-              "damage": 36,
-              "speed": 0.38,
-              "range": {
-                "min": 0,
-                "max": 8
-              },
-              "modifiers": [
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "ship"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 25,
-                  "type": "passive"
-                }
-              ]
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            },
-            {
-              "type": "fire",
-              "value": 5
-            }
-          ],
-          "sight": {
-            "line": 41,
-            "height": 501
-          },
-          "garrison": {
-            "capacity": 20
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/the-white-tower.png"
-        }
-      ]
-    },
-    {
-      "id": "town-center",
-      "name": "Town Center",
-      "type": "building",
-      "civs": [
-        "en"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Economy & Population Building"
-      ],
-      "classes": [
-        "economy",
-        "population",
-        "building"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/town-center.png",
-      "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your Population. Adds additional attacks while garrisoned.\nNetwork of Castles Bonus: Triggers an alarm when an enemy approaches, causing nearby units and defensive buildings to fire faster while the alarm is active.",
-      "variations": [
-        {
-          "id": "town-center-2-english",
-          "baseId": "town-center",
-          "type": "building",
-          "name": "Town Center",
-          "age": 2,
-          "civs": [
-            "en"
-          ],
-          "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your Population. Adds additional attacks while garrisoned.\nNetwork of Castles Bonus: Triggers an alarm when an enemy approaches, causing nearby units and defensive buildings to fire faster while the alarm is active.",
-          "classes": [
-            "economy",
-            "population",
-            "building"
-          ],
-          "displayClasses": [
-            "Economy & Population Building"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 400,
-            "stone": 300,
-            "gold": 0,
-            "total": 700,
-            "time": 120
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 2400,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "sight": {
-            "line": 52,
-            "height": 10
-          },
-          "garrison": {
-            "capacity": 10
-          },
-          "popcapIncrease": 10,
-          "icon": "https://data.aoe4world.com/images/buildings/town-center.png"
-        }
-      ]
-    },
-    {
-      "id": "wynguard-palace",
-      "name": "Wynguard Palace",
-      "type": "building",
-      "civs": [
-        "en"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Age IV - Military Landmark"
-      ],
-      "classes": [
-        "age",
-        "iv",
-        "military",
-        "landmark"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/buildings/wynguard-palace.png",
-      "description": "Produce one of the 3 Wynguard Forces for 100F, 100W & 200G from the Landmark. \n-Wynguard Army includes one each of Man-at-Arms, Spearman, Longbowman, Knight, and Trebuchet.\n-Wynguard Raiders, 3 Knights and 3 Horseman\n-Wynguard Rangers, 3 Handcannonneers and 3 Crossbowmen ",
-      "variations": [
-        {
-          "id": "wynguard-palace-3",
-          "baseId": "wynguard-palace",
-          "type": "building",
-          "name": "Wynguard Palace",
-          "age": 3,
-          "civs": [
-            "en"
-          ],
-          "description": "Produce one of the 3 Wynguard Forces for 100F, 100W & 200G from the Landmark. \n-Wynguard Army includes one each of Man-at-Arms, Spearman, Longbowman, Knight, and Trebuchet.\n-Wynguard Raiders, 3 Knights and 3 Horseman\n-Wynguard Rangers, 3 Handcannonneers and 3 Crossbowmen ",
-          "classes": [
-            "age",
-            "iv",
-            "military",
-            "landmark"
-          ],
-          "displayClasses": [
-            "Age IV - Military Landmark"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 2400,
-            "wood": 0,
-            "stone": 0,
-            "gold": 1200,
-            "total": 3600,
-            "popcap": 0,
-            "time": 250
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 5000,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "sight": {
-            "line": 25,
-            "height": 8
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/wynguard-palace.png"
-        }
-      ]
-    },
-    {
-      "id": "archery-range",
-      "name": "Archery Range",
-      "type": "building",
-      "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "mo",
-        "ru"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Military Building"
-      ],
-      "classes": [
-        "military",
-        "building"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/archery-range.png",
-      "description": "Produces ranged infantry units.",
-      "variations": [
-        {
-          "id": "archery-range-2",
-          "baseId": "archery-range",
-          "type": "building",
-          "name": "Archery Range",
-          "age": 2,
-          "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Produces ranged infantry units.",
-          "classes": [
-            "military",
-            "building"
-          ],
-          "displayClasses": [
-            "Military Building"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 150,
-            "stone": 0,
-            "gold": 0,
-            "total": 150,
-            "popcap": 0,
-            "time": 30
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 1500,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "sight": {
-            "line": 25,
-            "height": 8
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/archery-range.png"
-        }
-      ]
-    },
-    {
-      "id": "barracks",
-      "name": "Barracks",
-      "type": "building",
-      "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "mo",
-        "ru"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Military Building"
-      ],
-      "classes": [
-        "military",
-        "building"
-      ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/barracks.png",
-      "description": "Produces melee infantry units.",
-      "variations": [
-        {
-          "id": "barracks-1",
-          "baseId": "barracks",
-          "type": "building",
-          "name": "Barracks",
-          "age": 1,
-          "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Produces melee infantry units.",
-          "classes": [
-            "military",
-            "building"
-          ],
-          "displayClasses": [
-            "Military Building"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 150,
-            "stone": 0,
-            "gold": 0,
-            "total": 150,
-            "popcap": 0,
-            "time": 30
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 1500,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "sight": {
-            "line": 25,
-            "height": 8
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/barracks.png"
-        }
-      ]
-    },
-    {
-      "id": "blacksmith",
-      "name": "Blacksmith",
-      "type": "building",
-      "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "mo",
-        "ru"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Technology Building"
-      ],
-      "classes": [
-        "technology",
-        "building"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/blacksmith.png",
-      "description": "Houses technology to improve infantry and cavalry.",
-      "variations": [
-        {
-          "id": "blacksmith-2",
-          "baseId": "blacksmith",
-          "type": "building",
-          "name": "Blacksmith",
-          "age": 2,
-          "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Houses technology to improve infantry and cavalry.",
-          "classes": [
-            "technology",
-            "building"
-          ],
-          "displayClasses": [
-            "Technology Building"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 150,
-            "stone": 0,
-            "gold": 0,
-            "total": 150,
-            "popcap": 0,
-            "time": 25
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "hitpoints": 1500,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "sight": {
-            "line": 25,
-            "height": 8
-          },
-          "icon": "https://data.aoe4world.com/images/buildings/blacksmith.png"
+          "influences": []
         }
       ]
     },
@@ -1021,12 +646,7 @@
       "name": "Dock",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1035,32 +655,31 @@
       ],
       "classes": [
         "military",
+        "&",
         "economy",
         "building",
         "trade",
         "site"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/dock.png",
-      "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.",
+      "icon": "https://data.aoe4world.com/images/buildings/dock-1.png",
+      "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three fishing ships.",
       "variations": [
         {
-          "id": "dock-1-villager",
+          "id": "dock-1",
           "baseId": "dock",
           "type": "building",
           "name": "Dock",
+          "pbgid": 192784,
+          "attribName": "building_unit_naval_eng",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "mo",
-            "ru"
+            "en"
           ],
-          "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.",
+          "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three fishing ships.",
           "classes": [
             "military",
+            "&",
             "economy",
             "building",
             "trade",
@@ -1083,6 +702,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/dock-1.png",
           "hitpoints": 1500,
           "weapons": [],
           "armor": [
@@ -1096,9 +716,86 @@
             "height": 8
           },
           "garrison": {
-            "capacity": 3
+            "capacity": 3,
+            "classes": [
+              "fishing ship"
+            ]
           },
-          "icon": "https://data.aoe4world.com/images/buildings/dock.png"
+          "influences": []
+        }
+      ]
+    },
+    {
+      "id": "farm",
+      "name": "Farm",
+      "type": "building",
+      "civs": [
+        "en"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Food Source",
+        "Building"
+      ],
+      "classes": [
+        "food",
+        "source",
+        "building"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/buildings/farm-1.png",
+      "description": "Harvestable Food source. Use a Villager to gather Food from the Farm.\nOnly one Villager can work each Farm.\nFarm Enclosure technology is available from the Mill upon entering the Imperial Age (IV). Farm Enclosures generate 1 Gold every 8 seconds when worked by a Villager.",
+      "variations": [
+        {
+          "id": "farm-1",
+          "baseId": "farm",
+          "type": "building",
+          "name": "Farm",
+          "pbgid": 166261,
+          "attribName": "building_resource_farm_eng",
+          "age": 1,
+          "civs": [
+            "en"
+          ],
+          "description": "Harvestable Food source. Use a Villager to gather Food from the Farm.\nOnly one Villager can work each Farm.\nFarm Enclosure technology is available from the Mill upon entering the Imperial Age (IV). Farm Enclosures generate 1 Gold every 8 seconds when worked by a Villager.",
+          "classes": [
+            "food",
+            "source",
+            "building"
+          ],
+          "displayClasses": [
+            "Food Source",
+            "Building"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 37,
+            "stone": 0,
+            "gold": 0,
+            "total": 37,
+            "popcap": 0,
+            "time": 6
+          },
+          "producedBy": [
+            "villager"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/farm-1.png",
+          "hitpoints": 300,
+          "weapons": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
+          "sight": {
+            "line": 0,
+            "height": 0
+          },
+          "influences": [
+            "Farm harvest rate increased +15%/+20%/+25%/+30% by Age while within the influence of a Mill."
+          ]
         }
       ]
     },
@@ -1107,12 +804,7 @@
       "name": "House",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1123,7 +815,7 @@
         "building"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/house.png",
+      "icon": "https://data.aoe4world.com/images/buildings/house-1.png",
       "description": "Increases your maximum Population.",
       "variations": [
         {
@@ -1131,14 +823,11 @@
           "baseId": "house",
           "type": "building",
           "name": "House",
+          "pbgid": 166260,
+          "attribName": "building_house_control_eng",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "ru"
+            "en"
           ],
           "description": "Increases your maximum Population.",
           "classes": [
@@ -1155,11 +844,13 @@
             "stone": 0,
             "gold": 0,
             "total": 50,
+            "popcap": 0,
             "time": 15
           },
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/house-1.png",
           "hitpoints": 750,
           "weapons": [],
           "armor": [
@@ -1172,8 +863,7 @@
             "line": 15,
             "height": 8
           },
-          "popcapIncrease": 10,
-          "icon": "https://data.aoe4world.com/images/buildings/house.png"
+          "influences": []
         }
       ]
     },
@@ -1182,12 +872,7 @@
       "name": "Keep",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1198,24 +883,21 @@
         "building"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/buildings/keep.png",
-      "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.",
+      "icon": "https://data.aoe4world.com/images/buildings/keep-3.png",
+      "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.\nNetwork of Castles Bonus: Triggers an alarm when an enemy approaches, causing nearby units to fire faster while the alarm is active.",
       "variations": [
         {
           "id": "keep-3",
           "baseId": "keep",
           "type": "building",
           "name": "Keep",
+          "pbgid": 166243,
+          "attribName": "building_defense_keep_eng",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "ru"
+            "en"
           ],
-          "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.",
+          "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.\nNetwork of Castles Bonus: Triggers an alarm when an enemy approaches, causing nearby units to fire faster while the alarm is active.",
           "classes": [
             "defensive",
             "building"
@@ -1236,12 +918,14 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/keep-3.png",
           "hitpoints": 5000,
           "weapons": [
             {
+              "name": "Bow",
               "type": "ranged",
-              "damage": 36,
-              "speed": 0.38,
+              "damage": 12,
+              "speed": 0.625,
               "range": {
                 "min": 0,
                 "max": 8
@@ -1252,7 +936,8 @@
                   "target": {
                     "class": [
                       [
-                        "ship"
+                        "naval",
+                        "unit"
                       ]
                     ]
                   },
@@ -1260,7 +945,22 @@
                   "value": 25,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.125,
+                "fire": 0.25,
+                "winddown": 0,
+                "reload": 0.25,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "burst": {
+                "count": 3
+              },
+              "attribName": "weapon_keep_arrows_a",
+              "pbgid": 127372
             }
           ],
           "armor": [
@@ -1278,9 +978,102 @@
             "height": 501
           },
           "garrison": {
-            "capacity": 15
+            "capacity": 15,
+            "classes": [
+              "infantry",
+              "villager",
+              "infantry ranged",
+              "monk",
+              "cavalry",
+              "khan"
+            ]
           },
-          "icon": "https://data.aoe4world.com/images/buildings/keep.png"
+          "influences": []
+        }
+      ]
+    },
+    {
+      "id": "kings-palace",
+      "name": "King's Palace",
+      "type": "building",
+      "civs": [
+        "en"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Age III - Economic Landmark"
+      ],
+      "classes": [
+        "age",
+        "iii",
+        "-",
+        "economic",
+        "landmark"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/buildings/kings-palace-2.png",
+      "description": "Acts as a Town Center with all the behaviors, technology, units, and bonuses.",
+      "variations": [
+        {
+          "id": "kings-palace-2",
+          "baseId": "kings-palace",
+          "type": "building",
+          "name": "King's Palace",
+          "pbgid": 166271,
+          "attribName": "building_landmark_age2_westminster_palace_eng",
+          "age": 2,
+          "civs": [
+            "en"
+          ],
+          "description": "Acts as a Town Center with all the behaviors, technology, units, and bonuses.",
+          "classes": [
+            "age",
+            "iii",
+            "-",
+            "economic",
+            "landmark"
+          ],
+          "displayClasses": [
+            "Age III - Economic Landmark"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 1200,
+            "wood": 0,
+            "stone": 0,
+            "gold": 600,
+            "total": 1800,
+            "popcap": 0,
+            "time": 220
+          },
+          "producedBy": [
+            "villager"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/kings-palace-2.png",
+          "hitpoints": 2500,
+          "weapons": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
+          "sight": {
+            "line": 25,
+            "height": 8
+          },
+          "garrison": {
+            "capacity": 10,
+            "classes": [
+              "villager",
+              "infantry",
+              "monk",
+              "cavalry",
+              "infantry ranged",
+              "khan"
+            ]
+          },
+          "influences": []
         }
       ]
     },
@@ -1289,11 +1082,7 @@
       "name": "Lumber Camp",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "de",
-        "ab",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1304,7 +1093,7 @@
         "building"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/lumber-camp.png",
+      "icon": "https://data.aoe4world.com/images/buildings/lumber-camp-1.png",
       "description": "Villagers can drop off Wood at this building. Houses technologies to improve Wood gathering.",
       "variations": [
         {
@@ -1312,13 +1101,11 @@
           "baseId": "lumber-camp",
           "type": "building",
           "name": "Lumber Camp",
+          "pbgid": 166259,
+          "attribName": "building_econ_wood_control_eng",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "de",
-            "ab",
-            "ru"
+            "en"
           ],
           "description": "Villagers can drop off Wood at this building. Houses technologies to improve Wood gathering.",
           "classes": [
@@ -1341,6 +1128,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/lumber-camp-1.png",
           "hitpoints": 750,
           "weapons": [],
           "armor": [
@@ -1353,7 +1141,7 @@
             "line": 15,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/lumber-camp.png"
+          "influences": []
         }
       ]
     },
@@ -1362,13 +1150,7 @@
       "name": "Market",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1382,7 +1164,7 @@
         "site"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/market.png",
+      "icon": "https://data.aoe4world.com/images/buildings/market-2.png",
       "description": "Allows the buying and selling of resources and produces the Trader.",
       "variations": [
         {
@@ -1390,15 +1172,11 @@
           "baseId": "market",
           "type": "building",
           "name": "Market",
+          "pbgid": 166257,
+          "attribName": "building_econ_market_control_eng",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Allows the buying and selling of resources and produces the Trader.",
           "classes": [
@@ -1424,6 +1202,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/market-2.png",
           "hitpoints": 1000,
           "weapons": [],
           "armor": [
@@ -1436,7 +1215,7 @@
             "line": 25,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/market.png"
+          "influences": []
         }
       ]
     },
@@ -1445,10 +1224,7 @@
       "name": "Mill",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "de",
-        "ab"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1459,7 +1235,7 @@
         "building"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/mill.png",
+      "icon": "https://data.aoe4world.com/images/buildings/mill-1.png",
       "description": "Villagers can drop off Food at this building. Houses technologies to improve Food gathering.",
       "variations": [
         {
@@ -1467,12 +1243,11 @@
           "baseId": "mill",
           "type": "building",
           "name": "Mill",
+          "pbgid": 170823,
+          "attribName": "building_econ_food_control_eng",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "de",
-            "ab"
+            "en"
           ],
           "description": "Villagers can drop off Food at this building. Houses technologies to improve Food gathering.",
           "classes": [
@@ -1495,6 +1270,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/mill-1.png",
           "hitpoints": 750,
           "weapons": [],
           "armor": [
@@ -1507,7 +1283,9 @@
             "line": 15,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/mill.png"
+          "influences": [
+            "Farm harvest rate increased +15%/+20%/+25%/+30% by Age while within the influence of a Mill."
+          ]
         }
       ]
     },
@@ -1516,11 +1294,7 @@
       "name": "Mining Camp",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "de",
-        "ab",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1531,7 +1305,7 @@
         "building"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/mining-camp.png",
+      "icon": "https://data.aoe4world.com/images/buildings/mining-camp-1.png",
       "description": "Villagers can drop off Stone and Gold at this building. Houses technologies to improve mining.",
       "variations": [
         {
@@ -1539,13 +1313,11 @@
           "baseId": "mining-camp",
           "type": "building",
           "name": "Mining Camp",
+          "pbgid": 166258,
+          "attribName": "building_econ_mining_camp_control_eng",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "de",
-            "ab",
-            "ru"
+            "en"
           ],
           "description": "Villagers can drop off Stone and Gold at this building. Houses technologies to improve mining.",
           "classes": [
@@ -1568,6 +1340,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/mining-camp-1.png",
           "hitpoints": 750,
           "weapons": [],
           "armor": [
@@ -1580,7 +1353,7 @@
             "line": 15,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/mining-camp.png"
+          "influences": []
         }
       ]
     },
@@ -1589,10 +1362,7 @@
       "name": "Monastery",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1603,22 +1373,21 @@
         "building"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/buildings/monastery.png",
-      "description": "Produces religious units and houses religious technologies. Starting in the Castle Age (III), religious units can pick up Relics and place 3 of them in this building to generate Gold.",
+      "icon": "https://data.aoe4world.com/images/buildings/monastery-3.png",
+      "description": "Produces religious units and houses religious technologies. Starting in the Castle Age (III), religious units can pick up Relics and place them in this building to generate Gold.",
       "variations": [
         {
           "id": "monastery-3",
           "baseId": "monastery",
           "type": "building",
           "name": "Monastery",
+          "pbgid": 166267,
+          "attribName": "building_unit_religious_control_eng",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ru"
+            "en"
           ],
-          "description": "Produces religious units and houses religious technologies. Starting in the Castle Age (III), religious units can pick up Relics and place 3 of them in this building to generate Gold.",
+          "description": "Produces religious units and houses religious technologies. Starting in the Castle Age (III), religious units can pick up Relics and place them in this building to generate Gold.",
           "classes": [
             "religious",
             "building"
@@ -1639,6 +1408,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/monastery-3.png",
           "hitpoints": 2100,
           "weapons": [],
           "armor": [
@@ -1651,7 +1421,7 @@
             "line": 25,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/monastery.png"
+          "influences": []
         }
       ]
     },
@@ -1660,11 +1430,7 @@
       "name": "Outpost",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1675,23 +1441,21 @@
         "building"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/outpost.png",
-      "description": "Offers extensive line of sight. Can be upgraded with weaponry and fortifications. Attacks while garrisoned.",
+      "icon": "https://data.aoe4world.com/images/buildings/outpost-1.png",
+      "description": "Offers extensive line of sight. Can be upgraded with weaponry and fortifications. Attacks while garrisoned.\nNetwork of Castles Bonus: Triggers an alarm when an enemy approaches, causing nearby units and defensive buildings to fire faster while the alarm is active.",
       "variations": [
         {
           "id": "outpost-1",
           "baseId": "outpost",
           "type": "building",
           "name": "Outpost",
+          "pbgid": 166244,
+          "attribName": "building_defense_outpost_eng",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab"
+            "en"
           ],
-          "description": "Offers extensive line of sight. Can be upgraded with weaponry and fortifications. Attacks while garrisoned.",
+          "description": "Offers extensive line of sight. Can be upgraded with weaponry and fortifications. Attacks while garrisoned.\nNetwork of Castles Bonus: Triggers an alarm when an enemy approaches, causing nearby units and defensive buildings to fire faster while the alarm is active.",
           "classes": [
             "defensive",
             "building"
@@ -1712,6 +1476,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/outpost-1.png",
           "hitpoints": 750,
           "weapons": [],
           "armor": [
@@ -1725,9 +1490,17 @@
             "height": 501
           },
           "garrison": {
-            "capacity": 5
+            "capacity": 5,
+            "classes": [
+              "infantry",
+              "infantry ranged",
+              "villager",
+              "monk",
+              "cavalry",
+              "khan"
+            ]
           },
-          "icon": "https://data.aoe4world.com/images/buildings/outpost.png"
+          "influences": []
         }
       ]
     },
@@ -1736,11 +1509,7 @@
       "name": "Palisade Gate",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1751,7 +1520,7 @@
         "building"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/palisade-gate.png",
+      "icon": "https://data.aoe4world.com/images/buildings/palisade-gate-1.png",
       "description": "Light defensive gate. Must be built on a Palisade Wall segment.",
       "variations": [
         {
@@ -1759,13 +1528,11 @@
           "baseId": "palisade-gate",
           "type": "building",
           "name": "Palisade Gate",
+          "pbgid": 166247,
+          "attribName": "building_defense_palisade_gate_eng",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab"
+            "en"
           ],
           "description": "Light defensive gate. Must be built on a Palisade Wall segment.",
           "classes": [
@@ -1788,6 +1555,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/palisade-gate-1.png",
           "hitpoints": 1500,
           "weapons": [],
           "armor": [
@@ -1800,7 +1568,7 @@
             "line": 20,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/palisade-gate.png"
+          "influences": []
         }
       ]
     },
@@ -1809,12 +1577,7 @@
       "name": "Palisade Wall",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1825,24 +1588,21 @@
         "building"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/palisade-wall.png",
-      "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 15 Wood, with each additional section costing  5 Wood.",
+      "icon": "https://data.aoe4world.com/images/buildings/palisade-wall-1.png",
+      "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 15 Wood, with each additional section costing 5 Wood.",
       "variations": [
         {
           "id": "palisade-wall-1",
           "baseId": "palisade-wall",
           "type": "building",
           "name": "Palisade Wall",
+          "pbgid": 166245,
+          "attribName": "building_defense_palisade_bastion_eng",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab"
+            "en"
           ],
-          "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 15 Wood, with each additional section costing  5 Wood.",
+          "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 15 Wood, with each additional section costing 5 Wood.",
           "classes": [
             "defensive",
             "building"
@@ -1863,6 +1623,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/palisade-wall-1.png",
           "hitpoints": 1500,
           "weapons": [],
           "armor": [
@@ -1875,7 +1636,7 @@
             "line": 6,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/palisade-wall.png"
+          "influences": []
         }
       ]
     },
@@ -1884,13 +1645,7 @@
       "name": "Siege Workshop",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1901,7 +1656,7 @@
         "building"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/buildings/siege-workshop.png",
+      "icon": "https://data.aoe4world.com/images/buildings/siege-workshop-3.png",
       "description": "Produces siege engines and powerful gunpowder units.",
       "variations": [
         {
@@ -1909,15 +1664,11 @@
           "baseId": "siege-workshop",
           "type": "building",
           "name": "Siege Workshop",
+          "pbgid": 166268,
+          "attribName": "building_unit_siege_control_eng",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "en"
           ],
           "description": "Produces siege engines and powerful gunpowder units.",
           "classes": [
@@ -1940,6 +1691,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/siege-workshop-3.png",
           "hitpoints": 2100,
           "weapons": [],
           "armor": [
@@ -1952,7 +1704,7 @@
             "line": 25,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/siege-workshop.png"
+          "influences": []
         }
       ]
     },
@@ -1961,12 +1713,7 @@
       "name": "Stable",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -1977,7 +1724,7 @@
         "building"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/stable.png",
+      "icon": "https://data.aoe4world.com/images/buildings/stable-2.png",
       "description": "Produces cavalry military units.",
       "variations": [
         {
@@ -1985,14 +1732,11 @@
           "baseId": "stable",
           "type": "building",
           "name": "Stable",
+          "pbgid": 166264,
+          "attribName": "building_unit_cavalry_control_eng",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "ru"
+            "en"
           ],
           "description": "Produces cavalry military units.",
           "classes": [
@@ -2015,6 +1759,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/stable-2.png",
           "hitpoints": 1500,
           "weapons": [],
           "armor": [
@@ -2027,7 +1772,7 @@
             "line": 25,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/stable.png"
+          "influences": []
         }
       ]
     },
@@ -2036,12 +1781,7 @@
       "name": "Stone Wall",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -2051,25 +1791,22 @@
         "defensive",
         "building"
       ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/stone-wall.png",
-      "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take -66% less damage from ranged attacks and their range is increased by  +2.",
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-1.png",
+      "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 66% less damage from ranged attacks and their range is increased by +2.",
       "variations": [
         {
-          "id": "stone-wall-2",
+          "id": "stone-wall-1",
           "baseId": "stone-wall",
           "type": "building",
           "name": "Stone Wall",
-          "age": 2,
+          "pbgid": 166250,
+          "attribName": "building_defense_wall_bastion_eng",
+          "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab"
+            "en"
           ],
-          "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take -66% less damage from ranged attacks and their range is increased by  +2.",
+          "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 66% less damage from ranged attacks and their range is increased by +2.",
           "classes": [
             "defensive",
             "building"
@@ -2090,6 +1827,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/stone-wall-1.png",
           "hitpoints": 3500,
           "weapons": [],
           "armor": [
@@ -2102,7 +1840,54 @@
             "line": 6,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/stone-wall.png"
+          "influences": []
+        },
+        {
+          "id": "stone-wall-2",
+          "baseId": "stone-wall",
+          "type": "building",
+          "name": "Stone Wall",
+          "pbgid": 166251,
+          "attribName": "building_defense_wall_eng",
+          "age": 2,
+          "civs": [
+            "en"
+          ],
+          "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 66% less damage from ranged attacks and their range is increased by +2.",
+          "classes": [
+            "defensive",
+            "building"
+          ],
+          "displayClasses": [
+            "Defensive Building"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 15,
+            "gold": 0,
+            "total": 15,
+            "popcap": 0,
+            "time": 16
+          },
+          "producedBy": [
+            "villager"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/stone-wall-2.png",
+          "hitpoints": 3500,
+          "weapons": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
+          "sight": {
+            "line": 6,
+            "height": 8
+          },
+          "influences": []
         }
       ]
     },
@@ -2111,10 +1896,7 @@
       "name": "Stone Wall Gate",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ab"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -2125,7 +1907,7 @@
         "building"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-gate.png",
+      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-gate-2.png",
       "description": "Heavy defensive gate. Must be built on a Stone Wall segment.\nInfantry can use the gate to access the top of the walls.",
       "variations": [
         {
@@ -2133,12 +1915,11 @@
           "baseId": "stone-wall-gate",
           "type": "building",
           "name": "Stone Wall Gate",
+          "pbgid": 166252,
+          "attribName": "building_defense_wall_gate_eng",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ab"
+            "en"
           ],
           "description": "Heavy defensive gate. Must be built on a Stone Wall segment.\nInfantry can use the gate to access the top of the walls.",
           "classes": [
@@ -2161,6 +1942,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/stone-wall-gate-2.png",
           "hitpoints": 3000,
           "weapons": [],
           "armor": [
@@ -2173,7 +1955,7 @@
             "line": 25,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/stone-wall-gate.png"
+          "influences": []
         }
       ]
     },
@@ -2182,11 +1964,7 @@
       "name": "Stone Wall Tower",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -2197,23 +1975,21 @@
         "building"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-tower.png",
-      "description": "Heavy defensive tower that fires a springald. Must be built on a Stone Wall segment.\nInfantry can use the tower to access the top of the walls.",
+      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-tower-2.png",
+      "description": "Heavy defensive tower that fires a springald. Must be built on a Stone Wall segment.\nInfantry can use the tower to access the top of the walls.\nNetwork of Castles Bonus: Triggers an alarm when an enemy approaches, causing nearby units and defensive buildings to fire faster while the alarm is active.",
       "variations": [
         {
           "id": "stone-wall-tower-2",
           "baseId": "stone-wall-tower",
           "type": "building",
           "name": "Stone Wall Tower",
+          "pbgid": 166248,
+          "attribName": "building_defense_tower_eng",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab"
+            "en"
           ],
-          "description": "Heavy defensive tower that fires a springald. Must be built on a Stone Wall segment.\nInfantry can use the tower to access the top of the walls.",
+          "description": "Heavy defensive tower that fires a springald. Must be built on a Stone Wall segment.\nInfantry can use the tower to access the top of the walls.\nNetwork of Castles Bonus: Triggers an alarm when an enemy approaches, causing nearby units and defensive buildings to fire faster while the alarm is active.",
           "classes": [
             "defensive",
             "building"
@@ -2234,9 +2010,11 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/stone-wall-tower-2.png",
           "hitpoints": 3000,
           "weapons": [
             {
+              "name": "Springald",
               "type": "ranged",
               "damage": 60,
               "speed": 6.25,
@@ -2250,7 +2028,8 @@
                   "target": {
                     "class": [
                       [
-                        "ship"
+                        "naval",
+                        "unit"
                       ]
                     ]
                   },
@@ -2258,7 +2037,19 @@
                   "value": 50,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0.25,
+                "windup": 0.25,
+                "fire": 0.25,
+                "winddown": 0.5,
+                "reload": 5,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_walltower_springald",
+              "pbgid": 134820
             }
           ],
           "armor": [
@@ -2271,7 +2062,220 @@
             "line": 60,
             "height": 501
           },
-          "icon": "https://data.aoe4world.com/images/buildings/stone-wall-tower.png"
+          "influences": []
+        }
+      ]
+    },
+    {
+      "id": "the-white-tower",
+      "name": "The White Tower",
+      "type": "building",
+      "civs": [
+        "en"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Age III - Defensive Landmark"
+      ],
+      "classes": [
+        "age",
+        "iii",
+        "-",
+        "defensive",
+        "landmark"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/buildings/the-white-tower-2.png",
+      "description": "Acts as a Keep with all the behaviors, technology, and bonuses.",
+      "variations": [
+        {
+          "id": "the-white-tower-2",
+          "baseId": "the-white-tower",
+          "type": "building",
+          "name": "The White Tower",
+          "pbgid": 166270,
+          "attribName": "building_landmark_age2_white_tower_eng",
+          "age": 2,
+          "civs": [
+            "en"
+          ],
+          "description": "Acts as a Keep with all the behaviors, technology, and bonuses.",
+          "classes": [
+            "age",
+            "iii",
+            "-",
+            "defensive",
+            "landmark"
+          ],
+          "displayClasses": [
+            "Age III - Defensive Landmark"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 1200,
+            "wood": 0,
+            "stone": 0,
+            "gold": 600,
+            "total": 1800,
+            "popcap": 0,
+            "time": 220
+          },
+          "producedBy": [
+            "villager"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/the-white-tower-2.png",
+          "hitpoints": 5000,
+          "weapons": [
+            {
+              "name": "Bow",
+              "type": "ranged",
+              "damage": 12,
+              "speed": 0.625,
+              "range": {
+                "min": 0,
+                "max": 8
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "naval",
+                        "unit"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 25,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.125,
+                "fire": 0.25,
+                "winddown": 0,
+                "reload": 0.25,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "burst": {
+                "count": 3
+              },
+              "attribName": "weapon_keep_arrows_a",
+              "pbgid": 127372
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            },
+            {
+              "type": "fire",
+              "value": 5
+            }
+          ],
+          "sight": {
+            "line": 41,
+            "height": 501
+          },
+          "garrison": {
+            "capacity": 20,
+            "classes": [
+              "infantry",
+              "villager",
+              "infantry ranged",
+              "monk",
+              "cavalry"
+            ]
+          },
+          "influences": []
+        }
+      ]
+    },
+    {
+      "id": "town-center",
+      "name": "Town Center",
+      "type": "building",
+      "civs": [
+        "en"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Economy & Population Building"
+      ],
+      "classes": [
+        "economy",
+        "&",
+        "population",
+        "building"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-2.png",
+      "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your Population. Adds additional attacks while garrisoned.\nNetwork of Castles Bonus: Triggers an alarm when an enemy approaches, causing nearby units and defensive buildings to fire faster while the alarm is active.",
+      "variations": [
+        {
+          "id": "town-center-2",
+          "baseId": "town-center",
+          "type": "building",
+          "name": "Town Center",
+          "pbgid": 188762,
+          "attribName": "building_town_center_eng",
+          "age": 2,
+          "civs": [
+            "en"
+          ],
+          "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your Population. Adds additional attacks while garrisoned.\nNetwork of Castles Bonus: Triggers an alarm when an enemy approaches, causing nearby units and defensive buildings to fire faster while the alarm is active.",
+          "classes": [
+            "economy",
+            "&",
+            "population",
+            "building"
+          ],
+          "displayClasses": [
+            "Economy & Population Building"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 400,
+            "stone": 300,
+            "gold": 0,
+            "total": 700,
+            "popcap": 0,
+            "time": 120
+          },
+          "producedBy": [
+            "villager"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/town-center-2.png",
+          "hitpoints": 2500,
+          "weapons": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
+          "sight": {
+            "line": 52,
+            "height": 10
+          },
+          "garrison": {
+            "capacity": 10,
+            "classes": [
+              "villager",
+              "infantry",
+              "monk",
+              "cavalry",
+              "infantry ranged",
+              "khan"
+            ]
+          },
+          "influences": []
         }
       ]
     },
@@ -2280,10 +2284,7 @@
       "name": "University",
       "type": "building",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ru"
+        "en"
       ],
       "unique": false,
       "displayClasses": [
@@ -2294,7 +2295,7 @@
         "building"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/buildings/university.png",
+      "icon": "https://data.aoe4world.com/images/buildings/university-4.png",
       "description": "Houses advanced technology that benefit the civilization.",
       "variations": [
         {
@@ -2302,12 +2303,11 @@
           "baseId": "university",
           "type": "building",
           "name": "University",
+          "pbgid": 166262,
+          "attribName": "building_tech_university_control_eng",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ru"
+            "en"
           ],
           "description": "Houses advanced technology that benefit the civilization.",
           "classes": [
@@ -2330,6 +2330,7 @@
           "producedBy": [
             "villager"
           ],
+          "icon": "https://data.aoe4world.com/images/buildings/university-4.png",
           "hitpoints": 2100,
           "weapons": [],
           "armor": [
@@ -2342,7 +2343,81 @@
             "line": 25,
             "height": 8
           },
-          "icon": "https://data.aoe4world.com/images/buildings/university.png"
+          "influences": []
+        }
+      ]
+    },
+    {
+      "id": "wynguard-palace",
+      "name": "Wynguard Palace",
+      "type": "building",
+      "civs": [
+        "en"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Age IV - Military Landmark"
+      ],
+      "classes": [
+        "age",
+        "iv",
+        "-",
+        "military",
+        "landmark"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/buildings/wynguard-palace-3.png",
+      "description": "Allows production of 3 battalions: Wynguard Army, Wynguard Rangers, and Wynguard Raiders.",
+      "variations": [
+        {
+          "id": "wynguard-palace-3",
+          "baseId": "wynguard-palace",
+          "type": "building",
+          "name": "Wynguard Palace",
+          "pbgid": 166276,
+          "attribName": "building_landmark_age3_whitehall_palace_eng",
+          "age": 3,
+          "civs": [
+            "en"
+          ],
+          "description": "Allows production of 3 battalions: Wynguard Army, Wynguard Rangers, and Wynguard Raiders.",
+          "classes": [
+            "age",
+            "iv",
+            "-",
+            "military",
+            "landmark"
+          ],
+          "displayClasses": [
+            "Age IV - Military Landmark"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 2400,
+            "wood": 0,
+            "stone": 0,
+            "gold": 1200,
+            "total": 3600,
+            "popcap": 0,
+            "time": 250
+          },
+          "producedBy": [
+            "villager"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/wynguard-palace-3.png",
+          "hitpoints": 5000,
+          "weapons": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
+          "sight": {
+            "line": 25,
+            "height": 8
+          },
+          "influences": []
         }
       ]
     }

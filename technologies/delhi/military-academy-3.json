@@ -1,0 +1,63 @@
+{
+  "id": "military-academy-3",
+  "baseId": "military-academy",
+  "type": "technology",
+  "name": "Military Academy",
+  "pbgid": 181941,
+  "attribName": "upgrade_tech_military_academy_sul",
+  "age": 3,
+  "civs": [
+    "de"
+  ],
+  "description": "Reduce the time it takes to produce infantry, cavalry, siege, and transport units at buildings by 25%.\nDoes not affect religious units or other support units.",
+  "classes": [
+    "production",
+    "technology"
+  ],
+  "displayClasses": [
+    "Production Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "total": 0,
+    "popcap": 0,
+    "time": 300
+  },
+  "producedBy": [
+    "blacksmith"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/military-academy-3.png",
+  "effects": [
+    {
+      "property": "buildTime",
+      "select": {
+        "class": [
+          [
+            "infantry"
+          ],
+          [
+            "melee",
+            "cavalry"
+          ],
+          [
+            "ranged",
+            "cavalry"
+          ],
+          [
+            "siege"
+          ],
+          [
+            "transport"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.75,
+      "type": "passive"
+    }
+  ]
+}

@@ -5,12 +5,12 @@
   "name": "Springald",
   "type": "unit",
   "civs": [
-    "ch",
-    "en",
-    "hr",
-    "fr",
-    "de",
     "ab",
+    "ch",
+    "de",
+    "en",
+    "fr",
+    "hr",
     "mo",
     "ru"
   ],
@@ -22,17 +22,19 @@
     "siege"
   ],
   "minAge": 3,
-  "icon": "https://data.aoe4world.com/images/units/springald.png",
+  "icon": "https://data.aoe4world.com/images/units/springald-3.png",
   "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
   "variations": [
     {
-      "id": "springald-3-clocktower",
+      "id": "springald-3",
       "baseId": "springald",
       "type": "unit",
       "name": "Springald",
+      "pbgid": 166411,
+      "attribName": "unit_springald_3_eng",
       "age": 3,
       "civs": [
-        "ch"
+        "en"
       ],
       "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
       "classes": [
@@ -41,7 +43,7 @@
       "displayClasses": [
         "Siege"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 250,
@@ -52,16 +54,21 @@
         "time": 30
       },
       "producedBy": [
-        "astronomical-clocktower"
+        "the-white-tower",
+        "siege-workshop",
+        "keep",
+        "berkshire-palace"
       ],
-      "hitpoints": 190,
+      "icon": "https://data.aoe4world.com/images/units/springald-3.png",
+      "hitpoints": 125,
       "weapons": [
         {
+          "name": "Springald",
           "type": "ranged",
           "damage": 30,
           "speed": 4,
           "range": {
-            "min": 1.3,
+            "min": 1.25,
             "max": 10
           },
           "modifiers": [
@@ -70,9 +77,6 @@
               "target": {
                 "class": [
                   [
-                    "ship"
-                  ],
-                  [
                     "siege"
                   ]
                 ]
@@ -80,8 +84,34 @@
               "effect": "change",
               "value": 70,
               "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 70,
+              "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0.25,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 2.75,
+            "setup": 0,
+            "teardown": 0.125,
+            "cooldown": 0
+          },
+          "attribName": "weapon_springald_3",
+          "pbgid": 190303
         }
       ],
       "armor": [
@@ -95,24 +125,618 @@
         "height": 10
       },
       "movement": {
-        "speed": 0.88
-      },
-      "icon": "https://data.aoe4world.com/images/units/springald.png"
+        "speed": 0.875
+      }
     },
     {
       "id": "springald-3",
       "baseId": "springald",
       "type": "unit",
       "name": "Springald",
+      "pbgid": 134735,
+      "attribName": "unit_springald_3_hre",
       "age": 3,
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
+        "hr"
+      ],
+      "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 250,
+        "stone": 0,
+        "gold": 250,
+        "total": 500,
+        "popcap": 3,
+        "time": 30
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/springald-3.png",
+      "hitpoints": 125,
+      "weapons": [
+        {
+          "name": "Springald",
+          "type": "ranged",
+          "damage": 30,
+          "speed": 4,
+          "range": {
+            "min": 1.25,
+            "max": 10
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 70,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 70,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0.25,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 2.75,
+            "setup": 0,
+            "teardown": 0.125,
+            "cooldown": 0
+          },
+          "attribName": "weapon_springald_3",
+          "pbgid": 190303
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 20
+        }
+      ],
+      "sight": {
+        "line": 56,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.875
+      }
+    },
+    {
+      "id": "springald-3",
+      "baseId": "springald",
+      "type": "unit",
+      "name": "Springald",
+      "pbgid": 132292,
+      "attribName": "unit_springald_3_fre",
+      "age": 3,
+      "civs": [
+        "fr"
+      ],
+      "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 250,
+        "stone": 0,
+        "gold": 250,
+        "total": 500,
+        "popcap": 3,
+        "time": 30
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/springald-3.png",
+      "hitpoints": 125,
+      "weapons": [
+        {
+          "name": "Springald",
+          "type": "ranged",
+          "damage": 30,
+          "speed": 4,
+          "range": {
+            "min": 1.25,
+            "max": 10
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 70,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 70,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0.25,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 2.75,
+            "setup": 0,
+            "teardown": 0.125,
+            "cooldown": 0
+          },
+          "attribName": "weapon_springald_3",
+          "pbgid": 190303
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 20
+        }
+      ],
+      "sight": {
+        "line": 56,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.875
+      }
+    },
+    {
+      "id": "springald-3",
+      "baseId": "springald",
+      "type": "unit",
+      "name": "Springald",
+      "pbgid": 142047,
+      "attribName": "unit_springald_3_chi",
+      "age": 3,
+      "civs": [
+        "ch"
+      ],
+      "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 250,
+        "stone": 0,
+        "gold": 250,
+        "total": 500,
+        "popcap": 3,
+        "time": 30
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/springald-3.png",
+      "hitpoints": 125,
+      "weapons": [
+        {
+          "name": "Springald",
+          "type": "ranged",
+          "damage": 30,
+          "speed": 4,
+          "range": {
+            "min": 1.25,
+            "max": 10
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 70,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 70,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0.25,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 2.75,
+            "setup": 0,
+            "teardown": 0.125,
+            "cooldown": 0
+          },
+          "attribName": "weapon_springald_3",
+          "pbgid": 190303
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 20
+        }
+      ],
+      "sight": {
+        "line": 56,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.875
+      }
+    },
+    {
+      "id": "springald-3",
+      "baseId": "springald",
+      "type": "unit",
+      "name": "Springald",
+      "pbgid": 136061,
+      "attribName": "unit_springald_3_sul",
+      "age": 3,
+      "civs": [
+        "de"
+      ],
+      "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 250,
+        "stone": 0,
+        "gold": 250,
+        "total": 500,
+        "popcap": 3,
+        "time": 30
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/springald-3.png",
+      "hitpoints": 125,
+      "weapons": [
+        {
+          "name": "Springald",
+          "type": "ranged",
+          "damage": 30,
+          "speed": 4,
+          "range": {
+            "min": 1.25,
+            "max": 10
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 70,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 70,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0.25,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 2.75,
+            "setup": 0,
+            "teardown": 0.125,
+            "cooldown": 0
+          },
+          "attribName": "weapon_springald_3",
+          "pbgid": 190303
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 20
+        }
+      ],
+      "sight": {
+        "line": 56,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.875
+      }
+    },
+    {
+      "id": "springald-3",
+      "baseId": "springald",
+      "type": "unit",
+      "name": "Springald",
+      "pbgid": 199743,
+      "attribName": "unit_springald_3_abb",
+      "age": 3,
+      "civs": [
+        "ab"
+      ],
+      "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 250,
+        "stone": 0,
+        "gold": 250,
+        "total": 500,
+        "popcap": 3,
+        "time": 30
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/springald-3.png",
+      "hitpoints": 125,
+      "weapons": [
+        {
+          "name": "Springald",
+          "type": "ranged",
+          "damage": 30,
+          "speed": 4,
+          "range": {
+            "min": 1.25,
+            "max": 10
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 70,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 70,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0.25,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 2.75,
+            "setup": 0,
+            "teardown": 0.125,
+            "cooldown": 0
+          },
+          "attribName": "weapon_springald_3",
+          "pbgid": 190303
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 20
+        }
+      ],
+      "sight": {
+        "line": 56,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.875
+      }
+    },
+    {
+      "id": "springald-3",
+      "baseId": "springald",
+      "type": "unit",
+      "name": "Springald",
+      "pbgid": 129971,
+      "attribName": "unit_springald_3_mon",
+      "age": 3,
+      "civs": [
+        "mo"
+      ],
+      "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 250,
+        "stone": 0,
+        "gold": 250,
+        "total": 500,
+        "popcap": 3,
+        "time": 30
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/springald-3.png",
+      "hitpoints": 125,
+      "weapons": [
+        {
+          "name": "Springald",
+          "type": "ranged",
+          "damage": 30,
+          "speed": 4,
+          "range": {
+            "min": 1.25,
+            "max": 10
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 70,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 70,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0.25,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 2.75,
+            "setup": 0,
+            "teardown": 0.125,
+            "cooldown": 0
+          },
+          "attribName": "weapon_springald_3_mon",
+          "pbgid": 2033638
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 20
+        }
+      ],
+      "sight": {
+        "line": 56,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.875
+      }
+    },
+    {
+      "id": "springald-3",
+      "baseId": "springald",
+      "type": "unit",
+      "name": "Springald",
+      "pbgid": 133473,
+      "attribName": "unit_springald_3_rus",
+      "age": 3,
+      "civs": [
         "ru"
       ],
       "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
@@ -135,14 +759,16 @@
       "producedBy": [
         "siege-workshop"
       ],
+      "icon": "https://data.aoe4world.com/images/units/springald-3.png",
       "hitpoints": 125,
       "weapons": [
         {
+          "name": "Springald",
           "type": "ranged",
           "damage": 30,
           "speed": 4,
           "range": {
-            "min": 1.3,
+            "min": 1.25,
             "max": 10
           },
           "modifiers": [
@@ -151,9 +777,6 @@
               "target": {
                 "class": [
                   [
-                    "ship"
-                  ],
-                  [
                     "siege"
                   ]
                 ]
@@ -161,8 +784,34 @@
               "effect": "change",
               "value": 70,
               "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 70,
+              "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0.25,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 2.75,
+            "setup": 0,
+            "teardown": 0.125,
+            "cooldown": 0
+          },
+          "attribName": "weapon_springald_3_rus",
+          "pbgid": 194215
         }
       ],
       "armor": [
@@ -176,9 +825,8 @@
         "height": 10
       },
       "movement": {
-        "speed": 0.88
-      },
-      "icon": "https://data.aoe4world.com/images/units/springald-3.png"
+        "speed": 0.875
+      }
     }
   ]
 }

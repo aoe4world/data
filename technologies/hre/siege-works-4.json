@@ -1,0 +1,62 @@
+{
+  "id": "siege-works-4",
+  "baseId": "siege-works",
+  "type": "technology",
+  "name": "Siege Works",
+  "pbgid": 127859,
+  "attribName": "upgrade_siege_works",
+  "age": 4,
+  "civs": [
+    "hr"
+  ],
+  "description": "Increase the health of siege engines by +20% and their ranged armor by +10.",
+  "classes": [
+    "siege",
+    "technology"
+  ],
+  "displayClasses": [
+    "Siege Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 300,
+    "stone": 0,
+    "gold": 700,
+    "total": 1000,
+    "popcap": 0,
+    "time": 90
+  },
+  "producedBy": [
+    "university"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/siege-works-4.png",
+  "effects": [
+    {
+      "property": "hitpoints",
+      "select": {
+        "class": [
+          [
+            "siege"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.2,
+      "type": "passive"
+    },
+    {
+      "property": "rangedArmor",
+      "select": {
+        "class": [
+          [
+            "siege"
+          ]
+        ]
+      },
+      "effect": "change",
+      "value": 10,
+      "type": "passive"
+    }
+  ]
+}

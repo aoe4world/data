@@ -1,0 +1,106 @@
+{
+  "id": "spearman-1",
+  "baseId": "spearman",
+  "type": "unit",
+  "name": "Spearman",
+  "pbgid": 133481,
+  "attribName": "unit_spearman_1_rus",
+  "age": 1,
+  "civs": [
+    "ru"
+  ],
+  "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Susceptible to light ranged attacks\n- Weak against armored infantry",
+  "classes": [
+    "light",
+    "melee",
+    "infantry"
+  ],
+  "displayClasses": [
+    "Light Melee Infantry"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 60,
+    "wood": 20,
+    "stone": 0,
+    "gold": 0,
+    "total": 80,
+    "popcap": 1,
+    "time": 15
+  },
+  "producedBy": [
+    "barracks"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/spearman-1.png",
+  "hitpoints": 70,
+  "weapons": [
+    {
+      "name": "Spear",
+      "type": "melee",
+      "damage": 6,
+      "speed": 1.875,
+      "range": {
+        "min": 0,
+        "max": 0.295
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 15,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.25,
+        "fire": 0.125,
+        "winddown": 0.75,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0.75
+      },
+      "attribName": "weapon_spearman_1_rus",
+      "pbgid": 133287
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.25,
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "fire": 0.25,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch_rus",
+      "pbgid": 133324
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "line": 36,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.25
+  }
+}

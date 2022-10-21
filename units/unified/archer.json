@@ -5,11 +5,11 @@
   "name": "Archer",
   "type": "unit",
   "civs": [
-    "hr",
-    "fr",
+    "ab",
     "ch",
     "de",
-    "ab",
+    "fr",
+    "hr",
     "mo",
     "ru"
   ],
@@ -31,15 +31,11 @@
       "baseId": "archer",
       "type": "unit",
       "name": "Archer",
+      "pbgid": 134713,
+      "attribName": "unit_archer_2_hre",
       "age": 2,
       "civs": [
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "hr"
       ],
       "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
       "classes": [
@@ -63,12 +59,14 @@
       "producedBy": [
         "archery-range"
       ],
+      "icon": "https://data.aoe4world.com/images/units/archer-2.png",
       "hitpoints": 70,
       "weapons": [
         {
+          "name": "Bow",
           "type": "ranged",
           "damage": 5,
-          "speed": 1.5,
+          "speed": 1.625,
           "range": {
             "min": 0,
             "max": 5
@@ -89,7 +87,19 @@
               "value": 5,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_2",
+          "pbgid": 106763
         }
       ],
       "armor": [],
@@ -99,23 +109,18 @@
       },
       "movement": {
         "speed": 1.25
-      },
-      "icon": "https://data.aoe4world.com/images/units/archer-2.png"
+      }
     },
     {
       "id": "archer-3",
       "baseId": "archer",
       "type": "unit",
-      "name": "Archer",
+      "name": "Veteran Archer",
+      "pbgid": 134714,
+      "attribName": "unit_archer_3_hre",
       "age": 3,
       "civs": [
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "hr"
       ],
       "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
       "classes": [
@@ -139,12 +144,14 @@
       "producedBy": [
         "archery-range"
       ],
+      "icon": "https://data.aoe4world.com/images/units/archer-3.png",
       "hitpoints": 80,
       "weapons": [
         {
+          "name": "Bow",
           "type": "ranged",
           "damage": 7,
-          "speed": 1.5,
+          "speed": 1.625,
           "range": {
             "min": 0,
             "max": 5
@@ -165,7 +172,19 @@
               "value": 7,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_3",
+          "pbgid": 127828
         }
       ],
       "armor": [],
@@ -175,22 +194,1377 @@
       },
       "movement": {
         "speed": 1.25
-      },
-      "icon": "https://data.aoe4world.com/images/units/archer-3.png"
+      }
     },
     {
       "id": "archer-4",
       "baseId": "archer",
       "type": "unit",
-      "name": "Archer",
+      "name": "Elite Archer",
+      "pbgid": 134715,
+      "attribName": "unit_archer_4_hre",
       "age": 4,
       "civs": [
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
+        "hr"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-4.png",
+      "hitpoints": 95,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 8,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 8,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_4",
+          "pbgid": 127829
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-2",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Archer",
+      "pbgid": 132269,
+      "attribName": "unit_archer_2_fre",
+      "age": 2,
+      "civs": [
+        "fr"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-2.png",
+      "hitpoints": 70,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 5,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 5,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_2",
+          "pbgid": 106763
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-3",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Veteran Archer",
+      "pbgid": 132270,
+      "attribName": "unit_archer_3_fre",
+      "age": 3,
+      "civs": [
+        "fr"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-3.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 7,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 7,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_3",
+          "pbgid": 127828
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-4",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Elite Archer",
+      "pbgid": 132271,
+      "attribName": "unit_archer_4_fre",
+      "age": 4,
+      "civs": [
+        "fr"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-4.png",
+      "hitpoints": 95,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 8,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 8,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_4",
+          "pbgid": 127829
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-2",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Archer",
+      "pbgid": 137526,
+      "attribName": "unit_archer_2_chi",
+      "age": 2,
+      "civs": [
+        "ch"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-2.png",
+      "hitpoints": 70,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 5,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 5,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_2",
+          "pbgid": 106763
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-3",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Veteran Archer",
+      "pbgid": 137553,
+      "attribName": "unit_archer_3_chi",
+      "age": 3,
+      "civs": [
+        "ch"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-3.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 7,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 7,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_3",
+          "pbgid": 127828
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-4",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Elite Archer",
+      "pbgid": 137554,
+      "attribName": "unit_archer_4_chi",
+      "age": 4,
+      "civs": [
+        "ch"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-4.png",
+      "hitpoints": 95,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 8,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 8,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_4",
+          "pbgid": 127829
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-2",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Archer",
+      "pbgid": 136040,
+      "attribName": "unit_archer_2_sul",
+      "age": 2,
+      "civs": [
+        "de"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-2.png",
+      "hitpoints": 70,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 5,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 5,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_2",
+          "pbgid": 106763
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-3",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Veteran Archer",
+      "pbgid": 136041,
+      "attribName": "unit_archer_3_sul",
+      "age": 3,
+      "civs": [
+        "de"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-3.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 7,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 7,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_3",
+          "pbgid": 127828
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-4",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Elite Archer",
+      "pbgid": 136042,
+      "attribName": "unit_archer_4_sul",
+      "age": 4,
+      "civs": [
+        "de"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-4.png",
+      "hitpoints": 95,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 8,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 8,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_4",
+          "pbgid": 127829
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-2",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Archer",
+      "pbgid": 199706,
+      "attribName": "unit_archer_2_abb",
+      "age": 2,
+      "civs": [
+        "ab"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-2.png",
+      "hitpoints": 70,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 5,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 5,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_2",
+          "pbgid": 106763
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-3",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Veteran Archer",
+      "pbgid": 199707,
+      "attribName": "unit_archer_3_abb",
+      "age": 3,
+      "civs": [
+        "ab"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-3.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 7,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 7,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_3",
+          "pbgid": 127828
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-4",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Elite Archer",
+      "pbgid": 199708,
+      "attribName": "unit_archer_4_abb",
+      "age": 4,
+      "civs": [
+        "ab"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-4.png",
+      "hitpoints": 95,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 8,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 8,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_4",
+          "pbgid": 127829
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-2",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Archer",
+      "pbgid": 129582,
+      "attribName": "unit_archer_2_mon",
+      "age": 2,
+      "civs": [
+        "mo"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-2.png",
+      "hitpoints": 70,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 5,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 5,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_2_mon",
+          "pbgid": 2033622
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-3",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Veteran Archer",
+      "pbgid": 129583,
+      "attribName": "unit_archer_3_mon",
+      "age": 3,
+      "civs": [
+        "mo"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-3.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 7,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 7,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_3_mon",
+          "pbgid": 2033623
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-4",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Elite Archer",
+      "pbgid": 136247,
+      "attribName": "unit_archer_4_mon",
+      "age": 4,
+      "civs": [
+        "mo"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-4.png",
+      "hitpoints": 95,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 8,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 8,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_4_mon",
+          "pbgid": 2033624
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-2",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Archer",
+      "pbgid": 133452,
+      "attribName": "unit_archer_2_rus",
+      "age": 2,
+      "civs": [
         "ru"
       ],
       "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
@@ -215,12 +1589,184 @@
       "producedBy": [
         "archery-range"
       ],
+      "icon": "https://data.aoe4world.com/images/units/archer-2.png",
+      "hitpoints": 70,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 5,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 5,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_2_rus",
+          "pbgid": 133297
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-3",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Veteran Archer",
+      "pbgid": 133453,
+      "attribName": "unit_archer_3_rus",
+      "age": 3,
+      "civs": [
+        "ru"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-3.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 7,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 7,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_3_rus",
+          "pbgid": 133298
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "archer-4",
+      "baseId": "archer",
+      "type": "unit",
+      "name": "Elite Archer",
+      "pbgid": 133454,
+      "attribName": "unit_archer_4_rus",
+      "age": 4,
+      "civs": [
+        "ru"
+      ],
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 30,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/archer-4.png",
       "hitpoints": 95,
       "weapons": [
         {
+          "name": "Bow",
           "type": "ranged",
           "damage": 8,
-          "speed": 1.5,
+          "speed": 1.625,
           "range": {
             "min": 0,
             "max": 5
@@ -241,7 +1787,19 @@
               "value": 8,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0,
+            "fire": 0.25,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_4_rus",
+          "pbgid": 133299
         }
       ],
       "armor": [],
@@ -251,8 +1809,7 @@
       },
       "movement": {
         "speed": 1.25
-      },
-      "icon": "https://data.aoe4world.com/images/units/archer-4.png"
+      }
     }
   ]
 }

@@ -3,6 +3,8 @@
   "baseId": "kremlin",
   "type": "building",
   "name": "Kremlin",
+  "pbgid": 133426,
+  "attribName": "building_landmark_age1_novgorod_kremlin_control_rus",
   "age": 1,
   "civs": [
     "ru"
@@ -11,6 +13,7 @@
   "classes": [
     "age",
     "ii",
+    "-",
     "defensive",
     "landmark"
   ],
@@ -30,12 +33,14 @@
   "producedBy": [
     "villager"
   ],
+  "icon": "https://data.aoe4world.com/images/buildings/kremlin-1.png",
   "hitpoints": 5000,
   "weapons": [
     {
+      "name": "Bow",
       "type": "ranged",
-      "damage": 12,
-      "speed": 1,
+      "damage": 10,
+      "speed": 1.25,
       "range": {
         "min": 0,
         "max": 8
@@ -46,7 +51,8 @@
           "target": {
             "class": [
               [
-                "ship"
+                "naval",
+                "unit"
               ]
             ]
           },
@@ -54,7 +60,19 @@
           "value": 25,
           "type": "passive"
         }
-      ]
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "fire": 0.25,
+        "winddown": 0,
+        "reload": 0.5,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_kremlin_arrows",
+      "pbgid": 2081134
     }
   ],
   "armor": [
@@ -64,11 +82,20 @@
     }
   ],
   "sight": {
-    "line": 25,
-    "height": 8
+    "line": 84,
+    "height": 501
   },
   "garrison": {
-    "capacity": 8
+    "capacity": 8,
+    "classes": [
+      "infantry",
+      "infantry ranged",
+      "villager",
+      "monk",
+      "cavalry"
+    ]
   },
-  "icon": "https://data.aoe4world.com/images/buildings/kremlin.png"
+  "influences": [
+    "Lumber Camps and Town Centers within the influence of a Wooden Fortress return 20% more Wood."
+  ]
 }

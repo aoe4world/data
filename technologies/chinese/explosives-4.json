@@ -1,0 +1,51 @@
+{
+  "id": "explosives-4",
+  "baseId": "explosives",
+  "type": "technology",
+  "name": "Explosives",
+  "pbgid": 196883,
+  "attribName": "upgrade_naval_explosives",
+  "age": 4,
+  "civs": [
+    "ch"
+  ],
+  "description": "Increase the damage of Incendiary Ships by +40%.",
+  "classes": [
+    "demolition",
+    "ship",
+    "technology"
+  ],
+  "displayClasses": [
+    "Demolition Ship Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 150,
+    "wood": 0,
+    "stone": 0,
+    "gold": 350,
+    "total": 500,
+    "popcap": 0,
+    "time": 60
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/explosives-4.png",
+  "effects": [
+    {
+      "property": "fireAttack",
+      "select": {
+        "class": [
+          [
+            "incendiary",
+            "ship"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.4,
+      "type": "passive"
+    }
+  ]
+}

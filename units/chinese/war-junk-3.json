@@ -3,6 +3,8 @@
   "baseId": "war-junk",
   "type": "unit",
   "name": "War Junk",
+  "pbgid": 193109,
+  "attribName": "unit_naval_combat_ship_2_chi",
   "age": 3,
   "civs": [
     "ch"
@@ -15,7 +17,7 @@
   "displayClasses": [
     "Attack Ship"
   ],
-  "unique": true,
+  "unique": false,
   "costs": {
     "food": 0,
     "wood": 300,
@@ -23,27 +25,42 @@
     "gold": 210,
     "total": 510,
     "popcap": 4,
-    "time": 37
+    "time": 38
   },
   "producedBy": [
     "dock"
   ],
+  "icon": "https://data.aoe4world.com/images/units/war-junk-2.png",
   "hitpoints": 900,
   "weapons": [
     {
+      "name": "Ballista",
       "type": "ranged",
       "damage": 120,
       "speed": 4.5,
       "range": {
         "min": 0,
         "max": 6.5
-      }
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0.25,
+        "windup": 0.25,
+        "fire": 0.25,
+        "winddown": 0.5,
+        "reload": 3.25,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_naval_combat_ship_crossbow_asian",
+      "pbgid": 2034161
     }
   ],
   "armor": [
     {
       "type": "ranged",
-      "value": 6
+      "value": 5
     }
   ],
   "sight": {
@@ -52,6 +69,5 @@
   },
   "movement": {
     "speed": 1
-  },
-  "icon": "https://data.aoe4world.com/images/units/war-junk.png"
+  }
 }

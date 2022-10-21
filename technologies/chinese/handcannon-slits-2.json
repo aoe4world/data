@@ -3,11 +3,13 @@
   "baseId": "handcannon-slits",
   "type": "technology",
   "name": "Handcannon Slits",
+  "pbgid": 173701,
+  "attribName": "upgrade_outpost_handcannonslits_chi",
   "age": 2,
   "civs": [
     "ch"
   ],
-  "description": "Add defensive handcannon slits to this structure.",
+  "description": "Add defensive handcannon slits to this structure and increases garrison arrow range by +1. Only one weapon emplacement can be added.",
   "classes": [
     "weapon",
     "emplacement"
@@ -15,7 +17,7 @@
   "displayClasses": [
     "Weapon Emplacement"
   ],
-  "unique": true,
+  "unique": false,
   "costs": {
     "food": 0,
     "wood": 0,
@@ -28,57 +30,17 @@
   "producedBy": [
     "outpost"
   ],
-  "icon": "https://data.aoe4world.com/images/technologies/handcannon-slits.png",
+  "icon": "https://data.aoe4world.com/images/technologies/handcannon-slits-2.png",
   "effects": [
     {
-      "property": "rangedAttack",
+      "property": "unknown",
       "select": {
         "id": [
           "outpost"
         ]
       },
       "effect": "change",
-      "value": 25,
-      "type": "passive"
-    },
-    {
-      "property": "maxRange",
-      "select": {
-        "id": [
-          "outpost"
-        ]
-      },
-      "effect": "change",
-      "value": 8,
-      "type": "passive"
-    },
-    {
-      "property": "rangedAttack",
-      "select": {
-        "id": [
-          "outpost"
-        ]
-      },
-      "target": {
-        "class": [
-          [
-            "ship"
-          ]
-        ]
-      },
-      "effect": "change",
-      "value": 25,
-      "type": "bonus"
-    },
-    {
-      "property": "attackSpeed",
-      "select": {
-        "id": [
-          "outpost"
-        ]
-      },
-      "effect": "change",
-      "value": 3,
+      "value": 1,
       "type": "passive"
     }
   ]
