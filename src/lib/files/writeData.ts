@@ -19,7 +19,7 @@ export async function mergeItem(item: Item, type: ITEM_TYPES, { merge, log }: { 
   }
 }
 
-async function mergeJsonFile(file: string, data: any) {
+export async function mergeJsonFile(file: string, data: any) {
   if (fs.existsSync(file)) {
     data = merge(await readJsonFile(file), data);
   }

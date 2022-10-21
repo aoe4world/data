@@ -9,15 +9,19 @@
     "sync-images": "ts-node ./src/scripts/images/sync.ts",
     "sync-effects": "ts-node ./src/scripts/effects/sync.ts",
     "sync-all": "yarn sync-quicksheet && yarn sync-images && yarn sync-effects",
+    "sync-attrib": "ts-node ./src/scripts/attrib/sync.ts",
+    "convert-xml": "ts-node ./src/scripts/attrib/convert.ts",
     "format": "prettier --write ./src"
   },
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^17.0.10",
     "@types/node-fetch": "2",
+    "@types/xml2js": "^0.4.11",
     "prettier": "^2.7.1",
     "ts-node": "^10.4.0",
-    "typescript": "^4.5.5"
+    "typescript": "^4.5.5",
+    "xml2js": "^0.4.23"
   },
   "prettier": {
     "printWidth": 180

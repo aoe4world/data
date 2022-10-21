@@ -57,6 +57,9 @@ export interface Item {
     popcap?: number;
     total: number;
   };
+
+  pbgid?: number;
+  attribName?: string;
 }
 
 export interface PhysicalItem extends Item {
@@ -68,6 +71,11 @@ export interface PhysicalItem extends Item {
   sight: {
     line: number;
     height: number;
+  };
+
+  garrison?: {
+    capacity: number;
+    classes: string[];
   };
 }
 
@@ -81,9 +89,6 @@ export interface Unit extends PhysicalItem {
 // Todo, may add material properties, units/objects that can be garrisoned, etc.
 export interface Building extends PhysicalItem {
   type: "building";
-  garrison?: {
-    capacity: number;
-  };
 
   popcapIncrease?: number;
 }
@@ -99,6 +104,7 @@ export interface Upgrade extends Item {
 }
 
 export interface Weapon {
+  name?: string;
   id?: ItemId;
   type: "melee" | "charge" | "ranged" | "siege" | "fire";
   damage: number;
@@ -108,6 +114,10 @@ export interface Weapon {
     min: number;
     max: number;
   };
+  durations?: Record<string, number>;
+  burst?: { count: number };
+  attribName?: string;
+  pbgid?: number;
 }
 
 export type Modifier = {
@@ -126,8 +136,11 @@ export type Armor = {
 
 export type ItemId = string;
 
+export type ItemType = Building | Unit | Technology | Upgrade;
+
 export type ModifyableProperty =
   | "unknown" // Complex effects not easily incoded in buffed stats
+  | "burst"
   | "hitpoints"
   | "meleeArmor"
   | "rangedArmor"
