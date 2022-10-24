@@ -5,9 +5,9 @@
   "name": "Knight",
   "type": "unit",
   "civs": [
-    "ru",
     "en",
-    "hr"
+    "hr",
+    "ru"
   ],
   "unique": false,
   "displayClasses": [
@@ -19,14 +19,426 @@
     "cavalry"
   ],
   "minAge": 2,
-  "icon": "https://data.aoe4world.com/images/units/knight-2.png",
+  "icon": "https://data.aoe4world.com/images/units/knight-3.png",
   "description": "Expensive cavalry with a powerful charge.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen",
   "variations": [
+    {
+      "id": "knight-3",
+      "baseId": "knight",
+      "type": "unit",
+      "name": "Knight",
+      "pbgid": 166401,
+      "attribName": "unit_knight_3_eng",
+      "age": 3,
+      "civs": [
+        "en"
+      ],
+      "description": "Expensive cavalry with a powerful charge.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen",
+      "classes": [
+        "heavy",
+        "melee",
+        "cavalry"
+      ],
+      "displayClasses": [
+        "Heavy Melee Cavalry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 140,
+        "wood": 0,
+        "stone": 0,
+        "gold": 100,
+        "total": 240,
+        "popcap": 1,
+        "time": 35
+      },
+      "producedBy": [
+        "stable",
+        "the-white-tower",
+        "keep",
+        "berkshire-palace"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/knight-3.png",
+      "hitpoints": 230,
+      "weapons": [
+        {
+          "name": "Sword",
+          "type": "melee",
+          "damage": 24,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 0.2875
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.875
+          },
+          "attribName": "weapon_knight_3",
+          "pbgid": 106614
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch_horseman",
+          "pbgid": 127935
+        }
+      ],
+      "armor": [
+        {
+          "type": "melee",
+          "value": 4
+        },
+        {
+          "type": "ranged",
+          "value": 4
+        }
+      ],
+      "sight": {
+        "line": 28,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.625
+      }
+    },
+    {
+      "id": "knight-4",
+      "baseId": "knight",
+      "type": "unit",
+      "name": "Elite Knight",
+      "pbgid": 166402,
+      "attribName": "unit_knight_4_eng",
+      "age": 4,
+      "civs": [
+        "en"
+      ],
+      "description": "Expensive cavalry with a powerful charge.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen",
+      "classes": [
+        "heavy",
+        "melee",
+        "cavalry"
+      ],
+      "displayClasses": [
+        "Heavy Melee Cavalry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 140,
+        "wood": 0,
+        "stone": 0,
+        "gold": 100,
+        "total": 240,
+        "popcap": 1,
+        "time": 35
+      },
+      "producedBy": [
+        "stable",
+        "the-white-tower",
+        "keep",
+        "berkshire-palace"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/knight-4.png",
+      "hitpoints": 270,
+      "weapons": [
+        {
+          "name": "Sword",
+          "type": "melee",
+          "damage": 29,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 0.2875
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.875
+          },
+          "attribName": "weapon_knight_4",
+          "pbgid": 127822
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch_horseman",
+          "pbgid": 127935
+        }
+      ],
+      "armor": [
+        {
+          "type": "melee",
+          "value": 5
+        },
+        {
+          "type": "ranged",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "line": 28,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.625
+      }
+    },
+    {
+      "id": "knight-3",
+      "baseId": "knight",
+      "type": "unit",
+      "name": "Knight",
+      "pbgid": 134725,
+      "attribName": "unit_knight_3_hre",
+      "age": 3,
+      "civs": [
+        "hr"
+      ],
+      "description": "Expensive cavalry with a powerful charge.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen",
+      "classes": [
+        "heavy",
+        "melee",
+        "cavalry"
+      ],
+      "displayClasses": [
+        "Heavy Melee Cavalry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 140,
+        "wood": 0,
+        "stone": 0,
+        "gold": 100,
+        "total": 240,
+        "popcap": 1,
+        "time": 35
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/knight-3.png",
+      "hitpoints": 230,
+      "weapons": [
+        {
+          "name": "Sword",
+          "type": "melee",
+          "damage": 24,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 0.2875
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.875
+          },
+          "attribName": "weapon_knight_3",
+          "pbgid": 106614
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch_horseman",
+          "pbgid": 127935
+        }
+      ],
+      "armor": [
+        {
+          "type": "melee",
+          "value": 4
+        },
+        {
+          "type": "ranged",
+          "value": 4
+        }
+      ],
+      "sight": {
+        "line": 28,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.625
+      }
+    },
+    {
+      "id": "knight-4",
+      "baseId": "knight",
+      "type": "unit",
+      "name": "Elite Knight",
+      "pbgid": 134726,
+      "attribName": "unit_knight_4_hre",
+      "age": 4,
+      "civs": [
+        "hr"
+      ],
+      "description": "Expensive cavalry with a powerful charge.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen",
+      "classes": [
+        "heavy",
+        "melee",
+        "cavalry"
+      ],
+      "displayClasses": [
+        "Heavy Melee Cavalry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 140,
+        "wood": 0,
+        "stone": 0,
+        "gold": 100,
+        "total": 240,
+        "popcap": 1,
+        "time": 35
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/knight-4.png",
+      "hitpoints": 270,
+      "weapons": [
+        {
+          "name": "Sword",
+          "type": "melee",
+          "damage": 29,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 0.2875
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.875
+          },
+          "attribName": "weapon_knight_4",
+          "pbgid": 127822
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch_horseman",
+          "pbgid": 127935
+        }
+      ],
+      "armor": [
+        {
+          "type": "melee",
+          "value": 5
+        },
+        {
+          "type": "ranged",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "line": 28,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.625
+      }
+    },
     {
       "id": "knight-2",
       "baseId": "knight",
       "type": "unit",
-      "name": "Knight",
+      "name": "Early Knight",
+      "pbgid": 133509,
+      "attribName": "unit_knight_2_rus",
       "age": 2,
       "civs": [
         "ru"
@@ -40,7 +452,7 @@
       "displayClasses": [
         "Heavy Melee Cavalry"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 140,
         "wood": 0,
@@ -53,35 +465,63 @@
       "producedBy": [
         "stable"
       ],
+      "icon": "https://data.aoe4world.com/images/units/knight-2.png",
       "hitpoints": 190,
       "weapons": [
         {
+          "name": "Sword",
           "type": "melee",
           "damage": 19,
           "speed": 1.5,
           "range": {
             "min": 0,
-            "max": 0.3
-          }
+            "max": 0.2875
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.875
+          },
+          "attribName": "weapon_knight_2_rus",
+          "pbgid": 133280
         },
         {
+          "name": "Torch",
           "type": "fire",
-          "damage": 13,
-          "speed": 2,
+          "damage": 10,
+          "speed": 2.125,
           "range": {
-            "max": 4,
-            "min": 0
+            "min": 0,
+            "max": 1
           },
-          "modifiers": []
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch_horseman",
+          "pbgid": 127935
         }
       ],
       "armor": [
         {
-          "type": "ranged",
+          "type": "melee",
           "value": 3
         },
         {
-          "type": "melee",
+          "type": "ranged",
           "value": 3
         }
       ],
@@ -90,19 +530,18 @@
         "height": 10
       },
       "movement": {
-        "speed": 1.63
-      },
-      "icon": "https://data.aoe4world.com/images/units/knight-2.png"
+        "speed": 1.625
+      }
     },
     {
       "id": "knight-3",
       "baseId": "knight",
       "type": "unit",
       "name": "Knight",
+      "pbgid": 133462,
+      "attribName": "unit_knight_3_rus",
       "age": 3,
       "civs": [
-        "en",
-        "hr",
         "ru"
       ],
       "description": "Expensive cavalry with a powerful charge.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen",
@@ -127,35 +566,63 @@
       "producedBy": [
         "stable"
       ],
+      "icon": "https://data.aoe4world.com/images/units/knight-3.png",
       "hitpoints": 230,
       "weapons": [
         {
+          "name": "Sword",
           "type": "melee",
           "damage": 24,
           "speed": 1.5,
           "range": {
             "min": 0,
-            "max": 0.3
-          }
+            "max": 0.2875
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.875
+          },
+          "attribName": "weapon_knight_3",
+          "pbgid": 106614
         },
         {
+          "name": "Torch",
           "type": "fire",
-          "damage": 16,
-          "speed": 2,
+          "damage": 10,
+          "speed": 2.125,
           "range": {
-            "max": 4,
-            "min": 0
+            "min": 0,
+            "max": 1
           },
-          "modifiers": []
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch_horseman",
+          "pbgid": 127935
         }
       ],
       "armor": [
         {
-          "type": "ranged",
+          "type": "melee",
           "value": 4
         },
         {
-          "type": "melee",
+          "type": "ranged",
           "value": 4
         }
       ],
@@ -164,19 +631,18 @@
         "height": 10
       },
       "movement": {
-        "speed": 1.63
-      },
-      "icon": "https://data.aoe4world.com/images/units/knight-3.png"
+        "speed": 1.625
+      }
     },
     {
       "id": "knight-4",
       "baseId": "knight",
       "type": "unit",
-      "name": "Knight",
+      "name": "Elite Knight",
+      "pbgid": 133463,
+      "attribName": "unit_knight_4_rus",
       "age": 4,
       "civs": [
-        "en",
-        "hr",
         "ru"
       ],
       "description": "Expensive cavalry with a powerful charge.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen",
@@ -201,35 +667,63 @@
       "producedBy": [
         "stable"
       ],
+      "icon": "https://data.aoe4world.com/images/units/knight-4.png",
       "hitpoints": 270,
       "weapons": [
         {
+          "name": "Sword",
           "type": "melee",
           "damage": 29,
           "speed": 1.5,
           "range": {
             "min": 0,
-            "max": 0.3
-          }
+            "max": 0.2875
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.875
+          },
+          "attribName": "weapon_knight_4_rus",
+          "pbgid": 133279
         },
         {
+          "name": "Torch",
           "type": "fire",
-          "damage": 20,
-          "speed": 2,
+          "damage": 10,
+          "speed": 2.125,
           "range": {
-            "max": 4,
-            "min": 0
+            "min": 0,
+            "max": 1
           },
-          "modifiers": []
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch_horseman",
+          "pbgid": 127935
         }
       ],
       "armor": [
         {
-          "type": "ranged",
+          "type": "melee",
           "value": 5
         },
         {
-          "type": "melee",
+          "type": "ranged",
           "value": 5
         }
       ],
@@ -238,9 +732,8 @@
         "height": 10
       },
       "movement": {
-        "speed": 1.63
-      },
-      "icon": "https://data.aoe4world.com/images/units/knight-4.png"
+        "speed": 1.625
+      }
     }
   ]
 }

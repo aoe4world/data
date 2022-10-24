@@ -14,26 +14,30 @@
   "classes": [
     "age",
     "iv",
+    "-",
     "economic",
     "landmark"
   ],
   "minAge": 3,
-  "icon": "https://data.aoe4world.com/images/buildings/palace-of-swabia.png",
-  "description": "Acts as a Town Center. Produces Villagers +66% faster and  -66% cheaper.\nCost to build this Landmark is reduced by  -20%.",
+  "icon": "https://data.aoe4world.com/images/buildings/palace-of-swabia-3.png",
+  "description": "Acts as a Town Center. Produces Villagers +200% faster and at -66% cost.\nCost to build this Landmark is reduced by -20%.",
   "variations": [
     {
       "id": "palace-of-swabia-3",
       "baseId": "palace-of-swabia",
       "type": "building",
       "name": "Palace of Swabia",
+      "pbgid": 134920,
+      "attribName": "building_landmark_age3_hohenzollern_castle_hre",
       "age": 3,
       "civs": [
         "hr"
       ],
-      "description": "Acts as a Town Center. Produces Villagers +66% faster and  -66% cheaper.\nCost to build this Landmark is reduced by  -20%.",
+      "description": "Acts as a Town Center. Produces Villagers +200% faster and at -66% cost.\nCost to build this Landmark is reduced by -20%.",
       "classes": [
         "age",
         "iv",
+        "-",
         "economic",
         "landmark"
       ],
@@ -47,11 +51,13 @@
         "stone": 0,
         "gold": 960,
         "total": 2880,
+        "popcap": 0,
         "time": 250
       },
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/palace-of-swabia-3.png",
       "hitpoints": 5000,
       "weapons": [],
       "armor": [
@@ -65,10 +71,19 @@
         "height": 8
       },
       "garrison": {
-        "capacity": 10
+        "capacity": 10,
+        "classes": [
+          "villager",
+          "infantry",
+          "monk",
+          "cavalry",
+          "infantry ranged",
+          "khan"
+        ]
       },
-      "popcapIncrease": 10,
-      "icon": "https://data.aoe4world.com/images/buildings/palace-of-swabia.png"
+      "influences": [
+        "Buildings gain the Emergency Repairs ability while within the influence of a Town Center."
+      ]
     }
   ]
 }

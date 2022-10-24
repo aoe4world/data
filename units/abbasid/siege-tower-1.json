@@ -3,6 +3,8 @@
   "baseId": "siege-tower",
   "type": "unit",
   "name": "Siege Tower",
+  "pbgid": 199685,
+  "attribName": "unit_siege_tower_3_abb",
   "age": 1,
   "civs": [
     "ab"
@@ -14,19 +16,24 @@
   "displayClasses": [
     "Siege"
   ],
-  "unique": true,
+  "unique": false,
   "costs": {
     "food": 0,
     "wood": 125,
     "stone": 0,
     "gold": 0,
     "total": 125,
-    "popcap": 3,
+    "popcap": 1,
     "time": 45
   },
   "producedBy": [
-    "infantry-units"
+    "spearman",
+    "man-at-arms",
+    "archer",
+    "crossbowman",
+    "handcannoneer"
   ],
+  "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
   "hitpoints": 480,
   "weapons": [],
   "armor": [
@@ -40,7 +47,15 @@
     "height": 10
   },
   "movement": {
-    "speed": 0.63
+    "speed": 0.625
   },
-  "icon": "https://data.aoe4world.com/images/units/siege-tower.png"
+  "garrison": {
+    "capacity": 8,
+    "classes": [
+      "infantry",
+      "villager",
+      "infantry ranged",
+      "monk"
+    ]
+  }
 }

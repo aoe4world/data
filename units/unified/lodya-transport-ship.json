@@ -15,19 +15,21 @@
     "ship"
   ],
   "minAge": 2,
-  "icon": "https://data.aoe4world.com/images/units/lodya-transport-ship.png",
-  "description": "Can be garrisoned by any unit. Allows garrisoned units to be transport across water.\nThe Lodya can be converted to any other type of ship.",
+  "icon": "https://data.aoe4world.com/images/units/lodya-transport-ship-2.png",
+  "description": "Can be garrisoned by any unit and uses their sight range. Allows garrisoned units to be transport across water.\nThe Lodya can be converted to any other type of ship.",
   "variations": [
     {
       "id": "lodya-transport-ship-2",
       "baseId": "lodya-transport-ship",
       "type": "unit",
       "name": "Lodya Transport Ship",
+      "pbgid": 193138,
+      "attribName": "unit_naval_transport_ship_2_rus",
       "age": 2,
       "civs": [
         "ru"
       ],
-      "description": "Can be garrisoned by any unit. Allows garrisoned units to be transport across water.\nThe Lodya can be converted to any other type of ship.",
+      "description": "Can be garrisoned by any unit and uses their sight range. Allows garrisoned units to be transport across water.\nThe Lodya can be converted to any other type of ship.",
       "classes": [
         "ship"
       ],
@@ -47,6 +49,7 @@
       "producedBy": [
         "dock"
       ],
+      "icon": "https://data.aoe4world.com/images/units/lodya-transport-ship-2.png",
       "hitpoints": 600,
       "weapons": [],
       "armor": [],
@@ -57,7 +60,18 @@
       "movement": {
         "speed": 1.5
       },
-      "icon": "https://data.aoe4world.com/images/units/lodya-transport-ship.png"
+      "garrison": {
+        "capacity": 16,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "siege",
+          "monk",
+          "khan",
+          "cavalry"
+        ]
+      }
     }
   ]
 }

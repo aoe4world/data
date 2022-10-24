@@ -3,6 +3,8 @@
   "baseId": "royal-culverin",
   "type": "unit",
   "name": "Royal Culverin",
+  "pbgid": 1905981,
+  "attribName": "unit_culverin_4_royal_fre",
   "age": 4,
   "civs": [
     "fr"
@@ -16,7 +18,7 @@
     "Siege",
     "Gunpowder"
   ],
-  "unique": true,
+  "unique": false,
   "costs": {
     "food": 0,
     "wood": 400,
@@ -29,14 +31,16 @@
   "producedBy": [
     "college-of-artillery"
   ],
+  "icon": "https://data.aoe4world.com/images/units/royal-culverin-4.png",
   "hitpoints": 220,
   "weapons": [
     {
+      "name": "Cannon",
       "type": "ranged",
       "damage": 102,
-      "speed": 4.25,
+      "speed": 4.375,
       "range": {
-        "min": 1.3,
+        "min": 1.25,
         "max": 12
       },
       "modifiers": [
@@ -58,7 +62,8 @@
           "target": {
             "class": [
               [
-                "ship"
+                "naval",
+                "unit"
               ]
             ]
           },
@@ -66,7 +71,19 @@
           "value": 240,
           "type": "passive"
         }
-      ]
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0.75,
+        "reload": 3,
+        "setup": 0.25,
+        "teardown": 0.25,
+        "cooldown": 0
+      },
+      "attribName": "weapon_culverin_4_royal_fre",
+      "pbgid": 1905978
     }
   ],
   "armor": [
@@ -80,7 +97,6 @@
     "height": 10
   },
   "movement": {
-    "speed": 0.75
-  },
-  "icon": "https://data.aoe4world.com/images/units/royal-culverin.png"
+    "speed": 0.625
+  }
 }

@@ -7,7 +7,7 @@
   "civs": [
     "ch"
   ],
-  "unique": true,
+  "unique": false,
   "displayClasses": [
     "Archer Ship"
   ],
@@ -16,19 +16,21 @@
     "ship"
   ],
   "minAge": 2,
-  "icon": "https://data.aoe4world.com/images/units/junk.png",
-  "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from Blacksmith upgrades",
+  "icon": "https://data.aoe4world.com/images/units/junk-3.png",
+  "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from ranged damage Blacksmith technology",
   "variations": [
     {
       "id": "junk-2",
       "baseId": "junk",
       "type": "unit",
       "name": "Junk",
+      "pbgid": 193929,
+      "attribName": "unit_naval_war_galley_3_chi",
       "age": 2,
       "civs": [
         "ch"
       ],
-      "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from Blacksmith upgrades",
+      "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from ranged damage Blacksmith technology",
       "classes": [
         "archer",
         "ship"
@@ -36,7 +38,7 @@
       "displayClasses": [
         "Archer Ship"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 120,
@@ -44,17 +46,19 @@
         "gold": 90,
         "total": 210,
         "popcap": 2,
-        "time": 29
+        "time": 30
       },
       "producedBy": [
         "dock"
       ],
+      "icon": "https://data.aoe4world.com/images/units/junk-3.png",
       "hitpoints": 650,
       "weapons": [
         {
+          "name": "Bow",
           "type": "ranged",
-          "damage": 32,
-          "speed": 1.95,
+          "damage": 8,
+          "speed": 2.5,
           "range": {
             "min": 0,
             "max": 5
@@ -65,8 +69,8 @@
               "target": {
                 "class": [
                   [
-                    "incendiary",
-                    "ship"
+                    "naval",
+                    "fireship"
                   ]
                 ]
               },
@@ -74,7 +78,22 @@
               "value": 8,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0.25,
+            "attack": 0.5,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 4
+          },
+          "attribName": "weapon_naval_arrow_ship_arrow_asian",
+          "pbgid": 2034309
         }
       ],
       "armor": [
@@ -89,8 +108,7 @@
       },
       "movement": {
         "speed": 1.5
-      },
-      "icon": "https://data.aoe4world.com/images/units/junk.png"
+      }
     }
   ]
 }

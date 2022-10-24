@@ -3,13 +3,16 @@
   "baseId": "dock",
   "type": "building",
   "name": "Dock",
+  "pbgid": 199644,
+  "attribName": "building_unit_naval_abb",
   "age": 1,
   "civs": [
     "ab"
   ],
-  "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.",
+  "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three fishing ships.",
   "classes": [
     "military",
+    "&",
     "economy",
     "building",
     "trade",
@@ -19,7 +22,7 @@
     "Military & Economy Building",
     "Trade Site"
   ],
-  "unique": true,
+  "unique": false,
   "costs": {
     "food": 0,
     "wood": 75,
@@ -32,6 +35,7 @@
   "producedBy": [
     "villager"
   ],
+  "icon": "https://data.aoe4world.com/images/buildings/dock-1.png",
   "hitpoints": 1500,
   "weapons": [],
   "armor": [
@@ -45,7 +49,12 @@
     "height": 8
   },
   "garrison": {
-    "capacity": 3
+    "capacity": 3,
+    "classes": [
+      "fishing ship"
+    ]
   },
-  "icon": "https://data.aoe4world.com/images/buildings/dock.png"
+  "influences": [
+    "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+  ]
 }

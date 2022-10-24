@@ -1,0 +1,59 @@
+{
+  "id": "roller-shutter-triggers-4",
+  "baseId": "roller-shutter-triggers",
+  "type": "technology",
+  "name": "Roller Shutter Triggers",
+  "pbgid": 127938,
+  "attribName": "upgrade_siege_roller_trigger",
+  "age": 4,
+  "civs": [
+    "ch"
+  ],
+  "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+  "classes": [
+    "springald",
+    "technology"
+  ],
+  "displayClasses": [
+    "Springald Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 150,
+    "stone": 0,
+    "gold": 350,
+    "total": 500,
+    "popcap": 0,
+    "time": 60
+  },
+  "producedBy": [
+    "astronomical-clocktower",
+    "siege-workshop"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/roller-shutter-triggers-4.png",
+  "effects": [
+    {
+      "property": "maxRange",
+      "select": {
+        "id": [
+          "springald"
+        ]
+      },
+      "effect": "change",
+      "value": 2,
+      "type": "passive"
+    },
+    {
+      "property": "attackSpeed",
+      "select": {
+        "id": [
+          "springald"
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.75,
+      "type": "passive"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "id": "springald-3",
+  "baseId": "springald",
+  "type": "unit",
+  "name": "Springald",
+  "pbgid": 133473,
+  "attribName": "unit_springald_3_rus",
+  "age": 3,
+  "civs": [
+    "ru"
+  ],
+  "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
+  "classes": [
+    "siege"
+  ],
+  "displayClasses": [
+    "Siege"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 250,
+    "stone": 0,
+    "gold": 250,
+    "total": 500,
+    "popcap": 3,
+    "time": 30
+  },
+  "producedBy": [
+    "siege-workshop"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/springald-3.png",
+  "hitpoints": 125,
+  "weapons": [
+    {
+      "name": "Springald",
+      "type": "ranged",
+      "damage": 30,
+      "speed": 4.125,
+      "range": {
+        "min": 1.25,
+        "max": 10
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 70,
+          "type": "passive"
+        },
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 70,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 2.75,
+        "setup": 0,
+        "teardown": 0.25,
+        "cooldown": 0
+      },
+      "attribName": "weapon_springald_3_rus",
+      "pbgid": 194215
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 20
+    }
+  ],
+  "sight": {
+    "line": 56,
+    "height": 10
+  },
+  "movement": {
+    "speed": 0.875
+  }
+}

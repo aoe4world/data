@@ -1,0 +1,100 @@
+{
+  "id": "counterweight-trebuchet-3",
+  "baseId": "counterweight-trebuchet",
+  "type": "unit",
+  "name": "Counterweight Trebuchet",
+  "pbgid": 133489,
+  "attribName": "unit_trebuchet_4_cw_rus",
+  "age": 3,
+  "civs": [
+    "ru"
+  ],
+  "description": "Powerful siege engine effective at destroying buildings and walls over a great distance.\n+ Bonus damage vs buildings\n- Must be set up to fire\n- Inaccurate against units",
+  "classes": [
+    "siege"
+  ],
+  "displayClasses": [
+    "Siege"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 500,
+    "stone": 0,
+    "gold": 250,
+    "total": 750,
+    "popcap": 3,
+    "time": 40
+  },
+  "producedBy": [
+    "siege-workshop"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/counterweight-trebuchet-4.png",
+  "hitpoints": 210,
+  "weapons": [
+    {
+      "name": "Trebuchet",
+      "type": "siege",
+      "damage": 50,
+      "speed": 12.625,
+      "range": {
+        "min": 2.75,
+        "max": 16
+      },
+      "modifiers": [
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 500,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 500,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0.625,
+        "attack": 0.125,
+        "winddown": 7.375,
+        "reload": 4,
+        "setup": 3,
+        "teardown": 2,
+        "cooldown": 0
+      },
+      "attribName": "weapon_trebuchet_4_cw_rus",
+      "pbgid": 133327
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 20
+    }
+  ],
+  "sight": {
+    "line": 80,
+    "height": 10
+  },
+  "movement": {
+    "speed": 0.625
+  }
+}

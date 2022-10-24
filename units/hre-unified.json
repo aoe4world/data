@@ -8,872 +8,11 @@
   },
   "data": [
     {
-      "id": "galley",
-      "name": "Galley",
-      "type": "unit",
-      "civs": [
-        "hr"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Archer Ship"
-      ],
-      "classes": [
-        "archer",
-        "ship"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/galley.png",
-      "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from Blacksmith upgrades",
-      "variations": [
-        {
-          "id": "galley-2-dock",
-          "baseId": "galley",
-          "type": "unit",
-          "name": "Galley",
-          "age": 2,
-          "civs": [
-            "hr"
-          ],
-          "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from Blacksmith upgrades",
-          "classes": [
-            "archer",
-            "ship"
-          ],
-          "displayClasses": [
-            "Archer Ship"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 180,
-            "stone": 0,
-            "gold": 180,
-            "total": 360,
-            "popcap": 3,
-            "time": 40
-          },
-          "producedBy": [
-            "dock"
-          ],
-          "hitpoints": 550,
-          "weapons": [
-            {
-              "type": "ranged",
-              "damage": 60,
-              "speed": 1.95,
-              "range": {
-                "min": 0,
-                "max": 5
-              },
-              "modifiers": [
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "incendiary",
-                        "ship"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ]
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 5
-            }
-          ],
-          "sight": {
-            "line": 40,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.38
-          },
-          "icon": "https://data.aoe4world.com/images/units/galley.png"
-        }
-      ]
-    },
-    {
-      "id": "hulk",
-      "name": "Hulk",
-      "type": "unit",
-      "civs": [
-        "hr"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Attack Ship"
-      ],
-      "classes": [
-        "attack",
-        "ship"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/hulk.png",
-      "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
-      "variations": [
-        {
-          "id": "hulk-3-dock",
-          "baseId": "hulk",
-          "type": "unit",
-          "name": "Hulk",
-          "age": 3,
-          "civs": [
-            "hr"
-          ],
-          "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
-          "classes": [
-            "attack",
-            "ship"
-          ],
-          "displayClasses": [
-            "Attack Ship"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 300,
-            "stone": 0,
-            "gold": 240,
-            "total": 540,
-            "popcap": 3,
-            "time": 45
-          },
-          "producedBy": [
-            "dock"
-          ],
-          "hitpoints": 1000,
-          "weapons": [
-            {
-              "type": "ranged",
-              "damage": 100,
-              "speed": 3.95,
-              "range": {
-                "min": 0,
-                "max": 6
-              }
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 6
-            }
-          ],
-          "sight": {
-            "line": 42,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.13
-          },
-          "icon": "https://data.aoe4world.com/images/units/hulk.png"
-        }
-      ]
-    },
-    {
-      "id": "landsknecht",
-      "name": "Landsknecht",
-      "type": "unit",
-      "civs": [
-        "hr"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Light Melee Infantry"
-      ],
-      "classes": [
-        "light",
-        "melee",
-        "infantry"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/landsknecht-3.png",
-      "description": "Brave, unarmored infantry with enormous two-handed swords effective in mixed armies.\n+ Melee attack deals area damage\n- Low health",
-      "variations": [
-        {
-          "id": "landsknecht-3",
-          "baseId": "landsknecht",
-          "type": "unit",
-          "name": "Landsknecht",
-          "age": 3,
-          "civs": [
-            "hr"
-          ],
-          "description": "Brave, unarmored infantry with enormous two-handed swords effective in mixed armies.\n+ Melee attack deals area damage\n- Low health",
-          "classes": [
-            "light",
-            "melee",
-            "infantry"
-          ],
-          "displayClasses": [
-            "Light Melee Infantry"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 60,
-            "wood": 0,
-            "stone": 0,
-            "gold": 100,
-            "total": 160,
-            "popcap": 1,
-            "time": 22
-          },
-          "producedBy": [
-            "barracks"
-          ],
-          "hitpoints": 80,
-          "weapons": [
-            {
-              "type": "melee",
-              "damage": 17,
-              "speed": 1.25,
-              "range": {
-                "min": 0,
-                "max": 0.3
-              }
-            },
-            {
-              "type": "fire",
-              "damage": 16,
-              "speed": 2,
-              "range": {
-                "max": 4,
-                "min": 0
-              },
-              "modifiers": []
-            }
-          ],
-          "armor": [],
-          "sight": {
-            "line": 36,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.25
-          },
-          "icon": "https://data.aoe4world.com/images/units/landsknecht-3.png"
-        },
-        {
-          "id": "landsknecht-4",
-          "baseId": "landsknecht",
-          "type": "unit",
-          "name": "Landsknecht",
-          "age": 4,
-          "civs": [
-            "hr"
-          ],
-          "description": "Brave, unarmored infantry with enormous two-handed swords effective in mixed armies.\n+ Melee attack deals area damage\n- Low health",
-          "classes": [
-            "light",
-            "melee",
-            "infantry"
-          ],
-          "displayClasses": [
-            "Light Melee Infantry"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 60,
-            "wood": 0,
-            "stone": 0,
-            "gold": 100,
-            "total": 160,
-            "popcap": 1,
-            "time": 22
-          },
-          "producedBy": [
-            "barracks"
-          ],
-          "hitpoints": 95,
-          "weapons": [
-            {
-              "type": "melee",
-              "damage": 20,
-              "speed": 1.25,
-              "range": {
-                "min": 0,
-                "max": 0.3
-              }
-            },
-            {
-              "type": "fire",
-              "damage": 20,
-              "speed": 2,
-              "range": {
-                "max": 4,
-                "min": 0
-              },
-              "modifiers": []
-            }
-          ],
-          "armor": [],
-          "sight": {
-            "line": 36,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.25
-          },
-          "icon": "https://data.aoe4world.com/images/units/landsknecht-4.png"
-        }
-      ]
-    },
-    {
-      "id": "man-at-arms",
-      "name": "Man-at-Arms",
-      "type": "unit",
-      "civs": [
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "mo",
-        "ru"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Heavy Melee Infantry"
-      ],
-      "classes": [
-        "heavy",
-        "melee",
-        "infantry"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/man-at-arms-2.png",
-      "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
-      "variations": [
-        {
-          "id": "man-at-arms-2",
-          "baseId": "man-at-arms",
-          "type": "unit",
-          "name": "Man-at-Arms",
-          "age": 2,
-          "civs": [
-            "hr"
-          ],
-          "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
-          "classes": [
-            "heavy",
-            "melee",
-            "infantry"
-          ],
-          "displayClasses": [
-            "Heavy Melee Infantry"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 100,
-            "wood": 0,
-            "stone": 0,
-            "gold": 20,
-            "total": 120,
-            "popcap": 1,
-            "time": 22
-          },
-          "producedBy": [
-            "barracks"
-          ],
-          "hitpoints": 120,
-          "weapons": [
-            {
-              "type": "melee",
-              "damage": 10,
-              "speed": 1.375,
-              "range": {
-                "min": 0,
-                "max": 0.3
-              }
-            },
-            {
-              "type": "fire",
-              "damage": 10,
-              "speed": 2,
-              "range": {
-                "max": 4,
-                "min": 0
-              },
-              "modifiers": []
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 3
-            },
-            {
-              "type": "melee",
-              "value": 3
-            }
-          ],
-          "sight": {
-            "line": 36,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.13
-          },
-          "icon": "https://data.aoe4world.com/images/units/man-at-arms-2.png"
-        },
-        {
-          "id": "man-at-arms-3",
-          "baseId": "man-at-arms",
-          "type": "unit",
-          "name": "Man-at-Arms",
-          "age": 3,
-          "civs": [
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
-          "classes": [
-            "heavy",
-            "melee",
-            "infantry"
-          ],
-          "displayClasses": [
-            "Heavy Melee Infantry"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 100,
-            "wood": 0,
-            "stone": 0,
-            "gold": 20,
-            "total": 120,
-            "popcap": 1,
-            "time": 22
-          },
-          "producedBy": [
-            "barracks"
-          ],
-          "hitpoints": 155,
-          "weapons": [
-            {
-              "type": "melee",
-              "damage": 12,
-              "speed": 1.375,
-              "range": {
-                "min": 0,
-                "max": 0.3
-              }
-            },
-            {
-              "type": "fire",
-              "damage": 13,
-              "speed": 2,
-              "range": {
-                "max": 4,
-                "min": 0
-              },
-              "modifiers": []
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 4
-            },
-            {
-              "type": "melee",
-              "value": 4
-            }
-          ],
-          "sight": {
-            "line": 36,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.13
-          },
-          "icon": "https://data.aoe4world.com/images/units/man-at-arms-3.png"
-        },
-        {
-          "id": "man-at-arms-4",
-          "baseId": "man-at-arms",
-          "type": "unit",
-          "name": "Man-at-Arms",
-          "age": 4,
-          "civs": [
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
-          "classes": [
-            "heavy",
-            "melee",
-            "infantry"
-          ],
-          "displayClasses": [
-            "Heavy Melee Infantry"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 100,
-            "wood": 0,
-            "stone": 0,
-            "gold": 20,
-            "total": 120,
-            "popcap": 1,
-            "time": 22
-          },
-          "producedBy": [
-            "barracks"
-          ],
-          "hitpoints": 180,
-          "weapons": [
-            {
-              "type": "melee",
-              "damage": 14,
-              "speed": 1.375,
-              "range": {
-                "min": 0,
-                "max": 0.3
-              }
-            },
-            {
-              "type": "fire",
-              "damage": 16,
-              "speed": 2,
-              "range": {
-                "max": 4,
-                "min": 0
-              },
-              "modifiers": []
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 5
-            },
-            {
-              "type": "melee",
-              "value": 5
-            }
-          ],
-          "sight": {
-            "line": 36,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.13
-          },
-          "icon": "https://data.aoe4world.com/images/units/man-at-arms-4.png"
-        }
-      ]
-    },
-    {
-      "id": "prelate",
-      "name": "Prelate",
-      "type": "unit",
-      "civs": [
-        "hr"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Religious"
-      ],
-      "classes": [
-        "religious"
-      ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/prelate.png",
-      "description": "Support unit with no combat capability. Automatically inspires Villagers to greatly improve their gather rate. Can pick up Relics, convert enemy units, and capture Sacred Sites starting in the Castle Age (III).\n+ Heals friendly units\n- Low health",
-      "variations": [
-        {
-          "id": "prelate-1",
-          "baseId": "prelate",
-          "type": "unit",
-          "name": "Prelate",
-          "age": 1,
-          "civs": [
-            "hr"
-          ],
-          "description": "Support unit with no combat capability. Automatically inspires Villagers to greatly improve their gather rate. Can pick up Relics, convert enemy units, and capture Sacred Sites starting in the Castle Age (III).\n+ Heals friendly units\n- Low health",
-          "classes": [
-            "religious"
-          ],
-          "displayClasses": [
-            "Religious"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
-            "gold": 100,
-            "total": 100,
-            "popcap": 1,
-            "time": 20
-          },
-          "producedBy": [
-            "town-center"
-          ],
-          "hitpoints": 90,
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "line": 30,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.13
-          },
-          "icon": "https://data.aoe4world.com/images/units/prelate.png"
-        },
-        {
-          "id": "prelate-3",
-          "baseId": "prelate",
-          "type": "unit",
-          "name": "Prelate",
-          "age": 3,
-          "civs": [
-            "hr"
-          ],
-          "description": "Support unit with no combat capability. Automatically inspires Villagers to greatly improve their gather rate. Can pick up Relics, convert enemy units, and capture Sacred Sites starting in the Castle Age (III).\n+ Heals friendly units\n- Low health",
-          "classes": [
-            "religious"
-          ],
-          "displayClasses": [
-            "Religious"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
-            "gold": 100,
-            "total": 100,
-            "popcap": 1,
-            "time": 20
-          },
-          "producedBy": [
-            "monastery"
-          ],
-          "hitpoints": 90,
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "line": 30,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.13
-          },
-          "icon": "https://data.aoe4world.com/images/units/prelate.png"
-        }
-      ]
-    },
-    {
-      "id": "villager",
-      "name": "Villager",
-      "type": "unit",
-      "civs": [
-        "hr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
-        "ru"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Worker"
-      ],
-      "classes": [
-        "worker"
-      ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/villager.png",
-      "description": "Gathers Wood, Food, Stone, and Gold. Builds and repairs buildings and can repair siege engines and naval units.\n- Weak in combat",
-      "variations": [
-        {
-          "id": "villager-4-palace-of-swabia",
-          "baseId": "villager",
-          "type": "unit",
-          "name": "Villager",
-          "age": 4,
-          "civs": [
-            "hr"
-          ],
-          "description": "Gathers Wood, Food, Stone, and Gold. Builds and repairs buildings and can repair siege engines and naval units.\n- Weak in combat",
-          "classes": [
-            "worker"
-          ],
-          "displayClasses": [
-            "Worker"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 12,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "total": 12,
-            "popcap": 1,
-            "time": 5
-          },
-          "producedBy": [
-            "palace-of-swabia"
-          ],
-          "hitpoints": 50,
-          "weapons": [
-            {
-              "type": "melee",
-              "damage": 6,
-              "speed": 3.75,
-              "range": {
-                "min": 0,
-                "max": 0.3
-              }
-            },
-            {
-              "type": "fire",
-              "damage": 10,
-              "speed": 2,
-              "range": {
-                "max": 4,
-                "min": 0
-              },
-              "modifiers": [
-                {
-                  "property": "fireAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "siege"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 2,
-                  "type": "passive"
-                }
-              ]
-            }
-          ],
-          "armor": [],
-          "sight": {
-            "line": 28,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.13
-          },
-          "icon": "https://data.aoe4world.com/images/units/villager.png"
-        },
-        {
-          "id": "villager-1",
-          "baseId": "villager",
-          "type": "unit",
-          "name": "Villager",
-          "age": 1,
-          "civs": [
-            "hr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Gathers Wood, Food, Stone, and Gold. Builds and repairs buildings and can repair siege engines and naval units.\n- Weak in combat",
-          "classes": [
-            "worker"
-          ],
-          "displayClasses": [
-            "Worker"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 50,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "total": 50,
-            "popcap": 1,
-            "time": 20
-          },
-          "producedBy": [
-            "town-center"
-          ],
-          "hitpoints": 50,
-          "weapons": [
-            {
-              "type": "melee",
-              "damage": 6,
-              "speed": 3.75,
-              "range": {
-                "min": 0,
-                "max": 0.3
-              }
-            },
-            {
-              "type": "fire",
-              "damage": 10,
-              "speed": 2,
-              "range": {
-                "max": 4,
-                "min": 0
-              },
-              "modifiers": [
-                {
-                  "property": "fireAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "siege"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 2,
-                  "type": "passive"
-                }
-              ]
-            }
-          ],
-          "armor": [],
-          "sight": {
-            "line": 28,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.13
-          },
-          "icon": "https://data.aoe4world.com/images/units/villager.png"
-        }
-      ]
-    },
-    {
       "id": "archer",
       "name": "Archer",
       "type": "unit",
       "civs": [
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -893,15 +32,11 @@
           "baseId": "archer",
           "type": "unit",
           "name": "Archer",
+          "pbgid": 134713,
+          "attribName": "unit_archer_2_hre",
           "age": 2,
           "civs": [
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "hr"
           ],
           "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
           "classes": [
@@ -925,12 +60,14 @@
           "producedBy": [
             "archery-range"
           ],
+          "icon": "https://data.aoe4world.com/images/units/archer-2.png",
           "hitpoints": 70,
           "weapons": [
             {
+              "name": "Bow",
               "type": "ranged",
               "damage": 5,
-              "speed": 1.5,
+              "speed": 1.625,
               "range": {
                 "min": 0,
                 "max": 5
@@ -951,7 +88,19 @@
                   "value": 5,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0.25,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 0.75,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_archer_2",
+              "pbgid": 106763
             }
           ],
           "armor": [],
@@ -961,23 +110,18 @@
           },
           "movement": {
             "speed": 1.25
-          },
-          "icon": "https://data.aoe4world.com/images/units/archer-2.png"
+          }
         },
         {
           "id": "archer-3",
           "baseId": "archer",
           "type": "unit",
-          "name": "Archer",
+          "name": "Veteran Archer",
+          "pbgid": 134714,
+          "attribName": "unit_archer_3_hre",
           "age": 3,
           "civs": [
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "hr"
           ],
           "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
           "classes": [
@@ -1001,12 +145,14 @@
           "producedBy": [
             "archery-range"
           ],
+          "icon": "https://data.aoe4world.com/images/units/archer-3.png",
           "hitpoints": 80,
           "weapons": [
             {
+              "name": "Bow",
               "type": "ranged",
               "damage": 7,
-              "speed": 1.5,
+              "speed": 1.625,
               "range": {
                 "min": 0,
                 "max": 5
@@ -1027,7 +173,19 @@
                   "value": 7,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0.25,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 0.75,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_archer_3",
+              "pbgid": 127828
             }
           ],
           "armor": [],
@@ -1037,23 +195,18 @@
           },
           "movement": {
             "speed": 1.25
-          },
-          "icon": "https://data.aoe4world.com/images/units/archer-3.png"
+          }
         },
         {
           "id": "archer-4",
           "baseId": "archer",
           "type": "unit",
-          "name": "Archer",
+          "name": "Elite Archer",
+          "pbgid": 134715,
+          "attribName": "unit_archer_4_hre",
           "age": 4,
           "civs": [
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "hr"
           ],
           "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
           "classes": [
@@ -1077,12 +230,14 @@
           "producedBy": [
             "archery-range"
           ],
+          "icon": "https://data.aoe4world.com/images/units/archer-4.png",
           "hitpoints": 95,
           "weapons": [
             {
+              "name": "Bow",
               "type": "ranged",
               "damage": 8,
-              "speed": 1.5,
+              "speed": 1.625,
               "range": {
                 "min": 0,
                 "max": 5
@@ -1103,7 +258,19 @@
                   "value": 8,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0.25,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 0.75,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_archer_4",
+              "pbgid": 127829
             }
           ],
           "armor": [],
@@ -1113,8 +280,7 @@
           },
           "movement": {
             "speed": 1.25
-          },
-          "icon": "https://data.aoe4world.com/images/units/archer-4.png"
+          }
         }
       ]
     },
@@ -1123,13 +289,7 @@
       "name": "Battering Ram",
       "type": "unit",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "mo",
-        "ru"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -1139,7 +299,7 @@
         "siege"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/battering-ram-2.png",
+      "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
       "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Can only attack buildings\n- Slow movement speed",
       "variations": [
         {
@@ -1147,15 +307,11 @@
           "baseId": "battering-ram",
           "type": "unit",
           "name": "Battering Ram",
+          "pbgid": 134693,
+          "attribName": "unit_ram_3_hre",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "mo",
-            "ru"
+            "hr"
           ],
           "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Can only attack buildings\n- Slow movement speed",
           "classes": [
@@ -1175,33 +331,52 @@
             "time": 80
           },
           "producedBy": [
-            "infantry-units"
+            "spearman",
+            "man-at-arms",
+            "landsknecht",
+            "archer",
+            "crossbowman",
+            "handcannoneer"
           ],
+          "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
           "hitpoints": 420,
           "weapons": [
             {
+              "name": "Ram",
               "type": "siege",
               "damage": 200,
-              "speed": 5,
+              "speed": 5.125,
               "range": {
                 "min": 0,
-                "max": 0.3
+                "max": 0.2875
               },
               "modifiers": [
                 {
                   "property": "siegeAttack",
                   "target": {
-                    "id": [
-                      "stone-wall",
-                      "palisade-wall",
-                      "fortified-palisade-wall"
+                    "class": [
+                      [
+                        "wall"
+                      ]
                     ]
                   },
                   "effect": "change",
                   "value": 100,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.625,
+                "attack": 0.125,
+                "winddown": 0.375,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 4
+              },
+              "attribName": "weapon_ram_3",
+              "pbgid": 108918
             }
           ],
           "armor": [
@@ -1217,7 +392,15 @@
           "movement": {
             "speed": 0.75
           },
-          "icon": "https://data.aoe4world.com/images/units/battering-ram-2.png"
+          "garrison": {
+            "capacity": 16,
+            "classes": [
+              "infantry",
+              "villager",
+              "infantry ranged",
+              "monk"
+            ]
+          }
         }
       ]
     },
@@ -1226,13 +409,7 @@
       "name": "Bombard",
       "type": "unit",
       "civs": [
-        "en",
-        "hr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -1252,15 +429,11 @@
           "baseId": "bombard",
           "type": "unit",
           "name": "Bombard",
+          "pbgid": 134716,
+          "attribName": "unit_bombard_4_hre",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "hr"
           ],
           "description": "Intimidating siege gun excellent against buildings or any stubborn targets.\n+ High damage\n- Must be set up to fire",
           "classes": [
@@ -1284,14 +457,16 @@
           "producedBy": [
             "siege-workshop"
           ],
+          "icon": "https://data.aoe4world.com/images/units/bombard-4.png",
           "hitpoints": 240,
           "weapons": [
             {
+              "name": "Cannon",
               "type": "siege",
               "damage": 100,
-              "speed": 4.25,
+              "speed": 5.375,
               "range": {
-                "min": 3.8,
+                "min": 3.75,
                 "max": 10
               },
               "modifiers": [
@@ -1300,9 +475,6 @@
                   "target": {
                     "class": [
                       [
-                        "ship"
-                      ],
-                      [
                         "building"
                       ]
                     ]
@@ -1310,8 +482,34 @@
                   "effect": "change",
                   "value": 410,
                   "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "naval",
+                        "unit"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 410,
+                  "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0.5,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 4.75,
+                "setup": 0,
+                "teardown": 1,
+                "cooldown": 0
+              },
+              "attribName": "weapon_bombard_4",
+              "pbgid": 127728
             }
           ],
           "armor": [
@@ -1325,9 +523,8 @@
             "height": 10
           },
           "movement": {
-            "speed": 0.63
-          },
-          "icon": "https://data.aoe4world.com/images/units/bombard-4.png"
+            "speed": 0.625
+          }
         }
       ]
     },
@@ -1336,8 +533,7 @@
       "name": "Carrack",
       "type": "unit",
       "civs": [
-        "hr",
-        "fr"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -1347,18 +543,19 @@
         "warship"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/units/carrack.png",
+      "icon": "https://data.aoe4world.com/images/units/carrack-4.png",
       "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
       "variations": [
         {
-          "id": "carrack-4-dock",
+          "id": "carrack-4",
           "baseId": "carrack",
           "type": "unit",
           "name": "Carrack",
+          "pbgid": 193125,
+          "attribName": "unit_naval_combat_warship_4_hre",
           "age": 4,
           "civs": [
-            "hr",
-            "fr"
+            "hr"
           ],
           "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
           "classes": [
@@ -1380,12 +577,14 @@
           "producedBy": [
             "dock"
           ],
+          "icon": "https://data.aoe4world.com/images/units/carrack-4.png",
           "hitpoints": 1400,
           "weapons": [
             {
+              "name": "Cannon",
               "type": "ranged",
-              "damage": 210,
-              "speed": 4.5,
+              "damage": 70,
+              "speed": 4.625,
               "range": {
                 "min": 0,
                 "max": 8
@@ -1404,7 +603,22 @@
                   "value": 50,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0.5,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 4,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "burst": {
+                "count": 3
+              },
+              "attribName": "weapon_naval_warship_cannon_ai_western",
+              "pbgid": 2033788
             }
           ],
           "armor": [
@@ -1414,13 +628,132 @@
             }
           ],
           "sight": {
-            "line": 52,
+            "line": 48,
             "height": 10
           },
           "movement": {
-            "speed": 0.88
+            "speed": 0.875
+          }
+        }
+      ]
+    },
+    {
+      "id": "counterweight-trebuchet",
+      "name": "Counterweight Trebuchet",
+      "type": "unit",
+      "civs": [
+        "hr"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Siege"
+      ],
+      "classes": [
+        "siege"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/counterweight-trebuchet-4.png",
+      "description": "Powerful siege engine effective at destroying buildings and walls over a great distance.\n+ Bonus damage vs buildings\n- Must be set up to fire\n- Inaccurate against units",
+      "variations": [
+        {
+          "id": "counterweight-trebuchet-3",
+          "baseId": "counterweight-trebuchet",
+          "type": "unit",
+          "name": "Counterweight Trebuchet",
+          "pbgid": 134751,
+          "attribName": "unit_trebuchet_4_cw_hre",
+          "age": 3,
+          "civs": [
+            "hr"
+          ],
+          "description": "Powerful siege engine effective at destroying buildings and walls over a great distance.\n+ Bonus damage vs buildings\n- Must be set up to fire\n- Inaccurate against units",
+          "classes": [
+            "siege"
+          ],
+          "displayClasses": [
+            "Siege"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 500,
+            "stone": 0,
+            "gold": 250,
+            "total": 750,
+            "popcap": 3,
+            "time": 40
           },
-          "icon": "https://data.aoe4world.com/images/units/carrack.png"
+          "producedBy": [
+            "siege-workshop"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/counterweight-trebuchet-4.png",
+          "hitpoints": 210,
+          "weapons": [
+            {
+              "name": "Trebuchet",
+              "type": "siege",
+              "damage": 50,
+              "speed": 12.625,
+              "range": {
+                "min": 2.75,
+                "max": 16
+              },
+              "modifiers": [
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 500,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "naval",
+                        "unit"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 500,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0.5,
+                "windup": 0.625,
+                "attack": 0.125,
+                "winddown": 7.375,
+                "reload": 4,
+                "setup": 3,
+                "teardown": 2,
+                "cooldown": 0
+              },
+              "attribName": "weapon_trebuchet_4_counterweight",
+              "pbgid": 130952
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 20
+            }
+          ],
+          "sight": {
+            "line": 80,
+            "height": 10
+          },
+          "movement": {
+            "speed": 0.625
+          }
         }
       ]
     },
@@ -1429,13 +762,7 @@
       "name": "Crossbowman",
       "type": "unit",
       "civs": [
-        "en",
-        "hr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -1448,24 +775,20 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/units/crossbowman-3.png",
-      "description": "Powerful all-purpose ranged infantry.\n+ High damage\n- High cost\n- Slow movement speed",
+      "description": "High damage ranged unit best against armored targets.\n+ Anti-armor specialist\n- Low health",
       "variations": [
         {
           "id": "crossbowman-3",
           "baseId": "crossbowman",
           "type": "unit",
           "name": "Crossbowman",
+          "pbgid": 134717,
+          "attribName": "unit_crossbowman_3_hre",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "hr"
           ],
-          "description": "Powerful all-purpose ranged infantry.\n+ High damage\n- High cost\n- Slow movement speed",
+          "description": "High damage ranged unit best against armored targets.\n+ Anti-armor specialist\n- Low health",
           "classes": [
             "light",
             "ranged",
@@ -1482,17 +805,19 @@
             "gold": 40,
             "total": 120,
             "popcap": 1,
-            "time": 22
+            "time": 22.5
           },
           "producedBy": [
             "archery-range"
           ],
+          "icon": "https://data.aoe4world.com/images/units/crossbowman-3.png",
           "hitpoints": 80,
           "weapons": [
             {
+              "name": "Crossbow",
               "type": "ranged",
               "damage": 12,
-              "speed": 2.15,
+              "speed": 2.125,
               "range": {
                 "min": 0,
                 "max": 5
@@ -1511,7 +836,19 @@
                   "value": 9,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0.25,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 1.25,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_crossbow_3",
+              "pbgid": 108239
             }
           ],
           "armor": [],
@@ -1520,26 +857,21 @@
             "height": 10
           },
           "movement": {
-            "speed": 1.13
-          },
-          "icon": "https://data.aoe4world.com/images/units/crossbowman-3.png"
+            "speed": 1.125
+          }
         },
         {
           "id": "crossbowman-4",
           "baseId": "crossbowman",
           "type": "unit",
-          "name": "Crossbowman",
+          "name": "Elite Crossbowman",
+          "pbgid": 134719,
+          "attribName": "unit_crossbowman_4_hre",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "hr"
           ],
-          "description": "Powerful all-purpose ranged infantry.\n+ High damage\n- High cost\n- Slow movement speed",
+          "description": "High damage ranged unit best against armored targets.\n+ Anti-armor specialist\n- Low health",
           "classes": [
             "light",
             "ranged",
@@ -1556,17 +888,19 @@
             "gold": 40,
             "total": 120,
             "popcap": 1,
-            "time": 22
+            "time": 22.5
           },
           "producedBy": [
             "archery-range"
           ],
+          "icon": "https://data.aoe4world.com/images/units/crossbowman-4.png",
           "hitpoints": 95,
           "weapons": [
             {
+              "name": "Crossbow",
               "type": "ranged",
               "damage": 15,
-              "speed": 2.15,
+              "speed": 2.125,
               "range": {
                 "min": 0,
                 "max": 5
@@ -1585,7 +919,19 @@
                   "value": 11,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0.25,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 1.25,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_crossbow_4",
+              "pbgid": 127830
             }
           ],
           "armor": [],
@@ -1594,9 +940,8 @@
             "height": 10
           },
           "movement": {
-            "speed": 1.13
-          },
-          "icon": "https://data.aoe4world.com/images/units/crossbowman-4.png"
+            "speed": 1.125
+          }
         }
       ]
     },
@@ -1605,8 +950,7 @@
       "name": "Culverin",
       "type": "unit",
       "civs": [
-        "hr",
-        "ab"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -1626,10 +970,11 @@
           "baseId": "culverin",
           "type": "unit",
           "name": "Culverin",
+          "pbgid": 165170,
+          "attribName": "unit_culverin_4_hre",
           "age": 4,
           "civs": [
-            "hr",
-            "ab"
+            "hr"
           ],
           "description": "Long-range cannon made for destroying siege equipment.\n+ Bonus damage to siege weapons\n+ Attacks without having to set up\n- Low damage to buildings",
           "classes": [
@@ -1653,14 +998,16 @@
           "producedBy": [
             "siege-workshop"
           ],
+          "icon": "https://data.aoe4world.com/images/units/culverin-4.png",
           "hitpoints": 220,
           "weapons": [
             {
+              "name": "Cannon",
               "type": "ranged",
               "damage": 85,
-              "speed": 4.25,
+              "speed": 4.375,
               "range": {
-                "min": 1.3,
+                "min": 1.25,
                 "max": 12
               },
               "modifiers": [
@@ -1682,7 +1029,8 @@
                   "target": {
                     "class": [
                       [
-                        "ship"
+                        "naval",
+                        "unit"
                       ]
                     ]
                   },
@@ -1690,7 +1038,19 @@
                   "value": 200,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0.5,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 3,
+                "setup": 0.25,
+                "teardown": 0.25,
+                "cooldown": 0
+              },
+              "attribName": "weapon_culverin_4",
+              "pbgid": 165122
             }
           ],
           "armor": [
@@ -1704,9 +1064,8 @@
             "height": 10
           },
           "movement": {
-            "speed": 0.75
-          },
-          "icon": "https://data.aoe4world.com/images/units/culverin-4.png"
+            "speed": 0.625
+          }
         }
       ]
     },
@@ -1715,9 +1074,7 @@
       "name": "Demolition Ship",
       "type": "unit",
       "civs": [
-        "en",
-        "hr",
-        "fr"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -1728,21 +1085,21 @@
         "ship"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/demolition-ship.png",
-      "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area, and setting fire to nearby ships and structures.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+      "icon": "https://data.aoe4world.com/images/units/demolition-ship-3.png",
+      "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
       "variations": [
         {
           "id": "demolition-ship-3",
           "baseId": "demolition-ship",
           "type": "unit",
           "name": "Demolition Ship",
+          "pbgid": 193127,
+          "attribName": "unit_naval_fireship_3_hre",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr"
+            "hr"
           ],
-          "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area, and setting fire to nearby ships and structures.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+          "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
           "classes": [
             "incendiary",
             "ship"
@@ -1763,12 +1120,14 @@
           "producedBy": [
             "dock"
           ],
+          "icon": "https://data.aoe4world.com/images/units/demolition-ship-3.png",
           "hitpoints": 200,
           "weapons": [
             {
+              "name": "Incendiaries",
               "type": "fire",
               "damage": 400,
-              "speed": 1,
+              "speed": 0.125,
               "range": {
                 "min": 0,
                 "max": 2
@@ -1779,6 +1138,7 @@
                   "target": {
                     "class": [
                       [
+                        "naval",
                         "warship"
                       ]
                     ]
@@ -1787,7 +1147,57 @@
                   "value": 200,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_naval_fireship_western",
+              "pbgid": 2034817
+            },
+            {
+              "name": "Explosives",
+              "type": "fire",
+              "damage": 560,
+              "speed": 0.125,
+              "range": {
+                "min": 0,
+                "max": 2
+              },
+              "modifiers": [
+                {
+                  "property": "fireAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "naval",
+                        "warship"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 280,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_naval_fireship_explosive_western",
+              "pbgid": 2034819
             }
           ],
           "armor": [],
@@ -1797,8 +1207,7 @@
           },
           "movement": {
             "speed": 1.5
-          },
-          "icon": "https://data.aoe4world.com/images/units/demolition-ship.png"
+          }
         }
       ]
     },
@@ -1807,11 +1216,7 @@
       "name": "Fishing Boat",
       "type": "unit",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ab",
-        "mo"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -1822,22 +1227,20 @@
         "worker",
         "ship"
       ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/fishing-boat.png",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/fishing-boat-2.png",
       "description": "Small boat that gathers Food from either Deep Water Fish or Shoreline Fish. Drops off gathered resources at the Dock.\n+ Can repair\n- No combat",
       "variations": [
         {
-          "id": "fishing-boat-1",
+          "id": "fishing-boat-2",
           "baseId": "fishing-boat",
           "type": "unit",
           "name": "Fishing Boat",
-          "age": 1,
+          "pbgid": 193126,
+          "attribName": "unit_naval_fishing_boat_2_hre",
+          "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ab",
-            "mo"
+            "hr"
           ],
           "description": "Small boat that gathers Food from either Deep Water Fish or Shoreline Fish. Drops off gathered resources at the Dock.\n+ Can repair\n- No combat",
           "classes": [
@@ -1861,6 +1264,7 @@
           "producedBy": [
             "dock"
           ],
+          "icon": "https://data.aoe4world.com/images/units/fishing-boat-2.png",
           "hitpoints": 125,
           "weapons": [],
           "armor": [],
@@ -1870,8 +1274,119 @@
           },
           "movement": {
             "speed": 1.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "galley",
+      "name": "Galley",
+      "type": "unit",
+      "civs": [
+        "hr"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Archer Ship"
+      ],
+      "classes": [
+        "archer",
+        "ship"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/galley-3.png",
+      "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from ranged damage Blacksmith technology",
+      "variations": [
+        {
+          "id": "galley-2",
+          "baseId": "galley",
+          "type": "unit",
+          "name": "Galley",
+          "pbgid": 193932,
+          "attribName": "unit_naval_war_galley_3_hre",
+          "age": 2,
+          "civs": [
+            "hr"
+          ],
+          "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from ranged damage Blacksmith technology",
+          "classes": [
+            "archer",
+            "ship"
+          ],
+          "displayClasses": [
+            "Archer Ship"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 180,
+            "stone": 0,
+            "gold": 180,
+            "total": 360,
+            "popcap": 3,
+            "time": 40
           },
-          "icon": "https://data.aoe4world.com/images/units/fishing-boat.png"
+          "producedBy": [
+            "dock"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/galley-3.png",
+          "hitpoints": 550,
+          "weapons": [
+            {
+              "name": "Bow",
+              "type": "ranged",
+              "damage": 10,
+              "speed": 2.5,
+              "range": {
+                "min": 0,
+                "max": 5
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "naval",
+                        "fireship"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 10,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0.5,
+                "windup": 0.25,
+                "attack": 0.5,
+                "winddown": 0.5,
+                "reload": 0.75,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "burst": {
+                "count": 6
+              },
+              "attribName": "weapon_naval_arrow_ship_arrow_western",
+              "pbgid": 2034308
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 5
+            }
+          ],
+          "sight": {
+            "line": 36,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.375
+          }
         }
       ]
     },
@@ -1880,13 +1395,7 @@
       "name": "Handcannoneer",
       "type": "unit",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -1907,15 +1416,11 @@
           "baseId": "handcannoneer",
           "type": "unit",
           "name": "Handcannoneer",
+          "pbgid": 134720,
+          "attribName": "unit_handcannon_4_hre",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo"
+            "hr"
           ],
           "description": "Powerful all-purpose ranged infantry.\n+ High damage\n- High cost\n- Slow movement speed",
           "classes": [
@@ -1940,16 +1445,31 @@
           "producedBy": [
             "archery-range"
           ],
+          "icon": "https://data.aoe4world.com/images/units/handcannoneer-4.png",
           "hitpoints": 130,
           "weapons": [
             {
+              "name": "Handcannon",
               "type": "ranged",
               "damage": 35,
-              "speed": 2.15,
+              "speed": 2.125,
               "range": {
                 "min": 0,
                 "max": 4
-              }
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0.25,
+                "windup": 0.25,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 1,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_handcannon_4",
+              "pbgid": 127729
             }
           ],
           "armor": [],
@@ -1958,9 +1478,8 @@
             "height": 10
           },
           "movement": {
-            "speed": 1.13
-          },
-          "icon": "https://data.aoe4world.com/images/units/handcannoneer-4.png"
+            "speed": 1.125
+          }
         }
       ]
     },
@@ -1969,14 +1488,7 @@
       "name": "Horseman",
       "type": "unit",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -1996,16 +1508,11 @@
           "baseId": "horseman",
           "type": "unit",
           "name": "Horseman",
+          "pbgid": 134721,
+          "attribName": "unit_horseman_2_hre",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "hr"
           ],
           "description": "Mobile cavalry effective at raiding and flanking.\n+ High movement speed\n- Weak vs melee units",
           "classes": [
@@ -2024,20 +1531,22 @@
             "gold": 0,
             "total": 120,
             "popcap": 1,
-            "time": 22
+            "time": 22.5
           },
           "producedBy": [
             "stable"
           ],
+          "icon": "https://data.aoe4world.com/images/units/horseman-2.png",
           "hitpoints": 125,
           "weapons": [
             {
+              "name": "Spear",
               "type": "melee",
               "damage": 9,
               "speed": 1.75,
               "range": {
                 "min": 0,
-                "max": 0.3
+                "max": 0.2875
               },
               "modifiers": [
                 {
@@ -2066,17 +1575,42 @@
                   "value": 10,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.125
+              },
+              "attribName": "weapon_horseman_2",
+              "pbgid": 109275
             },
             {
+              "name": "Torch",
               "type": "fire",
-              "damage": 13,
-              "speed": 2,
+              "damage": 10,
+              "speed": 2.125,
               "range": {
-                "max": 4,
-                "min": 0
+                "min": 0,
+                "max": 1
               },
-              "modifiers": []
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_horseman",
+              "pbgid": 127935
             }
           ],
           "armor": [
@@ -2090,25 +1624,19 @@
             "height": 10
           },
           "movement": {
-            "speed": 1.88
-          },
-          "icon": "https://data.aoe4world.com/images/units/horseman-2.png"
+            "speed": 1.875
+          }
         },
         {
           "id": "horseman-3",
           "baseId": "horseman",
           "type": "unit",
-          "name": "Horseman",
+          "name": "Veteran Horseman",
+          "pbgid": 134722,
+          "attribName": "unit_horseman_3_hre",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "hr"
           ],
           "description": "Mobile cavalry effective at raiding and flanking.\n+ High movement speed\n- Weak vs melee units",
           "classes": [
@@ -2127,20 +1655,22 @@
             "gold": 0,
             "total": 120,
             "popcap": 1,
-            "time": 22
+            "time": 22.5
           },
           "producedBy": [
             "stable"
           ],
+          "icon": "https://data.aoe4world.com/images/units/horseman-3.png",
           "hitpoints": 155,
           "weapons": [
             {
+              "name": "Spear",
               "type": "melee",
               "damage": 11,
               "speed": 1.75,
               "range": {
                 "min": 0,
-                "max": 0.3
+                "max": 0.2875
               },
               "modifiers": [
                 {
@@ -2169,17 +1699,42 @@
                   "value": 10,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.125
+              },
+              "attribName": "weapon_horseman_3",
+              "pbgid": 127820
             },
             {
+              "name": "Torch",
               "type": "fire",
-              "damage": 16,
-              "speed": 2,
+              "damage": 10,
+              "speed": 2.125,
               "range": {
-                "max": 4,
-                "min": 0
+                "min": 0,
+                "max": 1
               },
-              "modifiers": []
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_horseman",
+              "pbgid": 127935
             }
           ],
           "armor": [
@@ -2193,25 +1748,19 @@
             "height": 10
           },
           "movement": {
-            "speed": 1.88
-          },
-          "icon": "https://data.aoe4world.com/images/units/horseman-3.png"
+            "speed": 1.875
+          }
         },
         {
           "id": "horseman-4",
           "baseId": "horseman",
           "type": "unit",
-          "name": "Horseman",
+          "name": "Elite Horseman",
+          "pbgid": 134724,
+          "attribName": "unit_horseman_4_hre",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "hr"
           ],
           "description": "Mobile cavalry effective at raiding and flanking.\n+ High movement speed\n- Weak vs melee units",
           "classes": [
@@ -2230,20 +1779,22 @@
             "gold": 0,
             "total": 120,
             "popcap": 1,
-            "time": 22
+            "time": 22.5
           },
           "producedBy": [
             "stable"
           ],
+          "icon": "https://data.aoe4world.com/images/units/horseman-4.png",
           "hitpoints": 180,
           "weapons": [
             {
+              "name": "Spear",
               "type": "melee",
               "damage": 13,
               "speed": 1.75,
               "range": {
                 "min": 0,
-                "max": 0.3
+                "max": 0.2875
               },
               "modifiers": [
                 {
@@ -2272,17 +1823,42 @@
                   "value": 10,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.125
+              },
+              "attribName": "weapon_horseman_4",
+              "pbgid": 127821
             },
             {
+              "name": "Torch",
               "type": "fire",
-              "damage": 20,
-              "speed": 2,
+              "damage": 10,
+              "speed": 2.125,
               "range": {
-                "max": 4,
-                "min": 0
+                "min": 0,
+                "max": 1
               },
-              "modifiers": []
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_horseman",
+              "pbgid": 127935
             }
           ],
           "armor": [
@@ -2296,9 +1872,102 @@
             "height": 10
           },
           "movement": {
-            "speed": 1.88
+            "speed": 1.875
+          }
+        }
+      ]
+    },
+    {
+      "id": "hulk",
+      "name": "Hulk",
+      "type": "unit",
+      "civs": [
+        "hr"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Attack Ship"
+      ],
+      "classes": [
+        "attack",
+        "ship"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/hulk-2.png",
+      "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+      "variations": [
+        {
+          "id": "hulk-3",
+          "baseId": "hulk",
+          "type": "unit",
+          "name": "Hulk",
+          "pbgid": 193124,
+          "attribName": "unit_naval_combat_ship_2_hre",
+          "age": 3,
+          "civs": [
+            "hr"
+          ],
+          "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+          "classes": [
+            "attack",
+            "ship"
+          ],
+          "displayClasses": [
+            "Attack Ship"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 300,
+            "stone": 0,
+            "gold": 240,
+            "total": 540,
+            "popcap": 4,
+            "time": 45
           },
-          "icon": "https://data.aoe4world.com/images/units/horseman-4.png"
+          "producedBy": [
+            "dock"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/hulk-2.png",
+          "hitpoints": 1000,
+          "weapons": [
+            {
+              "name": "Ballista",
+              "type": "ranged",
+              "damage": 100,
+              "speed": 4.125,
+              "range": {
+                "min": 0,
+                "max": 6
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0.5,
+                "windup": 0.25,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 2.75,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_naval_combat_ship_crossbow_western",
+              "pbgid": 2034159
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 5
+            }
+          ],
+          "sight": {
+            "line": 38,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.125
+          }
         }
       ]
     },
@@ -2307,9 +1976,7 @@
       "name": "Knight",
       "type": "unit",
       "civs": [
-        "en",
-        "hr",
-        "ru"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -2329,11 +1996,11 @@
           "baseId": "knight",
           "type": "unit",
           "name": "Knight",
+          "pbgid": 134725,
+          "attribName": "unit_knight_3_hre",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "ru"
+            "hr"
           ],
           "description": "Expensive cavalry with a powerful charge.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen",
           "classes": [
@@ -2357,35 +2024,63 @@
           "producedBy": [
             "stable"
           ],
+          "icon": "https://data.aoe4world.com/images/units/knight-3.png",
           "hitpoints": 230,
           "weapons": [
             {
+              "name": "Sword",
               "type": "melee",
               "damage": 24,
               "speed": 1.5,
               "range": {
                 "min": 0,
-                "max": 0.3
-              }
+                "max": 0.2875
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.875
+              },
+              "attribName": "weapon_knight_3",
+              "pbgid": 106614
             },
             {
+              "name": "Torch",
               "type": "fire",
-              "damage": 16,
-              "speed": 2,
+              "damage": 10,
+              "speed": 2.125,
               "range": {
-                "max": 4,
-                "min": 0
+                "min": 0,
+                "max": 1
               },
-              "modifiers": []
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_horseman",
+              "pbgid": 127935
             }
           ],
           "armor": [
             {
-              "type": "ranged",
+              "type": "melee",
               "value": 4
             },
             {
-              "type": "melee",
+              "type": "ranged",
               "value": 4
             }
           ],
@@ -2394,20 +2089,19 @@
             "height": 10
           },
           "movement": {
-            "speed": 1.63
-          },
-          "icon": "https://data.aoe4world.com/images/units/knight-3.png"
+            "speed": 1.625
+          }
         },
         {
           "id": "knight-4",
           "baseId": "knight",
           "type": "unit",
-          "name": "Knight",
+          "name": "Elite Knight",
+          "pbgid": 134726,
+          "attribName": "unit_knight_4_hre",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "ru"
+            "hr"
           ],
           "description": "Expensive cavalry with a powerful charge.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen",
           "classes": [
@@ -2431,35 +2125,63 @@
           "producedBy": [
             "stable"
           ],
+          "icon": "https://data.aoe4world.com/images/units/knight-4.png",
           "hitpoints": 270,
           "weapons": [
             {
+              "name": "Sword",
               "type": "melee",
               "damage": 29,
               "speed": 1.5,
               "range": {
                 "min": 0,
-                "max": 0.3
-              }
+                "max": 0.2875
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.875
+              },
+              "attribName": "weapon_knight_4",
+              "pbgid": 127822
             },
             {
+              "name": "Torch",
               "type": "fire",
-              "damage": 20,
-              "speed": 2,
+              "damage": 10,
+              "speed": 2.125,
               "range": {
-                "max": 4,
-                "min": 0
+                "min": 0,
+                "max": 1
               },
-              "modifiers": []
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_horseman",
+              "pbgid": 127935
             }
           ],
           "armor": [
             {
-              "type": "ranged",
+              "type": "melee",
               "value": 5
             },
             {
-              "type": "melee",
+              "type": "ranged",
               "value": 5
             }
           ],
@@ -2468,9 +2190,835 @@
             "height": 10
           },
           "movement": {
-            "speed": 1.63
+            "speed": 1.625
+          }
+        }
+      ]
+    },
+    {
+      "id": "landsknecht",
+      "name": "Landsknecht",
+      "type": "unit",
+      "civs": [
+        "hr"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/landsknecht-3.png",
+      "description": "Brave, unarmored infantry with enormous two-handed swords effective in mixed armies.\n+ Melee attack deals area damage\n- Low health",
+      "variations": [
+        {
+          "id": "landsknecht-3",
+          "baseId": "landsknecht",
+          "type": "unit",
+          "name": "Landsknecht",
+          "pbgid": 136941,
+          "attribName": "unit_landsknecht_3_hre",
+          "age": 3,
+          "civs": [
+            "hr"
+          ],
+          "description": "Brave, unarmored infantry with enormous two-handed swords effective in mixed armies.\n+ Melee attack deals area damage\n- Low health",
+          "classes": [
+            "light",
+            "melee",
+            "infantry"
+          ],
+          "displayClasses": [
+            "Light Melee Infantry"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 60,
+            "wood": 0,
+            "stone": 0,
+            "gold": 100,
+            "total": 160,
+            "popcap": 1,
+            "time": 22.5
           },
-          "icon": "https://data.aoe4world.com/images/units/knight-4.png"
+          "producedBy": [
+            "barracks",
+            "burgrave-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/landsknecht-3.png",
+          "hitpoints": 80,
+          "weapons": [
+            {
+              "name": "Zweihander",
+              "type": "melee",
+              "damage": 17,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_landsknecht_3_hre",
+              "pbgid": 136942
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch",
+              "pbgid": 123518
+            }
+          ],
+          "armor": [],
+          "sight": {
+            "line": 36,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.25
+          }
+        },
+        {
+          "id": "landsknecht-4",
+          "baseId": "landsknecht",
+          "type": "unit",
+          "name": "Elite Landsknecht",
+          "pbgid": 168401,
+          "attribName": "unit_landsknecht_4_hre",
+          "age": 4,
+          "civs": [
+            "hr"
+          ],
+          "description": "Brave, unarmored infantry with enormous two-handed swords effective in mixed armies.\n+ Melee attack deals area damage\n- Low health",
+          "classes": [
+            "light",
+            "melee",
+            "infantry"
+          ],
+          "displayClasses": [
+            "Light Melee Infantry"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 60,
+            "wood": 0,
+            "stone": 0,
+            "gold": 100,
+            "total": 160,
+            "popcap": 1,
+            "time": 22.5
+          },
+          "producedBy": [
+            "barracks",
+            "burgrave-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/landsknecht-4.png",
+          "hitpoints": 95,
+          "weapons": [
+            {
+              "name": "Zweihander",
+              "type": "melee",
+              "damage": 20,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_landsknecht_4_hre",
+              "pbgid": 184609
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch",
+              "pbgid": 123518
+            }
+          ],
+          "armor": [],
+          "sight": {
+            "line": 36,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.25
+          }
+        }
+      ]
+    },
+    {
+      "id": "man-at-arms",
+      "name": "Man-at-Arms",
+      "type": "unit",
+      "civs": [
+        "hr"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Heavy Melee Infantry"
+      ],
+      "classes": [
+        "heavy",
+        "melee",
+        "infantry"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/man-at-arms-2.png",
+      "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
+      "variations": [
+        {
+          "id": "man-at-arms-2",
+          "baseId": "man-at-arms",
+          "type": "unit",
+          "name": "Early Man-at-Arms",
+          "pbgid": 168040,
+          "attribName": "unit_manatarms_2_hre",
+          "age": 2,
+          "civs": [
+            "hr"
+          ],
+          "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
+          "classes": [
+            "heavy",
+            "melee",
+            "infantry"
+          ],
+          "displayClasses": [
+            "Heavy Melee Infantry"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 100,
+            "wood": 0,
+            "stone": 0,
+            "gold": 20,
+            "total": 120,
+            "popcap": 1,
+            "time": 22.5
+          },
+          "producedBy": [
+            "barracks",
+            "burgrave-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/man-at-arms-2.png",
+          "hitpoints": 120,
+          "weapons": [
+            {
+              "name": "Sword",
+              "type": "melee",
+              "damage": 10,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_manatarms_2",
+              "pbgid": 129615
+            },
+            {
+              "name": "Mace",
+              "type": "melee",
+              "damage": 10,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "heavy"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 6,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_manatarms_2_1handmace_hre",
+              "pbgid": 171908
+            },
+            {
+              "name": "Ax",
+              "type": "melee",
+              "damage": 10,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_manatarms_2_2handaxe_hre",
+              "pbgid": 2020386
+            },
+            {
+              "name": "Bludgeon",
+              "type": "melee",
+              "damage": 10,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "heavy"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 6,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_manatarms_2_2handmace_hre",
+              "pbgid": 171902
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch",
+              "pbgid": 123518
+            }
+          ],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 3
+            },
+            {
+              "type": "ranged",
+              "value": 3
+            }
+          ],
+          "sight": {
+            "line": 36,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.125
+          }
+        },
+        {
+          "id": "man-at-arms-3",
+          "baseId": "man-at-arms",
+          "type": "unit",
+          "name": "Man-at-Arms",
+          "pbgid": 134727,
+          "attribName": "unit_manatarms_3_hre",
+          "age": 3,
+          "civs": [
+            "hr"
+          ],
+          "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
+          "classes": [
+            "heavy",
+            "melee",
+            "infantry"
+          ],
+          "displayClasses": [
+            "Heavy Melee Infantry"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 100,
+            "wood": 0,
+            "stone": 0,
+            "gold": 20,
+            "total": 120,
+            "popcap": 1,
+            "time": 22.5
+          },
+          "producedBy": [
+            "barracks",
+            "burgrave-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/man-at-arms-3.png",
+          "hitpoints": 155,
+          "weapons": [
+            {
+              "name": "Sword",
+              "type": "melee",
+              "damage": 12,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_manatarms_3",
+              "pbgid": 109253
+            },
+            {
+              "name": "Mace",
+              "type": "melee",
+              "damage": 12,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "heavy"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 6,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_manatarms_3_1handmace_hre",
+              "pbgid": 171909
+            },
+            {
+              "name": "Ax",
+              "type": "melee",
+              "damage": 12,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_manatarms_3_2handaxe_hre",
+              "pbgid": 2020388
+            },
+            {
+              "name": "Bludgeon",
+              "type": "melee",
+              "damage": 12,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "heavy"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 6,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_manatarms_3_2handmace_hre",
+              "pbgid": 171903
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch",
+              "pbgid": 123518
+            }
+          ],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 4
+            },
+            {
+              "type": "ranged",
+              "value": 4
+            }
+          ],
+          "sight": {
+            "line": 36,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.125
+          }
+        },
+        {
+          "id": "man-at-arms-4",
+          "baseId": "man-at-arms",
+          "type": "unit",
+          "name": "Elite Man-at-Arms",
+          "pbgid": 134728,
+          "attribName": "unit_manatarms_4_hre",
+          "age": 4,
+          "civs": [
+            "hr"
+          ],
+          "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
+          "classes": [
+            "heavy",
+            "melee",
+            "infantry"
+          ],
+          "displayClasses": [
+            "Heavy Melee Infantry"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 100,
+            "wood": 0,
+            "stone": 0,
+            "gold": 20,
+            "total": 120,
+            "popcap": 1,
+            "time": 22.5
+          },
+          "producedBy": [
+            "barracks",
+            "burgrave-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/man-at-arms-4.png",
+          "hitpoints": 180,
+          "weapons": [
+            {
+              "name": "Sword",
+              "type": "melee",
+              "damage": 14,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_manatarms_4",
+              "pbgid": 127823
+            },
+            {
+              "name": "Mace",
+              "type": "melee",
+              "damage": 14,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "heavy"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 6,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_manatarms_4_1handmace_hre",
+              "pbgid": 171910
+            },
+            {
+              "name": "Ax",
+              "type": "melee",
+              "damage": 14,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_manatarms_4_2handaxe_hre",
+              "pbgid": 2020390
+            },
+            {
+              "name": "Bludgeon",
+              "type": "melee",
+              "damage": 14,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "heavy"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 6,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_manatarms_4_2handmace_hre",
+              "pbgid": 171904
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch",
+              "pbgid": 123518
+            }
+          ],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 5
+            },
+            {
+              "type": "ranged",
+              "value": 5
+            }
+          ],
+          "sight": {
+            "line": 36,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.125
+          }
         }
       ]
     },
@@ -2479,13 +3027,7 @@
       "name": "Mangonel",
       "type": "unit",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -2503,15 +3045,11 @@
           "baseId": "mangonel",
           "type": "unit",
           "name": "Mangonel",
+          "pbgid": 134729,
+          "attribName": "unit_mangonel_3_hre",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "hr"
           ],
           "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
           "classes": [
@@ -2533,12 +3071,14 @@
           "producedBy": [
             "siege-workshop"
           ],
+          "icon": "https://data.aoe4world.com/images/units/mangonel-3.png",
           "hitpoints": 140,
           "weapons": [
             {
+              "name": "Mangonel",
               "type": "siege",
-              "damage": 36,
-              "speed": 6.75,
+              "damage": 12,
+              "speed": 6.875,
               "range": {
                 "min": 3,
                 "max": 9
@@ -2549,10 +3089,21 @@
                   "target": {
                     "class": [
                       [
-                        "ship"
-                      ],
-                      [
                         "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 24,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "naval",
+                        "unit"
                       ]
                     ]
                   },
@@ -2570,10 +3121,65 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 18,
+                  "value": 6,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0.5,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 2.25,
+                "reload": 4,
+                "setup": 0,
+                "teardown": 1,
+                "cooldown": 0
+              },
+              "burst": {
+                "count": 3
+              },
+              "attribName": "weapon_mangonel_3",
+              "pbgid": 127503
+            },
+            {
+              "name": "Incendiary",
+              "type": "fire",
+              "damage": 15,
+              "speed": 8.875,
+              "range": {
+                "min": 2.5,
+                "max": 9
+              },
+              "modifiers": [
+                {
+                  "property": "fireAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 45,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0.5,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 2.25,
+                "reload": 6,
+                "setup": 0,
+                "teardown": 1,
+                "cooldown": 0
+              },
+              "burst": {
+                "count": 3
+              },
+              "attribName": "weapon_mangonel_3_incendiary",
+              "pbgid": 127724
             }
           ],
           "armor": [
@@ -2588,8 +3194,74 @@
           },
           "movement": {
             "speed": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "prelate",
+      "name": "Prelate",
+      "type": "unit",
+      "civs": [
+        "hr"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Religious"
+      ],
+      "classes": [
+        "religious"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/units/prelate-1.png",
+      "description": "Support unit with no combat capability. Automatically inspires Villagers to greatly improve their gather rate. Can pick up Relics, convert enemy units, and capture Sacred Sites starting in the Castle Age (III).\n+ Heals friendly units\n- Low health",
+      "variations": [
+        {
+          "id": "prelate-1",
+          "baseId": "prelate",
+          "type": "unit",
+          "name": "Prelate",
+          "pbgid": 136918,
+          "attribName": "unit_monk_1_hre",
+          "age": 1,
+          "civs": [
+            "hr"
+          ],
+          "description": "Support unit with no combat capability. Automatically inspires Villagers to greatly improve their gather rate. Can pick up Relics, convert enemy units, and capture Sacred Sites starting in the Castle Age (III).\n+ Heals friendly units\n- Low health",
+          "classes": [
+            "religious"
+          ],
+          "displayClasses": [
+            "Religious"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 100,
+            "total": 100,
+            "popcap": 1,
+            "time": 20
           },
-          "icon": "https://data.aoe4world.com/images/units/mangonel-3.png"
+          "producedBy": [
+            "town-center",
+            "regnitz-cathedral",
+            "monastery",
+            "palace-of-swabia",
+            "capital-town-center"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/prelate-1.png",
+          "hitpoints": 90,
+          "weapons": [],
+          "armor": [],
+          "sight": {
+            "line": 30,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.125
+          }
         }
       ]
     },
@@ -2598,14 +3270,7 @@
       "name": "Scout",
       "type": "unit",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -2617,7 +3282,7 @@
         "cavalry"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/scout.png",
+      "icon": "https://data.aoe4world.com/images/units/scout-1.png",
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
       "variations": [
         {
@@ -2625,16 +3290,11 @@
           "baseId": "scout",
           "type": "unit",
           "name": "Scout",
+          "pbgid": 134737,
+          "attribName": "unit_scout_1_hre",
           "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "hr"
           ],
           "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
           "classes": [
@@ -2656,42 +3316,63 @@
             "time": 25
           },
           "producedBy": [
-            "town-center"
+            "stable",
+            "town-center",
+            "palace-of-swabia",
+            "capital-town-center"
           ],
+          "icon": "https://data.aoe4world.com/images/units/scout-1.png",
           "hitpoints": 110,
           "weapons": [
             {
+              "name": "Fire Lance",
               "type": "melee",
               "damage": 2,
               "speed": 2,
               "range": {
                 "min": 0,
-                "max": 0.3
+                "max": 0.2875
               },
               "modifiers": [
                 {
                   "property": "meleeAttack",
                   "target": {
-                    "id": [
-                      "scout",
-                      "khan"
+                    "class": [
+                      [
+                        "scout"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 10,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "siege"
+                      ]
                     ]
                   },
                   "effect": "change",
                   "value": 10,
                   "type": "passive"
                 }
-              ]
-            },
-            {
-              "type": "fire",
-              "damage": 10,
-              "speed": 2,
-              "range": {
-                "max": 4,
-                "min": 0
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.375,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.5
               },
-              "modifiers": []
+              "attribName": "weapon_scout_1",
+              "pbgid": 120622
             }
           ],
           "armor": [],
@@ -2700,513 +3381,8 @@
             "height": 501
           },
           "movement": {
-            "speed": 1.63
-          },
-          "icon": "https://data.aoe4world.com/images/units/scout.png"
-        },
-        {
-          "id": "scout-2-stable",
-          "baseId": "scout",
-          "type": "unit",
-          "name": "Scout",
-          "age": 2,
-          "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
-          "classes": [
-            "light",
-            "melee",
-            "cavalry"
-          ],
-          "displayClasses": [
-            "Light Melee Cavalry"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 70,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "total": 70,
-            "popcap": 1,
-            "time": 25
-          },
-          "producedBy": [
-            "stable"
-          ],
-          "hitpoints": 110,
-          "weapons": [
-            {
-              "type": "melee",
-              "damage": 2,
-              "speed": 2,
-              "range": {
-                "min": 0,
-                "max": 0.3
-              },
-              "modifiers": [
-                {
-                  "property": "meleeAttack",
-                  "target": {
-                    "id": [
-                      "scout",
-                      "khan"
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ]
-            },
-            {
-              "type": "fire",
-              "damage": 13,
-              "speed": 2,
-              "range": {
-                "max": 4,
-                "min": 0
-              },
-              "modifiers": []
-            }
-          ],
-          "armor": [],
-          "sight": {
-            "line": 41,
-            "height": 501
-          },
-          "movement": {
-            "speed": 1.63
-          },
-          "icon": "https://data.aoe4world.com/images/units/scout.png"
-        },
-        {
-          "id": "scout-2",
-          "baseId": "scout",
-          "type": "unit",
-          "name": "Scout",
-          "age": 2,
-          "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
-          "classes": [
-            "light",
-            "melee",
-            "cavalry"
-          ],
-          "displayClasses": [
-            "Light Melee Cavalry"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 70,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "total": 70,
-            "popcap": 1,
-            "time": 25
-          },
-          "producedBy": [
-            "town-center"
-          ],
-          "hitpoints": 110,
-          "weapons": [
-            {
-              "type": "melee",
-              "damage": 2,
-              "speed": 2,
-              "range": {
-                "min": 0,
-                "max": 0.3
-              },
-              "modifiers": [
-                {
-                  "property": "meleeAttack",
-                  "target": {
-                    "id": [
-                      "scout",
-                      "khan"
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ]
-            },
-            {
-              "type": "fire",
-              "damage": 13,
-              "speed": 2,
-              "range": {
-                "max": 4,
-                "min": 0
-              },
-              "modifiers": []
-            }
-          ],
-          "armor": [],
-          "sight": {
-            "line": 41,
-            "height": 501
-          },
-          "movement": {
-            "speed": 1.63
-          },
-          "icon": "https://data.aoe4world.com/images/units/scout.png"
-        },
-        {
-          "id": "scout-3-stable",
-          "baseId": "scout",
-          "type": "unit",
-          "name": "Scout",
-          "age": 3,
-          "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
-          "classes": [
-            "light",
-            "melee",
-            "cavalry"
-          ],
-          "displayClasses": [
-            "Light Melee Cavalry"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 70,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "total": 70,
-            "popcap": 1,
-            "time": 25
-          },
-          "producedBy": [
-            "stable"
-          ],
-          "hitpoints": 110,
-          "weapons": [
-            {
-              "type": "melee",
-              "damage": 2,
-              "speed": 2,
-              "range": {
-                "min": 0,
-                "max": 0.3
-              },
-              "modifiers": [
-                {
-                  "property": "meleeAttack",
-                  "target": {
-                    "id": [
-                      "scout",
-                      "khan"
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ]
-            },
-            {
-              "type": "fire",
-              "damage": 16,
-              "speed": 2,
-              "range": {
-                "max": 4,
-                "min": 0
-              },
-              "modifiers": []
-            }
-          ],
-          "armor": [],
-          "sight": {
-            "line": 41,
-            "height": 501
-          },
-          "movement": {
-            "speed": 1.63
-          },
-          "icon": "https://data.aoe4world.com/images/units/scout.png"
-        },
-        {
-          "id": "scout-3",
-          "baseId": "scout",
-          "type": "unit",
-          "name": "Scout",
-          "age": 3,
-          "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
-          "classes": [
-            "light",
-            "melee",
-            "cavalry"
-          ],
-          "displayClasses": [
-            "Light Melee Cavalry"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 70,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "total": 70,
-            "popcap": 1,
-            "time": 25
-          },
-          "producedBy": [
-            "town-center"
-          ],
-          "hitpoints": 110,
-          "weapons": [
-            {
-              "type": "melee",
-              "damage": 2,
-              "speed": 2,
-              "range": {
-                "min": 0,
-                "max": 0.3
-              },
-              "modifiers": [
-                {
-                  "property": "meleeAttack",
-                  "target": {
-                    "id": [
-                      "scout",
-                      "khan"
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ]
-            },
-            {
-              "type": "fire",
-              "damage": 16,
-              "speed": 2,
-              "range": {
-                "max": 4,
-                "min": 0
-              },
-              "modifiers": []
-            }
-          ],
-          "armor": [],
-          "sight": {
-            "line": 41,
-            "height": 501
-          },
-          "movement": {
-            "speed": 1.63
-          },
-          "icon": "https://data.aoe4world.com/images/units/scout.png"
-        },
-        {
-          "id": "scout-4-stable",
-          "baseId": "scout",
-          "type": "unit",
-          "name": "Scout",
-          "age": 4,
-          "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
-          "classes": [
-            "light",
-            "melee",
-            "cavalry"
-          ],
-          "displayClasses": [
-            "Light Melee Cavalry"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 70,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "total": 70,
-            "popcap": 1,
-            "time": 25
-          },
-          "producedBy": [
-            "stable"
-          ],
-          "hitpoints": 110,
-          "weapons": [
-            {
-              "type": "melee",
-              "damage": 2,
-              "speed": 2,
-              "range": {
-                "min": 0,
-                "max": 0.3
-              },
-              "modifiers": [
-                {
-                  "property": "meleeAttack",
-                  "target": {
-                    "id": [
-                      "scout",
-                      "khan"
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ]
-            },
-            {
-              "type": "fire",
-              "damage": 20,
-              "speed": 2,
-              "range": {
-                "max": 4,
-                "min": 0
-              },
-              "modifiers": []
-            }
-          ],
-          "armor": [],
-          "sight": {
-            "line": 41,
-            "height": 501
-          },
-          "movement": {
-            "speed": 1.63
-          },
-          "icon": "https://data.aoe4world.com/images/units/scout.png"
-        },
-        {
-          "id": "scout-4",
-          "baseId": "scout",
-          "type": "unit",
-          "name": "Scout",
-          "age": 4,
-          "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
-          ],
-          "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
-          "classes": [
-            "light",
-            "melee",
-            "cavalry"
-          ],
-          "displayClasses": [
-            "Light Melee Cavalry"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 70,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "total": 70,
-            "popcap": 1,
-            "time": 25
-          },
-          "producedBy": [
-            "town-center"
-          ],
-          "hitpoints": 110,
-          "weapons": [
-            {
-              "type": "melee",
-              "damage": 2,
-              "speed": 2,
-              "range": {
-                "min": 0,
-                "max": 0.3
-              },
-              "modifiers": [
-                {
-                  "property": "meleeAttack",
-                  "target": {
-                    "id": [
-                      "scout",
-                      "khan"
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ]
-            },
-            {
-              "type": "fire",
-              "damage": 20,
-              "speed": 2,
-              "range": {
-                "max": 4,
-                "min": 0
-              },
-              "modifiers": []
-            }
-          ],
-          "armor": [],
-          "sight": {
-            "line": 41,
-            "height": 501
-          },
-          "movement": {
-            "speed": 1.63
-          },
-          "icon": "https://data.aoe4world.com/images/units/scout.png"
+            "speed": 1.625
+          }
         }
       ]
     },
@@ -3215,14 +3391,7 @@
       "name": "Siege Tower",
       "type": "unit",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -3232,7 +3401,7 @@
         "siege"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/siege-tower-2.png",
+      "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
       "description": "Tall infantry transport with no combat capability. Allows garrisoned infantry to be unloaded directly onto Stone Walls.\n+ High ranged armor\n- Cannot attack\n- Slow movement speed",
       "variations": [
         {
@@ -3240,16 +3409,11 @@
           "baseId": "siege-tower",
           "type": "unit",
           "name": "Siege Tower",
+          "pbgid": 134700,
+          "attribName": "unit_siege_tower_3_hre",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "hr"
           ],
           "description": "Tall infantry transport with no combat capability. Allows garrisoned infantry to be unloaded directly onto Stone Walls.\n+ High ranged armor\n- Cannot attack\n- Slow movement speed",
           "classes": [
@@ -3265,12 +3429,18 @@
             "stone": 0,
             "gold": 0,
             "total": 125,
-            "popcap": 3,
+            "popcap": 1,
             "time": 45
           },
           "producedBy": [
-            "infantry-units"
+            "spearman",
+            "man-at-arms",
+            "landsknecht",
+            "archer",
+            "crossbowman",
+            "handcannoneer"
           ],
+          "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
           "hitpoints": 480,
           "weapons": [],
           "armor": [
@@ -3284,9 +3454,17 @@
             "height": 10
           },
           "movement": {
-            "speed": 0.63
+            "speed": 0.625
           },
-          "icon": "https://data.aoe4world.com/images/units/siege-tower-2.png"
+          "garrison": {
+            "capacity": 8,
+            "classes": [
+              "infantry",
+              "villager",
+              "infantry ranged",
+              "monk"
+            ]
+          }
         }
       ]
     },
@@ -3295,14 +3473,7 @@
       "name": "Spearman",
       "type": "unit",
       "civs": [
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
-        "ru",
-        "en"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -3322,15 +3493,11 @@
           "baseId": "spearman",
           "type": "unit",
           "name": "Spearman",
+          "pbgid": 134743,
+          "attribName": "unit_spearman_1_hre",
           "age": 1,
           "civs": [
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "hr"
           ],
           "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Susceptible to light ranged attacks\n- Weak against armored infantry",
           "classes": [
@@ -3352,17 +3519,20 @@
             "time": 15
           },
           "producedBy": [
-            "barracks"
+            "barracks",
+            "burgrave-palace"
           ],
+          "icon": "https://data.aoe4world.com/images/units/spearman-1.png",
           "hitpoints": 70,
           "weapons": [
             {
+              "name": "Spear",
               "type": "melee",
               "damage": 6,
               "speed": 1.875,
               "range": {
                 "min": 0,
-                "max": 0.3
+                "max": 0.295
               },
               "modifiers": [
                 {
@@ -3378,17 +3548,42 @@
                   "value": 15,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.25,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.75
+              },
+              "attribName": "weapon_spearman_1",
+              "pbgid": 106762
             },
             {
+              "name": "Torch",
               "type": "fire",
               "damage": 10,
-              "speed": 2,
+              "speed": 2.125,
               "range": {
-                "max": 4,
-                "min": 0
+                "min": 0,
+                "max": 1
               },
-              "modifiers": []
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch",
+              "pbgid": 123518
             }
           ],
           "armor": [],
@@ -3398,24 +3593,18 @@
           },
           "movement": {
             "speed": 1.25
-          },
-          "icon": "https://data.aoe4world.com/images/units/spearman-1.png"
+          }
         },
         {
           "id": "spearman-2",
           "baseId": "spearman",
           "type": "unit",
-          "name": "Spearman",
+          "name": "Hardened Spearman",
+          "pbgid": 134745,
+          "attribName": "unit_spearman_2_hre",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "hr"
           ],
           "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Susceptible to light ranged attacks\n- Weak against armored infantry",
           "classes": [
@@ -3437,17 +3626,20 @@
             "time": 15
           },
           "producedBy": [
-            "barracks"
+            "barracks",
+            "burgrave-palace"
           ],
+          "icon": "https://data.aoe4world.com/images/units/spearman-2.png",
           "hitpoints": 90,
           "weapons": [
             {
+              "name": "Spear",
               "type": "melee",
               "damage": 8,
               "speed": 1.875,
               "range": {
                 "min": 0,
-                "max": 0.3
+                "max": 0.295
               },
               "modifiers": [
                 {
@@ -3463,17 +3655,42 @@
                   "value": 20,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.25,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.75
+              },
+              "attribName": "weapon_spearman_2",
+              "pbgid": 127825
             },
             {
+              "name": "Torch",
               "type": "fire",
-              "damage": 13,
-              "speed": 2,
+              "damage": 10,
+              "speed": 2.125,
               "range": {
-                "max": 4,
-                "min": 0
+                "min": 0,
+                "max": 1
               },
-              "modifiers": []
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch",
+              "pbgid": 123518
             }
           ],
           "armor": [],
@@ -3483,24 +3700,18 @@
           },
           "movement": {
             "speed": 1.25
-          },
-          "icon": "https://data.aoe4world.com/images/units/spearman-2.png"
+          }
         },
         {
           "id": "spearman-3",
           "baseId": "spearman",
           "type": "unit",
-          "name": "Spearman",
+          "name": "Veteran Spearman",
+          "pbgid": 134747,
+          "attribName": "unit_spearman_3_hre",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "hr"
           ],
           "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Susceptible to light ranged attacks\n- Weak against armored infantry",
           "classes": [
@@ -3522,17 +3733,20 @@
             "time": 15
           },
           "producedBy": [
-            "barracks"
+            "barracks",
+            "burgrave-palace"
           ],
+          "icon": "https://data.aoe4world.com/images/units/spearman-3.png",
           "hitpoints": 110,
           "weapons": [
             {
+              "name": "Spear",
               "type": "melee",
               "damage": 9,
               "speed": 1.875,
               "range": {
                 "min": 0,
-                "max": 0.3
+                "max": 0.295
               },
               "modifiers": [
                 {
@@ -3548,17 +3762,42 @@
                   "value": 23,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.25,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.75
+              },
+              "attribName": "weapon_spearman_3",
+              "pbgid": 127826
             },
             {
+              "name": "Torch",
               "type": "fire",
-              "damage": 16,
-              "speed": 2,
+              "damage": 10,
+              "speed": 2.125,
               "range": {
-                "max": 4,
-                "min": 0
+                "min": 0,
+                "max": 1
               },
-              "modifiers": []
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch",
+              "pbgid": 123518
             }
           ],
           "armor": [],
@@ -3568,24 +3807,18 @@
           },
           "movement": {
             "speed": 1.25
-          },
-          "icon": "https://data.aoe4world.com/images/units/spearman-3.png"
+          }
         },
         {
           "id": "spearman-4",
           "baseId": "spearman",
           "type": "unit",
-          "name": "Spearman",
+          "name": "Elite Spearman",
+          "pbgid": 134749,
+          "attribName": "unit_spearman_4_hre",
           "age": 4,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "hr"
           ],
           "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Susceptible to light ranged attacks\n- Weak against armored infantry",
           "classes": [
@@ -3607,17 +3840,20 @@
             "time": 15
           },
           "producedBy": [
-            "barracks"
+            "barracks",
+            "burgrave-palace"
           ],
+          "icon": "https://data.aoe4world.com/images/units/spearman-4.png",
           "hitpoints": 130,
           "weapons": [
             {
+              "name": "Spear",
               "type": "melee",
               "damage": 11,
               "speed": 1.875,
               "range": {
                 "min": 0,
-                "max": 0.3
+                "max": 0.295
               },
               "modifiers": [
                 {
@@ -3633,17 +3869,42 @@
                   "value": 28,
                   "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.25,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.75
+              },
+              "attribName": "weapon_spearman_4",
+              "pbgid": 127827
             },
             {
+              "name": "Torch",
               "type": "fire",
-              "damage": 20,
-              "speed": 2,
+              "damage": 10,
+              "speed": 2.125,
               "range": {
-                "max": 4,
-                "min": 0
+                "min": 0,
+                "max": 1
               },
-              "modifiers": []
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch",
+              "pbgid": 123518
             }
           ],
           "armor": [],
@@ -3653,8 +3914,7 @@
           },
           "movement": {
             "speed": 1.25
-          },
-          "icon": "https://data.aoe4world.com/images/units/spearman-4.png"
+          }
         }
       ]
     },
@@ -3663,14 +3923,7 @@
       "name": "Springald",
       "type": "unit",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -3688,16 +3941,11 @@
           "baseId": "springald",
           "type": "unit",
           "name": "Springald",
+          "pbgid": 134735,
+          "attribName": "unit_springald_3_hre",
           "age": 3,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "mo",
-            "ru"
+            "hr"
           ],
           "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
           "classes": [
@@ -3719,14 +3967,16 @@
           "producedBy": [
             "siege-workshop"
           ],
+          "icon": "https://data.aoe4world.com/images/units/springald-3.png",
           "hitpoints": 125,
           "weapons": [
             {
+              "name": "Springald",
               "type": "ranged",
               "damage": 30,
-              "speed": 4,
+              "speed": 4.125,
               "range": {
-                "min": 1.3,
+                "min": 1.25,
                 "max": 10
               },
               "modifiers": [
@@ -3735,9 +3985,6 @@
                   "target": {
                     "class": [
                       [
-                        "ship"
-                      ],
-                      [
                         "siege"
                       ]
                     ]
@@ -3745,8 +3992,34 @@
                   "effect": "change",
                   "value": 70,
                   "type": "passive"
+                },
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "naval",
+                        "unit"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 70,
+                  "type": "passive"
                 }
-              ]
+              ],
+              "durations": {
+                "aim": 0.5,
+                "windup": 0.25,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 2.75,
+                "setup": 0,
+                "teardown": 0.25,
+                "cooldown": 0
+              },
+              "attribName": "weapon_springald_3",
+              "pbgid": 190303
             }
           ],
           "armor": [
@@ -3760,9 +4033,8 @@
             "height": 10
           },
           "movement": {
-            "speed": 0.88
-          },
-          "icon": "https://data.aoe4world.com/images/units/springald-3.png"
+            "speed": 0.875
+          }
         }
       ]
     },
@@ -3771,12 +4043,7 @@
       "name": "Trade Ship",
       "type": "unit",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "mo"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -3788,24 +4055,21 @@
         "ship"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/trade-ship.png",
-      "description": "Trade Ships generate Gold and Wood when assigned to a trade route with a Coastal Trade Post or a Market near the shore. Once assigned to trade, the Trade Ship will make repeated trips between its home Dock and the trade target. You can assign a new home Dock if you wish to.\n- No combat",
+      "icon": "https://data.aoe4world.com/images/units/trade-ship-3.png",
+      "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
       "variations": [
         {
           "id": "trade-ship-2",
           "baseId": "trade-ship",
           "type": "unit",
           "name": "Trade Ship",
+          "pbgid": 196684,
+          "attribName": "unit_naval_trade_ship_3_hre",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab",
-            "mo"
+            "hr"
           ],
-          "description": "Trade Ships generate Gold and Wood when assigned to a trade route with a Coastal Trade Post or a Market near the shore. Once assigned to trade, the Trade Ship will make repeated trips between its home Dock and the trade target. You can assign a new home Dock if you wish to.\n- No combat",
+          "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
           "classes": [
             "worker",
             "ship"
@@ -3827,6 +4091,7 @@
           "producedBy": [
             "dock"
           ],
+          "icon": "https://data.aoe4world.com/images/units/trade-ship-3.png",
           "hitpoints": 300,
           "weapons": [],
           "armor": [],
@@ -3836,8 +4101,7 @@
           },
           "movement": {
             "speed": 1.5
-          },
-          "icon": "https://data.aoe4world.com/images/units/trade-ship.png"
+          }
         }
       ]
     },
@@ -3846,13 +4110,7 @@
       "name": "Trader",
       "type": "unit",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "mo",
-        "ru"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -3863,26 +4121,22 @@
         "worker",
         "cavalry"
       ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/trader.png",
-      "description": "Traders generate Gold when assigned to trade with a Trade Post or another player’s Market. Once assigned to trade, the Trader makes repeated trips between its Home Market and the Trade Target. You can assign a new Home Market if you wish to.",
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/units/trader-1.png",
+      "description": "Traders generate Gold when assigned to trade with a Trade Post or another player’s Market. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trader makes repeated trips between its Home Market and the trade target. You can assign a new Home Market if you wish to.",
       "variations": [
         {
-          "id": "trader-2",
+          "id": "trader-1",
           "baseId": "trader",
           "type": "unit",
           "name": "Trader",
-          "age": 2,
+          "pbgid": 134750,
+          "attribName": "unit_trade_cart_hre",
+          "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "mo",
-            "ru"
+            "hr"
           ],
-          "description": "Traders generate Gold when assigned to trade with a Trade Post or another player’s Market. Once assigned to trade, the Trader makes repeated trips between its Home Market and the Trade Target. You can assign a new Home Market if you wish to.",
+          "description": "Traders generate Gold when assigned to trade with a Trade Post or another player’s Market. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trader makes repeated trips between its Home Market and the trade target. You can assign a new Home Market if you wish to.",
           "classes": [
             "worker",
             "cavalry"
@@ -3904,6 +4158,7 @@
           "producedBy": [
             "market"
           ],
+          "icon": "https://data.aoe4world.com/images/units/trader-1.png",
           "hitpoints": 90,
           "weapons": [],
           "armor": [],
@@ -3913,8 +4168,7 @@
           },
           "movement": {
             "speed": 1
-          },
-          "icon": "https://data.aoe4world.com/images/units/trader.png"
+          }
         }
       ]
     },
@@ -3923,11 +4177,7 @@
       "name": "Transport Ship",
       "type": "unit",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "de",
-        "ab"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
@@ -3937,23 +4187,21 @@
         "ship"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/transport-ship.png",
-      "description": "Large oared vessel able to transport land units across water.\n+ Can be garrisoned by any unit\n- No combat",
+      "icon": "https://data.aoe4world.com/images/units/transport-ship-2.png",
+      "description": "Large oared vessel able to transport land units across water.\n+ Can be garrisoned by any unit\n+ Uses sight range of units in garrison\n- No combat",
       "variations": [
         {
           "id": "transport-ship-2",
           "baseId": "transport-ship",
           "type": "unit",
           "name": "Transport Ship",
+          "pbgid": 193128,
+          "attribName": "unit_naval_transport_ship_2_hre",
           "age": 2,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "de",
-            "ab"
+            "hr"
           ],
-          "description": "Large oared vessel able to transport land units across water.\n+ Can be garrisoned by any unit\n- No combat",
+          "description": "Large oared vessel able to transport land units across water.\n+ Can be garrisoned by any unit\n+ Uses sight range of units in garrison\n- No combat",
           "classes": [
             "ship"
           ],
@@ -3973,6 +4221,7 @@
           "producedBy": [
             "dock"
           ],
+          "icon": "https://data.aoe4world.com/images/units/transport-ship-2.png",
           "hitpoints": 600,
           "weapons": [],
           "armor": [],
@@ -3983,113 +4232,144 @@
           "movement": {
             "speed": 1.5
           },
-          "icon": "https://data.aoe4world.com/images/units/transport-ship.png"
+          "garrison": {
+            "capacity": 16,
+            "classes": [
+              "infantry",
+              "villager",
+              "infantry ranged",
+              "siege",
+              "monk",
+              "khan",
+              "cavalry"
+            ]
+          }
         }
       ]
     },
     {
-      "id": "trebuchet",
-      "name": "Trebuchet",
+      "id": "villager",
+      "name": "Villager",
       "type": "unit",
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "ru"
+        "hr"
       ],
       "unique": false,
       "displayClasses": [
-        "Siege"
+        "Worker"
       ],
       "classes": [
-        "siege"
+        "worker"
       ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/trebuchet-3.png",
-      "description": "Powerful siege engine effective at destroying buildings and walls over a great distance.\n+ Bonus damage vs buildings\n- Must be set up to fire\n- Inaccurate against units",
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/units/villager-1.png",
+      "description": "Gathers Wood, Food, Stone, and Gold. Builds and repairs buildings and can repair siege engines and naval units.\n- Weak in combat",
       "variations": [
         {
-          "id": "trebuchet-3",
-          "baseId": "trebuchet",
+          "id": "villager-1",
+          "baseId": "villager",
           "type": "unit",
-          "name": "Trebuchet",
-          "age": 3,
+          "name": "Villager",
+          "pbgid": 134753,
+          "attribName": "unit_villager_1_hre",
+          "age": 1,
           "civs": [
-            "en",
-            "hr",
-            "fr",
-            "ch",
-            "de",
-            "ab",
-            "ru"
+            "hr"
           ],
-          "description": "Powerful siege engine effective at destroying buildings and walls over a great distance.\n+ Bonus damage vs buildings\n- Must be set up to fire\n- Inaccurate against units",
+          "description": "Gathers Wood, Food, Stone, and Gold. Builds and repairs buildings and can repair siege engines and naval units.\n- Weak in combat",
           "classes": [
-            "siege"
+            "worker"
           ],
           "displayClasses": [
-            "Siege"
+            "Worker"
           ],
           "unique": false,
           "costs": {
-            "food": 0,
-            "wood": 500,
+            "food": 50,
+            "wood": 0,
             "stone": 0,
-            "gold": 250,
-            "total": 750,
-            "popcap": 3,
-            "time": 40
+            "gold": 0,
+            "total": 50,
+            "popcap": 1,
+            "time": 20
           },
           "producedBy": [
-            "siege-workshop"
+            "town-center",
+            "palace-of-swabia",
+            "capital-town-center"
           ],
-          "hitpoints": 210,
+          "icon": "https://data.aoe4world.com/images/units/villager-1.png",
+          "hitpoints": 50,
           "weapons": [
             {
-              "type": "siege",
-              "damage": 50,
-              "speed": 12.5,
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
               "range": {
-                "min": 2.8,
-                "max": 16
+                "min": 0,
+                "max": 1
               },
               "modifiers": [
                 {
-                  "property": "siegeAttack",
+                  "property": "fireAttack",
                   "target": {
                     "class": [
                       [
-                        "ship"
-                      ],
-                      [
-                        "building"
+                        "siege"
                       ]
                     ]
                   },
                   "effect": "change",
-                  "value": 500,
+                  "value": 2,
                   "type": "passive"
                 }
-              ]
-            }
-          ],
-          "armor": [
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch",
+              "pbgid": 123518
+            },
             {
-              "type": "ranged",
-              "value": 20
+              "name": "Knife",
+              "type": "melee",
+              "damage": 6,
+              "speed": 3.875,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 1,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 2
+              },
+              "attribName": "weapon_villager_1",
+              "pbgid": 120606
             }
           ],
+          "armor": [],
           "sight": {
-            "line": 80,
+            "line": 28,
             "height": 10
           },
           "movement": {
-            "speed": 0.63
-          },
-          "icon": "https://data.aoe4world.com/images/units/trebuchet-3.png"
+            "speed": 1.125
+          }
         }
       ]
     }

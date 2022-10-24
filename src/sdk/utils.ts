@@ -41,6 +41,7 @@ export class ItemList<T extends Item> extends Array<ItemGroup<T>> {
   }
 
   get(id: string | number) {
+    if (typeof id === "number") return this.find((x) => x.variations.some((v) => v.pbgid === id));
     return this.find((x) => x.id === id);
   }
 }

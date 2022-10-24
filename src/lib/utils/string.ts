@@ -7,8 +7,10 @@ export function slugify(str: string | number): string {
     .trim()
     .toLowerCase()
     .replace(p, (c: string) => b.charAt(a.indexOf(c))) // Replace special chars with normalized versions
+    .replace(`'`, "") // Remove apostrophes
     .replace(/[^a-z0-9]/g, "-") // replace non-alphanumeric characters with a hyphen
-    .replace(/\-+/g, "-"); // Replace multiple dashes with a single one
+    .replace(/\-+/g, "-") // Replace multiple dashes with a single one
+    .replace(/\-$/g, ""); // Remove trailing dash
 }
 
 /** Get the first string that is between parenthesis */

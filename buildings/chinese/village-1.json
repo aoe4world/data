@@ -3,6 +3,8 @@
   "baseId": "village",
   "type": "building",
   "name": "Village",
+  "pbgid": 156484,
+  "attribName": "building_dynasty_village_control_chi",
   "age": 1,
   "civs": [
     "ch"
@@ -10,6 +12,7 @@
   "description": "Increases maximum Population by 40.",
   "classes": [
     "population",
+    "&",
     "defensive",
     "building"
   ],
@@ -23,11 +26,13 @@
     "stone": 0,
     "gold": 0,
     "total": 125,
+    "popcap": 0,
     "time": 15
   },
   "producedBy": [
     "villager"
   ],
+  "icon": "https://data.aoe4world.com/images/buildings/village-1.png",
   "hitpoints": 1500,
   "weapons": [],
   "armor": [
@@ -37,12 +42,17 @@
     }
   ],
   "sight": {
-    "line": 18,
+    "line": 15,
     "height": 8
   },
   "garrison": {
-    "capacity": 10
+    "capacity": 10,
+    "classes": [
+      "infantry",
+      "infantry ranged",
+      "villager",
+      "monk"
+    ]
   },
-  "popcapIncrease": 40,
-  "icon": "https://data.aoe4world.com/images/buildings/village.png"
+  "influences": []
 }

@@ -3,6 +3,8 @@
   "baseId": "lodya-attack-ship",
   "type": "unit",
   "name": "Lodya Attack Ship",
+  "pbgid": 193134,
+  "attribName": "unit_naval_combat_ship_2_rus",
   "age": 2,
   "civs": [
     "ru"
@@ -28,12 +30,14 @@
   "producedBy": [
     "dock"
   ],
+  "icon": "https://data.aoe4world.com/images/units/lodya-attack-ship-2.png",
   "hitpoints": 400,
   "weapons": [
     {
+      "name": "Bow",
       "type": "ranged",
-      "damage": 40,
-      "speed": 2.25,
+      "damage": 8,
+      "speed": 2.75,
       "range": {
         "min": 0,
         "max": 5
@@ -44,8 +48,8 @@
           "target": {
             "class": [
               [
-                "incendiary",
-                "ship"
+                "naval",
+                "fireship"
               ]
             ]
           },
@@ -53,13 +57,28 @@
           "value": 8,
           "type": "passive"
         }
-      ]
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0.25,
+        "attack": 0.5,
+        "winddown": 1,
+        "reload": 0.5,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 5
+      },
+      "attribName": "weapon_naval_lodya_arrow_vis_rus",
+      "pbgid": 1862395
     }
   ],
   "armor": [
     {
       "type": "ranged",
-      "value": 2
+      "value": 3
     }
   ],
   "sight": {
@@ -68,6 +87,5 @@
   },
   "movement": {
     "speed": 1.5
-  },
-  "icon": "https://data.aoe4world.com/images/units/lodya-attack-ship.png"
+  }
 }

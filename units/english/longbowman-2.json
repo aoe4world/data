@@ -3,6 +3,8 @@
   "baseId": "longbowman",
   "type": "unit",
   "name": "Longbowman",
+  "pbgid": 166389,
+  "attribName": "unit_archer_2_eng",
   "age": 2,
   "civs": [
     "en"
@@ -27,14 +29,20 @@
     "time": 15
   },
   "producedBy": [
-    "archery-range"
+    "council-hall",
+    "archery-range",
+    "the-white-tower",
+    "keep",
+    "berkshire-palace"
   ],
+  "icon": "https://data.aoe4world.com/images/units/longbowman-2.png",
   "hitpoints": 70,
   "weapons": [
     {
+      "name": "Longbow",
       "type": "ranged",
       "damage": 6,
-      "speed": 1.5,
+      "speed": 1.625,
       "range": {
         "min": 0,
         "max": 7
@@ -55,7 +63,19 @@
           "value": 6,
           "type": "passive"
         }
-      ]
+      ],
+      "durations": {
+        "aim": 0.25,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 0.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_archer_2_eng",
+      "pbgid": 129520
     }
   ],
   "armor": [],
@@ -64,7 +84,6 @@
     "height": 10
   },
   "movement": {
-    "speed": 1.13
-  },
-  "icon": "https://data.aoe4world.com/images/units/longbowman-2.png"
+    "speed": 1.125
+  }
 }

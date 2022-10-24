@@ -14,26 +14,30 @@
   "classes": [
     "age",
     "iv",
+    "-",
     "defensive",
     "landmark"
   ],
   "minAge": 3,
-  "icon": "https://data.aoe4world.com/images/buildings/great-wall-gatehouse.png",
-  "description": "Must be built over Stone Walls.\ncomes with a Nest of Bees emplacement that fires a burst of 16 arrows . All troops on walls deal  +25% ranged damage.",
+  "icon": "https://data.aoe4world.com/images/buildings/great-wall-gatehouse-3.png",
+  "description": "Must be built over Stone Walls.\nComes with a Nest of Bees emplacement and provides +25% ranged damage to all units on walls.",
   "variations": [
     {
       "id": "great-wall-gatehouse-3",
       "baseId": "great-wall-gatehouse",
       "type": "building",
       "name": "Great Wall Gatehouse",
+      "pbgid": 145549,
+      "attribName": "building_landmark_age3_great_wall_control_chi",
       "age": 3,
       "civs": [
         "ch"
       ],
-      "description": "Must be built over Stone Walls.\ncomes with a Nest of Bees emplacement that fires a burst of 16 arrows . All troops on walls deal  +25% ranged damage.",
+      "description": "Must be built over Stone Walls.\nComes with a Nest of Bees emplacement and provides +25% ranged damage to all units on walls.",
       "classes": [
         "age",
         "iv",
+        "-",
         "defensive",
         "landmark"
       ],
@@ -53,8 +57,51 @@
       "producedBy": [
         "villager"
       ],
-      "hitpoints": 5000,
-      "weapons": [],
+      "icon": "https://data.aoe4world.com/images/buildings/great-wall-gatehouse-3.png",
+      "hitpoints": 7500,
+      "weapons": [
+        {
+          "name": "Rocket Arrow",
+          "type": "siege",
+          "damage": 15,
+          "speed": 8.5,
+          "range": {
+            "min": 0,
+            "max": 10
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 4,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 2,
+            "winddown": 2,
+            "reload": 4,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 16
+          },
+          "attribName": "weapon_great_wall_bees_chi",
+          "pbgid": 2076648
+        }
+      ],
       "armor": [
         {
           "type": "ranged",
@@ -62,10 +109,10 @@
         }
       ],
       "sight": {
-        "line": 25,
+        "line": 40,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/great-wall-gatehouse.png"
+      "influences": []
     }
   ]
 }

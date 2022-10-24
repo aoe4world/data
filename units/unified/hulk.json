@@ -6,10 +6,10 @@
   "type": "unit",
   "civs": [
     "en",
-    "hr",
-    "fr"
+    "fr",
+    "hr"
   ],
-  "unique": true,
+  "unique": false,
   "displayClasses": [
     "Attack Ship"
   ],
@@ -18,7 +18,7 @@
     "ship"
   ],
   "minAge": 2,
-  "icon": "https://data.aoe4world.com/images/units/hulk.png",
+  "icon": "https://data.aoe4world.com/images/units/hulk-2.png",
   "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
   "variations": [
     {
@@ -26,6 +26,8 @@
       "baseId": "hulk",
       "type": "unit",
       "name": "Hulk",
+      "pbgid": 193114,
+      "attribName": "unit_naval_combat_ship_2_eng",
       "age": 3,
       "civs": [
         "en"
@@ -38,35 +40,49 @@
       "displayClasses": [
         "Attack Ship"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
+        "gold": 216,
+        "wood": 270,
         "food": 0,
-        "wood": 300,
         "stone": 0,
-        "gold": 240,
-        "total": 540,
-        "popcap": 3,
+        "total": 486,
         "time": 45
       },
       "producedBy": [
         "dock"
       ],
+      "icon": "https://data.aoe4world.com/images/units/hulk-2.png",
       "hitpoints": 1000,
       "weapons": [
         {
+          "name": "Ballista",
           "type": "ranged",
           "damage": 100,
-          "speed": 3.95,
+          "speed": 4.125,
           "range": {
             "min": 0,
-            "max": 7
-          }
+            "max": 6
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 2.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_combat_ship_crossbow_western",
+          "pbgid": 2034159
         }
       ],
       "armor": [
         {
           "type": "ranged",
-          "value": 6
+          "value": 5
         }
       ],
       "sight": {
@@ -74,15 +90,16 @@
         "height": 10
       },
       "movement": {
-        "speed": 1.13
-      },
-      "icon": "https://data.aoe4world.com/images/units/hulk.png"
+        "speed": 1.125
+      }
     },
     {
-      "id": "hulk-3-dock",
+      "id": "hulk-3",
       "baseId": "hulk",
       "type": "unit",
       "name": "Hulk",
+      "pbgid": 193124,
+      "attribName": "unit_naval_combat_ship_2_hre",
       "age": 3,
       "civs": [
         "hr"
@@ -95,64 +112,7 @@
       "displayClasses": [
         "Attack Ship"
       ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 300,
-        "stone": 0,
-        "gold": 240,
-        "total": 540,
-        "popcap": 3,
-        "time": 45
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "hitpoints": 1000,
-      "weapons": [
-        {
-          "type": "ranged",
-          "damage": 100,
-          "speed": 3.95,
-          "range": {
-            "min": 0,
-            "max": 6
-          }
-        }
-      ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 6
-        }
-      ],
-      "sight": {
-        "line": 42,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.13
-      },
-      "icon": "https://data.aoe4world.com/images/units/hulk.png"
-    },
-    {
-      "id": "hulk-2",
-      "baseId": "hulk",
-      "type": "unit",
-      "name": "Hulk",
-      "age": 2,
-      "civs": [
-        "fr"
-      ],
-      "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
-      "classes": [
-        "attack",
-        "ship"
-      ],
-      "displayClasses": [
-        "Attack Ship"
-      ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 300,
@@ -165,16 +125,104 @@
       "producedBy": [
         "dock"
       ],
+      "icon": "https://data.aoe4world.com/images/units/hulk-2.png",
       "hitpoints": 1000,
       "weapons": [
         {
+          "name": "Ballista",
           "type": "ranged",
           "damage": 100,
-          "speed": 3.95,
+          "speed": 4.125,
           "range": {
             "min": 0,
             "max": 6
-          }
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 2.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_combat_ship_crossbow_western",
+          "pbgid": 2034159
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "line": 38,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "hulk-2",
+      "baseId": "hulk",
+      "type": "unit",
+      "name": "Hulk",
+      "pbgid": 193119,
+      "attribName": "unit_naval_combat_ship_2_fre",
+      "age": 2,
+      "civs": [
+        "fr"
+      ],
+      "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+      "classes": [
+        "attack",
+        "ship"
+      ],
+      "displayClasses": [
+        "Attack Ship"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 300,
+        "stone": 0,
+        "gold": 240,
+        "total": 540,
+        "popcap": 4,
+        "time": 45
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/hulk-2.png",
+      "hitpoints": 1000,
+      "weapons": [
+        {
+          "name": "Ballista",
+          "type": "ranged",
+          "damage": 100,
+          "speed": 4.125,
+          "range": {
+            "min": 0,
+            "max": 6
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 2.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_combat_ship_crossbow_western",
+          "pbgid": 2034159
         }
       ],
       "armor": [
@@ -184,13 +232,12 @@
         }
       ],
       "sight": {
-        "line": 42,
+        "line": 38,
         "height": 10
       },
       "movement": {
-        "speed": 1.13
-      },
-      "icon": "https://data.aoe4world.com/images/units/hulk.png"
+        "speed": 1.125
+      }
     }
   ]
 }

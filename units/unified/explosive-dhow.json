@@ -5,8 +5,8 @@
   "name": "Explosive Dhow",
   "type": "unit",
   "civs": [
-    "de",
-    "ab"
+    "ab",
+    "de"
   ],
   "unique": false,
   "displayClasses": [
@@ -17,20 +17,21 @@
     "ship"
   ],
   "minAge": 3,
-  "icon": "https://data.aoe4world.com/images/units/explosive-dhow.png",
-  "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area, and setting fire to nearby ships and structures.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+  "icon": "https://data.aoe4world.com/images/units/explosive-dhow-3.png",
+  "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
   "variations": [
     {
       "id": "explosive-dhow-3",
       "baseId": "explosive-dhow",
       "type": "unit",
       "name": "Explosive Dhow",
+      "pbgid": 193142,
+      "attribName": "unit_naval_fireship_3_sul",
       "age": 3,
       "civs": [
-        "de",
-        "ab"
+        "de"
       ],
-      "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area, and setting fire to nearby ships and structures.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+      "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
       "classes": [
         "incendiary",
         "ship"
@@ -51,12 +52,14 @@
       "producedBy": [
         "dock"
       ],
+      "icon": "https://data.aoe4world.com/images/units/explosive-dhow-3.png",
       "hitpoints": 200,
       "weapons": [
         {
+          "name": "Incendiaries",
           "type": "fire",
-          "damage": 500,
-          "speed": 1,
+          "damage": 400,
+          "speed": 0.125,
           "range": {
             "min": 0,
             "max": 2
@@ -67,6 +70,7 @@
               "target": {
                 "class": [
                   [
+                    "naval",
                     "warship"
                   ]
                 ]
@@ -75,7 +79,57 @@
               "value": 200,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_fireship_eastern",
+          "pbgid": 2033821
+        },
+        {
+          "name": "Explosives",
+          "type": "fire",
+          "damage": 560,
+          "speed": 0.125,
+          "range": {
+            "min": 0,
+            "max": 2
+          },
+          "modifiers": [
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "warship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 280,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_fireship_explosive_eastern",
+          "pbgid": 2033823
         }
       ],
       "armor": [],
@@ -84,9 +138,129 @@
         "height": 10
       },
       "movement": {
-        "speed": 1.63
+        "speed": 1.5
+      }
+    },
+    {
+      "id": "explosive-dhow-3",
+      "baseId": "explosive-dhow",
+      "type": "unit",
+      "name": "Explosive Dhow",
+      "pbgid": 199727,
+      "attribName": "unit_naval_fireship_3_abb",
+      "age": 3,
+      "civs": [
+        "ab"
+      ],
+      "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+      "classes": [
+        "incendiary",
+        "ship"
+      ],
+      "displayClasses": [
+        "Incendiary Ship"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 160,
+        "stone": 0,
+        "gold": 80,
+        "total": 240,
+        "popcap": 2,
+        "time": 35
       },
-      "icon": "https://data.aoe4world.com/images/units/explosive-dhow.png"
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/explosive-dhow-3.png",
+      "hitpoints": 200,
+      "weapons": [
+        {
+          "name": "Incendiaries",
+          "type": "fire",
+          "damage": 400,
+          "speed": 0.125,
+          "range": {
+            "min": 0,
+            "max": 2
+          },
+          "modifiers": [
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "warship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 200,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_fireship_eastern",
+          "pbgid": 2033821
+        },
+        {
+          "name": "Explosives",
+          "type": "fire",
+          "damage": 560,
+          "speed": 0.125,
+          "range": {
+            "min": 0,
+            "max": 2
+          },
+          "modifiers": [
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "warship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 280,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_fireship_explosive_eastern",
+          "pbgid": 2033823
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 32,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.5
+      }
     }
   ]
 }

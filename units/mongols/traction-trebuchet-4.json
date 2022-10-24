@@ -1,0 +1,100 @@
+{
+  "id": "traction-trebuchet-4",
+  "baseId": "traction-trebuchet",
+  "type": "unit",
+  "name": "Traction Trebuchet",
+  "pbgid": 171143,
+  "attribName": "unit_trebuchet_4_tr_mon",
+  "age": 4,
+  "civs": [
+    "mo"
+  ],
+  "description": "Powerful siege engine effective at destroying buildings and walls over a long distance.\n+ Bonus damage vs buildings\n+ High mobility\n- Must be set up to fire\n- Inaccurate against units",
+  "classes": [
+    "siege"
+  ],
+  "displayClasses": [
+    "Siege"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 0,
+    "wood": 400,
+    "stone": 0,
+    "gold": 150,
+    "total": 550,
+    "popcap": 3,
+    "time": 35
+  },
+  "producedBy": [
+    "siege-workshop"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/traction-trebuchet-4.png",
+  "hitpoints": 190,
+  "weapons": [
+    {
+      "name": "Trebuchet",
+      "type": "siege",
+      "damage": 50,
+      "speed": 9.625,
+      "range": {
+        "min": 2.75,
+        "max": 13
+      },
+      "modifiers": [
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 250,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 250,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 1.875,
+        "attack": 0.125,
+        "winddown": 6.125,
+        "reload": 1,
+        "setup": 1,
+        "teardown": 1,
+        "cooldown": 0
+      },
+      "attribName": "weapon_trebuchet_4_traction_mon",
+      "pbgid": 2033641
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 20
+    }
+  ],
+  "sight": {
+    "line": 68,
+    "height": 10
+  },
+  "movement": {
+    "speed": 0.875
+  }
+}

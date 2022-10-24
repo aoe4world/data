@@ -9,34 +9,34 @@
   ],
   "unique": true,
   "displayClasses": [
-    "Economy & Technology Building"
+    "Technology Building"
   ],
   "classes": [
-    "economy",
     "technology",
     "building"
   ],
   "minAge": 1,
-  "icon": "https://data.aoe4world.com/images/buildings/ovoo.png",
-  "description": "Must be built on a Stone Outcropping.\nHarvests Stone over time. Houses unique Mongol technologies.\nConstructing a new Ovoo will destroy the prior one.",
+  "icon": "https://data.aoe4world.com/images/buildings/ovoo-1.png",
+  "description": "Must be built on a Stone Outcropping.\nHarvests 80/100/120/150 Stone per minute by Age. Houses unique Mongol technologies.\nConstructing a new Ovoo will destroy the prior one.",
   "variations": [
     {
       "id": "ovoo-1",
       "baseId": "ovoo",
       "type": "building",
       "name": "Ovoo",
+      "pbgid": 168502,
+      "attribName": "building_stone_deposit_ovoo_mon",
       "age": 1,
       "civs": [
         "mo"
       ],
-      "description": "Must be built on a Stone Outcropping.\nHarvests Stone over time. Houses unique Mongol technologies.\nConstructing a new Ovoo will destroy the prior one.",
+      "description": "Must be built on a Stone Outcropping.\nHarvests 80/100/120/150 Stone per minute by Age. Houses unique Mongol technologies.\nConstructing a new Ovoo will destroy the prior one.",
       "classes": [
-        "economy",
         "technology",
         "building"
       ],
       "displayClasses": [
-        "Economy & Technology Building"
+        "Technology Building"
       ],
       "unique": true,
       "costs": {
@@ -51,6 +51,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/ovoo-1.png",
       "hitpoints": 1500,
       "weapons": [],
       "armor": [
@@ -60,10 +61,12 @@
         }
       ],
       "sight": {
-        "line": 15,
+        "line": 25,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/ovoo.png"
+      "influences": [
+        "Buildings within the influence of the Ovoo can spend Stone on improved production items:\n- Unit production produces two units instead of one.\n- Researches have improved effect.\n- Pastures produce sheep faster."
+      ]
     }
   ]
 }

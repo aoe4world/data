@@ -1,0 +1,53 @@
+{
+  "id": "camel-support-4",
+  "baseId": "camel-support",
+  "type": "technology",
+  "name": "Camel Support",
+  "pbgid": 200768,
+  "attribName": "upgrade_mil_camel_support_abb",
+  "age": 4,
+  "civs": [
+    "ab"
+  ],
+  "description": "Camels increase the armor of nearby infantry by +2.",
+  "classes": [
+    "camel",
+    "technology"
+  ],
+  "displayClasses": [
+    "Camel Technology"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 300,
+    "wood": 0,
+    "stone": 0,
+    "gold": 700,
+    "total": 1000,
+    "popcap": 0,
+    "time": 90
+  },
+  "producedBy": [
+    "house-of-wisdom"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/camel-support-4.png",
+  "effects": [
+    {
+      "property": "meleeArmor",
+      "select": {
+        "class": [
+          [
+            "infantry"
+          ]
+        ],
+        "id": [
+          "camel-rider",
+          "camel-archer"
+        ]
+      },
+      "effect": "change",
+      "value": 2,
+      "type": "influence"
+    }
+  ]
+}

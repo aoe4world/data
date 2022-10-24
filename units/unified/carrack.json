@@ -6,8 +6,8 @@
   "type": "unit",
   "civs": [
     "en",
-    "hr",
-    "fr"
+    "fr",
+    "hr"
   ],
   "unique": false,
   "displayClasses": [
@@ -17,7 +17,7 @@
     "warship"
   ],
   "minAge": 4,
-  "icon": "https://data.aoe4world.com/images/units/carrack.png",
+  "icon": "https://data.aoe4world.com/images/units/carrack-4.png",
   "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
   "variations": [
     {
@@ -25,6 +25,8 @@
       "baseId": "carrack",
       "type": "unit",
       "name": "Carrack",
+      "pbgid": 193115,
+      "attribName": "unit_naval_carrack_4_eng",
       "age": 4,
       "civs": [
         "en"
@@ -36,28 +38,29 @@
       "displayClasses": [
         "Warship"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
+        "gold": 243,
+        "wood": 351,
         "food": 0,
-        "wood": 390,
         "stone": 0,
-        "gold": 270,
-        "total": 660,
-        "popcap": 6,
+        "total": 594,
         "time": 60
       },
       "producedBy": [
         "dock"
       ],
+      "icon": "https://data.aoe4world.com/images/units/carrack-4.png",
       "hitpoints": 1400,
       "weapons": [
         {
+          "name": "Cannon",
           "type": "ranged",
-          "damage": 210,
-          "speed": 4.5,
+          "damage": 70,
+          "speed": 4.625,
           "range": {
             "min": 0,
-            "max": 9
+            "max": 8
           },
           "modifiers": [
             {
@@ -73,7 +76,22 @@
               "value": 50,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 4,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_naval_warship_cannon_ai_western",
+          "pbgid": 2033788
         }
       ],
       "armor": [
@@ -87,18 +105,107 @@
         "height": 10
       },
       "movement": {
-        "speed": 0.88
-      },
-      "icon": "https://data.aoe4world.com/images/units/carrack.png"
+        "speed": 0.875
+      }
     },
     {
-      "id": "carrack-4-dock",
+      "id": "carrack-4",
       "baseId": "carrack",
       "type": "unit",
       "name": "Carrack",
+      "pbgid": 193125,
+      "attribName": "unit_naval_combat_warship_4_hre",
       "age": 4,
       "civs": [
-        "hr",
+        "hr"
+      ],
+      "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
+      "classes": [
+        "warship"
+      ],
+      "displayClasses": [
+        "Warship"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 390,
+        "stone": 0,
+        "gold": 270,
+        "total": 660,
+        "popcap": 6,
+        "time": 60
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/carrack-4.png",
+      "hitpoints": 1400,
+      "weapons": [
+        {
+          "name": "Cannon",
+          "type": "ranged",
+          "damage": 70,
+          "speed": 4.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 50,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 4,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_naval_warship_cannon_ai_western",
+          "pbgid": 2033788
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "line": 48,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.875
+      }
+    },
+    {
+      "id": "carrack-4",
+      "baseId": "carrack",
+      "type": "unit",
+      "name": "Carrack",
+      "pbgid": 193120,
+      "attribName": "unit_naval_combat_warship_4_fre",
+      "age": 4,
+      "civs": [
         "fr"
       ],
       "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
@@ -121,12 +228,14 @@
       "producedBy": [
         "dock"
       ],
+      "icon": "https://data.aoe4world.com/images/units/carrack-4.png",
       "hitpoints": 1400,
       "weapons": [
         {
+          "name": "Cannon",
           "type": "ranged",
-          "damage": 210,
-          "speed": 4.5,
+          "damage": 70,
+          "speed": 4.625,
           "range": {
             "min": 0,
             "max": 8
@@ -145,7 +254,22 @@
               "value": 50,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 4,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_naval_warship_cannon_ai_western",
+          "pbgid": 2033788
         }
       ],
       "armor": [
@@ -155,13 +279,12 @@
         }
       ],
       "sight": {
-        "line": 52,
+        "line": 48,
         "height": 10
       },
       "movement": {
-        "speed": 0.88
-      },
-      "icon": "https://data.aoe4world.com/images/units/carrack.png"
+        "speed": 0.875
+      }
     }
   ]
 }

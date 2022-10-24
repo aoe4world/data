@@ -1,0 +1,49 @@
+{
+  "id": "lumber-preservation-3",
+  "baseId": "lumber-preservation",
+  "type": "technology",
+  "name": "Lumber Preservation",
+  "pbgid": 171836,
+  "attribName": "upgrade_econ_resource_wood_harvest_rate_3",
+  "age": 3,
+  "civs": [
+    "en"
+  ],
+  "description": "Increase Villagers' gathering rate for Wood by 15%.",
+  "classes": [
+    "wood",
+    "gathering",
+    "technology",
+    "2/3"
+  ],
+  "displayClasses": [
+    "Wood Gathering Technology 2/3"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 150,
+    "wood": 0,
+    "stone": 0,
+    "gold": 350,
+    "total": 500,
+    "popcap": 0,
+    "time": 75
+  },
+  "producedBy": [
+    "lumber-camp"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/lumber-preservation-3.png",
+  "effects": [
+    {
+      "property": "woodGatherRate",
+      "select": {
+        "id": [
+          "villager"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.15,
+      "type": "passive"
+    }
+  ]
+}

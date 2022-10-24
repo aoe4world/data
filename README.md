@@ -163,3 +163,42 @@ All of this data is open source, you may use it in your projects, websites and a
 
 - [aoemods/attrib](https://github.com/aoemods/attrib)
 - [AlexOcampos/aoe4treetechstatic](https://github.com/AlexOcampos/aoe4treetechstatic)
+
+
+### Updating the data from game files
+> Requirements: Node, .Net Core
+1. Download and install the latest version of [AOEMods.Essence](https://github.com/aoemods/AOEMods.Essence/releases). 
+2. Localate the game files, typically located in `C:\Program Files\Steam\steamapps\common\Age of Empires IV\`. When you play the gam through XBox, the process is a bit more [involved](https://answers.microsoft.com/en-us/xbox/forum/all/where-do-xbox-gamepass-games-install-to-on-pcs/845ceb04-fea7-4fde-b001-8b63fa52df7b#:~:text=yes%20its%20normal,the%20hidden%20folders) as the game is installed in the hidden and secure `windowsapps` folder. 
+3. Copy the following files/folders into `/source`
+    - `cardinal\attrib` for all stats and attributes
+    - `cardinal\archives\UIArt.sga` for the icons (optional for patches without any new icons)
+    - `cardinal\archives\LocaleEnglish.sga` for the names and descriptions
+4. Unpack the locale file using AOEMods.Essence, i.e.
+    ```
+    dotnet AOEMods.Essence.CLI.dll sga-unpack ./source/LocaleEnglish.sga ../source/locale` 
+    ```
+5. Optionally unpack the UIArt file using AOEMods.Essence, and convert the icons into PNG files, i.e.
+    ```
+    dotnet AOEMods.Essence.CLI.dll sga-unpack ./source/UIArt.sga ./source/art`
+    dotnet AOEMods.Essence.CLI.dll rrtex-decode ./source/art/ui/icons/races ./source/icons -b
+    ```
+6. You should end up with a folder structure like this:
+    ```
+    source
+    ├── attrib
+    │   ├── instances
+    │   ├── templates
+    │   └── etc...
+    ├── icons
+    │   └── races
+    │       ├── abbasid
+    │       ├── chinese
+    │       └── etc...
+    └── locale
+        └── en
+            └── cardinal.en.ucs
+    ```
+7. Run `yarn install && yarn sync` to update the data.
+8. Verify the changes. Specifically, the technology effects are currently compiled from translation parameters, of which the order may change. This can easily be spotted by changes in any technology description field. If they changed, update the parameter order or implementation in `effect.ts`.
+9. Run `yarn build` to update the optimzed json files and library.
+

@@ -7,7 +7,7 @@
   "civs": [
     "mo"
   ],
-  "unique": true,
+  "unique": false,
   "displayClasses": [
     "Religious Building"
   ],
@@ -16,19 +16,21 @@
     "building"
   ],
   "minAge": 3,
-  "icon": "https://data.aoe4world.com/images/buildings/prayer-tent.png",
-  "description": "Produces religious units and houses religious technologies. Starting in the Castle Age (III), religious units can pick up Relics and place 3 of them in this building to generate Gold.",
+  "icon": "https://data.aoe4world.com/images/buildings/prayer-tent-3.png",
+  "description": "Produces religious units and houses religious technologies. Starting in the Castle Age (III), religious units can pick up Relics and place them in this building to generate Gold.",
   "variations": [
     {
       "id": "prayer-tent-3",
       "baseId": "prayer-tent",
       "type": "building",
       "name": "Prayer Tent",
+      "pbgid": 2032510,
+      "attribName": "building_unit_religious_district_mon",
       "age": 3,
       "civs": [
         "mo"
       ],
-      "description": "Produces religious units and houses religious technologies. Starting in the Castle Age (III), religious units can pick up Relics and place 3 of them in this building to generate Gold.",
+      "description": "Produces religious units and houses religious technologies. Starting in the Castle Age (III), religious units can pick up Relics and place them in this building to generate Gold.",
       "classes": [
         "religious",
         "building"
@@ -36,7 +38,7 @@
       "displayClasses": [
         "Religious Building"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 0,
         "wood": 200,
@@ -49,6 +51,7 @@
       "producedBy": [
         "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/prayer-tent-3.png",
       "hitpoints": 2100,
       "weapons": [],
       "armor": [
@@ -61,7 +64,9 @@
         "line": 25,
         "height": 8
       },
-      "icon": "https://data.aoe4world.com/images/buildings/prayer-tent.png"
+      "influences": [
+        "Buildings within the influence of the Ovoo can spend Stone on improved production items:\n- Unit production produces two units instead of one.\n- Researches have improved effect."
+      ]
     }
   ]
 }

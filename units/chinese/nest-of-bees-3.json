@@ -3,6 +3,8 @@
   "baseId": "nest-of-bees",
   "type": "unit",
   "name": "Nest of Bees",
+  "pbgid": 166611,
+  "attribName": "unit_nest_of_bees_4_chi",
   "age": 3,
   "civs": [
     "ch"
@@ -29,16 +31,49 @@
   "producedBy": [
     "siege-workshop"
   ],
+  "icon": "https://data.aoe4world.com/images/units/nest-of-bees-4.png",
   "hitpoints": 140,
   "weapons": [
     {
+      "name": "Rocket Arrow",
       "type": "siege",
-      "damage": 80,
-      "speed": 5.5,
+      "damage": 8,
+      "speed": 6.5,
       "range": {
         "min": 3,
         "max": 8
-      }
+      },
+      "modifiers": [
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 4,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0,
+        "attack": 1,
+        "winddown": 2,
+        "reload": 3,
+        "setup": 0.25,
+        "teardown": 1,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 8
+      },
+      "attribName": "weapon_nest_of_bees_4_chi",
+      "pbgid": 166609
     }
   ],
   "armor": [
@@ -52,7 +87,6 @@
     "height": 10
   },
   "movement": {
-    "speed": 0.81
-  },
-  "icon": "https://data.aoe4world.com/images/units/nest-of-bees-3.png"
+    "speed": 0.8125
+  }
 }

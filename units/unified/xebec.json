@@ -5,8 +5,8 @@
   "name": "Xebec",
   "type": "unit",
   "civs": [
-    "de",
-    "ab"
+    "ab",
+    "de"
   ],
   "unique": false,
   "displayClasses": [
@@ -16,7 +16,7 @@
     "warship"
   ],
   "minAge": 4,
-  "icon": "https://data.aoe4world.com/images/units/xebec.png",
+  "icon": "https://data.aoe4world.com/images/units/xebec-4.png",
   "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
   "variations": [
     {
@@ -24,9 +24,99 @@
       "baseId": "xebec",
       "type": "unit",
       "name": "Xebec",
+      "pbgid": 193140,
+      "attribName": "unit_naval_combat_warship_4_sul",
       "age": 4,
       "civs": [
-        "de",
+        "de"
+      ],
+      "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
+      "classes": [
+        "warship"
+      ],
+      "displayClasses": [
+        "Warship"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 480,
+        "stone": 0,
+        "gold": 300,
+        "total": 780,
+        "popcap": 6,
+        "time": 60
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/xebec-4.png",
+      "hitpoints": 1700,
+      "weapons": [
+        {
+          "name": "Cannon",
+          "type": "ranged",
+          "damage": 60,
+          "speed": 5.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 50,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 5,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 5
+          },
+          "attribName": "weapon_naval_warship_cannon_ai_eastern",
+          "pbgid": 2033793
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "line": 48,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.875
+      }
+    },
+    {
+      "id": "xebec-4",
+      "baseId": "xebec",
+      "type": "unit",
+      "name": "Xebec",
+      "pbgid": 199726,
+      "attribName": "unit_naval_combat_warship_4_abb",
+      "age": 4,
+      "civs": [
         "ab"
       ],
       "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
@@ -49,12 +139,14 @@
       "producedBy": [
         "dock"
       ],
+      "icon": "https://data.aoe4world.com/images/units/xebec-4.png",
       "hitpoints": 1700,
       "weapons": [
         {
+          "name": "Cannon",
           "type": "ranged",
-          "damage": 240,
-          "speed": 5.5,
+          "damage": 60,
+          "speed": 5.625,
           "range": {
             "min": 0,
             "max": 8
@@ -73,7 +165,22 @@
               "value": 50,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 5,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 5
+          },
+          "attribName": "weapon_naval_warship_cannon_ai_eastern",
+          "pbgid": 2033793
         }
       ],
       "armor": [
@@ -87,9 +194,8 @@
         "height": 10
       },
       "movement": {
-        "speed": 0.88
-      },
-      "icon": "https://data.aoe4world.com/images/units/xebec.png"
+        "speed": 1.25
+      }
     }
   ]
 }

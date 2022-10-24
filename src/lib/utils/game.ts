@@ -6,5 +6,12 @@ export function transformRomanAgeToNumber(age: string = "") {
    "Increase the Khan's Signal Arrow duration by +%1% seconds and range by +%2% tiles.\r\n\r\nIf Whistling Arrows has already been researched, increase the Khan's Signal Arrow duration by +% 3 % seconds and range by +% 4 % tile."
    with the values in the array */
 export function interpolateGameString(str: string = "", values: string[]) {
-  return str.replace(/(-?\+?%(\d+)%+)/g, (_, x, index) => values[Math.min(index - 1, values.length - 1)]).replace(/(\\+[nr]+)+/g, "\n");
+  return str
+    .replace(/(-?\+?%(\d+)%+)/g, (_, x, index) => values[Math.min(index - 1, values.length - 1)])
+    .replace(/(\\+[nr]+)+/g, "\n")
+    .trim();
+}
+
+export function cleanWhiteSpaces(str: string) {
+  return str.replace(/(\\+[nr]+)+/g, "\n");
 }

@@ -5,33 +5,38 @@
   "name": "Capital Town Center",
   "type": "building",
   "civs": [
-    "en",
-    "ch",
-    "hr",
-    "fr",
-    "de",
     "ab",
+    "ch",
+    "de",
+    "en",
+    "fr",
+    "hr",
     "mo",
     "ru"
   ],
   "unique": false,
   "displayClasses": [
-    "Economy & Population Building"
+    "Economy & Population Building",
+    "Landmark"
   ],
   "classes": [
     "economy",
+    "&",
     "population",
-    "building"
+    "building",
+    "landmark"
   ],
   "minAge": 1,
-  "icon": "https://data.aoe4world.com/images/buildings/capital-town-center.png",
+  "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
   "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your Population. Adds additional attacks while garrisoned.\nNetwork of Castles Bonus: Triggers an alarm when an enemy approaches, causing nearby units and defensive buildings to fire faster while the alarm is active.",
   "variations": [
     {
-      "id": "capital-town-center-1-english",
+      "id": "capital-town-center-1",
       "baseId": "capital-town-center",
       "type": "building",
       "name": "Capital Town Center",
+      "pbgid": 173632,
+      "attribName": "building_town_center_capital_eng",
       "age": 1,
       "civs": [
         "en"
@@ -39,51 +44,30 @@
       "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your Population. Adds additional attacks while garrisoned.\nNetwork of Castles Bonus: Triggers an alarm when an enemy approaches, causing nearby units and defensive buildings to fire faster while the alarm is active.",
       "classes": [
         "economy",
+        "&",
         "population",
-        "building"
+        "building",
+        "landmark"
       ],
       "displayClasses": [
-        "Economy & Population Building"
+        "Economy & Population Building",
+        "Landmark"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
         "gold": 0,
+        "wood": 0,
+        "food": 0,
+        "stone": 0,
         "total": 0,
         "time": 0
       },
       "producedBy": [
-        "map-generation"
+        "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
       "hitpoints": 7000,
-      "weapons": [
-        {
-          "type": "ranged",
-          "damage": 16,
-          "speed": 1.88,
-          "range": {
-            "min": 0,
-            "max": 8
-          },
-          "modifiers": [
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "ship"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 25,
-              "type": "passive"
-            }
-          ]
-        }
-      ],
+      "weapons": [],
       "armor": [
         {
           "type": "ranged",
@@ -95,146 +79,119 @@
         "height": 10
       },
       "garrison": {
-        "capacity": 15
+        "capacity": 15,
+        "classes": [
+          "villager",
+          "infantry",
+          "monk",
+          "cavalry",
+          "infantry ranged",
+          "khan"
+        ]
       },
-      "popcapIncrease": 10,
-      "icon": "https://data.aoe4world.com/images/buildings/capital-town-center.png"
-    },
-    {
-      "id": "capital-town-center-1-chinese",
-      "baseId": "capital-town-center",
-      "type": "building",
-      "name": "Capital Town Center",
-      "age": 1,
-      "civs": [
-        "ch"
-      ],
-      "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
-      "classes": [
-        "economy",
-        "population",
-        "building"
-      ],
-      "displayClasses": [
-        "Economy & Population Building"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "total": 0,
-        "time": 0
-      },
-      "producedBy": [
-        "map-generation"
-      ],
-      "hitpoints": 7000,
-      "weapons": [
-        {
-          "type": "ranged",
-          "damage": 25,
-          "speed": 5.64,
-          "range": {
-            "min": 0,
-            "max": 8
-          },
-          "modifiers": [
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "ship"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 25,
-              "type": "passive"
-            }
-          ]
-        }
-      ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 50
-        }
-      ],
-      "sight": {
-        "line": 52,
-        "height": 10
-      },
-      "garrison": {
-        "capacity": 15
-      },
-      "popcapIncrease": 10,
-      "icon": "https://data.aoe4world.com/images/buildings/capital-town-center.png"
+      "influences": []
     },
     {
       "id": "capital-town-center-1",
       "baseId": "capital-town-center",
       "type": "building",
       "name": "Capital Town Center",
+      "pbgid": 134869,
+      "attribName": "building_town_center_capital_hre",
       "age": 1,
       "civs": [
-        "hr",
-        "fr",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "hr"
       ],
-      "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
+      "description": "All resources can be dropped off here. Produces Villagers, Scouts, and Prelates and increases your maximum Population. Adds additional attacks while garrisoned.",
       "classes": [
         "economy",
+        "&",
         "population",
-        "building"
+        "building",
+        "landmark"
       ],
       "displayClasses": [
-        "Economy & Population Building"
+        "Economy & Population Building",
+        "Landmark"
       ],
       "unique": false,
       "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
         "gold": 0,
+        "wood": 0,
+        "food": 0,
+        "stone": 0,
         "total": 0,
         "time": 0
       },
       "producedBy": [
-        "map-generation"
+        "villager"
       ],
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
       "hitpoints": 7000,
-      "weapons": [
+      "weapons": [],
+      "armor": [
         {
           "type": "ranged",
-          "damage": 8,
-          "speed": 1.88,
-          "range": {
-            "min": 0,
-            "max": 8
-          },
-          "modifiers": [
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "ship"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 25,
-              "type": "passive"
-            }
-          ]
+          "value": 75
         }
       ],
+      "sight": {
+        "line": 52,
+        "height": 10
+      },
+      "garrison": {
+        "capacity": 15,
+        "classes": [
+          "villager",
+          "infantry",
+          "monk",
+          "cavalry",
+          "infantry ranged",
+          "khan"
+        ]
+      },
+      "influences": [
+        "Buildings gain the Emergency Repairs ability while within the influence of a Town Center."
+      ]
+    },
+    {
+      "id": "capital-town-center-1",
+      "baseId": "capital-town-center",
+      "type": "building",
+      "name": "Capital Town Center",
+      "pbgid": 132751,
+      "attribName": "building_town_center_capital_fre",
+      "age": 1,
+      "civs": [
+        "fr"
+      ],
+      "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
+      "classes": [
+        "economy",
+        "&",
+        "population",
+        "building",
+        "landmark"
+      ],
+      "displayClasses": [
+        "Economy & Population Building",
+        "Landmark"
+      ],
+      "unique": false,
+      "costs": {
+        "gold": 0,
+        "wood": 0,
+        "food": 0,
+        "stone": 0,
+        "total": 0,
+        "time": 0
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
+      "hitpoints": 7000,
+      "weapons": [],
       "armor": [
         {
           "type": "ranged",
@@ -246,10 +203,328 @@
         "height": 10
       },
       "garrison": {
-        "capacity": 15
+        "capacity": 15,
+        "classes": [
+          "villager",
+          "infantry",
+          "monk",
+          "cavalry",
+          "infantry ranged",
+          "khan"
+        ]
       },
-      "popcapIncrease": 10,
-      "icon": "https://data.aoe4world.com/images/buildings/capital-town-center.png"
+      "influences": []
+    },
+    {
+      "id": "capital-town-center-1",
+      "baseId": "capital-town-center",
+      "type": "building",
+      "name": "Capital Town Center",
+      "pbgid": 181134,
+      "attribName": "building_town_center_capital_chi",
+      "age": 1,
+      "civs": [
+        "ch"
+      ],
+      "description": "All Resources can be dropped off here. Produces Villagers, Scouts, and Officials and increases your maximum Population. Adds additional attacks while garrisoned.",
+      "classes": [
+        "economy",
+        "&",
+        "population",
+        "building",
+        "landmark"
+      ],
+      "displayClasses": [
+        "Economy & Population Building",
+        "Landmark"
+      ],
+      "unique": false,
+      "costs": {
+        "gold": 0,
+        "wood": 0,
+        "food": 0,
+        "stone": 0,
+        "total": 0,
+        "time": 0
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
+      "hitpoints": 7000,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 52,
+        "height": 10
+      },
+      "garrison": {
+        "capacity": 15,
+        "classes": [
+          "villager",
+          "infantry",
+          "monk",
+          "cavalry",
+          "infantry ranged",
+          "khan"
+        ]
+      },
+      "influences": []
+    },
+    {
+      "id": "capital-town-center-1",
+      "baseId": "capital-town-center",
+      "type": "building",
+      "name": "Capital Town Center",
+      "pbgid": 135858,
+      "attribName": "building_town_center_capital_sul",
+      "age": 1,
+      "civs": [
+        "de"
+      ],
+      "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
+      "classes": [
+        "economy",
+        "&",
+        "population",
+        "building",
+        "landmark"
+      ],
+      "displayClasses": [
+        "Economy & Population Building",
+        "Landmark"
+      ],
+      "unique": false,
+      "costs": {
+        "gold": 0,
+        "wood": 0,
+        "food": 0,
+        "stone": 0,
+        "total": 0,
+        "time": 0
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
+      "hitpoints": 7000,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 52,
+        "height": 10
+      },
+      "garrison": {
+        "capacity": 15,
+        "classes": [
+          "villager",
+          "infantry",
+          "monk",
+          "cavalry",
+          "infantry ranged",
+          "khan"
+        ]
+      },
+      "influences": []
+    },
+    {
+      "id": "capital-town-center-1",
+      "baseId": "capital-town-center",
+      "type": "building",
+      "name": "Capital Town Center",
+      "pbgid": 199640,
+      "attribName": "building_town_center_capital_abb",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
+      "classes": [
+        "economy",
+        "&",
+        "population",
+        "building",
+        "landmark"
+      ],
+      "displayClasses": [
+        "Economy & Population Building",
+        "Landmark"
+      ],
+      "unique": false,
+      "costs": {
+        "gold": 0,
+        "wood": 0,
+        "food": 0,
+        "stone": 0,
+        "total": 0,
+        "time": 0
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
+      "hitpoints": 7000,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 52,
+        "height": 10
+      },
+      "garrison": {
+        "capacity": 15,
+        "classes": [
+          "villager",
+          "infantry",
+          "monk",
+          "cavalry",
+          "infantry ranged",
+          "khan"
+        ]
+      },
+      "influences": [
+        "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+      ]
+    },
+    {
+      "id": "capital-town-center-1",
+      "baseId": "capital-town-center",
+      "type": "building",
+      "name": "Capital Town Center",
+      "pbgid": 173907,
+      "attribName": "building_town_center_capital_mon",
+      "age": 1,
+      "civs": [
+        "mo"
+      ],
+      "description": "All Resources can be dropped off here. Produces Villagers and Scouts. Adds additional attacks while garrisoned.",
+      "classes": [
+        "economy",
+        "&",
+        "population",
+        "building",
+        "landmark"
+      ],
+      "displayClasses": [
+        "Economy & Population Building",
+        "Landmark"
+      ],
+      "unique": false,
+      "costs": {
+        "gold": 0,
+        "wood": 0,
+        "food": 0,
+        "stone": 0,
+        "total": 0,
+        "time": 0
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
+      "hitpoints": 7000,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 52,
+        "height": 10
+      },
+      "garrison": {
+        "capacity": 15,
+        "classes": [
+          "villager",
+          "infantry",
+          "monk",
+          "cavalry",
+          "infantry ranged",
+          "khan"
+        ]
+      },
+      "influences": [
+        "Buildings within the influence of the Ovoo can spend Stone on improved production items:\n- Unit production produces two units instead of one."
+      ]
+    },
+    {
+      "id": "capital-town-center-1",
+      "baseId": "capital-town-center",
+      "type": "building",
+      "name": "Capital Town Center",
+      "pbgid": 133397,
+      "attribName": "building_town_center_capital_rus",
+      "age": 1,
+      "civs": [
+        "ru"
+      ],
+      "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
+      "classes": [
+        "economy",
+        "&",
+        "population",
+        "building",
+        "landmark"
+      ],
+      "displayClasses": [
+        "Economy & Population Building",
+        "Landmark"
+      ],
+      "unique": false,
+      "costs": {
+        "gold": 0,
+        "wood": 0,
+        "food": 0,
+        "stone": 0,
+        "total": 0,
+        "time": 0
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
+      "hitpoints": 7000,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 52,
+        "height": 10
+      },
+      "garrison": {
+        "capacity": 15,
+        "classes": [
+          "villager",
+          "infantry",
+          "monk",
+          "cavalry",
+          "infantry ranged",
+          "khan"
+        ]
+      },
+      "influences": [
+        "Lumber Camps and Town Centers within the influence of a Wooden Fortress return 20% more Wood."
+      ]
     }
   ]
 }

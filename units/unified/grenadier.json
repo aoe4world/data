@@ -9,34 +9,38 @@
   ],
   "unique": true,
   "displayClasses": [
-    "Light Ranged Infantry"
+    "Light Ranged Gunpowder Infantry"
   ],
   "classes": [
     "light",
     "ranged",
+    "gunpowder",
     "infantry"
   ],
   "minAge": 4,
   "icon": "https://data.aoe4world.com/images/units/grenadier-4.png",
-  "description": "Advanced ranged infantry with thrown explosive canisters that deal damage in a small area.\n+ Deals area damage\n- Short range\n- Slow movement speed",
+  "description": "Advanced ranged infantry with thrown explosive canisters that deal damage in a small area.\n+ Deals area damage\n- Low single target damage\n- Slow movement speed",
   "variations": [
     {
       "id": "grenadier-4",
       "baseId": "grenadier",
       "type": "unit",
       "name": "Grenadier",
+      "pbgid": 156416,
+      "attribName": "unit_grenadier_4_chi",
       "age": 4,
       "civs": [
         "ch"
       ],
-      "description": "Advanced ranged infantry with thrown explosive canisters that deal damage in a small area.\n+ Deals area damage\n- Short range\n- Slow movement speed",
+      "description": "Advanced ranged infantry with thrown explosive canisters that deal damage in a small area.\n+ Deals area damage\n- Low single target damage\n- Slow movement speed",
       "classes": [
         "light",
         "ranged",
+        "gunpowder",
         "infantry"
       ],
       "displayClasses": [
-        "Light Ranged Infantry"
+        "Light Ranged Gunpowder Infantry"
       ],
       "unique": true,
       "costs": {
@@ -51,16 +55,45 @@
       "producedBy": [
         "archery-range"
       ],
+      "icon": "https://data.aoe4world.com/images/units/grenadier-4.png",
       "hitpoints": 150,
       "weapons": [
         {
+          "name": "Grenade",
           "type": "ranged",
           "damage": 13,
-          "speed": 1.5,
+          "speed": 1.625,
           "range": {
             "min": 0,
             "max": 3
-          }
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 65,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0.625,
+            "attack": 0.125,
+            "winddown": 0.375,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_grenade_4",
+          "pbgid": 156410
         }
       ],
       "armor": [],
@@ -69,9 +102,8 @@
         "height": 10
       },
       "movement": {
-        "speed": 1.13
-      },
-      "icon": "https://data.aoe4world.com/images/units/grenadier-4.png"
+        "speed": 1.125
+      }
     }
   ]
 }

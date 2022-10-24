@@ -1,12 +1,12 @@
 import { CIVILIZATIONS } from "../lib/config/civs";
-import { Building, Technology, Unit, Upgrade } from "./items";
+import { CivSlug } from "../sdk/utils";
 
 export type civAbbr = "en" | "hr" | "fr" | "ch" | "de" | "ab" | "mo" | "ru";
 
 export type civConfig = {
   name: string;
   abbr: civAbbr;
-  slug: string;
+  slug: CivSlug;
 };
 
 export const CIVILIZATION_BY_SLUG = {
@@ -24,6 +24,6 @@ export type CivInfo = {
   name: string;
   classes: string;
   description: string;
-  backdrop?: string;
+  // backdrop?: string;
   overview: { title: string; description?: string; list?: string[] }[];
 };

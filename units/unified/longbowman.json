@@ -21,80 +21,12 @@
   "description": "Cheap long-ranged infantry with good damage vs. unarmored targets.\n+ Long range\n+ Can construct Palings to fend off cavalry charges\n- Slow movement speed",
   "variations": [
     {
-      "id": "longbowman-2-council-hall",
-      "baseId": "longbowman",
-      "type": "unit",
-      "name": "Longbowman",
-      "age": 2,
-      "civs": [
-        "en"
-      ],
-      "description": "Cheap long-ranged infantry with good damage vs. unarmored targets.\n+ Long range\n+ Can construct Palings to fend off cavalry charges\n- Slow movement speed",
-      "classes": [
-        "light",
-        "ranged",
-        "infantry"
-      ],
-      "displayClasses": [
-        "Light Ranged Infantry"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 40,
-        "wood": 50,
-        "stone": 0,
-        "gold": 0,
-        "total": 90,
-        "popcap": 1,
-        "time": 8
-      },
-      "producedBy": [
-        "council-hall"
-      ],
-      "hitpoints": 70,
-      "weapons": [
-        {
-          "type": "ranged",
-          "damage": 6,
-          "speed": 1.5,
-          "range": {
-            "min": 0,
-            "max": 7
-          },
-          "modifiers": [
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "light",
-                    "melee",
-                    "infantry"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 6,
-              "type": "passive"
-            }
-          ]
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "line": 44,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.13
-      },
-      "icon": "https://data.aoe4world.com/images/units/longbowman-2.png"
-    },
-    {
       "id": "longbowman-2",
       "baseId": "longbowman",
       "type": "unit",
       "name": "Longbowman",
+      "pbgid": 166389,
+      "attribName": "unit_archer_2_eng",
       "age": 2,
       "civs": [
         "en"
@@ -119,14 +51,20 @@
         "time": 15
       },
       "producedBy": [
-        "archery-range"
+        "council-hall",
+        "archery-range",
+        "the-white-tower",
+        "keep",
+        "berkshire-palace"
       ],
+      "icon": "https://data.aoe4world.com/images/units/longbowman-2.png",
       "hitpoints": 70,
       "weapons": [
         {
+          "name": "Longbow",
           "type": "ranged",
           "damage": 6,
-          "speed": 1.5,
+          "speed": 1.625,
           "range": {
             "min": 0,
             "max": 7
@@ -147,77 +85,19 @@
               "value": 6,
               "type": "passive"
             }
-          ]
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "line": 44,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.13
-      },
-      "icon": "https://data.aoe4world.com/images/units/longbowman-2.png"
-    },
-    {
-      "id": "longbowman-3-council-hall",
-      "baseId": "longbowman",
-      "type": "unit",
-      "name": "Longbowman",
-      "age": 3,
-      "civs": [
-        "en"
-      ],
-      "description": "Cheap long-ranged infantry with good damage vs. unarmored targets.\n+ Long range\n+ Can construct Palings to fend off cavalry charges\n- Slow movement speed",
-      "classes": [
-        "light",
-        "ranged",
-        "infantry"
-      ],
-      "displayClasses": [
-        "Light Ranged Infantry"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 40,
-        "wood": 50,
-        "stone": 0,
-        "gold": 0,
-        "total": 90,
-        "popcap": 1,
-        "time": 8
-      },
-      "producedBy": [
-        "council-hall"
-      ],
-      "hitpoints": 80,
-      "weapons": [
-        {
-          "type": "ranged",
-          "damage": 8,
-          "speed": 1.5,
-          "range": {
-            "min": 0,
-            "max": 7
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
           },
-          "modifiers": [
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "light",
-                    "melee",
-                    "infantry"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 8,
-              "type": "passive"
-            }
-          ]
+          "attribName": "weapon_archer_2_eng",
+          "pbgid": 129520
         }
       ],
       "armor": [],
@@ -226,15 +106,16 @@
         "height": 10
       },
       "movement": {
-        "speed": 1.13
-      },
-      "icon": "https://data.aoe4world.com/images/units/longbowman-2.png"
+        "speed": 1.125
+      }
     },
     {
       "id": "longbowman-3",
       "baseId": "longbowman",
       "type": "unit",
-      "name": "Longbowman",
+      "name": "Veteran Longbowman",
+      "pbgid": 166390,
+      "attribName": "unit_archer_3_eng",
       "age": 3,
       "civs": [
         "en"
@@ -259,14 +140,20 @@
         "time": 15
       },
       "producedBy": [
-        "archery-range"
+        "council-hall",
+        "archery-range",
+        "the-white-tower",
+        "keep",
+        "berkshire-palace"
       ],
+      "icon": "https://data.aoe4world.com/images/units/longbowman-3.png",
       "hitpoints": 80,
       "weapons": [
         {
+          "name": "Longbow",
           "type": "ranged",
           "damage": 8,
-          "speed": 1.5,
+          "speed": 1.625,
           "range": {
             "min": 0,
             "max": 7
@@ -287,77 +174,19 @@
               "value": 8,
               "type": "passive"
             }
-          ]
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "line": 44,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.13
-      },
-      "icon": "https://data.aoe4world.com/images/units/longbowman-3.png"
-    },
-    {
-      "id": "longbowman-4-council-hall",
-      "baseId": "longbowman",
-      "type": "unit",
-      "name": "Longbowman",
-      "age": 4,
-      "civs": [
-        "en"
-      ],
-      "description": "Cheap long-ranged infantry with good damage vs. unarmored targets.\n+ Long range\n+ Can construct Palings to fend off cavalry charges\n- Slow movement speed",
-      "classes": [
-        "light",
-        "ranged",
-        "infantry"
-      ],
-      "displayClasses": [
-        "Light Ranged Infantry"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 40,
-        "wood": 50,
-        "stone": 0,
-        "gold": 0,
-        "total": 90,
-        "popcap": 1,
-        "time": 8
-      },
-      "producedBy": [
-        "council-hall"
-      ],
-      "hitpoints": 95,
-      "weapons": [
-        {
-          "type": "ranged",
-          "damage": 9,
-          "speed": 1.5,
-          "range": {
-            "min": 0,
-            "max": 7
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
           },
-          "modifiers": [
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "light",
-                    "melee",
-                    "infantry"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ]
+          "attribName": "weapon_archer_3_eng",
+          "pbgid": 129379
         }
       ],
       "armor": [],
@@ -366,15 +195,16 @@
         "height": 10
       },
       "movement": {
-        "speed": 1.13
-      },
-      "icon": "https://data.aoe4world.com/images/units/longbowman-2.png"
+        "speed": 1.125
+      }
     },
     {
       "id": "longbowman-4",
       "baseId": "longbowman",
       "type": "unit",
-      "name": "Longbowman",
+      "name": "Elite Longbowman",
+      "pbgid": 166391,
+      "attribName": "unit_archer_4_eng",
       "age": 4,
       "civs": [
         "en"
@@ -399,14 +229,20 @@
         "time": 15
       },
       "producedBy": [
-        "archery-range"
+        "council-hall",
+        "archery-range",
+        "the-white-tower",
+        "keep",
+        "berkshire-palace"
       ],
+      "icon": "https://data.aoe4world.com/images/units/longbowman-4.png",
       "hitpoints": 95,
       "weapons": [
         {
+          "name": "Longbow",
           "type": "ranged",
           "damage": 9,
-          "speed": 1.5,
+          "speed": 1.625,
           "range": {
             "min": 0,
             "max": 7
@@ -424,10 +260,22 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 8,
               "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_4_eng",
+          "pbgid": 129380
         }
       ],
       "armor": [],
@@ -436,9 +284,8 @@
         "height": 10
       },
       "movement": {
-        "speed": 1.13
-      },
-      "icon": "https://data.aoe4world.com/images/units/longbowman-4.png"
+        "speed": 1.125
+      }
     }
   ]
 }

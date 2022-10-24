@@ -4,6 +4,7 @@ export const IMAGE_FOLDER = "images";
 export const ROOT_FOLDER = path.join(__dirname, "../../../");
 export const IMG_PATH = path.join(ROOT_FOLDER, IMAGE_FOLDER);
 export const CDN_HOST = "https://data.aoe4world.com";
+
 export const FOLDERS = {
   UNITS: {
     SLUG: "units",
@@ -24,6 +25,11 @@ export const FOLDERS = {
     SLUG: "upgrades",
     DATA: path.join(ROOT_FOLDER, "upgrades"),
     IMG: path.join(IMG_PATH, "upgrades"),
+  },
+  CIVILIZATIONS: {
+    SLUG: "civilizations",
+    DATA: path.join(ROOT_FOLDER, "civilizations"),
+    IMG: path.join(IMG_PATH, "civilizations"),
   },
 };
 

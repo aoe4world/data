@@ -7,7 +7,7 @@
   "civs": [
     "mo"
   ],
-  "unique": true,
+  "unique": false,
   "displayClasses": [
     "Siege"
   ],
@@ -15,7 +15,7 @@
     "siege"
   ],
   "minAge": 3,
-  "icon": "https://data.aoe4world.com/images/units/traction-trebuchet.png",
+  "icon": "https://data.aoe4world.com/images/units/traction-trebuchet-3.png",
   "description": "Powerful siege engine effective at destroying buildings and walls over a long distance.\n+ Bonus damage vs buildings\n+ High mobility\n- Must be set up to fire\n- Inaccurate against units",
   "variations": [
     {
@@ -23,7 +23,113 @@
       "baseId": "traction-trebuchet",
       "type": "unit",
       "name": "Traction Trebuchet",
+      "pbgid": 174217,
+      "attribName": "unit_trebuchet_4_tr_field_construct_mon",
       "age": 3,
+      "civs": [
+        "mo"
+      ],
+      "description": "Powerful siege engine effective at destroying buildings and walls over a long distance.\n+ Bonus damage vs buildings\n+ High mobility\n- Must be set up to fire\n- Inaccurate against units",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 400,
+        "stone": 0,
+        "gold": 150,
+        "total": 550,
+        "popcap": 3,
+        "time": 80
+      },
+      "producedBy": [
+        "spearman",
+        "man-at-arms",
+        "archer",
+        "crossbowman",
+        "handcannoneer"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/traction-trebuchet-3.png",
+      "hitpoints": 190,
+      "weapons": [
+        {
+          "name": "Trebuchet",
+          "type": "siege",
+          "damage": 50,
+          "speed": 9.625,
+          "range": {
+            "min": 2.75,
+            "max": 13
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 250,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 250,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 1.875,
+            "attack": 0.125,
+            "winddown": 6.125,
+            "reload": 1,
+            "setup": 1,
+            "teardown": 1,
+            "cooldown": 0
+          },
+          "attribName": "weapon_trebuchet_4_traction",
+          "pbgid": 127504
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 20
+        }
+      ],
+      "sight": {
+        "line": 68,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.875
+      }
+    },
+    {
+      "id": "traction-trebuchet-4",
+      "baseId": "traction-trebuchet",
+      "type": "unit",
+      "name": "Traction Trebuchet",
+      "pbgid": 171143,
+      "attribName": "unit_trebuchet_4_tr_mon",
+      "age": 4,
       "civs": [
         "mo"
       ],
@@ -47,14 +153,16 @@
       "producedBy": [
         "siege-workshop"
       ],
+      "icon": "https://data.aoe4world.com/images/units/traction-trebuchet-4.png",
       "hitpoints": 190,
       "weapons": [
         {
+          "name": "Trebuchet",
           "type": "siege",
           "damage": 50,
-          "speed": 9.5,
+          "speed": 9.625,
           "range": {
-            "min": 2.8,
+            "min": 2.75,
             "max": 13
           },
           "modifiers": [
@@ -63,9 +171,6 @@
               "target": {
                 "class": [
                   [
-                    "ship"
-                  ],
-                  [
                     "building"
                   ]
                 ]
@@ -73,8 +178,34 @@
               "effect": "change",
               "value": 250,
               "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 250,
+              "type": "passive"
             }
-          ]
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 1.875,
+            "attack": 0.125,
+            "winddown": 6.125,
+            "reload": 1,
+            "setup": 1,
+            "teardown": 1,
+            "cooldown": 0
+          },
+          "attribName": "weapon_trebuchet_4_traction_mon",
+          "pbgid": 2033641
         }
       ],
       "armor": [
@@ -88,9 +219,8 @@
         "height": 10
       },
       "movement": {
-        "speed": 0.88
-      },
-      "icon": "https://data.aoe4world.com/images/units/traction-trebuchet.png"
+        "speed": 0.875
+      }
     }
   ]
 }

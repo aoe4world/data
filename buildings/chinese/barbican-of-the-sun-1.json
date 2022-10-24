@@ -3,14 +3,17 @@
   "baseId": "barbican-of-the-sun",
   "type": "building",
   "name": "Barbican of the Sun",
+  "pbgid": 145550,
+  "attribName": "building_landmark_age1_gatehouse_control_chi",
   "age": 1,
   "civs": [
     "ch"
   ],
-  "description": "Fires a long range hand cannon and adds arrowslits while garrisoned. Offers vision into stealth forests. Can add Springald and Cannon emplacements.",
+  "description": "Fires a long range hand cannon and adds arrowslits while garrisoned. Can be upgraded with weaponry and offers vision into Stealth Forests.",
   "classes": [
     "age",
     "ii",
+    "-",
     "defensive",
     "landmark"
   ],
@@ -30,12 +33,14 @@
   "producedBy": [
     "villager"
   ],
+  "icon": "https://data.aoe4world.com/images/buildings/barbican-of-the-sun-1.png",
   "hitpoints": 5000,
   "weapons": [
     {
+      "name": "Handcannon",
       "type": "ranged",
       "damage": 25,
-      "speed": 3,
+      "speed": 3.125,
       "range": {
         "min": 0,
         "max": 8
@@ -46,7 +51,8 @@
           "target": {
             "class": [
               [
-                "ship"
+                "naval",
+                "unit"
               ]
             ]
           },
@@ -54,7 +60,475 @@
           "value": 25,
           "type": "passive"
         }
-      ]
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 3,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_barbican_handcannon_chi",
+      "pbgid": 206717
+    },
+    {
+      "name": "Springald",
+      "type": "ranged",
+      "damage": 40,
+      "speed": 4.625,
+      "range": {
+        "min": 0,
+        "max": 9
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 40,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 3.25,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_keep_springald",
+      "pbgid": 127373
+    },
+    {
+      "name": "Cannon",
+      "type": "ranged",
+      "damage": 70,
+      "speed": 7.125,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 70,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 1,
+        "reload": 5.5,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_keep_cannon",
+      "pbgid": 185624
+    },
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 6,
+      "speed": 3.875,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 25,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 1.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 2
+      },
+      "attribName": "weapon_outpost_arrows_garrison",
+      "pbgid": 171016
+    },
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 6,
+      "speed": 3.875,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 25,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 1.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 2
+      },
+      "attribName": "weapon_outpost_arrows_garrison",
+      "pbgid": 171016
+    },
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 6,
+      "speed": 3.875,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 25,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 1.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 2
+      },
+      "attribName": "weapon_outpost_arrows_garrison",
+      "pbgid": 171016
+    },
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 6,
+      "speed": 3.875,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 25,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 1.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 2
+      },
+      "attribName": "weapon_outpost_arrows_garrison",
+      "pbgid": 171016
+    },
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 6,
+      "speed": 3.875,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 25,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 1.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 2
+      },
+      "attribName": "weapon_outpost_arrows_garrison",
+      "pbgid": 171016
+    },
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 6,
+      "speed": 3.875,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 25,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 1.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 2
+      },
+      "attribName": "weapon_outpost_arrows_garrison",
+      "pbgid": 171016
+    },
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 6,
+      "speed": 3.875,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 25,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 1.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 2
+      },
+      "attribName": "weapon_outpost_arrows_garrison",
+      "pbgid": 171016
+    },
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 6,
+      "speed": 3.875,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 25,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 1.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 2
+      },
+      "attribName": "weapon_outpost_arrows_garrison",
+      "pbgid": 171016
+    },
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 6,
+      "speed": 3.875,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 25,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 1.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 2
+      },
+      "attribName": "weapon_outpost_arrows_garrison",
+      "pbgid": 171016
+    },
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 6,
+      "speed": 3.875,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 25,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 1.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 2
+      },
+      "attribName": "weapon_outpost_arrows_garrison",
+      "pbgid": 171016
     }
   ],
   "armor": [
@@ -68,7 +542,14 @@
     "height": 501
   },
   "garrison": {
-    "capacity": 10
+    "capacity": 10,
+    "classes": [
+      "infantry",
+      "infantry ranged",
+      "villager",
+      "monk",
+      "cavalry"
+    ]
   },
-  "icon": "https://data.aoe4world.com/images/buildings/barbican-of-the-sun.png"
+  "influences": []
 }

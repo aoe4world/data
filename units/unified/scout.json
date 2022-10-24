@@ -5,14 +5,14 @@
   "name": "Scout",
   "type": "unit",
   "civs": [
-    "ru",
-    "en",
-    "hr",
-    "fr",
+    "ab",
     "ch",
     "de",
-    "ab",
-    "mo"
+    "en",
+    "fr",
+    "hr",
+    "mo",
+    "ru"
   ],
   "unique": false,
   "displayClasses": [
@@ -24,17 +24,19 @@
     "cavalry"
   ],
   "minAge": 1,
-  "icon": "https://data.aoe4world.com/images/units/scout.png",
+  "icon": "https://data.aoe4world.com/images/units/scout-1.png",
   "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
   "variations": [
     {
-      "id": "scout-1-hunting-cabin",
+      "id": "scout-1",
       "baseId": "scout",
       "type": "unit",
       "name": "Scout",
+      "pbgid": 166412,
+      "attribName": "unit_scout_1_eng",
       "age": 1,
       "civs": [
-        "ru"
+        "en"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
       "classes": [
@@ -45,7 +47,7 @@
       "displayClasses": [
         "Light Melee Cavalry"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
         "food": 70,
         "wood": 0,
@@ -56,42 +58,63 @@
         "time": 25
       },
       "producedBy": [
-        "hunting-cabin"
+        "stable",
+        "town-center",
+        "kings-palace",
+        "capital-town-center"
       ],
+      "icon": "https://data.aoe4world.com/images/units/scout-1.png",
       "hitpoints": 110,
       "weapons": [
         {
+          "name": "Fire Lance",
           "type": "melee",
           "damage": 2,
           "speed": 2,
           "range": {
             "min": 0,
-            "max": 0.3
+            "max": 0.2875
           },
           "modifiers": [
             {
               "property": "meleeAttack",
               "target": {
-                "id": [
-                  "scout",
-                  "khan"
+                "class": [
+                  [
+                    "scout"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
                 ]
               },
               "effect": "change",
               "value": 10,
               "type": "passive"
             }
-          ]
-        },
-        {
-          "type": "fire",
-          "damage": 10,
-          "speed": 2,
-          "range": {
-            "max": 4,
-            "min": 0
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.375,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.5
           },
-          "modifiers": []
+          "attribName": "weapon_scout_1",
+          "pbgid": 120622
         }
       ],
       "armor": [],
@@ -100,25 +123,19 @@
         "height": 501
       },
       "movement": {
-        "speed": 1.63
-      },
-      "icon": "https://data.aoe4world.com/images/units/scout.png"
+        "speed": 1.625
+      }
     },
     {
       "id": "scout-1",
       "baseId": "scout",
       "type": "unit",
       "name": "Scout",
+      "pbgid": 134737,
+      "attribName": "unit_scout_1_hre",
       "age": 1,
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "hr"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
       "classes": [
@@ -140,42 +157,63 @@
         "time": 25
       },
       "producedBy": [
-        "town-center"
+        "stable",
+        "town-center",
+        "palace-of-swabia",
+        "capital-town-center"
       ],
+      "icon": "https://data.aoe4world.com/images/units/scout-1.png",
       "hitpoints": 110,
       "weapons": [
         {
+          "name": "Fire Lance",
           "type": "melee",
           "damage": 2,
           "speed": 2,
           "range": {
             "min": 0,
-            "max": 0.3
+            "max": 0.2875
           },
           "modifiers": [
             {
               "property": "meleeAttack",
               "target": {
-                "id": [
-                  "scout",
-                  "khan"
+                "class": [
+                  [
+                    "scout"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
                 ]
               },
               "effect": "change",
               "value": 10,
               "type": "passive"
             }
-          ]
-        },
-        {
-          "type": "fire",
-          "damage": 10,
-          "speed": 2,
-          "range": {
-            "max": 4,
-            "min": 0
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.375,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.5
           },
-          "modifiers": []
+          "attribName": "weapon_scout_1",
+          "pbgid": 120622
         }
       ],
       "armor": [],
@@ -184,25 +222,19 @@
         "height": 501
       },
       "movement": {
-        "speed": 1.63
-      },
-      "icon": "https://data.aoe4world.com/images/units/scout.png"
+        "speed": 1.625
+      }
     },
     {
-      "id": "scout-2-stable",
+      "id": "scout-1",
       "baseId": "scout",
       "type": "unit",
       "name": "Scout",
-      "age": 2,
+      "pbgid": 132268,
+      "attribName": "unit_scout_1_fre",
+      "age": 1,
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "fr"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
       "classes": [
@@ -221,45 +253,66 @@
         "gold": 0,
         "total": 70,
         "popcap": 1,
-        "time": 25
+        "time": 23
       },
       "producedBy": [
-        "stable"
+        "school-of-cavalry",
+        "stable",
+        "town-center",
+        "capital-town-center"
       ],
+      "icon": "https://data.aoe4world.com/images/units/scout-1.png",
       "hitpoints": 110,
       "weapons": [
         {
+          "name": "Fire Lance",
           "type": "melee",
           "damage": 2,
           "speed": 2,
           "range": {
             "min": 0,
-            "max": 0.3
+            "max": 0.2875
           },
           "modifiers": [
             {
               "property": "meleeAttack",
               "target": {
-                "id": [
-                  "scout",
-                  "khan"
+                "class": [
+                  [
+                    "scout"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
                 ]
               },
               "effect": "change",
               "value": 10,
               "type": "passive"
             }
-          ]
-        },
-        {
-          "type": "fire",
-          "damage": 13,
-          "speed": 2,
-          "range": {
-            "max": 4,
-            "min": 0
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.375,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.5
           },
-          "modifiers": []
+          "attribName": "weapon_scout_1",
+          "pbgid": 120622
         }
       ],
       "armor": [],
@@ -268,25 +321,19 @@
         "height": 501
       },
       "movement": {
-        "speed": 1.63
-      },
-      "icon": "https://data.aoe4world.com/images/units/scout.png"
+        "speed": 1.625
+      }
     },
     {
-      "id": "scout-2",
+      "id": "scout-1",
       "baseId": "scout",
       "type": "unit",
       "name": "Scout",
-      "age": 2,
+      "pbgid": 137274,
+      "attribName": "unit_scout_1_chi",
+      "age": 1,
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "ch"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
       "classes": [
@@ -308,42 +355,62 @@
         "time": 25
       },
       "producedBy": [
-        "town-center"
+        "stable",
+        "town-center",
+        "capital-town-center"
       ],
+      "icon": "https://data.aoe4world.com/images/units/scout-1.png",
       "hitpoints": 110,
       "weapons": [
         {
+          "name": "Fire Lance",
           "type": "melee",
           "damage": 2,
           "speed": 2,
           "range": {
             "min": 0,
-            "max": 0.3
+            "max": 0.2875
           },
           "modifiers": [
             {
               "property": "meleeAttack",
               "target": {
-                "id": [
-                  "scout",
-                  "khan"
+                "class": [
+                  [
+                    "scout"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
                 ]
               },
               "effect": "change",
               "value": 10,
               "type": "passive"
             }
-          ]
-        },
-        {
-          "type": "fire",
-          "damage": 13,
-          "speed": 2,
-          "range": {
-            "max": 4,
-            "min": 0
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.375,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.5
           },
-          "modifiers": []
+          "attribName": "weapon_scout_1",
+          "pbgid": 120622
         }
       ],
       "armor": [],
@@ -352,25 +419,19 @@
         "height": 501
       },
       "movement": {
-        "speed": 1.63
-      },
-      "icon": "https://data.aoe4world.com/images/units/scout.png"
+        "speed": 1.625
+      }
     },
     {
-      "id": "scout-3-stable",
+      "id": "scout-1",
       "baseId": "scout",
       "type": "unit",
       "name": "Scout",
-      "age": 3,
+      "pbgid": 136063,
+      "attribName": "unit_scout_1_sul",
+      "age": 1,
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "de"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
       "classes": [
@@ -392,42 +453,63 @@
         "time": 25
       },
       "producedBy": [
-        "stable"
+        "stable",
+        "town-center",
+        "keep",
+        "capital-town-center"
       ],
+      "icon": "https://data.aoe4world.com/images/units/scout-1.png",
       "hitpoints": 110,
       "weapons": [
         {
+          "name": "Fire Lance",
           "type": "melee",
           "damage": 2,
           "speed": 2,
           "range": {
             "min": 0,
-            "max": 0.3
+            "max": 0.2875
           },
           "modifiers": [
             {
               "property": "meleeAttack",
               "target": {
-                "id": [
-                  "scout",
-                  "khan"
+                "class": [
+                  [
+                    "scout"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
                 ]
               },
               "effect": "change",
               "value": 10,
               "type": "passive"
             }
-          ]
-        },
-        {
-          "type": "fire",
-          "damage": 16,
-          "speed": 2,
-          "range": {
-            "max": 4,
-            "min": 0
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.375,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.5
           },
-          "modifiers": []
+          "attribName": "weapon_scout_1",
+          "pbgid": 120622
         }
       ],
       "armor": [],
@@ -436,25 +518,19 @@
         "height": 501
       },
       "movement": {
-        "speed": 1.63
-      },
-      "icon": "https://data.aoe4world.com/images/units/scout.png"
+        "speed": 1.625
+      }
     },
     {
-      "id": "scout-3",
+      "id": "scout-1",
       "baseId": "scout",
       "type": "unit",
       "name": "Scout",
-      "age": 3,
+      "pbgid": 199733,
+      "attribName": "unit_scout_1_abb",
+      "age": 1,
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "ab"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
       "classes": [
@@ -476,42 +552,62 @@
         "time": 25
       },
       "producedBy": [
-        "town-center"
+        "stable",
+        "town-center",
+        "capital-town-center"
       ],
+      "icon": "https://data.aoe4world.com/images/units/scout-1.png",
       "hitpoints": 110,
       "weapons": [
         {
+          "name": "Fire Lance",
           "type": "melee",
           "damage": 2,
           "speed": 2,
           "range": {
             "min": 0,
-            "max": 0.3
+            "max": 0.2875
           },
           "modifiers": [
             {
               "property": "meleeAttack",
               "target": {
-                "id": [
-                  "scout",
-                  "khan"
+                "class": [
+                  [
+                    "scout"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
                 ]
               },
               "effect": "change",
               "value": 10,
               "type": "passive"
             }
-          ]
-        },
-        {
-          "type": "fire",
-          "damage": 16,
-          "speed": 2,
-          "range": {
-            "max": 4,
-            "min": 0
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.375,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.5
           },
-          "modifiers": []
+          "attribName": "weapon_scout_1",
+          "pbgid": 120622
         }
       ],
       "armor": [],
@@ -520,25 +616,19 @@
         "height": 501
       },
       "movement": {
-        "speed": 1.63
-      },
-      "icon": "https://data.aoe4world.com/images/units/scout.png"
+        "speed": 1.625
+      }
     },
     {
-      "id": "scout-4-stable",
+      "id": "scout-1",
       "baseId": "scout",
       "type": "unit",
       "name": "Scout",
-      "age": 4,
+      "pbgid": 129486,
+      "attribName": "unit_scout_1_mon",
+      "age": 1,
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
-        "ru"
+        "mo"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
       "classes": [
@@ -560,42 +650,62 @@
         "time": 25
       },
       "producedBy": [
-        "stable"
+        "stable",
+        "town-center",
+        "capital-town-center"
       ],
+      "icon": "https://data.aoe4world.com/images/units/scout-1.png",
       "hitpoints": 110,
       "weapons": [
         {
+          "name": "Fire Lance",
           "type": "melee",
           "damage": 2,
           "speed": 2,
           "range": {
             "min": 0,
-            "max": 0.3
+            "max": 0.2875
           },
           "modifiers": [
             {
               "property": "meleeAttack",
               "target": {
-                "id": [
-                  "scout",
-                  "khan"
+                "class": [
+                  [
+                    "scout"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
                 ]
               },
               "effect": "change",
               "value": 10,
               "type": "passive"
             }
-          ]
-        },
-        {
-          "type": "fire",
-          "damage": 20,
-          "speed": 2,
-          "range": {
-            "max": 4,
-            "min": 0
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.375,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.5
           },
-          "modifiers": []
+          "attribName": "weapon_scout_1",
+          "pbgid": 120622
         }
       ],
       "armor": [],
@@ -604,24 +714,18 @@
         "height": 501
       },
       "movement": {
-        "speed": 1.63
-      },
-      "icon": "https://data.aoe4world.com/images/units/scout.png"
+        "speed": 1.625
+      }
     },
     {
-      "id": "scout-4",
+      "id": "scout-1",
       "baseId": "scout",
       "type": "unit",
       "name": "Scout",
-      "age": 4,
+      "pbgid": 133475,
+      "attribName": "unit_scout_1_rus",
+      "age": 1,
       "civs": [
-        "en",
-        "hr",
-        "fr",
-        "ch",
-        "de",
-        "ab",
-        "mo",
         "ru"
       ],
       "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
@@ -644,53 +748,73 @@
         "time": 25
       },
       "producedBy": [
-        "town-center"
+        "hunting-cabin",
+        "stable",
+        "town-center",
+        "capital-town-center"
       ],
+      "icon": "https://data.aoe4world.com/images/units/scout-1.png",
       "hitpoints": 110,
       "weapons": [
         {
+          "name": "Fire Lance",
           "type": "melee",
           "damage": 2,
           "speed": 2,
           "range": {
             "min": 0,
-            "max": 0.3
+            "max": 0.2875
           },
           "modifiers": [
             {
               "property": "meleeAttack",
               "target": {
-                "id": [
-                  "scout",
-                  "khan"
+                "class": [
+                  [
+                    "scout"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
                 ]
               },
               "effect": "change",
               "value": 10,
               "type": "passive"
             }
-          ]
-        },
-        {
-          "type": "fire",
-          "damage": 20,
-          "speed": 2,
-          "range": {
-            "max": 4,
-            "min": 0
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.375,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.5
           },
-          "modifiers": []
+          "attribName": "weapon_scout_1_rus",
+          "pbgid": 133285
         }
       ],
       "armor": [],
       "sight": {
-        "line": 41,
+        "line": 47,
         "height": 501
       },
       "movement": {
-        "speed": 1.63
-      },
-      "icon": "https://data.aoe4world.com/images/units/scout.png"
+        "speed": 1.625
+      }
     }
   ]
 }

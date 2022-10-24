@@ -3,14 +3,17 @@
   "baseId": "elzbach-palace",
   "type": "building",
   "name": "Elzbach Palace",
+  "pbgid": 134919,
+  "attribName": "building_landmark_age3_eltz_castle_hre",
   "age": 3,
   "civs": [
     "hr"
   ],
-  "description": "Acts as a Keep with +50% health. All buildings within influence take  -33% less damage.",
+  "description": "Acts as a Keep with +50% health. All buildings within influence take -33% less damage.",
   "classes": [
     "age",
     "iv",
+    "-",
     "defensive",
     "landmark"
   ],
@@ -30,15 +33,17 @@
   "producedBy": [
     "villager"
   ],
+  "icon": "https://data.aoe4world.com/images/buildings/elzbach-palace-3.png",
   "hitpoints": 7500,
   "weapons": [
     {
+      "name": "Bow",
       "type": "ranged",
-      "damage": 36,
-      "speed": 0.38,
+      "damage": 12,
+      "speed": 0.5,
       "range": {
         "min": 0,
-        "max": 10
+        "max": 8
       },
       "modifiers": [
         {
@@ -46,15 +51,31 @@
           "target": {
             "class": [
               [
-                "ship"
+                "naval",
+                "unit"
               ]
             ]
           },
           "effect": "change",
-          "value": 50,
+          "value": 25,
           "type": "passive"
         }
-      ]
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.125,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0.25,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 3
+      },
+      "attribName": "weapon_keep_arrows_a",
+      "pbgid": 127372
     }
   ],
   "armor": [
@@ -72,7 +93,16 @@
     "height": 501
   },
   "garrison": {
-    "capacity": 20
+    "capacity": 20,
+    "classes": [
+      "infantry",
+      "villager",
+      "infantry ranged",
+      "monk",
+      "cavalry"
+    ]
   },
-  "icon": "https://data.aoe4world.com/images/buildings/elzbach-palace.png"
+  "influences": [
+    "Buildings gain the Emergency Repairs ability while within the influence of a Town Center."
+  ]
 }

@@ -3,6 +3,8 @@
   "baseId": "baochuan",
   "type": "unit",
   "name": "Baochuan",
+  "pbgid": 193110,
+  "attribName": "unit_naval_combat_warship_4_chi",
   "age": 4,
   "civs": [
     "ch"
@@ -14,7 +16,7 @@
   "displayClasses": [
     "Warship"
   ],
-  "unique": true,
+  "unique": false,
   "costs": {
     "food": 0,
     "wood": 480,
@@ -22,17 +24,19 @@
     "gold": 480,
     "total": 960,
     "popcap": 6,
-    "time": 49
+    "time": 50
   },
   "producedBy": [
     "dock"
   ],
+  "icon": "https://data.aoe4world.com/images/units/baochuan-4.png",
   "hitpoints": 2000,
   "weapons": [
     {
+      "name": "Cannon",
       "type": "ranged",
-      "damage": 336,
-      "speed": 6.5,
+      "damage": 70,
+      "speed": 6.625,
       "range": {
         "min": 0,
         "max": 8
@@ -51,7 +55,22 @@
           "value": 50,
           "type": "passive"
         }
-      ]
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 6,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 7
+      },
+      "attribName": "weapon_naval_warship_cannon_ai_asian",
+      "pbgid": 2033791
     }
   ],
   "armor": [
@@ -66,6 +85,5 @@
   },
   "movement": {
     "speed": 0.75
-  },
-  "icon": "https://data.aoe4world.com/images/units/baochuan.png"
+  }
 }

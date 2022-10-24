@@ -3,11 +3,13 @@
   "baseId": "lodya-demolition-ship",
   "type": "unit",
   "name": "Lodya Demolition Ship",
+  "pbgid": 193137,
+  "attribName": "unit_naval_fireship_3_rus",
   "age": 3,
   "civs": [
     "ru"
   ],
-  "description": "Explodes when killed damaging any units in the area, and setting fire to ships and structures.\nThe Lodya can be converted to any other type of ship.",
+  "description": "Explodes when killed damaging any units in the area.\nThe Lodya can be converted to any other type of ship.",
   "classes": [
     "incendiary",
     "ship"
@@ -28,12 +30,14 @@
   "producedBy": [
     "dock"
   ],
+  "icon": "https://data.aoe4world.com/images/units/lodya-demolition-ship-3.png",
   "hitpoints": 200,
   "weapons": [
     {
+      "name": "Incendiaries",
       "type": "fire",
-      "damage": 300,
-      "speed": 1,
+      "damage": 400,
+      "speed": 0.125,
       "range": {
         "min": 0,
         "max": 2
@@ -44,6 +48,7 @@
           "target": {
             "class": [
               [
+                "naval",
                 "warship"
               ]
             ]
@@ -52,7 +57,57 @@
           "value": 200,
           "type": "passive"
         }
-      ]
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_naval_fireship",
+      "pbgid": 196723
+    },
+    {
+      "name": "Explosives",
+      "type": "fire",
+      "damage": 560,
+      "speed": 0.125,
+      "range": {
+        "min": 0,
+        "max": 2
+      },
+      "modifiers": [
+        {
+          "property": "fireAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "warship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 280,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_naval_fireship_explosive",
+      "pbgid": 196900
     }
   ],
   "armor": [],
@@ -62,6 +117,5 @@
   },
   "movement": {
     "speed": 1.5
-  },
-  "icon": "https://data.aoe4world.com/images/units/lodya-demolition-ship.png"
+  }
 }

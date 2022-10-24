@@ -1,0 +1,50 @@
+{
+  "id": "double-broadax-2",
+  "baseId": "double-broadax",
+  "type": "technology",
+  "name": "Double Broadax",
+  "pbgid": 128070,
+  "attribName": "upgrade_econ_resource_wood_harvest_rate_2",
+  "age": 2,
+  "civs": [
+    "mo"
+  ],
+  "description": "Increase Villagers' gathering rate for Wood by 15%.",
+  "classes": [
+    "wood",
+    "gathering",
+    "technology",
+    "1/3"
+  ],
+  "displayClasses": [
+    "Wood Gathering Technology 1/3"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 75,
+    "wood": 0,
+    "stone": 0,
+    "gold": 175,
+    "total": 250,
+    "popcap": 0,
+    "time": 75
+  },
+  "producedBy": [
+    "ger",
+    "steppe-redoubt"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/double-broadax-2.png",
+  "effects": [
+    {
+      "property": "woodGatherRate",
+      "select": {
+        "id": [
+          "villager"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.15,
+      "type": "passive"
+    }
+  ]
+}

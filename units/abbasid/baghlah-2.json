@@ -1,0 +1,114 @@
+{
+  "id": "baghlah-2",
+  "baseId": "baghlah",
+  "type": "unit",
+  "name": "Baghlah",
+  "pbgid": 199725,
+  "attribName": "unit_naval_combat_ship_2_abb",
+  "age": 2,
+  "civs": [
+    "ab"
+  ],
+  "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+  "classes": [
+    "attack",
+    "ship"
+  ],
+  "displayClasses": [
+    "Attack Ship"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 240,
+    "stone": 0,
+    "gold": 180,
+    "total": 420,
+    "popcap": 4,
+    "time": 45
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/baghlah-2.png",
+  "hitpoints": 900,
+  "weapons": [
+    {
+      "name": "Ballista",
+      "type": "ranged",
+      "damage": 70,
+      "speed": 3.875,
+      "range": {
+        "min": 0,
+        "max": 5
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 2.5,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_naval_combat_ship_crossbow_eastern",
+      "pbgid": 2034160
+    },
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 10,
+      "speed": 4.25,
+      "range": {
+        "min": 0,
+        "max": 5
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "fireship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 5,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0.25,
+        "attack": 0.5,
+        "winddown": 1,
+        "reload": 2,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 5
+      },
+      "attribName": "weapon_naval_combat_ship_arrow_abb",
+      "pbgid": 2034177
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 4
+    }
+  ],
+  "sight": {
+    "line": 38,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.25
+  }
+}

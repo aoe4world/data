@@ -1,0 +1,89 @@
+{
+  "id": "baochuan-4",
+  "baseId": "baochuan",
+  "type": "unit",
+  "name": "Baochuan",
+  "pbgid": 193130,
+  "attribName": "unit_naval_combat_warship_4_mon",
+  "age": 4,
+  "civs": [
+    "mo"
+  ],
+  "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
+  "classes": [
+    "warship"
+  ],
+  "displayClasses": [
+    "Warship"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 480,
+    "stone": 0,
+    "gold": 480,
+    "total": 960,
+    "popcap": 6,
+    "time": 60
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/baochuan-4.png",
+  "hitpoints": 2000,
+  "weapons": [
+    {
+      "name": "Cannon",
+      "type": "ranged",
+      "damage": 70,
+      "speed": 6.625,
+      "range": {
+        "min": 0,
+        "max": 8
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 50,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 6,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 7
+      },
+      "attribName": "weapon_naval_warship_cannon_ai_asian",
+      "pbgid": 2033791
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 6
+    }
+  ],
+  "sight": {
+    "line": 52,
+    "height": 10
+  },
+  "movement": {
+    "speed": 0.75
+  }
+}
