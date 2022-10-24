@@ -19,7 +19,7 @@ const ignoreForNow = [
   "sbps/races/mongol/unit_knight_2_mon", // is listed in khagenate palace but does not exist in feudal
 ];
 
-export async function parseItemFromAttirbFile(file: string, data: any, civ: civConfig, debug = false) {
+export async function parseItemFromAttribFile(file: string, data: any, civ: civConfig, debug = false) {
   const type = guessType(file, data);
 
   if (ignoreForNow.some((i) => file.includes(i))) {

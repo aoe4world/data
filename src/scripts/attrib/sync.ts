@@ -9,7 +9,7 @@ import { civConfig } from "../../types/civs";
 import { Item } from "../../types/items";
 import { attribFile, hardcodedDiscovery, racesMap } from "./config";
 import { workarounds } from "./overrides";
-import { parseItemFromAttirbFile } from "./parse";
+import { parseItemFromAttribFile } from "./parse";
 import { getTranslation as t } from "./translations";
 import { parseXmlFile } from "./xml";
 
@@ -44,7 +44,7 @@ async function buildTechTree(civ: civConfig, debug = false) {
     const data = await parseXmlFile(attribFile(file));
     if (debug) writeTemp(data, file);
 
-    const item = await parseItemFromAttirbFile(file, data, civ);
+    const item = await parseItemFromAttribFile(file, data, civ);
     if (!item) return;
 
     for (const [override, { predicate, mutator, validator }] of workarounds)

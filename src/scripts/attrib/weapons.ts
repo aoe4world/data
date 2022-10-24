@@ -48,20 +48,21 @@ async function parseWeapon(file: string): Promise<Weapon> {
   }));
 
   const burstInfo = weapon.weapon_bag.burst.can_burst ? weapon.weapon_bag.burst : undefined;
+  const burstDuration = burstInfo?.duration ? minMaxAvg(burstInfo?.duration) : 0;
   const burst = burstInfo && { count: minMaxAvg(burstInfo.duration) * minMaxAvg(burstInfo.rate_of_fire) };
 
   const durations = {
-    aim: (weapon.weapon_bag.aim.fire_aim_time.max + weapon.weapon_bag.aim.ready_aim_time.min) / 2,
+    aim: minMaxAvg(weapon.weapon_bag.aim.fire_aim_time),
     windup: weapon.weapon_bag.fire.wind_up,
-    fire: weapon.weapon_bag.fire.animation_impact_frame_time / 2,
+    attack: Math.max(burstDuration, 0.125), // Always at least one tick
     winddown: weapon.weapon_bag.fire.wind_down,
-    reload: (weapon.weapon_bag.reload.duration.min + weapon.weapon_bag.reload.duration.max) / 2,
-    setup: weapon.weapon_bag.setup.duration / 2,
-    teardown: weapon.weapon_bag.teardown.duration / 2,
-    cooldown: (weapon.weapon_bag.cooldown.duration.min + weapon.weapon_bag.cooldown.duration.max) / 2,
+    reload: minMaxAvg(weapon.weapon_bag.reload.duration),
+    setup: weapon.weapon_bag.setup.duration,
+    teardown: weapon.weapon_bag.teardown.duration,
+    cooldown: minMaxAvg(weapon.weapon_bag.cooldown.duration),
   };
 
-  const speed = ["aim", "windup", "fire", "winddown", "reload", "cooldown"].reduce((a, b) => a + durations[b], 0);
+  const speed = ["aim", "windup", "attack", "winddown", "reload", "cooldown"].reduce((a, b) => a + durations[b], 0);
 
   const range = {
     min: weapon.weapon_bag.range.min / 4,
@@ -89,7 +90,6 @@ async function oneWeaponPerType(weapons: Promise<Weapon | undefined>[]): Promise
   const wps = await Promise.all(weapons);
   const types = new Set(wps.filter(Boolean).map((w) => w!.type));
   return wps.filter(Boolean) as Weapon[];
-  return Array.from(types).map((t) => wps.find((w) => w!.type == t)!);
 }
 
 function minMaxAvg(x: { min: number; max: number }) {
