@@ -11,7 +11,9 @@
     "en",
     "fr",
     "hr",
+    "ma",
     "mo",
+    "ot",
     "ru"
   ],
   "unique": false,
@@ -70,7 +72,7 @@
           "speed": 5.125,
           "range": {
             "min": 0,
-            "max": 0.2875
+            "max": 0.5375
           },
           "modifiers": [
             {
@@ -83,7 +85,7 @@
                 ]
               },
               "effect": "change",
-              "value": 100,
+              "value": 200,
               "type": "passive"
             }
           ],
@@ -104,7 +106,7 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 30
+          "value": 50
         }
       ],
       "sight": {
@@ -170,7 +172,7 @@
           "speed": 5.125,
           "range": {
             "min": 0,
-            "max": 0.2875
+            "max": 0.5375
           },
           "modifiers": [
             {
@@ -183,7 +185,7 @@
                 ]
               },
               "effect": "change",
-              "value": 100,
+              "value": 200,
               "type": "passive"
             }
           ],
@@ -204,7 +206,7 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 30
+          "value": 50
         }
       ],
       "sight": {
@@ -269,7 +271,7 @@
           "speed": 5.125,
           "range": {
             "min": 0,
-            "max": 0.2875
+            "max": 0.5375
           },
           "modifiers": [
             {
@@ -282,7 +284,7 @@
                 ]
               },
               "effect": "change",
-              "value": 100,
+              "value": 200,
               "type": "passive"
             }
           ],
@@ -303,7 +305,7 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 30
+          "value": 50
         }
       ],
       "sight": {
@@ -370,7 +372,7 @@
           "speed": 5.125,
           "range": {
             "min": 0,
-            "max": 0.2875
+            "max": 0.5375
           },
           "modifiers": [
             {
@@ -383,7 +385,7 @@
                 ]
               },
               "effect": "change",
-              "value": 100,
+              "value": 200,
               "type": "passive"
             }
           ],
@@ -404,7 +406,7 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 30
+          "value": 50
         }
       ],
       "sight": {
@@ -469,7 +471,7 @@
           "speed": 5.125,
           "range": {
             "min": 0,
-            "max": 0.2875
+            "max": 0.5375
           },
           "modifiers": [
             {
@@ -482,7 +484,7 @@
                 ]
               },
               "effect": "change",
-              "value": 100,
+              "value": 200,
               "type": "passive"
             }
           ],
@@ -503,7 +505,7 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 30
+          "value": 50
         }
       ],
       "sight": {
@@ -568,7 +570,7 @@
           "speed": 5.125,
           "range": {
             "min": 0,
-            "max": 0.2875
+            "max": 0.5375
           },
           "modifiers": [
             {
@@ -581,7 +583,7 @@
                 ]
               },
               "effect": "change",
-              "value": 100,
+              "value": 200,
               "type": "passive"
             }
           ],
@@ -602,7 +604,106 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 30
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 30,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.75
+      },
+      "garrison": {
+        "capacity": 16,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk"
+        ]
+      }
+    },
+    {
+      "id": "battering-ram-2",
+      "baseId": "battering-ram",
+      "type": "unit",
+      "name": "Battering Ram",
+      "pbgid": 2444402,
+      "attribName": "unit_ram_3_mal",
+      "age": 2,
+      "civs": [
+        "ma"
+      ],
+      "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Can only attack buildings\n- Slow movement speed",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 250,
+        "stone": 0,
+        "gold": 0,
+        "total": 250,
+        "popcap": 1,
+        "time": 80
+      },
+      "producedBy": [
+        "donso",
+        "musofadi-warrior",
+        "archer",
+        "javelin-thrower",
+        "musofadi-gunner"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
+      "hitpoints": 420,
+      "weapons": [
+        {
+          "name": "Ram",
+          "type": "siege",
+          "damage": 200,
+          "speed": 5.125,
+          "range": {
+            "min": 0,
+            "max": 0.5375
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "wall"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 200,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.625,
+            "attack": 0.125,
+            "winddown": 0.375,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 4
+          },
+          "attribName": "weapon_ram_3",
+          "pbgid": 108918
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
         }
       ],
       "sight": {
@@ -667,7 +768,7 @@
           "speed": 5.125,
           "range": {
             "min": 0,
-            "max": 0.2875
+            "max": 0.5375
           },
           "modifiers": [
             {
@@ -680,7 +781,7 @@
                 ]
               },
               "effect": "change",
-              "value": 100,
+              "value": 200,
               "type": "passive"
             }
           ],
@@ -701,7 +802,106 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 30
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 30,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.75
+      },
+      "garrison": {
+        "capacity": 16,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk"
+        ]
+      }
+    },
+    {
+      "id": "battering-ram-2",
+      "baseId": "battering-ram",
+      "type": "unit",
+      "name": "Battering Ram",
+      "pbgid": 2034651,
+      "attribName": "unit_ram_3_ott",
+      "age": 2,
+      "civs": [
+        "ot"
+      ],
+      "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Can only attack buildings\n- Slow movement speed",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 250,
+        "stone": 0,
+        "gold": 0,
+        "total": 250,
+        "popcap": 1,
+        "time": 80
+      },
+      "producedBy": [
+        "spearman",
+        "man-at-arms",
+        "janissary",
+        "archer",
+        "crossbowman"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
+      "hitpoints": 420,
+      "weapons": [
+        {
+          "name": "Ram",
+          "type": "siege",
+          "damage": 200,
+          "speed": 5.125,
+          "range": {
+            "min": 0,
+            "max": 0.5375
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "wall"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 200,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.625,
+            "attack": 0.125,
+            "winddown": 0.375,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 4
+          },
+          "attribName": "weapon_ram_3",
+          "pbgid": 108918
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
         }
       ],
       "sight": {
@@ -766,7 +966,7 @@
           "speed": 5.125,
           "range": {
             "min": 0,
-            "max": 0.2875
+            "max": 0.5375
           },
           "modifiers": [
             {
@@ -779,7 +979,7 @@
                 ]
               },
               "effect": "change",
-              "value": 100,
+              "value": 200,
               "type": "passive"
             }
           ],
@@ -800,7 +1000,7 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 30
+          "value": 50
         }
       ],
       "sight": {

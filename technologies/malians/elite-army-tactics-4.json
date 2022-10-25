@@ -1,0 +1,65 @@
+{
+  "id": "elite-army-tactics-4",
+  "baseId": "elite-army-tactics",
+  "type": "technology",
+  "name": "Elite Army Tactics",
+  "pbgid": 190779,
+  "attribName": "upgrade_manatarms_elite_army_tactics",
+  "age": 4,
+  "civs": [
+    "ma"
+  ],
+  "description": "Increase the health of all melee infantry by +20% and their damage by +20%.",
+  "classes": [
+    "melee",
+    "infantry",
+    "technology"
+  ],
+  "displayClasses": [
+    "Melee Infantry Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 300,
+    "wood": 0,
+    "stone": 0,
+    "gold": 700,
+    "total": 1000,
+    "popcap": 0,
+    "time": 90
+  },
+  "producedBy": [
+    "madrasa"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/elite-army-tactics-4.png",
+  "effects": [
+    {
+      "property": "hitpoints",
+      "select": {
+        "class": [
+          [
+            "melee",
+            "infantry"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.2,
+      "type": "passive"
+    },
+    {
+      "property": "meleeAttack",
+      "select": {
+        "class": [
+          [
+            "melee",
+            "infantry"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.2,
+      "type": "passive"
+    }
+  ]
+}

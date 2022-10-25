@@ -9,15 +9,15 @@
   ],
   "unique": true,
   "displayClasses": [
-    "Archer Ship"
+    "Springald Ship"
   ],
   "classes": [
-    "archer",
+    "springald",
     "ship"
   ],
   "minAge": 2,
   "icon": "https://data.aoe4world.com/images/units/lodya-attack-ship-2.png",
-  "description": "Crewed with Archers.\nThe Lodya can be converted to any other type of ship.",
+  "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
   "variations": [
     {
       "id": "lodya-attack-ship-2",
@@ -30,38 +30,38 @@
       "civs": [
         "ru"
       ],
-      "description": "Crewed with Archers.\nThe Lodya can be converted to any other type of ship.",
+      "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
       "classes": [
-        "archer",
+        "springald",
         "ship"
       ],
       "displayClasses": [
-        "Archer Ship"
+        "Springald Ship"
       ],
       "unique": true,
       "costs": {
-        "food": 0,
-        "wood": 120,
+        "food": 120,
+        "wood": 200,
         "stone": 0,
-        "gold": 60,
-        "total": 180,
-        "popcap": 2,
-        "time": 35
+        "gold": 30,
+        "total": 350,
+        "popcap": 3,
+        "time": 30
       },
       "producedBy": [
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/lodya-attack-ship-2.png",
-      "hitpoints": 400,
+      "hitpoints": 450,
       "weapons": [
         {
-          "name": "Bow",
+          "name": "Ballista",
           "type": "ranged",
-          "damage": 8,
-          "speed": 2.75,
+          "damage": 35,
+          "speed": 4.125,
           "range": {
             "min": 0,
-            "max": 5
+            "max": 6
           },
           "modifiers": [
             {
@@ -69,31 +69,41 @@
               "target": {
                 "class": [
                   [
-                    "naval",
-                    "fireship"
+                    "archer",
+                    "ship"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 8,
+              "value": 40,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 45,
               "type": "passive"
             }
           ],
           "durations": {
             "aim": 0.5,
             "windup": 0.25,
-            "attack": 0.5,
-            "winddown": 1,
-            "reload": 0.5,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 2.75,
             "setup": 0,
             "teardown": 0,
             "cooldown": 0
           },
-          "burst": {
-            "count": 5
-          },
-          "attribName": "weapon_naval_lodya_arrow_vis_rus",
-          "pbgid": 1862395
+          "attribName": "weapon_naval_combat_ship_springald",
+          "pbgid": 2102494
         }
       ],
       "armor": [
@@ -103,11 +113,11 @@
         }
       ],
       "sight": {
-        "line": 36,
+        "line": 45,
         "height": 10
       },
       "movement": {
-        "speed": 1.5
+        "speed": 1.375
       }
     }
   ]

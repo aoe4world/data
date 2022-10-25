@@ -1,7 +1,7 @@
 import { CIVILIZATIONS } from "../lib/config/civs";
 import { CivSlug } from "../sdk/utils";
 
-export type civAbbr = "en" | "hr" | "fr" | "ch" | "de" | "ab" | "mo" | "ru";
+export type civAbbr = "en" | "hr" | "fr" | "ch" | "de" | "ab" | "mo" | "ru" | "ma" | "ot";
 
 export type civConfig = {
   name: string;
@@ -18,6 +18,8 @@ export const CIVILIZATION_BY_SLUG = {
   abbasid: CIVILIZATIONS.ab,
   mongols: CIVILIZATIONS.mo,
   rus: CIVILIZATIONS.ru,
+  malians: CIVILIZATIONS.ma,
+  ottomans: CIVILIZATIONS.ot,
 };
 
 export type CivInfo = {

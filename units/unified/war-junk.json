@@ -10,10 +10,10 @@
   ],
   "unique": false,
   "displayClasses": [
-    "Attack Ship"
+    "Springald Ship"
   ],
   "classes": [
-    "attack",
+    "springald",
     "ship"
   ],
   "minAge": 3,
@@ -33,64 +33,92 @@
       ],
       "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
       "classes": [
-        "attack",
+        "springald",
         "ship"
       ],
       "displayClasses": [
-        "Attack Ship"
+        "Springald Ship"
       ],
       "unique": false,
       "costs": {
-        "food": 0,
-        "wood": 300,
+        "food": 120,
+        "wood": 200,
         "stone": 0,
-        "gold": 210,
-        "total": 510,
-        "popcap": 4,
-        "time": 38
+        "gold": 30,
+        "total": 350,
+        "popcap": 3,
+        "time": 25
       },
       "producedBy": [
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/war-junk-2.png",
-      "hitpoints": 900,
+      "hitpoints": 450,
       "weapons": [
         {
           "name": "Ballista",
           "type": "ranged",
-          "damage": 120,
-          "speed": 4.625,
+          "damage": 35,
+          "speed": 4.125,
           "range": {
             "min": 0,
-            "max": 6.5
+            "max": 6
           },
-          "modifiers": [],
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "archer",
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 40,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 45,
+              "type": "passive"
+            }
+          ],
           "durations": {
             "aim": 0.5,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 3.25,
+            "reload": 2.75,
             "setup": 0,
             "teardown": 0,
             "cooldown": 0
           },
-          "attribName": "weapon_naval_combat_ship_crossbow_asian",
-          "pbgid": 2034161
+          "attribName": "weapon_naval_combat_ship_springald",
+          "pbgid": 2102494
         }
       ],
       "armor": [
         {
           "type": "ranged",
-          "value": 5
+          "value": 3
         }
       ],
       "sight": {
-        "line": 44,
+        "line": 45,
         "height": 10
       },
       "movement": {
-        "speed": 1
+        "speed": 1.375
       }
     },
     {
@@ -106,64 +134,92 @@
       ],
       "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
       "classes": [
-        "attack",
+        "springald",
         "ship"
       ],
       "displayClasses": [
-        "Attack Ship"
+        "Springald Ship"
       ],
       "unique": false,
       "costs": {
-        "food": 0,
-        "wood": 300,
+        "food": 120,
+        "wood": 200,
         "stone": 0,
-        "gold": 210,
-        "total": 510,
-        "popcap": 4,
-        "time": 45
+        "gold": 30,
+        "total": 350,
+        "popcap": 3,
+        "time": 30
       },
       "producedBy": [
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/war-junk-2.png",
-      "hitpoints": 900,
+      "hitpoints": 450,
       "weapons": [
         {
           "name": "Ballista",
           "type": "ranged",
-          "damage": 120,
-          "speed": 4.625,
+          "damage": 35,
+          "speed": 4.125,
           "range": {
             "min": 0,
-            "max": 6.5
+            "max": 6
           },
-          "modifiers": [],
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "archer",
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 40,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 45,
+              "type": "passive"
+            }
+          ],
           "durations": {
             "aim": 0.5,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 3.25,
+            "reload": 2.75,
             "setup": 0,
             "teardown": 0,
             "cooldown": 0
           },
-          "attribName": "weapon_naval_combat_ship_crossbow_asian",
-          "pbgid": 2034161
+          "attribName": "weapon_naval_combat_ship_springald",
+          "pbgid": 2102494
         }
       ],
       "armor": [
         {
           "type": "ranged",
-          "value": 5
+          "value": 3
         }
       ],
       "sight": {
-        "line": 44,
+        "line": 45,
         "height": 10
       },
       "movement": {
-        "speed": 1
+        "speed": 1.375
       }
     }
   ]

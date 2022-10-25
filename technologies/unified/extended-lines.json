@@ -11,7 +11,9 @@
     "en",
     "fr",
     "hr",
+    "ma",
     "mo",
+    "ot",
     "ru"
   ],
   "unique": false,
@@ -25,7 +27,7 @@
   ],
   "minAge": 2,
   "icon": "https://data.aoe4world.com/images/technologies/extended-lines-2.png",
-  "description": "Increase the gathering rate of Fishing Ships by +20% and their carry capacity by +10.",
+  "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
   "variations": [
     {
       "id": "extended-lines-2",
@@ -38,7 +40,7 @@
       "civs": [
         "en"
       ],
-      "description": "Increase the gathering rate of Fishing Ships by +20% and their carry capacity by +10.",
+      "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
       "classes": [
         "fishing",
         "technology",
@@ -49,13 +51,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 75,
-        "wood": 0,
+        "food": 0,
+        "wood": 75,
         "stone": 0,
         "gold": 175,
         "total": 250,
         "popcap": 0,
-        "time": 45
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -99,7 +101,7 @@
       "civs": [
         "hr"
       ],
-      "description": "Increase the gathering rate of Fishing Ships by +20% and their carry capacity by +10.",
+      "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
       "classes": [
         "fishing",
         "technology",
@@ -110,13 +112,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 75,
-        "wood": 0,
+        "food": 0,
+        "wood": 75,
         "stone": 0,
         "gold": 175,
         "total": 250,
         "popcap": 0,
-        "time": 45
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -160,7 +162,7 @@
       "civs": [
         "fr"
       ],
-      "description": "Increase the gathering rate of Fishing Ships by +20% and their carry capacity by +10.",
+      "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
       "classes": [
         "fishing",
         "technology",
@@ -172,11 +174,11 @@
       "unique": false,
       "costs": {
         "gold": 123,
-        "wood": 0,
-        "food": 53,
+        "wood": 53,
+        "food": 0,
         "stone": 0,
         "total": 176,
-        "time": 45
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -220,7 +222,7 @@
       "civs": [
         "ch"
       ],
-      "description": "Increase the gathering rate of Fishing Ships by +20% and their carry capacity by +10.",
+      "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
       "classes": [
         "fishing",
         "technology",
@@ -231,13 +233,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 75,
-        "wood": 0,
+        "food": 0,
+        "wood": 75,
         "stone": 0,
         "gold": 175,
         "total": 250,
         "popcap": 0,
-        "time": 45
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -281,7 +283,7 @@
       "civs": [
         "de"
       ],
-      "description": "Increase the gathering rate of Fishing Ships by +20% and their carry capacity by +10.",
+      "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
       "classes": [
         "fishing",
         "technology",
@@ -342,7 +344,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Increase the gathering rate of Fishing Ships by +20% and their carry capacity by +10.",
+      "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
       "classes": [
         "fishing",
         "technology",
@@ -353,13 +355,74 @@
       ],
       "unique": false,
       "costs": {
-        "food": 75,
-        "wood": 0,
+        "food": 0,
+        "wood": 75,
         "stone": 0,
         "gold": 175,
         "total": 250,
         "popcap": 0,
-        "time": 45
+        "time": 30
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/extended-lines-2.png",
+      "effects": [
+        {
+          "property": "foodGatherRate",
+          "select": {
+            "id": [
+              "fishing-boat",
+              "lodya-fishing-boat"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "carryCapacity",
+          "select": {
+            "id": [
+              "fishing-boat",
+              "lodya-fishing-boat"
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "extended-lines-2",
+      "baseId": "extended-lines",
+      "type": "technology",
+      "name": "Extended Lines",
+      "pbgid": 2033745,
+      "attribName": "upgrade_econ_extended_lines",
+      "age": 2,
+      "civs": [
+        "ma"
+      ],
+      "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
+      "classes": [
+        "fishing",
+        "technology",
+        "1/2"
+      ],
+      "displayClasses": [
+        "Fishing Technology 1/2"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 175,
+        "total": 250,
+        "popcap": 0,
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -403,7 +466,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Increase the gathering rate of Fishing Ships by +20% and their carry capacity by +10.",
+      "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
       "classes": [
         "fishing",
         "technology",
@@ -414,13 +477,74 @@
       ],
       "unique": false,
       "costs": {
-        "food": 75,
-        "wood": 0,
+        "food": 0,
+        "wood": 75,
         "stone": 0,
         "gold": 175,
         "total": 250,
         "popcap": 0,
-        "time": 45
+        "time": 30
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/extended-lines-2.png",
+      "effects": [
+        {
+          "property": "foodGatherRate",
+          "select": {
+            "id": [
+              "fishing-boat",
+              "lodya-fishing-boat"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "carryCapacity",
+          "select": {
+            "id": [
+              "fishing-boat",
+              "lodya-fishing-boat"
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "extended-lines-2",
+      "baseId": "extended-lines",
+      "type": "technology",
+      "name": "Extended Lines",
+      "pbgid": 2033745,
+      "attribName": "upgrade_econ_extended_lines",
+      "age": 2,
+      "civs": [
+        "ot"
+      ],
+      "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
+      "classes": [
+        "fishing",
+        "technology",
+        "1/2"
+      ],
+      "displayClasses": [
+        "Fishing Technology 1/2"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 175,
+        "total": 250,
+        "popcap": 0,
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -464,7 +588,7 @@
       "civs": [
         "ru"
       ],
-      "description": "Increase the gathering rate of Fishing Ships by +20% and their carry capacity by +10.",
+      "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
       "classes": [
         "fishing",
         "technology",
@@ -475,13 +599,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 75,
-        "wood": 0,
+        "food": 0,
+        "wood": 75,
         "stone": 0,
         "gold": 175,
         "total": 250,
         "popcap": 0,
-        "time": 45
+        "time": 30
       },
       "producedBy": [
         "dock"

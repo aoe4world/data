@@ -11,7 +11,9 @@
     "en",
     "fr",
     "hr",
+    "ma",
     "mo",
+    "ot",
     "ru"
   ],
   "unique": false,
@@ -52,12 +54,12 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 75,
+        "wood": 50,
         "stone": 0,
-        "gold": 175,
-        "total": 250,
+        "gold": 100,
+        "total": 150,
         "popcap": 0,
-        "time": 75
+        "time": 45
       },
       "producedBy": [
         "mill"
@@ -101,12 +103,12 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 75,
+        "wood": 50,
         "stone": 0,
-        "gold": 175,
-        "total": 250,
+        "gold": 100,
+        "total": 150,
         "popcap": 0,
-        "time": 75
+        "time": 45
       },
       "producedBy": [
         "mill"
@@ -149,12 +151,12 @@
       ],
       "unique": false,
       "costs": {
-        "gold": 123,
-        "wood": 53,
+        "gold": 70,
+        "wood": 35,
         "food": 0,
         "stone": 0,
-        "total": 176,
-        "time": 75
+        "total": 105,
+        "time": 45
       },
       "producedBy": [
         "mill"
@@ -198,15 +200,16 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 75,
+        "wood": 50,
         "stone": 0,
-        "gold": 175,
-        "total": 250,
+        "gold": 100,
+        "total": 150,
         "popcap": 0,
-        "time": 75
+        "time": 45
       },
       "producedBy": [
-        "mill"
+        "mill",
+        "granary"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/horticulture-2.png",
       "effects": [
@@ -252,7 +255,7 @@
         "gold": 0,
         "total": 0,
         "popcap": 0,
-        "time": 265
+        "time": 157
       },
       "producedBy": [
         "mill"
@@ -296,12 +299,61 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 75,
+        "wood": 50,
         "stone": 0,
-        "gold": 175,
-        "total": 250,
+        "gold": 100,
+        "total": 150,
         "popcap": 0,
-        "time": 75
+        "time": 45
+      },
+      "producedBy": [
+        "mill"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/horticulture-2.png",
+      "effects": [
+        {
+          "property": "foodGatherRate",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "horticulture-2",
+      "baseId": "horticulture",
+      "type": "technology",
+      "name": "Horticulture",
+      "pbgid": 128049,
+      "attribName": "upgrade_econ_resource_food_harvest_rate_2",
+      "age": 2,
+      "civs": [
+        "ma"
+      ],
+      "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
+      "classes": [
+        "food",
+        "gathering",
+        "technology",
+        "1/3"
+      ],
+      "displayClasses": [
+        "Food Gathering Technology 1/3"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 50,
+        "stone": 0,
+        "gold": 100,
+        "total": 150,
+        "popcap": 0,
+        "time": 45
       },
       "producedBy": [
         "mill"
@@ -345,16 +397,66 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 75,
+        "wood": 50,
         "stone": 0,
-        "gold": 175,
-        "total": 250,
+        "gold": 100,
+        "total": 150,
         "popcap": 0,
-        "time": 75
+        "time": 45
       },
       "producedBy": [
         "ger",
         "steppe-redoubt"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/horticulture-2.png",
+      "effects": [
+        {
+          "property": "foodGatherRate",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "horticulture-2",
+      "baseId": "horticulture",
+      "type": "technology",
+      "name": "Horticulture",
+      "pbgid": 128049,
+      "attribName": "upgrade_econ_resource_food_harvest_rate_2",
+      "age": 2,
+      "civs": [
+        "ot"
+      ],
+      "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
+      "classes": [
+        "food",
+        "gathering",
+        "technology",
+        "1/3"
+      ],
+      "displayClasses": [
+        "Food Gathering Technology 1/3"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 50,
+        "stone": 0,
+        "gold": 100,
+        "total": 150,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "mill",
+        "twin-minaret-medrese"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/horticulture-2.png",
       "effects": [
@@ -395,12 +497,12 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 75,
+        "wood": 50,
         "stone": 0,
-        "gold": 175,
-        "total": 250,
+        "gold": 100,
+        "total": 150,
         "popcap": 0,
-        "time": 75
+        "time": 45
       },
       "producedBy": [
         "hunting-cabin"

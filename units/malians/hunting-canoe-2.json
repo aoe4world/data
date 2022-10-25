@@ -1,0 +1,91 @@
+{
+  "id": "hunting-canoe-2",
+  "baseId": "hunting-canoe",
+  "type": "unit",
+  "name": "Hunting Canoe",
+  "pbgid": 2071545,
+  "attribName": "unit_naval_light_combat_ship_2_mal",
+  "age": 2,
+  "civs": [
+    "ma"
+  ],
+  "description": "Light war vessel armed with a crew of archers.\n+ Increased maneuverability and speed.\n+ Benefits from ranged damage Blacksmith technology",
+  "classes": [
+    "archer",
+    "ship"
+  ],
+  "displayClasses": [
+    "Archer Ship"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 90,
+    "wood": 150,
+    "stone": 0,
+    "gold": 0,
+    "total": 240,
+    "popcap": 3,
+    "time": 25
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/hunting-canoe-2.png",
+  "hitpoints": 300,
+  "weapons": [
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 6,
+      "speed": 1.5,
+      "range": {
+        "min": 0,
+        "max": 6.5
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "fireship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 18,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.125,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 0.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 5
+      },
+      "attribName": "weapon_naval_arrow_ship_arrow",
+      "pbgid": 2034306
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 1
+    }
+  ],
+  "sight": {
+    "line": 48,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.75
+  }
+}

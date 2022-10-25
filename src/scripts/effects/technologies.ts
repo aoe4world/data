@@ -13,9 +13,10 @@ const common = {
     ],
     id: ["longbowman", "zhuge-nu", "archer", "arbaletrier", "crossbowman"],
   } as Modifier["select"],
-  allMillitaryShips: { class: [["ship", "attack"], ["ship", "archer"], ["ship", "incendiary"], ["warship"]], id: ["galleass"] } as Modifier["select"],
+  allMillitaryShips: { class: [["ship", "springald"], ["ship", "archer"], ["ship", "incendiary"], ["warship"]], id: ["galleass", "grand-galley"] } as Modifier["select"],
   allKeepLikeLandmarks: { id: ["berkshire-palace", "elzbach-palace", "kremlin", "spasskaya-tower", "red-palace", "the-white-tower"] },
   allReligiousUnits: { id: ["prelate", "monk", "scholar", "shaman", "imam", "warrior-monk"] } as Modifier["select"],
+  allFishingShips: { id: ["fishing-boat", "lodya-fishing-boat"] } as Modifier["select"],
 };
 
 const increaseByPercent = (n: number, percent: number) => round(n * (1 + Math.abs(percent) / 100));
@@ -173,14 +174,14 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  "military-academy": ([reduction]) => [
-    // Reduce the time it takes to produce infantry, cavalry, siege, and transport units at buildings by -25%.
+  "military-academy": ([i]) => [
+    // Increase the production speed of infantry, cavalry, siege, and transport units at buildings by 33%.
     // Does not affect religious units or other support units.
     {
       property: "buildTime",
       select: { class: [["infantry"], ["melee", "cavalry"], ["ranged", "cavalry"], ["siege"], ["transport"]] },
       effect: "multiply",
-      value: decreaseByPercent(1, reduction),
+      value: increaseSpeedByPercent(1, i),
       type: "passive",
     },
   ],
@@ -283,20 +284,27 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  "drift-nets": ([r, c]) => [
-    // Increase the gathering rate of Fishing Ships by +15% and their carry capacity by +20.
+  "drift-nets": ([r, c, s]) => [
+    // Increase the gathering rate of Fishing Ships by +15%, carry capacity by +20 and move speed by +10%.
     {
       property: "foodGatherRate",
-      select: { id: ["fishing-boat", "lodya-fishing-boat"] },
+      select: common.allFishingShips,
       effect: "multiply",
       value: increaseByPercent(1, r),
       type: "passive",
     },
     {
       property: "carryCapacity",
-      select: { id: ["fishing-boat", "lodya-fishing-boat"] },
+      select: common.allFishingShips,
       effect: "change",
       value: c,
+      type: "passive",
+    },
+    {
+      property: "moveSpeed",
+      select: common.allFishingShips,
+      effect: "multiply",
+      value: increaseByPercent(1, s),
       type: "passive",
     },
   ],
@@ -305,14 +313,14 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     // Increase the gathering rate of Fishing Ships by +20% and their carry capacity by  +10.
     {
       property: "foodGatherRate",
-      select: { id: ["fishing-boat", "lodya-fishing-boat"] },
+      select: common.allFishingShips,
       effect: "multiply",
       value: increaseByPercent(1, i),
       type: "passive",
     },
     {
       property: "carryCapacity",
-      select: { id: ["fishing-boat", "lodya-fishing-boat"] },
+      select: common.allFishingShips,
       effect: "change",
       value: c,
       type: "passive",
@@ -675,21 +683,50 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  // Now a civ bonus
-  shipwrights: ([r]) => [
-    // Reduce the cost of ships by -10%.
+  shipwrights: ([h, a]) => [
+    // Increase the health of all military ships by +20% and ranged armor by +1.
     {
-      property: "woodCost",
-      select: { class: [["ship"], ["warship"]] },
+      property: "hitpoints",
+      select: common.allMillitaryShips,
       effect: "multiply",
-      value: decreaseByPercent(1, r),
+      value: increaseByPercent(1, h),
       type: "passive",
     },
     {
-      property: "goldCost",
-      select: { class: [["ship"], ["warship"]] },
+      property: "rangedArmor",
+      select: common.allMillitaryShips,
+      effect: "change",
+      value: a,
+      type: "passive",
+    },
+  ],
+
+  "springald-crews": ([r, s]) => [
+    // Springald Ships gain +1 range and attack 20% faster.
+    {
+      property: "maxRange",
+      select: { class: [["springald", "ship"]] },
+      effect: "change",
+      value: r,
+      type: "passive",
+    },
+    {
+      property: "attackSpeed",
+      select: { class: [["springald", "ship"]] },
       effect: "multiply",
-      value: decreaseByPercent(1, r),
+      value: increaseSpeedByPercent(1, s),
+      type: "passive",
+    },
+  ],
+
+  "swivel-cannon": ([]) => [
+    // Springald Ships gain an additional Cannon which fires in 360 degrees.
+    // (Adds a Swivel Cannon to the Springald Ship, which deals 15 damage and can fire in 360 degrees.)
+    {
+      property: "rangedAttack",
+      select: { class: [["springald", "ship"]] },
+      effect: "change",
+      value: 15,
       type: "passive",
     },
   ],
@@ -740,8 +777,8 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
   "fire-stations": ([i, s]) => [
     // Military Ships regenerate +1 health every 2 seconds when out of combat.
     {
-      property: "repairRate",
-      select: { id: ["dock"] },
+      property: "healingRate",
+      select: common.allMillitaryShips,
       effect: "change",
       value: i,
       type: "passive",
@@ -958,33 +995,11 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  "additional-sails": ([i]) => [
-    // Increase the movement speed of all ships by +15%.
-    {
-      property: "moveSpeed",
-      select: { class: [["ship"], ["warship"]] },
-      effect: "multiply",
-      value: increaseByPercent(1, i),
-      type: "passive",
-    },
-  ],
-
   "battle-hardened": ([i]) => [
     // Increase the health of Palace Guards by +30.
     {
       property: "hitpoints",
       select: { id: ["palace-guard"] },
-      effect: "change",
-      value: i,
-      type: "passive",
-    },
-  ],
-
-  "chaser-cannons": ([i]) => [
-    // Increase the weapon range of Warships by +1 tiles.
-    {
-      property: "maxRange",
-      select: { class: [["warship"]] },
       effect: "change",
       value: i,
       type: "passive",
@@ -1002,27 +1017,41 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  // TODO: In reality is adding an extra weapon, not modifiying the existing one.
-  "extra-ballista": ([d]) => [
-    // Adds a swivel ballista to Attack Ships.
-    // Swivel ballistae can fire in any direction and deal 15 damage.
+  incendiaries: ([i]) => [
+    // Incendiary Ships gain +20% explosion range.
     {
-      property: "rangedAttack",
-      select: { class: [["attack", "ship"]] },
-      effect: "change",
-      value: d,
+      property: "maxRange",
+      select: { class: [["incendiary", "ship"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
       type: "passive",
     },
   ],
 
-  // This comes down to 200%  "Shoots 2x2 arrows (burst) per atk, arrow = 8 dmg. 1 atk = 4 arrows, 4x8 = 32 dmg."
-  "extra-hammocks": ([]) => [
-    // Junks of the Archer Ship type gain additional crew, allowing them to fire two more arrows in each volley.
+  "naval-arrowslits": ([i]) => [
+    // Add a defensive arrowslit to this Dock which only attacks ships.
+  ],
+
+  // Technically this would increase burst by +1  but we don't have a way to represent that.
+  "extra-hammocks": ([i]) => [
+    // Increases the number of arrows fired by Archer Ships by +1.
     {
       property: "rangedAttack",
-      select: { id: ["junk"] },
+      select: { class: [["archer", "ship"]] },
       effect: "multiply",
-      value: 2,
+      value: 1 + i / 5, // 5 is the default number of arrows
+      type: "passive",
+    },
+  ],
+
+  "heated-shot": ([i]) => [
+    // Archer Ship arrows light enemy Ships on fire, dealing damage over time.
+    // (Arrow Ships set enemy ships on fire dealing 30 damage over 10 seconds (not stacking with each arrow).)
+    {
+      property: "rangedAttack",
+      select: { class: [["archer", "ship"]] },
+      effect: "change",
+      value: 30 / 5, // 5 is the default number of arrows
       type: "passive",
     },
   ],
@@ -1049,17 +1078,6 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  "navigator-lookout": ([i]) => [
-    // Increase the sight range of military ships by +4.
-    {
-      property: "lineOfSight",
-      select: common.allMillitaryShips,
-      effect: "change",
-      value: i,
-      type: "passive",
-    },
-  ],
-
   pyrotechnics: ([i]) => [
     // Increase the range of gunpowder units by 1.5 tiles.
     {
@@ -1072,12 +1090,23 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
   ],
 
   "reload-drills": ([i]) => [
-    // Reduce the reload time of Bombards by -33%.
+    // Increase attack speed of Bombards by -33%
     {
       property: "attackSpeed",
       select: { id: ["bombard"] },
       effect: "multiply",
       value: increaseSpeedByPercent(1, i),
+      type: "passive",
+    },
+  ],
+
+  "thunderclap-bombs": ([i]) => [
+    // Warships fire a Nest of Bees attack.
+    {
+      property: "siegeAttack",
+      select: { class: [["warship"]] },
+      effect: "change",
+      value: (8 * 8) / 3, // 8 damage of 8 nest of bees arrows / burst
       type: "passive",
     },
   ],
@@ -1152,20 +1181,20 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  "armored-hull": ([i]) => [
-    // Increase the armor of all military ships by +2.
+  "armored-hull": ([h, a]) => [
+    // Increase the health of all military ships by +20% and ranged armor by +1.
+    {
+      property: "hitpoints",
+      select: common.allMillitaryShips,
+      effect: "multiply",
+      value: increaseByPercent(1, h),
+      type: "passive",
+    },
     {
       property: "rangedArmor",
       select: common.allMillitaryShips,
       effect: "change",
-      value: i,
-      type: "passive",
-    },
-    {
-      property: "meleeArmor",
-      select: common.allMillitaryShips,
-      effect: "change",
-      value: i,
+      value: a,
       type: "passive",
     },
   ],
@@ -1372,6 +1401,17 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
+  "manuscript-trade": ([i]) => [
+    // Scholars garrisoned in Docks provide +20% faster production speed and contribute to global research.
+    {
+      property: "productionSpeed",
+      select: { id: ["dock"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "passive",
+    },
+  ],
+
   "incendiary-arrows": ([i]) => [
     // Increase the damage of ranged units and buildings by +20%. Does not apply to gunpowder units.
     {
@@ -1405,17 +1445,6 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     {
       property: "lineOfSight",
       select: { id: ["outpost"] },
-      effect: "multiply",
-      value: increaseByPercent(1, i),
-      type: "passive",
-    },
-  ],
-
-  "patchwork-repairs": ([i]) => [
-    // Increase the repair rate of Fishing Ships by +100%.
-    {
-      property: "repairRate",
-      select: { id: ["fishing-boat", "lodya-fishing-boat"] },
       effect: "multiply",
       value: increaseByPercent(1, i),
       type: "passive",
@@ -1949,12 +1978,12 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
   ],
 
   "teak-masts": ([i]) => [
-    // Increase the health of Dhows by +100.
+    // Increase the move speed of military ships +10%
     {
-      property: "hitpoints",
-      select: { id: ["dhow"] },
+      property: "moveSpeed",
+      select: common.allMillitaryShips,
       effect: "change",
-      value: i,
+      value: increaseSpeedByPercent(1, i),
       type: "passive",
     },
   ],
@@ -1970,6 +1999,58 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       select: { id: ["house-of-wisdom"] },
       effect: "change",
       value: 5000,
+      type: "passive",
+    },
+  ],
+
+  "canoe-tactics": ([i]) => [
+    // Archer Ships fire an additional 2 Javelin weapons.
+    {
+      property: "rangedAttack",
+      select: { class: [["archer", "ship"]] },
+      effect: "change",
+      value: (2 * 4) / 5, // 4 damage of 2 javelins / default burst
+      type: "passive",
+    },
+  ],
+
+  "farima-leadership": ([i]) => [
+    // Sofa increase the movement speed of nearby infantry by +15%.
+    {
+      property: "moveSpeed",
+      select: { id: ["sofa"] },
+      target: { class: [["infantry"]] },
+      effect: "multiply",
+      value: increaseSpeedByPercent(1, i),
+      type: "influence",
+    },
+  ],
+
+  "imported-armor": ([i]) => [
+    // Increase armor of Sofa by +2.
+    {
+      property: "meleeArmor",
+      select: { id: ["sofa"] },
+      effect: "change",
+      value: i,
+      type: "passive",
+    },
+    {
+      property: "rangedArmor",
+      select: { id: ["sofa"] },
+      effect: "change",
+      value: i,
+      type: "passive",
+    },
+  ],
+
+  "local-knowledge": ([i]) => [
+    // Musofadi units heal while in Stealth for +2 every 1 seconds.
+    {
+      property: "healingRate",
+      select: { id: ["musofadi-gunner", "musofadi-warrior"] },
+      effect: "change",
+      value: i,
       type: "passive",
     },
   ],
@@ -2008,6 +2089,101 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       value: javelin,
       type: "passive",
     },
+  ],
+
+  "advanced-academy": ([]) => [
+    // Outfits Military Schools with the ability to produce Knights and Janissaries.
+  ],
+
+  "anatolian-hills": ([s, i]) => [
+    // Spawn 8 sheep at the Landmark Town Center and increase Villager mining speed by +10%.
+    {
+      property: "goldGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseSpeedByPercent(1, i),
+      type: "passive",
+    },
+    {
+      property: "stoneGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseSpeedByPercent(1, i),
+      type: "passive",
+    },
+  ],
+
+  "fast-training": ([i]) => [
+    // Increase production of Military Schools by +25%.
+
+    {
+      property: "productionSpeed",
+      select: { id: ["military-school"] },
+      effect: "multiply",
+      value: increaseSpeedByPercent(1, i),
+      type: "passive",
+    },
+  ],
+
+  "field-work": ([imam, i]) => [
+    // Spawn 2 Imams at the Landmark Town Center. Imams area heal nearby units for 1 health every second.
+    {
+      property: "healingRate",
+      select: { id: ["imam"] },
+      target: { class: [[]] },
+      effect: "change",
+      value: imam,
+      type: "influence",
+    },
+  ],
+
+  "imperial-fleet": ([p, m]) => [
+    // Increase the production speed of Gunpowder Ships by 15% and their movement speed by 15%.
+    {
+      property: "productionSpeed",
+      select: { id: ["carrack", "grand-galley"] },
+      effect: "multiply",
+      value: increaseSpeedByPercent(1, p),
+      type: "passive",
+    },
+    {
+      property: "moveSpeed",
+      select: { id: ["carrack", "grand-galley"] },
+      effect: "multiply",
+      value: increaseSpeedByPercent(1, m),
+      type: "passive",
+    },
+  ],
+
+  "janissary-company": ([i]) => [
+    // Spawn 2 Janissaries for each of your Military Schools at the Landmark Town Center.
+  ],
+
+  "janissary-guns": ([i]) => [
+    // Increase Janissary gun damage by +3.
+    {
+      property: "rangedAttack",
+      select: { id: ["janissary"] },
+      effect: "change",
+      value: i,
+      type: "passive",
+    },
+  ],
+
+  "mehter-drums": ([mether, i]) => [
+    // Spawn 1 Mehter at the Landmark Town Center. Mehters increase move speed to units in the same formation by +15%.
+    {
+      property: "moveSpeed",
+      select: { id: ["mehter"] },
+      target: { class: [[]] },
+      effect: "multiply",
+      value: increaseSpeedByPercent(1, i),
+      type: "influence",
+    },
+  ],
+
+  "military-campus": ([i]) => [
+    // Increase Military Schools that can be built by +1.
   ],
 
   // Todo, add improved version
@@ -2227,6 +2403,17 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
+  "adaptable-hulls": ([i]) => [
+    // Converting between Lodya Ship types is 50% faster and no longer has a cost penalty.
+    {
+      property: "unknown",
+      select: { id: ["lodya-galley", "lodya-attack-ship", "lodya-fishing-boat", "lodya-trade-ship"] },
+      effect: "change",
+      value: i,
+      type: "ability",
+    },
+  ],
+
   "cedar-hulls": ([health, armor]) => [
     // Increase the health of Lodya Attack Ships by +200 and their ranged armor by  +1.
     {
@@ -2254,6 +2441,10 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       value: h,
       type: "passive",
     },
+  ],
+
+  "mounted-guns": ([]) => [
+    // Replaces Springald Ship weaponry with Cannons which provide greater range and damage.
   ],
 
   "double-time": ([s, d]) => [

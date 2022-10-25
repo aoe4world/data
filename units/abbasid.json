@@ -18,7 +18,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak against armored targets\n- Countered by Horsemen",
       "classes": [
         "light",
         "ranged",
@@ -103,7 +103,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak against armored targets\n- Countered by Horsemen",
       "classes": [
         "light",
         "ranged",
@@ -188,7 +188,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak vs armored targets",
+      "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak against armored targets\n- Countered by Horsemen",
       "classes": [
         "light",
         "ranged",
@@ -275,59 +275,36 @@
       ],
       "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
       "classes": [
-        "attack",
+        "springald",
         "ship"
       ],
       "displayClasses": [
-        "Attack Ship"
+        "Springald Ship"
       ],
       "unique": false,
       "costs": {
-        "food": 0,
-        "wood": 240,
+        "food": 120,
+        "wood": 200,
         "stone": 0,
-        "gold": 180,
-        "total": 420,
-        "popcap": 4,
-        "time": 45
+        "gold": 30,
+        "total": 350,
+        "popcap": 3,
+        "time": 30
       },
       "producedBy": [
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/baghlah-2.png",
-      "hitpoints": 900,
+      "hitpoints": 450,
       "weapons": [
         {
           "name": "Ballista",
           "type": "ranged",
-          "damage": 70,
-          "speed": 3.875,
+          "damage": 35,
+          "speed": 4.125,
           "range": {
             "min": 0,
-            "max": 5
-          },
-          "modifiers": [],
-          "durations": {
-            "aim": 0.5,
-            "windup": 0.25,
-            "attack": 0.125,
-            "winddown": 0.5,
-            "reload": 2.5,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0
-          },
-          "attribName": "weapon_naval_combat_ship_crossbow_eastern",
-          "pbgid": 2034160
-        },
-        {
-          "name": "Bow",
-          "type": "ranged",
-          "damage": 10,
-          "speed": 4.25,
-          "range": {
-            "min": 0,
-            "max": 5
+            "max": 6
           },
           "modifiers": [
             {
@@ -335,45 +312,55 @@
               "target": {
                 "class": [
                   [
-                    "naval",
-                    "fireship"
+                    "archer",
+                    "ship"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 5,
+              "value": 40,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 45,
               "type": "passive"
             }
           ],
           "durations": {
             "aim": 0.5,
             "windup": 0.25,
-            "attack": 0.5,
-            "winddown": 1,
-            "reload": 2,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 2.75,
             "setup": 0,
             "teardown": 0,
             "cooldown": 0
           },
-          "burst": {
-            "count": 5
-          },
-          "attribName": "weapon_naval_combat_ship_arrow_abb",
-          "pbgid": 2034177
+          "attribName": "weapon_naval_combat_ship_springald",
+          "pbgid": 2102494
         }
       ],
       "armor": [
         {
           "type": "ranged",
-          "value": 4
+          "value": 3
         }
       ],
       "sight": {
-        "line": 38,
+        "line": 45,
         "height": 10
       },
       "movement": {
-        "speed": 1.25
+        "speed": 1.375
       }
     },
     {
@@ -421,7 +408,7 @@
           "speed": 5.125,
           "range": {
             "min": 0,
-            "max": 0.2875
+            "max": 0.5375
           },
           "modifiers": [
             {
@@ -434,7 +421,7 @@
                 ]
               },
               "effect": "change",
-              "value": 100,
+              "value": 200,
               "type": "passive"
             }
           ],
@@ -455,7 +442,7 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 30
+          "value": 50
         }
       ],
       "sight": {
@@ -588,7 +575,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Highly mobile and durable ranged unit effective against all cavalry.\n+Bonus damage vs spearmen\n+Causes enemy cavalry to deal less damage\n-High cost",
+      "description": "Highly mobile and durable ranged unit.\n+Bonus damage vs Spearmen\n-High cost",
       "classes": [
         "light",
         "ranged",
@@ -675,7 +662,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Highly mobile and durable ranged unit effective against all cavalry.\n+Bonus damage vs spearmen\n+Causes enemy cavalry to deal less damage\n-High cost",
+      "description": "Highly mobile and durable ranged unit.\n+Bonus damage vs Spearmen\n-High cost",
       "classes": [
         "light",
         "ranged",
@@ -762,7 +749,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Highly mobile and durable ranged unit effective against all cavalry.\n+Bonus damage vs spearmen\n+Causes enemy cavalry to deal less damage\n-High cost",
+      "description": "Highly mobile and durable ranged unit.\n+Bonus damage vs Spearmen\n-High cost",
       "classes": [
         "light",
         "ranged",
@@ -933,7 +920,7 @@
           "speed": 2.125,
           "range": {
             "min": 0,
-            "max": 1
+            "max": 1.25
           },
           "modifiers": [],
           "durations": {
@@ -1054,7 +1041,7 @@
           "speed": 2.125,
           "range": {
             "min": 0,
-            "max": 1
+            "max": 1.25
           },
           "modifiers": [],
           "durations": {
@@ -1134,7 +1121,7 @@
                 ]
               },
               "effect": "change",
-              "value": 500,
+              "value": 450,
               "type": "passive"
             },
             {
@@ -1148,7 +1135,7 @@
                 ]
               },
               "effect": "change",
-              "value": 500,
+              "value": 200,
               "type": "passive"
             }
           ],
@@ -1191,7 +1178,7 @@
       "civs": [
         "ab"
       ],
-      "description": "High damage ranged unit best against armored targets.\n+ Anti-armor specialist\n- Low health",
+      "description": "High damage ranged unit best against armored targets.\n+ Anti-armor specialist\n- Low health\n- Countered by Horsemen",
       "classes": [
         "light",
         "ranged",
@@ -1274,7 +1261,7 @@
       "civs": [
         "ab"
       ],
-      "description": "High damage ranged unit best against armored targets.\n+ Anti-armor specialist\n- Low health",
+      "description": "High damage ranged unit best against armored targets.\n+ Anti-armor specialist\n- Low health\n- Countered by Horsemen",
       "classes": [
         "light",
         "ranged",
@@ -1416,7 +1403,7 @@
                 ]
               },
               "effect": "change",
-              "value": 200,
+              "value": 100,
               "type": "passive"
             }
           ],
@@ -1469,28 +1456,28 @@
       ],
       "unique": false,
       "costs": {
-        "food": 0,
-        "wood": 180,
+        "food": 90,
+        "wood": 150,
         "stone": 0,
-        "gold": 90,
-        "total": 270,
-        "popcap": 2,
-        "time": 40
+        "gold": 0,
+        "total": 240,
+        "popcap": 3,
+        "time": 25
       },
       "producedBy": [
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/dhow-2.png",
-      "hitpoints": 500,
+      "hitpoints": 300,
       "weapons": [
         {
           "name": "Bow",
           "type": "ranged",
-          "damage": 10,
-          "speed": 2.5,
+          "damage": 6,
+          "speed": 1.5,
           "range": {
             "min": 0,
-            "max": 3.75
+            "max": 6.5
           },
           "modifiers": [
             {
@@ -1504,39 +1491,39 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 18,
               "type": "passive"
             }
           ],
           "durations": {
             "aim": 0,
-            "windup": 0,
-            "attack": 0.25,
+            "windup": 0.125,
+            "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 0.75,
             "setup": 0,
             "teardown": 0,
             "cooldown": 0
           },
           "burst": {
-            "count": 4
+            "count": 5
           },
-          "attribName": "weapon_naval_dhow_arrow_abb",
-          "pbgid": 2037052
+          "attribName": "weapon_naval_arrow_ship_arrow",
+          "pbgid": 2034306
         }
       ],
       "armor": [
         {
           "type": "ranged",
-          "value": 4
+          "value": 1
         }
       ],
       "sight": {
-        "line": 44,
+        "line": 48,
         "height": 10
       },
       "movement": {
-        "speed": 1.875
+        "speed": 1.75
       }
     },
     {
@@ -1561,23 +1548,23 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 160,
+        "wood": 80,
         "stone": 0,
         "gold": 80,
-        "total": 240,
+        "total": 160,
         "popcap": 2,
-        "time": 35
+        "time": 15
       },
       "producedBy": [
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/explosive-dhow-3.png",
-      "hitpoints": 200,
+      "hitpoints": 145,
       "weapons": [
         {
           "name": "Incendiaries",
-          "type": "fire",
-          "damage": 400,
+          "type": "siege",
+          "damage": 95,
           "speed": 0.125,
           "range": {
             "min": 0,
@@ -1585,17 +1572,30 @@
           },
           "modifiers": [
             {
-              "property": "fireAttack",
+              "property": "siegeAttack",
               "target": {
                 "class": [
                   [
                     "naval",
-                    "warship"
+                    "broadside"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 200,
+              "value": 300,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 300,
               "type": "passive"
             }
           ],
@@ -1609,46 +1609,8 @@
             "teardown": 0,
             "cooldown": 0
           },
-          "attribName": "weapon_naval_fireship_eastern",
-          "pbgid": 2033821
-        },
-        {
-          "name": "Explosives",
-          "type": "fire",
-          "damage": 560,
-          "speed": 0.125,
-          "range": {
-            "min": 0,
-            "max": 2
-          },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "naval",
-                    "warship"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 280,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0
-          },
-          "attribName": "weapon_naval_fireship_explosive_eastern",
-          "pbgid": 2033823
+          "attribName": "weapon_naval_fireship",
+          "pbgid": 196723
         }
       ],
       "armor": [],
@@ -1657,7 +1619,7 @@
         "height": 10
       },
       "movement": {
-        "speed": 1.5
+        "speed": 2
       }
     },
     {
@@ -1698,8 +1660,8 @@
       "weapons": [],
       "armor": [],
       "sight": {
-        "line": 32,
-        "height": 10
+        "line": 56,
+        "height": 501
       },
       "movement": {
         "speed": 1.5
@@ -1716,7 +1678,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Powerful all-purpose ranged infantry.\n+ High damage\n- High cost\n- Slow movement speed",
+      "description": "Powerful all-purpose ranged infantry.\n+ High damage\n- High cost\n- Slow movement speed\n- Countered by Horsemen",
       "classes": [
         "light",
         "ranged",
@@ -1786,7 +1748,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Mobile cavalry effective at raiding and flanking.\n+ High movement speed\n- Weak vs melee units",
+      "description": "Fast cavalry effective at raiding, flanking, and countering ranged units.\n+ High movement speed\n- Weak against melee units\n- Countered by Spearmen",
       "classes": [
         "light",
         "melee",
@@ -1868,7 +1830,7 @@
           "speed": 2.125,
           "range": {
             "min": 0,
-            "max": 1
+            "max": 1.25
           },
           "modifiers": [],
           "durations": {
@@ -1910,7 +1872,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Mobile cavalry effective at raiding and flanking.\n+ High movement speed\n- Weak vs melee units",
+      "description": "Fast cavalry effective at raiding, flanking, and countering ranged units.\n+ High movement speed\n- Weak against melee units\n- Countered by Spearmen",
       "classes": [
         "light",
         "melee",
@@ -1992,7 +1954,7 @@
           "speed": 2.125,
           "range": {
             "min": 0,
-            "max": 1
+            "max": 1.25
           },
           "modifiers": [],
           "durations": {
@@ -2034,7 +1996,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Mobile cavalry effective at raiding and flanking.\n+ High movement speed\n- Weak vs melee units",
+      "description": "Fast cavalry effective at raiding, flanking, and countering ranged units.\n+ High movement speed\n- Weak against melee units\n- Countered by Spearmen",
       "classes": [
         "light",
         "melee",
@@ -2116,7 +2078,7 @@
           "speed": 2.125,
           "range": {
             "min": 0,
-            "max": 1
+            "max": 1.25
           },
           "modifiers": [],
           "durations": {
@@ -2201,7 +2163,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Expensive cavalry with a powerful charge.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen",
+      "description": "Expensive cavalry with high damage and a powerful charge attack. Effective against most units.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen",
       "classes": [
         "heavy",
         "melee",
@@ -2256,7 +2218,7 @@
           "speed": 2.125,
           "range": {
             "min": 0,
-            "max": 1
+            "max": 1.25
           },
           "modifiers": [],
           "durations": {
@@ -2302,7 +2264,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Expensive cavalry with a powerful charge.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen",
+      "description": "Expensive cavalry with high damage and a powerful charge attack. Effective against most units.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen",
       "classes": [
         "heavy",
         "melee",
@@ -2357,7 +2319,7 @@
           "speed": 2.125,
           "range": {
             "min": 0,
-            "max": 1
+            "max": 1.25
           },
           "modifiers": [],
           "durations": {
@@ -2403,7 +2365,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
+      "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement\n- Countered by Knights, Lancers, and Crossbowmen",
       "classes": [
         "heavy",
         "melee",
@@ -2458,7 +2420,7 @@
           "speed": 2.125,
           "range": {
             "min": 0,
-            "max": 1
+            "max": 1.25
           },
           "modifiers": [],
           "durations": {
@@ -2504,7 +2466,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement",
+      "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement\n- Countered by Knights, Lancers, and Crossbowmen",
       "classes": [
         "heavy",
         "melee",
@@ -2559,7 +2521,7 @@
           "speed": 2.125,
           "range": {
             "min": 0,
-            "max": 1
+            "max": 1.25
           },
           "modifiers": [],
           "durations": {
@@ -2761,7 +2723,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ High movement speed\n- Very weak in combat",
+      "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ Health regeneration\n+ High movement speed\n- Very weak in combat",
       "classes": [
         "light",
         "melee",
@@ -2789,9 +2751,9 @@
       "hitpoints": 110,
       "weapons": [
         {
-          "name": "Fire Lance",
+          "name": "Sword",
           "type": "melee",
-          "damage": 2,
+          "damage": 1,
           "speed": 2,
           "range": {
             "min": 0,
@@ -2920,7 +2882,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Susceptible to light ranged attacks\n- Weak against armored infantry",
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
       "classes": [
         "light",
         "melee",
@@ -2943,12 +2905,12 @@
         "barracks"
       ],
       "icon": "https://data.aoe4world.com/images/units/spearman-1.png",
-      "hitpoints": 70,
+      "hitpoints": 80,
       "weapons": [
         {
           "name": "Spear",
           "type": "melee",
-          "damage": 6,
+          "damage": 7,
           "speed": 1.875,
           "range": {
             "min": 0,
@@ -2965,7 +2927,7 @@
                 ]
               },
               "effect": "change",
-              "value": 15,
+              "value": 17,
               "type": "passive"
             }
           ],
@@ -2989,7 +2951,7 @@
           "speed": 2.125,
           "range": {
             "min": 0,
-            "max": 1
+            "max": 1.25
           },
           "modifiers": [],
           "durations": {
@@ -3026,7 +2988,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Susceptible to light ranged attacks\n- Weak against armored infantry",
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
       "classes": [
         "light",
         "melee",
@@ -3095,7 +3057,7 @@
           "speed": 2.125,
           "range": {
             "min": 0,
-            "max": 1
+            "max": 1.25
           },
           "modifiers": [],
           "durations": {
@@ -3132,7 +3094,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Susceptible to light ranged attacks\n- Weak against armored infantry",
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
       "classes": [
         "light",
         "melee",
@@ -3201,7 +3163,7 @@
           "speed": 2.125,
           "range": {
             "min": 0,
-            "max": 1
+            "max": 1.25
           },
           "modifiers": [],
           "durations": {
@@ -3238,7 +3200,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Susceptible to light ranged attacks\n- Weak against armored infantry",
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
       "classes": [
         "light",
         "melee",
@@ -3307,7 +3269,7 @@
           "speed": 2.125,
           "range": {
             "min": 0,
-            "max": 1
+            "max": 1.25
           },
           "modifiers": [],
           "durations": {
@@ -3456,18 +3418,18 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 300,
+        "wood": 100,
         "stone": 0,
         "gold": 100,
-        "total": 400,
+        "total": 200,
         "popcap": 2,
-        "time": 60
+        "time": 30
       },
       "producedBy": [
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/trade-ship-3.png",
-      "hitpoints": 300,
+      "hitpoints": 225,
       "weapons": [
         {
           "name": "Archer",
@@ -3525,12 +3487,12 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 50,
+        "wood": 40,
         "stone": 0,
-        "gold": 50,
-        "total": 100,
+        "gold": 40,
+        "total": 80,
         "popcap": 1,
-        "time": 35
+        "time": 25
       },
       "producedBy": [
         "market"
@@ -3579,7 +3541,7 @@
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/transport-ship-2.png",
-      "hitpoints": 600,
+      "hitpoints": 400,
       "weapons": [],
       "armor": [],
       "sight": {
@@ -3671,8 +3633,8 @@
             "teardown": 0,
             "cooldown": 1.25
           },
-          "attribName": "weapon_torch",
-          "pbgid": 123518
+          "attribName": "weapon_torch_weak",
+          "pbgid": 123522
         },
         {
           "name": "Knife",
@@ -3727,32 +3689,32 @@
       ],
       "unique": false,
       "costs": {
-        "food": 0,
-        "wood": 480,
+        "food": 200,
+        "wood": 200,
         "stone": 0,
-        "gold": 300,
-        "total": 780,
-        "popcap": 6,
-        "time": 60
+        "gold": 200,
+        "total": 600,
+        "popcap": 5,
+        "time": 45
       },
       "producedBy": [
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/xebec-4.png",
-      "hitpoints": 1700,
+      "hitpoints": 700,
       "weapons": [
         {
           "name": "Cannon",
-          "type": "ranged",
-          "damage": 60,
+          "type": "siege",
+          "damage": 45,
           "speed": 5.625,
           "range": {
             "min": 0,
-            "max": 8
+            "max": 9
           },
           "modifiers": [
             {
-              "property": "rangedAttack",
+              "property": "siegeAttack",
               "target": {
                 "class": [
                   [
@@ -3761,7 +3723,7 @@
                 ]
               },
               "effect": "change",
-              "value": 50,
+              "value": 70,
               "type": "passive"
             }
           ],
@@ -3776,10 +3738,10 @@
             "cooldown": 0
           },
           "burst": {
-            "count": 5
+            "count": 3
           },
-          "attribName": "weapon_naval_warship_cannon_ai_eastern",
-          "pbgid": 2033793
+          "attribName": "weapon_naval_warship_cannon_ai_western",
+          "pbgid": 2033788
         }
       ],
       "armor": [
@@ -3789,7 +3751,7 @@
         }
       ],
       "sight": {
-        "line": 48,
+        "line": 50,
         "height": 10
       },
       "movement": {

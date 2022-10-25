@@ -1,0 +1,63 @@
+{
+  "id": "steeled-arrow-2",
+  "baseId": "steeled-arrow",
+  "type": "technology",
+  "name": "Steeled Arrow",
+  "pbgid": 188269,
+  "attribName": "upgrade_ranged_damage_i",
+  "age": 2,
+  "civs": [
+    "ot"
+  ],
+  "description": "Increase the ranged damage of all non-siege units and buildings by +1.",
+  "classes": [
+    "ranged",
+    "damage",
+    "technology",
+    "1/3"
+  ],
+  "displayClasses": [
+    "Ranged Damage Technology 1/3"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 50,
+    "stone": 0,
+    "gold": 125,
+    "total": 175,
+    "popcap": 0,
+    "time": 60
+  },
+  "producedBy": [
+    "blacksmith"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/steeled-arrow-2.png",
+  "effects": [
+    {
+      "property": "rangedAttack",
+      "select": {
+        "class": [
+          [
+            "ranged",
+            "cavalry"
+          ],
+          [
+            "archer",
+            "ship"
+          ]
+        ],
+        "id": [
+          "longbowman",
+          "zhuge-nu",
+          "archer",
+          "arbaletrier",
+          "crossbowman"
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "passive"
+    }
+  ]
+}

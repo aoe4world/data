@@ -10,7 +10,27 @@ export const LOCALES_FOLDER = path.join(SOURCE_FOLDER, "/locale");
 // Unit files not discovered by sync.ts
 export const hardcodedDiscovery = {
   mongols: ["sbps/races/mongol/unit_khan_2_mon", "sbps/races/mongol/unit_khan_3_mon", "sbps/races/mongol/unit_khan_4_mon"],
+  ottomans: [
+    "upgrade/races/ottoman/research/upgrade_anatolian_hills_ott",
+    "upgrade/races/ottoman/research/upgrade_imperial_blacksmith_stockpile_ott",
+    "upgrade/races/ottoman/research/upgrade_imperial_janissary_company_ott",
+    "upgrade/races/ottoman/research/upgrade_imperial_manned_siege_ott",
+    "upgrade/races/ottoman/research/upgrade_imperial_mehter_drums_ott",
+    "upgrade/races/ottoman/research/upgrade_imperial_military_campus_ott",
+    "upgrade/races/ottoman/research/upgrade_imperial_military_training_ott",
+    "upgrade/races/ottoman/research/upgrade_imperial_monk_formation_ott",
+    "upgrade/races/ottoman/research/upgrade_imperial_trader_capacity_ott",
+  ],
 };
+
+export const ignoreForNow = [
+  "ebps/races/mongol/buildings/building_town_center_dummy_start",
+  "ebps/races/mongol/units/campaign/unit_great_trebuchet_cmp_mon",
+  "sbps/races/english/unit_wynguard_",
+  "ebps/dev/units/unit_siege_cart",
+  "_double_mon", // all double produced units
+  "sbps/races/mongol/unit_knight_2_mon", // is listed in khagenate palace but does not exist in feudal
+];
 
 // Map a4w slug to race id
 export const racesMap: Record<CivSlug, string> = {
@@ -20,9 +40,9 @@ export const racesMap: Record<CivSlug, string> = {
   english: "english",
   french: "french",
   hre: "hre",
-  // malians: "malian",
+  malians: "malian",
   mongols: "mongol",
-  // ottomans: "ottoman",
+  ottomans: "ottoman",
   rus: "rus",
 };
 

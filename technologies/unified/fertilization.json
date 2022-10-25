@@ -11,7 +11,9 @@
     "en",
     "fr",
     "hr",
+    "ma",
     "mo",
+    "ot",
     "ru"
   ],
   "unique": false,
@@ -52,12 +54,12 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 150,
+        "wood": 100,
         "stone": 0,
-        "gold": 350,
-        "total": 500,
+        "gold": 250,
+        "total": 350,
         "popcap": 0,
-        "time": 75
+        "time": 60
       },
       "producedBy": [
         "mill"
@@ -101,12 +103,12 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 150,
+        "wood": 100,
         "stone": 0,
-        "gold": 350,
-        "total": 500,
+        "gold": 250,
+        "total": 350,
         "popcap": 0,
-        "time": 75
+        "time": 60
       },
       "producedBy": [
         "mill"
@@ -149,12 +151,12 @@
       ],
       "unique": false,
       "costs": {
-        "gold": 245,
-        "wood": 105,
+        "gold": 175,
+        "wood": 70,
         "food": 0,
         "stone": 0,
-        "total": 350,
-        "time": 75
+        "total": 245,
+        "time": 60
       },
       "producedBy": [
         "mill"
@@ -198,15 +200,16 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 150,
+        "wood": 100,
         "stone": 0,
-        "gold": 350,
-        "total": 500,
+        "gold": 250,
+        "total": 350,
         "popcap": 0,
-        "time": 75
+        "time": 60
       },
       "producedBy": [
-        "mill"
+        "mill",
+        "granary"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/fertilization-3.png",
       "effects": [
@@ -252,7 +255,7 @@
         "gold": 0,
         "total": 0,
         "popcap": 0,
-        "time": 375
+        "time": 300
       },
       "producedBy": [
         "mill"
@@ -296,12 +299,61 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 150,
+        "wood": 100,
         "stone": 0,
-        "gold": 350,
-        "total": 500,
+        "gold": 250,
+        "total": 350,
         "popcap": 0,
-        "time": 75
+        "time": 60
+      },
+      "producedBy": [
+        "mill"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/fertilization-3.png",
+      "effects": [
+        {
+          "property": "foodGatherRate",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "fertilization-3",
+      "baseId": "fertilization",
+      "type": "technology",
+      "name": "Fertilization",
+      "pbgid": 171292,
+      "attribName": "upgrade_econ_resource_food_harvest_rate_3",
+      "age": 3,
+      "civs": [
+        "ma"
+      ],
+      "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
+      "classes": [
+        "food",
+        "gathering",
+        "technology",
+        "2/3"
+      ],
+      "displayClasses": [
+        "Food Gathering Technology 2/3"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 250,
+        "total": 350,
+        "popcap": 0,
+        "time": 60
       },
       "producedBy": [
         "mill"
@@ -345,16 +397,66 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 150,
+        "wood": 100,
         "stone": 0,
-        "gold": 350,
-        "total": 500,
+        "gold": 250,
+        "total": 350,
         "popcap": 0,
-        "time": 75
+        "time": 60
       },
       "producedBy": [
         "ger",
         "steppe-redoubt"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/fertilization-3.png",
+      "effects": [
+        {
+          "property": "foodGatherRate",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "fertilization-3",
+      "baseId": "fertilization",
+      "type": "technology",
+      "name": "Fertilization",
+      "pbgid": 171292,
+      "attribName": "upgrade_econ_resource_food_harvest_rate_3",
+      "age": 3,
+      "civs": [
+        "ot"
+      ],
+      "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
+      "classes": [
+        "food",
+        "gathering",
+        "technology",
+        "2/3"
+      ],
+      "displayClasses": [
+        "Food Gathering Technology 2/3"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 250,
+        "total": 350,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "mill",
+        "twin-minaret-medrese"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/fertilization-3.png",
       "effects": [
@@ -395,12 +497,12 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 150,
+        "wood": 100,
         "stone": 0,
-        "gold": 350,
-        "total": 500,
+        "gold": 250,
+        "total": 350,
         "popcap": 0,
-        "time": 75
+        "time": 60
       },
       "producedBy": [
         "hunting-cabin"

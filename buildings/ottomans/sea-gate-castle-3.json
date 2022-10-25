@@ -1,0 +1,107 @@
+{
+  "id": "sea-gate-castle-3",
+  "baseId": "sea-gate-castle",
+  "type": "building",
+  "name": "Sea Gate Castle",
+  "pbgid": 2055472,
+  "attribName": "building_landmark_age3_kilitbahir_castle_ott",
+  "age": 3,
+  "civs": [
+    "ot"
+  ],
+  "description": "Acts as a Keep. All Keeps gain an aura that increases Trader and Trade Ship movement speed by +40% and armor by +10.",
+  "classes": [
+    "age",
+    "iv",
+    "-",
+    "defensive",
+    "landmark"
+  ],
+  "displayClasses": [
+    "Age IV - Defensive Landmark"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 2400,
+    "wood": 0,
+    "stone": 0,
+    "gold": 1200,
+    "total": 3600,
+    "popcap": 0,
+    "time": 250
+  },
+  "producedBy": [
+    "villager"
+  ],
+  "icon": "https://data.aoe4world.com/images/buildings/sea-gate-castle-3.png",
+  "hitpoints": 5000,
+  "weapons": [
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 12,
+      "speed": 0.5,
+      "range": {
+        "min": 0,
+        "max": 8
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.125,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0.25,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 3
+      },
+      "attribName": "weapon_keep_arrows_a",
+      "pbgid": 127372
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 50
+    },
+    {
+      "type": "fire",
+      "value": 5
+    }
+  ],
+  "sight": {
+    "line": 41,
+    "height": 501
+  },
+  "garrison": {
+    "capacity": 15,
+    "classes": [
+      "infantry",
+      "villager",
+      "infantry ranged",
+      "monk",
+      "cavalry",
+      "khan"
+    ]
+  },
+  "influences": []
+}

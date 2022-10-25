@@ -10,7 +10,9 @@ import de from "../../civilizations/delhi.json";
 import en from "../../civilizations/english.json";
 import fr from "../../civilizations/french.json";
 import hr from "../../civilizations/hre.json";
+import ma from "../../civilizations/malians.json";
 import mo from "../../civilizations/mongols.json";
+import ot from "../../civilizations/ottomans.json";
 import ru from "../../civilizations/rus.json";
 import { CivInfo } from "../types/civs";
 import { Optimized, optimizedToUnified } from "../lib/utils/items";
@@ -27,10 +29,12 @@ const civilizations: Record<CivAbbr, CivInfo> & { Get: typeof GetCiv; list: CivI
   en,
   fr,
   hr,
+  ma,
   mo,
+  ot,
   ru,
   Get: GetCiv,
-  list: [ab, ch, de, en, fr, hr, mo, ru],
+  list: [ab, ch, de, en, fr, hr, ma, mo, ot, ru],
 };
 
 function GetCiv(slug: CivSlug | CivAbbr) {

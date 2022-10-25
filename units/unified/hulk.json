@@ -7,14 +7,15 @@
   "civs": [
     "en",
     "fr",
-    "hr"
+    "hr",
+    "ot"
   ],
   "unique": false,
   "displayClasses": [
-    "Attack Ship"
+    "Springald Ship"
   ],
   "classes": [
-    "attack",
+    "springald",
     "ship"
   ],
   "minAge": 2,
@@ -34,37 +35,65 @@
       ],
       "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
       "classes": [
-        "attack",
+        "springald",
         "ship"
       ],
       "displayClasses": [
-        "Attack Ship"
+        "Springald Ship"
       ],
       "unique": false,
       "costs": {
-        "gold": 216,
-        "wood": 270,
-        "food": 0,
+        "gold": 27,
+        "wood": 180,
+        "food": 108,
         "stone": 0,
-        "total": 486,
-        "time": 45
+        "total": 315,
+        "time": 30
       },
       "producedBy": [
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/hulk-2.png",
-      "hitpoints": 1000,
+      "hitpoints": 450,
       "weapons": [
         {
           "name": "Ballista",
           "type": "ranged",
-          "damage": 100,
+          "damage": 35,
           "speed": 4.125,
           "range": {
             "min": 0,
             "max": 6
           },
-          "modifiers": [],
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "archer",
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 40,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 45,
+              "type": "passive"
+            }
+          ],
           "durations": {
             "aim": 0.5,
             "windup": 0.25,
@@ -75,22 +104,22 @@
             "teardown": 0,
             "cooldown": 0
           },
-          "attribName": "weapon_naval_combat_ship_crossbow_western",
-          "pbgid": 2034159
+          "attribName": "weapon_naval_combat_ship_springald",
+          "pbgid": 2102494
         }
       ],
       "armor": [
         {
           "type": "ranged",
-          "value": 5
+          "value": 3
         }
       ],
       "sight": {
-        "line": 42,
+        "line": 45,
         "height": 10
       },
       "movement": {
-        "speed": 1.125
+        "speed": 1.375
       }
     },
     {
@@ -106,38 +135,66 @@
       ],
       "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
       "classes": [
-        "attack",
+        "springald",
         "ship"
       ],
       "displayClasses": [
-        "Attack Ship"
+        "Springald Ship"
       ],
       "unique": false,
       "costs": {
-        "food": 0,
-        "wood": 300,
+        "food": 120,
+        "wood": 200,
         "stone": 0,
-        "gold": 240,
-        "total": 540,
-        "popcap": 4,
-        "time": 45
+        "gold": 30,
+        "total": 350,
+        "popcap": 3,
+        "time": 30
       },
       "producedBy": [
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/hulk-2.png",
-      "hitpoints": 1000,
+      "hitpoints": 450,
       "weapons": [
         {
           "name": "Ballista",
           "type": "ranged",
-          "damage": 100,
+          "damage": 35,
           "speed": 4.125,
           "range": {
             "min": 0,
             "max": 6
           },
-          "modifiers": [],
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "archer",
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 40,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 45,
+              "type": "passive"
+            }
+          ],
           "durations": {
             "aim": 0.5,
             "windup": 0.25,
@@ -148,22 +205,22 @@
             "teardown": 0,
             "cooldown": 0
           },
-          "attribName": "weapon_naval_combat_ship_crossbow_western",
-          "pbgid": 2034159
+          "attribName": "weapon_naval_combat_ship_springald",
+          "pbgid": 2102494
         }
       ],
       "armor": [
         {
           "type": "ranged",
-          "value": 5
+          "value": 3
         }
       ],
       "sight": {
-        "line": 38,
+        "line": 45,
         "height": 10
       },
       "movement": {
-        "speed": 1.125
+        "speed": 1.375
       }
     },
     {
@@ -179,38 +236,66 @@
       ],
       "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
       "classes": [
-        "attack",
+        "springald",
         "ship"
       ],
       "displayClasses": [
-        "Attack Ship"
+        "Springald Ship"
       ],
       "unique": false,
       "costs": {
-        "food": 0,
-        "wood": 300,
+        "food": 120,
+        "wood": 200,
         "stone": 0,
-        "gold": 240,
-        "total": 540,
-        "popcap": 4,
-        "time": 45
+        "gold": 30,
+        "total": 350,
+        "popcap": 3,
+        "time": 30
       },
       "producedBy": [
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/hulk-2.png",
-      "hitpoints": 1000,
+      "hitpoints": 450,
       "weapons": [
         {
           "name": "Ballista",
           "type": "ranged",
-          "damage": 100,
+          "damage": 35,
           "speed": 4.125,
           "range": {
             "min": 0,
             "max": 6
           },
-          "modifiers": [],
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "archer",
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 40,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 45,
+              "type": "passive"
+            }
+          ],
           "durations": {
             "aim": 0.5,
             "windup": 0.25,
@@ -221,22 +306,123 @@
             "teardown": 0,
             "cooldown": 0
           },
-          "attribName": "weapon_naval_combat_ship_crossbow_western",
-          "pbgid": 2034159
+          "attribName": "weapon_naval_combat_ship_springald",
+          "pbgid": 2102494
         }
       ],
       "armor": [
         {
           "type": "ranged",
-          "value": 2
+          "value": 3
         }
       ],
       "sight": {
-        "line": 38,
+        "line": 45,
         "height": 10
       },
       "movement": {
-        "speed": 1.125
+        "speed": 1.375
+      }
+    },
+    {
+      "id": "hulk-2",
+      "baseId": "hulk",
+      "type": "unit",
+      "name": "Hulk",
+      "pbgid": 2046446,
+      "attribName": "unit_naval_combat_ship_2_ott",
+      "age": 2,
+      "civs": [
+        "ot"
+      ],
+      "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+      "classes": [
+        "springald",
+        "ship"
+      ],
+      "displayClasses": [
+        "Springald Ship"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 120,
+        "wood": 200,
+        "stone": 0,
+        "gold": 30,
+        "total": 350,
+        "popcap": 3,
+        "time": 30
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/hulk-2.png",
+      "hitpoints": 450,
+      "weapons": [
+        {
+          "name": "Ballista",
+          "type": "ranged",
+          "damage": 35,
+          "speed": 4.125,
+          "range": {
+            "min": 0,
+            "max": 6
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "archer",
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 40,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 45,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 2.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_combat_ship_springald",
+          "pbgid": 2102494
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 3
+        }
+      ],
+      "sight": {
+        "line": 45,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.375
       }
     }
   ]

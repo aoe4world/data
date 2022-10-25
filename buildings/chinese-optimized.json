@@ -98,7 +98,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/buildings/astronomical-clocktower-2.png",
-      "description": "Acts as a Siege Workshop and produces sieges engines with +50% health.",
+      "description": "Acts as a Siege Workshop and produces siege engines with +50% health.",
       "variations": [
         {
           "id": "astronomical-clocktower-2",
@@ -111,7 +111,7 @@
           "civs": [
             "ch"
           ],
-          "description": "Acts as a Siege Workshop and produces sieges engines with +50% health.",
+          "description": "Acts as a Siege Workshop and produces siege engines with +50% health.",
           "classes": [
             "age",
             "iii",
@@ -236,7 +236,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 25,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -350,7 +350,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 25,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -388,7 +388,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 25,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -426,7 +426,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 25,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -464,7 +464,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 25,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -502,7 +502,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 25,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -540,7 +540,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 25,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -578,7 +578,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 25,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -616,7 +616,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 25,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -654,7 +654,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 25,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -692,7 +692,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 25,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -1026,7 +1026,7 @@
             "villager"
           ],
           "icon": "https://data.aoe4world.com/images/buildings/dock-1.png",
-          "hitpoints": 1500,
+          "hitpoints": 2000,
           "weapons": [],
           "armor": [
             {
@@ -1532,13 +1532,12 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Age III - Economic Landmark"
+        "Age III - Landmark"
       ],
       "classes": [
         "age",
         "iii",
         "-",
-        "economic",
         "landmark"
       ],
       "minAge": 2,
@@ -1561,11 +1560,10 @@
             "age",
             "iii",
             "-",
-            "economic",
             "landmark"
           ],
           "displayClasses": [
-            "Age III - Economic Landmark"
+            "Age III - Landmark"
           ],
           "unique": true,
           "costs": {
@@ -1644,7 +1642,7 @@
             "gold": 0,
             "total": 800,
             "popcap": 0,
-            "time": 140
+            "time": 180
           },
           "producedBy": [
             "villager"
@@ -1673,7 +1671,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 25,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -1849,7 +1847,7 @@
             "gold": 0,
             "total": 100,
             "popcap": 0,
-            "time": 15
+            "time": 10
           },
           "producedBy": [
             "villager"
@@ -2033,7 +2031,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/buildings/monastery-3.png",
-      "description": "Produces religious units. \nGenerates tax each time a unit or research is produced.\nIn the Castle Age (III), religious units can carry Relics from this building to Sacred Sites in order to generate Gold.",
+      "description": "Produces religious units. \nGenerates tax each time a unit or research is produced.\nStarting in the Castle Age (III), religious units can pick up Relics and place them in this building to generate Gold.",
       "variations": [
         {
           "id": "monastery-3",
@@ -2046,7 +2044,7 @@
           "civs": [
             "ch"
           ],
-          "description": "Produces religious units. \nGenerates tax each time a unit or research is produced.\nIn the Castle Age (III), religious units can carry Relics from this building to Sacred Sites in order to generate Gold.",
+          "description": "Produces religious units. \nGenerates tax each time a unit or research is produced.\nStarting in the Castle Age (III), religious units can pick up Relics and place them in this building to generate Gold.",
           "classes": [
             "religious",
             "building"
@@ -2454,18 +2452,20 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Age IV - Military Landmark"
+        "Age IV - Military & Technology Landmark"
       ],
       "classes": [
         "age",
         "iv",
         "-",
         "military",
+        "&",
+        "technology",
         "landmark"
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/buildings/spirit-way-3.png",
-      "description": "Dynasty related technology can be researched here for -50% cost and +100% research speed.\nWhen a dynasty unit is killed nearby units will receive +20% attack speed and +20 health over 10 seconds.",
+      "description": "Dynasty related technology can be researched here for -50% cost and +150% research speed.\nWhen a dynasty unit is killed, nearby units will receive +20% attack speed and +20 health over 10 seconds.",
       "variations": [
         {
           "id": "spirit-way-3",
@@ -2478,16 +2478,18 @@
           "civs": [
             "ch"
           ],
-          "description": "Dynasty related technology can be researched here for -50% cost and +100% research speed.\nWhen a dynasty unit is killed nearby units will receive +20% attack speed and +20 health over 10 seconds.",
+          "description": "Dynasty related technology can be researched here for -50% cost and +150% research speed.\nWhen a dynasty unit is killed, nearby units will receive +20% attack speed and +20 health over 10 seconds.",
           "classes": [
             "age",
             "iv",
             "-",
             "military",
+            "&",
+            "technology",
             "landmark"
           ],
           "displayClasses": [
-            "Age IV - Military Landmark"
+            "Age IV - Military & Technology Landmark"
           ],
           "unique": true,
           "costs": {
@@ -2897,11 +2899,11 @@
           "costs": {
             "food": 0,
             "wood": 400,
-            "stone": 300,
+            "stone": 350,
             "gold": 0,
-            "total": 700,
+            "total": 750,
             "popcap": 0,
-            "time": 60
+            "time": 75
           },
           "producedBy": [
             "villager"

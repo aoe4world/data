@@ -1,0 +1,95 @@
+{
+  "id": "shipwrights-4",
+  "baseId": "shipwrights",
+  "type": "technology",
+  "name": "Shipwrights",
+  "pbgid": 2101643,
+  "attribName": "upgrade_naval_shipwrights",
+  "age": 4,
+  "civs": [
+    "mo"
+  ],
+  "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+  "classes": [
+    "naval",
+    "technology",
+    "2/2"
+  ],
+  "displayClasses": [
+    "Naval Technology 2/2"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 300,
+    "wood": 0,
+    "stone": 0,
+    "gold": 550,
+    "total": 850,
+    "popcap": 0,
+    "time": 50
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
+  "effects": [
+    {
+      "property": "hitpoints",
+      "select": {
+        "class": [
+          [
+            "ship",
+            "springald"
+          ],
+          [
+            "ship",
+            "archer"
+          ],
+          [
+            "ship",
+            "incendiary"
+          ],
+          [
+            "warship"
+          ]
+        ],
+        "id": [
+          "galleass",
+          "grand-galley"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.2,
+      "type": "passive"
+    },
+    {
+      "property": "rangedArmor",
+      "select": {
+        "class": [
+          [
+            "ship",
+            "springald"
+          ],
+          [
+            "ship",
+            "archer"
+          ],
+          [
+            "ship",
+            "incendiary"
+          ],
+          [
+            "warship"
+          ]
+        ],
+        "id": [
+          "galleass",
+          "grand-galley"
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "passive"
+    }
+  ]
+}

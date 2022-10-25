@@ -11,37 +11,65 @@
   ],
   "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
   "classes": [
-    "attack",
+    "springald",
     "ship"
   ],
   "displayClasses": [
-    "Attack Ship"
+    "Springald Ship"
   ],
   "unique": false,
   "costs": {
-    "gold": 216,
-    "wood": 270,
-    "food": 0,
+    "gold": 27,
+    "wood": 180,
+    "food": 108,
     "stone": 0,
-    "total": 486,
-    "time": 45
+    "total": 315,
+    "time": 30
   },
   "producedBy": [
     "dock"
   ],
   "icon": "https://data.aoe4world.com/images/units/hulk-2.png",
-  "hitpoints": 1000,
+  "hitpoints": 450,
   "weapons": [
     {
       "name": "Ballista",
       "type": "ranged",
-      "damage": 100,
+      "damage": 35,
       "speed": 4.125,
       "range": {
         "min": 0,
         "max": 6
       },
-      "modifiers": [],
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 40,
+          "type": "passive"
+        },
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 45,
+          "type": "passive"
+        }
+      ],
       "durations": {
         "aim": 0.5,
         "windup": 0.25,
@@ -52,21 +80,21 @@
         "teardown": 0,
         "cooldown": 0
       },
-      "attribName": "weapon_naval_combat_ship_crossbow_western",
-      "pbgid": 2034159
+      "attribName": "weapon_naval_combat_ship_springald",
+      "pbgid": 2102494
     }
   ],
   "armor": [
     {
       "type": "ranged",
-      "value": 5
+      "value": 3
     }
   ],
   "sight": {
-    "line": 42,
+    "line": 45,
     "height": 10
   },
   "movement": {
-    "speed": 1.125
+    "speed": 1.375
   }
 }

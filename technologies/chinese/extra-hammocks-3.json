@@ -3,13 +3,13 @@
   "baseId": "extra-hammocks",
   "type": "technology",
   "name": "Extra Hammocks",
-  "pbgid": 2034334,
-  "attribName": "upgrade_naval_hammocks_chi",
+  "pbgid": 2101642,
+  "attribName": "upgrade_naval_extra_hammocks",
   "age": 3,
   "civs": [
     "ch"
   ],
-  "description": "Junks of the Archer Ship type gain additional crew, allowing them to fire two more arrows in each volley.",
+  "description": "Increases the number of arrows fired by Archer Ships by +1.",
   "classes": [
     "naval",
     "technology"
@@ -17,15 +17,15 @@
   "displayClasses": [
     "Naval Technology"
   ],
-  "unique": true,
+  "unique": false,
   "costs": {
-    "food": 100,
-    "wood": 0,
+    "food": 0,
+    "wood": 100,
     "stone": 0,
     "gold": 250,
     "total": 350,
     "popcap": 0,
-    "time": 60
+    "time": 30
   },
   "producedBy": [
     "dock"
@@ -35,12 +35,15 @@
     {
       "property": "rangedAttack",
       "select": {
-        "id": [
-          "junk"
+        "class": [
+          [
+            "archer",
+            "ship"
+          ]
         ]
       },
       "effect": "multiply",
-      "value": 2,
+      "value": 1.2,
       "type": "passive"
     }
   ]

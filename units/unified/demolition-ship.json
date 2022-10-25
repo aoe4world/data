@@ -7,7 +7,9 @@
   "civs": [
     "en",
     "fr",
-    "hr"
+    "hr",
+    "ma",
+    "ot"
   ],
   "unique": false,
   "displayClasses": [
@@ -43,22 +45,22 @@
       "unique": false,
       "costs": {
         "gold": 72,
-        "wood": 144,
+        "wood": 72,
         "food": 0,
         "stone": 0,
-        "total": 216,
-        "time": 35
+        "total": 144,
+        "time": 15
       },
       "producedBy": [
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/demolition-ship-3.png",
-      "hitpoints": 200,
+      "hitpoints": 145,
       "weapons": [
         {
           "name": "Incendiaries",
-          "type": "fire",
-          "damage": 400,
+          "type": "siege",
+          "damage": 95,
           "speed": 0.125,
           "range": {
             "min": 0,
@@ -66,17 +68,30 @@
           },
           "modifiers": [
             {
-              "property": "fireAttack",
+              "property": "siegeAttack",
               "target": {
                 "class": [
                   [
                     "naval",
-                    "warship"
+                    "broadside"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 200,
+              "value": 300,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 300,
               "type": "passive"
             }
           ],
@@ -90,46 +105,8 @@
             "teardown": 0,
             "cooldown": 0
           },
-          "attribName": "weapon_naval_fireship_western",
-          "pbgid": 2034817
-        },
-        {
-          "name": "Explosives",
-          "type": "fire",
-          "damage": 560,
-          "speed": 0.125,
-          "range": {
-            "min": 0,
-            "max": 2
-          },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "naval",
-                    "warship"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 280,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0
-          },
-          "attribName": "weapon_naval_fireship_explosive_western",
-          "pbgid": 2034819
+          "attribName": "weapon_naval_fireship",
+          "pbgid": 196723
         }
       ],
       "armor": [],
@@ -138,7 +115,7 @@
         "height": 10
       },
       "movement": {
-        "speed": 1.5
+        "speed": 2
       }
     },
     {
@@ -163,23 +140,23 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 160,
+        "wood": 80,
         "stone": 0,
         "gold": 80,
-        "total": 240,
+        "total": 160,
         "popcap": 2,
-        "time": 35
+        "time": 15
       },
       "producedBy": [
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/demolition-ship-3.png",
-      "hitpoints": 200,
+      "hitpoints": 145,
       "weapons": [
         {
           "name": "Incendiaries",
-          "type": "fire",
-          "damage": 400,
+          "type": "siege",
+          "damage": 95,
           "speed": 0.125,
           "range": {
             "min": 0,
@@ -187,17 +164,30 @@
           },
           "modifiers": [
             {
-              "property": "fireAttack",
+              "property": "siegeAttack",
               "target": {
                 "class": [
                   [
                     "naval",
-                    "warship"
+                    "broadside"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 200,
+              "value": 300,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 300,
               "type": "passive"
             }
           ],
@@ -211,46 +201,8 @@
             "teardown": 0,
             "cooldown": 0
           },
-          "attribName": "weapon_naval_fireship_western",
-          "pbgid": 2034817
-        },
-        {
-          "name": "Explosives",
-          "type": "fire",
-          "damage": 560,
-          "speed": 0.125,
-          "range": {
-            "min": 0,
-            "max": 2
-          },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "naval",
-                    "warship"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 280,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0
-          },
-          "attribName": "weapon_naval_fireship_explosive_western",
-          "pbgid": 2034819
+          "attribName": "weapon_naval_fireship",
+          "pbgid": 196723
         }
       ],
       "armor": [],
@@ -259,7 +211,7 @@
         "height": 10
       },
       "movement": {
-        "speed": 1.5
+        "speed": 2
       }
     },
     {
@@ -284,23 +236,23 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 160,
+        "wood": 80,
         "stone": 0,
         "gold": 80,
-        "total": 240,
+        "total": 160,
         "popcap": 2,
-        "time": 35
+        "time": 15
       },
       "producedBy": [
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/demolition-ship-3.png",
-      "hitpoints": 200,
+      "hitpoints": 145,
       "weapons": [
         {
           "name": "Incendiaries",
-          "type": "fire",
-          "damage": 400,
+          "type": "siege",
+          "damage": 95,
           "speed": 0.125,
           "range": {
             "min": 0,
@@ -308,17 +260,30 @@
           },
           "modifiers": [
             {
-              "property": "fireAttack",
+              "property": "siegeAttack",
               "target": {
                 "class": [
                   [
                     "naval",
-                    "warship"
+                    "broadside"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 200,
+              "value": 300,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 300,
               "type": "passive"
             }
           ],
@@ -332,46 +297,8 @@
             "teardown": 0,
             "cooldown": 0
           },
-          "attribName": "weapon_naval_fireship_western",
-          "pbgid": 2034817
-        },
-        {
-          "name": "Explosives",
-          "type": "fire",
-          "damage": 560,
-          "speed": 0.125,
-          "range": {
-            "min": 0,
-            "max": 2
-          },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "naval",
-                    "warship"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 280,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0
-          },
-          "attribName": "weapon_naval_fireship_explosive_western",
-          "pbgid": 2034819
+          "attribName": "weapon_naval_fireship",
+          "pbgid": 196723
         }
       ],
       "armor": [],
@@ -380,7 +307,199 @@
         "height": 10
       },
       "movement": {
-        "speed": 1.5
+        "speed": 2
+      }
+    },
+    {
+      "id": "demolition-ship-3",
+      "baseId": "demolition-ship",
+      "type": "unit",
+      "name": "Demolition Ship",
+      "pbgid": 2356678,
+      "attribName": "unit_naval_fireship_3_mal",
+      "age": 3,
+      "civs": [
+        "ma"
+      ],
+      "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+      "classes": [
+        "incendiary",
+        "ship"
+      ],
+      "displayClasses": [
+        "Incendiary Ship"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 80,
+        "stone": 0,
+        "gold": 80,
+        "total": 160,
+        "popcap": 2,
+        "time": 15
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/demolition-ship-3.png",
+      "hitpoints": 145,
+      "weapons": [
+        {
+          "name": "Incendiaries",
+          "type": "siege",
+          "damage": 95,
+          "speed": 0.125,
+          "range": {
+            "min": 0,
+            "max": 2
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "broadside"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 300,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 300,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_fireship",
+          "pbgid": 196723
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 32,
+        "height": 10
+      },
+      "movement": {
+        "speed": 2
+      }
+    },
+    {
+      "id": "demolition-ship-3",
+      "baseId": "demolition-ship",
+      "type": "unit",
+      "name": "Demolition Ship",
+      "pbgid": 2046448,
+      "attribName": "unit_naval_fireship_3_ott",
+      "age": 3,
+      "civs": [
+        "ot"
+      ],
+      "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+      "classes": [
+        "incendiary",
+        "ship"
+      ],
+      "displayClasses": [
+        "Incendiary Ship"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 80,
+        "stone": 0,
+        "gold": 80,
+        "total": 160,
+        "popcap": 2,
+        "time": 15
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/demolition-ship-3.png",
+      "hitpoints": 145,
+      "weapons": [
+        {
+          "name": "Incendiaries",
+          "type": "siege",
+          "damage": 95,
+          "speed": 0.125,
+          "range": {
+            "min": 0,
+            "max": 2
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "broadside"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 300,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 300,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_fireship",
+          "pbgid": 196723
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 32,
+        "height": 10
+      },
+      "movement": {
+        "speed": 2
       }
     }
   ]

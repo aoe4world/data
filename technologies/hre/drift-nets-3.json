@@ -9,7 +9,7 @@
   "civs": [
     "hr"
   ],
-  "description": "Increase the gathering rate of Fishing Ships by +15% and their carry capacity by +20.",
+  "description": "Increase the gathering rate of Fishing Ships by +15%, carry capacity by +20 and move speed by +10%.",
   "classes": [
     "fishing",
     "technology",
@@ -20,8 +20,8 @@
   ],
   "unique": false,
   "costs": {
-    "food": 150,
-    "wood": 0,
+    "food": 0,
+    "wood": 150,
     "stone": 0,
     "gold": 350,
     "total": 500,
@@ -55,6 +55,18 @@
       },
       "effect": "change",
       "value": 20,
+      "type": "passive"
+    },
+    {
+      "property": "moveSpeed",
+      "select": {
+        "id": [
+          "fishing-boat",
+          "lodya-fishing-boat"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.1,
       "type": "passive"
     }
   ]

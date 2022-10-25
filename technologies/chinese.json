@@ -30,12 +30,12 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 150,
+        "wood": 100,
         "stone": 0,
-        "gold": 350,
-        "total": 500,
+        "gold": 250,
+        "total": 350,
         "popcap": 0,
-        "time": 75
+        "time": 60
       },
       "producedBy": [
         "mining-camp"
@@ -58,58 +58,6 @@
           "select": {
             "id": [
               "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.15,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "additional-sails-2",
-      "baseId": "additional-sails",
-      "type": "technology",
-      "name": "Additional Sails",
-      "pbgid": 196905,
-      "attribName": "upgrade_naval_addsails",
-      "age": 2,
-      "civs": [
-        "ch"
-      ],
-      "description": "Increase the movement speed of all ships by +15%.",
-      "classes": [
-        "naval",
-        "technology"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 50,
-        "wood": 0,
-        "stone": 0,
-        "gold": 125,
-        "total": 175,
-        "popcap": 0,
-        "time": 45
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/additional-sails-2.png",
-      "effects": [
-        {
-          "property": "moveSpeed",
-          "select": {
-            "class": [
-              [
-                "ship"
-              ],
-              [
-                "warship"
-              ]
             ]
           },
           "effect": "multiply",
@@ -256,6 +204,101 @@
               [
                 "cavalry"
               ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "armored-hull-3",
+      "baseId": "armored-hull",
+      "type": "technology",
+      "name": "Armored Hull",
+      "pbgid": 196879,
+      "attribName": "upgrade_naval_armored_hull",
+      "age": 3,
+      "civs": [
+        "ch"
+      ],
+      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+      "classes": [
+        "naval",
+        "technology",
+        "1/2"
+      ],
+      "displayClasses": [
+        "Naval Technology 1/2"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 200,
+        "wood": 0,
+        "stone": 0,
+        "gold": 500,
+        "total": 700,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/armored-hull-3.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "ship",
+                "springald"
+              ],
+              [
+                "ship",
+                "archer"
+              ],
+              [
+                "ship",
+                "incendiary"
+              ],
+              [
+                "warship"
+              ]
+            ],
+            "id": [
+              "galleass",
+              "grand-galley"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "class": [
+              [
+                "ship",
+                "springald"
+              ],
+              [
+                "ship",
+                "archer"
+              ],
+              [
+                "ship",
+                "incendiary"
+              ],
+              [
+                "warship"
+              ]
+            ],
+            "id": [
+              "galleass",
+              "grand-galley"
             ]
           },
           "effect": "change",
@@ -584,55 +627,6 @@
       ]
     },
     {
-      "id": "chaser-cannons-4",
-      "baseId": "chaser-cannons",
-      "type": "technology",
-      "name": "Chaser Cannons",
-      "pbgid": 196881,
-      "attribName": "upgrade_naval_galley_cannon",
-      "age": 4,
-      "civs": [
-        "ch"
-      ],
-      "description": "Increase the weapon range of Warships by +1 tiles.",
-      "classes": [
-        "warship",
-        "technology"
-      ],
-      "displayClasses": [
-        "Warship Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 300,
-        "wood": 0,
-        "stone": 0,
-        "gold": 700,
-        "total": 1000,
-        "popcap": 0,
-        "time": 90
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/chaser-cannons-4.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "warship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        }
-      ]
-    },
-    {
       "id": "chemistry-4",
       "baseId": "chemistry",
       "type": "technology",
@@ -777,11 +771,11 @@
       ],
       "unique": false,
       "costs": {
-        "food": 300,
+        "food": 250,
         "wood": 0,
         "stone": 0,
-        "gold": 700,
-        "total": 1000,
+        "gold": 500,
+        "total": 750,
         "popcap": 0,
         "time": 75
       },
@@ -826,10 +820,10 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 300,
+        "wood": 250,
         "stone": 0,
-        "gold": 700,
-        "total": 1000,
+        "gold": 500,
+        "total": 750,
         "popcap": 0,
         "time": 75
       },
@@ -987,13 +981,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 75,
+        "food": 50,
         "wood": 0,
         "stone": 0,
-        "gold": 175,
-        "total": 250,
+        "gold": 100,
+        "total": 150,
         "popcap": 0,
-        "time": 75
+        "time": 45
       },
       "producedBy": [
         "lumber-camp"
@@ -1024,7 +1018,7 @@
       "civs": [
         "ch"
       ],
-      "description": "Increase the gathering rate of Fishing Ships by +15% and their carry capacity by +20.",
+      "description": "Increase the gathering rate of Fishing Ships by +15%, carry capacity by +20 and move speed by +10%.",
       "classes": [
         "fishing",
         "technology",
@@ -1035,8 +1029,8 @@
       ],
       "unique": false,
       "costs": {
-        "food": 150,
-        "wood": 0,
+        "food": 0,
+        "wood": 150,
         "stone": 0,
         "gold": 350,
         "total": 500,
@@ -1070,6 +1064,18 @@
           },
           "effect": "change",
           "value": 20,
+          "type": "passive"
+        },
+        {
+          "property": "moveSpeed",
+          "select": {
+            "id": [
+              "fishing-boat",
+              "lodya-fishing-boat"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.1,
           "type": "passive"
         }
       ]
@@ -1152,12 +1158,11 @@
       ],
       "description": "Increase the damage of Incendiary Ships by +40%.",
       "classes": [
-        "demolition",
-        "ship",
+        "naval",
         "technology"
       ],
       "displayClasses": [
-        "Demolition Ship Technology"
+        "Naval Technology"
       ],
       "unique": false,
       "costs": {
@@ -1167,7 +1172,7 @@
         "gold": 350,
         "total": 500,
         "popcap": 0,
-        "time": 60
+        "time": 45
       },
       "producedBy": [
         "dock"
@@ -1201,7 +1206,7 @@
       "civs": [
         "ch"
       ],
-      "description": "Increase the gathering rate of Fishing Ships by +20% and their carry capacity by +10.",
+      "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
       "classes": [
         "fishing",
         "technology",
@@ -1212,13 +1217,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 75,
-        "wood": 0,
+        "food": 0,
+        "wood": 75,
         "stone": 0,
         "gold": 175,
         "total": 250,
         "popcap": 0,
-        "time": 45
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -1252,68 +1257,17 @@
       ]
     },
     {
-      "id": "extra-ballista-3",
-      "baseId": "extra-ballista",
-      "type": "technology",
-      "name": "Extra Ballista",
-      "pbgid": 196876,
-      "attribName": "upgrade_naval_forecastle",
-      "age": 3,
-      "civs": [
-        "ch"
-      ],
-      "description": "Adds a swivel ballista to Attack Ships.\nSwivel ballistae can fire in any direction and deal 15 damage.",
-      "classes": [
-        "attack",
-        "ship",
-        "technology"
-      ],
-      "displayClasses": [
-        "Attack Ship Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 150,
-        "wood": 0,
-        "stone": 0,
-        "gold": 250,
-        "total": 400,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/extra-ballista-3.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "attack",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 15,
-          "type": "passive"
-        }
-      ]
-    },
-    {
       "id": "extra-hammocks-3",
       "baseId": "extra-hammocks",
       "type": "technology",
       "name": "Extra Hammocks",
-      "pbgid": 2034334,
-      "attribName": "upgrade_naval_hammocks_chi",
+      "pbgid": 2101642,
+      "attribName": "upgrade_naval_extra_hammocks",
       "age": 3,
       "civs": [
         "ch"
       ],
-      "description": "Junks of the Archer Ship type gain additional crew, allowing them to fire two more arrows in each volley.",
+      "description": "Increases the number of arrows fired by Archer Ships by +1.",
       "classes": [
         "naval",
         "technology"
@@ -1321,15 +1275,15 @@
       "displayClasses": [
         "Naval Technology"
       ],
-      "unique": true,
+      "unique": false,
       "costs": {
-        "food": 100,
-        "wood": 0,
+        "food": 0,
+        "wood": 100,
         "stone": 0,
         "gold": 250,
         "total": 350,
         "popcap": 0,
-        "time": 60
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -1339,12 +1293,15 @@
         {
           "property": "rangedAttack",
           "select": {
-            "id": [
-              "junk"
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
             ]
           },
           "effect": "multiply",
-          "value": 2,
+          "value": 1.2,
           "type": "passive"
         }
       ]
@@ -1423,15 +1380,16 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 150,
+        "wood": 100,
         "stone": 0,
-        "gold": 350,
-        "total": 500,
+        "gold": 250,
+        "total": 350,
         "popcap": 0,
-        "time": 75
+        "time": 60
       },
       "producedBy": [
-        "mill"
+        "mill",
+        "granary"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/fertilization-3.png",
       "effects": [
@@ -1755,6 +1713,56 @@
       ]
     },
     {
+      "id": "heated-shot-4",
+      "baseId": "heated-shot",
+      "type": "technology",
+      "name": "Heated Shot",
+      "pbgid": 2101720,
+      "attribName": "upgrade_naval_heated_shot",
+      "age": 4,
+      "civs": [
+        "ch"
+      ],
+      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
+      "classes": [
+        "naval",
+        "technology"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 500,
+        "total": 700,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "passive"
+        }
+      ]
+    },
+    {
       "id": "herbal-medicine-3",
       "baseId": "herbal-medicine",
       "type": "technology",
@@ -1830,15 +1838,16 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 75,
+        "wood": 50,
         "stone": 0,
-        "gold": 175,
-        "total": 250,
+        "gold": 100,
+        "total": 150,
         "popcap": 0,
-        "time": 75
+        "time": 45
       },
       "producedBy": [
-        "mill"
+        "mill",
+        "granary"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/horticulture-2.png",
       "effects": [
@@ -1899,6 +1908,56 @@
           },
           "effect": "change",
           "value": 40,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "incendiaries-3",
+      "baseId": "incendiaries",
+      "type": "technology",
+      "name": "Incendiaries",
+      "pbgid": 2101633,
+      "attribName": "upgrade_naval_incendiaries",
+      "age": 3,
+      "civs": [
+        "ch"
+      ],
+      "description": "Incendiary Ships gain +20% explosion range.",
+      "classes": [
+        "naval",
+        "technology"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 0,
+        "stone": 0,
+        "gold": 250,
+        "total": 350,
+        "popcap": 0,
+        "time": 30
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "incendiary",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
           "type": "passive"
         }
       ]
@@ -2102,13 +2161,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 150,
+        "food": 100,
         "wood": 0,
         "stone": 0,
-        "gold": 350,
-        "total": 500,
+        "gold": 250,
+        "total": 350,
         "popcap": 0,
-        "time": 75
+        "time": 60
       },
       "producedBy": [
         "lumber-camp"
@@ -2193,7 +2252,7 @@
       "civs": [
         "ch"
       ],
-      "description": "Reduce the time it takes to produce infantry, cavalry, siege, and transport units at buildings by 25%.\nDoes not affect religious units or other support units.",
+      "description": "Increase the production speed of infantry, cavalry, siege, and transport units at buildings by 33%.\nDoes not affect religious units or other support units.",
       "classes": [
         "production",
         "technology"
@@ -2240,23 +2299,23 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.8,
           "type": "passive"
         }
       ]
     },
     {
-      "id": "navigator-lookout-3",
-      "baseId": "navigator-lookout",
+      "id": "naval-arrowslits-2",
+      "baseId": "naval-arrowslits",
       "type": "technology",
-      "name": "Navigator Lookout",
-      "pbgid": 196925,
-      "attribName": "upgrade_naval_navigator",
-      "age": 3,
+      "name": "Naval Arrowslits",
+      "pbgid": 2076426,
+      "attribName": "upgrade_naval_arrowslits",
+      "age": 2,
       "civs": [
         "ch"
       ],
-      "description": "Increase the sight range of military ships by +4.",
+      "description": "Add a defensive arrowslit to this Dock which only attacks ships.",
       "classes": [
         "naval",
         "technology"
@@ -2266,48 +2325,19 @@
       ],
       "unique": false,
       "costs": {
-        "food": 75,
-        "wood": 0,
-        "stone": 0,
-        "gold": 200,
-        "total": 275,
+        "food": 0,
+        "wood": 75,
+        "stone": 125,
+        "gold": 0,
+        "total": 200,
         "popcap": 0,
-        "time": 60
+        "time": 30
       },
       "producedBy": [
         "dock"
       ],
-      "icon": "https://data.aoe4world.com/images/technologies/navigator-lookout-3.png",
-      "effects": [
-        {
-          "property": "lineOfSight",
-          "select": {
-            "class": [
-              [
-                "ship",
-                "attack"
-              ],
-              [
-                "ship",
-                "archer"
-              ],
-              [
-                "ship",
-                "incendiary"
-              ],
-              [
-                "warship"
-              ]
-            ],
-            "id": [
-              "galleass"
-            ]
-          },
-          "effect": "change",
-          "value": 4,
-          "type": "passive"
-        }
-      ]
+      "icon": "https://data.aoe4world.com/images/technologies/naval-arrowslits-2.png",
+      "effects": []
     },
     {
       "id": "piety-4",
@@ -2448,15 +2478,16 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 300,
+        "wood": 250,
         "stone": 0,
-        "gold": 700,
-        "total": 1000,
+        "gold": 500,
+        "total": 750,
         "popcap": 0,
         "time": 75
       },
       "producedBy": [
-        "mill"
+        "mill",
+        "granary"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/precision-cross-breeding-4.png",
       "effects": [
@@ -2503,7 +2534,8 @@
         "time": 75
       },
       "producedBy": [
-        "mill"
+        "mill",
+        "granary"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/professional-scouts-2.png",
       "effects": [
@@ -2596,7 +2628,7 @@
       "civs": [
         "ch"
       ],
-      "description": "Reduce the reload time of Bombards by -33%.",
+      "description": "Increase attack speed of Bombards by -33%.",
       "classes": [
         "bombard",
         "technology"
@@ -2607,12 +2639,12 @@
       "unique": true,
       "costs": {
         "food": 0,
-        "wood": 300,
+        "wood": 150,
         "stone": 0,
-        "gold": 700,
-        "total": 1000,
+        "gold": 350,
+        "total": 500,
         "popcap": 0,
-        "time": 90
+        "time": 60
       },
       "producedBy": [
         "astronomical-clocktower",
@@ -2754,6 +2786,101 @@
       ]
     },
     {
+      "id": "shipwrights-4",
+      "baseId": "shipwrights",
+      "type": "technology",
+      "name": "Shipwrights",
+      "pbgid": 2101643,
+      "attribName": "upgrade_naval_shipwrights",
+      "age": 4,
+      "civs": [
+        "ch"
+      ],
+      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+      "classes": [
+        "naval",
+        "technology",
+        "2/2"
+      ],
+      "displayClasses": [
+        "Naval Technology 2/2"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 550,
+        "total": 850,
+        "popcap": 0,
+        "time": 50
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "ship",
+                "springald"
+              ],
+              [
+                "ship",
+                "archer"
+              ],
+              [
+                "ship",
+                "incendiary"
+              ],
+              [
+                "warship"
+              ]
+            ],
+            "id": [
+              "galleass",
+              "grand-galley"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "class": [
+              [
+                "ship",
+                "springald"
+              ],
+              [
+                "ship",
+                "archer"
+              ],
+              [
+                "ship",
+                "incendiary"
+              ],
+              [
+                "warship"
+              ]
+            ],
+            "id": [
+              "galleass",
+              "grand-galley"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
       "id": "siege-engineering-2",
       "baseId": "siege-engineering",
       "type": "technology",
@@ -2888,12 +3015,12 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 75,
+        "wood": 50,
         "stone": 0,
-        "gold": 175,
-        "total": 250,
+        "gold": 100,
+        "total": 150,
         "popcap": 0,
-        "time": 75
+        "time": 45
       },
       "producedBy": [
         "mining-camp"
@@ -2920,6 +3047,70 @@
           },
           "effect": "multiply",
           "value": 1.15,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "springald-crews-3",
+      "baseId": "springald-crews",
+      "type": "technology",
+      "name": "Springald Crews",
+      "pbgid": 2101638,
+      "attribName": "upgrade_naval_springald_ship_upgrade_1",
+      "age": 3,
+      "civs": [
+        "ch"
+      ],
+      "description": "Springald Ships gain +1 range and attack 20% faster.",
+      "classes": [
+        "naval",
+        "technology"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 150,
+        "wood": 0,
+        "stone": 0,
+        "gold": 350,
+        "total": 500,
+        "popcap": 0,
+        "time": 35
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        },
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.8,
           "type": "passive"
         }
       ]
@@ -3072,7 +3263,8 @@
         "time": 25
       },
       "producedBy": [
-        "mill"
+        "mill",
+        "granary"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/survival-techniques-1.png",
       "effects": [
@@ -3085,6 +3277,56 @@
           },
           "effect": "multiply",
           "value": 1.15,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "swivel-cannon-4",
+      "baseId": "swivel-cannon",
+      "type": "technology",
+      "name": "Swivel Cannon",
+      "pbgid": 2101653,
+      "attribName": "upgrade_naval_swivel_cannon",
+      "age": 4,
+      "civs": [
+        "ch"
+      ],
+      "description": "Springald Ships gain an additional Cannon which fires in 360 degrees.",
+      "classes": [
+        "naval",
+        "technology"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 150,
+        "wood": 0,
+        "stone": 0,
+        "gold": 350,
+        "total": 500,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/swivel-cannon-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 15,
           "type": "passive"
         }
       ]
@@ -3133,6 +3375,55 @@
           },
           "effect": "change",
           "value": 25,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "thunderclap-bombs-4",
+      "baseId": "thunderclap-bombs",
+      "type": "technology",
+      "name": "Thunderclap Bombs",
+      "pbgid": 2101718,
+      "attribName": "upgrade_naval_explosive_techniques_chi",
+      "age": 4,
+      "civs": [
+        "ch"
+      ],
+      "description": "Warships fire a Nest of Bees attack.",
+      "classes": [
+        "naval",
+        "technology"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 500,
+        "total": 700,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/thunderclap-bombs-4.png",
+      "effects": [
+        {
+          "property": "siegeAttack",
+          "select": {
+            "class": [
+              [
+                "warship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 21.333333333333332,
           "type": "passive"
         }
       ]
@@ -3271,7 +3562,8 @@
         "time": 90
       },
       "producedBy": [
-        "mill"
+        "mill",
+        "granary"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/wheelbarrow-1.png",
       "effects": [

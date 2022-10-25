@@ -33,7 +33,10 @@ workaround("Remove all emplacement except default arrow from the Kremlin", {
 });
 
 workaround("Remove all garrison and emplacement weapons from capital town center, keeps and regular keep-like landmarks, leave the passive arrow emplacement as a 3x burst", {
-  predicate: (item) => ["capital-town-center", "keep", "the-white-tower", "palace-of-swabia", "elzbach-palace"].includes(item.baseId),
+  predicate: (item) =>
+    ["capital-town-center", "keep", "the-white-tower", "palace-of-swabia", "elzbach-palace", "saharan-trade-network", "fort-of-the-huntress", "sea-gate-castle"].includes(
+      item.baseId
+    ),
   mutator: (item) => {
     item = item as Building;
     const bow = item.weapons.find((x) => x.name === "Bow");
@@ -75,6 +78,11 @@ workaround("Remove all weapons from the Spasskaya Tower, pick the Cannon as list
     item.weapons = [item.weapons.find((x) => x.name === "Cannon")!];
   },
   validator: (item) => (item as Building).weapons.length == 1,
+});
+
+workaround("Remove naval arrow slits emplacement from the Dock", {
+  predicate: (item) => item.baseId === "dock",
+  mutator: (item) => ((item as Building).weapons = (item as Building).weapons.filter((w) => w.attribName !== "weapon_dock_arrows")),
 });
 
 // –––– Age availabiity ––––
@@ -138,7 +146,7 @@ workaround("Make Delhi Village Fortresses available from Castle Age", {
 // –––– Unit weapons ––––
 
 workaround("Remove daggers from ranged units", {
-  predicate: (item) => item.type === "unit" && item.classes.includes("ranged") && item.weapons.some((w) => w.name === "Dagger"),
+  predicate: (item) => item.type === "unit" && (item.classes.includes("ranged") || item.baseId == "janissary") && item.weapons.some((w) => w.name === "Dagger"),
   mutator: (item) => {
     item = item as Unit;
     item.weapons = item.weapons.filter((w) => w.name !== "Dagger");
@@ -241,6 +249,26 @@ workaround("Change the individuals cannons on Warships to just 1 with a burst of
     const cannon = cannons[0]!;
     cannon.burst = { count: cannons.length / 2 };
     item.weapons = [cannon];
+  },
+  validator: (item) => (item as Unit).weapons.length == 1,
+});
+
+workaround("Remove the unused cannons and upgradable swivel cannon from Springald Ships, keep only one ballista", {
+  predicate: (item) => ["hulk", "baghlah", "war-junk", "war-canoe", "lodya-attack-ship"].includes(item.baseId),
+  mutator: (item) => {
+    item = item as Unit;
+    const ballista = item.weapons.find((w) => w.attribName == "weapon_naval_combat_ship_springald")!;
+    item.weapons = item.weapons.filter((w) => !["weapon_naval_swivel_cannon", "weapon_naval_mounted_gun"].includes(w.attribName!));
+    item.weapons = [ballista];
+  },
+  validator: (item) => (item as Unit).weapons.length == 1,
+});
+
+workaround("Remove the upgrade locked Javelin from the Hunting Canoe", {
+  predicate: (item) => item.baseId == "hunting-canoe",
+  mutator: (item) => {
+    item = item as Unit;
+    item.weapons = item.weapons.filter((w) => w.attribName != "weapon_naval_javelin_burst");
   },
   validator: (item) => (item as Unit).weapons.length == 1,
 });

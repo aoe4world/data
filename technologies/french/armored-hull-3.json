@@ -9,23 +9,24 @@
   "civs": [
     "fr"
   ],
-  "description": "Increase the armor of all military ships by +2.",
+  "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
   "classes": [
     "naval",
-    "technology"
+    "technology",
+    "1/2"
   ],
   "displayClasses": [
-    "Naval Technology"
+    "Naval Technology 1/2"
   ],
   "unique": false,
   "costs": {
-    "food": 150,
+    "food": 200,
     "wood": 0,
     "stone": 0,
-    "gold": 250,
-    "total": 400,
+    "gold": 500,
+    "total": 700,
     "popcap": 0,
-    "time": 60
+    "time": 45
   },
   "producedBy": [
     "dock"
@@ -33,12 +34,41 @@
   "icon": "https://data.aoe4world.com/images/technologies/armored-hull-3.png",
   "effects": [
     {
+      "property": "hitpoints",
+      "select": {
+        "class": [
+          [
+            "ship",
+            "springald"
+          ],
+          [
+            "ship",
+            "archer"
+          ],
+          [
+            "ship",
+            "incendiary"
+          ],
+          [
+            "warship"
+          ]
+        ],
+        "id": [
+          "galleass",
+          "grand-galley"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.2,
+      "type": "passive"
+    },
+    {
       "property": "rangedArmor",
       "select": {
         "class": [
           [
             "ship",
-            "attack"
+            "springald"
           ],
           [
             "ship",
@@ -53,39 +83,12 @@
           ]
         ],
         "id": [
-          "galleass"
+          "galleass",
+          "grand-galley"
         ]
       },
       "effect": "change",
-      "value": 2,
-      "type": "passive"
-    },
-    {
-      "property": "meleeArmor",
-      "select": {
-        "class": [
-          [
-            "ship",
-            "attack"
-          ],
-          [
-            "ship",
-            "archer"
-          ],
-          [
-            "ship",
-            "incendiary"
-          ],
-          [
-            "warship"
-          ]
-        ],
-        "id": [
-          "galleass"
-        ]
-      },
-      "effect": "change",
-      "value": 2,
+      "value": 1,
       "type": "passive"
     }
   ]

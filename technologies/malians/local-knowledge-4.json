@@ -1,0 +1,48 @@
+{
+  "id": "local-knowledge-4",
+  "baseId": "local-knowledge",
+  "type": "technology",
+  "name": "Local Knowledge",
+  "pbgid": 2064215,
+  "attribName": "upgrade_stealth_healing_mal",
+  "age": 4,
+  "civs": [
+    "ma"
+  ],
+  "description": "Musofadi units heal while in Stealth for +2 every 1 seconds.",
+  "classes": [
+    "healing",
+    "technology"
+  ],
+  "displayClasses": [
+    "Healing Technology"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 200,
+    "wood": 0,
+    "stone": 0,
+    "gold": 500,
+    "total": 700,
+    "popcap": 0,
+    "time": 90
+  },
+  "producedBy": [
+    "barracks"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/local-knowledge-4.png",
+  "effects": [
+    {
+      "property": "healingRate",
+      "select": {
+        "id": [
+          "musofadi-gunner",
+          "musofadi-warrior"
+        ]
+      },
+      "effect": "change",
+      "value": 2,
+      "type": "passive"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "id": "fort-of-the-huntress-3",
+  "baseId": "fort-of-the-huntress",
+  "type": "building",
+  "name": "Fort of the Huntress",
+  "pbgid": 2063110,
+  "attribName": "building_landmark_age3_landmarkf_mal",
+  "age": 3,
+  "civs": [
+    "ma"
+  ],
+  "description": "Acts as a Keep. Infantry units nearby the Landmark enter Stealth for 10 seconds.\nMusofadi Warriors and Musofadi Gunners gain First Strike, dealing more damage when breaking Stealth with an attack.",
+  "classes": [
+    "age",
+    "iv",
+    "-",
+    "defensive",
+    "landmark"
+  ],
+  "displayClasses": [
+    "Age IV - Defensive Landmark"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 2400,
+    "wood": 0,
+    "stone": 0,
+    "gold": 1200,
+    "total": 3600,
+    "popcap": 0,
+    "time": 250
+  },
+  "producedBy": [
+    "villager"
+  ],
+  "icon": "https://data.aoe4world.com/images/buildings/fort-of-the-huntress-3.png",
+  "hitpoints": 5000,
+  "weapons": [
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 12,
+      "speed": 0.5,
+      "range": {
+        "min": 0,
+        "max": 8
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.125,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0.25,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 3
+      },
+      "attribName": "weapon_keep_arrows_a",
+      "pbgid": 127372
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 50
+    }
+  ],
+  "sight": {
+    "line": 45,
+    "height": 501
+  },
+  "garrison": {
+    "capacity": 15,
+    "classes": [
+      "infantry",
+      "villager",
+      "infantry ranged",
+      "monk",
+      "cavalry",
+      "khan"
+    ]
+  },
+  "influences": []
+}

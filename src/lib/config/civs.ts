@@ -31,10 +31,20 @@ export const CIVILIZATIONS: Record<civAbbr, civConfig> = {
     abbr: "ab",
     slug: "abbasid",
   },
+  ma: {
+    name: "Malians",
+    abbr: "ma",
+    slug: "malians",
+  },
   mo: {
     name: "Mongols",
     abbr: "mo",
     slug: "mongols",
+  },
+  ot: {
+    name: "Ottomans",
+    abbr: "ot",
+    slug: "ottomans",
   },
   ru: {
     name: "Rus",
@@ -51,6 +61,8 @@ export enum CIV_ABBR {
   DE = "de",
   AB = "ab",
   MO = "mo",
+  MA = "ma",
+  OT = "ot",
   RU = "ru",
 }
 
@@ -61,6 +73,8 @@ export const CIVILIZATION_BY_SLUG = {
   chinese: CIVILIZATIONS.ch,
   delhi: CIVILIZATIONS.de,
   abbasid: CIVILIZATIONS.ab,
+  malians: CIVILIZATIONS.ma,
   mongols: CIVILIZATIONS.mo,
+  ottomans: CIVILIZATIONS.ot,
   rus: CIVILIZATIONS.ru,
 };

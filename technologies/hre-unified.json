@@ -50,12 +50,12 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 150,
+            "wood": 100,
             "stone": 0,
-            "gold": 350,
-            "total": 500,
+            "gold": 250,
+            "total": 350,
             "popcap": 0,
-            "time": 75
+            "time": 60
           },
           "producedBy": [
             "mining-camp"
@@ -78,79 +78,6 @@
               "select": {
                 "id": [
                   "villager"
-                ]
-              },
-              "effect": "multiply",
-              "value": 1.15,
-              "type": "passive"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "additional-sails",
-      "name": "Additional Sails",
-      "type": "technology",
-      "civs": [
-        "hr"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "classes": [
-        "naval",
-        "technology"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/additional-sails-2.png",
-      "description": "Increase the movement speed of all ships by +15%.",
-      "variations": [
-        {
-          "id": "additional-sails-2",
-          "baseId": "additional-sails",
-          "type": "technology",
-          "name": "Additional Sails",
-          "pbgid": 196905,
-          "attribName": "upgrade_naval_addsails",
-          "age": 2,
-          "civs": [
-            "hr"
-          ],
-          "description": "Increase the movement speed of all ships by +15%.",
-          "classes": [
-            "naval",
-            "technology"
-          ],
-          "displayClasses": [
-            "Naval Technology"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 50,
-            "wood": 0,
-            "stone": 0,
-            "gold": 125,
-            "total": 175,
-            "popcap": 0,
-            "time": 45
-          },
-          "producedBy": [
-            "dock"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/additional-sails-2.png",
-          "effects": [
-            {
-              "property": "moveSpeed",
-              "select": {
-                "class": [
-                  [
-                    "ship"
-                  ],
-                  [
-                    "warship"
-                  ]
                 ]
               },
               "effect": "multiply",
@@ -316,15 +243,16 @@
       ],
       "unique": false,
       "displayClasses": [
-        "Naval Technology"
+        "Naval Technology 1/2"
       ],
       "classes": [
         "naval",
-        "technology"
+        "technology",
+        "1/2"
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/armored-hull-3.png",
-      "description": "Increase the armor of all military ships by +2.",
+      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
       "variations": [
         {
           "id": "armored-hull-3",
@@ -337,23 +265,24 @@
           "civs": [
             "hr"
           ],
-          "description": "Increase the armor of all military ships by +2.",
+          "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
           "classes": [
             "naval",
-            "technology"
+            "technology",
+            "1/2"
           ],
           "displayClasses": [
-            "Naval Technology"
+            "Naval Technology 1/2"
           ],
           "unique": false,
           "costs": {
-            "food": 150,
+            "food": 200,
             "wood": 0,
             "stone": 0,
-            "gold": 250,
-            "total": 400,
+            "gold": 500,
+            "total": 700,
             "popcap": 0,
-            "time": 60
+            "time": 45
           },
           "producedBy": [
             "dock"
@@ -361,12 +290,41 @@
           "icon": "https://data.aoe4world.com/images/technologies/armored-hull-3.png",
           "effects": [
             {
+              "property": "hitpoints",
+              "select": {
+                "class": [
+                  [
+                    "ship",
+                    "springald"
+                  ],
+                  [
+                    "ship",
+                    "archer"
+                  ],
+                  [
+                    "ship",
+                    "incendiary"
+                  ],
+                  [
+                    "warship"
+                  ]
+                ],
+                "id": [
+                  "galleass",
+                  "grand-galley"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.2,
+              "type": "passive"
+            },
+            {
               "property": "rangedArmor",
               "select": {
                 "class": [
                   [
                     "ship",
-                    "attack"
+                    "springald"
                   ],
                   [
                     "ship",
@@ -381,39 +339,12 @@
                   ]
                 ],
                 "id": [
-                  "galleass"
+                  "galleass",
+                  "grand-galley"
                 ]
               },
               "effect": "change",
-              "value": 2,
-              "type": "passive"
-            },
-            {
-              "property": "meleeArmor",
-              "select": {
-                "class": [
-                  [
-                    "ship",
-                    "attack"
-                  ],
-                  [
-                    "ship",
-                    "archer"
-                  ],
-                  [
-                    "ship",
-                    "incendiary"
-                  ],
-                  [
-                    "warship"
-                  ]
-                ],
-                "id": [
-                  "galleass"
-                ]
-              },
-              "effect": "change",
-              "value": 2,
+              "value": 1,
               "type": "passive"
             }
           ]
@@ -943,76 +874,6 @@
       ]
     },
     {
-      "id": "chaser-cannons",
-      "name": "Chaser Cannons",
-      "type": "technology",
-      "civs": [
-        "hr"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Warship Technology"
-      ],
-      "classes": [
-        "warship",
-        "technology"
-      ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/chaser-cannons-4.png",
-      "description": "Increase the weapon range of Warships by +1 tiles.",
-      "variations": [
-        {
-          "id": "chaser-cannons-4",
-          "baseId": "chaser-cannons",
-          "type": "technology",
-          "name": "Chaser Cannons",
-          "pbgid": 196881,
-          "attribName": "upgrade_naval_galley_cannon",
-          "age": 4,
-          "civs": [
-            "hr"
-          ],
-          "description": "Increase the weapon range of Warships by +1 tiles.",
-          "classes": [
-            "warship",
-            "technology"
-          ],
-          "displayClasses": [
-            "Warship Technology"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 300,
-            "wood": 0,
-            "stone": 0,
-            "gold": 700,
-            "total": 1000,
-            "popcap": 0,
-            "time": 90
-          },
-          "producedBy": [
-            "dock"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/chaser-cannons-4.png",
-          "effects": [
-            {
-              "property": "maxRange",
-              "select": {
-                "class": [
-                  [
-                    "warship"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 1,
-              "type": "passive"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "chemistry",
       "name": "Chemistry",
       "type": "technology",
@@ -1221,11 +1082,11 @@
           ],
           "unique": false,
           "costs": {
-            "food": 300,
+            "food": 250,
             "wood": 0,
             "stone": 0,
-            "gold": 700,
-            "total": 1000,
+            "gold": 500,
+            "total": 750,
             "popcap": 0,
             "time": 75
           },
@@ -1292,10 +1153,10 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 300,
+            "wood": 250,
             "stone": 0,
-            "gold": 700,
-            "total": 1000,
+            "gold": 500,
+            "total": 750,
             "popcap": 0,
             "time": 75
           },
@@ -1626,13 +1487,13 @@
           ],
           "unique": false,
           "costs": {
-            "food": 75,
+            "food": 50,
             "wood": 0,
             "stone": 0,
-            "gold": 175,
-            "total": 250,
+            "gold": 100,
+            "total": 150,
             "popcap": 0,
-            "time": 75
+            "time": 45
           },
           "producedBy": [
             "lumber-camp"
@@ -1672,7 +1533,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/drift-nets-3.png",
-      "description": "Increase the gathering rate of Fishing Ships by +15% and their carry capacity by +20.",
+      "description": "Increase the gathering rate of Fishing Ships by +15%, carry capacity by +20 and move speed by +10%.",
       "variations": [
         {
           "id": "drift-nets-3",
@@ -1685,7 +1546,7 @@
           "civs": [
             "hr"
           ],
-          "description": "Increase the gathering rate of Fishing Ships by +15% and their carry capacity by +20.",
+          "description": "Increase the gathering rate of Fishing Ships by +15%, carry capacity by +20 and move speed by +10%.",
           "classes": [
             "fishing",
             "technology",
@@ -1696,8 +1557,8 @@
           ],
           "unique": false,
           "costs": {
-            "food": 150,
-            "wood": 0,
+            "food": 0,
+            "wood": 150,
             "stone": 0,
             "gold": 350,
             "total": 500,
@@ -1731,6 +1592,18 @@
               },
               "effect": "change",
               "value": 20,
+              "type": "passive"
+            },
+            {
+              "property": "moveSpeed",
+              "select": {
+                "id": [
+                  "fishing-boat",
+                  "lodya-fishing-boat"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.1,
               "type": "passive"
             }
           ]
@@ -1833,11 +1706,10 @@
       ],
       "unique": false,
       "displayClasses": [
-        "Demolition Ship Technology"
+        "Naval Technology"
       ],
       "classes": [
-        "demolition",
-        "ship",
+        "naval",
         "technology"
       ],
       "minAge": 4,
@@ -1857,12 +1729,11 @@
           ],
           "description": "Increase the damage of Incendiary Ships by +40%.",
           "classes": [
-            "demolition",
-            "ship",
+            "naval",
             "technology"
           ],
           "displayClasses": [
-            "Demolition Ship Technology"
+            "Naval Technology"
           ],
           "unique": false,
           "costs": {
@@ -1872,7 +1743,7 @@
             "gold": 350,
             "total": 500,
             "popcap": 0,
-            "time": 60
+            "time": 45
           },
           "producedBy": [
             "dock"
@@ -1915,7 +1786,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/technologies/extended-lines-2.png",
-      "description": "Increase the gathering rate of Fishing Ships by +20% and their carry capacity by +10.",
+      "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
       "variations": [
         {
           "id": "extended-lines-2",
@@ -1928,7 +1799,7 @@
           "civs": [
             "hr"
           ],
-          "description": "Increase the gathering rate of Fishing Ships by +20% and their carry capacity by +10.",
+          "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
           "classes": [
             "fishing",
             "technology",
@@ -1939,13 +1810,13 @@
           ],
           "unique": false,
           "costs": {
-            "food": 75,
-            "wood": 0,
+            "food": 0,
+            "wood": 75,
             "stone": 0,
             "gold": 175,
             "total": 250,
             "popcap": 0,
-            "time": 45
+            "time": 30
           },
           "producedBy": [
             "dock"
@@ -1981,72 +1852,70 @@
       ]
     },
     {
-      "id": "extra-ballista",
-      "name": "Extra Ballista",
+      "id": "extra-hammocks",
+      "name": "Extra Hammocks",
       "type": "technology",
       "civs": [
         "hr"
       ],
       "unique": false,
       "displayClasses": [
-        "Attack Ship Technology"
+        "Naval Technology"
       ],
       "classes": [
-        "attack",
-        "ship",
+        "naval",
         "technology"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/extra-ballista-3.png",
-      "description": "Adds a swivel ballista to Attack Ships.\nSwivel ballistae can fire in any direction and deal 15 damage.",
+      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
+      "description": "Increases the number of arrows fired by Archer Ships by +1.",
       "variations": [
         {
-          "id": "extra-ballista-3",
-          "baseId": "extra-ballista",
+          "id": "extra-hammocks-3",
+          "baseId": "extra-hammocks",
           "type": "technology",
-          "name": "Extra Ballista",
-          "pbgid": 196876,
-          "attribName": "upgrade_naval_forecastle",
+          "name": "Extra Hammocks",
+          "pbgid": 2101642,
+          "attribName": "upgrade_naval_extra_hammocks",
           "age": 3,
           "civs": [
             "hr"
           ],
-          "description": "Adds a swivel ballista to Attack Ships.\nSwivel ballistae can fire in any direction and deal 15 damage.",
+          "description": "Increases the number of arrows fired by Archer Ships by +1.",
           "classes": [
-            "attack",
-            "ship",
+            "naval",
             "technology"
           ],
           "displayClasses": [
-            "Attack Ship Technology"
+            "Naval Technology"
           ],
           "unique": false,
           "costs": {
-            "food": 150,
-            "wood": 0,
+            "food": 0,
+            "wood": 100,
             "stone": 0,
             "gold": 250,
-            "total": 400,
+            "total": 350,
             "popcap": 0,
-            "time": 60
+            "time": 30
           },
           "producedBy": [
             "dock"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/extra-ballista-3.png",
+          "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
           "effects": [
             {
               "property": "rangedAttack",
               "select": {
                 "class": [
                   [
-                    "attack",
+                    "archer",
                     "ship"
                   ]
                 ]
               },
-              "effect": "change",
-              "value": 15,
+              "effect": "multiply",
+              "value": 1.2,
               "type": "passive"
             }
           ]
@@ -2098,12 +1967,12 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 150,
+            "wood": 100,
             "stone": 0,
-            "gold": 350,
-            "total": 500,
+            "gold": 250,
+            "total": 350,
             "popcap": 0,
-            "time": 75
+            "time": 60
           },
           "producedBy": [
             "mill"
@@ -2142,7 +2011,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/technologies/fire-stations-2.png",
-      "description": "Increase the repair rate of Docks by +100%.",
+      "description": "Military Ships regenerate +1 health every 2 seconds when out of combat.",
       "variations": [
         {
           "id": "fire-stations-2",
@@ -2155,7 +2024,7 @@
           "civs": [
             "hr"
           ],
-          "description": "Increase the repair rate of Docks by +100%.",
+          "description": "Military Ships regenerate +1 health every 2 seconds when out of combat.",
           "classes": [
             "naval",
             "technology"
@@ -2165,13 +2034,13 @@
           ],
           "unique": true,
           "costs": {
-            "food": 50,
+            "food": 100,
             "wood": 0,
             "stone": 0,
-            "gold": 125,
-            "total": 175,
+            "gold": 250,
+            "total": 350,
             "popcap": 0,
-            "time": 45
+            "time": 30
           },
           "producedBy": [
             "dock"
@@ -2179,14 +2048,32 @@
           "icon": "https://data.aoe4world.com/images/technologies/fire-stations-2.png",
           "effects": [
             {
-              "property": "repairRate",
+              "property": "healingRate",
               "select": {
+                "class": [
+                  [
+                    "ship",
+                    "springald"
+                  ],
+                  [
+                    "ship",
+                    "archer"
+                  ],
+                  [
+                    "ship",
+                    "incendiary"
+                  ],
+                  [
+                    "warship"
+                  ]
+                ],
                 "id": [
-                  "dock"
+                  "galleass",
+                  "grand-galley"
                 ]
               },
               "effect": "change",
-              "value": 100,
+              "value": 1,
               "type": "passive"
             }
           ]
@@ -2559,6 +2446,77 @@
       ]
     },
     {
+      "id": "heated-shot",
+      "name": "Heated Shot",
+      "type": "technology",
+      "civs": [
+        "hr"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "classes": [
+        "naval",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
+      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
+      "variations": [
+        {
+          "id": "heated-shot-4",
+          "baseId": "heated-shot",
+          "type": "technology",
+          "name": "Heated Shot",
+          "pbgid": 2101720,
+          "attribName": "upgrade_naval_heated_shot",
+          "age": 4,
+          "civs": [
+            "hr"
+          ],
+          "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
+          "classes": [
+            "naval",
+            "technology"
+          ],
+          "displayClasses": [
+            "Naval Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 200,
+            "stone": 0,
+            "gold": 500,
+            "total": 700,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
+          "effects": [
+            {
+              "property": "rangedAttack",
+              "select": {
+                "class": [
+                  [
+                    "archer",
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 6,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "heavy-maces",
       "name": "Heavy Maces",
       "type": "technology",
@@ -2753,12 +2711,12 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 75,
+            "wood": 50,
             "stone": 0,
-            "gold": 175,
-            "total": 250,
+            "gold": 100,
+            "total": 150,
             "popcap": 0,
-            "time": 75
+            "time": 45
           },
           "producedBy": [
             "mill"
@@ -2774,6 +2732,77 @@
               },
               "effect": "multiply",
               "value": 1.15,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "incendiaries",
+      "name": "Incendiaries",
+      "type": "technology",
+      "civs": [
+        "hr"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "classes": [
+        "naval",
+        "technology"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
+      "description": "Incendiary Ships gain +20% explosion range.",
+      "variations": [
+        {
+          "id": "incendiaries-3",
+          "baseId": "incendiaries",
+          "type": "technology",
+          "name": "Incendiaries",
+          "pbgid": 2101633,
+          "attribName": "upgrade_naval_incendiaries",
+          "age": 3,
+          "civs": [
+            "hr"
+          ],
+          "description": "Incendiary Ships gain +20% explosion range.",
+          "classes": [
+            "naval",
+            "technology"
+          ],
+          "displayClasses": [
+            "Naval Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 100,
+            "wood": 0,
+            "stone": 0,
+            "gold": 250,
+            "total": 350,
+            "popcap": 0,
+            "time": 30
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
+          "effects": [
+            {
+              "property": "maxRange",
+              "select": {
+                "class": [
+                  [
+                    "incendiary",
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.2,
               "type": "passive"
             }
           ]
@@ -3195,13 +3224,13 @@
           ],
           "unique": false,
           "costs": {
-            "food": 150,
+            "food": 100,
             "wood": 0,
             "stone": 0,
-            "gold": 350,
-            "total": 500,
+            "gold": 250,
+            "total": 350,
             "popcap": 0,
-            "time": 75
+            "time": 60
           },
           "producedBy": [
             "lumber-camp"
@@ -3392,7 +3421,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/military-academy-3.png",
-      "description": "Reduce the time it takes to produce infantry, cavalry, siege, and transport units at buildings by 25%.\nDoes not affect religious units or other support units.",
+      "description": "Increase the production speed of infantry, cavalry, siege, and transport units at buildings by 33%.\nDoes not affect religious units or other support units.",
       "variations": [
         {
           "id": "military-academy-3",
@@ -3405,7 +3434,7 @@
           "civs": [
             "hr"
           ],
-          "description": "Reduce the time it takes to produce infantry, cavalry, siege, and transport units at buildings by 25%.\nDoes not affect religious units or other support units.",
+          "description": "Increase the production speed of infantry, cavalry, siege, and transport units at buildings by 33%.\nDoes not affect religious units or other support units.",
           "classes": [
             "production",
             "technology"
@@ -3453,7 +3482,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.75,
+              "value": 0.8,
               "type": "passive"
             }
           ]
@@ -3461,8 +3490,8 @@
       ]
     },
     {
-      "id": "navigator-lookout",
-      "name": "Navigator Lookout",
+      "id": "naval-arrowslits",
+      "name": "Naval Arrowslits",
       "type": "technology",
       "civs": [
         "hr"
@@ -3475,22 +3504,22 @@
         "naval",
         "technology"
       ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/navigator-lookout-3.png",
-      "description": "Increase the sight range of military ships by +4.",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/technologies/naval-arrowslits-2.png",
+      "description": "Add a defensive arrowslit to this Dock which only attacks ships.",
       "variations": [
         {
-          "id": "navigator-lookout-3",
-          "baseId": "navigator-lookout",
+          "id": "naval-arrowslits-2",
+          "baseId": "naval-arrowslits",
           "type": "technology",
-          "name": "Navigator Lookout",
-          "pbgid": 196925,
-          "attribName": "upgrade_naval_navigator",
-          "age": 3,
+          "name": "Naval Arrowslits",
+          "pbgid": 2076426,
+          "attribName": "upgrade_naval_arrowslits",
+          "age": 2,
           "civs": [
             "hr"
           ],
-          "description": "Increase the sight range of military ships by +4.",
+          "description": "Add a defensive arrowslit to this Dock which only attacks ships.",
           "classes": [
             "naval",
             "technology"
@@ -3500,48 +3529,19 @@
           ],
           "unique": false,
           "costs": {
-            "food": 75,
-            "wood": 0,
-            "stone": 0,
-            "gold": 200,
-            "total": 275,
+            "food": 0,
+            "wood": 75,
+            "stone": 125,
+            "gold": 0,
+            "total": 200,
             "popcap": 0,
-            "time": 60
+            "time": 30
           },
           "producedBy": [
             "dock"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/navigator-lookout-3.png",
-          "effects": [
-            {
-              "property": "lineOfSight",
-              "select": {
-                "class": [
-                  [
-                    "ship",
-                    "attack"
-                  ],
-                  [
-                    "ship",
-                    "archer"
-                  ],
-                  [
-                    "ship",
-                    "incendiary"
-                  ],
-                  [
-                    "warship"
-                  ]
-                ],
-                "id": [
-                  "galleass"
-                ]
-              },
-              "effect": "change",
-              "value": 4,
-              "type": "passive"
-            }
-          ]
+          "icon": "https://data.aoe4world.com/images/technologies/naval-arrowslits-2.png",
+          "effects": []
         }
       ]
     },
@@ -3751,10 +3751,10 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 300,
+            "wood": 250,
             "stone": 0,
-            "gold": 700,
-            "total": 1000,
+            "gold": 500,
+            "total": 750,
             "popcap": 0,
             "time": 75
           },
@@ -4090,6 +4090,123 @@
       ]
     },
     {
+      "id": "shipwrights",
+      "name": "Shipwrights",
+      "type": "technology",
+      "civs": [
+        "hr"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Naval Technology 2/2"
+      ],
+      "classes": [
+        "naval",
+        "technology",
+        "2/2"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
+      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+      "variations": [
+        {
+          "id": "shipwrights-4",
+          "baseId": "shipwrights",
+          "type": "technology",
+          "name": "Shipwrights",
+          "pbgid": 2101643,
+          "attribName": "upgrade_naval_shipwrights",
+          "age": 4,
+          "civs": [
+            "hr"
+          ],
+          "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+          "classes": [
+            "naval",
+            "technology",
+            "2/2"
+          ],
+          "displayClasses": [
+            "Naval Technology 2/2"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 300,
+            "wood": 0,
+            "stone": 0,
+            "gold": 550,
+            "total": 850,
+            "popcap": 0,
+            "time": 50
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
+          "effects": [
+            {
+              "property": "hitpoints",
+              "select": {
+                "class": [
+                  [
+                    "ship",
+                    "springald"
+                  ],
+                  [
+                    "ship",
+                    "archer"
+                  ],
+                  [
+                    "ship",
+                    "incendiary"
+                  ],
+                  [
+                    "warship"
+                  ]
+                ],
+                "id": [
+                  "galleass",
+                  "grand-galley"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.2,
+              "type": "passive"
+            },
+            {
+              "property": "rangedArmor",
+              "select": {
+                "class": [
+                  [
+                    "ship",
+                    "springald"
+                  ],
+                  [
+                    "ship",
+                    "archer"
+                  ],
+                  [
+                    "ship",
+                    "incendiary"
+                  ],
+                  [
+                    "warship"
+                  ]
+                ],
+                "id": [
+                  "galleass",
+                  "grand-galley"
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "siege-engineering",
       "name": "Siege Engineering",
       "type": "technology",
@@ -4359,12 +4476,12 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 75,
+            "wood": 50,
             "stone": 0,
-            "gold": 175,
-            "total": 250,
+            "gold": 100,
+            "total": 150,
             "popcap": 0,
-            "time": 75
+            "time": 45
           },
           "producedBy": [
             "mining-camp"
@@ -4391,6 +4508,91 @@
               },
               "effect": "multiply",
               "value": 1.15,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "springald-crews",
+      "name": "Springald Crews",
+      "type": "technology",
+      "civs": [
+        "hr"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "classes": [
+        "naval",
+        "technology"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
+      "description": "Springald Ships gain +1 range and attack 20% faster.",
+      "variations": [
+        {
+          "id": "springald-crews-3",
+          "baseId": "springald-crews",
+          "type": "technology",
+          "name": "Springald Crews",
+          "pbgid": 2101638,
+          "attribName": "upgrade_naval_springald_ship_upgrade_1",
+          "age": 3,
+          "civs": [
+            "hr"
+          ],
+          "description": "Springald Ships gain +1 range and attack 20% faster.",
+          "classes": [
+            "naval",
+            "technology"
+          ],
+          "displayClasses": [
+            "Naval Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 150,
+            "wood": 0,
+            "stone": 0,
+            "gold": 350,
+            "total": 500,
+            "popcap": 0,
+            "time": 35
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
+          "effects": [
+            {
+              "property": "maxRange",
+              "select": {
+                "class": [
+                  [
+                    "springald",
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "passive"
+            },
+            {
+              "property": "attackSpeed",
+              "select": {
+                "class": [
+                  [
+                    "springald",
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.8,
               "type": "passive"
             }
           ]
@@ -4622,6 +4824,77 @@
               },
               "effect": "multiply",
               "value": 1.15,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "swivel-cannon",
+      "name": "Swivel Cannon",
+      "type": "technology",
+      "civs": [
+        "hr"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "classes": [
+        "naval",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/swivel-cannon-4.png",
+      "description": "Springald Ships gain an additional Cannon which fires in 360 degrees.",
+      "variations": [
+        {
+          "id": "swivel-cannon-4",
+          "baseId": "swivel-cannon",
+          "type": "technology",
+          "name": "Swivel Cannon",
+          "pbgid": 2101653,
+          "attribName": "upgrade_naval_swivel_cannon",
+          "age": 4,
+          "civs": [
+            "hr"
+          ],
+          "description": "Springald Ships gain an additional Cannon which fires in 360 degrees.",
+          "classes": [
+            "naval",
+            "technology"
+          ],
+          "displayClasses": [
+            "Naval Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 150,
+            "wood": 0,
+            "stone": 0,
+            "gold": 350,
+            "total": 500,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/swivel-cannon-4.png",
+          "effects": [
+            {
+              "property": "rangedAttack",
+              "select": {
+                "class": [
+                  [
+                    "springald",
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 15,
               "type": "passive"
             }
           ]

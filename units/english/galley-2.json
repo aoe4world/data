@@ -19,27 +19,27 @@
   ],
   "unique": false,
   "costs": {
-    "gold": 162,
-    "wood": 162,
-    "food": 0,
+    "gold": 0,
+    "wood": 135,
+    "food": 81,
     "stone": 0,
-    "total": 324,
-    "time": 40
+    "total": 216,
+    "time": 25
   },
   "producedBy": [
     "dock"
   ],
   "icon": "https://data.aoe4world.com/images/units/galley-3.png",
-  "hitpoints": 550,
+  "hitpoints": 300,
   "weapons": [
     {
       "name": "Bow",
       "type": "ranged",
-      "damage": 10,
-      "speed": 2.5,
+      "damage": 6,
+      "speed": 1.5,
       "range": {
         "min": 0,
-        "max": 5
+        "max": 6.5
       },
       "modifiers": [
         {
@@ -53,14 +53,14 @@
             ]
           },
           "effect": "change",
-          "value": 10,
+          "value": 18,
           "type": "passive"
         }
       ],
       "durations": {
-        "aim": 0.5,
-        "windup": 0.25,
-        "attack": 0.5,
+        "aim": 0,
+        "windup": 0.125,
+        "attack": 0.125,
         "winddown": 0.5,
         "reload": 0.75,
         "setup": 0,
@@ -68,60 +68,23 @@
         "cooldown": 0
       },
       "burst": {
-        "count": 6
+        "count": 5
       },
-      "attribName": "weapon_naval_arrow_ship_arrow_western",
-      "pbgid": 2034308
-    },
-    {
-      "name": "Bombard",
-      "type": "ranged",
-      "damage": 70,
-      "speed": 7.375,
-      "range": {
-        "min": 0,
-        "max": 7.5
-      },
-      "modifiers": [
-        {
-          "property": "rangedAttack",
-          "target": {
-            "class": [
-              [
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 30,
-          "type": "passive"
-        }
-      ],
-      "durations": {
-        "aim": 0.5,
-        "windup": 0,
-        "attack": 0.125,
-        "winddown": 1.75,
-        "reload": 5,
-        "setup": 0,
-        "teardown": 0,
-        "cooldown": 0
-      },
-      "attribName": "weapon_naval_war_galley_bombard",
-      "pbgid": 196870
+      "attribName": "weapon_naval_arrow_ship_arrow",
+      "pbgid": 2034306
     }
   ],
   "armor": [
     {
       "type": "ranged",
-      "value": 5
+      "value": 1
     }
   ],
   "sight": {
-    "line": 40,
+    "line": 48,
     "height": 10
   },
   "movement": {
-    "speed": 1.375
+    "speed": 1.75
   }
 }

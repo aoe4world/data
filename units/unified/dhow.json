@@ -6,7 +6,8 @@
   "type": "unit",
   "civs": [
     "ab",
-    "de"
+    "de",
+    "ot"
   ],
   "unique": false,
   "displayClasses": [
@@ -41,28 +42,28 @@
       ],
       "unique": false,
       "costs": {
-        "food": 0,
-        "wood": 180,
+        "food": 90,
+        "wood": 150,
         "stone": 0,
-        "gold": 90,
-        "total": 270,
-        "popcap": 2,
-        "time": 40
+        "gold": 0,
+        "total": 240,
+        "popcap": 3,
+        "time": 25
       },
       "producedBy": [
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/dhow-2.png",
-      "hitpoints": 500,
+      "hitpoints": 300,
       "weapons": [
         {
           "name": "Bow",
           "type": "ranged",
-          "damage": 10,
-          "speed": 2.5,
+          "damage": 6,
+          "speed": 1.5,
           "range": {
             "min": 0,
-            "max": 3.75
+            "max": 6.5
           },
           "modifiers": [
             {
@@ -76,39 +77,39 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 18,
               "type": "passive"
             }
           ],
           "durations": {
             "aim": 0,
-            "windup": 0,
-            "attack": 0.25,
+            "windup": 0.125,
+            "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 0.75,
             "setup": 0,
             "teardown": 0,
             "cooldown": 0
           },
           "burst": {
-            "count": 4
+            "count": 5
           },
-          "attribName": "weapon_naval_dhow_arrow_sul",
-          "pbgid": 2037053
+          "attribName": "weapon_naval_arrow_ship_arrow",
+          "pbgid": 2034306
         }
       ],
       "armor": [
         {
           "type": "ranged",
-          "value": 4
+          "value": 1
         }
       ],
       "sight": {
-        "line": 44,
+        "line": 48,
         "height": 10
       },
       "movement": {
-        "speed": 1.875
+        "speed": 1.75
       }
     },
     {
@@ -132,28 +133,28 @@
       ],
       "unique": false,
       "costs": {
-        "food": 0,
-        "wood": 180,
+        "food": 90,
+        "wood": 150,
         "stone": 0,
-        "gold": 90,
-        "total": 270,
-        "popcap": 2,
-        "time": 40
+        "gold": 0,
+        "total": 240,
+        "popcap": 3,
+        "time": 25
       },
       "producedBy": [
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/dhow-2.png",
-      "hitpoints": 500,
+      "hitpoints": 300,
       "weapons": [
         {
           "name": "Bow",
           "type": "ranged",
-          "damage": 10,
-          "speed": 2.5,
+          "damage": 6,
+          "speed": 1.5,
           "range": {
             "min": 0,
-            "max": 3.75
+            "max": 6.5
           },
           "modifiers": [
             {
@@ -167,39 +168,130 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 18,
               "type": "passive"
             }
           ],
           "durations": {
             "aim": 0,
-            "windup": 0,
-            "attack": 0.25,
+            "windup": 0.125,
+            "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 0.75,
             "setup": 0,
             "teardown": 0,
             "cooldown": 0
           },
           "burst": {
-            "count": 4
+            "count": 5
           },
-          "attribName": "weapon_naval_dhow_arrow_abb",
-          "pbgid": 2037052
+          "attribName": "weapon_naval_arrow_ship_arrow",
+          "pbgid": 2034306
         }
       ],
       "armor": [
         {
           "type": "ranged",
-          "value": 4
+          "value": 1
         }
       ],
       "sight": {
-        "line": 44,
+        "line": 48,
         "height": 10
       },
       "movement": {
-        "speed": 1.875
+        "speed": 1.75
+      }
+    },
+    {
+      "id": "dhow-2",
+      "baseId": "dhow",
+      "type": "unit",
+      "name": "Dhow",
+      "pbgid": 2101917,
+      "attribName": "unit_naval_dhow_2_ott",
+      "age": 2,
+      "civs": [
+        "ot"
+      ],
+      "description": "Light war vessel armed with a crew of archers.\n+ Increased maneuverability and speed.\n+ Benefits from ranged damage Blacksmith technology",
+      "classes": [
+        "archer",
+        "ship"
+      ],
+      "displayClasses": [
+        "Archer Ship"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 90,
+        "wood": 150,
+        "stone": 0,
+        "gold": 0,
+        "total": 240,
+        "popcap": 3,
+        "time": 25
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/dhow-2.png",
+      "hitpoints": 300,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 6.5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "fireship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 18,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.125,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 5
+          },
+          "attribName": "weapon_naval_arrow_ship_arrow",
+          "pbgid": 2034306
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 1
+        }
+      ],
+      "sight": {
+        "line": 48,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.75
       }
     }
   ]

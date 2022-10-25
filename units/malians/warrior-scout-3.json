@@ -1,0 +1,144 @@
+{
+  "id": "warrior-scout-3",
+  "baseId": "warrior-scout",
+  "type": "unit",
+  "name": "Veteran Warrior Scout",
+  "pbgid": 2073646,
+  "attribName": "unit_scout_3_mal",
+  "age": 3,
+  "civs": [
+    "ma"
+  ],
+  "description": "Fast cavalry effective at raiding, exploring the world, hunting wildlife, and herding Sheep.\n+ Increased health regeneration\n+ Increased move speed\n+ Able to see into Stealth Forests\n- Weak in combat",
+  "classes": [
+    "light",
+    "melee",
+    "cavalry"
+  ],
+  "displayClasses": [
+    "Light Melee Cavalry"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 90,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "total": 90,
+    "popcap": 1,
+    "time": 15
+  },
+  "producedBy": [
+    "stable",
+    "town-center",
+    "capital-town-center"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/warrior-scout-3.png",
+  "hitpoints": 130,
+  "weapons": [
+    {
+      "name": "Tamba",
+      "type": "melee",
+      "damage": 9,
+      "speed": 2,
+      "range": {
+        "min": 0,
+        "max": 0.2875
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "scout"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.375,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.5
+      },
+      "attribName": "weapon_scout_3_mal",
+      "pbgid": 2074533
+    },
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 3,
+      "speed": 1.75,
+      "range": {
+        "min": 0,
+        "max": 2.875
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0.125,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 1,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_scout_hunt_ranged_1",
+      "pbgid": 174090
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch",
+      "pbgid": 123518
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "line": 41,
+    "height": 501
+  },
+  "movement": {
+    "speed": 1.875
+  }
+}

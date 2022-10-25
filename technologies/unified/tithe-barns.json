@@ -11,7 +11,9 @@
     "en",
     "fr",
     "hr",
+    "ma",
     "mo",
+    "ot",
     "ru"
   ],
   "unique": false,
@@ -282,13 +284,63 @@
       "baseId": "tithe-barns",
       "type": "technology",
       "name": "Tithe Barns",
-      "pbgid": 129407,
-      "attribName": "upgrade_unit_religious_tithe_barn_4",
+      "pbgid": 2103125,
+      "attribName": "upgrade_unit_religious_tithe_barn_4_abb",
       "age": 4,
       "civs": [
         "ab"
       ],
-      "description": "Relics placed in a Monastery provide an income of +30 Food, +30 Wood, and +30 Stone every minute.",
+      "description": "Relics placed in a Mosque provide an income of +30 Food, +30 Wood, and +30 Stone every minute.",
+      "classes": [
+        "religious",
+        "technology"
+      ],
+      "displayClasses": [
+        "Religious Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 500,
+        "total": 500,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "mosque"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/tithe-barns-4.png",
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "monastery",
+              "mosque",
+              "prayer-tent",
+              "regnitz-cathedral"
+            ]
+          },
+          "effect": "change",
+          "value": 30,
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "tithe-barns-4",
+      "baseId": "tithe-barns",
+      "type": "technology",
+      "name": "Tithe Barns",
+      "pbgid": 2104275,
+      "attribName": "upgrade_unit_religious_tithe_barn_4_mal",
+      "age": 4,
+      "civs": [
+        "ma"
+      ],
+      "description": "Relics placed in a Mosque provide an income of +30 Food, +30 Wood, and +30 Stone every minute.",
       "classes": [
         "religious",
         "technology"
@@ -358,6 +410,56 @@
       },
       "producedBy": [
         "prayer-tent"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/tithe-barns-4.png",
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "monastery",
+              "mosque",
+              "prayer-tent",
+              "regnitz-cathedral"
+            ]
+          },
+          "effect": "change",
+          "value": 30,
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "tithe-barns-4",
+      "baseId": "tithe-barns",
+      "type": "technology",
+      "name": "Tithe Barns",
+      "pbgid": 2104276,
+      "attribName": "upgrade_unit_religious_tithe_barn_4_ott",
+      "age": 4,
+      "civs": [
+        "ot"
+      ],
+      "description": "Relics placed in a Mosque provide an income of +30 Food, +30 Wood, and +30 Stone every minute.",
+      "classes": [
+        "religious",
+        "technology"
+      ],
+      "displayClasses": [
+        "Religious Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 500,
+        "total": 500,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "mosque"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/tithe-barns-4.png",
       "effects": [

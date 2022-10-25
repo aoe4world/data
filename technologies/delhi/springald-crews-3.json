@@ -1,0 +1,64 @@
+{
+  "id": "springald-crews-3",
+  "baseId": "springald-crews",
+  "type": "technology",
+  "name": "Springald Crews",
+  "pbgid": 2101972,
+  "attribName": "upgrade_naval_springald_ship_upgrade_1_sul",
+  "age": 3,
+  "civs": [
+    "de"
+  ],
+  "description": "Springald Ships gain +1 range and attack 20% faster.",
+  "classes": [
+    "naval",
+    "technology"
+  ],
+  "displayClasses": [
+    "Naval Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "total": 0,
+    "popcap": 0,
+    "time": 175
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
+  "effects": [
+    {
+      "property": "maxRange",
+      "select": {
+        "class": [
+          [
+            "springald",
+            "ship"
+          ]
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "passive"
+    },
+    {
+      "property": "attackSpeed",
+      "select": {
+        "class": [
+          [
+            "springald",
+            "ship"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.8,
+      "type": "passive"
+    }
+  ]
+}

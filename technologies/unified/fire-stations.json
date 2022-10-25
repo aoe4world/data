@@ -17,7 +17,7 @@
   ],
   "minAge": 2,
   "icon": "https://data.aoe4world.com/images/technologies/fire-stations-2.png",
-  "description": "Increase the repair rate of Docks by +100%.",
+  "description": "Military Ships regenerate +1 health every 2 seconds when out of combat.",
   "variations": [
     {
       "id": "fire-stations-2",
@@ -30,7 +30,7 @@
       "civs": [
         "hr"
       ],
-      "description": "Increase the repair rate of Docks by +100%.",
+      "description": "Military Ships regenerate +1 health every 2 seconds when out of combat.",
       "classes": [
         "naval",
         "technology"
@@ -40,13 +40,13 @@
       ],
       "unique": true,
       "costs": {
-        "food": 50,
+        "food": 100,
         "wood": 0,
         "stone": 0,
-        "gold": 125,
-        "total": 175,
+        "gold": 250,
+        "total": 350,
         "popcap": 0,
-        "time": 45
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -54,14 +54,32 @@
       "icon": "https://data.aoe4world.com/images/technologies/fire-stations-2.png",
       "effects": [
         {
-          "property": "repairRate",
+          "property": "healingRate",
           "select": {
+            "class": [
+              [
+                "ship",
+                "springald"
+              ],
+              [
+                "ship",
+                "archer"
+              ],
+              [
+                "ship",
+                "incendiary"
+              ],
+              [
+                "warship"
+              ]
+            ],
             "id": [
-              "dock"
+              "galleass",
+              "grand-galley"
             ]
           },
           "effect": "change",
-          "value": 100,
+          "value": 1,
           "type": "passive"
         }
       ]

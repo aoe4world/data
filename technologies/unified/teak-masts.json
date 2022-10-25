@@ -16,8 +16,8 @@
     "technology"
   ],
   "minAge": 3,
-  "icon": "https://data.aoe4world.com/images/technologies/teak-masts-2.png",
-  "description": "Increase the health of Dhows by +100.",
+  "icon": "https://data.aoe4world.com/images/technologies/teak-masts-3.png",
+  "description": "Increase the move speed of military ships +10.",
   "variations": [
     {
       "id": "teak-masts-3",
@@ -30,7 +30,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Increase the health of Dhows by +100.",
+      "description": "Increase the move speed of military ships +10.",
       "classes": [
         "naval",
         "technology"
@@ -40,28 +40,46 @@
       ],
       "unique": true,
       "costs": {
-        "food": 100,
-        "wood": 0,
+        "food": 0,
+        "wood": 200,
         "stone": 0,
-        "gold": 250,
-        "total": 350,
+        "gold": 300,
+        "total": 500,
         "popcap": 0,
-        "time": 60
+        "time": 40
       },
       "producedBy": [
         "dock"
       ],
-      "icon": "https://data.aoe4world.com/images/technologies/teak-masts-2.png",
+      "icon": "https://data.aoe4world.com/images/technologies/teak-masts-3.png",
       "effects": [
         {
-          "property": "hitpoints",
+          "property": "moveSpeed",
           "select": {
+            "class": [
+              [
+                "ship",
+                "springald"
+              ],
+              [
+                "ship",
+                "archer"
+              ],
+              [
+                "ship",
+                "incendiary"
+              ],
+              [
+                "warship"
+              ]
+            ],
             "id": [
-              "dhow"
+              "galleass",
+              "grand-galley"
             ]
           },
           "effect": "change",
-          "value": 100,
+          "value": 0.8999999999999999,
           "type": "passive"
         }
       ]

@@ -1,0 +1,63 @@
+{
+  "id": "military-academy-3",
+  "baseId": "military-academy",
+  "type": "technology",
+  "name": "Military Academy",
+  "pbgid": 128454,
+  "attribName": "upgrade_tech_military_academy",
+  "age": 3,
+  "civs": [
+    "ma"
+  ],
+  "description": "Increase the production speed of infantry, cavalry, siege, and transport units at buildings by 33%.\nDoes not affect religious units or other support units.",
+  "classes": [
+    "production",
+    "technology"
+  ],
+  "displayClasses": [
+    "Production Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 100,
+    "stone": 0,
+    "gold": 250,
+    "total": 350,
+    "popcap": 0,
+    "time": 60
+  },
+  "producedBy": [
+    "blacksmith"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/military-academy-3.png",
+  "effects": [
+    {
+      "property": "buildTime",
+      "select": {
+        "class": [
+          [
+            "infantry"
+          ],
+          [
+            "melee",
+            "cavalry"
+          ],
+          [
+            "ranged",
+            "cavalry"
+          ],
+          [
+            "siege"
+          ],
+          [
+            "transport"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.8,
+      "type": "passive"
+    }
+  ]
+}

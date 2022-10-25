@@ -11,59 +11,36 @@
   ],
   "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
   "classes": [
-    "attack",
+    "springald",
     "ship"
   ],
   "displayClasses": [
-    "Attack Ship"
+    "Springald Ship"
   ],
   "unique": false,
   "costs": {
-    "food": 0,
-    "wood": 240,
+    "food": 120,
+    "wood": 200,
     "stone": 0,
-    "gold": 180,
-    "total": 420,
-    "popcap": 4,
-    "time": 45
+    "gold": 30,
+    "total": 350,
+    "popcap": 3,
+    "time": 30
   },
   "producedBy": [
     "dock"
   ],
   "icon": "https://data.aoe4world.com/images/units/baghlah-2.png",
-  "hitpoints": 900,
+  "hitpoints": 450,
   "weapons": [
     {
       "name": "Ballista",
       "type": "ranged",
-      "damage": 70,
-      "speed": 3.875,
+      "damage": 35,
+      "speed": 4.125,
       "range": {
         "min": 0,
-        "max": 5
-      },
-      "modifiers": [],
-      "durations": {
-        "aim": 0.5,
-        "windup": 0.25,
-        "attack": 0.125,
-        "winddown": 0.5,
-        "reload": 2.5,
-        "setup": 0,
-        "teardown": 0,
-        "cooldown": 0
-      },
-      "attribName": "weapon_naval_combat_ship_crossbow_eastern",
-      "pbgid": 2034160
-    },
-    {
-      "name": "Bow",
-      "type": "ranged",
-      "damage": 10,
-      "speed": 4.25,
-      "range": {
-        "min": 0,
-        "max": 5
+        "max": 6
       },
       "modifiers": [
         {
@@ -71,44 +48,54 @@
           "target": {
             "class": [
               [
-                "naval",
-                "fireship"
+                "archer",
+                "ship"
               ]
             ]
           },
           "effect": "change",
-          "value": 5,
+          "value": 40,
+          "type": "passive"
+        },
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 45,
           "type": "passive"
         }
       ],
       "durations": {
         "aim": 0.5,
         "windup": 0.25,
-        "attack": 0.5,
-        "winddown": 1,
-        "reload": 2,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 2.75,
         "setup": 0,
         "teardown": 0,
         "cooldown": 0
       },
-      "burst": {
-        "count": 5
-      },
-      "attribName": "weapon_naval_combat_ship_arrow_abb",
-      "pbgid": 2034177
+      "attribName": "weapon_naval_combat_ship_springald",
+      "pbgid": 2102494
     }
   ],
   "armor": [
     {
       "type": "ranged",
-      "value": 4
+      "value": 3
     }
   ],
   "sight": {
-    "line": 38,
+    "line": 45,
     "height": 10
   },
   "movement": {
-    "speed": 1.25
+    "speed": 1.375
   }
 }

@@ -6,6 +6,8 @@ export type ItemClass =
   | "infantry"
   | "cavalry"
   | "ship"
+  | "archer"
+  | "springald"
   | "attack"
   | "incendiary"
   | "warship"

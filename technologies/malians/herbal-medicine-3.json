@@ -1,0 +1,52 @@
+{
+  "id": "herbal-medicine-3",
+  "baseId": "herbal-medicine",
+  "type": "technology",
+  "name": "Herbal Medicine",
+  "pbgid": 129401,
+  "attribName": "upgrade_unit_religious_herbal_medicine_4",
+  "age": 3,
+  "civs": [
+    "ma"
+  ],
+  "description": "Increase the healing rate of religious units by +60%.",
+  "classes": [
+    "healing",
+    "technology"
+  ],
+  "displayClasses": [
+    "Healing Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 275,
+    "total": 275,
+    "popcap": 0,
+    "time": 45
+  },
+  "producedBy": [
+    "mosque"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/herbal-medicine-3.png",
+  "effects": [
+    {
+      "property": "healingRate",
+      "select": {
+        "id": [
+          "prelate",
+          "monk",
+          "scholar",
+          "shaman",
+          "imam",
+          "warrior-monk"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.6,
+      "type": "passive"
+    }
+  ]
+}
