@@ -28,6 +28,8 @@ export const ignoreForNow = [
   "ebps/races/mongol/units/campaign/unit_great_trebuchet_cmp_mon",
   "sbps/races/english/unit_wynguard_",
   "ebps/dev/units/unit_siege_cart",
+  "ebps/dev/units/unit_siege_cart",
+  "unit_naval_scout_2_ott", // not actually available in game
   "_double_mon", // all double produced units
   "sbps/races/mongol/unit_knight_2_mon", // is listed in khagenate palace but does not exist in feudal
 ];
