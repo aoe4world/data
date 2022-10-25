@@ -1,6 +1,6 @@
 /** A configuration of technology ids and their modiying effects. */
 
-import { Modifier } from "../../types/items";
+import { Modifier } from "../types/items";
 
 // Common class/id presets
 const common = {

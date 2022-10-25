@@ -1,4 +1,4 @@
-import { CDN_HOST, FOLDERS, IMAGE_FOLDER, ITEM_TYPES } from "../../lib/config";
+import { CDN_HOST, FOLDERS, IMAGE_FOLDER, ITEM_TYPES } from "../lib/config";
 import { ICON_FOLDER } from "./config";
 import fs from "fs/promises";
 import path from "path";

@@ -1,8 +1,8 @@
 import path from "path";
-import { ITEM_TYPES } from "../../lib/config";
-import { CivSlug } from "../../sdk/utils";
+import { ITEM_TYPES } from "../lib/config";
+import { CivSlug } from "../sdk/utils";
 
-export const SOURCE_FOLDER = path.join(__dirname, "../../../source/");
+export const SOURCE_FOLDER = path.join(__dirname, "../../source/");
 export const ATTRIB_FOLDER = path.join(SOURCE_FOLDER, "/attrib");
 export const ICON_FOLDER = path.join(SOURCE_FOLDER, "/icons");
 export const LOCALES_FOLDER = path.join(SOURCE_FOLDER, "/locale");

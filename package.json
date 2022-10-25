@@ -4,19 +4,13 @@
   "description": "Static data files on AOE4 Units, Buildings and more",
   "main": "index.ts",
   "scripts": {
-    "build": "ts-node ./src/scripts/compile.ts",
-    "sync-quicksheet": "ts-node ./src/scripts/aoe4quicksheet/sync.ts",
-    "sync-images": "ts-node ./src/scripts/images/sync.ts",
-    "sync-effects": "ts-node ./src/scripts/effects/sync.ts",
-    "sync-all": "yarn sync-quicksheet && yarn sync-images && yarn sync-effects",
-    "sync-attrib": "ts-node ./src/scripts/attrib/sync.ts",
-    "convert-xml": "ts-node ./src/scripts/attrib/convert.ts",
+    "parse": "ts-node ./src/attrib/run.ts",
+    "build": "ts-node ./src/attrib/compile.ts",
     "format": "prettier --write ./src"
   },
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^17.0.10",
-    "@types/node-fetch": "2",
     "@types/xml2js": "^0.4.11",
     "prettier": "^2.7.1",
     "ts-node": "^10.4.0",
@@ -25,8 +19,5 @@
   },
   "prettier": {
     "printWidth": 180
-  },
-  "dependencies": {
-    "node-fetch": "2"
   }
 }

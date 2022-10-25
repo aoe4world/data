@@ -1,14 +1,14 @@
-import { FOLDERS, ITEM_TYPES } from "../../lib/config";
+import { ITEM_TYPES } from "../lib/config";
 import { getTranslation } from "./translations";
 import { parseXmlFile } from "./xml";
 import { parseWeapons } from "./weapons";
 import { attribFile, ignoreForNow } from "./config";
-import { slugify } from "../../lib/utils/string";
-import { Armor, Building, Item, ItemClass, Technology, Unit, Upgrade } from "../../types/items";
-import { civConfig } from "../../types/civs";
+import { slugify } from "../lib/utils/string";
+import { Armor, Building, Item, ItemClass, Technology, Unit, Upgrade } from "../types/items";
+import { civConfig } from "../types/civs";
 import { useIcon } from "./icons";
-import { technologyModifiers } from "../effects/technologies";
-import { writeTemp } from "./sync";
+import { technologyModifiers } from "./technologies";
+import { writeTemp } from "./run";
 
 export async function parseItemFromAttribFile(file: string, data: any, civ: civConfig, debug = false) {
   const type = guessType(file, data);

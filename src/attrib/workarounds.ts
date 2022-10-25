@@ -1,4 +1,4 @@
-import { Building, Item, ItemType, Technology, Unit } from "../../types/items";
+import { Building, Item, ItemType, Technology, Unit } from "../types/items";
 
 const workarounds = new Map<string, Override>();
 

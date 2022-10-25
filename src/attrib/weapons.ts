@@ -1,6 +1,6 @@
 import path from "path";
 import fs from "fs";
-import { Weapon } from "../../types/items";
+import { Weapon } from "../types/items";
 import { getTranslation } from "./translations";
 import { parseXml } from "./xml";
 import { attribFile } from "./config";
