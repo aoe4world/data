@@ -56,6 +56,10 @@ async function buildTechTree(civ: civConfig, debug = false) {
         }
       }
 
+    if (items.has(item.id)) {
+      throw new Error(`Duplicate item id ${item.id} in ${file} conflicts with ${items.get(item.id)!.attribName}`);
+    }
+
     items.set(item.id, item);
     filesToItemId.set(file, item.id);
 

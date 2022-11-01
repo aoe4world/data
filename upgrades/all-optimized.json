@@ -1221,13 +1221,10 @@
         },
         {
           "id": "elite-archers-4",
-          "pbgid": 2088993,
-          "attribName": "upgrade_unit_archer_4_farimba_mal",
+          "pbgid": 2074107,
+          "attribName": "upgrade_unit_archer_4_mal",
           "civs": [
             "ma"
-          ],
-          "producedBy": [
-            "farimba-garrison"
           ]
         },
         {
@@ -1533,8 +1530,8 @@
         },
         {
           "id": "veteran-archers-3",
-          "pbgid": 2088992,
-          "attribName": "upgrade_unit_archer_3_farimba_mal",
+          "pbgid": 2074106,
+          "attribName": "upgrade_unit_archer_3_mal",
           "civs": [
             "ma"
           ],
@@ -1546,10 +1543,7 @@
             "total": 175,
             "popcap": 0,
             "time": 30
-          },
-          "producedBy": [
-            "farimba-garrison"
-          ]
+          }
         },
         {
           "id": "veteran-archers-3",
@@ -2189,98 +2183,6 @@
       "shared": {}
     },
     {
-      "id": "-translation-not-found",
-      "name": "Warrior Scout",
-      "type": "upgrade",
-      "civs": [
-        "ma"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Cavalry Technology"
-      ],
-      "classes": [
-        "cavalry",
-        "technology"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/upgrades/-translation-not-found-2.png",
-      "description": "(translation not found)",
-      "variations": [
-        {
-          "id": "-translation-not-found-2",
-          "pbgid": 2073303,
-          "attribName": "upgrade_unit_scout_mal_2",
-          "civs": [
-            "ma"
-          ]
-        },
-        {
-          "id": "-translation-not-found-3",
-          "pbgid": 2073304,
-          "attribName": "upgrade_unit_scout_mal_3",
-          "civs": [
-            "ma"
-          ]
-        },
-        {
-          "id": "-translation-not-found-4",
-          "pbgid": 2073305,
-          "attribName": "upgrade_unit_scout_mal_4",
-          "civs": [
-            "ma"
-          ]
-        }
-      ],
-      "baseId": "-translation-not-found",
-      "age": 2,
-      "costs": {
-        "food": 15,
-        "wood": 0,
-        "stone": 0,
-        "gold": 35,
-        "total": 50,
-        "popcap": 0,
-        "time": 15
-      },
-      "producedBy": [
-        "stable"
-      ],
-      "unlocks": "",
-      "shared": {
-        "-translation-not-found-3": {
-          "name": "Veteran Warrior Scout",
-          "age": 3,
-          "costs": {
-            "food": 50,
-            "wood": 0,
-            "stone": 0,
-            "gold": 125,
-            "total": 175,
-            "popcap": 0,
-            "time": 30
-          },
-          "icon": "https://data.aoe4world.com/images/upgrades/-translation-not-found-3.png",
-          "id": "-translation-not-found-3"
-        },
-        "-translation-not-found-4": {
-          "name": "Elite Warrior Scout",
-          "age": 4,
-          "costs": {
-            "food": 300,
-            "wood": 0,
-            "stone": 0,
-            "gold": 700,
-            "total": 1000,
-            "popcap": 0,
-            "time": 60
-          },
-          "icon": "https://data.aoe4world.com/images/upgrades/-translation-not-found-4.png",
-          "id": "-translation-not-found-4"
-        }
-      }
-    },
-    {
       "id": "elite-donso",
       "name": "Upgrade to Elite",
       "type": "upgrade",
@@ -2365,8 +2267,8 @@
           "baseId": "elite-javelin-thrower",
           "type": "upgrade",
           "name": "Upgrade to Elite",
-          "pbgid": 2088989,
-          "attribName": "upgrade_unit_javelin_4_farimba_mal",
+          "pbgid": 2062113,
+          "attribName": "upgrade_unit_javelin_4_mal",
           "age": 4,
           "civs": [
             "ma"
@@ -2391,7 +2293,7 @@
             "time": 60
           },
           "producedBy": [
-            "farimba-garrison"
+            "archery-range"
           ],
           "icon": "https://data.aoe4world.com/images/upgrades/elite-javelin-thrower-4.png",
           "unlocks": ""
@@ -2519,6 +2421,63 @@
       "shared": {}
     },
     {
+      "id": "elite-warrior-scout",
+      "name": "Elite Warrior Scout",
+      "type": "upgrade",
+      "civs": [
+        "ma"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Cavalry Technology"
+      ],
+      "classes": [
+        "cavalry",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/upgrades/elite-warrior-scout-4.png",
+      "description": "Upgrade Veteran Warrior Scout to Elite Warrior Scout",
+      "variations": [
+        {
+          "id": "elite-warrior-scout-4",
+          "baseId": "elite-warrior-scout",
+          "type": "upgrade",
+          "name": "Elite Warrior Scout",
+          "pbgid": 2073305,
+          "attribName": "upgrade_unit_scout_mal_4",
+          "age": 4,
+          "civs": [
+            "ma"
+          ],
+          "description": "Upgrade Veteran Warrior Scout to Elite Warrior Scout",
+          "classes": [
+            "cavalry",
+            "technology"
+          ],
+          "displayClasses": [
+            "Cavalry Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 300,
+            "wood": 0,
+            "stone": 0,
+            "gold": 700,
+            "total": 1000,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "stable"
+          ],
+          "icon": "https://data.aoe4world.com/images/upgrades/elite-warrior-scout-4.png",
+          "unlocks": ""
+        }
+      ],
+      "shared": {}
+    },
+    {
       "id": "hardened-donso",
       "name": "Upgrade to Hardened",
       "type": "upgrade",
@@ -2573,6 +2532,63 @@
             "farimba-garrison"
           ],
           "icon": "https://data.aoe4world.com/images/upgrades/hardened-donso-2.png",
+          "unlocks": ""
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "upgrade-warrior-scout",
+      "name": "Warrior Scout",
+      "type": "upgrade",
+      "civs": [
+        "ma"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Cavalry Technology"
+      ],
+      "classes": [
+        "cavalry",
+        "technology"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/upgrades/warrior-scout-2.png",
+      "description": "Upgrade Scout to Warrior Scout",
+      "variations": [
+        {
+          "id": "upgrade-warrior-scout-2",
+          "baseId": "upgrade-warrior-scout",
+          "type": "upgrade",
+          "name": "Warrior Scout",
+          "pbgid": 2073303,
+          "attribName": "upgrade_unit_scout_mal_2",
+          "age": 2,
+          "civs": [
+            "ma"
+          ],
+          "description": "Upgrade Scout to Warrior Scout",
+          "classes": [
+            "cavalry",
+            "technology"
+          ],
+          "displayClasses": [
+            "Cavalry Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 15,
+            "wood": 0,
+            "stone": 0,
+            "gold": 35,
+            "total": 50,
+            "popcap": 0,
+            "time": 15
+          },
+          "producedBy": [
+            "stable"
+          ],
+          "icon": "https://data.aoe4world.com/images/upgrades/warrior-scout-2.png",
           "unlocks": ""
         }
       ],
@@ -2663,8 +2679,8 @@
           "baseId": "veteran-javelin-thrower",
           "type": "upgrade",
           "name": "Upgrade to Veteran",
-          "pbgid": 2088988,
-          "attribName": "upgrade_unit_javelin_3_farimba_mal",
+          "pbgid": 2062114,
+          "attribName": "upgrade_unit_javelin_3_mal",
           "age": 3,
           "civs": [
             "ma"
@@ -2689,7 +2705,7 @@
             "time": 30
           },
           "producedBy": [
-            "farimba-garrison"
+            "archery-range"
           ],
           "icon": "https://data.aoe4world.com/images/upgrades/veteran-javelin-thrower-3.png",
           "unlocks": ""
@@ -2811,6 +2827,63 @@
             "stable"
           ],
           "icon": "https://data.aoe4world.com/images/upgrades/veteran-sofa-3.png",
+          "unlocks": ""
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "veteran-warrior-scout",
+      "name": "Veteran Warrior Scout",
+      "type": "upgrade",
+      "civs": [
+        "ma"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Cavalry Technology"
+      ],
+      "classes": [
+        "cavalry",
+        "technology"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/upgrades/veteran-warrior-scout-3.png",
+      "description": "Upgrade Warrior Scout to Veteran Warrior Scout",
+      "variations": [
+        {
+          "id": "veteran-warrior-scout-3",
+          "baseId": "veteran-warrior-scout",
+          "type": "upgrade",
+          "name": "Veteran Warrior Scout",
+          "pbgid": 2073304,
+          "attribName": "upgrade_unit_scout_mal_3",
+          "age": 3,
+          "civs": [
+            "ma"
+          ],
+          "description": "Upgrade Warrior Scout to Veteran Warrior Scout",
+          "classes": [
+            "cavalry",
+            "technology"
+          ],
+          "displayClasses": [
+            "Cavalry Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 50,
+            "wood": 0,
+            "stone": 0,
+            "gold": 125,
+            "total": 175,
+            "popcap": 0,
+            "time": 30
+          },
+          "producedBy": [
+            "stable"
+          ],
+          "icon": "https://data.aoe4world.com/images/upgrades/veteran-warrior-scout-3.png",
           "unlocks": ""
         }
       ],

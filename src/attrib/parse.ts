@@ -1,5 +1,5 @@
 import { ITEM_TYPES } from "../lib/config";
-import { getTranslation } from "./translations";
+import { getTranslation, NO_TRANSLATION_FOUND } from "./translations";
 import { parseXmlFile } from "./xml";
 import { parseWeapons } from "./weapons";
 import { attribFile, ignoreForNow } from "./config";
@@ -13,7 +13,7 @@ import { writeTemp } from "./run";
 export async function parseItemFromAttribFile(file: string, data: any, civ: civConfig, debug = false) {
   const type = guessType(file, data);
 
-  if (ignoreForNow.some((i) => file.includes(i))) {
+  if (ignoreForNow.some((i) => (typeof i == "function" ? i(file) : file.includes(i)))) {
     if (debug) console.log(`Ignoring ${file} for now`);
     return undefined;
   }
@@ -23,6 +23,8 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
     return undefined;
   }
 
+  if (debug) writeTemp(data, file.split("/").join("_"));
+
   try {
     let ebpextensions = data.extensions;
 
@@ -30,7 +32,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
     const unitEbps = loadout?.type;
     if (unitEbps) {
       const ebps = await parseXmlFile(attribFile(unitEbps));
-      if (debug) writeTemp(ebps, "ebps_" + unitEbps.split("/").pop()!);
+      if (debug) writeTemp(ebps, unitEbps.split("/").join("_"));
       ebpextensions = ebps?.extensions;
     }
 
@@ -174,7 +176,7 @@ function guessType(file: string, data: any) {
 
 function getBasedId(name: string, type: ITEM_TYPES, description) {
   let baseId = slugify(name).trim();
-  if (type === ITEM_TYPES.UPGRADES) baseId = slugify(description).trim().split("-to-").pop()!;
+  if (type === ITEM_TYPES.UPGRADES && description != NO_TRANSLATION_FOUND) baseId = slugify(description).trim().split("-to-").pop()!;
   if (type == ITEM_TYPES.UNITS) baseId = baseId.replace(/^(early|vanguard|veteran|elite|hardened)\-/, "");
   return baseId;
 }
@@ -184,12 +186,14 @@ function findExt(data: any, key: string, value: string) {
 }
 
 function parseDescription(ui_ext: any) {
-  return ui_ext.help_text_formatter
+  const translation = !!ui_ext.help_text_formatter?.formatter
     ? getTranslation(
         ui_ext.help_text_formatter.formatter,
         ui_ext.help_text_formatter.formatter_arguments.map((x) => Object.values(x)[0])
       )
     : getTranslation(ui_ext.help_text);
+  if (translation === NO_TRANSLATION_FOUND) throw new Error("No translation found for " + ui_ext.help_text);
+  return translation;
 }
 
 function parseHitpoints(health_ext: any) {
