@@ -1,4 +1,4 @@
-import { Building, Item, ItemType, Technology, Unit } from "../types/items";
+import { Building, Item, ItemType, Technology, Unit, Upgrade } from "../types/items";
 
 const workarounds = new Map<string, Override>();
 
@@ -133,6 +133,10 @@ workaround("Make Rus Castle Turret and Castle Watch available from Fuedal Age", 
 
 workaround("Make Rus Mounted Precision available from Imperial Age", {
   ...overrideAge(["mounted-precision"], 4, ["ru"]),
+});
+
+workaround("Make Rus Stone Walls available from Imperial Age", {
+  ...overrideAge(["stone-wall", "stone-wall-tower", "stone-wall-gate"], 4, ["ru"]),
 });
 
 workaround("Make Abbasid Teak Masts available from Castle Age", {
@@ -314,6 +318,15 @@ workaround("Remove costs from Mongol Khan", {
   mutator: (item) => {
     const { time } = item.costs;
     item.costs = { ...NO_COSTS, time };
+  },
+});
+
+workaround("Prefix Malian Scout to Warrior Scout upgrade id so it does not clash with the Warrior Scout Unit", {
+  predicate: (item) => item.type === "upgrade" && item.attribName === "upgrade_unit_scout_mal_2",
+  mutator: (item) => {
+    item = item as Upgrade;
+    item.baseId = "upgrade-warrior-scout";
+    item.id = `${item.baseId}-${item.age}`;
   },
 });
 

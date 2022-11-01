@@ -2,6 +2,7 @@ import path from "path";
 import fs from "fs";
 import { LOCALES_FOLDER } from "./config";
 const dictionary = new Map<string, Map<number, string>>();
+export const NO_TRANSLATION_FOUND = "(translation not found)";
 
 export function getLocale(locale: string) {
   if (!dictionary.has(locale)) {
@@ -16,7 +17,7 @@ export function getLocale(locale: string) {
 
 export function getTranslation(id: number, args: string[] = [], locale = "en") {
   const translation = getLocale(locale)?.get(id);
-  if (!translation) return "(translation not found)";
+  if (!translation) return NO_TRANSLATION_FOUND;
   return interpolateString(translation, args);
 }
 
