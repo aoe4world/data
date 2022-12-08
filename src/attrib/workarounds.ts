@@ -364,7 +364,7 @@ workaround("English Civ Bonus: 'Naval units are 10% cheaper.'", {
 });
 
 workaround("Chinese Civ Bonus: 'Villagers construct defenses 50% faster and all other buildings 100% faster.'", {
-  predicate: (item) => item.civs.includes("ch") && item.attribName!.startsWith("building_"),
+  predicate: (item) => item.civs.includes("ch") && item.attribName!.startsWith("building_") && !["stone-wall", "palisade-wall", "keep", "outpost"].includes(item.baseId), // walls have a custom balanced build time set
   mutator(item) {
     if (item.attribName!.startsWith("building_defense_")) item.costs.time = Math.ceil(item.costs.time / (1 + 0.5));
     else item.costs.time = Math.ceil(item.costs.time / (1 + 1));
