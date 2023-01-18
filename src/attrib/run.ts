@@ -8,24 +8,35 @@ import { civConfig } from "../types/civs";
 import { Item } from "../types/items";
 import { attribFile, hardcodedDiscovery, racesMap } from "./config";
 import { workarounds } from "./workarounds";
-import { parseItemFromAttribFile } from "./parse";
+import { parseItemFromAttribFile, maybeOnKey } from "./parse";
 import { getTranslation as t } from "./translations";
-import { parseXmlFile } from "./xml";
+import { getXmlData, parseXmlFile } from "./xml";
+import { getEssenceData, guessAppropriateEssenceFile } from "./essence";
+
+let getData = getXmlData;
+if (process.argv[2] === "--essence") getData = getEssenceData;
+
+export type RunContext = {
+  debug: boolean;
+  getData: typeof getXmlData | typeof getEssenceData;
+  race: string;
+};
 
 // 1. For each civ, start at their army file
 // 2. Then, follow the villager construction options
 // 3. Then, for each building in their, folllow the building/research options
 // 4. Make a list of all to import items, starting at buildings
 
-async function buildTechTree(civ: civConfig, debug = false) {
+async function buildTechTree(civ: civConfig, context: RunContext = { debug: false, getData, race: racesMap[civ.slug] }) {
+  const techtree = {};
   const files = new Set<string>();
   const items = new Map<string, Item>();
   const filesToItemId = new Map<string, string>();
   const produces = new Map<string, Set<string>>();
+  const { debug, getData, race } = context;
 
-  const race = racesMap[civ.slug];
-  const army = await parseXmlFile(attribFile(`army/${race}`));
-  const bps = await parseXmlFile(attribFile(`racebps/${race}`));
+  const army: any = await parseXmlFile(attribFile(`army/${race}`), context);
+  const bps = await parseXmlFile(attribFile(`racebps/${race}`), context);
 
   const civOverview = getCivInfo(army.army_bag, bps);
   if (civOverview?.overview) writeJson(`${FOLDERS.CIVILIZATIONS.DATA}/${civ.slug}.json`, civOverview, { log: false });
@@ -40,10 +51,10 @@ async function buildTechTree(civ: civConfig, debug = false) {
   async function parseFilesRecursively(file: string) {
     if (!files.has(file)) files.add(file);
     if (filesToItemId.has(file)) return;
-    const data = await parseXmlFile(attribFile(file));
+    const data = await getData(attribFile(file), undefined, context);
     if (debug) writeTemp(data, file);
 
-    const item = await parseItemFromAttribFile(file, data, civ);
+    const item = await parseItemFromAttribFile(file, data, civ, context);
     if (!item) return;
 
     for (const [override, { predicate, mutator, validator }] of workarounds)
@@ -64,7 +75,7 @@ async function buildTechTree(civ: civConfig, debug = false) {
     filesToItemId.set(file, item.id);
 
     const itemProduces = produces.get(item?.baseId!) ?? produces.set(item?.baseId!, new Set()).get(item?.baseId!)!;
-    const discovered = [findConstructables(data), findUpgrades(data), findUnits(data)].flat();
+    const discovered = await tryFindFile(race, [findConstructables(data), findUpgrades(data), findUnits(data)].flat());
     for (const d of discovered) {
       await parseFilesRecursively(d);
       const dId = filesToItemId.get(d)!;
@@ -72,7 +83,7 @@ async function buildTechTree(civ: civConfig, debug = false) {
       if (dItem) {
         dItem.producedBy ??= [];
         dItem.producedBy = [...new Set(dItem.producedBy).add(item.baseId)];
-        itemProduces.add(d.baseId);
+        itemProduces.add(dItem.baseId);
       }
     }
   }
@@ -93,19 +104,31 @@ export function writeTemp(data: any, name: string) {
 }
 
 function findUnits(data: any) {
-  return data?.extensions?.find((x) => x.exts === "ebpextensions/spawner_ext")?.spawn_items?.map((s) => s.spawn_item.squad) ?? [];
+  return data?.extensions?.find((x) => x.exts === "ebpextensions/spawner_ext")?.spawn_items?.map((s) => (s.spawn_item ?? s).squad) ?? [];
 }
 
 function findUpgrades(data: any) {
-  return data?.extensions?.find((x) => x.exts === "ebpextensions/upgrade_ext")?.standard_upgrades?.flatMap((u) => u.upgrade) ?? [];
+  return data?.extensions?.find((x) => x.exts === "ebpextensions/upgrade_ext")?.standard_upgrades?.flatMap((u) => u.upgrade ?? u) ?? [];
 }
 
 function findConstructables(data: any) {
   return (
     data?.extensions
       ?.find((x) => x.squadexts === "sbpextensions/squad_engineer_ext")
-      ?.construction_groups.flatMap((g) => g.construction_group.construction_items.map((i) => i.construction_item.ebp)) ?? []
+      ?.construction_groups.flatMap((g) => (g.construction_group ?? g).construction_items.map((i) => (i.construction_item ?? i).ebp)) ?? []
   );
+}
+
+async function tryFindFile(race: string, paths: string[]) {
+  return (
+    await Promise.all(
+      paths.map((path) => {
+        if (!path) return undefined;
+        if (path.split("/").length <= 2) return guessAppropriateEssenceFile(path, race);
+        return path;
+      })
+    )
+  ).filter(Boolean) as string[];
 }
 
 function getCivInfo(army_bag: any, bps: any) {
@@ -127,7 +150,7 @@ function getCivInfo(army_bag: any, bps: any) {
     description: t(bps.race_bag.description),
     classes: t(army_bag.ui?.one_liner),
     overview,
-  };
+  } as any;
 }
 
 const itemTypeMap = {

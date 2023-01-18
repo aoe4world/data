@@ -167,7 +167,18 @@ Feel free to open PRs or issues for data that is incorrect or missing, if possib
 8. Verify the changes. Specifically, the technology effects are currently compiled from translation parameters, of which the order may change. This can easily be spotted by changes in any technology description field. If they changed, update the parameter order or implementation in `effect.ts`.
 9. Run `yarn build` to update the optimzed json files and library.
 
+#### Updating the data using SGA Archives (& server side patches)
+This project can also work with the JSON output fomr `sga-extract` into `rgd-decode` from the [AOEMods.Essence CLI](https://github.com/aoemods/AOEMods.Essence#cli). This is a bit more involved, but allows you to update the data while using the actual .sga files rather than relying on the developers bundling the `attrib` folder in the game files. 
 
+This is also required for server side patches as they don't update any of the game files inside `cardinal`, but can rather be found as a patch SGA file in `Documents\My Games\Age of Empires IV\OTAPatches`.
+
+For a server side patch, or using the `Attrib.sga` file from the game files (found in `/archives`), you can use the following steps:
+```
+dotnet AOEMods.Essence.CLI.dll sga-unpack ../Attrib.sga ../myattrib
+dotnet AOEMods.Essence.CLI.dll  rgd-decode ../myattrib ../myjsonattrib -b -f json
+```
+
+Put the resulting files in `source/essence/attrib` (note the absence of the `instances` folder). Then run `yarn parse --essence` and `yarn build` as usual. The `--essence` flag will switch the `getData` function used when fetching file data.
 
 ## Credits
 

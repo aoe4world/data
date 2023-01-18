@@ -6,6 +6,7 @@ export const SOURCE_FOLDER = path.join(__dirname, "../../source/");
 export const ATTRIB_FOLDER = path.join(SOURCE_FOLDER, "/attrib");
 export const ICON_FOLDER = path.join(SOURCE_FOLDER, "/icons");
 export const LOCALES_FOLDER = path.join(SOURCE_FOLDER, "/locale");
+export const ESSENCE_FOLDER = path.join(SOURCE_FOLDER, "/essence/attrib");
 
 // Unit files not discovered by sync.ts
 export const hardcodedDiscovery = {
@@ -61,6 +62,7 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "upgrade_barbican_cannon_chi",
   "upgrade_barbican_springald_chi",
   "upgrade_wooden_castle_springald_rus",
+  "upgrade_outpost_landmark_",
   (file) => file.includes("upgrade_outpost_cannon") && !file.includes("upgrade_outpost_cannon_mon"),
   (file) => file.includes("upgrade_outpost_springald") && !file.includes("upgrade_outpost_springald_mon"),
 ];
@@ -102,5 +104,5 @@ export const attribTypes = {
 
 export function attribFile(...paths: string[]) {
   paths[paths.length - 1] = paths.at(-1)?.endsWith(".xml") ? paths.at(-1)! : `${paths.at(-1)}.xml`;
-  return path.join(...[ATTRIB_FOLDER, "instances", ...paths]);
+  return path.join(...paths);
 }

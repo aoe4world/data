@@ -2,24 +2,25 @@ import path from "path";
 import fs from "fs";
 import { Weapon } from "../types/items";
 import { getTranslation } from "./translations";
-import { parseXml } from "./xml";
+import { parseXmlFile } from "./xml";
 import { attribFile } from "./config";
 import { damageMap } from "./parse";
+import { RunContext } from "./run";
 
-export function parseWeapons(combat_ext: any): Promise<Weapon[]> {
+export function parseWeapons(combat_ext: any, context: RunContext): Promise<Weapon[]> {
   const weaponList = (combat_ext?.hardpoints.flatMap((h) =>
-    h.hardpoint.weapon_table.map((w) => ({
-      weapon: w.weapon.non_entity_weapon_wrapper?.non_entity_weapon_wrapper_pbg,
-      attach: w.weapon.weapon_entity_attachment?.entity_attach_data?.ebp,
+    (h.hardpoint?.weapon_table ?? h.weapon_table)?.map((w) => ({
+      weapon: (w.weapon ?? w).non_entity_weapon_wrapper?.non_entity_weapon_wrapper_pbg,
+      attach: (w.weapon?.weapon_entity_attachment ?? w.weapon ?? w)?.entity_attach_data?.ebp,
     }))
   ) ?? []) as { weapon?: string; attach?: string }[];
 
   const weapons = weaponList.map(async (ref) => {
-    if (ref.weapon) return parseWeapon(ref.weapon);
-    if (ref.attach) {
-      const file = await parseXml(fs.promises.readFile(attribFile(ref.attach), "utf8"));
-      const weaponFile = file.extensions.find((x) => x.exts == "ebpextensions/weapon_ext")?.weapon;
-      return parseWeapon(weaponFile);
+    if (ref?.weapon) return parseWeapon(ref.weapon, context);
+    if (ref?.attach) {
+      const file = await context.getData(attribFile(ref.attach), undefined, context);
+      const weaponFile = file!.extensions.find((x) => x.exts == "ebpextensions/weapon_ext")?.weapon;
+      return parseWeapon(weaponFile, context);
     }
     return undefined;
   }, [] as Promise<Weapon>[]);
@@ -27,9 +28,9 @@ export function parseWeapons(combat_ext: any): Promise<Weapon[]> {
   return oneWeaponPerType(weapons);
 }
 
-async function parseWeapon(file: string): Promise<Weapon> {
-  const weapon = await parseXml(fs.promises.readFile(attribFile(file), "utf8"));
-  fs.writeFileSync(path.join(__dirname, "/.temp", file.split("/").pop()! + ".json"), JSON.stringify(weapon, null, 2));
+async function parseWeapon(file: string, context: RunContext): Promise<Weapon> {
+  const weapon: any = await context.getData(attribFile(file), undefined, context);
+  if (context.debug) fs.writeFileSync(path.join(__dirname, "/.temp", file.split("/").pop()! + ".json"), JSON.stringify(weapon ?? {}, null, 2));
 
   const name = getTranslation(weapon.weapon_bag.ui_name);
 
@@ -40,10 +41,10 @@ async function parseWeapon(file: string): Promise<Weapon> {
   const modifiers = weapon.weapon_bag.target_type_table.map((x) => ({
     property: `${type}Attack`,
     target: {
-      class: [x.target_unit_type_multipliers.unit_type?.split("_")],
+      class: [(x.target_unit_type_multipliers ?? x).unit_type?.split("_")],
     },
     effect: "change",
-    value: x.target_unit_type_multipliers.base_damage_modifier,
+    value: (x.target_unit_type_multipliers ?? x).base_damage_modifier,
     type: "passive",
   }));
 
@@ -88,7 +89,12 @@ async function parseWeapon(file: string): Promise<Weapon> {
 // used in the game, so this is the best we can do for now
 async function oneWeaponPerType(weapons: Promise<Weapon | undefined>[]): Promise<Weapon[]> {
   const wps = await Promise.all(weapons);
-  const types = new Set(wps.filter(Boolean).map((w) => w!.type));
+  const types = new Set(
+    wps
+      .filter(Boolean)
+      .reverse()
+      .map((w) => w!.type)
+  );
   return wps.filter(Boolean) as Weapon[];
 }
 

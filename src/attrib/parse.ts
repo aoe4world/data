@@ -8,10 +8,11 @@ import { Armor, Building, Item, ItemClass, Technology, Unit, Upgrade } from "../
 import { civConfig } from "../types/civs";
 import { useIcon } from "./icons";
 import { technologyModifiers } from "./technologies";
-import { writeTemp } from "./run";
+import { RunContext, writeTemp } from "./run";
 
-export async function parseItemFromAttribFile(file: string, data: any, civ: civConfig, debug = false) {
+export async function parseItemFromAttribFile(file: string, data: any, civ: civConfig, context: RunContext) {
   const type = guessType(file, data);
+  const { debug, getData } = context;
 
   if (ignoreForNow.some((i) => (typeof i == "function" ? i(file) : file.includes(i)))) {
     if (debug) console.log(`Ignoring ${file} for now`);
@@ -28,27 +29,27 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
   try {
     let ebpextensions = data.extensions;
 
-    const loadout = findExt(data, "squadexts", "sbpextensions/squad_loadout_ext")?.unit_list[0].loadout_data;
+    const loadout = maybeOnKey(findExt(data, "squadexts", "sbpextensions/squad_loadout_ext")?.unit_list[0], "loadout_data");
     const unitEbps = loadout?.type;
     if (unitEbps) {
-      const ebps = await parseXmlFile(attribFile(unitEbps));
+      const ebps = await getData(attribFile(unitEbps), undefined, context);
       if (debug) writeTemp(ebps, unitEbps.split("/").join("_"));
       ebpextensions = ebps?.extensions;
     }
 
-    const ebpExts = Object.fromEntries(ebpextensions?.map((e) => [e.exts.replace("ebpextensions/", ""), e]) ?? []);
+    const ebpExts = Object.fromEntries(ebpextensions?.map((e) => [e.exts?.replace("ebpextensions/", ""), e]) ?? []);
 
     let ui_ext;
     if (type === ITEM_TYPES.BUILDINGS) ui_ext = ebpExts.ui_ext;
     else if (type === ITEM_TYPES.TECHNOLOGIES || type === ITEM_TYPES.UPGRADES) ui_ext = data.upgrade_bag.ui_info;
     else if (type === ITEM_TYPES.UNITS) {
-      ui_ext = data.extensions.find((e) => e.squadexts === "sbpextensions/squad_ui_ext")?.race_list[0].race_data.info;
+      ui_ext = maybeOnKey(data.extensions.find((e) => e.squadexts === "sbpextensions/squad_ui_ext")?.race_list[0], "race_data")?.info;
     }
     if (!ui_ext && type === ITEM_TYPES.UNITS && ebpExts.ui_ext) ui_ext = ebpExts.ui_ext;
 
     const name = getTranslation(ui_ext.screen_name);
     const description = parseDescription(ui_ext);
-    const attribName = file.split("/").pop()!.replace(".xml", "");
+    const attribName = file.split("/").pop()!.replace(".xml", "").replace(".json", "");
     const age = parseAge(attribName, ebpExts?.requirement_ext?.requirement_table ?? data.upgrade_bag?.requirements, data.parent_pbg);
     const baseId = getBasedId(name, type, description);
     const id = `${baseId}-${age}`;
@@ -92,7 +93,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
         ...item,
         type: "building",
         hitpoints: parseHitpoints(ebpExts?.health_ext),
-        weapons: await parseWeapons(ebpExts.combat_ext),
+        weapons: await parseWeapons(ebpExts.combat_ext, context),
         armor: parseArmor(ebpExts?.health_ext),
         sight: parseSight(ebpExts?.sight_ext),
         garrison: parseGarrison(ebpExts?.hold_ext),
@@ -103,16 +104,19 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
     }
 
     if (type === ITEM_TYPES.UNITS) {
-      const weapons = await parseWeapons(ebpExts.combat_ext);
+      const weapons = await parseWeapons(ebpExts.combat_ext, context);
 
-      const loadoutUnits = loadout?.unit_attachments?.map((x) => x.unit.type);
+      const loadoutUnits = loadout?.unit_attachments?.map((x) => (x.unit ?? x).type);
       if (loadoutUnits)
         for (const luFile of loadoutUnits) {
           if (ignoreForNow.includes(luFile)) continue;
           try {
-            const luEbps = await parseXmlFile(attribFile(luFile));
+            const luEbps = await getData(attribFile(luFile), undefined, context);
             if (debug) writeTemp(luEbps, "ebps_" + luFile.split("/").pop()!);
-            const luWeapons = await parseWeapons(luEbps?.extensions.find((ex) => ex.exts === "ebpextensions/combat_ext"));
+            const luWeapons = await parseWeapons(
+              luEbps?.extensions.find((ex) => ex.exts === "ebpextensions/combat_ext"),
+              context
+            );
             if (luWeapons) weapons.push(...luWeapons);
           } catch (e) {
             console.log("Error parsing loadout unit", luFile, e);
@@ -134,7 +138,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
     }
 
     if (type === ITEM_TYPES.TECHNOLOGIES) {
-      const translationParams = ui_ext.help_text_formatter?.formatter_arguments?.map((x) => Object.values(x)[0]) ?? [];
+      const translationParams = ui_ext.help_text_formatter?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
       const effectsFactory = technologyModifiers[baseId];
       const effects = effectsFactory?.(translationParams) ?? [];
 
@@ -189,7 +193,7 @@ function parseDescription(ui_ext: any) {
   const translation = !!ui_ext.help_text_formatter?.formatter
     ? getTranslation(
         ui_ext.help_text_formatter.formatter,
-        ui_ext.help_text_formatter.formatter_arguments.map((x) => Object.values(x)[0])
+        ui_ext.help_text_formatter.formatter_arguments.map((x) => Object.values(x)[0] ?? x)
       )
     : getTranslation(ui_ext.help_text);
   if (translation === NO_TRANSLATION_FOUND) throw new Error("No translation found for " + ui_ext.help_text);
@@ -209,11 +213,11 @@ function parseCosts(time_cost: any, popcap = 0) {
 
 function parseAge(name: string, requirements: any, parent_pbg: string) {
   const ageUpLandmark = [
-    { parent: "ebps/races/core/buildings/building_wonder_age3", age: 3 },
-    { parent: "ebps/races/core/buildings/building_wonder_age2", age: 2 },
-    { parent: "ebps/races/core/buildings/building_wonder_age1", age: 1 },
+    { parent: "/building_wonder_age3", age: 3 },
+    { parent: "/building_wonder_age2", age: 2 },
+    { parent: "/building_wonder_age1", age: 1 },
   ];
-  const ageup = ageUpLandmark.find((x) => x.parent == parent_pbg);
+  const ageup = ageUpLandmark.find((x) => typeof parent_pbg === "string" && parent_pbg?.endsWith(x.parent));
   if (ageup) return ageup.age;
   let age = 1;
   const requiredUpgrade = requirements?.find((x) => String(x?.upgrade_name).endsWith("_age"))?.upgrade_name;
@@ -247,11 +251,13 @@ export const damageMap = {
   Ranged: "ranged",
   Fire: "fire",
 };
+const armorSort = ["melee", "ranged", "siege", "fire"];
 function parseArmor(health_ext): Armor[] {
   return (
     Object.entries<number>(health_ext?.armor_scaler_by_damage_type)
       ?.filter(([k, v]) => v > 0)
-      .map(([k, v]) => ({ type: damageMap[k], value: v })) ?? []
+      .map(([k, v]) => ({ type: damageMap[k], value: v }))
+      .sort((a, b) => armorSort.indexOf(a.type) - armorSort.indexOf(b.type)) ?? []
   );
 }
 
@@ -265,7 +271,7 @@ function parseGarrison(hold_ext: any) {
   return hold_ext?.num_slots
     ? {
         capacity: hold_ext?.num_slots,
-        classes: hold_ext?.acceptable_types?.map((x) => x.acceptable_type.replace("hold_", "").replace(/\_/g, " ")) ?? [],
+        classes: hold_ext?.acceptable_types?.map((x) => (typeof x == "string" ? x : x.acceptable_type).replace("hold_", "").replace(/\_/g, " ")) ?? [],
       }
     : undefined;
 }
@@ -276,12 +282,16 @@ function parseUnique(ui_ext: any) {
 
 function parseInfluences(ui_ext: any) {
   if (ui_ext.ui_extra_infos)
-    return ui_ext.ui_extra_infos.reduce((inf, x) => {
+    return ui_ext.ui_extra_infos?.reduce((inf, x) => {
       const str = getTranslation(
         x.description || x.description_formatter.formatter,
-        x.description_formatter?.formatter_arguments?.map((x) => Object.values(x)[0])
+        x.description_formatter?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x)
       );
       if (["influence_buff", "influence_decorator"].includes(x.icon)) inf.push(str);
       return inf;
     }, [] as string[]);
+}
+
+export function maybeOnKey(obj: any, key: string) {
+  return obj?.[key] ?? obj;
 }
