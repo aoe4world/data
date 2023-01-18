@@ -1,0 +1,51 @@
+{
+  "id": "fertile-crescent-2",
+  "baseId": "fertile-crescent",
+  "type": "technology",
+  "name": "Fertile Crescent",
+  "pbgid": 2108050,
+  "attribName": "upgrade_econ_fertile_crescent_abb",
+  "age": 2,
+  "civs": [
+    "ab"
+  ],
+  "description": "Reduce the cost of Economy buildings and Houses by 25%.",
+  "classes": [
+    "economic",
+    "technology"
+  ],
+  "displayClasses": [
+    "Economic Technology"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 25,
+    "wood": 0,
+    "stone": 0,
+    "gold": 75,
+    "total": 100,
+    "popcap": 0,
+    "time": 30
+  },
+  "producedBy": [
+    "house-of-wisdom"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/fertile-crescent-2.png",
+  "effects": [
+    {
+      "property": "foodCost",
+      "select": {
+        "id": [
+          "house",
+          "mill",
+          "lumber-camp",
+          "dock",
+          "mining-camp"
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.75,
+      "type": "passive"
+    }
+  ]
+}

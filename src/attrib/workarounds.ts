@@ -59,16 +59,16 @@ workaround("Remove all garrison and emplacement weapons from the Red Palace, set
   validator: (item) => (item as Building).weapons.length == 1 && (item as Building).weapons.filter((w) => w.type == "ranged" && w.damage == 60 && w.burst?.count == 2).length == 1,
 });
 
-workaround("Increase the Berkshire Palace range, and double set the garrison burst to 6", {
+workaround("Increase the Berkshire Palace range to 15, and double set the garrison burst to 6", {
   predicate: (item) => item.baseId === "berkshire-palace",
   mutator: (item) => {
     item = item as Building;
     const bow = item.weapons.find((x) => x.name === "Bow")!;
     bow.burst = { count: 6 };
-    bow.range!.max = bow.range!.max * 2;
+    bow.range!.max = 15;
     item.weapons = [bow];
   },
-  validator: (item) => (item as Building).weapons.filter((w) => w.type == "ranged" && w.burst?.count == 6 && w.range?.max == 16).length == 1,
+  validator: (item) => (item as Building).weapons.filter((w) => w.type == "ranged" && w.burst?.count == 6 && w.range?.max == 15).length == 1,
 });
 
 workaround("Remove all weapons from the Spasskaya Tower, pick the Cannon as listed ranged weapon even though the Springald is technically also in place", {
@@ -145,6 +145,10 @@ workaround("Make Abbasid Teak Masts available from Castle Age", {
 
 workaround("Make Delhi Village Fortresses available from Castle Age", {
   ...overrideAge(["village-fortress"], 3, ["de"]),
+});
+
+workaround("Make English Wynguard Forces available from Imperial Age", {
+  ...overrideAge(["wynguard-army", "wynguard-footmen", "wynguard-raiders", "wynguard-rangers"], 4, ["de"]),
 });
 
 // –––– Unit weapons ––––
@@ -243,6 +247,17 @@ workaround("Remove torch from Tower Elephant", {
     item = item as Unit;
     item.weapons = item.weapons.filter((w) => w.attribName != "weapon_torch_elephant_archer_sul");
   },
+});
+
+workaround("Remove crossbow, archer and torch from Sultan's Elite Tower Elephant, set burst of 2 to Handcannoneers", {
+  predicate: (item) => item.baseId == "sultans-elite-tower-elephant",
+  mutator: (item) => {
+    item = item as Unit;
+    const handcannon = item.weapons.find((w) => w.attribName == "weapon_war_elephant_tower_handcannon_4_sul");
+    handcannon!.burst = { count: 2 };
+    item.weapons = [...item.weapons.filter((w) => w.type != "ranged" && w.type != "fire"), handcannon!];
+  },
+  validator: (item) => (item as Unit).weapons.length == 3,
 });
 
 workaround("Change the individuals cannons on Warships to just 1 with a burst of half the total cannons (one side)", {

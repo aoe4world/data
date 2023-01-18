@@ -416,8 +416,8 @@
           "baseId": "battering-ram",
           "type": "unit",
           "name": "Battering Ram",
-          "pbgid": 129966,
-          "attribName": "unit_ram_3_mon",
+          "pbgid": 2108174,
+          "attribName": "unit_workshop_ram_3_mon",
           "age": 2,
           "civs": [
             "mo"
@@ -437,14 +437,10 @@
             "gold": 0,
             "total": 250,
             "popcap": 1,
-            "time": 80
+            "time": 30
           },
           "producedBy": [
-            "spearman",
-            "man-at-arms",
-            "archer",
-            "crossbowman",
-            "handcannoneer"
+            "siege-workshop"
           ],
           "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
           "hitpoints": 420,
@@ -555,10 +551,10 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 400,
+            "wood": 300,
             "stone": 0,
             "gold": 600,
-            "total": 1000,
+            "total": 900,
             "popcap": 3,
             "time": 45
           },
@@ -1078,10 +1074,10 @@
               "modifiers": [],
               "durations": {
                 "aim": 0.25,
-                "windup": 0.25,
+                "windup": 0,
                 "attack": 0.125,
                 "winddown": 0.5,
-                "reload": 1,
+                "reload": 1.25,
                 "setup": 0,
                 "teardown": 0,
                 "cooldown": 0
@@ -1152,8 +1148,7 @@
             "time": 22.5
           },
           "producedBy": [
-            "stable",
-            "khaganate-palace"
+            "stable"
           ],
           "icon": "https://data.aoe4world.com/images/units/horseman-1.png",
           "hitpoints": 110,
@@ -1277,8 +1272,7 @@
             "time": 22.5
           },
           "producedBy": [
-            "stable",
-            "khaganate-palace"
+            "stable"
           ],
           "icon": "https://data.aoe4world.com/images/units/horseman-2.png",
           "hitpoints": 125,
@@ -1402,8 +1396,7 @@
             "time": 22.5
           },
           "producedBy": [
-            "stable",
-            "khaganate-palace"
+            "stable"
           ],
           "icon": "https://data.aoe4world.com/images/units/horseman-3.png",
           "hitpoints": 155,
@@ -1527,8 +1520,7 @@
             "time": 22.5
           },
           "producedBy": [
-            "stable",
-            "khaganate-palace"
+            "stable"
           ],
           "icon": "https://data.aoe4world.com/images/units/horseman-4.png",
           "hitpoints": 180,
@@ -1624,6 +1616,126 @@
       ]
     },
     {
+      "id": "huihui-pao",
+      "name": "Huihui Pao",
+      "type": "unit",
+      "civs": [
+        "mo"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Siege"
+      ],
+      "classes": [
+        "siege"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/units/huihui-pao-1.png",
+      "description": "Massive siege engine with incredible range, extra effective at destroying buildings and walls.\n+ Extremely long range\n- Must be set up to fire",
+      "variations": [
+        {
+          "id": "huihui-pao-1",
+          "baseId": "huihui-pao",
+          "type": "unit",
+          "name": "Huihui Pao",
+          "pbgid": 2117335,
+          "attribName": "unit_khaganate_great_trebuchet_mon",
+          "age": 1,
+          "civs": [
+            "mo"
+          ],
+          "description": "Massive siege engine with incredible range, extra effective at destroying buildings and walls.\n+ Extremely long range\n- Must be set up to fire",
+          "classes": [
+            "siege"
+          ],
+          "displayClasses": [
+            "Siege"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 3,
+            "time": 63
+          },
+          "producedBy": [
+            "khaganate-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/huihui-pao-1.png",
+          "hitpoints": 260,
+          "weapons": [
+            {
+              "name": "Huihui Pao",
+              "type": "siege",
+              "damage": 75,
+              "speed": 13.625,
+              "range": {
+                "min": 2.75,
+                "max": 18
+              },
+              "modifiers": [
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 600,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "naval",
+                        "unit"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 200,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0.5,
+                "windup": 0.625,
+                "attack": 0.125,
+                "winddown": 7.375,
+                "reload": 5,
+                "setup": 5,
+                "teardown": 2,
+                "cooldown": 0
+              },
+              "attribName": "weapon_khaganate_huihui_pao",
+              "pbgid": 2117338
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 20
+            }
+          ],
+          "sight": {
+            "line": 80,
+            "height": 10
+          },
+          "movement": {
+            "speed": 0.625
+          }
+        }
+      ]
+    },
+    {
       "id": "khan",
       "name": "Khan",
       "type": "unit",
@@ -1698,29 +1810,6 @@
               },
               "attribName": "weapon_khan_1_mon",
               "pbgid": 172306
-            },
-            {
-              "name": "Torch",
-              "type": "fire",
-              "damage": 12,
-              "speed": 2.125,
-              "range": {
-                "min": 0,
-                "max": 1.25
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.75,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 1.25
-              },
-              "attribName": "weapon_torch_khan_no_burn_mon",
-              "pbgid": 168999
             }
           ],
           "armor": [],
@@ -1787,29 +1876,6 @@
               },
               "attribName": "weapon_khan_2_mon",
               "pbgid": 172307
-            },
-            {
-              "name": "Torch",
-              "type": "fire",
-              "damage": 12,
-              "speed": 2.125,
-              "range": {
-                "min": 0,
-                "max": 1.25
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.75,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 1.25
-              },
-              "attribName": "weapon_torch_khan_no_burn_mon",
-              "pbgid": 168999
             }
           ],
           "armor": [],
@@ -1876,29 +1942,6 @@
               },
               "attribName": "weapon_khan_3_mon",
               "pbgid": 172308
-            },
-            {
-              "name": "Torch",
-              "type": "fire",
-              "damage": 12,
-              "speed": 2.125,
-              "range": {
-                "min": 0,
-                "max": 1.25
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.75,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 1.25
-              },
-              "attribName": "weapon_torch_khan_no_burn_mon",
-              "pbgid": 168999
             }
           ],
           "armor": [],
@@ -1965,29 +2008,6 @@
               },
               "attribName": "weapon_khan_4_mon",
               "pbgid": 1261612
-            },
-            {
-              "name": "Torch",
-              "type": "fire",
-              "damage": 12,
-              "speed": 2.125,
-              "range": {
-                "min": 0,
-                "max": 1.25
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.75,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 1.25
-              },
-              "attribName": "weapon_torch_khan_no_burn_mon",
-              "pbgid": 168999
             }
           ],
           "armor": [
@@ -2799,8 +2819,7 @@
             "time": 30
           },
           "producedBy": [
-            "archery-range",
-            "khaganate-palace"
+            "archery-range"
           ],
           "icon": "https://data.aoe4world.com/images/units/mangudai-2.png",
           "hitpoints": 85,
@@ -2869,8 +2888,7 @@
             "time": 30
           },
           "producedBy": [
-            "archery-range",
-            "khaganate-palace"
+            "archery-range"
           ],
           "icon": "https://data.aoe4world.com/images/units/mangudai-3.png",
           "hitpoints": 105,
@@ -2939,8 +2957,7 @@
             "time": 30
           },
           "producedBy": [
-            "archery-range",
-            "khaganate-palace"
+            "archery-range"
           ],
           "icon": "https://data.aoe4world.com/images/units/mangudai-4.png",
           "hitpoints": 120,
@@ -3340,7 +3357,7 @@
             {
               "name": "Torch",
               "type": "fire",
-              "damage": 12,
+              "damage": 10,
               "speed": 2.125,
               "range": {
                 "min": 0,
@@ -3357,8 +3374,8 @@
                 "teardown": 0,
                 "cooldown": 1.25
               },
-              "attribName": "weapon_torch_no_burn_mon",
-              "pbgid": 136340
+              "attribName": "weapon_torch_mon",
+              "pbgid": 135193
             }
           ],
           "armor": [],
@@ -3706,7 +3723,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
+      "description": "Effective at taking out siege engines at long range.\n+ Long range\n+ Bonus damage vs. siege engines\n+ Attacks without having to set up\n- Trivial damage vs. buildings",
       "variations": [
         {
           "id": "springald-3",
@@ -3719,7 +3736,7 @@
           "civs": [
             "mo"
           ],
-          "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
+          "description": "Effective at taking out siege engines at long range.\n+ Long range\n+ Bonus damage vs. siege engines\n+ Attacks without having to set up\n- Trivial damage vs. buildings",
           "classes": [
             "siege"
           ],
@@ -4052,7 +4069,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/units/trade-ship-3.png",
-      "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
+      "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or another Dock. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
       "variations": [
         {
           "id": "trade-ship-2",
@@ -4065,7 +4082,7 @@
           "civs": [
             "mo"
           ],
-          "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
+          "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or another Dock. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
           "classes": [
             "worker",
             "ship"

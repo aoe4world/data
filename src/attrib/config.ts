@@ -10,6 +10,7 @@ export const ESSENCE_FOLDER = path.join(SOURCE_FOLDER, "/essence/attrib");
 
 // Unit files not discovered by sync.ts
 export const hardcodedDiscovery = {
+  rus: ["sbps/races/rus/unit_militia_2_rus"],
   mongols: ["sbps/races/mongol/unit_khan_2_mon", "sbps/races/mongol/unit_khan_3_mon", "sbps/races/mongol/unit_khan_4_mon"],
   ottomans: [
     "upgrade/races/ottoman/research/upgrade_anatolian_hills_ott",
@@ -43,7 +44,7 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "unit_springald_3_buildable_abb",
   "unit_springald_3_field_construct_mon",
 
-  "sbps/races/english/unit_wynguard_",
+  // "sbps/races/english/unit_wynguard_",
   "ebps/dev/units/unit_siege_cart",
   "ebps/dev/units/unit_siege_cart",
 
@@ -52,6 +53,15 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "_double_mon", // all double produced units
   "building_unit_religious_district_mon", // Monasteric shrines version of prayer tent
   "sbps/races/mongol/unit_knight_2_mon", // is listed in khagenate palace but does not exist in feudal
+
+  //  listed in khagenate palace but a bit meme or redundant to include ?
+  // unit_khaganate_great_trebuchet_mon -- except this one, as it is actually a brand new unit
+  "unit_khaganate_nest_of_bees_4_mon",
+  "unit_khaganate_manatarms_china_mon",
+  "unit_khaganate_monk_rus_mon",
+  "unit_khaganate_knight_rus_mon",
+  "unit_khaganate_mangudai_mon",
+  "unit_khaganate_horsearcher_rus_mon",
 
   // Research variations available at landmarks, that do not differ
   "upgrade_landmark_cavalry_cantled_saddle_fre",
@@ -65,6 +75,15 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "upgrade_outpost_landmark_",
   (file) => file.includes("upgrade_outpost_cannon") && !file.includes("upgrade_outpost_cannon_mon"),
   (file) => file.includes("upgrade_outpost_springald") && !file.includes("upgrade_outpost_springald_mon"),
+  (file) => file.includes("unit_ram_3") && !file.includes("workshop") && !file.includes("clocktower"),
+  "unit_trade_cart_chamber_of_commerce_fre",
+  "unit_trade_cart_free_abb",
+  "unit_military_2_free_abb",
+  "unit_military_3_free_abb",
+  "unit_military_4_free_abb",
+  "upgrade_landmark_siege_weapon_speed",
+  "upgrade_landmark_siege_works",
+  "unit_siege_tower_3_eng",
 ];
 
 // Map a4w slug to race id

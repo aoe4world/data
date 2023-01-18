@@ -1623,13 +1623,13 @@
       "civs": [
         "ma"
       ],
-      "description": "Increase the damage of Rams and Trebuchets +30%.",
+      "description": "Increase damage of Trebuchets by +20%.",
       "classes": [
-        "siege",
+        "trebuchet",
         "technology"
       ],
       "displayClasses": [
-        "Siege Technology"
+        "Trebuchet Technology"
       ],
       "unique": false,
       "costs": {
@@ -1650,13 +1650,13 @@
           "property": "siegeAttack",
           "select": {
             "id": [
-              "battering-ram",
+              "huihui-pao",
               "counterweight-trebuchet",
               "traction-trebuchet"
             ]
           },
           "effect": "multiply",
-          "value": 1.3,
+          "value": 1.2,
           "type": "passive"
         }
       ]
@@ -1705,7 +1705,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8999999999999999,
+          "value": 1.15,
           "type": "passive"
         }
       ]
@@ -2078,13 +2078,72 @@
       ]
     },
     {
-      "id": "local-knowledge-4",
+      "id": "lightweight-beams-4",
+      "baseId": "lightweight-beams",
+      "type": "technology",
+      "name": "Lightweight Beams",
+      "pbgid": 2117424,
+      "attribName": "upgrade_ram_scaling",
+      "age": 4,
+      "civs": [
+        "ma"
+      ],
+      "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+      "classes": [
+        "battering",
+        "ram",
+        "technology"
+      ],
+      "displayClasses": [
+        "Battering Ram Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 225,
+        "total": 325,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+      "effects": [
+        {
+          "property": "attackSpeed",
+          "select": {
+            "id": [
+              "battering-ram"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.7000000000000001,
+          "type": "passive"
+        },
+        {
+          "property": "buildTime",
+          "select": {
+            "id": [
+              "battering-ram"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.5,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "local-knowledge-3",
       "baseId": "local-knowledge",
       "type": "technology",
       "name": "Local Knowledge",
       "pbgid": 2064215,
       "attribName": "upgrade_stealth_healing_mal",
-      "age": 4,
+      "age": 3,
       "civs": [
         "ma"
       ],
@@ -2098,18 +2157,18 @@
       ],
       "unique": true,
       "costs": {
-        "food": 200,
+        "food": 100,
         "wood": 0,
         "stone": 0,
-        "gold": 500,
-        "total": 700,
+        "gold": 250,
+        "total": 350,
         "popcap": 0,
-        "time": 90
+        "time": 60
       },
       "producedBy": [
         "barracks"
       ],
-      "icon": "https://data.aoe4world.com/images/technologies/local-knowledge-4.png",
+      "icon": "https://data.aoe4world.com/images/technologies/local-knowledge-3.png",
       "effects": [
         {
           "property": "healingRate",

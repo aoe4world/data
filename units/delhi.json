@@ -368,8 +368,8 @@
       "baseId": "battering-ram",
       "type": "unit",
       "name": "Battering Ram",
-      "pbgid": 135944,
-      "attribName": "unit_ram_3_sul",
+      "pbgid": 2108177,
+      "attribName": "unit_workshop_ram_3_sul",
       "age": 2,
       "civs": [
         "de"
@@ -389,14 +389,10 @@
         "gold": 0,
         "total": 250,
         "popcap": 1,
-        "time": 80
+        "time": 30
       },
       "producedBy": [
-        "spearman",
-        "man-at-arms",
-        "archer",
-        "crossbowman",
-        "handcannoneer"
+        "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
       "hitpoints": 420,
@@ -485,10 +481,10 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 400,
+        "wood": 300,
         "stone": 0,
         "gold": 600,
-        "total": 1000,
+        "total": 900,
         "popcap": 3,
         "time": 45
       },
@@ -1135,10 +1131,10 @@
           "modifiers": [],
           "durations": {
             "aim": 0.25,
-            "windup": 0.25,
+            "windup": 0,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1,
+            "reload": 1.25,
             "setup": 0,
             "teardown": 0,
             "cooldown": 0
@@ -2819,7 +2815,7 @@
       "civs": [
         "de"
       ],
-      "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
+      "description": "Effective at taking out siege engines at long range.\n+ Long range\n+ Bonus damage vs. siege engines\n+ Attacks without having to set up\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -2909,6 +2905,107 @@
       }
     },
     {
+      "id": "sultans-elite-tower-elephant-4",
+      "baseId": "sultans-elite-tower-elephant",
+      "type": "unit",
+      "name": "Sultan's Elite Tower Elephant",
+      "pbgid": 2104689,
+      "attribName": "unit_war_elephant_tower2_4_sul",
+      "age": 4,
+      "civs": [
+        "de"
+      ],
+      "description": "Powerful ranged cavalry that can fire while moving.\n+ High health\n+ Mounted with Handcannoneers\n+ Capable of attacking Stone Walls\n- Slow movement speed",
+      "classes": [
+        "ranged",
+        "cavalry",
+        "elephant"
+      ],
+      "displayClasses": [
+        "Ranged Cavalry",
+        "Elephant"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 400,
+        "wood": 0,
+        "stone": 0,
+        "gold": 600,
+        "total": 1000,
+        "popcap": 3,
+        "time": 200
+      },
+      "producedBy": [
+        "palace-of-the-sultan"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/sultans-elite-tower-elephant-4.png",
+      "hitpoints": 600,
+      "weapons": [
+        {
+          "name": "Tusks",
+          "type": "melee",
+          "damage": 30,
+          "speed": 2.875,
+          "range": {
+            "min": 0,
+            "max": 1
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 2,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_tower_war_elephant_melee_sul",
+          "pbgid": 2024371
+        },
+        {
+          "name": "Handcannon",
+          "type": "ranged",
+          "damage": 35,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.5,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 2
+          },
+          "attribName": "weapon_war_elephant_tower_handcannon_4_sul",
+          "pbgid": 2104700
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 7
+        }
+      ],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.875
+      }
+    },
+    {
       "id": "tower-elephant-4",
       "baseId": "tower-elephant",
       "type": "unit",
@@ -2940,8 +3037,7 @@
         "time": 60
       },
       "producedBy": [
-        "archery-range",
-        "palace-of-the-sultan"
+        "archery-range"
       ],
       "icon": "https://data.aoe4world.com/images/units/tower-elephant-4.png",
       "hitpoints": 600,
@@ -3055,7 +3151,7 @@
       "civs": [
         "de"
       ],
-      "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
+      "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or another Dock. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
       "classes": [
         "worker",
         "ship"
@@ -3319,25 +3415,24 @@
       ],
       "unique": true,
       "costs": {
-        "food": 600,
+        "food": 400,
         "wood": 0,
         "stone": 0,
-        "gold": 400,
-        "total": 1000,
+        "gold": 350,
+        "total": 750,
         "popcap": 3,
         "time": 60
       },
       "producedBy": [
-        "stable",
-        "palace-of-the-sultan"
+        "stable"
       ],
       "icon": "https://data.aoe4world.com/images/units/war-elephant-3.png",
-      "hitpoints": 1400,
+      "hitpoints": 850,
       "weapons": [
         {
           "name": "Tusks",
           "type": "melee",
-          "damage": 30,
+          "damage": 50,
           "speed": 2.875,
           "range": {
             "min": 0,
@@ -3360,7 +3455,7 @@
         {
           "name": "Spear",
           "type": "melee",
-          "damage": 20,
+          "damage": 25,
           "speed": 1.875,
           "range": {
             "min": 0,
@@ -3402,7 +3497,7 @@
         },
         {
           "type": "ranged",
-          "value": 2
+          "value": 5
         }
       ],
       "sight": {

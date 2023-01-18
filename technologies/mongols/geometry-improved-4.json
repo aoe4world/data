@@ -9,7 +9,7 @@
   "civs": [
     "mo"
   ],
-  "description": "Increase the damage of Rams and Trebuchets +45%.\nIf Geometry has already been researched, increase it by +15% instead.",
+  "description": "Increase damage of Trebuchets by +20%.\nIf Geometry has already been researched, increase their damage by +10% instead.",
   "classes": [
     "siege",
     "technology"
@@ -31,5 +31,18 @@
     "siege-workshop"
   ],
   "icon": "https://data.aoe4world.com/images/technologies/geometry-improved-4.png",
-  "effects": []
+  "effects": [
+    {
+      "property": "rangedAttack",
+      "select": {
+        "id": [
+          "huihui-pao",
+          "trebuchet"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.09,
+      "type": "passive"
+    }
+  ]
 }

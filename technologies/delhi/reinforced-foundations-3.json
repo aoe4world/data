@@ -9,7 +9,7 @@
   "civs": [
     "de"
   ],
-  "description": "Houses and Town Centers grant an additional +5 maximum Population.",
+  "description": "Villagers and Infantry can garrison inside Houses for protection. Houses gain garrison arrows and +50% Health.",
   "classes": [
     "population",
     "technology"
@@ -33,15 +33,14 @@
   "icon": "https://data.aoe4world.com/images/technologies/reinforced-foundations-3.png",
   "effects": [
     {
-      "property": "maxPopulation",
+      "property": "hitpoints",
       "select": {
         "id": [
-          "house",
-          "town-center"
+          "house"
         ]
       },
-      "effect": "change",
-      "value": 5,
+      "effect": "multiply",
+      "value": 1.5,
       "type": "passive"
     }
   ]

@@ -225,7 +225,7 @@
       "civs": [
         "de"
       ],
-      "description": "Grant +3 armor to War Elephants.",
+      "description": "Grant +25% health and +4 ranged armor to War Elephants.",
       "classes": [
         "elephant",
         "technology"
@@ -241,24 +241,13 @@
         "gold": 0,
         "total": 0,
         "popcap": 0,
-        "time": 1080
+        "time": 720
       },
       "producedBy": [
         "stable"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/armored-beasts-4.png",
       "effects": [
-        {
-          "property": "meleeArmor",
-          "select": {
-            "id": [
-              "war-elephant"
-            ]
-          },
-          "effect": "change",
-          "value": 3,
-          "type": "passive"
-        },
         {
           "property": "rangedArmor",
           "select": {
@@ -267,7 +256,18 @@
             ]
           },
           "effect": "change",
-          "value": 3,
+          "value": 4,
+          "type": "passive"
+        },
+        {
+          "property": "hitpoints",
+          "select": {
+            "id": [
+              "war-elephant"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.25,
           "type": "passive"
         }
       ]
@@ -508,6 +508,7 @@
         "time": 1080
       },
       "producedBy": [
+        "hisar-academy",
         "madrasa"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/biology-4.png",
@@ -608,6 +609,7 @@
         "time": 450
       },
       "producedBy": [
+        "compound-of-the-defender",
         "keep"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/boiling-oil-3.png",
@@ -716,6 +718,7 @@
         "time": 1080
       },
       "producedBy": [
+        "hisar-academy",
         "madrasa"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
@@ -755,6 +758,61 @@
       ]
     },
     {
+      "id": "court-architects-3",
+      "baseId": "court-architects",
+      "type": "technology",
+      "name": "Court Architects",
+      "pbgid": 2108028,
+      "attribName": "upgrade_tech_university_architecture_compound_sul",
+      "age": 3,
+      "civs": [
+        "de"
+      ],
+      "description": "Increase the health of all buildings by +30%.",
+      "classes": [
+        "building",
+        "technology"
+      ],
+      "displayClasses": [
+        "Building Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0,
+        "time": 1080
+      },
+      "producedBy": [
+        "compound-of-the-defender"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/court-architects-3.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "building"
+              ],
+              [
+                "landmark"
+              ],
+              [
+                "wonder"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.3,
+          "type": "passive"
+        }
+      ]
+    },
+    {
       "id": "court-architects-4",
       "baseId": "court-architects",
       "type": "technology",
@@ -784,6 +842,7 @@
         "time": 1080
       },
       "producedBy": [
+        "hisar-academy",
         "madrasa"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/court-architects-4.png",
@@ -1219,6 +1278,7 @@
         "time": 1080
       },
       "producedBy": [
+        "hisar-academy",
         "madrasa"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/elite-army-tactics-4.png",
@@ -1683,13 +1743,13 @@
       "civs": [
         "de"
       ],
-      "description": "Increase the damage of Rams and Trebuchets +30%.",
+      "description": "Increase damage of Trebuchets by +20%.",
       "classes": [
-        "siege",
+        "trebuchet",
         "technology"
       ],
       "displayClasses": [
-        "Siege Technology"
+        "Trebuchet Technology"
       ],
       "unique": false,
       "costs": {
@@ -1710,13 +1770,13 @@
           "property": "siegeAttack",
           "select": {
             "id": [
-              "battering-ram",
+              "huihui-pao",
               "counterweight-trebuchet",
               "traction-trebuchet"
             ]
           },
           "effect": "multiply",
-          "value": 1.3,
+          "value": 1.2,
           "type": "passive"
         }
       ]
@@ -1765,19 +1825,19 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8999999999999999,
+          "value": 1.15,
           "type": "passive"
         }
       ]
     },
     {
-      "id": "hearty-rations-4",
+      "id": "hearty-rations-3",
       "baseId": "hearty-rations",
       "type": "technology",
       "name": "Hearty Rations",
       "pbgid": 200717,
       "attribName": "upgrade_landmark_hearty_rations_sul",
-      "age": 4,
+      "age": 3,
       "civs": [
         "de"
       ],
@@ -1797,12 +1857,12 @@
         "gold": 0,
         "total": 0,
         "popcap": 0,
-        "time": 720
+        "time": 300
       },
       "producedBy": [
         "house-of-learning"
       ],
-      "icon": "https://data.aoe4world.com/images/technologies/hearty-rations-4.png",
+      "icon": "https://data.aoe4world.com/images/technologies/hearty-rations-3.png",
       "effects": [
         {
           "property": "carryCapacity",
@@ -2020,6 +2080,82 @@
       ]
     },
     {
+      "id": "howdahs-4",
+      "baseId": "howdahs",
+      "type": "technology",
+      "name": "Howdahs",
+      "pbgid": 200139,
+      "attribName": "upgrade_landmark_siege_elephant_sul",
+      "age": 4,
+      "civs": [
+        "de"
+      ],
+      "description": "Upgrade Tower Elephants to have Elite Crossbowmen as riders instead of Archers. Tower Elephants gain +30% health and +4 ranged armor.",
+      "classes": [
+        "elephant",
+        "technology"
+      ],
+      "displayClasses": [
+        "Elephant Technology"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0,
+        "time": 720
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/howdahs-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "heavy"
+              ]
+            ]
+          },
+          "select": {
+            "id": [
+              "tower-elephant"
+            ]
+          },
+          "effect": "change",
+          "value": 11,
+          "type": "bonus"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "id": [
+              "tower-elephant"
+            ]
+          },
+          "effect": "change",
+          "value": 4,
+          "type": "passive"
+        },
+        {
+          "property": "hitpoints",
+          "select": {
+            "id": [
+              "tower-elephant"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.3,
+          "type": "passive"
+        }
+      ]
+    },
+    {
       "id": "incendiaries-3",
       "baseId": "incendiaries",
       "type": "technology",
@@ -2099,6 +2235,7 @@
         "time": 1080
       },
       "producedBy": [
+        "hisar-academy",
         "madrasa"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/incendiary-arrows-4.png",
@@ -2106,18 +2243,17 @@
         {
           "property": "rangedAttack",
           "select": {
-            "class": [
-              [
-                "ranged",
-                "cavalry"
-              ]
-            ],
             "id": [
               "longbowman",
               "zhuge-nu",
               "archer",
               "arbaletrier",
               "crossbowman",
+              "tower-elepahnt",
+              "mangudai",
+              "horse-archer",
+              "camel-archer",
+              "khan",
               "town-center",
               "keep",
               "outpost",
@@ -2246,6 +2382,65 @@
       ]
     },
     {
+      "id": "lightweight-beams-4",
+      "baseId": "lightweight-beams",
+      "type": "technology",
+      "name": "Lightweight Beams",
+      "pbgid": 2117415,
+      "attribName": "upgrade_ram_scaling_sul",
+      "age": 4,
+      "civs": [
+        "de"
+      ],
+      "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+      "classes": [
+        "battering",
+        "ram",
+        "technology"
+      ],
+      "displayClasses": [
+        "Battering Ram Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0,
+        "time": 585
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+      "effects": [
+        {
+          "property": "attackSpeed",
+          "select": {
+            "id": [
+              "battering-ram"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.7000000000000001,
+          "type": "passive"
+        },
+        {
+          "property": "buildTime",
+          "select": {
+            "id": [
+              "battering-ram"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.5,
+          "type": "passive"
+        }
+      ]
+    },
+    {
       "id": "lookout-towers-3",
       "baseId": "lookout-towers",
       "type": "technology",
@@ -2256,7 +2451,7 @@
       "civs": [
         "de"
       ],
-      "description": "Increase the sight range of Outposts by 50%.",
+      "description": "Increase the sight range of Outposts by 50% and weapon range by +1.",
       "classes": [
         "outpost",
         "technology"
@@ -2272,7 +2467,7 @@
         "gold": 0,
         "total": 0,
         "popcap": 0,
-        "time": 300
+        "time": 225
       },
       "producedBy": [
         "house-of-learning"
@@ -2288,6 +2483,17 @@
           },
           "effect": "multiply",
           "value": 1.5,
+          "type": "passive"
+        },
+        {
+          "property": "maxRange",
+          "select": {
+            "id": [
+              "outpost"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
           "type": "passive"
         }
       ]
@@ -2780,7 +2986,7 @@
       "civs": [
         "de"
       ],
-      "description": "Houses and Town Centers grant an additional +5 maximum Population.",
+      "description": "Villagers and Infantry can garrison inside Houses for protection. Houses gain garrison arrows and +50% Health.",
       "classes": [
         "population",
         "technology"
@@ -2804,15 +3010,14 @@
       "icon": "https://data.aoe4world.com/images/technologies/reinforced-foundations-3.png",
       "effects": [
         {
-          "property": "maxPopulation",
+          "property": "hitpoints",
           "select": {
             "id": [
-              "house",
-              "town-center"
+              "house"
             ]
           },
-          "effect": "change",
-          "value": 5,
+          "effect": "multiply",
+          "value": 1.5,
           "type": "passive"
         }
       ]
@@ -3029,60 +3234,6 @@
       ]
     },
     {
-      "id": "siege-elephant-4",
-      "baseId": "siege-elephant",
-      "type": "technology",
-      "name": "Siege Elephant",
-      "pbgid": 200139,
-      "attribName": "upgrade_landmark_siege_elephant_sul",
-      "age": 4,
-      "civs": [
-        "de"
-      ],
-      "description": "Upgrade Tower Elephants to have Elite Crossbowmen as riders instead of Archers.",
-      "classes": [
-        "elephant",
-        "technology"
-      ],
-      "displayClasses": [
-        "Elephant Technology"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "total": 0,
-        "popcap": 0,
-        "time": 720
-      },
-      "producedBy": [
-        "archery-range"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/siege-elephant-4.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "target": {
-            "class": [
-              [
-                "heavy"
-              ]
-            ]
-          },
-          "select": {
-            "id": [
-              "tower-elephant"
-            ]
-          },
-          "effect": "change",
-          "value": 11,
-          "type": "bonus"
-        }
-      ]
-    },
-    {
       "id": "siege-engineering-2",
       "baseId": "siege-engineering",
       "type": "technology",
@@ -3162,6 +3313,7 @@
         "time": 1080
       },
       "producedBy": [
+        "hisar-academy",
         "madrasa"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/siege-works-4.png",
@@ -3186,6 +3338,55 @@
               [
                 "siege"
               ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "slow-burning-defenses-3",
+      "baseId": "slow-burning-defenses",
+      "type": "technology",
+      "name": "Slow-Burning Defenses",
+      "pbgid": 2108027,
+      "attribName": "upgrade_landmark_keep_defense_compond_sul",
+      "age": 3,
+      "civs": [
+        "de"
+      ],
+      "description": "Increase the fire armor of Stone Wall Towers, Keeps, and Outposts by +10.",
+      "classes": [
+        "defensive",
+        "technology"
+      ],
+      "displayClasses": [
+        "Defensive Technology"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0,
+        "time": 225
+      },
+      "producedBy": [
+        "compound-of-the-defender"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/slow-burning-defenses-3.png",
+      "effects": [
+        {
+          "property": "fireArmor",
+          "select": {
+            "id": [
+              "stone-wall-tower",
+              "keep",
+              "outpost"
             ]
           },
           "effect": "change",
@@ -3737,7 +3938,7 @@
       "civs": [
         "de"
       ],
-      "description": "Mosques restore +1 health every second to units that are out of combat.",
+      "description": "Mosques restore +2 health every second to units that are out of combat.",
       "classes": [
         "mosque",
         "technology"
@@ -3768,19 +3969,19 @@
             ]
           },
           "effect": "change",
-          "value": 1,
+          "value": 2,
           "type": "passive"
         }
       ]
     },
     {
-      "id": "village-fortresses-1",
+      "id": "village-fortresses-3",
       "baseId": "village-fortresses",
       "type": "technology",
       "name": "Village Fortresses",
       "pbgid": 200170,
       "attribName": "upgrade_age2_keep_town_center_sul",
-      "age": 1,
+      "age": 3,
       "civs": [
         "de"
       ],
@@ -3800,12 +4001,13 @@
         "gold": 0,
         "total": 0,
         "popcap": 0,
-        "time": 300
+        "time": 225
       },
       "producedBy": [
+        "compound-of-the-defender",
         "keep"
       ],
-      "icon": "https://data.aoe4world.com/images/technologies/village-fortresses-1.png",
+      "icon": "https://data.aoe4world.com/images/technologies/village-fortresses-3.png",
       "effects": [
         {
           "property": "unknown",

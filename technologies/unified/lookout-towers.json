@@ -17,7 +17,7 @@
   ],
   "minAge": 3,
   "icon": "https://data.aoe4world.com/images/technologies/lookout-towers-3.png",
-  "description": "Increase the sight range of Outposts by 50%.",
+  "description": "Increase the sight range of Outposts by 50% and weapon range by +1.",
   "variations": [
     {
       "id": "lookout-towers-3",
@@ -30,7 +30,7 @@
       "civs": [
         "de"
       ],
-      "description": "Increase the sight range of Outposts by 50%.",
+      "description": "Increase the sight range of Outposts by 50% and weapon range by +1.",
       "classes": [
         "outpost",
         "technology"
@@ -46,7 +46,7 @@
         "gold": 0,
         "total": 0,
         "popcap": 0,
-        "time": 300
+        "time": 225
       },
       "producedBy": [
         "house-of-learning"
@@ -62,6 +62,17 @@
           },
           "effect": "multiply",
           "value": 1.5,
+          "type": "passive"
+        },
+        {
+          "property": "maxRange",
+          "select": {
+            "id": [
+              "outpost"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
           "type": "passive"
         }
       ]

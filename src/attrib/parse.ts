@@ -253,6 +253,7 @@ export const damageMap = {
 };
 const armorSort = ["melee", "ranged", "siege", "fire"];
 function parseArmor(health_ext): Armor[] {
+  if (!health_ext?.armor_scaler_by_damage_type) return [];
   return (
     Object.entries<number>(health_ext?.armor_scaler_by_damage_type)
       ?.filter(([k, v]) => v > 0)
@@ -263,7 +264,7 @@ function parseArmor(health_ext): Armor[] {
 
 function parseMovement(moving_ext: any) {
   return {
-    speed: moving_ext.speed_scaling_table.default_speed / 4,
+    speed: moving_ext?.speed_scaling_table.default_speed / 4,
   };
 }
 

@@ -862,12 +862,30 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
   ],
 
   "riveted-chain-mail": ([i]) => [
-    // Increase the melee armor of Spearmen by +3.
+    // Increase the melee armor of Spearmen and Horsemen by +2
     {
       property: "meleeArmor",
-      select: { id: ["spearman"] },
+      select: { id: ["spearman", "horseman"] },
       effect: "change",
       value: i,
+      type: "passive",
+    },
+  ],
+
+  "steel-barding": ([melee, ranged]) => [
+    // Grants Knights +2 melee and +2 ranged armor.
+    {
+      property: "meleeArmor",
+      select: { id: ["knight"] },
+      effect: "change",
+      value: melee,
+      type: "passive",
+    },
+    {
+      property: "rangedArmor",
+      select: { id: ["knight"] },
+      effect: "change",
+      value: ranged,
       type: "passive",
     },
   ],
@@ -1163,20 +1181,20 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  "armored-beasts": ([i]) => [
-    // Grant +2 armor to War Elephants and Tower War Elephants.
-    {
-      property: "meleeArmor",
-      select: { id: ["war-elephant"] },
-      effect: "change",
-      value: i,
-      type: "passive",
-    },
+  "armored-beasts": ([hp, armor]) => [
+    // Grant +25% health and +4 ranged armor to War Elephants.
     {
       property: "rangedArmor",
       select: { id: ["war-elephant"] },
       effect: "change",
-      value: i,
+      value: armor,
+      type: "passive",
+    },
+    {
+      property: "hitpoints",
+      select: { id: ["war-elephant"] },
+      effect: "multiply",
+      value: increaseByPercent(1, hp),
       type: "passive",
     },
   ],
@@ -1326,9 +1344,27 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     // Increase the damage of Rams and Trebuchets +30%.
     {
       property: "siegeAttack",
-      select: { id: ["battering-ram", "counterweight-trebuchet", "traction-trebuchet"] },
+      select: { id: ["huihui-pao", "counterweight-trebuchet", "traction-trebuchet"] },
       effect: "multiply",
       value: increaseByPercent(1, i),
+      type: "passive",
+    },
+  ],
+
+  "lightweight-beams": ([speed, time]) => [
+    // Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.
+    {
+      property: "attackSpeed",
+      select: { id: ["battering-ram"] },
+      effect: "multiply",
+      value: increaseSpeedByPercent(1, speed),
+      type: "passive",
+    },
+    {
+      property: "buildTime",
+      select: { id: ["battering-ram"] },
+      effect: "multiply",
+      value: decreaseByPercent(1, time),
       type: "passive",
     },
   ],
@@ -1339,7 +1375,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "moveSpeed",
       select: { class: [["siege"]] },
       effect: "multiply",
-      value: increaseSpeedByPercent(1, i),
+      value: increaseByPercent(1, i),
       type: "passive",
     },
   ],
@@ -1417,14 +1453,17 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     {
       property: "rangedAttack",
       select: {
-        class: [["ranged", "cavalry"]],
-        // Below is essentally the same a ["ranged", "infantry"] minus gunpowder units
         id: [
           "longbowman",
           "zhuge-nu",
           "archer",
           "arbaletrier",
           "crossbowman",
+          "tower-elepahnt",
+          "mangudai",
+          "horse-archer",
+          "camel-archer",
+          "khan",
           // And other ranged buildings
           "town-center",
           "keep",
@@ -1440,13 +1479,20 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  "lookout-towers": ([i]) => [
-    // Increase the sight range of Outposts by 50%.
+  "lookout-towers": ([sight, range]) => [
+    // Increase the sight range of Outposts by 50% and weapon range by +1.
     {
       property: "lineOfSight",
       select: { id: ["outpost"] },
       effect: "multiply",
-      value: increaseByPercent(1, i),
+      value: increaseByPercent(1, sight),
+      type: "passive",
+    },
+    {
+      property: "maxRange",
+      select: { id: ["outpost"] },
+      effect: "change",
+      value: range,
       type: "passive",
     },
   ],
@@ -1513,13 +1559,13 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  "reinforced-foundations": ([i]) => [
-    // Houses and Town Centers grant an additional +5 maximum Population.
+  "reinforced-foundations": ([hp]) => [
+    // Villagers and Infantry can garrison inside Houses for protection. Houses gain garrison arrows and +50% Health.
     {
-      property: "maxPopulation",
-      select: { id: ["house", "town-center"] },
-      effect: "change",
-      value: i,
+      property: "hitpoints",
+      select: { id: ["house"] },
+      effect: "multiply",
+      value: increaseByPercent(1, hp),
       type: "passive",
     },
   ],
@@ -1579,9 +1625,8 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  // todo .... ??
-  "siege-elephant": ([i]) => [
-    // Upgrade Tower War Elephants to have Elite Crossbowmen as riders instead of Archers.
+  howdahs: ([hp, armor]) => [
+    // Upgrade Tower Elephants to have Elite Crossbowmen as riders instead of Archers. Tower Elephants gain +30% health and +4 ranged armor.
     {
       property: "rangedAttack",
       target: { class: [["heavy"]] },
@@ -1589,6 +1634,20 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       effect: "change",
       value: 11,
       type: "bonus",
+    },
+    {
+      property: "rangedArmor",
+      select: { id: ["tower-elephant"] },
+      effect: "change",
+      value: armor,
+      type: "passive",
+    },
+    {
+      property: "hitpoints",
+      select: { id: ["tower-elephant"] },
+      effect: "multiply",
+      value: increaseByPercent(1, hp),
+      type: "passive",
     },
   ],
 
@@ -1878,6 +1937,17 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       select: { id: ["villager"] },
       effect: "multiply",
       value: decreaseByPercent(1, r),
+      type: "passive",
+    },
+  ],
+
+  "fertile-crescent": ([i]) => [
+    // Reduce the cost of Economy buildings and Houses by 25%.
+    {
+      property: "foodCost",
+      select: { id: ["house", "mill", "lumber-camp", "dock", "mining-camp"] },
+      effect: "multiply",
+      value: decreaseByPercent(1, i),
       type: "passive",
     },
   ],
@@ -2211,6 +2281,35 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
+  "geometry-improved": ([i, d]) => [
+    // Increase damage of Trebuchets by +20%.\nIf Geometry has already been researched, increase their damage by +10% instead.
+    {
+      property: "rangedAttack",
+      select: { id: ["huihui-pao", "trebuchet"] },
+      effect: "multiply",
+      value: increaseByPercentImproved(1, i, d),
+      type: "passive",
+    },
+  ],
+
+  "lightweight-beams-improved": ([as, ct, asd, ctd]) => [
+    // Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.\nIf Lightweight Beams has already been researched, increase attack speed by +60% and reduce field construction time by -75% instead.
+    {
+      property: "attackSpeed",
+      select: { id: ["battering-ram"] },
+      effect: "multiply",
+      value: increaseByPercentImproved(1, as, asd),
+      type: "passive",
+    },
+    {
+      property: "buildTime",
+      select: { id: ["battering-ram"] },
+      effect: "multiply",
+      value: decreaseByPercentImproved(1, ct, ctd),
+      type: "passive",
+    },
+  ],
+
   "monastic-shrines": ([]) => [
     // Monasteries allow Improved Production in their districts even without an Ovoo.
     {
@@ -2381,7 +2480,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  "blessing-duration": ([d]) => [
+  "divine-light": ([d]) => [
     // Increase the duration of Saint's Blessing by 10 seconds.
     {
       property: "unknown",
@@ -2458,25 +2557,58 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  "fine-tuned-guns": ([r]) => [
-    // Reduce the reload time of Bombards by -20%.
+  "fine-tuned-guns": ([d, bd]) => [
+    // Increase damage of Bombards by +20%. Bombards gain +50% damage vs Infantry.
     {
-      property: "attackSpeed",
+      property: "siegeAttack",
       select: { id: ["bombard"] },
       effect: "multiply",
-      value: increaseSpeedByPercent(1, r),
+      value: increaseSpeedByPercent(1, d),
       type: "passive",
+    },
+    {
+      property: "siegeAttack",
+      select: { id: ["bombard"] },
+      target: { class: [["infantry"]] },
+      effect: "multiply",
+      value: increaseSpeedByPercent(1, bd),
+      type: "bonus",
     },
   ],
 
-  "improved-blessing": ([d]) => [
-    // Improve the damage granted by Saint's Blessing by +1.
+  fervor: ([tiles, damage]) => [
+    //Improve the range of Saint's Blessing by +5 tiles and the damage granted by Saint's Blessing by +1.
     {
       property: "unknown",
-      select: { class: [["infantry"], ["cavalry"]], id: ["warrior-monk"] },
+      select: { id: ["warrior-monk"] },
+      effect: "change",
+      value: tiles,
+      type: "ability",
+    },
+    {
+      property: "meleeAttack",
+      select: { class: [["infantry"], ["cavalry"]] },
+      effect: "change",
+      value: damage,
+      type: "influence",
+    },
+    {
+      property: "rangedAttack",
+      select: { class: [["infantry"], ["cavalry"]] },
+      effect: "change",
+      value: damage,
+      type: "influence",
+    },
+  ],
+
+  "saints-veneration": ([d]) => [
+    // Increase the health of Warrior Monks by +100.
+    {
+      property: "hitpoints",
+      select: { id: ["warrior-monk"] },
       effect: "change",
       value: d,
-      type: "ability",
+      type: "passive",
     },
   ],
 
@@ -2502,35 +2634,31 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  "saints-reach": ([]) => [
-    // Increase the range of Saint's Blessing by 3 tiles.
-    {
-      property: "unknown",
-      select: { id: ["warrior-monk"] },
-      effect: "change",
-      value: 1,
-      type: "ability",
-    },
-  ],
-
   "siege-crew-training": ([]) => [
     // Setup and teardown speed of Trebuchets and Magonels is instant.
     {
       property: "attackSpeed",
-      select: { id: ["counterweight-trebuchet", "mangonel"] },
+      select: { id: ["counterweight-trebuchet", "mangonel", "bombard"] },
       effect: "change",
       value: 0, // Todo, figure out real timings
       type: "passive",
     },
   ],
 
-  "wandering-town": ([d]) => [
-    // Ram damage increased by +100%.
+  "wandering-town": ([d, hp, s]) => [
+    // Ram damage increased by +50%. Rams heal 2 health every 1 second.
     {
       property: "siegeAttack",
       select: { id: ["battering-ram"] },
       effect: "multiply",
       value: increaseByPercent(1, d),
+      type: "passive",
+    },
+    {
+      property: "healingRate",
+      select: { id: ["battering-ram"] },
+      effect: "change",
+      value: hp,
       type: "passive",
     },
   ],

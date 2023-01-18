@@ -821,7 +821,7 @@
         "time": 60
       },
       "producedBy": [
-        "house-of-wisdom"
+        "stable"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/camel-rider-shields-3.png",
       "effects": [
@@ -1014,13 +1014,13 @@
       ]
     },
     {
-      "id": "composite-bows-4",
+      "id": "composite-bows-3",
       "baseId": "composite-bows",
       "type": "technology",
       "name": "Composite Bows",
       "pbgid": 200372,
       "attribName": "upgrade_mameluke_damage_abb",
-      "age": 4,
+      "age": 3,
       "civs": [
         "ab"
       ],
@@ -1035,17 +1035,17 @@
       "unique": true,
       "costs": {
         "food": 0,
-        "wood": 300,
+        "wood": 150,
         "stone": 0,
-        "gold": 700,
-        "total": 1000,
+        "gold": 350,
+        "total": 500,
         "popcap": 0,
-        "time": 90
+        "time": 60
       },
       "producedBy": [
-        "archery-range"
+        "house-of-wisdom"
       ],
-      "icon": "https://data.aoe4world.com/images/technologies/composite-bows-4.png",
+      "icon": "https://data.aoe4world.com/images/technologies/composite-bows-3.png",
       "effects": [
         {
           "property": "attackSpeed",
@@ -1507,7 +1507,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Constructs the Economic Wing.\nThe following economic technologies become available:\n• Fresh Foodstuffs (Feudal Age)\n• Agriculture (Castle Age)\n• Improved Processing (Imperial Age)",
+      "description": "Constructs the Economic Wing.\nThe following economic technologies become available:\n• Fertile Crescent (Feudal Age)\n• Agriculture (Castle Age)\n• Improved Processing (Imperial Age)",
       "classes": [
         "advance",
         "to",
@@ -1772,49 +1772,53 @@
       ]
     },
     {
-      "id": "faith-4",
-      "baseId": "faith",
+      "id": "fertile-crescent-2",
+      "baseId": "fertile-crescent",
       "type": "technology",
-      "name": "Faith",
-      "pbgid": 201793,
-      "attribName": "upgrade_cul_conversion_invuln_abb",
-      "age": 4,
+      "name": "Fertile Crescent",
+      "pbgid": 2108050,
+      "attribName": "upgrade_econ_fertile_crescent_abb",
+      "age": 2,
       "civs": [
         "ab"
       ],
-      "description": "Imams can convert units without holding a Relic, but can only target a single unit.",
+      "description": "Reduce the cost of Economy buildings and Houses by 25%.",
       "classes": [
-        "religious",
+        "economic",
         "technology"
       ],
       "displayClasses": [
-        "Religious Technology"
+        "Economic Technology"
       ],
       "unique": true,
       "costs": {
-        "food": 150,
+        "food": 25,
         "wood": 0,
         "stone": 0,
-        "gold": 350,
-        "total": 500,
+        "gold": 75,
+        "total": 100,
         "popcap": 0,
-        "time": 60
+        "time": 30
       },
       "producedBy": [
         "house-of-wisdom"
       ],
-      "icon": "https://data.aoe4world.com/images/technologies/faith-4.png",
+      "icon": "https://data.aoe4world.com/images/technologies/fertile-crescent-2.png",
       "effects": [
         {
-          "property": "unknown",
+          "property": "foodCost",
           "select": {
             "id": [
-              "imam"
+              "house",
+              "mill",
+              "lumber-camp",
+              "dock",
+              "mining-camp"
             ]
           },
-          "effect": "change",
-          "value": 1,
-          "type": "ability"
+          "effect": "multiply",
+          "value": 0.75,
+          "type": "passive"
         }
       ]
     },
@@ -2037,7 +2041,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Reduce the cost to produce Villagers by -50%.",
+      "description": "Reduce the cost to produce Villagers by -35%.",
       "classes": [
         "villager",
         "technology"
@@ -2053,10 +2057,11 @@
         "gold": 125,
         "total": 175,
         "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
-        "house-of-wisdom"
+        "capital-town-center",
+        "town-center"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/fresh-foodstuffs-2.png",
       "effects": [
@@ -2068,7 +2073,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.5,
+          "value": 0.65,
           "type": "passive"
         }
       ]
@@ -2084,13 +2089,13 @@
       "civs": [
         "ab"
       ],
-      "description": "Increase the damage of Rams and Trebuchets +30%.",
+      "description": "Increase damage of Trebuchets by +20%.",
       "classes": [
-        "siege",
+        "trebuchet",
         "technology"
       ],
       "displayClasses": [
-        "Siege Technology"
+        "Trebuchet Technology"
       ],
       "unique": false,
       "costs": {
@@ -2111,13 +2116,13 @@
           "property": "siegeAttack",
           "select": {
             "id": [
-              "battering-ram",
+              "huihui-pao",
               "counterweight-trebuchet",
               "traction-trebuchet"
             ]
           },
           "effect": "multiply",
-          "value": 1.3,
+          "value": 1.2,
           "type": "passive"
         }
       ]
@@ -2213,7 +2218,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8999999999999999,
+          "value": 1.15,
           "type": "passive"
         }
       ]
@@ -2503,18 +2508,17 @@
         {
           "property": "rangedAttack",
           "select": {
-            "class": [
-              [
-                "ranged",
-                "cavalry"
-              ]
-            ],
             "id": [
               "longbowman",
               "zhuge-nu",
               "archer",
               "arbaletrier",
               "crossbowman",
+              "tower-elepahnt",
+              "mangudai",
+              "horse-archer",
+              "camel-archer",
+              "khan",
               "town-center",
               "keep",
               "outpost",
@@ -2638,6 +2642,65 @@
           },
           "effect": "change",
           "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "lightweight-beams-4",
+      "baseId": "lightweight-beams",
+      "type": "technology",
+      "name": "Lightweight Beams",
+      "pbgid": 2117424,
+      "attribName": "upgrade_ram_scaling",
+      "age": 4,
+      "civs": [
+        "ab"
+      ],
+      "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+      "classes": [
+        "battering",
+        "ram",
+        "technology"
+      ],
+      "displayClasses": [
+        "Battering Ram Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 225,
+        "total": 325,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+      "effects": [
+        {
+          "property": "attackSpeed",
+          "select": {
+            "id": [
+              "battering-ram"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.7000000000000001,
+          "type": "passive"
+        },
+        {
+          "property": "buildTime",
+          "select": {
+            "id": [
+              "battering-ram"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.5,
           "type": "passive"
         }
       ]
@@ -2866,7 +2929,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Constructs the Military Wing.\nThe following military technologies become available:\n• Boot Camp (Feudal Age)\n• Camel Rider Shields (Castle Age)\n• Camel Support (Imperial Age)",
+      "description": "Constructs the Military Wing.\nSpawns the following units upon completion:\n• 2 Spearmen & 1 Archer (Feudal Age)\n• 2 Camel Riders (Castle Age)\n• 3 Handcannoneers (Imperial Age)\nThe following military technologies become available:\n• Boot Camp (Feudal Age)\n• Composite Bows (Castle Age)\n• Camel Support (Imperial Age)",
       "classes": [
         "advance",
         "to",
@@ -3161,7 +3224,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Reduce the cost of all technology by -30%.",
+      "description": "Reduce the cost of all technology by -20%.",
       "classes": [
         "research",
         "technology"
@@ -3194,7 +3257,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.7,
+          "value": 0.8,
           "type": "passive"
         },
         {
@@ -3207,7 +3270,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.7,
+          "value": 0.8,
           "type": "passive"
         },
         {
@@ -3220,7 +3283,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.7,
+          "value": 0.8,
           "type": "passive"
         }
       ]
@@ -3289,6 +3352,41 @@
           "type": "bonus"
         }
       ]
+    },
+    {
+      "id": "proselytization-4",
+      "baseId": "proselytization",
+      "type": "technology",
+      "name": "Proselytization",
+      "pbgid": 201793,
+      "attribName": "upgrade_cul_conversion_invuln_abb",
+      "age": 4,
+      "civs": [
+        "ab"
+      ],
+      "description": "Imams can convert units without holding a Relic, but can only target a single unit.",
+      "classes": [
+        "religious",
+        "technology"
+      ],
+      "displayClasses": [
+        "Religious Technology"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 150,
+        "wood": 0,
+        "stone": 0,
+        "gold": 350,
+        "total": 500,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/proselytization-4.png",
+      "effects": []
     },
     {
       "id": "roller-shutter-triggers-4",
@@ -4064,7 +4162,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Constructs the Trade Wing.\nThe following trade technologies become available:\n• Grand Bazaar (Feudal Age)\n• Armored Caravans (Castle Age)\n• Spice Roads (Imperial Age)",
+      "description": "Constructs the Trade Wing.\nSpawns 3 Traders upon completion and acts as a Home Market.\nThe following trade technologies become available:\n• Grand Bazaar (Feudal Age)\n• Armored Caravans (Castle Age)\n• Spice Roads (Imperial Age)",
       "classes": [
         "advance",
         "to",

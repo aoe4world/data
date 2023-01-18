@@ -17,7 +17,7 @@
   ],
   "minAge": 4,
   "icon": "https://data.aoe4world.com/images/technologies/armored-beasts-4.png",
-  "description": "Grant +3 armor to War Elephants.",
+  "description": "Grant +25% health and +4 ranged armor to War Elephants.",
   "variations": [
     {
       "id": "armored-beasts-4",
@@ -30,7 +30,7 @@
       "civs": [
         "de"
       ],
-      "description": "Grant +3 armor to War Elephants.",
+      "description": "Grant +25% health and +4 ranged armor to War Elephants.",
       "classes": [
         "elephant",
         "technology"
@@ -46,24 +46,13 @@
         "gold": 0,
         "total": 0,
         "popcap": 0,
-        "time": 1080
+        "time": 720
       },
       "producedBy": [
         "stable"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/armored-beasts-4.png",
       "effects": [
-        {
-          "property": "meleeArmor",
-          "select": {
-            "id": [
-              "war-elephant"
-            ]
-          },
-          "effect": "change",
-          "value": 3,
-          "type": "passive"
-        },
         {
           "property": "rangedArmor",
           "select": {
@@ -72,7 +61,18 @@
             ]
           },
           "effect": "change",
-          "value": 3,
+          "value": 4,
+          "type": "passive"
+        },
+        {
+          "property": "hitpoints",
+          "select": {
+            "id": [
+              "war-elephant"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.25,
           "type": "passive"
         }
       ]

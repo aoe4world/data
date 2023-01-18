@@ -267,8 +267,8 @@
       "baseId": "battering-ram",
       "type": "unit",
       "name": "Battering Ram",
-      "pbgid": 133339,
-      "attribName": "unit_ram_3_rus",
+      "pbgid": 2108176,
+      "attribName": "unit_workshop_ram_3_rus",
       "age": 2,
       "civs": [
         "ru"
@@ -288,14 +288,10 @@
         "gold": 0,
         "total": 250,
         "popcap": 1,
-        "time": 80
+        "time": 30
       },
       "producedBy": [
-        "spearman",
-        "man-at-arms",
-        "archer",
-        "crossbowman",
-        "streltsy"
+        "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
       "hitpoints": 420,
@@ -384,10 +380,10 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 400,
+        "wood": 300,
         "stone": 0,
         "gold": 600,
-        "total": 1000,
+        "total": 900,
         "popcap": 3,
         "time": 45
       },
@@ -2334,6 +2330,110 @@
       }
     },
     {
+      "id": "militia-2",
+      "baseId": "militia",
+      "type": "unit",
+      "name": "Militia",
+      "pbgid": 2104839,
+      "attribName": "unit_militia_2_rus",
+      "age": 2,
+      "civs": [
+        "ru"
+      ],
+      "description": "Light melee infantry equipped with a polearm.\n+ Fast moving\n- Countered by Archers\n- Can't garrison\n- Has a 90 second lifespan",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 100,
+        "popcap": 1,
+        "time": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/units/militia-2.png",
+      "hitpoints": 85,
+      "weapons": [
+        {
+          "name": "Militia Axe",
+          "type": "melee",
+          "damage": 6,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 0.2875
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 6,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.25
+          },
+          "attribName": "weapon_shield_militia_2_rus",
+          "pbgid": 2104847
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch_rus",
+          "pbgid": 133324
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.5
+      }
+    },
+    {
       "id": "scout-1",
       "baseId": "scout",
       "type": "unit",
@@ -2465,7 +2565,8 @@
         "man-at-arms",
         "archer",
         "crossbowman",
-        "streltsy"
+        "streltsy",
+        "militia"
       ],
       "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
       "hitpoints": 480,
@@ -2928,7 +3029,7 @@
       "civs": [
         "ru"
       ],
-      "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
+      "description": "Effective at taking out siege engines at long range.\n+ Long range\n+ Bonus damage vs. siege engines\n+ Attacks without having to set up\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -3066,10 +3167,10 @@
           "modifiers": [],
           "durations": {
             "aim": 0.25,
-            "windup": 0.25,
+            "windup": 0,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1,
+            "reload": 1.25,
             "setup": 0,
             "teardown": 0,
             "cooldown": 0

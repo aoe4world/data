@@ -416,8 +416,8 @@
           "baseId": "battering-ram",
           "type": "unit",
           "name": "Battering Ram",
-          "pbgid": 137527,
-          "attribName": "unit_ram_3_chi",
+          "pbgid": 2108169,
+          "attribName": "unit_workshop_ram_3_chi",
           "age": 2,
           "civs": [
             "ch"
@@ -437,16 +437,10 @@
             "gold": 0,
             "total": 250,
             "popcap": 1,
-            "time": 80
+            "time": 30
           },
           "producedBy": [
-            "spearman",
-            "palace-guard",
-            "archer",
-            "crossbowman",
-            "grenadier",
-            "zhuge-nu",
-            "handcannoneer"
+            "siege-workshop"
           ],
           "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
           "hitpoints": 420,
@@ -557,10 +551,10 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 400,
+            "wood": 300,
             "stone": 0,
             "gold": 600,
-            "total": 1000,
+            "total": 900,
             "popcap": 3,
             "time": 45
           },
@@ -639,6 +633,121 @@
       ]
     },
     {
+      "id": "clocktower-battering-ram",
+      "name": "Clocktower Battering Ram",
+      "type": "unit",
+      "civs": [
+        "ch"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Siege"
+      ],
+      "classes": [
+        "siege"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/clocktower-battering-ram-3.png",
+      "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Can only attack buildings\n- Slow movement speed",
+      "variations": [
+        {
+          "id": "clocktower-battering-ram-3",
+          "baseId": "clocktower-battering-ram",
+          "type": "unit",
+          "name": "Clocktower Battering Ram",
+          "pbgid": 2120982,
+          "attribName": "unit_ram_3_clocktower_chi",
+          "age": 3,
+          "civs": [
+            "ch"
+          ],
+          "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Can only attack buildings\n- Slow movement speed",
+          "classes": [
+            "siege"
+          ],
+          "displayClasses": [
+            "Siege"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 250,
+            "stone": 0,
+            "gold": 0,
+            "total": 250,
+            "popcap": 1,
+            "time": 30
+          },
+          "producedBy": [
+            "astronomical-clocktower"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/clocktower-battering-ram-3.png",
+          "hitpoints": 630,
+          "weapons": [
+            {
+              "name": "Ram",
+              "type": "siege",
+              "damage": 200,
+              "speed": 5.125,
+              "range": {
+                "min": 0,
+                "max": 0.5375
+              },
+              "modifiers": [
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "wall"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 200,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.625,
+                "attack": 0.125,
+                "winddown": 0.375,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 4
+              },
+              "attribName": "weapon_ram_3",
+              "pbgid": 108918
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
+          "sight": {
+            "line": 30,
+            "height": 10
+          },
+          "movement": {
+            "speed": 0.75
+          },
+          "garrison": {
+            "capacity": 16,
+            "classes": [
+              "infantry",
+              "villager",
+              "infantry ranged",
+              "monk"
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "clocktower-bombard",
       "name": "Clocktower Bombard",
       "type": "unit",
@@ -681,10 +790,10 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 400,
+            "wood": 300,
             "stone": 0,
             "gold": 600,
-            "total": 1000,
+            "total": 900,
             "popcap": 3,
             "time": 45
           },
@@ -1012,7 +1121,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/units/clocktower-springald-3.png",
-      "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
+      "description": "Effective at taking out siege engines at long range.\n+ Long range\n+ Bonus damage vs. siege engines\n+ Attacks without having to set up\n- Trivial damage vs. buildings",
       "variations": [
         {
           "id": "clocktower-springald-3",
@@ -1025,7 +1134,7 @@
           "civs": [
             "ch"
           ],
-          "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
+          "description": "Effective at taking out siege engines at long range.\n+ Long range\n+ Bonus damage vs. siege engines\n+ Attacks without having to set up\n- Trivial damage vs. buildings",
           "classes": [
             "siege"
           ],
@@ -2029,10 +2138,10 @@
               "modifiers": [],
               "durations": {
                 "aim": 0.25,
-                "windup": 0.25,
+                "windup": 0,
                 "attack": 0.125,
                 "winddown": 0.5,
-                "reload": 1,
+                "reload": 1.25,
                 "setup": 0,
                 "teardown": 0,
                 "cooldown": 0
@@ -3913,7 +4022,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
+      "description": "Effective at taking out siege engines at long range.\n+ Long range\n+ Bonus damage vs. siege engines\n+ Attacks without having to set up\n- Trivial damage vs. buildings",
       "variations": [
         {
           "id": "springald-3",
@@ -3926,7 +4035,7 @@
           "civs": [
             "ch"
           ],
-          "description": "Effective at taking out high value targets at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs siege engines\n- Trivial damage vs. buildings",
+          "description": "Effective at taking out siege engines at long range.\n+ Long range\n+ Bonus damage vs. siege engines\n+ Attacks without having to set up\n- Trivial damage vs. buildings",
           "classes": [
             "siege"
           ],
@@ -4035,7 +4144,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/units/trade-ship-3.png",
-      "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
+      "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or another Dock. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
       "variations": [
         {
           "id": "trade-ship-2",
@@ -4048,7 +4157,7 @@
           "civs": [
             "ch"
           ],
-          "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or a Market near the shore. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
+          "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or another Dock. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
           "classes": [
             "worker",
             "ship"

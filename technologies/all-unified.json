@@ -3256,7 +3256,7 @@
           "civs": [
             "ru"
           ],
-          "description": "Add defensive arrowslits to this structure and increase garrison arrow range by +2. Only one weapon emplacement can be added.",
+          "description": "Add defensive arrowslits to this structure and increase garrison arrow range by +1.",
           "classes": [
             "weapon",
             "emplacement"
@@ -4162,6 +4162,7 @@
             "time": 1080
           },
           "producedBy": [
+            "hisar-academy",
             "madrasa"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/biology-4.png",
@@ -5248,6 +5249,7 @@
             "time": 450
           },
           "producedBy": [
+            "compound-of-the-defender",
             "keep"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/boiling-oil-3.png",
@@ -6262,6 +6264,7 @@
             "time": 90
           },
           "producedBy": [
+            "college-of-artillery",
             "university"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
@@ -6397,6 +6400,7 @@
             "time": 1080
           },
           "producedBy": [
+            "hisar-academy",
             "madrasa"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
@@ -6801,7 +6805,7 @@
         "building",
         "technology"
       ],
-      "minAge": 4,
+      "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/court-architects-4.png",
       "description": "Increase the health of all buildings by +30%.",
       "variations": [
@@ -7026,6 +7030,61 @@
           ]
         },
         {
+          "id": "court-architects-3",
+          "baseId": "court-architects",
+          "type": "technology",
+          "name": "Court Architects",
+          "pbgid": 2108028,
+          "attribName": "upgrade_tech_university_architecture_compound_sul",
+          "age": 3,
+          "civs": [
+            "de"
+          ],
+          "description": "Increase the health of all buildings by +30%.",
+          "classes": [
+            "building",
+            "technology"
+          ],
+          "displayClasses": [
+            "Building Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0,
+            "time": 1080
+          },
+          "producedBy": [
+            "compound-of-the-defender"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/court-architects-3.png",
+          "effects": [
+            {
+              "property": "hitpoints",
+              "select": {
+                "class": [
+                  [
+                    "building"
+                  ],
+                  [
+                    "landmark"
+                  ],
+                  [
+                    "wonder"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.3,
+              "type": "passive"
+            }
+          ]
+        },
+        {
           "id": "court-architects-4",
           "baseId": "court-architects",
           "type": "technology",
@@ -7055,6 +7114,7 @@
             "time": 1080
           },
           "producedBy": [
+            "hisar-academy",
             "madrasa"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/court-architects-4.png",
@@ -11132,6 +11192,7 @@
             "time": 1080
           },
           "producedBy": [
+            "hisar-academy",
             "madrasa"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/elite-army-tactics-4.png",
@@ -11511,7 +11572,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/enclosures-4.png",
-      "description": "Each Farm Enclosure being worked by a Villager generates +1 Gold every 3.5 seconds.",
+      "description": "Each Farm Enclosure being worked by a Villager generates +1 Gold every 5 seconds.",
       "variations": [
         {
           "id": "enclosures-4",
@@ -11524,7 +11585,7 @@
           "civs": [
             "en"
           ],
-          "description": "Each Farm Enclosure being worked by a Villager generates +1 Gold every 3.5 seconds.",
+          "description": "Each Farm Enclosure being worked by a Villager generates +1 Gold every 5 seconds.",
           "classes": [
             "farm",
             "technology"
@@ -11556,7 +11617,7 @@
                 ]
               },
               "effect": "change",
-              "value": 0.29,
+              "value": 0.2,
               "type": "influence"
             }
           ]
@@ -15370,15 +15431,15 @@
       ],
       "unique": false,
       "displayClasses": [
-        "Siege Technology"
+        "Trebuchet Technology"
       ],
       "classes": [
-        "siege",
+        "trebuchet",
         "technology"
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/geometry-4.png",
-      "description": "Increase the damage of Rams and Trebuchets +30%.",
+      "description": "Increase damage of Trebuchets by +20%.",
       "variations": [
         {
           "id": "geometry-4",
@@ -15391,13 +15452,13 @@
           "civs": [
             "en"
           ],
-          "description": "Increase the damage of Rams and Trebuchets +30%.",
+          "description": "Increase damage of Trebuchets by +20%.",
           "classes": [
-            "siege",
+            "trebuchet",
             "technology"
           ],
           "displayClasses": [
-            "Siege Technology"
+            "Trebuchet Technology"
           ],
           "unique": false,
           "costs": {
@@ -15418,13 +15479,13 @@
               "property": "siegeAttack",
               "select": {
                 "id": [
-                  "battering-ram",
+                  "huihui-pao",
                   "counterweight-trebuchet",
                   "traction-trebuchet"
                 ]
               },
               "effect": "multiply",
-              "value": 1.3,
+              "value": 1.2,
               "type": "passive"
             }
           ]
@@ -15440,13 +15501,13 @@
           "civs": [
             "hr"
           ],
-          "description": "Increase the damage of Rams and Trebuchets +30%.",
+          "description": "Increase damage of Trebuchets by +20%.",
           "classes": [
-            "siege",
+            "trebuchet",
             "technology"
           ],
           "displayClasses": [
-            "Siege Technology"
+            "Trebuchet Technology"
           ],
           "unique": false,
           "costs": {
@@ -15467,13 +15528,13 @@
               "property": "siegeAttack",
               "select": {
                 "id": [
-                  "battering-ram",
+                  "huihui-pao",
                   "counterweight-trebuchet",
                   "traction-trebuchet"
                 ]
               },
               "effect": "multiply",
-              "value": 1.3,
+              "value": 1.2,
               "type": "passive"
             }
           ]
@@ -15489,13 +15550,13 @@
           "civs": [
             "fr"
           ],
-          "description": "Increase the damage of Rams and Trebuchets +30%.",
+          "description": "Increase damage of Trebuchets by +20%.",
           "classes": [
-            "siege",
+            "trebuchet",
             "technology"
           ],
           "displayClasses": [
-            "Siege Technology"
+            "Trebuchet Technology"
           ],
           "unique": false,
           "costs": {
@@ -15516,13 +15577,13 @@
               "property": "siegeAttack",
               "select": {
                 "id": [
-                  "battering-ram",
+                  "huihui-pao",
                   "counterweight-trebuchet",
                   "traction-trebuchet"
                 ]
               },
               "effect": "multiply",
-              "value": 1.3,
+              "value": 1.2,
               "type": "passive"
             }
           ]
@@ -15538,13 +15599,13 @@
           "civs": [
             "ch"
           ],
-          "description": "Increase the damage of Rams and Trebuchets +30%.",
+          "description": "Increase damage of Trebuchets by +20%.",
           "classes": [
-            "siege",
+            "trebuchet",
             "technology"
           ],
           "displayClasses": [
-            "Siege Technology"
+            "Trebuchet Technology"
           ],
           "unique": false,
           "costs": {
@@ -15566,13 +15627,13 @@
               "property": "siegeAttack",
               "select": {
                 "id": [
-                  "battering-ram",
+                  "huihui-pao",
                   "counterweight-trebuchet",
                   "traction-trebuchet"
                 ]
               },
               "effect": "multiply",
-              "value": 1.3,
+              "value": 1.2,
               "type": "passive"
             }
           ]
@@ -15588,13 +15649,13 @@
           "civs": [
             "de"
           ],
-          "description": "Increase the damage of Rams and Trebuchets +30%.",
+          "description": "Increase damage of Trebuchets by +20%.",
           "classes": [
-            "siege",
+            "trebuchet",
             "technology"
           ],
           "displayClasses": [
-            "Siege Technology"
+            "Trebuchet Technology"
           ],
           "unique": false,
           "costs": {
@@ -15615,13 +15676,13 @@
               "property": "siegeAttack",
               "select": {
                 "id": [
-                  "battering-ram",
+                  "huihui-pao",
                   "counterweight-trebuchet",
                   "traction-trebuchet"
                 ]
               },
               "effect": "multiply",
-              "value": 1.3,
+              "value": 1.2,
               "type": "passive"
             }
           ]
@@ -15637,13 +15698,13 @@
           "civs": [
             "ab"
           ],
-          "description": "Increase the damage of Rams and Trebuchets +30%.",
+          "description": "Increase damage of Trebuchets by +20%.",
           "classes": [
-            "siege",
+            "trebuchet",
             "technology"
           ],
           "displayClasses": [
-            "Siege Technology"
+            "Trebuchet Technology"
           ],
           "unique": false,
           "costs": {
@@ -15664,13 +15725,13 @@
               "property": "siegeAttack",
               "select": {
                 "id": [
-                  "battering-ram",
+                  "huihui-pao",
                   "counterweight-trebuchet",
                   "traction-trebuchet"
                 ]
               },
               "effect": "multiply",
-              "value": 1.3,
+              "value": 1.2,
               "type": "passive"
             }
           ]
@@ -15686,13 +15747,13 @@
           "civs": [
             "ma"
           ],
-          "description": "Increase the damage of Rams and Trebuchets +30%.",
+          "description": "Increase damage of Trebuchets by +20%.",
           "classes": [
-            "siege",
+            "trebuchet",
             "technology"
           ],
           "displayClasses": [
-            "Siege Technology"
+            "Trebuchet Technology"
           ],
           "unique": false,
           "costs": {
@@ -15713,13 +15774,13 @@
               "property": "siegeAttack",
               "select": {
                 "id": [
-                  "battering-ram",
+                  "huihui-pao",
                   "counterweight-trebuchet",
                   "traction-trebuchet"
                 ]
               },
               "effect": "multiply",
-              "value": 1.3,
+              "value": 1.2,
               "type": "passive"
             }
           ]
@@ -15735,13 +15796,13 @@
           "civs": [
             "mo"
           ],
-          "description": "Increase the damage of Rams and Trebuchets +30%.",
+          "description": "Increase damage of Trebuchets by +20%.",
           "classes": [
-            "siege",
+            "trebuchet",
             "technology"
           ],
           "displayClasses": [
-            "Siege Technology"
+            "Trebuchet Technology"
           ],
           "unique": false,
           "costs": {
@@ -15762,13 +15823,13 @@
               "property": "siegeAttack",
               "select": {
                 "id": [
-                  "battering-ram",
+                  "huihui-pao",
                   "counterweight-trebuchet",
                   "traction-trebuchet"
                 ]
               },
               "effect": "multiply",
-              "value": 1.3,
+              "value": 1.2,
               "type": "passive"
             }
           ]
@@ -15784,13 +15845,13 @@
           "civs": [
             "ot"
           ],
-          "description": "Increase the damage of Rams and Trebuchets +30%.",
+          "description": "Increase damage of Trebuchets by +20%.",
           "classes": [
-            "siege",
+            "trebuchet",
             "technology"
           ],
           "displayClasses": [
-            "Siege Technology"
+            "Trebuchet Technology"
           ],
           "unique": false,
           "costs": {
@@ -15811,13 +15872,13 @@
               "property": "siegeAttack",
               "select": {
                 "id": [
-                  "battering-ram",
+                  "huihui-pao",
                   "counterweight-trebuchet",
                   "traction-trebuchet"
                 ]
               },
               "effect": "multiply",
-              "value": 1.3,
+              "value": 1.2,
               "type": "passive"
             }
           ]
@@ -15833,13 +15894,13 @@
           "civs": [
             "ru"
           ],
-          "description": "Increase the damage of Rams and Trebuchets +30%.",
+          "description": "Increase damage of Trebuchets by +20%.",
           "classes": [
-            "siege",
+            "trebuchet",
             "technology"
           ],
           "displayClasses": [
-            "Siege Technology"
+            "Trebuchet Technology"
           ],
           "unique": false,
           "costs": {
@@ -15860,13 +15921,13 @@
               "property": "siegeAttack",
               "select": {
                 "id": [
-                  "battering-ram",
+                  "huihui-pao",
                   "counterweight-trebuchet",
                   "traction-trebuchet"
                 ]
               },
               "effect": "multiply",
-              "value": 1.3,
+              "value": 1.2,
               "type": "passive"
             }
           ]
@@ -15945,7 +16006,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8999999999999999,
+              "value": 1.15,
               "type": "passive"
             }
           ]
@@ -15994,7 +16055,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8999999999999999,
+              "value": 1.15,
               "type": "passive"
             }
           ]
@@ -16043,7 +16104,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8999999999999999,
+              "value": 1.15,
               "type": "passive"
             }
           ]
@@ -16093,7 +16154,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8999999999999999,
+              "value": 1.15,
               "type": "passive"
             }
           ]
@@ -16142,7 +16203,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8999999999999999,
+              "value": 1.15,
               "type": "passive"
             }
           ]
@@ -16191,7 +16252,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8999999999999999,
+              "value": 1.15,
               "type": "passive"
             }
           ]
@@ -16240,7 +16301,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8999999999999999,
+              "value": 1.15,
               "type": "passive"
             }
           ]
@@ -16289,7 +16350,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8999999999999999,
+              "value": 1.15,
               "type": "passive"
             }
           ]
@@ -16338,7 +16399,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8999999999999999,
+              "value": 1.15,
               "type": "passive"
             }
           ]
@@ -16387,7 +16448,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8999999999999999,
+              "value": 1.15,
               "type": "passive"
             }
           ]
@@ -18594,18 +18655,17 @@
             {
               "property": "rangedAttack",
               "select": {
-                "class": [
-                  [
-                    "ranged",
-                    "cavalry"
-                  ]
-                ],
                 "id": [
                   "longbowman",
                   "zhuge-nu",
                   "archer",
                   "arbaletrier",
                   "crossbowman",
+                  "tower-elepahnt",
+                  "mangudai",
+                  "horse-archer",
+                  "camel-archer",
+                  "khan",
                   "town-center",
                   "keep",
                   "outpost",
@@ -18662,18 +18722,17 @@
             {
               "property": "rangedAttack",
               "select": {
-                "class": [
-                  [
-                    "ranged",
-                    "cavalry"
-                  ]
-                ],
                 "id": [
                   "longbowman",
                   "zhuge-nu",
                   "archer",
                   "arbaletrier",
                   "crossbowman",
+                  "tower-elepahnt",
+                  "mangudai",
+                  "horse-archer",
+                  "camel-archer",
+                  "khan",
                   "town-center",
                   "keep",
                   "outpost",
@@ -18730,18 +18789,17 @@
             {
               "property": "rangedAttack",
               "select": {
-                "class": [
-                  [
-                    "ranged",
-                    "cavalry"
-                  ]
-                ],
                 "id": [
                   "longbowman",
                   "zhuge-nu",
                   "archer",
                   "arbaletrier",
                   "crossbowman",
+                  "tower-elepahnt",
+                  "mangudai",
+                  "horse-archer",
+                  "camel-archer",
+                  "khan",
                   "town-center",
                   "keep",
                   "outpost",
@@ -18798,18 +18856,17 @@
             {
               "property": "rangedAttack",
               "select": {
-                "class": [
-                  [
-                    "ranged",
-                    "cavalry"
-                  ]
-                ],
                 "id": [
                   "longbowman",
                   "zhuge-nu",
                   "archer",
                   "arbaletrier",
                   "crossbowman",
+                  "tower-elepahnt",
+                  "mangudai",
+                  "horse-archer",
+                  "camel-archer",
+                  "khan",
                   "town-center",
                   "keep",
                   "outpost",
@@ -18859,6 +18916,7 @@
             "time": 1080
           },
           "producedBy": [
+            "hisar-academy",
             "madrasa"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/incendiary-arrows-4.png",
@@ -18866,18 +18924,17 @@
             {
               "property": "rangedAttack",
               "select": {
-                "class": [
-                  [
-                    "ranged",
-                    "cavalry"
-                  ]
-                ],
                 "id": [
                   "longbowman",
                   "zhuge-nu",
                   "archer",
                   "arbaletrier",
                   "crossbowman",
+                  "tower-elepahnt",
+                  "mangudai",
+                  "horse-archer",
+                  "camel-archer",
+                  "khan",
                   "town-center",
                   "keep",
                   "outpost",
@@ -18934,18 +18991,17 @@
             {
               "property": "rangedAttack",
               "select": {
-                "class": [
-                  [
-                    "ranged",
-                    "cavalry"
-                  ]
-                ],
                 "id": [
                   "longbowman",
                   "zhuge-nu",
                   "archer",
                   "arbaletrier",
                   "crossbowman",
+                  "tower-elepahnt",
+                  "mangudai",
+                  "horse-archer",
+                  "camel-archer",
+                  "khan",
                   "town-center",
                   "keep",
                   "outpost",
@@ -19002,18 +19058,17 @@
             {
               "property": "rangedAttack",
               "select": {
-                "class": [
-                  [
-                    "ranged",
-                    "cavalry"
-                  ]
-                ],
                 "id": [
                   "longbowman",
                   "zhuge-nu",
                   "archer",
                   "arbaletrier",
                   "crossbowman",
+                  "tower-elepahnt",
+                  "mangudai",
+                  "horse-archer",
+                  "camel-archer",
+                  "khan",
                   "town-center",
                   "keep",
                   "outpost",
@@ -19071,18 +19126,17 @@
             {
               "property": "rangedAttack",
               "select": {
-                "class": [
-                  [
-                    "ranged",
-                    "cavalry"
-                  ]
-                ],
                 "id": [
                   "longbowman",
                   "zhuge-nu",
                   "archer",
                   "arbaletrier",
                   "crossbowman",
+                  "tower-elepahnt",
+                  "mangudai",
+                  "horse-archer",
+                  "camel-archer",
+                  "khan",
                   "town-center",
                   "keep",
                   "outpost",
@@ -19139,18 +19193,17 @@
             {
               "property": "rangedAttack",
               "select": {
-                "class": [
-                  [
-                    "ranged",
-                    "cavalry"
-                  ]
-                ],
                 "id": [
                   "longbowman",
                   "zhuge-nu",
                   "archer",
                   "arbaletrier",
                   "crossbowman",
+                  "tower-elepahnt",
+                  "mangudai",
+                  "horse-archer",
+                  "camel-archer",
+                  "khan",
                   "town-center",
                   "keep",
                   "outpost",
@@ -20312,6 +20365,628 @@
               },
               "effect": "change",
               "value": 1,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lightweight-beams",
+      "name": "Lightweight Beams",
+      "type": "technology",
+      "civs": [
+        "ab",
+        "ch",
+        "de",
+        "en",
+        "fr",
+        "hr",
+        "ma",
+        "mo",
+        "ot",
+        "ru"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Battering Ram Technology"
+      ],
+      "classes": [
+        "battering",
+        "ram",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+      "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+      "variations": [
+        {
+          "id": "lightweight-beams-4",
+          "baseId": "lightweight-beams",
+          "type": "technology",
+          "name": "Lightweight Beams",
+          "pbgid": 2117424,
+          "attribName": "upgrade_ram_scaling",
+          "age": 4,
+          "civs": [
+            "en"
+          ],
+          "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+          "classes": [
+            "battering",
+            "ram",
+            "technology"
+          ],
+          "displayClasses": [
+            "Battering Ram Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 225,
+            "total": 325,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "siege-workshop"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.7000000000000001,
+              "type": "passive"
+            },
+            {
+              "property": "buildTime",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.5,
+              "type": "passive"
+            }
+          ]
+        },
+        {
+          "id": "lightweight-beams-4",
+          "baseId": "lightweight-beams",
+          "type": "technology",
+          "name": "Lightweight Beams",
+          "pbgid": 2117424,
+          "attribName": "upgrade_ram_scaling",
+          "age": 4,
+          "civs": [
+            "hr"
+          ],
+          "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+          "classes": [
+            "battering",
+            "ram",
+            "technology"
+          ],
+          "displayClasses": [
+            "Battering Ram Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 225,
+            "total": 325,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "siege-workshop"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.7000000000000001,
+              "type": "passive"
+            },
+            {
+              "property": "buildTime",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.5,
+              "type": "passive"
+            }
+          ]
+        },
+        {
+          "id": "lightweight-beams-4",
+          "baseId": "lightweight-beams",
+          "type": "technology",
+          "name": "Lightweight Beams",
+          "pbgid": 2117424,
+          "attribName": "upgrade_ram_scaling",
+          "age": 4,
+          "civs": [
+            "fr"
+          ],
+          "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+          "classes": [
+            "battering",
+            "ram",
+            "technology"
+          ],
+          "displayClasses": [
+            "Battering Ram Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 225,
+            "total": 325,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "siege-workshop"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.7000000000000001,
+              "type": "passive"
+            },
+            {
+              "property": "buildTime",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.5,
+              "type": "passive"
+            }
+          ]
+        },
+        {
+          "id": "lightweight-beams-4",
+          "baseId": "lightweight-beams",
+          "type": "technology",
+          "name": "Lightweight Beams",
+          "pbgid": 2117424,
+          "attribName": "upgrade_ram_scaling",
+          "age": 4,
+          "civs": [
+            "ch"
+          ],
+          "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+          "classes": [
+            "battering",
+            "ram",
+            "technology"
+          ],
+          "displayClasses": [
+            "Battering Ram Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 225,
+            "total": 325,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "astronomical-clocktower",
+            "siege-workshop"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.7000000000000001,
+              "type": "passive"
+            },
+            {
+              "property": "buildTime",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.5,
+              "type": "passive"
+            }
+          ]
+        },
+        {
+          "id": "lightweight-beams-4",
+          "baseId": "lightweight-beams",
+          "type": "technology",
+          "name": "Lightweight Beams",
+          "pbgid": 2117415,
+          "attribName": "upgrade_ram_scaling_sul",
+          "age": 4,
+          "civs": [
+            "de"
+          ],
+          "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+          "classes": [
+            "battering",
+            "ram",
+            "technology"
+          ],
+          "displayClasses": [
+            "Battering Ram Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0,
+            "time": 585
+          },
+          "producedBy": [
+            "siege-workshop"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.7000000000000001,
+              "type": "passive"
+            },
+            {
+              "property": "buildTime",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.5,
+              "type": "passive"
+            }
+          ]
+        },
+        {
+          "id": "lightweight-beams-4",
+          "baseId": "lightweight-beams",
+          "type": "technology",
+          "name": "Lightweight Beams",
+          "pbgid": 2117424,
+          "attribName": "upgrade_ram_scaling",
+          "age": 4,
+          "civs": [
+            "ab"
+          ],
+          "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+          "classes": [
+            "battering",
+            "ram",
+            "technology"
+          ],
+          "displayClasses": [
+            "Battering Ram Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 225,
+            "total": 325,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "siege-workshop"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.7000000000000001,
+              "type": "passive"
+            },
+            {
+              "property": "buildTime",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.5,
+              "type": "passive"
+            }
+          ]
+        },
+        {
+          "id": "lightweight-beams-4",
+          "baseId": "lightweight-beams",
+          "type": "technology",
+          "name": "Lightweight Beams",
+          "pbgid": 2117424,
+          "attribName": "upgrade_ram_scaling",
+          "age": 4,
+          "civs": [
+            "ma"
+          ],
+          "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+          "classes": [
+            "battering",
+            "ram",
+            "technology"
+          ],
+          "displayClasses": [
+            "Battering Ram Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 225,
+            "total": 325,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "siege-workshop"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.7000000000000001,
+              "type": "passive"
+            },
+            {
+              "property": "buildTime",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.5,
+              "type": "passive"
+            }
+          ]
+        },
+        {
+          "id": "lightweight-beams-4",
+          "baseId": "lightweight-beams",
+          "type": "technology",
+          "name": "Lightweight Beams",
+          "pbgid": 2119227,
+          "attribName": "upgrade_ram_scaling_mon",
+          "age": 4,
+          "civs": [
+            "mo"
+          ],
+          "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+          "classes": [
+            "battering",
+            "ram",
+            "technology"
+          ],
+          "displayClasses": [
+            "Battering Ram Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 225,
+            "total": 325,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "siege-workshop"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.7000000000000001,
+              "type": "passive"
+            },
+            {
+              "property": "buildTime",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.5,
+              "type": "passive"
+            }
+          ]
+        },
+        {
+          "id": "lightweight-beams-4",
+          "baseId": "lightweight-beams",
+          "type": "technology",
+          "name": "Lightweight Beams",
+          "pbgid": 2117424,
+          "attribName": "upgrade_ram_scaling",
+          "age": 4,
+          "civs": [
+            "ot"
+          ],
+          "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+          "classes": [
+            "battering",
+            "ram",
+            "technology"
+          ],
+          "displayClasses": [
+            "Battering Ram Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 225,
+            "total": 325,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "siege-workshop"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.7000000000000001,
+              "type": "passive"
+            },
+            {
+              "property": "buildTime",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.5,
+              "type": "passive"
+            }
+          ]
+        },
+        {
+          "id": "lightweight-beams-4",
+          "baseId": "lightweight-beams",
+          "type": "technology",
+          "name": "Lightweight Beams",
+          "pbgid": 2117424,
+          "attribName": "upgrade_ram_scaling",
+          "age": 4,
+          "civs": [
+            "ru"
+          ],
+          "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+          "classes": [
+            "battering",
+            "ram",
+            "technology"
+          ],
+          "displayClasses": [
+            "Battering Ram Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 225,
+            "total": 325,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "siege-workshop"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.7000000000000001,
+              "type": "passive"
+            },
+            {
+              "property": "buildTime",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.5,
               "type": "passive"
             }
           ]
@@ -22407,7 +23082,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/network-of-citadels-3.png",
-      "description": "Increase the Network of Castles attack speed bonus from +25% to +50%.",
+      "description": "Increase the Network of Castles attack speed bonus from +15% to +40%.",
       "variations": [
         {
           "id": "network-of-citadels-3",
@@ -22420,7 +23095,7 @@
           "civs": [
             "en"
           ],
-          "description": "Increase the Network of Castles attack speed bonus from +25% to +50%.",
+          "description": "Increase the Network of Castles attack speed bonus from +15% to +40%.",
           "classes": [
             "defensive",
             "technology"
@@ -22468,7 +23143,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.5,
+              "value": 1.4,
               "type": "bonus"
             }
           ]
@@ -27415,6 +28090,7 @@
             "time": 1080
           },
           "producedBy": [
+            "hisar-academy",
             "madrasa"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/siege-works-4.png",
@@ -31926,13 +32602,13 @@
           "baseId": "tithe-barns",
           "type": "technology",
           "name": "Tithe Barns",
-          "pbgid": 129407,
-          "attribName": "upgrade_unit_religious_tithe_barn_4",
+          "pbgid": 2124353,
+          "attribName": "upgrade_unit_religious_tithe_barn_4_hre",
           "age": 4,
           "civs": [
             "hr"
           ],
-          "description": "Relics placed in a Monastery provide an income of +30 Food, +30 Wood, and +30 Stone every minute.",
+          "description": "Relics placed in eligible buildings provide an income of +30 Food, +30 Wood, and +30 Stone every minute.",
           "classes": [
             "religious",
             "technology"
@@ -34182,60 +34858,64 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Spearman Technology"
+        "Spearman and Horseman Technology"
       ],
       "classes": [
         "spearman",
+        "and",
+        "horseman",
         "technology"
       ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/riveted-chain-mail-4.png",
-      "description": "Increase the melee armor of Spearmen by +3.",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/technologies/riveted-chain-mail-2.png",
+      "description": "Increase the melee armor of Spearmen and Horsemen by +2.",
       "variations": [
         {
-          "id": "riveted-chain-mail-4",
+          "id": "riveted-chain-mail-2",
           "baseId": "riveted-chain-mail",
           "type": "technology",
           "name": "Riveted Chain Mail",
           "pbgid": 183055,
           "attribName": "upgrade_riveted_chain_armour_hre",
-          "age": 4,
+          "age": 2,
           "civs": [
             "hr"
           ],
-          "description": "Increase the melee armor of Spearmen by +3.",
+          "description": "Increase the melee armor of Spearmen and Horsemen by +2.",
           "classes": [
             "spearman",
+            "and",
+            "horseman",
             "technology"
           ],
           "displayClasses": [
-            "Spearman Technology"
+            "Spearman and Horseman Technology"
           ],
           "unique": true,
           "costs": {
-            "food": 150,
+            "food": 75,
             "wood": 0,
             "stone": 0,
-            "gold": 350,
-            "total": 500,
+            "gold": 175,
+            "total": 250,
             "popcap": 0,
             "time": 60
           },
           "producedBy": [
-            "barracks",
-            "burgrave-palace"
+            "meinwerk-palace"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/riveted-chain-mail-4.png",
+          "icon": "https://data.aoe4world.com/images/technologies/riveted-chain-mail-2.png",
           "effects": [
             {
               "property": "meleeArmor",
               "select": {
                 "id": [
-                  "spearman"
+                  "spearman",
+                  "horseman"
                 ]
               },
               "effect": "change",
-              "value": 3,
+              "value": 2,
               "type": "passive"
             }
           ]
@@ -34307,6 +34987,85 @@
               },
               "effect": "change",
               "value": 5,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "steel-barding",
+      "name": "Steel Barding",
+      "type": "technology",
+      "civs": [
+        "hr"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Cavalry Technology"
+      ],
+      "classes": [
+        "cavalry",
+        "technology"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/steel-barding-3.png",
+      "description": "Grants Knights +2 melee and +2 ranged armor.",
+      "variations": [
+        {
+          "id": "steel-barding-3",
+          "baseId": "steel-barding",
+          "type": "technology",
+          "name": "Steel Barding",
+          "pbgid": 2122227,
+          "attribName": "upgrade_knight_barding_hre",
+          "age": 3,
+          "civs": [
+            "hr"
+          ],
+          "description": "Grants Knights +2 melee and +2 ranged armor.",
+          "classes": [
+            "cavalry",
+            "technology"
+          ],
+          "displayClasses": [
+            "Cavalry Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 200,
+            "wood": 0,
+            "stone": 0,
+            "gold": 500,
+            "total": 700,
+            "popcap": 0,
+            "time": 90
+          },
+          "producedBy": [
+            "meinwerk-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/steel-barding-3.png",
+          "effects": [
+            {
+              "property": "meleeArmor",
+              "select": {
+                "id": [
+                  "knight"
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "passive"
+            },
+            {
+              "property": "rangedArmor",
+              "select": {
+                "id": [
+                  "knight"
+                ]
+              },
+              "effect": "change",
+              "value": 2,
               "type": "passive"
             }
           ]
@@ -35853,7 +36612,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/armored-beasts-4.png",
-      "description": "Grant +3 armor to War Elephants.",
+      "description": "Grant +25% health and +4 ranged armor to War Elephants.",
       "variations": [
         {
           "id": "armored-beasts-4",
@@ -35866,7 +36625,7 @@
           "civs": [
             "de"
           ],
-          "description": "Grant +3 armor to War Elephants.",
+          "description": "Grant +25% health and +4 ranged armor to War Elephants.",
           "classes": [
             "elephant",
             "technology"
@@ -35882,24 +36641,13 @@
             "gold": 0,
             "total": 0,
             "popcap": 0,
-            "time": 1080
+            "time": 720
           },
           "producedBy": [
             "stable"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/armored-beasts-4.png",
           "effects": [
-            {
-              "property": "meleeArmor",
-              "select": {
-                "id": [
-                  "war-elephant"
-                ]
-              },
-              "effect": "change",
-              "value": 3,
-              "type": "passive"
-            },
             {
               "property": "rangedArmor",
               "select": {
@@ -35908,7 +36656,18 @@
                 ]
               },
               "effect": "change",
-              "value": 3,
+              "value": 4,
+              "type": "passive"
+            },
+            {
+              "property": "hitpoints",
+              "select": {
+                "id": [
+                  "war-elephant"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.25,
               "type": "passive"
             }
           ]
@@ -36070,18 +36829,18 @@
         "villager",
         "technology"
       ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/hearty-rations-4.png",
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/hearty-rations-3.png",
       "description": "Increase the carrying capacity of Villagers by +5.",
       "variations": [
         {
-          "id": "hearty-rations-4",
+          "id": "hearty-rations-3",
           "baseId": "hearty-rations",
           "type": "technology",
           "name": "Hearty Rations",
           "pbgid": 200717,
           "attribName": "upgrade_landmark_hearty_rations_sul",
-          "age": 4,
+          "age": 3,
           "civs": [
             "de"
           ],
@@ -36101,12 +36860,12 @@
             "gold": 0,
             "total": 0,
             "popcap": 0,
-            "time": 720
+            "time": 300
           },
           "producedBy": [
             "house-of-learning"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/hearty-rations-4.png",
+          "icon": "https://data.aoe4world.com/images/technologies/hearty-rations-3.png",
           "effects": [
             {
               "property": "carryCapacity",
@@ -36198,6 +36957,103 @@
       ]
     },
     {
+      "id": "howdahs",
+      "name": "Howdahs",
+      "type": "technology",
+      "civs": [
+        "de"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Elephant Technology"
+      ],
+      "classes": [
+        "elephant",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/howdahs-4.png",
+      "description": "Upgrade Tower Elephants to have Elite Crossbowmen as riders instead of Archers. Tower Elephants gain +30% health and +4 ranged armor.",
+      "variations": [
+        {
+          "id": "howdahs-4",
+          "baseId": "howdahs",
+          "type": "technology",
+          "name": "Howdahs",
+          "pbgid": 200139,
+          "attribName": "upgrade_landmark_siege_elephant_sul",
+          "age": 4,
+          "civs": [
+            "de"
+          ],
+          "description": "Upgrade Tower Elephants to have Elite Crossbowmen as riders instead of Archers. Tower Elephants gain +30% health and +4 ranged armor.",
+          "classes": [
+            "elephant",
+            "technology"
+          ],
+          "displayClasses": [
+            "Elephant Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0,
+            "time": 720
+          },
+          "producedBy": [
+            "archery-range"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/howdahs-4.png",
+          "effects": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "heavy"
+                  ]
+                ]
+              },
+              "select": {
+                "id": [
+                  "tower-elephant"
+                ]
+              },
+              "effect": "change",
+              "value": 11,
+              "type": "bonus"
+            },
+            {
+              "property": "rangedArmor",
+              "select": {
+                "id": [
+                  "tower-elephant"
+                ]
+              },
+              "effect": "change",
+              "value": 4,
+              "type": "passive"
+            },
+            {
+              "property": "hitpoints",
+              "select": {
+                "id": [
+                  "tower-elephant"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.3,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "lookout-towers",
       "name": "Lookout Towers",
       "type": "technology",
@@ -36214,7 +37070,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/lookout-towers-3.png",
-      "description": "Increase the sight range of Outposts by 50%.",
+      "description": "Increase the sight range of Outposts by 50% and weapon range by +1.",
       "variations": [
         {
           "id": "lookout-towers-3",
@@ -36227,7 +37083,7 @@
           "civs": [
             "de"
           ],
-          "description": "Increase the sight range of Outposts by 50%.",
+          "description": "Increase the sight range of Outposts by 50% and weapon range by +1.",
           "classes": [
             "outpost",
             "technology"
@@ -36243,7 +37099,7 @@
             "gold": 0,
             "total": 0,
             "popcap": 0,
-            "time": 300
+            "time": 225
           },
           "producedBy": [
             "house-of-learning"
@@ -36259,6 +37115,17 @@
               },
               "effect": "multiply",
               "value": 1.5,
+              "type": "passive"
+            },
+            {
+              "property": "maxRange",
+              "select": {
+                "id": [
+                  "outpost"
+                ]
+              },
+              "effect": "change",
+              "value": 1,
               "type": "passive"
             }
           ]
@@ -36350,7 +37217,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/reinforced-foundations-3.png",
-      "description": "Houses and Town Centers grant an additional +5 maximum Population.",
+      "description": "Villagers and Infantry can garrison inside Houses for protection. Houses gain garrison arrows and +50% Health.",
       "variations": [
         {
           "id": "reinforced-foundations-3",
@@ -36363,7 +37230,7 @@
           "civs": [
             "de"
           ],
-          "description": "Houses and Town Centers grant an additional +5 maximum Population.",
+          "description": "Villagers and Infantry can garrison inside Houses for protection. Houses gain garrison arrows and +50% Health.",
           "classes": [
             "population",
             "technology"
@@ -36387,15 +37254,14 @@
           "icon": "https://data.aoe4world.com/images/technologies/reinforced-foundations-3.png",
           "effects": [
             {
-              "property": "maxPopulation",
+              "property": "hitpoints",
               "select": {
                 "id": [
-                  "house",
-                  "town-center"
+                  "house"
                 ]
               },
-              "effect": "change",
-              "value": 5,
+              "effect": "multiply",
+              "value": 1.5,
               "type": "passive"
             }
           ]
@@ -36482,81 +37348,6 @@
       ]
     },
     {
-      "id": "siege-elephant",
-      "name": "Siege Elephant",
-      "type": "technology",
-      "civs": [
-        "de"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Elephant Technology"
-      ],
-      "classes": [
-        "elephant",
-        "technology"
-      ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/siege-elephant-4.png",
-      "description": "Upgrade Tower Elephants to have Elite Crossbowmen as riders instead of Archers.",
-      "variations": [
-        {
-          "id": "siege-elephant-4",
-          "baseId": "siege-elephant",
-          "type": "technology",
-          "name": "Siege Elephant",
-          "pbgid": 200139,
-          "attribName": "upgrade_landmark_siege_elephant_sul",
-          "age": 4,
-          "civs": [
-            "de"
-          ],
-          "description": "Upgrade Tower Elephants to have Elite Crossbowmen as riders instead of Archers.",
-          "classes": [
-            "elephant",
-            "technology"
-          ],
-          "displayClasses": [
-            "Elephant Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "total": 0,
-            "popcap": 0,
-            "time": 720
-          },
-          "producedBy": [
-            "archery-range"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/siege-elephant-4.png",
-          "effects": [
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "heavy"
-                  ]
-                ]
-              },
-              "select": {
-                "id": [
-                  "tower-elephant"
-                ]
-              },
-              "effect": "change",
-              "value": 11,
-              "type": "bonus"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "slow-burning-defenses",
       "name": "Slow-Burning Defenses",
       "type": "technology",
@@ -36571,10 +37362,59 @@
         "defensive",
         "technology"
       ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/slow-burning-defenses-4.png",
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/slow-burning-defenses-3.png",
       "description": "Increase the fire armor of Stone Wall Towers, Keeps, and Outposts by +10.",
       "variations": [
+        {
+          "id": "slow-burning-defenses-3",
+          "baseId": "slow-burning-defenses",
+          "type": "technology",
+          "name": "Slow-Burning Defenses",
+          "pbgid": 2108027,
+          "attribName": "upgrade_landmark_keep_defense_compond_sul",
+          "age": 3,
+          "civs": [
+            "de"
+          ],
+          "description": "Increase the fire armor of Stone Wall Towers, Keeps, and Outposts by +10.",
+          "classes": [
+            "defensive",
+            "technology"
+          ],
+          "displayClasses": [
+            "Defensive Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0,
+            "time": 225
+          },
+          "producedBy": [
+            "compound-of-the-defender"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/slow-burning-defenses-3.png",
+          "effects": [
+            {
+              "property": "fireArmor",
+              "select": {
+                "id": [
+                  "stone-wall-tower",
+                  "keep",
+                  "outpost"
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ]
+        },
         {
           "id": "slow-burning-defenses-4",
           "baseId": "slow-burning-defenses",
@@ -36711,7 +37551,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/tranquil-venue-3.png",
-      "description": "Mosques restore +1 health every second to units that are out of combat.",
+      "description": "Mosques restore +2 health every second to units that are out of combat.",
       "variations": [
         {
           "id": "tranquil-venue-3",
@@ -36724,7 +37564,7 @@
           "civs": [
             "de"
           ],
-          "description": "Mosques restore +1 health every second to units that are out of combat.",
+          "description": "Mosques restore +2 health every second to units that are out of combat.",
           "classes": [
             "mosque",
             "technology"
@@ -36755,7 +37595,7 @@
                 ]
               },
               "effect": "change",
-              "value": 1,
+              "value": 2,
               "type": "passive"
             }
           ]
@@ -36777,18 +37617,18 @@
         "keep",
         "technology"
       ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/technologies/village-fortresses-1.png",
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/village-fortresses-3.png",
       "description": "Keeps act like Town Centers, including unit production, population capacity, and technology.",
       "variations": [
         {
-          "id": "village-fortresses-1",
+          "id": "village-fortresses-3",
           "baseId": "village-fortresses",
           "type": "technology",
           "name": "Village Fortresses",
           "pbgid": 200170,
           "attribName": "upgrade_age2_keep_town_center_sul",
-          "age": 1,
+          "age": 3,
           "civs": [
             "de"
           ],
@@ -36808,12 +37648,13 @@
             "gold": 0,
             "total": 0,
             "popcap": 0,
-            "time": 300
+            "time": 225
           },
           "producedBy": [
+            "compound-of-the-defender",
             "keep"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/village-fortresses-1.png",
+          "icon": "https://data.aoe4world.com/images/technologies/village-fortresses-3.png",
           "effects": [
             {
               "property": "unknown",
@@ -37325,7 +38166,7 @@
             "time": 60
           },
           "producedBy": [
-            "house-of-wisdom"
+            "stable"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/camel-rider-shields-3.png",
           "effects": [
@@ -37433,18 +38274,18 @@
         "archer",
         "technology"
       ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/composite-bows-4.png",
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/composite-bows-3.png",
       "description": "Reduce the reload time of Archers by -33%.",
       "variations": [
         {
-          "id": "composite-bows-4",
+          "id": "composite-bows-3",
           "baseId": "composite-bows",
           "type": "technology",
           "name": "Composite Bows",
           "pbgid": 200372,
           "attribName": "upgrade_mameluke_damage_abb",
-          "age": 4,
+          "age": 3,
           "civs": [
             "ab"
           ],
@@ -37459,17 +38300,17 @@
           "unique": true,
           "costs": {
             "food": 0,
-            "wood": 300,
+            "wood": 150,
             "stone": 0,
-            "gold": 700,
-            "total": 1000,
+            "gold": 350,
+            "total": 500,
             "popcap": 0,
-            "time": 90
+            "time": 60
           },
           "producedBy": [
-            "archery-range"
+            "house-of-wisdom"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/composite-bows-4.png",
+          "icon": "https://data.aoe4world.com/images/technologies/composite-bows-3.png",
           "effects": [
             {
               "property": "attackSpeed",
@@ -37577,7 +38418,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/technologies/economic-wing-1.png",
-      "description": "Constructs the Economic Wing.\nThe following economic technologies become available:\n• Fresh Foodstuffs (Feudal Age)\n• Agriculture (Castle Age)\n• Improved Processing (Imperial Age)",
+      "description": "Constructs the Economic Wing.\nThe following economic technologies become available:\n• Fertile Crescent (Feudal Age)\n• Agriculture (Castle Age)\n• Improved Processing (Imperial Age)",
       "variations": [
         {
           "id": "economic-wing-1",
@@ -37590,7 +38431,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Constructs the Economic Wing.\nThe following economic technologies become available:\n• Fresh Foodstuffs (Feudal Age)\n• Agriculture (Castle Age)\n• Improved Processing (Imperial Age)",
+          "description": "Constructs the Economic Wing.\nThe following economic technologies become available:\n• Fertile Crescent (Feudal Age)\n• Agriculture (Castle Age)\n• Improved Processing (Imperial Age)",
           "classes": [
             "advance",
             "to",
@@ -37631,68 +38472,72 @@
       ]
     },
     {
-      "id": "faith",
-      "name": "Faith",
+      "id": "fertile-crescent",
+      "name": "Fertile Crescent",
       "type": "technology",
       "civs": [
         "ab"
       ],
       "unique": true,
       "displayClasses": [
-        "Religious Technology"
+        "Economic Technology"
       ],
       "classes": [
-        "religious",
+        "economic",
         "technology"
       ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/faith-4.png",
-      "description": "Imams can convert units without holding a Relic, but can only target a single unit.",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/technologies/fertile-crescent-2.png",
+      "description": "Reduce the cost of Economy buildings and Houses by 25%.",
       "variations": [
         {
-          "id": "faith-4",
-          "baseId": "faith",
+          "id": "fertile-crescent-2",
+          "baseId": "fertile-crescent",
           "type": "technology",
-          "name": "Faith",
-          "pbgid": 201793,
-          "attribName": "upgrade_cul_conversion_invuln_abb",
-          "age": 4,
+          "name": "Fertile Crescent",
+          "pbgid": 2108050,
+          "attribName": "upgrade_econ_fertile_crescent_abb",
+          "age": 2,
           "civs": [
             "ab"
           ],
-          "description": "Imams can convert units without holding a Relic, but can only target a single unit.",
+          "description": "Reduce the cost of Economy buildings and Houses by 25%.",
           "classes": [
-            "religious",
+            "economic",
             "technology"
           ],
           "displayClasses": [
-            "Religious Technology"
+            "Economic Technology"
           ],
           "unique": true,
           "costs": {
-            "food": 150,
+            "food": 25,
             "wood": 0,
             "stone": 0,
-            "gold": 350,
-            "total": 500,
+            "gold": 75,
+            "total": 100,
             "popcap": 0,
-            "time": 60
+            "time": 30
           },
           "producedBy": [
             "house-of-wisdom"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/faith-4.png",
+          "icon": "https://data.aoe4world.com/images/technologies/fertile-crescent-2.png",
           "effects": [
             {
-              "property": "unknown",
+              "property": "foodCost",
               "select": {
                 "id": [
-                  "imam"
+                  "house",
+                  "mill",
+                  "lumber-camp",
+                  "dock",
+                  "mining-camp"
                 ]
               },
-              "effect": "change",
-              "value": 1,
-              "type": "ability"
+              "effect": "multiply",
+              "value": 0.75,
+              "type": "passive"
             }
           ]
         }
@@ -37715,7 +38560,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/technologies/fresh-foodstuffs-2.png",
-      "description": "Reduce the cost to produce Villagers by -50%.",
+      "description": "Reduce the cost to produce Villagers by -35%.",
       "variations": [
         {
           "id": "fresh-foodstuffs-2",
@@ -37728,7 +38573,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Reduce the cost to produce Villagers by -50%.",
+          "description": "Reduce the cost to produce Villagers by -35%.",
           "classes": [
             "villager",
             "technology"
@@ -37744,10 +38589,11 @@
             "gold": 125,
             "total": 175,
             "popcap": 0,
-            "time": 30
+            "time": 20
           },
           "producedBy": [
-            "house-of-wisdom"
+            "capital-town-center",
+            "town-center"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/fresh-foodstuffs-2.png",
           "effects": [
@@ -37759,7 +38605,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.5,
+              "value": 0.65,
               "type": "passive"
             }
           ]
@@ -37989,7 +38835,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/technologies/military-wing-1.png",
-      "description": "Constructs the Military Wing.\nThe following military technologies become available:\n• Boot Camp (Feudal Age)\n• Camel Rider Shields (Castle Age)\n• Camel Support (Imperial Age)",
+      "description": "Constructs the Military Wing.\nSpawns the following units upon completion:\n• 2 Spearmen & 1 Archer (Feudal Age)\n• 2 Camel Riders (Castle Age)\n• 3 Handcannoneers (Imperial Age)\nThe following military technologies become available:\n• Boot Camp (Feudal Age)\n• Composite Bows (Castle Age)\n• Camel Support (Imperial Age)",
       "variations": [
         {
           "id": "military-wing-1",
@@ -38002,7 +38848,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Constructs the Military Wing.\nThe following military technologies become available:\n• Boot Camp (Feudal Age)\n• Camel Rider Shields (Castle Age)\n• Camel Support (Imperial Age)",
+          "description": "Constructs the Military Wing.\nSpawns the following units upon completion:\n• 2 Spearmen & 1 Archer (Feudal Age)\n• 2 Camel Riders (Castle Age)\n• 3 Handcannoneers (Imperial Age)\nThe following military technologies become available:\n• Boot Camp (Feudal Age)\n• Composite Bows (Castle Age)\n• Camel Support (Imperial Age)",
           "classes": [
             "advance",
             "to",
@@ -38127,7 +38973,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/technologies/preservation-of-knowledge-2.png",
-      "description": "Reduce the cost of all technology by -30%.",
+      "description": "Reduce the cost of all technology by -20%.",
       "variations": [
         {
           "id": "preservation-of-knowledge-2",
@@ -38140,7 +38986,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Reduce the cost of all technology by -30%.",
+          "description": "Reduce the cost of all technology by -20%.",
           "classes": [
             "research",
             "technology"
@@ -38173,7 +39019,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.7,
+              "value": 0.8,
               "type": "passive"
             },
             {
@@ -38186,7 +39032,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.7,
+              "value": 0.8,
               "type": "passive"
             },
             {
@@ -38199,10 +39045,66 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.7,
+              "value": 0.8,
               "type": "passive"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "proselytization",
+      "name": "Proselytization",
+      "type": "technology",
+      "civs": [
+        "ab"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Religious Technology"
+      ],
+      "classes": [
+        "religious",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/proselytization-4.png",
+      "description": "Imams can convert units without holding a Relic, but can only target a single unit.",
+      "variations": [
+        {
+          "id": "proselytization-4",
+          "baseId": "proselytization",
+          "type": "technology",
+          "name": "Proselytization",
+          "pbgid": 201793,
+          "attribName": "upgrade_cul_conversion_invuln_abb",
+          "age": 4,
+          "civs": [
+            "ab"
+          ],
+          "description": "Imams can convert units without holding a Relic, but can only target a single unit.",
+          "classes": [
+            "religious",
+            "technology"
+          ],
+          "displayClasses": [
+            "Religious Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 150,
+            "wood": 0,
+            "stone": 0,
+            "gold": 350,
+            "total": 500,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "house-of-wisdom"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/proselytization-4.png",
+          "effects": []
         }
       ]
     },
@@ -38379,7 +39281,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/technologies/trade-wing-1.png",
-      "description": "Constructs the Trade Wing.\nThe following trade technologies become available:\n• Grand Bazaar (Feudal Age)\n• Armored Caravans (Castle Age)\n• Spice Roads (Imperial Age)",
+      "description": "Constructs the Trade Wing.\nSpawns 3 Traders upon completion and acts as a Home Market.\nThe following trade technologies become available:\n• Grand Bazaar (Feudal Age)\n• Armored Caravans (Castle Age)\n• Spice Roads (Imperial Age)",
       "variations": [
         {
           "id": "trade-wing-1",
@@ -38392,7 +39294,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Constructs the Trade Wing.\nThe following trade technologies become available:\n• Grand Bazaar (Feudal Age)\n• Armored Caravans (Castle Age)\n• Spice Roads (Imperial Age)",
+          "description": "Constructs the Trade Wing.\nSpawns 3 Traders upon completion and acts as a Home Market.\nThe following trade technologies become available:\n• Grand Bazaar (Feudal Age)\n• Armored Caravans (Castle Age)\n• Spice Roads (Imperial Age)",
           "classes": [
             "advance",
             "to",
@@ -38729,18 +39631,18 @@
         "healing",
         "technology"
       ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/local-knowledge-4.png",
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/local-knowledge-3.png",
       "description": "Musofadi units heal while in Stealth for +2 every 1 seconds.",
       "variations": [
         {
-          "id": "local-knowledge-4",
+          "id": "local-knowledge-3",
           "baseId": "local-knowledge",
           "type": "technology",
           "name": "Local Knowledge",
           "pbgid": 2064215,
           "attribName": "upgrade_stealth_healing_mal",
-          "age": 4,
+          "age": 3,
           "civs": [
             "ma"
           ],
@@ -38754,18 +39656,18 @@
           ],
           "unique": true,
           "costs": {
-            "food": 200,
+            "food": 100,
             "wood": 0,
             "stone": 0,
-            "gold": 500,
-            "total": 700,
+            "gold": 250,
+            "total": 350,
             "popcap": 0,
-            "time": 90
+            "time": 60
           },
           "producedBy": [
             "barracks"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/local-knowledge-4.png",
+          "icon": "https://data.aoe4world.com/images/technologies/local-knowledge-3.png",
           "effects": [
             {
               "property": "healingRate",
@@ -39164,7 +40066,8 @@
             "time": 90
           },
           "producedBy": [
-            "ovoo"
+            "ovoo",
+            "the-white-stupa"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/additional-torches-3.png",
           "effects": [
@@ -39238,7 +40141,8 @@
             "time": 90
           },
           "producedBy": [
-            "ovoo"
+            "ovoo",
+            "the-white-stupa"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/additional-torches-improved-3.png",
           "effects": [
@@ -39875,7 +40779,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/geometry-improved-4.png",
-      "description": "Increase the damage of Rams and Trebuchets +45%.\nIf Geometry has already been researched, increase it by +15% instead.",
+      "description": "Increase damage of Trebuchets by +20%.\nIf Geometry has already been researched, increase their damage by +10% instead.",
       "variations": [
         {
           "id": "geometry-improved-4",
@@ -39888,7 +40792,7 @@
           "civs": [
             "mo"
           ],
-          "description": "Increase the damage of Rams and Trebuchets +45%.\nIf Geometry has already been researched, increase it by +15% instead.",
+          "description": "Increase damage of Trebuchets by +20%.\nIf Geometry has already been researched, increase their damage by +10% instead.",
           "classes": [
             "siege",
             "technology"
@@ -39910,7 +40814,20 @@
             "siege-workshop"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/geometry-improved-4.png",
-          "effects": []
+          "effects": [
+            {
+              "property": "rangedAttack",
+              "select": {
+                "id": [
+                  "huihui-pao",
+                  "trebuchet"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.09,
+              "type": "passive"
+            }
+          ]
         }
       ]
     },
@@ -40124,6 +41041,87 @@
               },
               "effect": "multiply",
               "value": 1.07,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lightweight-beams-improved",
+      "name": "Lightweight Beams (Improved)",
+      "type": "technology",
+      "civs": [
+        "mo"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Battering Ram Technology"
+      ],
+      "classes": [
+        "battering",
+        "ram",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-improved-4.png",
+      "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.\nIf Lightweight Beams has already been researched, increase attack speed by +60% and reduce field construction time by -75% instead.",
+      "variations": [
+        {
+          "id": "lightweight-beams-improved-4",
+          "baseId": "lightweight-beams-improved",
+          "type": "technology",
+          "name": "Lightweight Beams (Improved)",
+          "pbgid": 2117416,
+          "attribName": "upgrade_ram_scaling_improved_mon",
+          "age": 4,
+          "civs": [
+            "mo"
+          ],
+          "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.\nIf Lightweight Beams has already been researched, increase attack speed by +60% and reduce field construction time by -75% instead.",
+          "classes": [
+            "battering",
+            "ram",
+            "technology"
+          ],
+          "displayClasses": [
+            "Battering Ram Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 325,
+            "gold": 225,
+            "total": 650,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "siege-workshop"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-improved-4.png",
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.75,
+              "type": "passive"
+            },
+            {
+              "property": "buildTime",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.4,
               "type": "passive"
             }
           ]
@@ -40708,7 +41706,8 @@
             "time": 90
           },
           "producedBy": [
-            "ovoo"
+            "ovoo",
+            "the-white-stupa"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/raid-bounty-2.png",
           "effects": [
@@ -40781,7 +41780,8 @@
             "time": 90
           },
           "producedBy": [
-            "ovoo"
+            "ovoo",
+            "the-white-stupa"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/raid-bounty-improved-2.png",
           "effects": [
@@ -41312,7 +42312,8 @@
             "time": 45
           },
           "producedBy": [
-            "ovoo"
+            "ovoo",
+            "the-white-stupa"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/stone-bounty-4.png",
           "effects": [
@@ -41385,7 +42386,8 @@
             "time": 45
           },
           "producedBy": [
-            "ovoo"
+            "ovoo",
+            "the-white-stupa"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/stone-bounty-improved-4.png",
           "effects": [
@@ -41598,7 +42600,8 @@
             "time": 45
           },
           "producedBy": [
-            "ovoo"
+            "ovoo",
+            "the-white-stupa"
           ],
           "icon": "https://data.aoe4world.com/images/upgrades/packed-buildings-move-and-pack-unpack-50-faster-1.png",
           "unlocks": ""
@@ -41923,16 +42926,17 @@
           ],
           "unique": true,
           "costs": {
-            "food": 100,
+            "food": 50,
             "wood": 0,
             "stone": 0,
-            "gold": 250,
-            "total": 350,
+            "gold": 125,
+            "total": 175,
             "popcap": 0,
             "time": 60
           },
           "producedBy": [
-            "ovoo"
+            "ovoo",
+            "the-white-stupa"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/whistling-arrows-2.png",
           "effects": [
@@ -41991,16 +42995,17 @@
           ],
           "unique": true,
           "costs": {
-            "food": 100,
+            "food": 50,
             "wood": 0,
-            "stone": 350,
-            "gold": 250,
-            "total": 700,
+            "stone": 175,
+            "gold": 125,
+            "total": 350,
             "popcap": 0,
             "time": 60
           },
           "producedBy": [
-            "ovoo"
+            "ovoo",
+            "the-white-stupa"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/whistling-arrows-improved-2.png",
           "effects": [
@@ -42936,75 +43941,6 @@
       ]
     },
     {
-      "id": "blessing-duration",
-      "name": "Blessing Duration",
-      "type": "technology",
-      "civs": [
-        "ru"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Religious Technology"
-      ],
-      "classes": [
-        "religious",
-        "technology"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/blessing-duration-1.png",
-      "description": "Increase the duration of Saint's Blessing by +10 seconds.",
-      "variations": [
-        {
-          "id": "blessing-duration-3",
-          "baseId": "blessing-duration",
-          "type": "technology",
-          "name": "Blessing Duration",
-          "pbgid": 207442,
-          "attribName": "upgrade_saints_blessing_duration_rus",
-          "age": 3,
-          "civs": [
-            "ru"
-          ],
-          "description": "Increase the duration of Saint's Blessing by +10 seconds.",
-          "classes": [
-            "religious",
-            "technology"
-          ],
-          "displayClasses": [
-            "Religious Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 75,
-            "wood": 0,
-            "stone": 0,
-            "gold": 200,
-            "total": 275,
-            "popcap": 0,
-            "time": 45
-          },
-          "producedBy": [
-            "abbey-of-the-trinity",
-            "monastery"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/blessing-duration-1.png",
-          "effects": [
-            {
-              "property": "unknown",
-              "select": {
-                "id": [
-                  "warrior-monk"
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "influence"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "boyars-fortitude",
       "name": "Boyar's Fortitude",
       "type": "technology",
@@ -43211,6 +44147,75 @@
       ]
     },
     {
+      "id": "divine-light",
+      "name": "Divine Light",
+      "type": "technology",
+      "civs": [
+        "ru"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Religious Technology"
+      ],
+      "classes": [
+        "religious",
+        "technology"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/technologies/divine-light-1.png",
+      "description": "Increase the duration of Saint's Blessing by +10 seconds.",
+      "variations": [
+        {
+          "id": "divine-light-1",
+          "baseId": "divine-light",
+          "type": "technology",
+          "name": "Divine Light",
+          "pbgid": 207442,
+          "attribName": "upgrade_saints_blessing_duration_rus",
+          "age": 1,
+          "civs": [
+            "ru"
+          ],
+          "description": "Increase the duration of Saint's Blessing by +10 seconds.",
+          "classes": [
+            "religious",
+            "technology"
+          ],
+          "displayClasses": [
+            "Religious Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 75,
+            "wood": 0,
+            "stone": 0,
+            "gold": 200,
+            "total": 275,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "abbey-of-the-trinity",
+            "monastery"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/divine-light-1.png",
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "warrior-monk"
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "influence"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "double-time",
       "name": "Double Time",
       "type": "technology",
@@ -43281,76 +44286,8 @@
       ]
     },
     {
-      "id": "fine-tuned-guns",
-      "name": "Fine Tuned Guns",
-      "type": "technology",
-      "civs": [
-        "ru"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Cannon Technology"
-      ],
-      "classes": [
-        "cannon",
-        "technology"
-      ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/fine-tuned-guns-4.png",
-      "description": "Increase attack speed of Bombards by -20%.",
-      "variations": [
-        {
-          "id": "fine-tuned-guns-4",
-          "baseId": "fine-tuned-guns",
-          "type": "technology",
-          "name": "Fine Tuned Guns",
-          "pbgid": 207448,
-          "attribName": "upgrade_siege_fined_tuned_guns_rus",
-          "age": 4,
-          "civs": [
-            "ru"
-          ],
-          "description": "Increase attack speed of Bombards by -20%.",
-          "classes": [
-            "cannon",
-            "technology"
-          ],
-          "displayClasses": [
-            "Cannon Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 150,
-            "stone": 0,
-            "gold": 350,
-            "total": 500,
-            "popcap": 0,
-            "time": 60
-          },
-          "producedBy": [
-            "high-armory"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/fine-tuned-guns-4.png",
-          "effects": [
-            {
-              "property": "attackSpeed",
-              "select": {
-                "id": [
-                  "bombard"
-                ]
-              },
-              "effect": "multiply",
-              "value": 0.8,
-              "type": "passive"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "improved-blessing",
-      "name": "Improved Blessing",
+      "id": "fervor",
+      "name": "Fervor",
       "type": "technology",
       "civs": [
         "ru"
@@ -43364,21 +44301,21 @@
         "technology"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/improved-blessing-3.png",
-      "description": "Improve the damage granted by Saint's Blessing by +1.",
+      "icon": "https://data.aoe4world.com/images/technologies/fervor-3.png",
+      "description": "Improve the range of Saint's Blessing by +5 tiles and the damage granted by Saint's Blessing by +1.",
       "variations": [
         {
-          "id": "improved-blessing-3",
-          "baseId": "improved-blessing",
+          "id": "fervor-3",
+          "baseId": "fervor",
           "type": "technology",
-          "name": "Improved Blessing",
+          "name": "Fervor",
           "pbgid": 207449,
           "attribName": "upgrade_saints_blessing_buff_effect_rus",
           "age": 3,
           "civs": [
             "ru"
           ],
-          "description": "Improve the damage granted by Saint's Blessing by +1.",
+          "description": "Improve the range of Saint's Blessing by +5 tiles and the damage granted by Saint's Blessing by +1.",
           "classes": [
             "religious",
             "technology"
@@ -43399,10 +44336,21 @@
           "producedBy": [
             "abbey-of-the-trinity"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/improved-blessing-3.png",
+          "icon": "https://data.aoe4world.com/images/technologies/fervor-3.png",
           "effects": [
             {
               "property": "unknown",
+              "select": {
+                "id": [
+                  "warrior-monk"
+                ]
+              },
+              "effect": "change",
+              "value": 5,
+              "type": "ability"
+            },
+            {
+              "property": "meleeAttack",
               "select": {
                 "class": [
                   [
@@ -43411,14 +44359,113 @@
                   [
                     "cavalry"
                   ]
-                ],
-                "id": [
-                  "warrior-monk"
                 ]
               },
               "effect": "change",
               "value": 1,
-              "type": "ability"
+              "type": "influence"
+            },
+            {
+              "property": "rangedAttack",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "influence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fine-tuned-guns",
+      "name": "Fine Tuned Guns",
+      "type": "technology",
+      "civs": [
+        "ru"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Bombard Technology"
+      ],
+      "classes": [
+        "bombard",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/fine-tuned-guns-4.png",
+      "description": "Increase damage of Bombards by +20%. Bombards gain +50% damage vs Infantry.",
+      "variations": [
+        {
+          "id": "fine-tuned-guns-4",
+          "baseId": "fine-tuned-guns",
+          "type": "technology",
+          "name": "Fine Tuned Guns",
+          "pbgid": 207448,
+          "attribName": "upgrade_siege_fined_tuned_guns_rus",
+          "age": 4,
+          "civs": [
+            "ru"
+          ],
+          "description": "Increase damage of Bombards by +20%. Bombards gain +50% damage vs Infantry.",
+          "classes": [
+            "bombard",
+            "technology"
+          ],
+          "displayClasses": [
+            "Bombard Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 200,
+            "stone": 0,
+            "gold": 500,
+            "total": 700,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "high-armory"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/fine-tuned-guns-4.png",
+          "effects": [
+            {
+              "property": "siegeAttack",
+              "select": {
+                "id": [
+                  "bombard"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.8,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "select": {
+                "id": [
+                  "bombard"
+                ]
+              },
+              "target": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.7000000000000001,
+              "type": "bonus"
             }
           ]
         }
@@ -43563,8 +44610,8 @@
       ]
     },
     {
-      "id": "saints-reach",
-      "name": "Saint's Reach",
+      "id": "saints-veneration",
+      "name": "Saint's Veneration",
       "type": "technology",
       "civs": [
         "ru"
@@ -43577,22 +44624,22 @@
         "religious",
         "technology"
       ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/saints-reach-3.png",
-      "description": "Increase the range of Saint's Blessing by 3 tiles.",
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/saints-veneration-4.png",
+      "description": "Increase the health of Warrior Monks by +100.",
       "variations": [
         {
-          "id": "saints-reach-3",
-          "baseId": "saints-reach",
+          "id": "saints-veneration-4",
+          "baseId": "saints-veneration",
           "type": "technology",
-          "name": "Saint's Reach",
-          "pbgid": 207451,
-          "attribName": "upgrade_saints_blessing_range_rus",
-          "age": 3,
+          "name": "Saint's Veneration",
+          "pbgid": 2122121,
+          "attribName": "upgrade_saints_veneration_rus",
+          "age": 4,
           "civs": [
             "ru"
           ],
-          "description": "Increase the range of Saint's Blessing by 3 tiles.",
+          "description": "Increase the health of Warrior Monks by +100.",
           "classes": [
             "religious",
             "technology"
@@ -43605,26 +44652,26 @@
             "food": 0,
             "wood": 0,
             "stone": 0,
-            "gold": 275,
-            "total": 275,
+            "gold": 425,
+            "total": 425,
             "popcap": 0,
             "time": 45
           },
           "producedBy": [
             "abbey-of-the-trinity"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/saints-reach-3.png",
+          "icon": "https://data.aoe4world.com/images/technologies/saints-veneration-4.png",
           "effects": [
             {
-              "property": "unknown",
+              "property": "hitpoints",
               "select": {
                 "id": [
                   "warrior-monk"
                 ]
               },
               "effect": "change",
-              "value": 1,
-              "type": "ability"
+              "value": 100,
+              "type": "passive"
             }
           ]
         }
@@ -43639,17 +44686,20 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Mangonel & Trebuchet Technology"
+        "Mangonel",
+        "Trebuchet",
+        "and Bombard Technology"
       ],
       "classes": [
         "mangonel",
-        "&",
         "trebuchet",
+        "and",
+        "bombard",
         "technology"
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/siege-crew-training-4.png",
-      "description": "Setup and teardown speed of Trebuchets and Mangonels is instant.",
+      "description": "Setup and teardown speed of Mangonels, Trebuchets, and Bombards is instant.",
       "variations": [
         {
           "id": "siege-crew-training-4",
@@ -43662,15 +44712,18 @@
           "civs": [
             "ru"
           ],
-          "description": "Setup and teardown speed of Trebuchets and Mangonels is instant.",
+          "description": "Setup and teardown speed of Mangonels, Trebuchets, and Bombards is instant.",
           "classes": [
             "mangonel",
-            "&",
             "trebuchet",
+            "and",
+            "bombard",
             "technology"
           ],
           "displayClasses": [
-            "Mangonel & Trebuchet Technology"
+            "Mangonel",
+            "Trebuchet",
+            "and Bombard Technology"
           ],
           "unique": true,
           "costs": {
@@ -43692,7 +44745,8 @@
               "select": {
                 "id": [
                   "counterweight-trebuchet",
-                  "mangonel"
+                  "mangonel",
+                  "bombard"
                 ]
               },
               "effect": "change",
@@ -43720,7 +44774,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/wandering-town-4.png",
-      "description": "Ram damage increased by +100%.",
+      "description": "Ram damage increased by +50%. Rams heal 2 health every 1 second.",
       "variations": [
         {
           "id": "wandering-town-4",
@@ -43733,7 +44787,7 @@
           "civs": [
             "ru"
           ],
-          "description": "Ram damage increased by +100%.",
+          "description": "Ram damage increased by +50%. Rams heal 2 health every 1 second.",
           "classes": [
             "ram",
             "technology"
@@ -43764,6 +44818,17 @@
                 ]
               },
               "effect": "multiply",
+              "value": 1.5,
+              "type": "passive"
+            },
+            {
+              "property": "healingRate",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "change",
               "value": 2,
               "type": "passive"
             }

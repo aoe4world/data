@@ -443,7 +443,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/technologies/arrowslits-2.png",
-      "description": "Add defensive arrowslits to this structure and increase garrison arrow range by +2. Only one weapon emplacement can be added.",
+      "description": "Add defensive arrowslits to this structure and increase garrison arrow range by +1.",
       "variations": [
         {
           "id": "arrowslits-2",
@@ -456,7 +456,7 @@
           "civs": [
             "ru"
           ],
-          "description": "Add defensive arrowslits to this structure and increase garrison arrow range by +2. Only one weapon emplacement can be added.",
+          "description": "Add defensive arrowslits to this structure and increase garrison arrow range by +1.",
           "classes": [
             "weapon",
             "emplacement"
@@ -717,76 +717,6 @@
               "effect": "multiply",
               "value": 1.2,
               "type": "passive"
-            }
-          ]
-        }
-      ],
-      "shared": {}
-    },
-    {
-      "id": "blessing-duration",
-      "name": "Blessing Duration",
-      "type": "technology",
-      "civs": [
-        "ru"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Religious Technology"
-      ],
-      "classes": [
-        "religious",
-        "technology"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/blessing-duration-1.png",
-      "description": "Increase the duration of Saint's Blessing by +10 seconds.",
-      "variations": [
-        {
-          "id": "blessing-duration-3",
-          "baseId": "blessing-duration",
-          "type": "technology",
-          "name": "Blessing Duration",
-          "pbgid": 207442,
-          "attribName": "upgrade_saints_blessing_duration_rus",
-          "age": 3,
-          "civs": [
-            "ru"
-          ],
-          "description": "Increase the duration of Saint's Blessing by +10 seconds.",
-          "classes": [
-            "religious",
-            "technology"
-          ],
-          "displayClasses": [
-            "Religious Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 75,
-            "wood": 0,
-            "stone": 0,
-            "gold": 200,
-            "total": 275,
-            "popcap": 0,
-            "time": 45
-          },
-          "producedBy": [
-            "abbey-of-the-trinity",
-            "monastery"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/blessing-duration-1.png",
-          "effects": [
-            {
-              "property": "unknown",
-              "select": {
-                "id": [
-                  "warrior-monk"
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "influence"
             }
           ]
         }
@@ -1703,6 +1633,76 @@
       "shared": {}
     },
     {
+      "id": "divine-light",
+      "name": "Divine Light",
+      "type": "technology",
+      "civs": [
+        "ru"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Religious Technology"
+      ],
+      "classes": [
+        "religious",
+        "technology"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/technologies/divine-light-1.png",
+      "description": "Increase the duration of Saint's Blessing by +10 seconds.",
+      "variations": [
+        {
+          "id": "divine-light-1",
+          "baseId": "divine-light",
+          "type": "technology",
+          "name": "Divine Light",
+          "pbgid": 207442,
+          "attribName": "upgrade_saints_blessing_duration_rus",
+          "age": 1,
+          "civs": [
+            "ru"
+          ],
+          "description": "Increase the duration of Saint's Blessing by +10 seconds.",
+          "classes": [
+            "religious",
+            "technology"
+          ],
+          "displayClasses": [
+            "Religious Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 75,
+            "wood": 0,
+            "stone": 0,
+            "gold": 200,
+            "total": 275,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "abbey-of-the-trinity",
+            "monastery"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/divine-light-1.png",
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "warrior-monk"
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "influence"
+            }
+          ]
+        }
+      ],
+      "shared": {}
+    },
+    {
       "id": "double-broadax",
       "name": "Double Broadax",
       "type": "technology",
@@ -2332,6 +2332,107 @@
       "shared": {}
     },
     {
+      "id": "fervor",
+      "name": "Fervor",
+      "type": "technology",
+      "civs": [
+        "ru"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Religious Technology"
+      ],
+      "classes": [
+        "religious",
+        "technology"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/fervor-3.png",
+      "description": "Improve the range of Saint's Blessing by +5 tiles and the damage granted by Saint's Blessing by +1.",
+      "variations": [
+        {
+          "id": "fervor-3",
+          "baseId": "fervor",
+          "type": "technology",
+          "name": "Fervor",
+          "pbgid": 207449,
+          "attribName": "upgrade_saints_blessing_buff_effect_rus",
+          "age": 3,
+          "civs": [
+            "ru"
+          ],
+          "description": "Improve the range of Saint's Blessing by +5 tiles and the damage granted by Saint's Blessing by +1.",
+          "classes": [
+            "religious",
+            "technology"
+          ],
+          "displayClasses": [
+            "Religious Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 275,
+            "total": 275,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "abbey-of-the-trinity"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/fervor-3.png",
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "warrior-monk"
+                ]
+              },
+              "effect": "change",
+              "value": 5,
+              "type": "ability"
+            },
+            {
+              "property": "meleeAttack",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "influence"
+            },
+            {
+              "property": "rangedAttack",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "influence"
+            }
+          ]
+        }
+      ],
+      "shared": {}
+    },
+    {
       "id": "fine-tuned-guns",
       "name": "Fine Tuned Guns",
       "type": "technology",
@@ -2340,15 +2441,15 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Cannon Technology"
+        "Bombard Technology"
       ],
       "classes": [
-        "cannon",
+        "bombard",
         "technology"
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/fine-tuned-guns-4.png",
-      "description": "Increase attack speed of Bombards by -20%.",
+      "description": "Increase damage of Bombards by +20%. Bombards gain +50% damage vs Infantry.",
       "variations": [
         {
           "id": "fine-tuned-guns-4",
@@ -2361,21 +2462,21 @@
           "civs": [
             "ru"
           ],
-          "description": "Increase attack speed of Bombards by -20%.",
+          "description": "Increase damage of Bombards by +20%. Bombards gain +50% damage vs Infantry.",
           "classes": [
-            "cannon",
+            "bombard",
             "technology"
           ],
           "displayClasses": [
-            "Cannon Technology"
+            "Bombard Technology"
           ],
           "unique": true,
           "costs": {
             "food": 0,
-            "wood": 150,
+            "wood": 200,
             "stone": 0,
-            "gold": 350,
-            "total": 500,
+            "gold": 500,
+            "total": 700,
             "popcap": 0,
             "time": 60
           },
@@ -2385,7 +2486,7 @@
           "icon": "https://data.aoe4world.com/images/technologies/fine-tuned-guns-4.png",
           "effects": [
             {
-              "property": "attackSpeed",
+              "property": "siegeAttack",
               "select": {
                 "id": [
                   "bombard"
@@ -2394,6 +2495,24 @@
               "effect": "multiply",
               "value": 0.8,
               "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "select": {
+                "id": [
+                  "bombard"
+                ]
+              },
+              "target": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.7000000000000001,
+              "type": "bonus"
             }
           ]
         }
@@ -2556,15 +2675,15 @@
       ],
       "unique": false,
       "displayClasses": [
-        "Siege Technology"
+        "Trebuchet Technology"
       ],
       "classes": [
-        "siege",
+        "trebuchet",
         "technology"
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/geometry-4.png",
-      "description": "Increase the damage of Rams and Trebuchets +30%.",
+      "description": "Increase damage of Trebuchets by +20%.",
       "variations": [
         {
           "id": "geometry-4",
@@ -2577,13 +2696,13 @@
           "civs": [
             "ru"
           ],
-          "description": "Increase the damage of Rams and Trebuchets +30%.",
+          "description": "Increase damage of Trebuchets by +20%.",
           "classes": [
-            "siege",
+            "trebuchet",
             "technology"
           ],
           "displayClasses": [
-            "Siege Technology"
+            "Trebuchet Technology"
           ],
           "unique": false,
           "costs": {
@@ -2604,13 +2723,13 @@
               "property": "siegeAttack",
               "select": {
                 "id": [
-                  "battering-ram",
+                  "huihui-pao",
                   "counterweight-trebuchet",
                   "traction-trebuchet"
                 ]
               },
               "effect": "multiply",
-              "value": 1.3,
+              "value": 1.2,
               "type": "passive"
             }
           ]
@@ -2681,7 +2800,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8999999999999999,
+              "value": 1.15,
               "type": "passive"
             }
           ]
@@ -2910,83 +3029,6 @@
       "shared": {}
     },
     {
-      "id": "improved-blessing",
-      "name": "Improved Blessing",
-      "type": "technology",
-      "civs": [
-        "ru"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Religious Technology"
-      ],
-      "classes": [
-        "religious",
-        "technology"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/improved-blessing-3.png",
-      "description": "Improve the damage granted by Saint's Blessing by +1.",
-      "variations": [
-        {
-          "id": "improved-blessing-3",
-          "baseId": "improved-blessing",
-          "type": "technology",
-          "name": "Improved Blessing",
-          "pbgid": 207449,
-          "attribName": "upgrade_saints_blessing_buff_effect_rus",
-          "age": 3,
-          "civs": [
-            "ru"
-          ],
-          "description": "Improve the damage granted by Saint's Blessing by +1.",
-          "classes": [
-            "religious",
-            "technology"
-          ],
-          "displayClasses": [
-            "Religious Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
-            "gold": 275,
-            "total": 275,
-            "popcap": 0,
-            "time": 45
-          },
-          "producedBy": [
-            "abbey-of-the-trinity"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/improved-blessing-3.png",
-          "effects": [
-            {
-              "property": "unknown",
-              "select": {
-                "class": [
-                  [
-                    "infantry"
-                  ],
-                  [
-                    "cavalry"
-                  ]
-                ],
-                "id": [
-                  "warrior-monk"
-                ]
-              },
-              "effect": "change",
-              "value": 1,
-              "type": "ability"
-            }
-          ]
-        }
-      ],
-      "shared": {}
-    },
-    {
       "id": "incendiaries",
       "name": "Incendiaries",
       "type": "technology",
@@ -3114,18 +3156,17 @@
             {
               "property": "rangedAttack",
               "select": {
-                "class": [
-                  [
-                    "ranged",
-                    "cavalry"
-                  ]
-                ],
                 "id": [
                   "longbowman",
                   "zhuge-nu",
                   "archer",
                   "arbaletrier",
                   "crossbowman",
+                  "tower-elepahnt",
+                  "mangudai",
+                  "horse-archer",
+                  "camel-archer",
+                  "khan",
                   "town-center",
                   "keep",
                   "outpost",
@@ -3366,6 +3407,88 @@
               },
               "effect": "change",
               "value": 4,
+              "type": "passive"
+            }
+          ]
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "lightweight-beams",
+      "name": "Lightweight Beams",
+      "type": "technology",
+      "civs": [
+        "ru"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Battering Ram Technology"
+      ],
+      "classes": [
+        "battering",
+        "ram",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+      "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+      "variations": [
+        {
+          "id": "lightweight-beams-4",
+          "baseId": "lightweight-beams",
+          "type": "technology",
+          "name": "Lightweight Beams",
+          "pbgid": 2117424,
+          "attribName": "upgrade_ram_scaling",
+          "age": 4,
+          "civs": [
+            "ru"
+          ],
+          "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+          "classes": [
+            "battering",
+            "ram",
+            "technology"
+          ],
+          "displayClasses": [
+            "Battering Ram Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 225,
+            "total": 325,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "siege-workshop"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.7000000000000001,
+              "type": "passive"
+            },
+            {
+              "property": "buildTime",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.5,
               "type": "passive"
             }
           ]
@@ -4197,8 +4320,8 @@
       "shared": {}
     },
     {
-      "id": "saints-reach",
-      "name": "Saint's Reach",
+      "id": "saints-veneration",
+      "name": "Saint's Veneration",
       "type": "technology",
       "civs": [
         "ru"
@@ -4211,22 +4334,22 @@
         "religious",
         "technology"
       ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/saints-reach-3.png",
-      "description": "Increase the range of Saint's Blessing by 3 tiles.",
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/saints-veneration-4.png",
+      "description": "Increase the health of Warrior Monks by +100.",
       "variations": [
         {
-          "id": "saints-reach-3",
-          "baseId": "saints-reach",
+          "id": "saints-veneration-4",
+          "baseId": "saints-veneration",
           "type": "technology",
-          "name": "Saint's Reach",
-          "pbgid": 207451,
-          "attribName": "upgrade_saints_blessing_range_rus",
-          "age": 3,
+          "name": "Saint's Veneration",
+          "pbgid": 2122121,
+          "attribName": "upgrade_saints_veneration_rus",
+          "age": 4,
           "civs": [
             "ru"
           ],
-          "description": "Increase the range of Saint's Blessing by 3 tiles.",
+          "description": "Increase the health of Warrior Monks by +100.",
           "classes": [
             "religious",
             "technology"
@@ -4239,26 +4362,26 @@
             "food": 0,
             "wood": 0,
             "stone": 0,
-            "gold": 275,
-            "total": 275,
+            "gold": 425,
+            "total": 425,
             "popcap": 0,
             "time": 45
           },
           "producedBy": [
             "abbey-of-the-trinity"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/saints-reach-3.png",
+          "icon": "https://data.aoe4world.com/images/technologies/saints-veneration-4.png",
           "effects": [
             {
-              "property": "unknown",
+              "property": "hitpoints",
               "select": {
                 "id": [
                   "warrior-monk"
                 ]
               },
               "effect": "change",
-              "value": 1,
-              "type": "ability"
+              "value": 100,
+              "type": "passive"
             }
           ]
         }
@@ -4392,17 +4515,20 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Mangonel & Trebuchet Technology"
+        "Mangonel",
+        "Trebuchet",
+        "and Bombard Technology"
       ],
       "classes": [
         "mangonel",
-        "&",
         "trebuchet",
+        "and",
+        "bombard",
         "technology"
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/siege-crew-training-4.png",
-      "description": "Setup and teardown speed of Trebuchets and Mangonels is instant.",
+      "description": "Setup and teardown speed of Mangonels, Trebuchets, and Bombards is instant.",
       "variations": [
         {
           "id": "siege-crew-training-4",
@@ -4415,15 +4541,18 @@
           "civs": [
             "ru"
           ],
-          "description": "Setup and teardown speed of Trebuchets and Mangonels is instant.",
+          "description": "Setup and teardown speed of Mangonels, Trebuchets, and Bombards is instant.",
           "classes": [
             "mangonel",
-            "&",
             "trebuchet",
+            "and",
+            "bombard",
             "technology"
           ],
           "displayClasses": [
-            "Mangonel & Trebuchet Technology"
+            "Mangonel",
+            "Trebuchet",
+            "and Bombard Technology"
           ],
           "unique": true,
           "costs": {
@@ -4445,7 +4574,8 @@
               "select": {
                 "id": [
                   "counterweight-trebuchet",
-                  "mangonel"
+                  "mangonel",
+                  "bombard"
                 ]
               },
               "effect": "change",
@@ -5247,7 +5377,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/wandering-town-4.png",
-      "description": "Ram damage increased by +100%.",
+      "description": "Ram damage increased by +50%. Rams heal 2 health every 1 second.",
       "variations": [
         {
           "id": "wandering-town-4",
@@ -5260,7 +5390,7 @@
           "civs": [
             "ru"
           ],
-          "description": "Ram damage increased by +100%.",
+          "description": "Ram damage increased by +50%. Rams heal 2 health every 1 second.",
           "classes": [
             "ram",
             "technology"
@@ -5291,6 +5421,17 @@
                 ]
               },
               "effect": "multiply",
+              "value": 1.5,
+              "type": "passive"
+            },
+            {
+              "property": "healingRate",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "change",
               "value": 2,
               "type": "passive"
             }

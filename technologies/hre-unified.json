@@ -2314,15 +2314,15 @@
       ],
       "unique": false,
       "displayClasses": [
-        "Siege Technology"
+        "Trebuchet Technology"
       ],
       "classes": [
-        "siege",
+        "trebuchet",
         "technology"
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/geometry-4.png",
-      "description": "Increase the damage of Rams and Trebuchets +30%.",
+      "description": "Increase damage of Trebuchets by +20%.",
       "variations": [
         {
           "id": "geometry-4",
@@ -2335,13 +2335,13 @@
           "civs": [
             "hr"
           ],
-          "description": "Increase the damage of Rams and Trebuchets +30%.",
+          "description": "Increase damage of Trebuchets by +20%.",
           "classes": [
-            "siege",
+            "trebuchet",
             "technology"
           ],
           "displayClasses": [
-            "Siege Technology"
+            "Trebuchet Technology"
           ],
           "unique": false,
           "costs": {
@@ -2362,13 +2362,13 @@
               "property": "siegeAttack",
               "select": {
                 "id": [
-                  "battering-ram",
+                  "huihui-pao",
                   "counterweight-trebuchet",
                   "traction-trebuchet"
                 ]
               },
               "effect": "multiply",
-              "value": 1.3,
+              "value": 1.2,
               "type": "passive"
             }
           ]
@@ -2438,7 +2438,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8999999999999999,
+              "value": 1.15,
               "type": "passive"
             }
           ]
@@ -2865,18 +2865,17 @@
             {
               "property": "rangedAttack",
               "select": {
-                "class": [
-                  [
-                    "ranged",
-                    "cavalry"
-                  ]
-                ],
                 "id": [
                   "longbowman",
                   "zhuge-nu",
                   "archer",
                   "arbaletrier",
                   "crossbowman",
+                  "tower-elepahnt",
+                  "mangudai",
+                  "horse-archer",
+                  "camel-archer",
+                  "khan",
                   "town-center",
                   "keep",
                   "outpost",
@@ -3174,6 +3173,87 @@
               },
               "effect": "change",
               "value": 1,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lightweight-beams",
+      "name": "Lightweight Beams",
+      "type": "technology",
+      "civs": [
+        "hr"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Battering Ram Technology"
+      ],
+      "classes": [
+        "battering",
+        "ram",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+      "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+      "variations": [
+        {
+          "id": "lightweight-beams-4",
+          "baseId": "lightweight-beams",
+          "type": "technology",
+          "name": "Lightweight Beams",
+          "pbgid": 2117424,
+          "attribName": "upgrade_ram_scaling",
+          "age": 4,
+          "civs": [
+            "hr"
+          ],
+          "description": "Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.",
+          "classes": [
+            "battering",
+            "ram",
+            "technology"
+          ],
+          "displayClasses": [
+            "Battering Ram Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 225,
+            "total": 325,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "siege-workshop"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.7000000000000001,
+              "type": "passive"
+            },
+            {
+              "property": "buildTime",
+              "select": {
+                "id": [
+                  "battering-ram"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.5,
               "type": "passive"
             }
           ]
@@ -3950,60 +4030,64 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Spearman Technology"
+        "Spearman and Horseman Technology"
       ],
       "classes": [
         "spearman",
+        "and",
+        "horseman",
         "technology"
       ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/riveted-chain-mail-4.png",
-      "description": "Increase the melee armor of Spearmen by +3.",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/technologies/riveted-chain-mail-2.png",
+      "description": "Increase the melee armor of Spearmen and Horsemen by +2.",
       "variations": [
         {
-          "id": "riveted-chain-mail-4",
+          "id": "riveted-chain-mail-2",
           "baseId": "riveted-chain-mail",
           "type": "technology",
           "name": "Riveted Chain Mail",
           "pbgid": 183055,
           "attribName": "upgrade_riveted_chain_armour_hre",
-          "age": 4,
+          "age": 2,
           "civs": [
             "hr"
           ],
-          "description": "Increase the melee armor of Spearmen by +3.",
+          "description": "Increase the melee armor of Spearmen and Horsemen by +2.",
           "classes": [
             "spearman",
+            "and",
+            "horseman",
             "technology"
           ],
           "displayClasses": [
-            "Spearman Technology"
+            "Spearman and Horseman Technology"
           ],
           "unique": true,
           "costs": {
-            "food": 150,
+            "food": 75,
             "wood": 0,
             "stone": 0,
-            "gold": 350,
-            "total": 500,
+            "gold": 175,
+            "total": 250,
             "popcap": 0,
             "time": 60
           },
           "producedBy": [
-            "barracks",
-            "burgrave-palace"
+            "meinwerk-palace"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/riveted-chain-mail-4.png",
+          "icon": "https://data.aoe4world.com/images/technologies/riveted-chain-mail-2.png",
           "effects": [
             {
               "property": "meleeArmor",
               "select": {
                 "id": [
-                  "spearman"
+                  "spearman",
+                  "horseman"
                 ]
               },
               "effect": "change",
-              "value": 3,
+              "value": 2,
               "type": "passive"
             }
           ]
@@ -4676,6 +4760,85 @@
       ]
     },
     {
+      "id": "steel-barding",
+      "name": "Steel Barding",
+      "type": "technology",
+      "civs": [
+        "hr"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Cavalry Technology"
+      ],
+      "classes": [
+        "cavalry",
+        "technology"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/steel-barding-3.png",
+      "description": "Grants Knights +2 melee and +2 ranged armor.",
+      "variations": [
+        {
+          "id": "steel-barding-3",
+          "baseId": "steel-barding",
+          "type": "technology",
+          "name": "Steel Barding",
+          "pbgid": 2122227,
+          "attribName": "upgrade_knight_barding_hre",
+          "age": 3,
+          "civs": [
+            "hr"
+          ],
+          "description": "Grants Knights +2 melee and +2 ranged armor.",
+          "classes": [
+            "cavalry",
+            "technology"
+          ],
+          "displayClasses": [
+            "Cavalry Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 200,
+            "wood": 0,
+            "stone": 0,
+            "gold": 500,
+            "total": 700,
+            "popcap": 0,
+            "time": 90
+          },
+          "producedBy": [
+            "meinwerk-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/steel-barding-3.png",
+          "effects": [
+            {
+              "property": "meleeArmor",
+              "select": {
+                "id": [
+                  "knight"
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "passive"
+            },
+            {
+              "property": "rangedArmor",
+              "select": {
+                "id": [
+                  "knight"
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "steeled-arrow",
       "name": "Steeled Arrow",
       "type": "technology",
@@ -4988,20 +5151,20 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/tithe-barns-4.png",
-      "description": "Relics placed in a Monastery provide an income of +30 Food, +30 Wood, and +30 Stone every minute.",
+      "description": "Relics placed in eligible buildings provide an income of +30 Food, +30 Wood, and +30 Stone every minute.",
       "variations": [
         {
           "id": "tithe-barns-4",
           "baseId": "tithe-barns",
           "type": "technology",
           "name": "Tithe Barns",
-          "pbgid": 129407,
-          "attribName": "upgrade_unit_religious_tithe_barn_4",
+          "pbgid": 2124353,
+          "attribName": "upgrade_unit_religious_tithe_barn_4_hre",
           "age": 4,
           "civs": [
             "hr"
           ],
-          "description": "Relics placed in a Monastery provide an income of +30 Food, +30 Wood, and +30 Stone every minute.",
+          "description": "Relics placed in eligible buildings provide an income of +30 Food, +30 Wood, and +30 Stone every minute.",
           "classes": [
             "religious",
             "technology"

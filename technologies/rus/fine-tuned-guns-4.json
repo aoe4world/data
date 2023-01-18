@@ -9,21 +9,21 @@
   "civs": [
     "ru"
   ],
-  "description": "Increase attack speed of Bombards by -20%.",
+  "description": "Increase damage of Bombards by +20%. Bombards gain +50% damage vs Infantry.",
   "classes": [
-    "cannon",
+    "bombard",
     "technology"
   ],
   "displayClasses": [
-    "Cannon Technology"
+    "Bombard Technology"
   ],
   "unique": true,
   "costs": {
     "food": 0,
-    "wood": 150,
+    "wood": 200,
     "stone": 0,
-    "gold": 350,
-    "total": 500,
+    "gold": 500,
+    "total": 700,
     "popcap": 0,
     "time": 60
   },
@@ -33,7 +33,7 @@
   "icon": "https://data.aoe4world.com/images/technologies/fine-tuned-guns-4.png",
   "effects": [
     {
-      "property": "attackSpeed",
+      "property": "siegeAttack",
       "select": {
         "id": [
           "bombard"
@@ -42,6 +42,24 @@
       "effect": "multiply",
       "value": 0.8,
       "type": "passive"
+    },
+    {
+      "property": "siegeAttack",
+      "select": {
+        "id": [
+          "bombard"
+        ]
+      },
+      "target": {
+        "class": [
+          [
+            "infantry"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.7000000000000001,
+      "type": "bonus"
     }
   ]
 }

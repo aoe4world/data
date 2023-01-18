@@ -1,15 +1,15 @@
 {
-  "id": "siege-elephant-4",
-  "baseId": "siege-elephant",
+  "id": "howdahs-4",
+  "baseId": "howdahs",
   "type": "technology",
-  "name": "Siege Elephant",
+  "name": "Howdahs",
   "pbgid": 200139,
   "attribName": "upgrade_landmark_siege_elephant_sul",
   "age": 4,
   "civs": [
     "de"
   ],
-  "description": "Upgrade Tower Elephants to have Elite Crossbowmen as riders instead of Archers.",
+  "description": "Upgrade Tower Elephants to have Elite Crossbowmen as riders instead of Archers. Tower Elephants gain +30% health and +4 ranged armor.",
   "classes": [
     "elephant",
     "technology"
@@ -30,7 +30,7 @@
   "producedBy": [
     "archery-range"
   ],
-  "icon": "https://data.aoe4world.com/images/technologies/siege-elephant-4.png",
+  "icon": "https://data.aoe4world.com/images/technologies/howdahs-4.png",
   "effects": [
     {
       "property": "rangedAttack",
@@ -49,6 +49,28 @@
       "effect": "change",
       "value": 11,
       "type": "bonus"
+    },
+    {
+      "property": "rangedArmor",
+      "select": {
+        "id": [
+          "tower-elephant"
+        ]
+      },
+      "effect": "change",
+      "value": 4,
+      "type": "passive"
+    },
+    {
+      "property": "hitpoints",
+      "select": {
+        "id": [
+          "tower-elephant"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.3,
+      "type": "passive"
     }
   ]
 }
