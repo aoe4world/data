@@ -24,8 +24,8 @@ export function getTranslation(id: number, args: string[] = [], locale = "en") {
 function interpolateString(str: string, values: string[]) {
   values = [...values];
   return str
-    .replace(/%(\d+)%/g, (_, x, index) => values.shift() ?? "???")
-    .replace(/%%/g, "%")
+    .replace(/%(\d+)(\.\d+)*%/g, (_, x, index) => values.shift() ?? "???")
+    .replace(/%+/g, "%")
     .replace(/(\\+[nr]+)+/g, "\n")
     .trim();
 }
