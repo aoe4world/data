@@ -39,7 +39,6 @@ async function buildTechTree(civ: civConfig, context: RunContext = { debug: fals
   const bps = await parseXmlFile(attribFile(`racebps/${race}`), context);
 
   const civOverview = getCivInfo(army.army_bag, bps);
-  if (civOverview?.overview) writeJson(`${FOLDERS.CIVILIZATIONS.DATA}/${civ.slug}.json`, civOverview, { log: false });
 
   for (const b of army?.army_bag?.starting_buildings) {
     files.add(b.starting_building.building);
@@ -86,10 +85,22 @@ async function buildTechTree(civ: civConfig, context: RunContext = { debug: fals
         itemProduces.add(dItem.baseId);
       }
     }
+    techtree[item.id] = discovered.map((d) => filesToItemId.get(d)!);
   }
 
   for (const f of files) await parseFilesRecursively(f);
   for (const i of items.values()) persistItem(i, civ);
+
+  function fetchTree(id, depth = 0) {
+    if (depth > 10 || (id === "villager-1" && depth > 0)) return null;
+    const tree = {};
+    depth++;
+    for (const produces of techtree[id] ?? []) if (!!produces) tree[produces] = fetchTree(produces, depth);
+    return Object.keys(tree).length ? tree : null;
+  }
+
+  civOverview.techtree = fetchTree(["villager-1"]);
+  writeJson(`${FOLDERS.CIVILIZATIONS.DATA}/${civ.slug}.json`, civOverview, { log: false });
 }
 
 function ensureFolderStructure() {
