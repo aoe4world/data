@@ -19,12 +19,14 @@ const common = {
   allFishingShips: { id: ["fishing-boat", "lodya-fishing-boat"] } as Modifier["select"],
 };
 
-const increaseByPercent = (n: number, percent: number) => round(n * (1 + Math.abs(percent) / 100));
-const decreaseByPercent = (n: number, percent: number) => round(n * (1 - Math.abs(percent) / 100));
-const increaseByPercentImproved = (n: number, percent: number, delta: number) => round((n * (1 + Math.abs(percent) / 100)) / (1 + (Math.abs(percent) - Math.abs(delta)) / 100));
-const decreaseByPercentImproved = (n: number, percent: number, delta: number) => round((n * (1 - Math.abs(percent) / 100)) / (1 - (Math.abs(percent) - Math.abs(delta)) / 100));
-const increaseSpeedByPercent = (speed: number, percent: number) => round(speed / (1 + percent / 100) / 10) * 10;
-const round = (n: number) => Math.round(n * 100) / 100;
+const toPercent = (percent: number) => (percent == 33 ? 1 / 3 : Math.abs(percent) / 100);
+const increaseByPercent = (n: number, percent: number) => round(n * (1 + toPercent(percent)));
+const decreaseByPercent = (n: number, percent: number) => round(n * (1 - toPercent(percent)));
+const increaseByPercentImproved = (n: number, percent: number, delta: number) => round((n * (1 + toPercent(percent))) / (1 + (Math.abs(percent) - Math.abs(delta)) / 100));
+const decreaseByPercentImproved = (n: number, percent: number, delta: number) => round((n * (1 - toPercent(percent))) / (1 - (Math.abs(percent) - Math.abs(delta)) / 100));
+const increaseSpeedByPercent = (speed: number, percent: number) => round(speed / (1 + toPercent(percent)) / 10) * 10;
+const decreaseSpeedByPercent = (speed: number, percent: number) => speed * round(1 - 1 / (1 - toPercent(percent)));
+const round = (n: number) => Math.round(n * 100) / 100; //(100/(100-33))
 
 export const technologyModifiers: Record<string, (values: number[]) => Modifier[]> = {
   "arrow-volley": ([increase]) => [
@@ -714,7 +716,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { class: [["springald", "ship"]] },
       effect: "multiply",
-      value: increaseSpeedByPercent(1, s),
+      value: 1 + decreaseSpeedByPercent(1, s),
       type: "passive",
     },
   ],
@@ -1356,8 +1358,9 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     {
       property: "attackSpeed",
       select: { id: ["battering-ram"] },
-      effect: "multiply",
-      value: increaseSpeedByPercent(1, speed),
+      effect: "change",
+      value: (4 + 0.125) * -1 * (1 + decreaseSpeedByPercent(1, speed)),
+      // wtf is happening here? this is cooldown + attack decrease by 40%
       type: "passive",
     },
     {
@@ -1879,12 +1882,12 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
   ],
 
   "composite-bows": ([r]) => [
-    // Reduce the reload time of Archers by -25%.
+    // Reduce the reload time of Archers by -33%.
     {
       property: "attackSpeed",
       select: { id: ["archer"] },
-      effect: "multiply",
-      value: decreaseByPercent(1, r),
+      effect: "change", // (0,75/3)-(1,625-1,25)
+      value: decreaseSpeedByPercent(0.75, r), // 0.75 is archer reload time
       type: "passive",
     },
   ],
@@ -2053,7 +2056,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "moveSpeed",
       select: common.allMillitaryShips,
       effect: "change",
-      value: increaseSpeedByPercent(1, i),
+      value: increaseByPercent(1, i),
       type: "passive",
     },
   ],
