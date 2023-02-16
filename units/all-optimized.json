@@ -1661,6 +1661,7 @@
           ],
           "description": "Small boat that gathers Food from either Deep Water Fish or Shoreline Fish. Drops off gathered resources at the Dock.\n+ Can repair\n+ Fires a low damage arrow",
           "unique": true,
+          "hitpoints": 188,
           "weapons": [
             {
               "name": "Bow",
@@ -3145,10 +3146,94 @@
       "variations": [
         {
           "id": "hulk-2",
+          "pbgid": 193114,
+          "attribName": "unit_naval_combat_ship_2_eng",
+          "civs": [
+            "en"
+          ],
+          "costs": {
+            "gold": 27,
+            "wood": 180,
+            "food": 108,
+            "stone": 0,
+            "total": 315,
+            "time": 30
+          }
+        },
+        {
+          "id": "hulk-2",
+          "pbgid": 193124,
+          "attribName": "unit_naval_combat_ship_2_hre",
+          "civs": [
+            "hr"
+          ]
+        },
+        {
+          "id": "hulk-2",
           "pbgid": 193119,
           "attribName": "unit_naval_combat_ship_2_fre",
           "civs": [
             "fr"
+          ],
+          "unique": true,
+          "weapons": [
+            {
+              "name": "(translation not found)",
+              "type": "ranged",
+              "damage": 35,
+              "speed": 4.125,
+              "range": {
+                "min": 0,
+                "max": 6
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "archer",
+                        "ship"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 45,
+                  "type": "passive"
+                },
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 45,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0.5,
+                "windup": 0.25,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 2.75,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_naval_combat_ship_springald_fre",
+              "pbgid": 2128677
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 4
+            }
           ]
         },
         {
@@ -3158,31 +3243,6 @@
           "civs": [
             "ot"
           ]
-        },
-        {
-          "id": "hulk-3",
-          "pbgid": 193114,
-          "attribName": "unit_naval_combat_ship_2_eng",
-          "civs": [
-            "en"
-          ]
-        },
-        {
-          "id": "hulk-3",
-          "pbgid": 193124,
-          "attribName": "unit_naval_combat_ship_2_hre",
-          "civs": [
-            "hr"
-          ],
-          "costs": {
-            "food": 120,
-            "wood": 200,
-            "stone": 0,
-            "gold": 30,
-            "total": 350,
-            "popcap": 3,
-            "time": 30
-          }
         }
       ],
       "baseId": "hulk",
@@ -3200,6 +3260,65 @@
         "dock"
       ],
       "hitpoints": 450,
+      "weapons": [
+        {
+          "name": "Ballista",
+          "type": "ranged",
+          "damage": 35,
+          "speed": 4.125,
+          "range": {
+            "min": 0,
+            "max": 6
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "archer",
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 45,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 45,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 2.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_combat_ship_springald",
+          "pbgid": 2102494
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 3
+        }
+      ],
       "sight": {
         "line": 45,
         "height": 10
@@ -3207,143 +3326,7 @@
       "movement": {
         "speed": 1.375
       },
-      "shared": {
-        "hulk-2": {
-          "name": "Hulk",
-          "weapons": [
-            {
-              "name": "Ballista",
-              "type": "ranged",
-              "damage": 35,
-              "speed": 4.125,
-              "range": {
-                "min": 0,
-                "max": 6
-              },
-              "modifiers": [
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "archer",
-                        "ship"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 45,
-                  "type": "passive"
-                },
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 45,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0.5,
-                "windup": 0.25,
-                "attack": 0.125,
-                "winddown": 0.5,
-                "reload": 2.75,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "attribName": "weapon_naval_combat_ship_springald",
-              "pbgid": 2102494
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 3
-            }
-          ],
-          "id": "hulk-2"
-        },
-        "hulk-3": {
-          "name": "Hulk",
-          "age": 3,
-          "costs": {
-            "gold": 27,
-            "wood": 180,
-            "food": 108,
-            "stone": 0,
-            "total": 315,
-            "time": 30
-          },
-          "weapons": [
-            {
-              "name": "Ballista",
-              "type": "ranged",
-              "damage": 35,
-              "speed": 4.125,
-              "range": {
-                "min": 0,
-                "max": 6
-              },
-              "modifiers": [
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "archer",
-                        "ship"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 45,
-                  "type": "passive"
-                },
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 45,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0.5,
-                "windup": 0.25,
-                "attack": 0.125,
-                "winddown": 0.5,
-                "reload": 2.75,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "attribName": "weapon_naval_combat_ship_springald",
-              "pbgid": 2102494
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 3
-            }
-          ],
-          "id": "hulk-3"
-        }
-      }
+      "shared": {}
     },
     {
       "id": "king",
@@ -3354,11 +3337,12 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Unique Unit"
+        "Heavy Melee Cavalry"
       ],
       "classes": [
-        "unique",
-        "unit"
+        "heavy",
+        "melee",
+        "cavalry"
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/units/king-2.png",
@@ -3377,11 +3361,12 @@
           ],
           "description": "A mighty King, a powerful heavy cavalry unit. Heals nearby units by 2 health every 1 seconds.",
           "classes": [
-            "unique",
-            "unit"
+            "heavy",
+            "melee",
+            "cavalry"
           ],
           "displayClasses": [
-            "Unique Unit"
+            "Heavy Melee Cavalry"
           ],
           "unique": true,
           "costs": {
@@ -6381,7 +6366,7 @@
         "ot",
         "ru"
       ],
-      "unique": false,
+      "unique": true,
       "displayClasses": [
         "Light Melee Cavalry"
       ],
@@ -6631,18 +6616,42 @@
             "line": 47,
             "height": 501
           }
+        },
+        {
+          "id": "scout-2",
+          "pbgid": 2073403,
+          "attribName": "unit_scout_2_mal",
+          "civs": [
+            "ma"
+          ]
+        },
+        {
+          "id": "scout-3",
+          "pbgid": 2073646,
+          "attribName": "unit_scout_3_mal",
+          "civs": [
+            "ma"
+          ]
+        },
+        {
+          "id": "scout-4",
+          "pbgid": 2073647,
+          "attribName": "unit_scout_4_mal",
+          "civs": [
+            "ma"
+          ]
         }
       ],
       "baseId": "scout",
       "age": 1,
       "costs": {
-        "food": 70,
+        "food": 90,
         "wood": 0,
         "stone": 0,
         "gold": 0,
-        "total": 70,
+        "total": 90,
         "popcap": 1,
-        "time": 25
+        "time": 15
       },
       "producedBy": [
         "stable",
@@ -6650,67 +6659,280 @@
         "capital-town-center"
       ],
       "hitpoints": 110,
-      "weapons": [
-        {
-          "name": "Sword",
-          "type": "melee",
-          "damage": 1,
-          "speed": 2,
-          "range": {
-            "min": 0,
-            "max": 0.2875
-          },
-          "modifiers": [
-            {
-              "property": "meleeAttack",
-              "target": {
-                "class": [
-                  [
-                    "scout"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            },
-            {
-              "property": "meleeAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0.375,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 1.5
-          },
-          "attribName": "weapon_scout_1",
-          "pbgid": 120622
-        }
-      ],
-      "armor": [],
       "sight": {
         "line": 41,
         "height": 501
       },
       "movement": {
-        "speed": 1.625
+        "speed": 1.875
       },
-      "shared": {}
+      "shared": {
+        "scout-1": {
+          "name": "Scout",
+          "unique": false,
+          "costs": {
+            "food": 70,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 70,
+            "popcap": 1,
+            "time": 25
+          },
+          "weapons": [
+            {
+              "name": "Sword",
+              "type": "melee",
+              "damage": 1,
+              "speed": 2,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "scout"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 10,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "siege"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 10,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.375,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.5
+              },
+              "attribName": "weapon_scout_1",
+              "pbgid": 120622
+            }
+          ],
+          "armor": [],
+          "movement": {
+            "speed": 1.625
+          },
+          "id": "scout-1"
+        },
+        "scout-2": {
+          "name": "Warrior Scout",
+          "age": 2,
+          "description": "Fast cavalry effective at raiding, exploring the world, hunting wildlife, and herding Sheep.\n+ Increased move speed\n+ Able to see into Stealth Forests\n+ Health regeneration\n- Weak in combat",
+          "icon": "https://data.aoe4world.com/images/units/warrior-scout-2.png",
+          "weapons": [
+            {
+              "name": "Tamba",
+              "type": "melee",
+              "damage": 7,
+              "speed": 2,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "scout"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 10,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "siege"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 10,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.375,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.5
+              },
+              "attribName": "weapon_scout_2_mal",
+              "pbgid": 2074532
+            }
+          ],
+          "armor": [],
+          "id": "scout-2"
+        },
+        "scout-3": {
+          "name": "Veteran Warrior Scout",
+          "age": 3,
+          "description": "Fast cavalry effective at raiding, exploring the world, hunting wildlife, and herding Sheep.\n+ Increased health regeneration\n+ Increased move speed\n+ Able to see into Stealth Forests\n- Weak in combat",
+          "icon": "https://data.aoe4world.com/images/units/warrior-scout-3.png",
+          "hitpoints": 130,
+          "weapons": [
+            {
+              "name": "Tamba",
+              "type": "melee",
+              "damage": 9,
+              "speed": 2,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "scout"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 10,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "siege"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 10,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.375,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.5
+              },
+              "attribName": "weapon_scout_3_mal",
+              "pbgid": 2074533
+            }
+          ],
+          "armor": [],
+          "id": "scout-3"
+        },
+        "scout-4": {
+          "name": "Elite Warrior Scout",
+          "age": 4,
+          "description": "Fast cavalry effective at raiding and fighting ranged units.\n+ Bonus damage vs ranged\n+ Increased health regeneration\n+ Increased move speed\n+ Able to see into Stealth Forests\n- Weak vs melee units",
+          "icon": "https://data.aoe4world.com/images/units/warrior-scout-4.png",
+          "hitpoints": 155,
+          "weapons": [
+            {
+              "name": "Tamba",
+              "type": "melee",
+              "damage": 11,
+              "speed": 2,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "scout"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 10,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "siege"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 10,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "ranged"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 11,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.375,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.5
+              },
+              "attribName": "weapon_scout_4_mal",
+              "pbgid": 2074534
+            }
+          ],
+          "armor": [],
+          "id": "scout-4"
+        }
+      }
     },
     {
       "id": "siege-tower",
@@ -9353,6 +9575,142 @@
       "shared": {}
     },
     {
+      "id": "wynguard-footman",
+      "name": "Wynguard Footman",
+      "type": "unit",
+      "civs": [
+        "en"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Heavy Melee Infantry"
+      ],
+      "classes": [
+        "heavy",
+        "melee",
+        "infantry"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/units/wynguard-footman-4.png",
+      "description": "Specialized man at arms with high health and pierce armor.\n- Slow movement\n- Countered by Crossbowmen",
+      "variations": [
+        {
+          "id": "wynguard-footman-4",
+          "baseId": "wynguard-footman",
+          "type": "unit",
+          "name": "Wynguard Footman",
+          "pbgid": 2122350,
+          "attribName": "unit_footman_wynguard_4_eng",
+          "age": 4,
+          "civs": [
+            "en"
+          ],
+          "description": "Specialized man at arms with high health and pierce armor.\n- Slow movement\n- Countered by Crossbowmen",
+          "classes": [
+            "heavy",
+            "melee",
+            "infantry"
+          ],
+          "displayClasses": [
+            "Heavy Melee Infantry"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 60,
+            "wood": 0,
+            "stone": 0,
+            "gold": 40,
+            "total": 100,
+            "popcap": 1,
+            "time": 35
+          },
+          "producedBy": [],
+          "icon": "https://data.aoe4world.com/images/units/wynguard-footman-4.png",
+          "hitpoints": 280,
+          "weapons": [
+            {
+              "name": "Ax",
+              "type": "melee",
+              "damage": 20,
+              "speed": 1.625,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "cavalry"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 5,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.25
+              },
+              "attribName": "weapon_wynguard_footman_eng_4",
+              "pbgid": 2122348
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch",
+              "pbgid": 123518
+            }
+          ],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 3
+            },
+            {
+              "type": "ranged",
+              "value": 5
+            }
+          ],
+          "sight": {
+            "line": 36,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.125
+          }
+        }
+      ],
+      "shared": {}
+    },
+    {
       "id": "wynguard-footmen",
       "name": "Wynguard Footmen",
       "type": "unit",
@@ -9400,7 +9758,7 @@
             "gold": 500,
             "total": 700,
             "popcap": 6,
-            "time": 60
+            "time": 50
           },
           "producedBy": [
             "wynguard-palace"
@@ -9467,7 +9825,7 @@
             "gold": 200,
             "total": 850,
             "popcap": 6,
-            "time": 20
+            "time": 25
           },
           "producedBy": [
             "wynguard-palace"
@@ -9481,6 +9839,112 @@
           },
           "movement": {
             "speed": null
+          }
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "wynguard-ranger",
+      "name": "Wynguard Ranger",
+      "type": "unit",
+      "civs": [
+        "en"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/units/wynguard-ranger-4.png",
+      "description": "Master longbowmen with increased range and damage, good vs. unarmored targets.\n+ Long range\n+ Can construct Palings to fend off cavalry charges\n- Slow movement speed\n- Countered by Horsemen",
+      "variations": [
+        {
+          "id": "wynguard-ranger-4",
+          "baseId": "wynguard-ranger",
+          "type": "unit",
+          "name": "Wynguard Ranger",
+          "pbgid": 2122538,
+          "attribName": "unit_ranger_wynguard_4_eng",
+          "age": 4,
+          "civs": [
+            "en"
+          ],
+          "description": "Master longbowmen with increased range and damage, good vs. unarmored targets.\n+ Long range\n+ Can construct Palings to fend off cavalry charges\n- Slow movement speed\n- Countered by Horsemen",
+          "classes": [
+            "light",
+            "ranged",
+            "infantry"
+          ],
+          "displayClasses": [
+            "Light Ranged Infantry"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 40,
+            "wood": 50,
+            "stone": 0,
+            "gold": 0,
+            "total": 90,
+            "popcap": 1,
+            "time": 15
+          },
+          "producedBy": [],
+          "icon": "https://data.aoe4world.com/images/units/wynguard-ranger-4.png",
+          "hitpoints": 125,
+          "weapons": [
+            {
+              "name": "Longbow",
+              "type": "ranged",
+              "damage": 12,
+              "speed": 1.625,
+              "range": {
+                "min": 0,
+                "max": 9
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "light",
+                        "melee",
+                        "infantry"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 12,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0.25,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 0.75,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_wynguard_ranger_eng_4",
+              "pbgid": 2122533
+            }
+          ],
+          "armor": [],
+          "sight": {
+            "line": 45,
+            "height": 501
+          },
+          "movement": {
+            "speed": 1.125
           }
         }
       ],
@@ -9534,7 +9998,7 @@
             "gold": 250,
             "total": 700,
             "popcap": 6,
-            "time": 60
+            "time": 50
           },
           "producedBy": [
             "wynguard-palace"
@@ -13353,10 +13817,6 @@
           "civs": [
             "mo"
           ],
-          "producedBy": [
-            "stable",
-            "khaganate-palace"
-          ],
           "weapons": [
             {
               "name": "Sword",
@@ -13555,10 +14015,6 @@
           "attribName": "unit_knight_4_mon",
           "civs": [
             "mo"
-          ],
-          "producedBy": [
-            "stable",
-            "khaganate-palace"
           ],
           "weapons": [
             {
@@ -14765,8 +15221,8 @@
             "food": 0,
             "wood": 0,
             "stone": 0,
-            "gold": 150,
-            "total": 150,
+            "gold": 130,
+            "total": 130,
             "popcap": 1,
             "time": 30
           },
@@ -16966,7 +17422,7 @@
             {
               "name": "Sword",
               "type": "melee",
-              "damage": 9,
+              "damage": 8,
               "speed": 1.375,
               "range": {
                 "min": 0,
@@ -16983,7 +17439,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 9,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -17036,7 +17492,7 @@
             {
               "name": "Khanda",
               "type": "melee",
-              "damage": 12,
+              "damage": 9,
               "speed": 1.375,
               "range": {
                 "min": 0,
@@ -17053,7 +17509,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 12,
+                  "value": 15,
                   "type": "passive"
                 }
               ],
@@ -17106,7 +17562,7 @@
             {
               "name": "Khanda",
               "type": "melee",
-              "damage": 15,
+              "damage": 12,
               "speed": 1.375,
               "range": {
                 "min": 0,
@@ -17123,7 +17579,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 15,
+                  "value": 18,
                   "type": "passive"
                 }
               ],
@@ -18007,14 +18463,16 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Siege"
+        "Siege",
+        "Khaganate Unit"
       ],
       "classes": [
-        "siege"
+        "siege",
+        "khaganate"
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/units/huihui-pao-1.png",
-      "description": "Massive siege engine with incredible range, extra effective at destroying buildings and walls.\n+ Extremely long range\n- Must be set up to fire",
+      "description": "Massive siege engine with incredible range, extra effective at destroying buildings and walls.\n+ Extremely long range\n- Must be set up to fire\n\nRandomly spawns from the Khaganate Palace.",
       "variations": [
         {
           "id": "huihui-pao-1",
@@ -18027,12 +18485,14 @@
           "civs": [
             "mo"
           ],
-          "description": "Massive siege engine with incredible range, extra effective at destroying buildings and walls.\n+ Extremely long range\n- Must be set up to fire",
+          "description": "Massive siege engine with incredible range, extra effective at destroying buildings and walls.\n+ Extremely long range\n- Must be set up to fire\n\nRandomly spawns from the Khaganate Palace.",
           "classes": [
-            "siege"
+            "siege",
+            "khaganate"
           ],
           "displayClasses": [
-            "Siege"
+            "Siege",
+            "Khaganate Unit"
           ],
           "unique": true,
           "costs": {
@@ -18114,6 +18574,690 @@
           },
           "movement": {
             "speed": 0.625
+          }
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "khaganate-horse-archer",
+      "name": "Khaganate Elite Horse Archer",
+      "type": "unit",
+      "civs": [
+        "mo"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Light Ranged Cavalry",
+        "Khaganate Unit"
+      ],
+      "classes": [
+        "light",
+        "ranged",
+        "cavalry",
+        "khaganate"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/units/horse-archer-1.png",
+      "description": "Highly mobile ranged cavalry effective against slower melee units.\n+ High mobility\n- Weak vs ranged units\n\nRandomly spawns 5 at the time from the Khaganate Palace.",
+      "variations": [
+        {
+          "id": "khaganate-horse-archer-1",
+          "baseId": "khaganate-horse-archer",
+          "type": "unit",
+          "name": "Khaganate Elite Horse Archer",
+          "pbgid": 2104798,
+          "attribName": "unit_khaganate_horsearcher_rus_mon",
+          "age": 1,
+          "civs": [
+            "mo"
+          ],
+          "description": "Highly mobile ranged cavalry effective against slower melee units.\n+ High mobility\n- Weak vs ranged units\n\nRandomly spawns 5 at the time from the Khaganate Palace.",
+          "classes": [
+            "light",
+            "ranged",
+            "cavalry",
+            "khaganate"
+          ],
+          "displayClasses": [
+            "Light Ranged Cavalry",
+            "Khaganate Unit"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 5,
+            "time": 50
+          },
+          "producedBy": [
+            "khaganate-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/horse-archer-1.png",
+          "hitpoints": 100,
+          "weapons": [
+            {
+              "name": "Bow",
+              "type": "ranged",
+              "damage": 14,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 4.5
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0.125,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 1.375,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_horsearcher_4_rus",
+              "pbgid": 134964
+            }
+          ],
+          "armor": [],
+          "sight": {
+            "line": 34,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.625
+          }
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "khaganate-knight",
+      "name": "Khaganate Elite Knight",
+      "type": "unit",
+      "civs": [
+        "mo"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Heavy Melee Cavalry",
+        "Khaganate Unit"
+      ],
+      "classes": [
+        "heavy",
+        "melee",
+        "cavalry",
+        "khaganate"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/units/knight-1.png",
+      "description": "Expensive cavalry with high damage and a powerful charge attack. Effective against most units.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen\n\nRandomly spawns 3 at the time from the Khaganate Palace.",
+      "variations": [
+        {
+          "id": "khaganate-knight-1",
+          "baseId": "khaganate-knight",
+          "type": "unit",
+          "name": "Khaganate Elite Knight",
+          "pbgid": 2117332,
+          "attribName": "unit_khaganate_knight_rus_mon",
+          "age": 1,
+          "civs": [
+            "mo"
+          ],
+          "description": "Expensive cavalry with high damage and a powerful charge attack. Effective against most units.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen\n\nRandomly spawns 3 at the time from the Khaganate Palace.",
+          "classes": [
+            "heavy",
+            "melee",
+            "cavalry",
+            "khaganate"
+          ],
+          "displayClasses": [
+            "Heavy Melee Cavalry",
+            "Khaganate Unit"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 3,
+            "time": 60
+          },
+          "producedBy": [
+            "khaganate-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/knight-1.png",
+          "hitpoints": 270,
+          "weapons": [
+            {
+              "name": "Sword",
+              "type": "melee",
+              "damage": 29,
+              "speed": 1.5,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.875
+              },
+              "attribName": "weapon_khagnate_knight_rus_mon",
+              "pbgid": 2117334
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_horseman",
+              "pbgid": 127935
+            }
+          ],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 5
+            },
+            {
+              "type": "ranged",
+              "value": 5
+            }
+          ],
+          "sight": {
+            "line": 28,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.625
+          }
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "khaganate-mangudai",
+      "name": "Khaganate Elite Mangudai",
+      "type": "unit",
+      "civs": [
+        "mo"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Light Ranged Cavalry",
+        "Khaganate Unit"
+      ],
+      "classes": [
+        "light",
+        "ranged",
+        "cavalry",
+        "khaganate"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/units/mangudai-1.png",
+      "description": "Confounding mobile ranged cavalry that can fire while moving.\n+ High rate of fire\n- Low weapon range\n\nRandomly spawns from the Khaganate Palace.",
+      "variations": [
+        {
+          "id": "khaganate-mangudai-1",
+          "baseId": "khaganate-mangudai",
+          "type": "unit",
+          "name": "Khaganate Elite Mangudai",
+          "pbgid": 2122464,
+          "attribName": "unit_khaganate_mangudai_mon",
+          "age": 1,
+          "civs": [
+            "mo"
+          ],
+          "description": "Confounding mobile ranged cavalry that can fire while moving.\n+ High rate of fire\n- Low weapon range\n\nRandomly spawns from the Khaganate Palace.",
+          "classes": [
+            "light",
+            "ranged",
+            "cavalry",
+            "khaganate"
+          ],
+          "displayClasses": [
+            "Light Ranged Cavalry",
+            "Khaganate Unit"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 1,
+            "time": 50
+          },
+          "producedBy": [
+            "khaganate-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/mangudai-1.png",
+          "hitpoints": 120,
+          "weapons": [
+            {
+              "name": "Bow",
+              "type": "ranged",
+              "damage": 8,
+              "speed": 0.875,
+              "range": {
+                "min": 0,
+                "max": 3.5
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0.125,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 0.125,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_horsearcher_4_mon",
+              "pbgid": 136276
+            }
+          ],
+          "armor": [],
+          "sight": {
+            "line": 34,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.5625
+          }
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "khaganate-nest-of-bees",
+      "name": "Khaganate Nest of Bees",
+      "type": "unit",
+      "civs": [
+        "mo"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Siege",
+        "Gunpowder",
+        "Khaganate Unit"
+      ],
+      "classes": [
+        "siege",
+        "gunpowder",
+        "khaganate"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/nest-of-bees-4.png",
+      "description": "Innovative field weapon capable of firing a barrage of rockets to damage defensive positions and clumped enemy troops.\n+ Good area of effect damage against most targets\n- Slowest movement speed\n- Weak if surrounded\n\nRandomly spawns from the Khaganate Palace.",
+      "variations": [
+        {
+          "id": "khaganate-nest-of-bees-3",
+          "baseId": "khaganate-nest-of-bees",
+          "type": "unit",
+          "name": "Khaganate Nest of Bees",
+          "pbgid": 2104797,
+          "attribName": "unit_khaganate_nest_of_bees_4_mon",
+          "age": 3,
+          "civs": [
+            "mo"
+          ],
+          "description": "Innovative field weapon capable of firing a barrage of rockets to damage defensive positions and clumped enemy troops.\n+ Good area of effect damage against most targets\n- Slowest movement speed\n- Weak if surrounded\n\nRandomly spawns from the Khaganate Palace.",
+          "classes": [
+            "siege",
+            "gunpowder",
+            "khaganate"
+          ],
+          "displayClasses": [
+            "Siege",
+            "Gunpowder",
+            "Khaganate Unit"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 3,
+            "time": 50
+          },
+          "producedBy": [
+            "khaganate-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/nest-of-bees-4.png",
+          "hitpoints": 140,
+          "weapons": [
+            {
+              "name": "Rocket Arrow",
+              "type": "siege",
+              "damage": 8,
+              "speed": 6.5,
+              "range": {
+                "min": 3,
+                "max": 8
+              },
+              "modifiers": [
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "naval",
+                        "unit"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 4,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0.5,
+                "windup": 0,
+                "attack": 1,
+                "winddown": 2,
+                "reload": 3,
+                "setup": 0.25,
+                "teardown": 1,
+                "cooldown": 0
+              },
+              "burst": {
+                "count": 8
+              },
+              "attribName": "weapon_nest_of_bees_4_chi",
+              "pbgid": 166609
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 20
+            }
+          ],
+          "sight": {
+            "line": 64,
+            "height": 10
+          },
+          "movement": {
+            "speed": 0.8125
+          }
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "khaganate-palace-guard",
+      "name": "Khaganate Elite Palace Guard",
+      "type": "unit",
+      "civs": [
+        "mo"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Heavy Melee Infantry",
+        "Khaganate Unit"
+      ],
+      "classes": [
+        "heavy",
+        "melee",
+        "infantry",
+        "khaganate"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/units/palace-guard-1.png",
+      "description": "Tough infantry with good damage. Move faster than Men-At-Arms, but with reduced armor.\n+ Armored\n- Countered by Knights, Lancers, and Crossbowmen.\n\nRandomly spawns 5 at the time from the Khaganate Palace.",
+      "variations": [
+        {
+          "id": "khaganate-palace-guard-1",
+          "baseId": "khaganate-palace-guard",
+          "type": "unit",
+          "name": "Khaganate Elite Palace Guard",
+          "pbgid": 2104796,
+          "attribName": "unit_khaganate_manatarms_china_mon",
+          "age": 1,
+          "civs": [
+            "mo"
+          ],
+          "description": "Tough infantry with good damage. Move faster than Men-At-Arms, but with reduced armor.\n+ Armored\n- Countered by Knights, Lancers, and Crossbowmen.\n\nRandomly spawns 5 at the time from the Khaganate Palace.",
+          "classes": [
+            "heavy",
+            "melee",
+            "infantry",
+            "khaganate"
+          ],
+          "displayClasses": [
+            "Heavy Melee Infantry",
+            "Khaganate Unit"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 5,
+            "time": 50
+          },
+          "producedBy": [
+            "khaganate-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/palace-guard-1.png",
+          "hitpoints": 180,
+          "weapons": [
+            {
+              "name": "Guandao",
+              "type": "melee",
+              "damage": 14,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_manatarms_4_chi",
+              "pbgid": 137339
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch",
+              "pbgid": 123518
+            }
+          ],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 4
+            },
+            {
+              "type": "ranged",
+              "value": 4
+            }
+          ],
+          "sight": {
+            "line": 36,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.375
+          }
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "khaganate-warrior-monk",
+      "name": "Khaganate Warrior Monk",
+      "type": "unit",
+      "civs": [
+        "mo"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Religious Cavalry",
+        "Khaganate Unit"
+      ],
+      "classes": [
+        "religious",
+        "cavalry",
+        "khaganate"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/units/warrior-monk-1.png",
+      "description": "Military-minded support unit that improves combat capabilities of nearby units after it attacks. Can pick up Relics, convert enemy units, and capture Sacred Sites.\n+ Heals friendly units\n+ High utility in large armies\n- Low damage\n\nRandomly spawns 2 at the time from the Khaganate Palace.",
+      "variations": [
+        {
+          "id": "khaganate-warrior-monk-1",
+          "baseId": "khaganate-warrior-monk",
+          "type": "unit",
+          "name": "Khaganate Warrior Monk",
+          "pbgid": 2104799,
+          "attribName": "unit_khaganate_monk_rus_mon",
+          "age": 1,
+          "civs": [
+            "mo"
+          ],
+          "description": "Military-minded support unit that improves combat capabilities of nearby units after it attacks. Can pick up Relics, convert enemy units, and capture Sacred Sites.\n+ Heals friendly units\n+ High utility in large armies\n- Low damage\n\nRandomly spawns 2 at the time from the Khaganate Palace.",
+          "classes": [
+            "religious",
+            "cavalry",
+            "khaganate"
+          ],
+          "displayClasses": [
+            "Religious Cavalry",
+            "Khaganate Unit"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 2,
+            "time": 40
+          },
+          "producedBy": [
+            "khaganate-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/warrior-monk-1.png",
+          "hitpoints": 190,
+          "weapons": [
+            {
+              "name": "Spear",
+              "type": "melee",
+              "damage": 11,
+              "speed": 1.75,
+              "range": {
+                "min": 0,
+                "max": 0.75
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.625,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.5
+              },
+              "attribName": "weapon_monk_3_rus",
+              "pbgid": 2031620
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_rus",
+              "pbgid": 133324
+            }
+          ],
+          "armor": [],
+          "sight": {
+            "line": 30,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.625
           }
         }
       ],
@@ -18522,7 +19666,7 @@
         "height": 10
       },
       "movement": {
-        "speed": 1.625
+        "speed": 1.5625
       },
       "shared": {
         "mangudai-2": {
@@ -18531,8 +19675,8 @@
             {
               "name": "Bow",
               "type": "ranged",
-              "damage": 7,
-              "speed": 1.25,
+              "damage": 5,
+              "speed": 0.875,
               "range": {
                 "min": 0,
                 "max": 3.5
@@ -18543,7 +19687,7 @@
                 "windup": 0,
                 "attack": 0.125,
                 "winddown": 0.5,
-                "reload": 0.5,
+                "reload": 0.125,
                 "setup": 0,
                 "teardown": 0,
                 "cooldown": 0
@@ -18564,8 +19708,8 @@
             {
               "name": "Bow",
               "type": "ranged",
-              "damage": 9,
-              "speed": 1.25,
+              "damage": 6,
+              "speed": 0.875,
               "range": {
                 "min": 0,
                 "max": 3.5
@@ -18576,7 +19720,7 @@
                 "windup": 0,
                 "attack": 0.125,
                 "winddown": 0.5,
-                "reload": 0.5,
+                "reload": 0.125,
                 "setup": 0,
                 "teardown": 0,
                 "cooldown": 0
@@ -18597,8 +19741,8 @@
             {
               "name": "Bow",
               "type": "ranged",
-              "damage": 10,
-              "speed": 1.25,
+              "damage": 8,
+              "speed": 0.875,
               "range": {
                 "min": 0,
                 "max": 3.5
@@ -18609,7 +19753,7 @@
                 "windup": 0,
                 "attack": 0.125,
                 "winddown": 0.5,
-                "reload": 0.5,
+                "reload": 0.125,
                 "setup": 0,
                 "teardown": 0,
                 "cooldown": 0
@@ -18948,7 +20092,7 @@
               "name": "Bombard",
               "type": "siege",
               "damage": 35,
-              "speed": 5.75,
+              "speed": 4,
               "range": {
                 "min": 0,
                 "max": 9.5
@@ -18959,7 +20103,7 @@
                 "windup": 0.25,
                 "attack": 0.75,
                 "winddown": 0.5,
-                "reload": 3.75,
+                "reload": 2,
                 "setup": 0,
                 "teardown": 0,
                 "cooldown": 0

@@ -2007,7 +2007,9 @@
               "arbaletrier",
               "crossbowman",
               "tower-elepahnt",
+              "sultans-elite-tower-elephant",
               "mangudai",
+              "khaganate-elite-mangudai",
               "horse-archer",
               "camel-archer",
               "khan",
@@ -2177,18 +2179,20 @@
           "property": "attackSpeed",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
-          "effect": "multiply",
-          "value": 0.7000000000000001,
+          "effect": "change",
+          "value": -1.3612499999999998,
           "type": "passive"
         },
         {
           "property": "buildTime",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
           "effect": "multiply",
@@ -3170,7 +3174,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8,
+          "value": 0.75,
           "type": "passive"
         }
       ]
@@ -3488,6 +3492,196 @@
           "effect": "change",
           "value": 30,
           "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "upgrade-king-3",
+      "baseId": "upgrade-king-3",
+      "type": "technology",
+      "name": "Castle Age King",
+      "pbgid": 2123164,
+      "attribName": "upgrade_abbey_king_castle_1",
+      "age": 3,
+      "civs": [
+        "en"
+      ],
+      "description": "Increases the health, attack and armor of the King when reaching Castle Age.",
+      "classes": [
+        "king",
+        "scaling",
+        "technology"
+      ],
+      "displayClasses": [
+        "King Scaling Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0,
+        "time": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/units/king-2.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "value": 75,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        },
+        {
+          "property": "meleeAttack",
+          "value": 4,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        },
+        {
+          "property": "meleeArmor",
+          "value": 1,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        },
+        {
+          "property": "rangedArmor",
+          "value": 1,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        },
+        {
+          "property": "meleeAttack",
+          "value": 2,
+          "effect": "change",
+          "type": "ability",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "upgrade-king-4",
+      "baseId": "upgrade-king-4",
+      "type": "technology",
+      "name": "Imperial Age King",
+      "pbgid": 2123168,
+      "attribName": "upgrade_abbey_king_imp_2",
+      "age": 4,
+      "civs": [
+        "en"
+      ],
+      "description": "Increases the health, attack and armor of the King when reaching Imperial Age.",
+      "classes": [
+        "king",
+        "scaling",
+        "technology"
+      ],
+      "displayClasses": [
+        "King Scaling Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0,
+        "time": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/units/king-2.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "value": 100,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        },
+        {
+          "property": "meleeAttack",
+          "value": 5,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        },
+        {
+          "property": "meleeArmor",
+          "value": 1,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        },
+        {
+          "property": "rangedArmor",
+          "value": 1,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        },
+        {
+          "property": "meleeAttack",
+          "value": 3,
+          "effect": "change",
+          "type": "ability",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
         }
       ]
     },

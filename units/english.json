@@ -1260,13 +1260,13 @@
       }
     },
     {
-      "id": "hulk-3",
+      "id": "hulk-2",
       "baseId": "hulk",
       "type": "unit",
       "name": "Hulk",
       "pbgid": 193114,
       "attribName": "unit_naval_combat_ship_2_eng",
-      "age": 3,
+      "age": 2,
       "civs": [
         "en"
       ],
@@ -1372,11 +1372,12 @@
       ],
       "description": "A mighty King, a powerful heavy cavalry unit. Heals nearby units by 2 health every 1 seconds.",
       "classes": [
-        "unique",
-        "unit"
+        "heavy",
+        "melee",
+        "cavalry"
       ],
       "displayClasses": [
-        "Unique Unit"
+        "Heavy Melee Cavalry"
       ],
       "unique": true,
       "costs": {
@@ -3538,6 +3539,119 @@
       }
     },
     {
+      "id": "wynguard-footman-4",
+      "baseId": "wynguard-footman",
+      "type": "unit",
+      "name": "Wynguard Footman",
+      "pbgid": 2122350,
+      "attribName": "unit_footman_wynguard_4_eng",
+      "age": 4,
+      "civs": [
+        "en"
+      ],
+      "description": "Specialized man at arms with high health and pierce armor.\n- Slow movement\n- Countered by Crossbowmen",
+      "classes": [
+        "heavy",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Heavy Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 0,
+        "stone": 0,
+        "gold": 40,
+        "total": 100,
+        "popcap": 1,
+        "time": 35
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/units/wynguard-footman-4.png",
+      "hitpoints": 280,
+      "weapons": [
+        {
+          "name": "Ax",
+          "type": "melee",
+          "damage": 20,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 5,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.25
+          },
+          "attribName": "weapon_wynguard_footman_eng_4",
+          "pbgid": 2122348
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [
+        {
+          "type": "melee",
+          "value": 3
+        },
+        {
+          "type": "ranged",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
       "id": "wynguard-footmen-1",
       "baseId": "wynguard-footmen",
       "type": "unit",
@@ -3565,7 +3679,7 @@
         "gold": 500,
         "total": 700,
         "popcap": 6,
-        "time": 60
+        "time": 50
       },
       "producedBy": [
         "wynguard-palace"
@@ -3609,7 +3723,7 @@
         "gold": 200,
         "total": 850,
         "popcap": 6,
-        "time": 20
+        "time": 25
       },
       "producedBy": [
         "wynguard-palace"
@@ -3623,6 +3737,89 @@
       },
       "movement": {
         "speed": null
+      }
+    },
+    {
+      "id": "wynguard-ranger-4",
+      "baseId": "wynguard-ranger",
+      "type": "unit",
+      "name": "Wynguard Ranger",
+      "pbgid": 2122538,
+      "attribName": "unit_ranger_wynguard_4_eng",
+      "age": 4,
+      "civs": [
+        "en"
+      ],
+      "description": "Master longbowmen with increased range and damage, good vs. unarmored targets.\n+ Long range\n+ Can construct Palings to fend off cavalry charges\n- Slow movement speed\n- Countered by Horsemen",
+      "classes": [
+        "light",
+        "ranged",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 40,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "total": 90,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/units/wynguard-ranger-4.png",
+      "hitpoints": 125,
+      "weapons": [
+        {
+          "name": "Longbow",
+          "type": "ranged",
+          "damage": 12,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 9
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 12,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_wynguard_ranger_eng_4",
+          "pbgid": 2122533
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 45,
+        "height": 501
+      },
+      "movement": {
+        "speed": 1.125
       }
     },
     {
@@ -3653,7 +3850,7 @@
         "gold": 250,
         "total": 700,
         "popcap": 6,
-        "time": 60
+        "time": 50
       },
       "producedBy": [
         "wynguard-palace"

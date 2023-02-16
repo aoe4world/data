@@ -2279,7 +2279,7 @@
         {
           "name": "Sword",
           "type": "melee",
-          "damage": 9,
+          "damage": 8,
           "speed": 1.375,
           "range": {
             "min": 0,
@@ -2296,7 +2296,7 @@
                 ]
               },
               "effect": "change",
-              "value": 9,
+              "value": 10,
               "type": "passive"
             }
           ],
@@ -2386,7 +2386,7 @@
         {
           "name": "Khanda",
           "type": "melee",
-          "damage": 12,
+          "damage": 9,
           "speed": 1.375,
           "range": {
             "min": 0,
@@ -2403,7 +2403,7 @@
                 ]
               },
               "effect": "change",
-              "value": 12,
+              "value": 15,
               "type": "passive"
             }
           ],
@@ -2493,7 +2493,7 @@
         {
           "name": "Khanda",
           "type": "melee",
-          "damage": 15,
+          "damage": 12,
           "speed": 1.375,
           "range": {
             "min": 0,
@@ -2510,7 +2510,7 @@
                 ]
               },
               "effect": "change",
-              "value": 15,
+              "value": 18,
               "type": "passive"
             }
           ],
@@ -2656,6 +2656,313 @@
       },
       "movement": {
         "speed": 1.625
+      }
+    },
+    {
+      "id": "scout-2",
+      "baseId": "scout",
+      "type": "unit",
+      "name": "Warrior Scout",
+      "pbgid": 2073403,
+      "attribName": "unit_scout_2_mal",
+      "age": 2,
+      "civs": [
+        "ma"
+      ],
+      "description": "Fast cavalry effective at raiding, exploring the world, hunting wildlife, and herding Sheep.\n+ Increased move speed\n+ Able to see into Stealth Forests\n+ Health regeneration\n- Weak in combat",
+      "classes": [
+        "light",
+        "melee",
+        "cavalry"
+      ],
+      "displayClasses": [
+        "Light Melee Cavalry"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 90,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 90,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "stable",
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/warrior-scout-2.png",
+      "hitpoints": 110,
+      "weapons": [
+        {
+          "name": "Tamba",
+          "type": "melee",
+          "damage": 7,
+          "speed": 2,
+          "range": {
+            "min": 0,
+            "max": 0.2875
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "scout"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.375,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.5
+          },
+          "attribName": "weapon_scout_2_mal",
+          "pbgid": 2074532
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 41,
+        "height": 501
+      },
+      "movement": {
+        "speed": 1.875
+      }
+    },
+    {
+      "id": "scout-3",
+      "baseId": "scout",
+      "type": "unit",
+      "name": "Veteran Warrior Scout",
+      "pbgid": 2073646,
+      "attribName": "unit_scout_3_mal",
+      "age": 3,
+      "civs": [
+        "ma"
+      ],
+      "description": "Fast cavalry effective at raiding, exploring the world, hunting wildlife, and herding Sheep.\n+ Increased health regeneration\n+ Increased move speed\n+ Able to see into Stealth Forests\n- Weak in combat",
+      "classes": [
+        "light",
+        "melee",
+        "cavalry"
+      ],
+      "displayClasses": [
+        "Light Melee Cavalry"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 90,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 90,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "stable",
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/warrior-scout-3.png",
+      "hitpoints": 130,
+      "weapons": [
+        {
+          "name": "Tamba",
+          "type": "melee",
+          "damage": 9,
+          "speed": 2,
+          "range": {
+            "min": 0,
+            "max": 0.2875
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "scout"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.375,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.5
+          },
+          "attribName": "weapon_scout_3_mal",
+          "pbgid": 2074533
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 41,
+        "height": 501
+      },
+      "movement": {
+        "speed": 1.875
+      }
+    },
+    {
+      "id": "scout-4",
+      "baseId": "scout",
+      "type": "unit",
+      "name": "Elite Warrior Scout",
+      "pbgid": 2073647,
+      "attribName": "unit_scout_4_mal",
+      "age": 4,
+      "civs": [
+        "ma"
+      ],
+      "description": "Fast cavalry effective at raiding and fighting ranged units.\n+ Bonus damage vs ranged\n+ Increased health regeneration\n+ Increased move speed\n+ Able to see into Stealth Forests\n- Weak vs melee units",
+      "classes": [
+        "light",
+        "melee",
+        "cavalry"
+      ],
+      "displayClasses": [
+        "Light Melee Cavalry"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 90,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 90,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "stable",
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/warrior-scout-4.png",
+      "hitpoints": 155,
+      "weapons": [
+        {
+          "name": "Tamba",
+          "type": "melee",
+          "damage": 11,
+          "speed": 2,
+          "range": {
+            "min": 0,
+            "max": 0.2875
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "scout"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 11,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.375,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.5
+          },
+          "attribName": "weapon_scout_4_mal",
+          "pbgid": 2074534
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 41,
+        "height": 501
+      },
+      "movement": {
+        "speed": 1.875
       }
     },
     {

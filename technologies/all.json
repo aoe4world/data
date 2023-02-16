@@ -2002,7 +2002,9 @@
               "arbaletrier",
               "crossbowman",
               "tower-elepahnt",
+              "sultans-elite-tower-elephant",
               "mangudai",
+              "khaganate-elite-mangudai",
               "horse-archer",
               "camel-archer",
               "khan",
@@ -2172,18 +2174,20 @@
           "property": "attackSpeed",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
-          "effect": "multiply",
-          "value": 0.7000000000000001,
+          "effect": "change",
+          "value": -1.3612499999999998,
           "type": "passive"
         },
         {
           "property": "buildTime",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
           "effect": "multiply",
@@ -3165,7 +3169,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8,
+          "value": 0.75,
           "type": "passive"
         }
       ]
@@ -3483,6 +3487,196 @@
           "effect": "change",
           "value": 30,
           "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "upgrade-king-3",
+      "baseId": "upgrade-king-3",
+      "type": "technology",
+      "name": "Castle Age King",
+      "pbgid": 2123164,
+      "attribName": "upgrade_abbey_king_castle_1",
+      "age": 3,
+      "civs": [
+        "en"
+      ],
+      "description": "Increases the health, attack and armor of the King when reaching Castle Age.",
+      "classes": [
+        "king",
+        "scaling",
+        "technology"
+      ],
+      "displayClasses": [
+        "King Scaling Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0,
+        "time": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/units/king-2.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "value": 75,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        },
+        {
+          "property": "meleeAttack",
+          "value": 4,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        },
+        {
+          "property": "meleeArmor",
+          "value": 1,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        },
+        {
+          "property": "rangedArmor",
+          "value": 1,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        },
+        {
+          "property": "meleeAttack",
+          "value": 2,
+          "effect": "change",
+          "type": "ability",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "upgrade-king-4",
+      "baseId": "upgrade-king-4",
+      "type": "technology",
+      "name": "Imperial Age King",
+      "pbgid": 2123168,
+      "attribName": "upgrade_abbey_king_imp_2",
+      "age": 4,
+      "civs": [
+        "en"
+      ],
+      "description": "Increases the health, attack and armor of the King when reaching Imperial Age.",
+      "classes": [
+        "king",
+        "scaling",
+        "technology"
+      ],
+      "displayClasses": [
+        "King Scaling Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0,
+        "time": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/units/king-2.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "value": 100,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        },
+        {
+          "property": "meleeAttack",
+          "value": 5,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        },
+        {
+          "property": "meleeArmor",
+          "value": 1,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        },
+        {
+          "property": "rangedArmor",
+          "value": 1,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
+        },
+        {
+          "property": "meleeAttack",
+          "value": 3,
+          "effect": "change",
+          "type": "ability",
+          "select": {
+            "id": [
+              "king"
+            ],
+            "class": []
+          }
         }
       ]
     },
@@ -5662,7 +5856,9 @@
               "arbaletrier",
               "crossbowman",
               "tower-elepahnt",
+              "sultans-elite-tower-elephant",
               "mangudai",
+              "khaganate-elite-mangudai",
               "horse-archer",
               "camel-archer",
               "khan",
@@ -5939,18 +6135,20 @@
           "property": "attackSpeed",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
-          "effect": "multiply",
-          "value": 0.7000000000000001,
+          "effect": "change",
+          "value": -1.3612499999999998,
           "type": "passive"
         },
         {
           "property": "buildTime",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
           "effect": "multiply",
@@ -6986,7 +7184,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8,
+          "value": 0.75,
           "type": "passive"
         }
       ]
@@ -9676,7 +9874,9 @@
               "arbaletrier",
               "crossbowman",
               "tower-elepahnt",
+              "sultans-elite-tower-elephant",
               "mangudai",
+              "khaganate-elite-mangudai",
               "horse-archer",
               "camel-archer",
               "khan",
@@ -9846,18 +10046,20 @@
           "property": "attackSpeed",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
-          "effect": "multiply",
-          "value": 0.7000000000000001,
+          "effect": "change",
+          "value": -1.3612499999999998,
           "type": "passive"
         },
         {
           "property": "buildTime",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
           "effect": "multiply",
@@ -10826,7 +11028,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8,
+          "value": 0.75,
           "type": "passive"
         }
       ]
@@ -13255,7 +13457,9 @@
               "arbaletrier",
               "crossbowman",
               "tower-elepahnt",
+              "sultans-elite-tower-elephant",
               "mangudai",
+              "khaganate-elite-mangudai",
               "horse-archer",
               "camel-archer",
               "khan",
@@ -13426,18 +13630,20 @@
           "property": "attackSpeed",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
-          "effect": "multiply",
-          "value": 0.7000000000000001,
+          "effect": "change",
+          "value": -1.3612499999999998,
           "type": "passive"
         },
         {
           "property": "buildTime",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
           "effect": "multiply",
@@ -14418,7 +14624,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8,
+          "value": 0.75,
           "type": "passive"
         }
       ]
@@ -15035,7 +15241,8 @@
         "time": 157
       },
       "producedBy": [
-        "mosque"
+        "mosque",
+        "dome-of-the-faith"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/all-seeing-eye-2.png",
       "effects": [
@@ -16122,7 +16329,8 @@
         "time": 135
       },
       "producedBy": [
-        "mosque"
+        "mosque",
+        "dome-of-the-faith"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/efficient-production-1.png",
       "effects": [
@@ -16849,7 +17057,8 @@
         "time": 225
       },
       "producedBy": [
-        "mosque"
+        "mosque",
+        "dome-of-the-faith"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/herbal-medicine-3.png",
       "effects": [
@@ -17027,7 +17236,8 @@
           "property": "rangedArmor",
           "select": {
             "id": [
-              "tower-elephant"
+              "tower-elephant",
+              "sultans-elite-tower-elephant"
             ]
           },
           "effect": "change",
@@ -17038,7 +17248,8 @@
           "property": "hitpoints",
           "select": {
             "id": [
-              "tower-elephant"
+              "tower-elephant",
+              "sultans-elite-tower-elephant"
             ]
           },
           "effect": "multiply",
@@ -17142,7 +17353,9 @@
               "arbaletrier",
               "crossbowman",
               "tower-elepahnt",
+              "sultans-elite-tower-elephant",
               "mangudai",
+              "khaganate-elite-mangudai",
               "horse-archer",
               "camel-archer",
               "khan",
@@ -17312,18 +17525,20 @@
           "property": "attackSpeed",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
-          "effect": "multiply",
-          "value": 0.7000000000000001,
+          "effect": "change",
+          "value": -1.3612499999999998,
           "type": "passive"
         },
         {
           "property": "buildTime",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
           "effect": "multiply",
@@ -17450,7 +17665,7 @@
       "civs": [
         "de"
       ],
-      "description": "Scholars garrisoned in Docks provide +20% faster production speed and contribute to global research.",
+      "description": "Scholars garrisoned in Docks provide +30% faster production speed and contribute to global research.",
       "classes": [
         "naval",
         "technology"
@@ -17481,7 +17696,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 1.2,
+          "value": 1.3,
           "type": "passive"
         }
       ]
@@ -17668,7 +17883,8 @@
         "time": 135
       },
       "producedBy": [
-        "mosque"
+        "mosque",
+        "dome-of-the-faith"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/piety-4.png",
       "effects": [
@@ -18002,7 +18218,8 @@
         "time": 210
       },
       "producedBy": [
-        "mosque"
+        "mosque",
+        "dome-of-the-faith"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/sanctity-2.png",
       "effects": [
@@ -18454,7 +18671,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8,
+          "value": 0.75,
           "type": "passive"
         }
       ]
@@ -18654,7 +18871,8 @@
         "time": 450
       },
       "producedBy": [
-        "mosque"
+        "mosque",
+        "dome-of-the-faith"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/swiftness-3.png",
       "effects": [
@@ -18799,7 +19017,8 @@
         "time": 720
       },
       "producedBy": [
-        "mosque"
+        "mosque",
+        "dome-of-the-faith"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/tithe-barns-4.png",
       "effects": [
@@ -18893,7 +19112,7 @@
         "gold": 0,
         "total": 0,
         "popcap": 0,
-        "time": 225
+        "time": 300
       },
       "producedBy": [
         "compound-of-the-defender",
@@ -19056,7 +19275,8 @@
         "time": 1080
       },
       "producedBy": [
-        "mosque"
+        "mosque",
+        "dome-of-the-faith"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/zeal-4.png",
       "effects": [
@@ -20128,8 +20348,8 @@
               "archer"
             ]
           },
-          "effect": "multiply",
-          "value": 0.67,
+          "effect": "change",
+          "value": -0.375,
           "type": "passive"
         }
       ]
@@ -21589,7 +21809,9 @@
               "arbaletrier",
               "crossbowman",
               "tower-elepahnt",
+              "sultans-elite-tower-elephant",
               "mangudai",
+              "khaganate-elite-mangudai",
               "horse-archer",
               "camel-archer",
               "khan",
@@ -21759,18 +21981,20 @@
           "property": "attackSpeed",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
-          "effect": "multiply",
-          "value": 0.7000000000000001,
+          "effect": "change",
+          "value": -1.3612499999999998,
           "type": "passive"
         },
         {
           "property": "buildTime",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
           "effect": "multiply",
@@ -22842,7 +23066,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8,
+          "value": 0.75,
           "type": "passive"
         }
       ]
@@ -23084,12 +23308,12 @@
       "unique": true,
       "costs": {
         "food": 0,
-        "wood": 200,
+        "wood": 100,
         "stone": 0,
-        "gold": 300,
-        "total": 500,
+        "gold": 150,
+        "total": 250,
         "popcap": 0,
-        "time": 40
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -23122,7 +23346,7 @@
             ]
           },
           "effect": "change",
-          "value": 0.8999999999999999,
+          "value": 1.1,
           "type": "passive"
         }
       ]
@@ -24045,6 +24269,28 @@
           "effect": "change",
           "value": 1.6,
           "type": "passive"
+        },
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "target": {
+            "class": [
+              [
+                "incendiary",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 20,
+          "type": "bonus"
         }
       ]
     },
@@ -25495,18 +25741,20 @@
           "property": "attackSpeed",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
-          "effect": "multiply",
-          "value": 0.7000000000000001,
+          "effect": "change",
+          "value": -1.3612499999999998,
           "type": "passive"
         },
         {
           "property": "buildTime",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
           "effect": "multiply",
@@ -26527,7 +26775,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8,
+          "value": 0.75,
           "type": "passive"
         }
       ]
@@ -29037,7 +29285,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 1.2,
+          "value": 0.8999999999999999,
           "type": "passive"
         }
       ]
@@ -29390,7 +29638,9 @@
               "arbaletrier",
               "crossbowman",
               "tower-elepahnt",
+              "sultans-elite-tower-elephant",
               "mangudai",
+              "khaganate-elite-mangudai",
               "horse-archer",
               "camel-archer",
               "khan",
@@ -29560,18 +29810,20 @@
           "property": "attackSpeed",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
-          "effect": "multiply",
-          "value": 0.7000000000000001,
+          "effect": "change",
+          "value": -1.3612499999999998,
           "type": "passive"
         },
         {
           "property": "buildTime",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
           "effect": "multiply",
@@ -30992,13 +31244,13 @@
       ]
     },
     {
-      "id": "siha-bow-limbs-3",
+      "id": "siha-bow-limbs-4",
       "baseId": "siha-bow-limbs",
       "type": "technology",
       "name": "Siha Bow Limbs",
       "pbgid": 205553,
       "attribName": "upgrade_mangudai_weapon_damage_mon",
-      "age": 3,
+      "age": 4,
       "civs": [
         "mo"
       ],
@@ -31024,14 +31276,15 @@
       "producedBy": [
         "archery-range"
       ],
-      "icon": "https://data.aoe4world.com/images/technologies/siha-bow-limbs-3.png",
+      "icon": "https://data.aoe4world.com/images/technologies/siha-bow-limbs-4.png",
       "effects": [
         {
           "property": "rangedAttack",
           "select": {
             "id": [
               "khan",
-              "mangudai"
+              "mangudai",
+              "khaganate-elite-mangudai"
             ]
           },
           "effect": "change",
@@ -31041,13 +31294,13 @@
       ]
     },
     {
-      "id": "siha-bow-limbs-improved-3",
+      "id": "siha-bow-limbs-improved-4",
       "baseId": "siha-bow-limbs-improved",
       "type": "technology",
       "name": "Siha Bow Limbs (Improved)",
       "pbgid": 205803,
       "attribName": "upgrade_mangudai_weapon_damage_improved_mon",
-      "age": 3,
+      "age": 4,
       "civs": [
         "mo"
       ],
@@ -31073,14 +31326,15 @@
       "producedBy": [
         "archery-range"
       ],
-      "icon": "https://data.aoe4world.com/images/technologies/siha-bow-limbs-improved-3.png",
+      "icon": "https://data.aoe4world.com/images/technologies/siha-bow-limbs-improved-4.png",
       "effects": [
         {
           "property": "rangedAttack",
           "select": {
             "id": [
               "khan",
-              "mangudai"
+              "mangudai",
+              "khaganate-elite-mangudai"
             ]
           },
           "effect": "change",
@@ -31268,7 +31522,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8,
+          "value": 0.75,
           "type": "passive"
         }
       ]
@@ -34197,7 +34451,7 @@
       "civs": [
         "ot"
       ],
-      "description": "Increase the production speed of Gunpowder Ships by 15% and their movement speed by 15%.",
+      "description": "Increase the production speed of Gunpowder Ships by 25% and their movement speed by 25%.",
       "classes": [
         "naval",
         "technology"
@@ -34229,7 +34483,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8999999999999999,
+          "value": 0.8,
           "type": "passive"
         },
         {
@@ -34241,7 +34495,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8999999999999999,
+          "value": 0.8,
           "type": "passive"
         }
       ]
@@ -34341,7 +34595,9 @@
               "arbaletrier",
               "crossbowman",
               "tower-elepahnt",
+              "sultans-elite-tower-elephant",
               "mangudai",
+              "khaganate-elite-mangudai",
               "horse-archer",
               "camel-archer",
               "khan",
@@ -34591,18 +34847,20 @@
           "property": "attackSpeed",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
-          "effect": "multiply",
-          "value": 0.7000000000000001,
+          "effect": "change",
+          "value": -1.3612499999999998,
           "type": "passive"
         },
         {
           "property": "buildTime",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
           "effect": "multiply",
@@ -35480,7 +35738,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8,
+          "value": 0.75,
           "type": "passive"
         }
       ]
@@ -36575,7 +36833,7 @@
       "civs": [
         "ru"
       ],
-      "description": "Increase the health of Rus cavalry by +20.",
+      "description": "Increase the health of Rus cavalry by +30.",
       "classes": [
         "cavalry",
         "technology"
@@ -36585,13 +36843,13 @@
       ],
       "unique": true,
       "costs": {
-        "food": 200,
+        "food": 100,
         "wood": 0,
         "stone": 0,
-        "gold": 500,
-        "total": 700,
+        "gold": 250,
+        "total": 350,
         "popcap": 0,
-        "time": 90
+        "time": 60
       },
       "producedBy": [
         "blacksmith"
@@ -36608,7 +36866,7 @@
             ]
           },
           "effect": "change",
-          "value": 20,
+          "value": 30,
           "type": "passive"
         }
       ]
@@ -38176,7 +38434,9 @@
               "arbaletrier",
               "crossbowman",
               "tower-elepahnt",
+              "sultans-elite-tower-elephant",
               "mangudai",
+              "khaganate-elite-mangudai",
               "horse-archer",
               "camel-archer",
               "khan",
@@ -38393,18 +38653,20 @@
           "property": "attackSpeed",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
-          "effect": "multiply",
-          "value": 0.7000000000000001,
+          "effect": "change",
+          "value": -1.3612499999999998,
           "type": "passive"
         },
         {
           "property": "buildTime",
           "select": {
             "id": [
-              "battering-ram"
+              "battering-ram",
+              "clocktower-battering-ram"
             ]
           },
           "effect": "multiply",
@@ -39411,7 +39673,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8,
+          "value": 0.75,
           "type": "passive"
         }
       ]
@@ -39727,6 +39989,142 @@
           "effect": "change",
           "value": 30,
           "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "upgrade-militia-3",
+      "baseId": "upgrade-miltia-3",
+      "type": "technology",
+      "name": "Castle Age Militia",
+      "pbgid": 2124314,
+      "attribName": "upgrade_militia_3",
+      "age": 3,
+      "civs": [
+        "ru"
+      ],
+      "description": "Increases the health, attack and armor of Militia when reaching Castle Age.",
+      "classes": [
+        "Militia",
+        "scaling",
+        "technology"
+      ],
+      "displayClasses": [
+        "Militia Scaling Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0,
+        "time": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/units/militia-2.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "value": 40,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "militia"
+            ]
+          }
+        },
+        {
+          "property": "meleeAttack",
+          "value": 6,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "militia"
+            ]
+          }
+        },
+        {
+          "property": "fireAttack",
+          "value": 6,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "militia"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "upgrade-militia-4",
+      "baseId": "upgrade-militia-4",
+      "type": "technology",
+      "name": "Imperial Age Militia",
+      "pbgid": 2124315,
+      "attribName": "upgrade_militia_4",
+      "age": 4,
+      "civs": [
+        "ru"
+      ],
+      "description": "Increases the health, attack and armor of Militia when reaching Imperial Age.",
+      "classes": [
+        "Militia",
+        "scaling",
+        "technology"
+      ],
+      "displayClasses": [
+        "Militia Scaling Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0,
+        "time": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/units/militia-2.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "value": 40,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "militia"
+            ]
+          }
+        },
+        {
+          "property": "meleeAttack",
+          "value": 6,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "militia"
+            ]
+          }
+        },
+        {
+          "property": "fireAttack",
+          "value": 6,
+          "effect": "change",
+          "type": "passive",
+          "select": {
+            "id": [
+              "militia"
+            ]
+          }
         }
       ]
     },

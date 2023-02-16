@@ -229,6 +229,15 @@ workaround("Remove all weapons except one melee from Scouts", {
   validator: (item) => (item as Unit).weapons.filter((w) => w.type == "melee" && w.damage > 0).length == 1,
 });
 
+workaround("Scout scaling", {
+  predicate: (item) => item.type === "unit" && item.baseId !== "scout" && item.attribName?.startsWith("unit_scout_")!,
+  mutator: (item) => {
+    item = item as Unit;
+    item.baseId = "scout";
+    item.id = `scout-${item.age}`;
+  },
+});
+
 workaround("Remove charge attack from Horseman, except for mongols, who only have charge", {
   predicate: (item) => item.type === "unit" && item.baseId === "horseman",
   mutator: (item) => {

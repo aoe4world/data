@@ -881,7 +881,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/boyars-fortitude-3.png",
-      "description": "Increase the health of Rus cavalry by +20.",
+      "description": "Increase the health of Rus cavalry by +30.",
       "variations": [
         {
           "id": "boyars-fortitude-3",
@@ -894,7 +894,7 @@
           "civs": [
             "ru"
           ],
-          "description": "Increase the health of Rus cavalry by +20.",
+          "description": "Increase the health of Rus cavalry by +30.",
           "classes": [
             "cavalry",
             "technology"
@@ -904,13 +904,13 @@
           ],
           "unique": true,
           "costs": {
-            "food": 200,
+            "food": 100,
             "wood": 0,
             "stone": 0,
-            "gold": 500,
-            "total": 700,
+            "gold": 250,
+            "total": 350,
             "popcap": 0,
-            "time": 90
+            "time": 60
           },
           "producedBy": [
             "blacksmith"
@@ -927,7 +927,7 @@
                 ]
               },
               "effect": "change",
-              "value": 20,
+              "value": 30,
               "type": "passive"
             }
           ]
@@ -3123,7 +3123,9 @@
                   "arbaletrier",
                   "crossbowman",
                   "tower-elepahnt",
+                  "sultans-elite-tower-elephant",
                   "mangudai",
+                  "khaganate-elite-mangudai",
                   "horse-archer",
                   "camel-archer",
                   "khan",
@@ -3429,18 +3431,20 @@
               "property": "attackSpeed",
               "select": {
                 "id": [
-                  "battering-ram"
+                  "battering-ram",
+                  "clocktower-battering-ram"
                 ]
               },
-              "effect": "multiply",
-              "value": 0.7000000000000001,
+              "effect": "change",
+              "value": -1.3612499999999998,
               "type": "passive"
             },
             {
               "property": "buildTime",
               "select": {
                 "id": [
-                  "battering-ram"
+                  "battering-ram",
+                  "clocktower-battering-ram"
                 ]
               },
               "effect": "multiply",
@@ -4842,7 +4846,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8,
+              "value": 0.75,
               "type": "passive"
             }
           ]
@@ -5286,6 +5290,186 @@
               "effect": "change",
               "value": 30,
               "type": "influence"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "upgrade-miltia-3",
+      "name": "Castle Age Militia",
+      "type": "technology",
+      "civs": [
+        "ru"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Militia Scaling Technology"
+      ],
+      "classes": [
+        "Militia",
+        "scaling",
+        "technology"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/militia-2.png",
+      "description": "Increases the health, attack and armor of Militia when reaching Castle Age.",
+      "variations": [
+        {
+          "id": "upgrade-militia-3",
+          "baseId": "upgrade-miltia-3",
+          "type": "technology",
+          "name": "Castle Age Militia",
+          "pbgid": 2124314,
+          "attribName": "upgrade_militia_3",
+          "age": 3,
+          "civs": [
+            "ru"
+          ],
+          "description": "Increases the health, attack and armor of Militia when reaching Castle Age.",
+          "classes": [
+            "Militia",
+            "scaling",
+            "technology"
+          ],
+          "displayClasses": [
+            "Militia Scaling Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0,
+            "time": 0
+          },
+          "producedBy": [],
+          "icon": "https://data.aoe4world.com/images/units/militia-2.png",
+          "effects": [
+            {
+              "property": "hitpoints",
+              "value": 40,
+              "effect": "change",
+              "type": "passive",
+              "select": {
+                "id": [
+                  "militia"
+                ]
+              }
+            },
+            {
+              "property": "meleeAttack",
+              "value": 6,
+              "effect": "change",
+              "type": "passive",
+              "select": {
+                "id": [
+                  "militia"
+                ]
+              }
+            },
+            {
+              "property": "fireAttack",
+              "value": 6,
+              "effect": "change",
+              "type": "passive",
+              "select": {
+                "id": [
+                  "militia"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "upgrade-militia-4",
+      "name": "Imperial Age Militia",
+      "type": "technology",
+      "civs": [
+        "ru"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Militia Scaling Technology"
+      ],
+      "classes": [
+        "Militia",
+        "scaling",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/units/militia-2.png",
+      "description": "Increases the health, attack and armor of Militia when reaching Imperial Age.",
+      "variations": [
+        {
+          "id": "upgrade-militia-4",
+          "baseId": "upgrade-militia-4",
+          "type": "technology",
+          "name": "Imperial Age Militia",
+          "pbgid": 2124315,
+          "attribName": "upgrade_militia_4",
+          "age": 4,
+          "civs": [
+            "ru"
+          ],
+          "description": "Increases the health, attack and armor of Militia when reaching Imperial Age.",
+          "classes": [
+            "Militia",
+            "scaling",
+            "technology"
+          ],
+          "displayClasses": [
+            "Militia Scaling Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0,
+            "time": 0
+          },
+          "producedBy": [],
+          "icon": "https://data.aoe4world.com/images/units/militia-2.png",
+          "effects": [
+            {
+              "property": "hitpoints",
+              "value": 40,
+              "effect": "change",
+              "type": "passive",
+              "select": {
+                "id": [
+                  "militia"
+                ]
+              }
+            },
+            {
+              "property": "meleeAttack",
+              "value": 6,
+              "effect": "change",
+              "type": "passive",
+              "select": {
+                "id": [
+                  "militia"
+                ]
+              }
+            },
+            {
+              "property": "fireAttack",
+              "value": 6,
+              "effect": "change",
+              "type": "passive",
+              "select": {
+                "id": [
+                  "militia"
+                ]
+              }
             }
           ]
         }

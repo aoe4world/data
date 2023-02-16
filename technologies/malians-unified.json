@@ -924,6 +924,28 @@
               "effect": "change",
               "value": 1.6,
               "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "select": {
+                "class": [
+                  [
+                    "archer",
+                    "ship"
+                  ]
+                ]
+              },
+              "target": {
+                "class": [
+                  [
+                    "incendiary",
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 20,
+              "type": "bonus"
             }
           ]
         }
@@ -2964,18 +2986,20 @@
               "property": "attackSpeed",
               "select": {
                 "id": [
-                  "battering-ram"
+                  "battering-ram",
+                  "clocktower-battering-ram"
                 ]
               },
-              "effect": "multiply",
-              "value": 0.7000000000000001,
+              "effect": "change",
+              "value": -1.3612499999999998,
               "type": "passive"
             },
             {
               "property": "buildTime",
               "select": {
                 "id": [
-                  "battering-ram"
+                  "battering-ram",
+                  "clocktower-battering-ram"
                 ]
               },
               "effect": "multiply",
@@ -4385,7 +4409,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8,
+              "value": 0.75,
               "type": "passive"
             }
           ]
