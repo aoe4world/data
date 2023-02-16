@@ -4,7 +4,7 @@ import { parseXmlFile } from "./xml";
 import { parseWeapons } from "./weapons";
 import { attribFile, ignoreForNow } from "./config";
 import { slugify } from "../lib/utils/string";
-import { Armor, Building, Item, ItemClass, Technology, Unit, Upgrade } from "../types/items";
+import { Armor, Building, Item, ItemClass, ModifyableProperty, Technology, Unit, Upgrade } from "../types/items";
 import { civConfig } from "../types/civs";
 import { useIcon } from "./icons";
 import { technologyModifiers } from "./technologies";
@@ -47,7 +47,8 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
     }
     if (!ui_ext && type === ITEM_TYPES.UNITS && ebpExts.ui_ext) ui_ext = ebpExts.ui_ext;
 
-    const name = getTranslation(ui_ext.screen_name);
+    let name = getTranslation(ui_ext.screen_name);
+    if (name === NO_TRANSLATION_FOUND) name = file.split("/").pop()!;
     const description = parseDescription(ui_ext);
     const attribName = file.split("/").pop()!.replace(".xml", "").replace(".json", "");
     const age = parseAge(attribName, ebpExts?.requirement_ext?.requirement_table ?? data.upgrade_bag?.requirements, data.parent_pbg);
@@ -142,6 +143,28 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       const effectsFactory = technologyModifiers[baseId];
       const effects = effectsFactory?.(translationParams) ?? [];
 
+      // if (item.id == "upgrade-militia-4-4") {
+      if (effects.length == 0) {
+        const addEffect = (property: ModifyableProperty, value: number, effect: "change" | "multiply" = "change", type: "passive" | "ability" = "passive") =>
+          effects.push({ property, value, effect, type });
+
+        for (const { id, value } of data?.upgrade_bag?.float_properties ?? []) {
+          if (id === "health_max") addEffect("hitpoints", value);
+          else if (id === "melee_damage") addEffect("meleeAttack", value);
+          else if (id === "charge_damage") addEffect("meleeAttack", value, "change", "ability");
+          else if (id === "armor_fire") addEffect("fireArmor", value);
+          else if (id === "armor_melee") addEffect("meleeArmor", value);
+          else if (id === "armor_range") addEffect("rangedArmor", value);
+          else if (id === "damage") {
+            addEffect("meleeAttack", value);
+            addEffect("rangedAttack", value);
+            addEffect("siegeAttack", value);
+            addEffect("fireAttack", value);
+          } else if (id === "multiplier") {
+            // ignore
+          } else console.log("Unknown float property", id, value, item.attribName, item.id);
+        }
+      }
       const tech: Technology = {
         ...item,
         type: "technology",
@@ -196,7 +219,7 @@ function parseDescription(ui_ext: any) {
         ui_ext.help_text_formatter.formatter_arguments.map((x) => Object.values(x)[0] ?? x)
       )
     : getTranslation(ui_ext.help_text);
-  if (translation === NO_TRANSLATION_FOUND) throw new Error("No translation found for " + ui_ext.help_text);
+  if (translation === NO_TRANSLATION_FOUND) return `not-found-${Math.random()}`; // throw new Error("No translation found for " + ui_ext.help_text);
   return translation;
 }
 

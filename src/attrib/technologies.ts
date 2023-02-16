@@ -25,7 +25,7 @@ const decreaseByPercent = (n: number, percent: number) => round(n * (1 - toPerce
 const increaseByPercentImproved = (n: number, percent: number, delta: number) => round((n * (1 + toPercent(percent))) / (1 + (Math.abs(percent) - Math.abs(delta)) / 100));
 const decreaseByPercentImproved = (n: number, percent: number, delta: number) => round((n * (1 - toPercent(percent))) / (1 - (Math.abs(percent) - Math.abs(delta)) / 100));
 const increaseSpeedByPercent = (speed: number, percent: number) => round(speed / (1 + toPercent(percent)) / 10) * 10;
-const decreaseSpeedByPercent = (speed: number, percent: number) => speed * round(1 - 1 / (1 - toPercent(percent)));
+const increaseAttackSpeedByPercent = (speed: number, percent: number) => speed * round(1 - 1 / (1 - toPercent(percent)));
 const round = (n: number) => Math.round(n * 100) / 100; //(100/(100-33))
 
 export const technologyModifiers: Record<string, (values: number[]) => Modifier[]> = {
@@ -716,7 +716,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { class: [["springald", "ship"]] },
       effect: "multiply",
-      value: 1 + decreaseSpeedByPercent(1, s),
+      value: 1 + increaseAttackSpeedByPercent(1, s),
       type: "passive",
     },
   ],
@@ -1357,15 +1357,15 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     // Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.
     {
       property: "attackSpeed",
-      select: { id: ["battering-ram"] },
+      select: { id: ["battering-ram", "clocktower-battering-ram"] },
       effect: "change",
-      value: (4 + 0.125) * -1 * (1 + decreaseSpeedByPercent(1, speed)),
+      value: (4 + 0.125) * -1 * (1 + increaseAttackSpeedByPercent(1, speed)),
       // wtf is happening here? this is cooldown + attack decrease by 40%
       type: "passive",
     },
     {
       property: "buildTime",
-      select: { id: ["battering-ram"] },
+      select: { id: ["battering-ram", "clocktower-battering-ram"] },
       effect: "multiply",
       value: decreaseByPercent(1, time),
       type: "passive",
@@ -1463,7 +1463,9 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
           "arbaletrier",
           "crossbowman",
           "tower-elepahnt",
+          "sultans-elite-tower-elephant",
           "mangudai",
+          "khaganate-elite-mangudai",
           "horse-archer",
           "camel-archer",
           "khan",
@@ -1640,14 +1642,14 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
     {
       property: "rangedArmor",
-      select: { id: ["tower-elephant"] },
+      select: { id: ["tower-elephant", "sultans-elite-tower-elephant"] },
       effect: "change",
       value: armor,
       type: "passive",
     },
     {
       property: "hitpoints",
-      select: { id: ["tower-elephant"] },
+      select: { id: ["tower-elephant", "sultans-elite-tower-elephant"] },
       effect: "multiply",
       value: increaseByPercent(1, hp),
       type: "passive",
@@ -1887,7 +1889,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { id: ["archer"] },
       effect: "change", // (0,75/3)-(1,625-1,25)
-      value: decreaseSpeedByPercent(0.75, r), // 0.75 is archer reload time
+      value: increaseAttackSpeedByPercent(0.75, r), // 0.75 is archer reload time
       type: "passive",
     },
   ],
@@ -2078,12 +2080,21 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
 
   "canoe-tactics": ([i]) => [
     // Archer Ships fire an additional 2 Javelin weapons.
+    // Not in tooltip but in patch notes 'now also gives arrow ships +20 bonus damage when attacking fire ships.'
     {
       property: "rangedAttack",
       select: { class: [["archer", "ship"]] },
       effect: "change",
       value: (2 * 4) / 5, // 4 damage of 2 javelins / default burst
       type: "passive",
+    },
+    {
+      property: "rangedAttack",
+      select: { class: [["archer", "ship"]] },
+      target: { class: [["incendiary", "ship"]] },
+      effect: "change",
+      value: 20,
+      type: "bonus",
     },
   ],
 
@@ -2363,7 +2374,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     // Increase the ranged damage of Mangudai and the Khan by +1.
     {
       property: "rangedAttack",
-      select: { id: ["khan", "mangudai"] },
+      select: { id: ["khan", "mangudai", "khaganate-elite-mangudai"] },
       effect: "change",
       value: i,
       type: "passive",
@@ -2375,7 +2386,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     // If Siha Bow Limbs has already been researched, increase the ranged damage of Mangudai and the Khan by + 1.
     {
       property: "rangedAttack",
-      select: { id: ["khan", "mangudai"] },
+      select: { id: ["khan", "mangudai", "khaganate-elite-mangudai"] },
       effect: "change",
       value: i - d,
       type: "passive",

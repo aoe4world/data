@@ -10,7 +10,7 @@ export const ESSENCE_FOLDER = path.join(SOURCE_FOLDER, "/essence/attrib");
 
 // Unit files not discovered by sync.ts
 export const hardcodedDiscovery = {
-  rus: ["sbps/races/rus/unit_militia_2_rus"],
+  rus: ["sbps/races/rus/unit_militia_2_rus", "upgrade/races/rus/units/upgrade_militia_3", "upgrade/races/rus/units/upgrade_militia_4"],
   mongols: ["sbps/races/mongol/unit_khan_2_mon", "sbps/races/mongol/unit_khan_3_mon", "sbps/races/mongol/unit_khan_4_mon"],
   ottomans: [
     "upgrade/races/ottoman/research/upgrade_anatolian_hills_ott",
@@ -22,6 +22,12 @@ export const hardcodedDiscovery = {
     "upgrade/races/ottoman/research/upgrade_imperial_military_training_ott",
     "upgrade/races/ottoman/research/upgrade_imperial_monk_formation_ott",
     "upgrade/races/ottoman/research/upgrade_imperial_trader_capacity_ott",
+  ],
+  english: [
+    "upgrade/races/english/units/upgrade_abbey_king_castle_1",
+    "upgrade/races/english/units/upgrade_abbey_king_imp_2",
+    "/sbps/races/english/unit_ranger_wynguard_4_eng",
+    "/sbps/races/english/unit_footman_wynguard_4_eng",
   ],
 };
 
@@ -44,7 +50,6 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "unit_springald_3_buildable_abb",
   "unit_springald_3_field_construct_mon",
 
-  // "sbps/races/english/unit_wynguard_",
   "ebps/dev/units/unit_siege_cart",
   "ebps/dev/units/unit_siege_cart",
 
@@ -53,15 +58,6 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "_double_mon", // all double produced units
   "building_unit_religious_district_mon", // Monasteric shrines version of prayer tent
   "sbps/races/mongol/unit_knight_2_mon", // is listed in khagenate palace but does not exist in feudal
-
-  //  listed in khagenate palace but a bit meme or redundant to include ?
-  // unit_khaganate_great_trebuchet_mon -- except this one, as it is actually a brand new unit
-  "unit_khaganate_nest_of_bees_4_mon",
-  "unit_khaganate_manatarms_china_mon",
-  "unit_khaganate_monk_rus_mon",
-  "unit_khaganate_knight_rus_mon",
-  "unit_khaganate_mangudai_mon",
-  "unit_khaganate_horsearcher_rus_mon",
 
   // Research variations available at landmarks, that do not differ
   "upgrade_landmark_cavalry_cantled_saddle_fre",
@@ -120,6 +116,17 @@ export const attribTypes = {
     type: "technology",
   },
 } as Record<ITEM_TYPES, { location: string; plural: string; singular: string; type: string }>;
+
+// Could be looked up from ebps/races/mongol/buildings/building_wonder_age3_khanbaliq_mon.xml
+export const KHAGANTE_SPAWN_COUNTS = {
+  "huihui-pao": 1,
+  "nest-of-bees": 1,
+  "warrior-monk": 2,
+  knight: 3,
+  "horse-archer": 5,
+  magudai: 5,
+  "palace-guard": 5,
+};
 
 export function attribFile(...paths: string[]) {
   paths[paths.length - 1] = paths.at(-1)?.endsWith(".xml") ? paths.at(-1)! : `${paths.at(-1)}.xml`;

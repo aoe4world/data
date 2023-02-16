@@ -1,4 +1,5 @@
-import { Building, Item, ItemType, Technology, Unit, Upgrade } from "../types/items";
+import { Building, Item, ItemType, Modifier, Technology, Unit, Upgrade } from "../types/items";
+import { KHAGANTE_SPAWN_COUNTS } from "./config";
 
 const workarounds = new Map<string, Override>();
 
@@ -119,10 +120,6 @@ workaround("Make Baglah, War Junk and Galleass available from Castle Age", {
   ...overrideAge(["baglah", "war-junk", "galleass"], 3),
 });
 
-workaround("Make English and HRE Hulk available from Castle Age", {
-  ...overrideAge(["hulk"], 3, ["en", "hr"]),
-});
-
 workaround("Make Rus Blessing Duration available from Castle Age", {
   ...overrideAge(["blessing-duration"], 3, ["ru"]),
 });
@@ -224,7 +221,7 @@ workaround("Remove all weapons but the bow and torch from the English villager",
 });
 
 workaround("Remove all weapons except one melee from Scouts", {
-  predicate: (item) => item.type === "unit" && item.baseId === "scout",
+  predicate: (item) => item.type === "unit" && (item.baseId === "scout" || item.attribName?.startsWith("unit_scout_")!),
   mutator: (item) => {
     item = item as Unit;
     item.weapons = [item.weapons.find((w) => w.type === "melee" && w.attribName?.startsWith("weapon_scout_"))!];
@@ -276,7 +273,7 @@ workaround("Remove the unused cannons and upgradable swivel cannon from Springal
   predicate: (item) => ["hulk", "baghlah", "war-junk", "war-canoe", "lodya-attack-ship"].includes(item.baseId),
   mutator: (item) => {
     item = item as Unit;
-    const ballista = item.weapons.find((w) => w.attribName == "weapon_naval_combat_ship_springald")!;
+    const ballista = item.weapons.find((w) => w.attribName?.includes("weapon_naval_combat_ship_springald"))!;
     item.weapons = item.weapons.filter((w) => !["weapon_naval_swivel_cannon", "weapon_naval_mounted_gun"].includes(w.attribName!));
     item.weapons = [ballista];
   },
@@ -303,6 +300,91 @@ workaround("Deduplicating unit weapons with the same name, keeping the first", {
       if (!wps.some((wp) => w.name == wp.name)) wps.push(w);
       return wps;
     }, [] as Unit["weapons"]);
+  },
+});
+
+workaround("Modify King scaling to be more descriptive", {
+  predicate: (item) => item.attribName?.startsWith("upgrade_abbey_king_") || false,
+  mutator: (item) => {
+    const base: Partial<Item> = {
+      classes: ["king", "scaling", "technology"],
+      displayClasses: ["King Scaling Technology"],
+      icon: "https://data.aoe4world.com/images/units/king-2.png",
+    };
+    const castle: Partial<Item> = {
+      id: "upgrade-king-3",
+      baseId: "upgrade-king-3",
+      name: "Castle Age King",
+      description: "Increases the health, attack and armor of the King when reaching Castle Age.",
+      age: 3,
+    };
+    const imperial: Partial<Item> = {
+      id: "upgrade-king-4",
+      baseId: "upgrade-king-4",
+      name: "Imperial Age King",
+      description: "Increases the health, attack and armor of the King when reaching Imperial Age.",
+      age: 4,
+    };
+    Object.assign(item, base, item.attribName?.includes("_castle") ? castle : imperial);
+    (item as Technology).effects?.forEach((e) => (e.select = { id: ["king"], class: [] }));
+  },
+});
+
+workaround("Modify Militia scaling to be more descriptive", {
+  predicate: (item) => item.attribName?.startsWith("upgrade_militia_") || false,
+  mutator: (item) => {
+    const base: Partial<Item> = {
+      classes: ["Militia", "scaling", "technology"],
+      displayClasses: ["Militia Scaling Technology"],
+      icon: "https://data.aoe4world.com/images/units/militia-2.png",
+    };
+    const castle: Partial<Item> = {
+      id: "upgrade-militia-3",
+      baseId: "upgrade-miltia-3",
+      name: "Castle Age Militia",
+      description: "Increases the health, attack and armor of Militia when reaching Castle Age.",
+    };
+    const imperial: Partial<Item> = {
+      id: "upgrade-militia-4",
+      baseId: "upgrade-militia-4",
+      name: "Imperial Age Militia",
+      description: "Increases the health, attack and armor of Militia when reaching Imperial Age.",
+    };
+    Object.assign(item, base, item.age == 3 ? castle : imperial);
+    (item as Technology).effects = (item as Technology).effects
+      ?.filter((e) => ["meleeAttack", "hitpoints", "fireAttack"].includes(e.property))
+      .map((e) => ({ ...e, select: { id: ["militia"] } }));
+  },
+});
+
+workaround("Highlight Khaganate units", {
+  predicate: (item) => item.type === "unit" && item.attribName?.startsWith("unit_khaganate")!,
+  mutator: (item) => {
+    const spawnCount = KHAGANTE_SPAWN_COUNTS[item.baseId];
+    item.description = `${item.description}\n\nRandomly spawns ${spawnCount > 1 ? `${spawnCount} at the time ` : ""}from the Khaganate Palace.`;
+    if (item.baseId != "huihui-pao") {
+      item.name = `Khaganate ${item.name}`;
+      item.id = `khaganate-${item.id}`;
+      item.baseId = `khaganate-${item.baseId}`;
+    }
+    if (spawnCount > 1) (item as Unit).costs.popcap = spawnCount;
+    item.classes.push("khaganate");
+    item.displayClasses.push("Khaganate Unit");
+  },
+});
+
+workaround("Remove Mongol lancer from Khaganate Palace (still lingering in attrib file)", {
+  predicate: (item) => item.baseId == "lancer" && item.civs.includes("mo"),
+  mutator: (item) => {
+    item.producedBy = ["stable"];
+    Object.freeze(item.producedBy);
+  },
+});
+
+workaround("Remove china field constructed Siege Tower from Mongol tech tree (parsed from Khaganate Palace Guard)", {
+  predicate: (item) => item.attribName === "unit_siege_tower_3_chi" && item.civs.includes("mo"),
+  mutator: (item) => {
+    (item as any)._skip = true;
   },
 });
 

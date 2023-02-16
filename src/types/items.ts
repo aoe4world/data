@@ -30,7 +30,8 @@ export type ItemClass =
   | "technology"
   | "hunt"
   | "defensive"
-  | "worker";
+  | "worker"
+  | string;
 
 export interface Item {
   id: ItemId;

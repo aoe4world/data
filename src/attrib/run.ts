@@ -35,16 +35,13 @@ async function buildTechTree(civ: civConfig, context: RunContext = { debug: fals
   const produces = new Map<string, Set<string>>();
   const { debug, getData, race } = context;
 
-  const army: any = await parseXmlFile(attribFile(`army/${race}`), context);
+  const army: any = await parseXmlFile(attribFile(`army/standard_mode/normal_${race}`), context);
   const bps = await parseXmlFile(attribFile(`racebps/${race}`), context);
 
   const civOverview = getCivInfo(army.army_bag, bps);
 
-  for (const b of army?.army_bag?.starting_buildings) {
-    files.add(b.starting_building.building);
-    for (const s of b.starting_building.starting_squads) files.add(s.starting_squad.squad);
-  }
-
+  for (const b of army?.army_bag?.starting_buildings) files.add(b.starting_building.building);
+  for (const u of army?.army_bag?.starting_units) files.add(u.squad);
   for (const file of hardcodedDiscovery[civ.slug] ?? []) files.add(file);
 
   async function parseFilesRecursively(file: string) {
@@ -66,6 +63,12 @@ async function buildTechTree(civ: civConfig, context: RunContext = { debug: fals
         }
       }
 
+    // Workarounds can set this flag
+    if ((item as any)._skip) {
+      debug && console.error(`Skip`, item.id);
+      return;
+    }
+
     if (items.has(item.id)) {
       throw new Error(`Duplicate item id ${item.id} in ${file} conflicts with ${items.get(item.id)!.attribName}`);
     }
@@ -79,7 +82,7 @@ async function buildTechTree(civ: civConfig, context: RunContext = { debug: fals
       await parseFilesRecursively(d);
       const dId = filesToItemId.get(d)!;
       const dItem = items.get(dId);
-      if (dItem) {
+      if (dItem && !Object.isFrozen(dItem.producedBy)) {
         dItem.producedBy ??= [];
         dItem.producedBy = [...new Set(dItem.producedBy).add(item.baseId)];
         itemProduces.add(dItem.baseId);
@@ -177,3 +180,4 @@ function persistItem(item: Item, civ: civConfig) {
 
 ensureFolderStructure();
 for (const civ of Object.values(CIVILIZATIONS)) buildTechTree(civ);
+// buildTechTree(CIVILIZATIONS.en);
