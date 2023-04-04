@@ -49,7 +49,7 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "unit_mangonel_3_field_construct_mon",
   "unit_springald_3_buildable_abb",
   "unit_springald_3_field_construct_mon",
-
+  "unit_siege_tower_3_abb",
   "ebps/dev/units/unit_siege_cart",
   "ebps/dev/units/unit_siege_cart",
 

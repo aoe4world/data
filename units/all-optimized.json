@@ -880,7 +880,7 @@
             {
               "name": "Trebuchet",
               "type": "siege",
-              "damage": 50,
+              "damage": 40,
               "speed": 12.625,
               "range": {
                 "min": 2.75,
@@ -897,7 +897,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 450,
+                  "value": 375,
                   "type": "passive"
                 },
                 {
@@ -935,22 +935,22 @@
       "age": 3,
       "costs": {
         "food": 0,
-        "wood": 500,
+        "wood": 400,
         "stone": 0,
-        "gold": 250,
-        "total": 750,
+        "gold": 150,
+        "total": 550,
         "popcap": 3,
-        "time": 40
+        "time": 30
       },
       "producedBy": [
         "siege-workshop"
       ],
-      "hitpoints": 210,
+      "hitpoints": 170,
       "weapons": [
         {
           "name": "Trebuchet",
           "type": "siege",
-          "damage": 50,
+          "damage": 40,
           "speed": 12.625,
           "range": {
             "min": 2.75,
@@ -967,7 +967,7 @@
                 ]
               },
               "effect": "change",
-              "value": 450,
+              "value": 375,
               "type": "passive"
             },
             {
@@ -3482,7 +3482,6 @@
       "civs": [
         "en",
         "hr",
-        "ot",
         "ru"
       ],
       "unique": false,
@@ -3531,66 +3530,6 @@
         },
         {
           "id": "knight-3",
-          "pbgid": 2046440,
-          "attribName": "unit_knight_3_ott",
-          "civs": [
-            "ot"
-          ],
-          "producedBy": [
-            "military-school",
-            "stable"
-          ],
-          "weapons": [
-            {
-              "name": "Sword",
-              "type": "melee",
-              "damage": 24,
-              "speed": 1.5,
-              "range": {
-                "min": 0,
-                "max": 0.2875
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.5,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0.875
-              },
-              "attribName": "weapon_knight_3_ott",
-              "pbgid": 2072758
-            },
-            {
-              "name": "Torch",
-              "type": "fire",
-              "damage": 10,
-              "speed": 2.125,
-              "range": {
-                "min": 0,
-                "max": 1.25
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.75,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 1.25
-              },
-              "attribName": "weapon_torch",
-              "pbgid": 123518
-            }
-          ]
-        },
-        {
-          "id": "knight-3",
           "pbgid": 133462,
           "attribName": "unit_knight_3_rus",
           "civs": [
@@ -3617,66 +3556,6 @@
           "attribName": "unit_knight_4_hre",
           "civs": [
             "hr"
-          ]
-        },
-        {
-          "id": "knight-4",
-          "pbgid": 2046441,
-          "attribName": "unit_knight_4_ott",
-          "civs": [
-            "ot"
-          ],
-          "producedBy": [
-            "military-school",
-            "stable"
-          ],
-          "weapons": [
-            {
-              "name": "Sword",
-              "type": "melee",
-              "damage": 29,
-              "speed": 1.5,
-              "range": {
-                "min": 0,
-                "max": 0.2875
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.5,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0.875
-              },
-              "attribName": "weapon_knight_4_ott",
-              "pbgid": 2072759
-            },
-            {
-              "name": "Torch",
-              "type": "fire",
-              "damage": 10,
-              "speed": 2.125,
-              "range": {
-                "min": 0,
-                "max": 1.25
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.75,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 1.25
-              },
-              "attribName": "weapon_torch",
-              "pbgid": 123518
-            }
           ]
         },
         {
@@ -6963,8 +6842,8 @@
       "variations": [
         {
           "id": "siege-tower-1",
-          "pbgid": 199685,
-          "attribName": "unit_siege_tower_3_abb",
+          "pbgid": 128524,
+          "attribName": "unit_siege_tower_3",
           "civs": [
             "ab"
           ]
@@ -7106,11 +6985,9 @@
         "time": 45
       },
       "producedBy": [
-        "spearman",
-        "man-at-arms",
-        "archer",
-        "crossbowman",
-        "handcannoneer"
+        "trader",
+        "unit-trade-cart-free-3-abb",
+        "unit-trade-cart-free-4-abb"
       ],
       "hitpoints": 480,
       "sight": {
@@ -7144,6 +7021,13 @@
         "siege-tower-2": {
           "name": "Siege Tower",
           "age": 2,
+          "producedBy": [
+            "spearman",
+            "man-at-arms",
+            "archer",
+            "crossbowman",
+            "handcannoneer"
+          ],
           "weapons": [],
           "armor": [
             {
@@ -12702,23 +12586,23 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 500,
+            "wood": 400,
             "stone": 0,
-            "gold": 250,
-            "total": 750,
+            "gold": 150,
+            "total": 550,
             "popcap": 3,
-            "time": 40
+            "time": 30
           },
           "producedBy": [
             "astronomical-clocktower"
           ],
           "icon": "https://data.aoe4world.com/images/units/clocktower-counterweight-trebuchet-4.png",
-          "hitpoints": 315,
+          "hitpoints": 255,
           "weapons": [
             {
               "name": "Trebuchet",
               "type": "siege",
-              "damage": 50,
+              "damage": 40,
               "speed": 12.625,
               "range": {
                 "min": 2.75,
@@ -12735,7 +12619,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 450,
+                  "value": 375,
                   "type": "passive"
                 },
                 {
@@ -13652,7 +13536,8 @@
         "ab",
         "ch",
         "de",
-        "mo"
+        "mo",
+        "ot"
       ],
       "unique": false,
       "displayClasses": [
@@ -13867,6 +13752,66 @@
           ]
         },
         {
+          "id": "lancer-3",
+          "pbgid": 2046440,
+          "attribName": "unit_knight_3_ott",
+          "civs": [
+            "ot"
+          ],
+          "producedBy": [
+            "military-school",
+            "stable"
+          ],
+          "weapons": [
+            {
+              "name": "Sword",
+              "type": "melee",
+              "damage": 24,
+              "speed": 1.5,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.875
+              },
+              "attribName": "weapon_knight_3_ott",
+              "pbgid": 2072758
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch",
+              "pbgid": 123518
+            }
+          ]
+        },
+        {
           "id": "lancer-4",
           "pbgid": 137569,
           "attribName": "unit_knight_4_chi",
@@ -14062,6 +14007,66 @@
               },
               "attribName": "weapon_torch_horseman_mon",
               "pbgid": 135190
+            }
+          ]
+        },
+        {
+          "id": "lancer-4",
+          "pbgid": 2046441,
+          "attribName": "unit_knight_4_ott",
+          "civs": [
+            "ot"
+          ],
+          "producedBy": [
+            "military-school",
+            "stable"
+          ],
+          "weapons": [
+            {
+              "name": "Sword",
+              "type": "melee",
+              "damage": 29,
+              "speed": 1.5,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.875
+              },
+              "attribName": "weapon_knight_4_ott",
+              "pbgid": 2072759
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch",
+              "pbgid": 123518
             }
           ]
         }
@@ -17679,7 +17684,7 @@
         "gold": 60,
         "total": 180,
         "popcap": 1,
-        "time": 30
+        "time": 26
       },
       "producedBy": [
         "stable"
@@ -19870,10 +19875,10 @@
       "age": 3,
       "costs": {
         "food": 0,
-        "wood": 400,
+        "wood": 300,
         "stone": 0,
-        "gold": 150,
-        "total": 550,
+        "gold": 100,
+        "total": 400,
         "popcap": 3,
         "time": 80
       },
@@ -19884,7 +19889,7 @@
         "crossbowman",
         "handcannoneer"
       ],
-      "hitpoints": 190,
+      "hitpoints": 150,
       "sight": {
         "line": 68,
         "height": 10
@@ -19899,7 +19904,7 @@
             {
               "name": "Trebuchet",
               "type": "siege",
-              "damage": 50,
+              "damage": 40,
               "speed": 9.625,
               "range": {
                 "min": 2.75,
@@ -19916,7 +19921,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 250,
+                  "value": 200,
                   "type": "passive"
                 },
                 {
@@ -19962,12 +19967,12 @@
           "unique": true,
           "costs": {
             "food": 0,
-            "wood": 400,
+            "wood": 300,
             "stone": 0,
-            "gold": 150,
-            "total": 550,
+            "gold": 100,
+            "total": 400,
             "popcap": 3,
-            "time": 35
+            "time": 30
           },
           "producedBy": [
             "siege-workshop"
@@ -19977,7 +19982,7 @@
             {
               "name": "Trebuchet",
               "type": "siege",
-              "damage": 50,
+              "damage": 40,
               "speed": 9.625,
               "range": {
                 "min": 2.75,
@@ -19994,7 +19999,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 250,
+                  "value": 200,
                   "type": "passive"
                 },
                 {
