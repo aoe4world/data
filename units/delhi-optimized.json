@@ -309,7 +309,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 45,
+                  "value": 55,
                   "type": "passive"
                 }
               ],
@@ -1183,6 +1183,337 @@
       "shared": {}
     },
     {
+      "id": "ghazi-raider",
+      "name": "Ghazi Raider",
+      "type": "unit",
+      "civs": [
+        "de"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Light Melee Cavalry"
+      ],
+      "classes": [
+        "light",
+        "melee",
+        "cavalry"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/ghazi-raider-2.png",
+      "description": "Fast cavalry effective at raiding, flanking, and countering ranged units.\n+ High movement speed\n- Increased effectiveness against armored units\n- Countered by Spearmen",
+      "variations": [
+        {
+          "id": "ghazi-raider-2",
+          "pbgid": 136047,
+          "attribName": "unit_horseman_2_sul",
+          "civs": [
+            "de"
+          ]
+        },
+        {
+          "id": "ghazi-raider-3",
+          "pbgid": 136048,
+          "attribName": "unit_horseman_3_sul",
+          "civs": [
+            "de"
+          ]
+        },
+        {
+          "id": "ghazi-raider-4",
+          "pbgid": 136049,
+          "attribName": "unit_horseman_4_sul",
+          "civs": [
+            "de"
+          ]
+        }
+      ],
+      "baseId": "ghazi-raider",
+      "age": 2,
+      "costs": {
+        "food": 110,
+        "wood": 30,
+        "stone": 0,
+        "gold": 0,
+        "total": 140,
+        "popcap": 1,
+        "time": 22.5
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "hitpoints": 140,
+      "sight": {
+        "line": 28,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.875
+      },
+      "shared": {
+        "ghazi-raider-2": {
+          "name": "Ghazi Raider",
+          "weapons": [
+            {
+              "name": "Mace",
+              "type": "melee",
+              "damage": 12,
+              "speed": 2,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "ranged"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 12,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "heavy"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 2,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.375
+              },
+              "attribName": "weapon_horseman_2_sul",
+              "pbgid": 2132741
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_horseman",
+              "pbgid": 127935
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 2
+            }
+          ],
+          "id": "ghazi-raider-2"
+        },
+        "ghazi-raider-3": {
+          "name": "Veteran Ghazi Raider",
+          "age": 3,
+          "icon": "https://data.aoe4world.com/images/units/ghazi-raider-3.png",
+          "hitpoints": 170,
+          "weapons": [
+            {
+              "name": "Mace",
+              "type": "melee",
+              "damage": 15,
+              "speed": 2,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "ranged"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 15,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "heavy"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 3,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.375
+              },
+              "attribName": "weapon_horseman_3_sul",
+              "pbgid": 2132742
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_horseman",
+              "pbgid": 127935
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 3
+            }
+          ],
+          "id": "ghazi-raider-3"
+        },
+        "ghazi-raider-4": {
+          "name": "Elite Ghazi Raider",
+          "age": 4,
+          "icon": "https://data.aoe4world.com/images/units/ghazi-raider-4.png",
+          "hitpoints": 200,
+          "weapons": [
+            {
+              "name": "Mace",
+              "type": "melee",
+              "damage": 18,
+              "speed": 2,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "ranged"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 18,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "heavy"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 4,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.375
+              },
+              "attribName": "weapon_horseman_4_sul",
+              "pbgid": 2132743
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_horseman",
+              "pbgid": 127935
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 4
+            }
+          ],
+          "id": "ghazi-raider-4"
+        }
+      }
+    },
+    {
       "id": "handcannoneer",
       "name": "Handcannoneer",
       "type": "unit",
@@ -1275,337 +1606,6 @@
         }
       ],
       "shared": {}
-    },
-    {
-      "id": "horseman",
-      "name": "Horseman",
-      "type": "unit",
-      "civs": [
-        "de"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Light Melee Cavalry"
-      ],
-      "classes": [
-        "light",
-        "melee",
-        "cavalry"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/horseman-2.png",
-      "description": "Fast cavalry effective at raiding, flanking, and countering ranged units.\n+ High movement speed\n- Weak against melee units\n- Countered by Spearmen",
-      "variations": [
-        {
-          "id": "horseman-2",
-          "pbgid": 136047,
-          "attribName": "unit_horseman_2_sul",
-          "civs": [
-            "de"
-          ]
-        },
-        {
-          "id": "horseman-3",
-          "pbgid": 136048,
-          "attribName": "unit_horseman_3_sul",
-          "civs": [
-            "de"
-          ]
-        },
-        {
-          "id": "horseman-4",
-          "pbgid": 136049,
-          "attribName": "unit_horseman_4_sul",
-          "civs": [
-            "de"
-          ]
-        }
-      ],
-      "baseId": "horseman",
-      "age": 2,
-      "costs": {
-        "food": 100,
-        "wood": 20,
-        "stone": 0,
-        "gold": 0,
-        "total": 120,
-        "popcap": 1,
-        "time": 22.5
-      },
-      "producedBy": [
-        "stable"
-      ],
-      "hitpoints": 125,
-      "sight": {
-        "line": 28,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.875
-      },
-      "shared": {
-        "horseman-2": {
-          "name": "Horseman",
-          "weapons": [
-            {
-              "name": "Spear",
-              "type": "melee",
-              "damage": 9,
-              "speed": 1.75,
-              "range": {
-                "min": 0,
-                "max": 0.2875
-              },
-              "modifiers": [
-                {
-                  "property": "meleeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "ranged"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 9,
-                  "type": "passive"
-                },
-                {
-                  "property": "meleeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "siege"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0,
-                "windup": 0.5,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 1.125
-              },
-              "attribName": "weapon_horseman_2",
-              "pbgid": 109275
-            },
-            {
-              "name": "Torch",
-              "type": "fire",
-              "damage": 10,
-              "speed": 2.125,
-              "range": {
-                "min": 0,
-                "max": 1.25
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.75,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 1.25
-              },
-              "attribName": "weapon_torch_horseman",
-              "pbgid": 127935
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 2
-            }
-          ],
-          "id": "horseman-2"
-        },
-        "horseman-3": {
-          "name": "Veteran Horseman",
-          "age": 3,
-          "icon": "https://data.aoe4world.com/images/units/horseman-3.png",
-          "hitpoints": 155,
-          "weapons": [
-            {
-              "name": "Spear",
-              "type": "melee",
-              "damage": 11,
-              "speed": 1.75,
-              "range": {
-                "min": 0,
-                "max": 0.2875
-              },
-              "modifiers": [
-                {
-                  "property": "meleeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "ranged"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 11,
-                  "type": "passive"
-                },
-                {
-                  "property": "meleeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "siege"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0,
-                "windup": 0.5,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 1.125
-              },
-              "attribName": "weapon_horseman_3",
-              "pbgid": 127820
-            },
-            {
-              "name": "Torch",
-              "type": "fire",
-              "damage": 10,
-              "speed": 2.125,
-              "range": {
-                "min": 0,
-                "max": 1.25
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.75,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 1.25
-              },
-              "attribName": "weapon_torch_horseman",
-              "pbgid": 127935
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 3
-            }
-          ],
-          "id": "horseman-3"
-        },
-        "horseman-4": {
-          "name": "Elite Horseman",
-          "age": 4,
-          "icon": "https://data.aoe4world.com/images/units/horseman-4.png",
-          "hitpoints": 180,
-          "weapons": [
-            {
-              "name": "Spear",
-              "type": "melee",
-              "damage": 13,
-              "speed": 1.75,
-              "range": {
-                "min": 0,
-                "max": 0.2875
-              },
-              "modifiers": [
-                {
-                  "property": "meleeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "ranged"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 13,
-                  "type": "passive"
-                },
-                {
-                  "property": "meleeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "siege"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0,
-                "windup": 0.5,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 1.125
-              },
-              "attribName": "weapon_horseman_4",
-              "pbgid": 127821
-            },
-            {
-              "name": "Torch",
-              "type": "fire",
-              "damage": 10,
-              "speed": 2.125,
-              "range": {
-                "min": 0,
-                "max": 1.25
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.75,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 1.25
-              },
-              "attribName": "weapon_torch_horseman",
-              "pbgid": 127935
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 4
-            }
-          ],
-          "id": "horseman-4"
-        }
-      }
     },
     {
       "id": "lancer",
@@ -3066,7 +3066,21 @@
                 "min": 0,
                 "max": 1
               },
-              "modifiers": [],
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 40,
+                  "type": "passive"
+                }
+              ],
               "durations": {
                 "aim": 0,
                 "windup": 0.75,
@@ -3191,7 +3205,21 @@
                 "min": 0,
                 "max": 1
               },
-              "modifiers": [],
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 40,
+                  "type": "passive"
+                }
+              ],
               "durations": {
                 "aim": 0,
                 "windup": 0.75,
@@ -3301,7 +3329,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/units/trade-ship-3.png",
-      "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or another Dock. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
+      "description": "Trade Ships generate Gold and Wood when assigned to a trade route with a Coastal Trade Post or another player's Dock.\n- No combat",
       "variations": [
         {
           "id": "trade-ship-2",
@@ -3314,7 +3342,7 @@
           "civs": [
             "de"
           ],
-          "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or another Dock. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
+          "description": "Trade Ships generate Gold and Wood when assigned to a trade route with a Coastal Trade Post or another player's Dock.\n- No combat",
           "classes": [
             "worker",
             "ship"
@@ -3691,7 +3719,21 @@
                 "min": 0,
                 "max": 1
               },
-              "modifiers": [],
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 45,
+                  "type": "passive"
+                }
+              ],
               "durations": {
                 "aim": 0,
                 "windup": 0.75,

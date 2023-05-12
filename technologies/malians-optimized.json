@@ -106,7 +106,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/adjustable-crossbars-4.png",
-      "description": "Reduce the reload time of Mangonels by -25%.",
+      "description": "Increase the attack speed of Mangonels by +25%.",
       "variations": [
         {
           "id": "adjustable-crossbars-4",
@@ -119,7 +119,7 @@
           "civs": [
             "ma"
           ],
-          "description": "Reduce the reload time of Mangonels by -25%.",
+          "description": "Increase the attack speed of Mangonels by +25%.",
           "classes": [
             "mangonel",
             "technology"
@@ -150,7 +150,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.75,
+              "value": 0.6699999999999999,
               "type": "passive"
             }
           ]
@@ -278,13 +278,13 @@
           ],
           "unique": false,
           "costs": {
-            "food": 200,
+            "food": 150,
             "wood": 0,
             "stone": 0,
-            "gold": 500,
-            "total": 700,
+            "gold": 350,
+            "total": 500,
             "popcap": 0,
-            "time": 45
+            "time": 30
           },
           "producedBy": [
             "dock"
@@ -911,12 +911,12 @@
           "unique": true,
           "costs": {
             "food": 0,
-            "wood": 100,
+            "wood": 50,
             "stone": 0,
-            "gold": 250,
-            "total": 350,
+            "gold": 125,
+            "total": 175,
             "popcap": 0,
-            "time": 30
+            "time": 20
           },
           "producedBy": [
             "dock"
@@ -2698,11 +2698,11 @@
           ],
           "unique": true,
           "costs": {
-            "food": 100,
+            "food": 150,
             "wood": 0,
             "stone": 0,
-            "gold": 250,
-            "total": 350,
+            "gold": 350,
+            "total": 500,
             "popcap": 0,
             "time": 60
           },
@@ -3099,7 +3099,8 @@
             "time": 60
           },
           "producedBy": [
-            "barracks"
+            "barracks",
+            "farimba-garrison"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/local-knowledge-3.png",
           "effects": [
@@ -3969,7 +3970,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/roller-shutter-triggers-4.png",
-      "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+      "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
       "variations": [
         {
           "id": "roller-shutter-triggers-4",
@@ -3982,7 +3983,7 @@
           "civs": [
             "ma"
           ],
-          "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+          "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
           "classes": [
             "springald",
             "technology"
@@ -4024,7 +4025,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.75,
+              "value": 0.6699999999999999,
               "type": "passive"
             }
           ]
@@ -4546,6 +4547,76 @@
               },
               "effect": "change",
               "value": 1,
+              "type": "passive"
+            }
+          ]
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "spyglass",
+      "name": "Spyglass",
+      "type": "technology",
+      "civs": [
+        "ma"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Scout Technology"
+      ],
+      "classes": [
+        "scout",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+      "description": "Increase the sight radius of Scouts by 30%.",
+      "variations": [
+        {
+          "id": "spyglass-4",
+          "baseId": "spyglass",
+          "type": "technology",
+          "name": "Spyglass",
+          "pbgid": 2126348,
+          "attribName": "upgrade_scout_los_increase_mal",
+          "age": 4,
+          "civs": [
+            "ma"
+          ],
+          "description": "Increase the sight radius of Scouts by 30%.",
+          "classes": [
+            "scout",
+            "technology"
+          ],
+          "displayClasses": [
+            "Scout Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 50,
+            "total": 150,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "stable"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+          "effects": [
+            {
+              "property": "lineOfSight",
+              "select": {
+                "id": [
+                  "scout",
+                  "warrior-scout"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.3,
               "type": "passive"
             }
           ]

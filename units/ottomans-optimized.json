@@ -1027,7 +1027,7 @@
             "height": 501
           },
           "movement": {
-            "speed": 1.5
+            "speed": 1.65
           }
         }
       ],
@@ -1042,9 +1042,10 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Ship"
+        "Gunpowder Ship"
       ],
       "classes": [
+        "gunpowder",
         "ship"
       ],
       "minAge": 4,
@@ -1064,10 +1065,11 @@
           ],
           "description": "Large oared vessel which can be upgraded into a naval Military School.\n+ Large hold which can be garrisoned by any unit once upgraded into a Military School\n+ Very long range\n- Lower damage",
           "classes": [
+            "gunpowder",
             "ship"
           ],
           "displayClasses": [
-            "Ship"
+            "Gunpowder Ship"
           ],
           "unique": true,
           "costs": {
@@ -1373,7 +1375,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 45,
+                  "value": 55,
                   "type": "passive"
                 }
               ],
@@ -1548,7 +1550,7 @@
         "military-school",
         "archery-range"
       ],
-      "hitpoints": 90,
+      "hitpoints": 130,
       "sight": {
         "line": 32,
         "height": 10
@@ -1605,7 +1607,6 @@
           "name": "Elite Janissary",
           "age": 4,
           "icon": "https://data.aoe4world.com/images/units/janissary-4.png",
-          "hitpoints": 105,
           "weapons": [
             {
               "name": "Trench Gun",
@@ -2270,7 +2271,7 @@
             "stable"
           ],
           "icon": "https://data.aoe4world.com/images/units/mehter-2.png",
-          "hitpoints": 180,
+          "hitpoints": 160,
           "weapons": [
             {
               "name": "Bow",
@@ -2639,7 +2640,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/units/sipahi-2.png",
-      "description": "Fast cavalry effective at raiding, flanking, and countering ranged units. Has the ability to attack faster while also taking additional damage from melee sources.\n+ High movement speed\n+ Strong against ranged units\n- Weak against melee units\n- Countered by Spearmen",
+      "description": "Fast cavalry effective at raiding, flanking, and countering ranged units. Can gain attack speed at the cost of melee defense.\n+ High movement speed\n+ Strong against ranged units\n- Weak against melee units\n- Countered by Spearmen",
       "variations": [
         {
           "id": "sipahi-2",
@@ -2669,11 +2670,11 @@
       "baseId": "sipahi",
       "age": 2,
       "costs": {
-        "food": 110,
-        "wood": 20,
+        "food": 120,
+        "wood": 40,
         "stone": 0,
         "gold": 0,
-        "total": 130,
+        "total": 160,
         "popcap": 1,
         "time": 24
       },
@@ -2681,13 +2682,13 @@
         "military-school",
         "stable"
       ],
-      "hitpoints": 135,
+      "hitpoints": 160,
       "sight": {
         "line": 28,
         "height": 10
       },
       "movement": {
-        "speed": 1.875
+        "speed": 1.75
       },
       "shared": {
         "sipahi-2": {
@@ -2696,11 +2697,11 @@
             {
               "name": "Spear",
               "type": "melee",
-              "damage": 9,
+              "damage": 12,
               "speed": 1.75,
               "range": {
                 "min": 0,
-                "max": 0.2875
+                "max": 0.75
               },
               "modifiers": [
                 {
@@ -2713,7 +2714,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 9,
+                  "value": 12,
                   "type": "passive"
                 },
                 {
@@ -2779,16 +2780,16 @@
           "name": "Veteran Sipahi",
           "age": 3,
           "icon": "https://data.aoe4world.com/images/units/sipahi-3.png",
-          "hitpoints": 165,
+          "hitpoints": 190,
           "weapons": [
             {
               "name": "Spear",
               "type": "melee",
-              "damage": 11,
+              "damage": 15,
               "speed": 1.75,
               "range": {
                 "min": 0,
-                "max": 0.2875
+                "max": 0.75
               },
               "modifiers": [
                 {
@@ -2801,7 +2802,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 11,
+                  "value": 15,
                   "type": "passive"
                 },
                 {
@@ -2867,16 +2868,16 @@
           "name": "Elite Sipahi",
           "age": 4,
           "icon": "https://data.aoe4world.com/images/units/sipahi-4.png",
-          "hitpoints": 190,
+          "hitpoints": 230,
           "weapons": [
             {
               "name": "Spear",
               "type": "melee",
-              "damage": 13,
+              "damage": 18,
               "speed": 1.75,
               "range": {
                 "min": 0,
-                "max": 0.2875
+                "max": 0.75
               },
               "modifiers": [
                 {
@@ -2889,7 +2890,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 13,
+                  "value": 18,
                   "type": "passive"
                 },
                 {
@@ -3458,7 +3459,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/units/trade-ship-3.png",
-      "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or another Dock. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
+      "description": "Trade Ships generate Gold and Wood when assigned to a trade route with a Coastal Trade Post or another player's Dock.\n- No combat",
       "variations": [
         {
           "id": "trade-ship-2",
@@ -3471,7 +3472,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or another Dock. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
+          "description": "Trade Ships generate Gold and Wood when assigned to a trade route with a Coastal Trade Post or another player's Dock.\n- No combat",
           "classes": [
             "worker",
             "ship"

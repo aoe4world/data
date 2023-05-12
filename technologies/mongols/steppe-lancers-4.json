@@ -1,0 +1,58 @@
+{
+  "id": "steppe-lancers-4",
+  "baseId": "steppe-lancers",
+  "type": "technology",
+  "name": "Steppe Lancers",
+  "pbgid": 2137100,
+  "attribName": "upgrade_lancer_healing_mon",
+  "age": 4,
+  "civs": [
+    "mo"
+  ],
+  "description": "Increase Keshik healing by +1 Health per attack and attack speed by +10%.",
+  "classes": [
+    "keshik",
+    "technology"
+  ],
+  "displayClasses": [
+    "Keshik Technology"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 150,
+    "wood": 0,
+    "stone": 0,
+    "gold": 350,
+    "total": 500,
+    "popcap": 0,
+    "time": 45
+  },
+  "producedBy": [
+    "stable"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/steppe-lancers-4.png",
+  "effects": [
+    {
+      "property": "healingRate",
+      "select": {
+        "id": [
+          "keshik"
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "passive"
+    },
+    {
+      "property": "attackSpeed",
+      "select": {
+        "id": [
+          "keshik"
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.89,
+      "type": "passive"
+    }
+  ]
+}

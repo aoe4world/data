@@ -1,0 +1,124 @@
+{
+  "id": "ghazi-raider-3",
+  "baseId": "ghazi-raider",
+  "type": "unit",
+  "name": "Veteran Ghazi Raider",
+  "pbgid": 136048,
+  "attribName": "unit_horseman_3_sul",
+  "age": 3,
+  "civs": [
+    "de"
+  ],
+  "description": "Fast cavalry effective at raiding, flanking, and countering ranged units.\n+ High movement speed\n- Increased effectiveness against armored units\n- Countered by Spearmen",
+  "classes": [
+    "light",
+    "melee",
+    "cavalry"
+  ],
+  "displayClasses": [
+    "Light Melee Cavalry"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 110,
+    "wood": 30,
+    "stone": 0,
+    "gold": 0,
+    "total": 140,
+    "popcap": 1,
+    "time": 22.5
+  },
+  "producedBy": [
+    "stable"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/ghazi-raider-3.png",
+  "hitpoints": 170,
+  "weapons": [
+    {
+      "name": "Mace",
+      "type": "melee",
+      "damage": 15,
+      "speed": 2,
+      "range": {
+        "min": 0,
+        "max": 0.2875
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "ranged"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 15,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "heavy"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 3,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.375
+      },
+      "attribName": "weapon_horseman_3_sul",
+      "pbgid": 2132742
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch_horseman",
+      "pbgid": 127935
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 3
+    }
+  ],
+  "sight": {
+    "line": 28,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.875
+  }
+}

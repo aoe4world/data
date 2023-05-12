@@ -978,10 +978,11 @@
       ],
       "description": "Large oared vessel with a powerful forward mounted bombard.\n+ Long Range\n+ Anti-structure specialist",
       "classes": [
+        "gunpowder",
         "ship"
       ],
       "displayClasses": [
-        "Ship"
+        "Gunpowder Ship"
       ],
       "unique": true,
       "costs": {
@@ -1571,107 +1572,6 @@
       },
       "movement": {
         "speed": 1.875
-      }
-    },
-    {
-      "id": "hulk-2",
-      "baseId": "hulk",
-      "type": "unit",
-      "name": "Hulk",
-      "pbgid": 193119,
-      "attribName": "unit_naval_combat_ship_2_fre",
-      "age": 2,
-      "civs": [
-        "fr"
-      ],
-      "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
-      "classes": [
-        "springald",
-        "ship"
-      ],
-      "displayClasses": [
-        "Springald Ship"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 120,
-        "wood": 200,
-        "stone": 0,
-        "gold": 30,
-        "total": 350,
-        "popcap": 3,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/hulk-2.png",
-      "hitpoints": 450,
-      "weapons": [
-        {
-          "name": "(translation not found)",
-          "type": "ranged",
-          "damage": 35,
-          "speed": 4.125,
-          "range": {
-            "min": 0,
-            "max": 6
-          },
-          "modifiers": [
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "archer",
-                    "ship"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 45,
-              "type": "passive"
-            },
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "building"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 45,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0.5,
-            "windup": 0.25,
-            "attack": 0.125,
-            "winddown": 0.5,
-            "reload": 2.75,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0
-          },
-          "attribName": "weapon_naval_combat_ship_springald_fre",
-          "pbgid": 2128677
-        }
-      ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 4
-        }
-      ],
-      "sight": {
-        "line": 45,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.375
       }
     },
     {
@@ -3434,7 +3334,7 @@
       "civs": [
         "fr"
       ],
-      "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or another Dock. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
+      "description": "Trade Ships generate Gold and Wood when assigned to a trade route with a Coastal Trade Post or another player's Dock.\n- No combat",
       "classes": [
         "worker",
         "ship"
@@ -3672,6 +3572,158 @@
       },
       "movement": {
         "speed": 1.125
+      }
+    },
+    {
+      "id": "war-cog-2",
+      "baseId": "war-cog",
+      "type": "unit",
+      "name": "War Cog",
+      "pbgid": 193119,
+      "attribName": "unit_naval_combat_ship_2_fre",
+      "age": 2,
+      "civs": [
+        "fr"
+      ],
+      "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+      "classes": [
+        "springald",
+        "ship"
+      ],
+      "displayClasses": [
+        "Springald Ship"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 85,
+        "wood": 200,
+        "stone": 0,
+        "gold": 30,
+        "total": 315,
+        "popcap": 3,
+        "time": 30
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/war-cog-2.png",
+      "hitpoints": 450,
+      "weapons": [
+        {
+          "name": "Ballista",
+          "type": "ranged",
+          "damage": 35,
+          "speed": 4.125,
+          "range": {
+            "min": 0,
+            "max": 6
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "archer",
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 45,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 55,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 2.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_combat_ship_springald_fre",
+          "pbgid": 2128677
+        },
+        {
+          "name": "Cannon",
+          "type": "siege",
+          "damage": 40,
+          "speed": 4.125,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "archer",
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 45,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 80,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 2.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_mounted_gun",
+          "pbgid": 2101775
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 4
+        }
+      ],
+      "sight": {
+        "line": 45,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.375
       }
     }
   ]

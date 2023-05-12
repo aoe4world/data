@@ -178,7 +178,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/adjustable-crossbars-4.png",
-      "description": "Reduce the reload time of Mangonels by -25%.",
+      "description": "Increase the attack speed of Mangonels by +25%.",
       "variations": [
         {
           "id": "adjustable-crossbars-4",
@@ -191,7 +191,7 @@
           "civs": [
             "ru"
           ],
-          "description": "Reduce the reload time of Mangonels by -25%.",
+          "description": "Increase the attack speed of Mangonels by +25%.",
           "classes": [
             "mangonel",
             "technology"
@@ -222,7 +222,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.75,
+              "value": 0.6699999999999999,
               "type": "passive"
             }
           ]
@@ -350,13 +350,13 @@
           ],
           "unique": false,
           "costs": {
-            "food": 200,
+            "food": 150,
             "wood": 0,
             "stone": 0,
-            "gold": 500,
-            "total": 700,
+            "gold": 350,
+            "total": 500,
             "popcap": 0,
-            "time": 45
+            "time": 30
           },
           "producedBy": [
             "dock"
@@ -1134,11 +1134,11 @@
           "costs": {
             "food": 0,
             "wood": 0,
-            "stone": 100,
+            "stone": 50,
             "gold": 0,
-            "total": 100,
+            "total": 50,
             "popcap": 0,
-            "time": 30
+            "time": 15
           },
           "producedBy": [
             "wooden-fortress"
@@ -1770,77 +1770,6 @@
               "effect": "multiply",
               "value": 1.15,
               "type": "passive"
-            }
-          ]
-        }
-      ],
-      "shared": {}
-    },
-    {
-      "id": "double-time",
-      "name": "Double Time",
-      "type": "technology",
-      "civs": [
-        "ru"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Streltsy Ability Unlock"
-      ],
-      "classes": [
-        "streltsy",
-        "ability",
-        "unlock"
-      ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/double-time-4.png",
-      "description": "Streltsy gain the Double Time ability, which increases their movement speed by +30% for 10 seconds.",
-      "variations": [
-        {
-          "id": "double-time-4",
-          "baseId": "double-time",
-          "type": "technology",
-          "name": "Double Time",
-          "pbgid": 207443,
-          "attribName": "upgrade_streltsy_double_time_rus",
-          "age": 4,
-          "civs": [
-            "ru"
-          ],
-          "description": "Streltsy gain the Double Time ability, which increases their movement speed by +30% for 10 seconds.",
-          "classes": [
-            "streltsy",
-            "ability",
-            "unlock"
-          ],
-          "displayClasses": [
-            "Streltsy Ability Unlock"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 100,
-            "wood": 0,
-            "stone": 0,
-            "gold": 225,
-            "total": 325,
-            "popcap": 0,
-            "time": 45
-          },
-          "producedBy": [
-            "archery-range"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/double-time-4.png",
-          "effects": [
-            {
-              "property": "moveSpeed",
-              "select": {
-                "id": [
-                  "streltsy"
-                ]
-              },
-              "effect": "multiply",
-              "value": 0.8,
-              "type": "ability"
             }
           ]
         }
@@ -3350,8 +3279,8 @@
       "shared": {}
     },
     {
-      "id": "knight-sabers",
-      "name": "Knight Sabers",
+      "id": "knight-poleaxes",
+      "name": "Knight Poleaxes",
       "type": "technology",
       "civs": [
         "ru"
@@ -3365,21 +3294,21 @@
         "technology"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/knight-sabers-4.png",
-      "description": "Increase the sword damage of Knights by +4.",
+      "icon": "https://data.aoe4world.com/images/technologies/knight-poleaxes-4.png",
+      "description": "Knights equip a poleax, increasing their melee damage by +4.",
       "variations": [
         {
-          "id": "knight-sabers-4",
-          "baseId": "knight-sabers",
+          "id": "knight-poleaxes-4",
+          "baseId": "knight-poleaxes",
           "type": "technology",
-          "name": "Knight Sabers",
+          "name": "Knight Poleaxes",
           "pbgid": 207441,
           "attribName": "upgrade_cavalry_melee_damage_rus",
           "age": 4,
           "civs": [
             "ru"
           ],
-          "description": "Increase the sword damage of Knights by +4.",
+          "description": "Knights equip a poleax, increasing their melee damage by +4.",
           "classes": [
             "knight",
             "technology"
@@ -3400,7 +3329,7 @@
           "producedBy": [
             "stable"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/knight-sabers-4.png",
+          "icon": "https://data.aoe4world.com/images/technologies/knight-poleaxes-4.png",
           "effects": [
             {
               "property": "meleeAttack",
@@ -3796,8 +3725,8 @@
       "shared": {}
     },
     {
-      "id": "mounted-precision",
-      "name": "Mounted Precision",
+      "id": "mounted-training",
+      "name": "Mounted Training",
       "type": "technology",
       "civs": [
         "ru"
@@ -3812,21 +3741,21 @@
         "technology"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/mounted-precision-4.png",
-      "description": "Increase the weapon range of Horse Archers by +1.",
+      "icon": "https://data.aoe4world.com/images/technologies/mounted-training-4.png",
+      "description": "Increase weapon range of Horse Archers by +1 and unlock the Gallop ability.\nGallop: Activate to move at maximum speed with +2 tile weapon range for 8 seconds.",
       "variations": [
         {
-          "id": "mounted-precision-4",
-          "baseId": "mounted-precision",
+          "id": "mounted-training-4",
+          "baseId": "mounted-training",
           "type": "technology",
-          "name": "Mounted Precision",
-          "pbgid": 207445,
-          "attribName": "upgrade_streltsy_weapon_percision_rus",
+          "name": "Mounted Training",
+          "pbgid": 2134250,
+          "attribName": "upgrade_horse_archer_mounted_training_rus",
           "age": 4,
           "civs": [
             "ru"
           ],
-          "description": "Increase the weapon range of Horse Archers by +1.",
+          "description": "Increase weapon range of Horse Archers by +1 and unlock the Gallop ability.\nGallop: Activate to move at maximum speed with +2 tile weapon range for 8 seconds.",
           "classes": [
             "horse",
             "archer",
@@ -3848,7 +3777,7 @@
           "producedBy": [
             "archery-range"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/mounted-precision-4.png",
+          "icon": "https://data.aoe4world.com/images/technologies/mounted-training-4.png",
           "effects": [
             {
               "property": "maxRange",
@@ -4263,7 +4192,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/roller-shutter-triggers-4.png",
-      "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+      "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
       "variations": [
         {
           "id": "roller-shutter-triggers-4",
@@ -4276,7 +4205,7 @@
           "civs": [
             "ru"
           ],
-          "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+          "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
           "classes": [
             "springald",
             "technology"
@@ -4318,7 +4247,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.75,
+              "value": 0.6699999999999999,
               "type": "passive"
             }
           ]
@@ -4989,6 +4918,76 @@
               },
               "effect": "change",
               "value": 1,
+              "type": "passive"
+            }
+          ]
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "spyglass",
+      "name": "Spyglass",
+      "type": "technology",
+      "civs": [
+        "ru"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Scout Technology"
+      ],
+      "classes": [
+        "scout",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+      "description": "Increase the sight radius of Scouts by 30%.",
+      "variations": [
+        {
+          "id": "spyglass-4",
+          "baseId": "spyglass",
+          "type": "technology",
+          "name": "Spyglass",
+          "pbgid": 2126207,
+          "attribName": "upgrade_scout_los_increase",
+          "age": 4,
+          "civs": [
+            "ru"
+          ],
+          "description": "Increase the sight radius of Scouts by 30%.",
+          "classes": [
+            "scout",
+            "technology"
+          ],
+          "displayClasses": [
+            "Scout Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 50,
+            "total": 150,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "stable"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+          "effects": [
+            {
+              "property": "lineOfSight",
+              "select": {
+                "id": [
+                  "scout",
+                  "warrior-scout"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.3,
               "type": "passive"
             }
           ]

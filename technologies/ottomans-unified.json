@@ -105,7 +105,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/adjustable-crossbars-4.png",
-      "description": "Reduce the reload time of Mangonels by -25%.",
+      "description": "Increase the attack speed of Mangonels by +25%.",
       "variations": [
         {
           "id": "adjustable-crossbars-4",
@@ -118,7 +118,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Reduce the reload time of Mangonels by -25%.",
+          "description": "Increase the attack speed of Mangonels by +25%.",
           "classes": [
             "mangonel",
             "technology"
@@ -149,7 +149,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.75,
+              "value": 0.6699999999999999,
               "type": "passive"
             }
           ]
@@ -204,7 +204,10 @@
             "popcap": 0,
             "time": 0
           },
-          "producedBy": [],
+          "producedBy": [
+            "capital-town-center",
+            "town-center"
+          ],
           "icon": "https://data.aoe4world.com/images/technologies/advanced-academy-1.png",
           "effects": []
         }
@@ -258,7 +261,10 @@
             "popcap": 0,
             "time": 0
           },
-          "producedBy": [],
+          "producedBy": [
+            "capital-town-center",
+            "town-center"
+          ],
           "icon": "https://data.aoe4world.com/images/technologies/anatolian-hills-1.png",
           "effects": [
             {
@@ -406,13 +412,13 @@
           ],
           "unique": false,
           "costs": {
-            "food": 200,
+            "food": 150,
             "wood": 0,
             "stone": 0,
-            "gold": 500,
-            "total": 700,
+            "gold": 350,
+            "total": 500,
             "popcap": 0,
-            "time": 45
+            "time": 30
           },
           "producedBy": [
             "dock"
@@ -841,82 +847,6 @@
               "select": {
                 "id": [
                   "stone-wall-tower",
-                  "keep",
-                  "berkshire-palace",
-                  "elzbach-palace",
-                  "kremlin",
-                  "spasskaya-tower",
-                  "red-palace",
-                  "the-white-tower"
-                ]
-              },
-              "effect": "change",
-              "value": 1,
-              "type": "passive"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "cannon-emplacement",
-      "name": "Cannon Emplacement",
-      "type": "technology",
-      "civs": [
-        "ot"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Weapon Emplacement"
-      ],
-      "classes": [
-        "weapon",
-        "emplacement"
-      ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/technologies/cannon-emplacement-4.png",
-      "description": "Add a defensive cannon emplacement to this structure.",
-      "variations": [
-        {
-          "id": "cannon-emplacement-4",
-          "baseId": "cannon-emplacement",
-          "type": "technology",
-          "name": "Cannon Emplacement",
-          "pbgid": 185626,
-          "attribName": "upgrade_keep_cannon",
-          "age": 4,
-          "civs": [
-            "ot"
-          ],
-          "description": "Add a defensive cannon emplacement to this structure.",
-          "classes": [
-            "weapon",
-            "emplacement"
-          ],
-          "displayClasses": [
-            "Weapon Emplacement"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 375,
-            "gold": 125,
-            "total": 500,
-            "popcap": 0,
-            "time": 60
-          },
-          "producedBy": [
-            "keep",
-            "sea-gate-castle"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/cannon-emplacement-4.png",
-          "effects": [
-            {
-              "property": "unknown",
-              "select": {
-                "id": [
-                  "outpost",
                   "keep",
                   "berkshire-palace",
                   "elzbach-palace",
@@ -1930,7 +1860,10 @@
             "popcap": 0,
             "time": 0
           },
-          "producedBy": [],
+          "producedBy": [
+            "capital-town-center",
+            "town-center"
+          ],
           "icon": "https://data.aoe4world.com/images/technologies/fast-training-1.png",
           "effects": [
             {
@@ -2038,7 +1971,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/technologies/field-work-1.png",
-      "description": "Spawn 2 Imams at the Landmark Town Center. Imams area heal nearby units for 1 health every second.",
+      "description": "Spawn 2 Imams at the Landmark Town Center. Imams area heal nearby units for 1 health every second. Increases to 2 health in Castle Age and 3 health in Imperial Age.",
       "variations": [
         {
           "id": "field-work-1",
@@ -2051,7 +1984,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Spawn 2 Imams at the Landmark Town Center. Imams area heal nearby units for 1 health every second.",
+          "description": "Spawn 2 Imams at the Landmark Town Center. Imams area heal nearby units for 1 health every second. Increases to 2 health in Castle Age and 3 health in Imperial Age.",
           "classes": [
             "imperial",
             "council"
@@ -2069,7 +2002,10 @@
             "popcap": 0,
             "time": 0
           },
-          "producedBy": [],
+          "producedBy": [
+            "capital-town-center",
+            "town-center"
+          ],
           "icon": "https://data.aoe4world.com/images/technologies/field-work-1.png",
           "effects": [
             {
@@ -2453,6 +2389,63 @@
               "type": "passive"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "great-bombard-emplacement",
+      "name": "Great Bombard Emplacement",
+      "type": "technology",
+      "civs": [
+        "ot"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Weapon Emplacement"
+      ],
+      "classes": [
+        "weapon",
+        "emplacement"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/great-bombard-emplacement-4.png",
+      "description": "Add a defensive Great Bombard emplacement to this structure.",
+      "variations": [
+        {
+          "id": "great-bombard-emplacement-4",
+          "baseId": "great-bombard-emplacement",
+          "type": "technology",
+          "name": "Great Bombard Emplacement",
+          "pbgid": 2136153,
+          "attribName": "upgrade_keep_great_bombard",
+          "age": 4,
+          "civs": [
+            "ot"
+          ],
+          "description": "Add a defensive Great Bombard emplacement to this structure.",
+          "classes": [
+            "weapon",
+            "emplacement"
+          ],
+          "displayClasses": [
+            "Weapon Emplacement"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 400,
+            "gold": 250,
+            "total": 650,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "keep",
+            "sea-gate-castle"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/great-bombard-emplacement-4.png",
+          "effects": []
         }
       ]
     },
@@ -3088,7 +3081,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/technologies/janissary-company-1.png",
-      "description": "Spawn 2 Janissaries for each of your Military Schools at the Landmark Town Center.",
+      "description": "Spawn 2 Janissaries for each of your Landmark Town Center and Military Schools at the Landmark Town Center.",
       "variations": [
         {
           "id": "janissary-company-1",
@@ -3101,7 +3094,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Spawn 2 Janissaries for each of your Military Schools at the Landmark Town Center.",
+          "description": "Spawn 2 Janissaries for each of your Landmark Town Center and Military Schools at the Landmark Town Center.",
           "classes": [
             "imperial",
             "council"
@@ -3119,7 +3112,10 @@
             "popcap": 0,
             "time": 0
           },
-          "producedBy": [],
+          "producedBy": [
+            "capital-town-center",
+            "town-center"
+          ],
           "icon": "https://data.aoe4world.com/images/technologies/janissary-company-1.png",
           "effects": []
         }
@@ -3473,7 +3469,10 @@
             "popcap": 0,
             "time": 0
           },
-          "producedBy": [],
+          "producedBy": [
+            "capital-town-center",
+            "town-center"
+          ],
           "icon": "https://data.aoe4world.com/images/technologies/mehter-drums-1.png",
           "effects": [
             {
@@ -3544,7 +3543,10 @@
             "popcap": 0,
             "time": 0
           },
-          "producedBy": [],
+          "producedBy": [
+            "capital-town-center",
+            "town-center"
+          ],
           "icon": "https://data.aoe4world.com/images/technologies/military-campus-1.png",
           "effects": []
         }
@@ -3943,7 +3945,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/roller-shutter-triggers-4.png",
-      "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+      "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
       "variations": [
         {
           "id": "roller-shutter-triggers-4",
@@ -3956,7 +3958,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+          "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
           "classes": [
             "springald",
             "technology"
@@ -3998,7 +4000,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.75,
+              "value": 0.6699999999999999,
               "type": "passive"
             }
           ]
@@ -4170,7 +4172,10 @@
             "popcap": 0,
             "time": 0
           },
-          "producedBy": [],
+          "producedBy": [
+            "capital-town-center",
+            "town-center"
+          ],
           "icon": "https://data.aoe4world.com/images/technologies/siege-crews-1.png",
           "effects": []
         }
@@ -4576,6 +4581,75 @@
       ]
     },
     {
+      "id": "spyglass",
+      "name": "Spyglass",
+      "type": "technology",
+      "civs": [
+        "ot"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Scout Technology"
+      ],
+      "classes": [
+        "scout",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+      "description": "Increase the sight radius of Scouts by 30%.",
+      "variations": [
+        {
+          "id": "spyglass-4",
+          "baseId": "spyglass",
+          "type": "technology",
+          "name": "Spyglass",
+          "pbgid": 2126207,
+          "attribName": "upgrade_scout_los_increase",
+          "age": 4,
+          "civs": [
+            "ot"
+          ],
+          "description": "Increase the sight radius of Scouts by 30%.",
+          "classes": [
+            "scout",
+            "technology"
+          ],
+          "displayClasses": [
+            "Scout Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 50,
+            "total": 150,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "stable"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+          "effects": [
+            {
+              "property": "lineOfSight",
+              "select": {
+                "id": [
+                  "scout",
+                  "warrior-scout"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.3,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "steeled-arrow",
       "name": "Steeled Arrow",
       "type": "technology",
@@ -4959,7 +5033,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/technologies/trade-bags-1.png",
-      "description": "Increase the amount of Gold Traders collect by +40%.",
+      "description": "Increase the amount of Gold Traders collect and Income from the Sultanhani Trade Network by +40%.",
       "variations": [
         {
           "id": "trade-bags-1",
@@ -4972,7 +5046,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Increase the amount of Gold Traders collect by +40%.",
+          "description": "Increase the amount of Gold Traders collect and Income from the Sultanhani Trade Network by +40%.",
           "classes": [
             "imperial",
             "council"
@@ -4990,7 +5064,10 @@
             "popcap": 0,
             "time": 0
           },
-          "producedBy": [],
+          "producedBy": [
+            "capital-town-center",
+            "town-center"
+          ],
           "icon": "https://data.aoe4world.com/images/technologies/trade-bags-1.png",
           "effects": []
         }
