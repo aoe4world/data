@@ -105,7 +105,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/adjustable-crossbars-4.png",
-      "description": "Reduce the reload time of Mangonels by -25%.",
+      "description": "Increase the attack speed of Mangonels by +25%.",
       "variations": [
         {
           "id": "adjustable-crossbars-4",
@@ -118,7 +118,7 @@
           "civs": [
             "hr"
           ],
-          "description": "Reduce the reload time of Mangonels by -25%.",
+          "description": "Increase the attack speed of Mangonels by +25%.",
           "classes": [
             "mangonel",
             "technology"
@@ -149,7 +149,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.75,
+              "value": 0.6699999999999999,
               "type": "passive"
             }
           ]
@@ -276,13 +276,13 @@
           ],
           "unique": false,
           "costs": {
-            "food": 200,
+            "food": 150,
             "wood": 0,
             "stone": 0,
-            "gold": 500,
-            "total": 700,
+            "gold": 350,
+            "total": 500,
             "popcap": 0,
-            "time": 45
+            "time": 30
           },
           "producedBy": [
             "dock"
@@ -502,77 +502,6 @@
               "effect": "change",
               "value": 1,
               "type": "passive"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "benediction",
-      "name": "Benediction",
-      "type": "technology",
-      "civs": [
-        "hr"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Construction Technology"
-      ],
-      "classes": [
-        "construction",
-        "technology"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/benediction-3.png",
-      "description": "Inspired Villagers construct +15% faster.",
-      "variations": [
-        {
-          "id": "benediction-3",
-          "baseId": "benediction",
-          "type": "technology",
-          "name": "Benediction",
-          "pbgid": 180214,
-          "attribName": "upgrade_benediction_hre",
-          "age": 3,
-          "civs": [
-            "hr"
-          ],
-          "description": "Inspired Villagers construct +15% faster.",
-          "classes": [
-            "construction",
-            "technology"
-          ],
-          "displayClasses": [
-            "Construction Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 75,
-            "stone": 0,
-            "gold": 200,
-            "total": 275,
-            "popcap": 0,
-            "time": 45
-          },
-          "producedBy": [
-            "regnitz-cathedral",
-            "monastery"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/benediction-3.png",
-          "effects": [
-            {
-              "property": "buildTime",
-              "select": {
-                "class": [
-                  [
-                    "building"
-                  ]
-                ]
-              },
-              "effect": "multiply",
-              "value": 0.8999999999999999,
-              "type": "influence"
             }
           ]
         }
@@ -1351,15 +1280,15 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Gathering Technology"
+        "Prelate Technology"
       ],
       "classes": [
-        "gathering",
+        "prelate",
         "technology"
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/devoutness-3.png",
-      "description": "Inspired Villagers gather resources +10% faster.",
+      "description": "Inspired Villagers gather resources +10% faster and construct buildings and defenses +25% quicker.",
       "variations": [
         {
           "id": "devoutness-3",
@@ -1372,13 +1301,13 @@
           "civs": [
             "hr"
           ],
-          "description": "Inspired Villagers gather resources +10% faster.",
+          "description": "Inspired Villagers gather resources +10% faster and construct buildings and defenses +25% quicker.",
           "classes": [
-            "gathering",
+            "prelate",
             "technology"
           ],
           "displayClasses": [
-            "Gathering Technology"
+            "Prelate Technology"
           ],
           "unique": true,
           "costs": {
@@ -1438,6 +1367,19 @@
               },
               "effect": "multiply",
               "value": 1.1,
+              "type": "influence"
+            },
+            {
+              "property": "buildTime",
+              "select": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.8,
               "type": "influence"
             }
           ]
@@ -4054,7 +3996,7 @@
           "baseId": "riveted-chain-mail",
           "type": "technology",
           "name": "Riveted Chain Mail",
-          "pbgid": 183055,
+          "pbgid": 2127191,
           "attribName": "upgrade_riveted_chain_armour_hre",
           "age": 2,
           "civs": [
@@ -4118,7 +4060,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/roller-shutter-triggers-4.png",
-      "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+      "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
       "variations": [
         {
           "id": "roller-shutter-triggers-4",
@@ -4131,7 +4073,7 @@
           "civs": [
             "hr"
           ],
-          "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+          "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
           "classes": [
             "springald",
             "technology"
@@ -4173,7 +4115,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.75,
+              "value": 0.6699999999999999,
               "type": "passive"
             }
           ]
@@ -4760,6 +4702,75 @@
               },
               "effect": "change",
               "value": 1,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spyglass",
+      "name": "Spyglass",
+      "type": "technology",
+      "civs": [
+        "hr"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Scout Technology"
+      ],
+      "classes": [
+        "scout",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+      "description": "Increase the sight radius of Scouts by 30%.",
+      "variations": [
+        {
+          "id": "spyglass-4",
+          "baseId": "spyglass",
+          "type": "technology",
+          "name": "Spyglass",
+          "pbgid": 2126207,
+          "attribName": "upgrade_scout_los_increase",
+          "age": 4,
+          "civs": [
+            "hr"
+          ],
+          "description": "Increase the sight radius of Scouts by 30%.",
+          "classes": [
+            "scout",
+            "technology"
+          ],
+          "displayClasses": [
+            "Scout Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 50,
+            "total": 150,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "stable"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+          "effects": [
+            {
+              "property": "lineOfSight",
+              "select": {
+                "id": [
+                  "scout",
+                  "warrior-scout"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.3,
               "type": "passive"
             }
           ]

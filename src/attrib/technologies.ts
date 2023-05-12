@@ -29,13 +29,13 @@ const increaseAttackSpeedByPercent = (speed: number, percent: number) => speed *
 const round = (n: number) => Math.round(n * 100) / 100; //(100/(100-33))
 
 export const technologyModifiers: Record<string, (values: number[]) => Modifier[]> = {
-  "arrow-volley": ([increase]) => [
-    // Longbowmen gain Arrow Volley, an activated ability that increases Longbowmen attack speed by +70%.
+  "arrow-volley": ([s]) => [
+    // Longbowmen gain Arrow Volley, an activated ability that reduces their time to attack by +1 second for a duration of 6 seconds.
     {
       property: "attackSpeed",
       select: { id: ["longbowman"] },
-      effect: "multiply",
-      value: increaseSpeedByPercent(1, increase),
+      effect: "change",
+      value: -1 * s,
       type: "ability",
     },
   ],
@@ -611,17 +611,6 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
 
   /// Unit technologies –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-  "setup-camp": ([h]) => [
-    // Longbowmen gain the ability to Setup Camp, which heals them for +1 health every 1 seconds.
-    {
-      property: "healingRate",
-      select: { id: ["longbowman"] },
-      effect: "change",
-      value: h,
-      type: "ability",
-    },
-  ],
-
   "armor-clad": ([a]) => [
     // Increase the ranged and melee armor of Men-at-Arms by +2.
     {
@@ -658,7 +647,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       select: { class: [["infantry"]] },
       target: { class: [["infantry"], ["cavalry"], ["building"]] },
       effect: "multiply",
-      value: increaseByPercent(1, i),
+      value: increaseByPercent(1, i - o),
       type: "bonus",
     },
   ],
@@ -733,45 +722,41 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  benediction: ([i]) => [
-    // Inspired Villagers construct +15% faster.
-    {
-      property: "buildTime", // Todo, branch out?
-      select: { class: [["building"]] },
-      effect: "multiply",
-      value: increaseSpeedByPercent(1, i),
-      type: "influence",
-    },
-  ],
-
-  devoutness: ([i]) => [
-    // Inspired Villagers gather resources +10% faster.
+  devoutness: ([g, c]) => [
+    // "Inspired Villagers gather resources +10% faster and construct buildings and defenses +25% quicker.
     {
       property: "goldGatherRate",
       select: { id: ["villagers"] },
       effect: "multiply",
-      value: increaseByPercent(1, i),
+      value: increaseByPercent(1, g),
       type: "influence",
     },
     {
       property: "foodGatherRate",
       select: { id: ["villagers"] },
       effect: "multiply",
-      value: increaseByPercent(1, i),
+      value: increaseByPercent(1, g),
       type: "influence",
     },
     {
       property: "woodGatherRate",
       select: { id: ["villagers"] },
       effect: "multiply",
-      value: increaseByPercent(1, i),
+      value: increaseByPercent(1, g),
       type: "influence",
     },
     {
       property: "stoneGatherRate",
       select: { id: ["villagers"] },
       effect: "multiply",
-      value: increaseByPercent(1, i),
+      value: increaseByPercent(1, g),
+      type: "influence",
+    },
+    {
+      property: "buildTime", // Todo, branch out?
+      select: { class: [["building"]] },
+      effect: "multiply",
+      value: increaseSpeedByPercent(1, c),
       type: "influence",
     },
   ],
@@ -1015,6 +1000,17 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
+  "merchant-guilds": ([i]) => [
+    // Active Traders generate 1 gold every 6 seconds.
+    {
+      property: "goldGatherRate",
+      select: { id: ["trader"] },
+      effect: "change",
+      value: i,
+      type: "passive",
+    },
+  ],
+
   "battle-hardened": ([i]) => [
     // Increase the health of Palace Guards by +30.
     {
@@ -1110,12 +1106,12 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
   ],
 
   "reload-drills": ([i]) => [
-    // Increase attack speed of Bombards by -33%
+    // Increase the attack speed of Bombards by +33%
     {
       property: "attackSpeed",
       select: { id: ["bombard"] },
       effect: "multiply",
-      value: increaseSpeedByPercent(1, i),
+      value: 1 + increaseAttackSpeedByPercent(1, i),
       type: "passive",
     },
   ],
@@ -1131,43 +1127,36 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  "reusable-barrels": ([d]) => [
-    // Reduce the cost of Nest of Bees by -25%.
+  "additional-barrels": ([d]) => [
+    // Nest of Bees receive 2 additional Rocket Arrows.
     {
-      property: "woodCost",
-      select: { id: ["nest-of-bees"] },
-      effect: "multiply",
-      value: decreaseByPercent(1, d),
-      type: "passive",
-    },
-    {
-      property: "goldCost",
-      select: { id: ["nest-of-bees"] },
-      effect: "multiply",
-      value: decreaseByPercent(1, d),
+      property: "burst",
+      select: { id: ["nest-of-bees", "clocktower-nest-of-bees"] },
+      effect: "change",
+      value: d,
       type: "passive",
     },
   ],
 
   "adjustable-crossbars": ([i]) => [
-    // Reduce the reload time of Mangonels by -25%.
+    // Increase the attack speed of Mangonels by +25%
     {
       property: "attackSpeed",
       select: { id: ["mangonel"] },
       effect: "multiply",
-      value: decreaseByPercent(1, i),
+      value: 1 + increaseAttackSpeedByPercent(1, i),
       type: "passive",
     },
   ],
 
   "adjustable-crossbars-improved": ([i, d]) => [
     // "Reduce the reload time of Mangonels by -35%.
-    // If Adjustable Crossbars has already been researched, reduce reload time by - 10 % instead.
+    // If Adjustable Crossbars has already been researched, increase attack speed by +10% instead.
     {
       property: "attackSpeed",
       select: { id: ["mangonel"] },
       effect: "multiply",
-      value: decreaseByPercentImproved(1, i, d),
+      value: 1 + increaseAttackSpeedByPercent(1, d),
       type: "passive",
     },
   ],
@@ -1577,7 +1566,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
   ],
 
   "roller-shutter-triggers": ([r, t]) => [
-    // Increase the weapon range of Springalds by +2 tiles and reduce their reload time by  +25%.
+    // Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.
     {
       property: "maxRange",
       select: { id: ["springald"] },
@@ -1589,7 +1578,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { id: ["springald"] },
       effect: "multiply",
-      value: decreaseByPercent(1, t),
+      value: 1 + increaseAttackSpeedByPercent(1, t),
       type: "passive",
     },
   ],
@@ -1609,6 +1598,17 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       select: { id: ["springald"] },
       effect: "multiply",
       value: decreaseByPercentImproved(1, t, t - ti),
+      type: "passive",
+    },
+  ],
+
+  spyglass: ([i]) => [
+    // Increase the sight radius of Scouts by 30%.
+    {
+      property: "lineOfSight",
+      select: { id: ["scout", "warrior-scout"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
       type: "passive",
     },
   ],
@@ -1885,12 +1885,12 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
   ],
 
   "composite-bows": ([r]) => [
-    // Reduce the reload time of Archers by -33%.
+    // Increase the attack speed of Archers by +33%.
     {
       property: "attackSpeed",
       select: { id: ["archer"] },
-      effect: "change", // (0,75/3)-(1,625-1,25)
-      value: increaseAttackSpeedByPercent(0.75, r), // 0.75 is archer reload time
+      effect: "multiply",
+      value: 1 + increaseAttackSpeedByPercent(1, r),
       type: "passive",
     },
   ],
@@ -2054,9 +2054,9 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
   ],
 
   "teak-masts": ([i]) => [
-    // Increase the move speed of military ships +10%
+    // Increase the health of military ships +10%
     {
-      property: "moveSpeed",
+      property: "hitpoints",
       select: common.allMillitaryShips,
       effect: "change",
       value: increaseByPercent(1, i),
@@ -2212,6 +2212,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
 
   "field-work": ([imam, i]) => [
     // Spawn 2 Imams at the Landmark Town Center. Imams area heal nearby units for 1 health every second.
+    // Increases to 2 health in Castle Age and 3 health in Imperial Age.
     {
       property: "healingRate",
       select: { id: ["imam"] },
@@ -2418,7 +2419,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
   ],
 
   "stone-commerce": ([]) => [
-    // Having 9 or more active Traders causes them to supply of Stone as well as Gold.
+    // Traders supply +10% Stone to their trades
     {
       property: "unknown",
       select: { id: ["trader", "trade-ship"] },
@@ -2429,7 +2430,8 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
   ],
 
   "stone-commerce-improved": ([]) => [
-    // Having 9 or more active Traders causes them to supply an increased amount of Stone as well as Gold.
+    // Traders supply +20% Stone to their trades
+    // if Stone Commerce has already been researched, supply +10% Stone instead
     {
       property: "unknown",
       select: { id: ["trader", "trade-ship"] },
@@ -2481,6 +2483,55 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       effect: "change",
       value: 1,
       type: "influence",
+    },
+  ],
+
+  "yam-network-improved": ([hp, s]) => [
+    // Yam speed aura applies to all units instead of just Traders and cavalry units.
+    // Improved Yam Network allows Traders to regenerate 1 health every 2 seconds while in Yam's aura."
+    {
+      property: "healingRate",
+      select: { class: [["infantry"], ["siege"]] },
+      effect: "change",
+      value: hp,
+      type: "influence",
+    },
+  ],
+
+  "steppe-lancers": ([h, r]) => [
+    // Increase Keshik healing by +1 Health per attack and attack speed by +10%.
+    {
+      property: "healingRate",
+      select: { id: ["keshik"] },
+      effect: "change",
+      value: h,
+      type: "passive",
+    },
+    {
+      property: "attackSpeed",
+      select: { id: ["keshik"] },
+      effect: "multiply",
+      value: 1 + increaseAttackSpeedByPercent(1, r),
+      type: "passive",
+    },
+  ],
+
+  "steppe-lancers-improved": ([oh, or, h, r]) => [
+    // Increase Keshik healing by +1 Health per attack and attack speed by +10%.
+    // If Steppe Lancers has already been researched, increase Keshik healing by +20 Health per attack and attack speed by +10%.
+    {
+      property: "healingRate",
+      select: { id: ["keshik"] },
+      effect: "change",
+      value: h,
+      type: "passive",
+    },
+    {
+      property: "attackSpeed",
+      select: { id: ["keshik"] },
+      effect: "multiply",
+      value: 1 + increaseAttackSpeedByPercent(1, r),
+      type: "passive",
     },
   ],
 
@@ -2561,17 +2612,6 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     // Replaces Springald Ship weaponry with Cannons which provide greater range and damage.
   ],
 
-  "double-time": ([s, d]) => [
-    // Streltsy gain the Double Time ability, which increases their movement speed by +30% for  10 seconds.
-    {
-      property: "moveSpeed",
-      select: { id: ["streltsy"] },
-      effect: "multiply",
-      value: increaseSpeedByPercent(1, s),
-      type: "ability",
-    },
-  ],
-
   "fine-tuned-guns": ([d, bd]) => [
     // Increase damage of Bombards by +20%. Bombards gain +50% damage vs Infantry.
     {
@@ -2627,8 +2667,8 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  "knight-sabers": ([d]) => [
-    // Increase the melee damage of Knights by +4.
+  "knight-poleaxes": ([d]) => [
+    // Knights equip a poleax, increasing their melee damage by +4.
     {
       property: "meleeAttack",
       select: { id: ["knight"] },
@@ -2638,8 +2678,9 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  "mounted-precision": ([r]) => [
-    // Increases the Horse Archers weapon range by 1.
+  "mounted-training": ([r]) => [
+    // Increase weapon range of Horse Archers by +1 and unlock the Gallop ability.
+    // \nGallop: Activate to move at maximum speed with +2 tile weapon range for 8 seconds.
     {
       property: "maxRange",
       select: { id: ["horse-archer"] },

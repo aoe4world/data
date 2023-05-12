@@ -309,7 +309,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 45,
+                  "value": 55,
                   "type": "passive"
                 }
               ],
@@ -686,9 +686,9 @@
               ],
               "durations": {
                 "aim": 0,
-                "windup": 0.25,
+                "windup": 0,
                 "attack": 0.125,
-                "winddown": 0.25,
+                "winddown": 0.5,
                 "reload": 0.75,
                 "setup": 0,
                 "teardown": 0,
@@ -735,9 +735,9 @@
               ],
               "durations": {
                 "aim": 0,
-                "windup": 0.25,
+                "windup": 0,
                 "attack": 0.125,
-                "winddown": 0.25,
+                "winddown": 0.5,
                 "reload": 0.75,
                 "setup": 0,
                 "teardown": 0,
@@ -784,9 +784,9 @@
               ],
               "durations": {
                 "aim": 0,
-                "windup": 0.25,
+                "windup": 0,
                 "attack": 0.125,
-                "winddown": 0.25,
+                "winddown": 0.5,
                 "reload": 0.75,
                 "setup": 0,
                 "teardown": 0,
@@ -843,11 +843,11 @@
       "baseId": "camel-rider",
       "age": 3,
       "costs": {
-        "food": 180,
-        "wood": 0,
+        "food": 160,
+        "wood": 30,
         "stone": 0,
-        "gold": 60,
-        "total": 240,
+        "gold": 30,
+        "total": 220,
         "popcap": 1,
         "time": 35
       },
@@ -1727,6 +1727,195 @@
       "shared": {}
     },
     {
+      "id": "ghulam",
+      "name": "Ghulam",
+      "type": "unit",
+      "civs": [
+        "ab"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Heavy Melee Infantry"
+      ],
+      "classes": [
+        "heavy",
+        "melee",
+        "infantry"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/ghulam-3.png",
+      "description": "Tough infantry that deal two attacks in rapid succession.\n+ High armor\n+ Higher attack damage on charge\n- Lower base attack damage than a Man-at-Arms\n- Slow movement\n- Countered by Knights, Lancers, and Crossbowmen",
+      "variations": [
+        {
+          "id": "ghulam-3",
+          "pbgid": 199721,
+          "attribName": "unit_manatarms_3_abb",
+          "civs": [
+            "ab"
+          ]
+        },
+        {
+          "id": "ghulam-4",
+          "pbgid": 199722,
+          "attribName": "unit_manatarms_4_abb",
+          "civs": [
+            "ab"
+          ]
+        }
+      ],
+      "baseId": "ghulam",
+      "age": 3,
+      "costs": {
+        "food": 120,
+        "wood": 0,
+        "stone": 0,
+        "gold": 30,
+        "total": 150,
+        "popcap": 1,
+        "time": 22.5
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "hitpoints": 195,
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.1875
+      },
+      "shared": {
+        "ghulam-3": {
+          "name": "Ghulam",
+          "weapons": [
+            {
+              "name": "Sword",
+              "type": "melee",
+              "damage": 10,
+              "speed": 1.125,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_manatarms_3_abb",
+              "pbgid": 199547
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch",
+              "pbgid": 123518
+            }
+          ],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 4
+            },
+            {
+              "type": "ranged",
+              "value": 4
+            }
+          ],
+          "id": "ghulam-3"
+        },
+        "ghulam-4": {
+          "name": "Elite Ghulam",
+          "age": 4,
+          "icon": "https://data.aoe4world.com/images/units/ghulam-4.png",
+          "hitpoints": 225,
+          "weapons": [
+            {
+              "name": "Sword",
+              "type": "melee",
+              "damage": 12,
+              "speed": 1.125,
+              "range": {
+                "min": 0,
+                "max": 0.295
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_manatarms_4_abb",
+              "pbgid": 199551
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch",
+              "pbgid": 123518
+            }
+          ],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 5
+            },
+            {
+              "type": "ranged",
+              "value": 5
+            }
+          ],
+          "id": "ghulam-4"
+        }
+      }
+    },
+    {
       "id": "handcannoneer",
       "name": "Handcannoneer",
       "type": "unit",
@@ -2405,195 +2594,6 @@
       }
     },
     {
-      "id": "man-at-arms",
-      "name": "Man-at-Arms",
-      "type": "unit",
-      "civs": [
-        "ab"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Heavy Melee Infantry"
-      ],
-      "classes": [
-        "heavy",
-        "melee",
-        "infantry"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/man-at-arms-3.png",
-      "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement\n- Countered by Knights, Lancers, and Crossbowmen",
-      "variations": [
-        {
-          "id": "man-at-arms-3",
-          "pbgid": 199721,
-          "attribName": "unit_manatarms_3_abb",
-          "civs": [
-            "ab"
-          ]
-        },
-        {
-          "id": "man-at-arms-4",
-          "pbgid": 199722,
-          "attribName": "unit_manatarms_4_abb",
-          "civs": [
-            "ab"
-          ]
-        }
-      ],
-      "baseId": "man-at-arms",
-      "age": 3,
-      "costs": {
-        "food": 100,
-        "wood": 0,
-        "stone": 0,
-        "gold": 20,
-        "total": 120,
-        "popcap": 1,
-        "time": 22.5
-      },
-      "producedBy": [
-        "barracks"
-      ],
-      "hitpoints": 155,
-      "sight": {
-        "line": 36,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.125
-      },
-      "shared": {
-        "man-at-arms-3": {
-          "name": "Man-at-Arms",
-          "weapons": [
-            {
-              "name": "Sword",
-              "type": "melee",
-              "damage": 12,
-              "speed": 1.375,
-              "range": {
-                "min": 0,
-                "max": 0.295
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.5,
-                "attack": 0.125,
-                "winddown": 0.75,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "attribName": "weapon_manatarms_3_abb",
-              "pbgid": 199547
-            },
-            {
-              "name": "Torch",
-              "type": "fire",
-              "damage": 10,
-              "speed": 2.125,
-              "range": {
-                "min": 0,
-                "max": 1.25
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.75,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 1.25
-              },
-              "attribName": "weapon_torch",
-              "pbgid": 123518
-            }
-          ],
-          "armor": [
-            {
-              "type": "melee",
-              "value": 4
-            },
-            {
-              "type": "ranged",
-              "value": 4
-            }
-          ],
-          "id": "man-at-arms-3"
-        },
-        "man-at-arms-4": {
-          "name": "Elite Man-at-Arms",
-          "age": 4,
-          "icon": "https://data.aoe4world.com/images/units/man-at-arms-4.png",
-          "hitpoints": 180,
-          "weapons": [
-            {
-              "name": "Sword",
-              "type": "melee",
-              "damage": 14,
-              "speed": 1.375,
-              "range": {
-                "min": 0,
-                "max": 0.295
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.5,
-                "attack": 0.125,
-                "winddown": 0.75,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "attribName": "weapon_manatarms_4_abb",
-              "pbgid": 199551
-            },
-            {
-              "name": "Torch",
-              "type": "fire",
-              "damage": 10,
-              "speed": 2.125,
-              "range": {
-                "min": 0,
-                "max": 1.25
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.75,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 1.25
-              },
-              "attribName": "weapon_torch",
-              "pbgid": 123518
-            }
-          ],
-          "armor": [
-            {
-              "type": "melee",
-              "value": 5
-            },
-            {
-              "type": "ranged",
-              "value": 5
-            }
-          ],
-          "id": "man-at-arms-4"
-        }
-      }
-    },
-    {
       "id": "mangonel",
       "name": "Mangonel",
       "type": "unit",
@@ -2886,86 +2886,6 @@
           },
           "movement": {
             "speed": 1.625
-          }
-        }
-      ],
-      "shared": {}
-    },
-    {
-      "id": "siege-tower",
-      "name": "Siege Tower",
-      "type": "unit",
-      "civs": [
-        "ab"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Siege"
-      ],
-      "classes": [
-        "siege"
-      ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
-      "description": "Tall infantry transport with no combat capability. Allows garrisoned infantry to be unloaded directly onto Stone Walls.\n+ High ranged armor\n- Cannot attack\n- Slow movement speed",
-      "variations": [
-        {
-          "id": "siege-tower-1",
-          "baseId": "siege-tower",
-          "type": "unit",
-          "name": "Siege Tower",
-          "pbgid": 128524,
-          "attribName": "unit_siege_tower_3",
-          "age": 1,
-          "civs": [
-            "ab"
-          ],
-          "description": "Tall infantry transport with no combat capability. Allows garrisoned infantry to be unloaded directly onto Stone Walls.\n+ High ranged armor\n- Cannot attack\n- Slow movement speed",
-          "classes": [
-            "siege"
-          ],
-          "displayClasses": [
-            "Siege"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 125,
-            "stone": 0,
-            "gold": 0,
-            "total": 125,
-            "popcap": 1,
-            "time": 45
-          },
-          "producedBy": [
-            "trader",
-            "unit-trade-cart-free-3-abb",
-            "unit-trade-cart-free-4-abb"
-          ],
-          "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
-          "hitpoints": 480,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 8
-            }
-          ],
-          "sight": {
-            "line": 36,
-            "height": 10
-          },
-          "movement": {
-            "speed": 0.625
-          },
-          "garrison": {
-            "capacity": 8,
-            "classes": [
-              "infantry",
-              "villager",
-              "infantry ranged",
-              "monk"
-            ]
           }
         }
       ],
@@ -3465,7 +3385,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/units/trade-ship-3.png",
-      "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or another Dock. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
+      "description": "Trade Ships generate Gold and Wood when assigned to a trade route with a Coastal Trade Post or another player's Dock.\n- No combat",
       "variations": [
         {
           "id": "trade-ship-2",
@@ -3478,7 +3398,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Trade Ships generate Gold when assigned to a trade route with a Coastal Trade Post or another Dock. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trade Ship will make repeated trips between its Home Dock and the trade target. You can assign a new Home Dock if you wish to.\n- No combat",
+          "description": "Trade Ships generate Gold and Wood when assigned to a trade route with a Coastal Trade Post or another player's Dock.\n- No combat",
           "classes": [
             "worker",
             "ship"

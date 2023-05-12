@@ -72,7 +72,7 @@
       "civs": [
         "en"
       ],
-      "description": "Reduce the reload time of Mangonels by -25%.",
+      "description": "Increase the attack speed of Mangonels by +25%.",
       "classes": [
         "mangonel",
         "technology"
@@ -103,7 +103,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -218,11 +218,11 @@
       ],
       "unique": true,
       "costs": {
-        "food": 100,
+        "food": 150,
         "wood": 0,
         "stone": 0,
-        "gold": 250,
-        "total": 350,
+        "gold": 350,
+        "total": 500,
         "popcap": 0,
         "time": 60
       },
@@ -277,13 +277,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 200,
+        "food": 150,
         "wood": 0,
         "stone": 0,
-        "gold": 500,
-        "total": 700,
+        "gold": 350,
+        "total": 500,
         "popcap": 0,
-        "time": 45
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -361,7 +361,7 @@
       "civs": [
         "en"
       ],
-      "description": "Longbowmen gain Arrow Volley, an activated ability that increases Longbowmen attack speed by +70%.",
+      "description": "Longbowmen gain Arrow Volley, an activated ability that reduces their time to attack by +1 second for a duration of 6 seconds.",
       "classes": [
         "longbowman",
         "ability",
@@ -393,8 +393,8 @@
               "longbowman"
             ]
           },
-          "effect": "multiply",
-          "value": 0.6,
+          "effect": "change",
+          "value": -1,
           "type": "ability"
         }
       ]
@@ -2410,7 +2410,7 @@
       "civs": [
         "en"
       ],
-      "description": "Increase the Network of Castles attack speed bonus from +15% to +40%.",
+      "description": "Increase the Network of Castles attack speed bonus from +20% to +40%.",
       "classes": [
         "defensive",
         "technology"
@@ -2458,7 +2458,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 1.4,
+          "value": 1.2,
           "type": "bonus"
         }
       ]
@@ -2704,7 +2704,7 @@
       "civs": [
         "en"
       ],
-      "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+      "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
       "classes": [
         "springald",
         "technology"
@@ -2746,57 +2746,8 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "setup-camp-2",
-      "baseId": "setup-camp",
-      "type": "technology",
-      "name": "Setup Camp",
-      "pbgid": 202553,
-      "attribName": "upgrade_longbow_make_camp_eng",
-      "age": 2,
-      "civs": [
-        "en"
-      ],
-      "description": "Longbowmen gain the ability to Setup Camp, which heals them for +1 health every 1 seconds.",
-      "classes": [
-        "longbowman",
-        "ability",
-        "unlock"
-      ],
-      "displayClasses": [
-        "Longbowman Ability Unlock"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 25,
-        "wood": 0,
-        "stone": 0,
-        "gold": 75,
-        "total": 100,
-        "popcap": 0,
-        "time": 45
-      },
-      "producedBy": [
-        "council-hall",
-        "archery-range"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/setup-camp-2.png",
-      "effects": [
-        {
-          "property": "healingRate",
-          "select": {
-            "id": [
-              "longbowman"
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "ability"
         }
       ]
     },
@@ -3230,6 +3181,54 @@
           },
           "effect": "change",
           "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "spyglass-4",
+      "baseId": "spyglass",
+      "type": "technology",
+      "name": "Spyglass",
+      "pbgid": 2126207,
+      "attribName": "upgrade_scout_los_increase",
+      "age": 4,
+      "civs": [
+        "en"
+      ],
+      "description": "Increase the sight radius of Scouts by 30%.",
+      "classes": [
+        "scout",
+        "technology"
+      ],
+      "displayClasses": [
+        "Scout Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 50,
+        "total": 150,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+      "effects": [
+        {
+          "property": "lineOfSight",
+          "select": {
+            "id": [
+              "scout",
+              "warrior-scout"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.3,
           "type": "passive"
         }
       ]
@@ -3866,7 +3865,7 @@
       "civs": [
         "hr"
       ],
-      "description": "Reduce the reload time of Mangonels by -25%.",
+      "description": "Increase the attack speed of Mangonels by +25%.",
       "classes": [
         "mangonel",
         "technology"
@@ -3897,7 +3896,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -3979,13 +3978,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 200,
+        "food": 150,
         "wood": 0,
         "stone": 0,
-        "gold": 500,
-        "total": 700,
+        "gold": 350,
+        "total": 500,
         "popcap": 0,
-        "time": 45
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -4161,56 +4160,6 @@
           "effect": "change",
           "value": 1,
           "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "benediction-3",
-      "baseId": "benediction",
-      "type": "technology",
-      "name": "Benediction",
-      "pbgid": 180214,
-      "attribName": "upgrade_benediction_hre",
-      "age": 3,
-      "civs": [
-        "hr"
-      ],
-      "description": "Inspired Villagers construct +15% faster.",
-      "classes": [
-        "construction",
-        "technology"
-      ],
-      "displayClasses": [
-        "Construction Technology"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 75,
-        "stone": 0,
-        "gold": 200,
-        "total": 275,
-        "popcap": 0,
-        "time": 45
-      },
-      "producedBy": [
-        "regnitz-cathedral",
-        "monastery"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/benediction-3.png",
-      "effects": [
-        {
-          "property": "buildTime",
-          "select": {
-            "class": [
-              [
-                "building"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.8999999999999999,
-          "type": "influence"
         }
       ]
     },
@@ -4770,13 +4719,13 @@
       "civs": [
         "hr"
       ],
-      "description": "Inspired Villagers gather resources +10% faster.",
+      "description": "Inspired Villagers gather resources +10% faster and construct buildings and defenses +25% quicker.",
       "classes": [
-        "gathering",
+        "prelate",
         "technology"
       ],
       "displayClasses": [
-        "Gathering Technology"
+        "Prelate Technology"
       ],
       "unique": true,
       "costs": {
@@ -4836,6 +4785,19 @@
           },
           "effect": "multiply",
           "value": 1.1,
+          "type": "influence"
+        },
+        {
+          "property": "buildTime",
+          "select": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.8,
           "type": "influence"
         }
       ]
@@ -6712,7 +6674,7 @@
       "baseId": "riveted-chain-mail",
       "type": "technology",
       "name": "Riveted Chain Mail",
-      "pbgid": 183055,
+      "pbgid": 2127191,
       "attribName": "upgrade_riveted_chain_armour_hre",
       "age": 2,
       "civs": [
@@ -6768,7 +6730,7 @@
       "civs": [
         "hr"
       ],
-      "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+      "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
       "classes": [
         "springald",
         "technology"
@@ -6810,7 +6772,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -7247,6 +7209,54 @@
           },
           "effect": "change",
           "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "spyglass-4",
+      "baseId": "spyglass",
+      "type": "technology",
+      "name": "Spyglass",
+      "pbgid": 2126207,
+      "attribName": "upgrade_scout_los_increase",
+      "age": 4,
+      "civs": [
+        "hr"
+      ],
+      "description": "Increase the sight radius of Scouts by 30%.",
+      "classes": [
+        "scout",
+        "technology"
+      ],
+      "displayClasses": [
+        "Scout Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 50,
+        "total": 150,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+      "effects": [
+        {
+          "property": "lineOfSight",
+          "select": {
+            "id": [
+              "scout",
+              "warrior-scout"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.3,
           "type": "passive"
         }
       ]
@@ -7801,7 +7811,7 @@
       "civs": [
         "fr"
       ],
-      "description": "Reduce the reload time of Mangonels by -25%.",
+      "description": "Increase the attack speed of Mangonels by +25%.",
       "classes": [
         "mangonel",
         "technology"
@@ -7832,7 +7842,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -7913,13 +7923,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 200,
+        "food": 150,
         "wood": 0,
         "stone": 0,
-        "gold": 500,
-        "total": 700,
+        "gold": 350,
+        "total": 500,
         "popcap": 0,
-        "time": 45
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -8549,7 +8559,7 @@
       "civs": [
         "fr"
       ],
-      "description": "Reduce the reload time of Arbalétriers by -25%.",
+      "description": "Increase the attack speed of Arbalétriers by +25%.",
       "classes": [
         "arbalétrier",
         "technology"
@@ -8596,7 +8606,7 @@
       "civs": [
         "fr"
       ],
-      "description": "Reduce the reload time of Arbalétriers by -25%.",
+      "description": "Increase the attack speed of Arbalétriers by +25%.",
       "classes": [
         "arbalétrier",
         "technology"
@@ -10079,17 +10089,17 @@
       ]
     },
     {
-      "id": "long-guns-3",
+      "id": "long-guns-4",
       "baseId": "long-guns",
       "type": "technology",
       "name": "Long Guns",
       "pbgid": 2033833,
       "attribName": "upgrade_naval_long_guns_fre",
-      "age": 3,
+      "age": 4,
       "civs": [
         "fr"
       ],
-      "description": "Increase the damage of naval cannons by +10%.",
+      "description": "Increase the damage of naval cannons by +15%.",
       "classes": [
         "naval",
         "technology"
@@ -10100,17 +10110,17 @@
       "unique": true,
       "costs": {
         "food": 0,
-        "wood": 150,
+        "wood": 200,
         "stone": 0,
-        "gold": 350,
-        "total": 500,
+        "gold": 500,
+        "total": 700,
         "popcap": 0,
         "time": 30
       },
       "producedBy": [
         "dock"
       ],
-      "icon": "https://data.aoe4world.com/images/technologies/long-guns-3.png",
+      "icon": "https://data.aoe4world.com/images/technologies/long-guns-4.png",
       "effects": [
         {
           "property": "rangedAttack",
@@ -10125,7 +10135,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 1.1,
+          "value": 1.15,
           "type": "passive"
         }
       ]
@@ -10224,6 +10234,53 @@
               [
                 "cavalry"
               ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "merchant-guilds-4",
+      "baseId": "merchant-guilds",
+      "type": "technology",
+      "name": "Merchant Guilds",
+      "pbgid": 2137695,
+      "attribName": "upgrade_market_trickle_fre",
+      "age": 4,
+      "civs": [
+        "fr"
+      ],
+      "description": "Active Traders generate 1 gold every 6 seconds.",
+      "classes": [
+        "trade",
+        "technology"
+      ],
+      "displayClasses": [
+        "Trade Technology"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 200,
+        "wood": 0,
+        "stone": 0,
+        "gold": 500,
+        "total": 700,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "chamber-of-commerce",
+        "market"
+      ],
+      "effects": [
+        {
+          "property": "goldGatherRate",
+          "select": {
+            "id": [
+              "trader"
             ]
           },
           "effect": "change",
@@ -10570,7 +10627,7 @@
       "civs": [
         "fr"
       ],
-      "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+      "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
       "classes": [
         "springald",
         "technology"
@@ -10612,7 +10669,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -11101,6 +11158,55 @@
       ]
     },
     {
+      "id": "spyglass-4",
+      "baseId": "spyglass",
+      "type": "technology",
+      "name": "Spyglass",
+      "pbgid": 2126207,
+      "attribName": "upgrade_scout_los_increase",
+      "age": 4,
+      "civs": [
+        "fr"
+      ],
+      "description": "Increase the sight radius of Scouts by 30%.",
+      "classes": [
+        "scout",
+        "technology"
+      ],
+      "displayClasses": [
+        "Scout Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 50,
+        "total": 150,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "school-of-cavalry",
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+      "effects": [
+        {
+          "property": "lineOfSight",
+          "select": {
+            "id": [
+              "scout",
+              "warrior-scout"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.3,
+          "type": "passive"
+        }
+      ]
+    },
+    {
       "id": "steeled-arrow-2",
       "baseId": "steeled-arrow",
       "type": "technology",
@@ -11530,6 +11636,57 @@
       ]
     },
     {
+      "id": "additional-barrels-4",
+      "baseId": "additional-barrels",
+      "type": "technology",
+      "name": "Additional Barrels",
+      "pbgid": 217078,
+      "attribName": "upgrade_gunpowder_cost_chi",
+      "age": 4,
+      "civs": [
+        "ch"
+      ],
+      "description": "Nest of Bees receive 2 additional Rocket Arrows.",
+      "classes": [
+        "nest",
+        "of",
+        "bees",
+        "technology"
+      ],
+      "displayClasses": [
+        "Nest of Bees Technology"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 0,
+        "wood": 150,
+        "stone": 0,
+        "gold": 350,
+        "total": 500,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "astronomical-clocktower",
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/additional-barrels-4.png",
+      "effects": [
+        {
+          "property": "burst",
+          "select": {
+            "id": [
+              "nest-of-bees",
+              "clocktower-nest-of-bees"
+            ]
+          },
+          "effect": "change",
+          "value": 2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
       "id": "ancient-techniques-4",
       "baseId": "ancient-techniques",
       "type": "technology",
@@ -11697,13 +11854,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 200,
+        "food": 150,
         "wood": 0,
         "stone": 0,
-        "gold": 500,
-        "total": 700,
+        "gold": 350,
+        "total": 500,
         "popcap": 0,
-        "time": 45
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -14157,7 +14314,7 @@
       "civs": [
         "ch"
       ],
-      "description": "Increase attack speed of Bombards by -33%.",
+      "description": "Increase the attack speed of Bombards by +33%.",
       "classes": [
         "bombard",
         "technology"
@@ -14189,68 +14346,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "reusable-barrels-4",
-      "baseId": "reusable-barrels",
-      "type": "technology",
-      "name": "Reusable Barrels",
-      "pbgid": 217078,
-      "attribName": "upgrade_gunpowder_cost_chi",
-      "age": 4,
-      "civs": [
-        "ch"
-      ],
-      "description": "Reduce the cost of Nest of Bees by -25%.",
-      "classes": [
-        "nest",
-        "of",
-        "bees",
-        "technology"
-      ],
-      "displayClasses": [
-        "Nest of Bees Technology"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 150,
-        "stone": 0,
-        "gold": 350,
-        "total": 500,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "astronomical-clocktower",
-        "siege-workshop"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/reusable-barrels-4.png",
-      "effects": [
-        {
-          "property": "woodCost",
-          "select": {
-            "id": [
-              "nest-of-bees"
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.75,
-          "type": "passive"
-        },
-        {
-          "property": "goldCost",
-          "select": {
-            "id": [
-              "nest-of-bees"
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.75,
+          "value": 0.5,
           "type": "passive"
         }
       ]
@@ -14266,7 +14362,7 @@
       "civs": [
         "ch"
       ],
-      "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+      "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
       "classes": [
         "springald",
         "technology"
@@ -14309,7 +14405,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -14695,6 +14791,54 @@
           },
           "effect": "change",
           "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "spyglass-4",
+      "baseId": "spyglass",
+      "type": "technology",
+      "name": "Spyglass",
+      "pbgid": 2126346,
+      "attribName": "upgrade_scout_los_increase_chi",
+      "age": 4,
+      "civs": [
+        "ch"
+      ],
+      "description": "Increase the sight radius of Scouts by 30%.",
+      "classes": [
+        "scout",
+        "technology"
+      ],
+      "displayClasses": [
+        "Scout Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 50,
+        "total": 150,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+      "effects": [
+        {
+          "property": "lineOfSight",
+          "select": {
+            "id": [
+              "scout",
+              "warrior-scout"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.3,
           "type": "passive"
         }
       ]
@@ -15191,7 +15335,7 @@
       "civs": [
         "de"
       ],
-      "description": "Reduce the reload time of Mangonels by -25%.",
+      "description": "Increase the attack speed of Mangonels by +25%.",
       "classes": [
         "mangonel",
         "technology"
@@ -15222,7 +15366,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -15415,7 +15559,7 @@
         "gold": 0,
         "total": 0,
         "popcap": 0,
-        "time": 225
+        "time": 150
       },
       "producedBy": [
         "dock"
@@ -18160,7 +18304,7 @@
       "civs": [
         "de"
       ],
-      "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+      "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
       "classes": [
         "springald",
         "technology"
@@ -18202,7 +18346,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -18746,6 +18890,54 @@
           },
           "effect": "change",
           "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "spyglass-4",
+      "baseId": "spyglass",
+      "type": "technology",
+      "name": "Spyglass",
+      "pbgid": 2126347,
+      "attribName": "upgrade_scout_los_increase_sul",
+      "age": 4,
+      "civs": [
+        "de"
+      ],
+      "description": "Increase the sight radius of Scouts by 30%.",
+      "classes": [
+        "scout",
+        "technology"
+      ],
+      "displayClasses": [
+        "Scout Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0,
+        "time": 90
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+      "effects": [
+        {
+          "property": "lineOfSight",
+          "select": {
+            "id": [
+              "scout",
+              "warrior-scout"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.3,
           "type": "passive"
         }
       ]
@@ -19391,7 +19583,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Reduce the reload time of Mangonels by -25%.",
+      "description": "Increase the attack speed of Mangonels by +25%.",
       "classes": [
         "mangonel",
         "technology"
@@ -19422,7 +19614,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -19611,13 +19803,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 200,
+        "food": 150,
         "wood": 0,
         "stone": 0,
-        "gold": 500,
-        "total": 700,
+        "gold": 350,
+        "total": 500,
         "popcap": 0,
-        "time": 45
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -20061,10 +20253,12 @@
       "description": "Increase the armor of Camel Riders by +2.",
       "classes": [
         "camel",
-        "technology"
+        "rider",
+        "technology",
+        "2/2"
       ],
       "displayClasses": [
-        "Camel Technology"
+        "Camel Rider Technology 2/2"
       ],
       "unique": true,
       "costs": {
@@ -20120,20 +20314,21 @@
       "classes": [
         "camel",
         "rider",
-        "technology"
+        "technology",
+        "1/2"
       ],
       "displayClasses": [
-        "Camel Rider Technology"
+        "Camel Rider Technology 1/2"
       ],
       "unique": true,
       "costs": {
-        "food": 100,
+        "food": 75,
         "wood": 0,
         "stone": 0,
-        "gold": 250,
-        "total": 350,
+        "gold": 200,
+        "total": 275,
         "popcap": 0,
-        "time": 60
+        "time": 45
       },
       "producedBy": [
         "stable"
@@ -20339,7 +20534,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Reduce the reload time of Archers by -33%.",
+      "description": "Increase the attack speed of Archers by +33%.",
       "classes": [
         "archer",
         "technology"
@@ -20369,8 +20564,8 @@
               "archer"
             ]
           },
-          "effect": "change",
-          "value": -0.375,
+          "effect": "multiply",
+          "value": 0.5,
           "type": "passive"
         }
       ]
@@ -20490,7 +20685,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Constructs the Culture Wing.\nThe following cultural technologies become available:\n• Preservation of Knowledge (Feudal Age)\n• Medical Centers (Castle Age)\n• Faith (Imperial Age)",
+      "description": "Constructs the Culture Wing.\nThe following cultural technologies become available:\n• Preservation of Knowledge (Age II)\n• Medical Centers (Age III)\n• Proselytization (Age IV)",
       "classes": [
         "advance",
         "to",
@@ -20822,7 +21017,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Constructs the Economic Wing.\nThe following economic technologies become available:\n• Fertile Crescent (Feudal Age)\n• Agriculture (Castle Age)\n• Improved Processing (Imperial Age)",
+      "description": "Constructs the Economic Wing.\nThe following economic technologies become available:\n• Fertile Crescent (Age II)\n• Agriculture (Age III)\n• Improved Processing (Age IV)",
       "classes": [
         "advance",
         "to",
@@ -22249,7 +22444,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Constructs the Military Wing.\nSpawns the following units upon completion:\n• 2 Spearmen & 2 Archers (Feudal Age)\n• 2 Camel Riders (Castle Age)\n• 3 Handcannoneers (Imperial Age)\nThe following military technologies become available:\n• Boot Camp (Feudal Age)\n• Composite Bows (Castle Age)\n• Camel Support (Imperial Age)",
+      "description": "Constructs the Military Wing. Upon completion, grants 2 Spearmen & 2 Archers (Age II), 2 Camel Riders (Age III), or 3 Handcannoneers (Age IV).\nUnlocks:\n•Boot Camp (Age II)\n•Composite Bows (Age III)\n•Camel Support (Age IV)",
       "classes": [
         "advance",
         "to",
@@ -22545,7 +22740,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Reduce the cost of all technology by -20%.",
+      "description": "Reduce the cost of all technology and Age advancements by -20%.",
       "classes": [
         "research",
         "technology"
@@ -22720,7 +22915,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+      "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
       "classes": [
         "springald",
         "technology"
@@ -22762,7 +22957,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -23150,6 +23345,54 @@
       ]
     },
     {
+      "id": "spyglass-4",
+      "baseId": "spyglass",
+      "type": "technology",
+      "name": "Spyglass",
+      "pbgid": 2126345,
+      "attribName": "upgrade_scout_los_increase_abb",
+      "age": 4,
+      "civs": [
+        "ab"
+      ],
+      "description": "Increase the sight radius of Scouts by 30%.",
+      "classes": [
+        "scout",
+        "technology"
+      ],
+      "displayClasses": [
+        "Scout Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 50,
+        "total": 150,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+      "effects": [
+        {
+          "property": "lineOfSight",
+          "select": {
+            "id": [
+              "scout",
+              "warrior-scout"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.3,
+          "type": "passive"
+        }
+      ]
+    },
+    {
       "id": "steeled-arrow-2",
       "baseId": "steeled-arrow",
       "type": "technology",
@@ -23321,7 +23564,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Increase the move speed of military ships +10.",
+      "description": "Increase the health of military ships +10%.",
       "classes": [
         "naval",
         "technology"
@@ -23332,20 +23575,20 @@
       "unique": true,
       "costs": {
         "food": 0,
-        "wood": 100,
+        "wood": 75,
         "stone": 0,
-        "gold": 150,
-        "total": 250,
+        "gold": 125,
+        "total": 200,
         "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "dock"
       ],
-      "icon": "https://data.aoe4world.com/images/technologies/teak-masts-3.png",
+      "icon": "https://data.aoe4world.com/images/technologies/teak-masts-2.png",
       "effects": [
         {
-          "property": "moveSpeed",
+          "property": "hitpoints",
           "select": {
             "class": [
               [
@@ -23484,7 +23727,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Constructs the Trade Wing.\nSpawns Traders upon completion and acts as a Home Market.\n• 3 Traders (Feudal Age)\n• 4 Traders (Castle Age)\n• 5 Traders (Imperial Age)\nThe following trade technologies become available:\n• Grand Bazaar (Feudal Age)\n• Armored Caravans (Castle Age)\n• Spice Roads (Imperial Age)",
+      "description": "Constructs the Trade Wing. Acts as a home market and grants 3, 4, or 5 Traders upon completion (based on Age).\nUnlocks:\n•Grand Bazaar (Age II)\n•Armored Caravans (Age III)\n•Spice Roads (Age IV)",
       "classes": [
         "advance",
         "to",
@@ -23704,7 +23947,7 @@
       "civs": [
         "ma"
       ],
-      "description": "Reduce the reload time of Mangonels by -25%.",
+      "description": "Increase the attack speed of Mangonels by +25%.",
       "classes": [
         "mangonel",
         "technology"
@@ -23735,7 +23978,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -23816,13 +24059,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 200,
+        "food": 150,
         "wood": 0,
         "stone": 0,
-        "gold": 500,
-        "total": 700,
+        "gold": 350,
+        "total": 500,
         "popcap": 0,
-        "time": 45
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -24269,12 +24512,12 @@
       "unique": true,
       "costs": {
         "food": 0,
-        "wood": 100,
+        "wood": 50,
         "stone": 0,
-        "gold": 250,
-        "total": 350,
+        "gold": 125,
+        "total": 175,
         "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -25532,11 +25775,11 @@
       ],
       "unique": true,
       "costs": {
-        "food": 100,
+        "food": 150,
         "wood": 0,
         "stone": 0,
-        "gold": 250,
-        "total": 350,
+        "gold": 350,
+        "total": 500,
         "popcap": 0,
         "time": 60
       },
@@ -25818,7 +26061,8 @@
         "time": 60
       },
       "producedBy": [
-        "barracks"
+        "barracks",
+        "farimba-garrison"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/local-knowledge-3.png",
       "effects": [
@@ -26429,7 +26673,7 @@
       "civs": [
         "ma"
       ],
-      "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+      "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
       "classes": [
         "springald",
         "technology"
@@ -26471,7 +26715,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -26858,6 +27102,54 @@
           },
           "effect": "change",
           "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "spyglass-4",
+      "baseId": "spyglass",
+      "type": "technology",
+      "name": "Spyglass",
+      "pbgid": 2126348,
+      "attribName": "upgrade_scout_los_increase_mal",
+      "age": 4,
+      "civs": [
+        "ma"
+      ],
+      "description": "Increase the sight radius of Scouts by 30%.",
+      "classes": [
+        "scout",
+        "technology"
+      ],
+      "displayClasses": [
+        "Scout Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 50,
+        "total": 150,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+      "effects": [
+        {
+          "property": "lineOfSight",
+          "select": {
+            "id": [
+              "scout",
+              "warrior-scout"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.3,
           "type": "passive"
         }
       ]
@@ -27472,7 +27764,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Reduce the reload time of Mangonels by -25%.",
+      "description": "Increase the attack speed of Mangonels by +25%.",
       "classes": [
         "mangonel",
         "technology"
@@ -27503,7 +27795,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -27519,7 +27811,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Reduce the reload time of Mangonels by -35%.\nIf Adjustable Crossbars has already been researched, reduce reload time by -10% instead.",
+      "description": "Increase the attack speed of Mangonels by +35%.\nIf Adjustable Crossbars has already been researched, increase attack speed by +10% instead.",
       "classes": [
         "mangonel",
         "technology"
@@ -27550,7 +27842,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.87,
+          "value": 0.89,
           "type": "passive"
         }
       ]
@@ -27631,13 +27923,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 200,
+        "food": 150,
         "wood": 0,
         "stone": 0,
-        "gold": 500,
-        "total": 700,
+        "gold": 350,
+        "total": 500,
         "popcap": 0,
-        "time": 45
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -28083,6 +28375,62 @@
           },
           "effect": "multiply",
           "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "court-architects-4",
+      "baseId": "court-architects",
+      "type": "technology",
+      "name": "Court Architects",
+      "pbgid": 128427,
+      "attribName": "upgrade_tech_university_architecture_4",
+      "age": 4,
+      "civs": [
+        "mo"
+      ],
+      "description": "Increase the health of all buildings by +30%.",
+      "classes": [
+        "building",
+        "technology"
+      ],
+      "displayClasses": [
+        "Building Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 300,
+        "gold": 700,
+        "total": 1000,
+        "popcap": 0,
+        "time": 90
+      },
+      "producedBy": [
+        "ovoo",
+        "the-white-stupa"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/court-architects-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "building"
+              ],
+              [
+                "landmark"
+              ],
+              [
+                "wonder"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.3,
           "type": "passive"
         }
       ]
@@ -29136,11 +29484,11 @@
       ],
       "description": "Increase damage of Trebuchets by +20%.",
       "classes": [
-        "trebuchet",
+        "siege",
         "technology"
       ],
       "displayClasses": [
-        "Trebuchet Technology"
+        "Siege Technology"
       ],
       "unique": false,
       "costs": {
@@ -30148,7 +30496,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Reduce the time it takes to produce infantry, cavalry, siege, and transport units at buildings by 35%.\nDoes not affect Scouts, religious units, or other support units.\nIf Military Academy has already been researched, reduce the time by 10% instead.",
+      "description": "Increase the production speed of military and transport units at buildings by 53%.\nDoes not affect religious or other support units.\nIf Military Academy has already been researched, increase production speed by 20% instead.",
       "classes": [
         "production",
         "technology"
@@ -30195,7 +30543,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.87,
+          "value": 0.7,
           "type": "passive"
         }
       ]
@@ -30407,13 +30755,13 @@
       ],
       "unique": true,
       "costs": {
-        "food": 100,
+        "food": 50,
         "wood": 0,
         "stone": 0,
-        "gold": 250,
-        "total": 350,
+        "gold": 125,
+        "total": 175,
         "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -30677,7 +31025,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Scouts gain the ability to carry animal carcasses and +200% damage against wild animals.\nIf Professional Scouts has already been researched, increase ranged damage against wild animals by +100% instead.\nScouts move -35% slower while carrying and cannot pick up Boar.",
+      "description": "Scouts gain the ability to carry animal carcasses and +200% damage against wild animals. Scouts move -100% slower while carrying a carcass and cannot pick up Boar.\nIf Professional Scouts has already been researched, increase damage by +35% instead.",
       "classes": [
         "hunting",
         "technology"
@@ -30849,7 +31197,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+      "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
       "classes": [
         "springald",
         "technology"
@@ -30891,7 +31239,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -30907,7 +31255,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Increase the weapon range of Springalds by +3 tiles and reduce their reload time by 35%.\nIf Roller Shutter Triggers has already been researched, increase their weapon range by +1 tiles and reduce reload time by 10% instead.",
+      "description": "Increase the weapon range of Springalds by +3 tiles and increase their attack speed by +35%.\nIf Roller Shutter Triggers has already been researched, increase their weapon range by +1 tiles and increase attack speed by +10% instead.",
       "classes": [
         "springald",
         "technology"
@@ -31613,6 +31961,54 @@
       ]
     },
     {
+      "id": "spyglass-4",
+      "baseId": "spyglass",
+      "type": "technology",
+      "name": "Spyglass",
+      "pbgid": 2126207,
+      "attribName": "upgrade_scout_los_increase",
+      "age": 4,
+      "civs": [
+        "mo"
+      ],
+      "description": "Increase the sight radius of Scouts by 30%.",
+      "classes": [
+        "scout",
+        "technology"
+      ],
+      "displayClasses": [
+        "Scout Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 50,
+        "total": 150,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+      "effects": [
+        {
+          "property": "lineOfSight",
+          "select": {
+            "id": [
+              "scout",
+              "warrior-scout"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.3,
+          "type": "passive"
+        }
+      ]
+    },
+    {
       "id": "steeled-arrow-2",
       "baseId": "steeled-arrow",
       "type": "technology",
@@ -31672,6 +32068,122 @@
           },
           "effect": "change",
           "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "steppe-lancers-4",
+      "baseId": "steppe-lancers",
+      "type": "technology",
+      "name": "Steppe Lancers",
+      "pbgid": 2137100,
+      "attribName": "upgrade_lancer_healing_mon",
+      "age": 4,
+      "civs": [
+        "mo"
+      ],
+      "description": "Increase Keshik healing by +1 Health per attack and attack speed by +10%.",
+      "classes": [
+        "keshik",
+        "technology"
+      ],
+      "displayClasses": [
+        "Keshik Technology"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 150,
+        "wood": 0,
+        "stone": 0,
+        "gold": 350,
+        "total": 500,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/steppe-lancers-4.png",
+      "effects": [
+        {
+          "property": "healingRate",
+          "select": {
+            "id": [
+              "keshik"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        },
+        {
+          "property": "attackSpeed",
+          "select": {
+            "id": [
+              "keshik"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.89,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "steppe-lancers-improved-4",
+      "baseId": "steppe-lancers-improved",
+      "type": "technology",
+      "name": "Steppe Lancers (Improved)",
+      "pbgid": 2137099,
+      "attribName": "upgrade_lancer_healing_improved_mon",
+      "age": 4,
+      "civs": [
+        "mo"
+      ],
+      "description": "Increase Keshik healing by +2 Health per attack and attack speed by +1%.\nIf Steppe Lancers has already been researched, increase Keshik healing by +20 Health per attack and attack speed by +10%.",
+      "classes": [
+        "keshik",
+        "technology"
+      ],
+      "displayClasses": [
+        "Keshik Technology"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 150,
+        "wood": 0,
+        "stone": 500,
+        "gold": 350,
+        "total": 1000,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/steppe-lancers-improved-4.png",
+      "effects": [
+        {
+          "property": "healingRate",
+          "select": {
+            "id": [
+              "keshik"
+            ]
+          },
+          "effect": "change",
+          "value": 20,
+          "type": "passive"
+        },
+        {
+          "property": "attackSpeed",
+          "select": {
+            "id": [
+              "keshik"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.89,
           "type": "passive"
         }
       ]
@@ -31793,7 +32305,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Having 20 or more active Traders causes them to supply +10% Stone to their trades.",
+      "description": "Traders supply +20% Stone to their trades.",
       "classes": [
         "trade",
         "technology"
@@ -31803,13 +32315,13 @@
       ],
       "unique": true,
       "costs": {
-        "food": 150,
+        "food": 300,
         "wood": 0,
         "stone": 0,
-        "gold": 350,
-        "total": 500,
+        "gold": 700,
+        "total": 1000,
         "popcap": 0,
-        "time": 60
+        "time": 90
       },
       "producedBy": [
         "the-silver-tree",
@@ -31842,7 +32354,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Having 20 or more active Traders causes them to supply +20% Stone to their trades.\nIf Stone Commerce has already been researched, supply +10% Stone instead.",
+      "description": "Traders supply +20% Stone to their trades.\nIf Stone Commerce has already been researched, supply +20% Stone instead.",
       "classes": [
         "trade",
         "technology"
@@ -31852,13 +32364,13 @@
       ],
       "unique": true,
       "costs": {
-        "food": 150,
+        "food": 300,
         "wood": 0,
-        "stone": 500,
-        "gold": 350,
-        "total": 1000,
+        "stone": 1000,
+        "gold": 700,
+        "total": 2000,
         "popcap": 0,
-        "time": 60
+        "time": 90
       },
       "producedBy": [
         "the-silver-tree",
@@ -32568,6 +33080,59 @@
       ]
     },
     {
+      "id": "yam-network-improved-4",
+      "baseId": "yam-network-improved",
+      "type": "technology",
+      "name": "Yam Network (Improved)",
+      "pbgid": 2129166,
+      "attribName": "upgrade_ortoo_all_units_improved_mon",
+      "age": 4,
+      "civs": [
+        "mo"
+      ],
+      "description": "Yam speed aura applies to all units instead of just Traders and cavalry units. Does not apply to siege engines.\nImproved Yam Network allows Traders to regenerate 1 health every 2 seconds while in Yam's aura.",
+      "classes": [
+        "movement",
+        "technology"
+      ],
+      "displayClasses": [
+        "Movement Technology"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 350,
+        "gold": 250,
+        "total": 700,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "outpost",
+        "deer-stones"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/yam-network-improved-4.png",
+      "effects": [
+        {
+          "property": "healingRate",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ],
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "influence"
+        }
+      ]
+    },
+    {
       "id": "acid-distillation-3",
       "baseId": "acid-distillation",
       "type": "technology",
@@ -32637,7 +33202,7 @@
       "civs": [
         "ot"
       ],
-      "description": "Reduce the reload time of Mangonels by -25%.",
+      "description": "Increase the attack speed of Mangonels by +25%.",
       "classes": [
         "mangonel",
         "technology"
@@ -32668,7 +33233,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -32702,7 +33267,10 @@
         "popcap": 0,
         "time": 0
       },
-      "producedBy": [],
+      "producedBy": [
+        "capital-town-center",
+        "town-center"
+      ],
       "icon": "https://data.aoe4world.com/images/technologies/advanced-academy-1.png",
       "effects": []
     },
@@ -32735,7 +33303,10 @@
         "popcap": 0,
         "time": 0
       },
-      "producedBy": [],
+      "producedBy": [
+        "capital-town-center",
+        "town-center"
+      ],
       "icon": "https://data.aoe4world.com/images/technologies/anatolian-hills-1.png",
       "effects": [
         {
@@ -32838,13 +33409,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 200,
+        "food": 150,
         "wood": 0,
         "stone": 0,
-        "gold": 500,
-        "total": 700,
+        "gold": 350,
+        "total": 500,
         "popcap": 0,
-        "time": 45
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -33164,61 +33735,6 @@
           "select": {
             "id": [
               "stone-wall-tower",
-              "keep",
-              "berkshire-palace",
-              "elzbach-palace",
-              "kremlin",
-              "spasskaya-tower",
-              "red-palace",
-              "the-white-tower"
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "cannon-emplacement-4",
-      "baseId": "cannon-emplacement",
-      "type": "technology",
-      "name": "Cannon Emplacement",
-      "pbgid": 185626,
-      "attribName": "upgrade_keep_cannon",
-      "age": 4,
-      "civs": [
-        "ot"
-      ],
-      "description": "Add a defensive cannon emplacement to this structure.",
-      "classes": [
-        "weapon",
-        "emplacement"
-      ],
-      "displayClasses": [
-        "Weapon Emplacement"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 375,
-        "gold": 125,
-        "total": 500,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "keep",
-        "sea-gate-castle"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/cannon-emplacement-4.png",
-      "effects": [
-        {
-          "property": "unknown",
-          "select": {
-            "id": [
-              "outpost",
               "keep",
               "berkshire-palace",
               "elzbach-palace",
@@ -33947,7 +34463,10 @@
         "popcap": 0,
         "time": 0
       },
-      "producedBy": [],
+      "producedBy": [
+        "capital-town-center",
+        "town-center"
+      ],
       "icon": "https://data.aoe4world.com/images/technologies/fast-training-1.png",
       "effects": [
         {
@@ -34024,7 +34543,7 @@
       "civs": [
         "ot"
       ],
-      "description": "Spawn 2 Imams at the Landmark Town Center. Imams area heal nearby units for 1 health every second.",
+      "description": "Spawn 2 Imams at the Landmark Town Center. Imams area heal nearby units for 1 health every second. Increases to 2 health in Castle Age and 3 health in Imperial Age.",
       "classes": [
         "imperial",
         "council"
@@ -34042,7 +34561,10 @@
         "popcap": 0,
         "time": 0
       },
-      "producedBy": [],
+      "producedBy": [
+        "capital-town-center",
+        "town-center"
+      ],
       "icon": "https://data.aoe4world.com/images/technologies/field-work-1.png",
       "effects": [
         {
@@ -34319,6 +34841,42 @@
           "type": "passive"
         }
       ]
+    },
+    {
+      "id": "great-bombard-emplacement-4",
+      "baseId": "great-bombard-emplacement",
+      "type": "technology",
+      "name": "Great Bombard Emplacement",
+      "pbgid": 2136153,
+      "attribName": "upgrade_keep_great_bombard",
+      "age": 4,
+      "civs": [
+        "ot"
+      ],
+      "description": "Add a defensive Great Bombard emplacement to this structure.",
+      "classes": [
+        "weapon",
+        "emplacement"
+      ],
+      "displayClasses": [
+        "Weapon Emplacement"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 400,
+        "gold": 250,
+        "total": 650,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "keep",
+        "sea-gate-castle"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/great-bombard-emplacement-4.png",
+      "effects": []
     },
     {
       "id": "heated-shot-4",
@@ -34772,7 +35330,7 @@
       "civs": [
         "ot"
       ],
-      "description": "Spawn 2 Janissaries for each of your Military Schools at the Landmark Town Center.",
+      "description": "Spawn 2 Janissaries for each of your Landmark Town Center and Military Schools at the Landmark Town Center.",
       "classes": [
         "imperial",
         "council"
@@ -34790,7 +35348,10 @@
         "popcap": 0,
         "time": 0
       },
-      "producedBy": [],
+      "producedBy": [
+        "capital-town-center",
+        "town-center"
+      ],
       "icon": "https://data.aoe4world.com/images/technologies/janissary-company-1.png",
       "effects": []
     },
@@ -35034,7 +35595,10 @@
         "popcap": 0,
         "time": 0
       },
-      "producedBy": [],
+      "producedBy": [
+        "capital-town-center",
+        "town-center"
+      ],
       "icon": "https://data.aoe4world.com/images/technologies/mehter-drums-1.png",
       "effects": [
         {
@@ -35084,7 +35648,10 @@
         "popcap": 0,
         "time": 0
       },
-      "producedBy": [],
+      "producedBy": [
+        "capital-town-center",
+        "town-center"
+      ],
       "icon": "https://data.aoe4world.com/images/technologies/military-campus-1.png",
       "effects": []
     },
@@ -35366,7 +35933,7 @@
       "civs": [
         "ot"
       ],
-      "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+      "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
       "classes": [
         "springald",
         "technology"
@@ -35408,7 +35975,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -35537,7 +36104,10 @@
         "popcap": 0,
         "time": 0
       },
-      "producedBy": [],
+      "producedBy": [
+        "capital-town-center",
+        "town-center"
+      ],
       "icon": "https://data.aoe4world.com/images/technologies/siege-crews-1.png",
       "effects": []
     },
@@ -35834,6 +36404,54 @@
       ]
     },
     {
+      "id": "spyglass-4",
+      "baseId": "spyglass",
+      "type": "technology",
+      "name": "Spyglass",
+      "pbgid": 2126207,
+      "attribName": "upgrade_scout_los_increase",
+      "age": 4,
+      "civs": [
+        "ot"
+      ],
+      "description": "Increase the sight radius of Scouts by 30%.",
+      "classes": [
+        "scout",
+        "technology"
+      ],
+      "displayClasses": [
+        "Scout Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 50,
+        "total": 150,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+      "effects": [
+        {
+          "property": "lineOfSight",
+          "select": {
+            "id": [
+              "scout",
+              "warrior-scout"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.3,
+          "type": "passive"
+        }
+      ]
+    },
+    {
       "id": "steeled-arrow-2",
       "baseId": "steeled-arrow",
       "type": "technology",
@@ -36104,7 +36722,7 @@
       "civs": [
         "ot"
       ],
-      "description": "Increase the amount of Gold Traders collect by +40%.",
+      "description": "Increase the amount of Gold Traders collect and Income from the Sultanhani Trade Network by +40%.",
       "classes": [
         "imperial",
         "council"
@@ -36122,7 +36740,10 @@
         "popcap": 0,
         "time": 0
       },
-      "producedBy": [],
+      "producedBy": [
+        "capital-town-center",
+        "town-center"
+      ],
       "icon": "https://data.aoe4world.com/images/technologies/trade-bags-1.png",
       "effects": []
     },
@@ -36359,7 +36980,7 @@
       "civs": [
         "ru"
       ],
-      "description": "Reduce the reload time of Mangonels by -25%.",
+      "description": "Increase the attack speed of Mangonels by +25%.",
       "classes": [
         "mangonel",
         "technology"
@@ -36390,7 +37011,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -36471,13 +37092,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 200,
+        "food": 150,
         "wood": 0,
         "stone": 0,
-        "gold": 500,
-        "total": 700,
+        "gold": 350,
+        "total": 500,
         "popcap": 0,
-        "time": 45
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -37031,11 +37652,11 @@
       "costs": {
         "food": 0,
         "wood": 0,
-        "stone": 100,
+        "stone": 50,
         "gold": 0,
-        "total": 100,
+        "total": 50,
         "popcap": 0,
-        "time": 30
+        "time": 15
       },
       "producedBy": [
         "wooden-fortress"
@@ -37482,54 +38103,6 @@
           "effect": "multiply",
           "value": 1.15,
           "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "double-time-4",
-      "baseId": "double-time",
-      "type": "technology",
-      "name": "Double Time",
-      "pbgid": 207443,
-      "attribName": "upgrade_streltsy_double_time_rus",
-      "age": 4,
-      "civs": [
-        "ru"
-      ],
-      "description": "Streltsy gain the Double Time ability, which increases their movement speed by +30% for 10 seconds.",
-      "classes": [
-        "streltsy",
-        "ability",
-        "unlock"
-      ],
-      "displayClasses": [
-        "Streltsy Ability Unlock"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 100,
-        "wood": 0,
-        "stone": 0,
-        "gold": 225,
-        "total": 325,
-        "popcap": 0,
-        "time": 45
-      },
-      "producedBy": [
-        "archery-range"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/double-time-4.png",
-      "effects": [
-        {
-          "property": "moveSpeed",
-          "select": {
-            "id": [
-              "streltsy"
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.8,
-          "type": "ability"
         }
       ]
     },
@@ -38605,17 +39178,17 @@
       ]
     },
     {
-      "id": "knight-sabers-4",
-      "baseId": "knight-sabers",
+      "id": "knight-poleaxes-4",
+      "baseId": "knight-poleaxes",
       "type": "technology",
-      "name": "Knight Sabers",
+      "name": "Knight Poleaxes",
       "pbgid": 207441,
       "attribName": "upgrade_cavalry_melee_damage_rus",
       "age": 4,
       "civs": [
         "ru"
       ],
-      "description": "Increase the sword damage of Knights by +4.",
+      "description": "Knights equip a poleax, increasing their melee damage by +4.",
       "classes": [
         "knight",
         "technology"
@@ -38636,7 +39209,7 @@
       "producedBy": [
         "stable"
       ],
-      "icon": "https://data.aoe4world.com/images/technologies/knight-sabers-4.png",
+      "icon": "https://data.aoe4world.com/images/technologies/knight-poleaxes-4.png",
       "effects": [
         {
           "property": "meleeAttack",
@@ -38914,17 +39487,17 @@
       "effects": []
     },
     {
-      "id": "mounted-precision-4",
-      "baseId": "mounted-precision",
+      "id": "mounted-training-4",
+      "baseId": "mounted-training",
       "type": "technology",
-      "name": "Mounted Precision",
-      "pbgid": 207445,
-      "attribName": "upgrade_streltsy_weapon_percision_rus",
+      "name": "Mounted Training",
+      "pbgid": 2134250,
+      "attribName": "upgrade_horse_archer_mounted_training_rus",
       "age": 4,
       "civs": [
         "ru"
       ],
-      "description": "Increase the weapon range of Horse Archers by +1.",
+      "description": "Increase weapon range of Horse Archers by +1 and unlock the Gallop ability.\nGallop: Activate to move at maximum speed with +2 tile weapon range for 8 seconds.",
       "classes": [
         "horse",
         "archer",
@@ -38946,7 +39519,7 @@
       "producedBy": [
         "archery-range"
       ],
-      "icon": "https://data.aoe4world.com/images/technologies/mounted-precision-4.png",
+      "icon": "https://data.aoe4world.com/images/technologies/mounted-training-4.png",
       "effects": [
         {
           "property": "maxRange",
@@ -39238,7 +39811,7 @@
       "civs": [
         "ru"
       ],
-      "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+      "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
       "classes": [
         "springald",
         "technology"
@@ -39280,7 +39853,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -39767,6 +40340,54 @@
           },
           "effect": "change",
           "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "spyglass-4",
+      "baseId": "spyglass",
+      "type": "technology",
+      "name": "Spyglass",
+      "pbgid": 2126207,
+      "attribName": "upgrade_scout_los_increase",
+      "age": 4,
+      "civs": [
+        "ru"
+      ],
+      "description": "Increase the sight radius of Scouts by 30%.",
+      "classes": [
+        "scout",
+        "technology"
+      ],
+      "displayClasses": [
+        "Scout Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 50,
+        "total": 150,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+      "effects": [
+        {
+          "property": "lineOfSight",
+          "select": {
+            "id": [
+              "scout",
+              "warrior-scout"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.3,
           "type": "passive"
         }
       ]

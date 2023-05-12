@@ -77,7 +77,7 @@
       "civs": [
         "de"
       ],
-      "description": "Reduce the reload time of Mangonels by -25%.",
+      "description": "Increase the attack speed of Mangonels by +25%.",
       "classes": [
         "mangonel",
         "technology"
@@ -108,7 +108,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -301,7 +301,7 @@
         "gold": 0,
         "total": 0,
         "popcap": 0,
-        "time": 225
+        "time": 150
       },
       "producedBy": [
         "dock"
@@ -3046,7 +3046,7 @@
       "civs": [
         "de"
       ],
-      "description": "Increase the weapon range of Springalds by +2 tiles and reduce their reload time by -25%.",
+      "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
       "classes": [
         "springald",
         "technology"
@@ -3088,7 +3088,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.75,
+          "value": 0.6699999999999999,
           "type": "passive"
         }
       ]
@@ -3632,6 +3632,54 @@
           },
           "effect": "change",
           "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "spyglass-4",
+      "baseId": "spyglass",
+      "type": "technology",
+      "name": "Spyglass",
+      "pbgid": 2126347,
+      "attribName": "upgrade_scout_los_increase_sul",
+      "age": 4,
+      "civs": [
+        "de"
+      ],
+      "description": "Increase the sight radius of Scouts by 30%.",
+      "classes": [
+        "scout",
+        "technology"
+      ],
+      "displayClasses": [
+        "Scout Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0,
+        "time": 90
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+      "effects": [
+        {
+          "property": "lineOfSight",
+          "select": {
+            "id": [
+              "scout",
+              "warrior-scout"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.3,
           "type": "passive"
         }
       ]

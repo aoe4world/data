@@ -57,12 +57,14 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "_moving_mon", // packed version
   "_double_mon", // all double produced units
   "building_unit_religious_district_mon", // Monasteric shrines version of prayer tent
-  "sbps/races/mongol/unit_knight_2_mon", // is listed in khagenate palace but does not exist in feudal
 
   // Research variations available at landmarks, that do not differ
   "upgrade_landmark_cavalry_cantled_saddle_fre",
   "upgrade_landmark_ranged_crossbow_drills_fre",
+  "upgrade_landmark_naval_long_guns_fre",
+  "upgrade_landmark_market_trickle_fre",
   (file) => file.split("/").pop()!.startsWith("upgrade_unit") && file.endsWith("farimba_mal"),
+  "landmarkvariant",
 
   // Prefer the vanilla keep emplacement versions over landmark and outposts, except mongols
   "upgrade_barbican_cannon_chi",
@@ -73,10 +75,7 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   (file) => file.includes("upgrade_outpost_springald") && !file.includes("upgrade_outpost_springald_mon"),
   (file) => file.includes("unit_ram_3") && !file.includes("workshop") && !file.includes("clocktower"),
   "unit_trade_cart_chamber_of_commerce_fre",
-  "unit_trade_cart_free_abb",
-  "unit_trade_cart_free_2_abb",
-  "unit_trade_cart_free_3_abb",
-  "unit_trade_cart_free_4_abb",
+  "unit_trade_cart_free",
   "unit_military_2_free_abb",
   "unit_military_3_free_abb",
   "unit_military_4_free_abb",

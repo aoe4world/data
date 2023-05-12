@@ -145,7 +145,7 @@ workaround("Make Delhi Village Fortresses available from Castle Age", {
 });
 
 workaround("Make English Wynguard Forces available from Imperial Age", {
-  ...overrideAge(["wynguard-army", "wynguard-footmen", "wynguard-raiders", "wynguard-rangers"], 4, ["de"]),
+  ...overrideAge(["wynguard-army", "wynguard-footmen", "wynguard-raiders", "wynguard-rangers"], 4, ["en"]),
 });
 
 // –––– Unit weapons ––––
@@ -238,11 +238,11 @@ workaround("Scout scaling", {
   },
 });
 
-workaround("Remove charge attack from Horseman, except for mongols, who only have charge", {
-  predicate: (item) => item.type === "unit" && item.baseId === "horseman",
+workaround("Remove charge attack from Horseman and Ghazi Raider, except for mongols, who only have charge", {
+  predicate: (item) => item.type === "unit" && ["horseman", "ghazi-raider"].includes(item.baseId),
   mutator: (item) => {
     item = item as Unit;
-    item.weapons = item.weapons.filter((w) => !w.attribName!.endsWith("_charge"));
+    item.weapons = item.weapons.filter((w) => !w.attribName!.includes("_charge"));
   },
   validator: (item) => (item as Unit).weapons.filter((w) => w.type === "melee").length == 1,
 });
@@ -263,7 +263,7 @@ workaround("Remove crossbow, archer and torch from Sultan's Elite Tower Elephant
     handcannon!.burst = { count: 2 };
     item.weapons = [...item.weapons.filter((w) => w.type != "ranged" && w.type != "fire"), handcannon!];
   },
-  validator: (item) => (item as Unit).weapons.length == 3,
+  validator: (item) => (item as Unit).weapons.length == 2,
 });
 
 workaround("Change the individuals cannons on Warships to just 1 with a burst of half the total cannons (one side)", {
@@ -371,6 +371,7 @@ workaround("Highlight Khaganate units", {
   mutator: (item) => {
     const spawnCount = KHAGANTE_SPAWN_COUNTS[item.baseId];
     item.description = `${item.description}\n\nRandomly spawns ${spawnCount > 1 ? `${spawnCount} at the time ` : ""}from the Khaganate Palace.`;
+    item.age = 4;
     if (item.baseId != "huihui-pao") {
       item.name = `Khaganate ${item.name}`;
       item.id = `khaganate-${item.id}`;
@@ -424,6 +425,14 @@ workaround("Remove costs from Mongol Khan", {
   mutator: (item) => {
     const { time } = item.costs;
     item.costs = { ...NO_COSTS, time };
+  },
+});
+
+workaround("Rename Malian Scout to Warrior Scout", {
+  predicate: (item) => item.civs.includes("ma") && item.baseId === "scout" && item.age > 1,
+  mutator: (item) => {
+    item.baseId = "warrior-scout";
+    item.id = `${item.baseId}-${item.age}`;
   },
 });
 

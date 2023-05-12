@@ -9,7 +9,7 @@
   "civs": [
     "ma"
   ],
-  "description": "Fast cavalry effective at raiding, exploring the world, hunting wildlife, and herding Sheep.\n+ Increased health regeneration\n+ Increased move speed\n+ Able to see into Stealth Forests\n- Weak in combat",
+  "description": "Fast cavalry effective at raiding, exploring the world, hunting wildlife, and herding Sheep.\n+ Bonus damage vs ranged\n+ Increased health regeneration\n+ Increased move speed\n+ Able to see into Stealth Forests\n- Weak in combat",
   "classes": [
     "light",
     "melee",
@@ -71,6 +71,19 @@
           "effect": "change",
           "value": 10,
           "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "ranged"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 9,
+          "type": "passive"
         }
       ],
       "durations": {
@@ -85,52 +98,6 @@
       },
       "attribName": "weapon_scout_3_mal",
       "pbgid": 2074533
-    },
-    {
-      "name": "Bow",
-      "type": "ranged",
-      "damage": 3,
-      "speed": 1.75,
-      "range": {
-        "min": 0,
-        "max": 2.875
-      },
-      "modifiers": [],
-      "durations": {
-        "aim": 0.125,
-        "windup": 0,
-        "attack": 0.125,
-        "winddown": 0.5,
-        "reload": 1,
-        "setup": 0,
-        "teardown": 0,
-        "cooldown": 0
-      },
-      "attribName": "weapon_scout_hunt_ranged_1",
-      "pbgid": 174090
-    },
-    {
-      "name": "Torch",
-      "type": "fire",
-      "damage": 10,
-      "speed": 2.125,
-      "range": {
-        "min": 0,
-        "max": 1.25
-      },
-      "modifiers": [],
-      "durations": {
-        "aim": 0,
-        "windup": 0.75,
-        "attack": 0.125,
-        "winddown": 0,
-        "reload": 0,
-        "setup": 0,
-        "teardown": 0,
-        "cooldown": 1.25
-      },
-      "attribName": "weapon_torch",
-      "pbgid": 123518
     }
   ],
   "armor": [],
