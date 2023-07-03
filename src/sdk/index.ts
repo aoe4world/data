@@ -3,7 +3,8 @@ import allUnits from "../../units/all-optimized.json";
 import allBuildings from "../../buildings/all-optimized.json";
 import allTechnologies from "../../technologies/all-optimized.json";
 import allUpgrades from "../../upgrades/all-optimized.json";
-import { Building, Technology, Unit, Upgrade } from "../types/items";
+import allAbilities from "../../abilities/all-optimized.json";
+import { Building, Technology, Unit, Upgrade, Ability } from "../types/items";
 import ab from "../../civilizations/abbasid.json";
 import ch from "../../civilizations/chinese.json";
 import de from "../../civilizations/delhi.json";
@@ -21,6 +22,7 @@ const units = new ItemList<Unit>(...optimizedToUnified(allUnits.data as unknown 
 const buildings = new ItemList<Building>(...optimizedToUnified(allBuildings.data as unknown as Optimized<Building>[]));
 const technologies = new ItemList<Technology>(...optimizedToUnified(allTechnologies.data as unknown as Optimized<Technology>[]));
 const upgrades = new ItemList<Upgrade>(...optimizedToUnified(allUpgrades.data as unknown as Optimized<Upgrade>[]));
+const abilities = new ItemList<Ability>(...optimizedToUnified(allAbilities.data as unknown as Optimized<Ability>[]));
 
 const civilizations: Record<CivAbbr, CivInfo> & { Get: typeof GetCiv; list: CivInfo[] } = {
   ab,
@@ -44,12 +46,13 @@ function GetCiv(slug: CivSlug | CivAbbr) {
     Buildings: buildings.where({ civilization: slug }),
     Technologies: technologies.where({ civilization: slug }),
     Upgrades: upgrades.where({ civilization: slug }),
+    Abilities: abilities.where({ civilization: slug }),
   };
 }
 
-function Get(id: number | `${"units" | "buildings" | "technologies" | "upgrades"}/${string}`) {
+function Get(id: number | `${"units" | "buildings" | "technologies" | "upgrades" | "abilities"}/${string}`) {
   if (typeof id === "number") {
-    return units.get(id) || buildings.get(id) || technologies.get(id) || upgrades.get(id);
+    return units.get(id) || buildings.get(id) || technologies.get(id) || upgrades.get(id) || abilities.get(id);
   }
 
   const [type, slug] = id.split("/");
@@ -57,6 +60,7 @@ function Get(id: number | `${"units" | "buildings" | "technologies" | "upgrades"
   if (type == "buildings") return buildings.get(slug);
   if (type == "technologies") return technologies.get(slug);
   if (type == "upgrades") return upgrades.get(slug);
+  if (type == "abilities") return abilities.get(slug);
 }
 
-export { Get, civilizations, units, buildings, technologies, upgrades };
+export { Get, civilizations, units, buildings, technologies, upgrades, abilities };

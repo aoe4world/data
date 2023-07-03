@@ -172,6 +172,7 @@ const itemTypeMap = {
   building: ITEM_TYPES.BUILDINGS,
   technology: ITEM_TYPES.TECHNOLOGIES,
   upgrade: ITEM_TYPES.UPGRADES,
+  ability: ITEM_TYPES.ABILITIES,
 };
 
 function persistItem(item: Item, civ: civConfig) {

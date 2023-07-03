@@ -10,8 +10,18 @@ export const ESSENCE_FOLDER = path.join(SOURCE_FOLDER, "/essence/attrib");
 
 // Unit files not discovered by sync.ts
 export const hardcodedDiscovery = {
-  rus: ["sbps/races/rus/unit_militia_2_rus", "upgrade/races/rus/units/upgrade_militia_3", "upgrade/races/rus/units/upgrade_militia_4"],
-  mongols: ["sbps/races/mongol/unit_khan_2_mon", "sbps/races/mongol/unit_khan_3_mon", "sbps/races/mongol/unit_khan_4_mon"],
+  rus: [
+    "sbps/races/rus/unit_militia_2_rus",
+    "upgrade/races/rus/units/upgrade_militia_3",
+    "upgrade/races/rus/units/upgrade_militia_4",
+    "abilities/always_on_abilities/rus/saints_blessing_rus",
+  ],
+  mongols: [
+    "sbps/races/mongol/unit_khan_2_mon",
+    "sbps/races/mongol/unit_khan_3_mon", 
+    "sbps/races/mongol/unit_khan_4_mon",
+    "abilities/always_on_abilities/mongol/lancer_healing_mon",
+  ],
   ottomans: [
     "upgrade/races/ottoman/research/upgrade_anatolian_hills_ott",
     "upgrade/races/ottoman/research/upgrade_imperial_blacksmith_stockpile_ott",
@@ -22,13 +32,37 @@ export const hardcodedDiscovery = {
     "upgrade/races/ottoman/research/upgrade_imperial_military_training_ott",
     "upgrade/races/ottoman/research/upgrade_imperial_monk_formation_ott",
     "upgrade/races/ottoman/research/upgrade_imperial_trader_capacity_ott",
+    "abilities/toggle_abilities/ottoman/mehter_attack_buff_ott",
+    "abilities/toggle_abilities/ottoman/mehter_melee_armor_buff_ott",
+    "abilities/toggle_abilities/ottoman/mehter_ranged_armor_buff_ott",
   ],
   english: [
     "upgrade/races/english/units/upgrade_abbey_king_castle_1",
     "upgrade/races/english/units/upgrade_abbey_king_imp_2",
     "/sbps/races/english/unit_ranger_wynguard_4_eng",
     "/sbps/races/english/unit_footman_wynguard_4_eng",
+    "abilities/timed_abilities/english/longbow_rate_of_fire_ability",
   ],
+  chinese: [
+    "abilities/always_on_abilities/chinese/greatwall_chi",
+  ],
+  abbasid: [
+    "abilities/always_on_abilities/abbasid/camel_support_aura_abb",
+  ],
+  french: [
+    "abilities/always_on_abilities/french/lancer_charge_melee_boost_fre",
+  ],
+  hre: [
+    "abilities/always_on_abilities/hre/inspired_infantry_hre",
+  ],
+  malian: [
+    "abilities/always_on_abilities/malian/sofa_speed_aura_mal",
+  ],
+  sultanate: [
+    "abilities/timed_abilities/sultanate/infantry_forced_march_sul",
+  ],
+  
+  
 };
 
 export const ignoreForNow: (string | ((file: string) => boolean))[] = [

@@ -31,6 +31,11 @@ export const FOLDERS = {
     DATA: path.join(ROOT_FOLDER, "civilizations"),
     IMG: path.join(IMG_PATH, "civilizations"),
   },
+  ABILITIES: {
+    SLUG: "abilities",
+    DATA: path.join(ROOT_FOLDER, "abilities"),
+    IMG: path.join(IMG_PATH, "abilities"),
+  },
 };
 
 export enum ITEM_TYPES {
@@ -38,4 +43,5 @@ export enum ITEM_TYPES {
   TECHNOLOGIES = "TECHNOLOGIES",
   BUILDINGS = "BUILDINGS",
   UPGRADES = "UPGRADES",
+  ABILITIES = "ABILITIES",
 }

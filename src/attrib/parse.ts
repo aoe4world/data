@@ -4,10 +4,11 @@ import { parseXmlFile } from "./xml";
 import { parseWeapons } from "./weapons";
 import { attribFile, ignoreForNow } from "./config";
 import { slugify } from "../lib/utils/string";
-import { Armor, Building, Item, ItemClass, ModifyableProperty, Technology, Unit, Upgrade } from "../types/items";
+import { Armor, Building, Item, ItemClass, ModifyableProperty, Technology, Unit, Upgrade, Ability, AbilityActivation } from "../types/items";
 import { civConfig } from "../types/civs";
 import { useIcon } from "./icons";
 import { technologyModifiers } from "./technologies";
+import { abilityModifiers } from "./abilities";
 import { RunContext, writeTemp } from "./run";
 
 export async function parseItemFromAttribFile(file: string, data: any, civ: civConfig, context: RunContext) {
@@ -42,6 +43,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
     let ui_ext;
     if (type === ITEM_TYPES.BUILDINGS) ui_ext = ebpExts.ui_ext;
     else if (type === ITEM_TYPES.TECHNOLOGIES || type === ITEM_TYPES.UPGRADES) ui_ext = data.upgrade_bag.ui_info;
+    else if (type === ITEM_TYPES.ABILITIES) ui_ext = data.ability_bag.ui_info;
     else if (type === ITEM_TYPES.UNITS) {
       ui_ext = maybeOnKey(data.extensions.find((e) => e.squadexts === "sbpextensions/squad_ui_ext")?.race_list[0], "race_data")?.info;
     }
@@ -63,7 +65,11 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
 
     const unique = parseUnique(ui_ext);
 
-    const costs = parseCosts(ebpExts?.cost_ext?.time_cost || data.upgrade_bag.time_cost, ebpExts?.population_ext?.personnel_pop);
+    let costs;
+    if (type === ITEM_TYPES.ABILITIES)
+      costs = parseCosts(data.ability_bag.cost_to_player, data.ability_bag.recharge_cost, 0 );
+    else
+      costs = parseCosts(ebpExts?.cost_ext?.time_cost?.cost || data.upgrade_bag?.time_cost?.cost, ebpExts?.cost_ext?.time_cost?.time_seconds || data.upgrade_bag?.time_cost?.time_seconds, ebpExts?.population_ext?.personnel_pop );
 
     const icon = await useIcon(ui_ext.icon_name, type, id);
 
@@ -183,6 +189,16 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
 
       return upgrade;
     }
+    
+    if (type === ITEM_TYPES.ABILITIES) {
+      const ability: Ability = {
+        ...item,
+        type: "ability",
+      };
+
+      return ability;
+    }
+    
   } catch (e) {
     console.error(file, e);
     return undefined;
@@ -198,6 +214,7 @@ function guessType(file: string, data: any) {
   // below is too hacky for my taste, it filters out some wonky things we would call technologies like wheelbarrow and herbal medicine
   if (fileName.startsWith("upgrade_unit") && data?.upgrade_bag?.global_max_limit == 1) return ITEM_TYPES.UPGRADES;
   if (fileName.startsWith("upgrade_")) return ITEM_TYPES.TECHNOLOGIES;
+  if (file.startsWith("abilities")) return ITEM_TYPES.ABILITIES;
   return undefined;
 }
 
@@ -227,9 +244,8 @@ function parseHitpoints(health_ext: any) {
   return health_ext?.hitpoints;
 }
 
-function parseCosts(time_cost: any, popcap = 0) {
-  const { food, wood, gold, stone } = time_cost.cost as Record<"food" | "wood" | "gold" | "stone" | "popcap", number>;
-  const time = time_cost.time_seconds as number;
+function parseCosts(cost: any, time: any, popcap = 0) {
+  const { food, wood, gold, stone } = cost as Record<"food" | "wood" | "gold" | "stone" | "popcap", number>;
   const costs = { food, wood, stone, gold, total: food + wood + gold + stone, popcap, time };
   return costs;
 }

@@ -36,7 +36,7 @@ export type ItemClass =
 export interface Item {
   id: ItemId;
   baseId: ItemId;
-  type: "unit" | "building" | "technology" | "upgrade";
+  type: "unit" | "building" | "technology" | "upgrade" | "ability";
   civs: civAbbr[];
   classes: ItemClass[];
   displayClasses: string[];
@@ -123,13 +123,25 @@ export interface Weapon {
   pbgid?: number;
 }
 
+export interface Ability extends Item {
+  type: "ability";
+  modifiers?: Modifier[];
+  activation?: AbilityActivation;
+  range?: number;
+  //target self, ally, enemy, all, etc.?
+}
+
+export type AbilityActivation = {
+  type: "always_on" | "timed" | "toggle" | "influence";
+  rechargeTime: number;
+  toggleEntity: string;
+};
+
 export type Modifier = {
   property: ModifyableProperty;
   target?: { class?: ItemClass[][]; id?: ItemId[] };
-  select?: { class?: ItemClass[][]; id?: ItemId[] };
   effect: "multiply" | "change";
   value: number;
-  type: "passive" | "ability" | "influence" | "bonus";
 };
 
 export type Armor = {
