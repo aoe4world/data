@@ -339,6 +339,13 @@ workaround("Modify King scaling to be more descriptive", {
   },
 });
 
+workaround("Modify Militia cost to 20", {
+  predicate: (item) => item.baseId == "militia",
+  mutator: (item) => {
+    item.costs = MILITIA_COSTS;
+  },
+});
+
 workaround("Modify Militia scaling to be more descriptive", {
   predicate: (item) => item.attribName?.startsWith("upgrade_militia_") || false,
   mutator: (item) => {
@@ -508,6 +515,7 @@ workaround("HRE Civ Bonus: 'Cost of emplacements on Outposts, Wall Towers, and K
 });
 
 const NO_COSTS = { gold: 0, wood: 0, food: 0, stone: 0, total: 0, time: 0 };
+const MILITIA_COSTS = { gold: 0, wood: 0, food: 20, stone: 0, total: 20, time: 0, popcap: 1 };
 
 function discountCosts(costs: Item["costs"], discount: number) {
   const newCosts = {
