@@ -14,15 +14,7 @@
       "civs": [
         "ab"
       ],
-      "unique": false,
-      "displayClasses": [
-        "(translation not found)"
-      ],
-      "classes": [
-        "(translation",
-        "not",
-        "found)"
-      ],
+      "displayClasses": [],
       "minAge": 1,
       "description": "Infantry gain armor when near a camel unit.",
       "variations": [
@@ -38,15 +30,6 @@
             "ab"
           ],
           "description": "Infantry gain armor when near a camel unit.",
-          "classes": [
-            "(translation",
-            "not",
-            "found)"
-          ],
-          "displayClasses": [
-            "(translation not found)"
-          ],
-          "unique": false,
           "costs": {
             "food": 0,
             "wood": 0,
@@ -55,7 +38,29 @@
             "total": 0,
             "popcap": 0
           },
-          "producedBy": []
+          "abilityType": "always",
+          "activation": "always_on",
+          "range": 5,
+          "rechargeTime": 0,
+          "toggleGroup": null,
+          "effects": [
+            {
+              "property": "meleeArmor",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ],
+                "id": [
+                  "camel-rider",
+                  "camel-archer"
+                ]
+              },
+              "effect": "change",
+              "type": "influence"
+            }
+          ]
         }
       ]
     }

@@ -35,6 +35,7 @@ export const hardcodedDiscovery = {
     "abilities/toggle_abilities/ottoman/mehter_attack_buff_ott",
     "abilities/toggle_abilities/ottoman/mehter_melee_armor_buff_ott",
     "abilities/toggle_abilities/ottoman/mehter_ranged_armor_buff_ott",
+    "abilities/always_on_abilities/ottoman/mehter_formation_ott",
   ],
   english: [
     "upgrade/races/english/units/upgrade_abbey_king_castle_1",

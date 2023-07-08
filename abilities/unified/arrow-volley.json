@@ -7,15 +7,7 @@
   "civs": [
     "en"
   ],
-  "unique": false,
-  "displayClasses": [
-    "(translation not found)"
-  ],
-  "classes": [
-    "(translation",
-    "not",
-    "found)"
-  ],
+  "displayClasses": [],
   "minAge": 1,
   "description": "Left click to reduce Longbowman's time to attack by +1 second for a duration of 6 seconds.",
   "variations": [
@@ -31,15 +23,6 @@
         "en"
       ],
       "description": "Left click to reduce Longbowman's time to attack by +1 second for a duration of 6 seconds.",
-      "classes": [
-        "(translation",
-        "not",
-        "found)"
-      ],
-      "displayClasses": [
-        "(translation not found)"
-      ],
-      "unique": false,
       "costs": {
         "food": 0,
         "wood": 0,
@@ -48,7 +31,24 @@
         "total": 0,
         "popcap": 0
       },
-      "producedBy": []
+      "abilityType": "timed",
+      "activation": "timed",
+      "range": 0.0025,
+      "rechargeTime": 45,
+      "toggleGroup": null,
+      "effects": [
+        {
+          "property": "attackSpeed",
+          "select": {
+            "id": [
+              "longbowman"
+            ]
+          },
+          "effect": "change",
+          "value": -1,
+          "type": "ability"
+        }
+      ]
     }
   ]
 }

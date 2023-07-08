@@ -7,7 +7,7 @@ import { slugify } from "../lib/utils/string";
 import { Armor, Building, Item, ItemClass, ModifyableProperty, Technology, Unit, Upgrade, Ability, AbilityActivation } from "../types/items";
 import { civConfig } from "../types/civs";
 import { useIcon } from "./icons";
-import { technologyModifiers } from "./technologies";
+import { interpretModifiers } from "./modifiers";
 import { abilityModifiers } from "./abilities";
 import { RunContext, writeTemp } from "./run";
 
@@ -57,13 +57,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
     const baseId = getBasedId(name, type, description);
     const id = `${baseId}-${age}`;
 
-    const displayClasses = getTranslation(ui_ext.extra_text)
-      .split(",")
-      .map((x) => x.trim());
 
-    const classes = displayClasses.flatMap((x) => x.toLowerCase().split(" ")) as ItemClass[];
-
-    const unique = parseUnique(ui_ext);
 
     let costs;
     if (type === ITEM_TYPES.ABILITIES)
@@ -85,13 +79,59 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       age,
       civs: [civ.abbr],
       description,
-      classes,
-      displayClasses,
-      unique,
       costs,
-      producedBy: [],
       icon,
     };
+
+    if (type === ITEM_TYPES.ABILITIES) {
+      const translationParams = ui_ext.help_text_formatter?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
+      const effectsFactory = interpretModifiers[baseId];
+      const effects = effectsFactory?.(translationParams) ?? [];
+
+      // if (effects.length == 0) {
+      //   const addEffect = (property: ModifyableProperty, value: number, effect: "change" | "multiply" = "change", type: "passive" | "ability" = "passive") =>
+      //     effects.push({ property, value, effect, type });
+
+      //   for (const { id, value } of data?.ability_bag?.float_properties ?? []) {
+      //     if (id === "health_max") addEffect("hitpoints", value);
+      //     else if (id === "melee_damage") addEffect("meleeAttack", value);
+      //     else if (id === "charge_damage") addEffect("meleeAttack", value, "change", "ability");
+      //     else if (id === "armor_fire") addEffect("fireArmor", value);
+      //     else if (id === "armor_melee") addEffect("meleeArmor", value);
+      //     else if (id === "armor_range") addEffect("rangedArmor", value);
+      //     else if (id === "attack_speed") addEffect("attackSpeed", value);
+      //     else if (id === "damage") {
+      //       addEffect("meleeAttack", value);
+      //       addEffect("rangedAttack", value);
+      //       addEffect("siegeAttack", value);
+      //       addEffect("fireAttack", value);
+      //     } else if (id === "multiplier") {
+      //       // ignore
+      //     } else console.log("Unknown float property", id, value, item.attribName, item.id);
+      //   }
+      // }
+      
+      const ability: Ability = {
+        ...item,
+        type: "ability",
+        abilityType: file.split("/")[1].split("_")[0],
+        activation: data.ability_bag.activation,
+        range: data.ability_bag.range / 4,
+        rechargeTime: data.ability_bag.recharge_time,
+        toggleGroup: data.ability_bag.toggle_ability_group,
+        effects,
+      };
+
+      return ability;
+    }
+    
+    const displayClasses = getTranslation(ui_ext.extra_text)
+      .split(",")
+      .map((x) => x.trim());
+
+    const classes = displayClasses.flatMap((x) => x.toLowerCase().split(" ")) as ItemClass[];
+
+    const unique = parseUnique(ui_ext);
 
     if (type === ITEM_TYPES.BUILDINGS) {
       let influences = parseInfluences(ui_ext);
@@ -99,6 +139,10 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       const building: Building = {
         ...item,
         type: "building",
+        classes,
+        displayClasses,
+        unique,
+        producedBy: [],
         hitpoints: parseHitpoints(ebpExts?.health_ext),
         weapons: await parseWeapons(ebpExts.combat_ext, context),
         armor: parseArmor(ebpExts?.health_ext),
@@ -133,6 +177,10 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       const unit: Unit = {
         ...item,
         type: "unit",
+        classes,
+        displayClasses,
+        unique,
+        producedBy: [],
         hitpoints: parseHitpoints(ebpExts?.health_ext),
         weapons,
         armor: parseArmor(ebpExts?.health_ext),
@@ -146,7 +194,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
 
     if (type === ITEM_TYPES.TECHNOLOGIES) {
       const translationParams = ui_ext.help_text_formatter?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
-      const effectsFactory = technologyModifiers[baseId];
+      const effectsFactory = interpretModifiers[baseId];
       const effects = effectsFactory?.(translationParams) ?? [];
 
       // if (item.id == "upgrade-militia-4-4") {
@@ -174,6 +222,10 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       const tech: Technology = {
         ...item,
         type: "technology",
+        classes,
+        displayClasses,
+        unique,
+        producedBy: [],
         effects,
       };
 
@@ -184,19 +236,14 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       const upgrade: Upgrade = {
         ...item,
         type: "upgrade",
+        classes,
+        displayClasses,
+        unique,
+        producedBy: [],
         unlocks: "",
       };
 
       return upgrade;
-    }
-    
-    if (type === ITEM_TYPES.ABILITIES) {
-      const ability: Ability = {
-        ...item,
-        type: "ability",
-      };
-
-      return ability;
     }
     
   } catch (e) {

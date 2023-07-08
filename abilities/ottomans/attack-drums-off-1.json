@@ -10,15 +10,6 @@
     "ot"
   ],
   "description": "Mehter drums that increase the attack speed of nearby units by +15%.",
-  "classes": [
-    "(translation",
-    "not",
-    "found)"
-  ],
-  "displayClasses": [
-    "(translation not found)"
-  ],
-  "unique": false,
   "costs": {
     "food": 0,
     "wood": 0,
@@ -27,5 +18,30 @@
     "total": 0,
     "popcap": 0
   },
-  "producedBy": []
+  "abilityType": "toggle",
+  "activation": "toggle",
+  "range": 6,
+  "rechargeTime": 15,
+  "toggleGroup": "mehter_buff",
+  "effects": [
+    {
+      "property": "attackSpeed",
+      "select": {
+        "class": [
+          [
+            "infantry"
+          ],
+          [
+            "cavalry"
+          ],
+          [
+            "siege"
+          ]
+        ]
+      },
+      "effect": "change",
+      "value": 0.8200000000000001,
+      "type": "ability"
+    }
+  ]
 }

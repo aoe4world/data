@@ -508,7 +508,7 @@ workaround("Chinese Civ Bonus: 'Chemistry technology granted for free when advan
 });
 
 workaround("HRE Civ Bonus: 'Cost of emplacements on Outposts, Wall Towers, and Keeps reduced by 25%.':", {
-  predicate: (item) => item.civs.includes("hr") && item.displayClasses.includes("Weapon Emplacement"),
+  predicate: (item) => item.civs.includes("hr") && item.displayClasses?.includes("Weapon Emplacement"),
   mutator(item) {
     item.costs = discountCosts(item.costs, 0.75);
   },

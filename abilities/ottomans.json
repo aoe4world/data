@@ -19,15 +19,6 @@
         "ot"
       ],
       "description": "Mehter drums that increase the attack speed of nearby units by +15%.",
-      "classes": [
-        "(translation",
-        "not",
-        "found)"
-      ],
-      "displayClasses": [
-        "(translation not found)"
-      ],
-      "unique": false,
       "costs": {
         "food": 0,
         "wood": 0,
@@ -36,7 +27,59 @@
         "total": 0,
         "popcap": 0
       },
-      "producedBy": []
+      "abilityType": "toggle",
+      "activation": "toggle",
+      "range": 6,
+      "rechargeTime": 15,
+      "toggleGroup": "mehter_buff",
+      "effects": [
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ],
+              [
+                "cavalry"
+              ],
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0.8200000000000001,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "mehter-formation-boosts-1",
+      "baseId": "mehter-formation-boosts",
+      "type": "ability",
+      "name": "Mehter Formation Boosts",
+      "pbgid": 2063033,
+      "attribName": "mehter_formation_ott",
+      "age": 1,
+      "civs": [
+        "ot"
+      ],
+      "description": "+ Spread formation boosts ranged defense\n+ Line formation boosts melee defense\n+ Wedge Formation boosts attack damage\n+ No formation boosts movement speed",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "abilityType": "always",
+      "activation": "always_on",
+      "range": 0,
+      "rechargeTime": 0,
+      "toggleGroup": null,
+      "effects": []
     },
     {
       "id": "melee-defense-drums-off-1",
@@ -50,15 +93,6 @@
         "ot"
       ],
       "description": "Mehter drums that increase the melee armor of nearby units by +2.",
-      "classes": [
-        "(translation",
-        "not",
-        "found)"
-      ],
-      "displayClasses": [
-        "(translation not found)"
-      ],
-      "unique": false,
       "costs": {
         "food": 0,
         "wood": 0,
@@ -67,7 +101,12 @@
         "total": 0,
         "popcap": 0
       },
-      "producedBy": []
+      "abilityType": "toggle",
+      "activation": "toggle",
+      "range": 6,
+      "rechargeTime": 15,
+      "toggleGroup": "mehter_buff",
+      "effects": []
     },
     {
       "id": "ranged-defense-drums-off-1",
@@ -81,15 +120,6 @@
         "ot"
       ],
       "description": "Mehter drums that increase the ranged armor of nearby units by +1.",
-      "classes": [
-        "(translation",
-        "not",
-        "found)"
-      ],
-      "displayClasses": [
-        "(translation not found)"
-      ],
-      "unique": false,
       "costs": {
         "food": 0,
         "wood": 0,
@@ -98,7 +128,12 @@
         "total": 0,
         "popcap": 0
       },
-      "producedBy": []
+      "abilityType": "toggle",
+      "activation": "toggle",
+      "range": 6,
+      "rechargeTime": 15,
+      "toggleGroup": "mehter_buff",
+      "effects": []
     }
   ]
 }
