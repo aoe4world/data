@@ -7,6 +7,7 @@ const common = {
   allMeleeUnitsExceptSiege: { class: [["melee"]] } as Modifier["select"],
   allNonSiegeUnits: { class: [["infantry"], ["cavalry"]] } as Modifier["select"],
   allMilitaryLand: { class: [["infantry"], ["cavalry"], ["siege"]] } as Modifier["select"],
+  allLand: { class: [["infantry"], ["cavalry"], ["siege"], ["villager"]] } as Modifier["select"],
   allRangedUnitsAndBuildingsExceptSiege: {
     class: [
       ["ranged", "cavalry"],
@@ -41,7 +42,7 @@ export const interpretModifiers: Record<string, (values: number[]) => Modifier[]
     },
   ],
   
-  "arrow-volley": ([s]) => [
+  "arrow-volley": ([s, t]) => [
     // Longbowmen gain Arrow Volley, an activated ability that reduces their time to attack by +1 second for a duration of 6 seconds.
     {
       property: "attackSpeed",
@@ -49,6 +50,7 @@ export const interpretModifiers: Record<string, (values: number[]) => Modifier[]
       effect: "change",
       value: -1 * s,
       type: "ability",
+      duration: t,
     },
   ],
 
@@ -652,12 +654,22 @@ export const interpretModifiers: Record<string, (values: number[]) => Modifier[]
     },
   ],
 
+  "network-of-castles": ([i]) => [
+    // When enemies are nearby, this building sounds an alarm, causing nearby units to get a +20% increase to attack speed.
+    {
+      property: "attackSpeed",
+      select: common.allLand,
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "bonus",
+    },
+  ],
+
   "network-of-citadels": ([o, i]) => [
-    // Increase the Network of Castles attack speed bonus from +25% to 50%.
+    // Increase the Network of Castles attack speed bonus from +20% to 40%.
     {
       property: "attackSpeed",
       select: { class: [["infantry"]] },
-      target: { class: [["infantry"], ["cavalry"], ["building"]] },
       effect: "multiply",
       value: increaseByPercent(1, i - o),
       type: "bonus",

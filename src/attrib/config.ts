@@ -15,12 +15,24 @@ export const hardcodedDiscovery = {
     "upgrade/races/rus/units/upgrade_militia_3",
     "upgrade/races/rus/units/upgrade_militia_4",
     "abilities/always_on_abilities/rus/saints_blessing_rus",
+    "abilities/always_on_abilities/rus/high_armory_production_aura_rus",
+    "abilities/always_on_abilities/rus/streltsy_static_deployment_ability_rus",
+    "abilities/timed_abilities/rus/horse_archer_mounted_training_gallop_rus",
+    "abilities/timed_abilities/rus/streltsy_double_time_ability_rus",
+    "info/buff_info/races/abbasid/camel_debuff_aura",
   ],
   mongols: [
     "sbps/races/mongol/unit_khan_2_mon",
     "sbps/races/mongol/unit_khan_3_mon", 
     "sbps/races/mongol/unit_khan_4_mon",
     "abilities/always_on_abilities/mongol/lancer_healing_mon",
+    "abilities/always_on_abilities/mongol/kurultai_healing_aura_mon",
+    "abilities/timed_abilities/mongol/khan_attack_speed_signal_arrow_mon",
+    "abilities/timed_abilities/mongol/khan_defensive_signal_arrow_mon",
+    "abilities/timed_abilities/mongol/khan_maneuver_signal_arrow_mon",
+    "info/buff_info/races/mongol/outpost_speed_mon",
+    "info/buff_info/races/mongol/outpost_speed_improved_mon",
+    "info/buff_info/races/abbasid/camel_debuff_aura",
   ],
   ottomans: [
     "upgrade/races/ottoman/research/upgrade_anatolian_hills_ott",
@@ -36,6 +48,10 @@ export const hardcodedDiscovery = {
     "abilities/toggle_abilities/ottoman/mehter_melee_armor_buff_ott",
     "abilities/toggle_abilities/ottoman/mehter_ranged_armor_buff_ott",
     "abilities/always_on_abilities/ottoman/mehter_formation_ott",
+    "abilities/always_on_abilities/ottoman/university_blacksmith_influence_ott",
+    "abilities/timed_abilities/ottoman/sipahi_stamina_ott",
+    "info/buff_info/races/ottoman/mehter_wedge_formation_ott",
+    "info/buff_info/races/abbasid/camel_debuff_aura",
   ],
   english: [
     "upgrade/races/english/units/upgrade_abbey_king_castle_1",
@@ -43,24 +59,45 @@ export const hardcodedDiscovery = {
     "/sbps/races/english/unit_ranger_wynguard_4_eng",
     "/sbps/races/english/unit_footman_wynguard_4_eng",
     "abilities/timed_abilities/english/longbow_rate_of_fire_ability",
+    "abilities/always_on_abilities/english/tower_outpost_alert_aura_eng",
+    //"info/buff_info/races/english/network_of_castles_buff_eng", prefer /abilities source
+    //"info/buff_info/races/english/network_of_citadels_buff_eng", tower outpost has context to upgrade to citadels or tech has the context to upgrade buff or do a workaround 
+    "info/buff_info/races/abbasid/camel_debuff_aura",
   ],
   chinese: [
     "abilities/always_on_abilities/chinese/greatwall_chi",
+    "info/buff_info/races/chinese/great_wall_buff_chi",
+    "abilities/always_on_abilities/chinese/spirit_way",
+    "info/buff_info/races/chinese/spirit_way_chi",
+    "info/buff_info/races/abbasid/camel_debuff_aura",
   ],
   abbasid: [
     "abilities/always_on_abilities/abbasid/camel_support_aura_abb",
+    "abilities/always_on_abilities/abbasid/mamluke_anti_cavalry_aura_abb",
+    "info/buff_info/races/abbasid/camel_debuff_aura",
   ],
   french: [
     "abilities/always_on_abilities/french/lancer_charge_melee_boost_fre",
+    "abilities/always_on_abilities/french/keep_influence_fre",
+    "abilities/modal_abilities/french/deploy_pavise_fre",
+    "info/buff_info/races/abbasid/camel_debuff_aura",
   ],
   hre: [
     "abilities/always_on_abilities/hre/inspired_infantry_hre",
+    "info/buff_info/races/abbasid/camel_debuff_aura",
   ],
-  malian: [
+  malians: [
     "abilities/always_on_abilities/malian/sofa_speed_aura_mal",
+    "abilities/always_on_abilities/malian/gbeto_ambush_mal",
+    "abilities/timed_abilities/malian/activate_stealth_mal",
+    "abilities/always_on_abilities/malian/passives/donso_javelin_throw_mal",
+    "info/buff_info/races/malian/archer_poisoned_arrow_mal",
+    "info/buff_info/races/abbasid/camel_debuff_aura",
   ],
-  sultanate: [
+  delhi: [
     "abilities/timed_abilities/sultanate/infantry_forced_march_sul",
+    "info/buff_info/races/sultanate/tower_of_victory_sul",
+    "info/buff_info/races/abbasid/camel_debuff_aura",
   ],
   
   

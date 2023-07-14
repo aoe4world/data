@@ -1,0 +1,49 @@
+{
+  "id": "network-of-castles-1",
+  "baseId": "network-of-castles",
+  "type": "ability",
+  "name": "Network of Castles",
+  "pbgid": 168608,
+  "attribName": "tower_outpost_alert_aura_eng",
+  "age": 1,
+  "civs": [
+    "en"
+  ],
+  "description": "When enemies are nearby, this building sounds an alarm, causing nearby units to get a +20% increase to attack speed.",
+  "classes": [],
+  "displayClasses": "",
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "total": 0,
+    "popcap": 0
+  },
+  "activation": "always",
+  "range": 12.5,
+  "effects": [
+    {
+      "property": "attackSpeed",
+      "select": {
+        "class": [
+          [
+            "infantry"
+          ],
+          [
+            "cavalry"
+          ],
+          [
+            "siege"
+          ],
+          [
+            "villager"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.2,
+      "type": "bonus"
+    }
+  ]
+}

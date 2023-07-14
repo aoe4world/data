@@ -125,23 +125,23 @@ export interface Weapon {
 
 export interface Ability extends Item {
   type: "ability";
-  modifiers?: Modifier[];
-  activation?: AbilityActivation;
+  //abilityType?: "always_on" | "timed" | "toggle" | "modal";
+  //activation?: string;
+  activation: "always" | "timed" | "toggle" | "modal";
   range?: number;
-  //target self, ally, enemy, all, etc.?
-}
-
-export type AbilityActivation = {
-  type: "always_on" | "timed" | "toggle" | "influence";
-  rechargeTime: number;
-  toggleEntity: string;
+  activationRechargeTime?: number;
+  toggleGroup?: string;
+  effects?: Modifier[];
 };
 
 export type Modifier = {
   property: ModifyableProperty;
   target?: { class?: ItemClass[][]; id?: ItemId[] };
+  select?: { class?: ItemClass[][]; id?: ItemId[] };
   effect: "multiply" | "change";
   value: number;
+  type: "passive" | "ability" | "influence" | "bonus";
+  duration?: number;
 };
 
 export type Armor = {

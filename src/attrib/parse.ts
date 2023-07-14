@@ -43,7 +43,8 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
     let ui_ext;
     if (type === ITEM_TYPES.BUILDINGS) ui_ext = ebpExts.ui_ext;
     else if (type === ITEM_TYPES.TECHNOLOGIES || type === ITEM_TYPES.UPGRADES) ui_ext = data.upgrade_bag.ui_info;
-    else if (type === ITEM_TYPES.ABILITIES) ui_ext = data.ability_bag.ui_info;
+    else if (type === ITEM_TYPES.ABILITIES && file.startsWith("abilities")) ui_ext = data.ability_bag.ui_info;
+    else if (type === ITEM_TYPES.ABILITIES && file.startsWith("info/buff_info")) ui_ext = data.info;
     else if (type === ITEM_TYPES.UNITS) {
       ui_ext = maybeOnKey(data.extensions.find((e) => e.squadexts === "sbpextensions/squad_ui_ext")?.race_list[0], "race_data")?.info;
     }
@@ -53,15 +54,23 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
     if (name === NO_TRANSLATION_FOUND) name = file.split("/").pop()!;
     const description = parseDescription(ui_ext);
     const attribName = file.split("/").pop()!.replace(".xml", "").replace(".json", "");
-    const age = parseAge(attribName, ebpExts?.requirement_ext?.requirement_table ?? data.upgrade_bag?.requirements, data.parent_pbg);
+    const age = parseAge(attribName, ebpExts?.requirement_ext?.requirement_table ?? data.upgrade_bag?.requirements ?? data.ability_bag?.requirements, data.parent_pbg);
     const baseId = getBasedId(name, type, description);
     const id = `${baseId}-${age}`;
 
+    const displayClasses = getTranslation(ui_ext.extra_text)
+      .split(",")
+      .map((x) => x.trim());
 
+    const classes = displayClasses.flatMap((x) => x.toLowerCase().split(" ")) as ItemClass[];
+
+    const unique = parseUnique(ui_ext);
 
     let costs;
-    if (type === ITEM_TYPES.ABILITIES)
+    if (type === ITEM_TYPES.ABILITIES && file.startsWith("abilities"))
       costs = parseCosts(data.ability_bag.cost_to_player, data.ability_bag.recharge_cost, 0 );
+    else if (type === ITEM_TYPES.ABILITIES && file.startsWith("info/buff_info"))
+      costs = {};
     else
       costs = parseCosts(ebpExts?.cost_ext?.time_cost?.cost || data.upgrade_bag?.time_cost?.cost, ebpExts?.cost_ext?.time_cost?.time_seconds || data.upgrade_bag?.time_cost?.time_seconds, ebpExts?.population_ext?.personnel_pop );
 
@@ -79,11 +88,15 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       age,
       civs: [civ.abbr],
       description,
+      classes,
+      displayClasses,
+      unique,
       costs,
+      producedBy: [],
       icon,
     };
 
-    if (type === ITEM_TYPES.ABILITIES) {
+    if (type === ITEM_TYPES.ABILITIES && file.startsWith("abilities")) {
       const translationParams = ui_ext.help_text_formatter?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
       const effectsFactory = interpretModifiers[baseId];
       const effects = effectsFactory?.(translationParams) ?? [];
@@ -114,24 +127,45 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       const ability: Ability = {
         ...item,
         type: "ability",
-        abilityType: file.split("/")[1].split("_")[0],
-        activation: data.ability_bag.activation,
+        displayClasses: "",
+        classes: [],
+        // abilityType: file.split("/")[1].split("_")[0],
+        // activation: data.ability_bag.activation,
+        activation: file.split("/")[1].split("_")[0],
         range: data.ability_bag.range / 4,
-        rechargeTime: data.ability_bag.recharge_time,
-        toggleGroup: data.ability_bag.toggle_ability_group,
+        //rechargeTime: data.ability_bag.recharge_time,
+        //toggleGroup: data.ability_bag.toggle_ability_group ?? "",
         effects,
       };
-
+      delete(ability["unique"])
+      delete(ability["producedBy"])
+      
+      if (ability["activation"]=="toggle") ability["toggleGroup"]=data.ability_bag.toggle_ability_group;
+      if (!(ability["activation"]=="always")) ability["activationRechargeTime"]=data.ability_bag.recharge_time;
+      
+      //delete(ability["displayClasses"])
+      //delete(ability["classes"])
       return ability;
     }
     
-    const displayClasses = getTranslation(ui_ext.extra_text)
-      .split(",")
-      .map((x) => x.trim());
-
-    const classes = displayClasses.flatMap((x) => x.toLowerCase().split(" ")) as ItemClass[];
-
-    const unique = parseUnique(ui_ext);
+    if (type === ITEM_TYPES.ABILITIES && file.startsWith("info/buff_info")) {
+      const translationParams = ui_ext.description_formatter?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
+      const effectsFactory = interpretModifiers[baseId];
+      const effects = effectsFactory?.(translationParams) ?? [];
+      
+      const ability: Ability = {
+        ...item,
+        type: "ability",
+        name: getTranslation(ui_ext.title),
+        description: getTranslation(ui_ext.description_formatter?.formatter || ui_ext.description),
+        effects,
+      };
+      delete(ability["unique"])
+      delete(ability["producedBy"])
+      //delete(ability["displayClasses"])
+      //delete(ability["classes"])
+      return ability;
+    }
 
     if (type === ITEM_TYPES.BUILDINGS) {
       let influences = parseInfluences(ui_ext);
@@ -139,10 +173,6 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       const building: Building = {
         ...item,
         type: "building",
-        classes,
-        displayClasses,
-        unique,
-        producedBy: [],
         hitpoints: parseHitpoints(ebpExts?.health_ext),
         weapons: await parseWeapons(ebpExts.combat_ext, context),
         armor: parseArmor(ebpExts?.health_ext),
@@ -177,10 +207,6 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       const unit: Unit = {
         ...item,
         type: "unit",
-        classes,
-        displayClasses,
-        unique,
-        producedBy: [],
         hitpoints: parseHitpoints(ebpExts?.health_ext),
         weapons,
         armor: parseArmor(ebpExts?.health_ext),
@@ -222,10 +248,6 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       const tech: Technology = {
         ...item,
         type: "technology",
-        classes,
-        displayClasses,
-        unique,
-        producedBy: [],
         effects,
       };
 
@@ -236,10 +258,6 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       const upgrade: Upgrade = {
         ...item,
         type: "upgrade",
-        classes,
-        displayClasses,
-        unique,
-        producedBy: [],
         unlocks: "",
       };
 
@@ -262,6 +280,7 @@ function guessType(file: string, data: any) {
   if (fileName.startsWith("upgrade_unit") && data?.upgrade_bag?.global_max_limit == 1) return ITEM_TYPES.UPGRADES;
   if (fileName.startsWith("upgrade_")) return ITEM_TYPES.TECHNOLOGIES;
   if (file.startsWith("abilities")) return ITEM_TYPES.ABILITIES;
+  if (file.startsWith("info/buff_info")) return ITEM_TYPES.ABILITIES;
   return undefined;
 }
 
