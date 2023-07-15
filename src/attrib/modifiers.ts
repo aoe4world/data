@@ -30,7 +30,7 @@ const increaseSpeedByPercent = (speed: number, percent: number) => round(speed /
 const increaseAttackSpeedByPercent = (speed: number, percent: number) => speed * round(1 - 1 / (1 - toPercent(percent)));
 const round = (n: number) => Math.round(n * 100) / 100; //(100/(100-33))
 
-export const interpretModifiers: Record<string, (values: number[]) => Modifier[]> = {
+export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> = {
   "attack-drums-off": ([s]) => [
     // Ability: Mehter drums that increase the attack speed of nearby units by +15%.
     {
@@ -51,6 +51,30 @@ export const interpretModifiers: Record<string, (values: number[]) => Modifier[]
       value: -1 * s,
       type: "ability",
       duration: t,
+    },
+  ],
+  
+  "network-of-castles": ([i]) => [
+    // When enemies are nearby, this building sounds an alarm, causing nearby units to get a +20% increase to attack speed.
+    {
+      property: "attackSpeed",
+      select: common.allLand,
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "bonus",
+    },
+  ],
+};
+
+export const technologyModifiers: Record<string, (values: number[]) => Modifier[]> = {
+  "arrow-volley": ([s]) => [
+    // Longbowmen gain Arrow Volley, an activated ability that reduces their time to attack by +1 second for a duration of 6 seconds.
+    {
+      property: "attackSpeed",
+      select: { id: ["longbowman"] },
+      effect: "change",
+      value: -1 * s,
+      type: "ability",
     },
   ],
 
@@ -651,17 +675,6 @@ export const interpretModifiers: Record<string, (values: number[]) => Modifier[]
       effect: "change",
       value: round(g / s),
       type: "influence",
-    },
-  ],
-
-  "network-of-castles": ([i]) => [
-    // When enemies are nearby, this building sounds an alarm, causing nearby units to get a +20% increase to attack speed.
-    {
-      property: "attackSpeed",
-      select: common.allLand,
-      effect: "multiply",
-      value: increaseByPercent(1, i),
-      type: "bonus",
     },
   ],
 

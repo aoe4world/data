@@ -1,15 +1,17 @@
 {
-  "id": "arrow-volley-1",
+  "id": "arrow-volley-4",
   "baseId": "arrow-volley",
   "type": "ability",
   "name": "Arrow Volley",
   "pbgid": 178834,
   "attribName": "longbow_rate_of_fire_ability",
-  "age": 1,
+  "age": 4,
   "civs": [
     "en"
   ],
   "description": "Left click to reduce Longbowman's time to attack by +1 second for a duration of 6 seconds.",
+  "classes": [],
+  "displayClasses": "",
   "costs": {
     "food": 0,
     "wood": 0,
@@ -18,11 +20,8 @@
     "total": 0,
     "popcap": 0
   },
-  "abilityType": "timed",
   "activation": "timed",
   "range": 0.0025,
-  "rechargeTime": 45,
-  "toggleGroup": null,
   "effects": [
     {
       "property": "attackSpeed",
@@ -33,7 +32,9 @@
       },
       "effect": "change",
       "value": -1,
-      "type": "ability"
+      "type": "ability",
+      "duration": 6
     }
-  ]
+  ],
+  "activationRechargeTime": 45
 }

@@ -7,8 +7,7 @@ import { slugify } from "../lib/utils/string";
 import { Armor, Building, Item, ItemClass, ModifyableProperty, Technology, Unit, Upgrade, Ability, AbilityActivation } from "../types/items";
 import { civConfig } from "../types/civs";
 import { useIcon } from "./icons";
-import { interpretModifiers } from "./modifiers";
-import { abilityModifiers } from "./abilities";
+import { technologyModifiers, abilityModifiers } from "./modifiers";
 import { RunContext, writeTemp } from "./run";
 
 export async function parseItemFromAttribFile(file: string, data: any, civ: civConfig, context: RunContext) {
@@ -98,7 +97,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
 
     if (type === ITEM_TYPES.ABILITIES && file.startsWith("abilities")) {
       const translationParams = ui_ext.help_text_formatter?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
-      const effectsFactory = interpretModifiers[baseId];
+      const effectsFactory = abilityModifiers[baseId];
       const effects = effectsFactory?.(translationParams) ?? [];
 
       // if (effects.length == 0) {
@@ -150,7 +149,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
     
     if (type === ITEM_TYPES.ABILITIES && file.startsWith("info/buff_info")) {
       const translationParams = ui_ext.description_formatter?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
-      const effectsFactory = interpretModifiers[baseId];
+      const effectsFactory = abilityModifiers[baseId];
       const effects = effectsFactory?.(translationParams) ?? [];
       
       const ability: Ability = {
@@ -220,7 +219,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
 
     if (type === ITEM_TYPES.TECHNOLOGIES) {
       const translationParams = ui_ext.help_text_formatter?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
-      const effectsFactory = interpretModifiers[baseId];
+      const effectsFactory = technologyModifiers[baseId];
       const effects = effectsFactory?.(translationParams) ?? [];
 
       // if (item.id == "upgrade-militia-4-4") {

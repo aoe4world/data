@@ -148,6 +148,12 @@ workaround("Make English Wynguard Forces available from Imperial Age", {
   ...overrideAge(["wynguard-army", "wynguard-footmen", "wynguard-raiders", "wynguard-rangers"], 4, ["en"]),
 });
 
+//could do this by creating dependency from techs that unlock abilities, but doing workaround for the time being
+
+workaround("Make Ability Arrow Volley availabe in Imperial Age", {
+  ...overrideAge(["arrow-volley"], 4, ["en"]),
+});
+
 // –––– Unit weapons ––––
 
 workaround("Remove daggers from ranged units", {

@@ -70,7 +70,9 @@ async function buildTechTree(civ: civConfig, context: RunContext = { debug: fals
     }
 
     if (items.has(item.id)) {
-      throw new Error(`Duplicate item id ${item.id} in ${file} conflicts with ${items.get(item.id)!.attribName}`);
+      if (items.get(item.id)!.type == item.type) {
+        throw new Error(`Duplicate item id ${item.id} in ${file} conflicts with ${items.get(item.id)!.attribName}`);
+      }
     }
 
     items.set(item.id, item);
