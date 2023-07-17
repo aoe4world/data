@@ -191,8 +191,8 @@ workaround("Fix age and add ability props for great_wall_buff", {
   mutator: (item) => {
     item.age = 4;
     item.id = `${item.baseId}-${item.age}`;
-    item.activation = "always";
-    item.range = 0;
+    item.active = "always";
+    item.auraRange = 0;
     item.costs = { ...NO_COSTS, popcap:0 };
   },
 });
@@ -242,8 +242,8 @@ workaround("Fix age and add missing info for Yam Network", {
     item.age = 2;
     item.id = `${item.baseId}-${item.age}`;
     item.name = "Yam Network";
-    item.range = 12.5;
-    item.activation = "always";
+    item.auraRange = 12.5;
+    item.active = "always";
     item.description = "Yam speed aura applies to all units instead of just Traders and cavalry units. Does not apply to siege engines.";
     item.costs = { ...NO_COSTS, popcap:0 };
   },
@@ -263,8 +263,8 @@ workaround("Add ability info to Mehter speed formation", {
   mutator: (item) => {
     item.baseId = "mehter-speed-bonus";
     item.id = `${item.baseId}-${item.age}`;
-    item.range = 6;
-    item.activation = "always";
+    item.auraRange = 6;
+    item.active = "always";
     item.description = "Movement speed bonus +15%.";
     item.costs = { ...NO_COSTS, popcap:0 };
   },
@@ -275,8 +275,8 @@ workaround("Add ability info to Mehter speed formation", {
   mutator: (item) => {
     item.baseId = "mehter-speed-bonus";
     item.id = `${item.baseId}-${item.age}`;
-    item.range = 6;
-    item.activation = "always";
+    item.auraRange = 6;
+    item.active = "always";
     item.description = "Movement speed bonus +15%.";
     item.costs = { ...NO_COSTS, popcap:0 };
   },

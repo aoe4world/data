@@ -125,11 +125,9 @@ export interface Weapon {
 
 export interface Ability extends Item {
   type: "ability";
-  //abilityType?: "always_on" | "timed" | "toggle" | "modal";
-  //activation?: string;
-  activation: "always" | "timed" | "toggle" | "modal";
-  range?: number;
-  activationRechargeTime?: number;
+  active: "always" | "manual" | "toggle";
+  auraRange?: number;
+  cooldown?: number;
   toggleGroup?: string;
   effects?: Modifier[];
 };

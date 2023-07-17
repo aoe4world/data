@@ -64,17 +64,19 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
     const classes = displayClasses.flatMap((x) => x.toLowerCase().split(" ")) as ItemClass[];
 
     const unique = parseUnique(ui_ext);
+    
+    const isBuff = file.startsWith("info/buff_info");
 
     let costs;
-    if (type === ITEM_TYPES.ABILITIES && file.startsWith("abilities"))
-      costs = parseCosts(data.ability_bag.cost_to_player, data.ability_bag.recharge_cost, 0 );
-    else if (type === ITEM_TYPES.ABILITIES && file.startsWith("info/buff_info"))
+    if (isBuff)
       costs = {};
+    else if (type === ITEM_TYPES.ABILITIES)
+      costs = parseCosts(data.ability_bag.cost_to_player, data.ability_bag.recharge_cost, 0 );
     else
       costs = parseCosts(ebpExts?.cost_ext?.time_cost?.cost || data.upgrade_bag?.time_cost?.cost, ebpExts?.cost_ext?.time_cost?.time_seconds || data.upgrade_bag?.time_cost?.time_seconds, ebpExts?.population_ext?.personnel_pop );
 
     let icon;
-    if (type === ITEM_TYPES.ABILITIES && file.startsWith("info/buff_info")) 
+    if (isBuff) 
       icon = await useIcon(ui_ext.icon.slice(6), type, id);
     else icon = 
       await useIcon(ui_ext.icon_name, type, id);
@@ -99,58 +101,35 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       icon,
     };
 
-    if (type === ITEM_TYPES.ABILITIES && file.startsWith("abilities")) {
-      const translationParams = ui_ext.help_text_formatter?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
-      const effectsFactory = abilityModifiers[baseId];
-      const effects = effectsFactory?.(translationParams) ?? [];
-
-      // if (effects.length == 0) {
-      //   const addEffect = (property: ModifyableProperty, value: number, effect: "change" | "multiply" = "change", type: "passive" | "ability" = "passive") =>
-      //     effects.push({ property, value, effect, type });
-
-      //   for (const { id, value } of data?.ability_bag?.float_properties ?? []) {
-      //     if (id === "health_max") addEffect("hitpoints", value);
-      //     else if (id === "melee_damage") addEffect("meleeAttack", value);
-      //     else if (id === "charge_damage") addEffect("meleeAttack", value, "change", "ability");
-      //     else if (id === "armor_fire") addEffect("fireArmor", value);
-      //     else if (id === "armor_melee") addEffect("meleeArmor", value);
-      //     else if (id === "armor_range") addEffect("rangedArmor", value);
-      //     else if (id === "attack_speed") addEffect("attackSpeed", value);
-      //     else if (id === "damage") {
-      //       addEffect("meleeAttack", value);
-      //       addEffect("rangedAttack", value);
-      //       addEffect("siegeAttack", value);
-      //       addEffect("fireAttack", value);
-      //     } else if (id === "multiplier") {
-      //       // ignore
-      //     } else console.log("Unknown float property", id, value, item.attribName, item.id);
-      //   }
-      // }
-      
-      const ability: Ability = {
-        ...item,
-        type: "ability",
-        displayClasses: "",
-        classes: [],
-        // abilityType: file.split("/")[1].split("_")[0],
-        // activation: data.ability_bag.activation,
-        activation: file.split("/")[1].split("_")[0],
-        range: data.ability_bag.range / 4,
-        //rechargeTime: data.ability_bag.recharge_time,
-        //toggleGroup: data.ability_bag.toggle_ability_group ?? "",
-        effects,
-      };
-      delete(ability["unique"])
-      delete(ability["producedBy"])
-      
-      if (ability["activation"]=="toggle") ability["toggleGroup"]=data.ability_bag.toggle_ability_group;
-      if (!(ability["activation"]=="always")) ability["activationRechargeTime"]=data.ability_bag.recharge_time;
-      
-      return ability;
-    }
-    
-    if (type === ITEM_TYPES.ABILITIES && file.startsWith("info/buff_info")) {
-      const translationParams = ui_ext.description_formatter?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
+    if (type === ITEM_TYPES.ABILITIES) {
+      let abilityFormatter;
+      let abilityActive;
+      let abilityToggleGroup;
+      let abilityAuraRange;
+      let abilityCooldown;
+      let abilityName;
+      let abilityDescription;
+      if (isBuff) {
+        abilityFormatter = ui_ext.description_formatter;
+        abilityActive = "";
+        abilityToggleGroup = "";
+        abilityAuraRange = 0;
+        abilityCooldown = 0;
+        abilityName = getTranslation(ui_ext.title);
+        abilityDescription = getTranslation(ui_ext.description_formatter?.formatter || ui_ext.description);
+      }
+      else {
+        abilityFormatter = ui_ext.help_text_formatter;
+        abilityActive = file.split("/")[1].split("_")[0];
+        if (abilityActive == "timed" || abilityActive == "modal") abilityActive = "manual";
+        if (abilityActive == "toggle") abilityToggleGroup = data.ability_bag.toggle_ability_group ?? "";
+        else abilityToggleGroup = "";
+        abilityAuraRange = data.ability_bag.range / 4;
+        abilityCooldown = data.ability_bag.recharge_time;
+        abilityName = item["name"];
+        abilityDescription = item["description"];
+      }
+      const translationParams = abilityFormatter?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
       const effectsFactory = abilityModifiers[baseId];
       const effects = effectsFactory?.(translationParams) ?? [];
       
@@ -159,12 +138,18 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
         type: "ability",
         displayClasses: "",
         classes: [],
-        name: getTranslation(ui_ext.title),
-        description: getTranslation(ui_ext.description_formatter?.formatter || ui_ext.description),
+        name: abilityName,
+        description: abilityDescription,
+        active: abilityActive,
+        auraRange: abilityAuraRange,
         effects,
       };
       delete(ability["unique"])
       delete(ability["producedBy"])
+      
+      if (ability["active"]=="toggle") ability["toggleGroup"]=abilityToggleGroup;
+      if (abilityActive == "toggle" || abilityActive == "manual") ability["cooldown"]=abilityCooldown;
+      
       return ability;
     }
 
