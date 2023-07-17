@@ -73,7 +73,11 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
     else
       costs = parseCosts(ebpExts?.cost_ext?.time_cost?.cost || data.upgrade_bag?.time_cost?.cost, ebpExts?.cost_ext?.time_cost?.time_seconds || data.upgrade_bag?.time_cost?.time_seconds, ebpExts?.population_ext?.personnel_pop );
 
-    const icon = await useIcon(ui_ext.icon_name, type, id);
+    let icon;
+    if (type === ITEM_TYPES.ABILITIES && file.startsWith("info/buff_info")) 
+      icon = await useIcon(ui_ext.icon.slice(6), type, id);
+    else icon = 
+      await useIcon(ui_ext.icon_name, type, id);
 
     const pbgid = data.pbgid;
 
@@ -142,8 +146,6 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       if (ability["activation"]=="toggle") ability["toggleGroup"]=data.ability_bag.toggle_ability_group;
       if (!(ability["activation"]=="always")) ability["activationRechargeTime"]=data.ability_bag.recharge_time;
       
-      //delete(ability["displayClasses"])
-      //delete(ability["classes"])
       return ability;
     }
     
@@ -155,14 +157,14 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       const ability: Ability = {
         ...item,
         type: "ability",
+        displayClasses: "",
+        classes: [],
         name: getTranslation(ui_ext.title),
         description: getTranslation(ui_ext.description_formatter?.formatter || ui_ext.description),
         effects,
       };
       delete(ability["unique"])
       delete(ability["producedBy"])
-      //delete(ability["displayClasses"])
-      //delete(ability["classes"])
       return ability;
     }
 

@@ -1,0 +1,43 @@
+{
+  "id": "great-wall-buff-chi-4",
+  "baseId": "great-wall-buff-chi",
+  "type": "ability",
+  "name": "The Long Wall",
+  "pbgid": 2076747,
+  "attribName": "great_wall_buff_chi",
+  "age": 4,
+  "civs": [
+    "ch"
+  ],
+  "description": "All units standing on Walls gain +25% ranged damage.",
+  "classes": [],
+  "displayClasses": "",
+  "costs": {
+    "gold": 0,
+    "wood": 0,
+    "food": 0,
+    "stone": 0,
+    "total": 0,
+    "time": 0,
+    "popcap": 0
+  },
+  "icon": "https://data.aoe4world.com/images/abilities/great-wall-buff-chi-1.png",
+  "effects": [
+    {
+      "property": "rangedAttack",
+      "select": {
+        "id": [
+          "zhuge-nu",
+          "archer",
+          "crossbowman",
+          "grenadier"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.25,
+      "type": "ability"
+    }
+  ],
+  "activation": "always",
+  "range": 0
+}

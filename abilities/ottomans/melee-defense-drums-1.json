@@ -1,0 +1,49 @@
+{
+  "id": "melee-defense-drums-1",
+  "baseId": "melee-defense-drums",
+  "type": "ability",
+  "name": "Melee Defense Drums",
+  "pbgid": 2074304,
+  "attribName": "mehter_melee_armor_buff_ott",
+  "age": 1,
+  "civs": [
+    "ot"
+  ],
+  "description": "Mehter drums that increase the melee armor of nearby units by +2.",
+  "classes": [],
+  "displayClasses": "",
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "total": 0,
+    "popcap": 0
+  },
+  "icon": "https://data.aoe4world.com/images/abilities/melee-defense-drums-off-1.png",
+  "activation": "toggle",
+  "range": 6,
+  "effects": [
+    {
+      "property": "meleeArmor",
+      "select": {
+        "class": [
+          [
+            "infantry"
+          ],
+          [
+            "cavalry"
+          ],
+          [
+            "siege"
+          ]
+        ]
+      },
+      "effect": "change",
+      "value": 2,
+      "type": "ability"
+    }
+  ],
+  "toggleGroup": "mehter_buff",
+  "activationRechargeTime": 15
+}

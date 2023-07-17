@@ -1,0 +1,49 @@
+{
+  "id": "ranged-defense-drums-1",
+  "baseId": "ranged-defense-drums",
+  "type": "ability",
+  "name": "Ranged Defense Drums",
+  "pbgid": 2074303,
+  "attribName": "mehter_ranged_armor_buff_ott",
+  "age": 1,
+  "civs": [
+    "ot"
+  ],
+  "description": "Mehter drums that increase the ranged armor of nearby units by +1.",
+  "classes": [],
+  "displayClasses": "",
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "total": 0,
+    "popcap": 0
+  },
+  "icon": "https://data.aoe4world.com/images/abilities/ranged-defense-drums-off-1.png",
+  "activation": "toggle",
+  "range": 6,
+  "effects": [
+    {
+      "property": "rangedArmor",
+      "select": {
+        "class": [
+          [
+            "infantry"
+          ],
+          [
+            "cavalry"
+          ],
+          [
+            "siege"
+          ]
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "ability"
+    }
+  ],
+  "toggleGroup": "mehter_buff",
+  "activationRechargeTime": 15
+}

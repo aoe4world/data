@@ -7,7 +7,8 @@ const common = {
   allMeleeUnitsExceptSiege: { class: [["melee"]] } as Modifier["select"],
   allNonSiegeUnits: { class: [["infantry"], ["cavalry"]] } as Modifier["select"],
   allMilitaryLand: { class: [["infantry"], ["cavalry"], ["siege"]] } as Modifier["select"],
-  allLand: { class: [["infantry"], ["cavalry"], ["siege"], ["villager"]] } as Modifier["select"],
+  allLandUnitsExceptReligiousTrader: { class: [["melee"], ["ranged"], ["siege"]], id: ["villager"] } as Modifier["select"],
+  allLand: { class: [["melee"], ["ranged"], ["siege"]], id: ["villager", "trader"] } as Modifier["select"],
   allRangedUnitsAndBuildingsExceptSiege: {
     class: [
       ["ranged", "cavalry"],
@@ -28,20 +29,11 @@ const increaseByPercentImproved = (n: number, percent: number, delta: number) =>
 const decreaseByPercentImproved = (n: number, percent: number, delta: number) => round((n * (1 - toPercent(percent))) / (1 - (Math.abs(percent) - Math.abs(delta)) / 100));
 const increaseSpeedByPercent = (speed: number, percent: number) => round(speed / (1 + toPercent(percent)) / 10) * 10;
 const increaseAttackSpeedByPercent = (speed: number, percent: number) => speed * round(1 - 1 / (1 - toPercent(percent)));
+const increaseAttackSpeedByPercentNew = (percent: number) => round(1/(1+percent/100));
 const round = (n: number) => Math.round(n * 100) / 100; //(100/(100-33))
 
 export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> = {
-  "attack-drums-off": ([s]) => [
-    // Ability: Mehter drums that increase the attack speed of nearby units by +15%.
-    {
-      property: "attackSpeed",
-      select: common.allMilitaryLand,
-      effect: "change",
-      value: 1 + increaseAttackSpeedByPercent(1, s),
-      type: "ability",
-    },
-  ],
-  
+
   "arrow-volley": ([s, t]) => [
     // Longbowmen gain Arrow Volley, an activated ability that reduces their time to attack by +1 second for a duration of 6 seconds.
     {
@@ -58,12 +50,371 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     // When enemies are nearby, this building sounds an alarm, causing nearby units to get a +20% increase to attack speed.
     {
       property: "attackSpeed",
-      select: common.allLand,
+      select: common.allLandUnitsExceptReligiousTrader,
       effect: "multiply",
-      value: increaseByPercent(1, i),
-      type: "bonus",
+      value: decreaseByPercent(1, i),
+      type: "ability",
     },
   ],
+  
+  "great-wall-buff-chi": ([]) => [
+    // All units standing on Walls gain +25% ranged damage.
+    {
+      property: "rangedAttack",
+      select: {
+        id: [
+          "zhuge-nu",
+          "archer",
+          "crossbowman",
+          "grenadier",
+        ],
+      },
+      effect: "multiply",
+      value: increaseByPercent(1, 25),
+      type: "ability",
+    },
+  ],
+  
+    "spirit-way": ([]) => [
+    // When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.
+    {
+      property: "attackSpeed",
+      select: common.allNonSiegeUnits,
+      effect: "multiply",
+      value: increaseAttackSpeedByPercentNew(20),
+      type: "ability",
+      duration: 10,
+    },
+    {
+      property: "healingRate",
+      select: common.allNonSiegeUnits,
+      effect: "change",
+      value: 2,
+      type: "ability",
+      duration: 10,
+    },
+  ],
+
+    "saints-blessing": ([]) => [
+    // After striking an enemy, the Warrior Monk increases the armor and damage of nearby allied Rus military units for a duration.
+    // Manual testing produces a default of +1 range and melee armor and +2 damage for 10 second duration and 2 tile range
+    // Can be upgraded by two techs for additional +1 damage, +10 second duration, and +5 tile range
+    // Ability timer does not reset; has to end and then can restart
+    {
+      property: "rangedAttack",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "change",
+      value: 2,
+      type: "ability",
+      duration: 10,
+    },
+    {
+      property: "meleeAttack",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "change",
+      value: 2,
+      type: "ability",
+      duration: 10,
+    },
+    {
+      property: "fireAttack",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "change",
+      value: 2,
+      type: "ability",
+      duration: 10,
+    },
+    {
+      property: "siegeAttack",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "change",
+      value: 2,
+      type: "ability",
+      duration: 10,
+    },
+    {
+      property: "rangedArmor",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "change",
+      value: 1,
+      type: "ability",
+      duration: 10,
+    },
+    {
+      property: "meleeArmor",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "change",
+      value: 1,
+      type: "ability",
+      duration: 10,
+    },
+  ],
+
+  "high-armory-production-bonus": ([i]) => [
+    // The cost of siege engines in nearby Siege Workshops is decreased by 20%.
+    {
+      property: "goldCost",
+      select: { class: [["siege"]] },
+      effect: "multiply",
+      value: decreaseByPercent(1, i),
+      type: "ability",
+    },
+    {
+      property: "woodCost",
+      select: { class: [["siege"]] },
+      effect: "multiply",
+      value: decreaseByPercent(1, i),
+      type: "ability",
+    },
+  ],
+  
+  "static-deployment": ([i]) => [
+    // Streltsy gain +30% (i) attack speed after remaining stationary for 10 (j not implemented yet) seconds.
+    {
+      property: "attackSpeed",
+      select: { id: ["streltsy"] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercentNew(i),
+      type: "ability",
+    },
+  ],
+  
+  "gallop": ([]) => [
+    // Activate to move at maximum speed with +2 tile weapon range for 8 seconds.
+    {
+      property: "moveSpeed",
+      select: { id: ["horse-archer"] },
+      effect: "change",
+      value: 0.38,
+      type: "ability",
+      duration: 8,
+    },
+    {
+      property: "maxRange",
+      select: { id: ["horse-archer"] },
+      effect: "change",
+      value: 2,
+      type: "ability",
+      duration: 8,
+    },
+  ],
+
+  "kurultai-healing-aura-mon": ([]) => [
+    // Nearby units within its aura heal +1 health every 1 second and gain an additional +20% damage.
+    // also works for ally but dont have props to capture this yet
+    {
+      property: "rangedAttack",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "multiply",
+      value: increaseByPercent(1, 20),
+      type: "ability",
+    },
+    {
+      property: "meleeAttack",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "multiply",
+      value: increaseByPercent(1, 20),
+      type: "ability",
+    },
+    {
+      property: "fireAttack",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "multiply",
+      value: increaseByPercent(1, 20),
+      type: "ability",
+    },
+    {
+      property: "siegeAttack",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "multiply",
+      value: increaseByPercent(1, 20),
+      type: "ability",
+    },
+    {
+      property: "healingRate",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "change",
+      value: 1,
+      type: "ability",
+    },
+  ],
+
+  "battle-veteran": ([]) => [
+    // Heals after every attack performed
+    {
+      property: "healingRate",
+      select: { id: ["keshik"] },
+      effect: "change",
+      value: 3,
+      type: "ability",
+    },
+  ],
+  
+  "maneuver-arrow": ([i, j]) => [
+    // Fire a Signal Arrow that increases the movement speed of nearby units (including the Khan) by +33% for 5 seconds. Does not affect Villagers.
+    {
+      property: "moveSpeed",
+      select: common.allMilitaryLand,
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+      duration: j,
+    },
+  ],
+  
+  "attack-speed-arrow": ([i, j]) => [
+    // Fires a Signal Arrow that increases the attack speed of nearby ranged units (including the Khan) by +50% for 5 seconds.
+    {
+      property: "attackSpeed",
+      select: { class: [["ranged"]] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercentNew(i),
+      type: "ability",
+      duration: j,
+    },
+  ],
+  
+  "defense-arrow": ([i, j]) => [
+    // Fires a Signal Arrow that increases the armor of nearby units (including the Khan) by +2 for 5 seconds
+    {
+      property: "meleeArmor",
+      select: common.allMilitaryLand,
+      effect: "change",
+      value: i,
+      type: "ability",
+      duration: j,
+    },
+    {
+      property: "rangedArmor",
+      select: common.allMilitaryLand,
+      effect: "change",
+      value: i,
+      type: "ability",
+      duration: j,
+    },
+  ],
+  
+  "yam": ([i]) => [
+    // Cavalry and Traders near an Outpost get +15% speed for 10 seconds.
+    // does not seem to have a duration outside of the tower aura
+    {
+      property: "moveSpeed",
+      select: { class: [["cavalry"]], id: ["trader"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+    },
+  ],
+  
+  "outpost-speed-improved-mon": ([]) => [
+    // Yam speed aura applies to all units instead of just Traders and cavalry units. Does not apply to siege engines.
+    {
+      property: "moveSpeed",
+      select: { class: [["infantry"]], id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 15),
+      type: "ability",
+    },
+  ],
+
+  "mehter-default-formation-ott": ([i]) => [
+    // Movement speed bonus +15%
+    {
+      property: "moveSpeed",
+      select: common.allMilitaryLand,
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+    },
+  ],
+
+  "attack-drums-off": ([s]) => [
+    // Mehter drums that increase the attack speed of nearby units by +15%.
+    {
+      property: "attackSpeed",
+      select: common.allMilitaryLand,
+      effect: "multiply",
+      value: increaseAttackSpeedByPercentNew(s),
+      type: "ability",
+    },
+  ],
+  
+  "melee-defense-drums-off": ([s]) => [
+    // Mehter drums that increase the melee armor of nearby units by +2.
+    {
+      property: "meleeArmor",
+      select: common.allMilitaryLand,
+      effect: "change",
+      value: s,
+      type: "ability",
+    },
+  ],
+  
+  "ranged-defense-drums-off": ([s]) => [
+    // Mehter drums that increase the ranged armor of nearby units by +1.
+    {
+      property: "rangedArmor",
+      select: common.allMilitaryLand,
+      effect: "change",
+      value: s,
+      type: "ability",
+    },
+  ],
+  
+  "fortitude": ([i, j, k]) => [
+    // Gain +50% attack speed and receive +50% damage from melee weapons for 10 seconds.
+    // activation recharge starts after ability ends...
+    {
+      property: "attackSpeed",
+      select: common.allMilitaryLand,
+      effect: "change",
+      value: increaseAttackSpeedByPercentNew(i),
+      type: "ability",
+      duration: k,
+    },
+    {
+      property: "unknown",
+      select: common.allMilitaryLand,
+      effect: "multiply",
+      value: increaseByPercent(1, j),
+      type: "ability",
+      duration: k,
+    },
+  ],
+  
+  "blacksmith-and-university-influence": ([s, t, u, v]) => [
+    // Military unit production rate increased +20%/+30%/+40% by Age while within the influence of a Blacksmith or University. The Istanbul Observatory increases the bonus to +60%.
+    // need another way to handle this
+    {
+      property: "productionSpeed",
+      select: common.allMilitaryLand,
+      effect: "multiply",
+      value: decreaseByPercent(1, s),
+      type: "ability",
+    },
+    {
+      property: "productionSpeed",
+      select: common.allMilitaryLand,
+      effect: "multiply",
+      value: decreaseByPercent(1, t),
+      type: "ability",
+    },
+    {
+      property: "productionSpeed",
+      select: common.allMilitaryLand,
+      effect: "multiply",
+      value: decreaseByPercent(1, u),
+      type: "ability",
+    },
+    {
+      property: "productionSpeed",
+      select: common.allMilitaryLand,
+      effect: "multiply",
+      value: decreaseByPercent(1, v),
+      type: "ability",
+    },
+  ],
+
 };
 
 export const technologyModifiers: Record<string, (values: number[]) => Modifier[]> = {
@@ -239,7 +590,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  /// Common economic tecnologies ––––––––––––––––––––––––––––––––––––
+  /// Common economic tecnologies –––––––––––––––––––––––––––––––––
 
   "crosscut-saw": ([i]) => [
     // Increase Villagers' gathering rate for Wood by +15%.

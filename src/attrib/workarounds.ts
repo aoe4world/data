@@ -154,6 +154,134 @@ workaround("Make Ability Arrow Volley availabe in Imperial Age", {
   ...overrideAge(["arrow-volley"], 4, ["en"]),
 });
 
+workaround("Make Ability Saints Blessing availabe in Castle Age", {
+  ...overrideAge(["saints-blessing"], 3, ["ru"]),
+});
+
+workaround("Make Ability High Armory Production Bonus availabe in Imperial Age", {
+  ...overrideAge(["high-armory-production-bonus"], 4, ["ru"]),
+});
+
+workaround("Make Ability Static Deployment availabe in Imperial Age", {
+  ...overrideAge(["static-deployment"], 4, ["ru"]),
+});
+
+workaround("Make Ability Gallop availabe in Imperial Age", {
+  ...overrideAge(["gallop"], 4, ["ru"]),
+});
+
+workaround("Make Ability Gallop availabe in Imperial Age", {
+  ...overrideAge(["gallop"], 4, ["ru"]),
+});
+
+workaround("Make Ability Fortitude availabe in Feudal Age", {
+  ...overrideAge(["fortitude"], 2, ["ot"]),
+});
+
+workaround("Make Ability blacksmith-and-university-influence availabe in Feudal Age", {
+  ...overrideAge(["blacksmith-and-university-influence"], 2, ["ot"]),
+});
+
+
+
+// ---- Abilities ----
+
+workaround("Fix age and add ability props for great_wall_buff", {
+  predicate: (item) => item.type === "ability" && item.attribName === "great_wall_buff_chi",
+  mutator: (item) => {
+    item.age = 4;
+    item.id = `${item.baseId}-${item.age}`;
+    item.activation = "always";
+    item.range = 0;
+    item.costs = { ...NO_COSTS, popcap:0 };
+  },
+});
+
+workaround("Fix age and add missing info for spirit_way", {
+  predicate: (item) => item.type === "ability" && item.attribName === "spirit_way",
+  mutator: (item) => {
+    item.age = 4;
+    item.id = `${item.baseId}-${item.age}`;
+    item.name = "Spirit Way Ancestors";
+    item.description = "When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.";
+    item.icon = "https://data.aoe4world.com/images/buildings/spirit-way-3.png";
+  },
+});
+
+workaround("Fix age and add missing info for kurultai_healing_aura_mon", {
+  predicate: (item) => item.type === "ability" && item.attribName === "kurultai_healing_aura_mon",
+  mutator: (item) => {
+    item.age = 3;
+    item.id = `${item.baseId}-${item.age}`;
+    item.name = "Kurultai Aura";
+    item.description = "Nearby units within its aura heal +1 health every 1 second and gain an additional +20% damage.";
+    item.icon = "https://data.aoe4world.com/images/buildings/kurultai-2.png";
+  },
+});
+
+workaround("Fix age and add missing info for Keshik", {
+  predicate: (item) => item.type === "ability" && item.attribName === "lancer_healing_mon",
+  mutator: (item) => {
+    item.age = 2;
+    item.id = `${item.baseId}-${item.age}`;
+    item.name = "Keshik Healing";
+  },
+});
+
+workaround("Add toggle group for Khan abilities", {
+  predicate: (item) => item.type === "ability" && (item.attribName === "khan_maneuver_signal_arrow_mon" || item.attribName === "khan_attack_speed_signal_arrow_mon" || item.attribName === "khan_defensive_signal_arrow_mon"),
+  mutator: (item) => {
+    item.toggleGroup = "khan_signal_ability_available";
+  },
+});
+
+workaround("Fix age and add missing info for Yam Network", {
+  predicate: (item) => item.type === "ability" && item.attribName === "outpost_speed_improved_mon",
+  mutator: (item) => {
+    item.baseId = "yam-network";
+    item.age = 2;
+    item.id = `${item.baseId}-${item.age}`;
+    item.name = "Yam Network";
+    item.range = 12.5;
+    item.activation = "always";
+    item.description = "Yam speed aura applies to all units instead of just Traders and cavalry units. Does not apply to siege engines.";
+    item.costs = { ...NO_COSTS, popcap:0 };
+  },
+});
+
+workaround("Change names of Mehter abilities", {
+  predicate: (item) => item.type === "ability" && item.attribName.includes("mehter"),
+  mutator: (item) => {
+    item.baseId = item.baseId.replace("-off","");
+    item.id = `${item.baseId}-${item.age}`;
+    item.name = item.name.replace(" (Off)","");
+  },
+});
+
+workaround("Add ability info to Mehter speed formation", {
+  predicate: (item) => item.type === "ability" && item.attribName === "mehter_default_formation_ott",
+  mutator: (item) => {
+    item.baseId = "mehter-speed-bonus";
+    item.id = `${item.baseId}-${item.age}`;
+    item.range = 6;
+    item.activation = "always";
+    item.description = "Movement speed bonus +15%.";
+    item.costs = { ...NO_COSTS, popcap:0 };
+  },
+});
+
+workaround("Add ability info to Mehter speed formation", {
+  predicate: (item) => item.type === "ability" && item.attribName === "mehter_default_formation_ott",
+  mutator: (item) => {
+    item.baseId = "mehter-speed-bonus";
+    item.id = `${item.baseId}-${item.age}`;
+    item.range = 6;
+    item.activation = "always";
+    item.description = "Movement speed bonus +15%.";
+    item.costs = { ...NO_COSTS, popcap:0 };
+  },
+});
+
 // –––– Unit weapons ––––
 
 workaround("Remove daggers from ranged units", {
