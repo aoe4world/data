@@ -6,7 +6,7 @@ import { CIVILIZATIONS } from "../lib/config/civs";
 import { writeJson } from "../lib/files/writeData";
 import { civConfig } from "../types/civs";
 import { Item } from "../types/items";
-import { attribFile, hardcodedDiscovery, racesMap } from "./config";
+import { attribFile, hardcodedDiscovery, hardcodedDiscoveryCommon, racesMap } from "./config";
 import { workarounds } from "./workarounds";
 import { parseItemFromAttribFile, maybeOnKey } from "./parse";
 import { getTranslation as t } from "./translations";
@@ -43,6 +43,7 @@ async function buildTechTree(civ: civConfig, context: RunContext = { debug: fals
   for (const b of army?.army_bag?.starting_buildings) files.add(b.starting_building.building);
   for (const u of army?.army_bag?.starting_units) files.add(u.squad);
   for (const file of hardcodedDiscovery[civ.slug] ?? []) files.add(file);
+  for (const file of hardcodedDiscoveryCommon?? []) files.add(file);
 
   async function parseFilesRecursively(file: string) {
     if (!files.has(file)) files.add(file);

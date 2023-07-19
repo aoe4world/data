@@ -8,17 +8,62 @@
   },
   "data": [
     {
-      "id": "greatwall-chi-1",
-      "baseId": "greatwall-chi",
+      "id": "great-wall-buff-chi-4",
+      "baseId": "great-wall-buff-chi",
       "type": "ability",
-      "name": "greatwall_chi",
-      "pbgid": 207272,
-      "attribName": "greatwall_chi",
-      "age": 1,
+      "name": "The Long Wall",
+      "pbgid": 2076747,
+      "attribName": "great_wall_buff_chi",
+      "age": 4,
       "civs": [
         "ch"
       ],
-      "description": "not-found-0.878943792788424",
+      "description": "All units standing on Walls gain +25% ranged damage.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "gold": 0,
+        "wood": 0,
+        "food": 0,
+        "stone": 0,
+        "total": 0,
+        "time": 0,
+        "popcap": 0
+      },
+      "icon": "https://data.aoe4world.com/images/abilities/great-wall-buff-chi-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "id": [
+              "zhuge-nu",
+              "archer",
+              "crossbowman",
+              "grenadier"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.25,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "spirit-way-4",
+      "baseId": "spirit-way",
+      "type": "ability",
+      "name": "Spirit Way Ancestors",
+      "pbgid": 207131,
+      "attribName": "spirit_way",
+      "age": 4,
+      "civs": [
+        "ch"
+      ],
+      "description": "When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.",
+      "classes": [],
+      "displayClasses": "",
       "costs": {
         "food": 0,
         "wood": 0,
@@ -27,12 +72,45 @@
         "total": 0,
         "popcap": 0
       },
-      "abilityType": "always",
-      "activation": "always_on",
-      "range": 7.5,
-      "rechargeTime": 0,
-      "toggleGroup": null,
-      "effects": []
+      "icon": "https://data.aoe4world.com/images/buildings/spirit-way-3.png",
+      "active": "always",
+      "auraRange": 5,
+      "effects": [
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ],
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.83,
+          "type": "ability",
+          "duration": 10
+        },
+        {
+          "property": "healingRate",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ],
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 2,
+          "type": "ability",
+          "duration": 10
+        }
+      ]
     }
   ]
 }

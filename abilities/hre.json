@@ -8,17 +8,19 @@
   },
   "data": [
     {
-      "id": "inspired-1",
-      "baseId": "inspired",
+      "id": "inspired-warriors-3",
+      "baseId": "inspired-warriors",
       "type": "ability",
-      "name": "Inspired",
+      "name": "Inspired Warriors",
       "pbgid": 176144,
       "attribName": "inspired_infantry_hre",
-      "age": 1,
+      "age": 3,
       "civs": [
         "hr"
       ],
       "description": "Military units deal +15% damage and gain +1 armor.",
+      "classes": [],
+      "displayClasses": "",
       "costs": {
         "food": 0,
         "wood": 0,
@@ -27,12 +29,104 @@
         "total": 0,
         "popcap": 0
       },
-      "abilityType": "always",
-      "activation": "always_on",
-      "range": 0.0025,
-      "rechargeTime": 0,
-      "toggleGroup": null,
-      "effects": []
+      "icon": "https://data.aoe4world.com/images/abilities/inspired-1.png",
+      "active": "always",
+      "auraRange": 0.0025,
+      "effects": [
+        {
+          "property": "rangedArmor",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ],
+              [
+                "cavalry"
+              ],
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "ability"
+        },
+        {
+          "property": "meleeArmor",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ],
+              [
+                "cavalry"
+              ],
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "ability"
+        },
+        {
+          "property": "meleeAttack",
+          "select": {
+            "class": [
+              [
+                "melee"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "ability"
+        },
+        {
+          "property": "fireAttack",
+          "select": {
+            "class": [
+              [
+                "melee"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "ability"
+        },
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "ranged"
+              ]
+            ],
+            "id": [
+              "culverin"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "influence"
+        },
+        {
+          "property": "siegeAttack",
+          "select": {
+            "class": [
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "influence"
+        }
+      ]
     }
   ]
 }

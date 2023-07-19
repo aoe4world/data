@@ -14,22 +14,26 @@
       "civs": [
         "ab"
       ],
-      "displayClasses": [],
-      "minAge": 1,
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/abilities/camel-support-1.png",
       "description": "Infantry gain armor when near a camel unit.",
       "variations": [
         {
-          "id": "camel-support-1",
+          "id": "camel-support-4",
           "baseId": "camel-support",
           "type": "ability",
           "name": "Camel Support",
           "pbgid": 200770,
           "attribName": "camel_support_aura_abb",
-          "age": 1,
+          "age": 4,
           "civs": [
             "ab"
           ],
           "description": "Infantry gain armor when near a camel unit.",
+          "classes": [],
+          "displayClasses": "",
           "costs": {
             "food": 0,
             "wood": 0,
@@ -38,11 +42,9 @@
             "total": 0,
             "popcap": 0
           },
-          "abilityType": "always",
-          "activation": "always_on",
-          "range": 5,
-          "rechargeTime": 0,
-          "toggleGroup": null,
+          "icon": "https://data.aoe4world.com/images/abilities/camel-support-1.png",
+          "active": "always",
+          "auraRange": 5,
           "effects": [
             {
               "property": "meleeArmor",
@@ -51,14 +53,24 @@
                   [
                     "infantry"
                   ]
-                ],
-                "id": [
-                  "camel-rider",
-                  "camel-archer"
                 ]
               },
               "effect": "change",
-              "type": "influence"
+              "value": 2,
+              "type": "ability"
+            },
+            {
+              "property": "rangedArmor",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "ability"
             }
           ]
         }

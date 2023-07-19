@@ -8,28 +8,32 @@
   },
   "data": [
     {
-      "id": "saints-blessing",
-      "name": "Saint's Blessing",
+      "id": "gallop",
+      "name": "Gallop",
       "type": "ability",
       "civs": [
         "ru"
       ],
-      "displayClasses": [],
-      "minAge": 1,
-      "description": "After striking an enemy, the Warrior Monk increases the armor and damage of nearby allied Rus military units for a duration.",
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/abilities/gallop-1.png",
+      "description": "Activate to move at maximum speed with +2 tile weapon range for 8 seconds.",
       "variations": [
         {
-          "id": "saints-blessing-1",
-          "baseId": "saints-blessing",
+          "id": "gallop-4",
+          "baseId": "gallop",
           "type": "ability",
-          "name": "Saint's Blessing",
-          "pbgid": 181465,
-          "attribName": "saints_blessing_rus",
-          "age": 1,
+          "name": "Gallop",
+          "pbgid": 2134249,
+          "attribName": "horse_archer_mounted_training_gallop_rus",
+          "age": 4,
           "civs": [
             "ru"
           ],
-          "description": "After striking an enemy, the Warrior Monk increases the armor and damage of nearby allied Rus military units for a duration.",
+          "description": "Activate to move at maximum speed with +2 tile weapon range for 8 seconds.",
+          "classes": [],
+          "displayClasses": "",
           "costs": {
             "food": 0,
             "wood": 0,
@@ -38,12 +42,343 @@
             "total": 0,
             "popcap": 0
           },
-          "abilityType": "always",
-          "activation": "always_on",
-          "range": 2,
-          "rechargeTime": 0,
-          "toggleGroup": null,
-          "effects": []
+          "icon": "https://data.aoe4world.com/images/abilities/gallop-1.png",
+          "active": "manual",
+          "auraRange": 0.25,
+          "effects": [
+            {
+              "property": "moveSpeed",
+              "select": {
+                "id": [
+                  "horse-archer"
+                ]
+              },
+              "effect": "change",
+              "value": 0.38,
+              "type": "ability",
+              "duration": 8
+            },
+            {
+              "property": "maxRange",
+              "select": {
+                "id": [
+                  "horse-archer"
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "ability",
+              "duration": 8
+            }
+          ],
+          "cooldown": 45
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "high-armory-production-bonus",
+      "name": "High Armory Production Bonus",
+      "type": "ability",
+      "civs": [
+        "ru"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/abilities/high-armory-production-bonus-1.png",
+      "description": "The cost of siege engines in nearby Siege Workshops is decreased by 20%.",
+      "variations": [
+        {
+          "id": "high-armory-production-bonus-4",
+          "baseId": "high-armory-production-bonus",
+          "type": "ability",
+          "name": "High Armory Production Bonus",
+          "pbgid": 207496,
+          "attribName": "high_armory_production_aura_rus",
+          "age": 4,
+          "civs": [
+            "ru"
+          ],
+          "description": "The cost of siege engines in nearby Siege Workshops is decreased by 20%.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/high-armory-production-bonus-1.png",
+          "active": "always",
+          "auraRange": 7.5,
+          "effects": [
+            {
+              "property": "goldCost",
+              "select": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.8,
+              "type": "ability"
+            },
+            {
+              "property": "woodCost",
+              "select": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.8,
+              "type": "ability"
+            }
+          ]
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "saints-blessing",
+      "name": "Saint's Blessing",
+      "type": "ability",
+      "civs": [
+        "ru"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/abilities/saints-blessing-1.png",
+      "description": "After striking an enemy, the Warrior Monk increases the armor and damage of nearby allied Rus military units for a duration.",
+      "variations": [
+        {
+          "id": "saints-blessing-3",
+          "baseId": "saints-blessing",
+          "type": "ability",
+          "name": "Saint's Blessing",
+          "pbgid": 181465,
+          "attribName": "saints_blessing_rus",
+          "age": 3,
+          "civs": [
+            "ru"
+          ],
+          "description": "After striking an enemy, the Warrior Monk increases the armor and damage of nearby allied Rus military units for a duration.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/saints-blessing-1.png",
+          "active": "always",
+          "auraRange": 2,
+          "effects": [
+            {
+              "property": "rangedAttack",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "ability",
+              "duration": 10
+            },
+            {
+              "property": "meleeAttack",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "ability",
+              "duration": 10
+            },
+            {
+              "property": "fireAttack",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "ability",
+              "duration": 10
+            },
+            {
+              "property": "siegeAttack",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "ability",
+              "duration": 10
+            },
+            {
+              "property": "rangedArmor",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "ability",
+              "duration": 10
+            },
+            {
+              "property": "meleeArmor",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "ability",
+              "duration": 10
+            }
+          ]
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "static-deployment",
+      "name": "Static Deployment",
+      "type": "ability",
+      "civs": [
+        "ru"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/abilities/static-deployment-1.png",
+      "description": "Streltsy gain +30% attack speed after remaining stationary for 10 seconds.",
+      "variations": [
+        {
+          "id": "static-deployment-4",
+          "baseId": "static-deployment",
+          "type": "ability",
+          "name": "Static Deployment",
+          "pbgid": 182235,
+          "attribName": "streltsy_static_deployment_ability_rus",
+          "age": 4,
+          "civs": [
+            "ru"
+          ],
+          "description": "Streltsy gain +30% attack speed after remaining stationary for 10 seconds.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/static-deployment-1.png",
+          "active": "always",
+          "auraRange": 0,
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "id": [
+                  "streltsy"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.77,
+              "type": "ability"
+            }
+          ]
         }
       ],
       "shared": {}

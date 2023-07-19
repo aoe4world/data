@@ -9,22 +9,26 @@
       "civs": [
         "en"
       ],
-      "displayClasses": [],
-      "minAge": 1,
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/abilities/arrow-volley-1.png",
       "description": "Left click to reduce Longbowman's time to attack by +1 second for a duration of 6 seconds.",
       "variations": [
         {
-          "id": "arrow-volley-1",
+          "id": "arrow-volley-4",
           "baseId": "arrow-volley",
           "type": "ability",
           "name": "Arrow Volley",
           "pbgid": 178834,
           "attribName": "longbow_rate_of_fire_ability",
-          "age": 1,
+          "age": 4,
           "civs": [
             "en"
           ],
           "description": "Left click to reduce Longbowman's time to attack by +1 second for a duration of 6 seconds.",
+          "classes": [],
+          "displayClasses": "",
           "costs": {
             "food": 0,
             "wood": 0,
@@ -33,11 +37,9 @@
             "total": 0,
             "popcap": 0
           },
-          "abilityType": "timed",
-          "activation": "timed",
-          "range": 0.0025,
-          "rechargeTime": 45,
-          "toggleGroup": null,
+          "icon": "https://data.aoe4world.com/images/abilities/arrow-volley-1.png",
+          "active": "manual",
+          "auraRange": 0.0025,
           "effects": [
             {
               "property": "attackSpeed",
@@ -48,6 +50,73 @@
               },
               "effect": "change",
               "value": -1,
+              "type": "ability",
+              "duration": 6
+            }
+          ],
+          "cooldown": 45
+        }
+      ]
+    },
+    {
+      "id": "network-of-castles",
+      "name": "Network of Castles",
+      "type": "ability",
+      "civs": [
+        "en"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/network-of-castles-1.png",
+      "description": "When enemies are nearby, this building sounds an alarm, causing nearby units to get a +20% increase to attack speed.",
+      "variations": [
+        {
+          "id": "network-of-castles-1",
+          "baseId": "network-of-castles",
+          "type": "ability",
+          "name": "Network of Castles",
+          "pbgid": 168608,
+          "attribName": "tower_outpost_alert_aura_eng",
+          "age": 1,
+          "civs": [
+            "en"
+          ],
+          "description": "When enemies are nearby, this building sounds an alarm, causing nearby units to get a +20% increase to attack speed.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/network-of-castles-1.png",
+          "active": "always",
+          "auraRange": 12.5,
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.8,
               "type": "ability"
             }
           ]
@@ -55,28 +124,32 @@
       ]
     },
     {
-      "id": "inspired",
-      "name": "Inspired",
+      "id": "inspired-warriors",
+      "name": "Inspired Warriors",
       "type": "ability",
       "civs": [
         "hr"
       ],
-      "displayClasses": [],
-      "minAge": 1,
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/abilities/inspired-1.png",
       "description": "Military units deal +15% damage and gain +1 armor.",
       "variations": [
         {
-          "id": "inspired-1",
-          "baseId": "inspired",
+          "id": "inspired-warriors-3",
+          "baseId": "inspired-warriors",
           "type": "ability",
-          "name": "Inspired",
+          "name": "Inspired Warriors",
           "pbgid": 176144,
           "attribName": "inspired_infantry_hre",
-          "age": 1,
+          "age": 3,
           "civs": [
             "hr"
           ],
           "description": "Military units deal +15% damage and gain +1 armor.",
+          "classes": [],
+          "displayClasses": "",
           "costs": {
             "food": 0,
             "wood": 0,
@@ -85,38 +158,134 @@
             "total": 0,
             "popcap": 0
           },
-          "abilityType": "always",
-          "activation": "always_on",
-          "range": 0.0025,
-          "rechargeTime": 0,
-          "toggleGroup": null,
-          "effects": []
+          "icon": "https://data.aoe4world.com/images/abilities/inspired-1.png",
+          "active": "always",
+          "auraRange": 0.0025,
+          "effects": [
+            {
+              "property": "rangedArmor",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "ability"
+            },
+            {
+              "property": "meleeArmor",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "ability"
+            },
+            {
+              "property": "meleeAttack",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.15,
+              "type": "ability"
+            },
+            {
+              "property": "fireAttack",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.15,
+              "type": "ability"
+            },
+            {
+              "property": "rangedAttack",
+              "select": {
+                "class": [
+                  [
+                    "ranged"
+                  ]
+                ],
+                "id": [
+                  "culverin"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.15,
+              "type": "influence"
+            },
+            {
+              "property": "siegeAttack",
+              "select": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.15,
+              "type": "influence"
+            }
+          ]
         }
       ]
     },
     {
-      "id": "melee-boost",
-      "name": "Melee Boost",
+      "id": "deploy-pavise",
+      "name": "Deploy Pavise",
       "type": "ability",
       "civs": [
         "fr"
       ],
-      "displayClasses": [],
-      "minAge": 1,
-      "description": "Royal Knight is doing +15% melee damage for 10 seconds.",
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/abilities/deploy-pavise-1.png",
+      "description": "Activate to increase weapon range by +1 tile and gain +5 ranged armor.\nRemains active for 30 seconds or until the Arbalétrier moves away.",
       "variations": [
         {
-          "id": "melee-boost-1",
-          "baseId": "melee-boost",
+          "id": "deploy-pavise-3",
+          "baseId": "deploy-pavise",
           "type": "ability",
-          "name": "Melee Boost",
-          "pbgid": 193950,
-          "attribName": "lancer_charge_melee_boost_fre",
-          "age": 1,
+          "name": "Deploy Pavise",
+          "pbgid": 212030,
+          "attribName": "deploy_pavise_fre",
+          "age": 3,
           "civs": [
             "fr"
           ],
-          "description": "Royal Knight is doing +15% melee damage for 10 seconds.",
+          "description": "Activate to increase weapon range by +1 tile and gain +5 ranged armor.\nRemains active for 30 seconds or until the Arbalétrier moves away.",
+          "classes": [],
+          "displayClasses": "",
           "costs": {
             "food": 0,
             "wood": 0,
@@ -125,38 +294,66 @@
             "total": 0,
             "popcap": 0
           },
-          "abilityType": "always",
-          "activation": "always_on",
-          "range": 0,
-          "rechargeTime": 0,
-          "toggleGroup": null,
-          "effects": []
+          "icon": "https://data.aoe4world.com/images/abilities/deploy-pavise-1.png",
+          "active": "manual",
+          "auraRange": 8.75,
+          "effects": [
+            {
+              "property": "maxRange",
+              "select": {
+                "id": [
+                  "arbaletrier"
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "ability",
+              "duration": 30
+            },
+            {
+              "property": "rangeArmor",
+              "select": {
+                "id": [
+                  "arbaletrier"
+                ]
+              },
+              "effect": "change",
+              "value": 5,
+              "type": "ability",
+              "duration": 30
+            }
+          ],
+          "cooldown": 60
         }
       ]
     },
     {
-      "id": "greatwall-chi",
-      "name": "greatwall_chi",
+      "id": "keep-influence",
+      "name": "Keep Influence",
       "type": "ability",
       "civs": [
-        "ch"
+        "fr"
       ],
-      "displayClasses": [],
-      "minAge": 1,
-      "description": "not-found-0.878943792788424",
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/abilities/keep-influence-1.png",
+      "description": "Archery Ranges and Stables within influence have unit costs decreased by 20%.",
       "variations": [
         {
-          "id": "greatwall-chi-1",
-          "baseId": "greatwall-chi",
+          "id": "keep-influence-3",
+          "baseId": "keep-influence",
           "type": "ability",
-          "name": "greatwall_chi",
-          "pbgid": 207272,
-          "attribName": "greatwall_chi",
-          "age": 1,
+          "name": "Keep Influence",
+          "pbgid": 1452233,
+          "attribName": "keep_influence_fre",
+          "age": 3,
           "civs": [
-            "ch"
+            "fr"
           ],
-          "description": "not-found-0.878943792788424",
+          "description": "Archery Ranges and Stables within influence have unit costs decreased by 20%.",
+          "classes": [],
+          "displayClasses": "",
           "costs": {
             "food": 0,
             "wood": 0,
@@ -165,12 +362,367 @@
             "total": 0,
             "popcap": 0
           },
-          "abilityType": "always",
-          "activation": "always_on",
-          "range": 7.5,
-          "rechargeTime": 0,
-          "toggleGroup": null,
-          "effects": []
+          "icon": "https://data.aoe4world.com/images/abilities/keep-influence-1.png",
+          "active": "always",
+          "auraRange": 0,
+          "effects": [
+            {
+              "property": "goldCost",
+              "select": {
+                "class": [
+                  [
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.8,
+              "type": "ability"
+            },
+            {
+              "property": "foodCost",
+              "select": {
+                "class": [
+                  [
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.8,
+              "type": "ability"
+            },
+            {
+              "property": "woodCost",
+              "select": {
+                "class": [
+                  [
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.8,
+              "type": "ability"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lancer-charge-bonus-damage",
+      "name": "Royal Knight Charge Damage",
+      "type": "ability",
+      "civs": [
+        "fr"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/abilities/lancer-charge-bonus-damage-1.png",
+      "description": "Gain +3 melee attack damage for 5 seconds after charging.",
+      "variations": [
+        {
+          "id": "lancer-charge-bonus-damage-2",
+          "baseId": "lancer-charge-bonus-damage",
+          "type": "ability",
+          "name": "Royal Knight Charge Damage",
+          "pbgid": 2032837,
+          "attribName": "lancer_charge_bonus_damage",
+          "age": 2,
+          "civs": [
+            "fr"
+          ],
+          "description": "Gain +3 melee attack damage for 5 seconds after charging.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "gold": 0,
+            "wood": 0,
+            "food": 0,
+            "stone": 0,
+            "total": 0,
+            "time": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/lancer-charge-bonus-damage-1.png",
+          "active": "always",
+          "auraRange": 0,
+          "effects": [
+            {
+              "property": "meleeAttack",
+              "select": {
+                "id": [
+                  "royal-knight"
+                ]
+              },
+              "effect": "change",
+              "value": 3,
+              "type": "ability",
+              "duration": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "great-wall-buff-chi",
+      "name": "The Long Wall",
+      "type": "ability",
+      "civs": [
+        "ch"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/abilities/great-wall-buff-chi-1.png",
+      "description": "All units standing on Walls gain +25% ranged damage.",
+      "variations": [
+        {
+          "id": "great-wall-buff-chi-4",
+          "baseId": "great-wall-buff-chi",
+          "type": "ability",
+          "name": "The Long Wall",
+          "pbgid": 2076747,
+          "attribName": "great_wall_buff_chi",
+          "age": 4,
+          "civs": [
+            "ch"
+          ],
+          "description": "All units standing on Walls gain +25% ranged damage.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "gold": 0,
+            "wood": 0,
+            "food": 0,
+            "stone": 0,
+            "total": 0,
+            "time": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/great-wall-buff-chi-1.png",
+          "active": "always",
+          "auraRange": 0,
+          "effects": [
+            {
+              "property": "rangedAttack",
+              "select": {
+                "id": [
+                  "zhuge-nu",
+                  "archer",
+                  "crossbowman",
+                  "grenadier"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.25,
+              "type": "ability"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spirit-way",
+      "name": "Spirit Way Ancestors",
+      "type": "ability",
+      "civs": [
+        "ch"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/buildings/spirit-way-3.png",
+      "description": "When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.",
+      "variations": [
+        {
+          "id": "spirit-way-4",
+          "baseId": "spirit-way",
+          "type": "ability",
+          "name": "Spirit Way Ancestors",
+          "pbgid": 207131,
+          "attribName": "spirit_way",
+          "age": 4,
+          "civs": [
+            "ch"
+          ],
+          "description": "When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/buildings/spirit-way-3.png",
+          "active": "always",
+          "auraRange": 5,
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.83,
+              "type": "ability",
+              "duration": 10
+            },
+            {
+              "property": "healingRate",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "ability",
+              "duration": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "forced-march",
+      "name": "Forced March",
+      "type": "ability",
+      "civs": [
+        "de"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/abilities/forced-march-1.png",
+      "description": "Activate to move 100% faster for 10 seconds, deactivates early when dealing damage.",
+      "variations": [
+        {
+          "id": "forced-march-3",
+          "baseId": "forced-march",
+          "type": "ability",
+          "name": "Forced March",
+          "pbgid": 180772,
+          "attribName": "infantry_forced_march_sul",
+          "age": 3,
+          "civs": [
+            "de"
+          ],
+          "description": "Activate to move 100% faster for 10 seconds, deactivates early when dealing damage.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/forced-march-1.png",
+          "active": "manual",
+          "auraRange": 6.25,
+          "effects": [
+            {
+              "property": "moveSpeed",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 2,
+              "type": "ability",
+              "duration": 10
+            }
+          ],
+          "cooldown": 75
+        }
+      ]
+    },
+    {
+      "id": "tower-of-victory-aura",
+      "name": "Tower of Victory Aura",
+      "type": "ability",
+      "civs": [
+        "de"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/abilities/tower-of-victory-aura-1.png",
+      "description": "Melee and ranged infantry who move near this Landmark permanently gain +20% attack speed.",
+      "variations": [
+        {
+          "id": "tower-of-victory-aura-2",
+          "baseId": "tower-of-victory-aura",
+          "type": "ability",
+          "name": "Tower of Victory Aura",
+          "pbgid": 200847,
+          "attribName": "tower_of_victory_aura_sul",
+          "age": 2,
+          "civs": [
+            "de"
+          ],
+          "description": "Melee and ranged infantry who move near this Landmark permanently gain +20% attack speed.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/tower-of-victory-aura-1.png",
+          "active": "always",
+          "auraRange": 7.5,
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.83,
+              "type": "ability"
+            }
+          ]
         }
       ]
     },
@@ -181,22 +733,26 @@
       "civs": [
         "ab"
       ],
-      "displayClasses": [],
-      "minAge": 1,
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/abilities/camel-support-1.png",
       "description": "Infantry gain armor when near a camel unit.",
       "variations": [
         {
-          "id": "camel-support-1",
+          "id": "camel-support-4",
           "baseId": "camel-support",
           "type": "ability",
           "name": "Camel Support",
           "pbgid": 200770,
           "attribName": "camel_support_aura_abb",
-          "age": 1,
+          "age": 4,
           "civs": [
             "ab"
           ],
           "description": "Infantry gain armor when near a camel unit.",
+          "classes": [],
+          "displayClasses": "",
           "costs": {
             "food": 0,
             "wood": 0,
@@ -205,11 +761,9 @@
             "total": 0,
             "popcap": 0
           },
-          "abilityType": "always",
-          "activation": "always_on",
-          "range": 5,
-          "rechargeTime": 0,
-          "toggleGroup": null,
+          "icon": "https://data.aoe4world.com/images/abilities/camel-support-1.png",
+          "active": "always",
+          "auraRange": 5,
           "effects": [
             {
               "property": "meleeArmor",
@@ -218,42 +772,56 @@
                   [
                     "infantry"
                   ]
-                ],
-                "id": [
-                  "camel-rider",
-                  "camel-archer"
                 ]
               },
               "effect": "change",
-              "type": "influence"
+              "value": 2,
+              "type": "ability"
+            },
+            {
+              "property": "rangedArmor",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "ability"
             }
           ]
         }
       ]
     },
     {
-      "id": "battle-veteran",
-      "name": "Battle Veteran",
+      "id": "activate-stealth",
+      "name": "Activate Stealth",
       "type": "ability",
       "civs": [
-        "mo"
+        "ma"
       ],
-      "displayClasses": [],
-      "minAge": 1,
-      "description": "Heals after every attack performed.",
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/abilities/activate-stealth-1.png",
+      "description": "Enter Stealth for 20 seconds.\nWhile in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, Landmark Town Centers, or they engage in combat.",
       "variations": [
         {
-          "id": "battle-veteran-1",
-          "baseId": "battle-veteran",
+          "id": "activate-stealth-2",
+          "baseId": "activate-stealth",
           "type": "ability",
-          "name": "Battle Veteran",
-          "pbgid": 2131332,
-          "attribName": "lancer_healing_mon",
-          "age": 1,
+          "name": "Activate Stealth",
+          "pbgid": 2099938,
+          "attribName": "activate_stealth_mal",
+          "age": 2,
           "civs": [
-            "mo"
+            "ma"
           ],
-          "description": "Heals after every attack performed.",
+          "description": "Enter Stealth for 20 seconds.\nWhile in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, Landmark Town Centers, or they engage in combat.",
+          "classes": [],
+          "displayClasses": "",
           "costs": {
             "food": 0,
             "wood": 0,
@@ -262,31 +830,704 @@
             "total": 0,
             "popcap": 0
           },
-          "abilityType": "always",
-          "activation": "always_on",
-          "range": 5,
-          "rechargeTime": 0,
-          "toggleGroup": null,
-          "effects": []
+          "icon": "https://data.aoe4world.com/images/abilities/activate-stealth-1.png",
+          "active": "manual",
+          "auraRange": 0,
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "musofadi-gunner",
+                  "musofadi-warrior"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability",
+              "duration": 20
+            }
+          ],
+          "cooldown": 60
         }
       ]
     },
     {
-      "id": "attack-drums-off",
-      "name": "Attack Drums (Off)",
+      "id": "first-strike",
+      "name": "First Strike",
+      "type": "ability",
+      "civs": [
+        "ma"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/abilities/gbeto-ambush-buff-mal-1.png",
+      "description": "Musofadi Warriors and Musofadi Gunners gain First Strike, dealing 2x damage when breaking Stealth with their first attack.",
+      "variations": [
+        {
+          "id": "first-strike-4",
+          "baseId": "first-strike",
+          "type": "ability",
+          "name": "First Strike",
+          "pbgid": 2067085,
+          "attribName": "gbeto_ambush_buff_mal",
+          "age": 4,
+          "civs": [
+            "ma"
+          ],
+          "description": "Musofadi Warriors and Musofadi Gunners gain First Strike, dealing 2x damage when breaking Stealth with their first attack.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "gold": 0,
+            "wood": 0,
+            "food": 0,
+            "stone": 0,
+            "total": 0,
+            "time": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/gbeto-ambush-buff-mal-1.png",
+          "active": "always",
+          "auraRange": 0,
+          "effects": [
+            {
+              "property": "meleeAttack",
+              "select": {
+                "id": [
+                  "musofadi-warrior"
+                ]
+              },
+              "effect": "multiply",
+              "value": 2,
+              "type": "ability"
+            },
+            {
+              "property": "rangedAttack",
+              "select": {
+                "id": [
+                  "musofadi-gunner"
+                ]
+              },
+              "effect": "multiply",
+              "value": 2,
+              "type": "ability"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huntress-stealth",
+      "name": "Huntress' Stealth",
+      "type": "ability",
+      "civs": [
+        "ma"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/abilities/huntress-stealth-1.png",
+      "description": "Malian infantry within range enter Stealth. While in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, or when they engage in combat.",
+      "variations": [
+        {
+          "id": "huntress-stealth-4",
+          "baseId": "huntress-stealth",
+          "type": "ability",
+          "name": "Huntress' Stealth",
+          "pbgid": 2099928,
+          "attribName": "stealth_landmark_aura_mal",
+          "age": 4,
+          "civs": [
+            "ma"
+          ],
+          "description": "Malian infantry within range enter Stealth. While in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, or when they engage in combat.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/huntress-stealth-1.png",
+          "active": "always",
+          "auraRange": 8,
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability",
+              "duration": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "attack-speed-arrow",
+      "name": "Attack Speed Arrow",
+      "type": "ability",
+      "civs": [
+        "mo"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/abilities/attack-speed-arrow-2.png",
+      "description": "Fires a Signal Arrow that increases the attack speed of nearby ranged units (including the Khan) by +50% for 5 seconds.",
+      "variations": [
+        {
+          "id": "attack-speed-arrow-2",
+          "baseId": "attack-speed-arrow",
+          "type": "ability",
+          "name": "Attack Speed Arrow",
+          "pbgid": 168622,
+          "attribName": "khan_attack_speed_signal_arrow_mon",
+          "age": 2,
+          "civs": [
+            "mo"
+          ],
+          "description": "Fires a Signal Arrow that increases the attack speed of nearby ranged units (including the Khan) by +50% for 5 seconds.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/attack-speed-arrow-2.png",
+          "active": "manual",
+          "auraRange": 8.75,
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "class": [
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.67,
+              "type": "ability",
+              "duration": 5
+            }
+          ],
+          "cooldown": 90,
+          "toggleGroup": "khan_signal_ability_available"
+        }
+      ]
+    },
+    {
+      "id": "battle-veteran",
+      "name": "Keshik Healing",
+      "type": "ability",
+      "civs": [
+        "mo"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/abilities/battle-veteran-1.png",
+      "description": "Heals after every attack performed.",
+      "variations": [
+        {
+          "id": "battle-veteran-2",
+          "baseId": "battle-veteran",
+          "type": "ability",
+          "name": "Keshik Healing",
+          "pbgid": 2131332,
+          "attribName": "lancer_healing_mon",
+          "age": 2,
+          "civs": [
+            "mo"
+          ],
+          "description": "Heals after every attack performed.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/battle-veteran-1.png",
+          "active": "always",
+          "auraRange": 5,
+          "effects": [
+            {
+              "property": "healingRate",
+              "select": {
+                "id": [
+                  "keshik"
+                ]
+              },
+              "effect": "change",
+              "value": 3,
+              "type": "ability"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "defense-arrow",
+      "name": "Defense Arrow",
+      "type": "ability",
+      "civs": [
+        "mo"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/abilities/defense-arrow-3.png",
+      "description": "Fires a Signal Arrow that increases the armor of nearby units (including the Khan) by +2 for 5 seconds.",
+      "variations": [
+        {
+          "id": "defense-arrow-3",
+          "baseId": "defense-arrow",
+          "type": "ability",
+          "name": "Defense Arrow",
+          "pbgid": 168628,
+          "attribName": "khan_defensive_signal_arrow_mon",
+          "age": 3,
+          "civs": [
+            "mo"
+          ],
+          "description": "Fires a Signal Arrow that increases the armor of nearby units (including the Khan) by +2 for 5 seconds.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/defense-arrow-3.png",
+          "active": "manual",
+          "auraRange": 8.75,
+          "effects": [
+            {
+              "property": "meleeArmor",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "ability",
+              "duration": 5
+            },
+            {
+              "property": "rangedArmor",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "ability",
+              "duration": 5
+            }
+          ],
+          "cooldown": 90,
+          "toggleGroup": "khan_signal_ability_available"
+        }
+      ]
+    },
+    {
+      "id": "kurultai-healing-aura-mon",
+      "name": "Kurultai Aura",
+      "type": "ability",
+      "civs": [
+        "mo"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/buildings/kurultai-2.png",
+      "description": "Nearby units within its aura heal +1 health every 1 second and gain an additional +20% damage.",
+      "variations": [
+        {
+          "id": "kurultai-healing-aura-mon-3",
+          "baseId": "kurultai-healing-aura-mon",
+          "type": "ability",
+          "name": "Kurultai Aura",
+          "pbgid": 2075585,
+          "attribName": "kurultai_healing_aura_mon",
+          "age": 3,
+          "civs": [
+            "mo"
+          ],
+          "description": "Nearby units within its aura heal +1 health every 1 second and gain an additional +20% damage.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/buildings/kurultai-2.png",
+          "active": "always",
+          "auraRange": 10,
+          "effects": [
+            {
+              "property": "rangedAttack",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.2,
+              "type": "ability"
+            },
+            {
+              "property": "meleeAttack",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.2,
+              "type": "ability"
+            },
+            {
+              "property": "fireAttack",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.2,
+              "type": "ability"
+            },
+            {
+              "property": "siegeAttack",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.2,
+              "type": "ability"
+            },
+            {
+              "property": "healingRate",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "ability"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maneuver-arrow",
+      "name": "Maneuver Arrow",
+      "type": "ability",
+      "civs": [
+        "mo"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/maneuver-arrow-1.png",
+      "description": "Fire a Signal Arrow that increases the movement speed of nearby units (including the Khan) by +33% for 5 seconds. Does not affect Villagers.",
+      "variations": [
+        {
+          "id": "maneuver-arrow-1",
+          "baseId": "maneuver-arrow",
+          "type": "ability",
+          "name": "Maneuver Arrow",
+          "pbgid": 168567,
+          "attribName": "khan_maneuver_signal_arrow_mon",
+          "age": 1,
+          "civs": [
+            "mo"
+          ],
+          "description": "Fire a Signal Arrow that increases the movement speed of nearby units (including the Khan) by +33% for 5 seconds. Does not affect Villagers.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/maneuver-arrow-1.png",
+          "active": "manual",
+          "auraRange": 8.75,
+          "effects": [
+            {
+              "property": "moveSpeed",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.33,
+              "type": "ability",
+              "duration": 5
+            }
+          ],
+          "cooldown": 90,
+          "toggleGroup": "khan_signal_ability_available"
+        }
+      ]
+    },
+    {
+      "id": "yam",
+      "name": "Yam",
+      "type": "ability",
+      "civs": [
+        "mo"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/yam-1.png",
+      "description": "Cavalry and Traders near an Outpost get +15% speed for 10 seconds.",
+      "variations": [
+        {
+          "id": "yam-1",
+          "baseId": "yam",
+          "type": "ability",
+          "name": "Yam",
+          "pbgid": 131400,
+          "attribName": "ortoo_outpost_speed_aura_mon",
+          "age": 1,
+          "civs": [
+            "mo"
+          ],
+          "description": "Cavalry and Traders near an Outpost get +15% speed for 10 seconds.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/yam-1.png",
+          "active": "always",
+          "auraRange": 12.5,
+          "effects": [
+            {
+              "property": "moveSpeed",
+              "select": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ],
+                "id": [
+                  "trader"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.15,
+              "type": "ability"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yam-network",
+      "name": "Yam Network",
+      "type": "ability",
+      "civs": [
+        "mo"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/abilities/outpost-speed-improved-mon-1.png",
+      "description": "Yam speed aura applies to all units instead of just Traders and cavalry units. Does not apply to siege engines.",
+      "variations": [
+        {
+          "id": "yam-network-2",
+          "baseId": "yam-network",
+          "type": "ability",
+          "name": "Yam Network",
+          "pbgid": 190079,
+          "attribName": "outpost_speed_improved_mon",
+          "age": 2,
+          "civs": [
+            "mo"
+          ],
+          "description": "Yam speed aura applies to all units instead of just Traders and cavalry units. Does not apply to siege engines.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "gold": 0,
+            "wood": 0,
+            "food": 0,
+            "stone": 0,
+            "total": 0,
+            "time": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/outpost-speed-improved-mon-1.png",
+          "active": "always",
+          "auraRange": 12.5,
+          "effects": [
+            {
+              "property": "moveSpeed",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.15,
+              "type": "ability"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "attack-drums",
+      "name": "Attack Drums",
       "type": "ability",
       "civs": [
         "ot"
       ],
-      "displayClasses": [],
+      "displayClasses": "",
+      "classes": [],
       "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/attack-drums-off-1.png",
       "description": "Mehter drums that increase the attack speed of nearby units by +15%.",
       "variations": [
         {
-          "id": "attack-drums-off-1",
-          "baseId": "attack-drums-off",
+          "id": "attack-drums-1",
+          "baseId": "attack-drums",
           "type": "ability",
-          "name": "Attack Drums (Off)",
+          "name": "Attack Drums",
           "pbgid": 2074302,
           "attribName": "mehter_attack_buff_ott",
           "age": 1,
@@ -294,6 +1535,8 @@
             "ot"
           ],
           "description": "Mehter drums that increase the attack speed of nearby units by +15%.",
+          "classes": [],
+          "displayClasses": "",
           "costs": {
             "food": 0,
             "wood": 0,
@@ -302,11 +1545,192 @@
             "total": 0,
             "popcap": 0
           },
-          "abilityType": "toggle",
-          "activation": "toggle",
-          "range": 6,
-          "rechargeTime": 15,
+          "icon": "https://data.aoe4world.com/images/abilities/attack-drums-off-1.png",
+          "active": "toggle",
+          "auraRange": 6,
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.87,
+              "type": "ability"
+            }
+          ],
           "toggleGroup": "mehter_buff",
+          "cooldown": 15
+        }
+      ]
+    },
+    {
+      "id": "blacksmith-and-university-influence",
+      "name": "Blacksmith and University Influence",
+      "type": "ability",
+      "civs": [
+        "ot"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/abilities/blacksmith-and-university-influence-1.png",
+      "description": "Military unit production rate increased +20%/+30%/+40% by Age while within the influence of a Blacksmith or University. The Istanbul Observatory increases the bonus to +60%.",
+      "variations": [
+        {
+          "id": "blacksmith-and-university-influence-2",
+          "baseId": "blacksmith-and-university-influence",
+          "type": "ability",
+          "name": "Blacksmith and University Influence",
+          "pbgid": 2082042,
+          "attribName": "university_blacksmith_influence_ott",
+          "age": 2,
+          "civs": [
+            "ot"
+          ],
+          "description": "Military unit production rate increased +20%/+30%/+40% by Age while within the influence of a Blacksmith or University. The Istanbul Observatory increases the bonus to +60%.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/blacksmith-and-university-influence-1.png",
+          "active": "always",
+          "auraRange": 0,
+          "effects": [
+            {
+              "property": "productionSpeed",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.8,
+              "type": "ability"
+            },
+            {
+              "property": "productionSpeed",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.7,
+              "type": "ability"
+            },
+            {
+              "property": "productionSpeed",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.6,
+              "type": "ability"
+            },
+            {
+              "property": "productionSpeed",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.4,
+              "type": "ability"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fortitude",
+      "name": "Fortitude",
+      "type": "ability",
+      "civs": [
+        "ot"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/abilities/fortitude-1.png",
+      "description": "Gain +50% attack speed and receive +50% damage from melee weapons for 10 seconds.",
+      "variations": [
+        {
+          "id": "fortitude-2",
+          "baseId": "fortitude",
+          "type": "ability",
+          "name": "Fortitude",
+          "pbgid": 2089398,
+          "attribName": "sipahi_stamina_ott",
+          "age": 2,
+          "civs": [
+            "ot"
+          ],
+          "description": "Gain +50% attack speed and receive +50% damage from melee weapons for 10 seconds.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/fortitude-1.png",
+          "active": "manual",
+          "auraRange": 0,
           "effects": [
             {
               "property": "attackSpeed",
@@ -324,7 +1748,92 @@
                 ]
               },
               "effect": "change",
-              "value": 0.8200000000000001,
+              "value": 0.67,
+              "type": "ability",
+              "duration": 10
+            },
+            {
+              "property": "unknown",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.5,
+              "type": "ability",
+              "duration": 10
+            }
+          ],
+          "cooldown": 50
+        }
+      ]
+    },
+    {
+      "id": "mehter-speed-bonus",
+      "name": "Mehter Speed Bonus",
+      "type": "ability",
+      "civs": [
+        "ot"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/mehter-default-formation-ott-1.png",
+      "description": "Movement speed bonus +15%.",
+      "variations": [
+        {
+          "id": "mehter-speed-bonus-1",
+          "baseId": "mehter-speed-bonus",
+          "type": "ability",
+          "name": "Mehter Speed Bonus",
+          "pbgid": 2063074,
+          "attribName": "mehter_default_formation_ott",
+          "age": 1,
+          "civs": [
+            "ot"
+          ],
+          "description": "Movement speed bonus +15%.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "gold": 0,
+            "wood": 0,
+            "food": 0,
+            "stone": 0,
+            "total": 0,
+            "time": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/mehter-default-formation-ott-1.png",
+          "active": "always",
+          "auraRange": 6,
+          "effects": [
+            {
+              "property": "moveSpeed",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.15,
               "type": "ability"
             }
           ]
@@ -332,61 +1841,23 @@
       ]
     },
     {
-      "id": "mehter-formation-boosts",
-      "name": "Mehter Formation Boosts",
+      "id": "melee-defense-drums",
+      "name": "Melee Defense Drums",
       "type": "ability",
       "civs": [
         "ot"
       ],
-      "displayClasses": [],
+      "displayClasses": "",
+      "classes": [],
       "minAge": 1,
-      "description": "+ Spread formation boosts ranged defense\n+ Line formation boosts melee defense\n+ Wedge Formation boosts attack damage\n+ No formation boosts movement speed",
-      "variations": [
-        {
-          "id": "mehter-formation-boosts-1",
-          "baseId": "mehter-formation-boosts",
-          "type": "ability",
-          "name": "Mehter Formation Boosts",
-          "pbgid": 2063033,
-          "attribName": "mehter_formation_ott",
-          "age": 1,
-          "civs": [
-            "ot"
-          ],
-          "description": "+ Spread formation boosts ranged defense\n+ Line formation boosts melee defense\n+ Wedge Formation boosts attack damage\n+ No formation boosts movement speed",
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "total": 0,
-            "popcap": 0
-          },
-          "abilityType": "always",
-          "activation": "always_on",
-          "range": 0,
-          "rechargeTime": 0,
-          "toggleGroup": null,
-          "effects": []
-        }
-      ]
-    },
-    {
-      "id": "melee-defense-drums-off",
-      "name": "Melee Defense Drums (Off)",
-      "type": "ability",
-      "civs": [
-        "ot"
-      ],
-      "displayClasses": [],
-      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/melee-defense-drums-off-1.png",
       "description": "Mehter drums that increase the melee armor of nearby units by +2.",
       "variations": [
         {
-          "id": "melee-defense-drums-off-1",
-          "baseId": "melee-defense-drums-off",
+          "id": "melee-defense-drums-1",
+          "baseId": "melee-defense-drums",
           "type": "ability",
-          "name": "Melee Defense Drums (Off)",
+          "name": "Melee Defense Drums",
           "pbgid": 2074304,
           "attribName": "mehter_melee_armor_buff_ott",
           "age": 1,
@@ -394,6 +1865,8 @@
             "ot"
           ],
           "description": "Mehter drums that increase the melee armor of nearby units by +2.",
+          "classes": [],
+          "displayClasses": "",
           "costs": {
             "food": 0,
             "wood": 0,
@@ -402,31 +1875,53 @@
             "total": 0,
             "popcap": 0
           },
-          "abilityType": "toggle",
-          "activation": "toggle",
-          "range": 6,
-          "rechargeTime": 15,
+          "icon": "https://data.aoe4world.com/images/abilities/melee-defense-drums-off-1.png",
+          "active": "toggle",
+          "auraRange": 6,
+          "effects": [
+            {
+              "property": "meleeArmor",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "ability"
+            }
+          ],
           "toggleGroup": "mehter_buff",
-          "effects": []
+          "cooldown": 15
         }
       ]
     },
     {
-      "id": "ranged-defense-drums-off",
-      "name": "Ranged Defense Drums (Off)",
+      "id": "ranged-defense-drums",
+      "name": "Ranged Defense Drums",
       "type": "ability",
       "civs": [
         "ot"
       ],
-      "displayClasses": [],
+      "displayClasses": "",
+      "classes": [],
       "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ranged-defense-drums-off-1.png",
       "description": "Mehter drums that increase the ranged armor of nearby units by +1.",
       "variations": [
         {
-          "id": "ranged-defense-drums-off-1",
-          "baseId": "ranged-defense-drums-off",
+          "id": "ranged-defense-drums-1",
+          "baseId": "ranged-defense-drums",
           "type": "ability",
-          "name": "Ranged Defense Drums (Off)",
+          "name": "Ranged Defense Drums",
           "pbgid": 2074303,
           "attribName": "mehter_ranged_armor_buff_ott",
           "age": 1,
@@ -434,6 +1929,8 @@
             "ot"
           ],
           "description": "Mehter drums that increase the ranged armor of nearby units by +1.",
+          "classes": [],
+          "displayClasses": "",
           "costs": {
             "food": 0,
             "wood": 0,
@@ -442,12 +1939,169 @@
             "total": 0,
             "popcap": 0
           },
-          "abilityType": "toggle",
-          "activation": "toggle",
-          "range": 6,
-          "rechargeTime": 15,
+          "icon": "https://data.aoe4world.com/images/abilities/ranged-defense-drums-off-1.png",
+          "active": "toggle",
+          "auraRange": 6,
+          "effects": [
+            {
+              "property": "rangedArmor",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ],
+                  [
+                    "cavalry"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "ability"
+            }
+          ],
           "toggleGroup": "mehter_buff",
-          "effects": []
+          "cooldown": 15
+        }
+      ]
+    },
+    {
+      "id": "gallop",
+      "name": "Gallop",
+      "type": "ability",
+      "civs": [
+        "ru"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/abilities/gallop-1.png",
+      "description": "Activate to move at maximum speed with +2 tile weapon range for 8 seconds.",
+      "variations": [
+        {
+          "id": "gallop-4",
+          "baseId": "gallop",
+          "type": "ability",
+          "name": "Gallop",
+          "pbgid": 2134249,
+          "attribName": "horse_archer_mounted_training_gallop_rus",
+          "age": 4,
+          "civs": [
+            "ru"
+          ],
+          "description": "Activate to move at maximum speed with +2 tile weapon range for 8 seconds.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/gallop-1.png",
+          "active": "manual",
+          "auraRange": 0.25,
+          "effects": [
+            {
+              "property": "moveSpeed",
+              "select": {
+                "id": [
+                  "horse-archer"
+                ]
+              },
+              "effect": "change",
+              "value": 0.38,
+              "type": "ability",
+              "duration": 8
+            },
+            {
+              "property": "maxRange",
+              "select": {
+                "id": [
+                  "horse-archer"
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "ability",
+              "duration": 8
+            }
+          ],
+          "cooldown": 45
+        }
+      ]
+    },
+    {
+      "id": "high-armory-production-bonus",
+      "name": "High Armory Production Bonus",
+      "type": "ability",
+      "civs": [
+        "ru"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/abilities/high-armory-production-bonus-1.png",
+      "description": "The cost of siege engines in nearby Siege Workshops is decreased by 20%.",
+      "variations": [
+        {
+          "id": "high-armory-production-bonus-4",
+          "baseId": "high-armory-production-bonus",
+          "type": "ability",
+          "name": "High Armory Production Bonus",
+          "pbgid": 207496,
+          "attribName": "high_armory_production_aura_rus",
+          "age": 4,
+          "civs": [
+            "ru"
+          ],
+          "description": "The cost of siege engines in nearby Siege Workshops is decreased by 20%.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/high-armory-production-bonus-1.png",
+          "active": "always",
+          "auraRange": 7.5,
+          "effects": [
+            {
+              "property": "goldCost",
+              "select": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.8,
+              "type": "ability"
+            },
+            {
+              "property": "woodCost",
+              "select": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.8,
+              "type": "ability"
+            }
+          ]
         }
       ]
     },
@@ -458,22 +2112,26 @@
       "civs": [
         "ru"
       ],
-      "displayClasses": [],
-      "minAge": 1,
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/abilities/saints-blessing-1.png",
       "description": "After striking an enemy, the Warrior Monk increases the armor and damage of nearby allied Rus military units for a duration.",
       "variations": [
         {
-          "id": "saints-blessing-1",
+          "id": "saints-blessing-3",
           "baseId": "saints-blessing",
           "type": "ability",
           "name": "Saint's Blessing",
           "pbgid": 181465,
           "attribName": "saints_blessing_rus",
-          "age": 1,
+          "age": 3,
           "civs": [
             "ru"
           ],
           "description": "After striking an enemy, the Warrior Monk increases the armor and damage of nearby allied Rus military units for a duration.",
+          "classes": [],
+          "displayClasses": "",
           "costs": {
             "food": 0,
             "wood": 0,
@@ -482,12 +2140,203 @@
             "total": 0,
             "popcap": 0
           },
-          "abilityType": "always",
-          "activation": "always_on",
-          "range": 2,
-          "rechargeTime": 0,
-          "toggleGroup": null,
-          "effects": []
+          "icon": "https://data.aoe4world.com/images/abilities/saints-blessing-1.png",
+          "active": "always",
+          "auraRange": 2,
+          "effects": [
+            {
+              "property": "rangedAttack",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "ability",
+              "duration": 10
+            },
+            {
+              "property": "meleeAttack",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "ability",
+              "duration": 10
+            },
+            {
+              "property": "fireAttack",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "ability",
+              "duration": 10
+            },
+            {
+              "property": "siegeAttack",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "ability",
+              "duration": 10
+            },
+            {
+              "property": "rangedArmor",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "ability",
+              "duration": 10
+            },
+            {
+              "property": "meleeArmor",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "ability",
+              "duration": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "static-deployment",
+      "name": "Static Deployment",
+      "type": "ability",
+      "civs": [
+        "ru"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/abilities/static-deployment-1.png",
+      "description": "Streltsy gain +30% attack speed after remaining stationary for 10 seconds.",
+      "variations": [
+        {
+          "id": "static-deployment-4",
+          "baseId": "static-deployment",
+          "type": "ability",
+          "name": "Static Deployment",
+          "pbgid": 182235,
+          "attribName": "streltsy_static_deployment_ability_rus",
+          "age": 4,
+          "civs": [
+            "ru"
+          ],
+          "description": "Streltsy gain +30% attack speed after remaining stationary for 10 seconds.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/static-deployment-1.png",
+          "active": "always",
+          "auraRange": 0,
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "id": [
+                  "streltsy"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.77,
+              "type": "ability"
+            }
+          ]
         }
       ]
     }

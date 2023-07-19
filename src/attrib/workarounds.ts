@@ -150,38 +150,65 @@ workaround("Make English Wynguard Forces available from Imperial Age", {
 
 //could do this by creating dependency from techs that unlock abilities, but doing workaround for the time being
 
-workaround("Make Ability Arrow Volley availabe in Imperial Age", {
+workaround("Make Ability Arrow Volley available in Imperial Age", {
   ...overrideAge(["arrow-volley"], 4, ["en"]),
 });
 
-workaround("Make Ability Saints Blessing availabe in Castle Age", {
+workaround("Make Ability Saints Blessing available in Castle Age", {
   ...overrideAge(["saints-blessing"], 3, ["ru"]),
 });
 
-workaround("Make Ability High Armory Production Bonus availabe in Imperial Age", {
+workaround("Make Ability High Armory Production Bonus available in Imperial Age", {
   ...overrideAge(["high-armory-production-bonus"], 4, ["ru"]),
 });
 
-workaround("Make Ability Static Deployment availabe in Imperial Age", {
+workaround("Make Ability Static Deployment available in Imperial Age", {
   ...overrideAge(["static-deployment"], 4, ["ru"]),
 });
 
-workaround("Make Ability Gallop availabe in Imperial Age", {
+workaround("Make Ability Gallop available in Imperial Age", {
   ...overrideAge(["gallop"], 4, ["ru"]),
 });
 
-workaround("Make Ability Gallop availabe in Imperial Age", {
+workaround("Make Ability Gallop available in Imperial Age", {
   ...overrideAge(["gallop"], 4, ["ru"]),
 });
 
-workaround("Make Ability Fortitude availabe in Feudal Age", {
+workaround("Make Ability Fortitude available in Feudal Age", {
   ...overrideAge(["fortitude"], 2, ["ot"]),
 });
 
-workaround("Make Ability blacksmith-and-university-influence availabe in Feudal Age", {
+workaround("Make Ability blacksmith-and-university-influence available in Feudal Age", {
   ...overrideAge(["blacksmith-and-university-influence"], 2, ["ot"]),
 });
 
+workaround("Make Ability Tower of Victory available in Feudal Age", {
+  ...overrideAge(["tower-of-victory-aura"], 2, ["de"]),
+});
+
+workaround("Make Ability Forced March available in Castle Age", {
+  ...overrideAge(["forced-march"], 3, ["de"]),
+});
+
+workaround("Make Ability Deploy Pavis available in Castle Age", {
+  ...overrideAge(["deploy-pavise"], 3, ["fr"]),
+});
+
+workaround("Make Ability Keep Influence available in Castle Age", {
+  ...overrideAge(["keep-influence"], 3, ["fr"]),
+});
+
+workaround("Make Ability activate-stealth available in Feudal Age", {
+  ...overrideAge(["activate-stealth"], 2, ["ma"]),
+});
+
+workaround("Make Ability huntress-stealth available in Imperial Age", {
+  ...overrideAge(["huntress-stealth"], 4, ["ma"]),
+});
+
+workaround("Make Ability camel-support available in Imperial Age", {
+  ...overrideAge(["camel-support"], 4, ["ab"]),
+});
 
 
 // ---- Abilities ----
@@ -281,6 +308,40 @@ workaround("Add ability info to Mehter speed formation", {
     item.costs = { ...NO_COSTS, popcap:0 };
   },
 });
+
+workaround("Fix inaccurate ability info lancer_charge_bonus_damage", {
+  predicate: (item) => item.type === "ability" && item.attribName === "lancer_charge_bonus_damage",
+  mutator: (item) => {
+    item.age = 2;
+    item.id = `${item.baseId}-${item.age}`;
+    item.description = "Gain +3 melee attack damage for 5 seconds after charging.";
+    item.active = "always";
+    item.costs = { ...NO_COSTS, popcap:0 };
+  },
+});
+
+workaround("Fix inaccurate ability info gbeto_ambush_buff_mal", {
+  predicate: (item) => item.type === "ability" && item.attribName === "gbeto_ambush_buff_mal",
+  mutator: (item) => {
+    item.baseId = "first-strike";
+    item.age = 4;
+    item.id = `${item.baseId}-${item.age}`;
+    item.description = "Musofadi Warriors and Musofadi Gunners gain First Strike, dealing 2x damage when breaking Stealth with their first attack.";
+    item.active = "always";
+    item.costs = { ...NO_COSTS, popcap:0 };
+  },
+});
+
+workaround("Fix inaccurate ability info inspired_infantry_hre", {
+  predicate: (item) => item.type === "ability" && item.attribName === "inspired_infantry_hre",
+  mutator: (item) => {
+    item.baseId = "inspired-warriors";
+    item.age = 3;
+    item.id = `${item.baseId}-${item.age}`;
+    item.name = "Inspired Warriors";
+  },
+});
+
 
 // –––– Unit weapons ––––
 

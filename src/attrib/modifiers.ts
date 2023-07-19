@@ -414,6 +414,193 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       type: "ability",
     },
   ],
+  
+  "tower-of-victory-aura": ([s]) => [
+    // Melee and ranged infantry who move near this Landmark permanently gain +20% attack speed.
+    {
+      property: "attackSpeed",
+      select: { class: [["infantry"]] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercentNew(s),
+      type: "ability",
+    },
+  ],
+  
+  "forced-march": ([i, j]) => [
+    // Activate to move 100% faster for 10 seconds, deactivates early when dealing damage.
+    {
+      property: "moveSpeed",
+      select: { class: [["infantry"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+      duration: j,
+    },
+  ],
+  
+  "lancer-charge-bonus-damage": ([]) => [
+    // Every description is inaccurate or incomplete...
+    {
+      property: "meleeAttack",
+      select: { id: ["royal-knight"] },
+      effect: "change",
+      value: 3,
+      type: "ability",
+      duration: 5,
+    },
+  ],
+  
+  "deploy-pavise": ([i, j, k]) => [
+    // Activate to increase weapon range by +1 tile and gain +5 ranged armor.\nRemains active for 30 seconds or until the Arbalétrier moves away
+    {
+      property: "maxRange",
+      select: { id: ["arbaletrier"] },
+      effect: "change",
+      value: i,
+      type: "ability",
+      duration: k,
+    },
+    {
+      property: "rangeArmor",
+      select: { id: ["arbaletrier"] },
+      effect: "change",
+      value: j,
+      type: "ability",
+      duration: k,
+    },
+  ],
+  
+  "keep-influence": ([r]) => [
+    // Archery Ranges and Stables within influence have unit costs decreased by 20%.
+    {
+      property: "goldCost",
+      select: { class: [["cavalry", "melee"], ["ranged"]] },
+      effect: "multiply",
+      value: decreaseByPercent(1, r),
+      type: "ability",
+    },
+    {
+      property: "foodCost",
+      select: { class: [["cavalry", "melee"], ["ranged"]] },
+      effect: "multiply",
+      value: decreaseByPercent(1, r),
+      type: "ability",
+    },
+    {
+      property: "woodCost",
+      select: { class: [["cavalry", "melee"], ["ranged"]] },
+      effect: "multiply",
+      value: decreaseByPercent(1, r),
+      type: "ability",
+    },
+  ],
+  
+  "activate-stealth": ([i]) => [
+    // Enter Stealth for 20 seconds.\nWhile in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, Landmark Town Centers, or they engage in combat.
+    {
+      property: "unknown",
+      select: { id: ["musofadi-gunner", "musofadi-warrior"] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+      duration: i,
+    },
+  ],
+  
+  "gbeto-ambush-buff-mal": ([]) => [
+    // Deals increased damage on next hit.
+    {
+      property: "meleeAttack",
+      select: { id: ["musofadi-warrior"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 100),
+      type: "ability",
+    },
+    {
+      property: "rangedAttack",
+      select: { id: ["musofadi-gunner"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 100),
+      type: "ability",
+    },
+  ],
+  
+  "huntress-stealth": ([]) => [
+    // Malian infantry within range enter Stealth. While in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, or when they engage in combat.
+    {
+      property: "unknown",
+      select: { class: [["infantry"]] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+      duration: 30,
+    },
+  ],
+  
+  "camel-support": ([]) => [
+    // Infantry gain armor when near a camel unit. / Camels increase the armor of nearby infantry by +2.
+    {
+      property: "meleeArmor",
+      select: { class: [["infantry"]] },
+      effect: "change",
+      value: 2,
+      type: "ability",
+    },
+    {
+      property: "rangedArmor",
+      select: { class: [["infantry"]] },
+      effect: "change",
+      value: 2,
+      type: "ability",
+    },
+  ],
+
+  "inspired": ([a, b]) => [
+    // Military units deal +15% damage and gain +1 armor.
+    {
+      property: "rangedArmor",
+      select: common.allMilitaryLand,
+      effect: "change",
+      value: b,
+      type: "ability",
+    },
+    {
+      property: "meleeArmor",
+      select: common.allMilitaryLand,
+      effect: "change",
+      value: b,
+      type: "ability",
+    },
+    {
+      property: "meleeAttack",
+      select: { class: [["melee"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, a),
+      type: "ability",
+    },
+    {
+      property: "fireAttack",
+      select: { class: [["melee"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, a),
+      type: "ability",
+    },
+    {
+      property: "rangedAttack",
+      select: { class: [["ranged"]], id: ["culverin"] },
+      effect: "multiply",
+      value: increaseByPercent(1, a),
+      type: "influence",
+    },
+    {
+      property: "siegeAttack",
+      select: { class: [["siege"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, a),
+      type: "influence",
+    },
+  ],
+
 
 };
 

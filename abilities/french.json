@@ -8,17 +8,19 @@
   },
   "data": [
     {
-      "id": "melee-boost-1",
-      "baseId": "melee-boost",
+      "id": "deploy-pavise-3",
+      "baseId": "deploy-pavise",
       "type": "ability",
-      "name": "Melee Boost",
-      "pbgid": 193950,
-      "attribName": "lancer_charge_melee_boost_fre",
-      "age": 1,
+      "name": "Deploy Pavise",
+      "pbgid": 212030,
+      "attribName": "deploy_pavise_fre",
+      "age": 3,
       "civs": [
         "fr"
       ],
-      "description": "Royal Knight is doing +15% melee damage for 10 seconds.",
+      "description": "Activate to increase weapon range by +1 tile and gain +5 ranged armor.\nRemains active for 30 seconds or until the Arbalétrier moves away.",
+      "classes": [],
+      "displayClasses": "",
       "costs": {
         "food": 0,
         "wood": 0,
@@ -27,12 +29,156 @@
         "total": 0,
         "popcap": 0
       },
-      "abilityType": "always",
-      "activation": "always_on",
-      "range": 0,
-      "rechargeTime": 0,
-      "toggleGroup": null,
-      "effects": []
+      "icon": "https://data.aoe4world.com/images/abilities/deploy-pavise-1.png",
+      "active": "manual",
+      "auraRange": 8.75,
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "id": [
+              "arbaletrier"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "ability",
+          "duration": 30
+        },
+        {
+          "property": "rangeArmor",
+          "select": {
+            "id": [
+              "arbaletrier"
+            ]
+          },
+          "effect": "change",
+          "value": 5,
+          "type": "ability",
+          "duration": 30
+        }
+      ],
+      "cooldown": 60
+    },
+    {
+      "id": "keep-influence-3",
+      "baseId": "keep-influence",
+      "type": "ability",
+      "name": "Keep Influence",
+      "pbgid": 1452233,
+      "attribName": "keep_influence_fre",
+      "age": 3,
+      "civs": [
+        "fr"
+      ],
+      "description": "Archery Ranges and Stables within influence have unit costs decreased by 20%.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "icon": "https://data.aoe4world.com/images/abilities/keep-influence-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "goldCost",
+          "select": {
+            "class": [
+              [
+                "cavalry",
+                "melee"
+              ],
+              [
+                "ranged"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.8,
+          "type": "ability"
+        },
+        {
+          "property": "foodCost",
+          "select": {
+            "class": [
+              [
+                "cavalry",
+                "melee"
+              ],
+              [
+                "ranged"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.8,
+          "type": "ability"
+        },
+        {
+          "property": "woodCost",
+          "select": {
+            "class": [
+              [
+                "cavalry",
+                "melee"
+              ],
+              [
+                "ranged"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.8,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "lancer-charge-bonus-damage-2",
+      "baseId": "lancer-charge-bonus-damage",
+      "type": "ability",
+      "name": "Royal Knight Charge Damage",
+      "pbgid": 2032837,
+      "attribName": "lancer_charge_bonus_damage",
+      "age": 2,
+      "civs": [
+        "fr"
+      ],
+      "description": "Gain +3 melee attack damage for 5 seconds after charging.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "gold": 0,
+        "wood": 0,
+        "food": 0,
+        "stone": 0,
+        "total": 0,
+        "time": 0,
+        "popcap": 0
+      },
+      "icon": "https://data.aoe4world.com/images/abilities/lancer-charge-bonus-damage-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "meleeAttack",
+          "select": {
+            "id": [
+              "royal-knight"
+            ]
+          },
+          "effect": "change",
+          "value": 3,
+          "type": "ability",
+          "duration": 5
+        }
+      ]
     }
   ]
 }

@@ -6,5 +6,186 @@
     "abbr": "ma",
     "slug": "malians"
   },
-  "data": []
+  "data": [
+    {
+      "id": "activate-stealth",
+      "name": "Activate Stealth",
+      "type": "ability",
+      "civs": [
+        "ma"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/abilities/activate-stealth-1.png",
+      "description": "Enter Stealth for 20 seconds.\nWhile in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, Landmark Town Centers, or they engage in combat.",
+      "variations": [
+        {
+          "id": "activate-stealth-2",
+          "baseId": "activate-stealth",
+          "type": "ability",
+          "name": "Activate Stealth",
+          "pbgid": 2099938,
+          "attribName": "activate_stealth_mal",
+          "age": 2,
+          "civs": [
+            "ma"
+          ],
+          "description": "Enter Stealth for 20 seconds.\nWhile in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, Landmark Town Centers, or they engage in combat.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/activate-stealth-1.png",
+          "active": "manual",
+          "auraRange": 0,
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "musofadi-gunner",
+                  "musofadi-warrior"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability",
+              "duration": 20
+            }
+          ],
+          "cooldown": 60
+        }
+      ]
+    },
+    {
+      "id": "first-strike",
+      "name": "First Strike",
+      "type": "ability",
+      "civs": [
+        "ma"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/abilities/gbeto-ambush-buff-mal-1.png",
+      "description": "Musofadi Warriors and Musofadi Gunners gain First Strike, dealing 2x damage when breaking Stealth with their first attack.",
+      "variations": [
+        {
+          "id": "first-strike-4",
+          "baseId": "first-strike",
+          "type": "ability",
+          "name": "First Strike",
+          "pbgid": 2067085,
+          "attribName": "gbeto_ambush_buff_mal",
+          "age": 4,
+          "civs": [
+            "ma"
+          ],
+          "description": "Musofadi Warriors and Musofadi Gunners gain First Strike, dealing 2x damage when breaking Stealth with their first attack.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "gold": 0,
+            "wood": 0,
+            "food": 0,
+            "stone": 0,
+            "total": 0,
+            "time": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/gbeto-ambush-buff-mal-1.png",
+          "active": "always",
+          "auraRange": 0,
+          "effects": [
+            {
+              "property": "meleeAttack",
+              "select": {
+                "id": [
+                  "musofadi-warrior"
+                ]
+              },
+              "effect": "multiply",
+              "value": 2,
+              "type": "ability"
+            },
+            {
+              "property": "rangedAttack",
+              "select": {
+                "id": [
+                  "musofadi-gunner"
+                ]
+              },
+              "effect": "multiply",
+              "value": 2,
+              "type": "ability"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "huntress-stealth",
+      "name": "Huntress' Stealth",
+      "type": "ability",
+      "civs": [
+        "ma"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/abilities/huntress-stealth-1.png",
+      "description": "Malian infantry within range enter Stealth. While in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, or when they engage in combat.",
+      "variations": [
+        {
+          "id": "huntress-stealth-4",
+          "baseId": "huntress-stealth",
+          "type": "ability",
+          "name": "Huntress' Stealth",
+          "pbgid": 2099928,
+          "attribName": "stealth_landmark_aura_mal",
+          "age": 4,
+          "civs": [
+            "ma"
+          ],
+          "description": "Malian infantry within range enter Stealth. While in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, or when they engage in combat.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "icon": "https://data.aoe4world.com/images/abilities/huntress-stealth-1.png",
+          "active": "always",
+          "auraRange": 8,
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability",
+              "duration": 30
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

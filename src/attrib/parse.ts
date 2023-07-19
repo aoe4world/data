@@ -80,6 +80,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       icon = await useIcon(ui_ext.icon.slice(6), type, id);
     else icon = 
       await useIcon(ui_ext.icon_name, type, id);
+    if (!icon) console.log(`undefined icon for ${file}`);
 
     const pbgid = data.pbgid;
 
