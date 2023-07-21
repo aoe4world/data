@@ -60,6 +60,13 @@ workaround("Remove all garrison and emplacement weapons from the Red Palace, set
   validator: (item) => (item as Building).weapons.length == 1 && (item as Building).weapons.filter((w) => w.type == "ranged" && w.damage == 60 && w.burst?.count == 2).length == 1,
 });
 
+workaround("Fix incorrect description from 'great bombard' used on regular cannon emplacements", {
+  predicate: (item) => item.baseId === "cannon-emplacement" && item.description.includes("Great Bombard"),
+  mutator: (item) => {
+    item.description = "Add a defensive cannon emplacement to this structure.";
+  },
+});
+
 workaround("Increase the Berkshire Palace range to 15, and double set the garrison burst to 6", {
   predicate: (item) => item.baseId === "berkshire-palace",
   mutator: (item) => {
