@@ -25,7 +25,7 @@ const decreaseByPercent = (n: number, percent: number) => round(n * (1 - toPerce
 const increaseByPercentImproved = (n: number, percent: number, delta: number) => round((n * (1 + toPercent(percent))) / (1 + (Math.abs(percent) - Math.abs(delta)) / 100));
 const decreaseByPercentImproved = (n: number, percent: number, delta: number) => round((n * (1 - toPercent(percent))) / (1 - (Math.abs(percent) - Math.abs(delta)) / 100));
 const increaseSpeedByPercent = (speed: number, percent: number) => round(speed / (1 + toPercent(percent)) / 10) * 10;
-const increaseAttackSpeedByPercent = (speed: number, percent: number) => speed * round(1 - 1 / (1 - toPercent(percent)));
+const increaseAttackSpeedByPercent = (percent: number) => round(1 / (1 + percent / 100));
 const round = (n: number) => Math.round(n * 100) / 100; //(100/(100-33))
 
 export const technologyModifiers: Record<string, (values: number[]) => Modifier[]> = {
@@ -705,7 +705,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { class: [["springald", "ship"]] },
       effect: "multiply",
-      value: 1 + increaseAttackSpeedByPercent(1, s),
+      value: increaseAttackSpeedByPercent(s),
       type: "passive",
     },
   ],
@@ -1111,7 +1111,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { id: ["bombard"] },
       effect: "multiply",
-      value: 1 + increaseAttackSpeedByPercent(1, i),
+      value: increaseAttackSpeedByPercent(i),
       type: "passive",
     },
   ],
@@ -1144,7 +1144,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { id: ["mangonel"] },
       effect: "multiply",
-      value: 1 + increaseAttackSpeedByPercent(1, i),
+      value: increaseAttackSpeedByPercent(i),
       type: "passive",
     },
   ],
@@ -1156,7 +1156,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { id: ["mangonel"] },
       effect: "multiply",
-      value: 1 + increaseAttackSpeedByPercent(1, d),
+      value: increaseAttackSpeedByPercent(d),
       type: "passive",
     },
   ],
@@ -1347,9 +1347,8 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     {
       property: "attackSpeed",
       select: { id: ["battering-ram", "clocktower-battering-ram"] },
-      effect: "change",
-      value: (4 + 0.125) * -1 * (1 + increaseAttackSpeedByPercent(1, speed)),
-      // wtf is happening here? this is cooldown + attack decrease by 40%
+      effect: "multiply",
+      value: increaseAttackSpeedByPercent(speed),
       type: "passive",
     },
     {
@@ -1578,7 +1577,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { id: ["springald"] },
       effect: "multiply",
-      value: 1 + increaseAttackSpeedByPercent(1, t),
+      value: increaseAttackSpeedByPercent(t),
       type: "passive",
     },
   ],
@@ -1890,7 +1889,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { id: ["archer"] },
       effect: "multiply",
-      value: 1 + increaseAttackSpeedByPercent(1, r),
+      value: increaseAttackSpeedByPercent(r),
       type: "passive",
     },
   ],
@@ -2511,7 +2510,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { id: ["keshik"] },
       effect: "multiply",
-      value: 1 + increaseAttackSpeedByPercent(1, r),
+      value: increaseAttackSpeedByPercent(r),
       type: "passive",
     },
   ],
@@ -2530,7 +2529,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { id: ["keshik"] },
       effect: "multiply",
-      value: 1 + increaseAttackSpeedByPercent(1, r),
+      value: increaseAttackSpeedByPercent(r),
       type: "passive",
     },
   ],
