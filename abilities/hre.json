@@ -8,6 +8,60 @@
   },
   "data": [
     {
+      "id": "emergency-repairs-1",
+      "baseId": "emergency-repairs",
+      "type": "ability",
+      "name": "Emergency Repairs",
+      "pbgid": 2031580,
+      "attribName": "influence_auto_repair_hre",
+      "age": 1,
+      "civs": [
+        "hr"
+      ],
+      "description": "Building repairs itself by 150 health every 1 second for 20 seconds.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house",
+        "outpost",
+        "mill",
+        "barracks",
+        "lumber-camp",
+        "dock",
+        "mining-camp",
+        "meinwerk-palace",
+        "aachen-chapel",
+        "blacksmith",
+        "archery-range",
+        "market",
+        "stable",
+        "town-center",
+        "burgrave-palace",
+        "regnitz-cathedral",
+        "siege-workshop",
+        "keep",
+        "monastery",
+        "palace-of-swabia",
+        "elzbach-palace",
+        "university",
+        "great-palace-of-flensburg",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/emergency-repairs-1.png",
+      "active": "manual",
+      "auraRange": 0.0025,
+      "effects": [],
+      "cooldown": 75
+    },
+    {
       "id": "inspired-warriors-3",
       "baseId": "inspired-warriors",
       "type": "ability",
@@ -29,6 +83,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/inspired-1.png",
       "active": "always",
       "auraRange": 0.0025,
@@ -50,7 +105,8 @@
           },
           "effect": "change",
           "value": 1,
-          "type": "ability"
+          "type": "ability",
+          "duration": 60
         },
         {
           "property": "meleeArmor",
@@ -69,7 +125,8 @@
           },
           "effect": "change",
           "value": 1,
-          "type": "ability"
+          "type": "ability",
+          "duration": 60
         },
         {
           "property": "meleeAttack",
@@ -82,7 +139,8 @@
           },
           "effect": "multiply",
           "value": 1.15,
-          "type": "ability"
+          "type": "ability",
+          "duration": 60
         },
         {
           "property": "fireAttack",
@@ -95,7 +153,8 @@
           },
           "effect": "multiply",
           "value": 1.15,
-          "type": "ability"
+          "type": "ability",
+          "duration": 60
         },
         {
           "property": "rangedAttack",
@@ -111,7 +170,8 @@
           },
           "effect": "multiply",
           "value": 1.15,
-          "type": "influence"
+          "type": "influence",
+          "duration": 60
         },
         {
           "property": "siegeAttack",
@@ -124,9 +184,105 @@
           },
           "effect": "multiply",
           "value": 1.15,
-          "type": "influence"
+          "type": "influence",
+          "duration": 60
         }
       ]
+    },
+    {
+      "id": "relic-garrisoned-dock-3",
+      "baseId": "relic-garrisoned-dock",
+      "type": "ability",
+      "name": "Religious Zeal Dock",
+      "pbgid": 2034812,
+      "attribName": "relic_dock_bonus_hre",
+      "age": 3,
+      "civs": [
+        "hr"
+      ],
+      "description": "Increasing attack speed of military ships by +5%.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/relic-garrisoned-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": []
+    },
+    {
+      "id": "relic-garrisoned-keep-3",
+      "baseId": "relic-garrisoned-keep",
+      "type": "ability",
+      "name": "Religious Zeal Keeps and Outposts",
+      "pbgid": 195371,
+      "attribName": "relic_tower_keep_bonus_hre",
+      "age": 3,
+      "civs": [
+        "hr"
+      ],
+      "description": "• Armor increased by +50%\n• Damage increased by +35%\n• Sight range increased by +25%\n• Weapon range increased by +20%",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "outpost",
+        "stone-wall-tower",
+        "keep",
+        "elzbach-palace"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/relic-garrisoned-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": []
+    },
+    {
+      "id": "town-center-influence-1",
+      "baseId": "town-center-influence",
+      "type": "ability",
+      "name": "Town Center Influence",
+      "pbgid": 2031604,
+      "attribName": "influence_auto_repair_buff_tc_hre",
+      "age": 1,
+      "civs": [
+        "hr"
+      ],
+      "description": "Building gains the Emergency Repairs ability.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "palace-of-swabia",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/town-center-influence-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": []
     }
   ]
 }

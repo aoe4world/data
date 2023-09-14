@@ -3,6 +3,36 @@
   "__version__": "0.0.2",
   "data": [
     {
+      "id": "abbey-healing-1",
+      "baseId": "abbey-healing",
+      "type": "ability",
+      "name": "Abbey Healing",
+      "pbgid": 202453,
+      "attribName": "abbey_of_kings_heal_aura_eng",
+      "age": 1,
+      "civs": [
+        "en"
+      ],
+      "description": "Heals nearby out of combat units by 6 every 1 seconds.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "abbey-of-kings"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/abbey-healing-1.png",
+      "active": "always",
+      "auraRange": 7.5,
+      "effects": []
+    },
+    {
       "id": "arrow-volley-4",
       "baseId": "arrow-volley",
       "type": "ability",
@@ -24,6 +54,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/arrow-volley-1.png",
       "active": "manual",
       "auraRange": 0.0025,
@@ -42,6 +73,36 @@
         }
       ],
       "cooldown": 45
+    },
+    {
+      "id": "mill-influence-1",
+      "baseId": "mill-influence",
+      "type": "ability",
+      "name": "Mill Influence",
+      "pbgid": 1451854,
+      "attribName": "mill_influence_eng",
+      "age": 1,
+      "civs": [
+        "en"
+      ],
+      "description": "Farm harvest rate increased +15%/+20%/+25%/+30% by Age while within the influence of a Mill.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "mill"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/mill-influence-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": []
     },
     {
       "id": "network-of-castles-1",
@@ -65,6 +126,16 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [
+        "outpost",
+        "stone-wall-tower",
+        "town-center",
+        "the-white-tower",
+        "kings-palace",
+        "keep",
+        "berkshire-palace",
+        "capital-town-center"
+      ],
       "icon": "https://data.aoe4world.com/images/abilities/network-of-castles-1.png",
       "active": "always",
       "auraRange": 12.5,
@@ -94,6 +165,60 @@
       ]
     },
     {
+      "id": "emergency-repairs-1",
+      "baseId": "emergency-repairs",
+      "type": "ability",
+      "name": "Emergency Repairs",
+      "pbgid": 2031580,
+      "attribName": "influence_auto_repair_hre",
+      "age": 1,
+      "civs": [
+        "hr"
+      ],
+      "description": "Building repairs itself by 150 health every 1 second for 20 seconds.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house",
+        "outpost",
+        "mill",
+        "barracks",
+        "lumber-camp",
+        "dock",
+        "mining-camp",
+        "meinwerk-palace",
+        "aachen-chapel",
+        "blacksmith",
+        "archery-range",
+        "market",
+        "stable",
+        "town-center",
+        "burgrave-palace",
+        "regnitz-cathedral",
+        "siege-workshop",
+        "keep",
+        "monastery",
+        "palace-of-swabia",
+        "elzbach-palace",
+        "university",
+        "great-palace-of-flensburg",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/emergency-repairs-1.png",
+      "active": "manual",
+      "auraRange": 0.0025,
+      "effects": [],
+      "cooldown": 75
+    },
+    {
       "id": "inspired-warriors-3",
       "baseId": "inspired-warriors",
       "type": "ability",
@@ -115,6 +240,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/inspired-1.png",
       "active": "always",
       "auraRange": 0.0025,
@@ -136,7 +262,8 @@
           },
           "effect": "change",
           "value": 1,
-          "type": "ability"
+          "type": "ability",
+          "duration": 60
         },
         {
           "property": "meleeArmor",
@@ -155,7 +282,8 @@
           },
           "effect": "change",
           "value": 1,
-          "type": "ability"
+          "type": "ability",
+          "duration": 60
         },
         {
           "property": "meleeAttack",
@@ -168,7 +296,8 @@
           },
           "effect": "multiply",
           "value": 1.15,
-          "type": "ability"
+          "type": "ability",
+          "duration": 60
         },
         {
           "property": "fireAttack",
@@ -181,7 +310,8 @@
           },
           "effect": "multiply",
           "value": 1.15,
-          "type": "ability"
+          "type": "ability",
+          "duration": 60
         },
         {
           "property": "rangedAttack",
@@ -197,7 +327,8 @@
           },
           "effect": "multiply",
           "value": 1.15,
-          "type": "influence"
+          "type": "influence",
+          "duration": 60
         },
         {
           "property": "siegeAttack",
@@ -210,9 +341,105 @@
           },
           "effect": "multiply",
           "value": 1.15,
-          "type": "influence"
+          "type": "influence",
+          "duration": 60
         }
       ]
+    },
+    {
+      "id": "relic-garrisoned-dock-3",
+      "baseId": "relic-garrisoned-dock",
+      "type": "ability",
+      "name": "Religious Zeal Dock",
+      "pbgid": 2034812,
+      "attribName": "relic_dock_bonus_hre",
+      "age": 3,
+      "civs": [
+        "hr"
+      ],
+      "description": "Increasing attack speed of military ships by +5%.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/relic-garrisoned-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": []
+    },
+    {
+      "id": "relic-garrisoned-keep-3",
+      "baseId": "relic-garrisoned-keep",
+      "type": "ability",
+      "name": "Religious Zeal Keeps and Outposts",
+      "pbgid": 195371,
+      "attribName": "relic_tower_keep_bonus_hre",
+      "age": 3,
+      "civs": [
+        "hr"
+      ],
+      "description": "• Armor increased by +50%\n• Damage increased by +35%\n• Sight range increased by +25%\n• Weapon range increased by +20%",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "outpost",
+        "stone-wall-tower",
+        "keep",
+        "elzbach-palace"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/relic-garrisoned-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": []
+    },
+    {
+      "id": "town-center-influence-1",
+      "baseId": "town-center-influence",
+      "type": "ability",
+      "name": "Town Center Influence",
+      "pbgid": 2031604,
+      "attribName": "influence_auto_repair_buff_tc_hre",
+      "age": 1,
+      "civs": [
+        "hr"
+      ],
+      "description": "Building gains the Emergency Repairs ability.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "palace-of-swabia",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/town-center-influence-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": []
     },
     {
       "id": "deploy-pavise-3",
@@ -236,6 +463,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/deploy-pavise-1.png",
       "active": "manual",
       "auraRange": 8.75,
@@ -268,6 +496,36 @@
       "cooldown": 60
     },
     {
+      "id": "fiefdom-2",
+      "baseId": "fiefdom",
+      "type": "ability",
+      "name": "Fiefdom",
+      "pbgid": 187278,
+      "attribName": "town_center_production_age1_fre",
+      "age": 2,
+      "civs": [
+        "fr"
+      ],
+      "description": "Town Center production and research speed increased by +10%.\nBonus increases further in later Ages.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center"
+      ],
+      "active": "always",
+      "auraRange": 0,
+      "effects": []
+    },
+    {
       "id": "keep-influence-3",
       "baseId": "keep-influence",
       "type": "ability",
@@ -289,6 +547,9 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [
+        "keep"
+      ],
       "icon": "https://data.aoe4world.com/images/abilities/keep-influence-1.png",
       "active": "always",
       "auraRange": 0,
@@ -369,6 +630,7 @@
         "time": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/lancer-charge-bonus-damage-1.png",
       "active": "always",
       "auraRange": 0,
@@ -410,6 +672,7 @@
         "time": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/great-wall-buff-chi-1.png",
       "active": "always",
       "auraRange": 0,
@@ -429,6 +692,37 @@
           "type": "ability"
         }
       ]
+    },
+    {
+      "id": "imperial-spies-1",
+      "baseId": "imperial-spies",
+      "type": "ability",
+      "name": "Imperial Spies",
+      "pbgid": 206838,
+      "attribName": "imperial_spies",
+      "age": 1,
+      "civs": [
+        "ch"
+      ],
+      "description": "Reveal location of enemy workers for 10 seconds.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "imperial-palace"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/imperial-spies-1.png",
+      "active": "manual",
+      "auraRange": 250,
+      "effects": [],
+      "cooldown": 120
     },
     {
       "id": "spirit-way-4",
@@ -452,6 +746,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/buildings/spirit-way-3.png",
       "active": "always",
       "auraRange": 5,
@@ -514,6 +809,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/forced-march-1.png",
       "active": "manual",
       "auraRange": 6.25,
@@ -557,6 +853,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/tower-of-victory-aura-1.png",
       "active": "always",
       "auraRange": 7.5,
@@ -598,6 +895,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/camel-support-1.png",
       "active": "always",
       "auraRange": 5,
@@ -631,6 +929,153 @@
       ]
     },
     {
+      "id": "golden-age-tier-1-1",
+      "baseId": "golden-age-tier-1",
+      "type": "ability",
+      "name": "golden_age_tier_1",
+      "pbgid": 201563,
+      "attribName": "golden_age_tier_1",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "not-found-0.8207317470890954",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "active": "always",
+      "auraRange": 12.5,
+      "effects": []
+    },
+    {
+      "id": "golden-age-tier-2-2",
+      "baseId": "golden-age-tier-2",
+      "type": "ability",
+      "name": "golden_age_tier_2",
+      "pbgid": 201593,
+      "attribName": "golden_age_tier_2",
+      "age": 2,
+      "civs": [
+        "ab"
+      ],
+      "description": "not-found-0.38542858769154775",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "active": "always",
+      "auraRange": 12.5,
+      "effects": []
+    },
+    {
+      "id": "golden-age-tier-3-3",
+      "baseId": "golden-age-tier-3",
+      "type": "ability",
+      "name": "golden_age_tier_3",
+      "pbgid": 201595,
+      "attribName": "golden_age_tier_3",
+      "age": 3,
+      "civs": [
+        "ab"
+      ],
+      "description": "not-found-0.9916540744840867",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "active": "always",
+      "auraRange": 12.5,
+      "effects": []
+    },
+    {
+      "id": "house-of-wisdom-influence-1",
+      "baseId": "house-of-wisdom-influence",
+      "type": "ability",
+      "name": "House of Wisdom Influence",
+      "pbgid": 1838842,
+      "attribName": "how_influence_abb",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/house-of-wisdom-influence-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": []
+    },
+    {
+      "id": "medical-centers-1",
+      "baseId": "medical-centers",
+      "type": "ability",
+      "name": "Medical Centers",
+      "pbgid": 201837,
+      "attribName": "medical_centers_abb",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "Heals nearby units.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "keep"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/medical-centers-1.png",
+      "active": "always",
+      "auraRange": 5,
+      "effects": []
+    },
+    {
       "id": "activate-stealth-2",
       "baseId": "activate-stealth",
       "type": "ability",
@@ -652,6 +1097,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/activate-stealth-1.png",
       "active": "manual",
       "auraRange": 0,
@@ -695,6 +1141,7 @@
         "time": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/gbeto-ambush-buff-mal-1.png",
       "active": "always",
       "auraRange": 0,
@@ -724,6 +1171,37 @@
       ]
     },
     {
+      "id": "food-festival-1",
+      "baseId": "food-festival",
+      "type": "ability",
+      "name": "Food Festival",
+      "pbgid": 2062644,
+      "attribName": "festival_food_mal",
+      "age": 1,
+      "civs": [
+        "ma"
+      ],
+      "description": "Increase Food gather rate by +50% for 30 seconds.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 300,
+        "total": 300,
+        "popcap": 0
+      },
+      "producedBy": [
+        "griot-bara"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/food-festival-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "effects": [],
+      "cooldown": 30
+    },
+    {
       "id": "huntress-stealth-4",
       "baseId": "huntress-stealth",
       "type": "ability",
@@ -745,6 +1223,9 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [
+        "fort-of-the-huntress"
+      ],
       "icon": "https://data.aoe4world.com/images/abilities/huntress-stealth-1.png",
       "active": "always",
       "auraRange": 8,
@@ -764,6 +1245,68 @@
           "duration": 30
         }
       ]
+    },
+    {
+      "id": "military-festival-1",
+      "baseId": "military-festival",
+      "type": "ability",
+      "name": "Military Festival",
+      "pbgid": 2062645,
+      "attribName": "festival_military_mal",
+      "age": 1,
+      "civs": [
+        "ma"
+      ],
+      "description": "Increase military unit production speed by +50% for 30 seconds.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 300,
+        "total": 300,
+        "popcap": 0
+      },
+      "producedBy": [
+        "griot-bara"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/military-festival-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "effects": [],
+      "cooldown": 30
+    },
+    {
+      "id": "siege-festival-1",
+      "baseId": "siege-festival",
+      "type": "ability",
+      "name": "Siege Festival",
+      "pbgid": 2062641,
+      "attribName": "festival_siege_mal",
+      "age": 1,
+      "civs": [
+        "ma"
+      ],
+      "description": "Increase siege and torch damage for all units by +50% for 30 seconds.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 300,
+        "total": 300,
+        "popcap": 0
+      },
+      "producedBy": [
+        "griot-bara"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/siege-festival-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "effects": [],
+      "cooldown": 30
     },
     {
       "id": "attack-speed-arrow-2",
@@ -787,6 +1330,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/attack-speed-arrow-2.png",
       "active": "manual",
       "auraRange": 8.75,
@@ -831,6 +1375,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/battle-veteran-1.png",
       "active": "always",
       "auraRange": 5,
@@ -870,6 +1415,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/defense-arrow-3.png",
       "active": "manual",
       "auraRange": 8.75,
@@ -940,6 +1486,9 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [
+        "kurultai"
+      ],
       "icon": "https://data.aoe4world.com/images/buildings/kurultai-2.png",
       "active": "always",
       "auraRange": 10,
@@ -1078,6 +1627,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/maneuver-arrow-1.png",
       "active": "manual",
       "auraRange": 8.75,
@@ -1107,6 +1657,66 @@
       "toggleGroup": "khan_signal_ability_available"
     },
     {
+      "id": "ovoo-influence-1",
+      "baseId": "ovoo-influence",
+      "type": "ability",
+      "name": "Ovoo Influence",
+      "pbgid": 1457772,
+      "attribName": "ovoo_influence_mon",
+      "age": 1,
+      "civs": [
+        "mo"
+      ],
+      "description": "Buildings within influence have access to double production and improved technology. Pastures within influence produce Sheep at a faster rate.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "ovoo"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ovoo-influence-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": []
+    },
+    {
+      "id": "silk-road-1",
+      "baseId": "silk-road",
+      "type": "ability",
+      "name": "Silk Road",
+      "pbgid": 186431,
+      "attribName": "market_silk_road_passive_ui_mon",
+      "age": 1,
+      "civs": [
+        "mo"
+      ],
+      "description": "The types of resources you earn from each Trader is improved based on your total number of active Traders.\n5+ Traders: +10% Food\n10+ Traders: +10% Food, +10% Wood",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "the-silver-tree",
+        "market"
+      ],
+      "active": "always",
+      "auraRange": 0,
+      "effects": []
+    },
+    {
       "id": "yam-1",
       "baseId": "yam",
       "type": "ability",
@@ -1128,6 +1738,10 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [
+        "outpost",
+        "deer-stones"
+      ],
       "icon": "https://data.aoe4world.com/images/abilities/yam-1.png",
       "active": "always",
       "auraRange": 12.5,
@@ -1173,6 +1787,7 @@
         "time": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/outpost-speed-improved-mon-1.png",
       "active": "always",
       "auraRange": 12.5,
@@ -1217,6 +1832,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/attack-drums-off-1.png",
       "active": "toggle",
       "auraRange": 6,
@@ -1266,6 +1882,11 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [
+        "blacksmith",
+        "istanbul-observatory",
+        "university"
+      ],
       "icon": "https://data.aoe4world.com/images/abilities/blacksmith-and-university-influence-1.png",
       "active": "always",
       "auraRange": 0,
@@ -1370,6 +1991,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/fortitude-1.png",
       "active": "manual",
       "auraRange": 0,
@@ -1440,6 +2062,7 @@
         "time": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/mehter-default-formation-ott-1.png",
       "active": "always",
       "auraRange": 6,
@@ -1487,6 +2110,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/melee-defense-drums-off-1.png",
       "active": "toggle",
       "auraRange": 6,
@@ -1536,6 +2160,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/ranged-defense-drums-off-1.png",
       "active": "toggle",
       "auraRange": 6,
@@ -1564,6 +2189,37 @@
       "cooldown": 15
     },
     {
+      "id": "trade-protection-1",
+      "baseId": "trade-protection",
+      "type": "ability",
+      "name": "Trade Protection",
+      "pbgid": 2062057,
+      "attribName": "keep_trader_speed_boost_aura_ott",
+      "age": 1,
+      "civs": [
+        "ot"
+      ],
+      "description": "Traders and Trade Ships near Keeps receive +30% move speed and +8 armor for 20 seconds.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "keep",
+        "sea-gate-castle"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/trade-protection-1.png",
+      "active": "always",
+      "auraRange": 15,
+      "effects": []
+    },
+    {
       "id": "gallop-4",
       "baseId": "gallop",
       "type": "ability",
@@ -1585,6 +2241,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/gallop-1.png",
       "active": "manual",
       "auraRange": 0.25,
@@ -1638,6 +2295,9 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [
+        "high-armory"
+      ],
       "icon": "https://data.aoe4world.com/images/abilities/high-armory-production-bonus-1.png",
       "active": "always",
       "auraRange": 7.5,
@@ -1692,6 +2352,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/saints-blessing-1.png",
       "active": "always",
       "auraRange": 2,
@@ -1858,6 +2519,7 @@
         "total": 0,
         "popcap": 0
       },
+      "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/static-deployment-1.png",
       "active": "always",
       "auraRange": 0,

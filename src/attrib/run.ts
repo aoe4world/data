@@ -80,7 +80,7 @@ async function buildTechTree(civ: civConfig, context: RunContext = { debug: fals
     filesToItemId.set(file, item.id);
 
     const itemProduces = produces.get(item?.baseId!) ?? produces.set(item?.baseId!, new Set()).get(item?.baseId!)!;
-    const discovered = await tryFindFile(race, [findConstructables(data), findUpgrades(data), findUnits(data)].flat());
+    const discovered = await tryFindFile(race, [findConstructables(data), findUpgrades(data), findUnits(data), findEbpAbilities(data), findSbpAbilities(data)].flat());
     for (const d of discovered) {
       await parseFilesRecursively(d);
       const dId = filesToItemId.get(d)!;
@@ -134,6 +134,17 @@ function findConstructables(data: any) {
       ?.find((x) => x.squadexts === "sbpextensions/squad_engineer_ext")
       ?.construction_groups.flatMap((g) => (g.construction_group ?? g).construction_items.map((i) => (i.construction_item ?? i).ebp)) ?? []
   );
+}
+
+//issue in these functions in that if the item was found with sbp then ebp wont discover, and vise versa
+function findEbpAbilities(data: any) {
+  const foundAbilities = data?.extensions?.find((x) => x.exts === "ebpextensions/ability_ext")?.abilities?.flatMap((u) => u.ability ?? u) ?? [];
+  return foundAbilities;
+}
+
+function findSbpAbilities(data: any) {
+  const foundAbilities = data?.extensions?.find((x) => x.exts === "sbpextensions/squad_ability_ext")?.abilities?.flatMap((u) => u.ability ?? u) ?? [];
+  return foundAbilities;
 }
 
 async function tryFindFile(race: string, paths: string[]) {

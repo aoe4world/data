@@ -146,7 +146,6 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
         effects,
       };
       delete(ability["unique"])
-      delete(ability["producedBy"])
       
       if (ability["active"]=="toggle") ability["toggleGroup"]=abilityToggleGroup;
       if (abilityActive == "toggle" || abilityActive == "manual") ability["cooldown"]=abilityCooldown;

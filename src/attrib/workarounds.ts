@@ -342,6 +342,25 @@ workaround("Fix inaccurate ability info inspired_infantry_hre", {
   },
 });
 
+workaround("Fix id ability on dock garrison bonus", {
+  predicate: (item) => item.type === "ability" && item.attribName === "relic_dock_bonus_hre",
+  mutator: (item) => {
+    item.baseId = "relic-garrisoned-dock";
+    item.age = 3;
+    item.id = `${item.baseId}-${item.age}`;
+    item.name = "Religious Zeal Dock";
+  },
+});
+
+workaround("Fix id ability on land garrison bonus", {
+  predicate: (item) => item.type === "ability" && item.attribName === "relic_tower_keep_bonus_hre",
+  mutator: (item) => {
+    item.baseId = "relic-garrisoned-keep";
+    item.age = 3;
+    item.id = `${item.baseId}-${item.age}`;
+    item.name = "Religious Zeal Keeps and Outposts";
+  },
+});
 
 // –––– Unit weapons ––––
 

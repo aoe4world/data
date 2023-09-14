@@ -556,13 +556,14 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
   ],
 
   "inspired": ([a, b]) => [
-    // Military units deal +15% damage and gain +1 armor.
+    // Military units deal +15% damage and gain +1 armor. //tested to 60 second duration
     {
       property: "rangedArmor",
       select: common.allMilitaryLand,
       effect: "change",
       value: b,
       type: "ability",
+      duration: 60,
     },
     {
       property: "meleeArmor",
@@ -570,6 +571,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       effect: "change",
       value: b,
       type: "ability",
+      duration: 60,
     },
     {
       property: "meleeAttack",
@@ -577,6 +579,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       effect: "multiply",
       value: increaseByPercent(1, a),
       type: "ability",
+      duration: 60,
     },
     {
       property: "fireAttack",
@@ -584,6 +587,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       effect: "multiply",
       value: increaseByPercent(1, a),
       type: "ability",
+      duration: 60,
     },
     {
       property: "rangedAttack",
@@ -591,6 +595,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       effect: "multiply",
       value: increaseByPercent(1, a),
       type: "influence",
+      duration: 60,
     },
     {
       property: "siegeAttack",
@@ -598,6 +603,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       effect: "multiply",
       value: increaseByPercent(1, a),
       type: "influence",
+      duration: 60,
     },
   ],
 
