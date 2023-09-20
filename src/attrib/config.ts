@@ -153,6 +153,7 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "proxy_placement_gristmill",
   "golden_age_passive_abb",
   "golden_age_bonus_", //ignore whichever is not as complete, the other is "golden_age_tier_"
+  "medical_centers_abb",
   "tower_repair_nearby_walls_chi",
   "academy_influence_chi",
   "building_granary_aura_chi", //unknown why error: .../building_granary_aura_chi TypeError: Cannot read properties of undefined (reading 'screen_name')
@@ -170,10 +171,10 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "town_center_production_age3_fre",
   "toggle_guild_hall_resource",
   "influence_elzbach_palace_hre",
+  "influence_auto_repair_buff_tc_hre",
   "aachen_inspire_aoe_hre",
   "spotters_hre", //non-existent ability
   "cattle_landmark_passive_food_mal",
-  "docks_speed_bonus_mal",
   "open_pit_mine_influence_gen_mal",
   "trade_cart_taxation_aura_mal",
   "toggle_pit_mine_resource",

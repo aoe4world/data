@@ -210,6 +210,33 @@ workaround("Make Ability camel-support available in Imperial Age", {
   ...overrideAge(["camel-support"], 4, ["ab"]),
 });
 
+workaround("Make Ability camel-support available in Imperial Age", {
+  ...overrideAge(["camel-support"], 4, ["ab"]),
+});
+
+workaround("Make Imperial Spies available in Castle Age", {
+  ...overrideAge(["imperial-spies"], 3, ["ch"]),
+});
+
+workaround("Make Abbey Healing available in Feudal Age", {
+  ...overrideAge(["abbey-healing"], 2, ["en"]),
+});
+
+workaround("Make Food Festival available in Imperial Age", {
+  ...overrideAge(["food-festival"], 4, ["ma"]),
+});
+
+workaround("Make Military Festival available in Imperial Age", {
+  ...overrideAge(["military-festival"], 4, ["ma"]),
+});
+
+workaround("Make Siege Festival available in Imperial Age", {
+  ...overrideAge(["siege-festival"], 4, ["ma"]),
+});
+
+workaround("Make Trade Protection available in Imperial Age", {
+  ...overrideAge(["trade-protection"], 4, ["ot"]),
+});
 
 // ---- Abilities ----
 
@@ -361,6 +388,42 @@ workaround("Fix id ability on land garrison bonus", {
     item.name = "Religious Zeal Keeps and Outposts";
   },
 });
+
+workaround("Fix missing info Golden Age Tier 1", {
+  predicate: (item) => item.type === "ability" && item.attribName === "golden_age_tier_1",
+  mutator: (item) => {
+    item.description = "Tier 1: Villager gather rate +15%";
+    item.name = "Golden Age Tier 1";
+  },
+});
+
+workaround("Fix missing info Golden Age Tier 2", {
+  predicate: (item) => item.type === "ability" && item.attribName === "golden_age_tier_2",
+  mutator: (item) => {
+    item.age = 1;
+    item.id = `${item.baseId}-${item.age}`;
+    item.description = "Tier 2: Villager gather rate +15%, research speed +15%";
+    item.name = "Golden Age Tier 2";
+  },
+});
+
+workaround("Fix missing info Golden Age Tier 3", {
+  predicate: (item) => item.type === "ability" && item.attribName === "golden_age_tier_3",
+  mutator: (item) => {
+    item.age = 1;
+    item.id = `${item.baseId}-${item.age}`;
+    item.description = "Tier 3: Villager gather rate +20%, research speed +20%";
+    item.name = "Golden Age Tier 3";
+  },
+});
+
+workaround("Fix bad info in Coastal Navigation where this is only place where location string is used instead of integer in formatter_arguments", {
+  predicate: (item) => item.type === "ability" && item.attribName === "docks_speed_bonus_mal",
+  mutator: (item) => {
+    item.description = "Ships near a Docks get +15% speed for 25 seconds.";
+  },
+});
+
 
 // –––– Unit weapons ––––
 

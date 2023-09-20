@@ -51,6 +51,51 @@
       "cooldown": 60
     },
     {
+      "id": "coastal-navigation-1",
+      "baseId": "coastal-navigation",
+      "type": "ability",
+      "name": "Coastal Navigation",
+      "pbgid": 2071572,
+      "attribName": "docks_speed_bonus_mal",
+      "age": 1,
+      "civs": [
+        "ma"
+      ],
+      "description": "Ships near a Docks get +15% speed for 25 seconds.",
+      "classes": [],
+      "displayClasses": "",
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/coastal-navigation-1.png",
+      "active": "always",
+      "auraRange": 7.5,
+      "effects": [
+        {
+          "property": "moveSpeed",
+          "select": {
+            "class": [
+              [
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "ability",
+          "duration": 25
+        }
+      ]
+    },
+    {
       "id": "first-strike-4",
       "baseId": "first-strike",
       "type": "ability",
@@ -103,13 +148,13 @@
       ]
     },
     {
-      "id": "food-festival-1",
+      "id": "food-festival-4",
       "baseId": "food-festival",
       "type": "ability",
       "name": "Food Festival",
       "pbgid": 2062644,
       "attribName": "festival_food_mal",
-      "age": 1,
+      "age": 4,
       "civs": [
         "ma"
       ],
@@ -130,7 +175,20 @@
       "icon": "https://data.aoe4world.com/images/abilities/food-festival-1.png",
       "active": "manual",
       "auraRange": 0,
-      "effects": [],
+      "effects": [
+        {
+          "property": "foodGatherRate",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.5,
+          "type": "ability",
+          "duration": 30
+        }
+      ],
       "cooldown": 30
     },
     {
@@ -179,13 +237,13 @@
       ]
     },
     {
-      "id": "military-festival-1",
+      "id": "military-festival-4",
       "baseId": "military-festival",
       "type": "ability",
       "name": "Military Festival",
       "pbgid": 2062645,
       "attribName": "festival_military_mal",
-      "age": 1,
+      "age": 4,
       "civs": [
         "ma"
       ],
@@ -206,17 +264,35 @@
       "icon": "https://data.aoe4world.com/images/abilities/military-festival-1.png",
       "active": "manual",
       "auraRange": 0,
-      "effects": [],
+      "effects": [
+        {
+          "property": "productionSpeed",
+          "select": {
+            "class": [
+              [
+                "military"
+              ],
+              [
+                "population"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.5,
+          "type": "ability",
+          "duration": 30
+        }
+      ],
       "cooldown": 30
     },
     {
-      "id": "siege-festival-1",
+      "id": "siege-festival-4",
       "baseId": "siege-festival",
       "type": "ability",
       "name": "Siege Festival",
       "pbgid": 2062641,
       "attribName": "festival_siege_mal",
-      "age": 1,
+      "age": 4,
       "civs": [
         "ma"
       ],
@@ -237,7 +313,42 @@
       "icon": "https://data.aoe4world.com/images/abilities/siege-festival-1.png",
       "active": "manual",
       "auraRange": 0,
-      "effects": [],
+      "effects": [
+        {
+          "property": "fireAttack",
+          "select": {
+            "class": [
+              [
+                "melee"
+              ],
+              [
+                "calvary"
+              ]
+            ],
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.5,
+          "type": "ability",
+          "duration": 30
+        },
+        {
+          "property": "siegeAttack",
+          "select": {
+            "id": [
+              "battering-ram",
+              "counterweight-trebuchet",
+              "bombard"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.5,
+          "type": "ability",
+          "duration": 30
+        }
+      ],
       "cooldown": 30
     }
   ]

@@ -9,18 +9,18 @@
   ],
   "displayClasses": "",
   "classes": [],
-  "minAge": 1,
+  "minAge": 3,
   "icon": "https://data.aoe4world.com/images/abilities/imperial-spies-1.png",
   "description": "Reveal location of enemy workers for 10 seconds.",
   "variations": [
     {
-      "id": "imperial-spies-1",
+      "id": "imperial-spies-3",
       "baseId": "imperial-spies",
       "type": "ability",
       "name": "Imperial Spies",
       "pbgid": 206838,
       "attribName": "imperial_spies",
-      "age": 1,
+      "age": 3,
       "civs": [
         "ch"
       ],
@@ -41,7 +41,20 @@
       "icon": "https://data.aoe4world.com/images/abilities/imperial-spies-1.png",
       "active": "manual",
       "auraRange": 250,
-      "effects": [],
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability",
+          "duration": 10
+        }
+      ],
       "cooldown": 120
     }
   ]

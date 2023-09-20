@@ -11,18 +11,18 @@
       ],
       "displayClasses": "",
       "classes": [],
-      "minAge": 1,
+      "minAge": 2,
       "icon": "https://data.aoe4world.com/images/abilities/abbey-healing-1.png",
       "description": "Heals nearby out of combat units by 6 every 1 seconds.",
       "variations": [
         {
-          "id": "abbey-healing-1",
+          "id": "abbey-healing-2",
           "baseId": "abbey-healing",
           "type": "ability",
           "name": "Abbey Healing",
           "pbgid": 202453,
           "attribName": "abbey_of_kings_heal_aura_eng",
-          "age": 1,
+          "age": 2,
           "civs": [
             "en"
           ],
@@ -43,7 +43,31 @@
           "icon": "https://data.aoe4world.com/images/abilities/abbey-healing-1.png",
           "active": "always",
           "auraRange": 7.5,
-          "effects": []
+          "effects": [
+            {
+              "property": "healingRate",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "ranged"
+                  ],
+                  [
+                    "siege"
+                  ]
+                ],
+                "id": [
+                  "villager",
+                  "trader"
+                ]
+              },
+              "effect": "change",
+              "value": 6,
+              "type": "ability"
+            }
+          ]
         }
       ],
       "shared": {}
@@ -147,7 +171,19 @@
           "icon": "https://data.aoe4world.com/images/abilities/mill-influence-1.png",
           "active": "always",
           "auraRange": 0,
-          "effects": []
+          "effects": [
+            {
+              "property": "foodGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.15,
+              "type": "ability"
+            }
+          ]
         }
       ],
       "shared": {}
@@ -292,7 +328,22 @@
           "icon": "https://data.aoe4world.com/images/abilities/emergency-repairs-1.png",
           "active": "manual",
           "auraRange": 0.0025,
-          "effects": [],
+          "effects": [
+            {
+              "property": "repairRate",
+              "select": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 150,
+              "type": "ability",
+              "duration": 20
+            }
+          ],
           "cooldown": 75
         }
       ],
@@ -538,54 +589,6 @@
       "shared": {}
     },
     {
-      "id": "town-center-influence",
-      "name": "Town Center Influence",
-      "type": "ability",
-      "civs": [
-        "hr"
-      ],
-      "displayClasses": "",
-      "classes": [],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/abilities/town-center-influence-1.png",
-      "description": "Building gains the Emergency Repairs ability.",
-      "variations": [
-        {
-          "id": "town-center-influence-1",
-          "baseId": "town-center-influence",
-          "type": "ability",
-          "name": "Town Center Influence",
-          "pbgid": 2031604,
-          "attribName": "influence_auto_repair_buff_tc_hre",
-          "age": 1,
-          "civs": [
-            "hr"
-          ],
-          "description": "Building gains the Emergency Repairs ability.",
-          "classes": [],
-          "displayClasses": "",
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "total": 0,
-            "popcap": 0
-          },
-          "producedBy": [
-            "town-center",
-            "palace-of-swabia",
-            "capital-town-center"
-          ],
-          "icon": "https://data.aoe4world.com/images/abilities/town-center-influence-1.png",
-          "active": "always",
-          "auraRange": 0,
-          "effects": []
-        }
-      ],
-      "shared": {}
-    },
-    {
       "id": "deploy-pavise",
       "name": "Deploy Pavise",
       "type": "ability",
@@ -695,7 +698,19 @@
           ],
           "active": "always",
           "auraRange": 0,
-          "effects": []
+          "effects": [
+            {
+              "property": "productionSpeed",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.1,
+              "type": "ability"
+            }
+          ]
         }
       ],
       "shared": {}
@@ -900,11 +915,11 @@
             {
               "property": "rangedAttack",
               "select": {
-                "id": [
-                  "zhuge-nu",
-                  "archer",
-                  "crossbowman",
-                  "grenadier"
+                "class": [
+                  [
+                    "ranged",
+                    "infantry"
+                  ]
                 ]
               },
               "effect": "multiply",
@@ -925,18 +940,18 @@
       ],
       "displayClasses": "",
       "classes": [],
-      "minAge": 1,
+      "minAge": 3,
       "icon": "https://data.aoe4world.com/images/abilities/imperial-spies-1.png",
       "description": "Reveal location of enemy workers for 10 seconds.",
       "variations": [
         {
-          "id": "imperial-spies-1",
+          "id": "imperial-spies-3",
           "baseId": "imperial-spies",
           "type": "ability",
           "name": "Imperial Spies",
           "pbgid": 206838,
           "attribName": "imperial_spies",
-          "age": 1,
+          "age": 3,
           "civs": [
             "ch"
           ],
@@ -957,7 +972,20 @@
           "icon": "https://data.aoe4world.com/images/abilities/imperial-spies-1.png",
           "active": "manual",
           "auraRange": 250,
-          "effects": [],
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability",
+              "duration": 10
+            }
+          ],
           "cooldown": 120
         }
       ],
@@ -1233,7 +1261,7 @@
     },
     {
       "id": "golden-age-tier-1",
-      "name": "golden_age_tier_1",
+      "name": "Golden Age Tier 1",
       "type": "ability",
       "civs": [
         "ab"
@@ -1241,20 +1269,20 @@
       "displayClasses": "",
       "classes": [],
       "minAge": 1,
-      "description": "not-found-0.8207317470890954",
+      "description": "Tier 1: Villager gather rate +15%",
       "variations": [
         {
           "id": "golden-age-tier-1-1",
           "baseId": "golden-age-tier-1",
           "type": "ability",
-          "name": "golden_age_tier_1",
+          "name": "Golden Age Tier 1",
           "pbgid": 201563,
           "attribName": "golden_age_tier_1",
           "age": 1,
           "civs": [
             "ab"
           ],
-          "description": "not-found-0.8207317470890954",
+          "description": "Tier 1: Villager gather rate +15%",
           "classes": [],
           "displayClasses": "",
           "costs": {
@@ -1270,35 +1298,91 @@
           ],
           "active": "always",
           "auraRange": 12.5,
-          "effects": []
+          "effects": [
+            {
+              "property": "foodGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.15,
+              "type": "ability"
+            },
+            {
+              "property": "huntGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.15,
+              "type": "ability"
+            },
+            {
+              "property": "goldGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.15,
+              "type": "ability"
+            },
+            {
+              "property": "stoneGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.15,
+              "type": "ability"
+            },
+            {
+              "property": "woodGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.15,
+              "type": "ability"
+            }
+          ]
         }
       ],
       "shared": {}
     },
     {
       "id": "golden-age-tier-2",
-      "name": "golden_age_tier_2",
+      "name": "Golden Age Tier 2",
       "type": "ability",
       "civs": [
         "ab"
       ],
       "displayClasses": "",
       "classes": [],
-      "minAge": 2,
-      "description": "not-found-0.38542858769154775",
+      "minAge": 1,
+      "description": "Tier 2: Villager gather rate +15%, research speed +15%",
       "variations": [
         {
-          "id": "golden-age-tier-2-2",
+          "id": "golden-age-tier-2-1",
           "baseId": "golden-age-tier-2",
           "type": "ability",
-          "name": "golden_age_tier_2",
+          "name": "Golden Age Tier 2",
           "pbgid": 201593,
           "attribName": "golden_age_tier_2",
-          "age": 2,
+          "age": 1,
           "civs": [
             "ab"
           ],
-          "description": "not-found-0.38542858769154775",
+          "description": "Tier 2: Villager gather rate +15%, research speed +15%",
           "classes": [],
           "displayClasses": "",
           "costs": {
@@ -1321,28 +1405,28 @@
     },
     {
       "id": "golden-age-tier-3",
-      "name": "golden_age_tier_3",
+      "name": "Golden Age Tier 3",
       "type": "ability",
       "civs": [
         "ab"
       ],
       "displayClasses": "",
       "classes": [],
-      "minAge": 3,
-      "description": "not-found-0.9916540744840867",
+      "minAge": 1,
+      "description": "Tier 3: Villager gather rate +20%, research speed +20%",
       "variations": [
         {
-          "id": "golden-age-tier-3-3",
+          "id": "golden-age-tier-3-1",
           "baseId": "golden-age-tier-3",
           "type": "ability",
-          "name": "golden_age_tier_3",
+          "name": "Golden Age Tier 3",
           "pbgid": 201595,
           "attribName": "golden_age_tier_3",
-          "age": 3,
+          "age": 1,
           "civs": [
             "ab"
           ],
-          "description": "not-found-0.9916540744840867",
+          "description": "Tier 3: Villager gather rate +20%, research speed +20%",
           "classes": [],
           "displayClasses": "",
           "costs": {
@@ -1404,53 +1488,21 @@
           "icon": "https://data.aoe4world.com/images/abilities/house-of-wisdom-influence-1.png",
           "active": "always",
           "auraRange": 0,
-          "effects": []
-        }
-      ],
-      "shared": {}
-    },
-    {
-      "id": "medical-centers",
-      "name": "Medical Centers",
-      "type": "ability",
-      "civs": [
-        "ab"
-      ],
-      "displayClasses": "",
-      "classes": [],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/abilities/medical-centers-1.png",
-      "description": "Heals nearby units.",
-      "variations": [
-        {
-          "id": "medical-centers-1",
-          "baseId": "medical-centers",
-          "type": "ability",
-          "name": "Medical Centers",
-          "pbgid": 201837,
-          "attribName": "medical_centers_abb",
-          "age": 1,
-          "civs": [
-            "ab"
-          ],
-          "description": "Heals nearby units.",
-          "classes": [],
-          "displayClasses": "",
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "total": 0,
-            "popcap": 0
-          },
-          "producedBy": [
-            "keep"
-          ],
-          "icon": "https://data.aoe4world.com/images/abilities/medical-centers-1.png",
-          "active": "always",
-          "auraRange": 5,
-          "effects": []
+          "effects": [
+            {
+              "property": "fireArmor",
+              "select": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 5,
+              "type": "ability"
+            }
+          ]
         }
       ],
       "shared": {}
@@ -1510,6 +1562,67 @@
             }
           ],
           "cooldown": 60
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "coastal-navigation",
+      "name": "Coastal Navigation",
+      "type": "ability",
+      "civs": [
+        "ma"
+      ],
+      "displayClasses": "",
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/coastal-navigation-1.png",
+      "description": "Ships near a Docks get +15% speed for 25 seconds.",
+      "variations": [
+        {
+          "id": "coastal-navigation-1",
+          "baseId": "coastal-navigation",
+          "type": "ability",
+          "name": "Coastal Navigation",
+          "pbgid": 2071572,
+          "attribName": "docks_speed_bonus_mal",
+          "age": 1,
+          "civs": [
+            "ma"
+          ],
+          "description": "Ships near a Docks get +15% speed for 25 seconds.",
+          "classes": [],
+          "displayClasses": "",
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "dock"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/coastal-navigation-1.png",
+          "active": "always",
+          "auraRange": 7.5,
+          "effects": [
+            {
+              "property": "moveSpeed",
+              "select": {
+                "class": [
+                  [
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.15,
+              "type": "ability",
+              "duration": 25
+            }
+          ]
         }
       ],
       "shared": {}
@@ -1591,18 +1704,18 @@
       ],
       "displayClasses": "",
       "classes": [],
-      "minAge": 1,
+      "minAge": 4,
       "icon": "https://data.aoe4world.com/images/abilities/food-festival-1.png",
       "description": "Increase Food gather rate by +50% for 30 seconds.",
       "variations": [
         {
-          "id": "food-festival-1",
+          "id": "food-festival-4",
           "baseId": "food-festival",
           "type": "ability",
           "name": "Food Festival",
           "pbgid": 2062644,
           "attribName": "festival_food_mal",
-          "age": 1,
+          "age": 4,
           "civs": [
             "ma"
           ],
@@ -1623,7 +1736,20 @@
           "icon": "https://data.aoe4world.com/images/abilities/food-festival-1.png",
           "active": "manual",
           "auraRange": 0,
-          "effects": [],
+          "effects": [
+            {
+              "property": "foodGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.5,
+              "type": "ability",
+              "duration": 30
+            }
+          ],
           "cooldown": 30
         }
       ],
@@ -1699,18 +1825,18 @@
       ],
       "displayClasses": "",
       "classes": [],
-      "minAge": 1,
+      "minAge": 4,
       "icon": "https://data.aoe4world.com/images/abilities/military-festival-1.png",
       "description": "Increase military unit production speed by +50% for 30 seconds.",
       "variations": [
         {
-          "id": "military-festival-1",
+          "id": "military-festival-4",
           "baseId": "military-festival",
           "type": "ability",
           "name": "Military Festival",
           "pbgid": 2062645,
           "attribName": "festival_military_mal",
-          "age": 1,
+          "age": 4,
           "civs": [
             "ma"
           ],
@@ -1731,7 +1857,25 @@
           "icon": "https://data.aoe4world.com/images/abilities/military-festival-1.png",
           "active": "manual",
           "auraRange": 0,
-          "effects": [],
+          "effects": [
+            {
+              "property": "productionSpeed",
+              "select": {
+                "class": [
+                  [
+                    "military"
+                  ],
+                  [
+                    "population"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.5,
+              "type": "ability",
+              "duration": 30
+            }
+          ],
           "cooldown": 30
         }
       ],
@@ -1746,18 +1890,18 @@
       ],
       "displayClasses": "",
       "classes": [],
-      "minAge": 1,
+      "minAge": 4,
       "icon": "https://data.aoe4world.com/images/abilities/siege-festival-1.png",
       "description": "Increase siege and torch damage for all units by +50% for 30 seconds.",
       "variations": [
         {
-          "id": "siege-festival-1",
+          "id": "siege-festival-4",
           "baseId": "siege-festival",
           "type": "ability",
           "name": "Siege Festival",
           "pbgid": 2062641,
           "attribName": "festival_siege_mal",
-          "age": 1,
+          "age": 4,
           "civs": [
             "ma"
           ],
@@ -1778,7 +1922,42 @@
           "icon": "https://data.aoe4world.com/images/abilities/siege-festival-1.png",
           "active": "manual",
           "auraRange": 0,
-          "effects": [],
+          "effects": [
+            {
+              "property": "fireAttack",
+              "select": {
+                "class": [
+                  [
+                    "melee"
+                  ],
+                  [
+                    "calvary"
+                  ]
+                ],
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.5,
+              "type": "ability",
+              "duration": 30
+            },
+            {
+              "property": "siegeAttack",
+              "select": {
+                "id": [
+                  "battering-ram",
+                  "counterweight-trebuchet",
+                  "bombard"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.5,
+              "type": "ability",
+              "duration": 30
+            }
+          ],
           "cooldown": 30
         }
       ],
@@ -2912,18 +3091,18 @@
       ],
       "displayClasses": "",
       "classes": [],
-      "minAge": 1,
+      "minAge": 4,
       "icon": "https://data.aoe4world.com/images/abilities/trade-protection-1.png",
       "description": "Traders and Trade Ships near Keeps receive +30% move speed and +8 armor for 20 seconds.",
       "variations": [
         {
-          "id": "trade-protection-1",
+          "id": "trade-protection-4",
           "baseId": "trade-protection",
           "type": "ability",
           "name": "Trade Protection",
           "pbgid": 2062057,
           "attribName": "keep_trader_speed_boost_aura_ott",
-          "age": 1,
+          "age": 4,
           "civs": [
             "ot"
           ],
@@ -2945,7 +3124,44 @@
           "icon": "https://data.aoe4world.com/images/abilities/trade-protection-1.png",
           "active": "always",
           "auraRange": 15,
-          "effects": []
+          "effects": [
+            {
+              "property": "moveSpeed",
+              "select": {
+                "id": [
+                  "trader"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.3,
+              "type": "ability",
+              "duration": 20
+            },
+            {
+              "property": "meleeArmor",
+              "select": {
+                "id": [
+                  "trader"
+                ]
+              },
+              "effect": "change",
+              "value": 8,
+              "type": "ability",
+              "duration": 20
+            },
+            {
+              "property": "rangedArmor",
+              "select": {
+                "id": [
+                  "trader"
+                ]
+              },
+              "effect": "change",
+              "value": 8,
+              "type": "ability",
+              "duration": 20
+            }
+          ]
         }
       ],
       "shared": {}

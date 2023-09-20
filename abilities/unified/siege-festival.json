@@ -9,18 +9,18 @@
   ],
   "displayClasses": "",
   "classes": [],
-  "minAge": 1,
+  "minAge": 4,
   "icon": "https://data.aoe4world.com/images/abilities/siege-festival-1.png",
   "description": "Increase siege and torch damage for all units by +50% for 30 seconds.",
   "variations": [
     {
-      "id": "siege-festival-1",
+      "id": "siege-festival-4",
       "baseId": "siege-festival",
       "type": "ability",
       "name": "Siege Festival",
       "pbgid": 2062641,
       "attribName": "festival_siege_mal",
-      "age": 1,
+      "age": 4,
       "civs": [
         "ma"
       ],
@@ -41,7 +41,42 @@
       "icon": "https://data.aoe4world.com/images/abilities/siege-festival-1.png",
       "active": "manual",
       "auraRange": 0,
-      "effects": [],
+      "effects": [
+        {
+          "property": "fireAttack",
+          "select": {
+            "class": [
+              [
+                "melee"
+              ],
+              [
+                "calvary"
+              ]
+            ],
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.5,
+          "type": "ability",
+          "duration": 30
+        },
+        {
+          "property": "siegeAttack",
+          "select": {
+            "id": [
+              "battering-ram",
+              "counterweight-trebuchet",
+              "bombard"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.5,
+          "type": "ability",
+          "duration": 30
+        }
+      ],
       "cooldown": 30
     }
   ]

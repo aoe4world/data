@@ -484,18 +484,18 @@
       ],
       "displayClasses": "",
       "classes": [],
-      "minAge": 1,
+      "minAge": 4,
       "icon": "https://data.aoe4world.com/images/abilities/trade-protection-1.png",
       "description": "Traders and Trade Ships near Keeps receive +30% move speed and +8 armor for 20 seconds.",
       "variations": [
         {
-          "id": "trade-protection-1",
+          "id": "trade-protection-4",
           "baseId": "trade-protection",
           "type": "ability",
           "name": "Trade Protection",
           "pbgid": 2062057,
           "attribName": "keep_trader_speed_boost_aura_ott",
-          "age": 1,
+          "age": 4,
           "civs": [
             "ot"
           ],
@@ -517,7 +517,44 @@
           "icon": "https://data.aoe4world.com/images/abilities/trade-protection-1.png",
           "active": "always",
           "auraRange": 15,
-          "effects": []
+          "effects": [
+            {
+              "property": "moveSpeed",
+              "select": {
+                "id": [
+                  "trader"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.3,
+              "type": "ability",
+              "duration": 20
+            },
+            {
+              "property": "meleeArmor",
+              "select": {
+                "id": [
+                  "trader"
+                ]
+              },
+              "effect": "change",
+              "value": 8,
+              "type": "ability",
+              "duration": 20
+            },
+            {
+              "property": "rangedArmor",
+              "select": {
+                "id": [
+                  "trader"
+                ]
+              },
+              "effect": "change",
+              "value": 8,
+              "type": "ability",
+              "duration": 20
+            }
+          ]
         }
       ]
     }

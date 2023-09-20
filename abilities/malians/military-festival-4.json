@@ -1,11 +1,11 @@
 {
-  "id": "military-festival-1",
+  "id": "military-festival-4",
   "baseId": "military-festival",
   "type": "ability",
   "name": "Military Festival",
   "pbgid": 2062645,
   "attribName": "festival_military_mal",
-  "age": 1,
+  "age": 4,
   "civs": [
     "ma"
   ],
@@ -26,6 +26,24 @@
   "icon": "https://data.aoe4world.com/images/abilities/military-festival-1.png",
   "active": "manual",
   "auraRange": 0,
-  "effects": [],
+  "effects": [
+    {
+      "property": "productionSpeed",
+      "select": {
+        "class": [
+          [
+            "military"
+          ],
+          [
+            "population"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.5,
+      "type": "ability",
+      "duration": 30
+    }
+  ],
   "cooldown": 30
 }

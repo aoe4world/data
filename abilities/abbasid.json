@@ -66,14 +66,14 @@
       "id": "golden-age-tier-1-1",
       "baseId": "golden-age-tier-1",
       "type": "ability",
-      "name": "golden_age_tier_1",
+      "name": "Golden Age Tier 1",
       "pbgid": 201563,
       "attribName": "golden_age_tier_1",
       "age": 1,
       "civs": [
         "ab"
       ],
-      "description": "not-found-0.8207317470890954",
+      "description": "Tier 1: Villager gather rate +15%",
       "classes": [],
       "displayClasses": "",
       "costs": {
@@ -89,20 +89,76 @@
       ],
       "active": "always",
       "auraRange": 12.5,
-      "effects": []
+      "effects": [
+        {
+          "property": "foodGatherRate",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "ability"
+        },
+        {
+          "property": "huntGatherRate",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "ability"
+        },
+        {
+          "property": "goldGatherRate",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "ability"
+        },
+        {
+          "property": "stoneGatherRate",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "ability"
+        },
+        {
+          "property": "woodGatherRate",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "ability"
+        }
+      ]
     },
     {
-      "id": "golden-age-tier-2-2",
+      "id": "golden-age-tier-2-1",
       "baseId": "golden-age-tier-2",
       "type": "ability",
-      "name": "golden_age_tier_2",
+      "name": "Golden Age Tier 2",
       "pbgid": 201593,
       "attribName": "golden_age_tier_2",
-      "age": 2,
+      "age": 1,
       "civs": [
         "ab"
       ],
-      "description": "not-found-0.38542858769154775",
+      "description": "Tier 2: Villager gather rate +15%, research speed +15%",
       "classes": [],
       "displayClasses": "",
       "costs": {
@@ -121,17 +177,17 @@
       "effects": []
     },
     {
-      "id": "golden-age-tier-3-3",
+      "id": "golden-age-tier-3-1",
       "baseId": "golden-age-tier-3",
       "type": "ability",
-      "name": "golden_age_tier_3",
+      "name": "Golden Age Tier 3",
       "pbgid": 201595,
       "attribName": "golden_age_tier_3",
-      "age": 3,
+      "age": 1,
       "civs": [
         "ab"
       ],
-      "description": "not-found-0.9916540744840867",
+      "description": "Tier 3: Villager gather rate +20%, research speed +20%",
       "classes": [],
       "displayClasses": "",
       "costs": {
@@ -177,37 +233,21 @@
       "icon": "https://data.aoe4world.com/images/abilities/house-of-wisdom-influence-1.png",
       "active": "always",
       "auraRange": 0,
-      "effects": []
-    },
-    {
-      "id": "medical-centers-1",
-      "baseId": "medical-centers",
-      "type": "ability",
-      "name": "Medical Centers",
-      "pbgid": 201837,
-      "attribName": "medical_centers_abb",
-      "age": 1,
-      "civs": [
-        "ab"
-      ],
-      "description": "Heals nearby units.",
-      "classes": [],
-      "displayClasses": "",
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [
-        "keep"
-      ],
-      "icon": "https://data.aoe4world.com/images/abilities/medical-centers-1.png",
-      "active": "always",
-      "auraRange": 5,
-      "effects": []
+      "effects": [
+        {
+          "property": "fireArmor",
+          "select": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 5,
+          "type": "ability"
+        }
+      ]
     }
   ]
 }

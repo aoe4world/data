@@ -61,14 +61,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     // All units standing on Walls gain +25% ranged damage.
     {
       property: "rangedAttack",
-      select: {
-        id: [
-          "zhuge-nu",
-          "archer",
-          "crossbowman",
-          "grenadier",
-        ],
-      },
+      select: { class: [['ranged','infantry']] },
       effect: "multiply",
       value: increaseByPercent(1, 25),
       type: "ability",
@@ -604,6 +597,247 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       value: increaseByPercent(1, a),
       type: "influence",
       duration: 60,
+    },
+  ],
+  
+  "house-of-wisdom-influence": ([i]) => [
+    // Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age.
+    {
+      property: "fireArmor",
+      select: { class: [["building"]] },
+      effect: "change",
+      value: i,
+      type: "ability",
+    },
+  ],
+
+  "imperial-spies": ([i]) => [
+    // Reveal location of enemy workers for 10 seconds.
+    {
+      property: "unknown",
+      select: { id: ["villager"] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+      duration: i,
+    },
+  ],
+  
+  "abbey-healing": ([i,j]) => [
+    // Heals nearby out of combat units by 6 every 1 seconds.
+    {
+      property: "healingRate",
+      select: common.allLand,
+      effect: "change",
+      value: i/j,
+      type: "ability",
+    },
+  ],
+  
+  "mill-influence": ([i, j, k, l]) => [
+    // Farm harvest rate increased +15%/+20%/+25%/+30% by Age while within the influence of a Mill.
+    {
+      property: "foodGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+    },
+  ],
+    
+  "golden-age-tier-1": ([]) => [
+    // Tier 1: Villager gather rate +15%
+    {
+      property: "foodGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 15),
+      type: "ability",
+    },
+    {
+      property: "huntGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 15),
+      type: "ability",
+    },
+    {
+      property: "goldGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 15),
+      type: "ability",
+    },
+    {
+      property: "stoneGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 15),
+      type: "ability",
+    },
+    {
+      property: "woodGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 15),
+      type: "ability",
+    },
+  ],
+  
+  "fiefdom": ([i]) => [
+    // Town Center production and research speed increased by +10%.\nBonus increases further in later Ages
+    {
+      property: "productionSpeed",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+    },
+  ],
+  
+  "emergency-repairs": ([i, j, k]) => [
+    // Building repairs itself by 150 health every 1 second for 20 seconds.
+    {
+      property: "repairRate",
+      select: { class: [["building"]] },
+      effect: "change",
+      value: i/j,
+      type: "ability",
+      duration: k,
+    },
+  ],  
+  
+  "relic-garrisoned-dock": ([s]) => [
+    // Increasing attack speed of military ships by +5%.
+    {
+      property: "attackSpeed",
+      select: common.allMillitaryShips,
+      effect: "multiply",
+      value: increaseAttackSpeedByPercentNew(s),
+      type: "ability",
+    },
+  ],
+  
+  "relic-garrisoned-keep": ([s,t,u,v]) => [
+    // Armor increased by +50% Damage increased by +35% Sight range increased by +25% Weapon range increased by +20%"
+    {
+      property: "fireArmor",
+      select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercentNew(s),
+      type: "ability",
+    },
+    {
+      property: "rangedArmor",
+      select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercentNew(s),
+      type: "ability",
+    },
+    {
+      property: "rangedAttack",
+      select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercentNew(t),
+      type: "ability",
+    },
+    {
+      property: "maxRange",
+      select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercentNew(v),
+      type: "ability",
+    },
+    {
+      property: "lineOfSight",
+      select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercentNew(u),
+      type: "ability",
+    },
+  ],
+  
+  "food-festival": ([i,j]) => [
+    // Increase Food gather rate by +50% for 30 seconds.
+    {
+      property: "foodGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+      duration: j,
+    },
+  ],
+    
+  "military-festival": ([i,j]) => [
+    // Increase military unit production speed by +50% for 30 seconds.
+    {
+      property: "productionSpeed",
+      select: { class: [["military"], ["population"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+      duration: j,
+    },
+  ],
+    
+  "siege-festival": ([i,j]) => [
+    // Increase siege and torch damage for all units by +50% for 30 seconds.
+    {
+      property: "fireAttack",
+      select: { class: [["melee"], ["calvary"]], id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+      duration: j,
+    },
+    {
+      property: "siegeAttack",
+      select: { id: ["battering-ram", "counterweight-trebuchet", "bombard"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+      duration: j,
+    },
+  ],
+  
+  "trade-protection": ([i,j,k]) => [
+    // Increase siege and torch damage for all units by +50% for 30 seconds.
+    {
+      property: "moveSpeed",
+      select: { id: ["trader"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+      duration: k,
+    },
+    {
+      property: "meleeArmor",
+      select: { id: ["trader"] },
+      effect: "change",
+      value: j,
+      type: "ability",
+      duration: k,
+    },
+    {
+      property: "rangedArmor",
+      select: { id: ["trader"] },
+      effect: "change",
+      value: j,
+      type: "ability",
+      duration: k,
+    },
+  ],
+  
+  "coastal-navigation": ([]) => [
+    // Ships near a Docks get +15% speed for 25 seconds.
+    {
+      property: "moveSpeed",
+      select: { class: [["ship"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, 15),
+      type: "ability",
+      duration: 25,
     },
   ],
 

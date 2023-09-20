@@ -1,0 +1,45 @@
+{
+  "id": "coastal-navigation-1",
+  "baseId": "coastal-navigation",
+  "type": "ability",
+  "name": "Coastal Navigation",
+  "pbgid": 2071572,
+  "attribName": "docks_speed_bonus_mal",
+  "age": 1,
+  "civs": [
+    "ma"
+  ],
+  "description": "Ships near a Docks get +15% speed for 25 seconds.",
+  "classes": [],
+  "displayClasses": "",
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "total": 0,
+    "popcap": 0
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/abilities/coastal-navigation-1.png",
+  "active": "always",
+  "auraRange": 7.5,
+  "effects": [
+    {
+      "property": "moveSpeed",
+      "select": {
+        "class": [
+          [
+            "ship"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.15,
+      "type": "ability",
+      "duration": 25
+    }
+  ]
+}

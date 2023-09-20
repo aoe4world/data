@@ -64,7 +64,22 @@
       "icon": "https://data.aoe4world.com/images/abilities/emergency-repairs-1.png",
       "active": "manual",
       "auraRange": 0.0025,
-      "effects": [],
+      "effects": [
+        {
+          "property": "repairRate",
+          "select": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 150,
+          "type": "ability",
+          "duration": 20
+        }
+      ],
       "cooldown": 75
     }
   ]
