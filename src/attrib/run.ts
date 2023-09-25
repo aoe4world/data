@@ -35,16 +35,17 @@ async function buildTechTree(civ: civConfig, context: RunContext = { debug: fals
   const produces = new Map<string, Set<string>>();
   const { debug, getData, race } = context;
 
-  const army: any = await parseXmlFile(attribFile(`army/standard_mode/normal_${race}`), context);
-  const bps = await parseXmlFile(attribFile(`racebps/${race}`), context);
+  const army: any = await getData(attribFile(`army/standard_mode/normal_${race}`), undefined, context);
+  const bps = await getData(attribFile(`racebps/${race}`), undefined, context);
 
-  const civOverview = getCivInfo(army.army_bag, bps);
-
-  for (const b of army?.army_bag?.starting_buildings) files.add(b.starting_building.building);
-  for (const u of army?.army_bag?.starting_units) files.add(u.squad);
+  const army_extensions = army?.extensions?.[0] ?? army.army_bag;
+  const civOverview = getCivInfo(army_extensions, bps?.extensions?.[0]);
+  for (const b of army_extensions?.starting_buildings) files.add(b.starting_building);
+  for (const u of army_extensions?.starting_units) files.add(u);
   for (const file of hardcodedDiscovery[civ.slug] ?? []) files.add(file);
 
   async function parseFilesRecursively(file: string) {
+    if (!file) return;
     if (!files.has(file)) files.add(file);
     if (filesToItemId.has(file)) return;
     const data = await getData(attribFile(file), undefined, context);
@@ -145,11 +146,11 @@ async function tryFindFile(race: string, paths: string[]) {
   ).filter(Boolean) as string[];
 }
 
-function getCivInfo(army_bag: any, bps: any) {
-  if (!army_bag || !bps) return;
+function getCivInfo(army_bag: any, bps_race_bag: any) {
+  if (!army_bag || !bps_race_bag) return;
   const overview = army_bag.ui?.global_traits_summary.map((x) => {
-    const title = t(x.trait.title);
-    const description = t(x.trait.description);
+    const title = t(x.title);
+    const description = t(x.description);
     const list = description.startsWith("• ")
       ? description
           .split("• ")
@@ -160,8 +161,8 @@ function getCivInfo(army_bag: any, bps: any) {
     return { title, description };
   });
   return {
-    name: t(bps.race_bag.name),
-    description: t(bps.race_bag.description),
+    name: t(bps_race_bag.name),
+    description: t(bps_race_bag.description),
     classes: t(army_bag.ui?.one_liner),
     overview,
   } as any;

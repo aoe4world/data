@@ -184,7 +184,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       return upgrade;
     }
   } catch (e) {
-    console.error(file, e);
+    console.error(`src/attrib/.dev/${file}.essence.json`, e);
     return undefined;
   }
 }
