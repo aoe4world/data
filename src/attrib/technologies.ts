@@ -2151,7 +2151,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
   ],
 
   "precision-training": ([donso, archer, javelin]) => [
-    // Increase ranged damage of Donso by +6, Archers by +2, and Javelin Throwers by +2.
+    // Increase ranged damage of Donso by +6, Archers by +2, and Javelin Throwers by +3.
     {
       property: "rangedAttack",
       select: { id: ["donso"] },
