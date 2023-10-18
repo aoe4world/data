@@ -8,81 +8,21 @@
   },
   "data": [
     {
-      "id": "great-wall-buff-chi",
-      "name": "The Long Wall",
-      "type": "ability",
-      "civs": [
-        "ch"
-      ],
-      "displayClasses": "",
-      "classes": [],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/abilities/great-wall-buff-chi-1.png",
-      "description": "All units standing on Walls gain +25% ranged damage.",
-      "variations": [
-        {
-          "id": "great-wall-buff-chi-4",
-          "baseId": "great-wall-buff-chi",
-          "type": "ability",
-          "name": "The Long Wall",
-          "pbgid": 2076747,
-          "attribName": "great_wall_buff_chi",
-          "age": 4,
-          "civs": [
-            "ch"
-          ],
-          "description": "All units standing on Walls gain +25% ranged damage.",
-          "classes": [],
-          "displayClasses": "",
-          "costs": {
-            "gold": 0,
-            "wood": 0,
-            "food": 0,
-            "stone": 0,
-            "total": 0,
-            "time": 0,
-            "popcap": 0
-          },
-          "producedBy": [],
-          "icon": "https://data.aoe4world.com/images/abilities/great-wall-buff-chi-1.png",
-          "active": "always",
-          "auraRange": 0,
-          "effects": [
-            {
-              "property": "rangedAttack",
-              "select": {
-                "class": [
-                  [
-                    "ranged",
-                    "infantry"
-                  ]
-                ]
-              },
-              "effect": "multiply",
-              "value": 1.25,
-              "type": "ability"
-            }
-          ]
-        }
-      ],
-      "shared": {}
-    },
-    {
-      "id": "imperial-spies",
+      "id": "ability-imperial-spies",
       "name": "Imperial Spies",
       "type": "ability",
       "civs": [
         "ch"
       ],
-      "displayClasses": "",
+      "displayClasses": [],
       "classes": [],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/abilities/imperial-spies-1.png",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-imperial-spies-1.png",
       "description": "Reveal location of enemy workers for 10 seconds.",
       "variations": [
         {
-          "id": "imperial-spies-3",
-          "baseId": "imperial-spies",
+          "id": "ability-imperial-spies-3",
+          "baseId": "ability-imperial-spies",
           "type": "ability",
           "name": "Imperial Spies",
           "pbgid": 206838,
@@ -93,7 +33,7 @@
           ],
           "description": "Reveal location of enemy workers for 10 seconds.",
           "classes": [],
-          "displayClasses": "",
+          "displayClasses": [],
           "costs": {
             "food": 0,
             "wood": 0,
@@ -105,9 +45,10 @@
           "producedBy": [
             "imperial-palace"
           ],
-          "icon": "https://data.aoe4world.com/images/abilities/imperial-spies-1.png",
+          "icon": "https://data.aoe4world.com/images/abilities/ability-imperial-spies-1.png",
           "active": "manual",
           "auraRange": 250,
+          "cooldown": 120,
           "effects": [
             {
               "property": "unknown",
@@ -121,28 +62,27 @@
               "type": "ability",
               "duration": 10
             }
-          ],
-          "cooldown": 120
+          ]
         }
       ],
       "shared": {}
     },
     {
-      "id": "spirit-way",
+      "id": "ability-spirit-way",
       "name": "Spirit Way Ancestors",
       "type": "ability",
       "civs": [
         "ch"
       ],
-      "displayClasses": "",
+      "displayClasses": [],
       "classes": [],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/buildings/spirit-way-3.png",
       "description": "When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.",
       "variations": [
         {
-          "id": "spirit-way-4",
-          "baseId": "spirit-way",
+          "id": "ability-spirit-way-4",
+          "baseId": "ability-spirit-way",
           "type": "ability",
           "name": "Spirit Way Ancestors",
           "pbgid": 207131,
@@ -153,7 +93,7 @@
           ],
           "description": "When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.",
           "classes": [],
-          "displayClasses": "",
+          "displayClasses": [],
           "costs": {
             "food": 0,
             "wood": 0,
@@ -202,6 +142,68 @@
               "duration": 10
             }
           ]
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "ability-the-long-wall",
+      "name": "The Long Wall",
+      "type": "ability",
+      "civs": [
+        "ch"
+      ],
+      "unique": false,
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-the-long-wall-1.png",
+      "description": "All units standing on Walls gain +25% ranged damage.",
+      "variations": [
+        {
+          "id": "ability-the-long-wall-4",
+          "baseId": "ability-the-long-wall",
+          "type": "ability",
+          "name": "The Long Wall",
+          "pbgid": 2076747,
+          "attribName": "great_wall_buff_chi",
+          "age": 4,
+          "civs": [
+            "ch"
+          ],
+          "description": "All units standing on Walls gain +25% ranged damage.",
+          "classes": [],
+          "displayClasses": [],
+          "unique": false,
+          "costs": {
+            "gold": 0,
+            "wood": 0,
+            "food": 0,
+            "stone": 0,
+            "total": 0,
+            "time": 0,
+            "popcap": 0
+          },
+          "producedBy": [],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-the-long-wall-1.png",
+          "effects": [
+            {
+              "property": "rangedAttack",
+              "select": {
+                "class": [
+                  [
+                    "ranged",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.25,
+              "type": "ability"
+            }
+          ],
+          "active": "always",
+          "auraRange": 0
         }
       ],
       "shared": {}

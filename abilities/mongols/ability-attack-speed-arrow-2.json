@@ -1,0 +1,45 @@
+{
+  "id": "ability-attack-speed-arrow-2",
+  "baseId": "ability-attack-speed-arrow",
+  "type": "ability",
+  "name": "Attack Speed Arrow",
+  "pbgid": 168622,
+  "attribName": "khan_attack_speed_signal_arrow_mon",
+  "age": 2,
+  "civs": [
+    "mo"
+  ],
+  "description": "Fires a Signal Arrow that increases the attack speed of nearby ranged units (including the Khan) by +50% for 5 seconds.",
+  "classes": [],
+  "displayClasses": [],
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "total": 0,
+    "popcap": 0
+  },
+  "producedBy": [],
+  "icon": "https://data.aoe4world.com/images/abilities/ability-attack-speed-arrow-2.png",
+  "active": "manual",
+  "auraRange": 8.75,
+  "cooldown": 90,
+  "effects": [
+    {
+      "property": "attackSpeed",
+      "select": {
+        "class": [
+          [
+            "ranged"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.67,
+      "type": "ability",
+      "duration": 5
+    }
+  ],
+  "toggleGroup": "khan_signal_ability_available"
+}

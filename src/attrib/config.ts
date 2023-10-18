@@ -14,14 +14,14 @@ export const hardcodedDiscovery = {
     "sbps/races/rus/unit_militia_2_rus",
     "upgrade/races/rus/units/upgrade_militia_3",
     "upgrade/races/rus/units/upgrade_militia_4",
-    "abilities/always_on_abilities/rus/saints_blessing_rus",//misses auto discovery ; how to handle upgrades
+    "abilities/always_on_abilities/rus/saints_blessing_rus", //misses auto discovery ; how to handle upgrades
     // "abilities/always_on_abilities/rus/high_armory_production_aura_rus",
     "abilities/always_on_abilities/rus/streltsy_static_deployment_ability_rus", //misses auto discovery
     "abilities/timed_abilities/rus/horse_archer_mounted_training_gallop_rus", //misses auto discovery
   ],
   mongols: [
     "sbps/races/mongol/unit_khan_2_mon",
-    "sbps/races/mongol/unit_khan_3_mon", 
+    "sbps/races/mongol/unit_khan_3_mon",
     "sbps/races/mongol/unit_khan_4_mon",
     "abilities/always_on_abilities/mongol/lancer_healing_mon", //misses auto discovery
     // "abilities/always_on_abilities/mongol/kurultai_healing_aura_mon",
@@ -54,11 +54,11 @@ export const hardcodedDiscovery = {
     "/sbps/races/english/unit_ranger_wynguard_4_eng",
     "/sbps/races/english/unit_footman_wynguard_4_eng",
     "abilities/timed_abilities/english/longbow_rate_of_fire_ability", //misses auto discovery; range is weird but does it matter? //convert to ability from tech
-    // "abilities/always_on_abilities/english/tower_outpost_alert_aura_eng",  //how to handle upgrade,  tower outpost has context to upgrade to citadels or tech has the context to upgrade buff or do a workaround 
+    // "abilities/always_on_abilities/english/tower_outpost_alert_aura_eng",  //how to handle upgrade,  tower outpost has context to upgrade to citadels or tech has the context to upgrade buff or do a workaround
   ],
   chinese: [
-    "info/buff_info/races/chinese/great_wall_buff_chi",//needs trigger/standing on a wall?
-    "abilities/always_on_abilities/chinese/spirit_way",//misses auto discovery with no link; needs trigger/unitDeath?        does not stack, but timer resets upon next death
+    "info/buff_info/races/chinese/great_wall_buff_chi", //needs trigger/standing on a wall?
+    "abilities/always_on_abilities/chinese/spirit_way", //misses auto discovery with no link; needs trigger/unitDeath?        does not stack, but timer resets upon next death
   ],
   abbasid: [
     "abilities/always_on_abilities/abbasid/camel_support_aura_abb", //misses auto discovery; camel support tech needs both ranged and melee armor, so handling this here, and it can be modified when interfacing techs that unlock abilities
@@ -67,7 +67,7 @@ export const hardcodedDiscovery = {
   french: [
     "info/buff_info/races/french/lancer_charge_bonus_damage",
     // "abilities/always_on_abilities/french/keep_influence_fre",
-    "abilities/modal_abilities/french/deploy_pavise_fre",  //misses auto discovery 
+    "abilities/modal_abilities/french/deploy_pavise_fre", //misses auto discovery
   ],
   hre: [
     "abilities/always_on_abilities/hre/inspired_infantry_hre", //misses auto discovery; convert to ability from tech
@@ -75,18 +75,16 @@ export const hardcodedDiscovery = {
   malians: [
     //"abilities/always_on_abilities/malian/sofa_speed_aura_mal", //convert to ability from tech
     "info/buff_info/races/malian/gbeto_ambush_buff_mal",
-    "abilities/timed_abilities/malian/activate_stealth_mal",  //misses auto discovery
+    "abilities/timed_abilities/malian/activate_stealth_mal", //misses auto discovery
     // "abilities/always_on_abilities/malian/stealth_landmark_aura_mal", // unknown property
     //"abilities/always_on_abilities/malian/passives/donso_javelin_throw_mal //charge may be entirely a property of unit
     //"info/buff_info/races/malian/archer_poisoned_arrow_mal" //handle as debuff, found no upper limit
   ],
   delhi: [
-    "abilities/timed_abilities/sultanate/infantry_forced_march_sul",  //misses auto discovery with no link
+    "abilities/timed_abilities/sultanate/infantry_forced_march_sul", //misses auto discovery with no link
     "abilities/always_on_abilities/sultanate/district_effects/tower_of_victory_aura_sul", //misses auto discovery with no link
     //zeal? //convert to ability from tech
   ],
-  
-  
 };
 
 export const hardcodedDiscoveryCommon = []; //"info/buff_info/races/abbasid/camel_debuff_aura","info/buff_info/races/malian/archer_poisoned_arrow_mal"
@@ -143,18 +141,18 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "upgrade_landmark_siege_weapon_speed",
   "upgrade_landmark_siege_works",
   "unit_siege_tower_3_eng",
-  
+
   //uninteresting abilities to place into data
   "military_neutralize_holy_site",
-  "_abilities/civ_core/",
-  "modal_abilities/core/age_up_",
+  "abilities/civ_core/",
+  "abilities/core/age_up_",
   "return_to_work",
   "abilities/modal_abilities/abbasid/age_up_",
   "toggle_trade_resource",
   "proxy_placement_gristmill",
   "golden_age_passive_abb",
   "golden_age_bonus_", //ignore whichever is not as complete, the other is "golden_age_tier_"
-  "medical_centers_abb",
+  "abilities/always_on_abilities/abbasid/medical_centers_abb",
   "tower_repair_nearby_walls_chi",
   "academy_influence_chi",
   "building_granary_aura_chi", //unknown why error: .../building_granary_aura_chi TypeError: Cannot read properties of undefined (reading 'screen_name')

@@ -8,8 +8,8 @@
   },
   "data": [
     {
-      "id": "activate-stealth-2",
-      "baseId": "activate-stealth",
+      "id": "ability-activate-stealth-2",
+      "baseId": "ability-activate-stealth",
       "type": "ability",
       "name": "Activate Stealth",
       "pbgid": 2099938,
@@ -18,9 +18,9 @@
       "civs": [
         "ma"
       ],
-      "description": "Enter Stealth for 20 seconds.\nWhile in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, Landmark Town Centers, or they engage in combat.",
+      "description": "Enter Stealth for 30 seconds.\nWhile in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, Landmark Town Centers, or they engage in combat.",
       "classes": [],
-      "displayClasses": "",
+      "displayClasses": [],
       "costs": {
         "food": 0,
         "wood": 0,
@@ -30,9 +30,10 @@
         "popcap": 0
       },
       "producedBy": [],
-      "icon": "https://data.aoe4world.com/images/abilities/activate-stealth-1.png",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-activate-stealth-1.png",
       "active": "manual",
       "auraRange": 0,
+      "cooldown": 30,
       "effects": [
         {
           "property": "unknown",
@@ -45,14 +46,13 @@
           "effect": "change",
           "value": 0,
           "type": "ability",
-          "duration": 20
+          "duration": 30
         }
-      ],
-      "cooldown": 60
+      ]
     },
     {
-      "id": "coastal-navigation-1",
-      "baseId": "coastal-navigation",
+      "id": "ability-coastal-navigation-1",
+      "baseId": "ability-coastal-navigation",
       "type": "ability",
       "name": "Coastal Navigation",
       "pbgid": 2071572,
@@ -63,7 +63,7 @@
       ],
       "description": "Ships near a Docks get +15% speed for 25 seconds.",
       "classes": [],
-      "displayClasses": "",
+      "displayClasses": [],
       "costs": {
         "food": 0,
         "wood": 0,
@@ -75,7 +75,7 @@
       "producedBy": [
         "dock"
       ],
-      "icon": "https://data.aoe4world.com/images/abilities/coastal-navigation-1.png",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-coastal-navigation-1.png",
       "active": "always",
       "auraRange": 7.5,
       "effects": [
@@ -96,8 +96,8 @@
       ]
     },
     {
-      "id": "first-strike-4",
-      "baseId": "first-strike",
+      "id": "ability-first-strike-4",
+      "baseId": "ability-first-strike",
       "type": "ability",
       "name": "First Strike",
       "pbgid": 2067085,
@@ -108,7 +108,8 @@
       ],
       "description": "Musofadi Warriors and Musofadi Gunners gain First Strike, dealing 2x damage when breaking Stealth with their first attack.",
       "classes": [],
-      "displayClasses": "",
+      "displayClasses": [],
+      "unique": false,
       "costs": {
         "gold": 0,
         "wood": 0,
@@ -119,9 +120,7 @@
         "popcap": 0
       },
       "producedBy": [],
-      "icon": "https://data.aoe4world.com/images/abilities/gbeto-ambush-buff-mal-1.png",
-      "active": "always",
-      "auraRange": 0,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-first-strike-1.png",
       "effects": [
         {
           "property": "meleeAttack",
@@ -145,11 +144,12 @@
           "value": 2,
           "type": "ability"
         }
-      ]
+      ],
+      "active": "always"
     },
     {
-      "id": "food-festival-4",
-      "baseId": "food-festival",
+      "id": "ability-food-festival-4",
+      "baseId": "ability-food-festival",
       "type": "ability",
       "name": "Food Festival",
       "pbgid": 2062644,
@@ -158,9 +158,9 @@
       "civs": [
         "ma"
       ],
-      "description": "Increase Food gather rate by +50% for 30 seconds.",
+      "description": "Increase Food gather rate by +50% for 60 seconds.",
       "classes": [],
-      "displayClasses": "",
+      "displayClasses": [],
       "costs": {
         "food": 0,
         "wood": 0,
@@ -172,9 +172,10 @@
       "producedBy": [
         "griot-bara"
       ],
-      "icon": "https://data.aoe4world.com/images/abilities/food-festival-1.png",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-food-festival-1.png",
       "active": "manual",
       "auraRange": 0,
+      "cooldown": 30,
       "effects": [
         {
           "property": "foodGatherRate",
@@ -186,14 +187,13 @@
           "effect": "multiply",
           "value": 1.5,
           "type": "ability",
-          "duration": 30
+          "duration": 60
         }
-      ],
-      "cooldown": 30
+      ]
     },
     {
-      "id": "huntress-stealth-4",
-      "baseId": "huntress-stealth",
+      "id": "ability-huntress-stealth-4",
+      "baseId": "ability-huntress-stealth",
       "type": "ability",
       "name": "Huntress' Stealth",
       "pbgid": 2099928,
@@ -204,7 +204,7 @@
       ],
       "description": "Malian infantry within range enter Stealth. While in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, or when they engage in combat.",
       "classes": [],
-      "displayClasses": "",
+      "displayClasses": [],
       "costs": {
         "food": 0,
         "wood": 0,
@@ -216,7 +216,7 @@
       "producedBy": [
         "fort-of-the-huntress"
       ],
-      "icon": "https://data.aoe4world.com/images/abilities/huntress-stealth-1.png",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-huntress-stealth-1.png",
       "active": "always",
       "auraRange": 8,
       "effects": [
@@ -237,8 +237,8 @@
       ]
     },
     {
-      "id": "military-festival-4",
-      "baseId": "military-festival",
+      "id": "ability-military-festival-4",
+      "baseId": "ability-military-festival",
       "type": "ability",
       "name": "Military Festival",
       "pbgid": 2062645,
@@ -247,9 +247,9 @@
       "civs": [
         "ma"
       ],
-      "description": "Increase military unit production speed by +50% for 30 seconds.",
+      "description": "Increase military unit production speed by +50% for 60 seconds.",
       "classes": [],
-      "displayClasses": "",
+      "displayClasses": [],
       "costs": {
         "food": 0,
         "wood": 0,
@@ -261,9 +261,10 @@
       "producedBy": [
         "griot-bara"
       ],
-      "icon": "https://data.aoe4world.com/images/abilities/military-festival-1.png",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-military-festival-1.png",
       "active": "manual",
       "auraRange": 0,
+      "cooldown": 30,
       "effects": [
         {
           "property": "productionSpeed",
@@ -280,14 +281,13 @@
           "effect": "multiply",
           "value": 1.5,
           "type": "ability",
-          "duration": 30
+          "duration": 60
         }
-      ],
-      "cooldown": 30
+      ]
     },
     {
-      "id": "siege-festival-4",
-      "baseId": "siege-festival",
+      "id": "ability-siege-festival-4",
+      "baseId": "ability-siege-festival",
       "type": "ability",
       "name": "Siege Festival",
       "pbgid": 2062641,
@@ -296,9 +296,9 @@
       "civs": [
         "ma"
       ],
-      "description": "Increase siege and torch damage for all units by +50% for 30 seconds.",
+      "description": "Increase damage of Battering Rams, Bombards, Counterweight Trebuchets, and torches by +50% for 60 seconds.\nApplies to Springald Ships once Mounted Guns has been researched.",
       "classes": [],
-      "displayClasses": "",
+      "displayClasses": [],
       "costs": {
         "food": 0,
         "wood": 0,
@@ -310,9 +310,10 @@
       "producedBy": [
         "griot-bara"
       ],
-      "icon": "https://data.aoe4world.com/images/abilities/siege-festival-1.png",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-siege-festival-1.png",
       "active": "manual",
       "auraRange": 0,
+      "cooldown": 30,
       "effects": [
         {
           "property": "fireAttack",
@@ -332,7 +333,7 @@
           "effect": "multiply",
           "value": 1.5,
           "type": "ability",
-          "duration": 30
+          "duration": 60
         },
         {
           "property": "siegeAttack",
@@ -346,10 +347,9 @@
           "effect": "multiply",
           "value": 1.5,
           "type": "ability",
-          "duration": 30
+          "duration": 60
         }
-      ],
-      "cooldown": 30
+      ]
     }
   ]
 }

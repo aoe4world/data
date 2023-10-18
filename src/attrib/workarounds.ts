@@ -158,91 +158,87 @@ workaround("Make English Wynguard Forces available from Imperial Age", {
 //could do this by creating dependency from techs that unlock abilities, but doing workaround for the time being
 
 workaround("Make Ability Arrow Volley available in Imperial Age", {
-  ...overrideAge(["arrow-volley"], 4, ["en"]),
+  ...overrideAge(["ability-arrow-volley"], 4, ["en"]),
 });
 
 workaround("Make Ability Saints Blessing available in Castle Age", {
-  ...overrideAge(["saints-blessing"], 3, ["ru"]),
+  ...overrideAge(["ability-saints-blessing"], 3, ["ru"]),
 });
 
 workaround("Make Ability High Armory Production Bonus available in Imperial Age", {
-  ...overrideAge(["high-armory-production-bonus"], 4, ["ru"]),
+  ...overrideAge(["ability-high-armory-production-bonus"], 4, ["ru"]),
 });
 
 workaround("Make Ability Static Deployment available in Imperial Age", {
-  ...overrideAge(["static-deployment"], 4, ["ru"]),
+  ...overrideAge(["ability-static-deployment"], 4, ["ru"]),
 });
 
 workaround("Make Ability Gallop available in Imperial Age", {
-  ...overrideAge(["gallop"], 4, ["ru"]),
+  ...overrideAge(["ability-gallop"], 4, ["ru"]),
 });
 
 workaround("Make Ability Gallop available in Imperial Age", {
-  ...overrideAge(["gallop"], 4, ["ru"]),
+  ...overrideAge(["ability-gallop"], 4, ["ru"]),
 });
 
 workaround("Make Ability Fortitude available in Feudal Age", {
-  ...overrideAge(["fortitude"], 2, ["ot"]),
+  ...overrideAge(["ability-fortitude"], 2, ["ot"]),
 });
 
 workaround("Make Ability blacksmith-and-university-influence available in Feudal Age", {
-  ...overrideAge(["blacksmith-and-university-influence"], 2, ["ot"]),
+  ...overrideAge(["ability-blacksmith-and-university-influence"], 2, ["ot"]),
 });
 
 workaround("Make Ability Tower of Victory available in Feudal Age", {
-  ...overrideAge(["tower-of-victory-aura"], 2, ["de"]),
+  ...overrideAge(["ability-tower-of-victory-aura"], 2, ["de"]),
 });
 
 workaround("Make Ability Forced March available in Castle Age", {
-  ...overrideAge(["forced-march"], 3, ["de"]),
+  ...overrideAge(["ability-forced-march"], 3, ["de"]),
 });
 
 workaround("Make Ability Deploy Pavis available in Castle Age", {
-  ...overrideAge(["deploy-pavise"], 3, ["fr"]),
+  ...overrideAge(["ability-deploy-pavise"], 3, ["fr"]),
 });
 
 workaround("Make Ability Keep Influence available in Castle Age", {
-  ...overrideAge(["keep-influence"], 3, ["fr"]),
+  ...overrideAge(["ability-keep-influence"], 3, ["fr"]),
 });
 
 workaround("Make Ability activate-stealth available in Feudal Age", {
-  ...overrideAge(["activate-stealth"], 2, ["ma"]),
+  ...overrideAge(["ability-activate-stealth"], 2, ["ma"]),
 });
 
 workaround("Make Ability huntress-stealth available in Imperial Age", {
-  ...overrideAge(["huntress-stealth"], 4, ["ma"]),
+  ...overrideAge(["ability-huntress-stealth"], 4, ["ma"]),
 });
 
 workaround("Make Ability camel-support available in Imperial Age", {
-  ...overrideAge(["camel-support"], 4, ["ab"]),
-});
-
-workaround("Make Ability camel-support available in Imperial Age", {
-  ...overrideAge(["camel-support"], 4, ["ab"]),
+  ...overrideAge(["ability-camel-support"], 4, ["ab"]),
 });
 
 workaround("Make Imperial Spies available in Castle Age", {
-  ...overrideAge(["imperial-spies"], 3, ["ch"]),
+  ...overrideAge(["ability-imperial-spies"], 3, ["ch"]),
 });
 
 workaround("Make Abbey Healing available in Feudal Age", {
-  ...overrideAge(["abbey-healing"], 2, ["en"]),
+  ...overrideAge(["ability-abbey-healing"], 2, ["en"]),
 });
 
 workaround("Make Food Festival available in Imperial Age", {
-  ...overrideAge(["food-festival"], 4, ["ma"]),
+  ...overrideAge(["ability-food-festival"], 4, ["ma"]),
 });
 
 workaround("Make Military Festival available in Imperial Age", {
-  ...overrideAge(["military-festival"], 4, ["ma"]),
+  ...overrideAge(["ability-military-festival"], 4, ["ma"]),
 });
 
 workaround("Make Siege Festival available in Imperial Age", {
-  ...overrideAge(["siege-festival"], 4, ["ma"]),
+  ...overrideAge(["ability-siege-festival"], 4, ["ma"]),
 });
 
 workaround("Make Trade Protection available in Imperial Age", {
-  ...overrideAge(["trade-protection"], 4, ["ot"]),
+  ...overrideAge(["ability-trade-protection"], 4, ["ot"]),
 });
 
 // ---- Abilities ----
@@ -254,7 +250,7 @@ workaround("Fix age and add ability props for great_wall_buff", {
     item.id = `${item.baseId}-${item.age}`;
     item.active = "always";
     item.auraRange = 0;
-    item.costs = { ...NO_COSTS, popcap:0 };
+    item.costs = { ...NO_COSTS, popcap: 0 };
   },
 });
 
@@ -273,6 +269,7 @@ workaround("Fix age and add missing info for kurultai_healing_aura_mon", {
   predicate: (item) => item.type === "ability" && item.attribName === "kurultai_healing_aura_mon",
   mutator: (item) => {
     item.age = 3;
+    item.baseId = "ability-kurultai-aura";
     item.id = `${item.baseId}-${item.age}`;
     item.name = "Kurultai Aura";
     item.description = "Nearby units within its aura heal +1 health every 1 second and gain an additional +20% damage.";
@@ -290,7 +287,9 @@ workaround("Fix age and add missing info for Keshik", {
 });
 
 workaround("Add toggle group for Khan abilities", {
-  predicate: (item) => item.type === "ability" && (item.attribName === "khan_maneuver_signal_arrow_mon" || item.attribName === "khan_attack_speed_signal_arrow_mon" || item.attribName === "khan_defensive_signal_arrow_mon"),
+  predicate: (item) =>
+    item.type === "ability" &&
+    (item.attribName === "khan_maneuver_signal_arrow_mon" || item.attribName === "khan_attack_speed_signal_arrow_mon" || item.attribName === "khan_defensive_signal_arrow_mon"),
   mutator: (item) => {
     item.toggleGroup = "khan_signal_ability_available";
   },
@@ -299,23 +298,23 @@ workaround("Add toggle group for Khan abilities", {
 workaround("Fix age and add missing info for Yam Network", {
   predicate: (item) => item.type === "ability" && item.attribName === "outpost_speed_improved_mon",
   mutator: (item) => {
-    item.baseId = "yam-network";
+    item.baseId = "ability-yam-network";
     item.age = 2;
     item.id = `${item.baseId}-${item.age}`;
     item.name = "Yam Network";
     item.auraRange = 12.5;
     item.active = "always";
     item.description = "Yam speed aura applies to all units instead of just Traders and cavalry units. Does not apply to siege engines.";
-    item.costs = { ...NO_COSTS, popcap:0 };
+    item.costs = { ...NO_COSTS, popcap: 0 };
   },
 });
 
 workaround("Change names of Mehter abilities", {
   predicate: (item) => item.type === "ability" && item.attribName.includes("mehter"),
   mutator: (item) => {
-    item.baseId = item.baseId.replace("-off","");
+    item.baseId = item.baseId.replace("-off", "");
     item.id = `${item.baseId}-${item.age}`;
-    item.name = item.name.replace(" (Off)","");
+    item.name = item.name.replace(" (Off)", "");
   },
 });
 
@@ -327,19 +326,19 @@ workaround("Add ability info to Mehter speed formation", {
     item.auraRange = 6;
     item.active = "always";
     item.description = "Movement speed bonus +15%.";
-    item.costs = { ...NO_COSTS, popcap:0 };
+    item.costs = { ...NO_COSTS, popcap: 0 };
   },
 });
 
 workaround("Add ability info to Mehter speed formation", {
   predicate: (item) => item.type === "ability" && item.attribName === "mehter_default_formation_ott",
   mutator: (item) => {
-    item.baseId = "mehter-speed-bonus";
+    item.baseId = "ability-mehter-speed-bonus";
     item.id = `${item.baseId}-${item.age}`;
     item.auraRange = 6;
     item.active = "always";
     item.description = "Movement speed bonus +15%.";
-    item.costs = { ...NO_COSTS, popcap:0 };
+    item.costs = { ...NO_COSTS, popcap: 0 };
   },
 });
 
@@ -350,26 +349,26 @@ workaround("Fix inaccurate ability info lancer_charge_bonus_damage", {
     item.id = `${item.baseId}-${item.age}`;
     item.description = "Gain +3 melee attack damage for 5 seconds after charging.";
     item.active = "always";
-    item.costs = { ...NO_COSTS, popcap:0 };
+    item.costs = { ...NO_COSTS, popcap: 0 };
   },
 });
 
 workaround("Fix inaccurate ability info gbeto_ambush_buff_mal", {
   predicate: (item) => item.type === "ability" && item.attribName === "gbeto_ambush_buff_mal",
   mutator: (item) => {
-    item.baseId = "first-strike";
+    item.baseId = "ability-first-strike";
     item.age = 4;
     item.id = `${item.baseId}-${item.age}`;
     item.description = "Musofadi Warriors and Musofadi Gunners gain First Strike, dealing 2x damage when breaking Stealth with their first attack.";
     item.active = "always";
-    item.costs = { ...NO_COSTS, popcap:0 };
+    item.costs = { ...NO_COSTS, popcap: 0 };
   },
 });
 
 workaround("Fix inaccurate ability info inspired_infantry_hre", {
   predicate: (item) => item.type === "ability" && item.attribName === "inspired_infantry_hre",
   mutator: (item) => {
-    item.baseId = "inspired-warriors";
+    item.baseId = "ability-inspired-warriors";
     item.age = 3;
     item.id = `${item.baseId}-${item.age}`;
     item.name = "Inspired Warriors";
@@ -379,7 +378,7 @@ workaround("Fix inaccurate ability info inspired_infantry_hre", {
 workaround("Fix id ability on dock garrison bonus", {
   predicate: (item) => item.type === "ability" && item.attribName === "relic_dock_bonus_hre",
   mutator: (item) => {
-    item.baseId = "relic-garrisoned-dock";
+    item.baseId = "ability-relic-garrisoned-dock";
     item.age = 3;
     item.id = `${item.baseId}-${item.age}`;
     item.name = "Religious Zeal Dock";
@@ -389,7 +388,7 @@ workaround("Fix id ability on dock garrison bonus", {
 workaround("Fix id ability on land garrison bonus", {
   predicate: (item) => item.type === "ability" && item.attribName === "relic_tower_keep_bonus_hre",
   mutator: (item) => {
-    item.baseId = "relic-garrisoned-keep";
+    item.baseId = "ability-relic-garrisoned-keep";
     item.age = 3;
     item.id = `${item.baseId}-${item.age}`;
     item.name = "Religious Zeal Keeps and Outposts";
@@ -430,7 +429,6 @@ workaround("Fix bad info in Coastal Navigation where this is only place where lo
     item.description = "Ships near a Docks get +15% speed for 25 seconds.";
   },
 });
-
 
 // –––– Unit weapons ––––
 

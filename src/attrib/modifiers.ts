@@ -32,7 +32,7 @@ const increaseAttackSpeedByPercent = (percent: number) => round(1 / (1 + percent
 const round = (n: number) => Math.round(n * 100) / 100; //(100/(100-33))
 
 export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> = {
-  "arrow-volley": ([s, t]) => [
+  "ability-arrow-volley": ([s, t]) => [
     // Longbowmen gain Arrow Volley, an activated ability that reduces their time to attack by +1 second for a duration of 6 seconds.
     {
       property: "attackSpeed",
@@ -44,7 +44,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "network-of-castles": ([i]) => [
+  "ability-network-of-castles": ([i]) => [
     // When enemies are nearby, this building sounds an alarm, causing nearby units to get a +20% increase to attack speed.
     {
       property: "attackSpeed",
@@ -55,7 +55,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "great-wall-buff-chi": ([]) => [
+  "ability-the-long-wall": ([]) => [
     // All units standing on Walls gain +25% ranged damage.
     {
       property: "rangedAttack",
@@ -66,7 +66,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "spirit-way": ([]) => [
+  "ability-spirit-way": ([]) => [
     // When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.
     {
       property: "attackSpeed",
@@ -86,7 +86,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "saints-blessing": ([]) => [
+  "ability-saints-blessing": ([]) => [
     // After striking an enemy, the Warrior Monk increases the armor and damage of nearby allied Rus military units for a duration.
     // Manual testing produces a default of +1 range and melee armor and +2 damage for 10 second duration and 2 tile range
     // Can be upgraded by two techs for additional +1 damage, +10 second duration, and +5 tile range
@@ -141,7 +141,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "high-armory-production-bonus": ([i]) => [
+  "ability-high-armory-production-bonus": ([i]) => [
     // The cost of siege engines in nearby Siege Workshops is decreased by 20%.
     {
       property: "goldCost",
@@ -159,7 +159,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "static-deployment": ([i]) => [
+  "ability-static-deployment": ([i]) => [
     // Streltsy gain +30% (i) attack speed after remaining stationary for 10 (j not implemented yet) seconds.
     {
       property: "attackSpeed",
@@ -170,7 +170,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  gallop: ([]) => [
+  "ability-gallop": ([]) => [
     // Activate to move at maximum speed with +2 tile weapon range for 8 seconds.
     {
       property: "moveSpeed",
@@ -190,7 +190,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "kurultai-healing-aura-mon": ([]) => [
+  "ability-kurultai-healing-aura-mon": ([]) => [
     // Nearby units within its aura heal +1 health every 1 second and gain an additional +20% damage.
     // also works for ally but dont have props to capture this yet
     {
@@ -230,7 +230,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "battle-veteran": ([]) => [
+  "ability-battle-veteran": ([]) => [
     // Heals after every attack performed
     {
       property: "healingRate",
@@ -241,7 +241,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "maneuver-arrow": ([i, j]) => [
+  "ability-maneuver-arrow": ([i, j]) => [
     // Fire a Signal Arrow that increases the movement speed of nearby units (including the Khan) by +33% for 5 seconds. Does not affect Villagers.
     {
       property: "moveSpeed",
@@ -253,7 +253,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "attack-speed-arrow": ([i, j]) => [
+  "ability-attack-speed-arrow": ([i, j]) => [
     // Fires a Signal Arrow that increases the attack speed of nearby ranged units (including the Khan) by +50% for 5 seconds.
     {
       property: "attackSpeed",
@@ -265,7 +265,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "defense-arrow": ([i, j]) => [
+  "ability-defense-arrow": ([i, j]) => [
     // Fires a Signal Arrow that increases the armor of nearby units (including the Khan) by +2 for 5 seconds
     {
       property: "meleeArmor",
@@ -285,7 +285,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  yam: ([i]) => [
+  "ability-yam": ([i]) => [
     // Cavalry and Traders near an Outpost get +15% speed for 10 seconds.
     // does not seem to have a duration outside of the tower aura
     {
@@ -297,7 +297,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "outpost-speed-improved-mon": ([]) => [
+  "ability-outpost-speed-improved-mon": ([]) => [
     // Yam speed aura applies to all units instead of just Traders and cavalry units. Does not apply to siege engines.
     {
       property: "moveSpeed",
@@ -308,7 +308,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "mehter-default-formation-ott": ([i]) => [
+  "ability-mehter-speed-bonus": ([i]) => [
     // Movement speed bonus +15%
     {
       property: "moveSpeed",
@@ -319,7 +319,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "attack-drums-off": ([s]) => [
+  "ability-attack-drums-off": ([s]) => [
     // Mehter drums that increase the attack speed of nearby units by +15%.
     {
       property: "attackSpeed",
@@ -330,7 +330,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "melee-defense-drums-off": ([s]) => [
+  "ability-melee-defense-drums-off": ([s]) => [
     // Mehter drums that increase the melee armor of nearby units by +2.
     {
       property: "meleeArmor",
@@ -341,7 +341,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "ranged-defense-drums-off": ([s]) => [
+  "ability-ranged-defense-drums-off": ([s]) => [
     // Mehter drums that increase the ranged armor of nearby units by +1.
     {
       property: "rangedArmor",
@@ -352,7 +352,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  fortitude: ([i, j, k]) => [
+  "ability-fortitude": ([i, j, k]) => [
     // Gain +50% attack speed and receive +50% damage from melee weapons for 10 seconds.
     // activation recharge starts after ability ends...
     {
@@ -373,7 +373,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "blacksmith-and-university-influence": ([s, t, u, v]) => [
+  "ability-blacksmith-and-university-influence": ([s, t, u, v]) => [
     // Military unit production rate increased +20%/+30%/+40% by Age while within the influence of a Blacksmith or University. The Istanbul Observatory increases the bonus to +60%.
     // need another way to handle this
     {
@@ -406,7 +406,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "tower-of-victory-aura": ([s]) => [
+  "ability-tower-of-victory-aura": ([s]) => [
     // Melee and ranged infantry who move near this Landmark permanently gain +20% attack speed.
     {
       property: "attackSpeed",
@@ -417,7 +417,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "forced-march": ([i, j]) => [
+  "ability-forced-march": ([i, j]) => [
     // Activate to move 100% faster for 10 seconds, deactivates early when dealing damage.
     {
       property: "moveSpeed",
@@ -429,7 +429,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "lancer-charge-bonus-damage": ([]) => [
+  "ability-royal-knight-charge-damage": ([damage, seconds]) => [
     // Every description is inaccurate or incomplete...
     {
       property: "meleeAttack",
@@ -441,7 +441,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "deploy-pavise": ([i, j, k]) => [
+  "ability-deploy-pavise": ([i, j, k]) => [
     // Activate to increase weapon range by +1 tile and gain +5 ranged armor.\nRemains active for 30 seconds or until the Arbalétrier moves away
     {
       property: "maxRange",
@@ -461,7 +461,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "keep-influence": ([r]) => [
+  "ability-keep-influence": ([r]) => [
     // Archery Ranges and Stables within influence have unit costs decreased by 20%.
     {
       property: "goldCost",
@@ -486,7 +486,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "activate-stealth": ([i]) => [
+  "ability-activate-stealth": ([i]) => [
     // Enter Stealth for 20 seconds.\nWhile in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, Landmark Town Centers, or they engage in combat.
     {
       property: "unknown",
@@ -498,7 +498,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "gbeto-ambush-buff-mal": ([]) => [
+  "ability-first-strike": ([]) => [
     // Deals increased damage on next hit.
     {
       property: "meleeAttack",
@@ -516,7 +516,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "huntress-stealth": ([]) => [
+  "ability-huntress-stealth": ([]) => [
     // Malian infantry within range enter Stealth. While in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, or when they engage in combat.
     {
       property: "unknown",
@@ -528,7 +528,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "camel-support": ([]) => [
+  "ability-camel-support": ([]) => [
     // Infantry gain armor when near a camel unit. / Camels increase the armor of nearby infantry by +2.
     {
       property: "meleeArmor",
@@ -546,7 +546,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  inspired: ([a, b]) => [
+  "ability-inspired": ([a, b]) => [
     // Military units deal +15% damage and gain +1 armor. //tested to 60 second duration
     {
       property: "rangedArmor",
@@ -598,7 +598,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "house-of-wisdom-influence": ([i]) => [
+  "ability-house-of-wisdom-influence": ([i]) => [
     // Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age.
     {
       property: "fireArmor",
@@ -609,7 +609,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "imperial-spies": ([i]) => [
+  "ability-imperial-spies": ([i]) => [
     // Reveal location of enemy workers for 10 seconds.
     {
       property: "unknown",
@@ -621,7 +621,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "abbey-healing": ([i, j]) => [
+  "ability-abbey-healing": ([i, j]) => [
     // Heals nearby out of combat units by 6 every 1 seconds.
     {
       property: "healingRate",
@@ -632,7 +632,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "mill-influence": ([i, j, k, l]) => [
+  "ability-mill-influence": ([i, j, k, l]) => [
     // Farm harvest rate increased +15%/+20%/+25%/+30% by Age while within the influence of a Mill.
     {
       property: "foodGatherRate",
@@ -643,7 +643,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "golden-age-tier-1": ([]) => [
+  "ability-golden-age-tier-1": ([]) => [
     // Tier 1: Villager gather rate +15%
     {
       property: "foodGatherRate",
@@ -682,7 +682,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  fiefdom: ([i]) => [
+  "ability-fiefdom": ([i]) => [
     // Town Center production and research speed increased by +10%.\nBonus increases further in later Ages
     {
       property: "productionSpeed",
@@ -693,7 +693,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "emergency-repairs": ([i, j, k]) => [
+  "ability-emergency-repairs": ([i, j, k]) => [
     // Building repairs itself by 150 health every 1 second for 20 seconds.
     {
       property: "repairRate",
@@ -705,7 +705,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "relic-garrisoned-dock": ([s]) => [
+  "ability-relic-garrisoned-dock": ([s]) => [
     // Increasing attack speed of military ships by +5%.
     {
       property: "attackSpeed",
@@ -716,7 +716,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "relic-garrisoned-keep": ([s, t, u, v]) => [
+  "ability-relic-garrisoned-keep": ([s, t, u, v]) => [
     // Armor increased by +50% Damage increased by +35% Sight range increased by +25% Weapon range increased by +20%"
     {
       property: "fireArmor",
@@ -755,7 +755,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "food-festival": ([i, j]) => [
+  "ability-food-festival": ([i, j]) => [
     // Increase Food gather rate by +50% for 30 seconds.
     {
       property: "foodGatherRate",
@@ -767,7 +767,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "military-festival": ([i, j]) => [
+  "ability-military-festival": ([i, j]) => [
     // Increase military unit production speed by +50% for 30 seconds.
     {
       property: "productionSpeed",
@@ -779,7 +779,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "siege-festival": ([i, j]) => [
+  "ability-siege-festival": ([i, j]) => [
     // Increase siege and torch damage for all units by +50% for 30 seconds.
     {
       property: "fireAttack",
@@ -799,7 +799,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "trade-protection": ([i, j, k]) => [
+  "ability-trade-protection": ([i, j, k]) => [
     // Increase siege and torch damage for all units by +50% for 30 seconds.
     {
       property: "moveSpeed",
@@ -827,7 +827,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "coastal-navigation": ([]) => [
+  "ability-coastal-navigation": ([]) => [
     // Ships near a Docks get +15% speed for 25 seconds.
     {
       property: "moveSpeed",

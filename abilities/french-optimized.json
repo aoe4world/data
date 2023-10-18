@@ -8,21 +8,21 @@
   },
   "data": [
     {
-      "id": "deploy-pavise",
+      "id": "ability-deploy-pavise",
       "name": "Deploy Pavise",
       "type": "ability",
       "civs": [
         "fr"
       ],
-      "displayClasses": "",
+      "displayClasses": [],
       "classes": [],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/abilities/deploy-pavise-1.png",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-deploy-pavise-1.png",
       "description": "Activate to increase weapon range by +1 tile and gain +5 ranged armor.\nRemains active for 30 seconds or until the Arbalétrier moves away.",
       "variations": [
         {
-          "id": "deploy-pavise-3",
-          "baseId": "deploy-pavise",
+          "id": "ability-deploy-pavise-3",
+          "baseId": "ability-deploy-pavise",
           "type": "ability",
           "name": "Deploy Pavise",
           "pbgid": 212030,
@@ -33,7 +33,7 @@
           ],
           "description": "Activate to increase weapon range by +1 tile and gain +5 ranged armor.\nRemains active for 30 seconds or until the Arbalétrier moves away.",
           "classes": [],
-          "displayClasses": "",
+          "displayClasses": [],
           "costs": {
             "food": 0,
             "wood": 0,
@@ -43,9 +43,10 @@
             "popcap": 0
           },
           "producedBy": [],
-          "icon": "https://data.aoe4world.com/images/abilities/deploy-pavise-1.png",
+          "icon": "https://data.aoe4world.com/images/abilities/ability-deploy-pavise-1.png",
           "active": "manual",
           "auraRange": 8.75,
+          "cooldown": 60,
           "effects": [
             {
               "property": "maxRange",
@@ -60,7 +61,7 @@
               "duration": 30
             },
             {
-              "property": "rangeArmor",
+              "property": "rangedArmor",
               "select": {
                 "id": [
                   "arbaletrier"
@@ -71,27 +72,26 @@
               "type": "ability",
               "duration": 30
             }
-          ],
-          "cooldown": 60
+          ]
         }
       ],
       "shared": {}
     },
     {
-      "id": "fiefdom",
+      "id": "ability-fiefdom",
       "name": "Fiefdom",
       "type": "ability",
       "civs": [
         "fr"
       ],
-      "displayClasses": "",
+      "displayClasses": [],
       "classes": [],
       "minAge": 2,
       "description": "Town Center production and research speed increased by +10%.\nBonus increases further in later Ages.",
       "variations": [
         {
-          "id": "fiefdom-2",
-          "baseId": "fiefdom",
+          "id": "ability-fiefdom-2",
+          "baseId": "ability-fiefdom",
           "type": "ability",
           "name": "Fiefdom",
           "pbgid": 187278,
@@ -102,7 +102,7 @@
           ],
           "description": "Town Center production and research speed increased by +10%.\nBonus increases further in later Ages.",
           "classes": [],
-          "displayClasses": "",
+          "displayClasses": [],
           "costs": {
             "food": 0,
             "wood": 0,
@@ -135,21 +135,21 @@
       "shared": {}
     },
     {
-      "id": "keep-influence",
+      "id": "ability-keep-influence",
       "name": "Keep Influence",
       "type": "ability",
       "civs": [
         "fr"
       ],
-      "displayClasses": "",
+      "displayClasses": [],
       "classes": [],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/abilities/keep-influence-1.png",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-keep-influence-1.png",
       "description": "Archery Ranges and Stables within influence have unit costs decreased by 20%.",
       "variations": [
         {
-          "id": "keep-influence-3",
-          "baseId": "keep-influence",
+          "id": "ability-keep-influence-3",
+          "baseId": "ability-keep-influence",
           "type": "ability",
           "name": "Keep Influence",
           "pbgid": 1452233,
@@ -160,7 +160,7 @@
           ],
           "description": "Archery Ranges and Stables within influence have unit costs decreased by 20%.",
           "classes": [],
-          "displayClasses": "",
+          "displayClasses": [],
           "costs": {
             "food": 0,
             "wood": 0,
@@ -172,7 +172,7 @@
           "producedBy": [
             "keep"
           ],
-          "icon": "https://data.aoe4world.com/images/abilities/keep-influence-1.png",
+          "icon": "https://data.aoe4world.com/images/abilities/ability-keep-influence-1.png",
           "active": "always",
           "auraRange": 0,
           "effects": [
@@ -233,21 +233,22 @@
       "shared": {}
     },
     {
-      "id": "lancer-charge-bonus-damage",
+      "id": "ability-royal-knight-charge-damage",
       "name": "Royal Knight Charge Damage",
       "type": "ability",
       "civs": [
         "fr"
       ],
-      "displayClasses": "",
+      "unique": false,
+      "displayClasses": [],
       "classes": [],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/abilities/lancer-charge-bonus-damage-1.png",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-royal-knight-charge-damage-1.png",
       "description": "Gain +3 melee attack damage for 5 seconds after charging.",
       "variations": [
         {
-          "id": "lancer-charge-bonus-damage-2",
-          "baseId": "lancer-charge-bonus-damage",
+          "id": "ability-royal-knight-charge-damage-2",
+          "baseId": "ability-royal-knight-charge-damage",
           "type": "ability",
           "name": "Royal Knight Charge Damage",
           "pbgid": 2032837,
@@ -258,7 +259,8 @@
           ],
           "description": "Gain +3 melee attack damage for 5 seconds after charging.",
           "classes": [],
-          "displayClasses": "",
+          "displayClasses": [],
+          "unique": false,
           "costs": {
             "gold": 0,
             "wood": 0,
@@ -269,9 +271,7 @@
             "popcap": 0
           },
           "producedBy": [],
-          "icon": "https://data.aoe4world.com/images/abilities/lancer-charge-bonus-damage-1.png",
-          "active": "always",
-          "auraRange": 0,
+          "icon": "https://data.aoe4world.com/images/abilities/ability-royal-knight-charge-damage-1.png",
           "effects": [
             {
               "property": "meleeAttack",
@@ -285,7 +285,8 @@
               "type": "ability",
               "duration": 5
             }
-          ]
+          ],
+          "active": "always"
         }
       ],
       "shared": {}

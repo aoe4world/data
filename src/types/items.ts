@@ -125,12 +125,12 @@ export interface Weapon {
 
 export interface Ability extends Item {
   type: "ability";
-  active: "always" | "manual" | "toggle";
+  active?: "always" | "manual" | "toggle";
   auraRange?: number;
   cooldown?: number;
   toggleGroup?: string;
   effects?: Modifier[];
-};
+}
 
 export type Modifier = {
   property: ModifyableProperty;
@@ -149,7 +149,7 @@ export type Armor = {
 
 export type ItemId = string;
 
-export type ItemType = Building | Unit | Technology | Upgrade;
+export type ItemType = Building | Unit | Technology | Upgrade | Ability;
 
 export type ModifyableProperty =
   | "unknown" // Complex effects not easily incoded in buffed stats
