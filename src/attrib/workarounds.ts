@@ -412,6 +412,13 @@ workaround("Remove china field constructed Siege Tower from Mongol tech tree (pa
   },
 });
 
+workaround("Apply Meinwerk 40% cost reduction bonus to unique meinwork technologies", {
+  predicate: (item) => ["steel-barding", "riveted-chain-mail"].includes(item.baseId),
+  mutator: (item) => {
+    item.costs = discountCosts(item.costs, 0.6);
+  },
+});
+
 // –––– Misc –––– //
 
 workaround("Change Mongol Superior Mobility type from upgrade to technology", {
@@ -526,14 +533,16 @@ const MILITIA_COSTS = { gold: 0, wood: 0, food: 20, stone: 0, total: 20, time: 0
 
 function discountCosts(costs: Item["costs"], discount: number) {
   const newCosts = {
-    gold: Math.ceil(costs.gold * discount),
-    wood: Math.ceil(costs.wood * discount),
     food: Math.ceil(costs.food * discount),
+    wood: Math.ceil(costs.wood * discount),
     stone: Math.ceil(costs.stone * discount),
+    gold: Math.ceil(costs.gold * discount),
   };
   return {
+    ...costs,
     ...newCosts,
     total: newCosts.gold + newCosts.wood + newCosts.food + newCosts.stone,
+    popcap: costs.popcap,
     time: costs.time,
   };
 }
