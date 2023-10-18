@@ -1,5 +1,5 @@
 import path from "path";
-import { ATTRIB_FOLDER, ESSENCE_FOLDER, SOURCE_FOLDER } from "./config";
+import { ATTRIB_FOLDER, SOURCE_FOLDER } from "./config";
 import { getXmlData, logJson } from "./xml";
 import fs from "fs/promises";
 import type { RunContext } from "./run";
@@ -10,7 +10,7 @@ import { existsSync } from "fs";
 
 const parseAsValue = ["parent_pbg", "upgrade_bag", "weapon_bag"];
 
-export async function getEssenceData<T = NormalizedAttrib>(file: string, base: string = ESSENCE_FOLDER, context: RunContext): Promise<T | undefined> {
+export async function getEssenceData<T = NormalizedAttrib>(file: string, base: string = path.join(SOURCE_FOLDER, "essence/attrib"), context: RunContext): Promise<T | undefined> {
   const bestMatch = await guessAppropriateEssenceFile(file, context.race, base);
   if (!bestMatch) return undefined;
   let filePath = path.join(base, bestMatch);
@@ -20,7 +20,7 @@ export async function getEssenceData<T = NormalizedAttrib>(file: string, base: s
   const fileData: EssenceData = await fs.readFile(filePath, "utf-8").then(JSON.parse);
 
   let result: any = { extensions: [] };
-  for (const { key, value } of (fileData.data[0].value as any as EssenceItem[]) ?? fileData.data) {
+  for (const { key, value } of fileData.data) {
     if (parseAsValue.includes(key)) result[key] = formatValue(value);
     else if (typeof value == "object") {
       result.extensions.push(parseItemAsExt({ key, value }));
@@ -143,9 +143,6 @@ const valuesAsArray = [
   "abilities",
   "ui_extra_infos",
   "attack_target_restriction_on_victim",
-  "global_traits_summary",
-  "starting_buildings",
-  "starting_units",
 ];
 
 function parseValues(values: EssenceItem[]) {
