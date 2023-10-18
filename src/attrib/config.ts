@@ -125,6 +125,7 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "upgrade_landmark_market_trickle_fre",
   (file) => file.split("/").pop()!.startsWith("upgrade_unit") && file.endsWith("farimba_mal"),
   "landmarkvariant",
+  (file) => file.includes("upgrade_unit_") && file.includes("spirit_way_chi"),
 
   // Prefer the vanilla keep emplacement versions over landmark and outposts, except mongols
   "upgrade_barbican_cannon_chi",

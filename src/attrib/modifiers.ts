@@ -28,12 +28,10 @@ const decreaseByPercent = (n: number, percent: number) => round(n * (1 - toPerce
 const increaseByPercentImproved = (n: number, percent: number, delta: number) => round((n * (1 + toPercent(percent))) / (1 + (Math.abs(percent) - Math.abs(delta)) / 100));
 const decreaseByPercentImproved = (n: number, percent: number, delta: number) => round((n * (1 - toPercent(percent))) / (1 - (Math.abs(percent) - Math.abs(delta)) / 100));
 const increaseSpeedByPercent = (speed: number, percent: number) => round(speed / (1 + toPercent(percent)) / 10) * 10;
-const increaseAttackSpeedByPercent = (speed: number, percent: number) => speed * round(1 - 1 / (1 - toPercent(percent)));
-const increaseAttackSpeedByPercentNew = (percent: number) => round(1/(1+percent/100));
+const increaseAttackSpeedByPercent = (percent: number) => round(1 / (1 + percent / 100));
 const round = (n: number) => Math.round(n * 100) / 100; //(100/(100-33))
 
 export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> = {
-
   "arrow-volley": ([s, t]) => [
     // Longbowmen gain Arrow Volley, an activated ability that reduces their time to attack by +1 second for a duration of 6 seconds.
     {
@@ -45,7 +43,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       duration: t,
     },
   ],
-  
+
   "network-of-castles": ([i]) => [
     // When enemies are nearby, this building sounds an alarm, causing nearby units to get a +20% increase to attack speed.
     {
@@ -56,25 +54,25 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       type: "ability",
     },
   ],
-  
+
   "great-wall-buff-chi": ([]) => [
     // All units standing on Walls gain +25% ranged damage.
     {
       property: "rangedAttack",
-      select: { class: [['ranged','infantry']] },
+      select: { class: [["ranged", "infantry"]] },
       effect: "multiply",
       value: increaseByPercent(1, 25),
       type: "ability",
     },
   ],
-  
-    "spirit-way": ([]) => [
+
+  "spirit-way": ([]) => [
     // When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.
     {
       property: "attackSpeed",
       select: common.allNonSiegeUnits,
       effect: "multiply",
-      value: increaseAttackSpeedByPercentNew(20),
+      value: increaseAttackSpeedByPercent(20),
       type: "ability",
       duration: 10,
     },
@@ -88,7 +86,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-    "saints-blessing": ([]) => [
+  "saints-blessing": ([]) => [
     // After striking an enemy, the Warrior Monk increases the armor and damage of nearby allied Rus military units for a duration.
     // Manual testing produces a default of +1 range and melee armor and +2 damage for 10 second duration and 2 tile range
     // Can be upgraded by two techs for additional +1 damage, +10 second duration, and +5 tile range
@@ -160,19 +158,19 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       type: "ability",
     },
   ],
-  
+
   "static-deployment": ([i]) => [
     // Streltsy gain +30% (i) attack speed after remaining stationary for 10 (j not implemented yet) seconds.
     {
       property: "attackSpeed",
       select: { id: ["streltsy"] },
       effect: "multiply",
-      value: increaseAttackSpeedByPercentNew(i),
+      value: increaseAttackSpeedByPercent(i),
       type: "ability",
     },
   ],
-  
-  "gallop": ([]) => [
+
+  gallop: ([]) => [
     // Activate to move at maximum speed with +2 tile weapon range for 8 seconds.
     {
       property: "moveSpeed",
@@ -242,7 +240,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       type: "ability",
     },
   ],
-  
+
   "maneuver-arrow": ([i, j]) => [
     // Fire a Signal Arrow that increases the movement speed of nearby units (including the Khan) by +33% for 5 seconds. Does not affect Villagers.
     {
@@ -254,19 +252,19 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       duration: j,
     },
   ],
-  
+
   "attack-speed-arrow": ([i, j]) => [
     // Fires a Signal Arrow that increases the attack speed of nearby ranged units (including the Khan) by +50% for 5 seconds.
     {
       property: "attackSpeed",
       select: { class: [["ranged"]] },
       effect: "multiply",
-      value: increaseAttackSpeedByPercentNew(i),
+      value: increaseAttackSpeedByPercent(i),
       type: "ability",
       duration: j,
     },
   ],
-  
+
   "defense-arrow": ([i, j]) => [
     // Fires a Signal Arrow that increases the armor of nearby units (including the Khan) by +2 for 5 seconds
     {
@@ -286,8 +284,8 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       duration: j,
     },
   ],
-  
-  "yam": ([i]) => [
+
+  yam: ([i]) => [
     // Cavalry and Traders near an Outpost get +15% speed for 10 seconds.
     // does not seem to have a duration outside of the tower aura
     {
@@ -298,7 +296,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       type: "ability",
     },
   ],
-  
+
   "outpost-speed-improved-mon": ([]) => [
     // Yam speed aura applies to all units instead of just Traders and cavalry units. Does not apply to siege engines.
     {
@@ -327,11 +325,11 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       property: "attackSpeed",
       select: common.allMilitaryLand,
       effect: "multiply",
-      value: increaseAttackSpeedByPercentNew(s),
+      value: increaseAttackSpeedByPercent(s),
       type: "ability",
     },
   ],
-  
+
   "melee-defense-drums-off": ([s]) => [
     // Mehter drums that increase the melee armor of nearby units by +2.
     {
@@ -342,7 +340,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       type: "ability",
     },
   ],
-  
+
   "ranged-defense-drums-off": ([s]) => [
     // Mehter drums that increase the ranged armor of nearby units by +1.
     {
@@ -353,15 +351,15 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       type: "ability",
     },
   ],
-  
-  "fortitude": ([i, j, k]) => [
+
+  fortitude: ([i, j, k]) => [
     // Gain +50% attack speed and receive +50% damage from melee weapons for 10 seconds.
     // activation recharge starts after ability ends...
     {
       property: "attackSpeed",
       select: common.allMilitaryLand,
       effect: "change",
-      value: increaseAttackSpeedByPercentNew(i),
+      value: increaseAttackSpeedByPercent(i),
       type: "ability",
       duration: k,
     },
@@ -374,7 +372,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       duration: k,
     },
   ],
-  
+
   "blacksmith-and-university-influence": ([s, t, u, v]) => [
     // Military unit production rate increased +20%/+30%/+40% by Age while within the influence of a Blacksmith or University. The Istanbul Observatory increases the bonus to +60%.
     // need another way to handle this
@@ -407,18 +405,18 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       type: "ability",
     },
   ],
-  
+
   "tower-of-victory-aura": ([s]) => [
     // Melee and ranged infantry who move near this Landmark permanently gain +20% attack speed.
     {
       property: "attackSpeed",
       select: { class: [["infantry"]] },
       effect: "multiply",
-      value: increaseAttackSpeedByPercentNew(s),
+      value: increaseAttackSpeedByPercent(s),
       type: "ability",
     },
   ],
-  
+
   "forced-march": ([i, j]) => [
     // Activate to move 100% faster for 10 seconds, deactivates early when dealing damage.
     {
@@ -430,7 +428,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       duration: j,
     },
   ],
-  
+
   "lancer-charge-bonus-damage": ([]) => [
     // Every description is inaccurate or incomplete...
     {
@@ -442,7 +440,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       duration: 5,
     },
   ],
-  
+
   "deploy-pavise": ([i, j, k]) => [
     // Activate to increase weapon range by +1 tile and gain +5 ranged armor.\nRemains active for 30 seconds or until the Arbalétrier moves away
     {
@@ -454,7 +452,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       duration: k,
     },
     {
-      property: "rangeArmor",
+      property: "rangedArmor",
       select: { id: ["arbaletrier"] },
       effect: "change",
       value: j,
@@ -462,7 +460,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       duration: k,
     },
   ],
-  
+
   "keep-influence": ([r]) => [
     // Archery Ranges and Stables within influence have unit costs decreased by 20%.
     {
@@ -487,7 +485,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       type: "ability",
     },
   ],
-  
+
   "activate-stealth": ([i]) => [
     // Enter Stealth for 20 seconds.\nWhile in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, Landmark Town Centers, or they engage in combat.
     {
@@ -499,7 +497,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       duration: i,
     },
   ],
-  
+
   "gbeto-ambush-buff-mal": ([]) => [
     // Deals increased damage on next hit.
     {
@@ -517,7 +515,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       type: "ability",
     },
   ],
-  
+
   "huntress-stealth": ([]) => [
     // Malian infantry within range enter Stealth. While in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, or when they engage in combat.
     {
@@ -529,7 +527,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       duration: 30,
     },
   ],
-  
+
   "camel-support": ([]) => [
     // Infantry gain armor when near a camel unit. / Camels increase the armor of nearby infantry by +2.
     {
@@ -548,7 +546,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "inspired": ([a, b]) => [
+  inspired: ([a, b]) => [
     // Military units deal +15% damage and gain +1 armor. //tested to 60 second duration
     {
       property: "rangedArmor",
@@ -599,7 +597,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       duration: 60,
     },
   ],
-  
+
   "house-of-wisdom-influence": ([i]) => [
     // Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age.
     {
@@ -622,18 +620,18 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       duration: i,
     },
   ],
-  
-  "abbey-healing": ([i,j]) => [
+
+  "abbey-healing": ([i, j]) => [
     // Heals nearby out of combat units by 6 every 1 seconds.
     {
       property: "healingRate",
       select: common.allLand,
       effect: "change",
-      value: i/j,
+      value: i / j,
       type: "ability",
     },
   ],
-  
+
   "mill-influence": ([i, j, k, l]) => [
     // Farm harvest rate increased +15%/+20%/+25%/+30% by Age while within the influence of a Mill.
     {
@@ -644,7 +642,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       type: "ability",
     },
   ],
-    
+
   "golden-age-tier-1": ([]) => [
     // Tier 1: Villager gather rate +15%
     {
@@ -683,8 +681,8 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       type: "ability",
     },
   ],
-  
-  "fiefdom": ([i]) => [
+
+  fiefdom: ([i]) => [
     // Town Center production and research speed increased by +10%.\nBonus increases further in later Ages
     {
       property: "productionSpeed",
@@ -694,70 +692,70 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       type: "ability",
     },
   ],
-  
+
   "emergency-repairs": ([i, j, k]) => [
     // Building repairs itself by 150 health every 1 second for 20 seconds.
     {
       property: "repairRate",
       select: { class: [["building"]] },
       effect: "change",
-      value: i/j,
+      value: i / j,
       type: "ability",
       duration: k,
     },
-  ],  
-  
+  ],
+
   "relic-garrisoned-dock": ([s]) => [
     // Increasing attack speed of military ships by +5%.
     {
       property: "attackSpeed",
       select: common.allMillitaryShips,
       effect: "multiply",
-      value: increaseAttackSpeedByPercentNew(s),
+      value: increaseAttackSpeedByPercent(s),
       type: "ability",
     },
   ],
-  
-  "relic-garrisoned-keep": ([s,t,u,v]) => [
+
+  "relic-garrisoned-keep": ([s, t, u, v]) => [
     // Armor increased by +50% Damage increased by +35% Sight range increased by +25% Weapon range increased by +20%"
     {
       property: "fireArmor",
       select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
       effect: "multiply",
-      value: increaseAttackSpeedByPercentNew(s),
+      value: increaseAttackSpeedByPercent(s),
       type: "ability",
     },
     {
       property: "rangedArmor",
       select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
       effect: "multiply",
-      value: increaseAttackSpeedByPercentNew(s),
+      value: increaseAttackSpeedByPercent(s),
       type: "ability",
     },
     {
       property: "rangedAttack",
       select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
       effect: "multiply",
-      value: increaseAttackSpeedByPercentNew(t),
+      value: increaseAttackSpeedByPercent(t),
       type: "ability",
     },
     {
       property: "maxRange",
       select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
       effect: "multiply",
-      value: increaseAttackSpeedByPercentNew(v),
+      value: increaseAttackSpeedByPercent(v),
       type: "ability",
     },
     {
       property: "lineOfSight",
       select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
       effect: "multiply",
-      value: increaseAttackSpeedByPercentNew(u),
+      value: increaseAttackSpeedByPercent(u),
       type: "ability",
     },
   ],
-  
-  "food-festival": ([i,j]) => [
+
+  "food-festival": ([i, j]) => [
     // Increase Food gather rate by +50% for 30 seconds.
     {
       property: "foodGatherRate",
@@ -768,8 +766,8 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       duration: j,
     },
   ],
-    
-  "military-festival": ([i,j]) => [
+
+  "military-festival": ([i, j]) => [
     // Increase military unit production speed by +50% for 30 seconds.
     {
       property: "productionSpeed",
@@ -780,8 +778,8 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       duration: j,
     },
   ],
-    
-  "siege-festival": ([i,j]) => [
+
+  "siege-festival": ([i, j]) => [
     // Increase siege and torch damage for all units by +50% for 30 seconds.
     {
       property: "fireAttack",
@@ -800,8 +798,8 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       duration: j,
     },
   ],
-  
-  "trade-protection": ([i,j,k]) => [
+
+  "trade-protection": ([i, j, k]) => [
     // Increase siege and torch damage for all units by +50% for 30 seconds.
     {
       property: "moveSpeed",
@@ -828,7 +826,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       duration: k,
     },
   ],
-  
+
   "coastal-navigation": ([]) => [
     // Ships near a Docks get +15% speed for 25 seconds.
     {
@@ -840,8 +838,6 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       duration: 25,
     },
   ],
-
-
 };
 
 export const technologyModifiers: Record<string, (values: number[]) => Modifier[]> = {
@@ -1520,7 +1516,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { class: [["springald", "ship"]] },
       effect: "multiply",
-      value: 1 + increaseAttackSpeedByPercent(1, s),
+      value: increaseAttackSpeedByPercent(s),
       type: "passive",
     },
   ],
@@ -1926,7 +1922,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { id: ["bombard"] },
       effect: "multiply",
-      value: 1 + increaseAttackSpeedByPercent(1, i),
+      value: increaseAttackSpeedByPercent(i),
       type: "passive",
     },
   ],
@@ -1959,7 +1955,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { id: ["mangonel"] },
       effect: "multiply",
-      value: 1 + increaseAttackSpeedByPercent(1, i),
+      value: increaseAttackSpeedByPercent(i),
       type: "passive",
     },
   ],
@@ -1971,7 +1967,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { id: ["mangonel"] },
       effect: "multiply",
-      value: 1 + increaseAttackSpeedByPercent(1, d),
+      value: increaseAttackSpeedByPercent(d),
       type: "passive",
     },
   ],
@@ -2162,9 +2158,8 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     {
       property: "attackSpeed",
       select: { id: ["battering-ram", "clocktower-battering-ram"] },
-      effect: "change",
-      value: (4 + 0.125) * -1 * (1 + increaseAttackSpeedByPercent(1, speed)),
-      // wtf is happening here? this is cooldown + attack decrease by 40%
+      effect: "multiply",
+      value: increaseAttackSpeedByPercent(speed),
       type: "passive",
     },
     {
@@ -2393,7 +2388,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { id: ["springald"] },
       effect: "multiply",
-      value: 1 + increaseAttackSpeedByPercent(1, t),
+      value: increaseAttackSpeedByPercent(t),
       type: "passive",
     },
   ],
@@ -2705,7 +2700,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { id: ["archer"] },
       effect: "multiply",
-      value: 1 + increaseAttackSpeedByPercent(1, r),
+      value: increaseAttackSpeedByPercent(r),
       type: "passive",
     },
   ],
@@ -2967,7 +2962,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
   ],
 
   "precision-training": ([donso, archer, javelin]) => [
-    // Increase ranged damage of Donso by +6, Archers by +2, and Javelin Throwers by +2.
+    // Increase ranged damage of Donso by +6, Archers by +2, and Javelin Throwers by +3.
     {
       property: "rangedAttack",
       select: { id: ["donso"] },
@@ -3326,7 +3321,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { id: ["keshik"] },
       effect: "multiply",
-      value: 1 + increaseAttackSpeedByPercent(1, r),
+      value: increaseAttackSpeedByPercent(r),
       type: "passive",
     },
   ],
@@ -3345,7 +3340,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       property: "attackSpeed",
       select: { id: ["keshik"] },
       effect: "multiply",
-      value: 1 + increaseAttackSpeedByPercent(1, r),
+      value: increaseAttackSpeedByPercent(r),
       type: "passive",
     },
   ],
