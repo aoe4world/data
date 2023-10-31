@@ -73,6 +73,13 @@
               "value": 2,
               "type": "ability"
             }
+          ],
+          "activatedOn": [
+            "units/camel-rider",
+            "units/camel-archer"
+          ],
+          "unlockedBy": [
+            "technologies/camel-support"
           ]
         }
       ],
@@ -88,7 +95,8 @@
       "displayClasses": [],
       "classes": [],
       "minAge": 1,
-      "description": "Tier 1: Villager gather rate +15%",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png",
+      "description": "+15% Resource Gathering Rate",
       "variations": [
         {
           "id": "ability-golden-age-tier-1-1",
@@ -101,7 +109,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Tier 1: Villager gather rate +15%",
+          "description": "+15% Resource Gathering Rate",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -115,6 +123,7 @@
           "producedBy": [
             "house-of-wisdom"
           ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png",
           "active": "always",
           "auraRange": 12.5,
           "effects": [
@@ -172,6 +181,17 @@
               "effect": "multiply",
               "value": 1.15,
               "type": "ability"
+            },
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "house-of-wisdom"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability"
             }
           ]
         }
@@ -188,7 +208,8 @@
       "displayClasses": [],
       "classes": [],
       "minAge": 1,
-      "description": "Tier 2: Villager gather rate +15%, research speed +15%",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-2.png",
+      "description": "+15% Research Speed",
       "variations": [
         {
           "id": "ability-golden-age-tier-2-1",
@@ -201,7 +222,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Tier 2: Villager gather rate +15%, research speed +15%",
+          "description": "+15% Research Speed",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -215,9 +236,35 @@
           "producedBy": [
             "house-of-wisdom"
           ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-2.png",
           "active": "always",
           "auraRange": 12.5,
-          "effects": []
+          "effects": [
+            {
+              "property": "researchSpeed",
+              "select": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.15,
+              "type": "ability"
+            },
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "house-of-wisdom"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability"
+            }
+          ]
         }
       ],
       "shared": {}
@@ -232,7 +279,8 @@
       "displayClasses": [],
       "classes": [],
       "minAge": 1,
-      "description": "Tier 3: Villager gather rate +20%, research speed +20%",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-3.png",
+      "description": "+20% Production Speed, additional +5% Research Speed, additional +5% Resource Gathering Rate",
       "variations": [
         {
           "id": "ability-golden-age-tier-3-1",
@@ -245,7 +293,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Tier 3: Villager gather rate +20%, research speed +20%",
+          "description": "+20% Production Speed, additional +5% Research Speed, additional +5% Resource Gathering Rate",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -259,9 +307,103 @@
           "producedBy": [
             "house-of-wisdom"
           ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-3.png",
           "active": "always",
           "auraRange": 12.5,
-          "effects": []
+          "effects": [
+            {
+              "property": "productionSpeed",
+              "select": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.2,
+              "type": "ability"
+            },
+            {
+              "property": "researchSpeed",
+              "select": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.05,
+              "type": "ability"
+            },
+            {
+              "property": "foodGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.05,
+              "type": "ability"
+            },
+            {
+              "property": "huntGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.05,
+              "type": "ability"
+            },
+            {
+              "property": "goldGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.05,
+              "type": "ability"
+            },
+            {
+              "property": "stoneGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.05,
+              "type": "ability"
+            },
+            {
+              "property": "woodGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.05,
+              "type": "ability"
+            },
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "house-of-wisdom"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability"
+            }
+          ]
         }
       ],
       "shared": {}

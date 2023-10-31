@@ -57,7 +57,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -68,6 +73,9 @@
               "value": 0.87,
               "type": "ability"
             }
+          ],
+          "activatedOn": [
+            "units/mehter"
           ]
         }
       ]
@@ -124,7 +132,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -143,7 +156,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -162,7 +180,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -181,7 +204,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -240,16 +268,8 @@
             {
               "property": "attackSpeed",
               "select": {
-                "class": [
-                  [
-                    "infantry"
-                  ],
-                  [
-                    "cavalry"
-                  ],
-                  [
-                    "siege"
-                  ]
+                "id": [
+                  "sipahi"
                 ]
               },
               "effect": "change",
@@ -260,16 +280,8 @@
             {
               "property": "unknown",
               "select": {
-                "class": [
-                  [
-                    "infantry"
-                  ],
-                  [
-                    "cavalry"
-                  ],
-                  [
-                    "siege"
-                  ]
+                "id": [
+                  "sipahi"
                 ]
               },
               "effect": "multiply",
@@ -288,12 +300,11 @@
       "civs": [
         "ot"
       ],
-      "unique": false,
       "displayClasses": [],
       "classes": [],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/abilities/ability-mehter-speed-bonus-1.png",
-      "description": "Movement speed bonus +15%.",
+      "description": "Units move +15% faster when in formation.",
       "variations": [
         {
           "id": "ability-mehter-speed-bonus-1",
@@ -306,10 +317,9 @@
           "civs": [
             "ot"
           ],
-          "description": "Movement speed bonus +15%.",
+          "description": "Units move +15% faster when in formation.",
           "classes": [],
           "displayClasses": [],
-          "unique": false,
           "costs": {
             "gold": 0,
             "wood": 0,
@@ -330,7 +340,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -343,7 +358,13 @@
             }
           ],
           "auraRange": 6,
-          "active": "always"
+          "active": "always",
+          "activatedOn": [
+            "units/mehter"
+          ],
+          "unlockedBy": [
+            "technologies/mehter-drums"
+          ]
         }
       ]
     },
@@ -397,7 +418,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -408,6 +434,9 @@
               "value": 2,
               "type": "ability"
             }
+          ],
+          "activatedOn": [
+            "units/mehter"
           ]
         }
       ]
@@ -462,7 +491,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -473,6 +507,9 @@
               "value": 1,
               "type": "ability"
             }
+          ],
+          "activatedOn": [
+            "units/mehter"
           ]
         }
       ]
@@ -524,7 +561,8 @@
               "property": "moveSpeed",
               "select": {
                 "id": [
-                  "trader"
+                  "trader",
+                  "trade-ship"
                 ]
               },
               "effect": "multiply",
@@ -536,7 +574,8 @@
               "property": "meleeArmor",
               "select": {
                 "id": [
-                  "trader"
+                  "trader",
+                  "trade-ship"
                 ]
               },
               "effect": "change",
@@ -548,7 +587,8 @@
               "property": "rangedArmor",
               "select": {
                 "id": [
-                  "trader"
+                  "trader",
+                  "trade-ship"
                 ]
               },
               "effect": "change",
@@ -556,6 +596,13 @@
               "type": "ability",
               "duration": 20
             }
+          ],
+          "activatedOn": [
+            "buildings/keep",
+            "buildings/sea-gate-castle"
+          ],
+          "unlockedBy": [
+            "buildings/sea-gate-castle"
           ]
         }
       ]

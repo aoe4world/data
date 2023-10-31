@@ -122,6 +122,9 @@
               "type": "ability",
               "duration": 25
             }
+          ],
+          "activatedOn": [
+            "buildings/dock"
           ]
         }
       ],
@@ -134,12 +137,11 @@
       "civs": [
         "ma"
       ],
-      "unique": false,
       "displayClasses": [],
       "classes": [],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/abilities/ability-first-strike-1.png",
-      "description": "Musofadi Warriors and Musofadi Gunners gain First Strike, dealing 2x damage when breaking Stealth with their first attack.",
+      "description": "Musofadi Warriors and Musofadi Gunners deal double damage on their first attack when breaking stealth.",
       "variations": [
         {
           "id": "ability-first-strike-4",
@@ -152,10 +154,9 @@
           "civs": [
             "ma"
           ],
-          "description": "Musofadi Warriors and Musofadi Gunners gain First Strike, dealing 2x damage when breaking Stealth with their first attack.",
+          "description": "Musofadi Warriors and Musofadi Gunners deal double damage on their first attack when breaking stealth.",
           "classes": [],
           "displayClasses": [],
-          "unique": false,
           "costs": {
             "gold": 0,
             "wood": 0,
@@ -191,7 +192,14 @@
               "type": "ability"
             }
           ],
-          "active": "always"
+          "active": "always",
+          "activatedOn": [
+            "units/musofadi-warrior",
+            "units/musofadi-gunner"
+          ],
+          "unlockedBy": [
+            "buildings/fort-of-the-huntress"
+          ]
         }
       ],
       "shared": {}
@@ -251,6 +259,9 @@
               "type": "ability",
               "duration": 60
             }
+          ],
+          "unlockedBy": [
+            "buildings/griot-bara"
           ]
         }
       ],
@@ -312,6 +323,9 @@
               "type": "ability",
               "duration": 30
             }
+          ],
+          "activatedOn": [
+            "buildings/fort-of-the-huntress"
           ]
         }
       ],
@@ -368,8 +382,11 @@
                     "military"
                   ],
                   [
-                    "population"
+                    "building"
                   ]
+                ],
+                "id": [
+                  "farimba-garrison"
                 ]
               },
               "effect": "multiply",
@@ -377,6 +394,9 @@
               "type": "ability",
               "duration": 60
             }
+          ],
+          "unlockedBy": [
+            "buildings/griot-bara"
           ]
         }
       ],
@@ -459,6 +479,9 @@
               "type": "ability",
               "duration": 60
             }
+          ],
+          "unlockedBy": [
+            "buildings/griot-bara"
           ]
         }
       ],

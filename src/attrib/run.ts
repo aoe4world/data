@@ -81,14 +81,12 @@ async function buildTechTree(civ: civConfig, context: RunContext = { debug: fals
       return;
     }
 
-    if (items.has(item.id)) {
-      if (items.get(item.id)!.type == item.type) {
-        throw new Error(
-          `Duplicate item id ${item.id} in ${file} conflicts with ${items.get(item.id)!.attribName} ${[...files.values()]
-            .filter((x) => x?.includes(items.get(item.id)!.attribName!))
-            .join(", ")}`
-        );
-      }
+    if (items.has(item.id) && items.get(item.id)!.type == item.type) {
+      throw new Error(
+        `Duplicate item id ${item.id} in ${file} conflicts with ${items.get(item.id)!.attribName} ${[...files.values()]
+          .filter((x) => x?.includes(items.get(item.id)!.attribName!))
+          .join(", ")}`
+      );
     }
 
     items.set(item.id, item);
@@ -220,4 +218,3 @@ function persistItem(item: Item, civ: civConfig) {
 
 ensureFolderStructure();
 for (const civ of Object.values(CIVILIZATIONS)) buildTechTree(civ);
-// buildTechTree(CIVILIZATIONS.mo);

@@ -67,6 +67,9 @@
               "value": 6,
               "type": "ability"
             }
+          ],
+          "activatedOn": [
+            "buildings/abbey-of-kings"
           ]
         }
       ]
@@ -174,13 +177,17 @@
               "property": "foodGatherRate",
               "select": {
                 "id": [
-                  "villager"
+                  "farm",
+                  "mill"
                 ]
               },
               "effect": "multiply",
               "value": 1.15,
               "type": "ability"
             }
+          ],
+          "activatedOn": [
+            "buildings/mill"
           ]
         }
       ]
@@ -256,6 +263,16 @@
               "value": 0.8,
               "type": "ability"
             }
+          ],
+          "activatedOn": [
+            "buildings/outpost",
+            "buildings/stone-wall-tower",
+            "buildings/town-center",
+            "buildings/capital-town-center",
+            "buildings/the-white-tower",
+            "buildings/kings-palace",
+            "buildings/keep",
+            "buildings/berkshire-palace"
           ]
         }
       ]
@@ -392,7 +409,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -412,7 +434,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -483,13 +510,16 @@
               "type": "influence",
               "duration": 60
             }
+          ],
+          "activatedOn": [
+            "units/prelate"
           ]
         }
       ]
     },
     {
       "id": "ability-relic-garrisoned-dock",
-      "name": "Religious Zeal Dock",
+      "name": "Relic Garrisoned in Docks",
       "type": "ability",
       "civs": [
         "hr"
@@ -504,7 +534,7 @@
           "id": "ability-relic-garrisoned-dock-3",
           "baseId": "ability-relic-garrisoned-dock",
           "type": "ability",
-          "name": "Religious Zeal Dock",
+          "name": "Relic Garrisoned in Docks",
           "pbgid": 2034812,
           "attribName": "relic_dock_bonus_hre",
           "age": 3,
@@ -528,13 +558,43 @@
           "icon": "https://data.aoe4world.com/images/abilities/ability-relic-garrisoned-1.png",
           "active": "always",
           "auraRange": 0,
-          "effects": []
+          "effects": [
+            {
+              "property": "attackSpeed",
+              "select": {
+                "class": [
+                  [
+                    "ship",
+                    "springald"
+                  ],
+                  [
+                    "ship",
+                    "archer"
+                  ],
+                  [
+                    "ship",
+                    "incendiary"
+                  ],
+                  [
+                    "warship"
+                  ]
+                ],
+                "id": [
+                  "galleass",
+                  "grand-galley"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.95,
+              "type": "ability"
+            }
+          ]
         }
       ]
     },
     {
       "id": "ability-relic-garrisoned-keep",
-      "name": "Religious Zeal Keeps and Outposts",
+      "name": "Relic Garrisoned in Defensive Structures",
       "type": "ability",
       "civs": [
         "hr"
@@ -549,7 +609,7 @@
           "id": "ability-relic-garrisoned-keep-3",
           "baseId": "ability-relic-garrisoned-keep",
           "type": "ability",
-          "name": "Religious Zeal Keeps and Outposts",
+          "name": "Relic Garrisoned in Defensive Structures",
           "pbgid": 195371,
           "attribName": "relic_tower_keep_bonus_hre",
           "age": 3,
@@ -576,7 +636,78 @@
           "icon": "https://data.aoe4world.com/images/abilities/ability-relic-garrisoned-1.png",
           "active": "always",
           "auraRange": 0,
-          "effects": []
+          "effects": [
+            {
+              "property": "fireArmor",
+              "select": {
+                "id": [
+                  "outpost",
+                  "stone-wall-tower",
+                  "keep",
+                  "elzbach-palace"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.67,
+              "type": "ability"
+            },
+            {
+              "property": "rangedArmor",
+              "select": {
+                "id": [
+                  "outpost",
+                  "stone-wall-tower",
+                  "keep",
+                  "elzbach-palace"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.67,
+              "type": "ability"
+            },
+            {
+              "property": "rangedAttack",
+              "select": {
+                "id": [
+                  "outpost",
+                  "stone-wall-tower",
+                  "keep",
+                  "elzbach-palace"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.74,
+              "type": "ability"
+            },
+            {
+              "property": "maxRange",
+              "select": {
+                "id": [
+                  "outpost",
+                  "stone-wall-tower",
+                  "keep",
+                  "elzbach-palace"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.83,
+              "type": "ability"
+            },
+            {
+              "property": "lineOfSight",
+              "select": {
+                "id": [
+                  "outpost",
+                  "stone-wall-tower",
+                  "keep",
+                  "elzbach-palace"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.8,
+              "type": "ability"
+            }
+          ]
         }
       ]
     },
@@ -644,62 +775,6 @@
               "value": 5,
               "type": "ability",
               "duration": 30
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ability-fiefdom",
-      "name": "Fiefdom",
-      "type": "ability",
-      "civs": [
-        "fr"
-      ],
-      "displayClasses": [],
-      "classes": [],
-      "minAge": 2,
-      "description": "Town Center production and research speed increased by +10%.\nBonus increases further in later Ages.",
-      "variations": [
-        {
-          "id": "ability-fiefdom-2",
-          "baseId": "ability-fiefdom",
-          "type": "ability",
-          "name": "Fiefdom",
-          "pbgid": 187278,
-          "attribName": "town_center_production_age1_fre",
-          "age": 2,
-          "civs": [
-            "fr"
-          ],
-          "description": "Town Center production and research speed increased by +10%.\nBonus increases further in later Ages.",
-          "classes": [],
-          "displayClasses": [],
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "total": 0,
-            "popcap": 0
-          },
-          "producedBy": [
-            "town-center",
-            "capital-town-center"
-          ],
-          "active": "always",
-          "auraRange": 0,
-          "effects": [
-            {
-              "property": "productionSpeed",
-              "select": {
-                "id": [
-                  "villager"
-                ]
-              },
-              "effect": "multiply",
-              "value": 1.1,
-              "type": "ability"
             }
           ]
         }
@@ -809,7 +884,6 @@
       "civs": [
         "fr"
       ],
-      "unique": false,
       "displayClasses": [],
       "classes": [],
       "minAge": 2,
@@ -830,7 +904,6 @@
           "description": "Gain +3 melee attack damage for 5 seconds after charging.",
           "classes": [],
           "displayClasses": [],
-          "unique": false,
           "costs": {
             "gold": 0,
             "wood": 0,
@@ -857,6 +930,183 @@
             }
           ],
           "active": "always"
+        }
+      ]
+    },
+    {
+      "id": "ability-town-center-production-speed-castle-age",
+      "name": "Castle Age Town Center Production Speed",
+      "type": "ability",
+      "civs": [
+        "fr"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/buildings/town-center.png",
+      "description": "Town Center production and research speed increased by 20%.",
+      "variations": [
+        {
+          "id": "ability-town-center-production-speed-castle-age-3",
+          "baseId": "ability-town-center-production-speed-castle-age",
+          "type": "ability",
+          "name": "Castle Age Town Center Production Speed",
+          "pbgid": 187280,
+          "attribName": "town_center_production_age3_fre",
+          "age": 3,
+          "civs": [
+            "fr"
+          ],
+          "description": "Town Center production and research speed increased by 20%.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "town-center",
+            "capital-town-center"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/town-center.png",
+          "active": "always",
+          "auraRange": 0,
+          "effects": [
+            {
+              "property": "productionSpeed",
+              "select": {
+                "id": [
+                  "town-center",
+                  "capital-town-center"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.2,
+              "type": "ability"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ability-town-center-production-speed-dark-age",
+      "name": "Dark Age Town Center Production Speed",
+      "type": "ability",
+      "civs": [
+        "fr"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/buildings/town-center.png",
+      "description": "Town Center production and research speed increased by +10%.\nBonus increases further in later Ages.",
+      "variations": [
+        {
+          "id": "ability-town-center-production-speed-dark-age-1",
+          "baseId": "ability-town-center-production-speed-dark-age",
+          "type": "ability",
+          "name": "Dark Age Town Center Production Speed",
+          "pbgid": 187278,
+          "attribName": "town_center_production_age1_fre",
+          "age": 1,
+          "civs": [
+            "fr"
+          ],
+          "description": "Town Center production and research speed increased by +10%.\nBonus increases further in later Ages.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "town-center",
+            "capital-town-center"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/town-center.png",
+          "active": "always",
+          "auraRange": 0,
+          "effects": [
+            {
+              "property": "productionSpeed",
+              "select": {
+                "id": [
+                  "town-center",
+                  "capital-town-center"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.1,
+              "type": "ability"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ability-town-center-production-speed-feudal-age",
+      "name": "Feudal Age Town Center Production Speed",
+      "type": "ability",
+      "civs": [
+        "fr"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/buildings/town-center.png",
+      "description": "Town Center production and research speed increased by +15%.\nBonus increases further in later Ages.",
+      "variations": [
+        {
+          "id": "ability-town-center-production-speed-feudal-age-2",
+          "baseId": "ability-town-center-production-speed-feudal-age",
+          "type": "ability",
+          "name": "Feudal Age Town Center Production Speed",
+          "pbgid": 187279,
+          "attribName": "town_center_production_age2_fre",
+          "age": 2,
+          "civs": [
+            "fr"
+          ],
+          "description": "Town Center production and research speed increased by +15%.\nBonus increases further in later Ages.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "town-center",
+            "capital-town-center"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/town-center.png",
+          "active": "always",
+          "auraRange": 0,
+          "effects": [
+            {
+              "property": "productionSpeed",
+              "select": {
+                "id": [
+                  "town-center",
+                  "capital-town-center"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.15,
+              "type": "ability"
+            }
+          ]
         }
       ]
     },
@@ -907,7 +1157,7 @@
               "property": "unknown",
               "select": {
                 "id": [
-                  "villager"
+                  "imperial-palace"
                 ]
               },
               "effect": "change",
@@ -962,13 +1212,10 @@
             {
               "property": "attackSpeed",
               "select": {
-                "class": [
-                  [
-                    "infantry"
-                  ],
-                  [
-                    "cavalry"
-                  ]
+                "id": [
+                  "zhuge-nu",
+                  "fire-lancer",
+                  "grenadier"
                 ]
               },
               "effect": "multiply",
@@ -979,13 +1226,10 @@
             {
               "property": "healingRate",
               "select": {
-                "class": [
-                  [
-                    "infantry"
-                  ],
-                  [
-                    "cavalry"
-                  ]
+                "id": [
+                  "zhuge-nu",
+                  "fire-lancer",
+                  "grenadier"
                 ]
               },
               "effect": "change",
@@ -993,6 +1237,9 @@
               "type": "ability",
               "duration": 10
             }
+          ],
+          "unlockedBy": [
+            "buildings/spirit-way"
           ]
         }
       ]
@@ -1004,7 +1251,6 @@
       "civs": [
         "ch"
       ],
-      "unique": false,
       "displayClasses": [],
       "classes": [],
       "minAge": 4,
@@ -1025,7 +1271,6 @@
           "description": "All units standing on Walls gain +25% ranged damage.",
           "classes": [],
           "displayClasses": [],
-          "unique": false,
           "costs": {
             "gold": 0,
             "wood": 0,
@@ -1054,7 +1299,13 @@
             }
           ],
           "active": "always",
-          "auraRange": 0
+          "auraRange": 0,
+          "unlockedBy": [
+            "buildings/great-wall-gatehouse"
+          ],
+          "activatedOn": [
+            "buildings/stone-wall"
+          ]
         }
       ]
     },
@@ -1240,6 +1491,13 @@
               "value": 2,
               "type": "ability"
             }
+          ],
+          "activatedOn": [
+            "units/camel-rider",
+            "units/camel-archer"
+          ],
+          "unlockedBy": [
+            "technologies/camel-support"
           ]
         }
       ]
@@ -1254,7 +1512,8 @@
       "displayClasses": [],
       "classes": [],
       "minAge": 1,
-      "description": "Tier 1: Villager gather rate +15%",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png",
+      "description": "+15% Resource Gathering Rate",
       "variations": [
         {
           "id": "ability-golden-age-tier-1-1",
@@ -1267,7 +1526,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Tier 1: Villager gather rate +15%",
+          "description": "+15% Resource Gathering Rate",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -1281,6 +1540,7 @@
           "producedBy": [
             "house-of-wisdom"
           ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png",
           "active": "always",
           "auraRange": 12.5,
           "effects": [
@@ -1338,6 +1598,17 @@
               "effect": "multiply",
               "value": 1.15,
               "type": "ability"
+            },
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "house-of-wisdom"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability"
             }
           ]
         }
@@ -1353,7 +1624,8 @@
       "displayClasses": [],
       "classes": [],
       "minAge": 1,
-      "description": "Tier 2: Villager gather rate +15%, research speed +15%",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-2.png",
+      "description": "+15% Research Speed",
       "variations": [
         {
           "id": "ability-golden-age-tier-2-1",
@@ -1366,7 +1638,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Tier 2: Villager gather rate +15%, research speed +15%",
+          "description": "+15% Research Speed",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -1380,9 +1652,35 @@
           "producedBy": [
             "house-of-wisdom"
           ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-2.png",
           "active": "always",
           "auraRange": 12.5,
-          "effects": []
+          "effects": [
+            {
+              "property": "researchSpeed",
+              "select": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.15,
+              "type": "ability"
+            },
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "house-of-wisdom"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability"
+            }
+          ]
         }
       ]
     },
@@ -1396,7 +1694,8 @@
       "displayClasses": [],
       "classes": [],
       "minAge": 1,
-      "description": "Tier 3: Villager gather rate +20%, research speed +20%",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-3.png",
+      "description": "+20% Production Speed, additional +5% Research Speed, additional +5% Resource Gathering Rate",
       "variations": [
         {
           "id": "ability-golden-age-tier-3-1",
@@ -1409,7 +1708,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Tier 3: Villager gather rate +20%, research speed +20%",
+          "description": "+20% Production Speed, additional +5% Research Speed, additional +5% Resource Gathering Rate",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -1423,9 +1722,103 @@
           "producedBy": [
             "house-of-wisdom"
           ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-3.png",
           "active": "always",
           "auraRange": 12.5,
-          "effects": []
+          "effects": [
+            {
+              "property": "productionSpeed",
+              "select": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.2,
+              "type": "ability"
+            },
+            {
+              "property": "researchSpeed",
+              "select": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.05,
+              "type": "ability"
+            },
+            {
+              "property": "foodGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.05,
+              "type": "ability"
+            },
+            {
+              "property": "huntGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.05,
+              "type": "ability"
+            },
+            {
+              "property": "goldGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.05,
+              "type": "ability"
+            },
+            {
+              "property": "stoneGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.05,
+              "type": "ability"
+            },
+            {
+              "property": "woodGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.05,
+              "type": "ability"
+            },
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "house-of-wisdom"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability"
+            }
+          ]
         }
       ]
     },
@@ -1602,6 +1995,9 @@
               "type": "ability",
               "duration": 25
             }
+          ],
+          "activatedOn": [
+            "buildings/dock"
           ]
         }
       ]
@@ -1613,12 +2009,11 @@
       "civs": [
         "ma"
       ],
-      "unique": false,
       "displayClasses": [],
       "classes": [],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/abilities/ability-first-strike-1.png",
-      "description": "Musofadi Warriors and Musofadi Gunners gain First Strike, dealing 2x damage when breaking Stealth with their first attack.",
+      "description": "Musofadi Warriors and Musofadi Gunners deal double damage on their first attack when breaking stealth.",
       "variations": [
         {
           "id": "ability-first-strike-4",
@@ -1631,10 +2026,9 @@
           "civs": [
             "ma"
           ],
-          "description": "Musofadi Warriors and Musofadi Gunners gain First Strike, dealing 2x damage when breaking Stealth with their first attack.",
+          "description": "Musofadi Warriors and Musofadi Gunners deal double damage on their first attack when breaking stealth.",
           "classes": [],
           "displayClasses": [],
-          "unique": false,
           "costs": {
             "gold": 0,
             "wood": 0,
@@ -1670,7 +2064,14 @@
               "type": "ability"
             }
           ],
-          "active": "always"
+          "active": "always",
+          "activatedOn": [
+            "units/musofadi-warrior",
+            "units/musofadi-gunner"
+          ],
+          "unlockedBy": [
+            "buildings/fort-of-the-huntress"
+          ]
         }
       ]
     },
@@ -1729,6 +2130,9 @@
               "type": "ability",
               "duration": 60
             }
+          ],
+          "unlockedBy": [
+            "buildings/griot-bara"
           ]
         }
       ]
@@ -1789,6 +2193,9 @@
               "type": "ability",
               "duration": 30
             }
+          ],
+          "activatedOn": [
+            "buildings/fort-of-the-huntress"
           ]
         }
       ]
@@ -1844,8 +2251,11 @@
                     "military"
                   ],
                   [
-                    "population"
+                    "building"
                   ]
+                ],
+                "id": [
+                  "farimba-garrison"
                 ]
               },
               "effect": "multiply",
@@ -1853,6 +2263,9 @@
               "type": "ability",
               "duration": 60
             }
+          ],
+          "unlockedBy": [
+            "buildings/griot-bara"
           ]
         }
       ]
@@ -1934,6 +2347,9 @@
               "type": "ability",
               "duration": 60
             }
+          ],
+          "unlockedBy": [
+            "buildings/griot-bara"
           ]
         }
       ]
@@ -1994,7 +2410,10 @@
               "duration": 5
             }
           ],
-          "toggleGroup": "khan_signal_ability_available"
+          "toggleGroup": "khan_signal_ability_available",
+          "activatedOn": [
+            "units/khan"
+          ]
         }
       ]
     },
@@ -2102,7 +2521,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -2122,7 +2546,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -2135,7 +2564,10 @@
               "duration": 5
             }
           ],
-          "toggleGroup": "khan_signal_ability_available"
+          "toggleGroup": "khan_signal_ability_available",
+          "activatedOn": [
+            "units/khan"
+          ]
         }
       ]
     },
@@ -2344,7 +2776,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -2357,7 +2794,10 @@
               "duration": 5
             }
           ],
-          "toggleGroup": "khan_signal_ability_available"
+          "toggleGroup": "khan_signal_ability_available",
+          "activatedOn": [
+            "units/khan"
+          ]
         }
       ]
     },
@@ -2509,18 +2949,24 @@
               "value": 1.15,
               "type": "ability"
             }
+          ],
+          "activatedOn": [
+            "buildings/outpost"
+          ],
+          "unlockedBy": [
+            "technologies/yam-network",
+            "buildings/deer-stones"
           ]
         }
       ]
     },
     {
-      "id": "ability-yam-network",
-      "name": "Yam Network",
+      "id": "ability-yam-network-improved",
+      "name": "Yam Network (Improved)",
       "type": "ability",
       "civs": [
         "mo"
       ],
-      "unique": false,
       "displayClasses": [],
       "classes": [],
       "minAge": 2,
@@ -2528,10 +2974,10 @@
       "description": "Yam speed aura applies to all units instead of just Traders and cavalry units. Does not apply to siege engines.",
       "variations": [
         {
-          "id": "ability-yam-network-2",
-          "baseId": "ability-yam-network",
+          "id": "ability-yam-network-improved-2",
+          "baseId": "ability-yam-network-improved",
           "type": "ability",
-          "name": "Yam Network",
+          "name": "Yam Network (Improved)",
           "pbgid": 190079,
           "attribName": "outpost_speed_improved_mon",
           "age": 2,
@@ -2541,7 +2987,6 @@
           "description": "Yam speed aura applies to all units instead of just Traders and cavalry units. Does not apply to siege engines.",
           "classes": [],
           "displayClasses": [],
-          "unique": false,
           "costs": {
             "gold": 0,
             "wood": 0,
@@ -2570,6 +3015,12 @@
               "value": null,
               "type": "ability"
             }
+          ],
+          "activatedOn": [
+            "buildings/outpost"
+          ],
+          "unlockedBy": [
+            "technologies/yam-network-improved"
           ],
           "auraRange": 12.5,
           "active": "always"
@@ -2626,7 +3077,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -2637,6 +3093,9 @@
               "value": 0.87,
               "type": "ability"
             }
+          ],
+          "activatedOn": [
+            "units/mehter"
           ]
         }
       ]
@@ -2693,7 +3152,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -2712,7 +3176,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -2731,7 +3200,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -2750,7 +3224,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -2809,16 +3288,8 @@
             {
               "property": "attackSpeed",
               "select": {
-                "class": [
-                  [
-                    "infantry"
-                  ],
-                  [
-                    "cavalry"
-                  ],
-                  [
-                    "siege"
-                  ]
+                "id": [
+                  "sipahi"
                 ]
               },
               "effect": "change",
@@ -2829,16 +3300,8 @@
             {
               "property": "unknown",
               "select": {
-                "class": [
-                  [
-                    "infantry"
-                  ],
-                  [
-                    "cavalry"
-                  ],
-                  [
-                    "siege"
-                  ]
+                "id": [
+                  "sipahi"
                 ]
               },
               "effect": "multiply",
@@ -2857,12 +3320,11 @@
       "civs": [
         "ot"
       ],
-      "unique": false,
       "displayClasses": [],
       "classes": [],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/abilities/ability-mehter-speed-bonus-1.png",
-      "description": "Movement speed bonus +15%.",
+      "description": "Units move +15% faster when in formation.",
       "variations": [
         {
           "id": "ability-mehter-speed-bonus-1",
@@ -2875,10 +3337,9 @@
           "civs": [
             "ot"
           ],
-          "description": "Movement speed bonus +15%.",
+          "description": "Units move +15% faster when in formation.",
           "classes": [],
           "displayClasses": [],
-          "unique": false,
           "costs": {
             "gold": 0,
             "wood": 0,
@@ -2899,7 +3360,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -2912,7 +3378,13 @@
             }
           ],
           "auraRange": 6,
-          "active": "always"
+          "active": "always",
+          "activatedOn": [
+            "units/mehter"
+          ],
+          "unlockedBy": [
+            "technologies/mehter-drums"
+          ]
         }
       ]
     },
@@ -2966,7 +3438,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -2977,6 +3454,9 @@
               "value": 2,
               "type": "ability"
             }
+          ],
+          "activatedOn": [
+            "units/mehter"
           ]
         }
       ]
@@ -3031,7 +3511,12 @@
                     "infantry"
                   ],
                   [
-                    "cavalry"
+                    "cavalry",
+                    "melee"
+                  ],
+                  [
+                    "cavalry",
+                    "ranged"
                   ],
                   [
                     "siege"
@@ -3042,6 +3527,9 @@
               "value": 1,
               "type": "ability"
             }
+          ],
+          "activatedOn": [
+            "units/mehter"
           ]
         }
       ]
@@ -3093,7 +3581,8 @@
               "property": "moveSpeed",
               "select": {
                 "id": [
-                  "trader"
+                  "trader",
+                  "trade-ship"
                 ]
               },
               "effect": "multiply",
@@ -3105,7 +3594,8 @@
               "property": "meleeArmor",
               "select": {
                 "id": [
-                  "trader"
+                  "trader",
+                  "trade-ship"
                 ]
               },
               "effect": "change",
@@ -3117,7 +3607,8 @@
               "property": "rangedArmor",
               "select": {
                 "id": [
-                  "trader"
+                  "trader",
+                  "trade-ship"
                 ]
               },
               "effect": "change",
@@ -3125,6 +3616,13 @@
               "type": "ability",
               "duration": 20
             }
+          ],
+          "activatedOn": [
+            "buildings/keep",
+            "buildings/sea-gate-castle"
+          ],
+          "unlockedBy": [
+            "buildings/sea-gate-castle"
           ]
         }
       ]
@@ -3194,6 +3692,9 @@
               "type": "ability",
               "duration": 8
             }
+          ],
+          "unlockedBy": [
+            "technologies/mounted-training"
           ]
         }
       ]
@@ -3266,6 +3767,13 @@
               "value": 0.8,
               "type": "ability"
             }
+          ],
+          "activatedOn": [
+            "buildings/siege-workshop",
+            "buildings/high-armory"
+          ],
+          "unlockedBy": [
+            "buildings/high-armory"
           ]
         }
       ]
@@ -3448,6 +3956,9 @@
               "type": "ability",
               "duration": 10
             }
+          ],
+          "activatedOn": [
+            "units/warrior-monk"
           ]
         }
       ]

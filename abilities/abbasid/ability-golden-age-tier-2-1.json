@@ -9,7 +9,7 @@
   "civs": [
     "ab"
   ],
-  "description": "Tier 2: Villager gather rate +15%, research speed +15%",
+  "description": "+15% Research Speed",
   "classes": [],
   "displayClasses": [],
   "costs": {
@@ -23,7 +23,33 @@
   "producedBy": [
     "house-of-wisdom"
   ],
+  "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-2.png",
   "active": "always",
   "auraRange": 12.5,
-  "effects": []
+  "effects": [
+    {
+      "property": "researchSpeed",
+      "select": {
+        "class": [
+          [
+            "building"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.15,
+      "type": "ability"
+    },
+    {
+      "property": "unknown",
+      "select": {
+        "id": [
+          "house-of-wisdom"
+        ]
+      },
+      "effect": "change",
+      "value": 0,
+      "type": "ability"
+    }
+  ]
 }

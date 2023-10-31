@@ -111,7 +111,12 @@
                 "infantry"
               ],
               [
-                "cavalry"
+                "cavalry",
+                "melee"
+              ],
+              [
+                "cavalry",
+                "ranged"
               ],
               [
                 "siege"
@@ -131,7 +136,12 @@
                 "infantry"
               ],
               [
-                "cavalry"
+                "cavalry",
+                "melee"
+              ],
+              [
+                "cavalry",
+                "ranged"
               ],
               [
                 "siege"
@@ -202,13 +212,16 @@
           "type": "influence",
           "duration": 60
         }
+      ],
+      "activatedOn": [
+        "units/prelate"
       ]
     },
     {
       "id": "ability-relic-garrisoned-dock-3",
       "baseId": "ability-relic-garrisoned-dock",
       "type": "ability",
-      "name": "Religious Zeal Dock",
+      "name": "Relic Garrisoned in Docks",
       "pbgid": 2034812,
       "attribName": "relic_dock_bonus_hre",
       "age": 3,
@@ -232,13 +245,43 @@
       "icon": "https://data.aoe4world.com/images/abilities/ability-relic-garrisoned-1.png",
       "active": "always",
       "auraRange": 0,
-      "effects": []
+      "effects": [
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "ship",
+                "springald"
+              ],
+              [
+                "ship",
+                "archer"
+              ],
+              [
+                "ship",
+                "incendiary"
+              ],
+              [
+                "warship"
+              ]
+            ],
+            "id": [
+              "galleass",
+              "grand-galley"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.95,
+          "type": "ability"
+        }
+      ]
     },
     {
       "id": "ability-relic-garrisoned-keep-3",
       "baseId": "ability-relic-garrisoned-keep",
       "type": "ability",
-      "name": "Religious Zeal Keeps and Outposts",
+      "name": "Relic Garrisoned in Defensive Structures",
       "pbgid": 195371,
       "attribName": "relic_tower_keep_bonus_hre",
       "age": 3,
@@ -265,7 +308,78 @@
       "icon": "https://data.aoe4world.com/images/abilities/ability-relic-garrisoned-1.png",
       "active": "always",
       "auraRange": 0,
-      "effects": []
+      "effects": [
+        {
+          "property": "fireArmor",
+          "select": {
+            "id": [
+              "outpost",
+              "stone-wall-tower",
+              "keep",
+              "elzbach-palace"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.67,
+          "type": "ability"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "id": [
+              "outpost",
+              "stone-wall-tower",
+              "keep",
+              "elzbach-palace"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.67,
+          "type": "ability"
+        },
+        {
+          "property": "rangedAttack",
+          "select": {
+            "id": [
+              "outpost",
+              "stone-wall-tower",
+              "keep",
+              "elzbach-palace"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.74,
+          "type": "ability"
+        },
+        {
+          "property": "maxRange",
+          "select": {
+            "id": [
+              "outpost",
+              "stone-wall-tower",
+              "keep",
+              "elzbach-palace"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.83,
+          "type": "ability"
+        },
+        {
+          "property": "lineOfSight",
+          "select": {
+            "id": [
+              "outpost",
+              "stone-wall-tower",
+              "keep",
+              "elzbach-palace"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.8,
+          "type": "ability"
+        }
+      ]
     }
   ]
 }

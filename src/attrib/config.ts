@@ -166,8 +166,6 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "palace_of_the_sultan_elephant_spawner_sul",
   "chamber_of_commerce_ability_fre",
   "guild_hall_collect_resources_fre",
-  "town_center_production_age2_fre", //ability stays the same minus the formatter, and missing age 4?
-  "town_center_production_age3_fre",
   "toggle_guild_hall_resource",
   "influence_elzbach_palace_hre",
   "influence_auto_repair_buff_tc_hre",

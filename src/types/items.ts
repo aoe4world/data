@@ -1,3 +1,4 @@
+import { ItemSlug } from "../sdk/utils";
 import { civAbbr } from "./civs";
 
 export type ItemClass =
@@ -92,7 +93,7 @@ export interface Unit extends PhysicalItem {
 // Todo, may add material properties, units/objects that can be garrisoned, etc.
 export interface Building extends PhysicalItem {
   type: "building";
-
+  influences?: string[];
   popcapIncrease?: number;
 }
 
@@ -130,6 +131,8 @@ export interface Ability extends Item {
   cooldown?: number;
   toggleGroup?: string;
   effects?: Modifier[];
+  unlockedBy?: ItemSlug[];
+  activatedOn?: ItemSlug[];
 }
 
 export type Modifier = {
@@ -186,6 +189,7 @@ export type ModifyableProperty =
   | "maxPopulation"
   | "buildTime"
   | "productionSpeed"
+  | "researchSpeed"
   | "areaOfEffect";
 
 export interface UnifiedItem<T extends Item = Item> {

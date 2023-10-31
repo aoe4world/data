@@ -54,7 +54,7 @@
               "property": "unknown",
               "select": {
                 "id": [
-                  "villager"
+                  "imperial-palace"
                 ]
               },
               "effect": "change",
@@ -110,13 +110,10 @@
             {
               "property": "attackSpeed",
               "select": {
-                "class": [
-                  [
-                    "infantry"
-                  ],
-                  [
-                    "cavalry"
-                  ]
+                "id": [
+                  "zhuge-nu",
+                  "fire-lancer",
+                  "grenadier"
                 ]
               },
               "effect": "multiply",
@@ -127,13 +124,10 @@
             {
               "property": "healingRate",
               "select": {
-                "class": [
-                  [
-                    "infantry"
-                  ],
-                  [
-                    "cavalry"
-                  ]
+                "id": [
+                  "zhuge-nu",
+                  "fire-lancer",
+                  "grenadier"
                 ]
               },
               "effect": "change",
@@ -141,6 +135,9 @@
               "type": "ability",
               "duration": 10
             }
+          ],
+          "unlockedBy": [
+            "buildings/spirit-way"
           ]
         }
       ],
@@ -153,7 +150,6 @@
       "civs": [
         "ch"
       ],
-      "unique": false,
       "displayClasses": [],
       "classes": [],
       "minAge": 4,
@@ -174,7 +170,6 @@
           "description": "All units standing on Walls gain +25% ranged damage.",
           "classes": [],
           "displayClasses": [],
-          "unique": false,
           "costs": {
             "gold": 0,
             "wood": 0,
@@ -203,7 +198,13 @@
             }
           ],
           "active": "always",
-          "auraRange": 0
+          "auraRange": 0,
+          "unlockedBy": [
+            "buildings/great-wall-gatehouse"
+          ],
+          "activatedOn": [
+            "buildings/stone-wall"
+          ]
         }
       ],
       "shared": {}

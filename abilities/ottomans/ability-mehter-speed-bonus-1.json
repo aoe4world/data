@@ -9,10 +9,9 @@
   "civs": [
     "ot"
   ],
-  "description": "Movement speed bonus +15%.",
+  "description": "Units move +15% faster when in formation.",
   "classes": [],
   "displayClasses": [],
-  "unique": false,
   "costs": {
     "gold": 0,
     "wood": 0,
@@ -33,7 +32,12 @@
             "infantry"
           ],
           [
-            "cavalry"
+            "cavalry",
+            "melee"
+          ],
+          [
+            "cavalry",
+            "ranged"
           ],
           [
             "siege"
@@ -46,5 +50,11 @@
     }
   ],
   "auraRange": 6,
-  "active": "always"
+  "active": "always",
+  "activatedOn": [
+    "units/mehter"
+  ],
+  "unlockedBy": [
+    "technologies/mehter-drums"
+  ]
 }

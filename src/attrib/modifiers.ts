@@ -6,7 +6,7 @@ import { Modifier } from "../types/items";
 const common = {
   allMeleeUnitsExceptSiege: { class: [["melee"]] } as Modifier["select"],
   allNonSiegeUnits: { class: [["infantry"], ["cavalry"]] } as Modifier["select"],
-  allMilitaryLand: { class: [["infantry"], ["cavalry"], ["siege"]] } as Modifier["select"],
+  allMilitaryLand: { class: [["infantry"], ["cavalry", "melee"], ["cavalry", "ranged"], ["siege"]] } as Modifier["select"],
   allLandUnitsExceptReligiousTrader: { class: [["melee"], ["ranged"], ["siege"]], id: ["villager"] } as Modifier["select"],
   allLand: { class: [["melee"], ["ranged"], ["siege"]], id: ["villager", "trader"] } as Modifier["select"],
   allRangedUnitsAndBuildingsExceptSiege: {
@@ -70,7 +70,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     // When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.
     {
       property: "attackSpeed",
-      select: common.allNonSiegeUnits,
+      select: { id: ["zhuge-nu", "fire-lancer", "grenadier"] },
       effect: "multiply",
       value: increaseAttackSpeedByPercent(20),
       type: "ability",
@@ -78,7 +78,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
     {
       property: "healingRate",
-      select: common.allNonSiegeUnits,
+      select: { id: ["zhuge-nu", "fire-lancer", "grenadier"] },
       effect: "change",
       value: 2,
       type: "ability",
@@ -357,7 +357,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     // activation recharge starts after ability ends...
     {
       property: "attackSpeed",
-      select: common.allMilitaryLand,
+      select: { id: ["sipahi"] },
       effect: "change",
       value: increaseAttackSpeedByPercent(i),
       type: "ability",
@@ -365,7 +365,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
     {
       property: "unknown",
-      select: common.allMilitaryLand,
+      select: { id: ["sipahi"] },
       effect: "multiply",
       value: increaseByPercent(1, j),
       type: "ability",
@@ -613,7 +613,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     // Reveal location of enemy workers for 10 seconds.
     {
       property: "unknown",
-      select: { id: ["villager"] },
+      select: { id: ["imperial-palace"] },
       effect: "change",
       value: 0,
       type: "ability",
@@ -636,7 +636,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     // Farm harvest rate increased +15%/+20%/+25%/+30% by Age while within the influence of a Mill.
     {
       property: "foodGatherRate",
-      select: { id: ["villager"] },
+      select: { id: ["farm", "mill"] },
       effect: "multiply",
       value: increaseByPercent(1, i),
       type: "ability",
@@ -680,13 +680,98 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       value: increaseByPercent(1, 15),
       type: "ability",
     },
+    {
+      property: "unknown",
+      select: { id: ["house-of-wisdom"] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+    },
+  ],
+
+  "ability-golden-age-tier-2": ([]) => [
+    // Tier 2: Research speed +15%
+    {
+      property: "researchSpeed",
+      select: { class: [["building"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, 15),
+      type: "ability",
+    },
+    {
+      property: "unknown",
+      select: { id: ["house-of-wisdom"] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+    },
+  ],
+
+  "ability-golden-age-tier-3": ([]) => [
+    // Tier 2: Production speed +20%, +5% extra Research speed, +5% extra Villager gather rate
+    {
+      property: "productionSpeed",
+      select: { class: [["building"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, 20),
+      type: "ability",
+    },
+    {
+      property: "researchSpeed",
+      select: { class: [["building"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, 5),
+      type: "ability",
+    },
+    {
+      property: "foodGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 5),
+      type: "ability",
+    },
+    {
+      property: "huntGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 5),
+      type: "ability",
+    },
+    {
+      property: "goldGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 5),
+      type: "ability",
+    },
+    {
+      property: "stoneGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 5),
+      type: "ability",
+    },
+    {
+      property: "woodGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 5),
+      type: "ability",
+    },
+    {
+      property: "unknown",
+      select: { id: ["house-of-wisdom"] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+    },
   ],
 
   "ability-fiefdom": ([i]) => [
     // Town Center production and research speed increased by +10%.\nBonus increases further in later Ages
     {
       property: "productionSpeed",
-      select: { id: ["villager"] },
+      select: { id: ["town-center", "capital-town-center"] },
       effect: "multiply",
       value: increaseByPercent(1, i),
       type: "ability",
@@ -705,8 +790,22 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
-  "ability-relic-garrisoned-dock": ([s]) => [
+  // "ability-relic-garrisoned-dock": ([s]) => [
+  //   // Increasing attack speed of military ships by +5%.
+  //   {
+  //     property: "attackSpeed",
+  //     select: common.allMillitaryShips,
+  //     effect: "multiply",
+  //     value: increaseAttackSpeedByPercent(s),
+  //     type: "ability",
+  //   },
+  // ],
+
+  // "ability-relic-garrisoned-keep": ([s, t, u, v]) => [
+  // Yank workaround that matches two different abilities and adds both of the effects sets, split out in a workaround later
+  "ability-relic-garrisoned": ([s, t, u, v]) => [
     // Increasing attack speed of military ships by +5%.
+    // Dock
     {
       property: "attackSpeed",
       select: common.allMillitaryShips,
@@ -714,10 +813,8 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       value: increaseAttackSpeedByPercent(s),
       type: "ability",
     },
-  ],
-
-  "ability-relic-garrisoned-keep": ([s, t, u, v]) => [
     // Armor increased by +50% Damage increased by +35% Sight range increased by +25% Weapon range increased by +20%"
+    // Keeps etc
     {
       property: "fireArmor",
       select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
@@ -771,7 +868,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     // Increase military unit production speed by +50% for 30 seconds.
     {
       property: "productionSpeed",
-      select: { class: [["military"], ["population"]] },
+      select: { class: [["military"], ["building"]], id: ["farimba-garrison"] },
       effect: "multiply",
       value: increaseByPercent(1, i),
       type: "ability",
@@ -800,10 +897,10 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
   ],
 
   "ability-trade-protection": ([i, j, k]) => [
-    // Increase siege and torch damage for all units by +50% for 30 seconds.
+    // Traders and Trade Ships near Keeps receive +30% move speed and +8 armor for 20 seconds.
     {
       property: "moveSpeed",
-      select: { id: ["trader"] },
+      select: { id: ["trader", "trade-ship"] },
       effect: "multiply",
       value: increaseByPercent(1, i),
       type: "ability",
@@ -811,7 +908,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
     {
       property: "meleeArmor",
-      select: { id: ["trader"] },
+      select: { id: ["trader", "trade-ship"] },
       effect: "change",
       value: j,
       type: "ability",
@@ -819,7 +916,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
     {
       property: "rangedArmor",
-      select: { id: ["trader"] },
+      select: { id: ["trader", "trade-ship"] },
       effect: "change",
       value: j,
       type: "ability",
