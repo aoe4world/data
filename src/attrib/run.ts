@@ -6,20 +6,21 @@ import { CIVILIZATIONS } from "../lib/config/civs";
 import { writeJson } from "../lib/files/writeData";
 import { civConfig } from "../types/civs";
 import { Item } from "../types/items";
-import { attribFile, hardcodedDiscovery, racesMap } from "./config";
+import { attribFile, hardcodedDiscovery, hardcodedDiscoveryCommon, racesMap } from "./config";
 import { workarounds } from "./workarounds";
 import { parseItemFromAttribFile, maybeOnKey } from "./parse";
 import { getTranslation as t } from "./translations";
 import { getXmlData, parseXmlFile } from "./xml";
 import { getEssenceData, guessAppropriateEssenceFile } from "./essence";
 
-let getData = getXmlData;
-if (process.argv[2] === "--essence") getData = getEssenceData;
+const runType = process.argv[2] === "--essence" ? "essence" : "xml";
+const getData = runType == "essence" ? getEssenceData : getXmlData;
 
 export type RunContext = {
   debug: boolean;
   getData: typeof getXmlData | typeof getEssenceData;
   race: string;
+  runner: "xml" | "essence";
 };
 
 // 1. For each civ, start at their army file
@@ -27,7 +28,7 @@ export type RunContext = {
 // 3. Then, for each building in their, folllow the building/research options
 // 4. Make a list of all to import items, starting at buildings
 
-async function buildTechTree(civ: civConfig, context: RunContext = { debug: false, getData, race: racesMap[civ.slug] }) {
+async function buildTechTree(civ: civConfig, context: RunContext = { debug: false, getData, race: racesMap[civ.slug], runner: runType }) {
   const techtree = {};
   const files = new Set<string>();
   const items = new Map<string, Item>();
@@ -35,18 +36,29 @@ async function buildTechTree(civ: civConfig, context: RunContext = { debug: fals
   const produces = new Map<string, Set<string>>();
   const { debug, getData, race } = context;
 
-  const army: any = await parseXmlFile(attribFile(`army/standard_mode/normal_${race}`), context);
-  const bps = await parseXmlFile(attribFile(`racebps/${race}`), context);
+  const army: any = await getData(attribFile(`army/standard_mode/normal_${race}`), undefined, context);
+  const bps = await getData(attribFile(`racebps/${race}`), undefined, context);
 
-  const civOverview = getCivInfo(army.army_bag, bps);
+  const army_extensions = army?.extensions?.[0] ?? army.army_bag;
+  const civOverview = getCivInfo(army_extensions, bps?.extensions?.[0]);
 
-  for (const b of army?.army_bag?.starting_buildings) files.add(b.starting_building.building);
-  for (const u of army?.army_bag?.starting_units) files.add(u.squad);
-  for (const file of hardcodedDiscovery[civ.slug] ?? []) files.add(file);
+  async function addFile(file: string) {
+    if (!file) return;
+    if (context.runner == "essence") file = (await guessAppropriateEssenceFile(file, race)) ?? file;
+    files.add(file);
+    return file;
+  }
 
-  async function parseFilesRecursively(file: string) {
-    if (!files.has(file)) files.add(file);
-    if (filesToItemId.has(file)) return;
+  for (const b of army_extensions?.starting_buildings) await addFile(b.starting_building);
+  for (const u of army_extensions?.starting_units) await addFile(u);
+  for (const file of hardcodedDiscovery[civ.slug] ?? []) await addFile(file);
+  for (const file of hardcodedDiscoveryCommon ?? []) await addFile(file);
+
+  async function parseFileRecursively(file: string) {
+    const matchedFile = await addFile(file);
+    if (!matchedFile) return;
+    file = matchedFile;
+    if (filesToItemId.has(file)) return items.get(filesToItemId.get(file)!);
     const data = await getData(attribFile(file), undefined, context);
     if (debug) writeTemp(data, file);
 
@@ -69,19 +81,21 @@ async function buildTechTree(civ: civConfig, context: RunContext = { debug: fals
       return;
     }
 
-    if (items.has(item.id)) {
-      throw new Error(`Duplicate item id ${item.id} in ${file} conflicts with ${items.get(item.id)!.attribName}`);
+    if (items.has(item.id) && items.get(item.id)!.type == item.type) {
+      throw new Error(
+        `Duplicate item id ${item.id} in ${file} conflicts with ${items.get(item.id)!.attribName} ${[...files.values()]
+          .filter((x) => x?.includes(items.get(item.id)!.attribName!))
+          .join(", ")}`
+      );
     }
 
     items.set(item.id, item);
     filesToItemId.set(file, item.id);
 
     const itemProduces = produces.get(item?.baseId!) ?? produces.set(item?.baseId!, new Set()).get(item?.baseId!)!;
-    const discovered = await tryFindFile(race, [findConstructables(data), findUpgrades(data), findUnits(data)].flat());
+    const discovered = await tryFindFile(race, [findConstructables(data), findUpgrades(data), findUnits(data), findEbpAbilities(data), findSbpAbilities(data)].flat());
     for (const d of discovered) {
-      await parseFilesRecursively(d);
-      const dId = filesToItemId.get(d)!;
-      const dItem = items.get(dId);
+      const dItem = await parseFileRecursively(d);
       if (dItem && !Object.isFrozen(dItem.producedBy)) {
         dItem.producedBy ??= [];
         dItem.producedBy = [...new Set(dItem.producedBy).add(item.baseId)];
@@ -89,9 +103,22 @@ async function buildTechTree(civ: civConfig, context: RunContext = { debug: fals
       }
     }
     techtree[item.id] = discovered.map((d) => filesToItemId.get(d)!);
+
+    // const itemProduces = produces.get(item?.id!) ?? produces.set(item?.id!, new Set()).get(item?.id!)!;
+    // const discovered = await tryFindFile(race, [findConstructables(data), findUpgrades(data), findUnits(data), findEbpAbilities(data), findSbpAbilities(data)].flat());
+    // for await (const d of discovered) {
+    //   const dItem = await parseFileRecursively(d);
+    //   if (dItem) {
+    //     dItem.producedBy = [...new Set(dItem.producedBy).add(item.baseId)];
+    //     itemProduces.add(dItem.id);
+    //   }
+    // }
+    // techtree[item.id] = discovered.map((d) => filesToItemId.get(d)!);
+
+    return item;
   }
 
-  for (const f of files) await parseFilesRecursively(f);
+  for (const f of files) await parseFileRecursively(f);
   for (const i of items.values()) persistItem(i, civ);
 
   function fetchTree(id, depth = 0) {
@@ -133,23 +160,33 @@ function findConstructables(data: any) {
   );
 }
 
+//issue in these functions in that if the item was found with sbp then ebp wont discover, and vise versa
+function findEbpAbilities(data: any) {
+  const foundAbilities = data?.extensions?.find((x) => x.exts === "ebpextensions/ability_ext")?.abilities?.flatMap((u) => u.ability ?? u) ?? [];
+  return foundAbilities;
+}
+
+function findSbpAbilities(data: any) {
+  const foundAbilities = data?.extensions?.find((x) => x.exts === "sbpextensions/squad_ability_ext")?.abilities?.flatMap((u) => u.ability ?? u) ?? [];
+  return foundAbilities;
+}
+
 async function tryFindFile(race: string, paths: string[]) {
   return (
     await Promise.all(
       paths.map((path) => {
         if (!path) return undefined;
-        if (path.split("/").length <= 2) return guessAppropriateEssenceFile(path, race);
-        return path;
+        return guessAppropriateEssenceFile(path, race) ?? path;
       })
     )
   ).filter(Boolean) as string[];
 }
 
-function getCivInfo(army_bag: any, bps: any) {
-  if (!army_bag || !bps) return;
+function getCivInfo(army_bag: any, bps_race_bag: any) {
+  if (!army_bag || !bps_race_bag) return;
   const overview = army_bag.ui?.global_traits_summary.map((x) => {
-    const title = t(x.trait.title);
-    const description = t(x.trait.description);
+    const title = t(x.title);
+    const description = t(x.description);
     const list = description.startsWith("• ")
       ? description
           .split("• ")
@@ -160,8 +197,8 @@ function getCivInfo(army_bag: any, bps: any) {
     return { title, description };
   });
   return {
-    name: t(bps.race_bag.name),
-    description: t(bps.race_bag.description),
+    name: t(bps_race_bag.name),
+    description: t(bps_race_bag.description),
     classes: t(army_bag.ui?.one_liner),
     overview,
   } as any;
@@ -172,6 +209,7 @@ const itemTypeMap = {
   building: ITEM_TYPES.BUILDINGS,
   technology: ITEM_TYPES.TECHNOLOGIES,
   upgrade: ITEM_TYPES.UPGRADES,
+  ability: ITEM_TYPES.ABILITIES,
 };
 
 function persistItem(item: Item, civ: civConfig) {
@@ -180,4 +218,3 @@ function persistItem(item: Item, civ: civConfig) {
 
 ensureFolderStructure();
 for (const civ of Object.values(CIVILIZATIONS)) buildTechTree(civ);
-// buildTechTree(CIVILIZATIONS.en);

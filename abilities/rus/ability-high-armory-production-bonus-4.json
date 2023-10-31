@@ -1,0 +1,64 @@
+{
+  "id": "ability-high-armory-production-bonus-4",
+  "baseId": "ability-high-armory-production-bonus",
+  "type": "ability",
+  "name": "High Armory Production Bonus",
+  "pbgid": 207496,
+  "attribName": "high_armory_production_aura_rus",
+  "age": 4,
+  "civs": [
+    "ru"
+  ],
+  "description": "The cost of siege engines in nearby Siege Workshops is decreased by 20%.",
+  "classes": [],
+  "displayClasses": [],
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "total": 0,
+    "popcap": 0
+  },
+  "producedBy": [
+    "high-armory"
+  ],
+  "icon": "https://data.aoe4world.com/images/abilities/ability-high-armory-production-bonus-1.png",
+  "active": "always",
+  "auraRange": 7.5,
+  "effects": [
+    {
+      "property": "goldCost",
+      "select": {
+        "class": [
+          [
+            "siege"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.8,
+      "type": "ability"
+    },
+    {
+      "property": "woodCost",
+      "select": {
+        "class": [
+          [
+            "siege"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.8,
+      "type": "ability"
+    }
+  ],
+  "activatedOn": [
+    "buildings/siege-workshop",
+    "buildings/high-armory"
+  ],
+  "unlockedBy": [
+    "buildings/high-armory"
+  ]
+}

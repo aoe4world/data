@@ -1,0 +1,54 @@
+{
+  "id": "ability-fortitude-2",
+  "baseId": "ability-fortitude",
+  "type": "ability",
+  "name": "Fortitude",
+  "pbgid": 2089398,
+  "attribName": "sipahi_stamina_ott",
+  "age": 2,
+  "civs": [
+    "ot"
+  ],
+  "description": "Gain +50% attack speed and receive +50% damage from melee weapons for 10 seconds.",
+  "classes": [],
+  "displayClasses": [],
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "total": 0,
+    "popcap": 0
+  },
+  "producedBy": [],
+  "icon": "https://data.aoe4world.com/images/abilities/ability-fortitude-1.png",
+  "active": "manual",
+  "auraRange": 0,
+  "cooldown": 50,
+  "effects": [
+    {
+      "property": "attackSpeed",
+      "select": {
+        "id": [
+          "sipahi"
+        ]
+      },
+      "effect": "change",
+      "value": 0.67,
+      "type": "ability",
+      "duration": 10
+    },
+    {
+      "property": "unknown",
+      "select": {
+        "id": [
+          "sipahi"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.5,
+      "type": "ability",
+      "duration": 10
+    }
+  ]
+}

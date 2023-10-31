@@ -2,12 +2,12 @@ import { ITEM_TYPES } from "../lib/config";
 import { getTranslation, NO_TRANSLATION_FOUND } from "./translations";
 import { parseXmlFile } from "./xml";
 import { parseWeapons } from "./weapons";
-import { attribFile, ignoreForNow } from "./config";
+import { attribFile, ignoreForNow, racesMap } from "./config";
 import { slugify } from "../lib/utils/string";
-import { Armor, Building, Item, ItemClass, ModifyableProperty, Technology, Unit, Upgrade } from "../types/items";
+import { Armor, Building, Item, ItemClass, ModifyableProperty, Technology, Unit, Upgrade, Ability } from "../types/items";
 import { civConfig } from "../types/civs";
 import { useIcon } from "./icons";
-import { technologyModifiers } from "./technologies";
+import { technologyModifiers, abilityModifiers } from "./modifiers";
 import { RunContext, writeTemp } from "./run";
 
 export async function parseItemFromAttribFile(file: string, data: any, civ: civConfig, context: RunContext) {
@@ -39,19 +39,25 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
 
     const ebpExts = Object.fromEntries(ebpextensions?.map((e) => [e.exts?.replace("ebpextensions/", ""), e]) ?? []);
 
+    const isBuff = file.includes("buff_info");
+
     let ui_ext;
+    let ability_data = type == ITEM_TYPES.ABILITIES && !isBuff ? data.ability_bag ?? data.extensions[0] : undefined;
+
     if (type === ITEM_TYPES.BUILDINGS) ui_ext = ebpExts.ui_ext;
     else if (type === ITEM_TYPES.TECHNOLOGIES || type === ITEM_TYPES.UPGRADES) ui_ext = data.upgrade_bag.ui_info;
+    else if (type === ITEM_TYPES.ABILITIES && !isBuff) ui_ext = ability_data.ui_info;
+    else if (type === ITEM_TYPES.ABILITIES && isBuff) ui_ext = data.info ?? data.extensions[0] ?? {};
     else if (type === ITEM_TYPES.UNITS) {
       ui_ext = maybeOnKey(data.extensions.find((e) => e.squadexts === "sbpextensions/squad_ui_ext")?.race_list[0], "race_data")?.info;
     }
     if (!ui_ext && type === ITEM_TYPES.UNITS && ebpExts.ui_ext) ui_ext = ebpExts.ui_ext;
 
-    let name = getTranslation(ui_ext.screen_name);
+    let name = getTranslation(ui_ext?.screen_name ?? ui_ext.title);
     if (name === NO_TRANSLATION_FOUND) name = file.split("/").pop()!;
     const description = parseDescription(ui_ext);
     const attribName = file.split("/").pop()!.replace(".xml", "").replace(".json", "");
-    const age = parseAge(attribName, ebpExts?.requirement_ext?.requirement_table ?? data.upgrade_bag?.requirements, data.parent_pbg);
+    const age = parseAge(attribName, ebpExts?.requirement_ext?.requirement_table ?? data.upgrade_bag?.requirements ?? ability_data?.requirements, data.parent_pbg);
     const baseId = getBasedId(name, type, description);
     const id = `${baseId}-${age}`;
 
@@ -63,9 +69,20 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
 
     const unique = parseUnique(ui_ext);
 
-    const costs = parseCosts(ebpExts?.cost_ext?.time_cost || data.upgrade_bag.time_cost, ebpExts?.population_ext?.personnel_pop);
+    let costs;
+    if (isBuff) costs = {};
+    else if (type === ITEM_TYPES.ABILITIES) costs = parseCosts(ability_data.cost_to_player, ability_data.recharge_cost, 0);
+    else
+      costs = parseCosts(
+        ebpExts?.cost_ext?.time_cost?.cost || data.upgrade_bag?.time_cost?.cost,
+        ebpExts?.cost_ext?.time_cost?.time_seconds || data.upgrade_bag?.time_cost?.time_seconds,
+        ebpExts?.population_ext?.personnel_pop
+      );
 
-    const icon = await useIcon(ui_ext.icon_name, type, id);
+    let icon;
+    if (isBuff) icon = await useIcon(ui_ext.icon.slice(6), type, id);
+    icon ??= await useIcon(ui_ext.icon_name ?? ui_ext.icon, type, id);
+    if (!icon) console.log(`undefined icon for ${file}`, ui_ext.icon_name ?? ui_ext.icon);
 
     const pbgid = data.pbgid;
 
@@ -86,6 +103,42 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       producedBy: [],
       icon,
     };
+
+    if (type === ITEM_TYPES.ABILITIES) {
+      const translationParams = (isBuff ? ui_ext.description_formatter : ui_ext.help_text_formatter)?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
+      const effectsFactory = abilityModifiers[baseId];
+      const effects = effectsFactory?.(translationParams) ?? [];
+
+      if (isBuff) {
+        const ability: Ability = {
+          ...item,
+          type: "ability",
+          displayClasses: [],
+          classes: [],
+          effects,
+        };
+
+        delete ability["unique"];
+        return ability;
+      }
+
+      const ability: Ability = {
+        ...item,
+        type: "ability",
+        displayClasses: [],
+        classes: [],
+        active: parseAbilityActivation(file),
+        auraRange: ability_data.range / 4,
+        cooldown: ability_data.recharge_time,
+        toggleGroup: ability_data.toggle_ability_group,
+        effects,
+      };
+      delete ability["unique"];
+      if (!ability["toggleGroup"]) delete ability["toggleGroup"];
+      if (!ability["cooldown"]) delete ability["cooldown"];
+
+      return ability;
+    }
 
     if (type === ITEM_TYPES.BUILDINGS) {
       let influences = parseInfluences(ui_ext);
@@ -184,7 +237,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       return upgrade;
     }
   } catch (e) {
-    console.error(file, e);
+    console.error(`src/attrib/.dev/${file}.essence.json`, e);
     return undefined;
   }
 }
@@ -198,13 +251,16 @@ function guessType(file: string, data: any) {
   // below is too hacky for my taste, it filters out some wonky things we would call technologies like wheelbarrow and herbal medicine
   if (fileName.startsWith("upgrade_unit") && data?.upgrade_bag?.global_max_limit == 1) return ITEM_TYPES.UPGRADES;
   if (fileName.startsWith("upgrade_")) return ITEM_TYPES.TECHNOLOGIES;
+  if (file.startsWith("abilities")) return ITEM_TYPES.ABILITIES;
+  if (file.startsWith("info/buff_info")) return ITEM_TYPES.ABILITIES;
   return undefined;
 }
 
 function getBasedId(name: string, type: ITEM_TYPES, description) {
   let baseId = slugify(name).trim();
   if (type === ITEM_TYPES.UPGRADES && description != NO_TRANSLATION_FOUND) baseId = slugify(description).trim().split("-to-").pop()!;
-  if (type == ITEM_TYPES.UNITS) baseId = baseId.replace(/^(early|vanguard|veteran|elite|hardened)\-/, "");
+  if (type === ITEM_TYPES.UNITS) baseId = baseId.replace(/^(early|vanguard|veteran|elite|hardened)\-/, "");
+  if (type === ITEM_TYPES.ABILITIES) return `ability-${baseId}`;
   return baseId;
 }
 
@@ -213,12 +269,13 @@ function findExt(data: any, key: string, value: string) {
 }
 
 function parseDescription(ui_ext: any) {
+  if (!ui_ext) return `not-found-${Math.random()}`;
   const translation = !!ui_ext.help_text_formatter?.formatter
     ? getTranslation(
         ui_ext.help_text_formatter.formatter,
         ui_ext.help_text_formatter.formatter_arguments.map((x) => Object.values(x)[0] ?? x)
       )
-    : getTranslation(ui_ext.help_text);
+    : getTranslation(ui_ext.help_text ?? ui_ext.description_formatter?.formatter ?? ui_ext.description);
   if (translation === NO_TRANSLATION_FOUND) return `not-found-${Math.random()}`; // throw new Error("No translation found for " + ui_ext.help_text);
   return translation;
 }
@@ -227,9 +284,8 @@ function parseHitpoints(health_ext: any) {
   return health_ext?.hitpoints;
 }
 
-function parseCosts(time_cost: any, popcap = 0) {
-  const { food, wood, gold, stone } = time_cost.cost as Record<"food" | "wood" | "gold" | "stone" | "popcap", number>;
-  const time = time_cost.time_seconds as number;
+function parseCosts(cost: any, time: any, popcap = 0) {
+  const { food, wood, gold, stone } = cost as Record<"food" | "wood" | "gold" | "stone" | "popcap", number>;
   const costs = { food, wood, stone, gold, total: food + wood + gold + stone, popcap, time };
   return costs;
 }
@@ -318,4 +374,10 @@ function parseInfluences(ui_ext: any) {
 
 export function maybeOnKey(obj: any, key: string) {
   return obj?.[key] ?? obj;
+}
+
+function parseAbilityActivation(filename: string) {
+  if (filename.includes("timed") || filename.includes("modal")) return "manual";
+  if (filename.includes("toggle")) return "toggle";
+  return "always";
 }

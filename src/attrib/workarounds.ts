@@ -1,5 +1,5 @@
-import { Building, Item, ItemType, Modifier, Technology, Unit, Upgrade } from "../types/items";
-import { KHAGANTE_SPAWN_COUNTS } from "./config";
+import { Ability, Building, Item, ItemType, Modifier, Technology, Unit, Upgrade } from "../types/items";
+import { KHAGANTE_SPAWN_COUNTS, attribFile } from "./config";
 
 const workarounds = new Map<string, Override>();
 
@@ -153,6 +153,450 @@ workaround("Make Delhi Village Fortresses available from Castle Age", {
 
 workaround("Make English Wynguard Forces available from Imperial Age", {
   ...overrideAge(["wynguard-army", "wynguard-footmen", "wynguard-raiders", "wynguard-rangers"], 4, ["en"]),
+});
+
+//could do this by creating dependency from techs that unlock abilities, but doing workaround for the time being
+
+workaround("Make Ability Arrow Volley available in Imperial Age", {
+  ...overrideAge(["ability-arrow-volley"], 4, ["en"]),
+});
+
+workaround("Make Ability Saints Blessing available in Castle Age", {
+  ...overrideAge(["ability-saints-blessing"], 3, ["ru"]),
+});
+
+workaround("Make Ability High Armory Production Bonus available in Imperial Age", {
+  ...overrideAge(["ability-high-armory-production-bonus"], 4, ["ru"]),
+});
+
+workaround("Make Ability Static Deployment available in Imperial Age", {
+  ...overrideAge(["ability-static-deployment"], 4, ["ru"]),
+});
+
+workaround("Make Ability Gallop available in Imperial Age", {
+  ...overrideAge(["ability-gallop"], 4, ["ru"]),
+});
+
+workaround("Make Ability Fortitude available in Feudal Age", {
+  ...overrideAge(["ability-fortitude"], 2, ["ot"]),
+});
+
+workaround("Make Ability blacksmith-and-university-influence available in Feudal Age", {
+  ...overrideAge(["ability-blacksmith-and-university-influence"], 2, ["ot"]),
+});
+
+workaround("Make Ability Tower of Victory available in Feudal Age", {
+  ...overrideAge(["ability-tower-of-victory-aura"], 2, ["de"]),
+});
+
+workaround("Make Ability Forced March available in Castle Age", {
+  ...overrideAge(["ability-forced-march"], 3, ["de"]),
+});
+
+workaround("Make Ability Deploy Pavis available in Castle Age", {
+  ...overrideAge(["ability-deploy-pavise"], 3, ["fr"]),
+});
+
+workaround("Make Ability Keep Influence available in Castle Age", {
+  ...overrideAge(["ability-keep-influence"], 3, ["fr"]),
+});
+
+workaround("Make Ability activate-stealth available in Feudal Age", {
+  ...overrideAge(["ability-activate-stealth"], 2, ["ma"]),
+});
+
+workaround("Make Ability huntress-stealth available in Imperial Age", {
+  ...overrideAge(["ability-huntress-stealth"], 4, ["ma"]),
+});
+
+workaround("Make Ability camel-support available in Imperial Age", {
+  ...overrideAge(["ability-camel-support"], 4, ["ab"]),
+});
+
+workaround("Make Proselytize available in Imperial Age", {
+  ...overrideAge(["ability-proselytize"], 4, ["ab"]),
+});
+
+workaround("Make Artilery Shot available in Imperial Age", {
+  ...overrideAge(["ability-artillery-shot"], 4, ["ab"]),
+});
+
+workaround("Make Imperial Spies available in Castle Age", {
+  ...overrideAge(["ability-imperial-spies"], 3, ["ch"]),
+});
+
+workaround("Make Abbey Healing available in Feudal Age", {
+  ...overrideAge(["ability-abbey-healing"], 2, ["en"]),
+});
+
+workaround("Make Food Festival available in Imperial Age", {
+  ...overrideAge(["ability-food-festival"], 4, ["ma"]),
+});
+
+workaround("Make Military Festival available in Imperial Age", {
+  ...overrideAge(["ability-military-festival"], 4, ["ma"]),
+});
+
+workaround("Make Siege Festival available in Imperial Age", {
+  ...overrideAge(["ability-siege-festival"], 4, ["ma"]),
+});
+
+workaround("Make Trade Protection available in Imperial Age", {
+  ...overrideAge(["ability-trade-protection"], 4, ["ot"]),
+});
+
+// ---- Abilities ----
+
+workaround("Fix age and add ability props for great_wall_buff", {
+  predicate: (item) => item.type === "ability" && item.attribName === "great_wall_buff_chi",
+  mutator: (item) => {
+    item = item as Ability;
+    item.age = 4;
+    item.id = `${item.baseId}-${item.age}`;
+    item.active = "always";
+    item.auraRange = 0;
+    item.costs = { ...NO_COSTS, popcap: 0 };
+    item.unlockedBy = ["buildings/great-wall-gatehouse"];
+    item.activatedOn = ["buildings/stone-wall"];
+  },
+});
+
+workaround("Fix age and add missing info for spirit_way", {
+  predicate: (item) => item.type === "ability" && item.attribName === "spirit_way",
+  mutator: (item) => {
+    item = item as Ability;
+    item.age = 4;
+    item.id = `${item.baseId}-${item.age}`;
+    item.name = "Spirit Way Ancestors";
+    item.description = "When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.";
+    item.icon = "https://data.aoe4world.com/images/buildings/spirit-way-3.png";
+    item.unlockedBy = ["buildings/spirit-way"];
+  },
+});
+
+workaround("Add Saints Blessing requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-saints-blessing",
+  mutator: (item) => {
+    item = item as Ability;
+    item.activatedOn = ["units/warrior-monk"];
+  },
+});
+
+workaround("Add High Armory Bonus requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-high-armory-production-bonus",
+  mutator: (item) => {
+    item = item as Ability;
+    item.activatedOn = ["buildings/siege-workshop", "buildings/high-armory"];
+    item.unlockedBy = ["buildings/high-armory"];
+  },
+});
+
+workaround("Add Gallop requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-gallop",
+  mutator: (item) => {
+    item = item as Ability;
+    item.unlockedBy = ["technologies/mounted-training"];
+  },
+});
+
+workaround("Fix age and add missing info for kurultai_healing_aura_mon", {
+  predicate: (item) => item.type === "ability" && item.attribName === "kurultai_healing_aura_mon",
+  mutator: (item) => {
+    item.age = 3;
+    item.baseId = "ability-kurultai-aura";
+    item.id = `${item.baseId}-${item.age}`;
+    item.name = "Kurultai Aura";
+    item.description = "Nearby units within its aura heal +1 health every 1 second and gain an additional +20% damage.";
+    item.icon = "https://data.aoe4world.com/images/buildings/kurultai-2.png";
+  },
+});
+
+workaround("Fix age and add missing info for Keshik", {
+  predicate: (item) => item.type === "ability" && item.attribName === "lancer_healing_mon",
+  mutator: (item) => {
+    item.age = 2;
+    item.id = `${item.baseId}-${item.age}`;
+    item.name = "Keshik Healing";
+  },
+});
+
+workaround("Set conditions for Trade Protection", {
+  predicate: (item) => item.type === "ability" && item.id.includes("trade-protection"),
+  mutator: (item) => {
+    item = item as Ability;
+    item.activatedOn = ["buildings/keep", "buildings/sea-gate-castle"];
+    item.unlockedBy = ["buildings/sea-gate-castle"];
+  },
+});
+
+workaround("Set Prosteletize conditions", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-proselytize",
+  mutator: (item) => {
+    item = item as Ability;
+    item.unlockedBy = ["technologies/proselytization"];
+  },
+});
+
+workaround("Add Artillery Shot requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-artillery-shot",
+  mutator: (item) => {
+    item = item as Ability;
+    item.unlockedBy = ["buildings/college-of-artillery"];
+  },
+});
+
+workaround("Add toggle group and requirements for Khan abilities", {
+  predicate: (item) =>
+    item.type === "ability" &&
+    (item.attribName === "khan_maneuver_signal_arrow_mon" || item.attribName === "khan_attack_speed_signal_arrow_mon" || item.attribName === "khan_defensive_signal_arrow_mon"),
+  mutator: (item) => {
+    item = item as Ability;
+    item.toggleGroup = "khan_signal_ability_available";
+    item.activatedOn = ["units/khan"];
+  },
+});
+
+workaround("Add requirements for Yam", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-yam",
+  mutator: (item) => {
+    item = item as Ability;
+    item.activatedOn = ["buildings/outpost"];
+    item.unlockedBy = ["technologies/yam-network", "buildings/deer-stones"];
+  },
+});
+
+workaround("Fix age and add missing info for Yam Network", {
+  predicate: (item) => item.type === "ability" && item.attribName === "outpost_speed_improved_mon",
+  mutator: (item) => {
+    item = item as Ability;
+    item.baseId = "ability-yam-network-improved";
+    item.age = 2;
+    item.id = `${item.baseId}-${item.age}`;
+    item.name = "Yam Network (Improved)";
+    item.auraRange = 12.5;
+    item.active = "always";
+    item.description = "Yam speed aura applies to all units instead of just Traders and cavalry units. Does not apply to siege engines.";
+    item.costs = { ...NO_COSTS, popcap: 0 };
+    item.activatedOn = ["buildings/outpost"];
+    item.unlockedBy = ["technologies/yam-network-improved"];
+  },
+});
+
+workaround("Fix age and add missing info for Camel Support", {
+  predicate: (item) => item.type === "ability" && item.attribName === "camel_support_aura_abb",
+  mutator: (item) => {
+    item = item as Ability;
+    item.activatedOn = ["units/camel-rider", "units/camel-archer"];
+    item.unlockedBy = ["technologies/camel-support"];
+  },
+});
+
+workaround("Add ability info to Mehter speed formation", {
+  predicate: (item) => item.type === "ability" && item.attribName === "mehter_default_formation_ott",
+  mutator: (item) => {
+    item = item as Ability;
+    item.baseId = "ability-mehter-speed-bonus";
+    item.id = `${item.baseId}-${item.age}`;
+    item.auraRange = 6;
+    item.active = "always";
+    item.description = "Units move +15% faster when in formation.";
+    item.costs = { ...NO_COSTS, popcap: 0 };
+    item.activatedOn = ["units/mehter"];
+    item.unlockedBy = ["technologies/mehter-drums"];
+  },
+});
+
+workaround("Change names of Mehter abilities", {
+  predicate: (item) => item.type === "ability" && !!item.attribName?.includes("mehter"),
+  mutator: (item) => {
+    item = item as Ability;
+    item.baseId = item.baseId.replace("-off", "");
+    item.id = `${item.baseId}-${item.age}`;
+    item.name = item.name.replace(" (Off)", "");
+    item.activatedOn = ["units/mehter"];
+  },
+});
+
+workaround("Fix inaccurate ability info lancer_charge_bonus_damage", {
+  predicate: (item) => item.type === "ability" && item.attribName === "lancer_charge_bonus_damage",
+  mutator: (item) => {
+    item = item as Ability;
+    item.age = 2;
+    item.id = `${item.baseId}-${item.age}`;
+    item.description = "Gain +3 melee attack damage for 5 seconds after charging.";
+    item.active = "always";
+    item.costs = { ...NO_COSTS, popcap: 0 };
+  },
+});
+
+workaround("Fix inaccurate ability info First Strike", {
+  predicate: (item) => item.type === "ability" && item.attribName === "gbeto_ambush_buff_mal",
+  mutator: (item) => {
+    item = item as Ability;
+    item.baseId = "ability-first-strike";
+    item.age = 4;
+    item.id = `${item.baseId}-${item.age}`;
+    item.description = "Musofadi Warriors and Musofadi Gunners deal double damage on their first attack when breaking stealth.";
+    item.active = "always";
+    item.costs = { ...NO_COSTS, popcap: 0 };
+    item.activatedOn = ["units/musofadi-warrior", "units/musofadi-gunner"];
+    item.unlockedBy = ["buildings/fort-of-the-huntress"];
+  },
+});
+
+workaround("Add requirements to Huntress' Stealth", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-huntress-stealth",
+  mutator: (item) => {
+    item = item as Ability;
+    item.activatedOn = ["buildings/fort-of-the-huntress"];
+  },
+});
+
+workaround("Add requirements to Griot Bara Festivals", {
+  predicate: (item) => item.type === "ability" && item.baseId.includes("festival") && item.civs.includes("ma"),
+  mutator: (item) => {
+    item = item as Ability;
+    item.unlockedBy = ["buildings/griot-bara"];
+  },
+});
+
+workaround("Add requirements to Coastal Navigation", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-coastal-navigation",
+  mutator: (item) => {
+    item = item as Ability;
+    item.activatedOn = ["buildings/dock"];
+  },
+});
+
+workaround("Fix inaccurate ability info inspired_infantry_hre", {
+  predicate: (item) => item.type === "ability" && item.attribName === "inspired_infantry_hre",
+  mutator: (item) => {
+    item = item as Ability;
+    item.baseId = "ability-inspired-warriors";
+    item.age = 3;
+    item.id = `${item.baseId}-${item.age}`;
+    item.name = "Inspired Warriors";
+    item.activatedOn = ["units/prelate"];
+  },
+});
+
+workaround("Add requirements to Emergency Repair", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-emergency-repair",
+  mutator: (item) => {
+    item = item as Ability;
+    item.unlockedBy = ["buildings/capital-town-center", "buildings/town-center", "buildings/elzbach-palace"];
+  },
+});
+
+workaround("Fix id ability on dock garrison bonus", {
+  predicate: (item) => item.type === "ability" && item.attribName === "relic_dock_bonus_hre",
+  mutator: (item) => {
+    item = item as Ability;
+    item.baseId = "ability-relic-garrisoned-dock";
+    item.age = 3;
+    item.id = `${item.baseId}-${item.age}`;
+    item.name = "Relic Garrisoned in Docks";
+    // ability-relic-garrisoned contains both effects for Dock and Defensive structures, this splits them up
+    item.effects = item.effects?.filter((e) => e.property === "attackSpeed");
+  },
+});
+
+workaround("Fix id ability on land garrison bonus", {
+  predicate: (item) => item.type === "ability" && item.attribName === "relic_tower_keep_bonus_hre",
+  mutator: (item) => {
+    item = item as Ability;
+    item.baseId = "ability-relic-garrisoned-keep";
+    item.age = 3;
+    item.id = `${item.baseId}-${item.age}`;
+    item.name = "Relic Garrisoned in Defensive Structures";
+    // ability-relic-garrisoned contains both effects for Dock and Defensive structures, this splits them up
+    item.effects = item.effects?.filter((e) => e.property !== "attackSpeed");
+  },
+});
+
+workaround("Split French Town Center Production Bonus", {
+  predicate: (item) => item.type === "ability" && item.attribName?.includes("town_center_production_age")!,
+  mutator: (item) => {
+    item = item as Ability;
+    const age = +(item.attribName?.match(/age(\d)/)?.[1] ?? 1);
+    const ageName = ["Dark", "Feudal", "Castle", "Imperial"][age - 1];
+    item.baseId = `ability-town-center-production-speed-${ageName.toLowerCase()}-age`;
+    item.age = age;
+    item.id = `${item.baseId}-${age}`;
+    item.name = `${ageName} Age Town Center Production Speed`;
+    item.icon = `https://data.aoe4world.com/images/buildings/town-center.png`;
+  },
+});
+
+workaround("Add Abbey Healing requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-abbey-healing",
+  mutator: (item) => {
+    item = item as Ability;
+    item.activatedOn = ["buildings/abbey-of-kings"];
+  },
+});
+
+workaround("Add requirements to Network of Castles", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-network-of-castles",
+  mutator: (item) => {
+    item = item as Ability;
+    item.activatedOn = [
+      "buildings/outpost",
+      "buildings/stone-wall-tower",
+      "buildings/town-center",
+      "buildings/capital-town-center",
+      "buildings/the-white-tower",
+      "buildings/kings-palace",
+      "buildings/keep",
+      "buildings/berkshire-palace",
+    ];
+  },
+});
+
+workaround("Add requirements to Mill Influence", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-mill-influence",
+  mutator: (item) => {
+    item = item as Ability;
+    item.activatedOn = ["buildings/mill"];
+  },
+});
+
+workaround("Fix missing info Golden Age Tier 1", {
+  predicate: (item) => item.type === "ability" && item.attribName === "golden_age_tier_1",
+  mutator: (item) => {
+    item.description = "+15% Resource Gathering Rate";
+    item.name = "Golden Age Tier 1";
+    item.icon = "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png";
+  },
+});
+
+workaround("Fix missing info Golden Age Tier 2", {
+  predicate: (item) => item.type === "ability" && item.attribName === "golden_age_tier_2",
+  mutator: (item) => {
+    item.age = 1;
+    item.id = `${item.baseId}-${item.age}`;
+    item.description = "+15% Research Speed";
+    item.name = "Golden Age Tier 2";
+    item.icon = "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-2.png";
+  },
+});
+
+workaround("Fix missing info Golden Age Tier 3", {
+  predicate: (item) => item.type === "ability" && item.attribName === "golden_age_tier_3",
+  mutator: (item) => {
+    item.age = 1;
+    item.id = `${item.baseId}-${item.age}`;
+    item.description = "+20% Production Speed, additional +5% Research Speed, additional +5% Resource Gathering Rate";
+    item.name = "Golden Age Tier 3";
+    item.icon = "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-3.png";
+  },
+});
+
+workaround("Fix bad info in Coastal Navigation where this is only place where location string is used instead of integer in formatter_arguments", {
+  predicate: (item) => item.type === "ability" && item.attribName === "docks_speed_bonus_mal",
+  mutator: (item) => {
+    item.description = "Ships near a Docks get +15% speed for 25 seconds.";
+  },
 });
 
 // –––– Unit weapons ––––
@@ -522,7 +966,7 @@ workaround("Chinese Civ Bonus: 'Chemistry technology granted for free when advan
 });
 
 workaround("HRE Civ Bonus: 'Cost of emplacements on Outposts, Wall Towers, and Keeps reduced by 25%.':", {
-  predicate: (item) => item.civs.includes("hr") && item.displayClasses.includes("Weapon Emplacement"),
+  predicate: (item) => item.civs.includes("hr") && item.displayClasses?.includes("Weapon Emplacement"),
   mutator(item) {
     item.costs = discountCosts(item.costs, 0.75);
   },

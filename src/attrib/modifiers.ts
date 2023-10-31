@@ -6,6 +6,9 @@ import { Modifier } from "../types/items";
 const common = {
   allMeleeUnitsExceptSiege: { class: [["melee"]] } as Modifier["select"],
   allNonSiegeUnits: { class: [["infantry"], ["cavalry"]] } as Modifier["select"],
+  allMilitaryLand: { class: [["infantry"], ["cavalry", "melee"], ["cavalry", "ranged"], ["siege"]] } as Modifier["select"],
+  allLandUnitsExceptReligiousTrader: { class: [["melee"], ["ranged"], ["siege"]], id: ["villager"] } as Modifier["select"],
+  allLand: { class: [["melee"], ["ranged"], ["siege"]], id: ["villager", "trader"] } as Modifier["select"],
   allRangedUnitsAndBuildingsExceptSiege: {
     class: [
       ["ranged", "cavalry"],
@@ -27,6 +30,945 @@ const decreaseByPercentImproved = (n: number, percent: number, delta: number) =>
 const increaseSpeedByPercent = (speed: number, percent: number) => round(speed / (1 + toPercent(percent)) / 10) * 10;
 const increaseAttackSpeedByPercent = (percent: number) => round(1 / (1 + percent / 100));
 const round = (n: number) => Math.round(n * 100) / 100; //(100/(100-33))
+
+export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> = {
+  "ability-arrow-volley": ([s, t]) => [
+    // Longbowmen gain Arrow Volley, an activated ability that reduces their time to attack by +1 second for a duration of 6 seconds.
+    {
+      property: "attackSpeed",
+      select: { id: ["longbowman"] },
+      effect: "change",
+      value: -1 * s,
+      type: "ability",
+      duration: t,
+    },
+  ],
+
+  "ability-setup-camp": ([s]) => [
+    // Place a Campfire which increases sight range of nearby units by 30%.
+    {
+      property: "lineOfSight",
+      select: { id: ["man-at-arms"] },
+      effect: "multiply",
+      value: increaseByPercent(1, s),
+      type: "ability",
+    },
+  ],
+
+  "ability-network-of-castles": ([i]) => [
+    // When enemies are nearby, this building sounds an alarm, causing nearby units to get a +20% increase to attack speed.
+    {
+      property: "attackSpeed",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "multiply",
+      value: decreaseByPercent(1, i),
+      type: "ability",
+    },
+  ],
+
+  "ability-the-long-wall": ([]) => [
+    // All units standing on Walls gain +25% ranged damage.
+    {
+      property: "rangedAttack",
+      select: { class: [["ranged", "infantry"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, 25),
+      type: "ability",
+    },
+  ],
+
+  "ability-spirit-way": ([]) => [
+    // When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.
+    {
+      property: "attackSpeed",
+      select: { id: ["zhuge-nu", "fire-lancer", "grenadier"] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercent(20),
+      type: "ability",
+      duration: 10,
+    },
+    {
+      property: "healingRate",
+      select: { id: ["zhuge-nu", "fire-lancer", "grenadier"] },
+      effect: "change",
+      value: 2,
+      type: "ability",
+      duration: 10,
+    },
+  ],
+
+  "ability-saints-blessing": ([]) => [
+    // After striking an enemy, the Warrior Monk increases the armor and damage of nearby allied Rus military units for a duration.
+    // Manual testing produces a default of +1 range and melee armor and +2 damage for 10 second duration and 2 tile range
+    // Can be upgraded by two techs for additional +1 damage, +10 second duration, and +5 tile range
+    // Ability timer does not reset; has to end and then can restart
+    {
+      property: "rangedAttack",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "change",
+      value: 2,
+      type: "ability",
+      duration: 10,
+    },
+    {
+      property: "meleeAttack",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "change",
+      value: 2,
+      type: "ability",
+      duration: 10,
+    },
+    {
+      property: "fireAttack",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "change",
+      value: 2,
+      type: "ability",
+      duration: 10,
+    },
+    {
+      property: "siegeAttack",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "change",
+      value: 2,
+      type: "ability",
+      duration: 10,
+    },
+    {
+      property: "rangedArmor",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "change",
+      value: 1,
+      type: "ability",
+      duration: 10,
+    },
+    {
+      property: "meleeArmor",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "change",
+      value: 1,
+      type: "ability",
+      duration: 10,
+    },
+  ],
+
+  "ability-high-armory-production-bonus": ([i]) => [
+    // The cost of siege engines in nearby Siege Workshops is decreased by 20%.
+    {
+      property: "goldCost",
+      select: { class: [["siege"]] },
+      effect: "multiply",
+      value: decreaseByPercent(1, i),
+      type: "ability",
+    },
+    {
+      property: "woodCost",
+      select: { class: [["siege"]] },
+      effect: "multiply",
+      value: decreaseByPercent(1, i),
+      type: "ability",
+    },
+  ],
+
+  "ability-static-deployment": ([i]) => [
+    // Streltsy gain +30% (i) attack speed after remaining stationary for 10 (j not implemented yet) seconds.
+    {
+      property: "attackSpeed",
+      select: { id: ["streltsy"] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercent(i),
+      type: "ability",
+    },
+  ],
+
+  "ability-gallop": ([]) => [
+    // Activate to move at maximum speed with +2 tile weapon range for 8 seconds.
+    {
+      property: "moveSpeed",
+      select: { id: ["horse-archer"] },
+      effect: "change",
+      value: 0.38,
+      type: "ability",
+      duration: 8,
+    },
+    {
+      property: "maxRange",
+      select: { id: ["horse-archer"] },
+      effect: "change",
+      value: 2,
+      type: "ability",
+      duration: 8,
+    },
+  ],
+
+  "ability-kurultai-healing-aura-mon": ([]) => [
+    // Nearby units within its aura heal +1 health every 1 second and gain an additional +20% damage.
+    // also works for ally but dont have props to capture this yet
+    {
+      property: "rangedAttack",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "multiply",
+      value: increaseByPercent(1, 20),
+      type: "ability",
+    },
+    {
+      property: "meleeAttack",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "multiply",
+      value: increaseByPercent(1, 20),
+      type: "ability",
+    },
+    {
+      property: "fireAttack",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "multiply",
+      value: increaseByPercent(1, 20),
+      type: "ability",
+    },
+    {
+      property: "siegeAttack",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "multiply",
+      value: increaseByPercent(1, 20),
+      type: "ability",
+    },
+    {
+      property: "healingRate",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "change",
+      value: 1,
+      type: "ability",
+    },
+  ],
+
+  "ability-battle-veteran": ([]) => [
+    // Heals after every attack performed
+    {
+      property: "healingRate",
+      select: { id: ["keshik"] },
+      effect: "change",
+      value: 3,
+      type: "ability",
+    },
+  ],
+
+  "ability-maneuver-arrow": ([i, j]) => [
+    // Fire a Signal Arrow that increases the movement speed of nearby units (including the Khan) by +33% for 5 seconds. Does not affect Villagers.
+    {
+      property: "moveSpeed",
+      select: common.allMilitaryLand,
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+      duration: j,
+    },
+  ],
+
+  "ability-attack-speed-arrow": ([i, j]) => [
+    // Fires a Signal Arrow that increases the attack speed of nearby ranged units (including the Khan) by +50% for 5 seconds.
+    {
+      property: "attackSpeed",
+      select: { class: [["ranged"]] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercent(i),
+      type: "ability",
+      duration: j,
+    },
+  ],
+
+  "ability-defense-arrow": ([i, j]) => [
+    // Fires a Signal Arrow that increases the armor of nearby units (including the Khan) by +2 for 5 seconds
+    {
+      property: "meleeArmor",
+      select: common.allMilitaryLand,
+      effect: "change",
+      value: i,
+      type: "ability",
+      duration: j,
+    },
+    {
+      property: "rangedArmor",
+      select: common.allMilitaryLand,
+      effect: "change",
+      value: i,
+      type: "ability",
+      duration: j,
+    },
+  ],
+
+  "ability-yam": ([i]) => [
+    // Cavalry and Traders near an Outpost get +15% speed for 10 seconds.
+    // does not seem to have a duration outside of the tower aura
+    {
+      property: "moveSpeed",
+      select: { class: [["cavalry"]], id: ["trader"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+    },
+  ],
+
+  "ability-outpost-speed-improved-mon": ([]) => [
+    // Yam speed aura applies to all units instead of just Traders and cavalry units. Does not apply to siege engines.
+    {
+      property: "moveSpeed",
+      select: { class: [["infantry"]], id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 15),
+      type: "ability",
+    },
+  ],
+
+  "ability-mehter-speed-bonus": ([i]) => [
+    // Movement speed bonus +15%
+    {
+      property: "moveSpeed",
+      select: common.allMilitaryLand,
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+    },
+  ],
+
+  "ability-attack-drums-off": ([s]) => [
+    // Mehter drums that increase the attack speed of nearby units by +15%.
+    {
+      property: "attackSpeed",
+      select: common.allMilitaryLand,
+      effect: "multiply",
+      value: increaseAttackSpeedByPercent(s),
+      type: "ability",
+    },
+  ],
+
+  "ability-melee-defense-drums-off": ([s]) => [
+    // Mehter drums that increase the melee armor of nearby units by +2.
+    {
+      property: "meleeArmor",
+      select: common.allMilitaryLand,
+      effect: "change",
+      value: s,
+      type: "ability",
+    },
+  ],
+
+  "ability-ranged-defense-drums-off": ([s]) => [
+    // Mehter drums that increase the ranged armor of nearby units by +1.
+    {
+      property: "rangedArmor",
+      select: common.allMilitaryLand,
+      effect: "change",
+      value: s,
+      type: "ability",
+    },
+  ],
+
+  "ability-fortitude": ([i, j, k]) => [
+    // Gain +50% attack speed and receive +50% damage from melee weapons for 10 seconds.
+    // activation recharge starts after ability ends...
+    {
+      property: "attackSpeed",
+      select: { id: ["sipahi"] },
+      effect: "change",
+      value: increaseAttackSpeedByPercent(i),
+      type: "ability",
+      duration: k,
+    },
+    {
+      property: "unknown",
+      select: { id: ["sipahi"] },
+      effect: "multiply",
+      value: increaseByPercent(1, j),
+      type: "ability",
+      duration: k,
+    },
+  ],
+
+  "ability-blacksmith-and-university-influence": ([s, t, u, v]) => [
+    // Military unit production rate increased +20%/+30%/+40% by Age while within the influence of a Blacksmith or University. The Istanbul Observatory increases the bonus to +60%.
+    // need another way to handle this
+    {
+      property: "productionSpeed",
+      select: common.allMilitaryLand,
+      effect: "multiply",
+      value: decreaseByPercent(1, s),
+      type: "ability",
+    },
+    {
+      property: "productionSpeed",
+      select: common.allMilitaryLand,
+      effect: "multiply",
+      value: decreaseByPercent(1, t),
+      type: "ability",
+    },
+    {
+      property: "productionSpeed",
+      select: common.allMilitaryLand,
+      effect: "multiply",
+      value: decreaseByPercent(1, u),
+      type: "ability",
+    },
+    {
+      property: "productionSpeed",
+      select: common.allMilitaryLand,
+      effect: "multiply",
+      value: decreaseByPercent(1, v),
+      type: "ability",
+    },
+  ],
+
+  "ability-tower-of-victory-aura": ([s]) => [
+    // Melee and ranged infantry who move near this Landmark permanently gain +20% attack speed.
+    {
+      property: "attackSpeed",
+      select: { class: [["infantry"]] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercent(s),
+      type: "ability",
+    },
+  ],
+
+  "ability-forced-march": ([i, j]) => [
+    // Activate to move 100% faster for 10 seconds, deactivates early when dealing damage.
+    {
+      property: "moveSpeed",
+      select: { class: [["infantry"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+      duration: j,
+    },
+  ],
+
+  "ability-royal-knight-charge-damage": ([damage, seconds]) => [
+    // Every description is inaccurate or incomplete...
+    {
+      property: "meleeAttack",
+      select: { id: ["royal-knight"] },
+      effect: "change",
+      value: 3,
+      type: "ability",
+      duration: 5,
+    },
+  ],
+
+  "ability-deploy-pavise": ([i, j, k]) => [
+    // Activate to increase weapon range by +1 tile and gain +5 ranged armor.\nRemains active for 30 seconds or until the Arbalétrier moves away
+    {
+      property: "maxRange",
+      select: { id: ["arbaletrier"] },
+      effect: "change",
+      value: i,
+      type: "ability",
+      duration: k,
+    },
+    {
+      property: "rangedArmor",
+      select: { id: ["arbaletrier"] },
+      effect: "change",
+      value: j,
+      type: "ability",
+      duration: k,
+    },
+  ],
+
+  "ability-keep-influence": ([r]) => [
+    // Archery Ranges and Stables within influence have unit costs decreased by 20%.
+    {
+      property: "goldCost",
+      select: { class: [["cavalry", "melee"], ["ranged"]] },
+      effect: "multiply",
+      value: decreaseByPercent(1, r),
+      type: "ability",
+    },
+    {
+      property: "foodCost",
+      select: { class: [["cavalry", "melee"], ["ranged"]] },
+      effect: "multiply",
+      value: decreaseByPercent(1, r),
+      type: "ability",
+    },
+    {
+      property: "woodCost",
+      select: { class: [["cavalry", "melee"], ["ranged"]] },
+      effect: "multiply",
+      value: decreaseByPercent(1, r),
+      type: "ability",
+    },
+  ],
+
+  "ability-artillery-shot": ([]) => [
+    // Loads this Cannon for an Artillery Shot, next shot has greatly increased Area of Effect but no bonus against buildings.
+    {
+      property: "areaOfEffect",
+      select: { id: ["cannon", "royal-cannon"] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+    },
+  ],
+
+  "ability-activate-stealth": ([i]) => [
+    // Enter Stealth for 20 seconds.\nWhile in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, Landmark Town Centers, or they engage in combat.
+    {
+      property: "unknown",
+      select: { id: ["musofadi-gunner", "musofadi-warrior"] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+      duration: i,
+    },
+  ],
+
+  "ability-first-strike": ([]) => [
+    // Deals increased damage on next hit.
+    {
+      property: "meleeAttack",
+      select: { id: ["musofadi-warrior"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 100),
+      type: "ability",
+    },
+    {
+      property: "rangedAttack",
+      select: { id: ["musofadi-gunner"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 100),
+      type: "ability",
+    },
+  ],
+
+  "ability-huntress-stealth": ([]) => [
+    // Malian infantry within range enter Stealth. While in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, or when they engage in combat.
+    {
+      property: "unknown",
+      select: { class: [["infantry"]] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+      duration: 30,
+    },
+  ],
+
+  "ability-camel-support": ([]) => [
+    // Infantry gain armor when near a camel unit. / Camels increase the armor of nearby infantry by +2.
+    {
+      property: "meleeArmor",
+      select: { class: [["infantry"]] },
+      effect: "change",
+      value: 2,
+      type: "ability",
+    },
+    {
+      property: "rangedArmor",
+      select: { class: [["infantry"]] },
+      effect: "change",
+      value: 2,
+      type: "ability",
+    },
+  ],
+
+  "ability-proselytize": ([]) => [
+    // Attempts to convert a single enemy unit within range of this Imam to your control.
+    {
+      property: "unknown",
+      select: { id: ["imam"] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+    },
+  ],
+
+  "ability-inspired": ([a, b]) => [
+    // Military units deal +15% damage and gain +1 armor. //tested to 60 second duration
+    {
+      property: "rangedArmor",
+      select: common.allMilitaryLand,
+      effect: "change",
+      value: b,
+      type: "ability",
+      duration: 60,
+    },
+    {
+      property: "meleeArmor",
+      select: common.allMilitaryLand,
+      effect: "change",
+      value: b,
+      type: "ability",
+      duration: 60,
+    },
+    {
+      property: "meleeAttack",
+      select: { class: [["melee"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, a),
+      type: "ability",
+      duration: 60,
+    },
+    {
+      property: "fireAttack",
+      select: { class: [["melee"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, a),
+      type: "ability",
+      duration: 60,
+    },
+    {
+      property: "rangedAttack",
+      select: { class: [["ranged"]], id: ["culverin"] },
+      effect: "multiply",
+      value: increaseByPercent(1, a),
+      type: "influence",
+      duration: 60,
+    },
+    {
+      property: "siegeAttack",
+      select: { class: [["siege"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, a),
+      type: "influence",
+      duration: 60,
+    },
+  ],
+
+  "ability-house-of-wisdom-influence": ([i]) => [
+    // Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age.
+    {
+      property: "fireArmor",
+      select: { class: [["building"]] },
+      effect: "change",
+      value: i,
+      type: "ability",
+    },
+  ],
+
+  "ability-imperial-spies": ([i]) => [
+    // Reveal location of enemy workers for 10 seconds.
+    {
+      property: "unknown",
+      select: { id: ["imperial-palace"] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+      duration: i,
+    },
+  ],
+
+  "ability-abbey-healing": ([i, j]) => [
+    // Heals nearby out of combat units by 6 every 1 seconds.
+    {
+      property: "healingRate",
+      select: common.allLand,
+      effect: "change",
+      value: i / j,
+      type: "ability",
+    },
+  ],
+
+  "ability-mill-influence": ([i, j, k, l]) => [
+    // Farm harvest rate increased +15%/+20%/+25%/+30% by Age while within the influence of a Mill.
+    {
+      property: "foodGatherRate",
+      select: { id: ["farm", "mill"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+    },
+  ],
+
+  "ability-golden-age-tier-1": ([]) => [
+    // Tier 1: Villager gather rate +15%
+    {
+      property: "foodGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 15),
+      type: "ability",
+    },
+    {
+      property: "huntGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 15),
+      type: "ability",
+    },
+    {
+      property: "goldGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 15),
+      type: "ability",
+    },
+    {
+      property: "stoneGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 15),
+      type: "ability",
+    },
+    {
+      property: "woodGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 15),
+      type: "ability",
+    },
+    {
+      property: "unknown",
+      select: { id: ["house-of-wisdom"] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+    },
+  ],
+
+  "ability-golden-age-tier-2": ([]) => [
+    // Tier 2: Research speed +15%
+    {
+      property: "researchSpeed",
+      select: { class: [["building"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, 15),
+      type: "ability",
+    },
+    {
+      property: "unknown",
+      select: { id: ["house-of-wisdom"] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+    },
+  ],
+
+  "ability-golden-age-tier-3": ([]) => [
+    // Tier 2: Production speed +20%, +5% extra Research speed, +5% extra Villager gather rate
+    {
+      property: "productionSpeed",
+      select: { class: [["building"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, 20),
+      type: "ability",
+    },
+    {
+      property: "researchSpeed",
+      select: { class: [["building"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, 5),
+      type: "ability",
+    },
+    {
+      property: "foodGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 5),
+      type: "ability",
+    },
+    {
+      property: "huntGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 5),
+      type: "ability",
+    },
+    {
+      property: "goldGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 5),
+      type: "ability",
+    },
+    {
+      property: "stoneGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 5),
+      type: "ability",
+    },
+    {
+      property: "woodGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 5),
+      type: "ability",
+    },
+    {
+      property: "unknown",
+      select: { id: ["house-of-wisdom"] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+    },
+  ],
+
+  "ability-fiefdom": ([i]) => [
+    // Town Center production and research speed increased by +10%.\nBonus increases further in later Ages
+    {
+      property: "productionSpeed",
+      select: { id: ["town-center", "capital-town-center"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+    },
+  ],
+
+  "ability-emergency-repairs": ([i, j, k]) => [
+    // Building repairs itself by 150 health every 1 second for 20 seconds.
+    {
+      property: "repairRate",
+      select: { class: [["building"]] },
+      effect: "change",
+      value: i / j,
+      type: "ability",
+      duration: k,
+    },
+  ],
+
+  // "ability-relic-garrisoned-dock": ([s]) => [
+  //   // Increasing attack speed of military ships by +5%.
+  //   {
+  //     property: "attackSpeed",
+  //     select: common.allMillitaryShips,
+  //     effect: "multiply",
+  //     value: increaseAttackSpeedByPercent(s),
+  //     type: "ability",
+  //   },
+  // ],
+
+  // "ability-relic-garrisoned-keep": ([s, t, u, v]) => [
+  // Yank workaround that matches two different abilities and adds both of the effects sets, split out in a workaround later
+  "ability-relic-garrisoned": ([s, t, u, v]) => [
+    // Increasing attack speed of military ships by +5%.
+    // Dock
+    {
+      property: "attackSpeed",
+      select: common.allMillitaryShips,
+      effect: "multiply",
+      value: increaseAttackSpeedByPercent(s),
+      type: "ability",
+    },
+    // Armor increased by +50% Damage increased by +35% Sight range increased by +25% Weapon range increased by +20%"
+    // Keeps etc
+    {
+      property: "fireArmor",
+      select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercent(s),
+      type: "ability",
+    },
+    {
+      property: "rangedArmor",
+      select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercent(s),
+      type: "ability",
+    },
+    {
+      property: "rangedAttack",
+      select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercent(t),
+      type: "ability",
+    },
+    {
+      property: "maxRange",
+      select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercent(v),
+      type: "ability",
+    },
+    {
+      property: "lineOfSight",
+      select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercent(u),
+      type: "ability",
+    },
+  ],
+
+  "ability-food-festival": ([i, j]) => [
+    // Increase Food gather rate by +50% for 30 seconds.
+    {
+      property: "foodGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+      duration: j,
+    },
+  ],
+
+  "ability-military-festival": ([i, j]) => [
+    // Increase military unit production speed by +50% for 30 seconds.
+    {
+      property: "productionSpeed",
+      select: { class: [["military"], ["building"]], id: ["farimba-garrison"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+      duration: j,
+    },
+  ],
+
+  "ability-siege-festival": ([i, j]) => [
+    // Increase siege and torch damage for all units by +50% for 30 seconds.
+    {
+      property: "fireAttack",
+      select: { class: [["melee"], ["calvary"]], id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+      duration: j,
+    },
+    {
+      property: "siegeAttack",
+      select: { id: ["battering-ram", "counterweight-trebuchet", "bombard"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+      duration: j,
+    },
+  ],
+
+  "ability-trade-protection": ([i, j, k]) => [
+    // Traders and Trade Ships near Keeps receive +30% move speed and +8 armor for 20 seconds.
+    {
+      property: "moveSpeed",
+      select: { id: ["trader", "trade-ship"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+      duration: k,
+    },
+    {
+      property: "meleeArmor",
+      select: { id: ["trader", "trade-ship"] },
+      effect: "change",
+      value: j,
+      type: "ability",
+      duration: k,
+    },
+    {
+      property: "rangedArmor",
+      select: { id: ["trader", "trade-ship"] },
+      effect: "change",
+      value: j,
+      type: "ability",
+      duration: k,
+    },
+  ],
+
+  "ability-coastal-navigation": ([]) => [
+    // Ships near a Docks get +15% speed for 25 seconds.
+    {
+      property: "moveSpeed",
+      select: { class: [["ship"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, 15),
+      type: "ability",
+      duration: 25,
+    },
+  ],
+};
 
 export const technologyModifiers: Record<string, (values: number[]) => Modifier[]> = {
   "arrow-volley": ([s]) => [
@@ -201,7 +1143,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     },
   ],
 
-  /// Common economic tecnologies ––––––––––––––––––––––––––––––––––––
+  /// Common economic tecnologies –––––––––––––––––––––––––––––––––
 
   "crosscut-saw": ([i]) => [
     // Increase Villagers' gathering rate for Wood by +15%.
@@ -641,11 +1583,10 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
   ],
 
   "network-of-citadels": ([o, i]) => [
-    // Increase the Network of Castles attack speed bonus from +25% to 50%.
+    // Increase the Network of Castles attack speed bonus from +20% to 40%.
     {
       property: "attackSpeed",
       select: { class: [["infantry"]] },
-      target: { class: [["infantry"], ["cavalry"], ["building"]] },
       effect: "multiply",
       value: increaseByPercent(1, i - o),
       type: "bonus",

@@ -1,3 +1,4 @@
+import { ItemSlug } from "../sdk/utils";
 import { civAbbr } from "./civs";
 
 export type ItemClass =
@@ -36,7 +37,7 @@ export type ItemClass =
 export interface Item {
   id: ItemId;
   baseId: ItemId;
-  type: "unit" | "building" | "technology" | "upgrade";
+  type: "unit" | "building" | "technology" | "upgrade" | "ability";
   civs: civAbbr[];
   classes: ItemClass[];
   displayClasses: string[];
@@ -92,7 +93,7 @@ export interface Unit extends PhysicalItem {
 // Todo, may add material properties, units/objects that can be garrisoned, etc.
 export interface Building extends PhysicalItem {
   type: "building";
-
+  influences?: string[];
   popcapIncrease?: number;
 }
 
@@ -123,6 +124,17 @@ export interface Weapon {
   pbgid?: number;
 }
 
+export interface Ability extends Item {
+  type: "ability";
+  active?: "always" | "manual" | "toggle";
+  auraRange?: number;
+  cooldown?: number;
+  toggleGroup?: string;
+  effects?: Modifier[];
+  unlockedBy?: ItemSlug[];
+  activatedOn?: ItemSlug[];
+}
+
 export type Modifier = {
   property: ModifyableProperty;
   target?: { class?: ItemClass[][]; id?: ItemId[] };
@@ -130,6 +142,7 @@ export type Modifier = {
   effect: "multiply" | "change";
   value: number;
   type: "passive" | "ability" | "influence" | "bonus";
+  duration?: number;
 };
 
 export type Armor = {
@@ -139,7 +152,7 @@ export type Armor = {
 
 export type ItemId = string;
 
-export type ItemType = Building | Unit | Technology | Upgrade;
+export type ItemType = Building | Unit | Technology | Upgrade | Ability;
 
 export type ModifyableProperty =
   | "unknown" // Complex effects not easily incoded in buffed stats
@@ -176,6 +189,7 @@ export type ModifyableProperty =
   | "maxPopulation"
   | "buildTime"
   | "productionSpeed"
+  | "researchSpeed"
   | "areaOfEffect";
 
 export interface UnifiedItem<T extends Item = Item> {

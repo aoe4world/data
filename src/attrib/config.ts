@@ -10,8 +10,28 @@ export const ESSENCE_FOLDER = path.join(SOURCE_FOLDER, "/essence/attrib");
 
 // Unit files not discovered by sync.ts
 export const hardcodedDiscovery = {
-  rus: ["sbps/races/rus/unit_militia_2_rus", "upgrade/races/rus/units/upgrade_militia_3", "upgrade/races/rus/units/upgrade_militia_4"],
-  mongols: ["sbps/races/mongol/unit_khan_2_mon", "sbps/races/mongol/unit_khan_3_mon", "sbps/races/mongol/unit_khan_4_mon"],
+  rus: [
+    "sbps/races/rus/unit_militia_2_rus",
+    "upgrade/races/rus/units/upgrade_militia_3",
+    "upgrade/races/rus/units/upgrade_militia_4",
+    "abilities/always_on_abilities/rus/saints_blessing_rus", //misses auto discovery ; how to handle upgrades
+    // "abilities/always_on_abilities/rus/high_armory_production_aura_rus",
+    "abilities/always_on_abilities/rus/streltsy_static_deployment_ability_rus", //misses auto discovery
+    "abilities/timed_abilities/rus/horse_archer_mounted_training_gallop_rus", //misses auto discovery
+    // "abilities/timed_abilities/rus/kremlin_levy", //misses auto discovery
+  ],
+  mongols: [
+    "sbps/races/mongol/unit_khan_2_mon",
+    "sbps/races/mongol/unit_khan_3_mon",
+    "sbps/races/mongol/unit_khan_4_mon",
+    "abilities/always_on_abilities/mongol/lancer_healing_mon", //misses auto discovery
+    // "abilities/always_on_abilities/mongol/kurultai_healing_aura_mon",
+    "abilities/timed_abilities/mongol/khan_attack_speed_signal_arrow_mon", //khan-1 is discovered in starting army, so khan abilities miss auto discovery
+    "abilities/timed_abilities/mongol/khan_defensive_signal_arrow_mon",
+    "abilities/timed_abilities/mongol/khan_maneuver_signal_arrow_mon", //whistling arrow is an ability upgrade; how do techs upgrade an ability
+    // "abilities/always_on_abilities/mongol/ortoo_outpost_speed_aura_mon",
+    "info/buff_info/races/mongol/outpost_speed_improved_mon",
+  ],
   ottomans: [
     "upgrade/races/ottoman/research/upgrade_anatolian_hills_ott",
     "upgrade/races/ottoman/research/upgrade_imperial_blacksmith_stockpile_ott",
@@ -22,14 +42,56 @@ export const hardcodedDiscovery = {
     "upgrade/races/ottoman/research/upgrade_imperial_military_training_ott",
     "upgrade/races/ottoman/research/upgrade_imperial_monk_formation_ott",
     "upgrade/races/ottoman/research/upgrade_imperial_trader_capacity_ott",
+    "abilities/toggle_abilities/ottoman/mehter_attack_buff_ott", //misses auto discovery
+    "abilities/toggle_abilities/ottoman/mehter_melee_armor_buff_ott", //misses auto discovery
+    "abilities/toggle_abilities/ottoman/mehter_ranged_armor_buff_ott", //misses auto discovery
+    "info/buff_info/races/ottoman/mehter_default_formation_ott",
+    // "abilities/always_on_abilities/ottoman/university_blacksmith_influence_ott", //need another way to handle the progression by age
+    "abilities/timed_abilities/ottoman/sipahi_stamina_ott", //misses auto discovery; activation recharge starts after ability ends, or +10 to recharge time; are others like this? pavise is not
   ],
   english: [
     "upgrade/races/english/units/upgrade_abbey_king_castle_1",
     "upgrade/races/english/units/upgrade_abbey_king_imp_2",
     "/sbps/races/english/unit_ranger_wynguard_4_eng",
     "/sbps/races/english/unit_footman_wynguard_4_eng",
+    "abilities/timed_abilities/english/longbow_rate_of_fire_ability", //misses auto discovery; range is weird but does it matter? //convert to ability from tech
+    "abilities/timed_abilities/english/deploy_campfire_eng", //misses auto discovery;
+    // "abilities/always_on_abilities/english/tower_outpost_alert_aura_eng",  //how to handle upgrade,  tower outpost has context to upgrade to citadels or tech has the context to upgrade buff or do a workaround
+  ],
+  chinese: [
+    "info/buff_info/races/chinese/great_wall_buff_chi", //needs trigger/standing on a wall?
+    "abilities/always_on_abilities/chinese/spirit_way", //misses auto discovery with no link; needs trigger/unitDeath?        does not stack, but timer resets upon next death
+  ],
+  abbasid: [
+    "abilities/always_on_abilities/abbasid/camel_support_aura_abb", //misses auto discovery; camel support tech needs both ranged and melee armor, so handling this here, and it can be modified when interfacing techs that unlock abilities
+    "abilities/timed_abilities/abbasid/monk_conversion_faith_abb", //misses auto discovery;
+    //"abilities/always_on_abilities/abbasid/mamluke_anti_cavalry_aura_abb", //determine how to handle debuff
+  ],
+  french: [
+    "info/buff_info/races/french/lancer_charge_bonus_damage",
+    // "abilities/always_on_abilities/french/keep_influence_fre",
+    "abilities/modal_abilities/french/deploy_pavise_fre", //misses auto discovery
+    "abilities/timed_abilities/french/cannon_swap_fre", //misses auto discovery
+  ],
+  hre: [
+    "abilities/always_on_abilities/hre/inspired_infantry_hre", //misses auto discovery; convert to ability from tech
+  ],
+  malians: [
+    //"abilities/always_on_abilities/malian/sofa_speed_aura_mal", //convert to ability from tech
+    "info/buff_info/races/malian/gbeto_ambush_buff_mal",
+    "abilities/timed_abilities/malian/activate_stealth_mal", //misses auto discovery
+    // "abilities/always_on_abilities/malian/stealth_landmark_aura_mal", // unknown property
+    //"abilities/always_on_abilities/malian/passives/donso_javelin_throw_mal //charge may be entirely a property of unit
+    //"info/buff_info/races/malian/archer_poisoned_arrow_mal" //handle as debuff, found no upper limit
+  ],
+  delhi: [
+    "abilities/timed_abilities/sultanate/infantry_forced_march_sul", //misses auto discovery with no link
+    "abilities/always_on_abilities/sultanate/district_effects/tower_of_victory_aura_sul", //misses auto discovery with no link
+    //zeal? //convert to ability from tech
   ],
 };
+
+export const hardcodedDiscoveryCommon = []; //"info/buff_info/races/abbasid/camel_debuff_aura","info/buff_info/races/malian/archer_poisoned_arrow_mal"
 
 export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "ebps/races/mongol/buildings/building_town_center_dummy_start",
@@ -83,6 +145,59 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "upgrade_landmark_siege_weapon_speed",
   "upgrade_landmark_siege_works",
   "unit_siege_tower_3_eng",
+
+  //uninteresting abilities to place into data
+  "military_neutralize_holy_site",
+  "abilities/civ_core/",
+  "abilities/core/age_up_",
+  "return_to_work",
+  "abilities/modal_abilities/abbasid/age_up_",
+  "toggle_trade_resource",
+  "proxy_placement_gristmill",
+  "golden_age_passive_abb",
+  "golden_age_bonus_", //ignore whichever is not as complete, the other is "golden_age_tier_"
+  "abilities/always_on_abilities/abbasid/medical_centers_abb",
+  "tower_repair_nearby_walls_chi",
+  "academy_influence_chi",
+  "building_granary_aura_chi", //unknown why error: .../building_granary_aura_chi TypeError: Cannot read properties of undefined (reading 'screen_name')
+  "building_generate_tax_chi",
+  "toggle_spawn_hold_sul",
+  "hisar_academy_sul",
+  "mosque_influence_sul",
+  "dock_upgrade_aura",
+  "scholar_research_behavior_sul",
+  "palace_of_the_sultan_elephant_spawner_toggle_on_sul",
+  "palace_of_the_sultan_elephant_spawner_sul",
+  "chamber_of_commerce_ability_fre",
+  "guild_hall_collect_resources_fre",
+  "toggle_guild_hall_resource",
+  "influence_elzbach_palace_hre",
+  "influence_auto_repair_buff_tc_hre",
+  "aachen_inspire_aoe_hre",
+  "spotters_hre", //non-existent ability
+  "cattle_landmark_passive_food_mal",
+  "open_pit_mine_influence_gen_mal",
+  "trade_cart_taxation_aura_mal",
+  "toggle_pit_mine_resource",
+  "khaganate_khan_aura_mon",
+  "white_stupa_stone_generation_mon",
+  "pack_building_mon",
+  "packing_building_mon",
+  "abilities/toggle_abilities/ottoman/military_school_",
+  "abilities/toggle_abilities/ottoman/tophane_armory_",
+  "toggle_spawn_hold_ott",
+  "tophane_production_mod_ott",
+  "cifte_minareli_berry_spawn_ott",
+  "sultan_han_caravanseri_ott",
+  "topkapi_palace_imperial_council_exp_ott",
+  "istanbul_observatory_active_ott",
+  "mehter_formation_ott", //inaccurate/old/changed
+  "keep_trader_speed_boost_aura_ott_dummy", //dummy/duplicate
+  "abilities/timed_abilities/rus/buy",
+  "abilities/timed_abilities/rus/sell",
+  "hunting_cabin_gold_generation",
+  "wooden_fortress_influence_rus",
+  "abilities/timed_abilities/rus/kremlin_levy",
 ];
 
 // Map a4w slug to race id
