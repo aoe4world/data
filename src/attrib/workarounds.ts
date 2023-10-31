@@ -177,10 +177,6 @@ workaround("Make Ability Gallop available in Imperial Age", {
   ...overrideAge(["ability-gallop"], 4, ["ru"]),
 });
 
-workaround("Make Ability Gallop available in Imperial Age", {
-  ...overrideAge(["ability-gallop"], 4, ["ru"]),
-});
-
 workaround("Make Ability Fortitude available in Feudal Age", {
   ...overrideAge(["ability-fortitude"], 2, ["ot"]),
 });
@@ -215,6 +211,14 @@ workaround("Make Ability huntress-stealth available in Imperial Age", {
 
 workaround("Make Ability camel-support available in Imperial Age", {
   ...overrideAge(["ability-camel-support"], 4, ["ab"]),
+});
+
+workaround("Make Proselytize available in Imperial Age", {
+  ...overrideAge(["ability-proselytize"], 4, ["ab"]),
+});
+
+workaround("Make Artilery Shot available in Imperial Age", {
+  ...overrideAge(["ability-artillery-shot"], 4, ["ab"]),
 });
 
 workaround("Make Imperial Spies available in Castle Age", {
@@ -322,6 +326,22 @@ workaround("Set conditions for Trade Protection", {
     item = item as Ability;
     item.activatedOn = ["buildings/keep", "buildings/sea-gate-castle"];
     item.unlockedBy = ["buildings/sea-gate-castle"];
+  },
+});
+
+workaround("Set Prosteletize conditions", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-proselytize",
+  mutator: (item) => {
+    item = item as Ability;
+    item.unlockedBy = ["technologies/proselytization"];
+  },
+});
+
+workaround("Add Artillery Shot requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-artillery-shot",
+  mutator: (item) => {
+    item = item as Ability;
+    item.unlockedBy = ["buildings/college-of-artillery"];
   },
 });
 

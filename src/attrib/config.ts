@@ -18,6 +18,7 @@ export const hardcodedDiscovery = {
     // "abilities/always_on_abilities/rus/high_armory_production_aura_rus",
     "abilities/always_on_abilities/rus/streltsy_static_deployment_ability_rus", //misses auto discovery
     "abilities/timed_abilities/rus/horse_archer_mounted_training_gallop_rus", //misses auto discovery
+    // "abilities/timed_abilities/rus/kremlin_levy", //misses auto discovery
   ],
   mongols: [
     "sbps/races/mongol/unit_khan_2_mon",
@@ -54,6 +55,7 @@ export const hardcodedDiscovery = {
     "/sbps/races/english/unit_ranger_wynguard_4_eng",
     "/sbps/races/english/unit_footman_wynguard_4_eng",
     "abilities/timed_abilities/english/longbow_rate_of_fire_ability", //misses auto discovery; range is weird but does it matter? //convert to ability from tech
+    "abilities/timed_abilities/english/deploy_campfire_eng", //misses auto discovery;
     // "abilities/always_on_abilities/english/tower_outpost_alert_aura_eng",  //how to handle upgrade,  tower outpost has context to upgrade to citadels or tech has the context to upgrade buff or do a workaround
   ],
   chinese: [
@@ -62,12 +64,14 @@ export const hardcodedDiscovery = {
   ],
   abbasid: [
     "abilities/always_on_abilities/abbasid/camel_support_aura_abb", //misses auto discovery; camel support tech needs both ranged and melee armor, so handling this here, and it can be modified when interfacing techs that unlock abilities
+    "abilities/timed_abilities/abbasid/monk_conversion_faith_abb", //misses auto discovery;
     //"abilities/always_on_abilities/abbasid/mamluke_anti_cavalry_aura_abb", //determine how to handle debuff
   ],
   french: [
     "info/buff_info/races/french/lancer_charge_bonus_damage",
     // "abilities/always_on_abilities/french/keep_influence_fre",
     "abilities/modal_abilities/french/deploy_pavise_fre", //misses auto discovery
+    "abilities/timed_abilities/french/cannon_swap_fre", //misses auto discovery
   ],
   hre: [
     "abilities/always_on_abilities/hre/inspired_infantry_hre", //misses auto discovery; convert to ability from tech

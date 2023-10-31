@@ -44,6 +44,17 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
+  "ability-setup-camp": ([s]) => [
+    // Place a Campfire which increases sight range of nearby units by 30%.
+    {
+      property: "lineOfSight",
+      select: { id: ["man-at-arms"] },
+      effect: "multiply",
+      value: increaseByPercent(1, s),
+      type: "ability",
+    },
+  ],
+
   "ability-network-of-castles": ([i]) => [
     // When enemies are nearby, this building sounds an alarm, causing nearby units to get a +20% increase to attack speed.
     {
@@ -486,6 +497,17 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
     },
   ],
 
+  "ability-artillery-shot": ([]) => [
+    // Loads this Cannon for an Artillery Shot, next shot has greatly increased Area of Effect but no bonus against buildings.
+    {
+      property: "areaOfEffect",
+      select: { id: ["cannon", "royal-cannon"] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+    },
+  ],
+
   "ability-activate-stealth": ([i]) => [
     // Enter Stealth for 20 seconds.\nWhile in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, Landmark Town Centers, or they engage in combat.
     {
@@ -542,6 +564,17 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
       select: { class: [["infantry"]] },
       effect: "change",
       value: 2,
+      type: "ability",
+    },
+  ],
+
+  "ability-proselytize": ([]) => [
+    // Attempts to convert a single enemy unit within range of this Imam to your control.
+    {
+      property: "unknown",
+      select: { id: ["imam"] },
+      effect: "change",
+      value: 0,
       type: "ability",
     },
   ],

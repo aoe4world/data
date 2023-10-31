@@ -8,6 +8,51 @@
   },
   "data": [
     {
+      "id": "ability-artillery-shot-1",
+      "baseId": "ability-artillery-shot",
+      "type": "ability",
+      "name": "Artillery Shot",
+      "pbgid": 2122116,
+      "attribName": "cannon_swap_fre",
+      "age": 1,
+      "civs": [
+        "fr"
+      ],
+      "description": "Loads this Cannon for an Artillery Shot, next shot has greatly increased Area of Effect but no bonus against buildings.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-artillery-shot-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 210,
+      "effects": [
+        {
+          "property": "areaOfEffect",
+          "select": {
+            "id": [
+              "cannon",
+              "royal-cannon"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "unlockedBy": [
+        "buildings/college-of-artillery"
+      ]
+    },
+    {
       "id": "ability-deploy-pavise-3",
       "baseId": "ability-deploy-pavise",
       "type": "ability",

@@ -282,6 +282,63 @@
       "shared": {}
     },
     {
+      "id": "ability-setup-camp",
+      "name": "Setup Camp",
+      "type": "ability",
+      "civs": [
+        "en"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-setup-camp-1.png",
+      "description": "Place a Campfire which increases sight range of nearby units by 30%.\nA maximum of 5 Campfires can be lit at any one time. Placing an additional Campfire extinguishes an older one.",
+      "variations": [
+        {
+          "id": "ability-setup-camp-1",
+          "baseId": "ability-setup-camp",
+          "type": "ability",
+          "name": "Setup Camp",
+          "pbgid": 2133269,
+          "attribName": "deploy_campfire_eng",
+          "age": 1,
+          "civs": [
+            "en"
+          ],
+          "description": "Place a Campfire which increases sight range of nearby units by 30%.\nA maximum of 5 Campfires can be lit at any one time. Placing an additional Campfire extinguishes an older one.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 25,
+            "stone": 0,
+            "gold": 0,
+            "total": 25,
+            "popcap": 0
+          },
+          "producedBy": [],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-setup-camp-1.png",
+          "active": "manual",
+          "auraRange": 0,
+          "cooldown": 0.125,
+          "effects": [
+            {
+              "property": "lineOfSight",
+              "select": {
+                "id": [
+                  "man-at-arms"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.3,
+              "type": "ability"
+            }
+          ]
+        }
+      ],
+      "shared": {}
+    },
+    {
       "id": "ability-emergency-repairs",
       "name": "Emergency Repairs",
       "type": "ability",
@@ -714,6 +771,67 @@
               "value": 0.8,
               "type": "ability"
             }
+          ]
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "ability-artillery-shot",
+      "name": "Artillery Shot",
+      "type": "ability",
+      "civs": [
+        "fr"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-artillery-shot-1.png",
+      "description": "Loads this Cannon for an Artillery Shot, next shot has greatly increased Area of Effect but no bonus against buildings.",
+      "variations": [
+        {
+          "id": "ability-artillery-shot-1",
+          "baseId": "ability-artillery-shot",
+          "type": "ability",
+          "name": "Artillery Shot",
+          "pbgid": 2122116,
+          "attribName": "cannon_swap_fre",
+          "age": 1,
+          "civs": [
+            "fr"
+          ],
+          "description": "Loads this Cannon for an Artillery Shot, next shot has greatly increased Area of Effect but no bonus against buildings.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-artillery-shot-1.png",
+          "active": "manual",
+          "auraRange": 0,
+          "cooldown": 210,
+          "effects": [
+            {
+              "property": "areaOfEffect",
+              "select": {
+                "id": [
+                  "cannon",
+                  "royal-cannon"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability"
+            }
+          ],
+          "unlockedBy": [
+            "buildings/college-of-artillery"
           ]
         }
       ],
@@ -1904,6 +2022,75 @@
         }
       ],
       "shared": {}
+    },
+    {
+      "id": "ability-proselytize",
+      "name": "Proselytize",
+      "type": "ability",
+      "civs": [
+        "ab"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-proselytize-1.png",
+      "description": "Attempts to convert a single enemy unit within range of this Imam to your control.",
+      "variations": [
+        {
+          "id": "ability-proselytize-1",
+          "pbgid": 2035316,
+          "attribName": "monk_conversion_faith_abb",
+          "civs": [
+            "ab"
+          ]
+        },
+        {
+          "id": "ability-proselytize-4",
+          "pbgid": 2035316,
+          "attribName": "monk_conversion_faith_abb",
+          "civs": [
+            "ab"
+          ]
+        }
+      ],
+      "baseId": "ability-proselytize",
+      "age": 1,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "active": "manual",
+      "auraRange": 6.25,
+      "cooldown": 60,
+      "effects": [],
+      "shared": {
+        "ability-proselytize-4": {
+          "name": "Proselytize",
+          "age": 4,
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "imam"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability"
+            }
+          ],
+          "unlockedBy": [
+            "technologies/proselytization"
+          ],
+          "id": "ability-proselytize-4"
+        }
+      }
     },
     {
       "id": "ability-activate-stealth",
