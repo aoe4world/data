@@ -701,6 +701,24 @@ workaround("Merge Elite Rider", {
   },
 });
 
+workaround("Add auto upgrade info to companions", {
+  predicate: (item) => item.type === "unit" && ["jeannes-champion", "jeannes-rider"].includes(item.baseId),
+  mutator: (item) => {
+    item.description += `\n\nUpgrades to Elite when Jeanne reaches level 4.`;
+  },
+});
+
+// Set Dragon Fire Age to 3
+workaround("Set Dragon Fire Age to 3", { ...overrideAge(["dragon-fire"], 3) });
+
+workaround("Set Desert Raider abilities to manual", {
+  predicate: (item) => item.type === "ability" && item.baseId.startsWith("ability-desert-raider"),
+  mutator: (item) => {
+    item = item as Ability;
+    item.active = "manual";
+  },
+});
+
 workaround("Fix missing info Ayyubid Golden Age Tiers", {
   predicate: (item) => item.type === "ability" && item.civs[0] === "ay" && item.attribName?.startsWith("golden_age_tier_")! && item.attribName?.endsWith("_ha_01")!,
   mutator: (item) => {
@@ -892,6 +910,7 @@ workaround("Set Triumph requirements", {
   mutator: (item) => {
     item = item as Ability;
     item.activatedOn = ["buildings/imperial-hippodrome"];
+    item.description = item.description.replace("damage by +25%", "damage by +4");
     item.auraRange = 0;
   },
 });
@@ -1326,6 +1345,14 @@ workaround("Add Kabura-ya requirements", {
   mutator: (item) => {
     item = item as Ability;
     item.unlockedBy = ["technologies/kabura-ya-whistling-arrow"];
+  },
+});
+
+workaround("Mention Shinobi heal passively in description", {
+  predicate: (item) => item.type === "unit" && item.baseId === "shinobi",
+  mutator: (item) => {
+    item = item as Unit;
+    item.description += `\n\nHeals passively.`;
   },
 });
 

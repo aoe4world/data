@@ -8,6 +8,7 @@ export type CivConfig = {
   abbr: CivAbbr;
   slug: CivSlug;
   attribName?: string;
+  expansion: string[];
 };
 
 export type CivInfo = {

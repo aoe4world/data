@@ -5,7 +5,10 @@
     "name": "Jeanne d'Arc",
     "abbr": "je",
     "slug": "jeannedarc",
-    "attribName": "french_ha_01"
+    "attribName": "french_ha_01",
+    "expansion": [
+      "sultans-ascend"
+    ]
   },
   "data": [
     {
@@ -1084,33 +1087,27 @@
           "icon": "https://data.aoe4world.com/images/technologies/companion-equipment-3.png",
           "effects": [
             {
-              "property": "meleeAttack",
-              "value": 1.2,
-              "effect": "change",
-              "type": "passive"
-            },
-            {
-              "property": "rangedAttack",
-              "value": 1.2,
-              "effect": "change",
-              "type": "passive"
-            },
-            {
-              "property": "siegeAttack",
-              "value": 1.2,
-              "effect": "change",
-              "type": "passive"
-            },
-            {
-              "property": "fireAttack",
-              "value": 1.2,
-              "effect": "change",
-              "type": "passive"
-            },
-            {
               "property": "hitpoints",
+              "select": {
+                "id": [
+                  "jeannes-champion",
+                  "jeannes-rider"
+                ]
+              },
+              "effect": "multiply",
               "value": 1.2,
-              "effect": "change",
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "select": {
+                "id": [
+                  "jeannes-companion",
+                  "jeannes-rider"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.2,
               "type": "passive"
             }
           ]

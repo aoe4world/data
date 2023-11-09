@@ -323,10 +323,9 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
     {
       property: "meleeAttack",
       select: { class: [["cavalry"]] },
-      effect: "multiply",
-      value: increaseByPercent(1, m),
+      effect: "change",
+      value: 4,
       type: "ability",
-      duration: d,
     },
     {
       property: "moveSpeed",
@@ -334,7 +333,6 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       effect: "change",
       value: m,
       type: "ability",
-      duration: d,
     },
     {
       property: "healingRate",
@@ -342,7 +340,6 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       effect: "change",
       value: h,
       type: "ability",
-      duration: d,
     },
   ],
 
@@ -4605,6 +4602,24 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       select: { id: ["varangian-guard"] },
       effect: "multiply",
       value: increaseAttackSpeedByPercent(as),
+      type: "passive",
+    },
+  ],
+
+  //Increases the damage and health of Jeanne's Companions by 20%.
+  "companion-equipment": ([i]) => [
+    {
+      property: "hitpoints",
+      select: { id: ["jeannes-champion", "jeannes-rider"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "passive",
+    },
+    {
+      property: "meleeAttack",
+      select: { id: ["jeannes-companion", "jeannes-rider"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
       type: "passive",
     },
   ],

@@ -68398,33 +68398,27 @@
           "icon": "https://data.aoe4world.com/images/technologies/companion-equipment-3.png",
           "effects": [
             {
-              "property": "meleeAttack",
-              "value": 1.2,
-              "effect": "change",
-              "type": "passive"
-            },
-            {
-              "property": "rangedAttack",
-              "value": 1.2,
-              "effect": "change",
-              "type": "passive"
-            },
-            {
-              "property": "siegeAttack",
-              "value": 1.2,
-              "effect": "change",
-              "type": "passive"
-            },
-            {
-              "property": "fireAttack",
-              "value": 1.2,
-              "effect": "change",
-              "type": "passive"
-            },
-            {
               "property": "hitpoints",
+              "select": {
+                "id": [
+                  "jeannes-champion",
+                  "jeannes-rider"
+                ]
+              },
+              "effect": "multiply",
               "value": 1.2,
-              "effect": "change",
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "select": {
+                "id": [
+                  "jeannes-companion",
+                  "jeannes-rider"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.2,
               "type": "passive"
             }
           ]
@@ -73133,6 +73127,55 @@
           "pbgid": 2140414,
           "attribName": "upgrade_dragon_fire_hre_ha_01",
           "age": 2,
+          "civs": [
+            "od"
+          ],
+          "description": "Gilded Spearman torches deal area of effect damage.",
+          "classes": [
+            "spearman",
+            "technology"
+          ],
+          "displayClasses": [
+            "Spearman Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 50,
+            "wood": 0,
+            "stone": 0,
+            "gold": 125,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 175,
+            "popcap": 0,
+            "time": 30
+          },
+          "producedBy": [
+            "barracks",
+            "burgrave-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/dragon-fire-2.png",
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "gilded-spearman"
+                ]
+              },
+              "effect": "change",
+              "type": "ability"
+            }
+          ]
+        },
+        {
+          "id": "dragon-fire-3",
+          "baseId": "dragon-fire",
+          "type": "technology",
+          "name": "Dragon Fire",
+          "pbgid": 2140414,
+          "attribName": "upgrade_dragon_fire_hre_ha_01",
+          "age": 3,
           "civs": [
             "od"
           ],
