@@ -5,9 +5,12 @@
   "name": "Galley",
   "type": "unit",
   "civs": [
+    "by",
     "en",
     "fr",
-    "hr"
+    "hr",
+    "je",
+    "od"
   ],
   "unique": false,
   "displayClasses": [
@@ -26,11 +29,11 @@
       "baseId": "galley",
       "type": "unit",
       "name": "Galley",
-      "pbgid": 193930,
-      "attribName": "unit_naval_war_galley_3_eng",
+      "pbgid": 6590831,
+      "attribName": "unit_naval_war_galley_3_byz",
       "age": 2,
       "civs": [
-        "en"
+        "by"
       ],
       "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from ranged damage Blacksmith technology",
       "classes": [
@@ -42,11 +45,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 81,
-        "wood": 135,
+        "food": 90,
+        "wood": 150,
         "stone": 0,
         "gold": 0,
-        "total": 216,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 240,
         "popcap": 3,
         "time": 25
       },
@@ -94,8 +99,8 @@
           "burst": {
             "count": 5
           },
-          "attribName": "weapon_naval_arrow_ship_arrow",
-          "pbgid": 2034306
+          "attribName": "weapon_naval_arrow_ship_arrow_western",
+          "pbgid": 2034308
         }
       ],
       "armor": [
@@ -117,11 +122,11 @@
       "baseId": "galley",
       "type": "unit",
       "name": "Galley",
-      "pbgid": 193932,
-      "attribName": "unit_naval_war_galley_3_hre",
+      "pbgid": 193930,
+      "attribName": "unit_naval_war_galley_3_eng",
       "age": 2,
       "civs": [
-        "hr"
+        "en"
       ],
       "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from ranged damage Blacksmith technology",
       "classes": [
@@ -133,11 +138,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 90,
-        "wood": 150,
+        "food": 81,
+        "wood": 135,
         "stone": 0,
         "gold": 0,
-        "total": 240,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 216,
         "popcap": 3,
         "time": 25
       },
@@ -228,6 +235,287 @@
         "wood": 150,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 240,
+        "popcap": 3,
+        "time": 25
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/galley-3.png",
+      "hitpoints": 300,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 6.5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "fireship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 18,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.125,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 5
+          },
+          "attribName": "weapon_naval_arrow_ship_arrow",
+          "pbgid": 2034306
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 1
+        }
+      ],
+      "sight": {
+        "line": 48,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.75
+      }
+    },
+    {
+      "id": "galley-2",
+      "baseId": "galley",
+      "type": "unit",
+      "name": "Galley",
+      "pbgid": 193932,
+      "attribName": "unit_naval_war_galley_3_hre",
+      "age": 2,
+      "civs": [
+        "hr"
+      ],
+      "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from ranged damage Blacksmith technology",
+      "classes": [
+        "archer",
+        "ship"
+      ],
+      "displayClasses": [
+        "Archer Ship"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 90,
+        "wood": 150,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 240,
+        "popcap": 3,
+        "time": 25
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/galley-3.png",
+      "hitpoints": 300,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 6.5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "fireship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 18,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.125,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 5
+          },
+          "attribName": "weapon_naval_arrow_ship_arrow",
+          "pbgid": 2034306
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 1
+        }
+      ],
+      "sight": {
+        "line": 48,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.75
+      }
+    },
+    {
+      "id": "galley-2",
+      "baseId": "galley",
+      "type": "unit",
+      "name": "Galley",
+      "pbgid": 2101341,
+      "attribName": "unit_naval_war_galley_3_fre",
+      "age": 2,
+      "civs": [
+        "je"
+      ],
+      "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from ranged damage Blacksmith technology",
+      "classes": [
+        "archer",
+        "ship"
+      ],
+      "displayClasses": [
+        "Archer Ship"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 90,
+        "wood": 150,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 240,
+        "popcap": 3,
+        "time": 25
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/galley-3.png",
+      "hitpoints": 300,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 6.5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "fireship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 18,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.125,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 5
+          },
+          "attribName": "weapon_naval_arrow_ship_arrow",
+          "pbgid": 2034306
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 1
+        }
+      ],
+      "sight": {
+        "line": 48,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.75
+      }
+    },
+    {
+      "id": "galley-2",
+      "baseId": "galley",
+      "type": "unit",
+      "name": "Galley",
+      "pbgid": 8686565,
+      "attribName": "unit_naval_war_galley_3_hre_ha_01",
+      "age": 2,
+      "civs": [
+        "od"
+      ],
+      "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from ranged damage Blacksmith technology",
+      "classes": [
+        "archer",
+        "ship"
+      ],
+      "displayClasses": [
+        "Archer Ship"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 90,
+        "wood": 150,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 240,
         "popcap": 3,
         "time": 25

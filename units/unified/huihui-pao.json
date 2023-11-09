@@ -5,9 +5,10 @@
   "name": "Huihui Pao",
   "type": "unit",
   "civs": [
+    "by",
     "mo"
   ],
-  "unique": true,
+  "unique": false,
   "displayClasses": [
     "Siege",
     "Khaganate Unit"
@@ -16,10 +17,166 @@
     "siege",
     "khaganate"
   ],
-  "minAge": 4,
+  "minAge": 1,
   "icon": "https://data.aoe4world.com/images/units/huihui-pao-1.png",
-  "description": "Massive siege engine with incredible range, extra effective at destroying buildings and walls.\n+ Extremely long range\n- Must be set up to fire\n\nRandomly spawns from the Khaganate Palace.",
+  "description": "Massive siege engine with incredible range, extra effective at destroying buildings and walls.\n+ Extremely long range\n- Must be set up to fire\n\nMercenary that can be purchased for 1000 Olive Oil.",
   "variations": [
+    {
+      "id": "huihui-pao-1",
+      "baseId": "huihui-pao",
+      "type": "unit",
+      "name": "Huihui Pao",
+      "pbgid": 2138873,
+      "attribName": "unit_khaganate_great_trebuchet_merc_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Massive siege engine with incredible range, extra effective at destroying buildings and walls.\n+ Extremely long range\n- Must be set up to fire\n\nMercenary that can be purchased for 1000 Olive Oil.",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 1000,
+        "total": 1000,
+        "popcap": 3,
+        "time": 63
+      },
+      "producedBy": [
+        "foreign-engineering-company"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/huihui-pao-1.png",
+      "hitpoints": 260,
+      "weapons": [
+        {
+          "name": "Huihui Pao",
+          "type": "siege",
+          "damage": 75,
+          "speed": 13.625,
+          "range": {
+            "min": 2.75,
+            "max": 18
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 600,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 200,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0.625,
+            "attack": 0.125,
+            "winddown": 7.375,
+            "reload": 5,
+            "setup": 5,
+            "teardown": 2,
+            "cooldown": 0
+          },
+          "attribName": "weapon_khaganate_huihui_pao",
+          "pbgid": 2117338
+        },
+        {
+          "name": "Greek Fire",
+          "type": "siege",
+          "damage": 75,
+          "speed": 13.625,
+          "range": {
+            "min": 2.75,
+            "max": 18
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 600,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 200,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0.625,
+            "attack": 0.125,
+            "winddown": 7.375,
+            "reload": 5,
+            "setup": 5,
+            "teardown": 2,
+            "cooldown": 0
+          },
+          "attribName": "weapon_khagnate_huihui_pao_merc_byz",
+          "pbgid": 2150874
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 20
+        }
+      ],
+      "sight": {
+        "line": 80,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.625
+      },
+      "unlockedBy": [
+        "buildings/foreign-engineering-company"
+      ]
+    },
     {
       "id": "huihui-pao-1",
       "baseId": "huihui-pao",
@@ -46,6 +203,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 3,
         "time": 63

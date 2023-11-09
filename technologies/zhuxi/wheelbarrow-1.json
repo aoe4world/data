@@ -1,0 +1,61 @@
+{
+  "id": "wheelbarrow-1",
+  "baseId": "wheelbarrow",
+  "type": "technology",
+  "name": "Wheelbarrow",
+  "pbgid": 129091,
+  "attribName": "upgrade_unit_town_center_wheelbarrow_1",
+  "age": 1,
+  "civs": [
+    "zx"
+  ],
+  "description": "Increase the carry capacity of Villagers by +5 and their movement speed by +15%.",
+  "classes": [
+    "villager",
+    "technology"
+  ],
+  "displayClasses": [
+    "Villager Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 50,
+    "stone": 0,
+    "gold": 150,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 200,
+    "popcap": 0,
+    "time": 90
+  },
+  "producedBy": [
+    "mill",
+    "granary"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/wheelbarrow-1.png",
+  "effects": [
+    {
+      "property": "carryCapacity",
+      "select": {
+        "id": [
+          "villager"
+        ]
+      },
+      "effect": "change",
+      "value": 5,
+      "type": "passive"
+    },
+    {
+      "property": "moveSpeed",
+      "select": {
+        "id": [
+          "villager"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.15,
+      "type": "passive"
+    }
+  ]
+}

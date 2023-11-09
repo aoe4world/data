@@ -1,0 +1,135 @@
+{
+  "id": "yumi-bannerman-2",
+  "baseId": "yumi-bannerman",
+  "type": "unit",
+  "name": "Yumi Bannerman",
+  "pbgid": 2127061,
+  "attribName": "unit_banner_samurai_range_2_jpn",
+  "age": 2,
+  "civs": [
+    "ja"
+  ],
+  "description": "Ranged Samurai with an aura that increases damage of ranged infantry. Comes with the Deflective Armor ability that periodically blocks attacks.\n+ Banner drops on death\n+ Fast move speed\n- Weak against armored targets\n- Countered by Horsemen",
+  "classes": [
+    "light",
+    "ranged",
+    "infantry"
+  ],
+  "displayClasses": [
+    "Light Ranged Infantry"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 100,
+    "wood": 0,
+    "stone": 0,
+    "gold": 30,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 130,
+    "popcap": 1,
+    "time": 15
+  },
+  "producedBy": [
+    "archery-range"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/yumi-bannerman-2.png",
+  "hitpoints": 140,
+  "weapons": [
+    {
+      "name": "Yumi",
+      "type": "ranged",
+      "damage": 5,
+      "speed": 1.625,
+      "range": {
+        "min": 0,
+        "max": 5.25
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "light",
+                "melee",
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 5,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.25,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 0.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_banner_ranged_2_jpn",
+      "pbgid": 2145981
+    },
+    {
+      "name": "Yumi Incendiary",
+      "type": "ranged",
+      "damage": 5,
+      "speed": 1.625,
+      "range": {
+        "min": 0,
+        "max": 5.25
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "light",
+                "melee",
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 5,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.25,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 0.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_banner_ranged_incendiary_2_jpn",
+      "pbgid": 2145984
+    }
+  ],
+  "armor": [
+    {
+      "type": "melee",
+      "value": 1
+    },
+    {
+      "type": "ranged",
+      "value": 1
+    }
+  ],
+  "sight": {
+    "line": 36,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.375
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ability-uma-bannerman-aura-1",
+  "baseId": "ability-uma-bannerman-aura",
+  "type": "ability",
+  "name": "Uma Bannerman Aura",
+  "pbgid": 2127073,
+  "attribName": "bannerman_aura_cavalry_jpn",
+  "age": 1,
+  "civs": [
+    "ja"
+  ],
+  "description": "Aura that increases cavalry unit damage by +15%.\nBanner drops on death and lasts for 30 seconds providing the same aura.",
+  "classes": [],
+  "displayClasses": [],
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 0,
+    "popcap": 0
+  },
+  "producedBy": [],
+  "icon": "https://data.aoe4world.com/images/abilities/ability-uma-bannerman-aura-1.png",
+  "active": "always",
+  "auraRange": 6,
+  "effects": [
+    {
+      "property": "meleeAttack",
+      "select": {
+        "class": [
+          [
+            "cavalry"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.15,
+      "type": "ability"
+    }
+  ],
+  "activatedOn": [
+    "units/uma-bannerman"
+  ]
+}

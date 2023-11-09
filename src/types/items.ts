@@ -1,5 +1,4 @@
-import { ItemSlug } from "../sdk/utils";
-import { civAbbr } from "./civs";
+import { CivAbbr, ItemSlug } from "../sdk/utils";
 
 export type ItemClass =
   | "light"
@@ -38,7 +37,7 @@ export interface Item {
   id: ItemId;
   baseId: ItemId;
   type: "unit" | "building" | "technology" | "upgrade" | "ability";
-  civs: civAbbr[];
+  civs: CivAbbr[];
   classes: ItemClass[];
   displayClasses: string[];
 
@@ -57,6 +56,8 @@ export interface Item {
     wood: number;
     gold: number;
     stone: number;
+    oliveoil?: number;
+    vizier?: number;
     time: number;
     popcap?: number;
     total: number;
@@ -81,6 +82,8 @@ export interface PhysicalItem extends Item {
     capacity: number;
     classes: string[];
   };
+
+  unlockedBy?: ItemSlug[];
 }
 
 export interface Unit extends PhysicalItem {
@@ -135,10 +138,12 @@ export interface Ability extends Item {
   activatedOn?: ItemSlug[];
 }
 
+export type Selector = { class?: ItemClass[][]; id?: ItemId[] };
+
 export type Modifier = {
   property: ModifyableProperty;
-  target?: { class?: ItemClass[][]; id?: ItemId[] };
-  select?: { class?: ItemClass[][]; id?: ItemId[] };
+  target?: Selector;
+  select?: Selector;
   effect: "multiply" | "change";
   value: number;
   type: "passive" | "ability" | "influence" | "bonus";
@@ -183,6 +188,8 @@ export type ModifyableProperty =
   | "stoneGatherRate"
   | "woodCost"
   | "woodGatherRate"
+  | "berryGatherRate"
+  | "farmGatherRate"
   | "populationCost"
   | "healingRate"
   | "repairRate"
@@ -195,7 +202,7 @@ export type ModifyableProperty =
 export interface UnifiedItem<T extends Item = Item> {
   id: ItemId;
   name: string;
-  civs: civAbbr[];
+  civs: CivAbbr[];
   unique: boolean;
   variations: T[];
   type: T["type"];

@@ -1,0 +1,56 @@
+{
+  "id": "ability-divine-defense-1",
+  "baseId": "ability-divine-defense",
+  "type": "ability",
+  "name": "Divine Defense",
+  "pbgid": 2145449,
+  "attribName": "toggle_temple_of_the_sun_range_chi_ha_01",
+  "age": 1,
+  "civs": [
+    "zx"
+  ],
+  "description": "Gunpowder units and defensive structures gain +1 range.",
+  "classes": [],
+  "displayClasses": [],
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 0,
+    "popcap": 0
+  },
+  "producedBy": [
+    "temple-of-the-sun"
+  ],
+  "icon": "https://data.aoe4world.com/images/abilities/ability-divine-defense-1.png",
+  "active": "toggle",
+  "auraRange": 0,
+  "toggleGroup": "temple_of_the_sun",
+  "effects": [
+    {
+      "property": "maxRange",
+      "select": {
+        "class": [
+          [
+            "gunpowder"
+          ]
+        ],
+        "id": [
+          "outpost",
+          "keep",
+          "stone-wall-tower"
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "ability",
+      "duration": 1
+    }
+  ],
+  "activatedOn": [
+    "buildings/temple-of-the-sun"
+  ]
+}

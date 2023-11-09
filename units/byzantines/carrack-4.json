@@ -1,0 +1,91 @@
+{
+  "id": "carrack-4",
+  "baseId": "carrack",
+  "type": "unit",
+  "name": "Carrack",
+  "pbgid": 2616092,
+  "attribName": "unit_naval_combat_warship_4_byz",
+  "age": 4,
+  "civs": [
+    "by"
+  ],
+  "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
+  "classes": [
+    "warship"
+  ],
+  "displayClasses": [
+    "Warship"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 200,
+    "wood": 200,
+    "stone": 0,
+    "gold": 200,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 600,
+    "popcap": 5,
+    "time": 45
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/carrack-4.png",
+  "hitpoints": 700,
+  "weapons": [
+    {
+      "name": "Cannon",
+      "type": "siege",
+      "damage": 45,
+      "speed": 5.625,
+      "range": {
+        "min": 0,
+        "max": 9
+      },
+      "modifiers": [
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 70,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 5,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 3
+      },
+      "attribName": "weapon_naval_warship_cannon_ai_western",
+      "pbgid": 2033788
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 5
+    }
+  ],
+  "sight": {
+    "line": 50,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.25
+  }
+}

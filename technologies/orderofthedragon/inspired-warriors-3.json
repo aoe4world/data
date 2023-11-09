@@ -1,0 +1,107 @@
+{
+  "id": "inspired-warriors-3",
+  "baseId": "inspired-warriors",
+  "type": "technology",
+  "name": "Inspired Warriors",
+  "pbgid": 211200,
+  "attribName": "upgrade_inspired_infantry_hre",
+  "age": 3,
+  "civs": [
+    "od"
+  ],
+  "description": "Prelates can inspire military units, improving their armor by +1 and damage by +15%.",
+  "classes": [
+    "religious",
+    "technology"
+  ],
+  "displayClasses": [
+    "Religious Technology"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 100,
+    "wood": 0,
+    "stone": 0,
+    "gold": 250,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 350,
+    "popcap": 0,
+    "time": 60
+  },
+  "producedBy": [
+    "regnitz-cathedral",
+    "monastery"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/inspired-warriors-3.png",
+  "effects": [
+    {
+      "property": "rangedArmor",
+      "select": {
+        "class": [
+          [
+            "cavalry"
+          ],
+          [
+            "infantry"
+          ]
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "influence"
+    },
+    {
+      "property": "meleeArmor",
+      "select": {
+        "class": [
+          [
+            "cavalry"
+          ],
+          [
+            "infantry"
+          ]
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "influence"
+    },
+    {
+      "property": "meleeAttack",
+      "select": {
+        "class": [
+          [
+            "cavalry",
+            "melee"
+          ],
+          [
+            "infantry",
+            "melee"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.15,
+      "type": "influence"
+    },
+    {
+      "property": "rangedAttack",
+      "select": {
+        "class": [
+          [
+            "cavalry",
+            "ranged"
+          ],
+          [
+            "infantry",
+            "ranged"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.15,
+      "type": "influence"
+    }
+  ]
+}

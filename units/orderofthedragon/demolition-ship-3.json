@@ -1,0 +1,97 @@
+{
+  "id": "demolition-ship-3",
+  "baseId": "demolition-ship",
+  "type": "unit",
+  "name": "Demolition Ship",
+  "pbgid": 2280488,
+  "attribName": "unit_naval_fireship_3_hre_ha_01",
+  "age": 3,
+  "civs": [
+    "od"
+  ],
+  "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+  "classes": [
+    "incendiary",
+    "ship"
+  ],
+  "displayClasses": [
+    "Incendiary Ship"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 80,
+    "stone": 0,
+    "gold": 80,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 160,
+    "popcap": 2,
+    "time": 15
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/demolition-ship-3.png",
+  "hitpoints": 145,
+  "weapons": [
+    {
+      "name": "Incendiaries",
+      "type": "siege",
+      "damage": 95,
+      "speed": 0.125,
+      "range": {
+        "min": 0,
+        "max": 2
+      },
+      "modifiers": [
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "massive"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 300,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 300,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_naval_fireship",
+      "pbgid": 196723
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "line": 32,
+    "height": 10
+  },
+  "movement": {
+    "speed": 2
+  }
+}

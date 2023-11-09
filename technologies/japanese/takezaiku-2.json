@@ -1,0 +1,73 @@
+{
+  "id": "takezaiku-2",
+  "baseId": "takezaiku",
+  "type": "technology",
+  "name": "Takezaiku",
+  "pbgid": 2137905,
+  "attribName": "upgrade_unit_town_center_wheelbarrow_2_jpn",
+  "age": 2,
+  "civs": [
+    "ja"
+  ],
+  "description": "Increase the carry capacity of Villagers by +3, their movement speed by +7%, and +25% gather rate from Berry Bushes.",
+  "classes": [
+    "villager",
+    "technology",
+    "2/3"
+  ],
+  "displayClasses": [
+    "Villager Technology 2/3"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 0,
+    "wood": 50,
+    "stone": 0,
+    "gold": 100,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 150,
+    "popcap": 0,
+    "time": 40
+  },
+  "producedBy": [
+    "farmhouse",
+    "kura-storehouse"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/takezaiku-2.png",
+  "effects": [
+    {
+      "property": "carryCapacity",
+      "select": {
+        "id": [
+          "villager"
+        ]
+      },
+      "effect": "change",
+      "value": 3,
+      "type": "passive"
+    },
+    {
+      "property": "moveSpeed",
+      "select": {
+        "id": [
+          "villager"
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.8999999999999999,
+      "type": "passive"
+    },
+    {
+      "property": "berryGatherRate",
+      "select": {
+        "id": [
+          "villager"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.25,
+      "type": "passive"
+    }
+  ]
+}

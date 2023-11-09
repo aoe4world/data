@@ -22,6 +22,8 @@
     "wood": 400,
     "stone": 0,
     "gold": 200,
+    "vizier": 0,
+    "oliveoil": 0,
     "total": 600,
     "popcap": 3,
     "time": 40
@@ -102,10 +104,10 @@
     {
       "name": "Incendiary",
       "type": "fire",
-      "damage": 15,
-      "speed": 8.875,
+      "damage": 2,
+      "speed": 7,
       "range": {
-        "min": 2.5,
+        "min": 3,
         "max": 9
       },
       "modifiers": [
@@ -119,22 +121,36 @@
             ]
           },
           "effect": "change",
-          "value": 45,
+          "value": 14,
+          "type": "passive"
+        },
+        {
+          "property": "fireAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 16,
           "type": "passive"
         }
       ],
       "durations": {
         "aim": 0.5,
         "windup": 0,
-        "attack": 0.125,
+        "attack": 0.25,
         "winddown": 2.25,
-        "reload": 6,
+        "reload": 4,
         "setup": 0,
         "teardown": 1,
         "cooldown": 0
       },
       "burst": {
-        "count": 3
+        "count": 12
       },
       "attribName": "weapon_mangonel_3_incendiary_mon",
       "pbgid": 136319

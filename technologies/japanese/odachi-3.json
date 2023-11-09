@@ -1,0 +1,57 @@
+{
+  "id": "odachi-3",
+  "baseId": "odachi",
+  "type": "technology",
+  "name": "Odachi",
+  "pbgid": 2127556,
+  "attribName": "upgrade_odachi_jpn",
+  "age": 3,
+  "civs": [
+    "ja"
+  ],
+  "description": "Equip Samurai with an Odachi, a long sword that deals +4 bonus damage against infantry.",
+  "classes": [
+    "samurai",
+    "technology"
+  ],
+  "displayClasses": [
+    "Samurai Technology"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 100,
+    "wood": 0,
+    "stone": 0,
+    "gold": 250,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 350,
+    "popcap": 0,
+    "time": 60
+  },
+  "producedBy": [
+    "barracks"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/odachi-3.png",
+  "effects": [
+    {
+      "property": "meleeAttack",
+      "select": {
+        "id": [
+          "samurai",
+          "katana-bannerman"
+        ]
+      },
+      "target": {
+        "class": [
+          [
+            "infantry"
+          ]
+        ]
+      },
+      "effect": "change",
+      "value": 4,
+      "type": "passive"
+    }
+  ]
+}

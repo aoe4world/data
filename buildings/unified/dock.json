@@ -6,15 +6,21 @@
   "type": "building",
   "civs": [
     "ab",
+    "ay",
+    "by",
     "ch",
     "de",
     "en",
     "fr",
     "hr",
+    "ja",
+    "je",
     "ma",
     "mo",
+    "od",
     "ot",
-    "ru"
+    "ru",
+    "zx"
   ],
   "unique": false,
   "displayClasses": [
@@ -38,11 +44,11 @@
       "baseId": "dock",
       "type": "building",
       "name": "Dock",
-      "pbgid": 192784,
-      "attribName": "building_unit_naval_eng",
+      "pbgid": 199644,
+      "attribName": "building_unit_naval_abb",
       "age": 1,
       "civs": [
-        "en"
+        "ab"
       ],
       "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three Fishing Ships.",
       "classes": [
@@ -60,10 +66,12 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 150,
+        "wood": 75,
         "stone": 0,
         "gold": 0,
-        "total": 150,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 75,
         "popcap": 0,
         "time": 30
       },
@@ -89,18 +97,82 @@
           "fishing ship"
         ]
       },
-      "influences": []
+      "influences": [
+        "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age and unlock additional bonuses."
+      ]
     },
     {
       "id": "dock-1",
       "baseId": "dock",
       "type": "building",
       "name": "Dock",
-      "pbgid": 193147,
-      "attribName": "building_unit_naval_hre",
+      "pbgid": 5883638,
+      "attribName": "building_unit_naval_abb_ha_01",
       "age": 1,
       "civs": [
-        "hr"
+        "ay"
+      ],
+      "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three Fishing Ships.",
+      "classes": [
+        "military",
+        "&",
+        "economy",
+        "building",
+        "trade",
+        "site"
+      ],
+      "displayClasses": [
+        "Military & Economy Building",
+        "Trade Site"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 75,
+        "popcap": 0,
+        "time": 30
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/dock-1.png",
+      "hitpoints": 1750,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 50,
+        "height": 8
+      },
+      "garrison": {
+        "capacity": 3,
+        "classes": [
+          "fishing ship"
+        ]
+      },
+      "influences": [
+        "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age and unlock additional bonuses."
+      ]
+    },
+    {
+      "id": "dock-1",
+      "baseId": "dock",
+      "type": "building",
+      "name": "Dock",
+      "pbgid": 2104752,
+      "attribName": "building_unit_naval_byz",
+      "age": 1,
+      "civs": [
+        "by"
       ],
       "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three Fishing Ships.",
       "classes": [
@@ -121,6 +193,8 @@
         "wood": 150,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 150,
         "popcap": 0,
         "time": 30
@@ -148,66 +222,8 @@
         ]
       },
       "influences": [
-        "Buildings gain the Emergency Repairs ability while within the influence of a Town Center."
+        "Building output is improved while within the influence of a Cistern."
       ]
-    },
-    {
-      "id": "dock-1",
-      "baseId": "dock",
-      "type": "building",
-      "name": "Dock",
-      "pbgid": 193146,
-      "attribName": "building_unit_naval_fre",
-      "age": 1,
-      "civs": [
-        "fr"
-      ],
-      "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three Fishing Ships.",
-      "classes": [
-        "military",
-        "&",
-        "economy",
-        "building",
-        "trade",
-        "site"
-      ],
-      "displayClasses": [
-        "Military & Economy Building",
-        "Trade Site"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 150,
-        "stone": 0,
-        "gold": 0,
-        "total": 150,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "villager"
-      ],
-      "icon": "https://data.aoe4world.com/images/buildings/dock-1.png",
-      "hitpoints": 1750,
-      "weapons": [],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 50
-        }
-      ],
-      "sight": {
-        "line": 50,
-        "height": 8
-      },
-      "garrison": {
-        "capacity": 3,
-        "classes": [
-          "fishing ship"
-        ]
-      },
-      "influences": []
     },
     {
       "id": "dock-1",
@@ -239,6 +255,8 @@
         "wood": 150,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 150,
         "popcap": 0,
         "time": 15
@@ -299,6 +317,8 @@
         "wood": 150,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 150,
         "popcap": 0,
         "time": 30
@@ -335,11 +355,11 @@
       "baseId": "dock",
       "type": "building",
       "name": "Dock",
-      "pbgid": 199644,
-      "attribName": "building_unit_naval_abb",
+      "pbgid": 192784,
+      "attribName": "building_unit_naval_eng",
       "age": 1,
       "civs": [
-        "ab"
+        "en"
       ],
       "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three Fishing Ships.",
       "classes": [
@@ -357,10 +377,132 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 75,
+        "wood": 150,
         "stone": 0,
         "gold": 0,
-        "total": 75,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 150,
+        "popcap": 0,
+        "time": 30
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/dock-1.png",
+      "hitpoints": 1750,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 50,
+        "height": 8
+      },
+      "garrison": {
+        "capacity": 3,
+        "classes": [
+          "fishing ship"
+        ]
+      },
+      "influences": []
+    },
+    {
+      "id": "dock-1",
+      "baseId": "dock",
+      "type": "building",
+      "name": "Dock",
+      "pbgid": 193146,
+      "attribName": "building_unit_naval_fre",
+      "age": 1,
+      "civs": [
+        "fr"
+      ],
+      "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three Fishing Ships.",
+      "classes": [
+        "military",
+        "&",
+        "economy",
+        "building",
+        "trade",
+        "site"
+      ],
+      "displayClasses": [
+        "Military & Economy Building",
+        "Trade Site"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 150,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 150,
+        "popcap": 0,
+        "time": 30
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/dock-1.png",
+      "hitpoints": 1750,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 50,
+        "height": 8
+      },
+      "garrison": {
+        "capacity": 3,
+        "classes": [
+          "fishing ship"
+        ]
+      },
+      "influences": []
+    },
+    {
+      "id": "dock-1",
+      "baseId": "dock",
+      "type": "building",
+      "name": "Dock",
+      "pbgid": 193147,
+      "attribName": "building_unit_naval_hre",
+      "age": 1,
+      "civs": [
+        "hr"
+      ],
+      "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three Fishing Ships.",
+      "classes": [
+        "military",
+        "&",
+        "economy",
+        "building",
+        "trade",
+        "site"
+      ],
+      "displayClasses": [
+        "Military & Economy Building",
+        "Trade Site"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 150,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 150,
         "popcap": 0,
         "time": 30
       },
@@ -387,8 +529,130 @@
         ]
       },
       "influences": [
-        "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+        "Buildings gain the Emergency Repairs ability while within the influence of a Town Center."
       ]
+    },
+    {
+      "id": "dock-1",
+      "baseId": "dock",
+      "type": "building",
+      "name": "Dock",
+      "pbgid": 6657980,
+      "attribName": "building_unit_naval_jpn",
+      "age": 1,
+      "civs": [
+        "ja"
+      ],
+      "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three fishing ships.\nFishing Boats are produced 30% cheaper.",
+      "classes": [
+        "military",
+        "&",
+        "economy",
+        "building",
+        "trade",
+        "site"
+      ],
+      "displayClasses": [
+        "Military & Economy Building",
+        "Trade Site"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 150,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 150,
+        "popcap": 0,
+        "time": 30
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/dock-1.png",
+      "hitpoints": 1750,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 50,
+        "height": 8
+      },
+      "garrison": {
+        "capacity": 3,
+        "classes": [
+          "fishing ship",
+          "onna bugeisha"
+        ]
+      },
+      "influences": []
+    },
+    {
+      "id": "dock-1",
+      "baseId": "dock",
+      "type": "building",
+      "name": "Dock",
+      "pbgid": 4776413,
+      "attribName": "building_unit_naval_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three Fishing Ships.",
+      "classes": [
+        "military",
+        "&",
+        "economy",
+        "building",
+        "trade",
+        "site"
+      ],
+      "displayClasses": [
+        "Military & Economy Building",
+        "Trade Site"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 150,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 150,
+        "popcap": 0,
+        "time": 30
+      },
+      "producedBy": [
+        "jeanne-darc-peasant",
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/dock-1.png",
+      "hitpoints": 1750,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 50,
+        "height": 8
+      },
+      "garrison": {
+        "capacity": 3,
+        "classes": [
+          "fishing ship"
+        ]
+      },
+      "influences": []
     },
     {
       "id": "dock-1",
@@ -420,6 +684,8 @@
         "wood": 150,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 150,
         "popcap": 0,
         "time": 30
@@ -478,6 +744,8 @@
         "wood": 150,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 150,
         "popcap": 0,
         "time": 30
@@ -511,6 +779,68 @@
       "baseId": "dock",
       "type": "building",
       "name": "Dock",
+      "pbgid": 7872861,
+      "attribName": "building_unit_naval_hre_ha_01",
+      "age": 1,
+      "civs": [
+        "od"
+      ],
+      "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three Fishing Ships.",
+      "classes": [
+        "military",
+        "&",
+        "economy",
+        "building",
+        "trade",
+        "site"
+      ],
+      "displayClasses": [
+        "Military & Economy Building",
+        "Trade Site"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 150,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 150,
+        "popcap": 0,
+        "time": 30
+      },
+      "producedBy": [
+        "dragon-villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/dock-1.png",
+      "hitpoints": 1750,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 50,
+        "height": 8
+      },
+      "garrison": {
+        "capacity": 3,
+        "classes": [
+          "fishing ship"
+        ]
+      },
+      "influences": [
+        "Buildings gain the Emergency Repairs ability while within the influence of a Town Center."
+      ]
+    },
+    {
+      "id": "dock-1",
+      "baseId": "dock",
+      "type": "building",
+      "name": "Dock",
       "pbgid": 2034620,
       "attribName": "building_unit_naval_ott",
       "age": 1,
@@ -536,6 +866,8 @@
         "wood": 100,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 100,
         "popcap": 0,
         "time": 30
@@ -596,6 +928,68 @@
         "wood": 150,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 150,
+        "popcap": 0,
+        "time": 30
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/dock-1.png",
+      "hitpoints": 1750,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 50,
+        "height": 8
+      },
+      "garrison": {
+        "capacity": 3,
+        "classes": [
+          "fishing ship"
+        ]
+      },
+      "influences": []
+    },
+    {
+      "id": "dock-1",
+      "baseId": "dock",
+      "type": "building",
+      "name": "Dock",
+      "pbgid": 2760206,
+      "attribName": "building_unit_naval_chi_ha_01",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three fishing ships.\nGenerates Tax each time a unit or research is produced.",
+      "classes": [
+        "military",
+        "&",
+        "economy",
+        "building",
+        "trade",
+        "site"
+      ],
+      "displayClasses": [
+        "Military & Economy Building",
+        "Trade Site"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 150,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 150,
         "popcap": 0,
         "time": 30

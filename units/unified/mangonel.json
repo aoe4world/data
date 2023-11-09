@@ -6,12 +6,16 @@
   "type": "unit",
   "civs": [
     "ab",
+    "by",
     "de",
     "en",
     "fr",
     "hr",
+    "ja",
+    "je",
     "ma",
     "mo",
+    "od",
     "ot",
     "ru"
   ],
@@ -26,6 +30,522 @@
   "icon": "https://data.aoe4world.com/images/units/mangonel-3.png",
   "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
   "variations": [
+    {
+      "id": "mangonel-3",
+      "baseId": "mangonel",
+      "type": "unit",
+      "name": "Mangonel",
+      "pbgid": 199723,
+      "attribName": "unit_mangonel_3_abb",
+      "age": 3,
+      "civs": [
+        "ab"
+      ],
+      "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 400,
+        "stone": 0,
+        "gold": 200,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 600,
+        "popcap": 3,
+        "time": 40
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/mangonel-3.png",
+      "hitpoints": 140,
+      "weapons": [
+        {
+          "name": "Mangonel",
+          "type": "siege",
+          "damage": 12,
+          "speed": 6.875,
+          "range": {
+            "min": 3,
+            "max": 9
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 24,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 24,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 6,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 2.25,
+            "reload": 4,
+            "setup": 0,
+            "teardown": 1,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_mangonel_3",
+          "pbgid": 127503
+        },
+        {
+          "name": "Incendiary",
+          "type": "fire",
+          "damage": 2,
+          "speed": 7,
+          "range": {
+            "min": 3,
+            "max": 9
+          },
+          "modifiers": [
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 14,
+              "type": "passive"
+            },
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 16,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.25,
+            "winddown": 2.25,
+            "reload": 4,
+            "setup": 0,
+            "teardown": 1,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 12
+          },
+          "attribName": "weapon_mangonel_3_incendiary",
+          "pbgid": 127724
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 20
+        }
+      ],
+      "sight": {
+        "line": 52,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.75
+      }
+    },
+    {
+      "id": "mangonel-3",
+      "baseId": "mangonel",
+      "type": "unit",
+      "name": "Mangonel",
+      "pbgid": 3602537,
+      "attribName": "unit_mangonel_3_byz",
+      "age": 3,
+      "civs": [
+        "by"
+      ],
+      "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 400,
+        "stone": 0,
+        "gold": 200,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 600,
+        "popcap": 3,
+        "time": 40
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/mangonel-3.png",
+      "hitpoints": 140,
+      "weapons": [
+        {
+          "name": "Mangonel",
+          "type": "siege",
+          "damage": 12,
+          "speed": 6.875,
+          "range": {
+            "min": 3,
+            "max": 9
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 24,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 24,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 6,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 2.25,
+            "reload": 4,
+            "setup": 0,
+            "teardown": 1,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_mangonel_3",
+          "pbgid": 127503
+        },
+        {
+          "name": "Incendiary",
+          "type": "fire",
+          "damage": 2,
+          "speed": 7,
+          "range": {
+            "min": 3,
+            "max": 9
+          },
+          "modifiers": [
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 14,
+              "type": "passive"
+            },
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 16,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.25,
+            "winddown": 2.25,
+            "reload": 4,
+            "setup": 0,
+            "teardown": 1,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 12
+          },
+          "attribName": "weapon_mangonel_3_incendiary",
+          "pbgid": 127724
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 20
+        }
+      ],
+      "sight": {
+        "line": 52,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.75
+      }
+    },
+    {
+      "id": "mangonel-3",
+      "baseId": "mangonel",
+      "type": "unit",
+      "name": "Mangonel",
+      "pbgid": 136054,
+      "attribName": "unit_mangonel_3_sul",
+      "age": 3,
+      "civs": [
+        "de"
+      ],
+      "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 400,
+        "stone": 0,
+        "gold": 200,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 600,
+        "popcap": 3,
+        "time": 40
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/mangonel-3.png",
+      "hitpoints": 140,
+      "weapons": [
+        {
+          "name": "Mangonel",
+          "type": "siege",
+          "damage": 12,
+          "speed": 6.875,
+          "range": {
+            "min": 3,
+            "max": 9
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 24,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 24,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 6,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 2.25,
+            "reload": 4,
+            "setup": 0,
+            "teardown": 1,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_mangonel_3",
+          "pbgid": 127503
+        },
+        {
+          "name": "Incendiary",
+          "type": "fire",
+          "damage": 2,
+          "speed": 7,
+          "range": {
+            "min": 3,
+            "max": 9
+          },
+          "modifiers": [
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 14,
+              "type": "passive"
+            },
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 16,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.25,
+            "winddown": 2.25,
+            "reload": 4,
+            "setup": 0,
+            "teardown": 1,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 12
+          },
+          "attribName": "weapon_mangonel_3_incendiary",
+          "pbgid": 127724
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 20
+        }
+      ],
+      "sight": {
+        "line": 52,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.75
+      }
+    },
     {
       "id": "mangonel-3",
       "baseId": "mangonel",
@@ -50,6 +570,8 @@
         "wood": 400,
         "stone": 0,
         "gold": 200,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 600,
         "popcap": 3,
         "time": 40
@@ -133,10 +655,10 @@
         {
           "name": "Incendiary",
           "type": "fire",
-          "damage": 15,
-          "speed": 8.875,
+          "damage": 2,
+          "speed": 7,
           "range": {
-            "min": 2.5,
+            "min": 3,
             "max": 9
           },
           "modifiers": [
@@ -150,100 +672,11 @@
                 ]
               },
               "effect": "change",
-              "value": 45,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0.5,
-            "windup": 0,
-            "attack": 0.125,
-            "winddown": 2.25,
-            "reload": 6,
-            "setup": 0,
-            "teardown": 1,
-            "cooldown": 0
-          },
-          "burst": {
-            "count": 3
-          },
-          "attribName": "weapon_mangonel_3_incendiary",
-          "pbgid": 127724
-        }
-      ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 20
-        }
-      ],
-      "sight": {
-        "line": 52,
-        "height": 10
-      },
-      "movement": {
-        "speed": 0.75
-      }
-    },
-    {
-      "id": "mangonel-3",
-      "baseId": "mangonel",
-      "type": "unit",
-      "name": "Mangonel",
-      "pbgid": 134729,
-      "attribName": "unit_mangonel_3_hre",
-      "age": 3,
-      "civs": [
-        "hr"
-      ],
-      "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
-      "classes": [
-        "siege"
-      ],
-      "displayClasses": [
-        "Siege"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 400,
-        "stone": 0,
-        "gold": 200,
-        "total": 600,
-        "popcap": 3,
-        "time": 40
-      },
-      "producedBy": [
-        "siege-workshop"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/mangonel-3.png",
-      "hitpoints": 140,
-      "weapons": [
-        {
-          "name": "Mangonel",
-          "type": "siege",
-          "damage": 12,
-          "speed": 6.875,
-          "range": {
-            "min": 3,
-            "max": 9
-          },
-          "modifiers": [
-            {
-              "property": "siegeAttack",
-              "target": {
-                "class": [
-                  [
-                    "building"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 24,
+              "value": 14,
               "type": "passive"
             },
             {
-              "property": "siegeAttack",
+              "property": "fireAttack",
               "target": {
                 "class": [
                   [
@@ -253,27 +686,14 @@
                 ]
               },
               "effect": "change",
-              "value": 24,
-              "type": "passive"
-            },
-            {
-              "property": "siegeAttack",
-              "target": {
-                "class": [
-                  [
-                    "ranged"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 6,
+              "value": 16,
               "type": "passive"
             }
           ],
           "durations": {
             "aim": 0.5,
             "windup": 0,
-            "attack": 0.125,
+            "attack": 0.25,
             "winddown": 2.25,
             "reload": 4,
             "setup": 0,
@@ -281,47 +701,7 @@
             "cooldown": 0
           },
           "burst": {
-            "count": 3
-          },
-          "attribName": "weapon_mangonel_3",
-          "pbgid": 127503
-        },
-        {
-          "name": "Incendiary",
-          "type": "fire",
-          "damage": 15,
-          "speed": 8.875,
-          "range": {
-            "min": 2.5,
-            "max": 9
-          },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "building"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 45,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0.5,
-            "windup": 0,
-            "attack": 0.125,
-            "winddown": 2.25,
-            "reload": 6,
-            "setup": 0,
-            "teardown": 1,
-            "cooldown": 0
-          },
-          "burst": {
-            "count": 3
+            "count": 12
           },
           "attribName": "weapon_mangonel_3_incendiary",
           "pbgid": 127724
@@ -365,6 +745,8 @@
         "wood": 400,
         "stone": 0,
         "gold": 200,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 600,
         "popcap": 3,
         "time": 40
@@ -445,10 +827,10 @@
         {
           "name": "Incendiary",
           "type": "fire",
-          "damage": 15,
-          "speed": 8.875,
+          "damage": 2,
+          "speed": 7,
           "range": {
-            "min": 2.5,
+            "min": 3,
             "max": 9
           },
           "modifiers": [
@@ -462,22 +844,36 @@
                 ]
               },
               "effect": "change",
-              "value": 45,
+              "value": 14,
+              "type": "passive"
+            },
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 16,
               "type": "passive"
             }
           ],
           "durations": {
             "aim": 0.5,
             "windup": 0,
-            "attack": 0.125,
+            "attack": 0.25,
             "winddown": 2.25,
-            "reload": 6,
+            "reload": 4,
             "setup": 0,
             "teardown": 1,
             "cooldown": 0
           },
           "burst": {
-            "count": 3
+            "count": 12
           },
           "attribName": "weapon_mangonel_3_incendiary",
           "pbgid": 127724
@@ -502,11 +898,11 @@
       "baseId": "mangonel",
       "type": "unit",
       "name": "Mangonel",
-      "pbgid": 136054,
-      "attribName": "unit_mangonel_3_sul",
+      "pbgid": 134729,
+      "attribName": "unit_mangonel_3_hre",
       "age": 3,
       "civs": [
-        "de"
+        "hr"
       ],
       "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
       "classes": [
@@ -521,6 +917,8 @@
         "wood": 400,
         "stone": 0,
         "gold": 200,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 600,
         "popcap": 3,
         "time": 40
@@ -601,10 +999,10 @@
         {
           "name": "Incendiary",
           "type": "fire",
-          "damage": 15,
-          "speed": 8.875,
+          "damage": 2,
+          "speed": 7,
           "range": {
-            "min": 2.5,
+            "min": 3,
             "max": 9
           },
           "modifiers": [
@@ -618,22 +1016,36 @@
                 ]
               },
               "effect": "change",
-              "value": 45,
+              "value": 14,
+              "type": "passive"
+            },
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 16,
               "type": "passive"
             }
           ],
           "durations": {
             "aim": 0.5,
             "windup": 0,
-            "attack": 0.125,
+            "attack": 0.25,
             "winddown": 2.25,
-            "reload": 6,
+            "reload": 4,
             "setup": 0,
             "teardown": 1,
             "cooldown": 0
           },
           "burst": {
-            "count": 3
+            "count": 12
           },
           "attribName": "weapon_mangonel_3_incendiary",
           "pbgid": 127724
@@ -658,11 +1070,11 @@
       "baseId": "mangonel",
       "type": "unit",
       "name": "Mangonel",
-      "pbgid": 199723,
-      "attribName": "unit_mangonel_3_abb",
+      "pbgid": 8461993,
+      "attribName": "unit_mangonel_3_jpn",
       "age": 3,
       "civs": [
-        "ab"
+        "ja"
       ],
       "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
       "classes": [
@@ -677,6 +1089,8 @@
         "wood": 400,
         "stone": 0,
         "gold": 200,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 600,
         "popcap": 3,
         "time": 40
@@ -757,10 +1171,10 @@
         {
           "name": "Incendiary",
           "type": "fire",
-          "damage": 15,
-          "speed": 8.875,
+          "damage": 2,
+          "speed": 7,
           "range": {
-            "min": 2.5,
+            "min": 3,
             "max": 9
           },
           "modifiers": [
@@ -774,7 +1188,139 @@
                 ]
               },
               "effect": "change",
-              "value": 45,
+              "value": 14,
+              "type": "passive"
+            },
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 16,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.25,
+            "winddown": 2.25,
+            "reload": 4,
+            "setup": 0,
+            "teardown": 1,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 12
+          },
+          "attribName": "weapon_mangonel_3_incendiary",
+          "pbgid": 127724
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 20
+        }
+      ],
+      "sight": {
+        "line": 52,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.75
+      }
+    },
+    {
+      "id": "mangonel-3",
+      "baseId": "mangonel",
+      "type": "unit",
+      "name": "Mangonel",
+      "pbgid": 132284,
+      "attribName": "unit_mangonel_3_fre",
+      "age": 3,
+      "civs": [
+        "je"
+      ],
+      "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 400,
+        "stone": 0,
+        "gold": 200,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 600,
+        "popcap": 3,
+        "time": 40
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/mangonel-3.png",
+      "hitpoints": 140,
+      "weapons": [
+        {
+          "name": "Mangonel",
+          "type": "siege",
+          "damage": 12,
+          "speed": 6.875,
+          "range": {
+            "min": 3,
+            "max": 9
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 24,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 24,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 6,
               "type": "passive"
             }
           ],
@@ -783,13 +1329,67 @@
             "windup": 0,
             "attack": 0.125,
             "winddown": 2.25,
-            "reload": 6,
+            "reload": 4,
             "setup": 0,
             "teardown": 1,
             "cooldown": 0
           },
           "burst": {
             "count": 3
+          },
+          "attribName": "weapon_mangonel_3",
+          "pbgid": 127503
+        },
+        {
+          "name": "Incendiary",
+          "type": "fire",
+          "damage": 2,
+          "speed": 7,
+          "range": {
+            "min": 3,
+            "max": 9
+          },
+          "modifiers": [
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 14,
+              "type": "passive"
+            },
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 16,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.25,
+            "winddown": 2.25,
+            "reload": 4,
+            "setup": 0,
+            "teardown": 1,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 12
           },
           "attribName": "weapon_mangonel_3_incendiary",
           "pbgid": 127724
@@ -833,6 +1433,8 @@
         "wood": 400,
         "stone": 0,
         "gold": 200,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 600,
         "popcap": 3,
         "time": 40
@@ -913,10 +1515,10 @@
         {
           "name": "Incendiary",
           "type": "fire",
-          "damage": 15,
-          "speed": 8.875,
+          "damage": 2,
+          "speed": 7,
           "range": {
-            "min": 2.5,
+            "min": 3,
             "max": 9
           },
           "modifiers": [
@@ -930,22 +1532,36 @@
                 ]
               },
               "effect": "change",
-              "value": 45,
+              "value": 14,
+              "type": "passive"
+            },
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 16,
               "type": "passive"
             }
           ],
           "durations": {
             "aim": 0.5,
             "windup": 0,
-            "attack": 0.125,
+            "attack": 0.25,
             "winddown": 2.25,
-            "reload": 6,
+            "reload": 4,
             "setup": 0,
             "teardown": 1,
             "cooldown": 0
           },
           "burst": {
-            "count": 3
+            "count": 12
           },
           "attribName": "weapon_mangonel_3_incendiary",
           "pbgid": 127724
@@ -989,6 +1605,8 @@
         "wood": 400,
         "stone": 0,
         "gold": 200,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 600,
         "popcap": 3,
         "time": 40
@@ -1069,10 +1687,10 @@
         {
           "name": "Incendiary",
           "type": "fire",
-          "damage": 15,
-          "speed": 8.875,
+          "damage": 2,
+          "speed": 7,
           "range": {
-            "min": 2.5,
+            "min": 3,
             "max": 9
           },
           "modifiers": [
@@ -1086,7 +1704,139 @@
                 ]
               },
               "effect": "change",
-              "value": 45,
+              "value": 14,
+              "type": "passive"
+            },
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 16,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.25,
+            "winddown": 2.25,
+            "reload": 4,
+            "setup": 0,
+            "teardown": 1,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 12
+          },
+          "attribName": "weapon_mangonel_3_incendiary_mon",
+          "pbgid": 136319
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 20
+        }
+      ],
+      "sight": {
+        "line": 52,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.75
+      }
+    },
+    {
+      "id": "mangonel-3",
+      "baseId": "mangonel",
+      "type": "unit",
+      "name": "Mangonel",
+      "pbgid": 6182386,
+      "attribName": "unit_mangonel_3_hre_ha_01",
+      "age": 3,
+      "civs": [
+        "od"
+      ],
+      "description": "Fires multiple projectiles dealing damage in an area.\n+ Effective against massed units\n- Must be set up to fire",
+      "classes": [
+        "siege"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 400,
+        "stone": 0,
+        "gold": 200,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 600,
+        "popcap": 3,
+        "time": 40
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/mangonel-3.png",
+      "hitpoints": 140,
+      "weapons": [
+        {
+          "name": "Mangonel",
+          "type": "siege",
+          "damage": 12,
+          "speed": 6.875,
+          "range": {
+            "min": 3,
+            "max": 9
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 24,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 24,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 6,
               "type": "passive"
             }
           ],
@@ -1095,7 +1845,7 @@
             "windup": 0,
             "attack": 0.125,
             "winddown": 2.25,
-            "reload": 6,
+            "reload": 4,
             "setup": 0,
             "teardown": 1,
             "cooldown": 0
@@ -1103,8 +1853,62 @@
           "burst": {
             "count": 3
           },
-          "attribName": "weapon_mangonel_3_incendiary_mon",
-          "pbgid": 136319
+          "attribName": "weapon_mangonel_3",
+          "pbgid": 127503
+        },
+        {
+          "name": "Incendiary",
+          "type": "fire",
+          "damage": 2,
+          "speed": 7,
+          "range": {
+            "min": 3,
+            "max": 9
+          },
+          "modifiers": [
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 14,
+              "type": "passive"
+            },
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 16,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.25,
+            "winddown": 2.25,
+            "reload": 4,
+            "setup": 0,
+            "teardown": 1,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 12
+          },
+          "attribName": "weapon_mangonel_3_incendiary",
+          "pbgid": 127724
         }
       ],
       "armor": [
@@ -1145,6 +1949,8 @@
         "wood": 400,
         "stone": 0,
         "gold": 200,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 600,
         "popcap": 3,
         "time": 40
@@ -1226,10 +2032,10 @@
         {
           "name": "Incendiary",
           "type": "fire",
-          "damage": 15,
-          "speed": 8.875,
+          "damage": 2,
+          "speed": 7,
           "range": {
-            "min": 2.5,
+            "min": 3,
             "max": 9
           },
           "modifiers": [
@@ -1243,22 +2049,36 @@
                 ]
               },
               "effect": "change",
-              "value": 45,
+              "value": 14,
+              "type": "passive"
+            },
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 16,
               "type": "passive"
             }
           ],
           "durations": {
             "aim": 0.5,
             "windup": 0,
-            "attack": 0.125,
+            "attack": 0.25,
             "winddown": 2.25,
-            "reload": 6,
+            "reload": 4,
             "setup": 0,
             "teardown": 1,
             "cooldown": 0
           },
           "burst": {
-            "count": 3
+            "count": 12
           },
           "attribName": "weapon_mangonel_3_incendiary",
           "pbgid": 127724
@@ -1311,6 +2131,8 @@
         "wood": 400,
         "stone": 0,
         "gold": 200,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 600,
         "popcap": 3,
         "time": 40
@@ -1391,10 +2213,10 @@
         {
           "name": "Incendiary",
           "type": "fire",
-          "damage": 15,
-          "speed": 8.875,
+          "damage": 2,
+          "speed": 7,
           "range": {
-            "min": 2.5,
+            "min": 3,
             "max": 9
           },
           "modifiers": [
@@ -1408,22 +2230,36 @@
                 ]
               },
               "effect": "change",
-              "value": 45,
+              "value": 14,
+              "type": "passive"
+            },
+            {
+              "property": "fireAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 16,
               "type": "passive"
             }
           ],
           "durations": {
             "aim": 0.5,
             "windup": 0,
-            "attack": 0.125,
+            "attack": 0.25,
             "winddown": 2.25,
-            "reload": 6,
+            "reload": 4,
             "setup": 0,
             "teardown": 1,
             "cooldown": 0
           },
           "burst": {
-            "count": 3
+            "count": 12
           },
           "attribName": "weapon_mangonel_3_incendiary_rus",
           "pbgid": 133315

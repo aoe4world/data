@@ -1,25 +1,13 @@
 import { CIVILIZATIONS } from "../lib/config/civs";
-import { CivSlug } from "../sdk/utils";
 
-export type civAbbr = "en" | "hr" | "fr" | "ch" | "de" | "ab" | "mo" | "ru" | "ma" | "ot";
+export type CivAbbr = keyof typeof CIVILIZATIONS;
+export type CivSlug = typeof CIVILIZATIONS[CivAbbr]["slug"];
 
-export type civConfig = {
+export type CivConfig = {
   name: string;
-  abbr: civAbbr;
+  abbr: CivAbbr;
   slug: CivSlug;
-};
-
-export const CIVILIZATION_BY_SLUG = {
-  english: CIVILIZATIONS.en,
-  hre: CIVILIZATIONS.hr,
-  french: CIVILIZATIONS.fr,
-  chinese: CIVILIZATIONS.ch,
-  delhi: CIVILIZATIONS.de,
-  abbasid: CIVILIZATIONS.ab,
-  mongols: CIVILIZATIONS.mo,
-  rus: CIVILIZATIONS.ru,
-  malians: CIVILIZATIONS.ma,
-  ottomans: CIVILIZATIONS.ot,
+  attribName?: string;
 };
 
 export type CivInfo = {
@@ -29,3 +17,5 @@ export type CivInfo = {
   // backdrop?: string;
   overview: { title: string; description?: string; list?: string[] }[];
 };
+
+export const CIVILIZATION_BY_SLUG: Record<CivSlug, CivConfig> = Object.values(CIVILIZATIONS).reduce((acc, civ) => ({ ...acc, [civ.slug]: civ }), {} as Record<CivSlug, CivConfig>);

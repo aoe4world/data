@@ -1,0 +1,60 @@
+{
+  "id": "fortify-outpost-2",
+  "baseId": "fortify-outpost",
+  "type": "technology",
+  "name": "Fortify Outpost",
+  "pbgid": 127331,
+  "attribName": "upgrade_outpost_stone",
+  "age": 2,
+  "civs": [
+    "by"
+  ],
+  "description": "Add +1000 health and +5 fire armor to this Outpost.",
+  "classes": [
+    "defensive",
+    "emplacement"
+  ],
+  "displayClasses": [
+    "Defensive Emplacement"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 100,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 100,
+    "popcap": 0,
+    "time": 30
+  },
+  "producedBy": [
+    "outpost"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/fortify-outpost-2.png",
+  "effects": [
+    {
+      "property": "hitpoints",
+      "select": {
+        "id": [
+          "outpost"
+        ]
+      },
+      "effect": "change",
+      "value": 1000,
+      "type": "passive"
+    },
+    {
+      "property": "fireArmor",
+      "select": {
+        "id": [
+          "outpost"
+        ]
+      },
+      "effect": "change",
+      "value": 5,
+      "type": "passive"
+    }
+  ]
+}

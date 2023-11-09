@@ -1,20 +1,20 @@
 import { Get } from ".";
-import { civAbbr, civConfig, CIVILIZATION_BY_SLUG } from "../types/civs";
+import type { CivAbbr, CivSlug, CivConfig } from "../types/civs";
+import { CIVILIZATION_BY_SLUG } from "../types/civs";
 import { Item, ItemType, Modifier, UnifiedItem } from "../types/items";
 
-export type CivSlug = keyof typeof CIVILIZATION_BY_SLUG;
-export type CivAbbr = civAbbr;
+export { CivSlug, CivAbbr };
 export type ItemGroup<T extends Item> = UnifiedItem<T>;
 
 type NumberKeys<T> = { [K in keyof T]: T[K] extends number ? K : never }[keyof T];
 export type ItemSlug = `${"units" | "buildings" | "technologies" | "upgrades" | "abilities"}/${string}`;
 
-export function getAbbr(civ: CivAbbr | CivSlug | civConfig): CivAbbr {
+export function getAbbr(civ: CivAbbr | CivSlug | CivConfig): CivAbbr {
   if (typeof civ === "string") return civ.length == 2 ? civ : CIVILIZATION_BY_SLUG[civ];
   return civ.abbr;
 }
 
-export function getSlug(civ: CivAbbr | CivSlug | civConfig): CivSlug {
+export function getSlug(civ: CivAbbr | CivSlug | CivConfig): CivSlug {
   if (typeof civ === "string") return civ.length == 2 ? civ : CIVILIZATION_BY_SLUG[civ];
   return civ.slug;
 }

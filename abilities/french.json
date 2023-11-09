@@ -4,7 +4,8 @@
   "civ": {
     "name": "French",
     "abbr": "fr",
-    "slug": "french"
+    "slug": "french",
+    "attribName": "french"
   },
   "data": [
     {
@@ -26,6 +27,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -71,6 +74,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -107,13 +112,60 @@
       ]
     },
     {
-      "id": "ability-keep-influence-3",
-      "baseId": "ability-keep-influence",
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
       "type": "ability",
-      "name": "Keep Influence",
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
+      "age": 1,
+      "civs": [
+        "fr"
+      ],
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-royal-institute-influence-1",
+      "baseId": "ability-royal-institute-influence",
+      "type": "ability",
+      "name": "Royal Institute Influence",
       "pbgid": 1452233,
       "attribName": "keep_influence_fre",
-      "age": 3,
+      "age": 1,
       "civs": [
         "fr"
       ],
@@ -125,68 +177,18 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
       "producedBy": [
         "keep"
       ],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-keep-influence-1.png",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-royal-institute-influence-1.png",
       "active": "always",
       "auraRange": 0,
-      "effects": [
-        {
-          "property": "goldCost",
-          "select": {
-            "class": [
-              [
-                "cavalry",
-                "melee"
-              ],
-              [
-                "ranged"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.8,
-          "type": "ability"
-        },
-        {
-          "property": "foodCost",
-          "select": {
-            "class": [
-              [
-                "cavalry",
-                "melee"
-              ],
-              [
-                "ranged"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.8,
-          "type": "ability"
-        },
-        {
-          "property": "woodCost",
-          "select": {
-            "class": [
-              [
-                "cavalry",
-                "melee"
-              ],
-              [
-                "ranged"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.8,
-          "type": "ability"
-        }
-      ]
+      "effects": []
     },
     {
       "id": "ability-royal-knight-charge-damage-2",
@@ -248,6 +250,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -292,6 +296,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -336,6 +342,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },

@@ -2,11 +2,11 @@ import path from "path";
 import { ITEM_TYPES } from "../lib/config";
 import { CivSlug } from "../sdk/utils";
 
-export const SOURCE_FOLDER = path.join(__dirname, "../../source/");
+export const SOURCE_FOLDER = path.join(__dirname, "../../source/DLC");
 export const ATTRIB_FOLDER = path.join(SOURCE_FOLDER, "/attrib");
-export const ICON_FOLDER = path.join(SOURCE_FOLDER, "/icons");
+export const ICON_FOLDER = path.join(SOURCE_FOLDER, "/art/icons");
 export const LOCALES_FOLDER = path.join(SOURCE_FOLDER, "/locale");
-export const ESSENCE_FOLDER = path.join(SOURCE_FOLDER, "/essence/attrib");
+export const ESSENCE_FOLDER = path.join(SOURCE_FOLDER, "/attrib");
 
 // Unit files not discovered by sync.ts
 export const hardcodedDiscovery = {
@@ -65,7 +65,56 @@ export const hardcodedDiscovery = {
   abbasid: [
     "abilities/always_on_abilities/abbasid/camel_support_aura_abb", //misses auto discovery; camel support tech needs both ranged and melee armor, so handling this here, and it can be modified when interfacing techs that unlock abilities
     "abilities/timed_abilities/abbasid/monk_conversion_faith_abb", //misses auto discovery;
-    //"abilities/always_on_abilities/abbasid/mamluke_anti_cavalry_aura_abb", //determine how to handle debuff
+    "abilities/always_on_abilities/abbasid/mamluke_anti_cavalry_aura_abb", //determine how to handle debuff
+    "abilities/always_on_abilities/abbasid/ghulam_attack_abb",
+  ],
+  ayyubids: [
+    "abilities/toggle_abilities/mamluk_swap_to_bow_weapon",
+    "abilities/toggle_abilities/mamluk_swap_to_sword_weapon",
+    "abilities/always_on_abilities/abbasid/mamluke_anti_cavalry_aura_abb",
+    "abilities/modal_abilities/abbasid_ha_01/production_building_enhance_abb",
+    "abilities/timed_abilities/abbasid_ha_01/monk_aoe_heal",
+    "abilities/timed_abilities/abbasid_ha_01/siege_carpentry_abb_ha_01",
+    "abilities/always_on_abilities/abbasid/ghulam_attack_abb",
+    "abilities/always_on_abilities/abbasid/proxy_placement_gristmill_abb",
+
+    "sbps/races/abbasid_ha_01/unit_javelin_2_abb_ha_01", // Bedouin Skirmisher
+    "sbps/races/abbasid_ha_01/unit_pirate_abb_ha_01", // Bedouin Swordsman
+  ],
+  byzantines: [
+    // "abilities/always_on_abilities/byzantine/cistern_villager_buff_byz",
+    "abilities/always_on_abilities/byzantine/field_stone_buff_info_byz",
+    "abilities/always_on_abilities/byzantine/varangian_landmark_aura_byz",
+    // "abilities/always_on_abilities/byzantine/winery_aura_byz",
+    // "abilities/always_on_abilities/byzantine/winery_villager_buff_byz",
+    // "abilities/always_on_abilities/byzantine/cistern_auras/cistern_gather_aura_byz",
+    // "abilities/always_on_abilities/byzantine/cistern_auras/landmark_cistern_gather_aura_byz",
+    "abilities/modal_abilities/byzantine/cataphract_trample_byz",
+    "abilities/timed_abilities/byzantine/activate_akritoi_byz",
+    // "abilities/timed_abilities/byzantine/cannon_swap_byz",
+    "abilities/timed_abilities/byzantine/pilgrim_flask_byz",
+    "abilities/timed_abilities/byzantine/varangian_berserk_byz",
+    "abilities/toggle_abilities/byzantine/toggle_spearman_shield_wall_on_byz",
+
+    "info/buff_info/races/byzantine/cistern_influence_gathering_bonus_1_byz",
+    "info/buff_info/races/byzantine/hippodrome_scout_torch_byz",
+    "info/buff_info/races/byzantine/naval_transport_movespeed_unload_byz",
+    "info/buff_info/races/byzantine/oil_berry_dropoff_byz",
+    "info/buff_info/races/byzantine/oil_farm_dropoff_byz",
+    "info/buff_info/races/byzantine/oil_fish_dropoff_byz",
+    "info/buff_info/races/byzantine/oil_villager_fish_dropoff_byz",
+    "info/buff_info/races/byzantine/varangian_berserking_byz",
+    // "info/buff_info/races/byzantine/varangian_berserking_fear_debuff_byz",
+    "info/buff_info/races/byzantine/varangian_landmark_armor_aura_byz",
+    "info/buff_info/races/byzantine/winery_food_dropoff_imp_byz",
+
+    "upgrade/races/byzantine/mercenary_contracts/merc_contract_01_byz",
+    "upgrade/races/byzantine/mercenary_contracts/merc_contract_02_byz",
+    "upgrade/races/byzantine/mercenary_contracts/merc_contract_03_byz",
+
+    // "ebps/races/byzantine/buildings/dummy_trade_mercenary_house_byz",
+
+    // upgrade/races/byzantine/research/mercenary_upgrades unsure what to do with these
   ],
   french: [
     "info/buff_info/races/french/lancer_charge_bonus_damage",
@@ -75,6 +124,21 @@ export const hardcodedDiscovery = {
   ],
   hre: [
     "abilities/always_on_abilities/hre/inspired_infantry_hre", //misses auto discovery; convert to ability from tech
+  ],
+  japanese: [
+    "abilities/always_on_abilities/japanese/kaburya_arrow_jpn", //misses auto discovery;
+    "abilities/always_on_abilities/japanese/samurai_shield_jpn", //misses auto discovery;
+    "abilities/always_on_abilities/japanese/bannerman_aura_cavalry_jpn", //misses auto discovery;
+    "abilities/always_on_abilities/japanese/bannerman_aura_melee_jpn", //misses auto discovery;
+    "abilities/always_on_abilities/japanese/bannerman_aura_range_jpn", //misses auto discovery;
+    "abilities/modal_abilities/japanese/shinobi_blink_jpn", //misses auto discovery;
+    "abilities/modal_abilities/japanese/shinobi_sabotage_jpn", //misses auto discovery;
+    "abilities/modal_abilities/japanese/shinobi_spy_jpn", //misses auto discovery;
+    "abilities/modal_abilities/japanese/monk_shinto_deposit_sacred_object_jpn", //misses auto discovery;
+    "abilities/modal_abilities/japanese/monk_debuff_target_jpn", //misses auto discovery;
+
+    "upgrade/races/japanese/units/upgrade_unit_shinobi_3",
+    "upgrade/races/japanese/units/upgrade_unit_shinobi_4",
   ],
   malians: [
     //"abilities/always_on_abilities/malian/sofa_speed_aura_mal", //convert to ability from tech
@@ -89,11 +153,67 @@ export const hardcodedDiscovery = {
     "abilities/always_on_abilities/sultanate/district_effects/tower_of_victory_aura_sul", //misses auto discovery with no link
     //zeal? //convert to ability from tech
   ],
+  jeannedarc: [
+    "abilities/always_on_abilities/french_ha_01/jeanne_companion_keep_dummy_keep",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ability_charges_consecrate_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ability_charges_melee_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ability_charges_ranged_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_buff_follower_aura_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_cleaving_attack_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_construction_aura_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_divine_restoration_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_experience_gain_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_honorable_heart_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_influence_building_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_inspired_ally_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_journey_of_a_hero_archer_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_journey_of_a_hero_commander_monarch_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_journey_of_a_hero_crossbow_companions_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_journey_of_a_hero_gunpowder_monarch_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_journey_of_a_hero_manatarms_companions_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_journey_of_a_hero_womanatarms_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_rallying_call_archers_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_rallying_call_cannon_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_rallying_call_crossbows_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_rallying_call_knights_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_rallying_call_manatarms_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_rallying_call_spearmen_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_rallying_call_units_timer_fre_ha_01",
+    // "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ranged_attack_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_talented_builder_fre_ha_01",
+    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_valorous_inspiration_fre_ha_01",
+
+    "abilities/modal_abilities/french_ha_01/jeanne_d_arc_aoe_damage_ability_fre_ha_01",
+    "abilities/modal_abilities/french_ha_01/jeanne_d_arc_buyback_1_fre_ha_01",
+    "abilities/modal_abilities/french_ha_01/jeanne_d_arc_buyback_2_fre_ha_01",
+    "abilities/modal_abilities/french_ha_01/jeanne_d_arc_buyback_3_fre_ha_01",
+    "abilities/modal_abilities/french_ha_01/jeanne_d_arc_buyback_4_fre_ha_01",
+    "abilities/modal_abilities/french_ha_01/jeanne_d_arc_ranged_damage_ability_fre_ha_01",
+
+    "sbps/races/french_ha_01/unit_jeanne_d_arc_2_archer_fre_ha_01",
+    "sbps/races/french_ha_01/unit_jeanne_d_arc_2_womanatarms_fre_ha_01",
+    "sbps/races/french_ha_01/unit_jeanne_d_arc_3_melee_knight_fre_ha_01",
+    "sbps/races/french_ha_01/unit_jeanne_d_arc_3_ranged_knight_fre_ha_01",
+    "sbps/races/french_ha_01/unit_jeanne_d_arc_4_melee_monarch_fre_ha_01",
+    "sbps/races/french_ha_01/unit_jeanne_d_arc_4_ranged_monarch_fre_ha_01",
+  ],
+  zhuxi: [
+    "abilities/always_on_abilities/shaolin_monk_ranged_damage_reduction",
+    "abilities/always_on_abilities/shaolin_monk_passive_heal_self",
+    "abilities/modal_abilities/chinese/official_supervise_building_target_chi",
+    "upgrade/races/chinese_ha_01/research/upgrade_dynasty_econ_bonus_chi_ha_01",
+  ],
 };
 
 export const hardcodedDiscoveryCommon = []; //"info/buff_info/races/abbasid/camel_debuff_aura","info/buff_info/races/malian/archer_poisoned_arrow_mal"
 
 export const ignoreForNow: (string | ((file: string) => boolean))[] = [
+  "toggle_cistern_influence_2_byz",
+  "galata_merc_generation_byz",
+  "galata_spawner_toggle_on_byz",
+  "cistern_gather_aura_byz",
+  "winery_aura_byz",
+
   "ebps/races/mongol/buildings/building_town_center_dummy_start",
   "ebps/races/mongol/units/campaign/unit_great_trebuchet_cmp_mon",
 
@@ -102,9 +222,10 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "_wall_bastion",
   "_wall_infantry",
   "_wall_gate_infantry",
-  "_wing_imperial",
-  "_wing_castle",
-  "_wing_feudal",
+
+  (file) => file.includes("_wing_feudal") && !file.includes("abb_ha_01"),
+  (file) => file.includes("_wing_castle") && !file.includes("abb_ha_01"),
+  (file) => file.includes("_wing_imperial") && !file.includes("abb_ha_01"),
 
   // Field constructed versions of siege, prefer the Siege Workshop version
   "unit_mangonel_3_buildable_abb",
@@ -145,6 +266,20 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "upgrade_landmark_siege_weapon_speed",
   "upgrade_landmark_siege_works",
   "unit_siege_tower_3_eng",
+
+  "_tanegashima_4_jpn",
+  "upgrade_econ_resource_wood_harvest_rate_1_kura_jpn",
+  "upgrade_econ_resource_wood_harvest_rate_2_kura_jpn",
+  "upgrade_econ_resource_wood_harvest_rate_3_kura_jpn",
+  "upgrade_econ_resource_wood_harvest_rate_4_kura_jpn",
+  "upgrade_econ_resource_wood_fell_rate_1_kura_jpn",
+  "treasure_landmark_spawn_jpn", // 2127465
+  "shinto_landmark_sacred_object_spawner_jpn", // 2142557
+  "shinto_sacred_object_buff_jpn", // 2141773
+  "varangian_landmark_aura_byz", // 2104872
+  "tanegashima_stockpile_jpn", // 2138250
+  "tanegashima_buff_jpn",
+  "storehouse_rice_field_spawn_jpn", //2127424
 
   //uninteresting abilities to place into data
   "military_neutralize_holy_site",
@@ -198,21 +333,9 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "hunting_cabin_gold_generation",
   "wooden_fortress_influence_rus",
   "abilities/timed_abilities/rus/kremlin_levy",
-];
 
-// Map a4w slug to race id
-export const racesMap: Record<CivSlug, string> = {
-  abbasid: "abbasid",
-  chinese: "chinese",
-  delhi: "sultanate",
-  english: "english",
-  french: "french",
-  hre: "hre",
-  malians: "malian",
-  mongols: "mongol",
-  ottomans: "ottoman",
-  rus: "rus",
-};
+  (file) => file.includes("unit_") && file.includes("_free_abb_ha_01"),
+];
 
 export const attribTypes = {
   [ITEM_TYPES.BUILDINGS]: {

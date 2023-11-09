@@ -1,0 +1,114 @@
+{
+  "id": "gilded-spearman-3",
+  "baseId": "gilded-spearman",
+  "type": "unit",
+  "name": "Veteran Gilded Spearman",
+  "pbgid": 4502609,
+  "attribName": "unit_spearman_3_hre_ha_01",
+  "age": 3,
+  "civs": [
+    "od"
+  ],
+  "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+  "classes": [
+    "light",
+    "melee",
+    "infantry"
+  ],
+  "displayClasses": [
+    "Light Melee Infantry"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 120,
+    "wood": 40,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 160,
+    "popcap": 2,
+    "time": 18
+  },
+  "producedBy": [
+    "barracks",
+    "burgrave-palace"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/gilded-spearman-3.png",
+  "hitpoints": 220,
+  "weapons": [
+    {
+      "name": "Spear",
+      "type": "melee",
+      "damage": 14,
+      "speed": 1.875,
+      "range": {
+        "min": 0,
+        "max": 0.295
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 46,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.75,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0.75
+      },
+      "attribName": "weapon_spearman_3_hre_ha_01",
+      "pbgid": 2126960
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 18,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch_hre_ha_01",
+      "pbgid": 2126943
+    }
+  ],
+  "armor": [
+    {
+      "type": "melee",
+      "value": 1
+    }
+  ],
+  "sight": {
+    "line": 36,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.25
+  }
+}

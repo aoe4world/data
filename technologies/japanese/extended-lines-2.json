@@ -1,0 +1,63 @@
+{
+  "id": "extended-lines-2",
+  "baseId": "extended-lines",
+  "type": "technology",
+  "name": "Extended Lines",
+  "pbgid": 2033745,
+  "attribName": "upgrade_econ_extended_lines",
+  "age": 2,
+  "civs": [
+    "ja"
+  ],
+  "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
+  "classes": [
+    "fishing",
+    "technology",
+    "1/2"
+  ],
+  "displayClasses": [
+    "Fishing Technology 1/2"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 75,
+    "stone": 0,
+    "gold": 175,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 250,
+    "popcap": 0,
+    "time": 30
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/extended-lines-2.png",
+  "effects": [
+    {
+      "property": "foodGatherRate",
+      "select": {
+        "id": [
+          "fishing-boat",
+          "lodya-fishing-boat"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.2,
+      "type": "passive"
+    },
+    {
+      "property": "carryCapacity",
+      "select": {
+        "id": [
+          "fishing-boat",
+          "lodya-fishing-boat"
+        ]
+      },
+      "effect": "change",
+      "value": 10,
+      "type": "passive"
+    }
+  ]
+}

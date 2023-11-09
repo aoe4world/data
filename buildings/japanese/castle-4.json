@@ -1,0 +1,117 @@
+{
+  "id": "castle-4",
+  "baseId": "castle",
+  "type": "building",
+  "name": "Castle",
+  "pbgid": 7625763,
+  "attribName": "building_defense_keep_jpn",
+  "age": 4,
+  "civs": [
+    "ja"
+  ],
+  "description": "Heavy garrison and defensible position equipped with a powerful Rocket, which deals high damage to a single target. Can be upgraded with weaponry. Adds additional attacks while garrisoned.",
+  "classes": [
+    "defensive",
+    "building"
+  ],
+  "displayClasses": [
+    "Defensive Building"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 0,
+    "wood": 300,
+    "stone": 900,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 1200,
+    "popcap": 0,
+    "time": 180
+  },
+  "producedBy": [
+    "villager"
+  ],
+  "icon": "https://data.aoe4world.com/images/buildings/castle-4.png",
+  "hitpoints": 5500,
+  "weapons": [
+    {
+      "name": "Rocket",
+      "type": "ranged",
+      "damage": 80,
+      "speed": 4.125,
+      "range": {
+        "min": 0,
+        "max": 9
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "human"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 110,
+          "type": "passive"
+        },
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 330,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 3.5,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_keep_rocket_jpn",
+      "pbgid": 2136388
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 50
+    },
+    {
+      "type": "fire",
+      "value": 5
+    }
+  ],
+  "sight": {
+    "line": 41,
+    "height": 501
+  },
+  "garrison": {
+    "capacity": 15,
+    "classes": [
+      "infantry",
+      "villager",
+      "infantry ranged",
+      "monk",
+      "cavalry",
+      "khan",
+      "onna bugeisha"
+    ]
+  },
+  "influences": []
+}

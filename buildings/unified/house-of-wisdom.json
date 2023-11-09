@@ -5,7 +5,8 @@
   "name": "House of Wisdom",
   "type": "building",
   "civs": [
-    "ab"
+    "ab",
+    "ay"
   ],
   "unique": true,
   "displayClasses": [
@@ -17,7 +18,7 @@
     "building",
     "landmark"
   ],
-  "minAge": 2,
+  "minAge": 1,
   "icon": "https://data.aoe4world.com/images/buildings/house-of-wisdom-2.png",
   "description": "Contains civilization technology for the Abbasid Dynasty.\nAbbasids advance in Ages through the House of Wisdom. Construct wings to advance to the next Age and gain additional technology.",
   "variations": [
@@ -48,6 +49,8 @@
         "wood": 50,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 50,
         "popcap": 0,
         "time": 30
@@ -73,7 +76,64 @@
         "height": 8
       },
       "influences": [
-        "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age."
+        "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age and unlock additional bonuses."
+      ]
+    },
+    {
+      "id": "house-of-wisdom-1",
+      "baseId": "house-of-wisdom",
+      "type": "building",
+      "name": "House of Wisdom",
+      "pbgid": 2985508,
+      "attribName": "building_house_of_wisdom_control_abb_ha_01",
+      "age": 1,
+      "civs": [
+        "ay"
+      ],
+      "description": "Contains civilization technology for the Abbasid Dynasty.\nAbbasids advance in Ages through the House of Wisdom. Construct wings to advance to the next Age and gain additional technology.\nWing bonuses improve based on the Age they were built.",
+      "classes": [
+        "technology",
+        "building",
+        "landmark"
+      ],
+      "displayClasses": [
+        "Technology Building",
+        "Landmark"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 0,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 50,
+        "popcap": 0,
+        "time": 30
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/house-of-wisdom-1.png",
+      "hitpoints": 2000,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        },
+        {
+          "type": "fire",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "line": 25,
+        "height": 8
+      },
+      "influences": [
+        "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age and unlock additional bonuses."
       ]
     }
   ]

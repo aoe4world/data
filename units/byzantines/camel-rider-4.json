@@ -1,0 +1,128 @@
+{
+  "id": "camel-rider-4",
+  "baseId": "camel-rider",
+  "type": "unit",
+  "name": "Elite Camel Rider",
+  "pbgid": 2104159,
+  "attribName": "unit_camel_rider_4_merc_byz",
+  "age": 4,
+  "civs": [
+    "by"
+  ],
+  "description": "Highly mobile and durable melee unit effective against all cavalry.\n+Bonus damage to cavalry\n+Causes enemy cavalry to deal less damage\n-High cost\n\nMercenary that can be purchased per 2 units for a total of 480 Olive Oil.\n\nRequires the Silk Road Contract.",
+  "classes": [
+    "light",
+    "melee",
+    "cavalry",
+    "camel"
+  ],
+  "displayClasses": [
+    "Light Melee Cavalry",
+    "Camel"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 240,
+    "total": 240,
+    "popcap": 1,
+    "time": 73
+  },
+  "producedBy": [
+    "mercenary-house",
+    "golden-horn-tower"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/camel-rider-4.png",
+  "hitpoints": 320,
+  "weapons": [
+    {
+      "name": "Sword",
+      "type": "melee",
+      "damage": 16,
+      "speed": 1.125,
+      "range": {
+        "min": 0,
+        "max": 0.42
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 16,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0.75
+      },
+      "attribName": "weapon_mameluke_sword_4",
+      "pbgid": 204181
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch_horseman",
+      "pbgid": 127935
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "line": 28,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.625
+  },
+  "unlockedBy": [
+    "technologies/silk-road-contract",
+    "technologies/veteran-contract"
+  ]
+}

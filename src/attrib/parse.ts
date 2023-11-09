@@ -1,16 +1,15 @@
 import { ITEM_TYPES } from "../lib/config";
 import { getTranslation, NO_TRANSLATION_FOUND } from "./translations";
-import { parseXmlFile } from "./xml";
 import { parseWeapons } from "./weapons";
-import { attribFile, ignoreForNow, racesMap } from "./config";
+import { attribFile, ignoreForNow } from "./config";
 import { slugify } from "../lib/utils/string";
 import { Armor, Building, Item, ItemClass, ModifyableProperty, Technology, Unit, Upgrade, Ability } from "../types/items";
-import { civConfig } from "../types/civs";
+import { CivConfig } from "../types/civs";
 import { useIcon } from "./icons";
 import { technologyModifiers, abilityModifiers } from "./modifiers";
 import { RunContext, writeTemp } from "./run";
 
-export async function parseItemFromAttribFile(file: string, data: any, civ: civConfig, context: RunContext) {
+export async function parseItemFromAttribFile(file: string, data: any, civ: CivConfig, context: RunContext) {
   const type = guessType(file, data);
   const { debug, getData } = context;
 
@@ -39,21 +38,21 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
 
     const ebpExts = Object.fromEntries(ebpextensions?.map((e) => [e.exts?.replace("ebpextensions/", ""), e]) ?? []);
 
-    const isBuff = file.includes("buff_info");
+    const isBuff = file.includes("buff_info/");
 
     let ui_ext;
     let ability_data = type == ITEM_TYPES.ABILITIES && !isBuff ? data.ability_bag ?? data.extensions[0] : undefined;
 
     if (type === ITEM_TYPES.BUILDINGS) ui_ext = ebpExts.ui_ext;
     else if (type === ITEM_TYPES.TECHNOLOGIES || type === ITEM_TYPES.UPGRADES) ui_ext = data.upgrade_bag.ui_info;
-    else if (type === ITEM_TYPES.ABILITIES && !isBuff) ui_ext = ability_data.ui_info;
-    else if (type === ITEM_TYPES.ABILITIES && isBuff) ui_ext = data.info ?? data.extensions[0] ?? {};
+    else if (type === ITEM_TYPES.ABILITIES && !isBuff) ui_ext = Object.assign({}, ability_data.ui_info, { ui_contextual_info: ability_data.ui_contextual_info?.context });
+    else if (type === ITEM_TYPES.ABILITIES && isBuff) ui_ext = data.info ?? data.extensions[0] ?? data.ui_info ?? {};
     else if (type === ITEM_TYPES.UNITS) {
       ui_ext = maybeOnKey(data.extensions.find((e) => e.squadexts === "sbpextensions/squad_ui_ext")?.race_list[0], "race_data")?.info;
     }
     if (!ui_ext && type === ITEM_TYPES.UNITS && ebpExts.ui_ext) ui_ext = ebpExts.ui_ext;
 
-    let name = getTranslation(ui_ext?.screen_name ?? ui_ext.title);
+    let name = getTranslation(ui_ext?.ui_contextual_info?.screen_name ?? ui_ext?.screen_name ?? ui_ext.title);
     if (name === NO_TRANSLATION_FOUND) name = file.split("/").pop()!;
     const description = parseDescription(ui_ext);
     const attribName = file.split("/").pop()!.replace(".xml", "").replace(".json", "");
@@ -80,7 +79,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
       );
 
     let icon;
-    if (isBuff) icon = await useIcon(ui_ext.icon.slice(6), type, id);
+    if (isBuff) icon = await useIcon(ui_ext.icon?.slice(6), type, id);
     icon ??= await useIcon(ui_ext.icon_name ?? ui_ext.icon, type, id);
     if (!icon) console.log(`undefined icon for ${file}`, ui_ext.icon_name ?? ui_ext.icon);
 
@@ -107,7 +106,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
     if (type === ITEM_TYPES.ABILITIES) {
       const translationParams = (isBuff ? ui_ext.description_formatter : ui_ext.help_text_formatter)?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
       const effectsFactory = abilityModifiers[baseId];
-      const effects = effectsFactory?.(translationParams) ?? [];
+      const effects = effectsFactory?.(translationParams, item) ?? [];
 
       if (isBuff) {
         const ability: Ability = {
@@ -194,25 +193,27 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: civC
     if (type === ITEM_TYPES.TECHNOLOGIES) {
       const translationParams = ui_ext.help_text_formatter?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
       const effectsFactory = technologyModifiers[baseId];
-      const effects = effectsFactory?.(translationParams) ?? [];
+      const effects = effectsFactory?.(translationParams, item) ?? [];
 
       // if (item.id == "upgrade-militia-4-4") {
       if (effects.length == 0) {
         const addEffect = (property: ModifyableProperty, value: number, effect: "change" | "multiply" = "change", type: "passive" | "ability" = "passive") =>
           effects.push({ property, value, effect, type });
 
-        for (const { id, value } of data?.upgrade_bag?.float_properties ?? []) {
-          if (id === "health_max") addEffect("hitpoints", value);
-          else if (id === "melee_damage") addEffect("meleeAttack", value);
-          else if (id === "charge_damage") addEffect("meleeAttack", value, "change", "ability");
-          else if (id === "armor_fire") addEffect("fireArmor", value);
-          else if (id === "armor_melee") addEffect("meleeArmor", value);
-          else if (id === "armor_range") addEffect("rangedArmor", value);
+        for (let { id, value } of data?.upgrade_bag?.float_properties ?? []) {
+          const effect = value < 1 ? "multiply" : "change";
+          if (effect == "multiply") value = 1 + value;
+          if (id === "health_max") addEffect("hitpoints", value, effect);
+          else if (id === "melee_damage") addEffect("meleeAttack", value, effect);
+          else if (id === "charge_damage") addEffect("meleeAttack", value, effect, "ability");
+          else if (id === "armor_fire") addEffect("fireArmor", value, effect);
+          else if (id === "armor_melee") addEffect("meleeArmor", value, effect);
+          else if (id === "armor_range") addEffect("rangedArmor", value, effect);
           else if (id === "damage") {
-            addEffect("meleeAttack", value);
-            addEffect("rangedAttack", value);
-            addEffect("siegeAttack", value);
-            addEffect("fireAttack", value);
+            addEffect("meleeAttack", value, effect);
+            addEffect("rangedAttack", value, effect);
+            addEffect("siegeAttack", value, effect);
+            addEffect("fireAttack", value, effect);
           } else if (id === "multiplier") {
             // ignore
           } else console.log("Unknown float property", id, value, item.attribName, item.id);
@@ -248,9 +249,11 @@ function guessType(file: string, data: any) {
   if (fileName.startsWith("unit_")) return ITEM_TYPES.UNITS;
   if (fileName.startsWith("herdable_")) return undefined;
   if (fileName.startsWith("gaia_")) return undefined;
+
   // below is too hacky for my taste, it filters out some wonky things we would call technologies like wheelbarrow and herbal medicine
-  if (fileName.startsWith("upgrade_unit") && data?.upgrade_bag?.global_max_limit == 1) return ITEM_TYPES.UPGRADES;
+  if (fileName.startsWith("upgrade_unit") && data?.upgrade_bag?.global_max_limit == 1 && data?.upgrade_bag?.requirements?.length) return ITEM_TYPES.UPGRADES;
   if (fileName.startsWith("upgrade_")) return ITEM_TYPES.TECHNOLOGIES;
+  if (fileName.startsWith("merc_")) return ITEM_TYPES.TECHNOLOGIES;
   if (file.startsWith("abilities")) return ITEM_TYPES.ABILITIES;
   if (file.startsWith("info/buff_info")) return ITEM_TYPES.ABILITIES;
   return undefined;
@@ -270,12 +273,20 @@ function findExt(data: any, key: string, value: string) {
 
 function parseDescription(ui_ext: any) {
   if (!ui_ext) return `not-found-${Math.random()}`;
-  const translation = !!ui_ext.help_text_formatter?.formatter
-    ? getTranslation(
-        ui_ext.help_text_formatter.formatter,
-        ui_ext.help_text_formatter.formatter_arguments.map((x) => Object.values(x)[0] ?? x)
-      )
-    : getTranslation(ui_ext.help_text ?? ui_ext.description_formatter?.formatter ?? ui_ext.description);
+
+  const { formatter, formatter_arguments } = !!ui_ext.help_text_formatter?.formatter
+    ? ui_ext.help_text_formatter
+    : !!ui_ext.ui_contextual_info?.help_text_formatter?.formatter
+    ? ui_ext.ui_contextual_info.help_text_formatter
+    : !!ui_ext.description_formatter?.formatter
+    ? ui_ext.description_formatter
+    : { formatter: ui_ext.help_text ?? ui_ext.description, formatter_arguments: [] };
+
+  const translation = getTranslation(
+    formatter,
+    formatter_arguments.map((x) => (typeof x === "number" ? x : Object.values(x)[0] ?? x))
+  );
+
   if (translation === NO_TRANSLATION_FOUND) return `not-found-${Math.random()}`; // throw new Error("No translation found for " + ui_ext.help_text);
   return translation;
 }
@@ -285,8 +296,8 @@ function parseHitpoints(health_ext: any) {
 }
 
 function parseCosts(cost: any, time: any, popcap = 0) {
-  const { food, wood, gold, stone } = cost as Record<"food" | "wood" | "gold" | "stone" | "popcap", number>;
-  const costs = { food, wood, stone, gold, total: food + wood + gold + stone, popcap, time };
+  const { food, wood, gold, stone, command: vizier, merc_byz: oliveoil } = cost as Record<"food" | "wood" | "gold" | "stone" | "popcap" | "merc_byz" | "command", number>;
+  const costs = { food, wood, stone, gold, vizier, oliveoil, total: food + wood + gold + stone + oliveoil, popcap, time };
   return costs;
 }
 
@@ -307,6 +318,7 @@ function parseAge(name: string, requirements: any, parent_pbg: string) {
   else {
     const nameParts = name!.split("/")!.shift()!.split("_")!;
     for (const p of nameParts.reverse()) {
+      if (p.startsWith("0")) continue; // variant civs
       const n = parseFloat(p);
       if (!isNaN(n)) {
         age = n;

@@ -1,0 +1,110 @@
+{
+  "id": "elzbach-palace-3",
+  "baseId": "elzbach-palace",
+  "type": "building",
+  "name": "Elzbach Palace",
+  "pbgid": 5834401,
+  "attribName": "building_landmark_age3_eltz_castle_hre_ha_01",
+  "age": 3,
+  "civs": [
+    "od"
+  ],
+  "description": "Acts as a Keep with +50% health. All buildings within influence take -33% less damage.",
+  "classes": [
+    "age",
+    "iv",
+    "-",
+    "defensive",
+    "landmark"
+  ],
+  "displayClasses": [
+    "Age IV - Defensive Landmark"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 2400,
+    "wood": 0,
+    "stone": 0,
+    "gold": 1200,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 3600,
+    "popcap": 0,
+    "time": 250
+  },
+  "producedBy": [
+    "dragon-villager"
+  ],
+  "icon": "https://data.aoe4world.com/images/buildings/elzbach-palace-3.png",
+  "hitpoints": 7500,
+  "weapons": [
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 12,
+      "speed": 0.5,
+      "range": {
+        "min": 0,
+        "max": 8
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.125,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0.25,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 3
+      },
+      "attribName": "weapon_keep_arrows_a",
+      "pbgid": 127372
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 50
+    },
+    {
+      "type": "fire",
+      "value": 5
+    }
+  ],
+  "sight": {
+    "line": 41,
+    "height": 501
+  },
+  "garrison": {
+    "capacity": 20,
+    "classes": [
+      "infantry",
+      "villager",
+      "infantry ranged",
+      "monk",
+      "cavalry"
+    ]
+  },
+  "influences": [
+    "Buildings gain the Emergency Repairs ability while within the influence of a Town Center."
+  ]
+}

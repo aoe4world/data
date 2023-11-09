@@ -5,7 +5,8 @@
   "name": "Granary",
   "type": "building",
   "civs": [
-    "ch"
+    "ch",
+    "zx"
   ],
   "unique": true,
   "displayClasses": [
@@ -44,6 +45,8 @@
         "wood": 150,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 150,
         "popcap": 0,
         "time": 18
@@ -67,6 +70,55 @@
       "influences": [
         "Buildings generate +100% tax while within the influence of the Imperial Academy."
       ]
+    },
+    {
+      "id": "granary-1",
+      "baseId": "granary",
+      "type": "building",
+      "name": "Granary",
+      "pbgid": 7869339,
+      "attribName": "building_dynasty_granary_control_chi_ha_01",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "Villagers can drop off Food at this building. Improves the Farm gather rate of nearby Villagers by +10% (stacks with other Granaries). Generates tax each time a resource is dropped off.",
+      "classes": [
+        "economy",
+        "building"
+      ],
+      "displayClasses": [
+        "Economy Building"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 0,
+        "wood": 150,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 150,
+        "popcap": 0,
+        "time": 35
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/granary-1.png",
+      "hitpoints": 1500,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "line": 15,
+        "height": 8
+      },
+      "influences": []
     }
   ]
 }

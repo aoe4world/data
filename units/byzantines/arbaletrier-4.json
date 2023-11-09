@@ -1,0 +1,95 @@
+{
+  "id": "arbaletrier-4",
+  "baseId": "arbaletrier",
+  "type": "unit",
+  "name": "Elite Arbalétrier",
+  "pbgid": 2121102,
+  "attribName": "unit_crossbowman_4_merc_byz",
+  "age": 4,
+  "civs": [
+    "by"
+  ],
+  "description": "High damage ranged unit with a defensive pavise shield. Best used when supported by others.\n+ Anti-armor specialist\n+ Comes with melee armor\n- Low health\n- Countered by Horsemen\n\nMercenary that can be purchased per 4 units for a total of 480 Olive Oil.\n\nThis Mercenary can only be purchased on Mercenary Houses built near a neutral Trade Post that list this unit. The chance of this unit being available on a Trade Post is 20%.",
+  "classes": [
+    "light",
+    "ranged",
+    "infantry"
+  ],
+  "displayClasses": [
+    "Light Ranged Infantry"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 120,
+    "total": 120,
+    "popcap": 1,
+    "time": 80
+  },
+  "producedBy": [
+    "mercenary-house",
+    "golden-horn-tower"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/arbaletrier-4.png",
+  "hitpoints": 95,
+  "weapons": [
+    {
+      "name": "Crossbow",
+      "type": "ranged",
+      "damage": 15,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 5
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "heavy"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 11,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.25,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 1.25,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_crossbow_4_fre",
+      "pbgid": 132317
+    }
+  ],
+  "armor": [
+    {
+      "type": "melee",
+      "value": 2
+    }
+  ],
+  "sight": {
+    "line": 40,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.125
+  },
+  "unlockedBy": [
+    "buildings/trade-post",
+    "technologies/veteran-contract"
+  ]
+}

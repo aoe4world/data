@@ -6,6 +6,7 @@
   "type": "unit",
   "civs": [
     "ab",
+    "ay",
     "de"
   ],
   "unique": false,
@@ -25,11 +26,11 @@
       "baseId": "explosive-dhow",
       "type": "unit",
       "name": "Explosive Dhow",
-      "pbgid": 193142,
-      "attribName": "unit_naval_fireship_3_sul",
+      "pbgid": 199727,
+      "attribName": "unit_naval_fireship_3_abb",
       "age": 3,
       "civs": [
-        "de"
+        "ab"
       ],
       "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
       "classes": [
@@ -45,6 +46,8 @@
         "wood": 80,
         "stone": 0,
         "gold": 80,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 160,
         "popcap": 2,
         "time": 15
@@ -70,8 +73,7 @@
               "target": {
                 "class": [
                   [
-                    "naval",
-                    "broadside"
+                    "massive"
                   ]
                 ]
               },
@@ -121,11 +123,11 @@
       "baseId": "explosive-dhow",
       "type": "unit",
       "name": "Explosive Dhow",
-      "pbgid": 199727,
-      "attribName": "unit_naval_fireship_3_abb",
+      "pbgid": 7949762,
+      "attribName": "unit_naval_fireship_3_abb_ha_01",
       "age": 3,
       "civs": [
-        "ab"
+        "ay"
       ],
       "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
       "classes": [
@@ -141,6 +143,8 @@
         "wood": 80,
         "stone": 0,
         "gold": 80,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 160,
         "popcap": 2,
         "time": 15
@@ -166,8 +170,104 @@
               "target": {
                 "class": [
                   [
-                    "naval",
-                    "broadside"
+                    "massive"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 300,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 300,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_fireship",
+          "pbgid": 196723
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 32,
+        "height": 10
+      },
+      "movement": {
+        "speed": 2
+      }
+    },
+    {
+      "id": "explosive-dhow-3",
+      "baseId": "explosive-dhow",
+      "type": "unit",
+      "name": "Explosive Dhow",
+      "pbgid": 193142,
+      "attribName": "unit_naval_fireship_3_sul",
+      "age": 3,
+      "civs": [
+        "de"
+      ],
+      "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
+      "classes": [
+        "incendiary",
+        "ship"
+      ],
+      "displayClasses": [
+        "Incendiary Ship"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 80,
+        "stone": 0,
+        "gold": 80,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 160,
+        "popcap": 2,
+        "time": 15
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/explosive-dhow-3.png",
+      "hitpoints": 145,
+      "weapons": [
+        {
+          "name": "Incendiaries",
+          "type": "siege",
+          "damage": 95,
+          "speed": 0.125,
+          "range": {
+            "min": 0,
+            "max": 2
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "massive"
                   ]
                 ]
               },

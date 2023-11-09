@@ -1,0 +1,138 @@
+{
+  "id": "war-elephant-3",
+  "baseId": "war-elephant",
+  "type": "unit",
+  "name": "War Elephant",
+  "pbgid": 2104183,
+  "attribName": "unit_war_elephant_3_merc_byz",
+  "age": 3,
+  "civs": [
+    "by"
+  ],
+  "description": "Heavy cavalry effective against cavalry, siege engines, walls, and buildings.\n+ High health and armor\n+ Mounted with an advanced Spearman\n+ Capable of attacking Stone Walls\n- Slow movement speed\n\nMercenary that can be purchased for 750 Olive Oil.\n\nThis Mercenary can only be purchased on Mercenary Houses built near a neutral Trade Post that list this unit. The chance of this unit being available on a Trade Post is 20%.",
+  "classes": [
+    "heavy",
+    "melee",
+    "cavalry",
+    "elephant"
+  ],
+  "displayClasses": [
+    "Heavy Melee Cavalry",
+    "Elephant"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 750,
+    "total": 750,
+    "popcap": 3,
+    "time": 100
+  },
+  "producedBy": [
+    "mercenary-house",
+    "golden-horn-tower"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/war-elephant-3.png",
+  "hitpoints": 850,
+  "weapons": [
+    {
+      "name": "Tusks",
+      "type": "melee",
+      "damage": 50,
+      "speed": 2.875,
+      "range": {
+        "min": 0,
+        "max": 1
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 45,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 2,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_war_elephant_melee_3_sul",
+      "pbgid": 184643
+    },
+    {
+      "name": "Spear",
+      "type": "melee",
+      "damage": 25,
+      "speed": 1.875,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 40,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.75,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0.75
+      },
+      "attribName": "weapon_war_elephant_spear_3_sul",
+      "pbgid": 144673
+    }
+  ],
+  "armor": [
+    {
+      "type": "melee",
+      "value": 4
+    },
+    {
+      "type": "ranged",
+      "value": 5
+    }
+  ],
+  "sight": {
+    "line": 36,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1
+  },
+  "unlockedBy": [
+    "buildings/trade-post",
+    "technologies/elite-contract"
+  ]
+}

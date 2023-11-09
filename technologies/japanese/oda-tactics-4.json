@@ -1,0 +1,81 @@
+{
+  "id": "oda-tactics-4",
+  "baseId": "oda-tactics",
+  "type": "technology",
+  "name": "Oda Tactics",
+  "pbgid": 2140971,
+  "attribName": "upgrade_elite_army_tactics_jpn",
+  "age": 4,
+  "civs": [
+    "ja"
+  ],
+  "description": "Increase health, damage, and torch damage of melee infantry by 20%.",
+  "classes": [
+    "melee",
+    "infantry",
+    "technology"
+  ],
+  "displayClasses": [
+    "Melee Infantry Technology"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 300,
+    "wood": 0,
+    "stone": 0,
+    "gold": 700,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 1000,
+    "popcap": 0,
+    "time": 90
+  },
+  "producedBy": [
+    "university"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/oda-tactics-4.png",
+  "effects": [
+    {
+      "property": "hitpoints",
+      "select": {
+        "class": [
+          [
+            "infantry",
+            "melee"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.2,
+      "type": "passive"
+    },
+    {
+      "property": "meleeAttack",
+      "select": {
+        "class": [
+          [
+            "infantry",
+            "melee"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.2,
+      "type": "passive"
+    },
+    {
+      "property": "fireAttack",
+      "select": {
+        "class": [
+          [
+            "infantry",
+            "melee"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.2,
+      "type": "passive"
+    }
+  ]
+}

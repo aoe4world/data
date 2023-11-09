@@ -1,80 +1,98 @@
-import { civConfig, civAbbr } from "../../types/civs";
-
-export const CIVILIZATIONS: Record<civAbbr, civConfig> = {
-  en: {
-    name: "English",
-    abbr: "en",
-    slug: "english",
+export const CIVILIZATIONS = {
+  ab: {
+    name: "Abbasid Dynasty",
+    abbr: "ab",
+    slug: "abbasid",
+    attribName: "abbasid",
   },
-  hr: {
-    name: "Holy Roman Empire",
-    abbr: "hr",
-    slug: "hre",
+  ay: {
+    name: "Ayyubids",
+    abbr: "ay",
+    slug: "ayyubids",
+    attribName: "abbasid_ha_01",
   },
-  fr: {
-    name: "French",
-    abbr: "fr",
-    slug: "french",
+  by: {
+    name: "Byzantines",
+    abbr: "by",
+    slug: "byzantines",
+    attribName: "byzantine",
   },
   ch: {
     name: "Chinese",
     abbr: "ch",
     slug: "chinese",
+    attribName: "chinese",
   },
   de: {
     name: "Delhi Sultanate",
     abbr: "de",
     slug: "delhi",
+    attribName: "sultanate",
   },
-  ab: {
-    name: "Abbasid Dynasty",
-    abbr: "ab",
-    slug: "abbasid",
+  en: {
+    name: "English",
+    abbr: "en",
+    slug: "english",
+    attribName: "english",
+  },
+  fr: {
+    name: "French",
+    abbr: "fr",
+    slug: "french",
+    attribName: "french",
+  },
+  hr: {
+    name: "Holy Roman Empire",
+    abbr: "hr",
+    slug: "hre",
+    attribName: "hre",
+  },
+  ja: {
+    name: "Japanese",
+    abbr: "ja",
+    slug: "japanese",
+    attribName: "japanese",
+  },
+  je: {
+    name: "Jeanne d'Arc",
+    abbr: "je",
+    slug: "jeannedarc",
+    attribName: "french_ha_01",
   },
   ma: {
     name: "Malians",
     abbr: "ma",
     slug: "malians",
+    attribName: "malian",
   },
   mo: {
     name: "Mongols",
     abbr: "mo",
     slug: "mongols",
+    attribName: "mongol",
+  },
+  od: {
+    name: "Order of the Dragon",
+    abbr: "od",
+    slug: "orderofthedragon",
+    attribName: "hre_ha_01",
   },
   ot: {
     name: "Ottomans",
     abbr: "ot",
     slug: "ottomans",
+    attribName: "ottoman",
   },
   ru: {
     name: "Rus",
     abbr: "ru",
     slug: "rus",
+    attribName: "rus",
   },
-};
-
-export enum CIV_ABBR {
-  EN = "en",
-  HR = "hr",
-  FR = "fr",
-  CH = "ch",
-  DE = "de",
-  AB = "ab",
-  MO = "mo",
-  MA = "ma",
-  OT = "ot",
-  RU = "ru",
-}
-
-export const CIVILIZATION_BY_SLUG = {
-  english: CIVILIZATIONS.en,
-  hre: CIVILIZATIONS.hr,
-  french: CIVILIZATIONS.fr,
-  chinese: CIVILIZATIONS.ch,
-  delhi: CIVILIZATIONS.de,
-  abbasid: CIVILIZATIONS.ab,
-  malians: CIVILIZATIONS.ma,
-  mongols: CIVILIZATIONS.mo,
-  ottomans: CIVILIZATIONS.ot,
-  rus: CIVILIZATIONS.ru,
-};
+  zx: {
+    name: "Zhu Xi's Legacy",
+    abbr: "zx",
+    slug: "zhuxi",
+    attribName: "chinese_ha_01",
+  },
+} as const;

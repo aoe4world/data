@@ -1,0 +1,140 @@
+{
+  "id": "samurai-3",
+  "baseId": "samurai",
+  "type": "unit",
+  "name": "Veteran Samurai",
+  "pbgid": 2124176,
+  "attribName": "unit_samurai_3_jpn",
+  "age": 3,
+  "civs": [
+    "ja"
+  ],
+  "description": "Heavy infantry with good damage and defense. Comes with the Deflective Armor ability that periodically blocks attacks.\n+ Heavy armor\n+ Deflective Armor recharges out of combat\n- Slow move speed\n- Countered by Knights, Lancers, and Crossbowmen",
+  "classes": [
+    "heavy",
+    "melee",
+    "infantry"
+  ],
+  "displayClasses": [
+    "Heavy Melee Infantry"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 100,
+    "wood": 0,
+    "stone": 0,
+    "gold": 30,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 130,
+    "popcap": 1,
+    "time": 22.5
+  },
+  "producedBy": [
+    "barracks"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/samurai-3.png",
+  "hitpoints": 155,
+  "weapons": [
+    {
+      "name": "Naginata",
+      "type": "melee",
+      "damage": 12,
+      "speed": 1.375,
+      "range": {
+        "min": 0,
+        "max": 0.295
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "attack": 0.125,
+        "winddown": 0.75,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_manatarms_3_jpn",
+      "pbgid": 2127558
+    },
+    {
+      "name": "Odachi",
+      "type": "melee",
+      "damage": 12,
+      "speed": 1.375,
+      "range": {
+        "min": 0,
+        "max": 0.545
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 4,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "attack": 0.125,
+        "winddown": 0.75,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_odachi_3_jpn",
+      "pbgid": 2127563
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch",
+      "pbgid": 123518
+    }
+  ],
+  "armor": [
+    {
+      "type": "melee",
+      "value": 4
+    },
+    {
+      "type": "ranged",
+      "value": 4
+    }
+  ],
+  "sight": {
+    "line": 36,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.125
+  }
+}

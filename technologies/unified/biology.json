@@ -6,21 +6,26 @@
   "type": "technology",
   "civs": [
     "ab",
+    "ay",
+    "by",
     "ch",
     "de",
     "en",
     "hr",
+    "ja",
     "ma",
     "mo",
+    "od",
     "ot",
-    "ru"
+    "ru",
+    "zx"
   ],
   "unique": false,
   "displayClasses": [
-    "Cavalry Technology"
+    "Lancer Technology"
   ],
   "classes": [
-    "cavalry",
+    "lancer",
     "technology"
   ],
   "minAge": 4,
@@ -36,15 +41,15 @@
       "attribName": "upgrade_tech_university_biology",
       "age": 4,
       "civs": [
-        "en"
+        "ab"
       ],
       "description": "Increase the health of all cavalry by +20%.",
       "classes": [
-        "cavalry",
+        "lancer",
         "technology"
       ],
       "displayClasses": [
-        "Cavalry Technology"
+        "Lancer Technology"
       ],
       "unique": false,
       "costs": {
@@ -52,12 +57,14 @@
         "wood": 0,
         "stone": 0,
         "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 1000,
         "popcap": 0,
         "time": 90
       },
       "producedBy": [
-        "university"
+        "madrasa"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/biology-4.png",
       "effects": [
@@ -85,15 +92,15 @@
       "attribName": "upgrade_tech_university_biology",
       "age": 4,
       "civs": [
-        "hr"
+        "ay"
       ],
       "description": "Increase the health of all cavalry by +20%.",
       "classes": [
-        "cavalry",
+        "lancer",
         "technology"
       ],
       "displayClasses": [
-        "Cavalry Technology"
+        "Lancer Technology"
       ],
       "unique": false,
       "costs": {
@@ -101,6 +108,59 @@
         "wood": 0,
         "stone": 0,
         "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 1000,
+        "popcap": 0,
+        "time": 90
+      },
+      "producedBy": [
+        "madrasa"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/biology-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "biology-4",
+      "baseId": "biology",
+      "type": "technology",
+      "name": "Biology",
+      "pbgid": 127850,
+      "attribName": "upgrade_tech_university_biology",
+      "age": 4,
+      "civs": [
+        "by"
+      ],
+      "description": "Increase the health of all cavalry by +20%.",
+      "classes": [
+        "lancer",
+        "technology"
+      ],
+      "displayClasses": [
+        "Lancer Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 1000,
         "popcap": 0,
         "time": 90
@@ -138,11 +198,11 @@
       ],
       "description": "Increase the health of all cavalry by +20%.",
       "classes": [
-        "cavalry",
+        "lancer",
         "technology"
       ],
       "displayClasses": [
-        "Cavalry Technology"
+        "Lancer Technology"
       ],
       "unique": false,
       "costs": {
@@ -150,6 +210,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 1000,
         "popcap": 0,
         "time": 90
@@ -187,11 +249,11 @@
       ],
       "description": "Increase the health of all cavalry by +20%.",
       "classes": [
-        "cavalry",
+        "lancer",
         "technology"
       ],
       "displayClasses": [
-        "Cavalry Technology"
+        "Lancer Technology"
       ],
       "unique": false,
       "costs": {
@@ -199,6 +261,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0,
         "time": 1080
@@ -233,15 +297,15 @@
       "attribName": "upgrade_tech_university_biology",
       "age": 4,
       "civs": [
-        "ab"
+        "en"
       ],
       "description": "Increase the health of all cavalry by +20%.",
       "classes": [
-        "cavalry",
+        "lancer",
         "technology"
       ],
       "displayClasses": [
-        "Cavalry Technology"
+        "Lancer Technology"
       ],
       "unique": false,
       "costs": {
@@ -249,12 +313,116 @@
         "wood": 0,
         "stone": 0,
         "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 1000,
         "popcap": 0,
         "time": 90
       },
       "producedBy": [
-        "madrasa"
+        "university"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/biology-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "biology-4",
+      "baseId": "biology",
+      "type": "technology",
+      "name": "Biology",
+      "pbgid": 127850,
+      "attribName": "upgrade_tech_university_biology",
+      "age": 4,
+      "civs": [
+        "hr"
+      ],
+      "description": "Increase the health of all cavalry by +20%.",
+      "classes": [
+        "lancer",
+        "technology"
+      ],
+      "displayClasses": [
+        "Lancer Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 1000,
+        "popcap": 0,
+        "time": 90
+      },
+      "producedBy": [
+        "university"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/biology-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "biology-4",
+      "baseId": "biology",
+      "type": "technology",
+      "name": "Biology",
+      "pbgid": 127850,
+      "attribName": "upgrade_tech_university_biology",
+      "age": 4,
+      "civs": [
+        "ja"
+      ],
+      "description": "Increase the health of all cavalry by +20%.",
+      "classes": [
+        "lancer",
+        "technology"
+      ],
+      "displayClasses": [
+        "Lancer Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 1000,
+        "popcap": 0,
+        "time": 90
+      },
+      "producedBy": [
+        "university"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/biology-4.png",
       "effects": [
@@ -286,11 +454,11 @@
       ],
       "description": "Increase the health of all cavalry by +20%.",
       "classes": [
-        "cavalry",
+        "lancer",
         "technology"
       ],
       "displayClasses": [
-        "Cavalry Technology"
+        "Lancer Technology"
       ],
       "unique": false,
       "costs": {
@@ -298,6 +466,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 1000,
         "popcap": 0,
         "time": 90
@@ -335,11 +505,11 @@
       ],
       "description": "Increase the health of all cavalry by +20%.",
       "classes": [
-        "cavalry",
+        "lancer",
         "technology"
       ],
       "displayClasses": [
-        "Cavalry Technology"
+        "Lancer Technology"
       ],
       "unique": false,
       "costs": {
@@ -347,6 +517,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 1000,
         "popcap": 0,
         "time": 90
@@ -380,15 +552,15 @@
       "attribName": "upgrade_tech_university_biology",
       "age": 4,
       "civs": [
-        "ot"
+        "od"
       ],
       "description": "Increase the health of all cavalry by +20%.",
       "classes": [
-        "cavalry",
+        "lancer",
         "technology"
       ],
       "displayClasses": [
-        "Cavalry Technology"
+        "Lancer Technology"
       ],
       "unique": false,
       "costs": {
@@ -396,6 +568,59 @@
         "wood": 0,
         "stone": 0,
         "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 1000,
+        "popcap": 0,
+        "time": 90
+      },
+      "producedBy": [
+        "university"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/biology-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "biology-4",
+      "baseId": "biology",
+      "type": "technology",
+      "name": "Biology",
+      "pbgid": 127850,
+      "attribName": "upgrade_tech_university_biology",
+      "age": 4,
+      "civs": [
+        "ot"
+      ],
+      "description": "Increase the health of all cavalry by +20%.",
+      "classes": [
+        "lancer",
+        "technology"
+      ],
+      "displayClasses": [
+        "Lancer Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 1000,
         "popcap": 0,
         "time": 90
@@ -434,11 +659,11 @@
       ],
       "description": "Increase the health of all cavalry by +20%.",
       "classes": [
-        "cavalry",
+        "lancer",
         "technology"
       ],
       "displayClasses": [
-        "Cavalry Technology"
+        "Lancer Technology"
       ],
       "unique": false,
       "costs": {
@@ -446,6 +671,59 @@
         "wood": 0,
         "stone": 0,
         "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 1000,
+        "popcap": 0,
+        "time": 90
+      },
+      "producedBy": [
+        "university"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/biology-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "biology-4",
+      "baseId": "biology",
+      "type": "technology",
+      "name": "Biology",
+      "pbgid": 127850,
+      "attribName": "upgrade_tech_university_biology",
+      "age": 4,
+      "civs": [
+        "zx"
+      ],
+      "description": "Increase the health of all cavalry by +20%.",
+      "classes": [
+        "lancer",
+        "technology"
+      ],
+      "displayClasses": [
+        "Lancer Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 1000,
         "popcap": 0,
         "time": 90

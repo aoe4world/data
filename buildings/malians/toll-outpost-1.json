@@ -9,7 +9,7 @@
   "civs": [
     "ma"
   ],
-  "description": "Offers extensive line of sight. Can be upgraded with weaponry and fortifications. Attacks while garrisoned.\nPassing Traders and Trade Ships instantly provide an additional 8% of their carried Gold.",
+  "description": "Offers extensive line of sight. Can be upgraded with weaponry and fortifications. Attacks while garrisoned.\nPassing Traders and Trade Ships instantly provide an additional 8% of their carried Gold. Does not generate any bonus tax if a toll outpost is built within range of another one.",
   "classes": [
     "defensive",
     "building"
@@ -23,6 +23,8 @@
     "wood": 100,
     "stone": 0,
     "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
     "total": 100,
     "popcap": 0,
     "time": 60
@@ -75,7 +77,7 @@
       "name": "Springald",
       "type": "ranged",
       "damage": 40,
-      "speed": 4.625,
+      "speed": 3.875,
       "range": {
         "min": 0,
         "max": 9
@@ -97,11 +99,11 @@
         }
       ],
       "durations": {
-        "aim": 0.5,
+        "aim": 0,
         "windup": 0.25,
         "attack": 0.125,
         "winddown": 0.5,
-        "reload": 3.25,
+        "reload": 3,
         "setup": 0,
         "teardown": 0,
         "cooldown": 0
@@ -113,7 +115,7 @@
       "name": "Cannon",
       "type": "ranged",
       "damage": 70,
-      "speed": 7.125,
+      "speed": 5.875,
       "range": {
         "min": 0,
         "max": 9.5
@@ -135,11 +137,11 @@
         }
       ],
       "durations": {
-        "aim": 0.5,
+        "aim": 0,
         "windup": 0,
         "attack": 0.125,
         "winddown": 1,
-        "reload": 5.5,
+        "reload": 4.75,
         "setup": 0,
         "teardown": 0,
         "cooldown": 0

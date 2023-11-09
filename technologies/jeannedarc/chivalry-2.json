@@ -1,0 +1,51 @@
+{
+  "id": "chivalry-2",
+  "baseId": "chivalry",
+  "type": "technology",
+  "name": "Chivalry",
+  "pbgid": 137068,
+  "attribName": "upgrade_cavalry_chivalry_fre",
+  "age": 2,
+  "civs": [
+    "je"
+  ],
+  "description": "Royal Knights regenerate +1 health every 1 seconds when out of combat.",
+  "classes": [
+    "royal",
+    "knight",
+    "technology"
+  ],
+  "displayClasses": [
+    "Royal Knight Technology"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 0,
+    "wood": 100,
+    "stone": 0,
+    "gold": 200,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 300,
+    "popcap": 0,
+    "time": 60
+  },
+  "producedBy": [
+    "school-of-cavalry",
+    "stable"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/chivalry-2.png",
+  "effects": [
+    {
+      "property": "healingRate",
+      "select": {
+        "id": [
+          "royal-knight"
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "passive"
+    }
+  ]
+}

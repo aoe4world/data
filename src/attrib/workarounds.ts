@@ -1,4 +1,5 @@
-import { Ability, Building, Item, ItemType, Modifier, Technology, Unit, Upgrade } from "../types/items";
+import { ItemSlug } from "../sdk/utils";
+import { Ability, Building, Item, ItemType, Modifier, Selector, Technology, Unit, Upgrade } from "../types/items";
 import { KHAGANTE_SPAWN_COUNTS, attribFile } from "./config";
 
 const workarounds = new Map<string, Override>();
@@ -58,6 +59,15 @@ workaround("Remove all garrison and emplacement weapons from the Red Palace, set
     item.weapons = [arbalest];
   },
   validator: (item) => (item as Building).weapons.length == 1 && (item as Building).weapons.filter((w) => w.type == "ranged" && w.damage == 60 && w.burst?.count == 2).length == 1,
+});
+
+workaround("Remove all garrison and emplacement weapons from the Japanese Castle except the Rocket", {
+  predicate: (item) => item.baseId === "castle" && item.civs.includes("ja"),
+  mutator: (item) => {
+    item = item as Building;
+    const rocket = item.weapons.find((x) => x.name === "Rocket")!;
+    item.weapons = [rocket];
+  },
 });
 
 workaround("Fix incorrect description from 'great bombard' used on regular cannon emplacements", {
@@ -247,6 +257,15 @@ workaround("Make Trade Protection available in Imperial Age", {
 
 // ---- Abilities ----
 
+// workaround("..", {
+//   predicate: (item) => item.type === "ability" && item.attribName === "jeanne_d_arc_rallying_call_manatarms_fre_ha_01",
+//   mutator: (item) => {
+//     item = item as Ability;
+//     item.age = 3;
+//     item.id = `${item.baseId}-${item.age}`;
+//   },
+// });
+
 workaround("Fix age and add ability props for great_wall_buff", {
   predicate: (item) => item.type === "ability" && item.attribName === "great_wall_buff_chi",
   mutator: (item) => {
@@ -266,6 +285,7 @@ workaround("Fix age and add missing info for spirit_way", {
   mutator: (item) => {
     item = item as Ability;
     item.age = 4;
+    item.baseId = "ability-spirit-way";
     item.id = `${item.baseId}-${item.age}`;
     item.name = "Spirit Way Ancestors";
     item.description = "When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.";
@@ -564,6 +584,8 @@ workaround("Add requirements to Mill Influence", {
 workaround("Fix missing info Golden Age Tier 1", {
   predicate: (item) => item.type === "ability" && item.attribName === "golden_age_tier_1",
   mutator: (item) => {
+    item.baseId = "ability-golden-age-tier-1";
+    item.id = `${item.baseId}-${item.age}`;
     item.description = "+15% Resource Gathering Rate";
     item.name = "Golden Age Tier 1";
     item.icon = "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png";
@@ -574,6 +596,7 @@ workaround("Fix missing info Golden Age Tier 2", {
   predicate: (item) => item.type === "ability" && item.attribName === "golden_age_tier_2",
   mutator: (item) => {
     item.age = 1;
+    item.baseId = "ability-golden-age-tier-2";
     item.id = `${item.baseId}-${item.age}`;
     item.description = "+15% Research Speed";
     item.name = "Golden Age Tier 2";
@@ -585,6 +608,7 @@ workaround("Fix missing info Golden Age Tier 3", {
   predicate: (item) => item.type === "ability" && item.attribName === "golden_age_tier_3",
   mutator: (item) => {
     item.age = 1;
+    item.baseId = "ability-golden-age-tier-3";
     item.id = `${item.baseId}-${item.age}`;
     item.description = "+20% Production Speed, additional +5% Research Speed, additional +5% Resource Gathering Rate";
     item.name = "Golden Age Tier 3";
@@ -596,6 +620,422 @@ workaround("Fix bad info in Coastal Navigation where this is only place where lo
   predicate: (item) => item.type === "ability" && item.attribName === "docks_speed_bonus_mal",
   mutator: (item) => {
     item.description = "Ships near a Docks get +15% speed for 25 seconds.";
+  },
+});
+
+workaround("Mark Consecrate as manual ability", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-consecrate",
+  mutator: (item) => {
+    item = item as Ability;
+    item.active = "manual";
+  },
+});
+
+workaround("Mark Divine Restoration as manual ability", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-divine-restoration",
+  mutator: (item) => {
+    item = item as Ability;
+    item.active = "manual";
+  },
+});
+const jeanneLevels = [
+  ["ability-path-of-the-warrior", "ability-path-of-the-archer"],
+  ["ability-champion-companions", "ability-rider-companions"],
+  ["ability-field-commander", "ability-gunpowder-monarch"],
+];
+const jeanneLevelUps = jeanneLevels.flat();
+workaround("Change Jeanne d'Arc Level Choices to Technology", {
+  predicate: (item) => item.type === "ability" && jeanneLevelUps.includes(item.baseId),
+  mutator: (item) => {
+    item = item as Technology;
+    item.type = "technology";
+
+    const level = jeanneLevels.findIndex((x) => x.includes(item.baseId)) + 2;
+    item.age = 0;
+    item.baseId = item.baseId.replace("ability-", `level-${level}-`);
+    item.displayClasses = ["Hero Level Up Choice"];
+    item.classes = ["hero", "level-up-choice"];
+    item.description = `Level ${level} option\n\n${item.description}\n\nRequires 500XP`;
+    item.id = `${item.baseId}-${item.age}`;
+  },
+});
+
+workaround("Set Jeanne d'Arc ability requirements", {
+  predicate: (item) => item.type === "ability" && item.civs[0] == "je",
+  mutator: (item) => {
+    item = item as Ability;
+    const required = {
+      // "holy-wrath": ["level-2-path-of-the-warrior"],
+      // "divine-arrow": ["level-2-path-of-the-archer"],
+      // "divine-blast": ["level-2-path-of-the-archer"],
+      // consecrate: ["level-2-path-of-the-warrior", "level-2-path-of-the-archer"],
+      // "divine-restoration": ["level-2-path-of-the-warrior", "level-2-path-of-the-archer"],
+      "to-arms-men": ["level-3-champion-companions"],
+      "riders-ready": ["level-3-rider-companions"],
+      "galvenize-the-righteous": ["level-3-champion-companions", "level-3-rider-companions"],
+      "strength-of-heaven": ["level-4-field-commander"],
+      "valorous-inspiration": ["level-4-gunpowder-monarch"],
+    };
+
+    const id = item.baseId.replace("ability-", "");
+    if (Object.keys(required).includes(id)) {
+      item.unlockedBy = required[id].map((x) => `technologies/${x}`);
+      item.active = "manual";
+    }
+  },
+});
+
+workaround("Merge Elite Champion", {
+  predicate: (item) => item.type === "unit" && item.baseId === "jeannes-elite-champion",
+  mutator: (item) => {
+    item.baseId = "jeannes-champion";
+    item.id = `${item.baseId}-${item.age}`;
+  },
+});
+
+workaround("Merge Elite Rider", {
+  predicate: (item) => item.type === "unit" && item.baseId === "jeannes-elite-rider",
+  mutator: (item) => {
+    item.baseId = "jeannes-rider";
+    item.id = `${item.baseId}-${item.age}`;
+  },
+});
+
+workaround("Fix missing info Ayyubid Golden Age Tiers", {
+  predicate: (item) => item.type === "ability" && item.civs[0] === "ay" && item.attribName?.startsWith("golden_age_tier_")! && item.attribName?.endsWith("_ha_01")!,
+  mutator: (item) => {
+    item = item as Ability;
+    const createEffects = (property: string, value: number, select: Selector) => [
+      {
+        property: "unknown",
+        select,
+        effect: "multiply",
+        value,
+        type: "influence",
+      },
+      {
+        property: "unknown",
+        select: { id: ["house-of-wisdom"] },
+        effect: "change",
+        value: 0,
+        type: "ability",
+      },
+    ];
+    const tier = item.attribName?.match(/tier_(\d)/)?.[1] ?? 1;
+    const tiers = {
+      1: { description: "10 Structures: Villager gathering rate +10% for all resources.", effects: createEffects("gatherRate", 1.1, { id: ["villager"] }) },
+      2: { description: "20 Structures: Research Speeds +50%", effects: createEffects("researchSpeed", 1.5, { class: [["building"]] }) },
+      3: { description: "30 Structures: Production Speeds +20%", effects: createEffects("productionSpeed", 1.2, { class: [["building"]] }) },
+      4: { description: "50 Structures: Siege units cost 20% less resources to produce.", effects: createEffects("cost", 0.8, { class: [["siege"]] }) },
+      5: { description: "75 Structures: Camel units attack 20% faster.", effects: createEffects("attackSpeed", 0.83, { id: ["camel-lancer", "desert-raider"] }) },
+    } as const;
+
+    item.name = `Golden Age Tier ${tier}`;
+    item.baseId = `ability-golden-age-tier-${tier}`;
+    item.id = `${item.baseId}-${item.age}`;
+    item.description = tiers[tier].description;
+    item.effects = tiers[tier].effects;
+    item.unlockedBy = ["buildings/house-of-wisdom"];
+    item.icon = `https://data.aoe4world.com/images/abilities/ability-golden-age-tier-${tier}.png`;
+  },
+});
+
+workaround("Set Atabag Buff requirements", {
+  predicate: (item) => item.type === "ability" && item.attribName === "production_building_enhance_abb",
+  mutator: (item) => {
+    item = item as Ability;
+    item.unlockedBy = ["units/atabeg", "technologies/feudal-trade-wing-advisors"];
+  },
+});
+
+workaround("Set Dervish Mass Heal requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-mass-heal",
+  mutator: (item) => {
+    item = item as Ability;
+    item.activatedOn = ["units/dervish"];
+  },
+});
+
+workaround("Set Structural Reinforcement requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-structural-reinforcements",
+  mutator: (item) => {
+    item = item as Ability;
+    item.unlockedBy = ["technologies/siege-carpentry"];
+  },
+});
+
+workaround("Set Bedouin units requirements", {
+  predicate: (item) => item.type === "unit" && ["bedouin-swordsman", "bedouin-skirmisher"].includes(item.baseId),
+  mutator: (item) => {
+    item = item as Unit;
+    item.unlockedBy = ["technologies/feudal-trade-wing-bazaar", "technologies/castle-trade-wing-bazaar", "technologies/imperial-trade-wing-bazaar"];
+    item.description += `\n\nRequires the Trade Wing - Bazaar`;
+  },
+});
+
+workaround("Ayyubid House of Wisdom Wings", {
+  predicate: (item) => item.civs[0] == "ay" && item.type === "technology" && item.baseId.includes("-wing-"),
+  mutator: (item) => {
+    if (item.classes.includes("ii")) item.age = 1;
+    if (item.classes.includes("iii")) item.age = 2;
+    if (item.classes.includes("iv")) item.age = 3;
+    if (item.classes.includes("bonuses")) item.age = 4;
+    item.baseId = ["", "feudal-", "castle-", "imperial-", "bonus-"][item.age] + item.baseId;
+    const [wing, name] = item.name.split(": ");
+    item.name = `${name}\n(${["", "Feudal", "Castle", "Imperial", "Bonus"][item.age]} ${wing})`;
+    item.id = `${item.baseId}-${item.age}`;
+  },
+});
+
+workaround("Make Military Affairs Bureau available from Feudal Age", {
+  ...overrideAge(["military-affairs-bureau"], 2, ["zh"]),
+});
+
+workaround("Make Regional Inspection available from Castle Age", {
+  ...overrideAge(["regional-inspection"], 3, ["zh"]),
+});
+
+workaround("Make Single Whip Reform available from Castle Age", {
+  ...overrideAge(["single-whip-reform"], 3, ["zh"]),
+});
+
+workaround("Make Imperial Red Seals available from Imperial Age", {
+  ...overrideAge(["imperial-red-seals"], 4, ["zh"]),
+});
+
+workaround("Temple of the sun toggle Abilities", {
+  predicate: (item) => item.type === "ability" && item.civs[0] == "zx" && item.baseId.startsWith("ability-divine-"),
+  mutator: (item) => {
+    item = item as Ability;
+    item.activatedOn = ["buildings/temple-of-the-sun"];
+  },
+});
+
+// zx units imperial-guard and yuan-raider: Add to description "\n\n Requires Dynastic Protectors researched at Zhu Xi's Library."
+workaround("Add requirements to Imperial Guard and Yuan Raider", {
+  predicate: (item) => item.type === "unit" && ["imperial-guard", "yuan-raider"].includes(item.baseId),
+  mutator: (item) => {
+    item = item as Unit;
+    item.description += `\n\nRequires Dynastic Protectors researched at Zhu Xi's Library.`;
+  },
+});
+
+workaround("Set Body of Iron active to manual", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-body-of-iron",
+  mutator: (item) => {
+    item = item as Ability;
+    item.active = "manual";
+  },
+});
+
+workaround("Set Ancient Techniques to be produced at University", {
+  predicate: (item) => item.type === "technology" && item.civs[0] == "zx" && item.baseId === "ancient-techniques",
+  mutator: (item) => {
+    item = item as Technology;
+    item.producedBy = ["university"];
+  },
+});
+
+// add select: { id: ['zhuge-nu', 'crossbow'] } to every effects on technology 10000-bolts
+workaround("Set 10000 Bolts requirements", {
+  predicate: (item) => item.type === "technology" && item.baseId === "10000-bolts",
+  mutator: (item) => {
+    item = item as Technology;
+    item.effects = item.effects?.map((e) => ({ ...e, select: { id: ["zhuge-nu", "crossbow"] } }));
+  },
+});
+
+// add 'cistern' to ability-akritoi-defense prdoucedBy, set activatedOn to buildings cistern-of-the-first-hill and cistern
+workaround("Set Akritoi Defense requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-akritoi-defense",
+  mutator: (item) => {
+    item = item as Ability;
+    item.producedBy.push("cistern");
+    item.activatedOn = ["buildings/cistern-of-the-first-hill", "buildings/cistern"];
+  },
+});
+
+// add cistern-of-the-first-hill to ability-automatic-pilgrim-flask-off activatedOn
+workaround("Set Automatic Pilgrim Flask requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-automatic-pilgrim-flask-off",
+  mutator: (item) => {
+    item = item as Ability;
+    item.name = item.name.split(" (")[0];
+    item.activatedOn = ["buildings/cistern-of-the-first-hill"];
+    item.baseId = "ability-automatic-pilgrim-flask";
+    item.id = `${item.baseId}-${item.age}`;
+  },
+});
+
+// remove last line from description of ability-pilgrim-flask and requirement to cistern-of-the-first-hill
+workaround("Set Pilgrim Flask requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-pilgrim-flask",
+  mutator: (item) => {
+    item = item as Ability;
+    item.description = item.description.split("\n")[0];
+    item.unlockedBy = ["buildings/cistern-of-the-first-hill"];
+  },
+});
+
+// Set border-settlements tech as requirement fro ability-border-settlement
+workaround("Set Border Settlement requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-border-settlement",
+  mutator: (item) => {
+    item = item as Ability;
+    item.unlockedBy = ["technologies/border-settlements"];
+  },
+});
+
+// set ability-triumph activation on imperial-hippodrome
+workaround("Set Triumph requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-triumph",
+  mutator: (item) => {
+    item = item as Ability;
+    item.activatedOn = ["buildings/imperial-hippodrome"];
+    item.auraRange = 0;
+  },
+});
+
+// set ability-dialecticus, ability-conscriptio, ability-praesidium to be activatedOn cistern-of-the-first-hill
+workaround("Set Dialecticus, Conscriptio, Praesidium requirements", {
+  predicate: (item) => item.type === "ability" && ["ability-dialecticus", "ability-conscriptio", "ability-praesidium"].includes(item.baseId),
+  mutator: (item) => {
+    item = item as Ability;
+    item.activatedOn = ["buildings/cistern", "buildings/cistern-of-the-first-hill"];
+  },
+});
+
+// set ability-shield-wall-1 to manual
+workaround("Set Shield Wall requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-shield-wall",
+  mutator: (item) => {
+    item = item as Ability;
+    item.active = "manual";
+  },
+});
+
+// ability-irrigated set activatedOn cistern and cistern of hill
+// Villager gathering rate increased +???% by a nearby Cistern.
+
+workaround("Set Irrigated requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-irrigated",
+  mutator: (item) => {
+    item = item as Ability;
+    item.activatedOn = ["buildings/cistern", "buildings/cistern-of-the-first-hill"];
+    item.description = `Villager gathering rate increased by 5/10/15/20/25% (depening on water level)`;
+  },
+});
+
+// ability-improved-torch set acitivatedOn to scout
+workaround("Set Improved Torch requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-improved-torch",
+  mutator: (item) => {
+    item = item as Ability;
+    item.activatedOn = ["units/scout"];
+  },
+});
+
+// require Great Winery for ability-synergistic-crops
+workaround("Set Synergistic Crops requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-synergistic-crops",
+  mutator: (item) => {
+    item = item as Ability;
+    item.unlockedBy = ["buildings/grand-winery"];
+  },
+});
+
+// chainge ability-oil-harvest description
+workaround("Set Oil Harvest description to all modes", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-oil-harvest",
+  mutator: (item) => {
+    item = item as Ability;
+    item.description =
+      "Villagers generate +50% Olive Oil when gathering Food from Berry Bushes, +20% from Olive Groves, and +10% from Shore Fish. Fishing Boats generate +20% Olive Oil from fish.";
+  },
+});
+
+// chainge ability-oil-commerce description
+workaround("Set Oil Commerce description ", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-oil-commerce",
+  mutator: (item) => {
+    item = item as Ability;
+    item.description = "Traders provide +20% Olive Oil on trades.";
+  },
+});
+
+// change mercenary upgrades to technology
+// veteran-mercenaries, elite-mercenaries
+workaround("Set Mercenary Upgrades to technologies", {
+  predicate: (item) => item.type === "upgrade" && ["veteran-mercenaries", "elite-mercenaries"].includes(item.baseId),
+  mutator: (item) => {
+    item = item as Technology;
+    item.type = "technology";
+    item.producedBy = ["mercenary-house", "golden-horn-tower"];
+  },
+});
+
+workaround("Add Mercenary Contracts to mercenary House", {
+  predicate: (item) => item.type === "technology" && item.baseId.endsWith("-mercenary-contract"),
+  mutator: (item) => {
+    item = item as Technology;
+    item.producedBy = ["mercenary-house", "golden-horn-tower"];
+  },
+});
+
+workaround("Fix Trapezites description", {
+  predicate: (item) => item.type === "technology" && item.baseId === "trapezites",
+  mutator: (item) => {
+    item.description = "Scouts enhance the torch damage of nearby units by 25%";
+  },
+});
+
+workaround("Set Mercenary requirements", {
+  predicate: (item) => item.type === "unit" && item.civs[0] == "by" && (item.attribName?.endsWith("_merc_byz")! || ["sipahi"].includes(item.baseId)),
+  mutator: (item) => {
+    item = item as Unit;
+
+    const mercenaries: Record<string, [number, ItemSlug[]]> = {
+      keshik: [2, ["technologies/eastern-mercenary-contract"]],
+      ghulam: [3, ["technologies/eastern-mercenary-contract", "technologies/veteran-contract"]],
+      "tower-elephant": [1, ["technologies/eastern-mercenary-contract", "technologies/elite-contract"]],
+      longbowman: [5, ["technologies/western-mercenary-contract"]],
+      landsknecht: [3, ["technologies/western-mercenary-contract", "technologies/veteran-contract"]],
+      streltsy: [3, ["technologies/western-mercenary-contract", "technologies/veteran-contract"]],
+      javelin: [4, ["technologies/silk-road-contract"]],
+      "camel-rider": [2, ["technologies/silk-road-contract", "technologies/veteran-contract"]],
+      grenadier: [2, ["technologies/silk-road-contract", "technologies/elite-contract"]],
+      //roll 1
+      "desert-raider": [3, ["buildings/trade-post"]],
+      mangudai: [3, ["buildings/trade-post"]],
+      // roll 2
+      "royal-knight": [2, ["buildings/trade-post"]],
+      "horse-archer": [3, ["buildings/trade-post", "technologies/veteran-contract"]],
+      // roll 3
+      sipahi: [3, ["buildings/trade-post"]],
+      arbaletrier: [4, ["buildings/trade-post", "technologies/veteran-contract"]],
+      // roll 4
+      "war-elephant": [1, ["buildings/trade-post", "technologies/elite-contract"]],
+      "zhuge-nu": [5, ["buildings/trade-post"]],
+      // rol 5
+      "camel-archer": [2, ["buildings/trade-post"]],
+      "musofadi-warrior": [5, ["buildings/trade-post"]],
+      // foreign-engineering-company
+      "nest-of-bees": [1, ["buildings/foreign-engineering-company"]],
+      "huihui-pao": [1, ["buildings/foreign-engineering-company"]],
+      "royal-cannon": [1, ["buildings/foreign-engineering-company"]],
+    };
+    if (!Object.keys(mercenaries).includes(item.baseId)) return;
+    const [count, unlockedBy] = mercenaries[item.baseId];
+    item.unlockedBy = unlockedBy;
+    // item.costs.popcap = item.costs.popcap! * count;
+    // item.costs.oliveoil = item.costs.oliveoil! * count;
+    if (count > 1) item.description += `\n\nMercenary that can be purchased per ${count} units for a total of ${item.costs.oliveoil! * count} Olive Oil.`;
+    else item.description += `\n\nMercenary that can be purchased for ${item.costs.oliveoil!} Olive Oil.`;
+    if (unlockedBy.includes("technologies/silk-road-contract")) item.description += `\n\nRequires the Silk Road Contract.`;
+    else if (unlockedBy.includes("technologies/eastern-mercenary-contract")) item.description += `\n\nRequires the Eastern Mercenary Contract.`;
+    else if (unlockedBy.includes("technologies/western-mercenary-contract")) item.description += `\n\nRequires the Western Mercenary Contract.`;
+    if (unlockedBy.includes("buildings/trade-post"))
+      item.description += `\n\nThis Mercenary can only be purchased on Mercenary Houses built near a neutral Trade Post that list this unit. The chance of this unit being available on a Trade Post is 20%.`;
   },
 });
 
@@ -613,7 +1053,7 @@ workaround("Remove spearwall attack from spearman, until we can nicely display s
   predicate: (item) => item.type === "unit" && item.attribName!.includes("unit_spearman") && item.weapons.some((w) => w.name === "Spearwall"),
   mutator: (item) => {
     item = item as Unit;
-    item.weapons = item.weapons.filter((w) => w.name !== "Spearwall");
+    item.weapons = item.weapons.filter((w) => !["Spearwall", "Nagae Yari"].includes(w.name!));
   },
 });
 
@@ -693,7 +1133,7 @@ workaround("Remove charge attack from Horseman and Ghazi Raider, except for mong
   predicate: (item) => item.type === "unit" && ["horseman", "ghazi-raider"].includes(item.baseId),
   mutator: (item) => {
     item = item as Unit;
-    item.weapons = item.weapons.filter((w) => !w.attribName!.includes("_charge"));
+    item.weapons = item.weapons.filter((w) => !w.attribName!.includes("_charge") && !w.attribName!.includes("hippodrome_byz"));
   },
   validator: (item) => (item as Unit).weapons.filter((w) => w.type === "melee").length == 1,
 });
@@ -757,6 +1197,7 @@ workaround("Deduplicating unit weapons with the same name, keeping the first", {
   mutator: (item) => {
     item = item as Unit;
     item.weapons = item.weapons.reduce((wps, w) => {
+      wps = wps.filter(Boolean);
       if (!wps.some((wp) => w.name == wp.name)) wps.push(w);
       return wps;
     }, [] as Unit["weapons"]);
@@ -825,7 +1266,7 @@ workaround("Modify Militia scaling to be more descriptive", {
 });
 
 workaround("Highlight Khaganate units", {
-  predicate: (item) => item.type === "unit" && item.attribName?.startsWith("unit_khaganate")!,
+  predicate: (item) => item.type === "unit" && item.civs[0] == "mo" && item.attribName?.startsWith("unit_khaganate")!,
   mutator: (item) => {
     const spawnCount = KHAGANTE_SPAWN_COUNTS[item.baseId];
     item.description = `${item.description}\n\nRandomly spawns ${spawnCount > 1 ? `${spawnCount} at the time ` : ""}from the Khaganate Palace.`;
@@ -860,6 +1301,58 @@ workaround("Apply Meinwerk 40% cost reduction bonus to unique meinwork technolog
   predicate: (item) => ["steel-barding", "riveted-chain-mail"].includes(item.baseId),
   mutator: (item) => {
     item.costs = discountCosts(item.costs, 0.6);
+  },
+});
+
+workaround("Add Lumber Camp technologies to Japanese Kura Storehouse", {
+  predicate: (item) =>
+    item.civs.includes("ja") && (item.displayClasses[0]?.startsWith("Wood Gathering Technology") || item.displayClasses[0]?.startsWith("Woodcutting Technology")),
+  mutator: (item) => {
+    item.producedBy = ["kura-storehouse", "lumber-camp"];
+    Object.freeze(item.producedBy);
+  },
+});
+
+workaround("Add bannerman requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId.includes("bannerman-aura"),
+  mutator: (item) => {
+    item = item as Ability;
+    item.activatedOn = [item.baseId.replace("ability-", "units/").replace("-aura", "") as any];
+  },
+});
+
+workaround("Add Kabura-ya requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId.includes("kabura-ya"),
+  mutator: (item) => {
+    item = item as Ability;
+    item.unlockedBy = ["technologies/kabura-ya-whistling-arrow"];
+  },
+});
+
+workaround("Modify Shinobi scaling to be more descriptive", {
+  predicate: (item) => item.attribName?.startsWith("upgrade_unit_shinobi_") || false,
+  mutator: (item) => {
+    const base: Partial<Item> = {
+      classes: ["shinobi", "scaling", "technology"],
+      displayClasses: ["Shinobi Scaling Technology"],
+      icon: "https://data.aoe4world.com/images/units/shinobi-2.png",
+    };
+    const castle: Partial<Item> = {
+      id: "upgrade-shinobi-3",
+      baseId: "upgrade-shinobi-3",
+      name: "Castle Age Shinobi",
+      description: "Increases the health and damage of Shinobi when reaching Castle Age.",
+    };
+    const imperial: Partial<Item> = {
+      id: "upgrade-shinobi-4",
+      baseId: "upgrade-shinobi-4",
+      name: "Imperial Age Shinobi",
+      description: "Increases the health and damage of of Shinobi when reaching Imperial Age.",
+    };
+    Object.assign(item, base, item.age == 3 ? castle : imperial);
+    (item as Technology).effects = (item as Technology).effects
+      ?.filter((e) => ["meleeAttack", "hitpoints", "fireAttack"].includes(e.property))
+      .map((e) => ({ ...e, select: { id: ["shinobi"] } }));
   },
 });
 

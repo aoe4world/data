@@ -1,0 +1,62 @@
+{
+  "id": "fitted-leatherwork-2",
+  "baseId": "fitted-leatherwork",
+  "type": "technology",
+  "name": "Fitted Leatherwork",
+  "pbgid": 188116,
+  "attribName": "upgrade_melee_armor_i",
+  "age": 2,
+  "civs": [
+    "je"
+  ],
+  "description": "Increase the melee armor of all non-siege units by +1.",
+  "classes": [
+    "melee",
+    "armor",
+    "technology",
+    "1/3"
+  ],
+  "displayClasses": [
+    "Melee Armor Technology 1/3"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 50,
+    "wood": 0,
+    "stone": 0,
+    "gold": 125,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 175,
+    "popcap": 0,
+    "time": 60
+  },
+  "producedBy": [
+    "blacksmith"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/fitted-leatherwork-2.png",
+  "effects": [
+    {
+      "property": "meleeArmor",
+      "select": {
+        "class": [
+          [
+            "infantry"
+          ],
+          [
+            "cavalry"
+          ],
+          [
+            "worker"
+          ],
+          [
+            "religious"
+          ]
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "passive"
+    }
+  ]
+}

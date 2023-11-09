@@ -5,9 +5,10 @@
   "name": "Streltsy",
   "type": "unit",
   "civs": [
+    "by",
     "ru"
   ],
-  "unique": true,
+  "unique": false,
   "displayClasses": [
     "Light Ranged Gunpowder Infantry"
   ],
@@ -19,8 +20,85 @@
   ],
   "minAge": 4,
   "icon": "https://data.aoe4world.com/images/units/streltsy-4.png",
-  "description": "Most powerful ranged infantry with reasonable melee capabilities. Increased attack speed while stationary.\n+ High damage\n+ Lower cost than Handcannoneer\n- Slow movement speed",
+  "description": "Most powerful ranged infantry with reasonable melee capabilities. Increased attack speed while stationary.\n+ High damage\n+ Lower cost than Handcannoneer\n- Slow movement speed\n\nMercenary that can be purchased per 3 units for a total of 540 Olive Oil.\n\nRequires the Western Mercenary Contract.",
   "variations": [
+    {
+      "id": "streltsy-4",
+      "baseId": "streltsy",
+      "type": "unit",
+      "name": "Streltsy",
+      "pbgid": 2104181,
+      "attribName": "unit_streltsy_4_merc_byz",
+      "age": 4,
+      "civs": [
+        "by"
+      ],
+      "description": "Most powerful ranged infantry with reasonable melee capabilities. Increased attack speed while stationary.\n+ High damage\n+ Lower cost than Handcannoneer\n- Slow movement speed\n\nMercenary that can be purchased per 3 units for a total of 540 Olive Oil.\n\nRequires the Western Mercenary Contract.",
+      "classes": [
+        "light",
+        "ranged",
+        "gunpowder",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Gunpowder Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 180,
+        "total": 180,
+        "popcap": 1,
+        "time": 90
+      },
+      "producedBy": [
+        "mercenary-house",
+        "golden-horn-tower"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/streltsy-4.png",
+      "hitpoints": 130,
+      "weapons": [
+        {
+          "name": "Handcannon",
+          "type": "ranged",
+          "damage": 35,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 4
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 1.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_handcannon_4_rus",
+          "pbgid": 133305
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 32,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      },
+      "unlockedBy": [
+        "technologies/western-mercenary-contract",
+        "technologies/veteran-contract"
+      ]
+    },
     {
       "id": "streltsy-4",
       "baseId": "streltsy",
@@ -48,6 +126,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 90,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 180,
         "popcap": 1,
         "time": 35

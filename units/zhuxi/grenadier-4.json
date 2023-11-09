@@ -1,0 +1,86 @@
+{
+  "id": "grenadier-4",
+  "baseId": "grenadier",
+  "type": "unit",
+  "name": "Grenadier",
+  "pbgid": 7123292,
+  "attribName": "unit_grenadier_4_chi_ha_01",
+  "age": 4,
+  "civs": [
+    "zx"
+  ],
+  "description": "Advanced ranged infantry with thrown explosive canisters that deal damage in a small area.\n+ Deals area damage\n- Low single target damage\n- Slow movement speed",
+  "classes": [
+    "light",
+    "ranged",
+    "gunpowder",
+    "infantry"
+  ],
+  "displayClasses": [
+    "Light Ranged Gunpowder Infantry"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 120,
+    "wood": 60,
+    "stone": 0,
+    "gold": 60,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 240,
+    "popcap": 1,
+    "time": 30
+  },
+  "producedBy": [
+    "archery-range"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/grenadier-4.png",
+  "hitpoints": 150,
+  "weapons": [
+    {
+      "name": "Grenade",
+      "type": "siege",
+      "damage": 10,
+      "speed": 1.625,
+      "range": {
+        "min": 0,
+        "max": 3
+      },
+      "modifiers": [
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 20,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0.625,
+        "attack": 0.125,
+        "winddown": 0.375,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_grenade_4",
+      "pbgid": 156410
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "line": 50,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.125
+  }
+}

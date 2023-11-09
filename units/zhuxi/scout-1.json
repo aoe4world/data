@@ -1,0 +1,100 @@
+{
+  "id": "scout-1",
+  "baseId": "scout",
+  "type": "unit",
+  "name": "Scout",
+  "pbgid": 4207698,
+  "attribName": "unit_scout_1_chi_ha_01",
+  "age": 1,
+  "civs": [
+    "zx"
+  ],
+  "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ Health regeneration\n+ High movement speed\n- Very weak in combat",
+  "classes": [
+    "light",
+    "melee",
+    "cavalry"
+  ],
+  "displayClasses": [
+    "Light Melee Cavalry"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 70,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 70,
+    "popcap": 1,
+    "time": 25
+  },
+  "producedBy": [
+    "stable",
+    "town-center",
+    "capital-town-center"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/scout-1.png",
+  "hitpoints": 110,
+  "weapons": [
+    {
+      "name": "Dao",
+      "type": "melee",
+      "damage": 1,
+      "speed": 2,
+      "range": {
+        "min": 0,
+        "max": 0.2875
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "scout"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.375,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.5
+      },
+      "attribName": "weapon_scout_1_chi",
+      "pbgid": 2150563
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "line": 41,
+    "height": 501
+  },
+  "movement": {
+    "speed": 1.625
+  }
+}

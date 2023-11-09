@@ -1,0 +1,146 @@
+{
+  "id": "spearman-2",
+  "baseId": "spearman",
+  "type": "unit",
+  "name": "Hardened Spearman",
+  "pbgid": 6749113,
+  "attribName": "unit_spearman_2_chi_ha_01",
+  "age": 2,
+  "civs": [
+    "zx"
+  ],
+  "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+  "classes": [
+    "light",
+    "melee",
+    "infantry"
+  ],
+  "displayClasses": [
+    "Light Melee Infantry"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 60,
+    "wood": 20,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 80,
+    "popcap": 1,
+    "time": 15
+  },
+  "producedBy": [
+    "barracks",
+    "jiangnan-tower"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/spearman-2.png",
+  "hitpoints": 90,
+  "weapons": [
+    {
+      "name": "Spear",
+      "type": "melee",
+      "damage": 8,
+      "speed": 1.875,
+      "range": {
+        "min": 0,
+        "max": 0.295
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 20,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.75,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0.75
+      },
+      "attribName": "weapon_spearman_2",
+      "pbgid": 127825
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch",
+      "pbgid": 123518
+    },
+    {
+      "name": "Fire Lance",
+      "type": "melee",
+      "damage": 8,
+      "speed": 1.875,
+      "range": {
+        "min": 0,
+        "max": 0.545
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 20,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1
+      },
+      "attribName": "weapon_spearman_2_charge_fire_chi_ha_01",
+      "pbgid": 2135918
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "line": 36,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.25
+  }
+}

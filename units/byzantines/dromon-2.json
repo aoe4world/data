@@ -1,0 +1,93 @@
+{
+  "id": "dromon-2",
+  "baseId": "dromon",
+  "type": "unit",
+  "name": "Dromon",
+  "pbgid": 8953580,
+  "attribName": "unit_naval_combat_ship_2_byz",
+  "age": 2,
+  "civs": [
+    "by"
+  ],
+  "description": "Military ship equipped with Greek Fire.\n+ Strong against Arrow Ships\n- Low weapon range\n- Countered by Demolition Ships",
+  "classes": [
+    "springald",
+    "ship"
+  ],
+  "displayClasses": [
+    "Springald Ship"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 110,
+    "wood": 200,
+    "stone": 0,
+    "gold": 60,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 370,
+    "popcap": 3,
+    "time": 30
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/dromon-2.png",
+  "hitpoints": 500,
+  "weapons": [
+    {
+      "name": "Greek Fire",
+      "type": "siege",
+      "damage": 6,
+      "speed": 3,
+      "range": {
+        "min": 0,
+        "max": 4
+      },
+      "modifiers": [
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 8,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 1.5,
+        "winddown": 1.5,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 1,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 6
+      },
+      "attribName": "weapon_dromon_flame_thrower_byz",
+      "pbgid": 2140310
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 3
+    }
+  ],
+  "sight": {
+    "line": 45,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.375
+  }
+}

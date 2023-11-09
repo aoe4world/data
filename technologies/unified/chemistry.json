@@ -6,15 +6,21 @@
   "type": "technology",
   "civs": [
     "ab",
+    "ay",
+    "by",
     "ch",
     "de",
     "en",
     "fr",
     "hr",
+    "ja",
+    "je",
     "ma",
     "mo",
+    "od",
     "ot",
-    "ru"
+    "ru",
+    "zx"
   ],
   "unique": false,
   "displayClasses": [
@@ -37,7 +43,7 @@
       "attribName": "upgrade_siege_chemistry",
       "age": 4,
       "civs": [
-        "en"
+        "ab"
       ],
       "description": "Increase the damage of gunpowder units by +20%.",
       "classes": [
@@ -53,12 +59,14 @@
         "wood": 0,
         "stone": 0,
         "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 1000,
         "popcap": 0,
         "time": 90
       },
       "producedBy": [
-        "university"
+        "madrasa"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
       "effects": [
@@ -105,7 +113,7 @@
       "attribName": "upgrade_siege_chemistry",
       "age": 4,
       "civs": [
-        "hr"
+        "ay"
       ],
       "description": "Increase the damage of gunpowder units by +20%.",
       "classes": [
@@ -121,12 +129,14 @@
         "wood": 0,
         "stone": 0,
         "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 1000,
         "popcap": 0,
         "time": 90
       },
       "producedBy": [
-        "university"
+        "madrasa"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
       "effects": [
@@ -173,7 +183,7 @@
       "attribName": "upgrade_siege_chemistry",
       "age": 4,
       "civs": [
-        "fr"
+        "by"
       ],
       "description": "Increase the damage of gunpowder units by +20%.",
       "classes": [
@@ -189,12 +199,13 @@
         "wood": 0,
         "stone": 0,
         "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 1000,
         "popcap": 0,
         "time": 90
       },
       "producedBy": [
-        "college-of-artillery",
         "university"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
@@ -325,6 +336,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0,
         "time": 1080
@@ -378,7 +391,7 @@
       "attribName": "upgrade_siege_chemistry",
       "age": 4,
       "civs": [
-        "ab"
+        "en"
       ],
       "description": "Increase the damage of gunpowder units by +20%.",
       "classes": [
@@ -394,12 +407,296 @@
         "wood": 0,
         "stone": 0,
         "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 1000,
         "popcap": 0,
         "time": 90
       },
       "producedBy": [
-        "madrasa"
+        "university"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "gunpowder"
+              ],
+              [
+                "warship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "select": {
+            "class": [
+              [
+                "gunpowder"
+              ],
+              [
+                "warship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "chemistry-4",
+      "baseId": "chemistry",
+      "type": "technology",
+      "name": "Chemistry",
+      "pbgid": 124734,
+      "attribName": "upgrade_siege_chemistry",
+      "age": 4,
+      "civs": [
+        "fr"
+      ],
+      "description": "Increase the damage of gunpowder units by +20%.",
+      "classes": [
+        "gunpowder",
+        "technology"
+      ],
+      "displayClasses": [
+        "Gunpowder Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 1000,
+        "popcap": 0,
+        "time": 90
+      },
+      "producedBy": [
+        "college-of-artillery",
+        "university"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "gunpowder"
+              ],
+              [
+                "warship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "select": {
+            "class": [
+              [
+                "gunpowder"
+              ],
+              [
+                "warship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "chemistry-4",
+      "baseId": "chemistry",
+      "type": "technology",
+      "name": "Chemistry",
+      "pbgid": 124734,
+      "attribName": "upgrade_siege_chemistry",
+      "age": 4,
+      "civs": [
+        "hr"
+      ],
+      "description": "Increase the damage of gunpowder units by +20%.",
+      "classes": [
+        "gunpowder",
+        "technology"
+      ],
+      "displayClasses": [
+        "Gunpowder Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 1000,
+        "popcap": 0,
+        "time": 90
+      },
+      "producedBy": [
+        "university"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "gunpowder"
+              ],
+              [
+                "warship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "select": {
+            "class": [
+              [
+                "gunpowder"
+              ],
+              [
+                "warship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "chemistry-4",
+      "baseId": "chemistry",
+      "type": "technology",
+      "name": "Chemistry",
+      "pbgid": 124734,
+      "attribName": "upgrade_siege_chemistry",
+      "age": 4,
+      "civs": [
+        "ja"
+      ],
+      "description": "Increase the damage of gunpowder units by +20%.",
+      "classes": [
+        "gunpowder",
+        "technology"
+      ],
+      "displayClasses": [
+        "Gunpowder Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 1000,
+        "popcap": 0,
+        "time": 90
+      },
+      "producedBy": [
+        "university"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "gunpowder"
+              ],
+              [
+                "warship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "select": {
+            "class": [
+              [
+                "gunpowder"
+              ],
+              [
+                "warship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "chemistry-4",
+      "baseId": "chemistry",
+      "type": "technology",
+      "name": "Chemistry",
+      "pbgid": 124734,
+      "attribName": "upgrade_siege_chemistry",
+      "age": 4,
+      "civs": [
+        "je"
+      ],
+      "description": "Increase the damage of gunpowder units by +20%.",
+      "classes": [
+        "gunpowder",
+        "technology"
+      ],
+      "displayClasses": [
+        "Gunpowder Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 1000,
+        "popcap": 0,
+        "time": 90
+      },
+      "producedBy": [
+        "college-of-artillery",
+        "university"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
       "effects": [
@@ -462,6 +759,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 1000,
         "popcap": 0,
         "time": 90
@@ -530,12 +829,84 @@
         "wood": 0,
         "stone": 0,
         "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 1000,
         "popcap": 0,
         "time": 90
       },
       "producedBy": [
         "blacksmith"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "gunpowder"
+              ],
+              [
+                "warship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "select": {
+            "class": [
+              [
+                "gunpowder"
+              ],
+              [
+                "warship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "chemistry-4",
+      "baseId": "chemistry",
+      "type": "technology",
+      "name": "Chemistry",
+      "pbgid": 124734,
+      "attribName": "upgrade_siege_chemistry",
+      "age": 4,
+      "civs": [
+        "od"
+      ],
+      "description": "Increase the damage of gunpowder units by +20%.",
+      "classes": [
+        "gunpowder",
+        "technology"
+      ],
+      "displayClasses": [
+        "Gunpowder Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 1000,
+        "popcap": 0,
+        "time": 90
+      },
+      "producedBy": [
+        "university"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
       "effects": [
@@ -598,6 +969,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 1000,
         "popcap": 0,
         "time": 90
@@ -667,6 +1040,78 @@
         "wood": 0,
         "stone": 0,
         "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 1000,
+        "popcap": 0,
+        "time": 90
+      },
+      "producedBy": [
+        "university"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "gunpowder"
+              ],
+              [
+                "warship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "select": {
+            "class": [
+              [
+                "gunpowder"
+              ],
+              [
+                "warship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "chemistry-4",
+      "baseId": "chemistry",
+      "type": "technology",
+      "name": "Chemistry",
+      "pbgid": 2127649,
+      "attribName": "upgrade_siege_chemistry_chi_ha_01",
+      "age": 4,
+      "civs": [
+        "zx"
+      ],
+      "description": "Increase the damage of gunpowder units by +20%.",
+      "classes": [
+        "gunpowder",
+        "technology"
+      ],
+      "displayClasses": [
+        "Gunpowder Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 1000,
         "popcap": 0,
         "time": 90

@@ -5,7 +5,8 @@
   "name": "Dark Age Town Center Production Speed",
   "type": "ability",
   "civs": [
-    "fr"
+    "fr",
+    "je"
   ],
   "displayClasses": [],
   "classes": [],
@@ -32,12 +33,59 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
       "producedBy": [
         "town-center",
         "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/town-center.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "productionSpeed",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.1,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-town-center-production-speed-dark-age-1",
+      "baseId": "ability-town-center-production-speed-dark-age",
+      "type": "ability",
+      "name": "Dark Age Town Center Production Speed",
+      "pbgid": 187278,
+      "attribName": "town_center_production_age1_fre",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Town Center production and research speed increased by +10%.\nBonus increases further in later Ages.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center"
       ],
       "icon": "https://data.aoe4world.com/images/buildings/town-center.png",
       "active": "always",

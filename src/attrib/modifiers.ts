@@ -1,26 +1,61 @@
 /** A configuration of technology ids and their modiying effects. */
 
-import { Modifier } from "../types/items";
+import { Item, Modifier, Selector } from "../types/items";
 
 // Common class/id presets
 const common = {
-  allMeleeUnitsExceptSiege: { class: [["melee"]] } as Modifier["select"],
-  allNonSiegeUnits: { class: [["infantry"], ["cavalry"]] } as Modifier["select"],
-  allMilitaryLand: { class: [["infantry"], ["cavalry", "melee"], ["cavalry", "ranged"], ["siege"]] } as Modifier["select"],
-  allLandUnitsExceptReligiousTrader: { class: [["melee"], ["ranged"], ["siege"]], id: ["villager"] } as Modifier["select"],
-  allLand: { class: [["melee"], ["ranged"], ["siege"]], id: ["villager", "trader"] } as Modifier["select"],
+  allMeleeUnitsExceptSiege: { class: [["melee"]] } as Required<Modifier>["select"],
+  allNonSiegeUnits: { class: [["infantry"], ["cavalry"], ["worker"], ["religious"]] } as Required<Modifier>["select"],
+  allMilitaryLand: { class: [["infantry"], ["cavalry", "melee"], ["cavalry", "ranged"], ["siege"]] } as Required<Modifier>["select"],
+  allLandUnitsExceptReligiousTrader: { class: [["melee"], ["ranged"], ["siege"]], id: ["villager"] } as Required<Modifier>["select"],
+  allLand: { class: [["melee"], ["ranged"], ["siege"], ["cavalry"]], id: ["villager", "trader", "dragon-villager"] } as Required<Modifier>["select"],
   allRangedUnitsAndBuildingsExceptSiege: {
     class: [
       ["ranged", "cavalry"],
       ["archer", "ship"],
     ],
-    id: ["longbowman", "zhuge-nu", "archer", "arbaletrier", "crossbowman", "wynguard-ranger"],
-  } as Modifier["select"],
-  allMillitaryShips: { class: [["ship", "springald"], ["ship", "archer"], ["ship", "incendiary"], ["warship"]], id: ["galleass", "grand-galley"] } as Modifier["select"],
-  allKeepLikeLandmarks: { id: ["berkshire-palace", "elzbach-palace", "kremlin", "spasskaya-tower", "red-palace", "the-white-tower"] },
-  allReligiousUnits: { id: ["prelate", "monk", "scholar", "shaman", "imam", "warrior-monk"] } as Modifier["select"],
-  allFishingShips: { id: ["fishing-boat", "lodya-fishing-boat"] } as Modifier["select"],
-};
+    id: [
+      "longbowman",
+      "zhuge-nu",
+      "archer",
+      "arbaletrier",
+      "crossbowman",
+      "wynguard-ranger",
+      "javelin-thrower",
+      "gilded-crossbowman",
+      "gilded-archer",
+      "yumi-ashigaru",
+      "zhuge-nu",
+    ],
+  } as Required<Modifier>["select"],
+  allMillitaryShips: { class: [["ship", "springald"], ["ship", "archer"], ["ship", "incendiary"], ["warship"]], id: ["galleass", "grand-galley"] } as Required<Modifier>["select"],
+  allKeepLikeLandmarks: { id: ["berkshire-palace", "elzbach-palace", "kremlin", "spasskaya-tower", "red-palace", "the-white-tower"] } as Required<Modifier>["select"],
+  allReligiousUnits: {
+    id: ["monk", "scholar", "imam", "dervish", "warrior-monk", "shaman", "prelate", "shinto-priest", "buddhist-monk", "shaolin-monk"],
+  } as Required<Modifier>["select"],
+  allFishingShips: { id: ["fishing-boat", "lodya-fishing-boat"] } as Required<Modifier>["select"],
+  allCamelUnits: { id: ["camel-archer", "camel-rider", "camel-lancer", "desert-raider", "atabeg", "dervish"] } as Required<Modifier>["select"],
+  jeannes: {
+    all: {
+      id: [
+        "jeanne-darc-peasant",
+        "jeanne-darc-woman-at-arms",
+        "jeanne-darc-hunter",
+        "jeanne-darc-mounted-archer",
+        "jeanne-darc-knight",
+        "jeanne-darc-markswoman",
+        "jeanne-darc-blast-cannon",
+      ],
+    } as Required<Modifier>["select"],
+    heroes: {
+      id: ["jeanne-darc-woman-at-arms", "jeanne-darc-hunter", "jeanne-darc-mounted-archer", "jeanne-darc-knight", "jeanne-darc-markswoman", "jeanne-darc-blast-cannon"],
+    } as Required<Modifier>["select"],
+    lvl3: { id: ["jeanne-darc-mounted-archer", "jeanne-darc-knight", "jeanne-darc-markswoman", "jeanne-darc-blast-cannon"] } as Required<Modifier>["select"],
+    lvl4: { id: ["jeanne-darc-markswoman", "jeanne-darc-blast-cannon"] } as Required<Modifier>["select"],
+    archer: { id: ["jeanne-darc-hunter", "jeanne-darc-mounted-archer", "jeanne-darc-markswoman"] } as Required<Modifier>["select"],
+    warrior: { id: ["jeanne-darc-woman-at-arms", "jeanne-darc-knight", "jeanne-darc-blast-cannon"] } as Required<Modifier>["select"],
+  },
+} as const;
 
 const toPercent = (percent: number) => (percent == 33 ? 1 / 3 : Math.abs(percent) / 100);
 const increaseByPercent = (n: number, percent: number) => round(n * (1 + toPercent(percent)));
@@ -30,8 +65,372 @@ const decreaseByPercentImproved = (n: number, percent: number, delta: number) =>
 const increaseSpeedByPercent = (speed: number, percent: number) => round(speed / (1 + toPercent(percent)) / 10) * 10;
 const increaseAttackSpeedByPercent = (percent: number) => round(1 / (1 + percent / 100));
 const round = (n: number) => Math.round(n * 100) / 100; //(100/(100-33))
+const placeholderAbility =
+  (select: Selector) =>
+  (values: number[], item: Item): Modifier[] =>
+    [{ property: "unknown", select, effect: "change", value: 0, type: "ability" }];
 
-export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> = {
+export const abilityModifiers: Record<string, (values: number[], item: Item) => Modifier[]> = {
+  "ability-ring-the-town-bell": placeholderAbility({ id: ["town-center", "capital-town-center"] }),
+  "ability-treasure-caravans": placeholderAbility({ id: ["castle-of-the-crow"] }),
+  "ability-deflective-armor": placeholderAbility({ id: ["samurai", "mounted-samurai", "yumi-bannerman", "katana-bannerman", "uma-bannerman"] }),
+  "ability-kabura-ya": ([d]) => [
+    // Onna-Musha fire a whistling arrow when an enemy is seen, increasing move speed for 10 seconds.",
+    {
+      property: "moveSpeed",
+      select: { id: ["onna-musha"] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+      duration: d,
+    },
+  ],
+
+  "ability-katana-bannerman-aura": ([i]) => [
+    // Aura that increases melee infantry damage by +15%.\nBanner drops on death and lasts for 30 seconds providing the same aura.
+    {
+      property: "meleeAttack",
+      select: { class: [["melee", "infantry"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+    },
+  ],
+
+  "ability-yumi-bannerman-aura": ([i]) => [
+    // Aura that increases ranged infantry damage by +15%.\nBanner drops on death and lasts for 30 seconds providing the same aura.
+    {
+      property: "rangedAttack",
+      select: { class: [["ranged", "infantry"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+    },
+  ],
+
+  "ability-uma-bannerman-aura": ([i]) => [
+    // Aura that increases cavalry unit damage by +15%.\nBanner drops on death and lasts for 30 seconds providing the same aura.
+    {
+      property: "meleeAttack",
+      select: { class: [["cavalry"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+    },
+  ],
+
+  "ability-spy": placeholderAbility({ id: ["shinobi"] }),
+  // Target a visible enemy unit or structure to disguise the Shinobi as a Villager of that player.
+
+  "ability-shunshin": placeholderAbility({ id: ["shinobi"] }),
+  // Drop a smoke bomb and reappear at a selected location.
+
+  "ability-sabotage": placeholderAbility({ id: ["shinobi"] }),
+  // Target a visible enemy building to deal 200 damage, disable its production, and set it on fire for 30 seconds.
+
+  "ability-place-yorishiro": () => [
+    {
+      // Place a Yorishiro in buildings to receive bonuses and increase line of sight.\nTown Center: +25% Production speed\nFarmhouse: +75 Food per minute\nLumber Camp: +75 Wood per minute\nForge: +75 Gold per minute\nMilitary and Docks: +200% Work rate\nWonder: +4000 Health
+      property: "unknown",
+      select: {
+        id: [
+          "farmhouse",
+          // "outpost",
+          "barracks",
+          "lumber-camp",
+          "dock",
+          "forge",
+          "archery-range",
+          // "market",
+          "stable",
+          "capital-town-center",
+          "siege-workshop",
+          // "shinto-shrine",
+          // "buddhist-temple",
+          "tanegashima-gunsmith",
+          "castle-of-the-crow",
+          // "castle",
+          "tokugawa-shrine",
+          "town-center",
+        ],
+      },
+      effect: "change",
+      value: 0,
+      type: "ability",
+    },
+  ],
+
+  "ability-soheis-sutra": ([r, d]) => [
+    // Reduces enemy damage by 50% for 60 seconds.
+    {
+      property: "unknown",
+      select: { id: ["buddhist-monk"] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+      duration: d,
+    },
+  ],
+
+  "ability-talented-builder": placeholderAbility({ id: ["jeanne-darc-peasant"] }),
+  "ability-journey-of-a-hero": placeholderAbility({ id: ["jeanne-darc-peasant"] }),
+  "ability-return-of-the-saint": placeholderAbility({ id: ["capital-town-center"] }),
+  "ability-construct-the-kingdom": placeholderAbility({ id: ["villager"] }),
+  "ability-honorable-heart": placeholderAbility(common.jeannes.all),
+  "ability-consecrate": placeholderAbility(common.jeannes.heroes),
+  "ability-divine-restoration": placeholderAbility(common.jeannes.heroes),
+  "ability-divine-arrow": placeholderAbility(common.jeannes.archer),
+  "ability-holy-wrath": placeholderAbility(common.jeannes.warrior),
+  "ability-jeannes-companions": placeholderAbility({ id: ["keep", "red-palace"] }), //keep
+  "ability-galvanize-the-righteous": placeholderAbility(common.jeannes.lvl3),
+  "ability-riders-ready": placeholderAbility(common.jeannes.lvl3),
+  "ability-to-arms-men": placeholderAbility(common.jeannes.lvl3),
+  "ability-strength-of-heaven": placeholderAbility(common.jeannes.lvl4),
+  "ability-valorous-inspiration": placeholderAbility(common.jeannes.lvl4),
+
+  "ability-camel-unease": placeholderAbility(common.allCamelUnits),
+  "ability-atabeg-supervision": placeholderAbility({ id: ["atabeg"], class: [["building", "military"]] }),
+  "ability-desert-raider-blade": placeholderAbility({ id: ["desert-raider"] }),
+  "ability-desert-raider-bow": placeholderAbility({ id: ["desert-raider"] }),
+  "ability-mass-heal": placeholderAbility(common.allLand),
+  "ability-quick-strike": placeholderAbility({ id: ["ghulam"] }),
+  "ability-structural-reinforcements": ([m, f, d]) => [
+    // Siege unit gains +20 melee armor and +5 fire armor for 10 seconds.\nCosts 50 Wood to activate, only useable on one unit at a time.
+    {
+      property: "meleeArmor",
+      select: { class: [["siege"]] },
+      effect: "change",
+      value: m,
+      type: "ability",
+      duration: d,
+    },
+    {
+      property: "fireArmor",
+      select: { class: [["siege"]] },
+      effect: "change",
+      value: f,
+      type: "ability",
+      duration: d,
+    },
+  ],
+
+  "ability-bounty-of-solitude": placeholderAbility({ id: ["meditation-gardens"] }),
+
+  "ability-divine-charge": ([d]) => [
+    // Cavalry units deal +20% damage.
+    {
+      property: "meleeAttack",
+      select: { class: [["cavalry"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, 20),
+      type: "ability",
+      duration: d,
+    },
+  ],
+
+  "ability-divine-defense": ([d]) => [
+    // Gunpowder units and defensive structures gain +1 range.
+    {
+      property: "maxRange",
+      select: { class: [["gunpowder"]], id: ["outpost", "keep", "stone-wall-tower"] },
+      effect: "change",
+      value: 1,
+      type: "ability",
+      duration: d,
+    },
+  ],
+
+  "ability-divine-haste": ([m]) => [
+    // Infantry units move 15% faster.
+    {
+      property: "moveSpeed",
+      select: { class: [["infantry"]] },
+      effect: "change",
+      value: m,
+      type: "ability",
+    },
+  ],
+
+  "ability-divine-vitality": ([h]) => [
+    // Units out of combat heal 2 health per second.
+    {
+      property: "healingRate",
+      select: common.allLand,
+      effect: "change",
+      value: h,
+      type: "ability",
+    },
+  ],
+
+  // The Shaolin Monk regains health when out of combat.
+  "ability-ascetic-recovery": placeholderAbility({ id: ["shaolin-monk"] }),
+
+  // The Shaolin Monk hardens his body and reduces incoming ranged damage by 50% for 15 seconds.
+  "ability-body-of-iron": placeholderAbility({ id: ["shaolin-monk"] }),
+
+  // Supervise a research, production or drop-off building with an Imperial Official to make it work 150% faster. Resource drop off buildings receive 20% more resources. Cannot be used on Landmarks or Town Centers.",
+  "ability-supervise": placeholderAbility({ id: ["imperial-official"] }),
+
+  // Arm nearby Villagers with stronger weapons and increase their armor by +2 for 30 seconds.
+  "ability-akritoi-defense": ([a, d]) => [
+    {
+      property: "meleeArmor",
+      select: { id: ["villager"] },
+      effect: "change",
+      value: a,
+      type: "ability",
+      duration: d,
+    },
+    {
+      property: "rangedArmor",
+      select: { id: ["villager"] },
+      effect: "change",
+      value: a,
+      type: "ability",
+      duration: d,
+    },
+  ],
+
+  "ability-automatic-pilgrim-flask-off": placeholderAbility(common.allNonSiegeUnits),
+
+  // Activate to drink, rapidly increasing health regeneration by 25 per second for 10 seconds.
+  "ability-pilgrim-flask": placeholderAbility(common.allNonSiegeUnits),
+
+  // Toggle on to activate automatic drinking when low health, rapidly increasing health regeneration by 25 per second for 10 seconds.
+
+  // Military unit production rate increased +20%/+40%/+60%/+80%/+100% by Water Level while within the influence of a Cistern.
+  "ability-conscriptio": placeholderAbility({ class: [["military", "building"]] }),
+
+  // Research rate increased +50%/+100%/+150%/+200%/+250% by Water Level while within the influence of a Cistern.
+  "ability-dialecticus": placeholderAbility({ class: [["building"]] }),
+
+  // Building damage taken decreased by -5%/-10%/-15%/-20%/-25% by Water Level while within the influence of a Cistern.
+  "ability-praesidium": placeholderAbility({ class: [["building"]] }),
+
+  // Line of sight increased by 7 tiles. (on houses)
+  "ability-border-settlement": ([los]) => [
+    {
+      property: "lineOfSight",
+      select: { id: ["house"] },
+      effect: "change",
+      value: los,
+      type: "ability",
+    },
+  ],
+
+  // Consume all Supply Points to increase cavalry damage by +25%, move speed by +10%, and health regeneration by +2. \nEach Supply Point increases Triumph's duration by 1.5 seconds. A maximum of 40 Supply Points can be collected.
+  "ability-triumph": ([d, m, h]) => [
+    {
+      property: "meleeAttack",
+      select: { class: [["cavalry"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, m),
+      type: "ability",
+      duration: d,
+    },
+    {
+      property: "moveSpeed",
+      select: { class: [["cavalry"]] },
+      effect: "change",
+      value: m,
+      type: "ability",
+      duration: d,
+    },
+    {
+      property: "healingRate",
+      select: { class: [["cavalry"]] },
+      effect: "change",
+      value: h,
+      type: "ability",
+      duration: d,
+    },
+  ],
+
+  // Varangian Guard swap to their two-handed weapon and deal +6 damage for 30 seconds. Armor is reduced by -4.
+  "ability-berserking": ([d, du, a]) => [
+    {
+      property: "meleeAttack",
+      select: { id: ["varangian-guard"] },
+      effect: "change",
+      value: du,
+      type: "ability",
+      duration: d,
+    },
+    {
+      property: "meleeArmor",
+      select: { id: ["varangian-guard"] },
+      effect: "change",
+      value: a,
+      type: "ability",
+      duration: d,
+    },
+  ],
+
+  // Charge through enemy units in your path, dealing 10 damage to each one. cataphract
+  "ability-trample": ([d]) => [
+    {
+      property: "meleeAttack",
+      select: { id: ["cataphract"] },
+      effect: "change",
+      value: d,
+      type: "ability",
+    },
+  ],
+
+  // Enter a defensive stance, decreasing move speed by -25%, attack speed by -25%, and ranged damage taken by -50% .
+  "ability-shield-wall": ([d, m, a]) => [
+    {
+      property: "moveSpeed",
+      select: { id: ["limitanei"] },
+      effect: "change",
+      value: m,
+      type: "ability",
+      duration: d,
+    },
+    {
+      property: "attackSpeed",
+      select: { id: ["limitanei"] },
+      effect: "change",
+      value: a,
+      type: "ability",
+      duration: d,
+    },
+    {
+      property: "rangedArmor",
+      select: { id: ["limitanei"] },
+      effect: "change",
+      value: a,
+      type: "ability",
+      duration: d,
+    },
+  ],
+
+  // Torch damage improved by a nearby Scout. (25%)
+  "ability-improved-torch": ([d]) => [
+    {
+      property: "fireAttack",
+      select: common.allNonSiegeUnits,
+      effect: "change",
+      value: increaseByPercent(1, 25),
+      type: "ability",
+    },
+  ],
+
+  // Villager gathering rate increased +???% by a nearby Cistern.
+  "ability-irrigated": placeholderAbility({ id: ["villager", "fishing-boat"] }),
+
+  // Villagers generate +10% Olive Oil when fishing.
+  "ability-oil-commerce": placeholderAbility({ id: ["trader", "trade-ship"] }),
+
+  // Farmers and Foragers generate +60% Olive Oil around the Grand Winery
+  "ability-synergistic-crops": placeholderAbility({ id: ["villager"] }),
+
+  // Increased movement speed after unloading from a Transport Ship.
+  "ability-naval-deployment": placeholderAbility(common.allMilitaryLand),
+
+  // Earn various amounts of Stone from every building constructed.
+  "ability-field-stones": placeholderAbility({ id: ["villager"] }),
+
   "ability-arrow-volley": ([s, t]) => [
     // Longbowmen gain Arrow Volley, an activated ability that reduces their time to attack by +1 second for a duration of 6 seconds.
     {
@@ -970,7 +1369,7 @@ export const abilityModifiers: Record<string, (values: number[]) => Modifier[]> 
   ],
 };
 
-export const technologyModifiers: Record<string, (values: number[]) => Modifier[]> = {
+export const technologyModifiers: Record<string, (values: number[], item: Item) => Modifier[]> = {
   "arrow-volley": ([s]) => [
     // Longbowmen gain Arrow Volley, an activated ability that reduces their time to attack by +1 second for a duration of 6 seconds.
     {
@@ -2176,7 +2575,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     // Towers and Keeps gain a boiling oil attack against nearby units that deals  damage.
     {
       property: "unknown",
-      select: { id: ["stone-wall-tower", "keep", ...common.allKeepLikeLandmarks.id] },
+      select: { id: ["stone-wall-tower", "keep", ...common.allKeepLikeLandmarks.id!] },
       effect: "change",
       value: 1,
       type: "passive",
@@ -2405,7 +2804,8 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
           "outpost",
           "stone-wall-tower",
           "barbican-of-the-sun",
-          ...common.allKeepLikeLandmarks.id,
+          ...common.allRangedUnitsAndBuildingsExceptSiege.id!,
+          ...common.allKeepLikeLandmarks.id!,
         ],
       },
       effect: "multiply",
@@ -3708,7 +4108,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     // Add a defensive springald emplacement to this structure.
     {
       property: "unknown",
-      select: { id: ["wooden-fortress", "outpost", "keep", ...common.allKeepLikeLandmarks.id] },
+      select: { id: ["wooden-fortress", "outpost", "keep", ...common.allKeepLikeLandmarks.id!] },
       effect: "change",
       value: 1,
       type: "passive",
@@ -3719,7 +4119,7 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
     // Add a defensive cannon emplacement to this structure.
     {
       property: "unknown",
-      select: { id: ["outpost", "keep", ...common.allKeepLikeLandmarks.id] },
+      select: { id: ["outpost", "keep", ...common.allKeepLikeLandmarks.id!] },
       effect: "change",
       value: 1,
       type: "passive",
@@ -3740,6 +4140,471 @@ export const technologyModifiers: Record<string, (values: number[]) => Modifier[
       select: { id: ["outpost"] },
       effect: "change",
       value: a,
+      type: "passive",
+    },
+  ],
+
+  towara: ([c, s, r]) => [
+    // Increase the carry capacity of Villagers by +3, their movement speed by +7%, and +25% gather rate from Berry Bushes.
+    {
+      property: "carryCapacity",
+      select: { id: ["villager"] },
+      effect: "change",
+      value: c,
+      type: "passive",
+    },
+    {
+      property: "moveSpeed",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseSpeedByPercent(1, s),
+      type: "passive",
+    },
+    {
+      property: "berryGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, r),
+      type: "passive",
+    },
+  ],
+  takezaiku: ([c, s, r]) => [
+    // Increase the carry capacity of Villagers by +3, their movement speed by +7%, and +25% gather rate from Berry Bushes.
+    {
+      property: "carryCapacity",
+      select: { id: ["villager"] },
+      effect: "change",
+      value: c,
+      type: "passive",
+    },
+    {
+      property: "moveSpeed",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseSpeedByPercent(1, s),
+      type: "passive",
+    },
+    {
+      property: "berryGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, r),
+      type: "passive",
+    },
+  ],
+  fudasashi: ([c, s, r]) => [
+    // Increase the carry capacity of Villagers by +3, their movement speed by +7%, and +25% gather rate from Berry Bushes.
+    {
+      property: "carryCapacity",
+      select: { id: ["villager"] },
+      effect: "change",
+      value: c,
+      type: "passive",
+    },
+    {
+      property: "moveSpeed",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseSpeedByPercent(1, s),
+      type: "passive",
+    },
+    {
+      property: "berryGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, r),
+      type: "passive",
+    },
+  ],
+
+  "copper-plating": ([i]) => [
+    //Improves the fire and ranged armor of ships by +2%.
+
+    {
+      property: "fireArmor",
+      select: { class: [["ship"], ["warship"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "passive",
+    },
+    {
+      property: "rangedArmor",
+      select: { class: [["ship"], ["warship"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "passive",
+    },
+  ],
+
+  tatara: ([i]) => [
+    // Increase the melee damage of all non-siege units by +1.
+    {
+      property: "meleeAttack",
+      select: common.allMeleeUnitsExceptSiege,
+      effect: "change",
+      value: i,
+      type: "passive",
+    },
+  ],
+
+  hizukuri: ([i]) => [
+    // Increase the melee damage of all non-siege units by +1.
+    {
+      property: "meleeAttack",
+      select: common.allMeleeUnitsExceptSiege,
+      effect: "change",
+      value: i,
+      type: "passive",
+    },
+  ],
+
+  "kobuse-gitae": ([i]) => [
+    // Increase the melee damage of all non-siege units by +1.
+    {
+      property: "meleeAttack",
+      select: common.allMeleeUnitsExceptSiege,
+      effect: "change",
+      value: i,
+      type: "passive",
+    },
+  ],
+
+  "yaki-ire": ([i]) => [
+    // Increase the melee damage of all non-siege units by +1.
+    {
+      property: "meleeAttack",
+      select: common.allMeleeUnitsExceptSiege,
+      effect: "change",
+      value: i,
+      type: "passive",
+    },
+  ],
+
+  "oda-tactics": ([i]) => [
+    // Increase health, damage, and torch damage of melee infantry by 20%.
+
+    {
+      property: "hitpoints",
+      select: { class: [["infantry", "melee"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "passive",
+    },
+    {
+      property: "meleeAttack",
+      select: { class: [["infantry", "melee"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "passive",
+    },
+    {
+      property: "fireAttack",
+      select: { class: [["infantry", "melee"]] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "passive",
+    },
+  ],
+
+  "daimyo-manor": ([b, hp, fhr]) => [
+    // Increases the production cap of Bannerman Samurai by +1 and provides a free Villager.
+    // Increases Town Center health by +1000, adds an additional arrow slit, and adds an aura which enhances Villagers harvest rate from Farms by +25%.
+    {
+      property: "hitpoints",
+      select: { id: ["town-center", "capital-towncenter"] },
+      effect: "change",
+      value: hp,
+      type: "passive",
+    },
+    {
+      property: "farmGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, fhr),
+      type: "passive",
+    },
+  ],
+
+  "daimyo-palace": ([b, hp, fa, fhr]) => [
+    // Increases the production cap of Bannerman Samurai by +2 and provides a free Villager.
+    // Increases Town Center health by +2000, fire armor by +2, adds an additional arrow slit, and adds an aura which enhances Villagers harvest rate from Farms by +50%.
+    {
+      property: "hitpoints",
+      select: { id: ["town-center", "capital-towncenter"] },
+      effect: "change",
+      value: hp,
+      type: "passive",
+    },
+    {
+      property: "fireArmor",
+      select: { id: ["town-center", "capital-towncenter"] },
+      effect: "change",
+      value: fa,
+      type: "passive",
+    },
+    {
+      property: "farmGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, fhr),
+      type: "passive",
+    },
+  ],
+
+  "shogunate-castle": ([b, hp, fa, fhr]) => [
+    // Increases the production cap of Bannerman Samurai by +3 and provides a free Villager.
+    // Increases Town Center health by +3000, fire armor by +3, adds an aura which enhances Villagers harvest rate from Farms by +75%, and equips a Rocket Emplacement.
+    {
+      property: "hitpoints",
+      select: { id: ["town-center", "capital-towncenter"] },
+      effect: "change",
+      value: hp,
+      type: "passive",
+    },
+    {
+      property: "fireArmor",
+      select: { id: ["town-center", "capital-towncenter"] },
+      effect: "change",
+      value: fa,
+      type: "passive",
+    },
+    {
+      property: "farmGatherRate",
+      select: { id: ["villager"] },
+      effect: "multiply",
+      value: increaseByPercent(1, fhr),
+      type: "passive",
+    },
+  ],
+
+  "kabura-ya-whistling-arrow": ([d]) => [
+    // Onna-Musha fire a whistling arrow when an enemy is seen, increasing move speed for 10 seconds.
+    {
+      property: "moveSpeed",
+      select: { id: ["onna-musha"] },
+      effect: "change",
+      value: d,
+      type: "ability",
+    },
+  ],
+
+  odachi: ([d]) => [
+    // Equip Samurai with an Odachi, a long sword that deals +4 bonus damage against infantry.
+    {
+      property: "meleeAttack",
+      select: { id: ["samurai", "katana-bannerman"] },
+      target: { class: [["infantry"]] },
+      effect: "change",
+      value: d,
+      type: "passive",
+    },
+  ],
+
+  "do-maru-armor": ([d]) => [
+    // Increase Mounted Samurai move speed by +10% while Deflective Armor is active.
+    {
+      property: "moveSpeed",
+      select: { id: ["mounted-samurai"] },
+      effect: "change",
+      value: d,
+      type: "ability",
+    },
+  ],
+
+  "nagae-yari": ([r, d]) => [
+    // Spearmen are equipped with a stronger spear that increases weapon range by +20% and damage against cavalry by +20%.
+    {
+      property: "maxRange",
+      select: { id: ["spearman"] },
+      effect: "multiply",
+      value: increaseByPercent(1, r),
+      type: "passive",
+    },
+    {
+      property: "meleeAttack",
+      select: { id: ["spearman"] },
+      target: { class: [["cavalry"]] },
+      effect: "change",
+      value: round(toPercent(d) * 28) + 5, // total bonus vs cav for elite, + elite bonus damage
+      type: "bonus",
+    },
+  ],
+
+  "war-horses": ([d]) => [
+    // Gilded Knights take -25% damage while charging.
+    {
+      property: "unknown",
+      select: { id: ["gilded-knight"] },
+      effect: "multiply",
+      value: decreaseByPercent(1, d),
+      type: "passive",
+    },
+  ],
+
+  "dragon-fire": ([d]) => [
+    // Gilded Spearman torches deal area of effect damage.
+    {
+      property: "unknown",
+      select: { id: ["gilded-spearman"] },
+      effect: "change",
+      value: d,
+      type: "ability",
+    },
+  ],
+
+  "golden-cuirass": ([hp, d]) => [
+    // Gilded Men-at-Arms who fall below 20% health take -20% damage.
+    {
+      property: "unknown",
+      select: { id: ["gilded-man-at-arms"] },
+      effect: "multiply",
+      value: decreaseByPercent(1, d),
+      type: "passive",
+    },
+  ],
+
+  "dragon-scale-leather": ([r]) => [
+    // Increase the ranged armor of Gilded Archers by +3.
+    {
+      property: "rangedArmor",
+      select: { id: ["gilded-archer"] },
+      effect: "change",
+      value: r,
+      type: "passive",
+    },
+  ],
+
+  zornhau: ([dot, dur]) => [
+    // Gilded Landsknecht equip a halberd weapon that wounds enemies. When struck by this weapon, a unit will bleed for 2 damage every second. Lasts 10 seconds.
+    // Any healing effect will remove the bleed.
+    {
+      property: "unknown",
+      select: { id: ["gilded-landsknecht"] },
+      effect: "change",
+      value: dot,
+      type: "ability",
+    },
+  ],
+
+  "bodkin-bolts": ([d]) => [
+    // Gilded Crossbowmen deal +10 damage against Siege units.
+    {
+      property: "rangedAttack",
+      select: { id: ["gilded-crossbowman"] },
+      target: { class: [["siege"]] },
+      effect: "change",
+      value: d,
+      type: "bonus",
+    },
+  ],
+
+  // Zhu xi
+
+  "advanced-administration": ([hp, carryCapacity]) => [
+    // Imperial Officials gain 150 health and their maximum Gold carried is increased by +80. Imperial Official limit increased by +2.
+    {
+      property: "hitpoints",
+      select: { id: ["imperial-official"] },
+      effect: "change",
+      value: hp,
+      type: "passive",
+    },
+    {
+      property: "carryCapacity",
+      select: { id: ["imperial-official"] },
+      effect: "change",
+      value: carryCapacity,
+      type: "passive",
+    },
+  ],
+
+  "cloud-of-terro": placeholderAbility({ id: ["bombard"] }),
+  // Adds area of effect damage to Bombards.
+
+  "roar-of-the-dragon": placeholderAbility({ id: ["spearman", "horseman"] }),
+  // Spearmen and Horsemen gain a Fire Lance when charging.
+
+  "dynastic-protectors": placeholderAbility({ id: ["yuan-raider", "imperial-guard", "stable"] }),
+  // Allows production of unique cavalry units, the Imperial Guard, and the Yuan Raider.
+
+  // Increase House line of sight by 7 tiles and improve their construction speed by 500%.
+  "border-settlements": ([los]) => [
+    {
+      property: "lineOfSight",
+      select: { id: ["house"] },
+      effect: "change",
+      value: los,
+      type: "passive",
+    },
+  ],
+
+  //Horseman damage vs. Workers increased by +2. Workers killed by your Horsemen reward +20 Gold.
+  expilatores: ([d]) => [
+    {
+      property: "meleeAttack",
+      select: { id: ["horseman"] },
+      target: { class: [["worker"]] },
+      effect: "change",
+      value: d,
+      type: "bonus",
+    },
+  ],
+
+  // Varangian Guard increase their move speed by +30% when activating Berserking.
+  "ferocious-speed": ([ms]) => [
+    {
+      property: "moveSpeed",
+      select: { id: ["varangian-guard"] },
+      effect: "multiply",
+      value: increaseSpeedByPercent(1, ms),
+      type: "ability",
+    },
+  ],
+
+  // Counterweight Trebuchets deal +30% increased damage and engulf their target with Greek Fire, dealing area damage.
+  "greek-fire-projectiles": ([d]) => [
+    {
+      property: "siegeAttack",
+      select: { id: ["counterweight-trebuchet"] },
+      effect: "multiply",
+      value: increaseByPercent(1, d),
+      type: "passive",
+    },
+  ],
+
+  // Upgrade all Dromons to leave Greek Fire on the surface or ground where they attack. Man The Sails cooldown also reduced to 1 seconds.
+  "heavy-dromon": placeholderAbility({ id: ["dromon"] }),
+
+  // Demolition ships deal full damage to all enemies in explosion radius.
+  "liquid-explosives": placeholderAbility({ id: ["demolition-ship"] }),
+
+  // Add a defensive mangonel emplacement to this structure.
+  "mangonel-emplacement": placeholderAbility({ id: ["keep"] }),
+
+  // Enemy units hit by Trample become vulnerable and receive +20% increased damage for 12 seconds.
+  numeri: placeholderAbility({ id: ["cataphract"] }),
+
+  // Increase the armor of Cataphracts by +1, move speed of Limitanei by +15%, and attack speed of Varangian Guard by +15%.
+  "teardrop-shields": ([a, ms, as]) => [
+    {
+      property: "meleeArmor",
+      select: { id: ["cataphract"] },
+      effect: "change",
+      value: a,
+      type: "passive",
+    },
+    {
+      property: "moveSpeed",
+      select: { id: ["limitanei"] },
+      effect: "multiply",
+      value: increaseSpeedByPercent(1, ms),
+      type: "passive",
+    },
+    {
+      property: "attackSpeed",
+      select: { id: ["varangian-guard"] },
+      effect: "multiply",
+      value: increaseAttackSpeedByPercent(as),
       type: "passive",
     },
   ],

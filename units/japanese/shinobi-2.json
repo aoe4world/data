@@ -1,0 +1,108 @@
+{
+  "id": "shinobi-2",
+  "baseId": "shinobi",
+  "type": "unit",
+  "name": "Shinobi",
+  "pbgid": 2121981,
+  "attribName": "unit_shinobi_2_jpn",
+  "age": 2,
+  "civs": [
+    "ja"
+  ],
+  "description": "Melee infantry with abilities that specialize in scouting, sabotage, and assassination.\n+ Can disguise as enemy Villagers\n+ High damage with bonus vs. melee\n+ Fast move speed\n- Low health\n- Scouts can spot the disguises",
+  "classes": [
+    "light",
+    "melee",
+    "infantry"
+  ],
+  "displayClasses": [
+    "Light Melee Infantry"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 60,
+    "wood": 0,
+    "stone": 0,
+    "gold": 60,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 120,
+    "popcap": 1,
+    "time": 22.5
+  },
+  "producedBy": [
+    "koka-township"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/shinobi-2.png",
+  "hitpoints": 80,
+  "weapons": [
+    {
+      "name": "Wakizashi",
+      "type": "melee",
+      "damage": 20,
+      "speed": 1.25,
+      "range": {
+        "min": 0,
+        "max": 0.295
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "melee"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 5,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 1,
+        "attack": 0.125,
+        "winddown": 0.125,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_shinobi_2_jpn",
+      "pbgid": 2127418
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch",
+      "pbgid": 123518
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "line": 36,
+    "height": 250
+  },
+  "movement": {
+    "speed": 1.375
+  }
+}

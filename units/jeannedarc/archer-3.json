@@ -1,0 +1,87 @@
+{
+  "id": "archer-3",
+  "baseId": "archer",
+  "type": "unit",
+  "name": "Veteran Archer",
+  "pbgid": 132270,
+  "attribName": "unit_archer_3_fre",
+  "age": 3,
+  "civs": [
+    "je"
+  ],
+  "description": "Cheap ranged infantry with good damage vs. unarmored targets.\n+ High rate of fire\n- Weak against armored targets\n- Countered by Horsemen",
+  "classes": [
+    "light",
+    "ranged",
+    "infantry"
+  ],
+  "displayClasses": [
+    "Light Ranged Infantry"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 30,
+    "wood": 50,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 80,
+    "popcap": 1,
+    "time": 15
+  },
+  "producedBy": [
+    "archery-range"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/archer-3.png",
+  "hitpoints": 80,
+  "weapons": [
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 7,
+      "speed": 1.625,
+      "range": {
+        "min": 0,
+        "max": 5
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "light",
+                "melee",
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 7,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.25,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 0.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_archer_3",
+      "pbgid": 127828
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "line": 36,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.25
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "id": "desert-raider-3",
+  "baseId": "desert-raider",
+  "type": "unit",
+  "name": "Veteran Desert Raider",
+  "pbgid": 2136951,
+  "attribName": "unit_mamluk_3_merc_byz",
+  "age": 3,
+  "civs": [
+    "by"
+  ],
+  "description": "Versatile Cavalry unit that can swap between ranged and melee attacks with a toggle.\n+ Effective against Light Infantry in Ranged Mode\n+ Effective against Cavalry in Melee Mode\n- High cost\n- Weak to Ranged units\n\nMercenary that can be purchased per 3 units for a total of 540 Olive Oil.\n\nThis Mercenary can only be purchased on Mercenary Houses built near a neutral Trade Post that list this unit. The chance of this unit being available on a Trade Post is 20%.",
+  "classes": [
+    "light",
+    "ranged",
+    "and",
+    "melee",
+    "camel"
+  ],
+  "displayClasses": [
+    "Light Ranged and Melee Camel"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 180,
+    "total": 180,
+    "popcap": 1,
+    "time": 90
+  },
+  "producedBy": [
+    "mercenary-house",
+    "golden-horn-tower"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/desert-raider-3.png",
+  "hitpoints": 145,
+  "weapons": [
+    {
+      "name": "Sword",
+      "type": "melee",
+      "damage": 15,
+      "speed": 1.375,
+      "range": {
+        "min": 0,
+        "max": 0.2875
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 15,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0.75
+      },
+      "attribName": "weapon_mamluk_melee_3_abb_ha_01",
+      "pbgid": 2135408
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch_horseman",
+      "pbgid": 127935
+    },
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 9,
+      "speed": 1.25,
+      "range": {
+        "min": 0,
+        "max": 4.5
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.25,
+        "reload": 0.625,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_mamluk_ranged_3_abb_ha_01",
+      "pbgid": 2135409
+    }
+  ],
+  "armor": [
+    {
+      "type": "melee",
+      "value": 6
+    }
+  ],
+  "sight": {
+    "line": 38,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.625
+  },
+  "unlockedBy": [
+    "buildings/trade-post"
+  ]
+}

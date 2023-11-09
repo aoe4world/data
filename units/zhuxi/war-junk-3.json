@@ -1,0 +1,103 @@
+{
+  "id": "war-junk-3",
+  "baseId": "war-junk",
+  "type": "unit",
+  "name": "War Junk",
+  "pbgid": 7436149,
+  "attribName": "unit_naval_combat_ship_2_chi_ha_01",
+  "age": 3,
+  "civs": [
+    "zx"
+  ],
+  "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+  "classes": [
+    "springald",
+    "ship"
+  ],
+  "displayClasses": [
+    "Springald Ship"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 120,
+    "wood": 200,
+    "stone": 0,
+    "gold": 30,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 350,
+    "popcap": 3,
+    "time": 30
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/war-junk-2.png",
+  "hitpoints": 450,
+  "weapons": [
+    {
+      "name": "Ballista",
+      "type": "ranged",
+      "damage": 35,
+      "speed": 4.125,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 45,
+          "type": "passive"
+        },
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 55,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 2.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_naval_combat_ship_springald",
+      "pbgid": 2102494
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 3
+    }
+  ],
+  "sight": {
+    "line": 45,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.375
+  }
+}

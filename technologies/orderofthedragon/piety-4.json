@@ -1,0 +1,59 @@
+{
+  "id": "piety-4",
+  "baseId": "piety",
+  "type": "technology",
+  "name": "Piety",
+  "pbgid": 184600,
+  "attribName": "upgrade_unit_religious_piety_4_hre",
+  "age": 4,
+  "civs": [
+    "od"
+  ],
+  "description": "Increase the health of Prelates by +40.",
+  "classes": [
+    "religious",
+    "technology"
+  ],
+  "displayClasses": [
+    "Religious Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 325,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 325,
+    "popcap": 0,
+    "time": 45
+  },
+  "producedBy": [
+    "regnitz-cathedral",
+    "monastery"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/piety-4.png",
+  "effects": [
+    {
+      "property": "hitpoints",
+      "select": {
+        "id": [
+          "monk",
+          "scholar",
+          "imam",
+          "dervish",
+          "warrior-monk",
+          "shaman",
+          "prelate",
+          "shinto-priest",
+          "buddhist-monk",
+          "shaolin-monk"
+        ]
+      },
+      "effect": "change",
+      "value": 40,
+      "type": "passive"
+    }
+  ]
+}

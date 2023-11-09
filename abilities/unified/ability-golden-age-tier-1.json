@@ -5,7 +5,8 @@
   "name": "Golden Age Tier 1",
   "type": "ability",
   "civs": [
-    "ab"
+    "ab",
+    "ay"
   ],
   "displayClasses": [],
   "classes": [],
@@ -13,6 +14,38 @@
   "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png",
   "description": "+15% Resource Gathering Rate",
   "variations": [
+    {
+      "id": "ability--translation-not-found-undefined-1",
+      "baseId": "ability-golden-age-tier-1",
+      "type": "ability",
+      "name": "Golden Age Tier 1",
+      "pbgid": 201563,
+      "attribName": "golden_age_tier_1",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "+15% Resource Gathering Rate",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png",
+      "active": "always",
+      "auraRange": 12.5,
+      "effects": []
+    },
     {
       "id": "ability-golden-age-tier-1-1",
       "baseId": "ability-golden-age-tier-1",
@@ -32,6 +65,40 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png",
+      "active": "always",
+      "auraRange": 12.5,
+      "effects": []
+    },
+    {
+      "id": "ability-golden-age-tier-1-1",
+      "baseId": "ability-golden-age-tier-1",
+      "type": "ability",
+      "name": "Golden Age Tier 1",
+      "pbgid": 2146738,
+      "attribName": "golden_age_tier_1_ha_01",
+      "age": 1,
+      "civs": [
+        "ay"
+      ],
+      "description": "10 Structures: Villager gathering rate +10% for all resources.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -43,59 +110,15 @@
       "auraRange": 12.5,
       "effects": [
         {
-          "property": "foodGatherRate",
+          "property": "unknown",
           "select": {
             "id": [
               "villager"
             ]
           },
           "effect": "multiply",
-          "value": 1.15,
-          "type": "ability"
-        },
-        {
-          "property": "huntGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.15,
-          "type": "ability"
-        },
-        {
-          "property": "goldGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.15,
-          "type": "ability"
-        },
-        {
-          "property": "stoneGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.15,
-          "type": "ability"
-        },
-        {
-          "property": "woodGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.15,
-          "type": "ability"
+          "value": 1.1,
+          "type": "influence"
         },
         {
           "property": "unknown",
@@ -108,6 +131,9 @@
           "value": 0,
           "type": "ability"
         }
+      ],
+      "unlockedBy": [
+        "buildings/house-of-wisdom"
       ]
     }
   ]

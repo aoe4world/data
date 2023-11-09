@@ -1,0 +1,130 @@
+{
+  "id": "sipahi-4",
+  "baseId": "sipahi",
+  "type": "unit",
+  "name": "Elite Sipahi",
+  "pbgid": 2136771,
+  "attribName": "unit_sipahi_4_byz",
+  "age": 4,
+  "civs": [
+    "by"
+  ],
+  "description": "Fast cavalry effective at raiding, flanking, and countering ranged units. Can gain attack speed at the cost of melee defense.\n+ High movement speed\n+ Strong against ranged units\n- Weak against melee units\n- Countered by Spearmen\n\nMercenary that can be purchased per 3 units for a total of 480 Olive Oil.\n\nThis Mercenary can only be purchased on Mercenary Houses built near a neutral Trade Post that list this unit. The chance of this unit being available on a Trade Post is 20%.",
+  "classes": [
+    "light",
+    "melee",
+    "cavalry"
+  ],
+  "displayClasses": [
+    "Light Melee Cavalry"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 160,
+    "total": 160,
+    "popcap": 1,
+    "time": 80
+  },
+  "producedBy": [
+    "mercenary-house",
+    "golden-horn-tower"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/sipahi-4.png",
+  "hitpoints": 220,
+  "weapons": [
+    {
+      "name": "Spear",
+      "type": "melee",
+      "damage": 18,
+      "speed": 1.75,
+      "range": {
+        "min": 0,
+        "max": 0.75
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "ranged"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 18,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.125
+      },
+      "attribName": "weapon_horseman_4_ott",
+      "pbgid": 2063079
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch_horseman",
+      "pbgid": 127935
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 4
+    }
+  ],
+  "sight": {
+    "line": 28,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.75
+  },
+  "unlockedBy": [
+    "buildings/trade-post"
+  ]
+}

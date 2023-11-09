@@ -4,7 +4,8 @@
   "civ": {
     "name": "Delhi Sultanate",
     "abbr": "de",
-    "slug": "delhi"
+    "slug": "delhi",
+    "attribName": "sultanate"
   },
   "data": [
     {
@@ -59,6 +60,8 @@
         "wood": 50,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -265,6 +268,8 @@
             "wood": 200,
             "stone": 0,
             "gold": 30,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 350,
             "popcap": 3,
             "time": 30
@@ -386,6 +391,8 @@
             "wood": 250,
             "stone": 0,
             "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 250,
             "popcap": 1,
             "time": 40
@@ -506,6 +513,8 @@
             "wood": 350,
             "stone": 0,
             "gold": 500,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 850,
             "popcap": 3,
             "time": 45
@@ -627,6 +636,8 @@
             "wood": 400,
             "stone": 0,
             "gold": 150,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 550,
             "popcap": 3,
             "time": 30
@@ -750,6 +761,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 40,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 120,
         "popcap": 1,
         "time": 22.5
@@ -903,6 +916,8 @@
             "wood": 150,
             "stone": 0,
             "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 240,
             "popcap": 3,
             "time": 25
@@ -1016,6 +1031,8 @@
             "wood": 80,
             "stone": 0,
             "gold": 80,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 160,
             "popcap": 2,
             "time": 15
@@ -1041,8 +1058,7 @@
                   "target": {
                     "class": [
                       [
-                        "naval",
-                        "broadside"
+                        "massive"
                       ]
                     ]
                   },
@@ -1136,6 +1152,8 @@
             "wood": 75,
             "stone": 0,
             "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 75,
             "popcap": 1,
             "time": 25
@@ -1144,7 +1162,7 @@
             "dock"
           ],
           "icon": "https://data.aoe4world.com/images/units/fishing-boat-2.png",
-          "hitpoints": 188,
+          "hitpoints": 150,
           "weapons": [
             {
               "name": "Bow",
@@ -1172,7 +1190,7 @@
           ],
           "armor": [],
           "sight": {
-            "line": 56,
+            "line": 44,
             "height": 501
           },
           "movement": {
@@ -1234,6 +1252,8 @@
         "wood": 30,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 140,
         "popcap": 1,
         "time": 25
@@ -1561,6 +1581,8 @@
             "wood": 0,
             "stone": 0,
             "gold": 120,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 240,
             "popcap": 1,
             "time": 35
@@ -1651,6 +1673,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 100,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 240,
         "popcap": 1,
         "time": 35
@@ -1886,6 +1910,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 20,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 120,
         "popcap": 1,
         "time": 22.5
@@ -2119,6 +2145,8 @@
             "wood": 400,
             "stone": 0,
             "gold": 200,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 600,
             "popcap": 3,
             "time": 40
@@ -2199,10 +2227,10 @@
             {
               "name": "Incendiary",
               "type": "fire",
-              "damage": 15,
-              "speed": 8.875,
+              "damage": 2,
+              "speed": 7,
               "range": {
-                "min": 2.5,
+                "min": 3,
                 "max": 9
               },
               "modifiers": [
@@ -2216,22 +2244,36 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 45,
+                  "value": 14,
+                  "type": "passive"
+                },
+                {
+                  "property": "fireAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "naval",
+                        "unit"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 16,
                   "type": "passive"
                 }
               ],
               "durations": {
                 "aim": 0.5,
                 "windup": 0,
-                "attack": 0.125,
+                "attack": 0.25,
                 "winddown": 2.25,
-                "reload": 6,
+                "reload": 4,
                 "setup": 0,
                 "teardown": 1,
                 "cooldown": 0
               },
               "burst": {
-                "count": 3
+                "count": 12
               },
               "attribName": "weapon_mangonel_3_incendiary",
               "pbgid": 127724
@@ -2296,6 +2338,8 @@
             "wood": 0,
             "stone": 0,
             "gold": 130,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 130,
             "popcap": 1,
             "time": 30
@@ -2365,6 +2409,8 @@
             "wood": 0,
             "stone": 0,
             "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 70,
             "popcap": 1,
             "time": 25
@@ -2379,7 +2425,7 @@
           "hitpoints": 110,
           "weapons": [
             {
-              "name": "Sword",
+              "name": "Short Sword",
               "type": "melee",
               "damage": 1,
               "speed": 2,
@@ -2483,9 +2529,11 @@
             "wood": 125,
             "stone": 0,
             "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 125,
             "popcap": 1,
-            "time": 45
+            "time": 30
           },
           "producedBy": [
             "spearman",
@@ -2500,7 +2548,7 @@
           "armor": [
             {
               "type": "ranged",
-              "value": 8
+              "value": 50
             }
           ],
           "sight": {
@@ -2508,10 +2556,10 @@
             "height": 10
           },
           "movement": {
-            "speed": 0.625
+            "speed": 0.8125
           },
           "garrison": {
-            "capacity": 8,
+            "capacity": 10,
             "classes": [
               "infantry",
               "villager",
@@ -2583,6 +2631,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -2920,6 +2970,8 @@
             "wood": 250,
             "stone": 0,
             "gold": 250,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 500,
             "popcap": 3,
             "time": 30
@@ -3047,6 +3099,8 @@
             "wood": 0,
             "stone": 0,
             "gold": 600,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 1000,
             "popcap": 3,
             "time": 200
@@ -3186,6 +3240,8 @@
             "wood": 0,
             "stone": 0,
             "gold": 600,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 1000,
             "popcap": 3,
             "time": 60
@@ -3357,6 +3413,8 @@
             "wood": 100,
             "stone": 0,
             "gold": 100,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 200,
             "popcap": 2,
             "time": 30
@@ -3425,6 +3483,8 @@
             "wood": 60,
             "stone": 0,
             "gold": 60,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 120,
             "popcap": 1,
             "time": 25
@@ -3489,6 +3549,8 @@
             "wood": 100,
             "stone": 0,
             "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 100,
             "popcap": 2,
             "time": 20
@@ -3565,6 +3627,8 @@
             "wood": 0,
             "stone": 0,
             "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 50,
             "popcap": 1,
             "time": 20
@@ -3700,6 +3764,8 @@
             "wood": 0,
             "stone": 0,
             "gold": 350,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 750,
             "popcap": 3,
             "time": 60
@@ -3848,6 +3914,8 @@
             "wood": 200,
             "stone": 0,
             "gold": 200,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 600,
             "popcap": 5,
             "time": 45

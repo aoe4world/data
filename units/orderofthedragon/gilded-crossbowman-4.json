@@ -1,0 +1,135 @@
+{
+  "id": "gilded-crossbowman-4",
+  "baseId": "gilded-crossbowman",
+  "type": "unit",
+  "name": "Elite Gilded Crossbowman",
+  "pbgid": 4526942,
+  "attribName": "unit_crossbowman_4_hre_ha_01",
+  "age": 4,
+  "civs": [
+    "od"
+  ],
+  "description": "Crossbowmen with increased range and exceptionally high damage against armored units.\n+ Anti-armor specialist\n+ Long range\n- Low health\n- Countered by Horsemen",
+  "classes": [
+    "light",
+    "ranged",
+    "infantry"
+  ],
+  "displayClasses": [
+    "Light Ranged Infantry"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 160,
+    "wood": 0,
+    "stone": 0,
+    "gold": 80,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 240,
+    "popcap": 2,
+    "time": 27
+  },
+  "producedBy": [
+    "archery-range"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/gilded-crossbowman-4.png",
+  "hitpoints": 170,
+  "weapons": [
+    {
+      "name": "Crossbow",
+      "type": "ranged",
+      "damage": 19,
+      "speed": 1.75,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "heavy"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 20,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.25,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 0.875,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_crossbow_4_hre_ha_01",
+      "pbgid": 2127089
+    },
+    {
+      "name": "(translation not found) (undefined)",
+      "type": "ranged",
+      "damage": 16,
+      "speed": 1.75,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "heavy"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 18,
+          "type": "passive"
+        },
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.25,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 0.875,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_crossbow_incendiary_siege_damage_hre_ha_01",
+      "pbgid": 2140697
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "line": 40,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.125
+  }
+}

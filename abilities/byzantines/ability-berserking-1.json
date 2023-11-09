@@ -1,0 +1,56 @@
+{
+  "id": "ability-berserking-1",
+  "baseId": "ability-berserking",
+  "type": "ability",
+  "name": "Berserking",
+  "pbgid": 2104590,
+  "attribName": "varangian_berserk_byz",
+  "age": 1,
+  "civs": [
+    "by"
+  ],
+  "description": "Varangian Guard swap to their two-handed weapon and deal +6 damage for 30 seconds. Armor is reduced by -4.",
+  "classes": [],
+  "displayClasses": [],
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 0,
+    "popcap": 0
+  },
+  "producedBy": [],
+  "icon": "https://data.aoe4world.com/images/abilities/ability-berserking-1.png",
+  "active": "manual",
+  "auraRange": 6.25,
+  "cooldown": 30,
+  "effects": [
+    {
+      "property": "meleeAttack",
+      "select": {
+        "id": [
+          "varangian-guard"
+        ]
+      },
+      "effect": "change",
+      "value": 30,
+      "type": "ability",
+      "duration": 6
+    },
+    {
+      "property": "meleeArmor",
+      "select": {
+        "id": [
+          "varangian-guard"
+        ]
+      },
+      "effect": "change",
+      "value": 4,
+      "type": "ability",
+      "duration": 6
+    }
+  ]
+}

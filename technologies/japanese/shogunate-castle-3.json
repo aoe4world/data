@@ -1,0 +1,76 @@
+{
+  "id": "shogunate-castle-3",
+  "baseId": "shogunate-castle",
+  "type": "technology",
+  "name": "Shogunate Castle",
+  "pbgid": 2122006,
+  "attribName": "upgrade_capital_tier_3_jpn",
+  "age": 3,
+  "civs": [
+    "ja"
+  ],
+  "description": "Increases the production cap of Bannerman Samurai by +3 and provides a free Villager.\nIncreases Town Center health by +3000, fire armor by +3, adds an aura which enhances Villagers harvest rate from Farms by +75%, and equips a Rocket Emplacement.",
+  "classes": [
+    "town",
+    "center",
+    "improvement",
+    "3/3"
+  ],
+  "displayClasses": [
+    "Town Center Improvement 3/3"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 1200,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 1200,
+    "popcap": 0,
+    "time": 20
+  },
+  "producedBy": [
+    "town-center",
+    "capital-town-center"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/shogunate-castle-3.png",
+  "effects": [
+    {
+      "property": "hitpoints",
+      "select": {
+        "id": [
+          "town-center",
+          "capital-towncenter"
+        ]
+      },
+      "effect": "change",
+      "value": 3000,
+      "type": "passive"
+    },
+    {
+      "property": "fireArmor",
+      "select": {
+        "id": [
+          "town-center",
+          "capital-towncenter"
+        ]
+      },
+      "effect": "change",
+      "value": 3,
+      "type": "passive"
+    },
+    {
+      "property": "farmGatherRate",
+      "select": {
+        "id": [
+          "villager"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.75,
+      "type": "passive"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "teak-masts-2",
+  "baseId": "teak-masts",
+  "type": "technology",
+  "name": "Teak Masts",
+  "pbgid": 2033749,
+  "attribName": "upgrade_naval_teak_masts_abb",
+  "age": 2,
+  "civs": [
+    "ay"
+  ],
+  "description": "Increase the health of military ships by +10%.",
+  "classes": [
+    "naval",
+    "technology"
+  ],
+  "displayClasses": [
+    "Naval Technology"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 0,
+    "wood": 75,
+    "stone": 0,
+    "gold": 125,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 200,
+    "popcap": 0,
+    "time": 20
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/teak-masts-2.png",
+  "effects": [
+    {
+      "property": "hitpoints",
+      "select": {
+        "class": [
+          [
+            "ship",
+            "springald"
+          ],
+          [
+            "ship",
+            "archer"
+          ],
+          [
+            "ship",
+            "incendiary"
+          ],
+          [
+            "warship"
+          ]
+        ],
+        "id": [
+          "galleass",
+          "grand-galley"
+        ]
+      },
+      "effect": "change",
+      "value": 1.1,
+      "type": "passive"
+    }
+  ]
+}

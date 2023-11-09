@@ -6,14 +6,18 @@
   "type": "unit",
   "civs": [
     "ab",
+    "ay",
     "ch",
     "de",
     "en",
     "fr",
     "hr",
+    "ja",
+    "je",
     "mo",
     "ot",
-    "ru"
+    "ru",
+    "zx"
   ],
   "unique": false,
   "displayClasses": [
@@ -25,9 +29,1737 @@
     "infantry"
   ],
   "minAge": 1,
-  "icon": "https://data.aoe4world.com/images/units/spearman-2.png",
+  "icon": "https://data.aoe4world.com/images/units/spearman-1.png",
   "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
   "variations": [
+    {
+      "id": "spearman-1",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Spearman",
+      "pbgid": 199736,
+      "attribName": "unit_spearman_1_abb",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-1.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 7,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 17,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_1",
+          "pbgid": 106762
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-2",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Hardened Spearman",
+      "pbgid": 199738,
+      "attribName": "unit_spearman_2_abb",
+      "age": 2,
+      "civs": [
+        "ab"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-2.png",
+      "hitpoints": 90,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 8,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 20,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_2",
+          "pbgid": 127825
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-3",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Veteran Spearman",
+      "pbgid": 199740,
+      "attribName": "unit_spearman_3_abb",
+      "age": 3,
+      "civs": [
+        "ab"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-3.png",
+      "hitpoints": 110,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 23,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_3",
+          "pbgid": 127826
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-4",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Elite Spearman",
+      "pbgid": 199742,
+      "attribName": "unit_spearman_4_abb",
+      "age": 4,
+      "civs": [
+        "ab"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-4.png",
+      "hitpoints": 130,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 28,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_4",
+          "pbgid": 127827
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-1",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Spearman",
+      "pbgid": 6832042,
+      "attribName": "unit_spearman_1_abb_ha_01",
+      "age": 1,
+      "civs": [
+        "ay"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-1.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 7,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 17,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_1",
+          "pbgid": 106762
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-2",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Hardened Spearman",
+      "pbgid": 8681000,
+      "attribName": "unit_spearman_2_abb_ha_01",
+      "age": 2,
+      "civs": [
+        "ay"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-2.png",
+      "hitpoints": 90,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 8,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 20,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_2",
+          "pbgid": 127825
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-3",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Veteran Spearman",
+      "pbgid": 2191193,
+      "attribName": "unit_spearman_3_abb_ha_01",
+      "age": 3,
+      "civs": [
+        "ay"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-3.png",
+      "hitpoints": 110,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 23,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_3",
+          "pbgid": 127826
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-4",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Elite Spearman",
+      "pbgid": 5864359,
+      "attribName": "unit_spearman_4_abb_ha_01",
+      "age": 4,
+      "civs": [
+        "ay"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-4.png",
+      "hitpoints": 130,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 28,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_4",
+          "pbgid": 127827
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-1",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Spearman",
+      "pbgid": 143708,
+      "attribName": "unit_spearman_1_chi",
+      "age": 1,
+      "civs": [
+        "ch"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-1.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 7,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 17,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_1",
+          "pbgid": 106762
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-2",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Hardened Spearman",
+      "pbgid": 143710,
+      "attribName": "unit_spearman_2_chi",
+      "age": 2,
+      "civs": [
+        "ch"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-2.png",
+      "hitpoints": 90,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 8,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 20,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_2",
+          "pbgid": 127825
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-3",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Veteran Spearman",
+      "pbgid": 143712,
+      "attribName": "unit_spearman_3_chi",
+      "age": 3,
+      "civs": [
+        "ch"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-3.png",
+      "hitpoints": 110,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 23,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_3",
+          "pbgid": 127826
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-4",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Elite Spearman",
+      "pbgid": 143714,
+      "attribName": "unit_spearman_4_chi",
+      "age": 4,
+      "civs": [
+        "ch"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-4.png",
+      "hitpoints": 130,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 28,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_4",
+          "pbgid": 127827
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-1",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Spearman",
+      "pbgid": 136069,
+      "attribName": "unit_spearman_1_sul",
+      "age": 1,
+      "civs": [
+        "de"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-1.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 7,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 17,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_1",
+          "pbgid": 106762
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-2",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Hardened Spearman",
+      "pbgid": 136071,
+      "attribName": "unit_spearman_2_sul",
+      "age": 2,
+      "civs": [
+        "de"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-2.png",
+      "hitpoints": 90,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 8,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 20,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_2",
+          "pbgid": 127825
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-3",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Veteran Spearman",
+      "pbgid": 136073,
+      "attribName": "unit_spearman_3_sul",
+      "age": 3,
+      "civs": [
+        "de"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-3.png",
+      "hitpoints": 110,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 23,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_3",
+          "pbgid": 127826
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-4",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Elite Spearman",
+      "pbgid": 136075,
+      "attribName": "unit_spearman_4_sul",
+      "age": 4,
+      "civs": [
+        "de"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-4.png",
+      "hitpoints": 130,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 28,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_4",
+          "pbgid": 127827
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
     {
       "id": "spearman-2",
       "baseId": "spearman",
@@ -54,6 +1786,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -163,6 +1897,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -272,6 +2008,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -281,6 +2019,438 @@
         "the-white-tower",
         "keep",
         "berkshire-palace"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-4.png",
+      "hitpoints": 130,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 28,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_4",
+          "pbgid": 127827
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-1",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Spearman",
+      "pbgid": 132299,
+      "attribName": "unit_spearman_1_fre",
+      "age": 1,
+      "civs": [
+        "fr"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-1.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 7,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 17,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_1",
+          "pbgid": 106762
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-2",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Hardened Spearman",
+      "pbgid": 132301,
+      "attribName": "unit_spearman_2_fre",
+      "age": 2,
+      "civs": [
+        "fr"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-2.png",
+      "hitpoints": 90,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 8,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 20,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_2",
+          "pbgid": 127825
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-3",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Veteran Spearman",
+      "pbgid": 132303,
+      "attribName": "unit_spearman_3_fre",
+      "age": 3,
+      "civs": [
+        "fr"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-3.png",
+      "hitpoints": 110,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 23,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_3",
+          "pbgid": 127826
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-4",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Elite Spearman",
+      "pbgid": 132305,
+      "attribName": "unit_spearman_4_fre",
+      "age": 4,
+      "civs": [
+        "fr"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
       ],
       "icon": "https://data.aoe4world.com/images/units/spearman-4.png",
       "hitpoints": 130,
@@ -381,6 +2551,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -488,6 +2660,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -595,6 +2769,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -702,6 +2878,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -788,11 +2966,11 @@
       "baseId": "spearman",
       "type": "unit",
       "name": "Spearman",
-      "pbgid": 132299,
-      "attribName": "unit_spearman_1_fre",
+      "pbgid": 4830033,
+      "attribName": "unit_spearman_1_jpn",
       "age": 1,
       "civs": [
-        "fr"
+        "ja"
       ],
       "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
       "classes": [
@@ -809,6 +2987,440 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-1.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 7,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 17,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_1",
+          "pbgid": 106762
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-2",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Hardened Spearman",
+      "pbgid": 3688536,
+      "attribName": "unit_spearman_2_jpn",
+      "age": 2,
+      "civs": [
+        "ja"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-2.png",
+      "hitpoints": 90,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 8,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 20,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_2",
+          "pbgid": 127825
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-3",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Veteran Spearman",
+      "pbgid": 6201479,
+      "attribName": "unit_spearman_3_jpn",
+      "age": 3,
+      "civs": [
+        "ja"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-3.png",
+      "hitpoints": 110,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 23,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_3",
+          "pbgid": 127826
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-4",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Elite Spearman",
+      "pbgid": 6816972,
+      "attribName": "unit_spearman_4_jpn",
+      "age": 4,
+      "civs": [
+        "ja"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-4.png",
+      "hitpoints": 130,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 28,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_4",
+          "pbgid": 127827
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-1",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Spearman",
+      "pbgid": 132299,
+      "attribName": "unit_spearman_1_fre",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -898,7 +3510,7 @@
       "attribName": "unit_spearman_2_fre",
       "age": 2,
       "civs": [
-        "fr"
+        "je"
       ],
       "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
       "classes": [
@@ -915,6 +3527,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -1004,7 +3618,7 @@
       "attribName": "unit_spearman_3_fre",
       "age": 3,
       "civs": [
-        "fr"
+        "je"
       ],
       "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
       "classes": [
@@ -1021,6 +3635,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -1110,7 +3726,7 @@
       "attribName": "unit_spearman_4_fre",
       "age": 4,
       "civs": [
-        "fr"
+        "je"
       ],
       "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
       "classes": [
@@ -1127,1278 +3743,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
-        "total": 80,
-        "popcap": 1,
-        "time": 15
-      },
-      "producedBy": [
-        "barracks"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/spearman-4.png",
-      "hitpoints": 130,
-      "weapons": [
-        {
-          "name": "Spear",
-          "type": "melee",
-          "damage": 11,
-          "speed": 1.875,
-          "range": {
-            "min": 0,
-            "max": 0.295
-          },
-          "modifiers": [
-            {
-              "property": "meleeAttack",
-              "target": {
-                "class": [
-                  [
-                    "cavalry"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 28,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0.25,
-            "attack": 0.125,
-            "winddown": 0.75,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0.75
-          },
-          "attribName": "weapon_spearman_4",
-          "pbgid": 127827
-        },
-        {
-          "name": "Torch",
-          "type": "fire",
-          "damage": 10,
-          "speed": 2.125,
-          "range": {
-            "min": 0,
-            "max": 1.25
-          },
-          "modifiers": [],
-          "durations": {
-            "aim": 0,
-            "windup": 0.75,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 1.25
-          },
-          "attribName": "weapon_torch",
-          "pbgid": 123518
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "line": 36,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.25
-      }
-    },
-    {
-      "id": "spearman-1",
-      "baseId": "spearman",
-      "type": "unit",
-      "name": "Spearman",
-      "pbgid": 143708,
-      "attribName": "unit_spearman_1_chi",
-      "age": 1,
-      "civs": [
-        "ch"
-      ],
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
-      "classes": [
-        "light",
-        "melee",
-        "infantry"
-      ],
-      "displayClasses": [
-        "Light Melee Infantry"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 60,
-        "wood": 20,
-        "stone": 0,
-        "gold": 0,
-        "total": 80,
-        "popcap": 1,
-        "time": 15
-      },
-      "producedBy": [
-        "barracks"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/spearman-1.png",
-      "hitpoints": 80,
-      "weapons": [
-        {
-          "name": "Spear",
-          "type": "melee",
-          "damage": 7,
-          "speed": 1.875,
-          "range": {
-            "min": 0,
-            "max": 0.295
-          },
-          "modifiers": [
-            {
-              "property": "meleeAttack",
-              "target": {
-                "class": [
-                  [
-                    "cavalry"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 17,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0.25,
-            "attack": 0.125,
-            "winddown": 0.75,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0.75
-          },
-          "attribName": "weapon_spearman_1",
-          "pbgid": 106762
-        },
-        {
-          "name": "Torch",
-          "type": "fire",
-          "damage": 10,
-          "speed": 2.125,
-          "range": {
-            "min": 0,
-            "max": 1.25
-          },
-          "modifiers": [],
-          "durations": {
-            "aim": 0,
-            "windup": 0.75,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 1.25
-          },
-          "attribName": "weapon_torch",
-          "pbgid": 123518
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "line": 36,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.25
-      }
-    },
-    {
-      "id": "spearman-2",
-      "baseId": "spearman",
-      "type": "unit",
-      "name": "Hardened Spearman",
-      "pbgid": 143710,
-      "attribName": "unit_spearman_2_chi",
-      "age": 2,
-      "civs": [
-        "ch"
-      ],
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
-      "classes": [
-        "light",
-        "melee",
-        "infantry"
-      ],
-      "displayClasses": [
-        "Light Melee Infantry"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 60,
-        "wood": 20,
-        "stone": 0,
-        "gold": 0,
-        "total": 80,
-        "popcap": 1,
-        "time": 15
-      },
-      "producedBy": [
-        "barracks"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/spearman-2.png",
-      "hitpoints": 90,
-      "weapons": [
-        {
-          "name": "Spear",
-          "type": "melee",
-          "damage": 8,
-          "speed": 1.875,
-          "range": {
-            "min": 0,
-            "max": 0.295
-          },
-          "modifiers": [
-            {
-              "property": "meleeAttack",
-              "target": {
-                "class": [
-                  [
-                    "cavalry"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 20,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0.25,
-            "attack": 0.125,
-            "winddown": 0.75,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0.75
-          },
-          "attribName": "weapon_spearman_2",
-          "pbgid": 127825
-        },
-        {
-          "name": "Torch",
-          "type": "fire",
-          "damage": 10,
-          "speed": 2.125,
-          "range": {
-            "min": 0,
-            "max": 1.25
-          },
-          "modifiers": [],
-          "durations": {
-            "aim": 0,
-            "windup": 0.75,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 1.25
-          },
-          "attribName": "weapon_torch",
-          "pbgid": 123518
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "line": 36,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.25
-      }
-    },
-    {
-      "id": "spearman-3",
-      "baseId": "spearman",
-      "type": "unit",
-      "name": "Veteran Spearman",
-      "pbgid": 143712,
-      "attribName": "unit_spearman_3_chi",
-      "age": 3,
-      "civs": [
-        "ch"
-      ],
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
-      "classes": [
-        "light",
-        "melee",
-        "infantry"
-      ],
-      "displayClasses": [
-        "Light Melee Infantry"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 60,
-        "wood": 20,
-        "stone": 0,
-        "gold": 0,
-        "total": 80,
-        "popcap": 1,
-        "time": 15
-      },
-      "producedBy": [
-        "barracks"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/spearman-3.png",
-      "hitpoints": 110,
-      "weapons": [
-        {
-          "name": "Spear",
-          "type": "melee",
-          "damage": 9,
-          "speed": 1.875,
-          "range": {
-            "min": 0,
-            "max": 0.295
-          },
-          "modifiers": [
-            {
-              "property": "meleeAttack",
-              "target": {
-                "class": [
-                  [
-                    "cavalry"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 23,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0.25,
-            "attack": 0.125,
-            "winddown": 0.75,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0.75
-          },
-          "attribName": "weapon_spearman_3",
-          "pbgid": 127826
-        },
-        {
-          "name": "Torch",
-          "type": "fire",
-          "damage": 10,
-          "speed": 2.125,
-          "range": {
-            "min": 0,
-            "max": 1.25
-          },
-          "modifiers": [],
-          "durations": {
-            "aim": 0,
-            "windup": 0.75,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 1.25
-          },
-          "attribName": "weapon_torch",
-          "pbgid": 123518
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "line": 36,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.25
-      }
-    },
-    {
-      "id": "spearman-4",
-      "baseId": "spearman",
-      "type": "unit",
-      "name": "Elite Spearman",
-      "pbgid": 143714,
-      "attribName": "unit_spearman_4_chi",
-      "age": 4,
-      "civs": [
-        "ch"
-      ],
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
-      "classes": [
-        "light",
-        "melee",
-        "infantry"
-      ],
-      "displayClasses": [
-        "Light Melee Infantry"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 60,
-        "wood": 20,
-        "stone": 0,
-        "gold": 0,
-        "total": 80,
-        "popcap": 1,
-        "time": 15
-      },
-      "producedBy": [
-        "barracks"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/spearman-4.png",
-      "hitpoints": 130,
-      "weapons": [
-        {
-          "name": "Spear",
-          "type": "melee",
-          "damage": 11,
-          "speed": 1.875,
-          "range": {
-            "min": 0,
-            "max": 0.295
-          },
-          "modifiers": [
-            {
-              "property": "meleeAttack",
-              "target": {
-                "class": [
-                  [
-                    "cavalry"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 28,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0.25,
-            "attack": 0.125,
-            "winddown": 0.75,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0.75
-          },
-          "attribName": "weapon_spearman_4",
-          "pbgid": 127827
-        },
-        {
-          "name": "Torch",
-          "type": "fire",
-          "damage": 10,
-          "speed": 2.125,
-          "range": {
-            "min": 0,
-            "max": 1.25
-          },
-          "modifiers": [],
-          "durations": {
-            "aim": 0,
-            "windup": 0.75,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 1.25
-          },
-          "attribName": "weapon_torch",
-          "pbgid": 123518
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "line": 36,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.25
-      }
-    },
-    {
-      "id": "spearman-1",
-      "baseId": "spearman",
-      "type": "unit",
-      "name": "Spearman",
-      "pbgid": 136069,
-      "attribName": "unit_spearman_1_sul",
-      "age": 1,
-      "civs": [
-        "de"
-      ],
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
-      "classes": [
-        "light",
-        "melee",
-        "infantry"
-      ],
-      "displayClasses": [
-        "Light Melee Infantry"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 60,
-        "wood": 20,
-        "stone": 0,
-        "gold": 0,
-        "total": 80,
-        "popcap": 1,
-        "time": 15
-      },
-      "producedBy": [
-        "barracks"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/spearman-1.png",
-      "hitpoints": 80,
-      "weapons": [
-        {
-          "name": "Spear",
-          "type": "melee",
-          "damage": 7,
-          "speed": 1.875,
-          "range": {
-            "min": 0,
-            "max": 0.295
-          },
-          "modifiers": [
-            {
-              "property": "meleeAttack",
-              "target": {
-                "class": [
-                  [
-                    "cavalry"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 17,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0.25,
-            "attack": 0.125,
-            "winddown": 0.75,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0.75
-          },
-          "attribName": "weapon_spearman_1",
-          "pbgid": 106762
-        },
-        {
-          "name": "Torch",
-          "type": "fire",
-          "damage": 10,
-          "speed": 2.125,
-          "range": {
-            "min": 0,
-            "max": 1.25
-          },
-          "modifiers": [],
-          "durations": {
-            "aim": 0,
-            "windup": 0.75,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 1.25
-          },
-          "attribName": "weapon_torch",
-          "pbgid": 123518
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "line": 36,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.25
-      }
-    },
-    {
-      "id": "spearman-2",
-      "baseId": "spearman",
-      "type": "unit",
-      "name": "Hardened Spearman",
-      "pbgid": 136071,
-      "attribName": "unit_spearman_2_sul",
-      "age": 2,
-      "civs": [
-        "de"
-      ],
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
-      "classes": [
-        "light",
-        "melee",
-        "infantry"
-      ],
-      "displayClasses": [
-        "Light Melee Infantry"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 60,
-        "wood": 20,
-        "stone": 0,
-        "gold": 0,
-        "total": 80,
-        "popcap": 1,
-        "time": 15
-      },
-      "producedBy": [
-        "barracks"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/spearman-2.png",
-      "hitpoints": 90,
-      "weapons": [
-        {
-          "name": "Spear",
-          "type": "melee",
-          "damage": 8,
-          "speed": 1.875,
-          "range": {
-            "min": 0,
-            "max": 0.295
-          },
-          "modifiers": [
-            {
-              "property": "meleeAttack",
-              "target": {
-                "class": [
-                  [
-                    "cavalry"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 20,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0.25,
-            "attack": 0.125,
-            "winddown": 0.75,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0.75
-          },
-          "attribName": "weapon_spearman_2",
-          "pbgid": 127825
-        },
-        {
-          "name": "Torch",
-          "type": "fire",
-          "damage": 10,
-          "speed": 2.125,
-          "range": {
-            "min": 0,
-            "max": 1.25
-          },
-          "modifiers": [],
-          "durations": {
-            "aim": 0,
-            "windup": 0.75,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 1.25
-          },
-          "attribName": "weapon_torch",
-          "pbgid": 123518
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "line": 36,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.25
-      }
-    },
-    {
-      "id": "spearman-3",
-      "baseId": "spearman",
-      "type": "unit",
-      "name": "Veteran Spearman",
-      "pbgid": 136073,
-      "attribName": "unit_spearman_3_sul",
-      "age": 3,
-      "civs": [
-        "de"
-      ],
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
-      "classes": [
-        "light",
-        "melee",
-        "infantry"
-      ],
-      "displayClasses": [
-        "Light Melee Infantry"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 60,
-        "wood": 20,
-        "stone": 0,
-        "gold": 0,
-        "total": 80,
-        "popcap": 1,
-        "time": 15
-      },
-      "producedBy": [
-        "barracks"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/spearman-3.png",
-      "hitpoints": 110,
-      "weapons": [
-        {
-          "name": "Spear",
-          "type": "melee",
-          "damage": 9,
-          "speed": 1.875,
-          "range": {
-            "min": 0,
-            "max": 0.295
-          },
-          "modifiers": [
-            {
-              "property": "meleeAttack",
-              "target": {
-                "class": [
-                  [
-                    "cavalry"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 23,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0.25,
-            "attack": 0.125,
-            "winddown": 0.75,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0.75
-          },
-          "attribName": "weapon_spearman_3",
-          "pbgid": 127826
-        },
-        {
-          "name": "Torch",
-          "type": "fire",
-          "damage": 10,
-          "speed": 2.125,
-          "range": {
-            "min": 0,
-            "max": 1.25
-          },
-          "modifiers": [],
-          "durations": {
-            "aim": 0,
-            "windup": 0.75,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 1.25
-          },
-          "attribName": "weapon_torch",
-          "pbgid": 123518
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "line": 36,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.25
-      }
-    },
-    {
-      "id": "spearman-4",
-      "baseId": "spearman",
-      "type": "unit",
-      "name": "Elite Spearman",
-      "pbgid": 136075,
-      "attribName": "unit_spearman_4_sul",
-      "age": 4,
-      "civs": [
-        "de"
-      ],
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
-      "classes": [
-        "light",
-        "melee",
-        "infantry"
-      ],
-      "displayClasses": [
-        "Light Melee Infantry"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 60,
-        "wood": 20,
-        "stone": 0,
-        "gold": 0,
-        "total": 80,
-        "popcap": 1,
-        "time": 15
-      },
-      "producedBy": [
-        "barracks"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/spearman-4.png",
-      "hitpoints": 130,
-      "weapons": [
-        {
-          "name": "Spear",
-          "type": "melee",
-          "damage": 11,
-          "speed": 1.875,
-          "range": {
-            "min": 0,
-            "max": 0.295
-          },
-          "modifiers": [
-            {
-              "property": "meleeAttack",
-              "target": {
-                "class": [
-                  [
-                    "cavalry"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 28,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0.25,
-            "attack": 0.125,
-            "winddown": 0.75,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0.75
-          },
-          "attribName": "weapon_spearman_4",
-          "pbgid": 127827
-        },
-        {
-          "name": "Torch",
-          "type": "fire",
-          "damage": 10,
-          "speed": 2.125,
-          "range": {
-            "min": 0,
-            "max": 1.25
-          },
-          "modifiers": [],
-          "durations": {
-            "aim": 0,
-            "windup": 0.75,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 1.25
-          },
-          "attribName": "weapon_torch",
-          "pbgid": 123518
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "line": 36,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.25
-      }
-    },
-    {
-      "id": "spearman-1",
-      "baseId": "spearman",
-      "type": "unit",
-      "name": "Spearman",
-      "pbgid": 199736,
-      "attribName": "unit_spearman_1_abb",
-      "age": 1,
-      "civs": [
-        "ab"
-      ],
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
-      "classes": [
-        "light",
-        "melee",
-        "infantry"
-      ],
-      "displayClasses": [
-        "Light Melee Infantry"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 60,
-        "wood": 20,
-        "stone": 0,
-        "gold": 0,
-        "total": 80,
-        "popcap": 1,
-        "time": 15
-      },
-      "producedBy": [
-        "barracks"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/spearman-1.png",
-      "hitpoints": 80,
-      "weapons": [
-        {
-          "name": "Spear",
-          "type": "melee",
-          "damage": 7,
-          "speed": 1.875,
-          "range": {
-            "min": 0,
-            "max": 0.295
-          },
-          "modifiers": [
-            {
-              "property": "meleeAttack",
-              "target": {
-                "class": [
-                  [
-                    "cavalry"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 17,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0.25,
-            "attack": 0.125,
-            "winddown": 0.75,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0.75
-          },
-          "attribName": "weapon_spearman_1",
-          "pbgid": 106762
-        },
-        {
-          "name": "Torch",
-          "type": "fire",
-          "damage": 10,
-          "speed": 2.125,
-          "range": {
-            "min": 0,
-            "max": 1.25
-          },
-          "modifiers": [],
-          "durations": {
-            "aim": 0,
-            "windup": 0.75,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 1.25
-          },
-          "attribName": "weapon_torch",
-          "pbgid": 123518
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "line": 36,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.25
-      }
-    },
-    {
-      "id": "spearman-2",
-      "baseId": "spearman",
-      "type": "unit",
-      "name": "Hardened Spearman",
-      "pbgid": 199738,
-      "attribName": "unit_spearman_2_abb",
-      "age": 2,
-      "civs": [
-        "ab"
-      ],
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
-      "classes": [
-        "light",
-        "melee",
-        "infantry"
-      ],
-      "displayClasses": [
-        "Light Melee Infantry"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 60,
-        "wood": 20,
-        "stone": 0,
-        "gold": 0,
-        "total": 80,
-        "popcap": 1,
-        "time": 15
-      },
-      "producedBy": [
-        "barracks"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/spearman-2.png",
-      "hitpoints": 90,
-      "weapons": [
-        {
-          "name": "Spear",
-          "type": "melee",
-          "damage": 8,
-          "speed": 1.875,
-          "range": {
-            "min": 0,
-            "max": 0.295
-          },
-          "modifiers": [
-            {
-              "property": "meleeAttack",
-              "target": {
-                "class": [
-                  [
-                    "cavalry"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 20,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0.25,
-            "attack": 0.125,
-            "winddown": 0.75,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0.75
-          },
-          "attribName": "weapon_spearman_2",
-          "pbgid": 127825
-        },
-        {
-          "name": "Torch",
-          "type": "fire",
-          "damage": 10,
-          "speed": 2.125,
-          "range": {
-            "min": 0,
-            "max": 1.25
-          },
-          "modifiers": [],
-          "durations": {
-            "aim": 0,
-            "windup": 0.75,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 1.25
-          },
-          "attribName": "weapon_torch",
-          "pbgid": 123518
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "line": 36,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.25
-      }
-    },
-    {
-      "id": "spearman-3",
-      "baseId": "spearman",
-      "type": "unit",
-      "name": "Veteran Spearman",
-      "pbgid": 199740,
-      "attribName": "unit_spearman_3_abb",
-      "age": 3,
-      "civs": [
-        "ab"
-      ],
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
-      "classes": [
-        "light",
-        "melee",
-        "infantry"
-      ],
-      "displayClasses": [
-        "Light Melee Infantry"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 60,
-        "wood": 20,
-        "stone": 0,
-        "gold": 0,
-        "total": 80,
-        "popcap": 1,
-        "time": 15
-      },
-      "producedBy": [
-        "barracks"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/spearman-3.png",
-      "hitpoints": 110,
-      "weapons": [
-        {
-          "name": "Spear",
-          "type": "melee",
-          "damage": 9,
-          "speed": 1.875,
-          "range": {
-            "min": 0,
-            "max": 0.295
-          },
-          "modifiers": [
-            {
-              "property": "meleeAttack",
-              "target": {
-                "class": [
-                  [
-                    "cavalry"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 23,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0.25,
-            "attack": 0.125,
-            "winddown": 0.75,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0.75
-          },
-          "attribName": "weapon_spearman_3",
-          "pbgid": 127826
-        },
-        {
-          "name": "Torch",
-          "type": "fire",
-          "damage": 10,
-          "speed": 2.125,
-          "range": {
-            "min": 0,
-            "max": 1.25
-          },
-          "modifiers": [],
-          "durations": {
-            "aim": 0,
-            "windup": 0.75,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 1.25
-          },
-          "attribName": "weapon_torch",
-          "pbgid": 123518
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "line": 36,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.25
-      }
-    },
-    {
-      "id": "spearman-4",
-      "baseId": "spearman",
-      "type": "unit",
-      "name": "Elite Spearman",
-      "pbgid": 199742,
-      "attribName": "unit_spearman_4_abb",
-      "age": 4,
-      "civs": [
-        "ab"
-      ],
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
-      "classes": [
-        "light",
-        "melee",
-        "infantry"
-      ],
-      "displayClasses": [
-        "Light Melee Infantry"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 60,
-        "wood": 20,
-        "stone": 0,
-        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -2505,6 +3851,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -2611,6 +3959,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -2717,6 +4067,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -2823,6 +4175,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -2929,6 +4283,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -3036,6 +4392,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -3143,6 +4501,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -3250,6 +4610,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -3357,6 +4719,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -3463,6 +4827,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -3569,6 +4935,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -3675,6 +5043,8 @@
         "wood": 20,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 80,
         "popcap": 1,
         "time": 15
@@ -3744,6 +5114,590 @@
           },
           "attribName": "weapon_torch_rus",
           "pbgid": 133324
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-1",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Spearman",
+      "pbgid": 5551219,
+      "attribName": "unit_spearman_1_chi_ha_01",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks",
+        "jiangnan-tower"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-1.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 7,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 17,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_1",
+          "pbgid": 106762
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        },
+        {
+          "name": "Fire Lance",
+          "type": "melee",
+          "damage": 7,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.545
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 17,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1
+          },
+          "attribName": "weapon_spearman_1_charge_fire_chi_ha_01",
+          "pbgid": 2135919
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-2",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Hardened Spearman",
+      "pbgid": 6749113,
+      "attribName": "unit_spearman_2_chi_ha_01",
+      "age": 2,
+      "civs": [
+        "zx"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks",
+        "jiangnan-tower"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-2.png",
+      "hitpoints": 90,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 8,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 20,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_2",
+          "pbgid": 127825
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        },
+        {
+          "name": "Fire Lance",
+          "type": "melee",
+          "damage": 8,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.545
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 20,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1
+          },
+          "attribName": "weapon_spearman_2_charge_fire_chi_ha_01",
+          "pbgid": 2135918
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-3",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Veteran Spearman",
+      "pbgid": 8693055,
+      "attribName": "unit_spearman_3_chi_ha_01",
+      "age": 3,
+      "civs": [
+        "zx"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks",
+        "jiangnan-tower"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-3.png",
+      "hitpoints": 110,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 23,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_3",
+          "pbgid": 127826
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        },
+        {
+          "name": "Fire Lance",
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.545
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 23,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1
+          },
+          "attribName": "weapon_spearman_3_charge_fire_chi_ha_01",
+          "pbgid": 2135916
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "spearman-4",
+      "baseId": "spearman",
+      "type": "unit",
+      "name": "Elite Spearman",
+      "pbgid": 4109073,
+      "attribName": "unit_spearman_4_chi_ha_01",
+      "age": 4,
+      "civs": [
+        "zx"
+      ],
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "classes": [
+        "light",
+        "melee",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 60,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 80,
+        "popcap": 1,
+        "time": 15
+      },
+      "producedBy": [
+        "barracks",
+        "jiangnan-tower"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/spearman-4.png",
+      "hitpoints": 130,
+      "weapons": [
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 28,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_spearman_4",
+          "pbgid": 127827
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        },
+        {
+          "name": "Fire Lance",
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 0.545
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 28,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1
+          },
+          "attribName": "weapon_spearman_4_charge_fire_chi_ha_01",
+          "pbgid": 2135917
         }
       ],
       "armor": [],

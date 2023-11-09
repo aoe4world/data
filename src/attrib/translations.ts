@@ -17,14 +17,14 @@ export function getLocale(locale: string) {
 
 export function getTranslation(id: number, args: string[] = [], locale = "en") {
   const translation = getLocale(locale)?.get(id);
-  if (!translation) return NO_TRANSLATION_FOUND;
+  if (!translation) return NO_TRANSLATION_FOUND + ` (${id})`;
   return interpolateString(translation, args);
 }
 
 function interpolateString(str: string, values: string[]) {
   values = [...values];
   return str
-    .replace(/%(\d+)(\.\d+)*%/g, (_, x, index) => values.shift() ?? "???")
+    .replace(/%(\d+)(\.\d+)*%/g, (_, x, index) => values[+x[0] - 1] ?? values.shift() ?? "???")
     .replace(/%+/g, "%")
     .replace(/(\\+[nr]+)+/g, "\n")
     .trim();

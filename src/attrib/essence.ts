@@ -20,7 +20,7 @@ export async function getEssenceData<T = NormalizedAttrib>(file: string, base: s
   const fileData: EssenceData = await fs.readFile(filePath, "utf-8").then(JSON.parse);
 
   let result: any = { extensions: [] };
-  for (const { key, value } of fileData.data) {
+  for (const { key, value } of (fileData.data[0].value as any as EssenceItem[]) ?? fileData.data) {
     if (parseAsValue.includes(key)) result[key] = formatValue(value);
     else if (typeof value == "object") {
       result.extensions.push(parseItemAsExt({ key, value }));
@@ -49,7 +49,7 @@ function parseItemAsExt({ key, value }: EssenceItem) {
   return values;
 }
 
-export async function guessAppropriateEssenceFile(file: string, race: string, base = path.join(SOURCE_FOLDER, "essence/attrib")) {
+export async function guessAppropriateEssenceFile(file: string, race: string, base = path.join(SOURCE_FOLDER, "/attrib")) {
   if (file.endsWith(".xml")) file = file.replace(".xml", ".json");
   if (!file.endsWith(".json")) file += ".json";
   let matchedFile = file;
@@ -77,6 +77,9 @@ export async function guessAppropriateEssenceFile(file: string, race: string, ba
           insertRaceToPath("common/research/naval", file),
           insertRaceToPath("common/research/unit", file),
           insertRaceToPath("common/units", file),
+          `upgrades/races/abbasid_ha_01/research/house_of_wisdom/${path}`,
+          `upgrades/races/byzantine/research/mercenary_upgrades/${path}`,
+          `upgrades/races/byzantine/mercenary_contracts/${path}`,
         ]
       : []),
     ...(file.includes("weapon")
@@ -91,6 +94,7 @@ export async function guessAppropriateEssenceFile(file: string, race: string, ba
             `abilities/modal_abilities/${path}`,
             `abilities/timed_abilities/${path}`,
             `abilities/toggle_abilities/${path}`,
+            `abilities/toggle_abilities/byzantine/cistern_abilities/${path}`,
             insertRaceToPath("abilities/always_on_abilities", path),
             insertRaceToPath("abilities/modal_abilities", path),
             insertRaceToPath("abilities/timed_abilities", path),

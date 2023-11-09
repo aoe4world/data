@@ -3,6 +3,2477 @@
   "__version__": "0.0.2",
   "data": [
     {
+      "id": "ability--translation-not-found-undefined-1",
+      "baseId": "ability-golden-age-tier-1",
+      "type": "ability",
+      "name": "Golden Age Tier 1",
+      "pbgid": 201563,
+      "attribName": "golden_age_tier_1",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "+15% Resource Gathering Rate",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png",
+      "active": "always",
+      "auraRange": 12.5,
+      "effects": []
+    },
+    {
+      "id": "ability-camel-support-4",
+      "baseId": "ability-camel-support",
+      "type": "ability",
+      "name": "Camel Support",
+      "pbgid": 200770,
+      "attribName": "camel_support_aura_abb",
+      "age": 4,
+      "civs": [
+        "ab"
+      ],
+      "description": "Infantry gain armor when near a camel unit.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-camel-support-1.png",
+      "active": "always",
+      "auraRange": 5,
+      "effects": [
+        {
+          "property": "meleeArmor",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 2,
+          "type": "ability"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 2,
+          "type": "ability"
+        }
+      ],
+      "activatedOn": [
+        "units/camel-rider",
+        "units/camel-archer"
+      ],
+      "unlockedBy": [
+        "technologies/camel-support"
+      ]
+    },
+    {
+      "id": "ability-camel-unease-1",
+      "baseId": "ability-camel-unease",
+      "type": "ability",
+      "name": "Camel Unease",
+      "pbgid": 202653,
+      "attribName": "mamluke_anti_cavalry_aura_abb",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "Camels cause enemy horse cavalry units to deal 20% less damage.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-camel-unease-1.png",
+      "active": "always",
+      "auraRange": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "camel-archer",
+              "camel-rider",
+              "camel-lancer",
+              "desert-raider",
+              "atabeg",
+              "dervish"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-golden-age-tier-1-1",
+      "baseId": "ability-golden-age-tier-1",
+      "type": "ability",
+      "name": "Golden Age Tier 1",
+      "pbgid": 201563,
+      "attribName": "golden_age_tier_1",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "+15% Resource Gathering Rate",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png",
+      "active": "always",
+      "auraRange": 12.5,
+      "effects": []
+    },
+    {
+      "id": "ability-golden-age-tier-2-1",
+      "baseId": "ability-golden-age-tier-2",
+      "type": "ability",
+      "name": "Golden Age Tier 2",
+      "pbgid": 201593,
+      "attribName": "golden_age_tier_2",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "+15% Research Speed",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-2.png",
+      "active": "always",
+      "auraRange": 12.5,
+      "effects": []
+    },
+    {
+      "id": "ability-golden-age-tier-3-1",
+      "baseId": "ability-golden-age-tier-3",
+      "type": "ability",
+      "name": "Golden Age Tier 3",
+      "pbgid": 201595,
+      "attribName": "golden_age_tier_3",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "+20% Production Speed, additional +5% Research Speed, additional +5% Resource Gathering Rate",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-3.png",
+      "active": "always",
+      "auraRange": 12.5,
+      "effects": []
+    },
+    {
+      "id": "ability-house-of-wisdom-influence-1",
+      "baseId": "ability-house-of-wisdom-influence",
+      "type": "ability",
+      "name": "House of Wisdom Influence",
+      "pbgid": 1838842,
+      "attribName": "how_influence_abb",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age and unlock additional bonuses.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-house-of-wisdom-influence-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "fireArmor",
+          "select": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 5,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-proselytize-4",
+      "baseId": "ability-proselytize",
+      "type": "ability",
+      "name": "Proselytize",
+      "pbgid": 2035316,
+      "attribName": "monk_conversion_faith_abb",
+      "age": 4,
+      "civs": [
+        "ab"
+      ],
+      "description": "Attempts to convert a single enemy unit within range of this Imam to your control.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-proselytize-1.png",
+      "active": "manual",
+      "auraRange": 6.25,
+      "cooldown": 60,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "imam"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "unlockedBy": [
+        "technologies/proselytization"
+      ]
+    },
+    {
+      "id": "ability-quick-strike-1",
+      "baseId": "ability-quick-strike",
+      "type": "ability",
+      "name": "Quick Strike",
+      "pbgid": 2133476,
+      "attribName": "ghulam_attack_abb",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "Quickly deals a second hit after finishing an attack.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-quick-strike-1.png",
+      "active": "always",
+      "auraRange": 5,
+      "cooldown": 1,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "ghulam"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
+      "type": "ability",
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-atabeg-supervision-1",
+      "baseId": "ability-atabeg-supervision",
+      "type": "ability",
+      "name": "Atabeg Supervision",
+      "pbgid": 2144843,
+      "attribName": "production_building_enhance_abb",
+      "age": 1,
+      "civs": [
+        "ay"
+      ],
+      "description": "Garrison inside of a military production building to grant +20% health to newly trained units.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-atabeg-supervision-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "atabeg"
+            ],
+            "class": [
+              [
+                "building",
+                "military"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "unlockedBy": [
+        "units/atabeg",
+        "technologies/feudal-trade-wing-advisors"
+      ]
+    },
+    {
+      "id": "ability-camel-unease-1",
+      "baseId": "ability-camel-unease",
+      "type": "ability",
+      "name": "Camel Unease",
+      "pbgid": 202653,
+      "attribName": "mamluke_anti_cavalry_aura_abb",
+      "age": 1,
+      "civs": [
+        "ay"
+      ],
+      "description": "Camels cause enemy horse cavalry units to deal 20% less damage.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-camel-unease-1.png",
+      "active": "always",
+      "auraRange": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "camel-archer",
+              "camel-rider",
+              "camel-lancer",
+              "desert-raider",
+              "atabeg",
+              "dervish"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-desert-raider-blade-1",
+      "baseId": "ability-desert-raider-blade",
+      "type": "ability",
+      "name": "Desert Raider Blade",
+      "pbgid": 2138338,
+      "attribName": "mamluk_swap_to_sword_weapon",
+      "age": 1,
+      "civs": [
+        "ay"
+      ],
+      "description": "Swap to a melee Sword weapon.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-desert-raider-blade-1.png",
+      "active": "toggle",
+      "auraRange": 0.0025,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "desert-raider"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-desert-raider-bow-1",
+      "baseId": "ability-desert-raider-bow",
+      "type": "ability",
+      "name": "Desert Raider Bow",
+      "pbgid": 2138337,
+      "attribName": "mamluk_swap_to_bow_weapon",
+      "age": 1,
+      "civs": [
+        "ay"
+      ],
+      "description": "Swap to a ranged Bow weapon.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-desert-raider-bow-1.png",
+      "active": "toggle",
+      "auraRange": 0.0025,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "desert-raider"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-golden-age-tier-1-1",
+      "baseId": "ability-golden-age-tier-1",
+      "type": "ability",
+      "name": "Golden Age Tier 1",
+      "pbgid": 2146738,
+      "attribName": "golden_age_tier_1_ha_01",
+      "age": 1,
+      "civs": [
+        "ay"
+      ],
+      "description": "10 Structures: Villager gathering rate +10% for all resources.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png",
+      "active": "always",
+      "auraRange": 12.5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.1,
+          "type": "influence"
+        },
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "house-of-wisdom"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "unlockedBy": [
+        "buildings/house-of-wisdom"
+      ]
+    },
+    {
+      "id": "ability-golden-age-tier-2-2",
+      "baseId": "ability-golden-age-tier-2",
+      "type": "ability",
+      "name": "Golden Age Tier 2",
+      "pbgid": 2146739,
+      "attribName": "golden_age_tier_2_ha_01",
+      "age": 2,
+      "civs": [
+        "ay"
+      ],
+      "description": "20 Structures: Research Speeds +50%",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-2.png",
+      "active": "always",
+      "auraRange": 12.5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.5,
+          "type": "influence"
+        },
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "house-of-wisdom"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "unlockedBy": [
+        "buildings/house-of-wisdom"
+      ]
+    },
+    {
+      "id": "ability-golden-age-tier-3-3",
+      "baseId": "ability-golden-age-tier-3",
+      "type": "ability",
+      "name": "Golden Age Tier 3",
+      "pbgid": 2146740,
+      "attribName": "golden_age_tier_3_ha_01",
+      "age": 3,
+      "civs": [
+        "ay"
+      ],
+      "description": "30 Structures: Production Speeds +20%",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-3.png",
+      "active": "always",
+      "auraRange": 12.5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "influence"
+        },
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "house-of-wisdom"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "unlockedBy": [
+        "buildings/house-of-wisdom"
+      ]
+    },
+    {
+      "id": "ability-golden-age-tier-4-4",
+      "baseId": "ability-golden-age-tier-4",
+      "type": "ability",
+      "name": "Golden Age Tier 4",
+      "pbgid": 2146741,
+      "attribName": "golden_age_tier_4_ha_01",
+      "age": 4,
+      "civs": [
+        "ay"
+      ],
+      "description": "50 Structures: Siege units cost 20% less resources to produce.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-4.png",
+      "active": "always",
+      "auraRange": 12.5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "class": [
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.8,
+          "type": "influence"
+        },
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "house-of-wisdom"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "unlockedBy": [
+        "buildings/house-of-wisdom"
+      ]
+    },
+    {
+      "id": "ability-golden-age-tier-5-5",
+      "baseId": "ability-golden-age-tier-5",
+      "type": "ability",
+      "name": "Golden Age Tier 5",
+      "pbgid": 2146742,
+      "attribName": "golden_age_tier_5_ha_01",
+      "age": 5,
+      "civs": [
+        "ay"
+      ],
+      "description": "75 Structures: Camel units attack 20% faster.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-5.png",
+      "active": "always",
+      "auraRange": 12.5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "camel-lancer",
+              "desert-raider"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.83,
+          "type": "influence"
+        },
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "house-of-wisdom"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "unlockedBy": [
+        "buildings/house-of-wisdom"
+      ]
+    },
+    {
+      "id": "ability-house-of-wisdom-influence-1",
+      "baseId": "ability-house-of-wisdom-influence",
+      "type": "ability",
+      "name": "House of Wisdom Influence",
+      "pbgid": 1838842,
+      "attribName": "how_influence_abb",
+      "age": 1,
+      "civs": [
+        "ay"
+      ],
+      "description": "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age and unlock additional bonuses.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house-of-wisdom"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-house-of-wisdom-influence-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "fireArmor",
+          "select": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 5,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-mass-heal-1",
+      "baseId": "ability-mass-heal",
+      "type": "ability",
+      "name": "Mass Heal",
+      "pbgid": 2126592,
+      "attribName": "monk_aoe_heal",
+      "age": 1,
+      "civs": [
+        "ay"
+      ],
+      "description": "Heals all nearby units. Heals +50% times faster when carrying a relic.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-mass-heal-1.png",
+      "active": "manual",
+      "auraRange": 3,
+      "cooldown": 180,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "class": [
+              [
+                "melee"
+              ],
+              [
+                "ranged"
+              ],
+              [
+                "siege"
+              ],
+              [
+                "cavalry"
+              ]
+            ],
+            "id": [
+              "villager",
+              "trader",
+              "dragon-villager"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "activatedOn": [
+        "units/dervish"
+      ]
+    },
+    {
+      "id": "ability-quick-strike-1",
+      "baseId": "ability-quick-strike",
+      "type": "ability",
+      "name": "Quick Strike",
+      "pbgid": 2133476,
+      "attribName": "ghulam_attack_abb",
+      "age": 1,
+      "civs": [
+        "ay"
+      ],
+      "description": "Quickly deals a second hit after finishing an attack.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-quick-strike-1.png",
+      "active": "always",
+      "auraRange": 5,
+      "cooldown": 1,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "ghulam"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
+      "type": "ability",
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
+      "age": 1,
+      "civs": [
+        "ay"
+      ],
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-structural-reinforcements-1",
+      "baseId": "ability-structural-reinforcements",
+      "type": "ability",
+      "name": "Structural Reinforcements",
+      "pbgid": 2141405,
+      "attribName": "siege_carpentry_abb_ha_01",
+      "age": 1,
+      "civs": [
+        "ay"
+      ],
+      "description": "Siege unit gains +20 melee armor and +5 fire armor for 10 seconds.\nCosts 50 Wood to activate, only useable on one unit at a time.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 50,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 50,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-structural-reinforcements-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 90,
+      "effects": [
+        {
+          "property": "meleeArmor",
+          "select": {
+            "class": [
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 20,
+          "type": "ability",
+          "duration": 10
+        },
+        {
+          "property": "fireArmor",
+          "select": {
+            "class": [
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 5,
+          "type": "ability",
+          "duration": 10
+        }
+      ],
+      "unlockedBy": [
+        "technologies/siege-carpentry"
+      ]
+    },
+    {
+      "id": "ability-akritoi-defense-1",
+      "baseId": "ability-akritoi-defense",
+      "type": "ability",
+      "name": "Akritoi Defense",
+      "pbgid": 2146135,
+      "attribName": "landmark_activate_akritoi_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Arm nearby Villagers with stronger weapons and increase their armor by +2 for 30 seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "cistern",
+        "cistern-of-the-first-hill"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-akritoi-defense-1.png",
+      "active": "manual",
+      "auraRange": 9.5,
+      "cooldown": 120,
+      "effects": [
+        {
+          "property": "meleeArmor",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "change",
+          "value": 2,
+          "type": "ability",
+          "duration": 30
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "change",
+          "value": 2,
+          "type": "ability",
+          "duration": 30
+        }
+      ],
+      "activatedOn": [
+        "buildings/cistern-of-the-first-hill",
+        "buildings/cistern"
+      ]
+    },
+    {
+      "id": "ability-automatic-pilgrim-flask-1",
+      "baseId": "ability-automatic-pilgrim-flask",
+      "type": "ability",
+      "name": "Automatic Pilgrim Flask",
+      "pbgid": 2146130,
+      "attribName": "landmark_toggle_automatic_flask_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Toggle on to activate automatic drinking when low health, rapidly increasing health regeneration by 25 per second for 10 seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "cistern-of-the-first-hill"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-automatic-pilgrim-flask-off-1.png",
+      "active": "toggle",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ],
+              [
+                "cavalry"
+              ],
+              [
+                "worker"
+              ],
+              [
+                "religious"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "activatedOn": [
+        "buildings/cistern-of-the-first-hill"
+      ]
+    },
+    {
+      "id": "ability-berserking-1",
+      "baseId": "ability-berserking",
+      "type": "ability",
+      "name": "Berserking",
+      "pbgid": 2104590,
+      "attribName": "varangian_berserk_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Varangian Guard swap to their two-handed weapon and deal +6 damage for 30 seconds. Armor is reduced by -4.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-berserking-1.png",
+      "active": "manual",
+      "auraRange": 6.25,
+      "cooldown": 30,
+      "effects": [
+        {
+          "property": "meleeAttack",
+          "select": {
+            "id": [
+              "varangian-guard"
+            ]
+          },
+          "effect": "change",
+          "value": 30,
+          "type": "ability",
+          "duration": 6
+        },
+        {
+          "property": "meleeArmor",
+          "select": {
+            "id": [
+              "varangian-guard"
+            ]
+          },
+          "effect": "change",
+          "value": 4,
+          "type": "ability",
+          "duration": 6
+        }
+      ]
+    },
+    {
+      "id": "ability-border-settlement-1",
+      "baseId": "ability-border-settlement",
+      "type": "ability",
+      "name": "Border Settlement",
+      "pbgid": 2140943,
+      "attribName": "border_settlement_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Line of sight increased by 7 tiles.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-border-settlement-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "lineOfSight",
+          "select": {
+            "id": [
+              "house"
+            ]
+          },
+          "effect": "change",
+          "value": 7,
+          "type": "ability"
+        }
+      ],
+      "unlockedBy": [
+        "technologies/border-settlements"
+      ]
+    },
+    {
+      "id": "ability-conscriptio-2",
+      "baseId": "ability-conscriptio",
+      "type": "ability",
+      "name": "Conscriptio",
+      "pbgid": 2146132,
+      "attribName": "toggle_landmark_cistern_influence_2_byz",
+      "age": 2,
+      "civs": [
+        "by"
+      ],
+      "description": "Military unit production rate increased +20%/+40%/+60%/+80%/+100% by Water Level while within the influence of a Cistern.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "cistern-of-the-first-hill"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-conscriptio-2.png",
+      "active": "toggle",
+      "auraRange": 0,
+      "toggleGroup": "resource_toggle",
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "class": [
+              [
+                "military",
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "activatedOn": [
+        "buildings/cistern",
+        "buildings/cistern-of-the-first-hill"
+      ]
+    },
+    {
+      "id": "ability-dialecticus-3",
+      "baseId": "ability-dialecticus",
+      "type": "ability",
+      "name": "Dialecticus",
+      "pbgid": 2146133,
+      "attribName": "toggle_landmark_cistern_influence_3_byz",
+      "age": 3,
+      "civs": [
+        "by"
+      ],
+      "description": "Research rate increased +50%/+100%/+150%/+200%/+250% by Water Level while within the influence of a Cistern.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "cistern-of-the-first-hill"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-dialecticus-3.png",
+      "active": "toggle",
+      "auraRange": 0,
+      "toggleGroup": "resource_toggle",
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "activatedOn": [
+        "buildings/cistern",
+        "buildings/cistern-of-the-first-hill"
+      ]
+    },
+    {
+      "id": "ability-emperors-guard-1",
+      "baseId": "ability-emperors-guard",
+      "type": "ability",
+      "name": "Emperor's Guard",
+      "pbgid": 2121939,
+      "attribName": "varangian_landmark_armor_aura_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Armor increased by +3 while near allied Wonders.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {},
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-emperors-guard-1.png",
+      "effects": []
+    },
+    {
+      "id": "ability-field-stones-1",
+      "baseId": "ability-field-stones",
+      "type": "ability",
+      "name": "Field Stones",
+      "pbgid": 2145743,
+      "attribName": "field_stone_buff_info_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Earn various amounts of Stone from every building constructed.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-field-stones-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-improved-torch-1",
+      "baseId": "ability-improved-torch",
+      "type": "ability",
+      "name": "Improved Torch",
+      "pbgid": 2121987,
+      "attribName": "hippodrome_scout_torch_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Torch damage improved by a nearby Scout.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {},
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-improved-torch-1.png",
+      "effects": [
+        {
+          "property": "fireAttack",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ],
+              [
+                "cavalry"
+              ],
+              [
+                "worker"
+              ],
+              [
+                "religious"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1.25,
+          "type": "ability"
+        }
+      ],
+      "activatedOn": [
+        "units/scout"
+      ]
+    },
+    {
+      "id": "ability-irrigated-1",
+      "baseId": "ability-irrigated",
+      "type": "ability",
+      "name": "Irrigated",
+      "pbgid": 2128567,
+      "attribName": "cistern_influence_gathering_bonus_1_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Villager gathering rate increased by 5/10/15/20/25% (depening on water level)",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {},
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-irrigated-1.png",
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "villager",
+              "fishing-boat"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "activatedOn": [
+        "buildings/cistern",
+        "buildings/cistern-of-the-first-hill"
+      ]
+    },
+    {
+      "id": "ability-naval-deployment-1",
+      "baseId": "ability-naval-deployment",
+      "type": "ability",
+      "name": "Naval Deployment",
+      "pbgid": 2146720,
+      "attribName": "naval_transport_movespeed_unload_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Increased movement speed after unloading from a Transport Ship.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {},
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-naval-deployment-1.png",
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ],
+              [
+                "cavalry",
+                "melee"
+              ],
+              [
+                "cavalry",
+                "ranged"
+              ],
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-oil-commerce-1",
+      "baseId": "ability-oil-commerce",
+      "type": "ability",
+      "name": "Oil Commerce",
+      "pbgid": 2146205,
+      "attribName": "oil_villager_fish_dropoff_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Traders provide +20% Olive Oil on trades.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {},
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-oil-commerce-1.png",
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "trader",
+              "trade-ship"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-olive-harvest-1",
+      "baseId": "ability-olive-harvest",
+      "type": "ability",
+      "name": "Olive Harvest",
+      "pbgid": 2146200,
+      "attribName": "oil_farm_dropoff_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Villagers generate +20% Olive Oil when farming.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {},
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-olive-harvest-1.png",
+      "effects": []
+    },
+    {
+      "id": "ability-pilgrim-flask-1",
+      "baseId": "ability-pilgrim-flask",
+      "type": "ability",
+      "name": "Pilgrim Flask",
+      "pbgid": 2144175,
+      "attribName": "pilgrim_flask_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Activate to drink, rapidly increasing health regeneration by 25 per second for 10 seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-pilgrim-flask-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 45,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ],
+              [
+                "cavalry"
+              ],
+              [
+                "worker"
+              ],
+              [
+                "religious"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "unlockedBy": [
+        "buildings/cistern-of-the-first-hill"
+      ]
+    },
+    {
+      "id": "ability-praesidium-4",
+      "baseId": "ability-praesidium",
+      "type": "ability",
+      "name": "Praesidium",
+      "pbgid": 2146134,
+      "attribName": "toggle_landmark_cistern_influence_4_byz",
+      "age": 4,
+      "civs": [
+        "by"
+      ],
+      "description": "Building damage taken decreased by -5%/-10%/-15%/-20%/-25% by Water Level while within the influence of a Cistern.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "cistern-of-the-first-hill"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-praesidium-4.png",
+      "active": "toggle",
+      "auraRange": 0,
+      "toggleGroup": "resource_toggle",
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "activatedOn": [
+        "buildings/cistern",
+        "buildings/cistern-of-the-first-hill"
+      ]
+    },
+    {
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
+      "type": "ability",
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-shield-wall-1",
+      "baseId": "ability-shield-wall",
+      "type": "ability",
+      "name": "Shield Wall",
+      "pbgid": 2141378,
+      "attribName": "toggle_spearman_shield_wall_on_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Enter a defensive stance, decreasing move speed by -25%, attack speed by -25%, and ranged damage taken by -50% .",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-shield-wall-1.png",
+      "active": "manual",
+      "auraRange": 0.0025,
+      "cooldown": 10,
+      "effects": [
+        {
+          "property": "moveSpeed",
+          "select": {
+            "id": [
+              "limitanei"
+            ]
+          },
+          "effect": "change",
+          "value": 25,
+          "type": "ability",
+          "duration": 25
+        },
+        {
+          "property": "attackSpeed",
+          "select": {
+            "id": [
+              "limitanei"
+            ]
+          },
+          "effect": "change",
+          "value": 50,
+          "type": "ability",
+          "duration": 25
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "id": [
+              "limitanei"
+            ]
+          },
+          "effect": "change",
+          "value": 50,
+          "type": "ability",
+          "duration": 25
+        }
+      ]
+    },
+    {
+      "id": "ability-synergistic-crops-1",
+      "baseId": "ability-synergistic-crops",
+      "type": "ability",
+      "name": "Synergistic Crops",
+      "pbgid": 2129926,
+      "attribName": "winery_food_dropoff_imp_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Farmers and Foragers generate +60% Olive Oil around the Grand Winery.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {},
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-synergistic-crops-1.png",
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "unlockedBy": [
+        "buildings/grand-winery"
+      ]
+    },
+    {
+      "id": "ability-trample-1",
+      "baseId": "ability-trample",
+      "type": "ability",
+      "name": "Trample",
+      "pbgid": 2133600,
+      "attribName": "cataphract_trample_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Charge through enemy units in your path, dealing 10 damage to each one.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-trample-1.png",
+      "active": "manual",
+      "auraRange": 7.5,
+      "cooldown": 25,
+      "effects": [
+        {
+          "property": "meleeAttack",
+          "select": {
+            "id": [
+              "cataphract"
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-triumph-1",
+      "baseId": "ability-triumph",
+      "type": "ability",
+      "name": "Triumph",
+      "pbgid": 2138249,
+      "attribName": "hippodrome_triumph_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Consume all Supply Points to increase cavalry damage by +25%, move speed by +10%, and health regeneration by +2. \nEach Supply Point increases Triumph's duration by 1.5 seconds. A maximum of 40 Supply Points can be collected.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "imperial-hippodrome"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-triumph-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 30,
+      "effects": [
+        {
+          "property": "meleeAttack",
+          "select": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.1,
+          "type": "ability",
+          "duration": 25
+        },
+        {
+          "property": "moveSpeed",
+          "select": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "ability",
+          "duration": 25
+        },
+        {
+          "property": "healingRate",
+          "select": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 2,
+          "type": "ability",
+          "duration": 25
+        }
+      ],
+      "activatedOn": [
+        "buildings/imperial-hippodrome"
+      ]
+    },
+    {
+      "id": "ability-varangian-berserking-1",
+      "baseId": "ability-varangian-berserking",
+      "type": "ability",
+      "name": "Varangian Berserking",
+      "pbgid": 2105290,
+      "attribName": "varangian_berserking_byz",
+      "age": 1,
+      "civs": [
+        "by"
+      ],
+      "description": "Damage increased by +6 and armor decreased by -4.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {},
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-varangian-berserking-1.png",
+      "effects": []
+    },
+    {
+      "id": "ability--translation-not-found-undefined-4",
+      "baseId": "ability--translation-not-found-undefined",
+      "type": "ability",
+      "name": "Spirit Way Ancestors",
+      "pbgid": 207131,
+      "attribName": "spirit_way",
+      "age": 4,
+      "civs": [
+        "ch"
+      ],
+      "description": "When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/buildings/spirit-way-3.png",
+      "active": "always",
+      "auraRange": 5,
+      "effects": [],
+      "unlockedBy": [
+        "buildings/spirit-way"
+      ]
+    },
+    {
+      "id": "ability-imperial-spies-3",
+      "baseId": "ability-imperial-spies",
+      "type": "ability",
+      "name": "Imperial Spies",
+      "pbgid": 206838,
+      "attribName": "imperial_spies",
+      "age": 3,
+      "civs": [
+        "ch"
+      ],
+      "description": "Reveal location of enemy workers for 10 seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "imperial-palace"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-imperial-spies-1.png",
+      "active": "manual",
+      "auraRange": 250,
+      "cooldown": 120,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "imperial-palace"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability",
+          "duration": 10
+        }
+      ]
+    },
+    {
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
+      "type": "ability",
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
+      "age": 1,
+      "civs": [
+        "ch"
+      ],
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-spirit-way-4",
+      "baseId": "ability-spirit-way",
+      "type": "ability",
+      "name": "Spirit Way Ancestors",
+      "pbgid": 207131,
+      "attribName": "spirit_way",
+      "age": 4,
+      "civs": [
+        "ch"
+      ],
+      "description": "When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/buildings/spirit-way-3.png",
+      "active": "always",
+      "auraRange": 5,
+      "effects": [],
+      "unlockedBy": [
+        "buildings/spirit-way"
+      ]
+    },
+    {
+      "id": "ability-the-long-wall-4",
+      "baseId": "ability-the-long-wall",
+      "type": "ability",
+      "name": "The Long Wall",
+      "pbgid": 2076747,
+      "attribName": "great_wall_buff_chi",
+      "age": 4,
+      "civs": [
+        "ch"
+      ],
+      "description": "All units standing on Walls gain +25% ranged damage.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "gold": 0,
+        "wood": 0,
+        "food": 0,
+        "stone": 0,
+        "total": 0,
+        "time": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-the-long-wall-1.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "ranged",
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.25,
+          "type": "ability"
+        }
+      ],
+      "active": "always",
+      "auraRange": 0,
+      "unlockedBy": [
+        "buildings/great-wall-gatehouse"
+      ],
+      "activatedOn": [
+        "buildings/stone-wall"
+      ]
+    },
+    {
+      "id": "ability-forced-march-3",
+      "baseId": "ability-forced-march",
+      "type": "ability",
+      "name": "Forced March",
+      "pbgid": 180772,
+      "attribName": "infantry_forced_march_sul",
+      "age": 3,
+      "civs": [
+        "de"
+      ],
+      "description": "Activate to move 100% faster for 10 seconds, deactivates early when dealing damage.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-forced-march-1.png",
+      "active": "manual",
+      "auraRange": 6.25,
+      "cooldown": 75,
+      "effects": [
+        {
+          "property": "moveSpeed",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 2,
+          "type": "ability",
+          "duration": 10
+        }
+      ]
+    },
+    {
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
+      "type": "ability",
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
+      "age": 1,
+      "civs": [
+        "de"
+      ],
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center",
+        "keep"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-tower-of-victory-aura-2",
+      "baseId": "ability-tower-of-victory-aura",
+      "type": "ability",
+      "name": "Tower of Victory Aura",
+      "pbgid": 200847,
+      "attribName": "tower_of_victory_aura_sul",
+      "age": 2,
+      "civs": [
+        "de"
+      ],
+      "description": "Melee and ranged infantry who move near this Landmark permanently gain +20% attack speed.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-tower-of-victory-aura-1.png",
+      "active": "always",
+      "auraRange": 7.5,
+      "effects": [
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.83,
+          "type": "ability"
+        }
+      ]
+    },
+    {
       "id": "ability-abbey-healing-2",
       "baseId": "ability-abbey-healing",
       "type": "ability",
@@ -21,6 +2492,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -43,11 +2516,15 @@
               ],
               [
                 "siege"
+              ],
+              [
+                "cavalry"
               ]
             ],
             "id": [
               "villager",
-              "trader"
+              "trader",
+              "dragon-villager"
             ]
           },
           "effect": "change",
@@ -78,6 +2555,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -120,6 +2599,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -166,6 +2647,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -218,6 +2701,54 @@
       ]
     },
     {
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
+      "type": "ability",
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
+      "age": 1,
+      "civs": [
+        "en"
+      ],
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center",
+        "kings-palace"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
       "id": "ability-setup-camp-1",
       "baseId": "ability-setup-camp",
       "type": "ability",
@@ -236,6 +2767,8 @@
         "wood": 25,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 25,
         "popcap": 0
       },
@@ -259,6 +2792,367 @@
       ]
     },
     {
+      "id": "ability-artillery-shot-1",
+      "baseId": "ability-artillery-shot",
+      "type": "ability",
+      "name": "Artillery Shot",
+      "pbgid": 2122116,
+      "attribName": "cannon_swap_fre",
+      "age": 1,
+      "civs": [
+        "fr"
+      ],
+      "description": "Loads this Cannon for an Artillery Shot, next shot has greatly increased Area of Effect but no bonus against buildings.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-artillery-shot-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 210,
+      "effects": [
+        {
+          "property": "areaOfEffect",
+          "select": {
+            "id": [
+              "cannon",
+              "royal-cannon"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "unlockedBy": [
+        "buildings/college-of-artillery"
+      ]
+    },
+    {
+      "id": "ability-deploy-pavise-3",
+      "baseId": "ability-deploy-pavise",
+      "type": "ability",
+      "name": "Deploy Pavise",
+      "pbgid": 212030,
+      "attribName": "deploy_pavise_fre",
+      "age": 3,
+      "civs": [
+        "fr"
+      ],
+      "description": "Activate to increase weapon range by +1 tile and gain +5 ranged armor.\nRemains active for 30 seconds or until the Arbalétrier moves away.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-deploy-pavise-1.png",
+      "active": "manual",
+      "auraRange": 8.75,
+      "cooldown": 60,
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "id": [
+              "arbaletrier"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "ability",
+          "duration": 30
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "id": [
+              "arbaletrier"
+            ]
+          },
+          "effect": "change",
+          "value": 5,
+          "type": "ability",
+          "duration": 30
+        }
+      ]
+    },
+    {
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
+      "type": "ability",
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
+      "age": 1,
+      "civs": [
+        "fr"
+      ],
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-royal-institute-influence-1",
+      "baseId": "ability-royal-institute-influence",
+      "type": "ability",
+      "name": "Royal Institute Influence",
+      "pbgid": 1452233,
+      "attribName": "keep_influence_fre",
+      "age": 1,
+      "civs": [
+        "fr"
+      ],
+      "description": "Archery Ranges and Stables within influence have unit costs decreased by 20%.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "keep"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-royal-institute-influence-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": []
+    },
+    {
+      "id": "ability-royal-knight-charge-damage-2",
+      "baseId": "ability-royal-knight-charge-damage",
+      "type": "ability",
+      "name": "Royal Knight Charge Damage",
+      "pbgid": 2032837,
+      "attribName": "lancer_charge_bonus_damage",
+      "age": 2,
+      "civs": [
+        "fr"
+      ],
+      "description": "Gain +3 melee attack damage for 5 seconds after charging.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "gold": 0,
+        "wood": 0,
+        "food": 0,
+        "stone": 0,
+        "total": 0,
+        "time": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-royal-knight-charge-damage-1.png",
+      "effects": [
+        {
+          "property": "meleeAttack",
+          "select": {
+            "id": [
+              "royal-knight"
+            ]
+          },
+          "effect": "change",
+          "value": 3,
+          "type": "ability",
+          "duration": 5
+        }
+      ],
+      "active": "always"
+    },
+    {
+      "id": "ability-town-center-production-speed-castle-age-3",
+      "baseId": "ability-town-center-production-speed-castle-age",
+      "type": "ability",
+      "name": "Castle Age Town Center Production Speed",
+      "pbgid": 187280,
+      "attribName": "town_center_production_age3_fre",
+      "age": 3,
+      "civs": [
+        "fr"
+      ],
+      "description": "Town Center production and research speed increased by 20%.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/town-center.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "productionSpeed",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-town-center-production-speed-dark-age-1",
+      "baseId": "ability-town-center-production-speed-dark-age",
+      "type": "ability",
+      "name": "Dark Age Town Center Production Speed",
+      "pbgid": 187278,
+      "attribName": "town_center_production_age1_fre",
+      "age": 1,
+      "civs": [
+        "fr"
+      ],
+      "description": "Town Center production and research speed increased by +10%.\nBonus increases further in later Ages.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/town-center.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "productionSpeed",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.1,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-town-center-production-speed-feudal-age-2",
+      "baseId": "ability-town-center-production-speed-feudal-age",
+      "type": "ability",
+      "name": "Feudal Age Town Center Production Speed",
+      "pbgid": 187279,
+      "attribName": "town_center_production_age2_fre",
+      "age": 2,
+      "civs": [
+        "fr"
+      ],
+      "description": "Town Center production and research speed increased by +15%.\nBonus increases further in later Ages.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/town-center.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "productionSpeed",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "ability"
+        }
+      ]
+    },
+    {
       "id": "ability-emergency-repairs-1",
       "baseId": "ability-emergency-repairs",
       "type": "ability",
@@ -277,6 +3171,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -346,6 +3242,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -487,6 +3385,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -547,6 +3447,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -633,17 +3535,17 @@
       ]
     },
     {
-      "id": "ability-artillery-shot-1",
-      "baseId": "ability-artillery-shot",
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
       "type": "ability",
-      "name": "Artillery Shot",
-      "pbgid": 2122116,
-      "attribName": "cannon_swap_fre",
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
       "age": 1,
       "civs": [
-        "fr"
+        "hr"
       ],
-      "description": "Loads this Cannon for an Artillery Shot, next shot has greatly increased Area of Effect but no bonus against buildings.",
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -651,21 +3553,1462 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center",
+        "palace-of-swabia"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-daimyo-farm-aura-1",
+      "baseId": "ability-daimyo-farm-aura",
+      "type": "ability",
+      "name": "Daimyo Farm Aura",
+      "pbgid": 2126941,
+      "attribName": "daimyo_level_manager_jpn",
+      "age": 1,
+      "civs": [
+        "ja"
+      ],
+      "description": "Aura that increases the harvest rate of nearby farms by +75%.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "capital-town-center",
+        "town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-daimyo-farm-aura-1.png",
+      "active": "always",
+      "auraRange": 10,
+      "effects": []
+    },
+    {
+      "id": "ability-deflective-armor-1",
+      "baseId": "ability-deflective-armor",
+      "type": "ability",
+      "name": "Deflective Armor",
+      "pbgid": 2127304,
+      "attribName": "samurai_shield_jpn",
+      "age": 1,
+      "civs": [
+        "ja"
+      ],
+      "description": "Deflective Armor charge can block one melee or ranged attack. Recharges while out of combat for 8 seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
       "producedBy": [],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-artillery-shot-1.png",
-      "active": "manual",
-      "auraRange": 0,
-      "cooldown": 210,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-deflective-armor-1.png",
+      "active": "always",
+      "auraRange": 6,
       "effects": [
         {
-          "property": "areaOfEffect",
+          "property": "unknown",
           "select": {
             "id": [
-              "cannon",
-              "royal-cannon"
+              "samurai",
+              "mounted-samurai",
+              "yumi-bannerman",
+              "katana-bannerman",
+              "uma-bannerman"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-kabura-ya-1",
+      "baseId": "ability-kabura-ya",
+      "type": "ability",
+      "name": "Kabura-ya",
+      "pbgid": 2127408,
+      "attribName": "kaburya_arrow_jpn",
+      "age": 1,
+      "civs": [
+        "ja"
+      ],
+      "description": "Onna-Musha fire a whistling arrow when an enemy is seen, increasing move speed for 10 seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-kabura-ya-1.png",
+      "active": "always",
+      "auraRange": 6,
+      "effects": [
+        {
+          "property": "moveSpeed",
+          "select": {
+            "id": [
+              "onna-musha"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability",
+          "duration": 10
+        }
+      ],
+      "unlockedBy": [
+        "technologies/kabura-ya-whistling-arrow"
+      ]
+    },
+    {
+      "id": "ability-katana-bannerman-aura-1",
+      "baseId": "ability-katana-bannerman-aura",
+      "type": "ability",
+      "name": "Katana Bannerman Aura",
+      "pbgid": 2127069,
+      "attribName": "bannerman_aura_melee_jpn",
+      "age": 1,
+      "civs": [
+        "ja"
+      ],
+      "description": "Aura that increases melee infantry damage by +15%.\nBanner drops on death and lasts for 30 seconds providing the same aura.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-katana-bannerman-aura-1.png",
+      "active": "always",
+      "auraRange": 6,
+      "effects": [
+        {
+          "property": "meleeAttack",
+          "select": {
+            "class": [
+              [
+                "melee",
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "ability"
+        }
+      ],
+      "activatedOn": [
+        "units/katana-bannerman"
+      ]
+    },
+    {
+      "id": "ability-place-yorishiro-1",
+      "baseId": "ability-place-yorishiro",
+      "type": "ability",
+      "name": "Place Yorishiro",
+      "pbgid": 2141548,
+      "attribName": "monk_shinto_deposit_sacred_object_jpn",
+      "age": 1,
+      "civs": [
+        "ja"
+      ],
+      "description": "Place a Yorishiro in buildings to receive bonuses and increase line of sight.\nTown Center: +25% Production speed\nFarmhouse: +75 Food per minute\nLumber Camp: +75 Wood per minute\nForge: +75 Gold per minute\nMilitary and Docks: +200% Work rate\nWonder: +4000 Health",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-place-yorishiro-1.png",
+      "active": "manual",
+      "auraRange": 0.5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "farmhouse",
+              "barracks",
+              "lumber-camp",
+              "dock",
+              "forge",
+              "archery-range",
+              "stable",
+              "capital-town-center",
+              "siege-workshop",
+              "tanegashima-gunsmith",
+              "castle-of-the-crow",
+              "tokugawa-shrine",
+              "town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
+      "type": "ability",
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
+      "age": 1,
+      "civs": [
+        "ja"
+      ],
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "capital-town-center",
+        "town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-sabotage-1",
+      "baseId": "ability-sabotage",
+      "type": "ability",
+      "name": "Sabotage",
+      "pbgid": 2127420,
+      "attribName": "shinobi_sabotage_jpn",
+      "age": 1,
+      "civs": [
+        "ja"
+      ],
+      "description": "Target a visible enemy building to deal 200 damage, disable its production, and set it on fire for 30 seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-sabotage-1.png",
+      "active": "manual",
+      "auraRange": 0.75,
+      "cooldown": 60,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "shinobi"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-shunshin-1",
+      "baseId": "ability-shunshin",
+      "type": "ability",
+      "name": "Shunshin",
+      "pbgid": 2145411,
+      "attribName": "shinobi_blink_jpn",
+      "age": 1,
+      "civs": [
+        "ja"
+      ],
+      "description": "Drop a smoke bomb and reappear at a selected location.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-shunshin-1.png",
+      "active": "manual",
+      "auraRange": 4,
+      "cooldown": 30,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "shinobi"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-soheis-sutra-1",
+      "baseId": "ability-soheis-sutra",
+      "type": "ability",
+      "name": "Sohei's Sutra",
+      "pbgid": 2141302,
+      "attribName": "monk_debuff_target_jpn",
+      "age": 1,
+      "civs": [
+        "ja"
+      ],
+      "description": "Reduces enemy damage by 50% for 60 seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-soheis-sutra-1.png",
+      "active": "manual",
+      "auraRange": 6.25,
+      "cooldown": 1.5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "buddhist-monk"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability",
+          "duration": 60
+        }
+      ]
+    },
+    {
+      "id": "ability-spy-1",
+      "baseId": "ability-spy",
+      "type": "ability",
+      "name": "Spy",
+      "pbgid": 2127419,
+      "attribName": "shinobi_spy_jpn",
+      "age": 1,
+      "civs": [
+        "ja"
+      ],
+      "description": "Target a visible enemy unit or structure to disguise the Shinobi as a Villager of that player.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-spy-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 60,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "shinobi"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-treasure-caravans-1",
+      "baseId": "ability-treasure-caravans",
+      "type": "ability",
+      "name": "Treasure Caravans",
+      "pbgid": 2127492,
+      "attribName": "treasure_landmark_target_jpn",
+      "age": 1,
+      "civs": [
+        "ja"
+      ],
+      "description": "Select a neutral Trade Post to periodically spawn Treasure Caravans from that location. Caravans can convert into a Trade Ship when instructed to reach Trade Posts over water.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "castle-of-the-crow"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-treasure-caravans-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "castle-of-the-crow"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-uma-bannerman-aura-1",
+      "baseId": "ability-uma-bannerman-aura",
+      "type": "ability",
+      "name": "Uma Bannerman Aura",
+      "pbgid": 2127073,
+      "attribName": "bannerman_aura_cavalry_jpn",
+      "age": 1,
+      "civs": [
+        "ja"
+      ],
+      "description": "Aura that increases cavalry unit damage by +15%.\nBanner drops on death and lasts for 30 seconds providing the same aura.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-uma-bannerman-aura-1.png",
+      "active": "always",
+      "auraRange": 6,
+      "effects": [
+        {
+          "property": "meleeAttack",
+          "select": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "ability"
+        }
+      ],
+      "activatedOn": [
+        "units/uma-bannerman"
+      ]
+    },
+    {
+      "id": "ability-yumi-bannerman-aura-1",
+      "baseId": "ability-yumi-bannerman-aura",
+      "type": "ability",
+      "name": "Yumi Bannerman Aura",
+      "pbgid": 2127067,
+      "attribName": "bannerman_aura_range_jpn",
+      "age": 1,
+      "civs": [
+        "ja"
+      ],
+      "description": "Aura that increases ranged infantry damage by +15%.\nBanner drops on death and lasts for 30 seconds providing the same aura.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-yumi-bannerman-aura-1.png",
+      "active": "always",
+      "auraRange": 6,
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "ranged",
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "ability"
+        }
+      ],
+      "activatedOn": [
+        "units/yumi-bannerman"
+      ]
+    },
+    {
+      "id": "ability--translation-not-found-11257526-1",
+      "baseId": "ability--translation-not-found-11257526",
+      "type": "ability",
+      "name": "(translation not found) (11257526)",
+      "pbgid": 2146144,
+      "attribName": "jeanne_d_arc_ability_charges_consecrate_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "(translation not found) (undefined)",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "active": "always",
+      "auraRange": 0.0025,
+      "effects": []
+    },
+    {
+      "id": "ability--translation-not-found-11257527-1",
+      "baseId": "ability--translation-not-found-11257527",
+      "type": "ability",
+      "name": "(translation not found) (11257527)",
+      "pbgid": 2146141,
+      "attribName": "jeanne_d_arc_ability_charges_melee_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "(translation not found) (undefined)",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "active": "always",
+      "auraRange": 0.0025,
+      "effects": []
+    },
+    {
+      "id": "ability--translation-not-found-undefined-1",
+      "baseId": "ability--translation-not-found-undefined",
+      "type": "ability",
+      "name": "(translation not found) (undefined)",
+      "pbgid": 2141775,
+      "attribName": "jeanne_d_arc_rallying_call_units_timer_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "(translation not found) (undefined)",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability--translation-not-found-undefined-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "cooldown": 90,
+      "effects": []
+    },
+    {
+      "id": "ability-bring-down-the-walls-1",
+      "baseId": "ability-bring-down-the-walls",
+      "type": "ability",
+      "name": "Bring down the walls!",
+      "pbgid": 2127667,
+      "attribName": "jeanne_d_arc_rallying_call_cannon_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Jeanne calls a Cannon to her side. Rallies an additional Cannon if used on a Neutral Settlement.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-bring-down-the-walls-1.png",
+      "active": "always",
+      "auraRange": 1,
+      "cooldown": 240,
+      "effects": []
+    },
+    {
+      "id": "ability-consecrate-1",
+      "baseId": "ability-consecrate",
+      "type": "ability",
+      "name": "Consecrate",
+      "pbgid": 2141453,
+      "attribName": "jeanne_d_arc_influence_building_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Jeanne consecrates a production building, reducing the Food cost of units by -25%.\nNo Cooldown\nRecharge Time: 120 Seconds.\nMax Charges: 4.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-consecrate-1.png",
+      "active": "manual",
+      "auraRange": 1,
+      "cooldown": 1,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "jeanne-darc-woman-at-arms",
+              "jeanne-darc-hunter",
+              "jeanne-darc-mounted-archer",
+              "jeanne-darc-knight",
+              "jeanne-darc-markswoman",
+              "jeanne-darc-blast-cannon"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-construct-the-kingdom-1",
+      "baseId": "ability-construct-the-kingdom",
+      "type": "ability",
+      "name": "Construct the Kingdom",
+      "pbgid": 2139259,
+      "attribName": "jeanne_d_arc_construction_aura_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Nearby Villagers construct buildings 33% faster.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-construct-the-kingdom-1.png",
+      "active": "always",
+      "auraRange": 0.0025,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-divine-arrow-1",
+      "baseId": "ability-divine-arrow",
+      "type": "ability",
+      "name": "Divine Arrow",
+      "pbgid": 2141675,
+      "attribName": "jeanne_d_arc_ranged_damage_ability_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Jeanne targets an enemy and fires a divine arrow that deals 40 damage.\nCooldown: 8 Seconds.\nRecharge Time: 60 Seconds.\nMax Charges: 4",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-divine-arrow-1.png",
+      "active": "manual",
+      "auraRange": 7,
+      "cooldown": 8,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "jeanne-darc-hunter",
+              "jeanne-darc-mounted-archer",
+              "jeanne-darc-markswoman"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-divine-restoration-1",
+      "baseId": "ability-divine-restoration",
+      "type": "ability",
+      "name": "Divine Restoration",
+      "pbgid": 2128763,
+      "attribName": "jeanne_d_arc_divine_restoration_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Jeanne and nearby allies are blessed, instantly healing for 30% of their missing health.\nCooldown: 120 Seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-divine-restoration-1.png",
+      "active": "manual",
+      "auraRange": 4,
+      "cooldown": 120,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "jeanne-darc-woman-at-arms",
+              "jeanne-darc-hunter",
+              "jeanne-darc-mounted-archer",
+              "jeanne-darc-knight",
+              "jeanne-darc-markswoman",
+              "jeanne-darc-blast-cannon"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-forward-companions-1",
+      "baseId": "ability-forward-companions",
+      "type": "ability",
+      "name": "Forward, companions!",
+      "pbgid": 2127665,
+      "attribName": "jeanne_d_arc_rallying_call_knights_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Jeanne calls 3/6 Knights to her side. Rallies 2 additional Knights if used on a Neutral Settlement.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-forward-companions-1.png",
+      "active": "always",
+      "auraRange": 1,
+      "cooldown": 240,
+      "effects": []
+    },
+    {
+      "id": "ability-galvanize-the-righteous-1",
+      "baseId": "ability-galvanize-the-righteous",
+      "type": "ability",
+      "name": "Galvanize the Righteous",
+      "pbgid": 2144058,
+      "attribName": "jeanne_d_arc_buff_follower_aura_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Companions close to Jeanne gain +1/1 armor and +10% damage.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-galvanize-the-righteous-1.png",
+      "active": "always",
+      "auraRange": 0.0025,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "jeanne-darc-mounted-archer",
+              "jeanne-darc-knight",
+              "jeanne-darc-markswoman",
+              "jeanne-darc-blast-cannon"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-holy-wrath-1",
+      "baseId": "ability-holy-wrath",
+      "type": "ability",
+      "name": "Holy Wrath",
+      "pbgid": 2141553,
+      "attribName": "jeanne_d_arc_aoe_damage_ability_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Jeanne unleashes a powerful area of effect attack, striking all enemies within 1.25 tiles for 20 damage.\nCooldown: 8 Seconds.\nRecharge Time: 60 Seconds.\nMax Charges: 4.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-holy-wrath-1.png",
+      "active": "manual",
+      "auraRange": 1.25,
+      "cooldown": 8,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "jeanne-darc-woman-at-arms",
+              "jeanne-darc-knight",
+              "jeanne-darc-blast-cannon"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-honorable-heart-1",
+      "baseId": "ability-honorable-heart",
+      "type": "ability",
+      "name": "Honorable Heart",
+      "pbgid": 2127594,
+      "attribName": "jeanne_d_arc_honorable_heart_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Jeanne regenerates 1/1.5/2/2.5 health per second while out of combat based on her current level.\nAt level 3 Jeanne takes 50% less damage from ranged attacks; at level 4 this is increased to 66%.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-honorable-heart-1.png",
+      "active": "always",
+      "auraRange": 0.0025,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "jeanne-darc-peasant",
+              "jeanne-darc-woman-at-arms",
+              "jeanne-darc-hunter",
+              "jeanne-darc-mounted-archer",
+              "jeanne-darc-knight",
+              "jeanne-darc-markswoman",
+              "jeanne-darc-blast-cannon"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-jeannes-companions-1",
+      "baseId": "ability-jeannes-companions",
+      "type": "ability",
+      "name": "Jeanne's Companions",
+      "pbgid": 2149013,
+      "attribName": "jeanne_companion_keep_dummy_keep",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Achieve level 3 with Jeanne d'Arc to select between Champions and Riders to be trained at the keep.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "keep",
+        "red-palace"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-jeannes-companions-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "keep",
+              "red-palace"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-journey-of-a-hero-1",
+      "baseId": "ability-journey-of-a-hero",
+      "type": "ability",
+      "name": "Journey of a Hero",
+      "pbgid": 2127657,
+      "attribName": "jeanne_d_arc_experience_gain_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Jeanne generates experience for completing tasks such as gathering resources, constructing buildings, capturing Sacred Sites, and participating in combat. Jeanne also gains a small trickle of experience over time.\nAfter earning sufficient experience Jeanne can level up, becoming more powerful and gaining access to unique abilities.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-journey-of-a-hero-1.png",
+      "active": "always",
+      "auraRange": 7.5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "jeanne-darc-peasant"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-merchant-guilds-1",
+      "baseId": "ability-merchant-guilds",
+      "type": "ability",
+      "name": "Merchant Guilds",
+      "pbgid": 186581,
+      "attribName": "market_passive_gold_generation_fre",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Active Traders generate 1 gold every 6 seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "market"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-merchant-guilds-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": []
+    },
+    {
+      "id": "ability-nock-your-arrows-1",
+      "baseId": "ability-nock-your-arrows",
+      "type": "ability",
+      "name": "Nock your arrows!",
+      "pbgid": 2127666,
+      "attribName": "jeanne_d_arc_rallying_call_archers_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Jeanne calls 2/4/6 Archers to her side. Rallies 2 additional Archers if used on a Neutral Settlement.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-nock-your-arrows-1.png",
+      "active": "always",
+      "auraRange": 1,
+      "cooldown": 240,
+      "effects": []
+    },
+    {
+      "id": "ability-return-of-the-saint-1",
+      "baseId": "ability-return-of-the-saint",
+      "type": "ability",
+      "name": "Return of the Saint",
+      "pbgid": 2141662,
+      "attribName": "jeanne_d_arc_buyback_1_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Pay tribute and instantly return Jeanne to the battlefield.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 100,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 100,
+        "popcap": 0
+      },
+      "producedBy": [
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-return-of-the-saint-1.png",
+      "active": "manual",
+      "auraRange": 1,
+      "cooldown": 120,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-return-of-the-saint-2",
+      "baseId": "ability-return-of-the-saint",
+      "type": "ability",
+      "name": "Return of the Saint",
+      "pbgid": 2141664,
+      "attribName": "jeanne_d_arc_buyback_2_fre_ha_01",
+      "age": 2,
+      "civs": [
+        "je"
+      ],
+      "description": "Pay tribute and instantly return Jeanne to the battlefield.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 250,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 250,
+        "popcap": 0
+      },
+      "producedBy": [
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-return-of-the-saint-2.png",
+      "active": "manual",
+      "auraRange": 1,
+      "cooldown": 120,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-return-of-the-saint-3",
+      "baseId": "ability-return-of-the-saint",
+      "type": "ability",
+      "name": "Return of the Saint",
+      "pbgid": 2141665,
+      "attribName": "jeanne_d_arc_buyback_3_fre_ha_01",
+      "age": 3,
+      "civs": [
+        "je"
+      ],
+      "description": "Pay tribute and instantly return Jeanne to the battlefield.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 500,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 500,
+        "popcap": 0
+      },
+      "producedBy": [
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-return-of-the-saint-3.png",
+      "active": "manual",
+      "auraRange": 1,
+      "cooldown": 120,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-return-of-the-saint-4",
+      "baseId": "ability-return-of-the-saint",
+      "type": "ability",
+      "name": "Return of the Saint",
+      "pbgid": 2141666,
+      "attribName": "jeanne_d_arc_buyback_4_fre_ha_01",
+      "age": 4,
+      "civs": [
+        "je"
+      ],
+      "description": "Pay tribute and instantly return Jeanne to the battlefield.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 1000,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 1000,
+        "popcap": 0
+      },
+      "producedBy": [
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-return-of-the-saint-4.png",
+      "active": "manual",
+      "auraRange": 1,
+      "cooldown": 120,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-riders-ready-1",
+      "baseId": "ability-riders-ready",
+      "type": "ability",
+      "name": "Riders, Ready!",
+      "pbgid": 2136635,
+      "attribName": "jeanne_d_arc_rallying_call_crossbows_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Jeanne calls 3 Riders to her side.\nCooldown: 240 Seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-riders-ready-1.png",
+      "active": "manual",
+      "auraRange": 1,
+      "cooldown": 240,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "jeanne-darc-mounted-archer",
+              "jeanne-darc-knight",
+              "jeanne-darc-markswoman",
+              "jeanne-darc-blast-cannon"
             ]
           },
           "effect": "change",
@@ -674,21 +5017,21 @@
         }
       ],
       "unlockedBy": [
-        "buildings/college-of-artillery"
+        "technologies/level-3-rider-companions"
       ]
     },
     {
-      "id": "ability-deploy-pavise-3",
-      "baseId": "ability-deploy-pavise",
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
       "type": "ability",
-      "name": "Deploy Pavise",
-      "pbgid": 212030,
-      "attribName": "deploy_pavise_fre",
-      "age": 3,
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
+      "age": 1,
       "civs": [
-        "fr"
+        "je"
       ],
-      "description": "Activate to increase weapon range by +1 tile and gain +5 ranged armor.\nRemains active for 30 seconds or until the Arbalétrier moves away.",
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -696,163 +5039,202 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-deploy-pavise-1.png",
-      "active": "manual",
-      "auraRange": 8.75,
-      "cooldown": 60,
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "id": [
-              "arbaletrier"
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "ability",
-          "duration": 30
-        },
-        {
-          "property": "rangedArmor",
-          "select": {
-            "id": [
-              "arbaletrier"
-            ]
-          },
-          "effect": "change",
-          "value": 5,
-          "type": "ability",
-          "duration": 30
-        }
-      ]
-    },
-    {
-      "id": "ability-keep-influence-3",
-      "baseId": "ability-keep-influence",
-      "type": "ability",
-      "name": "Keep Influence",
-      "pbgid": 1452233,
-      "attribName": "keep_influence_fre",
-      "age": 3,
-      "civs": [
-        "fr"
-      ],
-      "description": "Archery Ranges and Stables within influence have unit costs decreased by 20%.",
-      "classes": [],
-      "displayClasses": [],
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
       "producedBy": [
-        "keep"
+        "capital-town-center",
+        "town-center"
       ],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-keep-influence-1.png",
-      "active": "always",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
       "auraRange": 0,
+      "cooldown": 5,
       "effects": [
         {
-          "property": "goldCost",
+          "property": "unknown",
           "select": {
-            "class": [
-              [
-                "cavalry",
-                "melee"
-              ],
-              [
-                "ranged"
-              ]
+            "id": [
+              "town-center",
+              "capital-town-center"
             ]
           },
-          "effect": "multiply",
-          "value": 0.8,
-          "type": "ability"
-        },
-        {
-          "property": "foodCost",
-          "select": {
-            "class": [
-              [
-                "cavalry",
-                "melee"
-              ],
-              [
-                "ranged"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.8,
-          "type": "ability"
-        },
-        {
-          "property": "woodCost",
-          "select": {
-            "class": [
-              [
-                "cavalry",
-                "melee"
-              ],
-              [
-                "ranged"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.8,
+          "effect": "change",
+          "value": 0,
           "type": "ability"
         }
       ]
     },
     {
-      "id": "ability-royal-knight-charge-damage-2",
-      "baseId": "ability-royal-knight-charge-damage",
+      "id": "ability-spears-up-1",
+      "baseId": "ability-spears-up",
       "type": "ability",
-      "name": "Royal Knight Charge Damage",
-      "pbgid": 2032837,
-      "attribName": "lancer_charge_bonus_damage",
-      "age": 2,
+      "name": "Spears up!",
+      "pbgid": 2136639,
+      "attribName": "jeanne_d_arc_rallying_call_spearmen_fre_ha_01",
+      "age": 1,
       "civs": [
-        "fr"
+        "je"
       ],
-      "description": "Gain +3 melee attack damage for 5 seconds after charging.",
+      "description": "Jeanne calls 2 Spearmen to her side. Awards 50 experience if activated on a Neutral Settlement or a friendly Keep or Landmark.",
       "classes": [],
       "displayClasses": [],
       "costs": {
-        "gold": 0,
-        "wood": 0,
         "food": 0,
+        "wood": 0,
         "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
-        "time": 0,
         "popcap": 0
       },
       "producedBy": [],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-royal-knight-charge-damage-1.png",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-spears-up-1.png",
+      "active": "always",
+      "auraRange": 1,
+      "cooldown": 240,
+      "effects": []
+    },
+    {
+      "id": "ability-strength-of-heaven-1",
+      "baseId": "ability-strength-of-heaven",
+      "type": "ability",
+      "name": "Strength of Heaven",
+      "pbgid": 2139646,
+      "attribName": "jeanne_d_arc_inspired_ally_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Jeanne chooses a unit to bless, bestowing them with incredible strength and durability. The chosen warrior gains 300 health, 4 Melee and Ranged Armor, and +300% damage.\nJeanne may only bless one unit at a time.\nCooldown: 30 Seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-strength-of-heaven-1.png",
+      "active": "manual",
+      "auraRange": 1,
+      "cooldown": 30,
       "effects": [
         {
-          "property": "meleeAttack",
+          "property": "unknown",
           "select": {
             "id": [
-              "royal-knight"
+              "jeanne-darc-markswoman",
+              "jeanne-darc-blast-cannon"
             ]
           },
           "effect": "change",
-          "value": 3,
-          "type": "ability",
-          "duration": 5
+          "value": 0,
+          "type": "ability"
         }
       ],
-      "active": "always"
+      "unlockedBy": [
+        "technologies/level-4-field-commander"
+      ]
+    },
+    {
+      "id": "ability-talented-builder-1",
+      "baseId": "ability-talented-builder",
+      "type": "ability",
+      "name": "Talented Builder",
+      "pbgid": 2144250,
+      "attribName": "jeanne_d_arc_talented_builder_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Jeanne constructs buildings 33% faster.\nUpon reaching level 2, Jeanne shares her talents with nearby builders.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-talented-builder-1.png",
+      "active": "always",
+      "auraRange": 0.0025,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "jeanne-darc-peasant"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-to-arms-men-1",
+      "baseId": "ability-to-arms-men",
+      "type": "ability",
+      "name": "To arms, men!",
+      "pbgid": 2136640,
+      "attribName": "jeanne_d_arc_rallying_call_manatarms_fre_ha_01",
+      "age": 1,
+      "civs": [
+        "je"
+      ],
+      "description": "Jeanne calls 3 Champions to her side.\nCooldown: 240 Seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-to-arms-men-1.png",
+      "active": "manual",
+      "auraRange": 1,
+      "cooldown": 240,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "jeanne-darc-mounted-archer",
+              "jeanne-darc-knight",
+              "jeanne-darc-markswoman",
+              "jeanne-darc-blast-cannon"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "unlockedBy": [
+        "technologies/level-3-champion-companions"
+      ]
     },
     {
       "id": "ability-town-center-production-speed-castle-age-3",
@@ -863,7 +5245,7 @@
       "attribName": "town_center_production_age3_fre",
       "age": 3,
       "civs": [
-        "fr"
+        "je"
       ],
       "description": "Town Center production and research speed increased by 20%.",
       "classes": [],
@@ -873,12 +5255,13 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
       "producedBy": [
-        "town-center",
-        "capital-town-center"
+        "town-center"
       ],
       "icon": "https://data.aoe4world.com/images/buildings/town-center.png",
       "active": "always",
@@ -907,7 +5290,7 @@
       "attribName": "town_center_production_age1_fre",
       "age": 1,
       "civs": [
-        "fr"
+        "je"
       ],
       "description": "Town Center production and research speed increased by +10%.\nBonus increases further in later Ages.",
       "classes": [],
@@ -917,12 +5300,13 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
       "producedBy": [
-        "town-center",
-        "capital-town-center"
+        "town-center"
       ],
       "icon": "https://data.aoe4world.com/images/buildings/town-center.png",
       "active": "always",
@@ -951,7 +5335,7 @@
       "attribName": "town_center_production_age2_fre",
       "age": 2,
       "civs": [
-        "fr"
+        "je"
       ],
       "description": "Town Center production and research speed increased by +15%.\nBonus increases further in later Ages.",
       "classes": [],
@@ -961,12 +5345,13 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
       "producedBy": [
-        "town-center",
-        "capital-town-center"
+        "town-center"
       ],
       "icon": "https://data.aoe4world.com/images/buildings/town-center.png",
       "active": "always",
@@ -987,17 +5372,17 @@
       ]
     },
     {
-      "id": "ability-imperial-spies-3",
-      "baseId": "ability-imperial-spies",
+      "id": "ability-valorous-inspiration-1",
+      "baseId": "ability-valorous-inspiration",
       "type": "ability",
-      "name": "Imperial Spies",
-      "pbgid": 206838,
-      "attribName": "imperial_spies",
-      "age": 3,
+      "name": "Valorous Inspiration",
+      "pbgid": 2127606,
+      "attribName": "jeanne_d_arc_valorous_inspiration_fre_ha_01",
+      "age": 1,
       "civs": [
-        "ch"
+        "je"
       ],
-      "description": "Reveal location of enemy workers for 10 seconds.",
+      "description": "Increases the attack speed of all units within 4 tiles by 35% for 20 seconds.\nCooldown: 60 Seconds.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -1005,670 +5390,23 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
-      "producedBy": [
-        "imperial-palace"
-      ],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-imperial-spies-1.png",
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-valorous-inspiration-1.png",
       "active": "manual",
-      "auraRange": 250,
-      "cooldown": 120,
-      "effects": [
-        {
-          "property": "unknown",
-          "select": {
-            "id": [
-              "imperial-palace"
-            ]
-          },
-          "effect": "change",
-          "value": 0,
-          "type": "ability",
-          "duration": 10
-        }
-      ]
-    },
-    {
-      "id": "ability-spirit-way-4",
-      "baseId": "ability-spirit-way",
-      "type": "ability",
-      "name": "Spirit Way Ancestors",
-      "pbgid": 207131,
-      "attribName": "spirit_way",
-      "age": 4,
-      "civs": [
-        "ch"
-      ],
-      "description": "When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.",
-      "classes": [],
-      "displayClasses": [],
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [],
-      "icon": "https://data.aoe4world.com/images/buildings/spirit-way-3.png",
-      "active": "always",
-      "auraRange": 5,
-      "effects": [
-        {
-          "property": "attackSpeed",
-          "select": {
-            "id": [
-              "zhuge-nu",
-              "fire-lancer",
-              "grenadier"
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.83,
-          "type": "ability",
-          "duration": 10
-        },
-        {
-          "property": "healingRate",
-          "select": {
-            "id": [
-              "zhuge-nu",
-              "fire-lancer",
-              "grenadier"
-            ]
-          },
-          "effect": "change",
-          "value": 2,
-          "type": "ability",
-          "duration": 10
-        }
-      ],
-      "unlockedBy": [
-        "buildings/spirit-way"
-      ]
-    },
-    {
-      "id": "ability-the-long-wall-4",
-      "baseId": "ability-the-long-wall",
-      "type": "ability",
-      "name": "The Long Wall",
-      "pbgid": 2076747,
-      "attribName": "great_wall_buff_chi",
-      "age": 4,
-      "civs": [
-        "ch"
-      ],
-      "description": "All units standing on Walls gain +25% ranged damage.",
-      "classes": [],
-      "displayClasses": [],
-      "costs": {
-        "gold": 0,
-        "wood": 0,
-        "food": 0,
-        "stone": 0,
-        "total": 0,
-        "time": 0,
-        "popcap": 0
-      },
-      "producedBy": [],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-the-long-wall-1.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "ranged",
-                "infantry"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.25,
-          "type": "ability"
-        }
-      ],
-      "active": "always",
-      "auraRange": 0,
-      "unlockedBy": [
-        "buildings/great-wall-gatehouse"
-      ],
-      "activatedOn": [
-        "buildings/stone-wall"
-      ]
-    },
-    {
-      "id": "ability-forced-march-3",
-      "baseId": "ability-forced-march",
-      "type": "ability",
-      "name": "Forced March",
-      "pbgid": 180772,
-      "attribName": "infantry_forced_march_sul",
-      "age": 3,
-      "civs": [
-        "de"
-      ],
-      "description": "Activate to move 100% faster for 10 seconds, deactivates early when dealing damage.",
-      "classes": [],
-      "displayClasses": [],
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-forced-march-1.png",
-      "active": "manual",
-      "auraRange": 6.25,
-      "cooldown": 75,
-      "effects": [
-        {
-          "property": "moveSpeed",
-          "select": {
-            "class": [
-              [
-                "infantry"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 2,
-          "type": "ability",
-          "duration": 10
-        }
-      ]
-    },
-    {
-      "id": "ability-tower-of-victory-aura-2",
-      "baseId": "ability-tower-of-victory-aura",
-      "type": "ability",
-      "name": "Tower of Victory Aura",
-      "pbgid": 200847,
-      "attribName": "tower_of_victory_aura_sul",
-      "age": 2,
-      "civs": [
-        "de"
-      ],
-      "description": "Melee and ranged infantry who move near this Landmark permanently gain +20% attack speed.",
-      "classes": [],
-      "displayClasses": [],
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-tower-of-victory-aura-1.png",
-      "active": "always",
-      "auraRange": 7.5,
-      "effects": [
-        {
-          "property": "attackSpeed",
-          "select": {
-            "class": [
-              [
-                "infantry"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.83,
-          "type": "ability"
-        }
-      ]
-    },
-    {
-      "id": "ability-camel-support-4",
-      "baseId": "ability-camel-support",
-      "type": "ability",
-      "name": "Camel Support",
-      "pbgid": 200770,
-      "attribName": "camel_support_aura_abb",
-      "age": 4,
-      "civs": [
-        "ab"
-      ],
-      "description": "Infantry gain armor when near a camel unit.",
-      "classes": [],
-      "displayClasses": [],
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-camel-support-1.png",
-      "active": "always",
-      "auraRange": 5,
-      "effects": [
-        {
-          "property": "meleeArmor",
-          "select": {
-            "class": [
-              [
-                "infantry"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 2,
-          "type": "ability"
-        },
-        {
-          "property": "rangedArmor",
-          "select": {
-            "class": [
-              [
-                "infantry"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 2,
-          "type": "ability"
-        }
-      ],
-      "activatedOn": [
-        "units/camel-rider",
-        "units/camel-archer"
-      ],
-      "unlockedBy": [
-        "technologies/camel-support"
-      ]
-    },
-    {
-      "id": "ability-golden-age-tier-1-1",
-      "baseId": "ability-golden-age-tier-1",
-      "type": "ability",
-      "name": "Golden Age Tier 1",
-      "pbgid": 201563,
-      "attribName": "golden_age_tier_1",
-      "age": 1,
-      "civs": [
-        "ab"
-      ],
-      "description": "+15% Resource Gathering Rate",
-      "classes": [],
-      "displayClasses": [],
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [
-        "house-of-wisdom"
-      ],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png",
-      "active": "always",
-      "auraRange": 12.5,
-      "effects": [
-        {
-          "property": "foodGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.15,
-          "type": "ability"
-        },
-        {
-          "property": "huntGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.15,
-          "type": "ability"
-        },
-        {
-          "property": "goldGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.15,
-          "type": "ability"
-        },
-        {
-          "property": "stoneGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.15,
-          "type": "ability"
-        },
-        {
-          "property": "woodGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.15,
-          "type": "ability"
-        },
-        {
-          "property": "unknown",
-          "select": {
-            "id": [
-              "house-of-wisdom"
-            ]
-          },
-          "effect": "change",
-          "value": 0,
-          "type": "ability"
-        }
-      ]
-    },
-    {
-      "id": "ability-golden-age-tier-2-1",
-      "baseId": "ability-golden-age-tier-2",
-      "type": "ability",
-      "name": "Golden Age Tier 2",
-      "pbgid": 201593,
-      "attribName": "golden_age_tier_2",
-      "age": 1,
-      "civs": [
-        "ab"
-      ],
-      "description": "+15% Research Speed",
-      "classes": [],
-      "displayClasses": [],
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [
-        "house-of-wisdom"
-      ],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-2.png",
-      "active": "always",
-      "auraRange": 12.5,
-      "effects": [
-        {
-          "property": "researchSpeed",
-          "select": {
-            "class": [
-              [
-                "building"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.15,
-          "type": "ability"
-        },
-        {
-          "property": "unknown",
-          "select": {
-            "id": [
-              "house-of-wisdom"
-            ]
-          },
-          "effect": "change",
-          "value": 0,
-          "type": "ability"
-        }
-      ]
-    },
-    {
-      "id": "ability-golden-age-tier-3-1",
-      "baseId": "ability-golden-age-tier-3",
-      "type": "ability",
-      "name": "Golden Age Tier 3",
-      "pbgid": 201595,
-      "attribName": "golden_age_tier_3",
-      "age": 1,
-      "civs": [
-        "ab"
-      ],
-      "description": "+20% Production Speed, additional +5% Research Speed, additional +5% Resource Gathering Rate",
-      "classes": [],
-      "displayClasses": [],
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [
-        "house-of-wisdom"
-      ],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-3.png",
-      "active": "always",
-      "auraRange": 12.5,
-      "effects": [
-        {
-          "property": "productionSpeed",
-          "select": {
-            "class": [
-              [
-                "building"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "ability"
-        },
-        {
-          "property": "researchSpeed",
-          "select": {
-            "class": [
-              [
-                "building"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.05,
-          "type": "ability"
-        },
-        {
-          "property": "foodGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.05,
-          "type": "ability"
-        },
-        {
-          "property": "huntGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.05,
-          "type": "ability"
-        },
-        {
-          "property": "goldGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.05,
-          "type": "ability"
-        },
-        {
-          "property": "stoneGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.05,
-          "type": "ability"
-        },
-        {
-          "property": "woodGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.05,
-          "type": "ability"
-        },
-        {
-          "property": "unknown",
-          "select": {
-            "id": [
-              "house-of-wisdom"
-            ]
-          },
-          "effect": "change",
-          "value": 0,
-          "type": "ability"
-        }
-      ]
-    },
-    {
-      "id": "ability-house-of-wisdom-influence-1",
-      "baseId": "ability-house-of-wisdom-influence",
-      "type": "ability",
-      "name": "House of Wisdom Influence",
-      "pbgid": 1838842,
-      "attribName": "how_influence_abb",
-      "age": 1,
-      "civs": [
-        "ab"
-      ],
-      "description": "Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age.",
-      "classes": [],
-      "displayClasses": [],
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [
-        "house-of-wisdom"
-      ],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-house-of-wisdom-influence-1.png",
-      "active": "always",
-      "auraRange": 0,
-      "effects": [
-        {
-          "property": "fireArmor",
-          "select": {
-            "class": [
-              [
-                "building"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 5,
-          "type": "ability"
-        }
-      ]
-    },
-    {
-      "id": "ability-proselytize-1",
-      "baseId": "ability-proselytize",
-      "type": "ability",
-      "name": "Proselytize",
-      "pbgid": 2035316,
-      "attribName": "monk_conversion_faith_abb",
-      "age": 1,
-      "civs": [
-        "ab"
-      ],
-      "description": "Attempts to convert a single enemy unit within range of this Imam to your control.",
-      "classes": [],
-      "displayClasses": [],
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-proselytize-1.png",
-      "active": "manual",
-      "auraRange": 6.25,
-      "cooldown": 60,
-      "effects": []
-    },
-    {
-      "id": "ability-proselytize-4",
-      "baseId": "ability-proselytize",
-      "type": "ability",
-      "name": "Proselytize",
-      "pbgid": 2035316,
-      "attribName": "monk_conversion_faith_abb",
-      "age": 4,
-      "civs": [
-        "ab"
-      ],
-      "description": "Attempts to convert a single enemy unit within range of this Imam to your control.",
-      "classes": [],
-      "displayClasses": [],
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-proselytize-1.png",
-      "active": "manual",
-      "auraRange": 6.25,
+      "auraRange": 4,
       "cooldown": 60,
       "effects": [
         {
           "property": "unknown",
           "select": {
             "id": [
-              "imam"
+              "jeanne-darc-markswoman",
+              "jeanne-darc-blast-cannon"
             ]
           },
           "effect": "change",
@@ -1677,7 +5415,7 @@
         }
       ],
       "unlockedBy": [
-        "technologies/proselytization"
+        "technologies/level-4-gunpowder-monarch"
       ]
     },
     {
@@ -1699,6 +5437,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -1742,6 +5482,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -1848,6 +5590,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 300,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 300,
         "popcap": 0
       },
@@ -1895,6 +5639,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -1943,6 +5689,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 300,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 300,
         "popcap": 0
       },
@@ -1980,6 +5728,53 @@
       ]
     },
     {
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
+      "type": "ability",
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
+      "age": 1,
+      "civs": [
+        "ma"
+      ],
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
       "id": "ability-siege-festival-4",
       "baseId": "ability-siege-festival",
       "type": "ability",
@@ -1998,6 +5793,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 300,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 300,
         "popcap": 0
       },
@@ -2067,6 +5864,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -2115,6 +5914,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -2155,6 +5956,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -2239,6 +6042,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -2248,118 +6053,7 @@
       "icon": "https://data.aoe4world.com/images/buildings/kurultai-2.png",
       "active": "always",
       "auraRange": 10,
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "melee"
-              ],
-              [
-                "ranged"
-              ],
-              [
-                "siege"
-              ]
-            ],
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "ability"
-        },
-        {
-          "property": "meleeAttack",
-          "select": {
-            "class": [
-              [
-                "melee"
-              ],
-              [
-                "ranged"
-              ],
-              [
-                "siege"
-              ]
-            ],
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "ability"
-        },
-        {
-          "property": "fireAttack",
-          "select": {
-            "class": [
-              [
-                "melee"
-              ],
-              [
-                "ranged"
-              ],
-              [
-                "siege"
-              ]
-            ],
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "ability"
-        },
-        {
-          "property": "siegeAttack",
-          "select": {
-            "class": [
-              [
-                "melee"
-              ],
-              [
-                "ranged"
-              ],
-              [
-                "siege"
-              ]
-            ],
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "ability"
-        },
-        {
-          "property": "healingRate",
-          "select": {
-            "class": [
-              [
-                "melee"
-              ],
-              [
-                "ranged"
-              ],
-              [
-                "siege"
-              ]
-            ],
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "ability"
-        }
-      ]
+      "effects": []
     },
     {
       "id": "ability-maneuver-arrow-1",
@@ -2380,6 +6074,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -2439,6 +6135,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -2449,6 +6147,53 @@
       "active": "always",
       "auraRange": 0,
       "effects": []
+    },
+    {
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
+      "type": "ability",
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
+      "age": 1,
+      "civs": [
+        "mo"
+      ],
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
     },
     {
       "id": "ability-silk-road-1",
@@ -2469,6 +6214,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -2499,6 +6246,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -2588,6 +6337,293 @@
       "active": "always"
     },
     {
+      "id": "ability-emergency-repairs-1",
+      "baseId": "ability-emergency-repairs",
+      "type": "ability",
+      "name": "Emergency Repairs",
+      "pbgid": 2031580,
+      "attribName": "influence_auto_repair_hre",
+      "age": 1,
+      "civs": [
+        "od"
+      ],
+      "description": "Building repairs itself by 150 health every 1 second for 20 seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "house",
+        "outpost",
+        "mill",
+        "barracks",
+        "lumber-camp",
+        "dock",
+        "mining-camp",
+        "meinwerk-palace",
+        "aachen-chapel",
+        "blacksmith",
+        "archery-range",
+        "market",
+        "stable",
+        "town-center",
+        "capital-town-center",
+        "burgrave-palace",
+        "regnitz-cathedral",
+        "siege-workshop",
+        "keep",
+        "monastery",
+        "palace-of-swabia",
+        "elzbach-palace",
+        "university",
+        "great-palace-of-flensburg"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-emergency-repairs-1.png",
+      "active": "manual",
+      "auraRange": 0.0025,
+      "cooldown": 75,
+      "effects": [
+        {
+          "property": "repairRate",
+          "select": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 150,
+          "type": "ability",
+          "duration": 20
+        }
+      ]
+    },
+    {
+      "id": "ability-relic-garrisoned-dock-3",
+      "baseId": "ability-relic-garrisoned-dock",
+      "type": "ability",
+      "name": "Relic Garrisoned in Docks",
+      "pbgid": 2034812,
+      "attribName": "relic_dock_bonus_hre",
+      "age": 3,
+      "civs": [
+        "od"
+      ],
+      "description": "Increasing attack speed of military ships by +5%.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-relic-garrisoned-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "ship",
+                "springald"
+              ],
+              [
+                "ship",
+                "archer"
+              ],
+              [
+                "ship",
+                "incendiary"
+              ],
+              [
+                "warship"
+              ]
+            ],
+            "id": [
+              "galleass",
+              "grand-galley"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.95,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-relic-garrisoned-keep-3",
+      "baseId": "ability-relic-garrisoned-keep",
+      "type": "ability",
+      "name": "Relic Garrisoned in Defensive Structures",
+      "pbgid": 195371,
+      "attribName": "relic_tower_keep_bonus_hre",
+      "age": 3,
+      "civs": [
+        "od"
+      ],
+      "description": "• Armor increased by +50%\n• Damage increased by +35%\n• Sight range increased by +25%\n• Weapon range increased by +20%",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "outpost",
+        "stone-wall-tower",
+        "keep",
+        "elzbach-palace"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-relic-garrisoned-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "fireArmor",
+          "select": {
+            "id": [
+              "outpost",
+              "stone-wall-tower",
+              "keep",
+              "elzbach-palace"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.67,
+          "type": "ability"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "id": [
+              "outpost",
+              "stone-wall-tower",
+              "keep",
+              "elzbach-palace"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.67,
+          "type": "ability"
+        },
+        {
+          "property": "rangedAttack",
+          "select": {
+            "id": [
+              "outpost",
+              "stone-wall-tower",
+              "keep",
+              "elzbach-palace"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.74,
+          "type": "ability"
+        },
+        {
+          "property": "maxRange",
+          "select": {
+            "id": [
+              "outpost",
+              "stone-wall-tower",
+              "keep",
+              "elzbach-palace"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.83,
+          "type": "ability"
+        },
+        {
+          "property": "lineOfSight",
+          "select": {
+            "id": [
+              "outpost",
+              "stone-wall-tower",
+              "keep",
+              "elzbach-palace"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.8,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
+      "type": "ability",
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
+      "age": 1,
+      "civs": [
+        "od"
+      ],
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center",
+        "palace-of-swabia"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
       "id": "ability-attack-drums-1",
       "baseId": "ability-attack-drums",
       "type": "ability",
@@ -2606,6 +6642,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -2664,6 +6702,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -2793,6 +6833,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -2907,6 +6949,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -2965,6 +7009,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -3005,6 +7051,53 @@
       ]
     },
     {
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
+      "type": "ability",
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
+      "age": 1,
+      "civs": [
+        "ot"
+      ],
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
       "id": "ability-trade-protection-4",
       "baseId": "ability-trade-protection",
       "type": "ability",
@@ -3023,6 +7116,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -3101,6 +7196,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -3158,6 +7255,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -3204,6 +7303,53 @@
       ]
     },
     {
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
+      "type": "ability",
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
+      "age": 1,
+      "civs": [
+        "ru"
+      ],
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
       "id": "ability-saints-blessing-3",
       "baseId": "ability-saints-blessing",
       "type": "ability",
@@ -3222,6 +7368,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -3392,6 +7540,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "popcap": 0
       },
@@ -3409,6 +7559,446 @@
           },
           "effect": "multiply",
           "value": 0.77,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-ascetic-recovery-1",
+      "baseId": "ability-ascetic-recovery",
+      "type": "ability",
+      "name": "Ascetic Recovery",
+      "pbgid": 2127510,
+      "attribName": "shaolin_monk_passive_heal_self",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "The Shaolin Monk regains health when out of combat.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ascetic-recovery-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "shaolin-monk"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-body-of-iron-1",
+      "baseId": "ability-body-of-iron",
+      "type": "ability",
+      "name": "Body of Iron",
+      "pbgid": 2127511,
+      "attribName": "shaolin_monk_ranged_damage_reduction",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "The Shaolin Monk hardens his body and reduces incoming ranged damage by 50% for 15 seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-body-of-iron-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 90,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "shaolin-monk"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-bounty-of-solitude-1",
+      "baseId": "ability-bounty-of-solitude",
+      "type": "ability",
+      "name": "Bounty of Solitude",
+      "pbgid": 2127403,
+      "attribName": "meditation_gardens_resource_generation",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "Generates resources depending on the type of resources nearby. Enemy units within 9 tiles reduce the rate at which resources are generated.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "meditation-gardens"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-bounty-of-solitude-1.png",
+      "active": "always",
+      "auraRange": 9,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "meditation-gardens"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-divine-charge-1",
+      "baseId": "ability-divine-charge",
+      "type": "ability",
+      "name": "Divine Charge",
+      "pbgid": 2145464,
+      "attribName": "toggle_temple_of_the_sun_damage_chi_ha_01",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "Cavalry units deal +20% damage.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "temple-of-the-sun"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-divine-charge-1.png",
+      "active": "toggle",
+      "auraRange": 0,
+      "toggleGroup": "temple_of_the_sun",
+      "effects": [
+        {
+          "property": "meleeAttack",
+          "select": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "ability",
+          "duration": 20
+        }
+      ],
+      "activatedOn": [
+        "buildings/temple-of-the-sun"
+      ]
+    },
+    {
+      "id": "ability-divine-defense-1",
+      "baseId": "ability-divine-defense",
+      "type": "ability",
+      "name": "Divine Defense",
+      "pbgid": 2145449,
+      "attribName": "toggle_temple_of_the_sun_range_chi_ha_01",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "Gunpowder units and defensive structures gain +1 range.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "temple-of-the-sun"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-divine-defense-1.png",
+      "active": "toggle",
+      "auraRange": 0,
+      "toggleGroup": "temple_of_the_sun",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "gunpowder"
+              ]
+            ],
+            "id": [
+              "outpost",
+              "keep",
+              "stone-wall-tower"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "ability",
+          "duration": 1
+        }
+      ],
+      "activatedOn": [
+        "buildings/temple-of-the-sun"
+      ]
+    },
+    {
+      "id": "ability-divine-haste-1",
+      "baseId": "ability-divine-haste",
+      "type": "ability",
+      "name": "Divine Haste",
+      "pbgid": 2145444,
+      "attribName": "toggle_temple_of_the_sun_speed_chi_ha_01",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "Infantry units move 15% faster.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "temple-of-the-sun"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-divine-haste-1.png",
+      "active": "toggle",
+      "auraRange": 0,
+      "toggleGroup": "temple_of_the_sun",
+      "effects": [
+        {
+          "property": "moveSpeed",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 15,
+          "type": "ability"
+        }
+      ],
+      "activatedOn": [
+        "buildings/temple-of-the-sun"
+      ]
+    },
+    {
+      "id": "ability-divine-vitality-1",
+      "baseId": "ability-divine-vitality",
+      "type": "ability",
+      "name": "Divine Vitality",
+      "pbgid": 2145465,
+      "attribName": "toggle_temple_of_the_sun_regen_chi_ha_01",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "Units out of combat heal 2 health per second.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "temple-of-the-sun"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-divine-vitality-1.png",
+      "active": "toggle",
+      "auraRange": 0,
+      "toggleGroup": "temple_of_the_sun",
+      "effects": [
+        {
+          "property": "healingRate",
+          "select": {
+            "class": [
+              [
+                "melee"
+              ],
+              [
+                "ranged"
+              ],
+              [
+                "siege"
+              ],
+              [
+                "cavalry"
+              ]
+            ],
+            "id": [
+              "villager",
+              "trader",
+              "dragon-villager"
+            ]
+          },
+          "effect": "change",
+          "value": 2,
+          "type": "ability"
+        }
+      ],
+      "activatedOn": [
+        "buildings/temple-of-the-sun"
+      ]
+    },
+    {
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
+      "type": "ability",
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "capital-town-center",
+        "town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "town-center",
+              "capital-town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-supervise-1",
+      "baseId": "ability-supervise",
+      "type": "ability",
+      "name": "Supervise",
+      "pbgid": 182138,
+      "attribName": "official_supervise_building_target_chi",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "Supervise a research, production or drop-off building with an Imperial Official to make it work 150% faster. Resource drop off buildings receive 20% more resources. Cannot be used on Landmarks or Town Centers.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-supervise-1.png",
+      "active": "manual",
+      "auraRange": 1.25,
+      "cooldown": 1,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "imperial-official"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
           "type": "ability"
         }
       ]

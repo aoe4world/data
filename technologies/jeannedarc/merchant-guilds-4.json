@@ -1,0 +1,50 @@
+{
+  "id": "merchant-guilds-4",
+  "baseId": "merchant-guilds",
+  "type": "technology",
+  "name": "Merchant Guilds",
+  "pbgid": 2137695,
+  "attribName": "upgrade_market_trickle_fre",
+  "age": 4,
+  "civs": [
+    "je"
+  ],
+  "description": "Active Traders generate 1 gold every 6 seconds.",
+  "classes": [
+    "trade",
+    "technology"
+  ],
+  "displayClasses": [
+    "Trade Technology"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 200,
+    "wood": 0,
+    "stone": 0,
+    "gold": 500,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 700,
+    "popcap": 0,
+    "time": 60
+  },
+  "producedBy": [
+    "chamber-of-commerce",
+    "market"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/merchant-guilds-4.png",
+  "effects": [
+    {
+      "property": "goldGatherRate",
+      "select": {
+        "id": [
+          "trader"
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "passive"
+    }
+  ]
+}

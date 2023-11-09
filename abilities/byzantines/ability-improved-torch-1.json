@@ -1,0 +1,45 @@
+{
+  "id": "ability-improved-torch-1",
+  "baseId": "ability-improved-torch",
+  "type": "ability",
+  "name": "Improved Torch",
+  "pbgid": 2121987,
+  "attribName": "hippodrome_scout_torch_byz",
+  "age": 1,
+  "civs": [
+    "by"
+  ],
+  "description": "Torch damage improved by a nearby Scout.",
+  "classes": [],
+  "displayClasses": [],
+  "costs": {},
+  "producedBy": [],
+  "icon": "https://data.aoe4world.com/images/abilities/ability-improved-torch-1.png",
+  "effects": [
+    {
+      "property": "fireAttack",
+      "select": {
+        "class": [
+          [
+            "infantry"
+          ],
+          [
+            "cavalry"
+          ],
+          [
+            "worker"
+          ],
+          [
+            "religious"
+          ]
+        ]
+      },
+      "effect": "change",
+      "value": 1.25,
+      "type": "ability"
+    }
+  ],
+  "activatedOn": [
+    "units/scout"
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "id": "gilded-horseman-3",
+  "baseId": "gilded-horseman",
+  "type": "unit",
+  "name": "Veteran Gilded Horseman",
+  "pbgid": 8642669,
+  "attribName": "unit_horseman_3_hre_ha_01",
+  "age": 3,
+  "civs": [
+    "od"
+  ],
+  "description": "Fast cavalry effective at raiding, flanking, and countering ranged units.\n+ High movement speed\n- Weak against melee units\n- Countered by Spearmen",
+  "classes": [
+    "light",
+    "melee",
+    "cavalry"
+  ],
+  "displayClasses": [
+    "Light Melee Cavalry"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 200,
+    "wood": 40,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 240,
+    "popcap": 2,
+    "time": 27
+  },
+  "producedBy": [
+    "stable"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/gilded-horseman-3.png",
+  "hitpoints": 310,
+  "weapons": [
+    {
+      "name": "Spear",
+      "type": "melee",
+      "damage": 18,
+      "speed": 1.75,
+      "range": {
+        "min": 0,
+        "max": 0.2875
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "ranged"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 18,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 15,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.125
+      },
+      "attribName": "weapon_horseman_3_hre_ha_01",
+      "pbgid": 2126999
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 18,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch_horseman_hre_ha_01",
+      "pbgid": 2126944
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 3
+    }
+  ],
+  "sight": {
+    "line": 28,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.875
+  }
+}

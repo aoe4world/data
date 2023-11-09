@@ -1,0 +1,111 @@
+{
+  "id": "red-palace-3",
+  "baseId": "red-palace",
+  "type": "building",
+  "name": "Red Palace",
+  "pbgid": 5998963,
+  "attribName": "building_landmark_age2_la_chateau_rouge_fre_ha_01",
+  "age": 3,
+  "civs": [
+    "je"
+  ],
+  "description": "Acts as a Keep. Features high-damage arbalest emplacements. Each garrisoned unit adds an additional arbalest.\nActivates an Arbalest emplacement on all Keeps and Town Centers.",
+  "classes": [
+    "age",
+    "iv",
+    "-",
+    "defensive",
+    "landmark"
+  ],
+  "displayClasses": [
+    "Age IV - Defensive Landmark"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 2400,
+    "wood": 0,
+    "stone": 0,
+    "gold": 1200,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 3600,
+    "popcap": 0,
+    "time": 250
+  },
+  "producedBy": [
+    "villager",
+    "jeanne-darc-peasant"
+  ],
+  "icon": "https://data.aoe4world.com/images/buildings/red-palace-3.png",
+  "hitpoints": 5000,
+  "weapons": [
+    {
+      "name": "Arbalest",
+      "type": "ranged",
+      "damage": 60,
+      "speed": 1.5,
+      "range": {
+        "min": 0,
+        "max": 10
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 50,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.125,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 1,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 2
+      },
+      "attribName": "weapon_keep_arbalest_a",
+      "pbgid": 1907157
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 50
+    },
+    {
+      "type": "fire",
+      "value": 5
+    }
+  ],
+  "sight": {
+    "line": 50,
+    "height": 501
+  },
+  "garrison": {
+    "capacity": 15,
+    "classes": [
+      "infantry",
+      "villager",
+      "infantry ranged",
+      "monk",
+      "cavalry"
+    ]
+  },
+  "influences": [
+    "Archery Range and Stable unit costs reduced by -20%."
+  ]
+}

@@ -4,16 +4,23 @@ import path from "path";
 import { FOLDERS, ITEM_TYPES } from "../lib/config";
 import { CIVILIZATIONS } from "../lib/config/civs";
 import { writeJson } from "../lib/files/writeData";
-import { civConfig } from "../types/civs";
+import { CIVILIZATION_BY_SLUG, CivConfig } from "../types/civs";
 import { Item } from "../types/items";
-import { attribFile, hardcodedDiscovery, hardcodedDiscoveryCommon, racesMap } from "./config";
+import { attribFile, hardcodedDiscovery, hardcodedDiscoveryCommon } from "./config";
 import { workarounds } from "./workarounds";
 import { parseItemFromAttribFile, maybeOnKey } from "./parse";
 import { getTranslation as t } from "./translations";
 import { getXmlData, parseXmlFile } from "./xml";
 import { getEssenceData, guessAppropriateEssenceFile } from "./essence";
 
-const runType = process.argv[2] === "--essence" ? "essence" : "xml";
+const runType = process.argv.some((arg) => arg === "--essence") ? "essence" : "xml";
+let runCiv: CivConfig | undefined;
+if (process.argv.some((arg) => arg === "--civ")) {
+  const runCivString = process.argv[process.argv.findIndex((arg) => arg === "--civ") + 1];
+  runCiv = runCivString?.length == 2 ? CIVILIZATIONS[runCivString] : CIVILIZATION_BY_SLUG[runCivString?.toLowerCase()];
+  if (!runCiv) throw Error(`Could not find civ ${runCivString}, valid options are ${Object.keys(CIVILIZATION_BY_SLUG).join(", ")} or the 2 letter abbreviation`);
+}
+
 const getData = runType == "essence" ? getEssenceData : getXmlData;
 
 export type RunContext = {
@@ -28,7 +35,7 @@ export type RunContext = {
 // 3. Then, for each building in their, folllow the building/research options
 // 4. Make a list of all to import items, starting at buildings
 
-async function buildTechTree(civ: civConfig, context: RunContext = { debug: false, getData, race: racesMap[civ.slug], runner: runType }) {
+async function buildTechTree(civ: CivConfig, context: RunContext = { debug: false, getData, race: civ.attribName, runner: runType }) {
   const techtree = {};
   const files = new Set<string>();
   const items = new Map<string, Item>();
@@ -82,7 +89,7 @@ async function buildTechTree(civ: civConfig, context: RunContext = { debug: fals
     }
 
     if (items.has(item.id) && items.get(item.id)!.type == item.type) {
-      throw new Error(
+      console.error(
         `Duplicate item id ${item.id} in ${file} conflicts with ${items.get(item.id)!.attribName} ${[...files.values()]
           .filter((x) => x?.includes(items.get(item.id)!.attribName!))
           .join(", ")}`
@@ -186,7 +193,7 @@ function getCivInfo(army_bag: any, bps_race_bag: any) {
   if (!army_bag || !bps_race_bag) return;
   const overview = army_bag.ui?.global_traits_summary.map((x) => {
     const title = t(x.title);
-    const description = t(x.description);
+    const description = x.description_formatter?.value ? t(x.description_formatter.formatter, x.description_formatter.formatter_arguments) : t(x.description);
     const list = description.startsWith("• ")
       ? description
           .split("• ")
@@ -212,9 +219,10 @@ const itemTypeMap = {
   ability: ITEM_TYPES.ABILITIES,
 };
 
-function persistItem(item: Item, civ: civConfig) {
+function persistItem(item: Item, civ: CivConfig) {
   writeJson(`${FOLDERS[itemTypeMap[item.type]].DATA}/${civ.slug}/${item.id}.json`, item, { log: false });
 }
 
 ensureFolderStructure();
-for (const civ of Object.values(CIVILIZATIONS)) buildTechTree(civ);
+if (runCiv) buildTechTree(runCiv);
+else for (const civ of Object.values(CIVILIZATIONS)) buildTechTree(civ);

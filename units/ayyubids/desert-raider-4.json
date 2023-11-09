@@ -1,0 +1,139 @@
+{
+  "id": "desert-raider-4",
+  "baseId": "desert-raider",
+  "type": "unit",
+  "name": "Elite Desert Raider",
+  "pbgid": 8731241,
+  "attribName": "unit_mamluk_4_abb_ha_01",
+  "age": 4,
+  "civs": [
+    "ay"
+  ],
+  "description": "Versatile Cavalry unit that can swap between ranged and melee attacks with a toggle.\n+ Effective against Light Infantry in Ranged Mode\n+ Effective against Cavalry in Melee Mode\n- High cost\n- Weak to Ranged units",
+  "classes": [
+    "light",
+    "ranged",
+    "and",
+    "melee",
+    "camel"
+  ],
+  "displayClasses": [
+    "Light Ranged and Melee Camel"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 80,
+    "wood": 50,
+    "stone": 0,
+    "gold": 50,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 180,
+    "popcap": 1,
+    "time": 30
+  },
+  "producedBy": [
+    "archery-range",
+    "stable"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/desert-raider-4.png",
+  "hitpoints": 175,
+  "weapons": [
+    {
+      "name": "Sword",
+      "type": "melee",
+      "damage": 19,
+      "speed": 1.375,
+      "range": {
+        "min": 0,
+        "max": 0.2875
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 19,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0.75
+      },
+      "attribName": "weapon_mamluk_melee_4_abb_ha_01",
+      "pbgid": 2135413
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch_horseman",
+      "pbgid": 127935
+    },
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 11,
+      "speed": 1.25,
+      "range": {
+        "min": 0,
+        "max": 4.5
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.25,
+        "reload": 0.625,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_mamluk_ranged_4_abb_ha_01",
+      "pbgid": 2135415
+    }
+  ],
+  "armor": [
+    {
+      "type": "melee",
+      "value": 7
+    }
+  ],
+  "sight": {
+    "line": 38,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.625
+  }
+}

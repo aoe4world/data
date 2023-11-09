@@ -4,7 +4,8 @@
   "civ": {
     "name": "Mongols",
     "abbr": "mo",
-    "slug": "mongols"
+    "slug": "mongols",
+    "attribName": "mongol"
   },
   "data": [
     {
@@ -39,6 +40,8 @@
             "wood": 0,
             "stone": 0,
             "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 0,
             "popcap": 0
           },
@@ -102,6 +105,8 @@
             "wood": 0,
             "stone": 0,
             "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 0,
             "popcap": 0
           },
@@ -157,6 +162,8 @@
             "wood": 0,
             "stone": 0,
             "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 0,
             "popcap": 0
           },
@@ -256,6 +263,8 @@
             "wood": 0,
             "stone": 0,
             "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 0,
             "popcap": 0
           },
@@ -265,118 +274,7 @@
           "icon": "https://data.aoe4world.com/images/buildings/kurultai-2.png",
           "active": "always",
           "auraRange": 10,
-          "effects": [
-            {
-              "property": "rangedAttack",
-              "select": {
-                "class": [
-                  [
-                    "melee"
-                  ],
-                  [
-                    "ranged"
-                  ],
-                  [
-                    "siege"
-                  ]
-                ],
-                "id": [
-                  "villager"
-                ]
-              },
-              "effect": "multiply",
-              "value": 1.2,
-              "type": "ability"
-            },
-            {
-              "property": "meleeAttack",
-              "select": {
-                "class": [
-                  [
-                    "melee"
-                  ],
-                  [
-                    "ranged"
-                  ],
-                  [
-                    "siege"
-                  ]
-                ],
-                "id": [
-                  "villager"
-                ]
-              },
-              "effect": "multiply",
-              "value": 1.2,
-              "type": "ability"
-            },
-            {
-              "property": "fireAttack",
-              "select": {
-                "class": [
-                  [
-                    "melee"
-                  ],
-                  [
-                    "ranged"
-                  ],
-                  [
-                    "siege"
-                  ]
-                ],
-                "id": [
-                  "villager"
-                ]
-              },
-              "effect": "multiply",
-              "value": 1.2,
-              "type": "ability"
-            },
-            {
-              "property": "siegeAttack",
-              "select": {
-                "class": [
-                  [
-                    "melee"
-                  ],
-                  [
-                    "ranged"
-                  ],
-                  [
-                    "siege"
-                  ]
-                ],
-                "id": [
-                  "villager"
-                ]
-              },
-              "effect": "multiply",
-              "value": 1.2,
-              "type": "ability"
-            },
-            {
-              "property": "healingRate",
-              "select": {
-                "class": [
-                  [
-                    "melee"
-                  ],
-                  [
-                    "ranged"
-                  ],
-                  [
-                    "siege"
-                  ]
-                ],
-                "id": [
-                  "villager"
-                ]
-              },
-              "effect": "change",
-              "value": 1,
-              "type": "ability"
-            }
-          ]
+          "effects": []
         }
       ]
     },
@@ -412,6 +310,8 @@
             "wood": 0,
             "stone": 0,
             "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 0,
             "popcap": 0
           },
@@ -486,6 +386,8 @@
             "wood": 0,
             "stone": 0,
             "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 0,
             "popcap": 0
           },
@@ -496,6 +398,68 @@
           "active": "always",
           "auraRange": 0,
           "effects": []
+        }
+      ]
+    },
+    {
+      "id": "ability-ring-the-town-bell",
+      "name": "Ring the Town Bell",
+      "type": "ability",
+      "civs": [
+        "mo"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "variations": [
+        {
+          "id": "ability-ring-the-town-bell-1",
+          "baseId": "ability-ring-the-town-bell",
+          "type": "ability",
+          "name": "Ring the Town Bell",
+          "pbgid": 2149990,
+          "attribName": "town_center_town_bell",
+          "age": 1,
+          "civs": [
+            "mo"
+          ],
+          "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "town-center",
+            "capital-town-center"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+          "active": "manual",
+          "auraRange": 0,
+          "cooldown": 5,
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "town-center",
+                  "capital-town-center"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability"
+            }
+          ]
         }
       ]
     },
@@ -530,6 +494,8 @@
             "wood": 0,
             "stone": 0,
             "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 0,
             "popcap": 0
           },
@@ -575,6 +541,8 @@
             "wood": 0,
             "stone": 0,
             "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 0,
             "popcap": 0
           },
