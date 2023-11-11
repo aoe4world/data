@@ -3,6 +3,7 @@ import { Ability, Building, Item, ItemType, Modifier, Selector, Technology, Unit
 import { KHAGANTE_SPAWN_COUNTS, attribFile } from "./config";
 
 const workarounds = new Map<string, Override>();
+const NO_COSTS = { food: 0, wood: 0, stone: 0, gold: 0, vizier: 0, oliveoil: 0, total: 0, time: 0, popcap: 0 };
 
 // –––––– Building Emplacements and Garrisons ––––––
 
@@ -616,6 +617,62 @@ workaround("Fix missing info Golden Age Tier 3", {
   },
 });
 
+workaround("Set Medical Center requirements", {
+  predicate: (item) => item.baseId === "ability-medical-centers",
+  mutator: (item) => {
+    item = item as Ability;
+    item.unlockedBy = ["technologies/medical-centers"];
+    item.description = "Heals nearby units for +2 health every 1 second";
+  },
+});
+
+workaround("Remove Medical Center from Ayyubids", {
+  predicate: (item) => item.civs[0] == "ay" && item.baseId === "ability-medical-centers" && item.civs.includes("ay"),
+  mutator: (item) => {
+    (item as any)._skip = true;
+  },
+});
+
+workaround("Remove Extra Materials from any civs that's not China", {
+  predicate: (item) => item.baseId === "ability-extra-materials" && item.civs[0] !== "ch",
+  mutator: (item) => {
+    (item as any)._skip = true;
+  },
+});
+
+const jeanneHeroLevels = {
+  1: ["jeanne-darc-peasant"],
+  2: ["jeanne-darc-hunter", "jeanne-darc-woman-at-arms"],
+  3: ["jeanne-darc-mounted-archer", "jeanne-knight"],
+  4: ["jeanne-darc-markswoman", "jeanne-darc-blast-cannon"],
+};
+
+const jeanneHeroes = Object.values(jeanneHeroLevels).flat();
+
+const jeanneReturnOfSaintCosts = {
+  1: generateCosts({ gold: 100, popcap: 1 }),
+  2: generateCosts({ gold: 250, popcap: 1 }),
+  3: generateCosts({ gold: 500, popcap: 1 }),
+  4: generateCosts({ gold: 1000, popcap: 1 }),
+};
+
+workaround("Set Jeanne buyback costs on heroes", {
+  predicate: (item) => item.type === "unit" && jeanneHeroes.includes(item.baseId),
+  mutator: (item) => {
+    item = item as Ability;
+    item.costs = jeanneReturnOfSaintCosts[Object.keys(jeanneHeroLevels).find((x) => jeanneHeroLevels[x].includes(item.baseId))!];
+  },
+});
+
+workaround("Add 'Hero' class to Jeanne heroes", {
+  predicate: (item) => item.type === "unit" && jeanneHeroes.includes(item.baseId),
+  mutator: (item) => {
+    item = item as Ability;
+    item.displayClasses.push("Hero");
+    item.classes.push("hero");
+  },
+});
+
 workaround("Fix bad info in Coastal Navigation where this is only place where location string is used instead of integer in formatter_arguments", {
   predicate: (item) => item.type === "ability" && item.attribName === "docks_speed_bonus_mal",
   mutator: (item) => {
@@ -846,11 +903,10 @@ workaround("Set Body of Iron active to manual", {
   },
 });
 
-workaround("Set Ancient Techniques to be produced at University", {
+workaround("Remove Ancient Techniques from Zhu Xi", {
   predicate: (item) => item.type === "technology" && item.civs[0] == "zx" && item.baseId === "ancient-techniques",
   mutator: (item) => {
-    item = item as Technology;
-    item.producedBy = ["university"];
+    (item as any)._skip = true;
   },
 });
 
@@ -1005,6 +1061,13 @@ workaround("Fix Trapezites description", {
   predicate: (item) => item.type === "technology" && item.baseId === "trapezites",
   mutator: (item) => {
     item.description = "Scouts enhance the torch damage of nearby units by 25%";
+  },
+});
+
+workaround("Remove Tower of The Sultan from Byzantines", {
+  predicate: (item) => item.civs[0] == "by" && item.type === "unit" && item.baseId === "tower-of-the-sultan",
+  mutator: (item) => {
+    (item as any)._skip = true;
   },
 });
 
@@ -1492,8 +1555,7 @@ workaround("HRE Civ Bonus: 'Cost of emplacements on Outposts, Wall Towers, and K
   },
 });
 
-const NO_COSTS = { gold: 0, wood: 0, food: 0, stone: 0, total: 0, time: 0 };
-const MILITIA_COSTS = { gold: 0, wood: 0, food: 20, stone: 0, total: 20, time: 0, popcap: 1 };
+const MILITIA_COSTS = generateCosts({ food: 20 });
 
 function discountCosts(costs: Item["costs"], discount: number) {
   const newCosts = {
@@ -1509,6 +1571,12 @@ function discountCosts(costs: Item["costs"], discount: number) {
     popcap: costs.popcap,
     time: costs.time,
   };
+}
+
+function generateCosts(costs: Partial<Item["costs"]>, addTo: Item["costs"] = NO_COSTS) {
+  const newCosts = Object.entries(addTo).reduce((acc, [key, value]) => ({ ...acc, [key]: value + (costs[key] || 0) }), {} as Item["costs"]);
+  newCosts.total = newCosts.gold + newCosts.wood + newCosts.food + newCosts.stone + (newCosts.oliveoil ?? 0);
+  return newCosts;
 }
 
 function overrideAge(ids: string[], age: number, civs?: string[]) {

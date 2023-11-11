@@ -12,38 +12,6 @@
   },
   "data": [
     {
-      "id": "ability--translation-not-found-undefined-1",
-      "baseId": "ability-golden-age-tier-1",
-      "type": "ability",
-      "name": "Golden Age Tier 1",
-      "pbgid": 201563,
-      "attribName": "golden_age_tier_1",
-      "age": 1,
-      "civs": [
-        "ab"
-      ],
-      "description": "+15% Resource Gathering Rate",
-      "classes": [],
-      "displayClasses": [],
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [
-        "house-of-wisdom"
-      ],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png",
-      "active": "always",
-      "auraRange": 12.5,
-      "effects": []
-    },
-    {
       "id": "ability-camel-support-4",
       "baseId": "ability-camel-support",
       "type": "ability",
@@ -146,6 +114,103 @@
               "desert-raider",
               "atabeg",
               "dervish"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-conversion-1",
+      "baseId": "ability-conversion",
+      "type": "ability",
+      "name": "Conversion",
+      "pbgid": 192685,
+      "attribName": "monk_conversion",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "Attempts to convert enemy units within range of this Monk to your control.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-conversion-1.png",
+      "active": "manual",
+      "auraRange": 4.75,
+      "cooldown": 120,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "monk",
+              "scholar",
+              "imam",
+              "dervish",
+              "warrior-monk",
+              "shaman",
+              "prelate",
+              "shinto-priest",
+              "buddhist-monk",
+              "shaolin-monk"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-detonate-1",
+      "baseId": "ability-detonate",
+      "type": "ability",
+      "name": "Detonate",
+      "pbgid": 2013822,
+      "attribName": "fireship_self_detonate",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "Detonate the ship.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-detonate-1.png",
+      "active": "manual",
+      "auraRange": 2,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "class": [
+              [
+                "ship",
+                "incendiary"
+              ]
             ]
           },
           "effect": "change",
@@ -294,6 +359,100 @@
           "value": 5,
           "type": "ability"
         }
+      ]
+    },
+    {
+      "id": "ability-man-the-sails-1",
+      "baseId": "ability-man-the-sails",
+      "type": "ability",
+      "name": "Man The Sails",
+      "pbgid": 2101656,
+      "attribName": "naval_man_the_sails",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "Activate to move 40% faster for 10 seconds, deactivates early when dealing damage.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-man-the-sails-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 60,
+      "effects": [
+        {
+          "property": "moveSpeed",
+          "select": {
+            "class": [
+              [
+                "ship",
+                "springald"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 40,
+          "type": "ability",
+          "duration": 10
+        }
+      ]
+    },
+    {
+      "id": "ability-medical-centers-1",
+      "baseId": "ability-medical-centers",
+      "type": "ability",
+      "name": "Medical Centers",
+      "pbgid": 201837,
+      "attribName": "medical_centers_abb",
+      "age": 1,
+      "civs": [
+        "ab"
+      ],
+      "description": "Heals nearby units for +2 health every 1 second",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "keep"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-medical-centers-1.png",
+      "active": "always",
+      "auraRange": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "keep"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ],
+      "unlockedBy": [
+        "technologies/medical-centers"
       ]
     },
     {

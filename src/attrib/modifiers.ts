@@ -5,7 +5,7 @@ import { Item, Modifier, Selector } from "../types/items";
 // Common class/id presets
 const common = {
   allMeleeUnitsExceptSiege: { class: [["melee"]] } as Required<Modifier>["select"],
-  allNonSiegeUnits: { class: [["infantry"], ["cavalry"], ["worker"], ["religious"]] } as Required<Modifier>["select"],
+  allNonSiegeUnits: { class: [["infantry"], ["cavalry"], ["worker"], ["religious"], ["camel"]] } as Required<Modifier>["select"],
   allMilitaryLand: { class: [["infantry"], ["cavalry", "melee"], ["cavalry", "ranged"], ["siege"]] } as Required<Modifier>["select"],
   allLandUnitsExceptReligiousTrader: { class: [["melee"], ["ranged"], ["siege"]], id: ["villager"] } as Required<Modifier>["select"],
   allLand: { class: [["melee"], ["ranged"], ["siege"], ["cavalry"]], id: ["villager", "trader", "dragon-villager"] } as Required<Modifier>["select"],
@@ -26,6 +26,9 @@ const common = {
       "gilded-archer",
       "yumi-ashigaru",
       "zhuge-nu",
+      "bedouin-skirmisher",
+      "desert-raider",
+      "yumi-bannerman",
     ],
   } as Required<Modifier>["select"],
   allMillitaryShips: { class: [["ship", "springald"], ["ship", "archer"], ["ship", "incendiary"], ["warship"]], id: ["galleass", "grand-galley"] } as Required<Modifier>["select"],
@@ -193,6 +196,9 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
   "ability-desert-raider-blade": placeholderAbility({ id: ["desert-raider"] }),
   "ability-desert-raider-bow": placeholderAbility({ id: ["desert-raider"] }),
   "ability-mass-heal": placeholderAbility(common.allLand),
+  "ability-tactical-charge": placeholderAbility({ id: ["camel-lancer"] }),
+  "ability-swap-weapon-kinetic": placeholderAbility({ id: ["manjaniq"] }),
+  "ability-swap-weapon-incendiary": placeholderAbility({ id: ["manjaniq"] }),
   "ability-quick-strike": placeholderAbility({ id: ["ghulam"] }),
   "ability-structural-reinforcements": ([m, f, d]) => [
     // Siege unit gains +20 melee armor and +5 fire armor for 10 seconds.\nCosts 50 Wood to activate, only useable on one unit at a time.
@@ -238,6 +244,13 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: d,
     },
+    {
+      property: "unknown",
+      select: { id: ["temple-of-the-sun"] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+    },
   ],
 
   "ability-divine-haste": ([m]) => [
@@ -249,6 +262,13 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: m,
       type: "ability",
     },
+    {
+      property: "unknown",
+      select: { id: ["temple-of-the-sun"] },
+      effect: "change",
+      value: 0,
+      type: "ability",
+    },
   ],
 
   "ability-divine-vitality": ([h]) => [
@@ -258,6 +278,13 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       select: common.allLand,
       effect: "change",
       value: h,
+      type: "ability",
+    },
+    {
+      property: "unknown",
+      select: { id: ["temple-of-the-sun"] },
+      effect: "change",
+      value: 0,
       type: "ability",
     },
   ],
@@ -1072,6 +1099,34 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
     },
   ],
 
+  "ability-place-palings": ([du, dmg]) => [
+    // Enemy cavalry are stunned for 2.5 seconds and take 25 damage.
+    {
+      property: "meleeAttack",
+      select: { id: ["longbowman"] },
+      target: { class: [["cavalry"]] },
+      effect: "change",
+      value: dmg,
+      type: "ability",
+      duration: du,
+    },
+  ],
+
+  "ability-man-the-sails": ([ms, d]) => [
+    // Activate to move 40% faster for 10 seconds, deactivates early when dealing damage.
+    {
+      property: "moveSpeed",
+      select: { class: [["ship", "springald"]] },
+      effect: "change",
+      value: ms,
+      type: "ability",
+      duration: d,
+    },
+  ],
+
+  "ability-detonate": placeholderAbility({ class: [["ship", "incendiary"]] }),
+  "ability-conversion": placeholderAbility(common.allReligiousUnits),
+
   "ability-golden-age-tier-1": ([]) => [
     // Tier 1: Villager gather rate +15%
     {
@@ -1195,6 +1250,8 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
     },
   ],
+
+  "ability-medical-centers": placeholderAbility({ id: ["keep"] }),
 
   "ability-fiefdom": ([i]) => [
     // Town Center production and research speed increased by +10%.\nBonus increases further in later Ages
@@ -1364,6 +1421,8 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       duration: 25,
     },
   ],
+
+  "ability-extra-materials": placeholderAbility({ id: ["outpost", "stone-wall-tower"] }),
 };
 
 export const technologyModifiers: Record<string, (values: number[], item: Item) => Modifier[]> = {
@@ -2683,14 +2742,14 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
     // Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.
     {
       property: "attackSpeed",
-      select: { id: ["battering-ram", "clocktower-battering-ram"] },
+      select: { id: ["battering-ram", "clocktower-battering-ram", "cheirosiphon"] },
       effect: "multiply",
       value: increaseAttackSpeedByPercent(speed),
       type: "passive",
     },
     {
       property: "buildTime",
-      select: { id: ["battering-ram", "clocktower-battering-ram"] },
+      select: { id: ["battering-ram", "clocktower-battering-ram", "cheirosiphon"] },
       effect: "multiply",
       value: decreaseByPercent(1, time),
       type: "passive",
@@ -2715,7 +2774,7 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       property: "moveSpeed",
       select: { class: [["siege"]] },
       effect: "multiply",
-      value: increaseSpeedByPercent(1, d - i),
+      value: increaseByPercent(1, d - i),
       type: "passive",
     },
   ],
@@ -4594,7 +4653,7 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       property: "moveSpeed",
       select: { id: ["limitanei"] },
       effect: "multiply",
-      value: increaseSpeedByPercent(1, ms),
+      value: increaseByPercent(1, ms),
       type: "passive",
     },
     {

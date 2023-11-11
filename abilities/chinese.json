@@ -12,17 +12,17 @@
   },
   "data": [
     {
-      "id": "ability--translation-not-found-undefined-4",
-      "baseId": "ability--translation-not-found-undefined",
+      "id": "ability-conversion-1",
+      "baseId": "ability-conversion",
       "type": "ability",
-      "name": "Spirit Way Ancestors",
-      "pbgid": 207131,
-      "attribName": "spirit_way",
-      "age": 4,
+      "name": "Conversion",
+      "pbgid": 192685,
+      "attribName": "monk_conversion",
+      "age": 1,
       "civs": [
         "ch"
       ],
-      "description": "When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.",
+      "description": "Attempts to convert enemy units within range of this Monk to your control.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -36,12 +36,121 @@
         "popcap": 0
       },
       "producedBy": [],
-      "icon": "https://data.aoe4world.com/images/buildings/spirit-way-3.png",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-conversion-1.png",
+      "active": "manual",
+      "auraRange": 4.75,
+      "cooldown": 120,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "monk",
+              "scholar",
+              "imam",
+              "dervish",
+              "warrior-monk",
+              "shaman",
+              "prelate",
+              "shinto-priest",
+              "buddhist-monk",
+              "shaolin-monk"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-detonate-1",
+      "baseId": "ability-detonate",
+      "type": "ability",
+      "name": "Detonate",
+      "pbgid": 2013822,
+      "attribName": "fireship_self_detonate",
+      "age": 1,
+      "civs": [
+        "ch"
+      ],
+      "description": "Detonate the ship.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-detonate-1.png",
+      "active": "manual",
+      "auraRange": 2,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "class": [
+              [
+                "ship",
+                "incendiary"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-extra-materials-1",
+      "baseId": "ability-extra-materials",
+      "type": "ability",
+      "name": "Extra Materials",
+      "pbgid": 182388,
+      "attribName": "tower_repair_nearby_walls_chi",
+      "age": 1,
+      "civs": [
+        "ch"
+      ],
+      "description": "Stone Wall Towers and Outposts repair nearby damaged Stone Walls. A single section is repaired at a time for +20 health per second.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "stone-wall-tower"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-extra-materials-1.png",
       "active": "always",
-      "auraRange": 5,
-      "effects": [],
-      "unlockedBy": [
-        "buildings/spirit-way"
+      "auraRange": 4,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "outpost",
+              "stone-wall-tower"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
       ]
     },
     {
@@ -85,6 +194,53 @@
           },
           "effect": "change",
           "value": 0,
+          "type": "ability",
+          "duration": 10
+        }
+      ]
+    },
+    {
+      "id": "ability-man-the-sails-1",
+      "baseId": "ability-man-the-sails",
+      "type": "ability",
+      "name": "Man The Sails",
+      "pbgid": 2101656,
+      "attribName": "naval_man_the_sails",
+      "age": 1,
+      "civs": [
+        "ch"
+      ],
+      "description": "Activate to move 40% faster for 10 seconds, deactivates early when dealing damage.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-man-the-sails-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 60,
+      "effects": [
+        {
+          "property": "moveSpeed",
+          "select": {
+            "class": [
+              [
+                "ship",
+                "springald"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 40,
           "type": "ability",
           "duration": 10
         }
@@ -185,10 +341,12 @@
       "classes": [],
       "displayClasses": [],
       "costs": {
-        "gold": 0,
-        "wood": 0,
         "food": 0,
+        "wood": 0,
         "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
         "total": 0,
         "time": 0,
         "popcap": 0

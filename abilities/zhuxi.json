@@ -141,6 +141,103 @@
       ]
     },
     {
+      "id": "ability-conversion-1",
+      "baseId": "ability-conversion",
+      "type": "ability",
+      "name": "Conversion",
+      "pbgid": 192685,
+      "attribName": "monk_conversion",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "Attempts to convert enemy units within range of this Monk to your control.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-conversion-1.png",
+      "active": "manual",
+      "auraRange": 4.75,
+      "cooldown": 120,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "monk",
+              "scholar",
+              "imam",
+              "dervish",
+              "warrior-monk",
+              "shaman",
+              "prelate",
+              "shinto-priest",
+              "buddhist-monk",
+              "shaolin-monk"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-detonate-1",
+      "baseId": "ability-detonate",
+      "type": "ability",
+      "name": "Detonate",
+      "pbgid": 2013822,
+      "attribName": "fireship_self_detonate",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "Detonate the ship.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-detonate-1.png",
+      "active": "manual",
+      "auraRange": 2,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "class": [
+              [
+                "ship",
+                "incendiary"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
       "id": "ability-divine-charge-1",
       "baseId": "ability-divine-charge",
       "type": "ability",
@@ -241,6 +338,17 @@
           "value": 1,
           "type": "ability",
           "duration": 1
+        },
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "temple-of-the-sun"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
         }
       ],
       "activatedOn": [
@@ -290,6 +398,17 @@
           },
           "effect": "change",
           "value": 15,
+          "type": "ability"
+        },
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "temple-of-the-sun"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
           "type": "ability"
         }
       ],
@@ -355,10 +474,68 @@
           "effect": "change",
           "value": 2,
           "type": "ability"
+        },
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "temple-of-the-sun"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
         }
       ],
       "activatedOn": [
         "buildings/temple-of-the-sun"
+      ]
+    },
+    {
+      "id": "ability-man-the-sails-1",
+      "baseId": "ability-man-the-sails",
+      "type": "ability",
+      "name": "Man The Sails",
+      "pbgid": 2101656,
+      "attribName": "naval_man_the_sails",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "Activate to move 40% faster for 10 seconds, deactivates early when dealing damage.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-man-the-sails-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 60,
+      "effects": [
+        {
+          "property": "moveSpeed",
+          "select": {
+            "class": [
+              [
+                "ship",
+                "springald"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 40,
+          "type": "ability",
+          "duration": 10
+        }
       ]
     },
     {

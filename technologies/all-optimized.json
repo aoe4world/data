@@ -717,6 +717,9 @@
               ],
               [
                 "religious"
+              ],
+              [
+                "camel"
               ]
             ]
           },
@@ -1487,7 +1490,10 @@
               "gilded-crossbowman",
               "gilded-archer",
               "yumi-ashigaru",
-              "zhuge-nu"
+              "zhuge-nu",
+              "bedouin-skirmisher",
+              "desert-raider",
+              "yumi-bannerman"
             ]
           },
           "effect": "change",
@@ -1808,12 +1814,15 @@
             "fr"
           ],
           "costs": {
-            "gold": 0,
-            "wood": 0,
             "food": 0,
+            "wood": 0,
             "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 0,
-            "time": 0
+            "time": 0,
+            "popcap": 0
           }
         },
         {
@@ -2857,12 +2866,15 @@
             "ch"
           ],
           "costs": {
-            "gold": 0,
-            "wood": 0,
             "food": 0,
+            "wood": 0,
             "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 0,
-            "time": 0
+            "time": 0,
+            "popcap": 0
           }
         },
         {
@@ -4021,12 +4033,15 @@
             "fr"
           ],
           "costs": {
-            "gold": 0,
-            "wood": 0,
             "food": 0,
+            "wood": 0,
             "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 0,
-            "time": 0
+            "time": 0,
+            "popcap": 0
           }
         },
         {
@@ -4237,12 +4252,15 @@
             "fr"
           ],
           "costs": {
-            "gold": 0,
-            "wood": 0,
             "food": 0,
+            "wood": 0,
             "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
             "total": 0,
-            "time": 0
+            "time": 0,
+            "popcap": 0
           }
         },
         {
@@ -6296,6 +6314,9 @@
               ],
               [
                 "religious"
+              ],
+              [
+                "camel"
               ]
             ]
           },
@@ -7633,8 +7654,7 @@
           "producedBy": [
             "temple-of-equality",
             "shinto-shrine",
-            "buddhist-temple",
-            "religious-choice"
+            "buddhist-temple"
           ]
         },
         {
@@ -8483,6 +8503,9 @@
               "gilded-archer",
               "yumi-ashigaru",
               "zhuge-nu",
+              "bedouin-skirmisher",
+              "desert-raider",
+              "yumi-bannerman",
               "berkshire-palace",
               "elzbach-palace",
               "kremlin",
@@ -8717,6 +8740,9 @@
               ],
               [
                 "religious"
+              ],
+              [
+                "camel"
               ]
             ]
           },
@@ -8946,6 +8972,9 @@
               ],
               [
                 "religious"
+              ],
+              [
+                "camel"
               ]
             ]
           },
@@ -9157,7 +9186,8 @@
           "select": {
             "id": [
               "battering-ram",
-              "clocktower-battering-ram"
+              "clocktower-battering-ram",
+              "cheirosiphon"
             ]
           },
           "effect": "multiply",
@@ -9169,7 +9199,8 @@
           "select": {
             "id": [
               "battering-ram",
-              "clocktower-battering-ram"
+              "clocktower-battering-ram",
+              "cheirosiphon"
             ]
           },
           "effect": "multiply",
@@ -9624,6 +9655,9 @@
               ],
               [
                 "religious"
+              ],
+              [
+                "camel"
               ]
             ]
           },
@@ -10395,8 +10429,7 @@
           "producedBy": [
             "temple-of-equality",
             "shinto-shrine",
-            "buddhist-temple",
-            "religious-choice"
+            "buddhist-temple"
           ]
         },
         {
@@ -10743,7 +10776,10 @@
               "gilded-crossbowman",
               "gilded-archer",
               "yumi-ashigaru",
-              "zhuge-nu"
+              "zhuge-nu",
+              "bedouin-skirmisher",
+              "desert-raider",
+              "yumi-bannerman"
             ]
           },
           "effect": "change",
@@ -13306,7 +13342,10 @@
               "gilded-crossbowman",
               "gilded-archer",
               "yumi-ashigaru",
-              "zhuge-nu"
+              "zhuge-nu",
+              "bedouin-skirmisher",
+              "desert-raider",
+              "yumi-bannerman"
             ]
           },
           "effect": "change",
@@ -14211,8 +14250,7 @@
           "producedBy": [
             "temple-of-equality",
             "shinto-shrine",
-            "buddhist-temple",
-            "religious-choice"
+            "buddhist-temple"
           ]
         },
         {
@@ -14621,6 +14659,9 @@
               ],
               [
                 "religious"
+              ],
+              [
+                "camel"
               ]
             ]
           },
@@ -18081,7 +18122,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8999999999999999,
+              "value": 1.15,
               "type": "passive"
             },
             {
@@ -18364,8 +18405,7 @@
       "name": "Ancient Techniques",
       "type": "technology",
       "civs": [
-        "ch",
-        "zx"
+        "ch"
       ],
       "unique": true,
       "displayClasses": [
@@ -18381,96 +18421,97 @@
       "variations": [
         {
           "id": "ancient-techniques-4",
+          "baseId": "ancient-techniques",
+          "type": "technology",
+          "name": "Ancient Techniques",
           "pbgid": 220924,
           "attribName": "upgrade_dynasty_econ_bonus_chi",
+          "age": 4,
           "civs": [
             "ch"
-          ]
-        },
-        {
-          "id": "ancient-techniques-4",
-          "pbgid": 2127652,
-          "attribName": "upgrade_dynasty_econ_bonus_chi_ha_01",
-          "civs": [
-            "zx"
           ],
+          "description": "Increase the gathering rate of Villagers by +4% for each dynasty achieved.",
+          "classes": [
+            "gathering",
+            "technology"
+          ],
+          "displayClasses": [
+            "Gathering Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 200,
+            "stone": 0,
+            "gold": 500,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 700,
+            "popcap": 0,
+            "time": 90
+          },
           "producedBy": [
+            "spirit-way",
             "university"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/ancient-techniques-4.png",
+          "effects": [
+            {
+              "property": "foodGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.04,
+              "type": "passive"
+            },
+            {
+              "property": "huntGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.04,
+              "type": "passive"
+            },
+            {
+              "property": "goldGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.04,
+              "type": "passive"
+            },
+            {
+              "property": "stoneGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.04,
+              "type": "passive"
+            },
+            {
+              "property": "woodGatherRate",
+              "select": {
+                "id": [
+                  "villager"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.04,
+              "type": "passive"
+            }
           ]
-        }
-      ],
-      "baseId": "ancient-techniques",
-      "age": 4,
-      "costs": {
-        "food": 0,
-        "wood": 200,
-        "stone": 0,
-        "gold": 500,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 700,
-        "popcap": 0,
-        "time": 90
-      },
-      "producedBy": [
-        "spirit-way",
-        "university"
-      ],
-      "effects": [
-        {
-          "property": "foodGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.04,
-          "type": "passive"
-        },
-        {
-          "property": "huntGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.04,
-          "type": "passive"
-        },
-        {
-          "property": "goldGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.04,
-          "type": "passive"
-        },
-        {
-          "property": "stoneGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.04,
-          "type": "passive"
-        },
-        {
-          "property": "woodGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.04,
-          "type": "passive"
         }
       ],
       "shared": {}
@@ -26070,7 +26111,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8999999999999999,
+              "value": 1.15,
               "type": "passive"
             }
           ]
@@ -28781,63 +28822,61 @@
         "spearman",
         "technology"
       ],
-      "minAge": 2,
+      "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/dragon-fire-2.png",
       "description": "Gilded Spearman torches deal area of effect damage.",
       "variations": [
         {
-          "id": "dragon-fire-2",
-          "pbgid": 2140414,
-          "attribName": "upgrade_dragon_fire_hre_ha_01",
-          "civs": [
-            "od"
-          ]
-        },
-        {
           "id": "dragon-fire-3",
+          "baseId": "dragon-fire",
+          "type": "technology",
+          "name": "Dragon Fire",
           "pbgid": 2140414,
           "attribName": "upgrade_dragon_fire_hre_ha_01",
+          "age": 3,
           "civs": [
             "od"
+          ],
+          "description": "Gilded Spearman torches deal area of effect damage.",
+          "classes": [
+            "spearman",
+            "technology"
+          ],
+          "displayClasses": [
+            "Spearman Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 50,
+            "wood": 0,
+            "stone": 0,
+            "gold": 125,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 175,
+            "popcap": 0,
+            "time": 30
+          },
+          "producedBy": [
+            "barracks",
+            "burgrave-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/dragon-fire-2.png",
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "gilded-spearman"
+                ]
+              },
+              "effect": "change",
+              "type": "ability"
+            }
           ]
         }
       ],
-      "baseId": "dragon-fire",
-      "age": 2,
-      "costs": {
-        "food": 50,
-        "wood": 0,
-        "stone": 0,
-        "gold": 125,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 175,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "barracks",
-        "burgrave-palace"
-      ],
-      "effects": [
-        {
-          "property": "unknown",
-          "select": {
-            "id": [
-              "gilded-spearman"
-            ]
-          },
-          "effect": "change",
-          "type": "ability"
-        }
-      ],
-      "shared": {
-        "dragon-fire-3": {
-          "name": "Dragon Fire",
-          "age": 3,
-          "id": "dragon-fire-3"
-        }
-      }
+      "shared": {}
     },
     {
       "id": "dragon-scale-leather",

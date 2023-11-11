@@ -57,6 +57,7 @@ export const hardcodedDiscovery = {
     "abilities/timed_abilities/english/longbow_rate_of_fire_ability", //misses auto discovery; range is weird but does it matter? //convert to ability from tech
     "abilities/timed_abilities/english/deploy_campfire_eng", //misses auto discovery;
     // "abilities/always_on_abilities/english/tower_outpost_alert_aura_eng",  //how to handle upgrade,  tower outpost has context to upgrade to citadels or tech has the context to upgrade buff or do a workaround
+    "abilities/timed_abilities/civ_core/deploy_palings",
   ],
   chinese: [
     "info/buff_info/races/chinese/great_wall_buff_chi", //needs trigger/standing on a wall?
@@ -77,9 +78,12 @@ export const hardcodedDiscovery = {
     "abilities/timed_abilities/abbasid_ha_01/siege_carpentry_abb_ha_01",
     "abilities/always_on_abilities/abbasid/ghulam_attack_abb",
     "abilities/always_on_abilities/abbasid/proxy_placement_gristmill_abb",
-
+    "abilities/always_on_abilities/abbasid_ha_01/camel_knight_charge_damage",
     "sbps/races/abbasid_ha_01/unit_javelin_2_abb_ha_01", // Bedouin Skirmisher
     "sbps/races/abbasid_ha_01/unit_pirate_abb_ha_01", // Bedouin Swordsman
+
+    "abilities/toggle_abilities/mangonel_swap_to_incendiary_weapon",
+    "abilities/toggle_abilities/mangonel_swap_to_kinetic_weapon",
   ],
   byzantines: [
     // "abilities/always_on_abilities/byzantine/cistern_villager_buff_byz",
@@ -111,7 +115,9 @@ export const hardcodedDiscovery = {
     "upgrade/races/byzantine/mercenary_contracts/merc_contract_01_byz",
     "upgrade/races/byzantine/mercenary_contracts/merc_contract_02_byz",
     "upgrade/races/byzantine/mercenary_contracts/merc_contract_03_byz",
-
+    "abilities/timed_abilities/civ_core/deploy_palings",
+    "abilities/timed_abilities/french/cannon_swap_fre", //misses auto discovery
+    "info/buff_info/races/french/lancer_charge_bonus_damage",
     // "ebps/races/byzantine/buildings/dummy_trade_mercenary_house_byz",
 
     // upgrade/races/byzantine/research/mercenary_upgrades unsure what to do with these
@@ -196,6 +202,7 @@ export const hardcodedDiscovery = {
     "sbps/races/french_ha_01/unit_jeanne_d_arc_3_ranged_knight_fre_ha_01",
     "sbps/races/french_ha_01/unit_jeanne_d_arc_4_melee_monarch_fre_ha_01",
     "sbps/races/french_ha_01/unit_jeanne_d_arc_4_ranged_monarch_fre_ha_01",
+    "info/buff_info/races/french/lancer_charge_bonus_damage",
   ],
   zhuxi: [
     "abilities/always_on_abilities/shaolin_monk_ranged_damage_reduction",
@@ -205,7 +212,11 @@ export const hardcodedDiscovery = {
   ],
 };
 
-export const hardcodedDiscoveryCommon = []; //"info/buff_info/races/abbasid/camel_debuff_aura","info/buff_info/races/malian/archer_poisoned_arrow_mal"
+export const hardcodedDiscoveryCommon = [
+  "abilities/timed_abilities/civ_core/naval_man_the_sails",
+  "abilities/timed_abilities/civ_core/monk_conversion",
+  "abilities/timed_abilities/civ_core/fireship_self_detonate",
+]; //"info/buff_info/races/abbasid/camel_debuff_aura","info/buff_info/races/malian/archer_poisoned_arrow_mal"
 
 export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "toggle_cistern_influence_2_byz",
@@ -213,6 +224,8 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "galata_spawner_toggle_on_byz",
   "cistern_gather_aura_byz",
   "winery_aura_byz",
+
+  "building_placeholder_religious_choice_jpn",
 
   "ebps/races/mongol/buildings/building_town_center_dummy_start",
   "ebps/races/mongol/units/campaign/unit_great_trebuchet_cmp_mon",
@@ -283,7 +296,7 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
 
   //uninteresting abilities to place into data
   "military_neutralize_holy_site",
-  "abilities/civ_core/",
+  "abilities/civ_core/core_",
   "abilities/core/age_up_",
   "return_to_work",
   "abilities/modal_abilities/abbasid/age_up_",
@@ -291,8 +304,8 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "proxy_placement_gristmill",
   "golden_age_passive_abb",
   "golden_age_bonus_", //ignore whichever is not as complete, the other is "golden_age_tier_"
-  "abilities/always_on_abilities/abbasid/medical_centers_abb",
-  "tower_repair_nearby_walls_chi",
+  // "abilities/always_on_abilities/abbasid/medical_centers_abb",
+  // "tower_repair_nearby_walls_chi",
   "academy_influence_chi",
   "building_granary_aura_chi", //unknown why error: .../building_granary_aura_chi TypeError: Cannot read properties of undefined (reading 'screen_name')
   "building_generate_tax_chi",
