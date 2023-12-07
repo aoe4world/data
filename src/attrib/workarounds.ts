@@ -118,6 +118,10 @@ workaround("Make Abbasid Battering Ram and Siege Tower available from the dark a
   ...overrideAge(["battering-ram", "siege-tower"], 1, ["ab"]),
 });
 
+workaround("Make Imperiual Guard available from Imperial Age", {
+  ...overrideAge(["imperial-guard"], 4),
+});
+
 workaround("Make Nest of Bees available from Castle Age", {
   ...overrideAge(["nest-of-bees", "clocktower-nest-of-bees"], 3),
 });
