@@ -8,9 +8,10 @@ Parsed stats on units, buildings and technologies from Age of Empires 4 in a dev
 
 This project hosts data on all units, buildings, technologies, upgrades and other AoE4 game objects in an opinionated json format ready for developers to use in any project. The data is parsed from game files and reflects what players can read on in-game tooltips.
 
-### Example
-
-[english/man-at-arms-2.json](./units/english/man-at-arms-2.json)
+<details>
+<summary>
+ Example ./units/english/man-at-arms-2.json
+</summary>
 
 ```json
 {
@@ -105,6 +106,8 @@ This project hosts data on all units, buildings, technologies, upgrades and othe
   }
 }
 ```
+</details>
+
 
 ### Formats
 
@@ -132,12 +135,20 @@ The logic to parse game files and output them in our desired format resides in `
 Feel free to open PRs or issues for data that is incorrect or missing, if possible please provide a rationale or source. One-off corrections to data are encoded in [src/attrib/workarounds.ts](.src/attrib/workarounds.ts) and technology effects in [src/attrib/technologies.ts](./src/attrib/technologies.ts)
 
 ### Updating the data from game files
+You will need raw parsed game files to build and update the data. Those files are not included in the repository due to licensing and copyright issues (you will need your own copy of AoE4). First we unpack the so called Archives (SGA) and then parse them using scripts we wrote to JSON files. 
+
+
+
+
 1. Download and install the latest version of [AOEMods.Essence](https://github.com/aoemods/AOEMods.Essence/releases).
 2. Localate the game files, typically located in `C:\Program Files\Steam\steamapps\common\Age of Empires IV\`. When you play the gam through XBox, the process is a bit more [involved](https://answers.microsoft.com/en-us/xbox/forum/all/where-do-xbox-gamepass-games-install-to-on-pcs/845ceb04-fea7-4fde-b001-8b63fa52df7b#:~:text=yes%20its%20normal,the%20hidden%20folders) as the game is installed in the hidden and secure `windowsapps` folder.
 3. Copy the following files/folders into `/source`
-   - `cardinal\attrib` for all stats and attributes
-   - `cardinal\archives\UIArt.sga` for the icons (optional for patches without any new icons)
+   - `cardinal\archices\Attrib.sga` for all stats and attributes
+   - `cardinal\archives\UIArt.sga` for the icons (optional if you want to update icons)
    - `cardinal\archives\LocaleEnglish.sga` for the names and descriptions
+3. Unpack and convert the Attrib archive
+   - `dotnet AOEMods.Essence.CLI.dll sga-unpack ./source/Attrib.sga ./source/attrib-raw`
+   - `dotnet AOEMods.Essence.CLI.dll  rgd-decode ./source/attrib-raw ./source/ -b -f json`
 4. Unpack the locale file using AOEMods.Essence, i.e.
    ```
    dotnet AOEMods.Essence.CLI.dll sga-unpack ./source/LocaleEnglish.sga ../source/locale`
@@ -147,6 +158,7 @@ Feel free to open PRs or issues for data that is incorrect or missing, if possib
    dotnet AOEMods.Essence.CLI.dll sga-unpack ./source/UIArt.sga ./source/art`
    dotnet AOEMods.Essence.CLI.dll rrtex-decode ./source/art/ui/icons/races ./source/icons -b
    ```
+   If this step isn't giving you the desired results consider using [Coh3-Image-Extractor](https://github.com/cohstats/coh3-image-extractor) instead. It works with similar commands `python scripts/main.py --src "./source/art" --format png`
 6. You should end up with a folder structure like this:
    ```
    source
@@ -163,22 +175,14 @@ Feel free to open PRs or issues for data that is incorrect or missing, if possib
        └── en
            └── cardinal.en.ucs
    ```
-7. Run `yarn install && yarn parse` to update the data.
+7. Run `yarn install && yarn parse --essence` to update the data.
 8. Verify the changes. Specifically, the technology effects are currently compiled from translation parameters, of which the order may change. This can easily be spotted by changes in any technology description field. If they changed, update the parameter order or implementation in `effect.ts`.
 9. Run `yarn build` to update the optimzed json files and library.
 
-#### Updating the data using SGA Archives (& server side patches)
-This project can also work with the JSON output fomr `sga-extract` into `rgd-decode` from the [AOEMods.Essence CLI](https://github.com/aoemods/AOEMods.Essence#cli). This is a bit more involved, but allows you to update the data while using the actual .sga files rather than relying on the developers bundling the `attrib` folder in the game files. 
+> **Note**: The `--essence` flag instructs our code to use formatting from the Essence format, rather than the (now deprecated) Attrib xml files that are packed with the game in the root cardinal folder.
 
-This is also required for server side patches as they don't update any of the game files inside `cardinal`, but can rather be found as a patch SGA file in `Documents\My Games\Age of Empires IV\OTAPatches`.
-
-For a server side patch, or using the `Attrib.sga` file from the game files (found in `/archives`), you can use the following steps:
-```
-dotnet AOEMods.Essence.CLI.dll sga-unpack ../Attrib.sga ../myattrib
-dotnet AOEMods.Essence.CLI.dll  rgd-decode ../myattrib ../myjsonattrib -b -f json
-```
-
-Put the resulting files in `source/essence/attrib` (note the absence of the `instances` folder). Then run `yarn parse --essence` and `yarn build` as usual. The `--essence` flag will switch the `getData` function used when fetching file data.
+#### Just parse one civ
+Parsing can be relatively slow due to the total amount of files involved. If you're just working on data for a specific civ you can add an additional flag to the the parse command to only parse a specific civ. I.e. `yarn parse --essence --civ japanese`
 
 ## Credits
 
