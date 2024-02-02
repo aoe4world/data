@@ -691,6 +691,74 @@
       ]
     },
     {
+      "id": "bunrei",
+      "name": "Bunrei",
+      "type": "technology",
+      "civs": [
+        "ja"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Shinto Technology"
+      ],
+      "classes": [
+        "shinto",
+        "technology"
+      ],
+      "minAge": 4,
+      "description": "Increases the maximum number of Yorishiro by +2. Immediately spawns 2 Yorishiro at the Floating Gate.",
+      "variations": [
+        {
+          "id": "bunrei-4",
+          "baseId": "bunrei",
+          "type": "technology",
+          "name": "Bunrei",
+          "pbgid": 2157994,
+          "attribName": "upgrade_shrine_bunrei_jpn",
+          "age": 4,
+          "civs": [
+            "ja"
+          ],
+          "description": "Increases the maximum number of Yorishiro by +2. Immediately spawns 2 Yorishiro at the Floating Gate.",
+          "classes": [
+            "shinto",
+            "technology"
+          ],
+          "displayClasses": [
+            "Shinto Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 400,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 400,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "shinto-shrine"
+          ],
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "floating-gate"
+                ]
+              },
+              "effect": "change",
+              "value": 2,
+              "type": "ability"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "cannon-emplacement",
       "name": "Cannon Emplacement",
       "type": "technology",
@@ -876,7 +944,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/copper-plating-3.png",
-      "description": "Improves the fire and ranged armor of ships by +2%.",
+      "description": "Improves the fire and ranged armor of ships by +2.",
       "variations": [
         {
           "id": "copper-plating-3",
@@ -889,7 +957,7 @@
           "civs": [
             "ja"
           ],
-          "description": "Improves the fire and ranged armor of ships by +2%.",
+          "description": "Improves the fire and ranged armor of ships by +2.",
           "classes": [
             "naval",
             "technology"
@@ -1047,7 +1115,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/crosscut-saw-4.png",
-      "description": "Increase Villagers' gathering rate for Wood by 15%.",
+      "description": "Increase Villagers' gathering rate for Wood by 15% and Wood gatherers carry capacity by +5.",
       "variations": [
         {
           "id": "crosscut-saw-4",
@@ -1060,7 +1128,7 @@
           "civs": [
             "ja"
           ],
-          "description": "Increase Villagers' gathering rate for Wood by 15%.",
+          "description": "Increase Villagers' gathering rate for Wood by 15% and Wood gatherers carry capacity by +5.",
           "classes": [
             "wood",
             "gathering",
@@ -1121,7 +1189,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/cupellation-4.png",
-      "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
+      "description": "Gold gatherers drop off 15% more resources.",
       "variations": [
         {
           "id": "cupellation-4",
@@ -1134,7 +1202,7 @@
           "civs": [
             "ja"
           ],
-          "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
+          "description": "Gold gatherers drop off 15% more resources.",
           "classes": [
             "mining",
             "technology",
@@ -1937,6 +2005,76 @@
       ]
     },
     {
+      "id": "five-mountain-ministries",
+      "name": "Five Mountain Ministries",
+      "type": "technology",
+      "civs": [
+        "ja"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Buddhist Technology"
+      ],
+      "classes": [
+        "buddhist",
+        "technology"
+      ],
+      "minAge": 4,
+      "description": "Buddhist Temples cast Sohei Sutra on a nearby enemy every 6 seconds.",
+      "variations": [
+        {
+          "id": "five-mountain-ministries-4",
+          "baseId": "five-mountain-ministries",
+          "type": "technology",
+          "name": "Five Mountain Ministries",
+          "pbgid": 2158004,
+          "attribName": "upgrade_temple_fivemountain_jpn",
+          "age": 4,
+          "civs": [
+            "ja"
+          ],
+          "description": "Buddhist Temples cast Sohei Sutra on a nearby enemy every 6 seconds.",
+          "classes": [
+            "buddhist",
+            "technology"
+          ],
+          "displayClasses": [
+            "Buddhist Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 750,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 750,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "temple-of-equality",
+            "buddhist-temple"
+          ],
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "buddhist-temple",
+                  "temple-of-equality"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "forestry",
       "name": "Forestry",
       "type": "technology",
@@ -2249,6 +2387,76 @@
               },
               "effect": "multiply",
               "value": 1.2,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gion-festival",
+      "name": "Gion Festival",
+      "type": "technology",
+      "civs": [
+        "ja"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Shinto Technology"
+      ],
+      "classes": [
+        "shinto",
+        "technology"
+      ],
+      "minAge": 4,
+      "description": "Increases the Line of Sight of all buildings by +2 tiles. Every 3 minutes, all economic units heal for 100% of their health over 3 seconds.",
+      "variations": [
+        {
+          "id": "gion-festival-4",
+          "baseId": "gion-festival",
+          "type": "technology",
+          "name": "Gion Festival",
+          "pbgid": 2157995,
+          "attribName": "upgrade_shrine_gion_jpn",
+          "age": 4,
+          "civs": [
+            "ja"
+          ],
+          "description": "Increases the Line of Sight of all buildings by +2 tiles. Every 3 minutes, all economic units heal for 100% of their health over 3 seconds.",
+          "classes": [
+            "shinto",
+            "technology"
+          ],
+          "displayClasses": [
+            "Shinto Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 100,
+            "wood": 100,
+            "stone": 0,
+            "gold": 150,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 350,
+            "popcap": 0,
+            "time": 40
+          },
+          "producedBy": [
+            "shinto-shrine"
+          ],
+          "effects": [
+            {
+              "property": "lineOfSight",
+              "select": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 2,
               "type": "passive"
             }
           ]
@@ -3542,6 +3750,75 @@
       ]
     },
     {
+      "id": "nehan",
+      "name": "Nehan",
+      "type": "technology",
+      "civs": [
+        "ja"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Buddhist Technology"
+      ],
+      "classes": [
+        "buddhist",
+        "technology"
+      ],
+      "minAge": 4,
+      "description": "Upgrades Buddhist Conversion to Nehan Conversion, which has a 25% shorter cooldown and additionally improves nearby allied units movement speed by +25% when cast.",
+      "variations": [
+        {
+          "id": "nehan-4",
+          "baseId": "nehan",
+          "type": "technology",
+          "name": "Nehan",
+          "pbgid": 2158006,
+          "attribName": "upgrade_temple_nehan_jpn",
+          "age": 4,
+          "civs": [
+            "ja"
+          ],
+          "description": "Upgrades Buddhist Conversion to Nehan Conversion, which has a 25% shorter cooldown and additionally improves nearby allied units movement speed by +25% when cast.",
+          "classes": [
+            "buddhist",
+            "technology"
+          ],
+          "displayClasses": [
+            "Buddhist Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 350,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 350,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "temple-of-equality",
+            "buddhist-temple"
+          ],
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "buddhist-monk"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "oda-tactics",
       "name": "Oda Tactics",
       "type": "technology",
@@ -4064,6 +4341,96 @@
               },
               "effect": "multiply",
               "value": 0.8,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shinto-rituals",
+      "name": "Shinto Rituals",
+      "type": "technology",
+      "civs": [
+        "ja"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Shinto Technology"
+      ],
+      "classes": [
+        "shinto",
+        "technology"
+      ],
+      "minAge": 3,
+      "description": "Increases Shinto Priest health by +40, healing rate by +60%, and movement speed by +15%.",
+      "variations": [
+        {
+          "id": "shinto-rituals-3",
+          "baseId": "shinto-rituals",
+          "type": "technology",
+          "name": "Shinto Rituals",
+          "pbgid": 2157996,
+          "attribName": "upgrade_shrine_rituals_jpn",
+          "age": 3,
+          "civs": [
+            "ja"
+          ],
+          "description": "Increases Shinto Priest health by +40, healing rate by +60%, and movement speed by +15%.",
+          "classes": [
+            "shinto",
+            "technology"
+          ],
+          "displayClasses": [
+            "Shinto Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 300,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 300,
+            "popcap": 0,
+            "time": 30
+          },
+          "producedBy": [
+            "shinto-shrine"
+          ],
+          "effects": [
+            {
+              "property": "hitpoints",
+              "select": {
+                "id": [
+                  "shinto-priest"
+                ]
+              },
+              "effect": "change",
+              "value": 40,
+              "type": "passive"
+            },
+            {
+              "property": "healingRate",
+              "select": {
+                "id": [
+                  "shinto-priest"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.6,
+              "type": "passive"
+            },
+            {
+              "property": "moveSpeed",
+              "select": {
+                "id": [
+                  "shinto-priest"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.8999999999999999,
               "type": "passive"
             }
           ]
@@ -5763,6 +6130,75 @@
               },
               "effect": "change",
               "value": 1,
+              "type": "passive"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zen",
+      "name": "Zen",
+      "type": "technology",
+      "civs": [
+        "ja"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Buddhist Technology"
+      ],
+      "classes": [
+        "buddhist",
+        "technology"
+      ],
+      "minAge": 3,
+      "description": "Buddhist Monks generate 25 gold every 60 seconds.",
+      "variations": [
+        {
+          "id": "zen-3",
+          "baseId": "zen",
+          "type": "technology",
+          "name": "Zen",
+          "pbgid": 2158005,
+          "attribName": "upgrade_temple_zen_jpn",
+          "age": 3,
+          "civs": [
+            "ja"
+          ],
+          "description": "Buddhist Monks generate 25 gold every 60 seconds.",
+          "classes": [
+            "buddhist",
+            "technology"
+          ],
+          "displayClasses": [
+            "Buddhist Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 200,
+            "wood": 300,
+            "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 500,
+            "popcap": 0,
+            "time": 35
+          },
+          "producedBy": [
+            "temple-of-equality",
+            "buddhist-temple"
+          ],
+          "effects": [
+            {
+              "property": "goldGeneration",
+              "select": {
+                "id": [
+                  "buddhist-monk"
+                ]
+              },
+              "effect": "change",
+              "value": 25,
               "type": "passive"
             }
           ]

@@ -318,7 +318,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
-      "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
+      "description": "All Resources can be dropped off here. Produces Villagers, Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.\nCapital Town Centers can detect units stealth or disguises.",
       "variations": [
         {
           "id": "capital-town-center-1",
@@ -331,7 +331,7 @@
           "civs": [
             "by"
           ],
-          "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
+          "description": "All Resources can be dropped off here. Produces Villagers, Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.\nCapital Town Centers can detect units stealth or disguises.",
           "classes": [
             "economy",
             "&",
@@ -465,15 +465,15 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Economy Building"
+        "Influence Building"
       ],
       "classes": [
-        "economy",
+        "influence",
         "building"
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/buildings/cistern-1.png",
-      "description": "Improves the gather rate of nearby villagers by +5/10/15/20/25% depending on network level. Generates influence that boosts production, research or defense. Can activate Arkitoi Defense to briefly arm nearby Villagers. \nConnect Cisterns with Aqueducts to enhance their influence and villager gather rate aura. Cistern costs increase the more Cisterns are built.",
+      "description": "Improves the gather rate of nearby villagers by +10/14/18/22/26% depending on network level. Generates influence that boosts production, research or defense. Can activate Arkitoi Defense to briefly arm nearby Villagers. \nConnect Cisterns with Aqueducts to enhance their influence and villager gather rate aura. Cistern costs increase the more Cisterns are built.",
       "variations": [
         {
           "id": "cistern-1",
@@ -486,13 +486,13 @@
           "civs": [
             "by"
           ],
-          "description": "Improves the gather rate of nearby villagers by +5/10/15/20/25% depending on network level. Generates influence that boosts production, research or defense. Can activate Arkitoi Defense to briefly arm nearby Villagers. \nConnect Cisterns with Aqueducts to enhance their influence and villager gather rate aura. Cistern costs increase the more Cisterns are built.",
+          "description": "Improves the gather rate of nearby villagers by +10/14/18/22/26% depending on network level. Generates influence that boosts production, research or defense. Can activate Arkitoi Defense to briefly arm nearby Villagers. \nConnect Cisterns with Aqueducts to enhance their influence and villager gather rate aura. Cistern costs increase the more Cisterns are built.",
           "classes": [
-            "economy",
+            "influence",
             "building"
           ],
           "displayClasses": [
-            "Economy Building"
+            "Influence Building"
           ],
           "unique": true,
           "costs": {
@@ -504,7 +504,7 @@
             "oliveoil": 0,
             "total": 50,
             "popcap": 0,
-            "time": 20
+            "time": 15
           },
           "producedBy": [
             "villager"
@@ -535,18 +535,18 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Age III - Economic Landmark"
+        "Age III - Influence Landmark"
       ],
       "classes": [
         "age",
         "iii",
         "-",
-        "economic",
+        "influence",
         "landmark"
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/buildings/cistern-of-the-first-hill-2.png",
-      "description": "Acts as a Cistern. Unlocks the Pilgrim Flask ability on non-siege military units, which can be activated to increase health regeneration by 25 per second for 10 seconds.\nFlasks refill every 45 seconds to a maximum of 10 active flasks.",
+      "description": "Acts as a Cistern. Unlocks the Pilgrim Flask ability on non-siege military units, which can be activated to increase health regeneration by 25 per second for 6 seconds.\nFlasks refill every 30 seconds to a maximum of 20 active flasks.",
       "variations": [
         {
           "id": "cistern-of-the-first-hill-2",
@@ -559,16 +559,16 @@
           "civs": [
             "by"
           ],
-          "description": "Acts as a Cistern. Unlocks the Pilgrim Flask ability on non-siege military units, which can be activated to increase health regeneration by 25 per second for 10 seconds.\nFlasks refill every 45 seconds to a maximum of 10 active flasks.",
+          "description": "Acts as a Cistern. Unlocks the Pilgrim Flask ability on non-siege military units, which can be activated to increase health regeneration by 25 per second for 6 seconds.\nFlasks refill every 30 seconds to a maximum of 20 active flasks.",
           "classes": [
             "age",
             "iii",
             "-",
-            "economic",
+            "influence",
             "landmark"
           ],
           "displayClasses": [
-            "Age III - Economic Landmark"
+            "Age III - Influence Landmark"
           ],
           "unique": true,
           "costs": {
@@ -788,7 +788,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/buildings/golden-horn-tower-2.png",
-      "description": "Periodically produces unlocked Mercenary Units for free.\nThe value of units produced increases within a Cistern's influence.",
+      "description": "Periodically produces unlocked Mercenary Units for free.",
       "variations": [
         {
           "id": "golden-horn-tower-2",
@@ -801,7 +801,7 @@
           "civs": [
             "by"
           ],
-          "description": "Periodically produces unlocked Mercenary Units for free.\nThe value of units produced increases within a Cistern's influence.",
+          "description": "Periodically produces unlocked Mercenary Units for free.",
           "classes": [
             "age",
             "iii",
@@ -840,9 +840,7 @@
             "line": 25,
             "height": 8
           },
-          "influences": [
-            "Building output is improved while within the influence of a Cistern."
-          ]
+          "influences": []
         }
       ]
     },
@@ -855,18 +853,20 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Age II - Economic Landmark"
+        "Age II - Economic & Religious Landmark"
       ],
       "classes": [
         "age",
         "ii",
         "-",
         "economic",
+        "&",
+        "religious",
         "landmark"
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/buildings/grand-winery-1.png",
-      "description": "Acts as a Monastery. Nearby Villagers gather +60% Olive Oil from Berry Bushes and Olive Groves. Relics garrisoned generate Olive Oil instead of Gold.\nVillagers can drop off Food at this building.",
+      "description": "Acts as a Mill and Monastery. Nearby Villagers gather +60% Olive Oil from Berry Bushes and Olive Groves. Relics garrisoned generate Olive Oil instead of Gold.",
       "variations": [
         {
           "id": "grand-winery-1",
@@ -879,16 +879,18 @@
           "civs": [
             "by"
           ],
-          "description": "Acts as a Monastery. Nearby Villagers gather +60% Olive Oil from Berry Bushes and Olive Groves. Relics garrisoned generate Olive Oil instead of Gold.\nVillagers can drop off Food at this building.",
+          "description": "Acts as a Mill and Monastery. Nearby Villagers gather +60% Olive Oil from Berry Bushes and Olive Groves. Relics garrisoned generate Olive Oil instead of Gold.",
           "classes": [
             "age",
             "ii",
             "-",
             "economic",
+            "&",
+            "religious",
             "landmark"
           ],
           "displayClasses": [
-            "Age II - Economic Landmark"
+            "Age II - Economic & Religious Landmark"
           ],
           "unique": true,
           "costs": {
@@ -1442,7 +1444,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/buildings/mill-1.png",
-      "description": "Villagers can drop off Food at this building. Houses technologies to improve Food gathering. Byzantine Villagers generate +30% Olive Oil from Berry Bushes, +10% from Fish, and +20% from Olive Groves.",
+      "description": "Villagers can drop off Food at this building. Houses technologies to improve Food gathering. Byzantine Villagers generate Olive Oil equal to 50% of Food from Berry Bushes, 10% from Fish, and 20% from Olive Groves.",
       "variations": [
         {
           "id": "mill-1",
@@ -1455,7 +1457,7 @@
           "civs": [
             "by"
           ],
-          "description": "Villagers can drop off Food at this building. Houses technologies to improve Food gathering. Byzantine Villagers generate +30% Olive Oil from Berry Bushes, +10% from Fish, and +20% from Olive Groves.",
+          "description": "Villagers can drop off Food at this building. Houses technologies to improve Food gathering. Byzantine Villagers generate Olive Oil equal to 50% of Food from Berry Bushes, 10% from Fish, and 20% from Olive Groves.",
           "classes": [
             "economy",
             "building"
@@ -1732,7 +1734,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/buildings/outpost-1.png",
-      "description": "Offers extensive line of sight. Can be upgraded with weaponry and fortifications. Attacks while garrisoned.",
+      "description": "Offers extensive line of sight and detects units stealth or disguises. Can be upgraded with weaponry and fortifications. Attacks while garrisoned.",
       "variations": [
         {
           "id": "outpost-1",
@@ -1745,7 +1747,7 @@
           "civs": [
             "by"
           ],
-          "description": "Offers extensive line of sight. Can be upgraded with weaponry and fortifications. Attacks while garrisoned.",
+          "description": "Offers extensive line of sight and detects units stealth or disguises. Can be upgraded with weaponry and fortifications. Attacks while garrisoned.",
           "classes": [
             "defensive",
             "building"
@@ -2177,7 +2179,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/buildings/stone-wall-2.png",
-      "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 66% less damage from ranged attacks and their range is increased by +2.",
+      "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 25% less damage from ranged attacks, 50% less damage from siege attacks, and their range is increased by +2.",
       "variations": [
         {
           "id": "stone-wall-2",
@@ -2190,7 +2192,7 @@
           "civs": [
             "by"
           ],
-          "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 66% less damage from ranged attacks and their range is increased by +2.",
+          "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 25% less damage from ranged attacks, 50% less damage from siege attacks, and their range is increased by +2.",
           "classes": [
             "defensive",
             "building"
@@ -2317,7 +2319,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/buildings/stone-wall-tower-2.png",
-      "description": "Heavy defensive tower that fires a springald. Must be built on a Stone Wall segment.\nInfantry can use the tower to access the top of the walls.",
+      "description": "Heavy defensive tower that fires a mangonel. Must be built on a Stone Wall. \nCan be used to access the top of walls.",
       "variations": [
         {
           "id": "stone-wall-tower-2",
@@ -2330,7 +2332,7 @@
           "civs": [
             "by"
           ],
-          "description": "Heavy defensive tower that fires a springald. Must be built on a Stone Wall segment.\nInfantry can use the tower to access the top of the walls.",
+          "description": "Heavy defensive tower that fires a mangonel. Must be built on a Stone Wall. \nCan be used to access the top of walls.",
           "classes": [
             "defensive",
             "building"
@@ -2391,7 +2393,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/buildings/town-center-2.png",
-      "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
+      "description": "All Resources can be dropped off here. Produces Villagers, Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.\nNon-Capital Town Centers can't detect stealth or disguises.",
       "variations": [
         {
           "id": "town-center-2",
@@ -2404,7 +2406,7 @@
           "civs": [
             "by"
           ],
-          "description": "All Resources can be dropped off here. Produces Villagers and Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.",
+          "description": "All Resources can be dropped off here. Produces Villagers, Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.\nNon-Capital Town Centers can't detect stealth or disguises.",
           "classes": [
             "economy",
             "&",

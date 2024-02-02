@@ -707,7 +707,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/bodkin-bolts-4.png",
-      "description": "Gilded Crossbowmen deal +10 damage against Siege units.",
+      "description": "Gilded Crossbowmen deal +20 damage against Siege units.",
       "variations": [
         {
           "id": "bodkin-bolts-4",
@@ -720,7 +720,7 @@
           "civs": [
             "od"
           ],
-          "description": "Gilded Crossbowmen deal +10 damage against Siege units.",
+          "description": "Gilded Crossbowmen deal +20 damage against Siege units.",
           "classes": [
             "crossbow",
             "technology"
@@ -760,7 +760,7 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 20,
               "type": "bonus"
             }
           ]
@@ -1111,7 +1111,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/crosscut-saw-4.png",
-      "description": "Increase Villagers' gathering rate for Wood by 15%.",
+      "description": "Increase Villagers' gathering rate for Wood by 15% and Wood gatherers carry capacity by +5.",
       "variations": [
         {
           "id": "crosscut-saw-4",
@@ -1124,7 +1124,7 @@
           "civs": [
             "od"
           ],
-          "description": "Increase Villagers' gathering rate for Wood by 15%.",
+          "description": "Increase Villagers' gathering rate for Wood by 15% and Wood gatherers carry capacity by +5.",
           "classes": [
             "wood",
             "gathering",
@@ -1184,7 +1184,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/cupellation-4.png",
-      "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
+      "description": "Gold gatherers drop off 15% more resources.",
       "variations": [
         {
           "id": "cupellation-4",
@@ -1197,7 +1197,7 @@
           "civs": [
             "od"
           ],
-          "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
+          "description": "Gold gatherers drop off 15% more resources.",
           "classes": [
             "mining",
             "technology",
@@ -2720,6 +2720,65 @@
               "type": "passive"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "heavy-torches",
+      "name": "Heavy Torches",
+      "type": "technology",
+      "civs": [
+        "od"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Spearman Technology"
+      ],
+      "classes": [
+        "spearman",
+        "technology"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/technologies/heavy-torches-2.png",
+      "description": "Gilded Spearman torches deal area of effect damage.",
+      "variations": [
+        {
+          "id": "heavy-torches-2",
+          "baseId": "heavy-torches",
+          "type": "technology",
+          "name": "Heavy Torches",
+          "pbgid": 2140414,
+          "attribName": "upgrade_dragon_fire_hre_ha_01",
+          "age": 2,
+          "civs": [
+            "od"
+          ],
+          "description": "Gilded Spearman torches deal area of effect damage.",
+          "classes": [
+            "spearman",
+            "technology"
+          ],
+          "displayClasses": [
+            "Spearman Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 50,
+            "wood": 0,
+            "stone": 0,
+            "gold": 125,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 175,
+            "popcap": 0,
+            "time": 30
+          },
+          "producedBy": [
+            "barracks",
+            "burgrave-palace"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/heavy-torches-2.png",
+          "effects": []
         }
       ]
     },
@@ -4259,6 +4318,64 @@
       ]
     },
     {
+      "id": "scale-armor",
+      "name": "Scale Armor",
+      "type": "technology",
+      "civs": [
+        "od"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Archer Technology"
+      ],
+      "classes": [
+        "archer",
+        "technology"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/scale-armor-3.png",
+      "description": "Increase the ranged armor of Gilded Archers by +3.",
+      "variations": [
+        {
+          "id": "scale-armor-3",
+          "baseId": "scale-armor",
+          "type": "technology",
+          "name": "Scale Armor",
+          "pbgid": 2140559,
+          "attribName": "upgrade_archer_armor_hre_ha_01",
+          "age": 3,
+          "civs": [
+            "od"
+          ],
+          "description": "Increase the ranged armor of Gilded Archers by +3.",
+          "classes": [
+            "archer",
+            "technology"
+          ],
+          "displayClasses": [
+            "Archer Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 100,
+            "wood": 0,
+            "stone": 0,
+            "gold": 250,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 350,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "archery-range"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/scale-armor-3.png",
+          "effects": []
+        }
+      ]
+    },
+    {
       "id": "shipwrights",
       "name": "Shipwrights",
       "type": "technology",
@@ -5260,7 +5377,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/tithe-barns-4.png",
-      "description": "Relics placed in a Monastery provide an income of +30 Food, +30 Wood, and +30 Stone every minute.",
+      "description": "Relics placed in a Monastery provide an income of +40 Food, +40 Wood, and +10 Stone every minute.",
       "variations": [
         {
           "id": "tithe-barns-4",
@@ -5273,7 +5390,7 @@
           "civs": [
             "od"
           ],
-          "description": "Relics placed in a Monastery provide an income of +30 Food, +30 Wood, and +30 Stone every minute.",
+          "description": "Relics placed in a Monastery provide an income of +40 Food, +40 Wood, and +10 Stone every minute.",
           "classes": [
             "religious",
             "technology"
@@ -5310,7 +5427,7 @@
                 ]
               },
               "effect": "change",
-              "value": 30,
+              "value": 40,
               "type": "influence"
             }
           ]

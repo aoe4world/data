@@ -1,0 +1,49 @@
+{
+  "id": "zen-3",
+  "baseId": "zen",
+  "type": "technology",
+  "name": "Zen",
+  "pbgid": 2158005,
+  "attribName": "upgrade_temple_zen_jpn",
+  "age": 3,
+  "civs": [
+    "ja"
+  ],
+  "description": "Buddhist Monks generate 25 gold every 60 seconds.",
+  "classes": [
+    "buddhist",
+    "technology"
+  ],
+  "displayClasses": [
+    "Buddhist Technology"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 200,
+    "wood": 300,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 500,
+    "popcap": 0,
+    "time": 35
+  },
+  "producedBy": [
+    "temple-of-equality",
+    "buddhist-temple"
+  ],
+  "effects": [
+    {
+      "property": "goldGeneration",
+      "select": {
+        "id": [
+          "buddhist-monk"
+        ]
+      },
+      "effect": "change",
+      "value": 25,
+      "type": "passive"
+    }
+  ]
+}

@@ -386,7 +386,7 @@
       "civs": [
         "de"
       ],
-      "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Can only attack buildings\n- Slow movement speed",
+      "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Takes bonus damage from melee attacks\n- Can only attack buildings\n- Slow movement speed",
       "classes": [
         "siege"
       ],
@@ -396,12 +396,12 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 200,
         "stone": 0,
         "gold": 0,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 250,
+        "total": 200,
         "popcap": 1,
         "time": 40
       },
@@ -409,7 +409,7 @@
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
-      "hitpoints": 420,
+      "hitpoints": 340,
       "weapons": [
         {
           "name": "Ram",
@@ -565,7 +565,7 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 30
+          "value": 35
         }
       ],
       "sight": {
@@ -667,7 +667,7 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 20
+          "value": 30
         }
       ],
       "sight": {
@@ -2224,7 +2224,7 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 20
+          "value": 30
         }
       ],
       "sight": {
@@ -2917,7 +2917,7 @@
           "name": "Springald",
           "type": "ranged",
           "damage": 30,
-          "speed": 4.125,
+          "speed": 3.125,
           "range": {
             "min": 1.25,
             "max": 10
@@ -2933,7 +2933,7 @@
                 ]
               },
               "effect": "change",
-              "value": 70,
+              "value": 60,
               "type": "passive"
             },
             {
@@ -2947,7 +2947,7 @@
                 ]
               },
               "effect": "change",
-              "value": 70,
+              "value": 60,
               "type": "passive"
             }
           ],
@@ -2956,7 +2956,7 @@
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 2.75,
+            "reload": 1.75,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -3307,12 +3307,10 @@
       ],
       "description": "Traders generate Gold when assigned to trade with a Trade Post or another player’s Market. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trader makes repeated trips between its Home Market and the trade target. You can assign a new Home Market if you wish to.",
       "classes": [
-        "worker",
-        "cavalry"
+        "worker"
       ],
       "displayClasses": [
-        "Worker",
-        "Cavalry"
+        "Worker"
       ],
       "unique": false,
       "costs": {
@@ -3445,21 +3443,7 @@
             "min": 0,
             "max": 1
           },
-          "modifiers": [
-            {
-              "property": "fireAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 2,
-              "type": "passive"
-            }
-          ],
+          "modifiers": [],
           "durations": {
             "aim": 0,
             "windup": 0.75,

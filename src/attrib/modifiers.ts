@@ -70,8 +70,8 @@ const increaseAttackSpeedByPercent = (percent: number) => round(1 / (1 + percent
 const round = (n: number) => Math.round(n * 100) / 100; //(100/(100-33))
 const placeholderAbility =
   (select: Selector) =>
-  (values: number[], item: Item): Modifier[] =>
-    [{ property: "unknown", select, effect: "change", value: 0, type: "ability" }];
+    (values: number[], item: Item): Modifier[] =>
+      [{ property: "unknown", select, effect: "change", value: 0, type: "ability" }];
 
 export const abilityModifiers: Record<string, (values: number[], item: Item) => Modifier[]> = {
   "ability-ring-the-town-bell": placeholderAbility({ id: ["town-center", "capital-town-center"] }),
@@ -4665,21 +4665,158 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
     },
   ],
 
-  //Increases the damage and health of Jeanne's Companions by 20%.
-  "companion-equipment": ([i]) => [
+  // Increase Jeanne d'Arc's health and damage by 25% and gain +1 armor. Increase the health and damage of Jeanne's Companions by 20%.
+  "companion-equipment": ([jeanne, armor, companions]) => [
     {
       property: "hitpoints",
       select: { id: ["jeannes-champion", "jeannes-rider"] },
       effect: "multiply",
-      value: increaseByPercent(1, i),
+      value: increaseByPercent(1, companions),
       type: "passive",
     },
     {
       property: "meleeAttack",
       select: { id: ["jeannes-companion", "jeannes-rider"] },
       effect: "multiply",
-      value: increaseByPercent(1, i),
+      value: increaseByPercent(1, companions),
+      type: "passive",
+    },
+    {
+      property: "rangedAttack",
+      select: common.jeannes.lvl3,
+      effect: "multiply",
+      value: increaseByPercent(1, jeanne),
+      type: "passive",
+    },
+    {
+      property: "meleeAttack",
+      select: common.jeannes.lvl3,
+      effect: "multiply",
+      value: increaseByPercent(1, jeanne),
+      type: "passive",
+    },
+    {
+      property: "hitpoints",
+      select: common.jeannes.lvl3,
+      effect: "multiply",
+      value: increaseByPercent(1, jeanne),
+      type: "passive",
+    },
+    {
+      property: "meleeArmor",
+      select: common.jeannes.lvl3,
+      effect: "change",
+      value: armor,
+      type: "passive",
+    },
+    {
+      property: "rangedArmor",
+      select: common.jeannes.lvl3,
+      effect: "change",
+      value: armor,
+      type: "passive",
+    },
+    {
+      property: "rangedAttack",
+      select: common.jeannes.lvl4,
+      effect: "multiply",
+      value: increaseByPercent(1, jeanne),
+      type: "passive",
+    },
+    {
+      property: "meleeAttack",
+      select: common.jeannes.lvl4,
+      effect: "multiply",
+      value: increaseByPercent(1, jeanne),
+      type: "passive",
+    },
+    {
+      property: "hitpoints",
+      select: common.jeannes.lvl4,
+      effect: "multiply",
+      value: increaseByPercent(1, jeanne),
+      type: "passive",
+    },
+    {
+      property: "meleeArmor",
+      select: common.jeannes.lvl4,
+      effect: "change",
+      value: armor,
+      type: "passive",
+    },
+    {
+      property: "rangedArmor",
+      select: common.jeannes.lvl4,
+      effect: "change",
+      value: armor,
       type: "passive",
     },
   ],
+
+  // Increases Shinto Priest health by +40, healing rate by +60%, and movement speed by +15%.
+  "shinto-rituals": ([hp, hr, ms]) => [
+    {
+      property: "hitpoints",
+      select: { id: ["shinto-priest"] },
+      effect: "change",
+      value: hp,
+      type: "passive",
+    },
+    {
+      property: "healingRate",
+      select: { id: ["shinto-priest"] },
+      effect: "multiply",
+      value: increaseByPercent(1, hr),
+      type: "passive",
+    },
+    {
+      property: "moveSpeed",
+      select: { id: ["shinto-priest"] },
+      effect: "multiply",
+      value: increaseSpeedByPercent(1, ms),
+      type: "passive",
+    },
+  ],
+
+  // Increases the maximum number of Yorishiro by +2. Immediately spawns 2 Yorishiro at the Floating Gate.
+  "bunrei": ([b]) => [
+    {
+      property: "unknown",
+      select: { id: ["floating-gate"] },
+      effect: "change",
+      value: b,
+      type: "ability",
+    },
+  ],
+
+  // Increases the Line of Sight of all buildings by +2 tiles. Every 3 minutes, all economic units heal for 100% of their health over 3 seconds.
+  "gion-festival": ([los]) => [
+    {
+      property: "lineOfSight",
+      select: { class: [["building"]] },
+      effect: "change",
+      value: los,
+      type: "passive",
+    },
+  ],
+
+  // Buddhist Monks generate 25 gold every 60 seconds.
+  "zen": ([g]) => [
+    {
+      property: "goldGeneration",
+      select: { id: ["buddhist-monk"] },
+      effect: "change",
+      value: g,
+      type: "passive",
+    },
+  ],
+
+  // Buddhist Temples cast Sohei Sutra on a nearby enemy every 6 seconds.
+  "five-mountain-ministries": placeholderAbility({ id: ["buddhist-temple", "temple-of-equality"] }),
+
+  // Upgrades Buddhist Conversion to Nehan Conversion, which has a 25% shorter cooldown and additionally improves nearby allied units movement speed by +25% when cast.
+  "nehan": placeholderAbility({ id: ["buddhist-monk"] }),
+
+
+
 };

@@ -647,7 +647,7 @@ workaround("Remove Extra Materials from any civs that's not China", {
 const jeanneHeroLevels = {
   1: ["jeanne-darc-peasant"],
   2: ["jeanne-darc-hunter", "jeanne-darc-woman-at-arms"],
-  3: ["jeanne-darc-mounted-archer", "jeanne-knight"],
+  3: ["jeanne-darc-mounted-archer", "jeanne-darc-knight"],
   4: ["jeanne-darc-markswoman", "jeanne-darc-blast-cannon"],
 };
 

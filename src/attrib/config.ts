@@ -2,7 +2,7 @@ import path from "path";
 import { ITEM_TYPES } from "../lib/config";
 import { CivSlug } from "../sdk/utils";
 
-export const SOURCE_FOLDER = path.join(__dirname, "../../source/DLC");
+export const SOURCE_FOLDER = path.join(__dirname, "../../source/latest");
 export const ATTRIB_FOLDER = path.join(SOURCE_FOLDER, "/attrib");
 export const ICON_FOLDER = path.join(SOURCE_FOLDER, "/art/icons");
 export const LOCALES_FOLDER = path.join(SOURCE_FOLDER, "/locale");
@@ -346,6 +346,9 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "hunting_cabin_gold_generation",
   "wooden_fortress_influence_rus",
   "abilities/timed_abilities/rus/kremlin_levy",
+  "upgrade_stable_unit_mamluk_4_abb_ha_01",
+  "upgrade_stable_unit_mamluk_3_abb_ha_01",
+  "monk_debuff_target_jpn_five_mountain_landmark_version",
 
   (file) => file.includes("unit_") && file.includes("_free_abb_ha_01"),
 ];

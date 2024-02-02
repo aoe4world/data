@@ -1,0 +1,70 @@
+{
+  "id": "shinto-rituals-3",
+  "baseId": "shinto-rituals",
+  "type": "technology",
+  "name": "Shinto Rituals",
+  "pbgid": 2157996,
+  "attribName": "upgrade_shrine_rituals_jpn",
+  "age": 3,
+  "civs": [
+    "ja"
+  ],
+  "description": "Increases Shinto Priest health by +40, healing rate by +60%, and movement speed by +15%.",
+  "classes": [
+    "shinto",
+    "technology"
+  ],
+  "displayClasses": [
+    "Shinto Technology"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 300,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 300,
+    "popcap": 0,
+    "time": 30
+  },
+  "producedBy": [
+    "shinto-shrine"
+  ],
+  "effects": [
+    {
+      "property": "hitpoints",
+      "select": {
+        "id": [
+          "shinto-priest"
+        ]
+      },
+      "effect": "change",
+      "value": 40,
+      "type": "passive"
+    },
+    {
+      "property": "healingRate",
+      "select": {
+        "id": [
+          "shinto-priest"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.6,
+      "type": "passive"
+    },
+    {
+      "property": "moveSpeed",
+      "select": {
+        "id": [
+          "shinto-priest"
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.8999999999999999,
+      "type": "passive"
+    }
+  ]
+}

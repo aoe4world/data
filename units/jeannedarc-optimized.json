@@ -408,7 +408,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
-      "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Can only attack buildings\n- Slow movement speed",
+      "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Takes bonus damage from melee attacks\n- Can only attack buildings\n- Slow movement speed",
       "variations": [
         {
           "id": "battering-ram-2",
@@ -421,7 +421,7 @@
           "civs": [
             "je"
           ],
-          "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Can only attack buildings\n- Slow movement speed",
+          "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Takes bonus damage from melee attacks\n- Can only attack buildings\n- Slow movement speed",
           "classes": [
             "siege"
           ],
@@ -431,12 +431,12 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 250,
+            "wood": 200,
             "stone": 0,
             "gold": 0,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 250,
+            "total": 200,
             "popcap": 1,
             "time": 40
           },
@@ -444,7 +444,7 @@
             "siege-workshop"
           ],
           "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
-          "hitpoints": 420,
+          "hitpoints": 340,
           "weapons": [
             {
               "name": "Ram",
@@ -623,7 +623,7 @@
           "armor": [
             {
               "type": "ranged",
-              "value": 30
+              "value": 35
             }
           ],
           "sight": {
@@ -858,7 +858,7 @@
           "armor": [
             {
               "type": "ranged",
-              "value": 20
+              "value": 30
             }
           ],
           "sight": {
@@ -1761,12 +1761,12 @@
           },
           "producedBy": [],
           "icon": "https://data.aoe4world.com/images/units/jeanne-darc-blast-cannon-4.png",
-          "hitpoints": 600,
+          "hitpoints": 480,
           "weapons": [
             {
               "name": "Handcannon",
               "type": "siege",
-              "damage": 50,
+              "damage": 40,
               "speed": 2.125,
               "range": {
                 "min": 0,
@@ -1804,11 +1804,11 @@
           "armor": [
             {
               "type": "melee",
-              "value": 6
+              "value": 5
             },
             {
               "type": "ranged",
-              "value": 6
+              "value": 5
             }
           ],
           "sight": {
@@ -1880,7 +1880,7 @@
           },
           "producedBy": [],
           "icon": "https://data.aoe4world.com/images/units/jeanne-darc-hunter-2.png",
-          "hitpoints": 200,
+          "hitpoints": 225,
           "weapons": [
             {
               "name": "Bow",
@@ -2007,7 +2007,7 @@
             "height": 10
           },
           "movement": {
-            "speed": 1.25
+            "speed": 1.375
           }
         }
       ],
@@ -2022,12 +2022,14 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Heavy Melee Cavalry"
+        "Heavy Melee Cavalry",
+        "Hero"
       ],
       "classes": [
         "heavy",
         "melee",
-        "cavalry"
+        "cavalry",
+        "hero"
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/units/jeanne-darc-knight-3.png",
@@ -2048,30 +2050,33 @@
           "classes": [
             "heavy",
             "melee",
-            "cavalry"
+            "cavalry",
+            "hero"
           ],
           "displayClasses": [
-            "Heavy Melee Cavalry"
+            "Heavy Melee Cavalry",
+            "Hero"
           ],
           "unique": true,
           "costs": {
             "food": 0,
             "wood": 0,
             "stone": 0,
-            "gold": 0,
+            "gold": 500,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 0,
+            "total": 500,
+            "time": 0,
             "popcap": 1
           },
           "producedBy": [],
           "icon": "https://data.aoe4world.com/images/units/jeanne-darc-knight-3.png",
-          "hitpoints": 450,
+          "hitpoints": 360,
           "weapons": [
             {
               "name": "Sword",
               "type": "melee",
-              "damage": 20,
+              "damage": 16,
               "speed": 1.5,
               "range": {
                 "min": 0,
@@ -2132,7 +2137,7 @@
             {
               "name": "Lance",
               "type": "melee",
-              "damage": 30,
+              "damage": 24,
               "speed": 0.525,
               "range": {
                 "min": 0,
@@ -2171,11 +2176,11 @@
           "armor": [
             {
               "type": "melee",
-              "value": 5
+              "value": 4
             },
             {
               "type": "ranged",
-              "value": 5
+              "value": 4
             }
           ],
           "sight": {
@@ -2245,12 +2250,12 @@
           },
           "producedBy": [],
           "icon": "https://data.aoe4world.com/images/units/jeanne-darc-markswoman-4.png",
-          "hitpoints": 500,
+          "hitpoints": 400,
           "weapons": [
             {
               "name": "Handcannon",
               "type": "ranged",
-              "damage": 35,
+              "damage": 28,
               "speed": 2.125,
               "range": {
                 "min": 0,
@@ -2377,12 +2382,12 @@
           },
           "producedBy": [],
           "icon": "https://data.aoe4world.com/images/units/jeanne-darc-mounted-archer-3.png",
-          "hitpoints": 350,
+          "hitpoints": 280,
           "weapons": [
             {
               "name": "Bow",
               "type": "ranged",
-              "damage": 18,
+              "damage": 15,
               "speed": 1.625,
               "range": {
                 "min": 0,
@@ -2435,7 +2440,7 @@
             {
               "name": "(translation not found) (undefined)",
               "type": "ranged",
-              "damage": 18,
+              "damage": 15,
               "speed": 1.625,
               "range": {
                 "min": 0,
@@ -3689,7 +3694,7 @@
           "armor": [
             {
               "type": "ranged",
-              "value": 20
+              "value": 30
             }
           ],
           "sight": {
@@ -3984,7 +3989,7 @@
           "armor": [
             {
               "type": "ranged",
-              "value": 30
+              "value": 35
             }
           ],
           "sight": {
@@ -4060,7 +4065,7 @@
               "name": "Cannon",
               "type": "ranged",
               "damage": 85,
-              "speed": 4.375,
+              "speed": 3.375,
               "range": {
                 "min": 1.25,
                 "max": 12
@@ -4076,7 +4081,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 100,
+                  "value": 60,
                   "type": "passive"
                 },
                 {
@@ -4090,7 +4095,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 100,
+                  "value": 60,
                   "type": "passive"
                 }
               ],
@@ -4099,7 +4104,7 @@
                 "windup": 0,
                 "attack": 0.125,
                 "winddown": 0.75,
-                "reload": 3,
+                "reload": 2,
                 "setup": 0.25,
                 "teardown": 0.25,
                 "cooldown": 0
@@ -5118,7 +5123,7 @@
               "name": "Springald",
               "type": "ranged",
               "damage": 30,
-              "speed": 4.125,
+              "speed": 3.125,
               "range": {
                 "min": 1.25,
                 "max": 10
@@ -5134,7 +5139,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 70,
+                  "value": 60,
                   "type": "passive"
                 },
                 {
@@ -5148,7 +5153,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 70,
+                  "value": 60,
                   "type": "passive"
                 }
               ],
@@ -5157,7 +5162,7 @@
                 "windup": 0.25,
                 "attack": 0.125,
                 "winddown": 0.5,
-                "reload": 2.75,
+                "reload": 1.75,
                 "setup": 0,
                 "teardown": 0.25,
                 "cooldown": 0
@@ -5262,12 +5267,10 @@
       ],
       "unique": false,
       "displayClasses": [
-        "Worker",
-        "Cavalry"
+        "Worker"
       ],
       "classes": [
-        "worker",
-        "cavalry"
+        "worker"
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/units/trader-1.png",
@@ -5286,12 +5289,10 @@
           ],
           "description": "Traders generate Gold when assigned to trade with a Trade Post or another player’s Market. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trader makes repeated trips between its Home Market and the trade target. You can assign a new Home Market if you wish to.",
           "classes": [
-            "worker",
-            "cavalry"
+            "worker"
           ],
           "displayClasses": [
-            "Worker",
-            "Cavalry"
+            "Worker"
           ],
           "unique": false,
           "costs": {
@@ -5466,21 +5467,7 @@
                 "min": 0,
                 "max": 1
               },
-              "modifiers": [
-                {
-                  "property": "fireAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "siege"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 2,
-                  "type": "passive"
-                }
-              ],
+              "modifiers": [],
               "durations": {
                 "aim": 0,
                 "windup": 0.75,
