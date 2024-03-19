@@ -467,7 +467,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/buildings/castle-of-the-crow-4.png",
-      "description": "Acts as a Castle. Can periodically spawn Treasure Caravans from selected neutral Trading Posts. Treasure Caravans provide a large amount of resources upon reaching the Castle of the Crow.",
+      "description": "Acts as a Castle. Can periodically spawn Treasure Caravans from selected neutral Trading Posts to provide a large amount of Food, Wood, Gold, and some Stone when reaching the Castle of the Crow.",
       "variations": [
         {
           "id": "castle-of-the-crow-4",
@@ -480,7 +480,7 @@
           "civs": [
             "ja"
           ],
-          "description": "Acts as a Castle. Can periodically spawn Treasure Caravans from selected neutral Trading Posts. Treasure Caravans provide a large amount of resources upon reaching the Castle of the Crow.",
+          "description": "Acts as a Castle. Can periodically spawn Treasure Caravans from selected neutral Trading Posts to provide a large amount of Food, Wood, Gold, and some Stone when reaching the Castle of the Crow.",
           "classes": [
             "age",
             "iv",
@@ -663,33 +663,18 @@
               "name": "Bow",
               "type": "ranged",
               "damage": 12,
-              "speed": 0.5,
+              "speed": 1,
               "range": {
                 "min": 0,
-                "max": 8
+                "max": 6
               },
-              "modifiers": [
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "naval",
-                        "unit"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ],
+              "modifiers": [],
               "durations": {
                 "aim": 0,
-                "windup": 0.125,
+                "windup": 0,
                 "attack": 0.125,
                 "winddown": 0,
-                "reload": 0.25,
+                "reload": 0.875,
                 "setup": 0,
                 "teardown": 0,
                 "cooldown": 0

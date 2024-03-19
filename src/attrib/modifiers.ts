@@ -489,6 +489,18 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
     },
   ],
 
+  "ability-network-of-citadels": ([i]) => [
+    // When enemies are nearby, this building sounds an alarm, causing nearby units to get a +40% increase to attack speed.
+    {
+      property: "attackSpeed",
+      select: common.allLandUnitsExceptReligiousTrader,
+      effect: "multiply",
+      value: decreaseByPercent(1, i),
+      type: "ability",
+    },
+  ],
+
+
   "ability-the-long-wall": ([]) => [
     // All units standing on Walls gain +25% ranged damage.
     {
@@ -2180,8 +2192,15 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
     },
   ],
 
-  "inspired-warriors": ([a, d]) => [
-    // Prelates can inspire military units, improving their armor by +1 and damage by  +15%.
+  "inspired-warriors": ([mv, a, d]) => [
+    // Prelates increase their move speed by 10% and can inspire military units, improving their armor by +1, and damage by +15%.
+    {
+      property: "moveSpeed",
+      select: { id: ["prelate"] },
+      effect: "multiply",
+      value: increaseByPercent(1, mv),
+      type: "passive",
+    },
     {
       property: "rangedArmor",
       select: { class: [["cavalry"], ["infantry"]] },
@@ -2226,7 +2245,7 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
     // Increase the movement speed of infantry and prelates by +10%.
     {
       property: "moveSpeed",
-      select: { class: [["infantry"]], id: ["prelate"] },
+      select: { class: [["infantry"]] },
       effect: "multiply",
       value: increaseByPercent(1, i),
       type: "passive",

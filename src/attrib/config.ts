@@ -263,6 +263,10 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "landmarkvariant",
   (file) => file.includes("upgrade_unit_") && file.includes("spirit_way_chi"),
 
+  // Crusador mode landmarks
+  (file) => file.includes("_cru"),
+  (file) => file.includes("crusader_cmp"),
+
   // Prefer the vanilla keep emplacement versions over landmark and outposts, except mongols
   "upgrade_barbican_cannon_chi",
   "upgrade_barbican_springald_chi",
@@ -293,6 +297,7 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "tanegashima_stockpile_jpn", // 2138250
   "tanegashima_buff_jpn",
   "storehouse_rice_field_spawn_jpn", //2127424
+  "daimyo_level_manager_jpn",
 
   //uninteresting abilities to place into data
   "military_neutralize_holy_site",

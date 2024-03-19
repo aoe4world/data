@@ -546,7 +546,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -1368,7 +1368,7 @@
       "civs": [
         "ay"
       ],
-      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -1669,7 +1669,7 @@
       "civs": [
         "by"
       ],
-      "description": "Loads this Cannon for an Artillery Shot, next shot has greatly increased Area of Effect but no bonus against buildings.",
+      "description": "Loads this Cannon with an Artillery Shot, reducing damage in exchange for area of effect damage. No bonus damage against buildings.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -1716,7 +1716,7 @@
       "civs": [
         "by"
       ],
-      "description": "Toggle on to activate automatic drinking when low health, rapidly increasing health regeneration by 15 per second for 10 seconds.",
+      "description": "Toggle on to activate automatic drinking when low health, rapidly increasing health regeneration by 25 per second for 6 seconds.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -2529,7 +2529,7 @@
       "civs": [
         "by"
       ],
-      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -2619,7 +2619,7 @@
       "civs": [
         "by"
       ],
-      "description": "Enter a defensive stance, decreasing move speed by -25%, attack speed by -25%, and ranged damage taken by -40% .",
+      "description": "Enter a defensive stance, decreasing move speed by -25%, attack speed by -25%, and ranged damage taken by -30%.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -2658,7 +2658,7 @@
             ]
           },
           "effect": "change",
-          "value": 40,
+          "value": 30,
           "type": "ability",
           "duration": 25
         },
@@ -2670,7 +2670,7 @@
             ]
           },
           "effect": "change",
-          "value": 40,
+          "value": 30,
           "type": "ability",
           "duration": 25
         }
@@ -3094,7 +3094,7 @@
       "civs": [
         "ch"
       ],
-      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -3416,7 +3416,7 @@
       "civs": [
         "de"
       ],
-      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -3869,6 +3869,63 @@
       ]
     },
     {
+      "id": "ability-network-of-citadels-1",
+      "baseId": "ability-network-of-citadels",
+      "type": "ability",
+      "name": "Network of Citadels",
+      "pbgid": 2160807,
+      "attribName": "network_of_citadels_eng",
+      "age": 1,
+      "civs": [
+        "en"
+      ],
+      "description": "When enemies are nearby, this building sounds an alarm, causing nearby units to get a +40% increase to attack speed.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "outpost",
+        "stone-wall-tower",
+        "keep"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-network-of-citadels-1.png",
+      "active": "always",
+      "auraRange": 12.5,
+      "effects": [
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "melee"
+              ],
+              [
+                "ranged"
+              ],
+              [
+                "siege"
+              ]
+            ],
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.6,
+          "type": "ability"
+        }
+      ]
+    },
+    {
       "id": "ability-place-palings-1",
       "baseId": "ability-place-palings",
       "type": "ability",
@@ -3930,7 +3987,7 @@
       "civs": [
         "en"
       ],
-      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -4021,7 +4078,7 @@
       "civs": [
         "fr"
       ],
-      "description": "Loads this Cannon for an Artillery Shot, next shot has greatly increased Area of Effect but no bonus against buildings.",
+      "description": "Loads this Cannon with an Artillery Shot, reducing damage in exchange for area of effect damage. No bonus damage against buildings.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -4268,7 +4325,7 @@
       "civs": [
         "fr"
       ],
-      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -4640,11 +4697,9 @@
       },
       "producedBy": [
         "house",
-        "outpost",
         "mill",
         "barracks",
         "lumber-camp",
-        "dock",
         "mining-camp",
         "meinwerk-palace",
         "aachen-chapel",
@@ -4657,11 +4712,8 @@
         "burgrave-palace",
         "regnitz-cathedral",
         "siege-workshop",
-        "keep",
-        "monastery",
         "palace-of-swabia",
         "elzbach-palace",
-        "university",
         "great-palace-of-flensburg"
       ],
       "icon": "https://data.aoe4world.com/images/abilities/ability-emergency-repairs-1.png",
@@ -5054,7 +5106,7 @@
       "civs": [
         "hr"
       ],
-      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -5451,7 +5503,7 @@
       "civs": [
         "ja"
       ],
-      "description": "Place a Yorishiro in the following buildings to receive bonuses and increase their line of sight.\nMilitary and Docks: +200% Work rate\nTown Center: +25% Production speed\nFarmhouse: +75 Food per minute\nLumber Camp: +75 Wood per minute\nForge: +75 Gold per minute\nWonder: +4000 Health",
+      "description": "Place a Yorishiro in the following buildings to receive bonuses and increase their line of sight.\nMilitary and Docks: +200% Production speed\nTown Center: +25% Production speed\nFarmhouse: +75 Food per minute\nLumber Camp: +75 Wood per minute\nForge: +75 Gold per minute\nWonder: +4000 Health",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -5505,7 +5557,7 @@
       "civs": [
         "ja"
       ],
-      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -6860,7 +6912,7 @@
       "civs": [
         "je"
       ],
-      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -7756,7 +7808,7 @@
       "civs": [
         "ma"
       ],
-      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -8321,7 +8373,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -8894,7 +8946,7 @@
       "civs": [
         "od"
       ],
-      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -9515,7 +9567,7 @@
       "civs": [
         "ot"
       ],
-      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -9911,7 +9963,7 @@
       "civs": [
         "ru"
       ],
-      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -10699,7 +10751,7 @@
       "civs": [
         "zx"
       ],
-      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
       "classes": [],
       "displayClasses": [],
       "costs": {

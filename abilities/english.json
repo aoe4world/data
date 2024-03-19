@@ -383,6 +383,63 @@
       ]
     },
     {
+      "id": "ability-network-of-citadels-1",
+      "baseId": "ability-network-of-citadels",
+      "type": "ability",
+      "name": "Network of Citadels",
+      "pbgid": 2160807,
+      "attribName": "network_of_citadels_eng",
+      "age": 1,
+      "civs": [
+        "en"
+      ],
+      "description": "When enemies are nearby, this building sounds an alarm, causing nearby units to get a +40% increase to attack speed.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "outpost",
+        "stone-wall-tower",
+        "keep"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-network-of-citadels-1.png",
+      "active": "always",
+      "auraRange": 12.5,
+      "effects": [
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "melee"
+              ],
+              [
+                "ranged"
+              ],
+              [
+                "siege"
+              ]
+            ],
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.6,
+          "type": "ability"
+        }
+      ]
+    },
+    {
       "id": "ability-place-palings-1",
       "baseId": "ability-place-palings",
       "type": "ability",
@@ -444,7 +501,7 @@
       "civs": [
         "en"
       ],
-      "description": "Alert nearby Villagers to run to the closest building with available garrison space.",
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
       "classes": [],
       "displayClasses": [],
       "costs": {
