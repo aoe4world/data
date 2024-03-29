@@ -284,6 +284,8 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "upgrade_landmark_siege_works",
   "unit_siege_tower_3_eng",
 
+  "unit_abbey_king_free_2", //free king on abbey completion
+
   "_tanegashima_4_jpn",
   "upgrade_econ_resource_wood_harvest_rate_1_kura_jpn",
   "upgrade_econ_resource_wood_harvest_rate_2_kura_jpn",

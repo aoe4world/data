@@ -471,7 +471,7 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
     // Place a Campfire which increases sight range of nearby units by 30%.
     {
       property: "lineOfSight",
-      select: { id: ["man-at-arms"] },
+      select: { id: ["scout"] },
       effect: "multiply",
       value: increaseByPercent(1, s),
       type: "ability",
@@ -1263,7 +1263,7 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
     },
   ],
 
-  "ability-medical-centers": placeholderAbility({ id: ["keep"] }),
+  "ability-medical-centers": placeholderAbility({ id: ["keep", "town-center", "capital-town-center"] }),
 
   "ability-fiefdom": ([i]) => [
     // Town Center production and research speed increased by +10%.\nBonus increases further in later Ages
