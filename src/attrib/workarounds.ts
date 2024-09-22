@@ -1,6 +1,6 @@
 import { ItemSlug } from "../sdk/utils";
 import { Ability, Building, Item, ItemType, Modifier, Selector, Technology, Unit, Upgrade } from "../types/items";
-import { KHAGANTE_SPAWN_COUNTS, attribFile } from "./config";
+import { KHAGANTE_SPAWN_COUNTS } from "./config";
 
 const workarounds = new Map<string, Override>();
 const NO_COSTS = { food: 0, wood: 0, stone: 0, gold: 0, vizier: 0, oliveoil: 0, total: 0, time: 0, popcap: 0 };

@@ -52,8 +52,8 @@ export const hardcodedDiscovery = {
   english: [
     "upgrade/races/english/units/upgrade_abbey_king_castle_1",
     "upgrade/races/english/units/upgrade_abbey_king_imp_2",
-    "/sbps/races/english/unit_ranger_wynguard_4_eng",
-    "/sbps/races/english/unit_footman_wynguard_4_eng",
+    "sbps/races/english/unit_ranger_wynguard_4_eng",
+    "sbps/races/english/unit_footman_wynguard_4_eng",
     "abilities/timed_abilities/english/longbow_rate_of_fire_ability", //misses auto discovery; range is weird but does it matter? //convert to ability from tech
     "abilities/timed_abilities/english/deploy_campfire_eng", //misses auto discovery;
     // "abilities/always_on_abilities/english/tower_outpost_alert_aura_eng",  //how to handle upgrade,  tower outpost has context to upgrade to citadels or tech has the context to upgrade buff or do a workaround
@@ -161,9 +161,9 @@ export const hardcodedDiscovery = {
   ],
   jeannedarc: [
     "abilities/always_on_abilities/french_ha_01/jeanne_companion_keep_dummy_keep",
-    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ability_charges_consecrate_fre_ha_01",
-    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ability_charges_melee_fre_ha_01",
-    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ability_charges_ranged_fre_ha_01",
+    //"abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ability_charges_consecrate_fre_ha_01",
+    //"abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ability_charges_melee_fre_ha_01",
+    //"abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ability_charges_ranged_fre_ha_01",
     "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_buff_follower_aura_fre_ha_01",
     "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_cleaving_attack_fre_ha_01",
     "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_construction_aura_fre_ha_01",
@@ -391,8 +391,3 @@ export const KHAGANTE_SPAWN_COUNTS = {
   magudai: 5,
   "palace-guard": 5,
 };
-
-export function attribFile(...paths: string[]) {
-  paths[paths.length - 1] = paths.at(-1)?.endsWith(".xml") ? paths.at(-1)! : `${paths.at(-1)}.xml`;
-  return path.join(...paths);
-}

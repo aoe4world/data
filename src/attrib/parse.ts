@@ -1,7 +1,7 @@
 import { ITEM_TYPES } from "../lib/config";
 import { getTranslation, NO_TRANSLATION_FOUND } from "./translations";
 import { parseWeapons } from "./weapons";
-import { attribFile, ignoreForNow } from "./config";
+import { ignoreForNow } from "./config";
 import { slugify } from "../lib/utils/string";
 import { Armor, Building, Item, ItemClass, ModifyableProperty, Technology, Unit, Upgrade, Ability } from "../types/items";
 import { CivConfig } from "../types/civs";
@@ -31,7 +31,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
     const loadout = maybeOnKey(findExt(data, "squadexts", "sbpextensions/squad_loadout_ext")?.unit_list[0], "loadout_data");
     const unitEbps = loadout?.type;
     if (unitEbps) {
-      const ebps = await getData(attribFile(unitEbps), undefined, context);
+      const ebps = await getData(unitEbps, context);
       if (debug) writeTemp(ebps, unitEbps.split("/").join("_"));
       ebpextensions = ebps?.extensions;
     }
@@ -164,7 +164,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
         for (const luFile of loadoutUnits) {
           if (ignoreForNow.includes(luFile)) continue;
           try {
-            const luEbps = await getData(attribFile(luFile), undefined, context);
+            const luEbps = await getData(luFile, context);
             if (debug) writeTemp(luEbps, "ebps_" + luFile.split("/").pop()!);
             const luWeapons = await parseWeapons(
               luEbps?.extensions.find((ex) => ex.exts === "ebpextensions/combat_ext"),

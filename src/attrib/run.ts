@@ -6,7 +6,7 @@ import { CIVILIZATIONS } from "../lib/config/civs";
 import { writeJson } from "../lib/files/writeData";
 import { CIVILIZATION_BY_SLUG, CivConfig } from "../types/civs";
 import { Item } from "../types/items";
-import { attribFile, hardcodedDiscovery, hardcodedDiscoveryCommon } from "./config";
+import { hardcodedDiscovery, hardcodedDiscoveryCommon } from "./config";
 import { workarounds } from "./workarounds";
 import { parseItemFromAttribFile, maybeOnKey } from "./parse";
 import { getTranslation as t } from "./translations";
@@ -43,8 +43,8 @@ async function buildTechTree(civ: CivConfig, context: RunContext = { debug: fals
   const produces = new Map<string, Set<string>>();
   const { debug, getData, race } = context;
 
-  const army: any = await getData(attribFile(`army/standard_mode/normal_${race}`), undefined, context);
-  const bps = await getData(attribFile(`racebps/${race}`), undefined, context);
+  const army: any = await getData(`army/normal_${race}`, context);
+  const bps = await getData(`racebps/${race}`, context);
 
   const army_extensions = army?.extensions?.[0] ?? army.army_bag;
   const civOverview = getCivInfo(army_extensions, bps?.extensions?.[0]);
@@ -66,7 +66,7 @@ async function buildTechTree(civ: CivConfig, context: RunContext = { debug: fals
     if (!matchedFile) return;
     file = matchedFile;
     if (filesToItemId.has(file)) return items.get(filesToItemId.get(file)!);
-    const data = await getData(attribFile(file), undefined, context);
+    const data = await getData(file, context);
     if (debug) writeTemp(data, file);
 
     const item = await parseItemFromAttribFile(file, data, civ, context);
