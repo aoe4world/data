@@ -330,9 +330,23 @@ function parseAge(name: string, requirements: any, parent_pbg: string) {
 }
 
 function parseSight(sight_ext: any) {
+  const {
+    inner_height = 0,
+    inner_radius = 0,
+    outer_height = 0,
+    outer_radius = 0
+  } = sight_ext?.sight_package || {};
+  // It's a cone and outer_height is negative (which leads to units seeing further from elevation)
+  // Calculate the radius at 0 height
+  const base = outer_height === inner_height ? outer_radius : (outer_radius - outer_height * (inner_radius - outer_radius) / (inner_height - outer_height));
   return {
-    line: sight_ext?.sight_package?.outer_radius || 0,
-    height: sight_ext?.sight_package?.inner_height || 0,
+    inner_height,
+    inner_radius,
+    outer_height,
+    outer_radius,
+    base,
+    line: outer_radius,
+    height: inner_height,
   };
 }
 
