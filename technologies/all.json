@@ -32263,6 +32263,17 @@
       "icon": "https://data.aoe4world.com/images/technologies/inspired-warriors-3.png",
       "effects": [
         {
+          "property": "moveSpeed",
+          "select": {
+            "id": [
+              "prelate"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.1,
+          "type": "passive"
+        },
+        {
           "property": "rangedArmor",
           "select": {
             "class": [
@@ -32275,7 +32286,7 @@
             ]
           },
           "effect": "change",
-          "value": 10,
+          "value": 1,
           "type": "influence"
         },
         {
@@ -32291,7 +32302,7 @@
             ]
           },
           "effect": "change",
-          "value": 10,
+          "value": 1,
           "type": "influence"
         },
         {
@@ -32309,7 +32320,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 1.01,
+          "value": 1.15,
           "type": "influence"
         },
         {
@@ -32327,7 +32338,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 1.01,
+          "value": 1.15,
           "type": "influence"
         }
       ]
@@ -32576,61 +32587,6 @@
           },
           "effect": "multiply",
           "value": 1.15,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "marching-drills-2",
-      "baseId": "marching-drills",
-      "type": "technology",
-      "name": "Marching Drills",
-      "pbgid": 170824,
-      "attribName": "upgrade_infantry_marching_drills_hre",
-      "age": 2,
-      "civs": [
-        "hr"
-      ],
-      "description": "Increase the movement speed of infantry and religious units by +10%.",
-      "classes": [
-        "infantry",
-        "technology"
-      ],
-      "displayClasses": [
-        "Infantry Technology"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 50,
-        "wood": 0,
-        "stone": 0,
-        "gold": 125,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 175,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "meinwerk-palace",
-        "blacksmith"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/marching-drills-2.png",
-      "effects": [
-        {
-          "property": "moveSpeed",
-          "select": {
-            "class": [
-              [
-                "infantry"
-              ]
-            ],
-            "id": [
-              "prelate"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.1,
           "type": "passive"
         }
       ]
@@ -36154,66 +36110,6 @@
       ]
     },
     {
-      "id": "herbal-medicine-3",
-      "baseId": "herbal-medicine",
-      "type": "technology",
-      "name": "Herbal Medicine",
-      "pbgid": 129401,
-      "attribName": "upgrade_unit_religious_herbal_medicine_4",
-      "age": 3,
-      "civs": [
-        "ja"
-      ],
-      "description": "Increase the healing rate of religious units by +60%.",
-      "classes": [
-        "healing",
-        "technology"
-      ],
-      "displayClasses": [
-        "Healing Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 275,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 275,
-        "popcap": 0,
-        "time": 45
-      },
-      "producedBy": [
-        "temple-of-equality",
-        "shinto-shrine",
-        "buddhist-temple"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/herbal-medicine-3.png",
-      "effects": [
-        {
-          "property": "healingRate",
-          "select": {
-            "id": [
-              "monk",
-              "scholar",
-              "imam",
-              "dervish",
-              "warrior-monk",
-              "shaman",
-              "prelate",
-              "shinto-priest",
-              "buddhist-monk",
-              "shaolin-monk"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.6,
-          "type": "passive"
-        }
-      ]
-    },
-    {
       "id": "hizukuri-2",
       "baseId": "hizukuri",
       "type": "technology",
@@ -37171,66 +37067,6 @@
           },
           "effect": "change",
           "value": 4,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "piety-4",
-      "baseId": "piety",
-      "type": "technology",
-      "name": "Piety",
-      "pbgid": 129403,
-      "attribName": "upgrade_unit_religious_piety_4",
-      "age": 4,
-      "civs": [
-        "ja"
-      ],
-      "description": "Increase the health of religious units by +40.",
-      "classes": [
-        "religious",
-        "technology"
-      ],
-      "displayClasses": [
-        "Religious Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 325,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 325,
-        "popcap": 0,
-        "time": 45
-      },
-      "producedBy": [
-        "temple-of-equality",
-        "shinto-shrine",
-        "buddhist-temple"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/piety-4.png",
-      "effects": [
-        {
-          "property": "hitpoints",
-          "select": {
-            "id": [
-              "monk",
-              "scholar",
-              "imam",
-              "dervish",
-              "warrior-monk",
-              "shaman",
-              "prelate",
-              "shinto-priest",
-              "buddhist-monk",
-              "shaolin-monk"
-            ]
-          },
-          "effect": "change",
-          "value": 40,
           "type": "passive"
         }
       ]
@@ -38336,6 +38172,45 @@
       ]
     },
     {
+      "id": "tawara-1",
+      "baseId": "tawara",
+      "type": "technology",
+      "name": "Tawara",
+      "pbgid": 2137904,
+      "attribName": "upgrade_unit_town_center_wheelbarrow_1_jpn",
+      "age": 1,
+      "civs": [
+        "ja"
+      ],
+      "description": "Increase the carry capacity of Villagers by +3, their movement speed by +7%, and +25% gather rate from Berry Bushes.",
+      "classes": [
+        "villager",
+        "technology",
+        "1/3"
+      ],
+      "displayClasses": [
+        "Villager Technology 1/3"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 0,
+        "wood": 25,
+        "stone": 0,
+        "gold": 50,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 75,
+        "popcap": 0,
+        "time": 30
+      },
+      "producedBy": [
+        "farmhouse",
+        "kura-storehouse"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/tawara-1.png",
+      "effects": []
+    },
+    {
       "id": "textiles-2",
       "baseId": "textiles",
       "type": "technology",
@@ -38381,133 +38256,6 @@
           },
           "effect": "change",
           "value": 50,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "tithe-barns-4",
-      "baseId": "tithe-barns",
-      "type": "technology",
-      "name": "Tithe Barns",
-      "pbgid": 129407,
-      "attribName": "upgrade_unit_religious_tithe_barn_4",
-      "age": 4,
-      "civs": [
-        "ja"
-      ],
-      "description": "Relics placed in a Monastery provide an income of +30 Food, +30 Wood, and +30 Stone every minute.",
-      "classes": [
-        "religious",
-        "technology"
-      ],
-      "displayClasses": [
-        "Religious Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 500,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 500,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "temple-of-equality",
-        "shinto-shrine",
-        "buddhist-temple"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/tithe-barns-4.png",
-      "effects": [
-        {
-          "property": "unknown",
-          "select": {
-            "id": [
-              "monastery",
-              "mosque",
-              "prayer-tent",
-              "regnitz-cathedral"
-            ]
-          },
-          "effect": "change",
-          "value": 30,
-          "type": "influence"
-        }
-      ]
-    },
-    {
-      "id": "towara-1",
-      "baseId": "towara",
-      "type": "technology",
-      "name": "Towara",
-      "pbgid": 2137904,
-      "attribName": "upgrade_unit_town_center_wheelbarrow_1_jpn",
-      "age": 1,
-      "civs": [
-        "ja"
-      ],
-      "description": "Increase the carry capacity of Villagers by +3, their movement speed by +7%, and +25% gather rate from Berry Bushes.",
-      "classes": [
-        "villager",
-        "technology",
-        "1/3"
-      ],
-      "displayClasses": [
-        "Villager Technology 1/3"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 25,
-        "stone": 0,
-        "gold": 50,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 75,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "farmhouse",
-        "kura-storehouse"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/towara-1.png",
-      "effects": [
-        {
-          "property": "carryCapacity",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "change",
-          "value": 3,
-          "type": "passive"
-        },
-        {
-          "property": "moveSpeed",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.8999999999999999,
-          "type": "passive"
-        },
-        {
-          "property": "berryGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.25,
           "type": "passive"
         }
       ]
@@ -39804,69 +39552,6 @@
           },
           "effect": "change",
           "value": 1,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "companion-equipment-3",
-      "baseId": "companion-equipment",
-      "type": "technology",
-      "name": "Companion Equipment",
-      "pbgid": 2144435,
-      "attribName": "upgrade_keep_companion_upgrade_fre_ha_01",
-      "age": 3,
-      "civs": [
-        "je"
-      ],
-      "description": "Increases the damage and health of Jeanne's Companions by 20%.",
-      "classes": [
-        "companion",
-        "upgrade"
-      ],
-      "displayClasses": [
-        "Companion Upgrade"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 50,
-        "stone": 0,
-        "gold": 125,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 175,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "keep",
-        "red-palace"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/companion-equipment-3.png",
-      "effects": [
-        {
-          "property": "hitpoints",
-          "select": {
-            "id": [
-              "jeannes-champion",
-              "jeannes-rider"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        },
-        {
-          "property": "meleeAttack",
-          "select": {
-            "id": [
-              "jeannes-companion",
-              "jeannes-rider"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
           "type": "passive"
         }
       ]
@@ -54220,104 +53905,6 @@
       ]
     },
     {
-      "id": "dragon-fire-3",
-      "baseId": "dragon-fire",
-      "type": "technology",
-      "name": "Dragon Fire",
-      "pbgid": 2140414,
-      "attribName": "upgrade_dragon_fire_hre_ha_01",
-      "age": 3,
-      "civs": [
-        "od"
-      ],
-      "description": "Gilded Spearman torches deal area of effect damage.",
-      "classes": [
-        "spearman",
-        "technology"
-      ],
-      "displayClasses": [
-        "Spearman Technology"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 50,
-        "wood": 0,
-        "stone": 0,
-        "gold": 125,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 175,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "barracks",
-        "burgrave-palace"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/dragon-fire-2.png",
-      "effects": [
-        {
-          "property": "unknown",
-          "select": {
-            "id": [
-              "gilded-spearman"
-            ]
-          },
-          "effect": "change",
-          "type": "ability"
-        }
-      ]
-    },
-    {
-      "id": "dragon-scale-leather-3",
-      "baseId": "dragon-scale-leather",
-      "type": "technology",
-      "name": "Dragon Scale Leather",
-      "pbgid": 2140559,
-      "attribName": "upgrade_archer_armor_hre_ha_01",
-      "age": 3,
-      "civs": [
-        "od"
-      ],
-      "description": "Increase the ranged armor of Gilded Archers by +3.",
-      "classes": [
-        "archer",
-        "technology"
-      ],
-      "displayClasses": [
-        "Archer Technology"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 100,
-        "wood": 0,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "archery-range"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/dragon-scale-leather-3.png",
-      "effects": [
-        {
-          "property": "rangedArmor",
-          "select": {
-            "id": [
-              "gilded-archer"
-            ]
-          },
-          "effect": "change",
-          "value": 3,
-          "type": "passive"
-        }
-      ]
-    },
-    {
       "id": "drift-nets-3",
       "baseId": "drift-nets",
       "type": "technology",
@@ -55446,6 +55033,17 @@
       "icon": "https://data.aoe4world.com/images/technologies/inspired-warriors-3.png",
       "effects": [
         {
+          "property": "moveSpeed",
+          "select": {
+            "id": [
+              "prelate"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.1,
+          "type": "passive"
+        },
+        {
           "property": "rangedArmor",
           "select": {
             "class": [
@@ -55458,7 +55056,7 @@
             ]
           },
           "effect": "change",
-          "value": 10,
+          "value": 1,
           "type": "influence"
         },
         {
@@ -55474,7 +55072,7 @@
             ]
           },
           "effect": "change",
-          "value": 10,
+          "value": 1,
           "type": "influence"
         },
         {
@@ -55492,7 +55090,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 1.01,
+          "value": 1.15,
           "type": "influence"
         },
         {
@@ -55510,7 +55108,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 1.01,
+          "value": 1.15,
           "type": "influence"
         }
       ]

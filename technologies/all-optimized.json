@@ -7526,7 +7526,6 @@
         "en",
         "fr",
         "hr",
-        "ja",
         "je",
         "ma",
         "mo",
@@ -7636,19 +7635,6 @@
           "producedBy": [
             "regnitz-cathedral",
             "monastery"
-          ]
-        },
-        {
-          "id": "herbal-medicine-3",
-          "pbgid": 129401,
-          "attribName": "upgrade_unit_religious_herbal_medicine_4",
-          "civs": [
-            "ja"
-          ],
-          "producedBy": [
-            "temple-of-equality",
-            "shinto-shrine",
-            "buddhist-temple"
           ]
         },
         {
@@ -10300,7 +10286,6 @@
         "en",
         "fr",
         "hr",
-        "ja",
         "je",
         "ma",
         "mo",
@@ -10410,19 +10395,6 @@
           "producedBy": [
             "regnitz-cathedral",
             "monastery"
-          ]
-        },
-        {
-          "id": "piety-4",
-          "pbgid": 129403,
-          "attribName": "upgrade_unit_religious_piety_4",
-          "civs": [
-            "ja"
-          ],
-          "producedBy": [
-            "temple-of-equality",
-            "shinto-shrine",
-            "buddhist-temple"
           ]
         },
         {
@@ -14138,7 +14110,6 @@
         "en",
         "fr",
         "hr",
-        "ja",
         "je",
         "ma",
         "mo",
@@ -14250,36 +14221,6 @@
           "producedBy": [
             "regnitz-cathedral",
             "monastery"
-          ]
-        },
-        {
-          "id": "tithe-barns-4",
-          "pbgid": 129407,
-          "attribName": "upgrade_unit_religious_tithe_barn_4",
-          "civs": [
-            "ja"
-          ],
-          "description": "Relics placed in a Monastery provide an income of +30 Food, +30 Wood, and +30 Stone every minute.",
-          "producedBy": [
-            "temple-of-equality",
-            "shinto-shrine",
-            "buddhist-temple"
-          ],
-          "effects": [
-            {
-              "property": "unknown",
-              "select": {
-                "id": [
-                  "monastery",
-                  "mosque",
-                  "prayer-tent",
-                  "regnitz-cathedral"
-                ]
-              },
-              "effect": "change",
-              "value": 30,
-              "type": "influence"
-            }
           ]
         },
         {
@@ -21957,6 +21898,17 @@
       ],
       "effects": [
         {
+          "property": "moveSpeed",
+          "select": {
+            "id": [
+              "prelate"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.1,
+          "type": "passive"
+        },
+        {
           "property": "rangedArmor",
           "select": {
             "class": [
@@ -21969,7 +21921,7 @@
             ]
           },
           "effect": "change",
-          "value": 10,
+          "value": 1,
           "type": "influence"
         },
         {
@@ -21985,7 +21937,7 @@
             ]
           },
           "effect": "change",
-          "value": 10,
+          "value": 1,
           "type": "influence"
         },
         {
@@ -22003,7 +21955,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 1.01,
+          "value": 1.15,
           "type": "influence"
         },
         {
@@ -22021,85 +21973,8 @@
             ]
           },
           "effect": "multiply",
-          "value": 1.01,
+          "value": 1.15,
           "type": "influence"
-        }
-      ],
-      "shared": {}
-    },
-    {
-      "id": "marching-drills",
-      "name": "Marching Drills",
-      "type": "technology",
-      "civs": [
-        "hr"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Infantry Technology"
-      ],
-      "classes": [
-        "infantry",
-        "technology"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/marching-drills-2.png",
-      "description": "Increase the movement speed of infantry and religious units by +10%.",
-      "variations": [
-        {
-          "id": "marching-drills-2",
-          "baseId": "marching-drills",
-          "type": "technology",
-          "name": "Marching Drills",
-          "pbgid": 170824,
-          "attribName": "upgrade_infantry_marching_drills_hre",
-          "age": 2,
-          "civs": [
-            "hr"
-          ],
-          "description": "Increase the movement speed of infantry and religious units by +10%.",
-          "classes": [
-            "infantry",
-            "technology"
-          ],
-          "displayClasses": [
-            "Infantry Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 50,
-            "wood": 0,
-            "stone": 0,
-            "gold": 125,
-            "vizier": 0,
-            "oliveoil": 0,
-            "total": 175,
-            "popcap": 0,
-            "time": 60
-          },
-          "producedBy": [
-            "meinwerk-palace",
-            "blacksmith"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/marching-drills-2.png",
-          "effects": [
-            {
-              "property": "moveSpeed",
-              "select": {
-                "class": [
-                  [
-                    "infantry"
-                  ]
-                ],
-                "id": [
-                  "prelate"
-                ]
-              },
-              "effect": "multiply",
-              "value": 1.1,
-              "type": "passive"
-            }
-          ]
         }
       ],
       "shared": {}
@@ -24084,8 +23959,8 @@
       "shared": {}
     },
     {
-      "id": "towara",
-      "name": "Towara",
+      "id": "tawara",
+      "name": "Tawara",
       "type": "technology",
       "civs": [
         "ja"
@@ -24100,14 +23975,14 @@
         "1/3"
       ],
       "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/technologies/towara-1.png",
+      "icon": "https://data.aoe4world.com/images/technologies/tawara-1.png",
       "description": "Increase the carry capacity of Villagers by +3, their movement speed by +7%, and +25% gather rate from Berry Bushes.",
       "variations": [
         {
-          "id": "towara-1",
-          "baseId": "towara",
+          "id": "tawara-1",
+          "baseId": "tawara",
           "type": "technology",
-          "name": "Towara",
+          "name": "Tawara",
           "pbgid": 2137904,
           "attribName": "upgrade_unit_town_center_wheelbarrow_1_jpn",
           "age": 1,
@@ -24139,42 +24014,8 @@
             "farmhouse",
             "kura-storehouse"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/towara-1.png",
-          "effects": [
-            {
-              "property": "carryCapacity",
-              "select": {
-                "id": [
-                  "villager"
-                ]
-              },
-              "effect": "change",
-              "value": 3,
-              "type": "passive"
-            },
-            {
-              "property": "moveSpeed",
-              "select": {
-                "id": [
-                  "villager"
-                ]
-              },
-              "effect": "multiply",
-              "value": 0.8999999999999999,
-              "type": "passive"
-            },
-            {
-              "property": "berryGatherRate",
-              "select": {
-                "id": [
-                  "villager"
-                ]
-              },
-              "effect": "multiply",
-              "value": 1.25,
-              "type": "passive"
-            }
-          ]
+          "icon": "https://data.aoe4world.com/images/technologies/tawara-1.png",
+          "effects": []
         }
       ],
       "shared": {}
@@ -24535,214 +24376,39 @@
       "variations": [
         {
           "id": "companion-equipment-1",
+          "baseId": "companion-equipment",
+          "type": "technology",
+          "name": "Companion Equipment",
           "pbgid": 2146393,
           "attribName": "upgrade_landmark_keep_companion_upgrade_fre_ha_01",
+          "age": 1,
           "civs": [
             "je"
-          ]
-        },
-        {
-          "id": "companion-equipment-3",
-          "pbgid": 2144435,
-          "attribName": "upgrade_keep_companion_upgrade_fre_ha_01",
-          "civs": [
-            "je"
-          ]
-        }
-      ],
-      "baseId": "companion-equipment",
-      "age": 1,
-      "costs": {
-        "food": 0,
-        "wood": 150,
-        "stone": 0,
-        "gold": 350,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 500,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "royal-institute"
-      ],
-      "effects": [
-        {
-          "property": "hitpoints",
-          "select": {
-            "id": [
-              "jeannes-champion",
-              "jeannes-rider"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        },
-        {
-          "property": "meleeAttack",
-          "select": {
-            "id": [
-              "jeannes-companion",
-              "jeannes-rider"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        },
-        {
-          "property": "rangedAttack",
-          "select": {
-            "id": [
-              "jeanne-darc-mounted-archer",
-              "jeanne-darc-knight",
-              "jeanne-darc-markswoman",
-              "jeanne-darc-blast-cannon"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.25,
-          "type": "passive"
-        },
-        {
-          "property": "meleeAttack",
-          "select": {
-            "id": [
-              "jeanne-darc-mounted-archer",
-              "jeanne-darc-knight",
-              "jeanne-darc-markswoman",
-              "jeanne-darc-blast-cannon"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.25,
-          "type": "passive"
-        },
-        {
-          "property": "hitpoints",
-          "select": {
-            "id": [
-              "jeanne-darc-mounted-archer",
-              "jeanne-darc-knight",
-              "jeanne-darc-markswoman",
-              "jeanne-darc-blast-cannon"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.25,
-          "type": "passive"
-        },
-        {
-          "property": "meleeArmor",
-          "select": {
-            "id": [
-              "jeanne-darc-mounted-archer",
-              "jeanne-darc-knight",
-              "jeanne-darc-markswoman",
-              "jeanne-darc-blast-cannon"
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        },
-        {
-          "property": "rangedArmor",
-          "select": {
-            "id": [
-              "jeanne-darc-mounted-archer",
-              "jeanne-darc-knight",
-              "jeanne-darc-markswoman",
-              "jeanne-darc-blast-cannon"
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        },
-        {
-          "property": "rangedAttack",
-          "select": {
-            "id": [
-              "jeanne-darc-markswoman",
-              "jeanne-darc-blast-cannon"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.25,
-          "type": "passive"
-        },
-        {
-          "property": "meleeAttack",
-          "select": {
-            "id": [
-              "jeanne-darc-markswoman",
-              "jeanne-darc-blast-cannon"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.25,
-          "type": "passive"
-        },
-        {
-          "property": "hitpoints",
-          "select": {
-            "id": [
-              "jeanne-darc-markswoman",
-              "jeanne-darc-blast-cannon"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.25,
-          "type": "passive"
-        },
-        {
-          "property": "meleeArmor",
-          "select": {
-            "id": [
-              "jeanne-darc-markswoman",
-              "jeanne-darc-blast-cannon"
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        },
-        {
-          "property": "rangedArmor",
-          "select": {
-            "id": [
-              "jeanne-darc-markswoman",
-              "jeanne-darc-blast-cannon"
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        }
-      ],
-      "shared": {
-        "companion-equipment-3": {
-          "name": "Companion Equipment",
-          "age": 3,
-          "description": "Increases the damage and health of Jeanne's Companions by 20%.",
+          ],
+          "description": "Increase Jeanne d'Arc's health and damage by 25% and gain +1 armor. Increase the health and damage of Jeanne's Companions by 20%.",
+          "classes": [
+            "companion",
+            "upgrade"
+          ],
+          "displayClasses": [
+            "Companion Upgrade"
+          ],
+          "unique": true,
           "costs": {
             "food": 0,
-            "wood": 50,
+            "wood": 150,
             "stone": 0,
-            "gold": 125,
+            "gold": 350,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 175,
+            "total": 500,
             "popcap": 0,
-            "time": 30
+            "time": 60
           },
           "producedBy": [
-            "keep",
-            "red-palace"
+            "royal-institute"
           ],
-          "icon": "https://data.aoe4world.com/images/technologies/companion-equipment-3.png",
+          "icon": "https://data.aoe4world.com/images/technologies/companion-equipment-1.png",
           "effects": [
             {
               "property": "hitpoints",
@@ -24767,11 +24433,141 @@
               "effect": "multiply",
               "value": 1.2,
               "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "select": {
+                "id": [
+                  "jeanne-darc-mounted-archer",
+                  "jeanne-darc-knight",
+                  "jeanne-darc-markswoman",
+                  "jeanne-darc-blast-cannon"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.25,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "select": {
+                "id": [
+                  "jeanne-darc-mounted-archer",
+                  "jeanne-darc-knight",
+                  "jeanne-darc-markswoman",
+                  "jeanne-darc-blast-cannon"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.25,
+              "type": "passive"
+            },
+            {
+              "property": "hitpoints",
+              "select": {
+                "id": [
+                  "jeanne-darc-mounted-archer",
+                  "jeanne-darc-knight",
+                  "jeanne-darc-markswoman",
+                  "jeanne-darc-blast-cannon"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.25,
+              "type": "passive"
+            },
+            {
+              "property": "meleeArmor",
+              "select": {
+                "id": [
+                  "jeanne-darc-mounted-archer",
+                  "jeanne-darc-knight",
+                  "jeanne-darc-markswoman",
+                  "jeanne-darc-blast-cannon"
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "passive"
+            },
+            {
+              "property": "rangedArmor",
+              "select": {
+                "id": [
+                  "jeanne-darc-mounted-archer",
+                  "jeanne-darc-knight",
+                  "jeanne-darc-markswoman",
+                  "jeanne-darc-blast-cannon"
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "select": {
+                "id": [
+                  "jeanne-darc-markswoman",
+                  "jeanne-darc-blast-cannon"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.25,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "select": {
+                "id": [
+                  "jeanne-darc-markswoman",
+                  "jeanne-darc-blast-cannon"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.25,
+              "type": "passive"
+            },
+            {
+              "property": "hitpoints",
+              "select": {
+                "id": [
+                  "jeanne-darc-markswoman",
+                  "jeanne-darc-blast-cannon"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.25,
+              "type": "passive"
+            },
+            {
+              "property": "meleeArmor",
+              "select": {
+                "id": [
+                  "jeanne-darc-markswoman",
+                  "jeanne-darc-blast-cannon"
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "passive"
+            },
+            {
+              "property": "rangedArmor",
+              "select": {
+                "id": [
+                  "jeanne-darc-markswoman",
+                  "jeanne-darc-blast-cannon"
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "passive"
             }
-          ],
-          "id": "companion-equipment-3"
+          ]
         }
-      }
+      ],
+      "shared": {}
     },
     {
       "id": "level-2-path-of-the-archer",
@@ -29464,148 +29260,6 @@
               "effect": "change",
               "value": 20,
               "type": "bonus"
-            }
-          ]
-        }
-      ],
-      "shared": {}
-    },
-    {
-      "id": "dragon-fire",
-      "name": "Dragon Fire",
-      "type": "technology",
-      "civs": [
-        "od"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Spearman Technology"
-      ],
-      "classes": [
-        "spearman",
-        "technology"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/dragon-fire-2.png",
-      "description": "Gilded Spearman torches deal area of effect damage.",
-      "variations": [
-        {
-          "id": "dragon-fire-3",
-          "baseId": "dragon-fire",
-          "type": "technology",
-          "name": "Dragon Fire",
-          "pbgid": 2140414,
-          "attribName": "upgrade_dragon_fire_hre_ha_01",
-          "age": 3,
-          "civs": [
-            "od"
-          ],
-          "description": "Gilded Spearman torches deal area of effect damage.",
-          "classes": [
-            "spearman",
-            "technology"
-          ],
-          "displayClasses": [
-            "Spearman Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 50,
-            "wood": 0,
-            "stone": 0,
-            "gold": 125,
-            "vizier": 0,
-            "oliveoil": 0,
-            "total": 175,
-            "popcap": 0,
-            "time": 30
-          },
-          "producedBy": [
-            "barracks",
-            "burgrave-palace"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/dragon-fire-2.png",
-          "effects": [
-            {
-              "property": "unknown",
-              "select": {
-                "id": [
-                  "gilded-spearman"
-                ]
-              },
-              "effect": "change",
-              "type": "ability"
-            }
-          ]
-        }
-      ],
-      "shared": {}
-    },
-    {
-      "id": "dragon-scale-leather",
-      "name": "Dragon Scale Leather",
-      "type": "technology",
-      "civs": [
-        "od"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Archer Technology"
-      ],
-      "classes": [
-        "archer",
-        "technology"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/dragon-scale-leather-3.png",
-      "description": "Increase the ranged armor of Gilded Archers by +3.",
-      "variations": [
-        {
-          "id": "dragon-scale-leather-3",
-          "baseId": "dragon-scale-leather",
-          "type": "technology",
-          "name": "Dragon Scale Leather",
-          "pbgid": 2140559,
-          "attribName": "upgrade_archer_armor_hre_ha_01",
-          "age": 3,
-          "civs": [
-            "od"
-          ],
-          "description": "Increase the ranged armor of Gilded Archers by +3.",
-          "classes": [
-            "archer",
-            "technology"
-          ],
-          "displayClasses": [
-            "Archer Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 100,
-            "wood": 0,
-            "stone": 0,
-            "gold": 250,
-            "vizier": 0,
-            "oliveoil": 0,
-            "total": 350,
-            "popcap": 0,
-            "time": 60
-          },
-          "producedBy": [
-            "archery-range"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/dragon-scale-leather-3.png",
-          "effects": [
-            {
-              "property": "rangedArmor",
-              "select": {
-                "id": [
-                  "gilded-archer"
-                ]
-              },
-              "effect": "change",
-              "value": 3,
-              "type": "passive"
             }
           ]
         }

@@ -1478,146 +1478,6 @@
       ]
     },
     {
-      "id": "dragon-fire",
-      "name": "Dragon Fire",
-      "type": "technology",
-      "civs": [
-        "od"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Spearman Technology"
-      ],
-      "classes": [
-        "spearman",
-        "technology"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/dragon-fire-2.png",
-      "description": "Gilded Spearman torches deal area of effect damage.",
-      "variations": [
-        {
-          "id": "dragon-fire-3",
-          "baseId": "dragon-fire",
-          "type": "technology",
-          "name": "Dragon Fire",
-          "pbgid": 2140414,
-          "attribName": "upgrade_dragon_fire_hre_ha_01",
-          "age": 3,
-          "civs": [
-            "od"
-          ],
-          "description": "Gilded Spearman torches deal area of effect damage.",
-          "classes": [
-            "spearman",
-            "technology"
-          ],
-          "displayClasses": [
-            "Spearman Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 50,
-            "wood": 0,
-            "stone": 0,
-            "gold": 125,
-            "vizier": 0,
-            "oliveoil": 0,
-            "total": 175,
-            "popcap": 0,
-            "time": 30
-          },
-          "producedBy": [
-            "barracks",
-            "burgrave-palace"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/dragon-fire-2.png",
-          "effects": [
-            {
-              "property": "unknown",
-              "select": {
-                "id": [
-                  "gilded-spearman"
-                ]
-              },
-              "effect": "change",
-              "type": "ability"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "dragon-scale-leather",
-      "name": "Dragon Scale Leather",
-      "type": "technology",
-      "civs": [
-        "od"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Archer Technology"
-      ],
-      "classes": [
-        "archer",
-        "technology"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/dragon-scale-leather-3.png",
-      "description": "Increase the ranged armor of Gilded Archers by +3.",
-      "variations": [
-        {
-          "id": "dragon-scale-leather-3",
-          "baseId": "dragon-scale-leather",
-          "type": "technology",
-          "name": "Dragon Scale Leather",
-          "pbgid": 2140559,
-          "attribName": "upgrade_archer_armor_hre_ha_01",
-          "age": 3,
-          "civs": [
-            "od"
-          ],
-          "description": "Increase the ranged armor of Gilded Archers by +3.",
-          "classes": [
-            "archer",
-            "technology"
-          ],
-          "displayClasses": [
-            "Archer Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 100,
-            "wood": 0,
-            "stone": 0,
-            "gold": 250,
-            "vizier": 0,
-            "oliveoil": 0,
-            "total": 350,
-            "popcap": 0,
-            "time": 60
-          },
-          "producedBy": [
-            "archery-range"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/dragon-scale-leather-3.png",
-          "effects": [
-            {
-              "property": "rangedArmor",
-              "select": {
-                "id": [
-                  "gilded-archer"
-                ]
-              },
-              "effect": "change",
-              "value": 3,
-              "type": "passive"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "drift-nets",
       "name": "Drift Nets",
       "type": "technology",
@@ -3173,6 +3033,17 @@
           "icon": "https://data.aoe4world.com/images/technologies/inspired-warriors-3.png",
           "effects": [
             {
+              "property": "moveSpeed",
+              "select": {
+                "id": [
+                  "prelate"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.1,
+              "type": "passive"
+            },
+            {
               "property": "rangedArmor",
               "select": {
                 "class": [
@@ -3185,7 +3056,7 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 1,
               "type": "influence"
             },
             {
@@ -3201,7 +3072,7 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 1,
               "type": "influence"
             },
             {
@@ -3219,7 +3090,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.01,
+              "value": 1.15,
               "type": "influence"
             },
             {
@@ -3237,7 +3108,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.01,
+              "value": 1.15,
               "type": "influence"
             }
           ]

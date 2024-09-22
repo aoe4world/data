@@ -3058,6 +3058,17 @@
           "icon": "https://data.aoe4world.com/images/technologies/inspired-warriors-3.png",
           "effects": [
             {
+              "property": "moveSpeed",
+              "select": {
+                "id": [
+                  "prelate"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.1,
+              "type": "passive"
+            },
+            {
               "property": "rangedArmor",
               "select": {
                 "class": [
@@ -3070,7 +3081,7 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 1,
               "type": "influence"
             },
             {
@@ -3086,7 +3097,7 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 1,
               "type": "influence"
             },
             {
@@ -3104,7 +3115,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.01,
+              "value": 1.15,
               "type": "influence"
             },
             {
@@ -3122,7 +3133,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.01,
+              "value": 1.15,
               "type": "influence"
             }
           ]
@@ -3466,83 +3477,6 @@
               },
               "effect": "multiply",
               "value": 1.15,
-              "type": "passive"
-            }
-          ]
-        }
-      ],
-      "shared": {}
-    },
-    {
-      "id": "marching-drills",
-      "name": "Marching Drills",
-      "type": "technology",
-      "civs": [
-        "hr"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Infantry Technology"
-      ],
-      "classes": [
-        "infantry",
-        "technology"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/marching-drills-2.png",
-      "description": "Increase the movement speed of infantry and religious units by +10%.",
-      "variations": [
-        {
-          "id": "marching-drills-2",
-          "baseId": "marching-drills",
-          "type": "technology",
-          "name": "Marching Drills",
-          "pbgid": 170824,
-          "attribName": "upgrade_infantry_marching_drills_hre",
-          "age": 2,
-          "civs": [
-            "hr"
-          ],
-          "description": "Increase the movement speed of infantry and religious units by +10%.",
-          "classes": [
-            "infantry",
-            "technology"
-          ],
-          "displayClasses": [
-            "Infantry Technology"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 50,
-            "wood": 0,
-            "stone": 0,
-            "gold": 125,
-            "vizier": 0,
-            "oliveoil": 0,
-            "total": 175,
-            "popcap": 0,
-            "time": 60
-          },
-          "producedBy": [
-            "meinwerk-palace",
-            "blacksmith"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/marching-drills-2.png",
-          "effects": [
-            {
-              "property": "moveSpeed",
-              "select": {
-                "class": [
-                  [
-                    "infantry"
-                  ]
-                ],
-                "id": [
-                  "prelate"
-                ]
-              },
-              "effect": "multiply",
-              "value": 1.1,
               "type": "passive"
             }
           ]
