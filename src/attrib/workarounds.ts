@@ -1266,11 +1266,11 @@ workaround("Remove the unused cannons and upgradable swivel cannon from Springal
   validator: (item) => (item as Unit).weapons.length == 1,
 });
 
-workaround("Remove the upgrade locked Javelin from the Hunting Canoe", {
+workaround("Remove the upgrade locked Javelin/Incendiary from the Hunting Canoe", {
   predicate: (item) => item.baseId == "hunting-canoe",
   mutator: (item) => {
     item = item as Unit;
-    item.weapons = item.weapons.filter((w) => w.attribName != "weapon_naval_javelin_burst");
+    item.weapons = item.weapons.filter((w) => !["weapon_naval_javelin_burst", "weapon_naval_arrow_ship_incendiary"].includes(w.attribName!));
   },
   validator: (item) => (item as Unit).weapons.length == 1,
 });

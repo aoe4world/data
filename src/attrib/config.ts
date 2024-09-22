@@ -184,7 +184,7 @@ export const hardcodedDiscovery = {
     "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_rallying_call_knights_fre_ha_01",
     "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_rallying_call_manatarms_fre_ha_01",
     "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_rallying_call_spearmen_fre_ha_01",
-    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_rallying_call_units_timer_fre_ha_01",
+    // "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_rallying_call_units_timer_fre_ha_01",
     // "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ranged_attack_fre_ha_01",
     "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_talented_builder_fre_ha_01",
     "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_valorous_inspiration_fre_ha_01",
@@ -356,6 +356,7 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "upgrade_stable_unit_mamluk_4_abb_ha_01",
   "upgrade_stable_unit_mamluk_3_abb_ha_01",
   "monk_debuff_target_jpn_five_mountain_landmark_version",
+  "abilities/always_on_abilities/ottoman/galleass_production_buff_ott",
 
   (file) => file.includes("unit_") && file.includes("_free_abb_ha_01"),
 ];
