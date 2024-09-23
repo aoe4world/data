@@ -5,7 +5,7 @@ import { ignoreForNow } from "./config";
 import { slugify } from "../lib/utils/string";
 import { Armor, Building, Item, ItemClass, ModifyableProperty, Technology, Unit, Upgrade, Ability } from "../types/items";
 import { CivConfig } from "../types/civs";
-import { useIcon } from "./icons";
+import { prepareIcon } from "./icons";
 import { technologyModifiers, abilityModifiers } from "./modifiers";
 import { RunContext, writeTemp } from "./run";
 
@@ -78,9 +78,8 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
         ebpExts?.population_ext?.personnel_pop
       );
 
-    let icon;
-    if (isBuff) icon = await useIcon(ui_ext.icon?.slice(6), type, id);
-    icon ??= await useIcon(ui_ext.icon_name ?? ui_ext.icon, type, id);
+    const icon_name = isBuff ? ui_ext.icon?.slice(6) : (ui_ext.icon_name ?? ui_ext.icon);
+    const [icon_src, icon] = await prepareIcon(icon_name, type, id);
     if (!icon) console.log(`undefined icon for ${file}`, ui_ext.icon_name ?? ui_ext.icon);
 
     const pbgid = data.pbgid;
@@ -100,6 +99,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
       unique,
       costs,
       producedBy: [],
+      icon_src,
       icon,
     };
 
