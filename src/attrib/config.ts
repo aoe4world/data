@@ -29,12 +29,13 @@ export const hardcodedDiscovery = {
     "abilities/timed_abilities/mongol/khan_attack_speed_signal_arrow_mon", //khan-1 is discovered in starting army, so khan abilities miss auto discovery
     "abilities/timed_abilities/mongol/khan_defensive_signal_arrow_mon",
     "abilities/timed_abilities/mongol/khan_maneuver_signal_arrow_mon", //whistling arrow is an ability upgrade; how do techs upgrade an ability
+    //"abilities/timed_abilities/mongol/scout_falcon_sight_mon",
     // "abilities/always_on_abilities/mongol/ortoo_outpost_speed_aura_mon",
     "info/buff_info/races/mongol/outpost_speed_improved_mon",
   ],
   ottomans: [
     "upgrade/races/ottoman/research/upgrade_anatolian_hills_ott",
-    "upgrade/races/ottoman/research/upgrade_imperial_blacksmith_stockpile_ott",
+    //"upgrade/races/ottoman/research/upgrade_imperial_blacksmith_stockpile_ott",
     "upgrade/races/ottoman/research/upgrade_imperial_janissary_company_ott",
     "upgrade/races/ottoman/research/upgrade_imperial_manned_siege_ott",
     "upgrade/races/ottoman/research/upgrade_imperial_mehter_drums_ott",
@@ -358,6 +359,8 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "monk_debuff_target_jpn_five_mountain_landmark_version",
   "abilities/always_on_abilities/ottoman/galleass_production_buff_ott",
   "upgrade_free_abbey_trinity_global_discount_rus",
+
+  "military_school_production_mod_ott", // Advanced Academy bonus to military school production speed
 
   (file) => file.includes("unit_") && file.includes("_free_abb_ha_01"),
 ];

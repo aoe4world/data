@@ -1,0 +1,118 @@
+{
+  "id": "freeborn-warrior-4",
+  "baseId": "freeborn-warrior",
+  "type": "unit",
+  "name": "Elite Freeborn Warrior",
+  "pbgid": 9000341,
+  "attribName": "unit_freebornwarrior_4_mal",
+  "age": 4,
+  "civs": [
+    "ma"
+  ],
+  "description": "Fast melee unit with high ranged armour and bonus against ranged.\n+ Strong against ranged units\n-weak against armoured melee units",
+  "classes": [
+    "melee",
+    "infantry"
+  ],
+  "displayClasses": [
+    "Melee Infantry"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 90,
+    "wood": 0,
+    "stone": 0,
+    "gold": 35,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 125,
+    "popcap": 1,
+    "time": 15
+  },
+  "producedBy": [
+    "barracks",
+    "farimba-garrison"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/freeborn-warrior-4.png",
+  "hitpoints": 190,
+  "weapons": [
+    {
+      "name": "Khanda",
+      "type": "melee",
+      "damage": 12,
+      "speed": 1.375,
+      "range": {
+        "min": 0,
+        "max": 0.295
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "ranged"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 7,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "attack": 0.125,
+        "winddown": 0.75,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_freebornwarrior_4_mal",
+      "pbgid": 9000354
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch",
+      "pbgid": 123518
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 8
+    }
+  ],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 12,
+    "outer_height": -15,
+    "outer_radius": 36,
+    "base": 21.6,
+    "line": 36,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.375
+  }
+}

@@ -163,7 +163,7 @@
                 ]
               },
               "effect": "change",
-              "value": 200,
+              "value": 300,
               "type": "passive"
             }
           ],
@@ -181,12 +181,7 @@
           "pbgid": 108918
         }
       ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 50
-        }
-      ],
+      "armor": [],
       "sight": {
         "inner_height": 10,
         "inner_radius": 8,
@@ -245,12 +240,12 @@
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/bombard-4.png",
-      "hitpoints": 240,
+      "hitpoints": 210,
       "weapons": [
         {
           "name": "Cannon",
           "type": "siege",
-          "damage": 100,
+          "damage": 50,
           "speed": 5.375,
           "range": {
             "min": 3.75,
@@ -283,6 +278,19 @@
               "effect": "change",
               "value": 410,
               "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 50,
+              "type": "passive"
             }
           ],
           "durations": {
@@ -299,12 +307,7 @@
           "pbgid": 127728
         }
       ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 40
-        }
-      ],
+      "armor": [],
       "sight": {
         "inner_height": 10,
         "inner_radius": 32,
@@ -345,14 +348,14 @@
         "vizier": 0,
         "oliveoil": 0,
         "total": 550,
-        "popcap": 3,
+        "popcap": 2,
         "time": 30
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/counterweight-trebuchet-4.png",
-      "hitpoints": 170,
+      "hitpoints": 140,
       "weapons": [
         {
           "name": "Trebuchet",
@@ -406,12 +409,7 @@
           "pbgid": 130952
         }
       ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 30
-        }
-      ],
+      "armor": [],
       "sight": {
         "inner_height": 10,
         "inner_radius": 56,
@@ -800,6 +798,97 @@
       }
     },
     {
+      "id": "grenadier-3",
+      "baseId": "grenadier",
+      "type": "unit",
+      "name": "Early Grenadier",
+      "pbgid": 3416523,
+      "attribName": "unit_grenadier_3_chi_ha_01",
+      "age": 3,
+      "civs": [
+        "zx"
+      ],
+      "description": "Advanced ranged infantry with thrown explosive canisters that deal damage in a small area.\n+ Deals area damage\n- Low single target damage\n- Slow movement speed",
+      "classes": [
+        "light",
+        "ranged",
+        "gunpowder",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Gunpowder Infantry"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 120,
+        "wood": 60,
+        "stone": 0,
+        "gold": 60,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 240,
+        "popcap": 1,
+        "time": 30
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/grenadier-3.png",
+      "hitpoints": 110,
+      "weapons": [
+        {
+          "name": "Grenade",
+          "type": "siege",
+          "damage": 10,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 3
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 15,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.625,
+            "attack": 0.125,
+            "winddown": 0.375,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.5
+          },
+          "attribName": "weapon_grenade_3_chi_ha",
+          "pbgid": 9000381
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 20,
+        "outer_height": -15,
+        "outer_radius": 50,
+        "base": 32,
+        "line": 50,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
       "id": "grenadier-4",
       "baseId": "grenadier",
       "type": "unit",
@@ -841,7 +930,7 @@
         {
           "name": "Grenade",
           "type": "siege",
-          "damage": 10,
+          "damage": 12,
           "speed": 1.625,
           "range": {
             "min": 0,
@@ -863,14 +952,14 @@
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0,
             "windup": 0.625,
             "attack": 0.125,
             "winddown": 0.375,
             "reload": 0,
             "setup": 0,
             "teardown": 0,
-            "cooldown": 0
+            "cooldown": 0.5
           },
           "attribName": "weapon_grenade_4",
           "pbgid": 156410
@@ -962,7 +1051,7 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 9,
               "type": "passive"
             }
           ],
@@ -1094,7 +1183,7 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 11,
               "type": "passive"
             }
           ],
@@ -1226,7 +1315,7 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 13,
               "type": "passive"
             }
           ],
@@ -1270,7 +1359,7 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 4
+          "value": 5
         }
       ],
       "sight": {
@@ -1328,7 +1417,7 @@
           "name": "Sword",
           "type": "melee",
           "damage": 28,
-          "speed": 1.5,
+          "speed": 1.625,
           "range": {
             "min": 0,
             "max": 0.2875
@@ -1342,7 +1431,7 @@
             "reload": 0,
             "setup": 0,
             "teardown": 0,
-            "cooldown": 0.875
+            "cooldown": 1
           },
           "attribName": "weapon_ming_guard_chi",
           "pbgid": 2143707
@@ -1873,11 +1962,11 @@
         {
           "name": "Rocket Arrow",
           "type": "siege",
-          "damage": 8,
+          "damage": 6,
           "speed": 6.5,
           "range": {
             "min": 3,
-            "max": 8
+            "max": 7
           },
           "modifiers": [
             {
@@ -1892,6 +1981,19 @@
               },
               "effect": "change",
               "value": 4,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 2,
               "type": "passive"
             }
           ],
@@ -1912,12 +2014,7 @@
           "pbgid": 166609
         }
       ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 30
-        }
-      ],
+      "armor": [],
       "sight": {
         "inner_height": 10,
         "inner_radius": 40,
@@ -2239,7 +2336,7 @@
         },
         {
           "type": "ranged",
-          "value": 4
+          "value": 5
         }
       ],
       "sight": {
@@ -2502,12 +2599,7 @@
       "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
       "hitpoints": 480,
       "weapons": [],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 50
-        }
-      ],
+      "armor": [],
       "sight": {
         "inner_height": 10,
         "inner_radius": 12,
@@ -3145,7 +3237,7 @@
       "civs": [
         "zx"
       ],
-      "description": "Effective at taking out siege engines at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs. siege engines\n- Trivial damage vs. buildings",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -3155,29 +3247,29 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -3185,12 +3277,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 65,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -3209,11 +3302,11 @@
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -3224,8 +3317,8 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
@@ -3606,7 +3699,7 @@
           "name": "Sword",
           "type": "melee",
           "damage": 15,
-          "speed": 1.5,
+          "speed": 1.625,
           "range": {
             "min": 0,
             "max": 0.2875
@@ -3647,7 +3740,7 @@
             "reload": 0,
             "setup": 0,
             "teardown": 0,
-            "cooldown": 0.875
+            "cooldown": 1
           },
           "attribName": "weapon_yuan_guard_chi_ha_01",
           "pbgid": 2143702

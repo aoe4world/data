@@ -34,12 +34,12 @@
     "astronomical-clocktower"
   ],
   "icon": "https://data.aoe4world.com/images/units/clocktower-bombard-4.png",
-  "hitpoints": 360,
+  "hitpoints": 315,
   "weapons": [
     {
       "name": "Cannon",
       "type": "siege",
-      "damage": 100,
+      "damage": 50,
       "speed": 5.375,
       "range": {
         "min": 3.75,
@@ -72,6 +72,19 @@
           "effect": "change",
           "value": 410,
           "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 50,
+          "type": "passive"
         }
       ],
       "durations": {
@@ -88,12 +101,7 @@
       "pbgid": 127728
     }
   ],
-  "armor": [
-    {
-      "type": "ranged",
-      "value": 40
-    }
-  ],
+  "armor": [],
   "sight": {
     "inner_height": 10,
     "inner_radius": 32,

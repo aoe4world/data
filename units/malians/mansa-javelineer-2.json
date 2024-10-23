@@ -1,0 +1,119 @@
+{
+  "id": "mansa-javelineer-2",
+  "baseId": "mansa-javelineer",
+  "type": "unit",
+  "name": "Mansa Javelineer",
+  "pbgid": 9000342,
+  "attribName": "unit_mansa_javelin_2_mal",
+  "age": 2,
+  "civs": [
+    "ma"
+  ],
+  "description": "Ranged infantry effective against other ranged units. Moves faster and deals poison damage.\n+ Anti-ranged specialist\n+ Increased weapon range\n+ Comes with ranged armor\n- Low health\n- Countered by Horsemen",
+  "classes": [
+    "light",
+    "ranged",
+    "infantry"
+  ],
+  "displayClasses": [
+    "Light Ranged Infantry"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 80,
+    "wood": 0,
+    "stone": 0,
+    "gold": 40,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 120,
+    "popcap": 1,
+    "time": 22.5
+  },
+  "producedBy": [
+    "archery-range",
+    "farimba-garrison"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/mansa-javelineer-2.png",
+  "hitpoints": 70,
+  "weapons": [
+    {
+      "name": "Javelin",
+      "type": "ranged",
+      "damage": 8,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "ranged"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 4,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.125,
+        "windup": 0.5,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 0.875,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_mansa_javelin_2",
+      "pbgid": 9000371
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch",
+      "pbgid": 123518
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 3
+    }
+  ],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 16,
+    "outer_height": -15,
+    "outer_radius": 40,
+    "base": 25.6,
+    "line": 40,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.375
+  }
+}

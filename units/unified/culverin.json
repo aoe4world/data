@@ -8,7 +8,6 @@
     "ab",
     "ay",
     "hr",
-    "ma",
     "od"
   ],
   "unique": false,
@@ -22,7 +21,7 @@
   ],
   "minAge": 4,
   "icon": "https://data.aoe4world.com/images/units/culverin-4.png",
-  "description": "Long-range cannon made for destroying siege engines. Fires after quickly setting up.\n+ Bonus damage vs. siege engines\n- Low damage vs. buildings",
+  "description": "Long-range mobile cannon with bonus vs buildings.\n+ Effective against Defenses\n+ Does not require setup to fire",
   "variations": [
     {
       "id": "culverin-4",
@@ -35,7 +34,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Long-range cannon made for destroying siege engines. Fires after quickly setting up.\n+ Bonus damage vs. siege engines\n- Low damage vs. buildings",
+      "description": "Long-range mobile cannon with bonus vs buildings.\n+ Effective against Defenses\n+ Does not require setup to fire",
       "classes": [
         "siege",
         "gunpowder"
@@ -47,12 +46,12 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 400,
+        "wood": 325,
         "stone": 0,
-        "gold": 600,
+        "gold": 550,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 1000,
+        "total": 875,
         "popcap": 3,
         "time": 45
       },
@@ -60,33 +59,33 @@
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/culverin-4.png",
-      "hitpoints": 220,
+      "hitpoints": 200,
       "weapons": [
         {
           "name": "Cannon",
-          "type": "ranged",
-          "damage": 85,
-          "speed": 3.375,
+          "type": "siege",
+          "damage": 35,
+          "speed": 3.625,
           "range": {
             "min": 1.25,
-            "max": 12
+            "max": 10.5
           },
           "modifiers": [
             {
-              "property": "rangedAttack",
+              "property": "siegeAttack",
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "building"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 230,
               "type": "passive"
             },
             {
-              "property": "rangedAttack",
+              "property": "siegeAttack",
               "target": {
                 "class": [
                   [
@@ -96,7 +95,20 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 230,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 50,
               "type": "passive"
             }
           ],
@@ -105,7 +117,7 @@
             "windup": 0,
             "attack": 0.125,
             "winddown": 0.75,
-            "reload": 2,
+            "reload": 2.25,
             "setup": 0.25,
             "teardown": 0.25,
             "cooldown": 0
@@ -114,12 +126,7 @@
           "pbgid": 165122
         }
       ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 10
-        }
-      ],
+      "armor": [],
       "sight": {
         "inner_height": 10,
         "inner_radius": 40,
@@ -144,7 +151,7 @@
       "civs": [
         "ay"
       ],
-      "description": "Long-range cannon made for destroying siege engines. Fires after quickly setting up.\n+ Bonus damage vs. siege engines\n- Low damage vs. buildings",
+      "description": "Long-range mobile cannon with bonus vs buildings.\n+ Effective against Defenses\n+ Does not require setup to fire",
       "classes": [
         "siege",
         "gunpowder"
@@ -156,12 +163,12 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 400,
+        "wood": 325,
         "stone": 0,
-        "gold": 600,
+        "gold": 550,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 1000,
+        "total": 875,
         "popcap": 3,
         "time": 45
       },
@@ -169,33 +176,33 @@
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/culverin-4.png",
-      "hitpoints": 220,
+      "hitpoints": 200,
       "weapons": [
         {
           "name": "Cannon",
-          "type": "ranged",
-          "damage": 85,
-          "speed": 3.375,
+          "type": "siege",
+          "damage": 35,
+          "speed": 3.625,
           "range": {
             "min": 1.25,
-            "max": 12
+            "max": 10.5
           },
           "modifiers": [
             {
-              "property": "rangedAttack",
+              "property": "siegeAttack",
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "building"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 230,
               "type": "passive"
             },
             {
-              "property": "rangedAttack",
+              "property": "siegeAttack",
               "target": {
                 "class": [
                   [
@@ -205,7 +212,20 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 230,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 50,
               "type": "passive"
             }
           ],
@@ -214,7 +234,7 @@
             "windup": 0,
             "attack": 0.125,
             "winddown": 0.75,
-            "reload": 2,
+            "reload": 2.25,
             "setup": 0.25,
             "teardown": 0.25,
             "cooldown": 0
@@ -223,12 +243,7 @@
           "pbgid": 165122
         }
       ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 10
-        }
-      ],
+      "armor": [],
       "sight": {
         "inner_height": 10,
         "inner_radius": 40,
@@ -253,7 +268,7 @@
       "civs": [
         "hr"
       ],
-      "description": "Long-range cannon made for destroying siege engines. Fires after quickly setting up.\n+ Bonus damage vs. siege engines\n- Low damage vs. buildings",
+      "description": "Long-range mobile cannon with bonus vs buildings.\n+ Effective against Defenses\n+ Does not require setup to fire",
       "classes": [
         "siege",
         "gunpowder"
@@ -265,12 +280,12 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 400,
+        "wood": 325,
         "stone": 0,
-        "gold": 600,
+        "gold": 550,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 1000,
+        "total": 875,
         "popcap": 3,
         "time": 45
       },
@@ -278,33 +293,33 @@
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/culverin-4.png",
-      "hitpoints": 220,
+      "hitpoints": 200,
       "weapons": [
         {
           "name": "Cannon",
-          "type": "ranged",
-          "damage": 85,
-          "speed": 3.375,
+          "type": "siege",
+          "damage": 35,
+          "speed": 3.625,
           "range": {
             "min": 1.25,
-            "max": 12
+            "max": 10.5
           },
           "modifiers": [
             {
-              "property": "rangedAttack",
+              "property": "siegeAttack",
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "building"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 230,
               "type": "passive"
             },
             {
-              "property": "rangedAttack",
+              "property": "siegeAttack",
               "target": {
                 "class": [
                   [
@@ -314,116 +329,20 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0.5,
-            "windup": 0,
-            "attack": 0.125,
-            "winddown": 0.75,
-            "reload": 2,
-            "setup": 0.25,
-            "teardown": 0.25,
-            "cooldown": 0
-          },
-          "attribName": "weapon_culverin_4",
-          "pbgid": 165122
-        }
-      ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 10
-        }
-      ],
-      "sight": {
-        "inner_height": 10,
-        "inner_radius": 40,
-        "outer_height": -15,
-        "outer_radius": 64,
-        "base": 49.6,
-        "line": 64,
-        "height": 10
-      },
-      "movement": {
-        "speed": 0.625
-      }
-    },
-    {
-      "id": "culverin-4",
-      "baseId": "culverin",
-      "type": "unit",
-      "name": "Culverin",
-      "pbgid": 2278976,
-      "attribName": "unit_culverin_4_mal",
-      "age": 4,
-      "civs": [
-        "ma"
-      ],
-      "description": "Long-range cannon made for destroying siege engines. Fires after quickly setting up.\n+ Bonus damage vs. siege engines\n- Low damage vs. buildings",
-      "classes": [
-        "siege",
-        "gunpowder"
-      ],
-      "displayClasses": [
-        "Siege",
-        "Gunpowder"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 400,
-        "stone": 0,
-        "gold": 600,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 1000,
-        "popcap": 3,
-        "time": 45
-      },
-      "producedBy": [
-        "siege-workshop"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/culverin-4.png",
-      "hitpoints": 220,
-      "weapons": [
-        {
-          "name": "Cannon",
-          "type": "ranged",
-          "damage": 85,
-          "speed": 3.375,
-          "range": {
-            "min": 1.25,
-            "max": 12
-          },
-          "modifiers": [
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 60,
+              "value": 230,
               "type": "passive"
             },
             {
-              "property": "rangedAttack",
+              "property": "siegeAttack",
               "target": {
                 "class": [
                   [
-                    "naval",
-                    "unit"
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 50,
               "type": "passive"
             }
           ],
@@ -432,7 +351,7 @@
             "windup": 0,
             "attack": 0.125,
             "winddown": 0.75,
-            "reload": 2,
+            "reload": 2.25,
             "setup": 0.25,
             "teardown": 0.25,
             "cooldown": 0
@@ -441,12 +360,7 @@
           "pbgid": 165122
         }
       ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 10
-        }
-      ],
+      "armor": [],
       "sight": {
         "inner_height": 10,
         "inner_radius": 40,
@@ -471,7 +385,7 @@
       "civs": [
         "od"
       ],
-      "description": "Long-range cannon made for destroying siege engines. Fires after quickly setting up.\n+ Bonus damage vs. siege engines\n- Low damage vs. buildings",
+      "description": "Long-range mobile cannon with bonus vs buildings.\n+ Effective against Defenses\n+ Does not require setup to fire",
       "classes": [
         "siege",
         "gunpowder"
@@ -483,12 +397,12 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 400,
+        "wood": 325,
         "stone": 0,
-        "gold": 600,
+        "gold": 550,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 1000,
+        "total": 875,
         "popcap": 3,
         "time": 45
       },
@@ -496,33 +410,33 @@
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/culverin-4.png",
-      "hitpoints": 220,
+      "hitpoints": 200,
       "weapons": [
         {
           "name": "Cannon",
-          "type": "ranged",
-          "damage": 85,
-          "speed": 3.375,
+          "type": "siege",
+          "damage": 35,
+          "speed": 3.625,
           "range": {
             "min": 1.25,
-            "max": 12
+            "max": 10.5
           },
           "modifiers": [
             {
-              "property": "rangedAttack",
+              "property": "siegeAttack",
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "building"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 230,
               "type": "passive"
             },
             {
-              "property": "rangedAttack",
+              "property": "siegeAttack",
               "target": {
                 "class": [
                   [
@@ -532,7 +446,20 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 230,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 50,
               "type": "passive"
             }
           ],
@@ -541,7 +468,7 @@
             "windup": 0,
             "attack": 0.125,
             "winddown": 0.75,
-            "reload": 2,
+            "reload": 2.25,
             "setup": 0.25,
             "teardown": 0.25,
             "cooldown": 0
@@ -550,12 +477,7 @@
           "pbgid": 165122
         }
       ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 10
-        }
-      ],
+      "armor": [],
       "sight": {
         "inner_height": 10,
         "inner_radius": 40,

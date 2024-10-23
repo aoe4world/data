@@ -12,89 +12,6 @@
   },
   "data": [
     {
-      "id": "acid-distillation",
-      "name": "Acid Distillation",
-      "type": "technology",
-      "civs": [
-        "ot"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Mining Technology 2/3"
-      ],
-      "classes": [
-        "mining",
-        "technology",
-        "2/3"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/acid-distillation-3.png",
-      "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
-      "variations": [
-        {
-          "id": "acid-distillation-3",
-          "baseId": "acid-distillation",
-          "type": "technology",
-          "name": "Acid Distillation",
-          "pbgid": 171823,
-          "attribName": "upgrade_econ_resource_gold_harvest_rate_3",
-          "age": 3,
-          "civs": [
-            "ot"
-          ],
-          "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
-          "classes": [
-            "mining",
-            "technology",
-            "2/3"
-          ],
-          "displayClasses": [
-            "Mining Technology 2/3"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 100,
-            "stone": 0,
-            "gold": 250,
-            "vizier": 0,
-            "oliveoil": 0,
-            "total": 350,
-            "popcap": 0,
-            "time": 60
-          },
-          "producedBy": [
-            "mining-camp"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/acid-distillation-3.png",
-          "effects": [
-            {
-              "property": "goldGatherRate",
-              "select": {
-                "id": [
-                  "villager"
-                ]
-              },
-              "effect": "multiply",
-              "value": 1.15,
-              "type": "passive"
-            },
-            {
-              "property": "stoneGatherRate",
-              "select": {
-                "id": [
-                  "villager"
-                ]
-              },
-              "effect": "multiply",
-              "value": 1.15,
-              "type": "passive"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "adjustable-crossbars",
       "name": "Adjustable Crossbars",
       "type": "technology",
@@ -111,7 +28,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/adjustable-crossbars-4.png",
-      "description": "Increase the attack speed of Mangonels by +25%.",
+      "description": "Increases Mangonel range by +1, blast radius by +100%, and adds +1 projectile to attacks.",
       "variations": [
         {
           "id": "adjustable-crossbars-4",
@@ -124,7 +41,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Increase the attack speed of Mangonels by +25%.",
+          "description": "Increases Mangonel range by +1, blast radius by +100%, and adds +1 projectile to attacks.",
           "classes": [
             "mangonel",
             "technology"
@@ -135,12 +52,12 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 200,
+            "wood": 1000,
             "stone": 0,
-            "gold": 500,
+            "gold": 1200,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 700,
+            "total": 2200,
             "popcap": 0,
             "time": 90
           },
@@ -157,7 +74,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8,
+              "value": 0.99,
               "type": "passive"
             }
           ]
@@ -181,20 +98,20 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/technologies/advanced-academy-1.png",
-      "description": "Outfits Military Schools with the ability to produce Lancers and Janissaries.",
+      "description": "Increases military production speed by +25% and outfits Military Schools with the ability to train Lancers and Janissaries.",
       "variations": [
         {
           "id": "advanced-academy-1",
           "baseId": "advanced-academy",
           "type": "technology",
           "name": "Advanced Academy",
-          "pbgid": 2059830,
-          "attribName": "upgrade_imperial_blacksmith_stockpile_ott",
+          "pbgid": 2059527,
+          "attribName": "upgrade_imperial_military_training_ott",
           "age": 1,
           "civs": [
             "ot"
           ],
-          "description": "Outfits Military Schools with the ability to produce Lancers and Janissaries.",
+          "description": "Increases military production speed by +25% and outfits Military Schools with the ability to train Lancers and Janissaries.",
           "classes": [
             "imperial",
             "council"
@@ -214,10 +131,7 @@
             "popcap": 0,
             "time": 0
           },
-          "producedBy": [
-            "town-center",
-            "capital-town-center"
-          ],
+          "producedBy": [],
           "icon": "https://data.aoe4world.com/images/technologies/advanced-academy-1.png",
           "effects": []
         }
@@ -273,10 +187,7 @@
             "popcap": 0,
             "time": 0
           },
-          "producedBy": [
-            "town-center",
-            "capital-town-center"
-          ],
+          "producedBy": [],
           "icon": "https://data.aoe4world.com/images/technologies/anatolian-hills-1.png",
           "effects": [
             {
@@ -697,7 +608,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/biology-4.png",
-      "description": "Increase the health of all cavalry by +20%.",
+      "description": "Investing in natural sciences increases the health of all cavalry by +30%.",
       "variations": [
         {
           "id": "biology-4",
@@ -710,7 +621,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Increase the health of all cavalry by +20%.",
+          "description": "Investing in natural sciences increases the health of all cavalry by +30%.",
           "classes": [
             "lancer",
             "technology"
@@ -720,13 +631,13 @@
           ],
           "unique": false,
           "costs": {
-            "food": 300,
+            "food": 500,
             "wood": 0,
             "stone": 0,
-            "gold": 700,
+            "gold": 1000,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 1000,
+            "total": 1500,
             "popcap": 0,
             "time": 90
           },
@@ -746,7 +657,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.2,
+              "value": 1.3,
               "type": "passive"
             }
           ]
@@ -924,7 +835,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
-      "description": "Increase the damage of gunpowder units by +20%.",
+      "description": "Advancements in alchemical research increase the bonus damage of all gunpowder siege weapons by +25%.",
       "variations": [
         {
           "id": "chemistry-4",
@@ -937,7 +848,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Increase the damage of gunpowder units by +20%.",
+          "description": "Advancements in alchemical research increase the bonus damage of all gunpowder siege weapons by +25%.",
           "classes": [
             "gunpowder",
             "technology"
@@ -947,15 +858,15 @@
           ],
           "unique": false,
           "costs": {
-            "food": 300,
+            "food": 200,
             "wood": 0,
             "stone": 0,
-            "gold": 700,
+            "gold": 650,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 1000,
+            "total": 850,
             "popcap": 0,
-            "time": 90
+            "time": 60
           },
           "producedBy": [
             "istanbul-observatory",
@@ -976,7 +887,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.2,
+              "value": 1.25,
               "type": "passive"
             },
             {
@@ -992,7 +903,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.2,
+              "value": 1.25,
               "type": "passive"
             }
           ]
@@ -1016,7 +927,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/court-architects-4.png",
-      "description": "Increase the health of all buildings by +30%.",
+      "description": "Patronage of the finest builders increases all building health by +30%.",
       "variations": [
         {
           "id": "court-architects-4",
@@ -1029,7 +940,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Increase the health of all buildings by +30%.",
+          "description": "Patronage of the finest builders increases all building health by +30%.",
           "classes": [
             "building",
             "technology"
@@ -1479,7 +1390,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/drift-nets-3.png",
-      "description": "Increase the gathering rate of Fishing Ships by +15%, carry capacity by +20 and move speed by +10%.",
+      "description": "Increase the gathering rate of Fishing Ships by +10%, carry capacity by +20 and move speed by +10%.",
       "variations": [
         {
           "id": "drift-nets-3",
@@ -1492,7 +1403,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Increase the gathering rate of Fishing Ships by +15%, carry capacity by +20 and move speed by +10%.",
+          "description": "Increase the gathering rate of Fishing Ships by +10%, carry capacity by +20 and move speed by +10%.",
           "classes": [
             "fishing",
             "technology",
@@ -1527,7 +1438,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.15,
+              "value": 1.1,
               "type": "passive"
             },
             {
@@ -1576,7 +1487,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/elite-army-tactics-4.png",
-      "description": "Increase the health of all melee infantry by +20% and their damage by +20%.",
+      "description": "Training elite infantry leads to improved prowess in battle. Melee Infantry gain +20% damage and +4 melee armor.",
       "variations": [
         {
           "id": "elite-army-tactics-4",
@@ -1589,7 +1500,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Increase the health of all melee infantry by +20% and their damage by +20%.",
+          "description": "Training elite infantry leads to improved prowess in battle. Melee Infantry gain +20% damage and +4 melee armor.",
           "classes": [
             "melee",
             "infantry",
@@ -1600,13 +1511,13 @@
           ],
           "unique": false,
           "costs": {
-            "food": 300,
+            "food": 500,
             "wood": 0,
             "stone": 0,
-            "gold": 700,
+            "gold": 1000,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 1000,
+            "total": 1500,
             "popcap": 0,
             "time": 90
           },
@@ -1641,7 +1552,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.2,
+              "value": 1.04,
               "type": "passive"
             }
           ]
@@ -1739,7 +1650,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/technologies/extended-lines-2.png",
-      "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
+      "description": "Increase the gathering rate of Fishing Ships by +15% and carry capacity by +10.",
       "variations": [
         {
           "id": "extended-lines-2",
@@ -1752,7 +1663,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
+          "description": "Increase the gathering rate of Fishing Ships by +15% and carry capacity by +10.",
           "classes": [
             "fishing",
             "technology",
@@ -1787,7 +1698,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.2,
+              "value": 1.15,
               "type": "passive"
             },
             {
@@ -1880,77 +1791,6 @@
       ]
     },
     {
-      "id": "fast-training",
-      "name": "Fast Training",
-      "type": "technology",
-      "civs": [
-        "ot"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Imperial Council"
-      ],
-      "classes": [
-        "imperial",
-        "council"
-      ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/technologies/fast-training-1.png",
-      "description": "Increase production of Military Schools by +25%.",
-      "variations": [
-        {
-          "id": "fast-training-1",
-          "baseId": "fast-training",
-          "type": "technology",
-          "name": "Fast Training",
-          "pbgid": 2059527,
-          "attribName": "upgrade_imperial_military_training_ott",
-          "age": 1,
-          "civs": [
-            "ot"
-          ],
-          "description": "Increase production of Military Schools by +25%.",
-          "classes": [
-            "imperial",
-            "council"
-          ],
-          "displayClasses": [
-            "Imperial Council"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "vizier": 1,
-            "oliveoil": 0,
-            "total": 0,
-            "popcap": 0,
-            "time": 0
-          },
-          "producedBy": [
-            "town-center",
-            "capital-town-center"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/fast-training-1.png",
-          "effects": [
-            {
-              "property": "productionSpeed",
-              "select": {
-                "id": [
-                  "military-school"
-                ]
-              },
-              "effect": "multiply",
-              "value": 0.8,
-              "type": "passive"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "fertilization",
       "name": "Fertilization",
       "type": "technology",
@@ -1969,7 +1809,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/fertilization-3.png",
-      "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
+      "description": "Increase Villagers' gathering rate for Food by 10%. Does not apply to hunted meat.",
       "variations": [
         {
           "id": "fertilization-3",
@@ -1982,7 +1822,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
+          "description": "Increase Villagers' gathering rate for Food by 10%. Does not apply to hunted meat.",
           "classes": [
             "food",
             "gathering",
@@ -2018,7 +1858,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.15,
+              "value": 1.1,
               "type": "passive"
             }
           ]
@@ -2075,10 +1915,7 @@
             "popcap": 0,
             "time": 0
           },
-          "producedBy": [
-            "town-center",
-            "capital-town-center"
-          ],
+          "producedBy": [],
           "icon": "https://data.aoe4world.com/images/technologies/field-work-1.png",
           "effects": [
             {
@@ -2714,7 +2551,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/technologies/horticulture-2.png",
-      "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
+      "description": "Increase Villagers' gathering rate for Food by 10%. Does not apply to hunted meat.",
       "variations": [
         {
           "id": "horticulture-2",
@@ -2727,7 +2564,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
+          "description": "Increase Villagers' gathering rate for Food by 10%. Does not apply to hunted meat.",
           "classes": [
             "food",
             "gathering",
@@ -2763,7 +2600,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.15,
+              "value": 1.1,
               "type": "passive"
             }
           ]
@@ -2943,7 +2780,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/incendiary-arrows-4.png",
-      "description": "Increase the damage of ranged units by +20%. Does not apply to gunpowder units.",
+      "description": "Flammable munitions grant non-gunpowder ranged units a siege arrow or bolt when attacking buildings and increase their damage by +20%.",
       "variations": [
         {
           "id": "incendiary-arrows-4",
@@ -2956,7 +2793,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Increase the damage of ranged units by +20%. Does not apply to gunpowder units.",
+          "description": "Flammable munitions grant non-gunpowder ranged units a siege arrow or bolt when attacking buildings and increase their damage by +20%.",
           "classes": [
             "ranged",
             "technology"
@@ -2967,12 +2804,12 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 300,
+            "wood": 500,
             "stone": 0,
-            "gold": 700,
+            "gold": 1000,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 1000,
+            "total": 1500,
             "popcap": 0,
             "time": 90
           },
@@ -3260,10 +3097,7 @@
             "popcap": 0,
             "time": 0
           },
-          "producedBy": [
-            "town-center",
-            "capital-town-center"
-          ],
+          "producedBy": [],
           "icon": "https://data.aoe4world.com/images/technologies/janissary-company-1.png",
           "effects": []
         }
@@ -3286,7 +3120,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/janissary-guns-4.png",
-      "description": "Increase Janissary gun damage by +3.",
+      "description": "Increase Janissary gun damage by +5.",
       "variations": [
         {
           "id": "janissary-guns-4",
@@ -3299,7 +3133,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Increase Janissary gun damage by +3.",
+          "description": "Increase Janissary gun damage by +5.",
           "classes": [
             "janissary",
             "technology"
@@ -3332,7 +3166,7 @@
                 ]
               },
               "effect": "change",
-              "value": 3,
+              "value": 5,
               "type": "passive"
             }
           ]
@@ -3638,10 +3472,7 @@
             "popcap": 0,
             "time": 0
           },
-          "producedBy": [
-            "town-center",
-            "capital-town-center"
-          ],
+          "producedBy": [],
           "icon": "https://data.aoe4world.com/images/technologies/mehter-drums-1.png",
           "effects": [
             {
@@ -3714,10 +3545,7 @@
             "popcap": 0,
             "time": 0
           },
-          "producedBy": [
-            "town-center",
-            "capital-town-center"
-          ],
+          "producedBy": [],
           "icon": "https://data.aoe4world.com/images/technologies/military-campus-1.png",
           "effects": []
         }
@@ -3976,7 +3804,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/precision-cross-breeding-4.png",
-      "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
+      "description": "Increase Villagers' gathering rate for Food by 10%. Does not apply to hunted meat.",
       "variations": [
         {
           "id": "precision-cross-breeding-4",
@@ -3989,7 +3817,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
+          "description": "Increase Villagers' gathering rate for Food by 10%. Does not apply to hunted meat.",
           "classes": [
             "food",
             "gathering",
@@ -4025,7 +3853,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.15,
+              "value": 1.1,
               "type": "passive"
             }
           ]
@@ -4138,7 +3966,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/roller-shutter-triggers-4.png",
-      "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
+      "description": "Increases Springald attack speed by +25% and grants +10% Ranged Resistance.",
       "variations": [
         {
           "id": "roller-shutter-triggers-4",
@@ -4151,7 +3979,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
+          "description": "Increases Springald attack speed by +25% and grants +10% Ranged Resistance.",
           "classes": [
             "springald",
             "technology"
@@ -4184,7 +4012,7 @@
                 ]
               },
               "effect": "change",
-              "value": 2,
+              "value": 25,
               "type": "passive"
             },
             {
@@ -4195,10 +4023,70 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8,
+              "value": 0.91,
               "type": "passive"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "shaft-mining",
+      "name": "Shaft Mining",
+      "type": "technology",
+      "civs": [
+        "ot"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Mining Technology 2/3"
+      ],
+      "classes": [
+        "mining",
+        "technology",
+        "2/3"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/shaft-mining-3.png",
+      "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
+      "variations": [
+        {
+          "id": "shaft-mining-3",
+          "baseId": "shaft-mining",
+          "type": "technology",
+          "name": "Shaft Mining",
+          "pbgid": 171823,
+          "attribName": "upgrade_econ_resource_gold_harvest_rate_3",
+          "age": 3,
+          "civs": [
+            "ot"
+          ],
+          "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
+          "classes": [
+            "mining",
+            "technology",
+            "2/3"
+          ],
+          "displayClasses": [
+            "Mining Technology 2/3"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 250,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 350,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "mining-camp"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/shaft-mining-3.png",
+          "effects": []
         }
       ]
     },
@@ -4371,10 +4259,7 @@
             "popcap": 0,
             "time": 0
           },
-          "producedBy": [
-            "town-center",
-            "capital-town-center"
-          ],
+          "producedBy": [],
           "icon": "https://data.aoe4world.com/images/technologies/siege-crews-1.png",
           "effects": []
         }
@@ -4471,7 +4356,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/siege-works-4.png",
-      "description": "Increase the health of siege engines by +20% and their ranged armor by +10.",
+      "description": "New carpentry techniques increase the health of siege units by +20%.",
       "variations": [
         {
           "id": "siege-works-4",
@@ -4484,7 +4369,7 @@
           "civs": [
             "ot"
           ],
-          "description": "Increase the health of siege engines by +20% and their ranged armor by +10.",
+          "description": "New carpentry techniques increase the health of siege units by +20%.",
           "classes": [
             "siege",
             "technology"
@@ -4497,10 +4382,10 @@
             "food": 0,
             "wood": 300,
             "stone": 0,
-            "gold": 700,
+            "gold": 600,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 1000,
+            "total": 900,
             "popcap": 0,
             "time": 90
           },
@@ -4533,10 +4418,68 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
               "type": "passive"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "silk-bowstrings",
+      "name": "Silk Bowstrings",
+      "type": "technology",
+      "civs": [
+        "ot"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Archer Technology"
+      ],
+      "classes": [
+        "archer",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/silk-bowstrings-4.png",
+      "description": "Stringing bows with silk grants Archers +2 range and Mounted Archers +1 range.",
+      "variations": [
+        {
+          "id": "silk-bowstrings-4",
+          "baseId": "silk-bowstrings",
+          "type": "technology",
+          "name": "Silk Bowstrings",
+          "pbgid": 127842,
+          "attribName": "upgrade_ranged_archer_silkstring",
+          "age": 4,
+          "civs": [
+            "ot"
+          ],
+          "description": "Stringing bows with silk grants Archers +2 range and Mounted Archers +1 range.",
+          "classes": [
+            "archer",
+            "technology"
+          ],
+          "displayClasses": [
+            "Archer Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 300,
+            "stone": 0,
+            "gold": 700,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 1000,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "istanbul-observatory",
+            "university"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/silk-bowstrings-4.png",
+          "effects": []
         }
       ]
     },
@@ -5295,10 +5238,7 @@
             "popcap": 0,
             "time": 0
           },
-          "producedBy": [
-            "town-center",
-            "capital-town-center"
-          ],
+          "producedBy": [],
           "icon": "https://data.aoe4world.com/images/technologies/trade-bags-1.png",
           "effects": []
         }
