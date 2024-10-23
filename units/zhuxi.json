@@ -95,6 +95,11 @@
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 50,
+        "outer_height": -15,
+        "outer_radius": 50,
+        "base": 50,
         "line": 50,
         "height": 10
       },
@@ -130,13 +135,13 @@
         "oliveoil": 0,
         "total": 200,
         "popcap": 1,
-        "time": 40
+        "time": 35
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
-      "hitpoints": 340,
+      "hitpoints": 370,
       "weapons": [
         {
           "name": "Ram",
@@ -158,7 +163,7 @@
                 ]
               },
               "effect": "change",
-              "value": 200,
+              "value": 300,
               "type": "passive"
             }
           ],
@@ -176,13 +181,13 @@
           "pbgid": 108918
         }
       ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 50
-        }
-      ],
+      "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 8,
+        "outer_height": -15,
+        "outer_radius": 30,
+        "base": 16.8,
         "line": 30,
         "height": 10
       },
@@ -235,12 +240,12 @@
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/bombard-4.png",
-      "hitpoints": 240,
+      "hitpoints": 210,
       "weapons": [
         {
           "name": "Cannon",
           "type": "siege",
-          "damage": 100,
+          "damage": 50,
           "speed": 5.375,
           "range": {
             "min": 3.75,
@@ -273,6 +278,19 @@
               "effect": "change",
               "value": 410,
               "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 50,
+              "type": "passive"
             }
           ],
           "durations": {
@@ -289,13 +307,13 @@
           "pbgid": 127728
         }
       ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 35
-        }
-      ],
+      "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },
@@ -330,14 +348,14 @@
         "vizier": 0,
         "oliveoil": 0,
         "total": 550,
-        "popcap": 3,
+        "popcap": 2,
         "time": 30
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/counterweight-trebuchet-4.png",
-      "hitpoints": 170,
+      "hitpoints": 140,
       "weapons": [
         {
           "name": "Trebuchet",
@@ -391,13 +409,13 @@
           "pbgid": 130952
         }
       ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 30
-        }
-      ],
+      "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 56,
+        "outer_height": -15,
+        "outer_radius": 80,
+        "base": 65.6,
         "line": 80,
         "height": 10
       },
@@ -523,6 +541,11 @@
       ],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 16,
+        "outer_height": -15,
+        "outer_radius": 40,
+        "base": 25.6,
         "line": 40,
         "height": 10
       },
@@ -608,6 +631,11 @@
       ],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 16,
+        "outer_height": -15,
+        "outer_radius": 40,
+        "base": 25.6,
         "line": 40,
         "height": 10
       },
@@ -705,6 +733,11 @@
       ],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 8,
+        "outer_height": -15,
+        "outer_radius": 32,
+        "base": 17.6,
         "line": 32,
         "height": 10
       },
@@ -742,7 +775,7 @@
         "oliveoil": 0,
         "total": 75,
         "popcap": 1,
-        "time": 25
+        "time": 30
       },
       "producedBy": [
         "dock"
@@ -752,11 +785,107 @@
       "weapons": [],
       "armor": [],
       "sight": {
-        "line": 44,
+        "inner_height": 501,
+        "inner_radius": 42,
+        "outer_height": -15,
+        "outer_radius": 33,
+        "base": 33.26162790697674,
+        "line": 33,
         "height": 501
       },
       "movement": {
         "speed": 1.5
+      }
+    },
+    {
+      "id": "grenadier-3",
+      "baseId": "grenadier",
+      "type": "unit",
+      "name": "Early Grenadier",
+      "pbgid": 3416523,
+      "attribName": "unit_grenadier_3_chi_ha_01",
+      "age": 3,
+      "civs": [
+        "zx"
+      ],
+      "description": "Advanced ranged infantry with thrown explosive canisters that deal damage in a small area.\n+ Deals area damage\n- Low single target damage\n- Slow movement speed",
+      "classes": [
+        "light",
+        "ranged",
+        "gunpowder",
+        "infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Gunpowder Infantry"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 120,
+        "wood": 60,
+        "stone": 0,
+        "gold": 60,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 240,
+        "popcap": 1,
+        "time": 30
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/grenadier-3.png",
+      "hitpoints": 110,
+      "weapons": [
+        {
+          "name": "Grenade",
+          "type": "siege",
+          "damage": 10,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 3
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 15,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.625,
+            "attack": 0.125,
+            "winddown": 0.375,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.5
+          },
+          "attribName": "weapon_grenade_3_chi_ha",
+          "pbgid": 9000381
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 20,
+        "outer_height": -15,
+        "outer_radius": 50,
+        "base": 32,
+        "line": 50,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
       }
     },
     {
@@ -801,7 +930,7 @@
         {
           "name": "Grenade",
           "type": "siege",
-          "damage": 10,
+          "damage": 12,
           "speed": 1.625,
           "range": {
             "min": 0,
@@ -823,14 +952,14 @@
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0,
             "windup": 0.625,
             "attack": 0.125,
             "winddown": 0.375,
             "reload": 0,
             "setup": 0,
             "teardown": 0,
-            "cooldown": 0
+            "cooldown": 0.5
           },
           "attribName": "weapon_grenade_4",
           "pbgid": 156410
@@ -838,6 +967,11 @@
       ],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 20,
+        "outer_height": -15,
+        "outer_radius": 50,
+        "base": 32,
         "line": 50,
         "height": 10
       },
@@ -891,7 +1025,7 @@
           "speed": 1.75,
           "range": {
             "min": 0,
-            "max": 0.2875
+            "max": 0.375
           },
           "modifiers": [
             {
@@ -917,7 +1051,7 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 9,
               "type": "passive"
             }
           ],
@@ -965,6 +1099,11 @@
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
         "line": 28,
         "height": 10
       },
@@ -1018,7 +1157,7 @@
           "speed": 1.75,
           "range": {
             "min": 0,
-            "max": 0.2875
+            "max": 0.375
           },
           "modifiers": [
             {
@@ -1044,7 +1183,7 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 11,
               "type": "passive"
             }
           ],
@@ -1092,6 +1231,11 @@
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
         "line": 28,
         "height": 10
       },
@@ -1145,7 +1289,7 @@
           "speed": 1.75,
           "range": {
             "min": 0,
-            "max": 0.2875
+            "max": 0.375
           },
           "modifiers": [
             {
@@ -1171,7 +1315,7 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 13,
               "type": "passive"
             }
           ],
@@ -1215,10 +1359,15 @@
       "armor": [
         {
           "type": "ranged",
-          "value": 4
+          "value": 5
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
         "line": 28,
         "height": 10
       },
@@ -1268,7 +1417,7 @@
           "name": "Sword",
           "type": "melee",
           "damage": 28,
-          "speed": 1.5,
+          "speed": 1.625,
           "range": {
             "min": 0,
             "max": 0.2875
@@ -1282,7 +1431,7 @@
             "reload": 0,
             "setup": 0,
             "teardown": 0,
-            "cooldown": 0.875
+            "cooldown": 1
           },
           "attribName": "weapon_ming_guard_chi",
           "pbgid": 2143707
@@ -1345,6 +1494,11 @@
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
         "line": 28,
         "height": 10
       },
@@ -1391,6 +1545,11 @@
       "weapons": [],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
         "line": 28,
         "height": 10
       },
@@ -1419,13 +1578,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 90,
+        "food": 80,
         "wood": 150,
         "stone": 0,
         "gold": 0,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 240,
+        "total": 230,
         "popcap": 3,
         "time": 25
       },
@@ -1484,6 +1643,11 @@
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 48,
+        "outer_height": -15,
+        "outer_radius": 48,
+        "base": 48,
         "line": 48,
         "height": 10
       },
@@ -1587,6 +1751,11 @@
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
         "line": 28,
         "height": 10
       },
@@ -1690,6 +1859,11 @@
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
         "line": 28,
         "height": 10
       },
@@ -1735,6 +1909,11 @@
       "weapons": [],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 15,
+        "outer_height": -15,
+        "outer_radius": 30,
+        "base": 21,
         "line": 30,
         "height": 10
       },
@@ -1778,16 +1957,16 @@
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/nest-of-bees-4.png",
-      "hitpoints": 140,
+      "hitpoints": 130,
       "weapons": [
         {
           "name": "Rocket Arrow",
           "type": "siege",
-          "damage": 8,
+          "damage": 6,
           "speed": 6.5,
           "range": {
             "min": 3,
-            "max": 8
+            "max": 7
           },
           "modifiers": [
             {
@@ -1802,6 +1981,19 @@
               },
               "effect": "change",
               "value": 4,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 2,
               "type": "passive"
             }
           ],
@@ -1822,13 +2014,13 @@
           "pbgid": 166609
         }
       ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 30
-        }
-      ],
+      "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 40,
+        "outer_height": -15,
+        "outer_radius": 64,
+        "base": 49.6,
         "line": 64,
         "height": 10
       },
@@ -1872,7 +2064,7 @@
         "barracks"
       ],
       "icon": "https://data.aoe4world.com/images/units/palace-guard-2.png",
-      "hitpoints": 120,
+      "hitpoints": 130,
       "weapons": [
         {
           "name": "Mace",
@@ -1932,6 +2124,11 @@
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 36,
+        "base": 21.6,
         "line": 36,
         "height": 10
       },
@@ -2035,6 +2232,11 @@
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 36,
+        "base": 21.6,
         "line": 36,
         "height": 10
       },
@@ -2134,10 +2336,15 @@
         },
         {
           "type": "ranged",
-          "value": 4
+          "value": 5
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 36,
+        "base": 21.6,
         "line": 36,
         "height": 10
       },
@@ -2238,6 +2445,11 @@
       ],
       "armor": [],
       "sight": {
+        "inner_height": 501,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 41,
+        "base": 40.156976744186046,
         "line": 41,
         "height": 501
       },
@@ -2337,6 +2549,11 @@
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 15,
+        "outer_height": -15,
+        "outer_radius": 30,
+        "base": 21,
         "line": 30,
         "height": 10
       },
@@ -2382,13 +2599,13 @@
       "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
       "hitpoints": 480,
       "weapons": [],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 50
-        }
-      ],
+      "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 36,
+        "base": 21.6,
         "line": 36,
         "height": 10
       },
@@ -2544,6 +2761,11 @@
       ],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 36,
+        "base": 21.6,
         "line": 36,
         "height": 10
       },
@@ -2690,6 +2912,11 @@
       ],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 36,
+        "base": 21.6,
         "line": 36,
         "height": 10
       },
@@ -2836,6 +3063,11 @@
       ],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 36,
+        "base": 21.6,
         "line": 36,
         "height": 10
       },
@@ -2982,6 +3214,11 @@
       ],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 36,
+        "base": 21.6,
         "line": 36,
         "height": 10
       },
@@ -3000,7 +3237,7 @@
       "civs": [
         "zx"
       ],
-      "description": "Effective at taking out siege engines at long range.\n+ Long range\n+ Bonus damage vs. siege engines\n+ Attacks without having to set up\n- Trivial damage vs. buildings",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -3010,29 +3247,29 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -3040,12 +3277,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -3059,16 +3297,16 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 65,
               "type": "passive"
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -3079,11 +3317,16 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },
@@ -3131,6 +3374,11 @@
       "weapons": [],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 8,
+        "outer_height": -15,
+        "outer_radius": 32,
+        "base": 17.6,
         "line": 32,
         "height": 10
       },
@@ -3176,6 +3424,11 @@
       "weapons": [],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 10,
+        "outer_height": -15,
+        "outer_radius": 35,
+        "base": 20,
         "line": 35,
         "height": 10
       },
@@ -3221,6 +3474,11 @@
       "weapons": [],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 32,
+        "base": 32,
         "line": 32,
         "height": 10
       },
@@ -3279,6 +3537,11 @@
       ],
       "armor": [],
       "sight": {
+        "inner_height": 0,
+        "inner_radius": 0,
+        "outer_height": 0,
+        "outer_radius": 0,
+        "base": 0,
         "line": 0,
         "height": 0
       },
@@ -3307,13 +3570,13 @@
       ],
       "unique": false,
       "costs": {
-        "food": 120,
+        "food": 110,
         "wood": 200,
         "stone": 0,
         "gold": 30,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 340,
         "popcap": 3,
         "time": 30
       },
@@ -3382,6 +3645,11 @@
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 45,
+        "outer_height": -15,
+        "outer_radius": 45,
+        "base": 45,
         "line": 45,
         "height": 10
       },
@@ -3431,7 +3699,7 @@
           "name": "Sword",
           "type": "melee",
           "damage": 15,
-          "speed": 1.5,
+          "speed": 1.625,
           "range": {
             "min": 0,
             "max": 0.2875
@@ -3472,7 +3740,7 @@
             "reload": 0,
             "setup": 0,
             "teardown": 0,
-            "cooldown": 0.875
+            "cooldown": 1
           },
           "attribName": "weapon_yuan_guard_chi_ha_01",
           "pbgid": 2143702
@@ -3508,6 +3776,11 @@
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 20,
+        "outer_height": -15,
+        "outer_radius": 50,
+        "base": 32,
         "line": 50,
         "height": 10
       },
@@ -3583,6 +3856,11 @@
       ],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 40,
+        "base": 23.2,
         "line": 40,
         "height": 10
       },
@@ -3658,6 +3936,11 @@
       ],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 40,
+        "base": 23.2,
         "line": 40,
         "height": 10
       },
@@ -3733,6 +4016,11 @@
       ],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 20,
+        "outer_height": -15,
+        "outer_radius": 40,
+        "base": 28,
         "line": 40,
         "height": 10
       },

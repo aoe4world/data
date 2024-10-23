@@ -1,7 +1,7 @@
 import path from "path";
 import { ATTRIB_FOLDER, ESSENCE_FOLDER, SOURCE_FOLDER } from "./config";
 import { getXmlData, logJson } from "./xml";
-import fs from "fs/promises";
+import fs from "fs";
 import type { RunContext } from "./run";
 import { existsSync } from "fs";
 
@@ -10,17 +10,46 @@ import { existsSync } from "fs";
 
 const parseAsValue = ["parent_pbg", "upgrade_bag", "weapon_bag"];
 
-export async function getEssenceData<T = NormalizedAttrib>(file: string, base: string = ESSENCE_FOLDER, context: RunContext): Promise<T | undefined> {
-  const bestMatch = await guessAppropriateEssenceFile(file, context.race, base);
-  if (!bestMatch) return undefined;
-  let filePath = path.join(base, bestMatch);
-  if (filePath.endsWith(".xml")) filePath = filePath.replace(".xml", ".json");
-  if (!filePath.endsWith(".json")) filePath += ".json";
+// In Essence, files are unique within the pbgmap, regardless of their directory structure.
+// So easiest is to build an index of all pbgmaps we need.
+const pbgmaps = {};
 
-  const fileData: EssenceData = await fs.readFile(filePath, "utf-8").then(JSON.parse);
+function initEssencePBGMap(pbgmap, folder) {
+  if (!pbgmaps[pbgmap])
+    pbgmaps[pbgmap] = {};
+  const files = fs.readdirSync(folder);
+  for (const f of files) {
+    const filePath = path.join(folder, f);
+    const stat = fs.statSync(filePath);
+    if (stat?.isDirectory())
+      initEssencePBGMap(pbgmap, filePath);
+    if (stat?.isFile() && filePath.endsWith('.json')) {
+      const pbgname = f.replace('.json', '');
+      const fullname = path.relative(ESSENCE_FOLDER, filePath).replace(/\\/g, '/').replace('.json', '')
+      pbgmaps[pbgmap][pbgname] = fullname;
+    }
+  }
+}
+
+export async function getEssenceData<T = NormalizedAttrib>(file: string, context: RunContext): Promise<T | undefined> {
+  let fullname = await guessAppropriateEssenceFile(file);
+  if (!fullname) {
+    throw new Error(`EssenceData not found ${file}`);
+  }
+
+  let filePath = path.join(ESSENCE_FOLDER, fullname + '.json');
+
+  const fileData: EssenceData = await fs.promises.readFile(filePath, "utf-8").then(JSON.parse).catch(e => {
+    console.log(filePath, e);
+    throw e;
+  });
 
   let result: any = { extensions: [] };
-  for (const { key, value } of (fileData.data[0].value as any as EssenceItem[]) ?? fileData.data) {
+  let dataDefault = fileData.data.filter(d => d.key == 'default')[0]?.value;
+  if (!dataDefault) {
+    throw new Error(`No default data ${file}`);
+  }
+  for (const { key, value } of (dataDefault as any as EssenceItem[]) ?? fileData.data) {
     if (parseAsValue.includes(key)) result[key] = formatValue(value);
     else if (typeof value == "object") {
       result.extensions.push(parseItemAsExt({ key, value }));
@@ -29,7 +58,6 @@ export async function getEssenceData<T = NormalizedAttrib>(file: string, base: s
     }
   }
 
-  logJson(result, bestMatch + ".essence");
   return { version: 4, description: null, template: null, source: "AOE4MODS.Essence", ...result };
 }
 
@@ -49,92 +77,23 @@ function parseItemAsExt({ key, value }: EssenceItem) {
   return values;
 }
 
-export async function guessAppropriateEssenceFile(file: string, race: string, base = path.join(SOURCE_FOLDER, "/attrib")) {
-  if (file.endsWith(".xml")) file = file.replace(".xml", ".json");
-  if (!file.endsWith(".json")) file += ".json";
-  let matchedFile = file;
-  const attemptPaths = [
-    insertRaceToPath(race, file),
-    insertRaceToPath("common", file),
-    ...(file.includes("unit") ? [insertRaceToPath(race + "/units", file), insertRaceToPath("common/units", file)] : []),
-    ...(file.includes("building")
-      ? [
-          insertRaceToPath(race + "/buildings", file),
-          insertRaceToPath(race + "/buildings/" + file.split("/").pop()?.replace(".json", ""), file),
-          insertRaceToPath("common/buildings", file),
-          insertRaceToPath("common/buildings/" + file.split("/").pop()?.replace(".json", ""), file),
-        ]
-      : []),
-    ...(file.includes("upgrade")
-      ? [
-          insertRaceToPath(race + "/research", file),
-          insertRaceToPath(race + "/research/economy", file),
-          insertRaceToPath(race + "/research/naval", file),
-          insertRaceToPath(race + "/research/unit", file),
-          insertRaceToPath(race + "/units", file),
-          insertRaceToPath("common/research", file),
-          insertRaceToPath("common/research/economy", file),
-          insertRaceToPath("common/research/naval", file),
-          insertRaceToPath("common/research/unit", file),
-          insertRaceToPath("common/units", file),
-          `upgrades/races/abbasid_ha_01/research/house_of_wisdom/${path}`,
-          `upgrades/races/byzantine/research/mercenary_upgrades/${path}`,
-          `upgrades/races/byzantine/mercenary_contracts/${path}`,
-        ]
-      : []),
-    ...(file.includes("weapon")
-      ? [insertRaceToPath(race + "/ranged", file), insertRaceToPath(race + "/melee", file), insertRaceToPath("common/melee", file), insertRaceToPath("common/ranged", file)]
-      : []),
-    ...(file.includes("abilities")
-      ? ((file) => {
-          const path = file.replace("abilities/", "");
-          return [
-            `abilities/${path}`,
-            `abilities/always_on_abilities/${path}`,
-            `abilities/modal_abilities/${path}`,
-            `abilities/timed_abilities/${path}`,
-            `abilities/toggle_abilities/${path}`,
-            `abilities/toggle_abilities/byzantine/cistern_abilities/${path}`,
-            insertRaceToPath("abilities/always_on_abilities", path),
-            insertRaceToPath("abilities/modal_abilities", path),
-            insertRaceToPath("abilities/timed_abilities", path),
-            insertRaceToPath("abilities/toggle_abilities", path),
-          ];
-        })(file)
-      : []),
-  ].filter(Boolean) as string[];
-  const x = [...attemptPaths, file];
-  while (!existsSync(path.join(base, matchedFile)) && attemptPaths.length) matchedFile = attemptPaths.shift()!;
+export async function guessAppropriateEssenceFile(file: string) {
+  // name can be 'pbgmap/pbgname' or already a fullname 'pbgmap/*/pbgname'
+  const split = file.split('/');
+  const pbgmap = split[0];
+  const pbgname = split.at(-1) as string;
 
-  if (!existsSync(path.join(base, matchedFile))) {
-    const [folder, filename] = file.split("/");
-    const found = await findMatchingFileInFolder(path.join(base, folder), filename);
-    if (found) {
-      //   console.log(`Found essence file: ${file}`, found);
-      return [folder, found.split(folder + "/").pop()!].join("/").replace(".json", "");
-    }
+  if (!pbgmaps[pbgmap]) {
+    initEssencePBGMap(pbgmap, path.join(ESSENCE_FOLDER, pbgmap));
   }
 
-  if (!existsSync(path.join(base, matchedFile))) {
-    console.log(`Missing essence file: ${file}`, x);
-    return;
-  }
-  return matchedFile.replace(".json", "");
-}
+  let filePath = pbgmaps[pbgmap][pbgname];
 
-async function findMatchingFileInFolder(folder: string, file: string) {
-  // inside folder, recuresively walk over all folders and files, until a match is found
-  // if no match is found, return undefined
-  const files = await fs.readdir(folder);
-  for (const f of files) {
-    const filePath = path.join(folder, f);
-    const stat = await fs.stat(filePath).catch(() => null);
-    if (stat?.isDirectory()) {
-      const result = await findMatchingFileInFolder(filePath, file);
-      if (result) return result;
-    }
-    if (stat?.isFile() && f === file) return filePath;
+  if (!filePath) {
+    throw new Error(`EssenceData not found ${file}`);
   }
+
+  return filePath;
 }
 
 const valuesAsArray = [

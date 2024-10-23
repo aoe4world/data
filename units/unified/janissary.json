@@ -9,16 +9,17 @@
   ],
   "unique": true,
   "displayClasses": [
-    "Light Gunpowder Infantry"
+    "Light Ranged Gunpowder Infantry"
   ],
   "classes": [
     "light",
+    "ranged",
     "gunpowder",
     "infantry"
   ],
   "minAge": 3,
   "icon": "https://data.aoe4world.com/images/units/janissary-3.png",
-  "description": "Powerful infantry effective against cavalry and can repair siege engines.\n+ High damage\n+ Bonus damage against cavalry\n- High cost\n- Slow movement speed\n- Receives +50% ranged damage",
+  "description": "Powerful infantry effective against cavalry and can repair siege engines.\n+ High damage\n+ Bonus damage against cavalry\n- High cost\n- Slow movement speed\n- Receives additional damage from Archers.",
   "variations": [
     {
       "id": "janissary-3",
@@ -31,14 +32,15 @@
       "civs": [
         "ot"
       ],
-      "description": "Powerful infantry effective against cavalry and can repair siege engines.\n+ High damage\n+ Bonus damage against cavalry\n- High cost\n- Slow movement speed\n- Receives +50% ranged damage",
+      "description": "Powerful infantry effective against cavalry and can repair siege engines.\n+ High damage\n+ Bonus damage against cavalry\n- High cost\n- Slow movement speed\n- Receives additional damage from Archers.",
       "classes": [
         "light",
+        "ranged",
         "gunpowder",
         "infantry"
       ],
       "displayClasses": [
-        "Light Gunpowder Infantry"
+        "Light Ranged Gunpowder Infantry"
       ],
       "unique": true,
       "costs": {
@@ -79,7 +81,7 @@
                 ]
               },
               "effect": "change",
-              "value": 16,
+              "value": 12,
               "type": "passive"
             }
           ],
@@ -95,10 +97,53 @@
           },
           "attribName": "weapon_handcannon_3_ott",
           "pbgid": 2063080
+        },
+        {
+          "name": "Handcannon",
+          "type": "ranged",
+          "damage": 35,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 4
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 8,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 1.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_handcannon_4_leadshot",
+          "pbgid": 9000618
         }
       ],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 8,
+        "outer_height": -15,
+        "outer_radius": 32,
+        "base": 17.6,
         "line": 32,
         "height": 10
       },
@@ -117,14 +162,15 @@
       "civs": [
         "ot"
       ],
-      "description": "Powerful infantry effective against cavalry and can repair siege engines.\n+ High damage\n+ Bonus damage against cavalry\n- High cost\n- Slow movement speed\n- Receives +50% ranged damage",
+      "description": "Powerful infantry effective against cavalry and can repair siege engines.\n+ High damage\n+ Bonus damage against cavalry\n- High cost\n- Slow movement speed\n- Receives additional damage from Archers.",
       "classes": [
         "light",
+        "ranged",
         "gunpowder",
         "infantry"
       ],
       "displayClasses": [
-        "Light Gunpowder Infantry"
+        "Light Ranged Gunpowder Infantry"
       ],
       "unique": true,
       "costs": {
@@ -165,7 +211,7 @@
                 ]
               },
               "effect": "change",
-              "value": 20,
+              "value": 15,
               "type": "passive"
             }
           ],
@@ -181,10 +227,53 @@
           },
           "attribName": "weapon_handcannon_4_ott",
           "pbgid": 2063081
+        },
+        {
+          "name": "Handcannon",
+          "type": "ranged",
+          "damage": 35,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 4
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 8,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 1.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_handcannon_4_leadshot",
+          "pbgid": 9000618
         }
       ],
       "armor": [],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 8,
+        "outer_height": -15,
+        "outer_radius": 32,
+        "base": 17.6,
         "line": 32,
         "height": 10
       },

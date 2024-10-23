@@ -1673,7 +1673,7 @@
       "civs": [
         "by"
       ],
-      "description": "Loads this Cannon with an Artillery Shot, reducing damage in exchange for area of effect damage. No bonus damage against buildings.",
+      "description": "Loads this Cannon with an Artillery Shot that has an increased range of 5 tiles and 30% more damage.\nCan only target buildings.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -1689,8 +1689,8 @@
       "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/ability-artillery-shot-1.png",
       "active": "manual",
-      "auraRange": 0,
-      "cooldown": 210,
+      "auraRange": 15,
+      "cooldown": 200,
       "effects": [
         {
           "property": "areaOfEffect",
@@ -2725,7 +2725,7 @@
       "civs": [
         "by"
       ],
-      "description": "Charge through enemy units in your path, dealing 10 damage to each one.",
+      "description": "Charge through enemy units in your path, dealing 12 damage to each one.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -2752,7 +2752,7 @@
             ]
           },
           "effect": "change",
-          "value": 10,
+          "value": 12,
           "type": "ability"
         }
       ]
@@ -2960,7 +2960,7 @@
       "civs": [
         "ch"
       ],
-      "description": "Stone Wall Towers and Outposts repair nearby damaged Stone Walls. A single section is repaired at a time for +20 health per second.",
+      "description": "Towers and Keeps repair nearby walls and gates for +20 health per second.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -3005,7 +3005,7 @@
       "civs": [
         "ch"
       ],
-      "description": "Reveal location of enemy workers for 10 seconds.",
+      "description": "Reveal location of enemy workers for 15 seconds.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -3036,7 +3036,7 @@
           "effect": "change",
           "value": 0,
           "type": "ability",
-          "duration": 10
+          "duration": 15
         }
       ]
     },
@@ -3899,7 +3899,12 @@
       "producedBy": [
         "outpost",
         "stone-wall-tower",
-        "keep"
+        "town-center",
+        "capital-town-center",
+        "the-white-tower",
+        "kings-palace",
+        "keep",
+        "berkshire-palace"
       ],
       "icon": "https://data.aoe4world.com/images/abilities/ability-network-of-citadels-1.png",
       "active": "always",
@@ -4082,7 +4087,7 @@
       "civs": [
         "fr"
       ],
-      "description": "Loads this Cannon with an Artillery Shot, reducing damage in exchange for area of effect damage. No bonus damage against buildings.",
+      "description": "Loads this Cannon with an Artillery Shot that has an increased range of 5 tiles and 30% more damage.\nCan only target buildings.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -4098,8 +4103,8 @@
       "producedBy": [],
       "icon": "https://data.aoe4world.com/images/abilities/ability-artillery-shot-1.png",
       "active": "manual",
-      "auraRange": 0,
-      "cooldown": 210,
+      "auraRange": 15,
+      "cooldown": 200,
       "effects": [
         {
           "property": "areaOfEffect",
@@ -4701,9 +4706,11 @@
       },
       "producedBy": [
         "house",
+        "outpost",
         "mill",
         "barracks",
         "lumber-camp",
+        "dock",
         "mining-camp",
         "meinwerk-palace",
         "aachen-chapel",
@@ -4716,8 +4723,11 @@
         "burgrave-palace",
         "regnitz-cathedral",
         "siege-workshop",
+        "keep",
+        "monastery",
         "palace-of-swabia",
         "elzbach-palace",
+        "university",
         "great-palace-of-flensburg"
       ],
       "icon": "https://data.aoe4world.com/images/abilities/ability-emergency-repairs-1.png",
@@ -5004,7 +5014,7 @@
       "civs": [
         "hr"
       ],
-      "description": "• Armor increased by +50%\n• Damage increased by +35%\n• Sight range increased by +25%\n• Weapon range increased by +20%",
+      "description": "• Armor increased by +25%\n• Damage increased by +25%\n• Sight range increased by +20%\n• Weapon range increased by +20%",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -5038,7 +5048,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.67,
+          "value": 0.8,
           "type": "ability"
         },
         {
@@ -5052,7 +5062,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.67,
+          "value": 0.8,
           "type": "ability"
         },
         {
@@ -5066,7 +5076,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.74,
+          "value": 0.8,
           "type": "ability"
         },
         {
@@ -5094,7 +5104,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8,
+          "value": 0.83,
           "type": "ability"
         }
       ]
@@ -5198,39 +5208,6 @@
           "type": "ability"
         }
       ]
-    },
-    {
-      "id": "ability-daimyo-farm-aura-1",
-      "baseId": "ability-daimyo-farm-aura",
-      "type": "ability",
-      "name": "Daimyo Farm Aura",
-      "pbgid": 2126941,
-      "attribName": "daimyo_level_manager_jpn",
-      "age": 1,
-      "civs": [
-        "ja"
-      ],
-      "description": "Aura that increases the harvest rate of nearby farms by +75%.",
-      "classes": [],
-      "displayClasses": [],
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [
-        "capital-town-center",
-        "town-center"
-      ],
-      "icon": "https://data.aoe4world.com/images/abilities/ability-daimyo-farm-aura-1.png",
-      "active": "always",
-      "auraRange": 10,
-      "effects": []
     },
     {
       "id": "ability-deflective-armor-1",
@@ -5507,7 +5484,7 @@
       "civs": [
         "ja"
       ],
-      "description": "Place a Yorishiro in the following buildings to receive bonuses and increase their line of sight.\nMilitary and Docks: +200% Production speed\nTown Center: +25% Production speed\nFarmhouse: +75 Food per minute\nLumber Camp: +75 Wood per minute\nForge: +75 Gold per minute\nWonder: +4000 Health",
+      "description": "Place a Yorishiro in the following buildings to receive bonuses and increase their line of sight.\nMilitary and Docks: +150% Production speed\nTown Center: +30% Production speed\nFarmhouse: +75 Food per minute\nLumber Camp: +75 Wood per minute\nForge: +60 Gold per minute\nWonder: +4000 Health",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -5908,95 +5885,6 @@
       "activatedOn": [
         "units/yumi-bannerman"
       ]
-    },
-    {
-      "id": "ability--translation-not-found-11257526-1",
-      "baseId": "ability--translation-not-found-11257526",
-      "type": "ability",
-      "name": "(translation not found) (11257526)",
-      "pbgid": 2146144,
-      "attribName": "jeanne_d_arc_ability_charges_consecrate_fre_ha_01",
-      "age": 1,
-      "civs": [
-        "je"
-      ],
-      "description": "(translation not found) (undefined)",
-      "classes": [],
-      "displayClasses": [],
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [],
-      "active": "always",
-      "auraRange": 0.0025,
-      "effects": []
-    },
-    {
-      "id": "ability--translation-not-found-11257527-1",
-      "baseId": "ability--translation-not-found-11257527",
-      "type": "ability",
-      "name": "(translation not found) (11257527)",
-      "pbgid": 2146141,
-      "attribName": "jeanne_d_arc_ability_charges_melee_fre_ha_01",
-      "age": 1,
-      "civs": [
-        "je"
-      ],
-      "description": "(translation not found) (undefined)",
-      "classes": [],
-      "displayClasses": [],
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [],
-      "active": "always",
-      "auraRange": 0.0025,
-      "effects": []
-    },
-    {
-      "id": "ability--translation-not-found-undefined-1",
-      "baseId": "ability--translation-not-found-undefined",
-      "type": "ability",
-      "name": "(translation not found) (undefined)",
-      "pbgid": 2141775,
-      "attribName": "jeanne_d_arc_rallying_call_units_timer_fre_ha_01",
-      "age": 1,
-      "civs": [
-        "je"
-      ],
-      "description": "(translation not found) (undefined)",
-      "classes": [],
-      "displayClasses": [],
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [],
-      "icon": "https://data.aoe4world.com/images/abilities/ability--translation-not-found-undefined-1.png",
-      "active": "always",
-      "auraRange": 0,
-      "cooldown": 90,
-      "effects": []
     },
     {
       "id": "ability-bring-down-the-walls-1",
@@ -6503,8 +6391,8 @@
         "popcap": 0
       },
       "producedBy": [
-        "keep",
-        "red-palace"
+        "barracks",
+        "stable"
       ],
       "icon": "https://data.aoe4world.com/images/abilities/ability-jeannes-companions-1.png",
       "active": "always",
@@ -7609,7 +7497,7 @@
       "civs": [
         "ma"
       ],
-      "description": "Increase Food gather rate by +50% for 60 seconds.",
+      "description": "Increase Food gather rate by +50% for 90 seconds.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -7640,7 +7528,7 @@
           "effect": "multiply",
           "value": 1.5,
           "type": "ability",
-          "duration": 60
+          "duration": 90
         }
       ],
       "unlockedBy": [
@@ -7755,7 +7643,7 @@
       "civs": [
         "ma"
       ],
-      "description": "Increase military unit production speed by +50% for 60 seconds.",
+      "description": "Increase all unit production speed by +100% for 90 seconds.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -7792,9 +7680,9 @@
             ]
           },
           "effect": "multiply",
-          "value": 1.5,
+          "value": 2,
           "type": "ability",
-          "duration": 60
+          "duration": 90
         }
       ],
       "unlockedBy": [
@@ -7859,7 +7747,7 @@
       "civs": [
         "ma"
       ],
-      "description": "Increase damage of Battering Rams, Bombards, Counterweight Trebuchets, and torches by +50% for 60 seconds.\nApplies to Springald Ships once Mounted Guns has been researched.",
+      "description": "Increase damage of Battering Rams, Bombards, Counterweight Trebuchets, and torches by +50% for 90 seconds.\nApplies to Springald Ships once Mounted Guns has been researched.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -7898,7 +7786,7 @@
           "effect": "multiply",
           "value": 1.5,
           "type": "ability",
-          "duration": 60
+          "duration": 90
         },
         {
           "property": "siegeAttack",
@@ -7912,7 +7800,7 @@
           "effect": "multiply",
           "value": 1.5,
           "type": "ability",
-          "duration": 60
+          "duration": 90
         }
       ],
       "unlockedBy": [
@@ -8844,7 +8732,7 @@
       "civs": [
         "od"
       ],
-      "description": "• Armor increased by +50%\n• Damage increased by +35%\n• Sight range increased by +25%\n• Weapon range increased by +20%",
+      "description": "• Armor increased by +25%\n• Damage increased by +25%\n• Sight range increased by +20%\n• Weapon range increased by +20%",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -8878,7 +8766,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.67,
+          "value": 0.8,
           "type": "ability"
         },
         {
@@ -8892,7 +8780,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.67,
+          "value": 0.8,
           "type": "ability"
         },
         {
@@ -8906,7 +8794,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.74,
+          "value": 0.8,
           "type": "ability"
         },
         {
@@ -8934,7 +8822,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.8,
+          "value": 0.83,
           "type": "ability"
         }
       ]
@@ -9058,7 +8946,7 @@
       "civs": [
         "ot"
       ],
-      "description": "Military unit production rate increased +20%/+30%/+40% by Age while within the influence of a Blacksmith or University. The Istanbul Observatory increases the bonus to +60%.",
+      "description": "Military unit production rate increased +20%/+30%/+40% by Age while within the influence of a Blacksmith or University. The Istanbul Observatory increases the bonus to +100%.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -9073,7 +8961,6 @@
       },
       "producedBy": [
         "blacksmith",
-        "istanbul-observatory",
         "university"
       ],
       "icon": "https://data.aoe4world.com/images/abilities/ability-blacksmith-and-university-influence-1.png",
@@ -9173,7 +9060,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0.4,
+          "value": 0,
           "type": "ability"
         }
       ]

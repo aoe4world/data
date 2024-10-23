@@ -55,6 +55,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
         "line": 25,
         "height": 8
       },
@@ -110,6 +115,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
         "line": 25,
         "height": 8
       },
@@ -165,6 +175,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
         "line": 25,
         "height": 8
       },
@@ -208,7 +223,7 @@
       "producedBy": [
         "villager"
       ],
-      "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
+      "icon": "https://data.aoe4world.com/images/buildings/capital-town-center.png",
       "hitpoints": 7000,
       "weapons": [],
       "armor": [
@@ -218,6 +233,11 @@
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 28,
+        "outer_height": -15,
+        "outer_radius": 52,
+        "base": 37.6,
         "line": 52,
         "height": 10
       },
@@ -280,6 +300,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 10,
+        "outer_height": 0,
+        "outer_radius": 15,
+        "base": 15,
         "line": 15,
         "height": 8
       },
@@ -340,6 +365,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 50,
+        "base": 50,
         "line": 50,
         "height": 8
       },
@@ -362,7 +392,7 @@
       "civs": [
         "ma"
       ],
-      "description": "Produces Barracks and Archery Range units 5 at a time. Unit cost is converted to Gold and reduced by -10%.",
+      "description": "Enlist one of three units to enhance your roster: the Mansa Musofadi, Mansa Javelineer, or Freeborn Warrior. Another unit can be enlisted in the Imperial Age.",
       "classes": [
         "age",
         "iii",
@@ -398,6 +428,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
         "line": 25,
         "height": 8
       },
@@ -449,6 +484,11 @@
         }
       ],
       "sight": {
+        "inner_height": 0,
+        "inner_radius": 0,
+        "outer_height": 0,
+        "outer_radius": 0,
+        "base": 0,
         "line": 0,
         "height": 0
       },
@@ -465,7 +505,7 @@
       "civs": [
         "ma"
       ],
-      "description": "Acts as a Keep. Infantry units nearby the Landmark enter Stealth for 30 seconds.\nMusofadi Warriors and Musofadi Gunners gain First Strike, dealing more damage when breaking Stealth with an attack.",
+      "description": "Acts as a Keep that shoots poison arrows. Infantry units nearby the Landmark enter Stealth for 30 seconds.\nMusofadi Warriors and Musofadi Gunners gain First Strike, dealing more damage when breaking Stealth with an attack.",
       "classes": [
         "age",
         "iv",
@@ -498,18 +538,33 @@
           "name": "Bow",
           "type": "ranged",
           "damage": 12,
-          "speed": 1,
+          "speed": 0.5,
           "range": {
             "min": 0,
-            "max": 6
+            "max": 8
           },
-          "modifiers": [],
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
           "durations": {
             "aim": 0,
-            "windup": 0,
+            "windup": 0.125,
             "attack": 0.125,
             "winddown": 0,
-            "reload": 0.875,
+            "reload": 0.25,
             "setup": 0,
             "teardown": 0,
             "cooldown": 0
@@ -517,8 +572,8 @@
           "burst": {
             "count": 3
           },
-          "attribName": "weapon_keep_arrows_a",
-          "pbgid": 127372
+          "attribName": "weapon_keep_arrows_a_poison_mal",
+          "pbgid": 9000078
         }
       ],
       "armor": [
@@ -532,6 +587,11 @@
         }
       ],
       "sight": {
+        "inner_height": 501,
+        "inner_radius": 40,
+        "outer_height": -15,
+        "outer_radius": 45,
+        "base": 44.854651162790695,
         "line": 45,
         "height": 501
       },
@@ -594,6 +654,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
         "line": 25,
         "height": 8
       },
@@ -642,6 +707,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
         "line": 25,
         "height": 8
       },
@@ -658,7 +728,7 @@
       "civs": [
         "ma"
       ],
-      "description": "Begin a festival for 300 Gold, providing global enhancements to Food gather rates, military production speeds, or damage of torches and siege attacks. One festival may be active at a time.",
+      "description": "Begin a festival for 300 Gold, providing global enhancements to Food gather rates, unit production speeds, or damage of torches and siege attacks. One festival may be active at a time.",
       "classes": [
         "age",
         "iv",
@@ -694,6 +764,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
         "line": 25,
         "height": 8
       },
@@ -743,6 +818,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 10,
+        "outer_height": 0,
+        "outer_radius": 15,
+        "base": 15,
         "line": 15,
         "height": 8
       },
@@ -791,18 +871,33 @@
           "name": "Bow",
           "type": "ranged",
           "damage": 12,
-          "speed": 1,
+          "speed": 0.5,
           "range": {
             "min": 0,
-            "max": 6
+            "max": 8
           },
-          "modifiers": [],
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
           "durations": {
             "aim": 0,
-            "windup": 0,
+            "windup": 0.125,
             "attack": 0.125,
             "winddown": 0,
-            "reload": 0.875,
+            "reload": 0.25,
             "setup": 0,
             "teardown": 0,
             "cooldown": 0
@@ -825,6 +920,11 @@
         }
       ],
       "sight": {
+        "inner_height": 501,
+        "inner_radius": 40,
+        "outer_height": -15,
+        "outer_radius": 41,
+        "base": 40.97093023255814,
         "line": 41,
         "height": 501
       },
@@ -885,6 +985,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 10,
+        "outer_height": 0,
+        "outer_radius": 15,
+        "base": 15,
         "line": 15,
         "height": 8
       },
@@ -934,6 +1039,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
         "line": 25,
         "height": 8
       },
@@ -985,6 +1095,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
         "line": 25,
         "height": 8
       },
@@ -1037,6 +1152,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
         "line": 25,
         "height": 8
       },
@@ -1086,6 +1206,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 10,
+        "outer_height": 0,
+        "outer_radius": 15,
+        "base": 15,
         "line": 15,
         "height": 8
       },
@@ -1135,6 +1260,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 10,
+        "outer_height": 0,
+        "outer_radius": 15,
+        "base": 15,
         "line": 15,
         "height": 8
       },
@@ -1186,6 +1316,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
         "line": 25,
         "height": 8
       },
@@ -1235,6 +1370,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 10,
+        "outer_height": 0,
+        "outer_radius": 20,
+        "base": 20,
         "line": 20,
         "height": 8
       },
@@ -1269,7 +1409,7 @@
         "oliveoil": 0,
         "total": 7,
         "popcap": 0,
-        "time": 4
+        "time": 8
       },
       "producedBy": [
         "villager"
@@ -1284,6 +1424,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 6,
+        "outer_height": 0,
+        "outer_radius": 6,
+        "base": 6,
         "line": 6,
         "height": 8
       },
@@ -1333,6 +1478,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": -6,
+        "outer_radius": 25,
+        "base": 22.857142857142858,
         "line": 25,
         "height": 8
       },
@@ -1351,7 +1501,7 @@
       "civs": [
         "ma"
       ],
-      "description": "Acts as a Toll Outpost that comes with Defensive Arrowslits technology researched.\nAll Traders and Trade Ships taxed will generate Food equal to the taxed Gold at this Landmark. All other Toll Outposts will generate 50% of taxed Gold as Food.",
+      "description": "Acts as a Toll Outpost that comes with Defensive Javelin Emplacement researched. Unlocks Javelin Emplacement for Outposts.\nAll Traders and Trade Ships taxed will generate Food equal to the taxed Gold at this Landmark. All other Toll Outposts will generate 50% of taxed Gold as Food.",
       "classes": [
         "age",
         "ii",
@@ -1383,28 +1533,43 @@
         {
           "name": "Bow",
           "type": "ranged",
-          "damage": 12,
-          "speed": 1,
+          "damage": 6,
+          "speed": 3.875,
           "range": {
             "min": 0,
-            "max": 5
+            "max": 6
           },
-          "modifiers": [],
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
           "durations": {
             "aim": 0,
             "windup": 0,
             "attack": 0.125,
             "winddown": 0,
-            "reload": 0.875,
+            "reload": 1.75,
             "setup": 0,
             "teardown": 0,
-            "cooldown": 0
+            "cooldown": 2
           },
           "burst": {
             "count": 3
           },
-          "attribName": "weapon_outpost_arrows",
-          "pbgid": 127357
+          "attribName": "weapon_outpost_arrows_garrison",
+          "pbgid": 171016
         }
       ],
       "armor": [
@@ -1414,6 +1579,11 @@
         }
       ],
       "sight": {
+        "inner_height": 501,
+        "inner_radius": 35,
+        "outer_height": -20,
+        "outer_radius": 60,
+        "base": 59.04030710172745,
         "line": 60,
         "height": 501
       },
@@ -1473,6 +1643,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
         "line": 25,
         "height": 8
       },
@@ -1528,6 +1703,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
         "line": 25,
         "height": 8
       },
@@ -1562,11 +1742,11 @@
       "costs": {
         "food": 0,
         "wood": 0,
-        "stone": 20,
+        "stone": 25,
         "gold": 0,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 20,
+        "total": 25,
         "popcap": 0,
         "time": 16
       },
@@ -1583,6 +1763,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 6,
+        "outer_height": 0,
+        "outer_radius": 6,
+        "base": 6,
         "line": 6,
         "height": 8
       },
@@ -1632,6 +1817,11 @@
         }
       ],
       "sight": {
+        "inner_height": 8,
+        "inner_radius": 10,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
         "line": 25,
         "height": 8
       },
@@ -1720,6 +1910,11 @@
         }
       ],
       "sight": {
+        "inner_height": 501,
+        "inner_radius": 35,
+        "outer_height": -20,
+        "outer_radius": 60,
+        "base": 59.04030710172745,
         "line": 60,
         "height": 501
       },
@@ -1765,19 +1960,34 @@
         {
           "name": "Bow",
           "type": "ranged",
-          "damage": 12,
-          "speed": 1,
+          "damage": 10,
+          "speed": 1.125,
           "range": {
             "min": 0,
-            "max": 5
+            "max": 6
           },
-          "modifiers": [],
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
           "durations": {
             "aim": 0,
-            "windup": 0,
+            "windup": 0.5,
             "attack": 0.125,
             "winddown": 0,
-            "reload": 0.875,
+            "reload": 0.5,
             "setup": 0,
             "teardown": 0,
             "cooldown": 0
@@ -1788,19 +1998,34 @@
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 24,
-          "speed": 1,
+          "damage": 40,
+          "speed": 3.875,
           "range": {
             "min": 0,
-            "max": 5
+            "max": 9
           },
-          "modifiers": [],
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 40,
+              "type": "passive"
+            }
+          ],
           "durations": {
             "aim": 0,
-            "windup": 0,
+            "windup": 0.25,
             "attack": 0.125,
-            "winddown": 0,
-            "reload": 0.875,
+            "winddown": 0.5,
+            "reload": 3,
             "setup": 0,
             "teardown": 0,
             "cooldown": 0
@@ -2058,6 +2283,57 @@
           },
           "attribName": "weapon_outpost_arrows_garrison",
           "pbgid": 171016
+        },
+        {
+          "name": "Javelin",
+          "type": "ranged",
+          "damage": 12,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 7
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 4,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_outpost_javelin_mal",
+          "pbgid": 9000610
         }
       ],
       "armor": [
@@ -2067,6 +2343,11 @@
         }
       ],
       "sight": {
+        "inner_height": 501,
+        "inner_radius": 35,
+        "outer_height": -20,
+        "outer_radius": 60,
+        "base": 59.04030710172745,
         "line": 60,
         "height": 501
       },
@@ -2108,11 +2389,11 @@
       "costs": {
         "food": 0,
         "wood": 400,
-        "stone": 350,
-        "gold": 0,
+        "stone": 0,
+        "gold": 450,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 750,
+        "total": 850,
         "popcap": 0,
         "time": 150
       },
@@ -2129,11 +2410,16 @@
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 28,
+        "outer_height": -15,
+        "outer_radius": 52,
+        "base": 37.6,
         "line": 52,
         "height": 10
       },
       "garrison": {
-        "capacity": 7,
+        "capacity": 8,
         "classes": [
           "villager",
           "infantry",

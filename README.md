@@ -143,7 +143,7 @@ You will need raw parsed game files to build and update the data. Those files ar
 1. Download and install the latest version of [AOEMods.Essence](https://github.com/aoemods/AOEMods.Essence/releases).
 2. Localate the game files, typically located in `C:\Program Files\Steam\steamapps\common\Age of Empires IV\`. When you play the gam through XBox, the process is a bit more [involved](https://answers.microsoft.com/en-us/xbox/forum/all/where-do-xbox-gamepass-games-install-to-on-pcs/845ceb04-fea7-4fde-b001-8b63fa52df7b#:~:text=yes%20its%20normal,the%20hidden%20folders) as the game is installed in the hidden and secure `windowsapps` folder.
 3. Copy the following files/folders into `/source`
-   - `cardinal\archices\Attrib.sga` for all stats and attributes
+   - `cardinal\archives\Attrib.sga` for all stats and attributes
    - `cardinal\archives\UIArt.sga` for the icons (optional if you want to update icons)
    - `cardinal\archives\LocaleEnglish.sga` for the names and descriptions
 3. Unpack and convert the Attrib archive

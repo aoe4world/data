@@ -20,7 +20,7 @@
   ],
   "minAge": 3,
   "icon": "https://data.aoe4world.com/images/buildings/sea-gate-castle-3.png",
-  "description": "Acts as a Keep. All Keeps gain an aura that increases Trader and Trade Ship movement speed by +30% and armor by +8.",
+  "description": "Acts as a Keep with a free Great Bombard emplacement. All Keeps gain an aura that increases Trader and Trade Ship movement speed by +30% and armor by +8.",
   "variations": [
     {
       "id": "sea-gate-castle-3",
@@ -33,7 +33,7 @@
       "civs": [
         "ot"
       ],
-      "description": "Acts as a Keep. All Keeps gain an aura that increases Trader and Trade Ship movement speed by +30% and armor by +8.",
+      "description": "Acts as a Keep with a free Great Bombard emplacement. All Keeps gain an aura that increases Trader and Trade Ship movement speed by +30% and armor by +8.",
       "classes": [
         "age",
         "iv",
@@ -66,18 +66,33 @@
           "name": "Bow",
           "type": "ranged",
           "damage": 12,
-          "speed": 1,
+          "speed": 0.5,
           "range": {
             "min": 0,
-            "max": 6
+            "max": 8
           },
-          "modifiers": [],
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
           "durations": {
             "aim": 0,
-            "windup": 0,
+            "windup": 0.125,
             "attack": 0.125,
             "winddown": 0,
-            "reload": 0.875,
+            "reload": 0.25,
             "setup": 0,
             "teardown": 0,
             "cooldown": 0
@@ -100,6 +115,11 @@
         }
       ],
       "sight": {
+        "inner_height": 501,
+        "inner_radius": 40,
+        "outer_height": -15,
+        "outer_radius": 41,
+        "base": 40.97093023255814,
         "line": 41,
         "height": 501
       },

@@ -31,7 +31,7 @@
   ],
   "minAge": 3,
   "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-  "description": "Effective at taking out siege engines at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs. siege engines\n- Trivial damage vs. buildings",
+  "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
   "variations": [
     {
       "id": "springald-3",
@@ -44,7 +44,7 @@
       "civs": [
         "ab"
       ],
-      "description": "Effective at taking out siege engines at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs. siege engines\n- Trivial damage vs. buildings",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -54,29 +54,29 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -84,12 +84,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -103,16 +104,16 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 65,
               "type": "passive"
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -123,11 +124,16 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },
@@ -146,7 +152,7 @@
       "civs": [
         "ay"
       ],
-      "description": "Effective at taking out siege engines at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs. siege engines\n- Trivial damage vs. buildings",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -156,29 +162,29 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -186,12 +192,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -205,16 +212,16 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 65,
               "type": "passive"
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -225,11 +232,16 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },
@@ -248,7 +260,7 @@
       "civs": [
         "by"
       ],
-      "description": "Effective at taking out siege engines at long range.\n+ Long range\n+ Bonus damage vs. siege engines\n+ Attacks without having to set up\n- Trivial damage vs. buildings",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -258,29 +270,29 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -288,12 +300,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -307,16 +320,16 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 65,
               "type": "passive"
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -327,11 +340,16 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },
@@ -350,7 +368,7 @@
       "civs": [
         "ch"
       ],
-      "description": "Effective at taking out siege engines at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs. siege engines\n- Trivial damage vs. buildings",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -360,29 +378,29 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -390,12 +408,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -409,16 +428,16 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 65,
               "type": "passive"
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -429,11 +448,16 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },
@@ -452,7 +476,7 @@
       "civs": [
         "de"
       ],
-      "description": "Effective at taking out siege engines at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs. siege engines\n- Trivial damage vs. buildings",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -462,29 +486,29 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -492,12 +516,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -511,16 +536,16 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 65,
               "type": "passive"
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -531,11 +556,16 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },
@@ -554,7 +584,7 @@
       "civs": [
         "en"
       ],
-      "description": "Effective at taking out siege engines at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs. siege engines\n- Trivial damage vs. buildings",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -564,14 +594,14 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "the-white-tower",
@@ -580,16 +610,16 @@
         "berkshire-palace"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -597,12 +627,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -616,16 +647,16 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 65,
               "type": "passive"
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -636,11 +667,16 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },
@@ -659,7 +695,7 @@
       "civs": [
         "fr"
       ],
-      "description": "Effective at taking out siege engines at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs. siege engines\n- Trivial damage vs. buildings",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -669,29 +705,29 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -699,12 +735,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -718,16 +755,16 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 65,
               "type": "passive"
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -738,11 +775,16 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },
@@ -761,7 +803,7 @@
       "civs": [
         "hr"
       ],
-      "description": "Ranged siege unit.\n+ Bonus damage vs siege",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -771,29 +813,29 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -801,12 +843,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -820,16 +863,16 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 65,
               "type": "passive"
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -840,11 +883,16 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },
@@ -863,7 +911,7 @@
       "civs": [
         "ja"
       ],
-      "description": "Effective at taking out siege engines at long range.\n+ Long range\n+ Bonus damage vs. siege engines\n+ Attacks without having to set up\n- Trivial damage vs. buildings",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -873,29 +921,29 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -903,12 +951,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -922,16 +971,16 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 65,
               "type": "passive"
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -942,11 +991,16 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },
@@ -965,7 +1019,7 @@
       "civs": [
         "je"
       ],
-      "description": "Effective at taking out siege engines at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs. siege engines\n- Trivial damage vs. buildings",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -975,29 +1029,29 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -1005,12 +1059,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -1024,16 +1079,16 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 65,
               "type": "passive"
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -1044,11 +1099,16 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },
@@ -1067,7 +1127,7 @@
       "civs": [
         "ma"
       ],
-      "description": "Effective at taking out siege engines at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs. siege engines\n- Trivial damage vs. buildings",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -1077,29 +1137,29 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -1107,12 +1167,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -1126,16 +1187,16 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 65,
               "type": "passive"
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -1146,11 +1207,16 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },
@@ -1169,7 +1235,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Effective at taking out siege engines at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs. siege engines\n- Trivial damage vs. buildings",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -1179,29 +1245,29 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -1209,12 +1275,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -1228,16 +1295,16 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 65,
               "type": "passive"
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -1248,11 +1315,16 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },
@@ -1271,7 +1343,7 @@
       "civs": [
         "od"
       ],
-      "description": "Effective at taking out siege engines at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs. siege engines\n- Trivial damage vs. buildings",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -1281,29 +1353,29 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -1311,12 +1383,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -1330,16 +1403,16 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 65,
               "type": "passive"
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -1350,11 +1423,16 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },
@@ -1373,7 +1451,7 @@
       "civs": [
         "ot"
       ],
-      "description": "Effective at taking out siege engines at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs. siege engines\n- Trivial damage vs. buildings",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -1383,30 +1461,30 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "mehmed-imperial-armory",
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -1414,12 +1492,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -1433,16 +1512,16 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 65,
               "type": "passive"
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -1453,11 +1532,16 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },
@@ -1485,7 +1569,7 @@
       "civs": [
         "ru"
       ],
-      "description": "Effective at taking out siege engines at long range. Fires after quickly setting up.\n+ Long range\n+ Bonus damage vs. siege engines\n- Trivial damage vs. buildings",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -1495,29 +1579,29 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -1525,12 +1609,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -1544,16 +1629,16 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 65,
               "type": "passive"
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -1564,11 +1649,16 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },
@@ -1587,7 +1677,7 @@
       "civs": [
         "zx"
       ],
-      "description": "Effective at taking out siege engines at long range.\n+ Long range\n+ Bonus damage vs. siege engines\n+ Attacks without having to set up\n- Trivial damage vs. buildings",
+      "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
       "classes": [
         "siege"
       ],
@@ -1597,29 +1687,29 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 150,
         "stone": 0,
-        "gold": 250,
+        "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
-        "popcap": 3,
-        "time": 30
+        "total": 250,
+        "popcap": 2,
+        "time": 20
       },
       "producedBy": [
         "siege-workshop"
       ],
       "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-      "hitpoints": 125,
+      "hitpoints": 75,
       "weapons": [
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 30,
+          "damage": 15,
           "speed": 3.125,
           "range": {
-            "min": 1.25,
-            "max": 10
+            "min": 0,
+            "max": 8
           },
           "modifiers": [
             {
@@ -1627,12 +1717,13 @@
               "target": {
                 "class": [
                   [
-                    "siege"
+                    "melee",
+                    "infantry"
                   ]
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 10,
               "type": "passive"
             },
             {
@@ -1646,16 +1737,16 @@
                 ]
               },
               "effect": "change",
-              "value": 60,
+              "value": 65,
               "type": "passive"
             }
           ],
           "durations": {
-            "aim": 0.5,
+            "aim": 0.125,
             "windup": 0.25,
             "attack": 0.125,
             "winddown": 0.5,
-            "reload": 1.75,
+            "reload": 2.125,
             "setup": 0,
             "teardown": 0.25,
             "cooldown": 0
@@ -1666,11 +1757,16 @@
       ],
       "armor": [
         {
-          "type": "ranged",
-          "value": 10
+          "type": "melee",
+          "value": 3
         }
       ],
       "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
         "line": 56,
         "height": 10
       },

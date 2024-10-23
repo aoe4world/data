@@ -1,6 +1,6 @@
 import { ItemSlug } from "../sdk/utils";
 import { Ability, Building, Item, ItemType, Modifier, Selector, Technology, Unit, Upgrade } from "../types/items";
-import { KHAGANTE_SPAWN_COUNTS, attribFile } from "./config";
+import { KHAGANTE_SPAWN_COUNTS } from "./config";
 
 const workarounds = new Map<string, Override>();
 const NO_COSTS = { food: 0, wood: 0, stone: 0, gold: 0, vizier: 0, oliveoil: 0, total: 0, time: 0, popcap: 0 };
@@ -294,7 +294,7 @@ workaround("Fix age and add missing info for spirit_way", {
     item.id = `${item.baseId}-${item.age}`;
     item.name = "Spirit Way Ancestors";
     item.description = "When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.";
-    item.icon = "https://data.aoe4world.com/images/buildings/spirit-way-3.png";
+    item.icon = "buildings/spirit-way-3.png";
     item.unlockedBy = ["buildings/spirit-way"];
   },
 });
@@ -332,7 +332,7 @@ workaround("Fix age and add missing info for kurultai_healing_aura_mon", {
     item.id = `${item.baseId}-${item.age}`;
     item.name = "Kurultai Aura";
     item.description = "Nearby units within its aura heal +1 health every 1 second and gain an additional +20% damage.";
-    item.icon = "https://data.aoe4world.com/images/buildings/kurultai-2.png";
+    item.icon = "buildings/kurultai-2.png";
   },
 });
 
@@ -549,7 +549,7 @@ workaround("Split French Town Center Production Bonus", {
     item.age = age;
     item.id = `${item.baseId}-${age}`;
     item.name = `${ageName} Age Town Center Production Speed`;
-    item.icon = `https://data.aoe4world.com/images/buildings/town-center.png`;
+    item.icon = `buildings/town-center.png`;
   },
 });
 
@@ -593,7 +593,7 @@ workaround("Fix missing info Golden Age Tier 1", {
     item.id = `${item.baseId}-${item.age}`;
     item.description = "+15% Resource Gathering Rate";
     item.name = "Golden Age Tier 1";
-    item.icon = "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png";
+    item.icon = "abilities/ability-golden-age-tier-1.png";
   },
 });
 
@@ -605,7 +605,7 @@ workaround("Fix missing info Golden Age Tier 2", {
     item.id = `${item.baseId}-${item.age}`;
     item.description = "+15% Research Speed";
     item.name = "Golden Age Tier 2";
-    item.icon = "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-2.png";
+    item.icon = "abilities/ability-golden-age-tier-2.png";
   },
 });
 
@@ -617,7 +617,7 @@ workaround("Fix missing info Golden Age Tier 3", {
     item.id = `${item.baseId}-${item.age}`;
     item.description = "+20% Production Speed, additional +5% Research Speed, additional +5% Resource Gathering Rate";
     item.name = "Golden Age Tier 3";
-    item.icon = "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-3.png";
+    item.icon = "abilities/ability-golden-age-tier-3.png";
   },
 });
 
@@ -815,7 +815,7 @@ workaround("Fix missing info Ayyubid Golden Age Tiers", {
     item.description = tiers[tier].description;
     item.effects = tiers[tier].effects;
     item.unlockedBy = ["buildings/house-of-wisdom"];
-    item.icon = `https://data.aoe4world.com/images/abilities/ability-golden-age-tier-${tier}.png`;
+    item.icon = `abilities/ability-golden-age-tier-${tier}.png`;
   },
 });
 
@@ -1266,11 +1266,11 @@ workaround("Remove the unused cannons and upgradable swivel cannon from Springal
   validator: (item) => (item as Unit).weapons.length == 1,
 });
 
-workaround("Remove the upgrade locked Javelin from the Hunting Canoe", {
+workaround("Remove the upgrade locked Javelin/Incendiary from the Hunting Canoe", {
   predicate: (item) => item.baseId == "hunting-canoe",
   mutator: (item) => {
     item = item as Unit;
-    item.weapons = item.weapons.filter((w) => w.attribName != "weapon_naval_javelin_burst");
+    item.weapons = item.weapons.filter((w) => !["weapon_naval_javelin_burst", "weapon_naval_arrow_ship_incendiary"].includes(w.attribName!));
   },
   validator: (item) => (item as Unit).weapons.length == 1,
 });
@@ -1296,7 +1296,7 @@ workaround("Modify King scaling to be more descriptive", {
     const base: Partial<Item> = {
       classes: ["king", "scaling", "technology"],
       displayClasses: ["King Scaling Technology"],
-      icon: "https://data.aoe4world.com/images/units/king-2.png",
+      icon: "units/king-2.png",
     };
     const castle: Partial<Item> = {
       id: "upgrade-king-3",
@@ -1330,7 +1330,7 @@ workaround("Modify Militia scaling to be more descriptive", {
     const base: Partial<Item> = {
       classes: ["Militia", "scaling", "technology"],
       displayClasses: ["Militia Scaling Technology"],
-      icon: "https://data.aoe4world.com/images/units/militia-2.png",
+      icon: "units/militia-2.png",
     };
     const castle: Partial<Item> = {
       id: "upgrade-militia-3",
@@ -1429,7 +1429,7 @@ workaround("Modify Shinobi scaling to be more descriptive", {
     const base: Partial<Item> = {
       classes: ["shinobi", "scaling", "technology"],
       displayClasses: ["Shinobi Scaling Technology"],
-      icon: "https://data.aoe4world.com/images/units/shinobi-2.png",
+      icon: "units/shinobi-2.png",
     };
     const castle: Partial<Item> = {
       id: "upgrade-shinobi-3",
@@ -1459,6 +1459,18 @@ workaround("Change Mongol Superior Mobility type from upgrade to technology", {
     item.type = "technology";
     item.baseId = "superior-mobility";
     item.id = `${item.baseId}-${item.age}`;
+    item.icon = `technologies/${item.id}.png`;
+  },
+});
+
+workaround("Change Mongol Improved Superior Mobility type from upgrade to technology", {
+  predicate: (item) => item.type === "upgrade" && item.attribName === "upgrade_unit_town_center_faster_packing_1_improved_mon",
+  mutator: (item) => {
+    item = item as Technology;
+    item.type = "technology";
+    item.baseId = "superior-mobility-improved";
+    item.id = `${item.baseId}-${item.age}`;
+    item.icon = `technologies/${item.id}.png`;
   },
 });
 
@@ -1469,6 +1481,7 @@ workaround("Give capital town centers unique id and clear name", {
     item.costs = NO_COSTS;
     item.baseId = "capital-town-center";
     item.id = "capital-town-center-1";
+    item.icon = 'buildings/capital-town-center.png';
   },
 });
 

@@ -1,0 +1,62 @@
+{
+  "id": "armored-caravans-2",
+  "baseId": "armored-caravans",
+  "type": "technology",
+  "name": "Armored Caravans",
+  "pbgid": 201746,
+  "attribName": "upgrade_trade_trader_armor_abb",
+  "age": 2,
+  "civs": [
+    "ab"
+  ],
+  "description": "Grant +3 armor to Traders and Trade Ships.",
+  "classes": [
+    "trade",
+    "technology"
+  ],
+  "displayClasses": [
+    "Trade Technology"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 0,
+    "wood": 25,
+    "stone": 0,
+    "gold": 75,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 100,
+    "popcap": 0,
+    "time": 45
+  },
+  "producedBy": [
+    "house-of-wisdom"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/armored-caravans-2.png",
+  "effects": [
+    {
+      "property": "meleeArmor",
+      "select": {
+        "id": [
+          "trader",
+          "trade-ship"
+        ]
+      },
+      "effect": "change",
+      "value": 3,
+      "type": "passive"
+    },
+    {
+      "property": "rangedArmor",
+      "select": {
+        "id": [
+          "trader",
+          "trade-ship"
+        ]
+      },
+      "effect": "change",
+      "value": 3,
+      "type": "passive"
+    }
+  ]
+}

@@ -45,6 +45,7 @@ export interface Item {
   age: number;
 
   description: string;
+  icon_src?: string;
   icon?: string;
 
   unique: boolean;

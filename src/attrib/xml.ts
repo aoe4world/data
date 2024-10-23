@@ -55,8 +55,9 @@ becomes
 ```
     */
 const cache = new Map<string, any>();
-export async function getXmlData<T = NormalizedAttrib>(file: string, base: string = path.join(ATTRIB_FOLDER, "instances"), context: RunContext): Promise<T | undefined> {
+export async function getXmlData<T = NormalizedAttrib>(file: string, context: RunContext): Promise<T | undefined> {
   if (!file.endsWith(".xml")) file += ".xml";
+  const base = path.join(ATTRIB_FOLDER, "instances");
   let filePath = path.join(base, file);
   if (cache.has(filePath)) return cache.get(filePath) as T;
   try {
@@ -65,7 +66,7 @@ export async function getXmlData<T = NormalizedAttrib>(file: string, base: strin
     const raw = await parser.parseStringPromise(await fileData);
     let parent;
     const parentPath = raw.instance_reference?.find((r: any) => r.$attr.name === "parent_pbg")?.$attr.value;
-    if (parentPath) parent = await getXmlData(formatValue(parentPath), base, context);
+    if (parentPath) parent = await getXmlData(formatValue(parentPath), context);
 
     // Step 2: Parse the object into our own normalized format
     const parsed = parseAttribObject(raw) as T;
@@ -295,5 +296,5 @@ export function logJson(data: any, name = Date.now().toString() + ".json") {
 }
 
 export async function parseXmlFile<T extends NormalizedAttrib>(file: string, context: RunContext): Promise<T | undefined> {
-  return getXmlData<T>(file, path.join(ATTRIB_FOLDER, "instances"), context);
+  return getXmlData<T>(file, context);
 }

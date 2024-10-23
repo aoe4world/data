@@ -12,89 +12,6 @@
   },
   "data": [
     {
-      "id": "acid-distillation",
-      "name": "Acid Distillation",
-      "type": "technology",
-      "civs": [
-        "ay"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Mining Technology 2/3"
-      ],
-      "classes": [
-        "mining",
-        "technology",
-        "2/3"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/technologies/acid-distillation-3.png",
-      "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
-      "variations": [
-        {
-          "id": "acid-distillation-3",
-          "baseId": "acid-distillation",
-          "type": "technology",
-          "name": "Acid Distillation",
-          "pbgid": 171823,
-          "attribName": "upgrade_econ_resource_gold_harvest_rate_3",
-          "age": 3,
-          "civs": [
-            "ay"
-          ],
-          "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
-          "classes": [
-            "mining",
-            "technology",
-            "2/3"
-          ],
-          "displayClasses": [
-            "Mining Technology 2/3"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 100,
-            "stone": 0,
-            "gold": 250,
-            "vizier": 0,
-            "oliveoil": 0,
-            "total": 350,
-            "popcap": 0,
-            "time": 60
-          },
-          "producedBy": [
-            "mining-camp"
-          ],
-          "icon": "https://data.aoe4world.com/images/technologies/acid-distillation-3.png",
-          "effects": [
-            {
-              "property": "goldGatherRate",
-              "select": {
-                "id": [
-                  "villager"
-                ]
-              },
-              "effect": "multiply",
-              "value": 1.15,
-              "type": "passive"
-            },
-            {
-              "property": "stoneGatherRate",
-              "select": {
-                "id": [
-                  "villager"
-                ]
-              },
-              "effect": "multiply",
-              "value": 1.15,
-              "type": "passive"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "adjustable-crossbars",
       "name": "Adjustable Crossbars",
       "type": "technology",
@@ -111,7 +28,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/adjustable-crossbars-4.png",
-      "description": "Increase the attack speed of Mangonels by +25%.",
+      "description": "Increases Mangonel range by +1, blast radius by +100%, and adds +1 projectile to attacks.",
       "variations": [
         {
           "id": "adjustable-crossbars-4",
@@ -124,7 +41,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Increase the attack speed of Mangonels by +25%.",
+          "description": "Increases Mangonel range by +1, blast radius by +100%, and adds +1 projectile to attacks.",
           "classes": [
             "mangonel",
             "technology"
@@ -135,12 +52,12 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 200,
+            "wood": 1000,
             "stone": 0,
-            "gold": 500,
+            "gold": 1200,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 700,
+            "total": 2200,
             "popcap": 0,
             "time": 90
           },
@@ -157,7 +74,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8,
+              "value": 0.99,
               "type": "passive"
             }
           ]
@@ -556,7 +473,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/biology-4.png",
-      "description": "Increase the health of all cavalry by +20%.",
+      "description": "Investing in natural sciences increases the health of all cavalry by +30%.",
       "variations": [
         {
           "id": "biology-4",
@@ -569,7 +486,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Increase the health of all cavalry by +20%.",
+          "description": "Investing in natural sciences increases the health of all cavalry by +30%.",
           "classes": [
             "lancer",
             "technology"
@@ -579,13 +496,13 @@
           ],
           "unique": false,
           "costs": {
-            "food": 300,
+            "food": 500,
             "wood": 0,
             "stone": 0,
-            "gold": 700,
+            "gold": 1000,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 1000,
+            "total": 1500,
             "popcap": 0,
             "time": 90
           },
@@ -604,7 +521,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.2,
+              "value": 1.3,
               "type": "passive"
             }
           ]
@@ -839,7 +756,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/culture-wing-logistics-1.png",
-      "description": "Constructs the Culture Wing.\nUpon completion, grants 4 Dervish, improves the unit's healing by +30%, and turns it on permanently.",
+      "description": "Constructs the Culture Wing.\nUpon completion, grants 4 Dervish, improves the unit's healing by +50%, and turns it on permanently.",
       "variations": [
         {
           "id": "bonus-culture-wing-logistics-4",
@@ -852,7 +769,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Constructs the Culture Wing.\nUpon completion, grants 4 Dervish, improves the unit's healing by +30%, and turns it on permanently.",
+          "description": "Constructs the Culture Wing.\nUpon completion, grants 4 Dervish, improves the unit's healing by +50%, and turns it on permanently.",
           "classes": [
             "unlock",
             "bonuses"
@@ -955,7 +872,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/economic-wing-industry-1.png",
-      "description": "Constructs the Economic Wing.\nUpon completion, awards 2800 Wood.",
+      "description": "Constructs the Military Wing.\nThe Blacksmith's damage and armor technologies become free and complete automatically when entering an Age. (Those of other Ages must still be researched as normal).",
       "variations": [
         {
           "id": "bonus-economic-wing-industry-4",
@@ -968,7 +885,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Constructs the Economic Wing.\nUpon completion, awards 2800 Wood.",
+          "description": "Constructs the Military Wing.\nThe Blacksmith's damage and armor technologies become free and complete automatically when entering an Age. (Those of other Ages must still be researched as normal).",
           "classes": [
             "unlock",
             "bonuses"
@@ -1386,7 +1303,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/technologies/culture-wing-logistics-1.png",
-      "description": "Constructs the Culture Wing.\nUpon completion, grants 3 Dervish and improves the unit's healing by +30%.",
+      "description": "Constructs the Culture Wing.\nUpon completion, grants 3 Dervish, improves the unit's healing by +25%, and turns it on permanently.",
       "variations": [
         {
           "id": "castle-culture-wing-logistics-2",
@@ -1399,7 +1316,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Constructs the Culture Wing.\nUpon completion, grants 3 Dervish and improves the unit's healing by +30%.",
+          "description": "Constructs the Culture Wing.\nUpon completion, grants 3 Dervish, improves the unit's healing by +25%, and turns it on permanently.",
           "classes": [
             "advance",
             "to",
@@ -1448,7 +1365,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/technologies/economic-wing-growth-1.png",
-      "description": "Constructs the Economic Wing.\nUpon completion, grants 8 Villagers. Orchards gain 100 additional food.",
+      "description": "Constructs the Economic Wing.\nUpon completion, grants 7 Villagers. Orchards gain 100 additional food.",
       "variations": [
         {
           "id": "castle-economic-wing-growth-2",
@@ -1461,7 +1378,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Constructs the Economic Wing.\nUpon completion, grants 8 Villagers. Orchards gain 100 additional food.",
+          "description": "Constructs the Economic Wing.\nUpon completion, grants 7 Villagers. Orchards gain 100 additional food.",
           "classes": [
             "advance",
             "to",
@@ -1510,7 +1427,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/technologies/economic-wing-industry-1.png",
-      "description": "Constructs the Economic Wing.\nUpon completion, awards 1000 Wood.",
+      "description": "Constructs the Economic Wing.\nUpon completion, awards 800 Wood and 400 Stone.",
       "variations": [
         {
           "id": "castle-economic-wing-industry-2",
@@ -1523,7 +1440,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Constructs the Economic Wing.\nUpon completion, awards 1000 Wood.",
+          "description": "Constructs the Economic Wing.\nUpon completion, awards 800 Wood and 400 Stone.",
           "classes": [
             "advance",
             "to",
@@ -1696,7 +1613,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/technologies/trade-wing-advisors-1.png",
-      "description": "Constructs the Trade Wing.\nUpon completion, gain 4 Atabeg which can be garrisoned in any military production building (except Docks) to increase the health of newly trained units by 20%.",
+      "description": "Constructs the Trade Wing.\nUpon completion, gain 5 Atabeg which can be garrisoned in any military production building (except Docks) to increase the health of newly trained units by 20%.",
       "variations": [
         {
           "id": "castle-trade-wing-advisors-2",
@@ -1709,7 +1626,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Constructs the Trade Wing.\nUpon completion, gain 4 Atabeg which can be garrisoned in any military production building (except Docks) to increase the health of newly trained units by 20%.",
+          "description": "Constructs the Trade Wing.\nUpon completion, gain 5 Atabeg which can be garrisoned in any military production building (except Docks) to increase the health of newly trained units by 20%.",
           "classes": [
             "advance",
             "to",
@@ -1818,7 +1735,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
-      "description": "Increase the damage of gunpowder units by +20%.",
+      "description": "Advancements in alchemical research increase the bonus damage of all gunpowder siege weapons by +25%.",
       "variations": [
         {
           "id": "chemistry-4",
@@ -1831,7 +1748,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Increase the damage of gunpowder units by +20%.",
+          "description": "Advancements in alchemical research increase the bonus damage of all gunpowder siege weapons by +25%.",
           "classes": [
             "gunpowder",
             "technology"
@@ -1841,15 +1758,15 @@
           ],
           "unique": false,
           "costs": {
-            "food": 300,
+            "food": 200,
             "wood": 0,
             "stone": 0,
-            "gold": 700,
+            "gold": 650,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 1000,
+            "total": 850,
             "popcap": 0,
-            "time": 90
+            "time": 60
           },
           "producedBy": [
             "madrasa"
@@ -1869,7 +1786,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.2,
+              "value": 1.25,
               "type": "passive"
             },
             {
@@ -1885,7 +1802,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.2,
+              "value": 1.25,
               "type": "passive"
             }
           ]
@@ -1909,7 +1826,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/court-architects-4.png",
-      "description": "Increase the health of all buildings by +30%.",
+      "description": "Patronage of the finest builders increases all building health by +30%.",
       "variations": [
         {
           "id": "court-architects-4",
@@ -1922,7 +1839,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Increase the health of all buildings by +30%.",
+          "description": "Patronage of the finest builders increases all building health by +30%.",
           "classes": [
             "building",
             "technology"
@@ -2371,7 +2288,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/drift-nets-3.png",
-      "description": "Increase the gathering rate of Fishing Ships by +15%, carry capacity by +20 and move speed by +10%.",
+      "description": "Increase the gathering rate of Fishing Ships by +10%, carry capacity by +20 and move speed by +10%.",
       "variations": [
         {
           "id": "drift-nets-3",
@@ -2384,7 +2301,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Increase the gathering rate of Fishing Ships by +15%, carry capacity by +20 and move speed by +10%.",
+          "description": "Increase the gathering rate of Fishing Ships by +10%, carry capacity by +20 and move speed by +10%.",
           "classes": [
             "fishing",
             "technology",
@@ -2419,7 +2336,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.15,
+              "value": 1.1,
               "type": "passive"
             },
             {
@@ -2468,7 +2385,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/elite-army-tactics-4.png",
-      "description": "Increase the health of all melee infantry by +20% and their damage by +20%.",
+      "description": "Training elite infantry leads to improved prowess in battle. Melee Infantry gain +20% damage and +4 melee armor.",
       "variations": [
         {
           "id": "elite-army-tactics-4",
@@ -2481,7 +2398,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Increase the health of all melee infantry by +20% and their damage by +20%.",
+          "description": "Training elite infantry leads to improved prowess in battle. Melee Infantry gain +20% damage and +4 melee armor.",
           "classes": [
             "melee",
             "infantry",
@@ -2492,13 +2409,13 @@
           ],
           "unique": false,
           "costs": {
-            "food": 300,
+            "food": 500,
             "wood": 0,
             "stone": 0,
-            "gold": 700,
+            "gold": 1000,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 1000,
+            "total": 1500,
             "popcap": 0,
             "time": 90
           },
@@ -2532,7 +2449,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.2,
+              "value": 1.04,
               "type": "passive"
             }
           ]
@@ -2630,7 +2547,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/technologies/extended-lines-2.png",
-      "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
+      "description": "Increase the gathering rate of Fishing Ships by +15% and carry capacity by +10.",
       "variations": [
         {
           "id": "extended-lines-2",
@@ -2643,7 +2560,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Increase the gathering rate of Fishing Ships by +20% and carry capacity by +10.",
+          "description": "Increase the gathering rate of Fishing Ships by +15% and carry capacity by +10.",
           "classes": [
             "fishing",
             "technology",
@@ -2678,7 +2595,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.2,
+              "value": 1.15,
               "type": "passive"
             },
             {
@@ -2789,7 +2706,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/fertilization-3.png",
-      "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
+      "description": "Increase Villagers' gathering rate for Food by 10%. Does not apply to hunted meat.",
       "variations": [
         {
           "id": "fertilization-3",
@@ -2802,7 +2719,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
+          "description": "Increase Villagers' gathering rate for Food by 10%. Does not apply to hunted meat.",
           "classes": [
             "food",
             "gathering",
@@ -2837,7 +2754,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.15,
+              "value": 1.1,
               "type": "passive"
             }
           ]
@@ -2925,7 +2842,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/technologies/culture-wing-logistics-1.png",
-      "description": "Constructs the Culture Wing.\nUpon completion, grants 2 Dervish and improves the unit's healing by +25%.",
+      "description": "Constructs the Culture Wing.\nUpon completion, grants 2 Dervish and turns their healing aura on permanently.",
       "variations": [
         {
           "id": "feudal-culture-wing-logistics-1",
@@ -2938,7 +2855,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Constructs the Culture Wing.\nUpon completion, grants 2 Dervish and improves the unit's healing by +25%.",
+          "description": "Constructs the Culture Wing.\nUpon completion, grants 2 Dervish and turns their healing aura on permanently.",
           "classes": [
             "advance",
             "to",
@@ -3049,7 +2966,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/technologies/economic-wing-industry-1.png",
-      "description": "Constructs the Economic Wing.\nUpon completion, awards 300 Wood.",
+      "description": "Constructs the Economic Wing.\nUpon completion, awards 350 Wood.",
       "variations": [
         {
           "id": "feudal-economic-wing-industry-1",
@@ -3062,7 +2979,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Constructs the Economic Wing.\nUpon completion, awards 300 Wood.",
+          "description": "Constructs the Economic Wing.\nUpon completion, awards 350 Wood.",
           "classes": [
             "advance",
             "to",
@@ -3173,7 +3090,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/technologies/military-wing-reinforcement-1.png",
-      "description": "Constructs the Military Wing.\nUpon completion, Cavalry units gain the ability to construct siege weapons.\nThe House of Wisdom produces 1 Desert Raiders immediately and then every 2 minutes for the rest of the game.",
+      "description": "Constructs the Military Wing.\nUpon completion, Cavalry units gain the ability to construct siege weapons.\nThe House of Wisdom produces 1 Desert Raider after 15 seconds and then every 2 minutes for the rest of the game.",
       "variations": [
         {
           "id": "feudal-military-wing-reinforcement-1",
@@ -3186,7 +3103,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Constructs the Military Wing.\nUpon completion, Cavalry units gain the ability to construct siege weapons.\nThe House of Wisdom produces 1 Desert Raiders immediately and then every 2 minutes for the rest of the game.",
+          "description": "Constructs the Military Wing.\nUpon completion, Cavalry units gain the ability to construct siege weapons.\nThe House of Wisdom produces 1 Desert Raider after 15 seconds and then every 2 minutes for the rest of the game.",
           "classes": [
             "advance",
             "to",
@@ -3235,7 +3152,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/technologies/trade-wing-advisors-1.png",
-      "description": "Constructs the Trade Wing.\nUpon completion, gain 2 Atabeg which can be garrisoned in any military production building (except Docks) to increase the health of newly trained units by 20%.",
+      "description": "Constructs the Trade Wing.\nUpon completion, gain 3 Atabeg which can be garrisoned in any military production building (except Docks) to increase the health of newly trained units by 20%.",
       "variations": [
         {
           "id": "feudal-trade-wing-advisors-1",
@@ -3248,7 +3165,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Constructs the Trade Wing.\nUpon completion, gain 2 Atabeg which can be garrisoned in any military production building (except Docks) to increase the health of newly trained units by 20%.",
+          "description": "Constructs the Trade Wing.\nUpon completion, gain 3 Atabeg which can be garrisoned in any military production building (except Docks) to increase the health of newly trained units by 20%.",
           "classes": [
             "advance",
             "to",
@@ -3894,7 +3811,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/technologies/horticulture-2.png",
-      "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
+      "description": "Increase Villagers' gathering rate for Food by 10%. Does not apply to hunted meat.",
       "variations": [
         {
           "id": "horticulture-2",
@@ -3907,7 +3824,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
+          "description": "Increase Villagers' gathering rate for Food by 10%. Does not apply to hunted meat.",
           "classes": [
             "food",
             "gathering",
@@ -3942,7 +3859,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.15,
+              "value": 1.1,
               "type": "passive"
             }
           ]
@@ -4030,7 +3947,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/culture-wing-logistics-1.png",
-      "description": "Constructs the Culture Wing.\nUpon completion, grants 4 Dervish, improves the unit's healing by +30%, and turns it on permanently.",
+      "description": "Constructs the Culture Wing.\nUpon completion, grants 4 Dervish, improves the unit's healing by +50%, and turns it on permanently.",
       "variations": [
         {
           "id": "imperial-culture-wing-logistics-3",
@@ -4043,7 +3960,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Constructs the Culture Wing.\nUpon completion, grants 4 Dervish, improves the unit's healing by +30%, and turns it on permanently.",
+          "description": "Constructs the Culture Wing.\nUpon completion, grants 4 Dervish, improves the unit's healing by +50%, and turns it on permanently.",
           "classes": [
             "advance",
             "to",
@@ -4154,7 +4071,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/economic-wing-industry-1.png",
-      "description": "Constructs the Economic Wing.\nUpon completion, awards 2500 Wood.",
+      "description": "Constructs the Economic Wing.\nUpon completion, awards 2000 Wood and 900 Stone.",
       "variations": [
         {
           "id": "imperial-economic-wing-industry-3",
@@ -4167,7 +4084,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Constructs the Economic Wing.\nUpon completion, awards 2500 Wood.",
+          "description": "Constructs the Economic Wing.\nUpon completion, awards 2000 Wood and 900 Stone.",
           "classes": [
             "advance",
             "to",
@@ -4535,7 +4452,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/incendiary-arrows-4.png",
-      "description": "Increase the damage of ranged units by +20%. Does not apply to gunpowder units.",
+      "description": "Flammable munitions grant non-gunpowder ranged units a siege arrow or bolt when attacking buildings and increase their damage by +20%.",
       "variations": [
         {
           "id": "incendiary-arrows-4",
@@ -4548,7 +4465,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Increase the damage of ranged units by +20%. Does not apply to gunpowder units.",
+          "description": "Flammable munitions grant non-gunpowder ranged units a siege arrow or bolt when attacking buildings and increase their damage by +20%.",
           "classes": [
             "ranged",
             "technology"
@@ -4559,12 +4476,12 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 300,
+            "wood": 500,
             "stone": 0,
-            "gold": 700,
+            "gold": 1000,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 1000,
+            "total": 1500,
             "popcap": 0,
             "time": 90
           },
@@ -5517,7 +5434,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/precision-cross-breeding-4.png",
-      "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
+      "description": "Increase Villagers' gathering rate for Food by 10%. Does not apply to hunted meat.",
       "variations": [
         {
           "id": "precision-cross-breeding-4",
@@ -5530,7 +5447,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Increase Villagers' gathering rate for Food by 15%. Does not apply to hunted meat.",
+          "description": "Increase Villagers' gathering rate for Food by 10%. Does not apply to hunted meat.",
           "classes": [
             "food",
             "gathering",
@@ -5565,7 +5482,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.15,
+              "value": 1.1,
               "type": "passive"
             }
           ]
@@ -5677,7 +5594,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/roller-shutter-triggers-4.png",
-      "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
+      "description": "Increases Springald attack speed by +25% and grants +10% Ranged Resistance.",
       "variations": [
         {
           "id": "roller-shutter-triggers-4",
@@ -5690,7 +5607,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.",
+          "description": "Increases Springald attack speed by +25% and grants +10% Ranged Resistance.",
           "classes": [
             "springald",
             "technology"
@@ -5723,7 +5640,7 @@
                 ]
               },
               "effect": "change",
-              "value": 2,
+              "value": 25,
               "type": "passive"
             },
             {
@@ -5734,10 +5651,128 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.8,
+              "value": 0.91,
               "type": "passive"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "serpentine-powder",
+      "name": "Serpentine Powder",
+      "type": "technology",
+      "civs": [
+        "ay"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Gunpowder Technology"
+      ],
+      "classes": [
+        "gunpowder",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/serpentine-powder-4.png",
+      "description": "With new gunpowder, Handcannoneers gain +8 damage against melee infantry and gain a brief increase to their movement speed after firing their weapon.",
+      "variations": [
+        {
+          "id": "serpentine-powder-4",
+          "baseId": "serpentine-powder",
+          "type": "technology",
+          "name": "Serpentine Powder",
+          "pbgid": 9000617,
+          "attribName": "upgrade_ranged_leadshot",
+          "age": 4,
+          "civs": [
+            "ay"
+          ],
+          "description": "With new gunpowder, Handcannoneers gain +8 damage against melee infantry and gain a brief increase to their movement speed after firing their weapon.",
+          "classes": [
+            "gunpowder",
+            "technology"
+          ],
+          "displayClasses": [
+            "Gunpowder Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 300,
+            "wood": 0,
+            "stone": 0,
+            "gold": 500,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 800,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "madrasa"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/serpentine-powder-4.png",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "shaft-mining",
+      "name": "Shaft Mining",
+      "type": "technology",
+      "civs": [
+        "ay"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Mining Technology 2/3"
+      ],
+      "classes": [
+        "mining",
+        "technology",
+        "2/3"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/shaft-mining-3.png",
+      "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
+      "variations": [
+        {
+          "id": "shaft-mining-3",
+          "baseId": "shaft-mining",
+          "type": "technology",
+          "name": "Shaft Mining",
+          "pbgid": 171823,
+          "attribName": "upgrade_econ_resource_gold_harvest_rate_3",
+          "age": 3,
+          "civs": [
+            "ay"
+          ],
+          "description": "Increase Villagers' gathering rate for Gold and Stone by 15%.",
+          "classes": [
+            "mining",
+            "technology",
+            "2/3"
+          ],
+          "displayClasses": [
+            "Mining Technology 2/3"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 100,
+            "stone": 0,
+            "gold": 250,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 350,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "mining-camp"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/shaft-mining-3.png",
+          "effects": []
         }
       ]
     },
@@ -5935,7 +5970,7 @@
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/technologies/siege-works-4.png",
-      "description": "Increase the health of siege engines by +20% and their ranged armor by +10.",
+      "description": "New carpentry techniques increase the health of siege units by +20%.",
       "variations": [
         {
           "id": "siege-works-4",
@@ -5948,7 +5983,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Increase the health of siege engines by +20% and their ranged armor by +10.",
+          "description": "New carpentry techniques increase the health of siege units by +20%.",
           "classes": [
             "siege",
             "technology"
@@ -5961,10 +5996,10 @@
             "food": 0,
             "wood": 300,
             "stone": 0,
-            "gold": 700,
+            "gold": 600,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 1000,
+            "total": 900,
             "popcap": 0,
             "time": 90
           },
@@ -5996,10 +6031,67 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
               "type": "passive"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "silk-bowstrings",
+      "name": "Silk Bowstrings",
+      "type": "technology",
+      "civs": [
+        "ay"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Archer Technology"
+      ],
+      "classes": [
+        "archer",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/silk-bowstrings-4.png",
+      "description": "Stringing bows with silk grants Archers +2 range and Mounted Archers +1 range.",
+      "variations": [
+        {
+          "id": "silk-bowstrings-4",
+          "baseId": "silk-bowstrings",
+          "type": "technology",
+          "name": "Silk Bowstrings",
+          "pbgid": 127842,
+          "attribName": "upgrade_ranged_archer_silkstring",
+          "age": 4,
+          "civs": [
+            "ay"
+          ],
+          "description": "Stringing bows with silk grants Archers +2 range and Mounted Archers +1 range.",
+          "classes": [
+            "archer",
+            "technology"
+          ],
+          "displayClasses": [
+            "Archer Technology"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 300,
+            "stone": 0,
+            "gold": 700,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 1000,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "madrasa"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/silk-bowstrings-4.png",
+          "effects": []
         }
       ]
     },

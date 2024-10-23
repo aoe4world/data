@@ -3,7 +3,6 @@ import fs from "fs";
 import { Weapon } from "../types/items";
 import { getTranslation } from "./translations";
 import { parseXmlFile } from "./xml";
-import { attribFile } from "./config";
 import { damageMap } from "./parse";
 import { RunContext } from "./run";
 
@@ -18,7 +17,7 @@ export function parseWeapons(combat_ext: any, context: RunContext): Promise<Weap
   const weapons = weaponList.map(async (ref) => {
     if (ref?.weapon) return parseWeapon(ref.weapon, context);
     if (ref?.attach) {
-      const file = await context.getData(attribFile(ref.attach), undefined, context);
+      const file = await context.getData(ref.attach, context);
       const weaponFile = file!.extensions.find((x) => x.exts == "ebpextensions/weapon_ext")?.weapon;
       return parseWeapon(weaponFile, context);
     }
@@ -29,7 +28,7 @@ export function parseWeapons(combat_ext: any, context: RunContext): Promise<Weap
 }
 
 async function parseWeapon(file: string, context: RunContext): Promise<Weapon> {
-  const weapon: any = await context.getData(attribFile(file), undefined, context);
+  const weapon: any = await context.getData(file, context);
   if (context.debug) fs.writeFileSync(path.join(__dirname, "/.temp", file.split("/").pop()! + ".json"), JSON.stringify(weapon ?? {}, null, 2));
 
   const name = getTranslation(weapon.weapon_bag.ui_name);

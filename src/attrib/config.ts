@@ -29,12 +29,13 @@ export const hardcodedDiscovery = {
     "abilities/timed_abilities/mongol/khan_attack_speed_signal_arrow_mon", //khan-1 is discovered in starting army, so khan abilities miss auto discovery
     "abilities/timed_abilities/mongol/khan_defensive_signal_arrow_mon",
     "abilities/timed_abilities/mongol/khan_maneuver_signal_arrow_mon", //whistling arrow is an ability upgrade; how do techs upgrade an ability
+    //"abilities/timed_abilities/mongol/scout_falcon_sight_mon",
     // "abilities/always_on_abilities/mongol/ortoo_outpost_speed_aura_mon",
     "info/buff_info/races/mongol/outpost_speed_improved_mon",
   ],
   ottomans: [
     "upgrade/races/ottoman/research/upgrade_anatolian_hills_ott",
-    "upgrade/races/ottoman/research/upgrade_imperial_blacksmith_stockpile_ott",
+    //"upgrade/races/ottoman/research/upgrade_imperial_blacksmith_stockpile_ott",
     "upgrade/races/ottoman/research/upgrade_imperial_janissary_company_ott",
     "upgrade/races/ottoman/research/upgrade_imperial_manned_siege_ott",
     "upgrade/races/ottoman/research/upgrade_imperial_mehter_drums_ott",
@@ -52,8 +53,8 @@ export const hardcodedDiscovery = {
   english: [
     "upgrade/races/english/units/upgrade_abbey_king_castle_1",
     "upgrade/races/english/units/upgrade_abbey_king_imp_2",
-    "/sbps/races/english/unit_ranger_wynguard_4_eng",
-    "/sbps/races/english/unit_footman_wynguard_4_eng",
+    "sbps/races/english/unit_ranger_wynguard_4_eng",
+    "sbps/races/english/unit_footman_wynguard_4_eng",
     "abilities/timed_abilities/english/longbow_rate_of_fire_ability", //misses auto discovery; range is weird but does it matter? //convert to ability from tech
     "abilities/timed_abilities/english/deploy_campfire_eng", //misses auto discovery;
     // "abilities/always_on_abilities/english/tower_outpost_alert_aura_eng",  //how to handle upgrade,  tower outpost has context to upgrade to citadels or tech has the context to upgrade buff or do a workaround
@@ -161,9 +162,9 @@ export const hardcodedDiscovery = {
   ],
   jeannedarc: [
     "abilities/always_on_abilities/french_ha_01/jeanne_companion_keep_dummy_keep",
-    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ability_charges_consecrate_fre_ha_01",
-    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ability_charges_melee_fre_ha_01",
-    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ability_charges_ranged_fre_ha_01",
+    //"abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ability_charges_consecrate_fre_ha_01",
+    //"abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ability_charges_melee_fre_ha_01",
+    //"abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ability_charges_ranged_fre_ha_01",
     "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_buff_follower_aura_fre_ha_01",
     "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_cleaving_attack_fre_ha_01",
     "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_construction_aura_fre_ha_01",
@@ -184,7 +185,7 @@ export const hardcodedDiscovery = {
     "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_rallying_call_knights_fre_ha_01",
     "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_rallying_call_manatarms_fre_ha_01",
     "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_rallying_call_spearmen_fre_ha_01",
-    "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_rallying_call_units_timer_fre_ha_01",
+    // "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_rallying_call_units_timer_fre_ha_01",
     // "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_ranged_attack_fre_ha_01",
     "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_talented_builder_fre_ha_01",
     "abilities/always_on_abilities/french_ha_01/jeanne_d_arc_valorous_inspiration_fre_ha_01",
@@ -356,6 +357,10 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "upgrade_stable_unit_mamluk_4_abb_ha_01",
   "upgrade_stable_unit_mamluk_3_abb_ha_01",
   "monk_debuff_target_jpn_five_mountain_landmark_version",
+  "abilities/always_on_abilities/ottoman/galleass_production_buff_ott",
+  "upgrade_free_abbey_trinity_global_discount_rus",
+
+  "military_school_production_mod_ott", // Advanced Academy bonus to military school production speed
 
   (file) => file.includes("unit_") && file.includes("_free_abb_ha_01"),
 ];
@@ -391,8 +396,3 @@ export const KHAGANTE_SPAWN_COUNTS = {
   magudai: 5,
   "palace-guard": 5,
 };
-
-export function attribFile(...paths: string[]) {
-  paths[paths.length - 1] = paths.at(-1)?.endsWith(".xml") ? paths.at(-1)! : `${paths.at(-1)}.xml`;
-  return path.join(...paths);
-}

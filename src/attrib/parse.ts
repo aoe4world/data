@@ -1,11 +1,11 @@
 import { ITEM_TYPES } from "../lib/config";
 import { getTranslation, NO_TRANSLATION_FOUND } from "./translations";
 import { parseWeapons } from "./weapons";
-import { attribFile, ignoreForNow } from "./config";
+import { ignoreForNow } from "./config";
 import { slugify } from "../lib/utils/string";
 import { Armor, Building, Item, ItemClass, ModifyableProperty, Technology, Unit, Upgrade, Ability } from "../types/items";
 import { CivConfig } from "../types/civs";
-import { useIcon } from "./icons";
+import { prepareIcon } from "./icons";
 import { technologyModifiers, abilityModifiers } from "./modifiers";
 import { RunContext, writeTemp } from "./run";
 
@@ -31,7 +31,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
     const loadout = maybeOnKey(findExt(data, "squadexts", "sbpextensions/squad_loadout_ext")?.unit_list[0], "loadout_data");
     const unitEbps = loadout?.type;
     if (unitEbps) {
-      const ebps = await getData(attribFile(unitEbps), undefined, context);
+      const ebps = await getData(unitEbps, context);
       if (debug) writeTemp(ebps, unitEbps.split("/").join("_"));
       ebpextensions = ebps?.extensions;
     }
@@ -78,9 +78,8 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
         ebpExts?.population_ext?.personnel_pop
       );
 
-    let icon;
-    if (isBuff) icon = await useIcon(ui_ext.icon?.slice(6), type, id);
-    icon ??= await useIcon(ui_ext.icon_name ?? ui_ext.icon, type, id);
+    const icon_name = isBuff ? ui_ext.icon?.slice(6) : (ui_ext.icon_name ?? ui_ext.icon);
+    const [icon_src, icon] = await prepareIcon(icon_name, type, id);
     if (!icon) console.log(`undefined icon for ${file}`, ui_ext.icon_name ?? ui_ext.icon);
 
     const pbgid = data.pbgid;
@@ -100,6 +99,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
       unique,
       costs,
       producedBy: [],
+      icon_src,
       icon,
     };
 
@@ -164,7 +164,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
         for (const luFile of loadoutUnits) {
           if (ignoreForNow.includes(luFile)) continue;
           try {
-            const luEbps = await getData(attribFile(luFile), undefined, context);
+            const luEbps = await getData(luFile, context);
             if (debug) writeTemp(luEbps, "ebps_" + luFile.split("/").pop()!);
             const luWeapons = await parseWeapons(
               luEbps?.extensions.find((ex) => ex.exts === "ebpextensions/combat_ext"),
@@ -330,9 +330,23 @@ function parseAge(name: string, requirements: any, parent_pbg: string) {
 }
 
 function parseSight(sight_ext: any) {
+  const {
+    inner_height = 0,
+    inner_radius = 0,
+    outer_height = 0,
+    outer_radius = 0
+  } = sight_ext?.sight_package || {};
+  // It's a cone and outer_height is negative (which leads to units seeing further from elevation)
+  // Calculate the radius at 0 height
+  const base = outer_height === inner_height ? outer_radius : (outer_radius - outer_height * (inner_radius - outer_radius) / (inner_height - outer_height));
   return {
-    line: sight_ext?.sight_package?.outer_radius || 0,
-    height: sight_ext?.sight_package?.inner_height || 0,
+    inner_height,
+    inner_radius,
+    outer_height,
+    outer_radius,
+    base,
+    line: outer_radius,
+    height: inner_height,
   };
 }
 

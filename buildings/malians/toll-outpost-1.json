@@ -38,19 +38,34 @@
     {
       "name": "Bow",
       "type": "ranged",
-      "damage": 12,
-      "speed": 1,
+      "damage": 10,
+      "speed": 1.125,
       "range": {
         "min": 0,
-        "max": 5
+        "max": 6
       },
-      "modifiers": [],
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ],
       "durations": {
         "aim": 0,
-        "windup": 0,
+        "windup": 0.5,
         "attack": 0.125,
         "winddown": 0,
-        "reload": 0.875,
+        "reload": 0.5,
         "setup": 0,
         "teardown": 0,
         "cooldown": 0
@@ -61,19 +76,34 @@
     {
       "name": "Springald",
       "type": "ranged",
-      "damage": 24,
-      "speed": 1,
+      "damage": 40,
+      "speed": 3.875,
       "range": {
         "min": 0,
-        "max": 5
+        "max": 9
       },
-      "modifiers": [],
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 40,
+          "type": "passive"
+        }
+      ],
       "durations": {
         "aim": 0,
-        "windup": 0,
+        "windup": 0.25,
         "attack": 0.125,
-        "winddown": 0,
-        "reload": 0.875,
+        "winddown": 0.5,
+        "reload": 3,
         "setup": 0,
         "teardown": 0,
         "cooldown": 0
@@ -331,6 +361,57 @@
       },
       "attribName": "weapon_outpost_arrows_garrison",
       "pbgid": 171016
+    },
+    {
+      "name": "Javelin",
+      "type": "ranged",
+      "damage": 12,
+      "speed": 1.375,
+      "range": {
+        "min": 0,
+        "max": 7
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        },
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "ranged"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 4,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_outpost_javelin_mal",
+      "pbgid": 9000610
     }
   ],
   "armor": [
@@ -340,6 +421,11 @@
     }
   ],
   "sight": {
+    "inner_height": 501,
+    "inner_radius": 35,
+    "outer_height": -20,
+    "outer_radius": 60,
+    "base": 59.04030710172745,
     "line": 60,
     "height": 501
   },

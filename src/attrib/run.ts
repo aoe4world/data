@@ -1,17 +1,18 @@
 import { existsSync, mkdirSync } from "fs";
 import fs from "fs/promises";
 import path from "path";
-import { FOLDERS, ITEM_TYPES } from "../lib/config";
+import { FOLDERS, ITEM_TYPE_MAP, ITEM_TYPES } from "../lib/config";
 import { CIVILIZATIONS } from "../lib/config/civs";
 import { writeJson } from "../lib/files/writeData";
 import { CIVILIZATION_BY_SLUG, CivConfig } from "../types/civs";
 import { Item } from "../types/items";
-import { attribFile, hardcodedDiscovery, hardcodedDiscoveryCommon } from "./config";
+import { hardcodedDiscovery, hardcodedDiscoveryCommon } from "./config";
 import { workarounds } from "./workarounds";
 import { parseItemFromAttribFile, maybeOnKey } from "./parse";
 import { getTranslation as t } from "./translations";
 import { getXmlData, parseXmlFile } from "./xml";
 import { getEssenceData, guessAppropriateEssenceFile } from "./essence";
+import { copyIcon } from "./icons";
 
 const runType = process.argv.some((arg) => arg === "--essence") ? "essence" : "xml";
 let runCiv: CivConfig | undefined;
@@ -43,8 +44,8 @@ async function buildTechTree(civ: CivConfig, context: RunContext = { debug: fals
   const produces = new Map<string, Set<string>>();
   const { debug, getData, race } = context;
 
-  const army: any = await getData(attribFile(`army/standard_mode/normal_${race}`), undefined, context);
-  const bps = await getData(attribFile(`racebps/${race}`), undefined, context);
+  const army: any = await getData(`army/normal_${race}`, context);
+  const bps = await getData(`racebps/${race}`, context);
 
   const army_extensions = army?.extensions?.[0] ?? army.army_bag;
   const civOverview = getCivInfo(army_extensions, bps?.extensions?.[0]);
@@ -66,7 +67,7 @@ async function buildTechTree(civ: CivConfig, context: RunContext = { debug: fals
     if (!matchedFile) return;
     file = matchedFile;
     if (filesToItemId.has(file)) return items.get(filesToItemId.get(file)!);
-    const data = await getData(attribFile(file), undefined, context);
+    const data = await getData(file, context);
     if (debug) writeTemp(data, file);
 
     const item = await parseItemFromAttribFile(file, data, civ, context);
@@ -87,6 +88,21 @@ async function buildTechTree(civ: CivConfig, context: RunContext = { debug: fals
       debug && console.error(`Skip`, item.id);
       return;
     }
+
+    if (item.icon && !item.icon.startsWith("http")) {
+      // Ideally i'd use useIcon, but the original files use the original 'age' and thus would end up with different filenames now. So instead we let workarounds deal with it case-by-case as they can override 'icon' before it's used here.
+      // But leaving this here so we can opt for having all icon stuff done after mutations are done.
+      //const icon_url = await useIcon(item.icon, ITEM_TYPE_MAP[item.type], item.id);
+      const icon_url = await copyIcon(item.icon_src, item.icon);
+
+      if (icon_url) {
+        item.icon = icon_url;
+      } else {
+         console.log(`undefined icon for ${file}`, item.icon);
+         item.icon = undefined;
+      }
+    }
+    item.icon_src = undefined;
 
     if (items.has(item.id) && items.get(item.id)!.type == item.type) {
       console.error(
