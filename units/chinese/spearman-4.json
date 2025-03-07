@@ -9,7 +9,7 @@
   "civs": [
     "ch"
   ],
-  "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+  "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n+ Additional damage against Elephants\n- Weak against armored infantry\n- Countered by Archers",
   "classes": [
     "light",
     "melee",
@@ -57,6 +57,20 @@
           },
           "effect": "change",
           "value": 28,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "war",
+                "elephant"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
           "type": "passive"
         }
       ],

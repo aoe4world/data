@@ -694,26 +694,13 @@
             {
               "name": "Cannon",
               "type": "siege",
-              "damage": 50,
+              "damage": 55,
               "speed": 5.375,
               "range": {
                 "min": 3.75,
                 "max": 10
               },
               "modifiers": [
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 410,
-                  "type": "passive"
-                },
                 {
                   "property": "siegeAttack",
                   "target": {
@@ -733,7 +720,34 @@
                   "target": {
                     "class": [
                       [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 375,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
                         "infantry"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 50,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
                       ]
                     ]
                   },
@@ -846,7 +860,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 375,
+                  "value": 350,
                   "type": "passive"
                 },
                 {
@@ -1035,7 +1049,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/units/donso-1.png",
-      "description": "Infantry best used against mounted units. Periodically throws a javelin when attacking from ranged.\n+ Anti-cavalry specialist\n+ Comes with melee armor\n- Weak against armored infantry\n- Countered by Archers and Longbowmen",
+      "description": "Infantry best used against mounted units. Periodically throws a javelin when attacking from ranged.\n+ Anti-cavalry specialist\n+ Additional damage against Elephants\n+ Comes with melee armor\n- Weak against armored infantry\n- Countered by Archers and Longbowmen",
       "variations": [
         {
           "id": "donso-1",
@@ -1048,7 +1062,7 @@
           "civs": [
             "ma"
           ],
-          "description": "Infantry best used against mounted units. Periodically throws a javelin when attacking from ranged.\n+ Anti-cavalry specialist\n+ Comes with melee armor\n- Weak against armored infantry\n- Countered by Archers and Longbowmen",
+          "description": "Infantry best used against mounted units. Periodically throws a javelin when attacking from ranged.\n+ Anti-cavalry specialist\n+ Additional damage against Elephants\n+ Comes with melee armor\n- Weak against armored infantry\n- Countered by Archers and Longbowmen",
           "classes": [
             "light",
             "melee",
@@ -1096,6 +1110,20 @@
                   },
                   "effect": "change",
                   "value": 17,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 3,
                   "type": "passive"
                 }
               ],
@@ -1203,7 +1231,7 @@
           "civs": [
             "ma"
           ],
-          "description": "Infantry best used against mounted units. Periodically throws a javelin when attacking from ranged.\n+ Anti-cavalry specialist\n+ Comes with melee armor\n- Weak against armored infantry\n- Countered by Archers and Longbowmen",
+          "description": "Infantry best used against mounted units. Periodically throws a javelin when attacking from ranged.\n+ Anti-cavalry specialist\n+ Additional damage against Elephants\n+ Comes with melee armor\n- Weak against armored infantry\n- Countered by Archers and Longbowmen",
           "classes": [
             "light",
             "melee",
@@ -1251,6 +1279,20 @@
                   },
                   "effect": "change",
                   "value": 20,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 4,
                   "type": "passive"
                 }
               ],
@@ -1358,7 +1400,7 @@
           "civs": [
             "ma"
           ],
-          "description": "Infantry best used against mounted units. Periodically throws a javelin when attacking from ranged.\n+ Anti-cavalry specialist\n+ Comes with melee armor\n- Weak against armored infantry\n- Countered by Archers and Longbowmen",
+          "description": "Infantry best used against mounted units. Periodically throws a javelin when attacking from ranged.\n+ Anti-cavalry specialist\n+ Additional damage against Elephants\n+ Comes with melee armor\n- Weak against armored infantry\n- Countered by Archers and Longbowmen",
           "classes": [
             "light",
             "melee",
@@ -1406,6 +1448,20 @@
                   },
                   "effect": "change",
                   "value": 23,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 5,
                   "type": "passive"
                 }
               ],
@@ -1513,7 +1569,7 @@
           "civs": [
             "ma"
           ],
-          "description": "Infantry best used against mounted units. Periodically throws a javelin when attacking from ranged.\n+ Anti-cavalry specialist\n+ Comes with melee armor\n- Weak against armored infantry\n- Countered by Archers and Longbowmen",
+          "description": "Infantry best used against mounted units. Periodically throws a javelin when attacking from ranged.\n+ Anti-cavalry specialist\n+ Additional damage against Elephants\n+ Comes with melee armor\n- Weak against armored infantry\n- Countered by Archers and Longbowmen",
           "classes": [
             "light",
             "melee",
@@ -1561,6 +1617,20 @@
                   },
                   "effect": "change",
                   "value": 28,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 6,
                   "type": "passive"
                 }
               ],
@@ -1750,7 +1820,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/units/freeborn-warrior-3.png",
-      "description": "Fast melee unit with high ranged armour and bonus against ranged.\n+ Strong against ranged units\n-weak against armoured melee units",
+      "description": "Infantry with high ranged armor and bonus against ranged.\n+ Strong against ranged units\n-weak against armored melee units",
       "variations": [
         {
           "id": "freeborn-warrior-3",
@@ -1763,7 +1833,7 @@
           "civs": [
             "ma"
           ],
-          "description": "Fast melee unit with high ranged armour and bonus against ranged.\n+ Strong against ranged units\n-weak against armoured melee units",
+          "description": "Infantry with high ranged armor and bonus against ranged.\n+ Strong against ranged units\n-weak against armored melee units",
           "classes": [
             "melee",
             "infantry"
@@ -1788,7 +1858,7 @@
             "farimba-garrison"
           ],
           "icon": "https://data.aoe4world.com/images/units/freeborn-warrior-3.png",
-          "hitpoints": 165,
+          "hitpoints": 175,
           "weapons": [
             {
               "name": "Khanda",
@@ -1881,7 +1951,7 @@
           "civs": [
             "ma"
           ],
-          "description": "Fast melee unit with high ranged armour and bonus against ranged.\n+ Strong against ranged units\n-weak against armoured melee units",
+          "description": "Infantry with high ranged armor and bonus against ranged.\n+ Strong against ranged units\n-weak against armored melee units",
           "classes": [
             "melee",
             "infantry"
@@ -1906,7 +1976,7 @@
             "farimba-garrison"
           ],
           "icon": "https://data.aoe4world.com/images/units/freeborn-warrior-4.png",
-          "hitpoints": 190,
+          "hitpoints": 205,
           "weapons": [
             {
               "name": "Khanda",
@@ -2680,7 +2750,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 8,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -2801,7 +2871,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 8,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -3657,7 +3727,7 @@
             {
               "name": "Handcannon",
               "type": "ranged",
-              "damage": 38,
+              "damage": 41,
               "speed": 2.125,
               "range": {
                 "min": 0,
@@ -3750,7 +3820,7 @@
             "barracks"
           ],
           "icon": "https://data.aoe4world.com/images/units/musofadi-warrior-2.png",
-          "hitpoints": 90,
+          "hitpoints": 95,
           "weapons": [
             {
               "name": "Mace",
@@ -3863,7 +3933,7 @@
             "barracks"
           ],
           "icon": "https://data.aoe4world.com/images/units/musofadi-warrior-3.png",
-          "hitpoints": 110,
+          "hitpoints": 115,
           "weapons": [
             {
               "name": "Khanda",
@@ -3976,7 +4046,7 @@
             "barracks"
           ],
           "icon": "https://data.aoe4world.com/images/units/musofadi-warrior-4.png",
-          "hitpoints": 135,
+          "hitpoints": 140,
           "weapons": [
             {
               "name": "Khanda",
@@ -4057,7 +4127,7 @@
     },
     {
       "id": "scout",
-      "name": "Scout",
+      "name": "Vanguard Scout",
       "type": "unit",
       "civs": [
         "ma"
@@ -4079,7 +4149,7 @@
           "id": "scout-1",
           "baseId": "scout",
           "type": "unit",
-          "name": "Scout",
+          "name": "Vanguard Scout",
           "pbgid": 2236148,
           "attribName": "unit_scout_1_mal",
           "age": 1,
@@ -4105,7 +4175,7 @@
             "oliveoil": 0,
             "total": 90,
             "popcap": 1,
-            "time": 15
+            "time": 14
           },
           "producedBy": [
             "stable",
@@ -4324,12 +4394,12 @@
             "stable"
           ],
           "icon": "https://data.aoe4world.com/images/units/sofa-2.png",
-          "hitpoints": 155,
+          "hitpoints": 160,
           "weapons": [
             {
               "name": "Spear",
               "type": "melee",
-              "damage": 16,
+              "damage": 17,
               "speed": 1.625,
               "range": {
                 "min": 0,
@@ -4708,12 +4778,12 @@
             "siege-workshop"
           ],
           "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-          "hitpoints": 75,
+          "hitpoints": 85,
           "weapons": [
             {
               "name": "Springald",
               "type": "ranged",
-              "damage": 15,
+              "damage": 16,
               "speed": 3.125,
               "range": {
                 "min": 0,
@@ -5331,7 +5401,7 @@
             "oliveoil": 0,
             "total": 90,
             "popcap": 1,
-            "time": 15
+            "time": 14
           },
           "producedBy": [
             "stable",
@@ -5436,7 +5506,7 @@
             "oliveoil": 0,
             "total": 90,
             "popcap": 1,
-            "time": 15
+            "time": 14
           },
           "producedBy": [
             "stable",
@@ -5554,7 +5624,7 @@
             "oliveoil": 0,
             "total": 90,
             "popcap": 1,
-            "time": 15
+            "time": 14
           },
           "producedBy": [
             "stable",
