@@ -1,3 +1,53 @@
+<#
+.SYNOPSIS
+Extracts and prepares Age of Empires IV game assets for use in the aoe4world data project.
+
+.PARAMETER GamePath
+Use the assets from the specified game directory. This would be C:\Program Files (x86)\Steam\steamapps\common\Age of Empires IV, if it was installed in the default Steam directory.
+
+.PARAMETER ArchivesPath
+Use the Attrib.sga, UIArt.sga and LocaleEnglish.sga files in the specified directory. defaults to './source' if all 3 files are found there.
+
+.PARAMETER DataStorePath
+Specifies the directory that contains an archival storage of multiple game versions, it should contain a 'patches\{patch-version}' structure. Use -Patch to specify which patch to extract.
+This option will extract to 'exports\{patch-version}' in the specified directory.
+
+.PARAMETER Patch
+The patch to use in the DataStore; eg. 12.2.3372
+
+.PARAMETER OutputPath
+Where to extract the data to; defaults to './source'
+
+.PARAMETER ExtractXml
+Whether to also convert the attribs to xml format (into {OutputPath}/attrib-raw/xml)
+
+.PARAMETER ExtractExtraImages
+Whether to extracts all icons instead of only races, also extracts civ flags & map images.
+
+.PARAMETER RemoveTemp
+Removes the extracted sga content after conversion (attrib-raw and uiart-raw dirs)
+
+.PARAMETER AOEModsEssenceDir
+Specify an alternative dir containing 'AOEMods.Essence.CLI.dll'; defaults to './source/AOEMods.Essence'
+
+.EXAMPLE
+
+.\Extract-AOE4Patch.ps1 -GamePath 'C:\Program Files (x86)\Steam\steamapps\common\Age of Empires IV\'
+
+Simply extract the required data for the explorer from your default Steam AoE4 installation.
+
+.EXAMPLE
+
+.\Extract-AOE4Patch.ps1 -GamePath 'C:\Program Files (x86)\Steam\steamapps\common\Age of Empires IV\' -ExtractExtraImages -RemoveTemp
+
+Extract the required data, but also export map, civ and additional icons (these won't be used by the explorer). Also Remove temporary files.
+
+.EXAMPLE
+
+.\Extract-AOE4Patch.ps1 -RemoveTemp
+
+After manually placing Attrib.sga, UIArt.sga and LocaleEnglish.sga in ./sources. This simply extracts the necessary resources and removes the temporary files.
+#>
 [CmdletBinding(DefaultParameterSetName = 'ArchivePath')]
 param(
   [Parameter(Mandatory, ParameterSetName = 'GamePath')]
