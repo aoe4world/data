@@ -162,7 +162,7 @@ All Parameters:
 
 **Manual process**
 
-*Note: Maky any of the specified directories as needed*
+*Note: Make any of the specified directories as needed*
 
 1. Copy the following files/folders into `/source`
    - `cardinal\archives\Attrib.sga` for all stats and attributes
