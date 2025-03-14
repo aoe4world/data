@@ -39,26 +39,13 @@
     {
       "name": "Cannon",
       "type": "siege",
-      "damage": 35,
+      "damage": 40,
       "speed": 3.625,
       "range": {
         "min": 1.25,
         "max": 10.5
       },
       "modifiers": [
-        {
-          "property": "siegeAttack",
-          "target": {
-            "class": [
-              [
-                "building"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 230,
-          "type": "passive"
-        },
         {
           "property": "siegeAttack",
           "target": {
@@ -78,12 +65,39 @@
           "target": {
             "class": [
               [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 215,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
                 "infantry"
               ]
             ]
           },
           "effect": "change",
           "value": 50,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "war",
+                "elephant"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 35,
           "type": "passive"
         }
       ],

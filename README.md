@@ -137,52 +137,72 @@ Feel free to open PRs or issues for data that is incorrect or missing, if possib
 ### Updating the data from game files
 You will need raw parsed game files to build and update the data. Those files are not included in the repository due to licensing and copyright issues (you will need your own copy of AoE4). First we unpack the so called Archives (SGA) and then parse them using scripts we wrote to JSON files. 
 
+**Prerequisites**
 
+1. Download and install the latest version of [AOEMods.Essence](https://github.com/aoemods/AOEMods.Essence/releases), extract into `./source/AOEMods.Essence`
+2. Locate the game files, typically located in `C:\Program Files (x86)\Steam\steamapps\common\Age of Empires IV\`. When you play the gam through XBox, the process is a bit more [involved](https://answers.microsoft.com/en-us/xbox/forum/all/where-do-xbox-gamepass-games-install-to-on-pcs/845ceb04-fea7-4fde-b001-8b63fa52df7b#:~:text=yes%20its%20normal,the%20hidden%20folders) as the game is installed in the hidden and secure `windowsapps` folder.
 
+**Automatic process**
 
-1. Download and install the latest version of [AOEMods.Essence](https://github.com/aoemods/AOEMods.Essence/releases).
-2. Localate the game files, typically located in `C:\Program Files\Steam\steamapps\common\Age of Empires IV\`. When you play the gam through XBox, the process is a bit more [involved](https://answers.microsoft.com/en-us/xbox/forum/all/where-do-xbox-gamepass-games-install-to-on-pcs/845ceb04-fea7-4fde-b001-8b63fa52df7b#:~:text=yes%20its%20normal,the%20hidden%20folders) as the game is installed in the hidden and secure `windowsapps` folder.
-3. Copy the following files/folders into `/source`
+The powershell script `Extract-AOE4Patch.ps1` supports various methodologies. But the main procedure is:
+
+Run in a powershell window:
+
+1. `.\Extract-AOE4Patch.ps1 -GamePath 'C:\Program Files (x86)\Steam\steamapps\common\Age of Empires IV\'`
+2. Done
+
+NOTE: It's preferable to use `-GamePath`, it'll determine the game version and by default create a versioned directory under `./source`. If you used this repository before, you may have to clean up `./source` as it'll only create a junction of `source/latest` doesn't exist or is already a junction.
+
+All Parameters:
+- `-ArchivesPath`: Use instead of `-GamePath`. Specify the directory containing the Attrib.sga, UIArt.sga and LocaleEnglish.sga files.
+- `-OutputPath`: Simply where to put the output, defaults to `./source/{version}`. (And creates symlink/junction from `./source/latest` to it)
+- `-DataStore` + `-Patch`: Can be used to keep an archive of all game patches & exports. It uses a `patches/12.2.1234` subdir structure, in my case on a zfs storage for dedup reasons. But that requires local changes in config.ts too.
+- `-ExtractXml`: Switch to also convert attrib to xml format in another directory.
+- `-ExtractExtraImages`: Extracts all icons instead of only races, also extracts civ flags & map images.
+- `-RemoveTemp`: Removes the extracted sga content after conversion (attrib-raw and uiart-raw dirs)
+- `-AOEModsEssenceDir`: Specify an alternative dir containing `AOEMods.Essence.CLI.dll`; defaults to `./source/AOEMods.Essence`
+
+**Manual process**
+
+*Note: Make any of the specified directories as needed*
+
+1. Copy the following files/folders into `/source`
    - `cardinal\archives\Attrib.sga` for all stats and attributes
    - `cardinal\archives\UIArt.sga` for the icons (optional if you want to update icons)
    - `cardinal\archives\LocaleEnglish.sga` for the names and descriptions
-3. Unpack and convert the Attrib archive
+2. Unpack and convert the Attrib archive
    - `dotnet AOEMods.Essence.CLI.dll sga-unpack ./source/Attrib.sga ./source/attrib-raw`
    - `dotnet AOEMods.Essence.CLI.dll  rgd-decode ./source/attrib-raw ./source/ -b -f json`
-4. Unpack the locale file using AOEMods.Essence, i.e.
-   ```
-   dotnet AOEMods.Essence.CLI.dll sga-unpack ./source/LocaleEnglish.sga ../source/locale`
-   ```
-5. Optionally unpack the UIArt file using AOEMods.Essence, and convert the icons into PNG files, i.e.
-   ```
-   dotnet AOEMods.Essence.CLI.dll sga-unpack ./source/UIArt.sga ./source/art`
-   dotnet AOEMods.Essence.CLI.dll rrtex-decode ./source/art/ui/icons/races ./source/icons -b
-   ```
-   If this step isn't giving you the desired results consider using [Coh3-Image-Extractor](https://github.com/cohstats/coh3-image-extractor) instead. It works with similar commands `python scripts/main.py --src "./source/art" --format png`
-6. You should end up with a folder structure like this:
+3. Unpack the locale file using AOEMods.Essence, i.e.
+   - `dotnet AOEMods.Essence.CLI.dll sga-unpack ./source/LocaleEnglish.sga ../source/locale`
+4. Unpack the UIArt file using AOEMods.Essence, and convert the icons into PNG files, i.e.
+   - `dotnet AOEMods.Essence.CLI.dll sga-unpack ./source/UIArt.sga ./source/uiart-raw`
+   - `dotnet AOEMods.Essence.CLI.dll rrtex-decode ./source/uiart-raw/ui/icons/races ./source/ui/icons/races -b`
+5. You should end up with a folder structure like this:
    ```
    source
    ├── attrib
    │   ├── instances
    │   ├── templates
    │   └── etc...
-   ├── icons
-   │   └── races
-   │       ├── abbasid
-   │       ├── chinese
-   │       └── etc...
+   ├── ui
+   |   └── icons
+   │       └── races
+   │           ├── abbasid
+   │           ├── chinese
+   │           └── etc...
    └── locale
        └── en
            └── cardinal.en.ucs
    ```
-7. Run `yarn install && yarn parse --essence` to update the data.
+7. Run `yarn install && yarn parse` to update the data.
 8. Verify the changes. Specifically, the technology effects are currently compiled from translation parameters, of which the order may change. This can easily be spotted by changes in any technology description field. If they changed, update the parameter order or implementation in `effect.ts`.
 9. Run `yarn build` to update the optimzed json files and library.
 
-> **Note**: The `--essence` flag instructs our code to use formatting from the Essence format, rather than the (now deprecated) Attrib xml files that are packed with the game in the root cardinal folder.
-
 #### Just parse one civ
-Parsing can be relatively slow due to the total amount of files involved. If you're just working on data for a specific civ you can add an additional flag to the the parse command to only parse a specific civ. I.e. `yarn parse --essence --civ japanese`
+Parsing can be relatively slow due to the total amount of files involved. If you're just working on data for a specific civ you can add an additional flag to the the parse command to only parse a specific civ. I.e. `yarn parse --civ japanese`
+
+Note: It's not slow anymore, but the option still exists.
 
 ## Credits
 

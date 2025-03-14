@@ -9,7 +9,7 @@
   "civs": [
     "by"
   ],
-  "description": "Infantry best used against cavalry. Can enter Shield Wall to take reduced ranged damage.\n+ Anti-cavalry specialist\n+ Increased health\n- Shield Wall reduces move speed\n- Weak vs armored infantry\n- Countered by Archers",
+  "description": "Infantry best used against cavalry. Can enter Shield Wall to take reduced ranged damage.\n+ Anti-cavalry specialist\n+ Additional damage against Elephants\n+ Increased health\n- Shield Wall reduces move speed\n- Weak vs armored infantry\n- Countered by Archers",
   "classes": [
     "light",
     "melee",
@@ -58,6 +58,20 @@
           },
           "effect": "change",
           "value": 20,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "war",
+                "elephant"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 4,
           "type": "passive"
         }
       ],

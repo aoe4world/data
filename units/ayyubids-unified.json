@@ -1307,7 +1307,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 375,
+                  "value": 350,
                   "type": "passive"
                 },
                 {
@@ -1416,7 +1416,7 @@
             {
               "name": "Crossbow",
               "type": "ranged",
-              "damage": 12,
+              "damage": 11,
               "speed": 2.125,
               "range": {
                 "min": 0,
@@ -1433,7 +1433,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 9,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -1506,7 +1506,7 @@
             {
               "name": "Crossbow",
               "type": "ranged",
-              "damage": 15,
+              "damage": 14,
               "speed": 2.125,
               "range": {
                 "min": 0,
@@ -1523,7 +1523,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 11,
+                  "value": 12,
                   "type": "passive"
                 }
               ],
@@ -1618,26 +1618,13 @@
             {
               "name": "Cannon",
               "type": "siege",
-              "damage": 35,
+              "damage": 40,
               "speed": 3.625,
               "range": {
                 "min": 1.25,
                 "max": 10.5
               },
               "modifiers": [
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 230,
-                  "type": "passive"
-                },
                 {
                   "property": "siegeAttack",
                   "target": {
@@ -1657,12 +1644,39 @@
                   "target": {
                     "class": [
                       [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 215,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
                         "infantry"
                       ]
                     ]
                   },
                   "effect": "change",
                   "value": 50,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 35,
                   "type": "passive"
                 }
               ],
@@ -2837,7 +2851,7 @@
             {
               "name": "Handcannon",
               "type": "ranged",
-              "damage": 35,
+              "damage": 38,
               "speed": 2.125,
               "range": {
                 "min": 0,
@@ -3390,7 +3404,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 8,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -3511,7 +3525,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 8,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -3590,15 +3604,15 @@
           ],
           "unique": false,
           "costs": {
-            "food": 70,
+            "food": 65,
             "wood": 0,
             "stone": 0,
             "gold": 0,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 70,
+            "total": 65,
             "popcap": 1,
-            "time": 25
+            "time": 23
           },
           "producedBy": [
             "stable",
@@ -3693,7 +3707,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/units/spearman-1.png",
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n+ Additional damage against Elephants\n- Weak against armored infantry\n- Countered by Archers",
       "variations": [
         {
           "id": "spearman-1",
@@ -3706,7 +3720,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+          "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n+ Additional damage against Elephants\n- Weak against armored infantry\n- Countered by Archers",
           "classes": [
             "light",
             "melee",
@@ -3754,6 +3768,20 @@
                   },
                   "effect": "change",
                   "value": 17,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 3,
                   "type": "passive"
                 }
               ],
@@ -3819,7 +3847,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+          "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n+ Additional damage against Elephants\n- Weak against armored infantry\n- Countered by Archers",
           "classes": [
             "light",
             "melee",
@@ -3867,6 +3895,20 @@
                   },
                   "effect": "change",
                   "value": 20,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 4,
                   "type": "passive"
                 }
               ],
@@ -3932,7 +3974,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+          "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n+ Additional damage against Elephants\n- Weak against armored infantry\n- Countered by Archers",
           "classes": [
             "light",
             "melee",
@@ -3980,6 +4022,20 @@
                   },
                   "effect": "change",
                   "value": 23,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 5,
                   "type": "passive"
                 }
               ],
@@ -4045,7 +4101,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+          "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n+ Additional damage against Elephants\n- Weak against armored infantry\n- Countered by Archers",
           "classes": [
             "light",
             "melee",
@@ -4093,6 +4149,20 @@
                   },
                   "effect": "change",
                   "value": 28,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 6,
                   "type": "passive"
                 }
               ],
@@ -4201,12 +4271,12 @@
             "siege-workshop"
           ],
           "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-          "hitpoints": 75,
+          "hitpoints": 85,
           "weapons": [
             {
               "name": "Springald",
               "type": "ranged",
-              "damage": 15,
+              "damage": 16,
               "speed": 3.125,
               "range": {
                 "min": 0,

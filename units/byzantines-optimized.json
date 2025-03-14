@@ -89,7 +89,7 @@
             {
               "name": "Crossbow",
               "type": "ranged",
-              "damage": 12,
+              "damage": 11,
               "speed": 2.125,
               "range": {
                 "min": 0,
@@ -106,7 +106,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 9,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -141,7 +141,7 @@
             {
               "name": "Crossbow",
               "type": "ranged",
-              "damage": 15,
+              "damage": 14,
               "speed": 2.125,
               "range": {
                 "min": 0,
@@ -158,7 +158,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 11,
+                  "value": 12,
                   "type": "passive"
                 }
               ],
@@ -513,26 +513,13 @@
             {
               "name": "Cannon",
               "type": "siege",
-              "damage": 50,
+              "damage": 55,
               "speed": 5.375,
               "range": {
                 "min": 3.75,
                 "max": 10
               },
               "modifiers": [
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 410,
-                  "type": "passive"
-                },
                 {
                   "property": "siegeAttack",
                   "target": {
@@ -552,7 +539,34 @@
                   "target": {
                     "class": [
                       [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 375,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
                         "infantry"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 50,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
                       ]
                     ]
                   },
@@ -679,7 +693,7 @@
             {
               "name": "Bow",
               "type": "ranged",
-              "damage": 12,
+              "damage": 11,
               "speed": 1.375,
               "range": {
                 "min": 0,
@@ -698,7 +712,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 12,
+                  "value": 11,
                   "type": "passive"
                 },
                 {
@@ -713,7 +727,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 12,
+                  "value": 11,
                   "type": "passive"
                 }
               ],
@@ -739,6 +753,70 @@
           "age": 3,
           "icon": "https://data.aoe4world.com/images/units/camel-archer-3.png",
           "hitpoints": 175,
+          "weapons": [
+            {
+              "name": "Bow",
+              "type": "ranged",
+              "damage": 13,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 3.75
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "light",
+                        "melee",
+                        "infantry"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 13,
+                  "type": "passive"
+                },
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "light",
+                        "gunpowder",
+                        "infantry"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 13,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 0.75,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_camel_archer_3_abb",
+              "pbgid": 200015
+            }
+          ],
+          "armor": [],
+          "id": "camel-archer-3"
+        },
+        "camel-archer-4": {
+          "name": "Elite Camel Archer",
+          "age": 4,
+          "icon": "https://data.aoe4world.com/images/units/camel-archer-4.png",
+          "hitpoints": 200,
           "weapons": [
             {
               "name": "Bow",
@@ -778,70 +856,6 @@
                   },
                   "effect": "change",
                   "value": 14,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0,
-                "windup": 0,
-                "attack": 0.125,
-                "winddown": 0.5,
-                "reload": 0.75,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "attribName": "weapon_camel_archer_3_abb",
-              "pbgid": 200015
-            }
-          ],
-          "armor": [],
-          "id": "camel-archer-3"
-        },
-        "camel-archer-4": {
-          "name": "Elite Camel Archer",
-          "age": 4,
-          "icon": "https://data.aoe4world.com/images/units/camel-archer-4.png",
-          "hitpoints": 200,
-          "weapons": [
-            {
-              "name": "Bow",
-              "type": "ranged",
-              "damage": 15,
-              "speed": 1.375,
-              "range": {
-                "min": 0,
-                "max": 3.75
-              },
-              "modifiers": [
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "light",
-                        "melee",
-                        "infantry"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 15,
-                  "type": "passive"
-                },
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "light",
-                        "gunpowder",
-                        "infantry"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 15,
                   "type": "passive"
                 }
               ],
@@ -1660,7 +1674,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 375,
+                  "value": 350,
                   "type": "passive"
                 },
                 {
@@ -1711,7 +1725,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 375,
+                  "value": 350,
                   "type": "passive"
                 },
                 {
@@ -1833,7 +1847,7 @@
             {
               "name": "Crossbow",
               "type": "ranged",
-              "damage": 12,
+              "damage": 11,
               "speed": 2.125,
               "range": {
                 "min": 0,
@@ -1850,7 +1864,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 9,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -1880,7 +1894,7 @@
             {
               "name": "Crossbow",
               "type": "ranged",
-              "damage": 15,
+              "damage": 14,
               "speed": 2.125,
               "range": {
                 "min": 0,
@@ -1897,7 +1911,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 11,
+                  "value": 12,
                   "type": "passive"
                 }
               ],
@@ -3115,7 +3129,7 @@
             {
               "name": "Handcannon",
               "type": "ranged",
-              "damage": 35,
+              "damage": 38,
               "speed": 2.125,
               "range": {
                 "min": 0,
@@ -3859,8 +3873,8 @@
         "stone": 0,
         "gold": 0,
         "vizier": 0,
-        "oliveoil": 115,
-        "total": 115,
+        "oliveoil": 120,
+        "total": 120,
         "popcap": 1,
         "time": 80
       },
@@ -4649,7 +4663,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/units/limitanei-1.png",
-      "description": "Infantry best used against cavalry. Can enter Shield Wall to take reduced ranged damage.\n+ Anti-cavalry specialist\n+ Increased health\n- Shield Wall reduces move speed\n- Weak vs armored infantry\n- Countered by Archers",
+      "description": "Infantry best used against cavalry. Can enter Shield Wall to take reduced ranged damage.\n+ Anti-cavalry specialist\n+ Additional damage against Elephants\n+ Increased health\n- Shield Wall reduces move speed\n- Weak vs armored infantry\n- Countered by Archers",
       "variations": [
         {
           "id": "limitanei-1",
@@ -4740,6 +4754,20 @@
                   "effect": "change",
                   "value": 17,
                   "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 3,
+                  "type": "passive"
                 }
               ],
               "durations": {
@@ -4809,6 +4837,20 @@
                   },
                   "effect": "change",
                   "value": 20,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 4,
                   "type": "passive"
                 }
               ],
@@ -4880,6 +4922,20 @@
                   "effect": "change",
                   "value": 23,
                   "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 5,
+                  "type": "passive"
                 }
               ],
               "durations": {
@@ -4950,6 +5006,20 @@
                   "effect": "change",
                   "value": 28,
                   "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 6,
+                  "type": "passive"
                 }
               ],
               "durations": {
@@ -5012,7 +5082,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/units/longbowman-2.png",
-      "description": "Cheap long-ranged infantry with good damage vs. unarmored targets.\n+ Long range\n+ Can construct Palings to fend off cavalry charges\n- Slow movement speed\n- Countered by Horsemen\n\nMercenary that can be purchased per 5 units for a total of 450 Olive Oil.\n\nRequires the Western Mercenary Contract.",
+      "description": "Cheap long-ranged infantry with good damage vs. unarmored targets.\n+ Long range\n+ Can construct Palings to fend off cavalry charges\n- Slow movement speed\n- Countered by Horsemen\n\nMercenary that can be purchased per 5 units for a total of 470 Olive Oil.\n\nRequires the Western Mercenary Contract.",
       "variations": [
         {
           "id": "longbowman-2",
@@ -5047,8 +5117,8 @@
         "stone": 0,
         "gold": 0,
         "vizier": 0,
-        "oliveoil": 90,
-        "total": 90,
+        "oliveoil": 94,
+        "total": 94,
         "popcap": 1,
         "time": 75
       },
@@ -5365,7 +5435,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 8,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -5486,7 +5556,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 8,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -5835,7 +5905,7 @@
         "mercenary-house",
         "golden-horn-tower"
       ],
-      "hitpoints": 90,
+      "hitpoints": 95,
       "sight": {
         "inner_height": 10,
         "inner_radius": 12,
@@ -5923,7 +5993,7 @@
           "name": "Veteran Musofadi Warrior",
           "age": 3,
           "icon": "https://data.aoe4world.com/images/units/musofadi-warrior-3.png",
-          "hitpoints": 110,
+          "hitpoints": 115,
           "weapons": [
             {
               "name": "Khanda",
@@ -5993,7 +6063,7 @@
           "name": "Elite Musofadi Warrior",
           "age": 4,
           "icon": "https://data.aoe4world.com/images/units/musofadi-warrior-4.png",
-          "hitpoints": 135,
+          "hitpoints": 140,
           "weapons": [
             {
               "name": "Khanda",
@@ -6126,7 +6196,7 @@
               "speed": 6.5,
               "range": {
                 "min": 3,
-                "max": 7
+                "max": 7.5
               },
               "modifiers": [
                 {
@@ -6255,26 +6325,13 @@
             {
               "name": "Cannon",
               "type": "siege",
-              "damage": 55,
+              "damage": 60,
               "speed": 5.375,
               "range": {
                 "min": 3.75,
                 "max": 10
               },
               "modifiers": [
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 500,
-                  "type": "passive"
-                },
                 {
                   "property": "siegeAttack",
                   "target": {
@@ -6294,7 +6351,34 @@
                   "target": {
                     "class": [
                       [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 450,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
                         "infantry"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 55,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
                       ]
                     ]
                   },
@@ -6652,15 +6736,15 @@
           ],
           "unique": false,
           "costs": {
-            "food": 70,
+            "food": 65,
             "wood": 0,
             "stone": 0,
             "gold": 0,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 70,
+            "total": 65,
             "popcap": 1,
-            "time": 25
+            "time": 23
           },
           "producedBy": [
             "imperial-hippodrome",
@@ -7226,12 +7310,12 @@
             "siege-workshop"
           ],
           "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-          "hitpoints": 75,
+          "hitpoints": 85,
           "weapons": [
             {
               "name": "Springald",
               "type": "ranged",
-              "damage": 15,
+              "damage": 16,
               "speed": 3.125,
               "range": {
                 "min": 0,
@@ -7365,7 +7449,7 @@
             {
               "name": "Handcannon",
               "type": "ranged",
-              "damage": 35,
+              "damage": 38,
               "speed": 2.125,
               "range": {
                 "min": 0,
@@ -7548,7 +7632,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 11,
+                  "value": 12,
                   "type": "passive"
                 }
               ],
@@ -8327,6 +8411,20 @@
                   },
                   "effect": "change",
                   "value": 40,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 6,
                   "type": "passive"
                 }
               ],

@@ -4,7 +4,7 @@ import { CivSlug } from "../sdk/utils";
 
 export const SOURCE_FOLDER = path.join(__dirname, "../../source/latest");
 export const ATTRIB_FOLDER = path.join(SOURCE_FOLDER, "/attrib");
-export const ICON_FOLDER = path.join(SOURCE_FOLDER, "/art/icons");
+export const ICON_FOLDER = path.join(SOURCE_FOLDER, "/ui/icons");
 export const LOCALES_FOLDER = path.join(SOURCE_FOLDER, "/locale");
 export const ESSENCE_FOLDER = path.join(SOURCE_FOLDER, "/attrib");
 

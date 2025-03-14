@@ -196,26 +196,13 @@
             {
               "name": "Cannon",
               "type": "siege",
-              "damage": 50,
+              "damage": 55,
               "speed": 5.375,
               "range": {
                 "min": 3.75,
                 "max": 10
               },
               "modifiers": [
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 410,
-                  "type": "passive"
-                },
                 {
                   "property": "siegeAttack",
                   "target": {
@@ -235,7 +222,34 @@
                   "target": {
                     "class": [
                       [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 375,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
                         "infantry"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 50,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
                       ]
                     ]
                   },
@@ -469,7 +483,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 375,
+                  "value": 350,
                   "type": "passive"
                 },
                 {
@@ -595,7 +609,7 @@
             {
               "name": "Crossbow",
               "type": "ranged",
-              "damage": 12,
+              "damage": 11,
               "speed": 2.125,
               "range": {
                 "min": 0,
@@ -612,7 +626,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 9,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -642,7 +656,7 @@
             {
               "name": "Crossbow",
               "type": "ranged",
-              "damage": 15,
+              "damage": 14,
               "speed": 2.125,
               "range": {
                 "min": 0,
@@ -659,7 +673,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 11,
+                  "value": 12,
                   "type": "passive"
                 }
               ],
@@ -1066,7 +1080,7 @@
             {
               "name": "Handcannon",
               "type": "ranged",
-              "damage": 35,
+              "damage": 38,
               "speed": 2.125,
               "range": {
                 "min": 0,
@@ -2647,7 +2661,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 8,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -2768,7 +2782,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 8,
+                  "value": 10,
                   "type": "passive"
                 }
               ],
@@ -2936,7 +2950,7 @@
             "berkshire-palace"
           ],
           "icon": "https://data.aoe4world.com/images/units/ribauldequin-4.png",
-          "hitpoints": 225,
+          "hitpoints": 215,
           "weapons": [
             {
               "name": "Ribauldequin",
@@ -2968,7 +2982,7 @@
           "armor": [
             {
               "type": "melee",
-              "value": 15
+              "value": 10
             }
           ],
           "sight": {
@@ -3029,15 +3043,15 @@
           ],
           "unique": false,
           "costs": {
-            "food": 70,
+            "food": 65,
             "wood": 0,
             "stone": 0,
             "gold": 0,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 70,
+            "total": 65,
             "popcap": 1,
-            "time": 25
+            "time": 23
           },
           "producedBy": [
             "stable",
@@ -3217,7 +3231,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/units/spearman-2.png",
-      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n- Weak against armored infantry\n- Countered by Archers",
+      "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n+ Additional damage against Elephants\n- Weak against armored infantry\n- Countered by Archers",
       "variations": [
         {
           "id": "spearman-2",
@@ -3302,6 +3316,20 @@
                   "effect": "change",
                   "value": 20,
                   "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 4,
+                  "type": "passive"
                 }
               ],
               "durations": {
@@ -3372,6 +3400,20 @@
                   "effect": "change",
                   "value": 23,
                   "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 5,
+                  "type": "passive"
                 }
               ],
               "durations": {
@@ -3441,6 +3483,20 @@
                   },
                   "effect": "change",
                   "value": 28,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 6,
                   "type": "passive"
                 }
               ],
@@ -3541,12 +3597,12 @@
             "berkshire-palace"
           ],
           "icon": "https://data.aoe4world.com/images/units/springald-3.png",
-          "hitpoints": 75,
+          "hitpoints": 85,
           "weapons": [
             {
               "name": "Springald",
               "type": "ranged",
-              "damage": 15,
+              "damage": 16,
               "speed": 3.125,
               "range": {
                 "min": 0,
@@ -4445,13 +4501,13 @@
           ],
           "armor": [],
           "sight": {
-            "inner_height": 501,
-            "inner_radius": 12,
+            "inner_height": 10,
+            "inner_radius": 20,
             "outer_height": -15,
-            "outer_radius": 45,
-            "base": 44.0406976744186,
-            "line": 45,
-            "height": 501
+            "outer_radius": 44,
+            "base": 29.6,
+            "line": 44,
+            "height": 10
           },
           "movement": {
             "speed": 1.125
