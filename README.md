@@ -151,9 +151,11 @@ Run in a powershell window:
 1. `.\Extract-AOE4Patch.ps1 -GamePath 'C:\Program Files (x86)\Steam\steamapps\common\Age of Empires IV\'`
 2. Done
 
+NOTE: It's preferable to use `-GamePath`, it'll determine the game version and by default create a versioned directory under `./source`. If you used this repository before, you may have to clean up `./source` as it'll only create a junction of `source/latest` doesn't exist or is already a junction.
+
 All Parameters:
 - `-ArchivesPath`: Use instead of `-GamePath`. Specify the directory containing the Attrib.sga, UIArt.sga and LocaleEnglish.sga files.
-- `-OutputPath`: Simply where to put the output, defaults to `./source`.
+- `-OutputPath`: Simply where to put the output, defaults to `./source/{version}`. (And creates symlink/junction from `./source/latest` to it)
 - `-DataStore` + `-Patch`: Can be used to keep an archive of all game patches & exports. It uses a `patches/12.2.1234` subdir structure, in my case on a zfs storage for dedup reasons. But that requires local changes in config.ts too.
 - `-ExtractXml`: Switch to also convert attrib to xml format in another directory.
 - `-ExtractExtraImages`: Extracts all icons instead of only races, also extracts civ flags & map images.

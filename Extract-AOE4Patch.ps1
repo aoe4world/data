@@ -16,7 +16,7 @@ This option will extract to 'exports\{patch-version}' in the specified directory
 The patch to use in the DataStore; eg. 12.2.3372
 
 .PARAMETER OutputPath
-Where to extract the data to; defaults to './source'
+Where to extract the data to; defaults to './source/{version}' (and create junction from ./source/latest to it)
 
 .PARAMETER ExtractXml
 Whether to also convert the attribs to xml format (into {OutputPath}/attrib-raw/xml)
@@ -59,6 +59,7 @@ param(
   [Parameter(Mandatory, ParameterSetName = 'DataStore')]
   [String]$DataStorePath,
   [Parameter(Mandatory, ParameterSetName = 'DataStore')]
+  [Parameter(ParameterSetName = 'ArchivesPath')]
   [String]$Patch,
 
   [String]$OutputPath,
@@ -101,8 +102,29 @@ if (-not (Test-Path (Join-Path $ArchivesPath 'Attrib.sga')) -or
   return
 }
 
+$OutputLatestPath = Join-Path $PSScriptRoot 'source/latest'
+
 if (-not $OutputPath) {
-  $OutputPath = Join-Path $PSScriptRoot 'source'
+  if (-not (Test-Path $OutputLatestPath) -or (Get-Item $OutputLatestPath).LinkType -eq 'Junction') {
+    if ($GamePath -and (Test-Path "$GamePath\RelicCardinal.exe")) {
+      $BinaryVersion = (Get-Item "$GamePath\RelicCardinal.exe").VersionInfo.ProductVersion -replace '^(\d+\.\d+\.\d+).*', '$1'
+      $OutputPath = Join-Path $PSScriptRoot "source/$BinaryVersion"
+      Write-Host "Found game version ${BinaryVersion} in $GamePath..."
+    } elseif ($Patch) {
+      $OutputPath = Join-Path $PSScriptRoot "source/$Patch"
+      Write-Host "Using game version ${Patch} as specified."
+    } else {
+      Write-Error "Cannot create versioned dir in ./source and update the junction/symlink ./source/latest without a version number, provide one via -Path or preferably use -GamePath method instead of -ArchivesPath"
+      return
+    }
+  } elseif (Test-Path $OutputLatestPath) {
+    Write-Warning "Using ./source/latest path as OutputPath since it already exists and isn't a junction. Clean up ./source and rerun the script if you want to switch to multi-version support."
+  }
+
+  if (-not $OutputPath) {
+    $OutputPath = $OutputLatestPath
+  }
+
   Write-Host "Selected $OutputPath as output directory"
 }
 
@@ -224,3 +246,11 @@ function Export-Icons {
 Export-Attrib
 Export-Locale
 Export-Icons
+
+if ($OutputLatestPath -ne $OutputPath -and (-not (Test-Path $OutputLatestPath) -or (Get-Item $OutputLatestPath).LinkType -eq 'Junction')) {
+  Write-Host "Updating $OutputLatestPath to point to $OutputPath"
+  if (Test-Path $OutputLatestPath) {
+    (Get-Item $OutputLatestPath).Delete()
+  }
+  $null = New-Item $OutputLatestPath -ItemType 'Junction' -Value $OutputPath
+}
