@@ -1,6 +1,85 @@
 /** A configuration of technology ids and their modiying effects. */
 
+import { captureCallContext } from "../lib/utils/processors";
 import { Item, Modifier, Selector } from "../types/items";
+
+interface EffectsFactory {
+  call(format: string | undefined, values: number[], item: Item): Modifier[];
+}
+
+class ModifierHandler implements EffectsFactory {
+  helptext: string[] | null;
+  handler: (values: number[], item: Item) => Modifier[];
+  context: string;
+
+  constructor(helptext: string | string[] | null, handler: (values: number[], item: Item) => Modifier[], context: string | null) {
+    this.helptext = helptext !== null ? [helptext].flat() : null;
+    this.handler = handler;
+    this.context = context || captureCallContext(1);
+  }
+
+  call(helptext: string | undefined, values: number[], item: Item) {
+    this.verifyHelptext(helptext);
+    return this.handler(values, item);
+  }
+
+  verifyHelptext(helptext?: string) {
+    if (this.helptext === null) {
+      return;
+    }
+
+    if (!helptext) {
+      console.log(`[Warning] ${this.context}: AOEParser: Modifier has no helptext (Expected: ${JSON.stringify(this.helptext)})`);
+      return;
+    }
+
+    helptext = helptext.trim().replace(/(?:\\r|\\n)+/mg, '\n');
+    helptext = helptext.replace(/%(\d+)%/mg, "{$1}").replace(/%%/mg, "%");
+
+    if (this.helptext[0] === "") {
+      console.log(`[Info] ${this.context}: AOEParser: Modifier with missing expected helptexts (Found: ${JSON.stringify(helptext)})`);
+    } else if (!this.helptext.includes(helptext)) {
+      console.log(`[Error] ${this.context}: AOEParser: Modifier help text changed (Found: ${JSON.stringify(helptext)}) (Expected: ${JSON.stringify(this.helptext)})`);
+    }
+  }
+}
+
+function standardAbility(helptext: string | string[] | null, handler: (values: number[], item: Item) => Modifier[]) {
+  return new ModifierHandler(
+    helptext,
+    handler,
+    captureCallContext(1, 1)
+  );
+}
+
+function placeholderAbility(helptext: string | string[] | null, select: Selector): EffectsFactory {
+  return new ModifierHandler(
+    helptext,
+    (values: number[], item: Item): Modifier[] => {
+      return [
+        {
+          property: "unknown",
+          select,
+          effect: "change",
+          value: 0,
+          type: "ability"
+        }
+      ]
+    },
+    captureCallContext(1, 1)
+  );
+}
+
+// This helper converts the abilities that don't yet use standardAbility/placeholderAbility
+function sanitizeModifierGenerator(hash: Record<string, EffectsFactory | ((values: number[], item: Item) => Modifier[])>): Record<string, EffectsFactory> {
+
+  for (const key of Object.keys(hash)) {
+    if (typeof hash[key] === 'function') {
+      hash[key] = new ModifierHandler("", hash[key], key);
+    }
+  }
+  return hash as Record<string, EffectsFactory>;
+}
 
 // Common class/id presets
 const common = {
@@ -68,28 +147,45 @@ const decreaseByPercentImproved = (n: number, percent: number, delta: number) =>
 const increaseSpeedByPercent = (speed: number, percent: number) => round(speed / (1 + toPercent(percent)) / 10) * 10;
 const increaseAttackSpeedByPercent = (percent: number) => round(1 / (1 + percent / 100));
 const round = (n: number) => Math.round(n * 100) / 100; //(100/(100-33))
-const placeholderAbility =
-  (select: Selector) =>
-    (values: number[], item: Item): Modifier[] =>
-      [{ property: "unknown", select, effect: "change", value: 0, type: "ability" }];
 
-export const abilityModifiers: Record<string, (values: number[], item: Item) => Modifier[]> = {
-  "ability-ring-the-town-bell": placeholderAbility({ id: ["town-center", "capital-town-center"] }),
-  "ability-treasure-caravans": placeholderAbility({ id: ["castle-of-the-crow"] }),
-  "ability-deflective-armor": placeholderAbility({ id: ["samurai", "mounted-samurai", "yumi-bannerman", "katana-bannerman", "uma-bannerman"] }),
-  "ability-kabura-ya": ([d]) => [
-    // Onna-Musha fire a whistling arrow when an enemy is seen, increasing move speed for 10 seconds.",
-    {
-      property: "moveSpeed",
-      select: { id: ["onna-musha"] },
-      effect: "change",
-      value: 0,
-      type: "ability",
-      duration: d,
-    },
-  ],
+export const abilityModifiers: Record<string, EffectsFactory> = {
+  "ability-ring-the-town-bell": placeholderAbility(
+    "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
+    { id: ["town-center", "capital-town-center"] }
+  ),
 
-  "ability-katana-bannerman-aura": ([i]) => [
+  "ability-fortress-influence": placeholderAbility(
+    "The Templar Headquarters and Fortresses grant Stone Walls in influence +{1}% health and an arrowslit emplacement.",
+    { id: ["capital-town-center", "fortress"] }
+  ),
+
+  "ability-treasure-caravans": placeholderAbility(
+    "Select a neutral Trade Post to periodically spawn Treasure Caravans from that location. Caravans can convert into a Trade Ship when instructed to reach Trade Posts over water.",
+    { id: ["castle-of-the-crow"] }
+  ),
+
+  "ability-deflective-armor": placeholderAbility(
+    "Deflective Armor charge can block one melee or ranged attack. Recharges while out of combat for {1} seconds.",
+    { id: ["samurai", "mounted-samurai", "yumi-bannerman", "katana-bannerman", "uma-bannerman"] }
+  ),
+
+  "ability-kabura-ya": standardAbility(
+    "Onna-Musha fire a whistling arrow when an enemy is seen, increasing move speed for {1} seconds.",
+    ([d]) => [
+      {
+        property: "moveSpeed",
+        select: { id: ["onna-musha"] },
+        effect: "change",
+        value: 0,
+        type: "ability",
+        duration: d,
+      },
+    ]
+  ),
+
+  "ability-katana-bannerman-aura": standardAbility(
+    "",
+    ([i]) => [
     // Aura that increases melee infantry damage by +15%.\nBanner drops on death and lasts for 30 seconds providing the same aura.
     {
       property: "meleeAttack",
@@ -98,9 +194,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: increaseByPercent(1, i),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-yumi-bannerman-aura": ([i]) => [
+  "ability-yumi-bannerman-aura": standardAbility(
+    "",
+    ([i]) => [
     // Aura that increases ranged infantry damage by +15%.\nBanner drops on death and lasts for 30 seconds providing the same aura.
     {
       property: "rangedAttack",
@@ -109,29 +208,40 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: increaseByPercent(1, i),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-uma-bannerman-aura": ([i]) => [
-    // Aura that increases cavalry unit damage by +15%.\nBanner drops on death and lasts for 30 seconds providing the same aura.
-    {
-      property: "meleeAttack",
-      select: { class: [["cavalry"]] },
-      effect: "multiply",
-      value: increaseByPercent(1, i),
-      type: "ability",
-    },
-  ],
+  "ability-uma-bannerman-aura": standardAbility(
+    "Aura that increases cavalry unit damage by +{1}%.\nBanner drops on death and lasts for {2} seconds providing the same aura.",
+    ([i]) => [
+      {
+        property: "meleeAttack",
+        select: { class: [["cavalry"]] },
+        effect: "multiply",
+        value: increaseByPercent(1, i),
+        type: "ability",
+      },
+    ]
+  ),
 
-  "ability-spy": placeholderAbility({ id: ["shinobi"] }),
-  // Target a visible enemy unit or structure to disguise the Shinobi as a Villager of that player.
+  "ability-spy": placeholderAbility(
+    "Target a visible enemy unit or structure to disguise the Shinobi as a Villager of that player.",
+    { id: ["shinobi"] }
+  ),
 
-  "ability-shunshin": placeholderAbility({ id: ["shinobi"] }),
-  // Drop a smoke bomb and reappear at a selected location.
+  "ability-shunshin": placeholderAbility(
+    "Drop a smoke bomb and reappear at a selected location.",
+    { id: ["shinobi"] }
+  ),
 
-  "ability-sabotage": placeholderAbility({ id: ["shinobi"] }),
-  // Target a visible enemy building to deal 200 damage, disable its production, and set it on fire for 30 seconds.
+  "ability-sabotage": placeholderAbility(
+    "Target a visible enemy building to deal {1} damage, disable its production, and set it on fire for {2} seconds.",
+    { id: ["shinobi"] }
+  ),
 
-  "ability-place-yorishiro": () => [
+  "ability-place-yorishiro": standardAbility(
+    "",
+    () => [
     {
       // Place a Yorishiro in buildings to receive bonuses and increase line of sight.\nTown Center: +25% Production speed\nFarmhouse: +75 Food per minute\nLumber Camp: +75 Wood per minute\nForge: +75 Gold per minute\nMilitary and Docks: +200% Work rate\nWonder: +4000 Health
       property: "unknown",
@@ -161,9 +271,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: 0,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-soheis-sutra": ([r, d]) => [
+  "ability-soheis-sutra": standardAbility(
+    "",
+    ([r, d]) => [
     // Reduces enemy damage by 50% for 60 seconds.
     {
       property: "unknown",
@@ -173,56 +286,136 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: d,
     },
-  ],
+  ]
+  ),
 
-  "ability-talented-builder": placeholderAbility({ id: ["jeanne-darc-peasant"] }),
-  "ability-journey-of-a-hero": placeholderAbility({ id: ["jeanne-darc-peasant"] }),
-  "ability-return-of-the-saint": placeholderAbility({ id: ["capital-town-center"] }),
-  "ability-construct-the-kingdom": placeholderAbility({ id: ["villager"] }),
-  "ability-honorable-heart": placeholderAbility(common.jeannes.all),
-  "ability-consecrate": placeholderAbility(common.jeannes.heroes),
-  "ability-divine-restoration": placeholderAbility(common.jeannes.heroes),
-  "ability-divine-arrow": placeholderAbility(common.jeannes.archer),
-  "ability-holy-wrath": placeholderAbility(common.jeannes.warrior),
-  "ability-jeannes-companions": placeholderAbility({ id: ["keep", "red-palace"] }), //keep
-  "ability-galvanize-the-righteous": placeholderAbility(common.jeannes.lvl3),
-  "ability-riders-ready": placeholderAbility(common.jeannes.lvl3),
-  "ability-to-arms-men": placeholderAbility(common.jeannes.lvl3),
-  "ability-strength-of-heaven": placeholderAbility(common.jeannes.lvl4),
-  "ability-valorous-inspiration": placeholderAbility(common.jeannes.lvl4),
+  "ability-talented-builder": placeholderAbility(
+    "Jeanne constructs buildings {1}% faster.\nUpon reaching level 2, Jeanne shares her talents with nearby builders.",
+    { id: ["jeanne-darc-peasant"] }
+  ),
+  "ability-journey-of-a-hero": placeholderAbility(
+    "Jeanne generates experience for completing tasks such as gathering resources, constructing buildings, hunting boar, capturing Sacred Sites, and participating in combat. Jeanne also gains a small trickle of experience over time.\nAfter earning sufficient experience Jeanne can level up, becoming more powerful and gaining access to unique abilities.",
+    { id: ["jeanne-darc-peasant"] }
+  ),
+  "ability-return-of-the-saint": placeholderAbility(
+    "Pay tribute and instantly return Jeanne to the battlefield.",
+    { id: ["capital-town-center"] }
+  ),
+  "ability-construct-the-kingdom": placeholderAbility(
+    "Nearby Villagers construct buildings {1}% faster.",
+    { id: ["villager"] }
+  ),
+  "ability-honorable-heart": placeholderAbility(
+     "Jeanne regenerates {1}/{2}/{3}/{4} health per second while out of combat based on her current level.\nAt level 3 Jeanne takes {5}% less damage from ranged attacks; at level 4 this is increased to {6}%.",
+    common.jeannes.all
+  ),
+  "ability-consecrate": placeholderAbility(
+    "Jeanne consecrates a production building, reducing the Food cost of units by -{1}%.\nNo Cooldown\nRecharge Time: {2} Seconds.\nMax Charges: {3}.",
+    common.jeannes.heroes
+  ),
+  "ability-divine-restoration": placeholderAbility(
+    "Jeanne and nearby allies are blessed, instantly healing for {1}% of their missing health.\nCooldown: {2} Seconds.",
+    common.jeannes.heroes
+  ),
+  "ability-divine-arrow": placeholderAbility(
+    "",
+    common.jeannes.archer
+  ),
+  "ability-holy-wrath": placeholderAbility(
+    "",
+    common.jeannes.warrior
+  ),
+  "ability-jeannes-companions": placeholderAbility(  //keep
+    "Achieve level 3 with Jeanne d'Arc to select between Champions and Riders to be trained at the keep.",
+    { id: ["keep", "red-palace"] }
+  ),
+  "ability-galvanize-the-righteous": placeholderAbility(
+    "Companions close to Jeanne gain +{1}/{1} armor and +{2}% damage.",
+    common.jeannes.lvl3
+  ),
+  "ability-riders-ready": placeholderAbility(
+    "Jeanne calls {1} Riders to her side.\nCooldown: {3} Seconds.",
+    common.jeannes.lvl3
+  ),
+  "ability-to-arms-men": placeholderAbility(
+    "Jeanne calls {1} Champions to her side.\nCooldown: {3} Seconds.",
+    common.jeannes.lvl3
+  ),
+  "ability-strength-of-heaven": placeholderAbility(
+    "Jeanne chooses a unit to bless, bestowing them with incredible strength and durability. The chosen warrior gains {1} health, {2} Melee and Ranged Armor, and +{3}% damage.\nJeanne may only bless one unit at a time.\nCooldown: {4} Seconds.",
+    common.jeannes.lvl4
+  ),
+  "ability-valorous-inspiration": placeholderAbility(
+    "Increases the attack speed of all units within {1} tiles by {2}% for {3} seconds.\nCooldown: {4} Seconds.",
+    common.jeannes.lvl4
+  ),
 
-  "ability-camel-unease": placeholderAbility(common.allCamelUnits),
-  "ability-atabeg-supervision": placeholderAbility({ id: ["atabeg"], class: [["building", "military"]] }),
-  "ability-desert-raider-blade": placeholderAbility({ id: ["desert-raider"] }),
-  "ability-desert-raider-bow": placeholderAbility({ id: ["desert-raider"] }),
-  "ability-mass-heal": placeholderAbility(common.allLand),
-  "ability-tactical-charge": placeholderAbility({ id: ["camel-lancer"] }),
-  "ability-swap-weapon-kinetic": placeholderAbility({ id: ["manjaniq"] }),
-  "ability-swap-weapon-incendiary": placeholderAbility({ id: ["manjaniq"] }),
-  "ability-quick-strike": placeholderAbility({ id: ["ghulam"] }),
-  "ability-structural-reinforcements": ([m, f, d]) => [
-    // Siege unit gains +20 melee armor and +5 fire armor for 10 seconds.\nCosts 50 Wood to activate, only useable on one unit at a time.
-    {
-      property: "meleeArmor",
-      select: { class: [["siege"]] },
-      effect: "change",
-      value: m,
-      type: "ability",
-      duration: d,
-    },
-    {
-      property: "fireArmor",
-      select: { class: [["siege"]] },
-      effect: "change",
-      value: f,
-      type: "ability",
-      duration: d,
-    },
-  ],
+  "ability-camel-unease": placeholderAbility(
+    "Camels cause enemy horse cavalry units to deal 20% less damage.",
+    common.allCamelUnits
+  ),
+  "ability-atabeg-supervision": placeholderAbility(
+    "Garrison inside of a military production building to grant +{1}% health to newly trained units. Cannot garrison in Docks.",
+    { id: ["atabeg"], class: [["building", "military"]] }
+  ),
+  "ability-desert-raider-blade": placeholderAbility(
+    "Swap to a melee Sword weapon.",
+    { id: ["desert-raider"] }
+  ),
+  "ability-desert-raider-bow": placeholderAbility(
+    "Swap to a ranged Bow weapon.",
+    { id: ["desert-raider"] }
+  ),
+  "ability-mass-heal": placeholderAbility(
+    "Heals all nearby units. Heals +{1}% times faster when carrying a relic.",
+    common.allLand
+  ),
+  "ability-tactical-charge": placeholderAbility(
+    "Camel Lancers charge faster, more often, and for longer distances than other heavy cavalry. Camel Lancers deals -{1}% less baseline charge damage. Each second spent charging increases the charge damage (up to +{2}%).",
+    { id: ["camel-lancer"] }
+  ),
+  "ability-swap-weapon-kinetic": placeholderAbility(
+    "Switch to solid ammunition, which deals higher damage.",
+    { id: ["manjaniq"] }
+  ),
+  "ability-swap-weapon-incendiary": placeholderAbility(
+    "Switch to incendiary ammunition, which deals damage in an increased area.",
+    { id: ["manjaniq"] }
+  ),
+  "ability-quick-strike": placeholderAbility(
+    "Quickly deals a second hit after finishing an attack.",
+    { id: ["ghulam"] }
+  ),
+  "ability-structural-reinforcements": standardAbility(
+    "Siege unit gains +{1} melee armor and +{2} fire armor for {3} seconds.\nCosts {4} Wood to activate, only useable on one unit at a time.",
+    ([m, f, d]) => [
+      {
+        property: "meleeArmor",
+        select: { class: [["siege"]] },
+        effect: "change",
+        value: m,
+        type: "ability",
+        duration: d,
+      },
+      {
+        property: "fireArmor",
+        select: { class: [["siege"]] },
+        effect: "change",
+        value: f,
+        type: "ability",
+        duration: d,
+      },
+    ]
+  ),
 
-  "ability-bounty-of-solitude": placeholderAbility({ id: ["meditation-gardens"] }),
+  "ability-bounty-of-solitude": placeholderAbility(
+    "Generates resources depending on the type of resources nearby. Enemy units within {1} tiles reduce the rate at which resources are generated.",
+    { id: ["meditation-gardens"] }
+  ),
 
-  "ability-divine-charge": ([d]) => [
+  "ability-divine-charge": standardAbility(
+    "",
+    ([d]) => [
     // Cavalry units deal +20% damage.
     {
       property: "meleeAttack",
@@ -232,9 +425,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: d,
     },
-  ],
+  ]
+  ),
 
-  "ability-divine-defense": ([d]) => [
+  "ability-divine-defense": standardAbility(
+    "",
+    ([d]) => [
     // Gunpowder units and defensive structures gain +1 range.
     {
       property: "maxRange",
@@ -251,9 +447,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: 0,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-divine-haste": ([m]) => [
+  "ability-divine-haste": standardAbility(
+    "",
+    ([m]) => [
     // Infantry units move 15% faster.
     {
       property: "moveSpeed",
@@ -269,9 +468,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: 0,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-divine-vitality": ([h]) => [
+  "ability-divine-vitality": standardAbility(
+    "",
+    ([h]) => [
     // Units out of combat heal 2 health per second.
     {
       property: "healingRate",
@@ -287,19 +489,28 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: 0,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  // The Shaolin Monk regains health when out of combat.
-  "ability-ascetic-recovery": placeholderAbility({ id: ["shaolin-monk"] }),
+  "ability-ascetic-recovery": placeholderAbility(
+    "The Shaolin Monk regains health when out of combat.",
+    { id: ["shaolin-monk"] }
+  ),
 
-  // The Shaolin Monk hardens his body and reduces incoming ranged damage by 50% for 15 seconds.
-  "ability-body-of-iron": placeholderAbility({ id: ["shaolin-monk"] }),
+  "ability-body-of-iron": placeholderAbility(
+    "The Shaolin Monk hardens his body and reduces incoming ranged damage by {1}% for {2} seconds.",
+    { id: ["shaolin-monk"] }
+  ),
 
-  // Supervise a research, production or drop-off building with an Imperial Official to make it work 150% faster. Resource drop off buildings receive 20% more resources. Cannot be used on Landmarks or Town Centers.",
-  "ability-supervise": placeholderAbility({ id: ["imperial-official"] }),
+  "ability-supervise": placeholderAbility(
+    "Supervise a research, production, or drop-off building with an Imperial Official to make it work {1}% faster. Resource drop-off buildings receive {2}% more resources. Cannot be used on Landmarks, Town Centers, or Docks.",
+    { id: ["imperial-official"] }
+  ),
 
   // Arm nearby Villagers with stronger weapons and increase their armor by +2 for 30 seconds.
-  "ability-akritoi-defense": ([a, d]) => [
+  "ability-akritoi-defense": standardAbility(
+    "",
+    ([a, d]) => [
     {
       property: "meleeArmor",
       select: { id: ["villager"] },
@@ -316,26 +527,38 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: d,
     },
-  ],
+  ]
+  ),
 
-  "ability-automatic-pilgrim-flask-off": placeholderAbility(common.allNonSiegeUnits),
+  "ability-automatic-pilgrim-flask-off": placeholderAbility(
+    "Toggle on to activate automatic drinking when low health, rapidly increasing health regeneration by {1} per second for {2} seconds.",
+    common.allNonSiegeUnits
+  ),
 
-  // Activate to drink, rapidly increasing health regeneration by 25 per second for 10 seconds.
-  "ability-pilgrim-flask": placeholderAbility(common.allNonSiegeUnits),
+  "ability-pilgrim-flask": placeholderAbility(
+    "Activate to drink, rapidly increasing health regeneration by {1} per second for {2} seconds.\nFlasks available: {3}",
+    common.allNonSiegeUnits
+  ),
 
-  // Toggle on to activate automatic drinking when low health, rapidly increasing health regeneration by 25 per second for 10 seconds.
+  "ability-conscriptio": placeholderAbility(
+    "Military unit production rate increased +{1}%/+{2}%/+{3}%/+{4}%/+{5}% by Water Level while within the influence of a Cistern.",
+    { class: [["military", "building"]] }
+  ),
 
-  // Military unit production rate increased +20%/+40%/+60%/+80%/+100% by Water Level while within the influence of a Cistern.
-  "ability-conscriptio": placeholderAbility({ class: [["military", "building"]] }),
+  "ability-dialecticus": placeholderAbility(
+    "Research rate increased +{1}%/+{2}%/+{3}%/+{4}%/+{5}% by Water Level while within the influence of a Cistern.",
+    { class: [["building"]] }
+  ),
 
-  // Research rate increased +50%/+100%/+150%/+200%/+250% by Water Level while within the influence of a Cistern.
-  "ability-dialecticus": placeholderAbility({ class: [["building"]] }),
-
-  // Building damage taken decreased by -5%/-10%/-15%/-20%/-25% by Water Level while within the influence of a Cistern.
-  "ability-praesidium": placeholderAbility({ class: [["building"]] }),
+  "ability-praesidium": placeholderAbility(
+    "Building damage taken decreased by -{1}%/-{2}%/-{3}%/-{4}%/-{5}% by Water Level while within the influence of a Cistern.",
+    { class: [["building"]] }
+  ),
 
   // Line of sight increased by 7 tiles. (on houses)
-  "ability-border-settlement": ([los]) => [
+  "ability-border-settlement": standardAbility(
+    "Line of sight increased by {1} tiles.",
+    ([los]) => [
     {
       property: "lineOfSight",
       select: { id: ["house"] },
@@ -343,10 +566,13 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: los,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
   // Consume all Supply Points to increase cavalry damage by +25%, move speed by +10%, and health regeneration by +2. \nEach Supply Point increases Triumph's duration by 1.5 seconds. A maximum of 40 Supply Points can be collected.
-  "ability-triumph": ([d, m, h]) => [
+  "ability-triumph": standardAbility(
+    "",
+    ([d, m, h]) => [
     {
       property: "meleeAttack",
       select: { class: [["cavalry"]] },
@@ -368,10 +594,13 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: h,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
   // Varangian Guard swap to their two-handed weapon and deal +6 damage for 30 seconds. Armor is reduced by -4.
-  "ability-berserking": ([d, du, a]) => [
+  "ability-berserking": standardAbility(
+    "",
+    ([d, du, a]) => [
     {
       property: "meleeAttack",
       select: { id: ["varangian-guard"] },
@@ -388,10 +617,13 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: d,
     },
-  ],
+  ]
+  ),
 
   // Charge through enemy units in your path, dealing 10 damage to each one. cataphract
-  "ability-trample": ([d]) => [
+  "ability-trample": standardAbility(
+    "",
+    ([d]) => [
     {
       property: "meleeAttack",
       select: { id: ["cataphract"] },
@@ -399,10 +631,13 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: d,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
   // Enter a defensive stance, decreasing move speed by -25%, attack speed by -25%, and ranged damage taken by -50% .
-  "ability-shield-wall": ([d, m, a]) => [
+  "ability-shield-wall": standardAbility(
+    "",
+    ([d, m, a]) => [
     {
       property: "moveSpeed",
       select: { id: ["limitanei"] },
@@ -427,10 +662,13 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: d,
     },
-  ],
+  ]
+  ),
 
   // Torch damage improved by a nearby Scout. (25%)
-  "ability-improved-torch": ([d]) => [
+  "ability-improved-torch": standardAbility(
+    "",
+    ([d]) => [
     {
       property: "fireAttack",
       select: common.allNonSiegeUnits,
@@ -438,24 +676,38 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: increaseByPercent(1, 25),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  // Villager gathering rate increased +???% by a nearby Cistern.
-  "ability-irrigated": placeholderAbility({ id: ["villager", "fishing-boat"] }),
+  "ability-irrigated": placeholderAbility(
+    "Villager gathering rate increased +{1}% by a nearby Cistern.",
+    { id: ["villager", "fishing-boat"] }
+  ),
 
   // Villagers generate +10% Olive Oil when fishing.
-  "ability-oil-commerce": placeholderAbility({ id: ["trader", "trade-ship"] }),
+  "ability-oil-commerce": placeholderAbility(
+    "Fishing Boats generate Olive Oil equal to {1}% of Food gathered when fishing.",
+    { id: ["trader", "trade-ship"] }
+  ),
 
-  // Farmers and Foragers generate +60% Olive Oil around the Grand Winery
-  "ability-synergistic-crops": placeholderAbility({ id: ["villager"] }),
+  "ability-synergistic-crops": placeholderAbility(
+    "Farmers and Foragers generate +{1}% Olive Oil around the Grand Winery.",
+    { id: ["villager"] }
+  ),
 
-  // Increased movement speed after unloading from a Transport Ship.
-  "ability-naval-deployment": placeholderAbility(common.allMilitaryLand),
+  "ability-naval-deployment": placeholderAbility(
+    "Increased movement speed after unloading from a Transport Ship.",
+    common.allMilitaryLand
+  ),
 
-  // Earn various amounts of Stone from every building constructed.
-  "ability-field-stones": placeholderAbility({ id: ["villager"] }),
+  "ability-field-stones": placeholderAbility(
+    "Earn various amounts of Stone from every building constructed.",
+    { id: ["villager"] }
+  ),
 
-  "ability-arrow-volley": ([s, t]) => [
+  "ability-arrow-volley": standardAbility(
+    "",
+    ([s, t]) => [
     // Longbowmen gain Arrow Volley, an activated ability that reduces their time to attack by +1 second for a duration of 6 seconds.
     {
       property: "attackSpeed",
@@ -465,9 +717,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: t,
     },
-  ],
+  ]
+  ),
 
-  "ability-setup-camp": ([s]) => [
+  "ability-setup-camp": standardAbility(
+    "",
+    ([s]) => [
     // Place a Campfire which increases sight range of nearby units by 30%.
     {
       property: "lineOfSight",
@@ -476,10 +731,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: increaseByPercent(1, s),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-network-of-castles": ([i]) => [
-    // When enemies are nearby, this building sounds an alarm, causing nearby units to get a +20% increase to attack speed.
+  "ability-network-of-castles": standardAbility(
+    "When enemies are nearby, this building sounds an alarm, causing nearby units to get a +{1}% increase to attack speed.",
+    ([i]) => [
     {
       property: "attackSpeed",
       select: common.allLandUnitsExceptReligiousTrader,
@@ -487,9 +744,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: decreaseByPercent(1, i),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-network-of-citadels": ([i]) => [
+  "ability-network-of-citadels": standardAbility(
+    "",
+    ([i]) => [
     // When enemies are nearby, this building sounds an alarm, causing nearby units to get a +40% increase to attack speed.
     {
       property: "attackSpeed",
@@ -498,10 +758,13 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: decreaseByPercent(1, i),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
 
-  "ability-the-long-wall": ([]) => [
+  "ability-the-long-wall": standardAbility(
+    "",
+    ([]) => [
     // All units standing on Walls gain +25% ranged damage.
     {
       property: "rangedAttack",
@@ -510,9 +773,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: increaseByPercent(1, 25),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-spirit-way": ([]) => [
+  "ability-spirit-way": standardAbility(
+    "",
+    ([]) => [
     // When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.
     {
       property: "attackSpeed",
@@ -530,9 +796,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: 10,
     },
-  ],
+  ]
+  ),
 
-  "ability-saints-blessing": ([]) => [
+  "ability-saints-blessing": standardAbility(
+    "",
+    ([]) => [
     // After striking an enemy, the Warrior Monk increases the armor and damage of nearby allied Rus military units for a duration.
     // Manual testing produces a default of +1 range and melee armor and +2 damage for 10 second duration and 2 tile range
     // Can be upgraded by two techs for additional +1 damage, +10 second duration, and +5 tile range
@@ -585,9 +854,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: 10,
     },
-  ],
+  ]
+  ),
 
-  "ability-high-armory-production-bonus": ([i]) => [
+  "ability-high-armory-production-bonus": standardAbility(
+    "",
+    ([i]) => [
     // The cost of siege engines in nearby Siege Workshops is decreased by 20%.
     {
       property: "goldCost",
@@ -603,9 +875,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: decreaseByPercent(1, i),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-static-deployment": ([i]) => [
+  "ability-static-deployment": standardAbility(
+    "",
+    ([i]) => [
     // Streltsy gain +30% (i) attack speed after remaining stationary for 10 (j not implemented yet) seconds.
     {
       property: "attackSpeed",
@@ -614,9 +889,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: increaseAttackSpeedByPercent(i),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-gallop": ([]) => [
+  "ability-gallop": standardAbility(
+    "",
+    ([]) => [
     // Activate to move at maximum speed with +2 tile weapon range for 8 seconds.
     {
       property: "moveSpeed",
@@ -634,9 +912,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: 8,
     },
-  ],
+  ]
+  ),
 
-  "ability-kurultai-healing-aura-mon": ([]) => [
+  "ability-kurultai-healing-aura-mon": standardAbility(
+    "",
+    ([]) => [
     // Nearby units within its aura heal +1 health every 1 second and gain an additional +20% damage.
     // also works for ally but dont have props to capture this yet
     {
@@ -674,9 +955,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: 1,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-battle-veteran": ([]) => [
+  "ability-battle-veteran": standardAbility(
+    "",
+    ([]) => [
     // Heals after every attack performed
     {
       property: "healingRate",
@@ -685,9 +969,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: 3,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-maneuver-arrow": ([i, j]) => [
+  "ability-maneuver-arrow": standardAbility(
+    "",
+    ([i, j]) => [
     // Fire a Signal Arrow that increases the movement speed of nearby units (including the Khan) by +33% for 5 seconds. Does not affect Villagers.
     {
       property: "moveSpeed",
@@ -697,9 +984,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: j,
     },
-  ],
+  ]
+  ),
 
-  "ability-attack-speed-arrow": ([i, j]) => [
+  "ability-attack-speed-arrow": standardAbility(
+    "",
+    ([i, j]) => [
     // Fires a Signal Arrow that increases the attack speed of nearby ranged units (including the Khan) by +50% for 5 seconds.
     {
       property: "attackSpeed",
@@ -709,9 +999,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: j,
     },
-  ],
+  ]
+  ),
 
-  "ability-defense-arrow": ([i, j]) => [
+  "ability-defense-arrow": standardAbility(
+    "",
+    ([i, j]) => [
     // Fires a Signal Arrow that increases the armor of nearby units (including the Khan) by +2 for 5 seconds
     {
       property: "meleeArmor",
@@ -729,9 +1022,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: j,
     },
-  ],
+  ]
+  ),
 
-  "ability-yam": ([i]) => [
+  "ability-yam": standardAbility(
+    "",
+    ([i]) => [
     // Cavalry and Traders near an Outpost get +15% speed for 10 seconds.
     // does not seem to have a duration outside of the tower aura
     {
@@ -741,9 +1037,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: increaseByPercent(1, i),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-outpost-speed-improved-mon": ([]) => [
+  "ability-outpost-speed-improved-mon": standardAbility(
+    "",
+    ([]) => [
     // Yam speed aura applies to all units instead of just Traders and cavalry units. Does not apply to siege engines.
     {
       property: "moveSpeed",
@@ -752,9 +1051,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: increaseByPercent(1, 15),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-mehter-speed-bonus": ([i]) => [
+  "ability-mehter-speed-bonus": standardAbility(
+    "",
+    ([i]) => [
     // Movement speed bonus +15%
     {
       property: "moveSpeed",
@@ -763,9 +1065,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: increaseByPercent(1, i),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-attack-drums-off": ([s]) => [
+  "ability-attack-drums-off": standardAbility(
+    "",
+    ([s]) => [
     // Mehter drums that increase the attack speed of nearby units by +15%.
     {
       property: "attackSpeed",
@@ -774,9 +1079,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: increaseAttackSpeedByPercent(s),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-melee-defense-drums-off": ([s]) => [
+  "ability-melee-defense-drums-off": standardAbility(
+    "",
+    ([s]) => [
     // Mehter drums that increase the melee armor of nearby units by +2.
     {
       property: "meleeArmor",
@@ -785,9 +1093,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: s,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-ranged-defense-drums-off": ([s]) => [
+  "ability-ranged-defense-drums-off": standardAbility(
+    "",
+    ([s]) => [
     // Mehter drums that increase the ranged armor of nearby units by +1.
     {
       property: "rangedArmor",
@@ -796,9 +1107,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: s,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-fortitude": ([i, j, k]) => [
+  "ability-fortitude": standardAbility(
+    "",
+    ([i, j, k]) => [
     // Gain +50% attack speed and receive +50% damage from melee weapons for 10 seconds.
     // activation recharge starts after ability ends...
     {
@@ -817,9 +1131,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: k,
     },
-  ],
+  ]
+  ),
 
-  "ability-blacksmith-and-university-influence": ([s, t, u, v]) => [
+  "ability-blacksmith-and-university-influence": standardAbility(
+    "",
+    ([s, t, u, v]) => [
     // Military unit production rate increased +20%/+30%/+40% by Age while within the influence of a Blacksmith or University. The Istanbul Observatory increases the bonus to +60%.
     // need another way to handle this
     {
@@ -850,9 +1167,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: decreaseByPercent(1, v),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-tower-of-victory-aura": ([s]) => [
+  "ability-tower-of-victory-aura": standardAbility(
+    "",
+    ([s]) => [
     // Melee and ranged infantry who move near this Landmark permanently gain +20% attack speed.
     {
       property: "attackSpeed",
@@ -861,9 +1181,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: increaseAttackSpeedByPercent(s),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-forced-march": ([i, j]) => [
+  "ability-forced-march": standardAbility(
+    "",
+    ([i, j]) => [
     // Activate to move 100% faster for 10 seconds, deactivates early when dealing damage.
     {
       property: "moveSpeed",
@@ -873,9 +1196,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: j,
     },
-  ],
+  ]
+  ),
 
-  "ability-royal-knight-charge-damage": ([damage, seconds]) => [
+  "ability-royal-knight-charge-damage": standardAbility(
+    "",
+    ([damage, seconds]) => [
     // Every description is inaccurate or incomplete...
     {
       property: "meleeAttack",
@@ -885,9 +1211,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: 5,
     },
-  ],
+  ]
+  ),
 
-  "ability-deploy-pavise": ([i, j, k]) => [
+  "ability-deploy-pavise": standardAbility(
+    "",
+    ([i, j, k]) => [
     // Activate to increase weapon range by +1 tile and gain +5 ranged armor.\nRemains active for 30 seconds or until the Arbalétrier moves away
     {
       property: "maxRange",
@@ -905,9 +1234,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: k,
     },
-  ],
+  ]
+  ),
 
-  "ability-keep-influence": ([r]) => [
+  "ability-keep-influence": standardAbility(
+    "",
+    ([r]) => [
     // Archery Ranges and Stables within influence have unit costs decreased by 20%.
     {
       property: "goldCost",
@@ -930,9 +1262,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: decreaseByPercent(1, r),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-artillery-shot": ([]) => [
+  "ability-artillery-shot": standardAbility(
+    "",
+    ([]) => [
     // Loads this Cannon for an Artillery Shot, next shot has greatly increased Area of Effect but no bonus against buildings.
     {
       property: "areaOfEffect",
@@ -941,9 +1276,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: 0,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-activate-stealth": ([i]) => [
+  "ability-activate-stealth": standardAbility(
+    "",
+    ([i]) => [
     // Enter Stealth for 20 seconds.\nWhile in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, Landmark Town Centers, or they engage in combat.
     {
       property: "unknown",
@@ -953,9 +1291,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: i,
     },
-  ],
+  ]
+  ),
 
-  "ability-first-strike": ([]) => [
+  "ability-first-strike": standardAbility(
+    "",
+    ([]) => [
     // Deals increased damage on next hit.
     {
       property: "meleeAttack",
@@ -971,9 +1312,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: increaseByPercent(1, 100),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-huntress-stealth": ([]) => [
+  "ability-huntress-stealth": standardAbility(
+    "",
+    ([]) => [
     // Malian infantry within range enter Stealth. While in Stealth, units are invisible until they are revealed by enemy Scouts, Outposts, or when they engage in combat.
     {
       property: "unknown",
@@ -983,9 +1327,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: 30,
     },
-  ],
+  ]
+  ),
 
-  "ability-camel-support": ([]) => [
+  "ability-camel-support": standardAbility(
+    "",
+    ([]) => [
     // Infantry gain armor when near a camel unit. / Camels increase the armor of nearby infantry by +2.
     {
       property: "meleeArmor",
@@ -1001,9 +1348,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: 2,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-proselytize": ([]) => [
+  "ability-proselytize": standardAbility(
+    "",
+    ([]) => [
     // Attempts to convert a single enemy unit within range of this Imam to your control.
     {
       property: "unknown",
@@ -1012,9 +1362,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: 0,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-inspired": ([a, b]) => [
+  "ability-inspired": standardAbility(
+    "",
+    ([a, b]) => [
     // Military units deal +15% damage and gain +1 armor. //tested to 60 second duration
     {
       property: "rangedArmor",
@@ -1064,9 +1417,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "influence",
       duration: 60,
     },
-  ],
+  ]
+  ),
 
-  "ability-house-of-wisdom-influence": ([i]) => [
+  "ability-house-of-wisdom-influence": standardAbility(
+    "",
+    ([i]) => [
     // Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age.
     {
       property: "fireArmor",
@@ -1075,9 +1431,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: i,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-imperial-spies": ([i]) => [
+  "ability-imperial-spies": standardAbility(
+    "",
+    ([i]) => [
     // Reveal location of enemy workers for 10 seconds.
     {
       property: "unknown",
@@ -1087,9 +1446,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: i,
     },
-  ],
+  ]
+  ),
 
-  "ability-abbey-healing": ([i, j]) => [
+  "ability-abbey-healing": standardAbility(
+    "",
+    ([i, j]) => [
     // Heals nearby out of combat units by 6 every 1 seconds.
     {
       property: "healingRate",
@@ -1098,9 +1460,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: i / j,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-mill-influence": ([i, j, k, l]) => [
+  "ability-mill-influence": standardAbility(
+    "",
+    ([i, j, k, l]) => [
     // Farm harvest rate increased +15%/+20%/+25%/+30% by Age while within the influence of a Mill.
     {
       property: "foodGatherRate",
@@ -1109,9 +1474,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: increaseByPercent(1, i),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-place-palings": ([du, dmg]) => [
+  "ability-place-palings": standardAbility(
+    "",
+    ([du, dmg]) => [
     // Enemy cavalry are stunned for 2.5 seconds and take 25 damage.
     {
       property: "meleeAttack",
@@ -1122,10 +1490,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: du,
     },
-  ],
+  ]
+  ),
 
-  "ability-man-the-sails": ([ms, d]) => [
-    // Activate to move 40% faster for 10 seconds, deactivates early when dealing damage.
+  "ability-man-the-sails": standardAbility(
+    "Activate to move {1}% faster for {2} seconds, deactivates early when dealing damage.",
+    ([ms, d]) => [
     {
       property: "moveSpeed",
       select: { class: [["ship", "springald"]] },
@@ -1134,12 +1504,22 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: d,
     },
-  ],
+  ]
+  ),
 
-  "ability-detonate": placeholderAbility({ class: [["ship", "incendiary"]] }),
-  "ability-conversion": placeholderAbility(common.allReligiousUnits),
+  "ability-detonate": placeholderAbility(
+    "Detonate the ship.",
+    { class: [["ship", "incendiary"]] }
+  ),
 
-  "ability-golden-age-tier-1": ([]) => [
+  "ability-conversion": placeholderAbility(
+    "Attempts to convert enemy units within range of this Monk to your control.\nCooldown: {1} Seconds.",
+    common.allReligiousUnits
+  ),
+
+  "ability-golden-age-tier-1": standardAbility(
+    "",
+    ([]) => [
     // Tier 1: Villager gather rate +15%
     {
       property: "foodGatherRate",
@@ -1183,9 +1563,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: 0,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-golden-age-tier-2": ([]) => [
+  "ability-golden-age-tier-2": standardAbility(
+    "",
+    ([]) => [
     // Tier 2: Research speed +15%
     {
       property: "researchSpeed",
@@ -1201,9 +1584,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: 0,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-golden-age-tier-3": ([]) => [
+  "ability-golden-age-tier-3": standardAbility(
+    "",
+    ([]) => [
     // Tier 2: Production speed +20%, +5% extra Research speed, +5% extra Villager gather rate
     {
       property: "productionSpeed",
@@ -1261,11 +1647,17 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: 0,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-medical-centers": placeholderAbility({ id: ["keep", "town-center", "capital-town-center"] }),
+  "ability-medical-centers": placeholderAbility(
+    "Heals nearby units.",
+    { id: ["keep", "town-center", "capital-town-center"] }
+  ),
 
-  "ability-fiefdom": ([i]) => [
+  "ability-fiefdom": standardAbility(
+    "",
+    ([i]) => [
     // Town Center production and research speed increased by +10%.\nBonus increases further in later Ages
     {
       property: "productionSpeed",
@@ -1274,9 +1666,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       value: increaseByPercent(1, i),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "ability-emergency-repairs": ([i, j, k]) => [
+  "ability-emergency-repairs": standardAbility(
+    "Building repairs itself by {1} health every {2} second for {3} seconds.",
+    ([i, j, k]) => [
     // Building repairs itself by 150 health every 1 second for 20 seconds.
     {
       property: "repairRate",
@@ -1286,9 +1681,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: k,
     },
-  ],
+  ]
+  ),
 
-  // "ability-relic-garrisoned-dock": ([s]) => [
+  // "ability-relic-garrisoned-dock": standardAbility(
+  // "",
+  // ([s]) => [
   //   // Increasing attack speed of military ships by +5%.
   //   {
   //     property: "attackSpeed",
@@ -1301,56 +1699,61 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
 
   // "ability-relic-garrisoned-keep": ([s, t, u, v]) => [
   // Yank workaround that matches two different abilities and adds both of the effects sets, split out in a workaround later
-  "ability-relic-garrisoned": ([s, t, u, v]) => [
-    // Increasing attack speed of military ships by +5%.
-    // Dock
-    {
-      property: "attackSpeed",
-      select: common.allMillitaryShips,
-      effect: "multiply",
-      value: increaseAttackSpeedByPercent(s),
-      type: "ability",
-    },
-    // Armor increased by +50% Damage increased by +35% Sight range increased by +25% Weapon range increased by +20%"
-    // Keeps etc
-    {
-      property: "fireArmor",
-      select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
-      effect: "multiply",
-      value: increaseAttackSpeedByPercent(s),
-      type: "ability",
-    },
-    {
-      property: "rangedArmor",
-      select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
-      effect: "multiply",
-      value: increaseAttackSpeedByPercent(s),
-      type: "ability",
-    },
-    {
-      property: "rangedAttack",
-      select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
-      effect: "multiply",
-      value: increaseAttackSpeedByPercent(t),
-      type: "ability",
-    },
-    {
-      property: "maxRange",
-      select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
-      effect: "multiply",
-      value: increaseAttackSpeedByPercent(v),
-      type: "ability",
-    },
-    {
-      property: "lineOfSight",
-      select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
-      effect: "multiply",
-      value: increaseAttackSpeedByPercent(u),
-      type: "ability",
-    },
-  ],
+  "ability-relic-garrisoned": standardAbility(
+    "", // "• Armor increased by +{1}%\n• Damage increased by +{2}%\n• Sight range increased by +{3}%\n• Weapon range increased by +{4}%"
+    ([s, t, u, v]) => [
+      // Increasing attack speed of military ships by +5%.
+      // Dock
+      {
+        property: "attackSpeed",
+        select: common.allMillitaryShips,
+        effect: "multiply",
+        value: increaseAttackSpeedByPercent(s),
+        type: "ability",
+      },
+      // Armor increased by +50% Damage increased by +35% Sight range increased by +25% Weapon range increased by +20%"
+      // Keeps etc
+      {
+        property: "fireArmor",
+        select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
+        effect: "multiply",
+        value: increaseAttackSpeedByPercent(s),
+        type: "ability",
+      },
+      {
+        property: "rangedArmor",
+        select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
+        effect: "multiply",
+        value: increaseAttackSpeedByPercent(s),
+        type: "ability",
+      },
+      {
+        property: "rangedAttack",
+        select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
+        effect: "multiply",
+        value: increaseAttackSpeedByPercent(t),
+        type: "ability",
+      },
+      {
+        property: "maxRange",
+        select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
+        effect: "multiply",
+        value: increaseAttackSpeedByPercent(v),
+        type: "ability",
+      },
+      {
+        property: "lineOfSight",
+        select: { id: ["outpost", "stone-wall-tower", "keep", "elzbach-palace"] },
+        effect: "multiply",
+        value: increaseAttackSpeedByPercent(u),
+        type: "ability",
+      },
+    ]
+  ),
 
-  "ability-food-festival": ([i, j]) => [
+  "ability-food-festival": standardAbility(
+    "",
+    ([i, j]) => [
     // Increase Food gather rate by +50% for 30 seconds.
     {
       property: "foodGatherRate",
@@ -1360,9 +1763,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: j,
     },
-  ],
+  ]
+  ),
 
-  "ability-military-festival": ([i, j]) => [
+  "ability-military-festival": standardAbility(
+    "",
+    ([i, j]) => [
     // Increase military unit production speed by +50% for 30 seconds.
     {
       property: "productionSpeed",
@@ -1372,9 +1778,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: j,
     },
-  ],
+  ]
+  ),
 
-  "ability-siege-festival": ([i, j]) => [
+  "ability-siege-festival": standardAbility(
+    "",
+    ([i, j]) => [
     // Increase siege and torch damage for all units by +50% for 30 seconds.
     {
       property: "fireAttack",
@@ -1392,9 +1801,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: j,
     },
-  ],
+  ]
+  ),
 
-  "ability-trade-protection": ([i, j, k]) => [
+  "ability-trade-protection": standardAbility(
+    "",
+    ([i, j, k]) => [
     // Traders and Trade Ships near Keeps receive +30% move speed and +8 armor for 20 seconds.
     {
       property: "moveSpeed",
@@ -1420,9 +1832,12 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: k,
     },
-  ],
+  ]
+  ),
 
-  "ability-coastal-navigation": ([]) => [
+  "ability-coastal-navigation": standardAbility(
+    "",
+    ([]) => [
     // Ships near a Docks get +15% speed for 25 seconds.
     {
       property: "moveSpeed",
@@ -1432,13 +1847,19 @@ export const abilityModifiers: Record<string, (values: number[], item: Item) => 
       type: "ability",
       duration: 25,
     },
-  ],
+  ]
+  ),
 
-  "ability-extra-materials": placeholderAbility({ id: ["outpost", "stone-wall-tower"] }),
+  "ability-extra-materials": placeholderAbility(
+    "Towers and Keeps repair nearby walls and gates for +{1} health per second.",
+    { id: ["outpost", "stone-wall-tower"] }
+  )
 };
 
-export const technologyModifiers: Record<string, (values: number[], item: Item) => Modifier[]> = {
-  "arrow-volley": ([s]) => [
+export const technologyModifiers: Record<string, EffectsFactory> = {
+  "arrow-volley": standardAbility(
+    "",
+    ([s]) => [
     // Longbowmen gain Arrow Volley, an activated ability that reduces their time to attack by +1 second for a duration of 6 seconds.
     {
       property: "attackSpeed",
@@ -1447,9 +1868,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: -1 * s,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "steeled-arrow": ([d]) => [
+  "steeled-arrow": standardAbility(
+    "",
+    ([d]) => [
     // Increase the ranged damage of all non-siege units and buildings by +1.
     {
       property: "rangedAttack",
@@ -1458,9 +1882,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "balanced-projectiles": ([d]) => [
+  "balanced-projectiles": standardAbility(
+    "",
+    ([d]) => [
     // Increase the ranged damage of all non-siege units and buildings by +1.
     {
       property: "rangedAttack",
@@ -1469,9 +1896,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "platecutter-point": ([d]) => [
+  "platecutter-point": standardAbility(
+    "",
+    ([d]) => [
     // Increase the ranged damage of all non-siege units and buildings by +1.
 
     {
@@ -1481,9 +1911,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "iron-undermesh": ([a]) => [
+  "iron-undermesh": standardAbility(
+    "",
+    ([a]) => [
     // Increase the ranged armor of all non-siege units by +1.
 
     {
@@ -1493,9 +1926,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: a,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "wedge-rivets": ([a]) => [
+  "wedge-rivets": standardAbility(
+    "",
+    ([a]) => [
     // Increase the ranged armor of all non-siege units by +1.
 
     {
@@ -1505,8 +1941,11 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: a,
       type: "passive",
     },
-  ],
-  "angled-surfaces": ([a]) => [
+  ]
+  ),
+  "angled-surfaces": standardAbility(
+    "",
+    ([a]) => [
     // Increase the ranged armor of all non-siege units by +1.
     {
       property: "rangedArmor",
@@ -1515,9 +1954,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: a,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "fitted-leatherwork": ([a]) => [
+  "fitted-leatherwork": standardAbility(
+    "",
+    ([a]) => [
     // Increase the melee armor of all non-siege units by +1.
 
     {
@@ -1527,9 +1969,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: a,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "insulated-helm": ([a]) => [
+  "insulated-helm": standardAbility(
+    "",
+    ([a]) => [
     // Increase the melee armor of all non-siege units by +1.
 
     {
@@ -1539,9 +1984,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: a,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "master-smiths": ([a]) => [
+  "master-smiths": standardAbility(
+    "",
+    ([a]) => [
     // Increase the melee armor of all non-siege units by +1.
     {
       property: "meleeArmor",
@@ -1550,9 +1998,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: a,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  bloomery: ([d]) => [
+  "bloomery": standardAbility(
+    "",
+    ([d]) => [
     // Increase the melee damage of all non-siege units by +1.
     {
       property: "meleeAttack",
@@ -1561,9 +2012,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "damascus-steel": ([d]) => [
+  "damascus-steel": standardAbility(
+    "",
+    ([d]) => [
     // Increase the melee damage of all non-siege units by +1.
     {
       property: "meleeAttack",
@@ -1572,9 +2026,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  decarbonization: ([d]) => [
+  "decarbonization": standardAbility(
+    "",
+    ([d]) => [
     // Increase the melee damage of all non-siege units by +1.
     {
       property: "meleeAttack",
@@ -1583,9 +2040,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "military-academy": ([i]) => [
+  "military-academy": standardAbility(
+    "",
+    ([i]) => [
     // Increase the production speed of infantry, cavalry, siege, and transport units at buildings by 33%.
     // Does not affect religious units or other support units.
     {
@@ -1595,9 +2055,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseSpeedByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "military-academy-improved": ([reduction, additional]) => [
+  "military-academy-improved": standardAbility(
+    "",
+    ([reduction, additional]) => [
     // Reduce the time it takes to produce infantry, cavalry, siege, and transport units at buildings by -35%.
     // Does not affect religious units or other support units.
     // If Military Academy has already been researched, reduce the time by  -10% instead.
@@ -1608,12 +2071,14 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: decreaseByPercentImproved(1, reduction, additional),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
   /// Common economic tecnologies –––––––––––––––––––––––––––––––––
 
-  "crosscut-saw": ([i]) => [
-    // Increase Villagers' gathering rate for Wood by +15%.
+  "crosscut-saw": standardAbility(
+    "Increase Villagers' gathering rate for Wood by {1}% and Wood gatherers carry capacity by +{2}.",
+    ([i]) => [
     {
       property: "woodGatherRate",
       select: { id: ["villager"] },
@@ -1621,9 +2086,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "crosscut-saw-improved": ([i, d]) => [
+  "crosscut-saw-improved": standardAbility(
+    "",
+    ([i, d]) => [
     //  Increase Villagers' gathering rate for Wood by +20%.
     // If Crosscut Saw has already been researched, increase it by + 5 % instead.
     {
@@ -1633,9 +2101,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercentImproved(1, i, d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  cupellation: ([i]) => [
+  "cupellation": standardAbility(
+    "",
+    ([i]) => [
     // Increase Villagers' gathering rate for Gold and Stone by +15%.
     {
       property: "goldGatherRate",
@@ -1651,9 +2122,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "cupellation-improved": ([i, d]) => [
+  "cupellation-improved": standardAbility(
+    "",
+    ([i, d]) => [
     //  ncrease Villagers' gathering rate for Gold by +20%.
     // If Cupellation has already been researched, increase it by + 5 % instead.
     {
@@ -1670,10 +2144,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercentImproved(1, i, d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "double-broadax": ([i]) => [
-    // Increase Villagers' gathering rate for Wood by +15%.
+  "double-broadax": standardAbility(
+    "Increase Villagers' gathering rate for Wood by {1}%.",
+    ([i]) => [
     {
       property: "woodGatherRate",
       select: { id: ["villager"] },
@@ -1681,9 +2157,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "double-broadax-improved": ([i, d]) => [
+  "double-broadax-improved": standardAbility(
+    "",
+    ([i, d]) => [
     // Increase Villagers' gathering rate for Wood by +20%.
     // If Double Broadaxe has already been researched, increase it by + 5 % instead.
     {
@@ -1693,9 +2172,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercentImproved(1, i, d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "drift-nets": ([r, c, s]) => [
+  "drift-nets": standardAbility(
+    "",
+    ([r, c, s]) => [
     // Increase the gathering rate of Fishing Ships by +15%, carry capacity by +20 and move speed by +10%.
     {
       property: "foodGatherRate",
@@ -1718,9 +2200,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, s),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "extended-lines": ([i, c]) => [
+  "extended-lines": standardAbility(
+    "",
+    ([i, c]) => [
     // Increase the gathering rate of Fishing Ships by +20% and their carry capacity by  +10.
     {
       property: "foodGatherRate",
@@ -1736,9 +2221,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: c,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  horticulture: ([i]) => [
+  "horticulture": standardAbility(
+    "Increase Villagers' gathering rate for Food by {1}%. Does not apply to hunted meat.",
+    ([i]) => [
     // Increase Villagers' gathering rate for Food by +15%.
     {
       property: "foodGatherRate",
@@ -1747,9 +2235,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "horticulture-improved": ([i, d]) => [
+  "horticulture-improved": standardAbility(
+    "",
+    ([i, d]) => [
     // Increase Villagers' gathering rate for Food by +20%.
     // If Horticulture has already been researched, increase it by + 5 % instead.
     {
@@ -1759,9 +2250,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercentImproved(1, i, d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  fertilization: ([i]) => [
+  "fertilization": standardAbility(
+    "Increase Villagers' gathering rate for Food by {1}%. Does not apply to hunted meat.",
+    ([i]) => [
     // Increase Villagers' gathering rate for Food by +15%.
     {
       property: "foodGatherRate",
@@ -1770,9 +2264,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "fertilization-improved": ([i, d]) => [
+  "fertilization-improved": standardAbility(
+    "",
+    ([i, d]) => [
     // Increase Villagers' gathering rate for Food by +20%.
     // If Fertilization has already been researched, increase it by + 5 % instead.
     {
@@ -1782,9 +2279,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercentImproved(1, i, d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  forestry: ([]) => [
+  "forestry": standardAbility(
+    "Double the rate at which Villagers chop down trees.",
+    ([]) => [
     // Double the rate at which Villagers chop down trees.
     {
       property: "unknown",
@@ -1793,9 +2293,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 2,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "forestry-improved": ([]) => [
+  "forestry-improved": standardAbility(
+    "",
+    ([]) => [
     // Villagers fell trees in a single chop.
     {
       property: "unknown",
@@ -1804,9 +2307,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 4, // ??
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "acid-distillation": ([i]) => [
+  "acid-distillation": standardAbility(
+    "",
+    ([i]) => [
     // Increase Villagers' gathering rate for Gold and Stone by +15%.
     {
       property: "goldGatherRate",
@@ -1822,9 +2328,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "acid-distillation-improved": ([i, d]) => [
+  "acid-distillation-improved": standardAbility(
+    "",
+    ([i, d]) => [
     // Increase Villagers' gathering rate for Gold by +20%.
     // If Acid Distillation has already been researched, increase it by + 5 % instead.
     {
@@ -1841,9 +2350,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercentImproved(1, i, d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "specialized-pick": ([i]) => [
+  "specialized-pick": standardAbility(
+    "",
+    ([i]) => [
     // Increase Villagers' gathering rate for Gold and Stone by +15%.
     {
       property: "goldGatherRate",
@@ -1859,9 +2371,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "specialized-pick-improved": ([i, d]) => [
+  "specialized-pick-improved": standardAbility(
+    "",
+    ([i, d]) => [
     // Increase Villagers' gathering rate for Gold by +20%.
     // If Specialized Pick has already been researched, increase it by + 5 % instead.
     {
@@ -1878,10 +2393,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercentImproved(1, i, d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "survival-techniques": ([i]) => [
-    // Increase Villagers' hunted meat gather rate by  +15%.
+  "survival-techniques": standardAbility(
+    "Increase Villagers' hunted meat gather rate by +{1}%.",
+    ([i]) => [
     {
       property: "huntGatherRate",
       select: { id: ["villager"] },
@@ -1889,9 +2406,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "survival-techniques-improved": ([i, d]) => [
+  "survival-techniques-improved": standardAbility(
+    "",
+    ([i, d]) => [
     // Increase Villagers' hunted meat gather rate by +20%.
     // If Survival Techniques has already been researched, increase hunted meat gather rate by +5% instead.
     {
@@ -1901,10 +2421,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercentImproved(1, i, d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  wheelbarrow: ([c, s]) => [
-    // Increase the carry capacity of Villagers by +5 and their movement speed by  +15%.
+  "wheelbarrow": standardAbility(
+    "Increase the carry capacity of Villagers by +{1} and their movement speed by +{2}%.",
+    ([c, s]) => [
     {
       property: "carryCapacity",
       select: { id: ["villager"] },
@@ -1919,9 +2441,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, s),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "wheelbarrow-improved": ([c, s, d]) => [
+  "wheelbarrow-improved": standardAbility(
+    "",
+    ([c, s, d]) => [
     // Increase Villagers' resource carry capacity by +7 and movement speed by  +15%.
     // If Wheelbarrow has already been researched, increase carry capacity by + 2 instead.
     {
@@ -1931,10 +2456,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "lumber-preservation": ([i]) => [
-    // Increase Villagers' gathering rate for Wood by +15%.
+  "lumber-preservation": standardAbility(
+    "Increase Villagers' gathering rate for Wood by {1}%.",
+    ([i]) => [
     {
       property: "woodGatherRate",
       select: { id: ["villager"] },
@@ -1942,9 +2469,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "lumber-preservation-improved": ([i, d]) => [
+  "lumber-preservation-improved": standardAbility(
+    "",
+    ([i, d]) => [
     // Increase Villagers' gathering rate for Wood by +20%.
     // If Lumber Preservation has already been researched, increase it by + 5 % instead.
     {
@@ -1954,10 +2484,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercentImproved(1, i, d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "precision-cross-breeding": ([i]) => [
-    // Increase Villagers' gathering rate for Food by +15%.
+  "precision-cross-breeding": standardAbility(
+   "Increase Villagers' gathering rate for Food by {1}%. Does not apply to hunted meat.",
+    ([i]) => [
     {
       property: "foodGatherRate",
       select: { id: ["villager"] },
@@ -1965,9 +2497,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "precision-cross-breeding-improved": ([i, d]) => [
+  "precision-cross-breeding-improved": standardAbility(
+    "",
+    ([i, d]) => [
     // Increase Villagers' gathering rate for Food by +20%.
     // If Precision Crossbreeding has already been researched, increase it by + 5 % instead.
     {
@@ -1977,9 +2512,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercentImproved(1, i, d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "ancient-techniques": ([i]) => [
+  "ancient-techniques": standardAbility(
+    "",
+    ([i]) => [
     // Increase the gathering rate of Villagers by +5% for each dynasty achieved.
     {
       property: "foodGatherRate",
@@ -2016,11 +2554,14 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
   /// Unit technologies –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-  "armor-clad": ([a]) => [
+  "armor-clad": standardAbility(
+    "",
+    ([a]) => [
     // Increase the ranged and melee armor of Men-at-Arms by +2.
     {
       property: "rangedArmor",
@@ -2036,9 +2577,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: a,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  enclosures: ([g, s]) => [
+  "enclosures": standardAbility(
+    "",
+    ([g, s]) => [
     // Each Farm Enclosure being worked by a Villager generates +1 Gold every  3.5 seconds.
     {
       property: "goldGatherRate",
@@ -2047,9 +2591,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: round(g / s),
       type: "influence",
     },
-  ],
+  ]
+  ),
 
-  "network-of-citadels": ([o, i]) => [
+  "network-of-citadels": standardAbility(
+    "",
+    ([o, i]) => [
     // Increase the Network of Castles attack speed bonus from +20% to 40%.
     {
       property: "attackSpeed",
@@ -2058,9 +2605,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i - o),
       type: "bonus",
     },
-  ],
+  ]
+  ),
 
-  "shattering-projectiles": ([]) => [
+  "shattering-projectiles": standardAbility(
+    "",
+    ([]) => [
     // Trebuchet projectiles shatter on impact, increasing their area of effect.
     {
       property: "areaOfEffect",
@@ -2069,9 +2619,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  admirality: ([r]) => [
+  "admirality": standardAbility(
+    "",
+    ([r]) => [
     // Increases the range of all combat ships by +1.
     {
       property: "maxRange",
@@ -2080,9 +2633,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: r,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  shipwrights: ([h, a]) => [
+  "shipwrights": standardAbility(
+    "",
+    ([h, a]) => [
     // Increase the health of all military ships by +20% and ranged armor by +1.
     {
       property: "hitpoints",
@@ -2098,9 +2654,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: a,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "springald-crews": ([r, s]) => [
+  "springald-crews": standardAbility(
+    "",
+    ([r, s]) => [
     // Springald Ships gain +1 range and attack 20% faster.
     {
       property: "maxRange",
@@ -2116,9 +2675,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseAttackSpeedByPercent(s),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "swivel-cannon": ([]) => [
+  "swivel-cannon": standardAbility(
+    "",
+    ([]) => [
     // Springald Ships gain an additional Cannon which fires in 360 degrees.
     // (Adds a Swivel Cannon to the Springald Ship, which deals 15 damage and can fire in 360 degrees.)
     {
@@ -2128,9 +2690,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 15,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  devoutness: ([g, c]) => [
+  "devoutness": standardAbility(
+    "",
+    ([g, c]) => [
     // "Inspired Villagers gather resources +10% faster and construct buildings and defenses +25% quicker.
     {
       property: "goldGatherRate",
@@ -2167,9 +2732,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseSpeedByPercent(1, c),
       type: "influence",
     },
-  ],
+  ]
+  ),
 
-  "fire-stations": ([i, s]) => [
+  "fire-stations": standardAbility(
+    "",
+    ([i, s]) => [
     // Military Ships regenerate +1 health every 2 seconds when out of combat.
     {
       property: "healingRate",
@@ -2178,9 +2746,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "heavy-maces": ([i]) => [
+  "heavy-maces": standardAbility(
+    "",
+    ([i]) => [
     // Men-at-Arms wield maces, increasing their bonus damage against heavy targets by +6.
     {
       property: "meleeAttack",
@@ -2190,9 +2761,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "bonus",
     },
-  ],
+  ]
+  ),
 
-  "inspired-warriors": ([mv, a, d]) => [
+  "inspired-warriors": standardAbility(
+    "",
+    ([mv, a, d]) => [
     // Prelates increase their move speed by 10% and can inspire military units, improving their armor by +1, and damage by +15%.
     {
       property: "moveSpeed",
@@ -2239,9 +2813,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, d),
       type: "influence",
     },
-  ],
+  ]
+  ),
 
-  "marching-drills": ([i]) => [
+  "marching-drills": standardAbility(
+    "",
+    ([i]) => [
     // Increase the movement speed of infantry and prelates by +10%.
     {
       property: "moveSpeed",
@@ -2250,9 +2827,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "reinforced-defenses": ([i]) => [
+  "reinforced-defenses": standardAbility(
+    "",
+    ([i]) => [
     // Increase the health of walls, towers, and gates by +40%.
     {
       property: "hitpoints",
@@ -2261,9 +2841,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "riveted-chain-mail": ([i]) => [
+  "riveted-chain-mail": standardAbility(
+    "",
+    ([i]) => [
     // Increase the melee armor of Spearmen and Horsemen by +2
     {
       property: "meleeArmor",
@@ -2272,9 +2855,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "steel-barding": ([melee, ranged]) => [
+  "steel-barding": standardAbility(
+    "",
+    ([melee, ranged]) => [
     // Grants Knights +2 melee and +2 ranged armor.
     {
       property: "meleeArmor",
@@ -2290,9 +2876,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: ranged,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "siege-engineering": ([]) => [
+  "siege-engineering": standardAbility(
+    "",
+    ([]) => [
     // Melee and ranged infantry can construct Siege Towers and Battering Rams in the field.
     {
       property: "unknown",
@@ -2301,9 +2890,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "siege-engineering-improved": ([]) => [
+  "siege-engineering-improved": standardAbility(
+    "",
+    ([]) => [
     // Melee and ranged infantry can construct Siege Towers and Battering Rams in the field.
     // Improved Siege Engineering allows for the construction of Mangonels, Springalds and Trebuchets as well.
     {
@@ -2313,9 +2905,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "slate-and-stone-construction": ([i]) => [
+  "slate-and-stone-construction": standardAbility(
+    "",
+    ([i]) => [
     // All buildings gain +5 fire armor.
     {
       property: "fireArmor",
@@ -2324,9 +2919,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "two-handed-weapons": ([i]) => [
+  "two-handed-weapons": standardAbility(
+    "",
+    ([i]) => [
     // Men-at-Arms wield two-handed weapons, increasing their damage by +2.
     {
       property: "meleeAttack",
@@ -2335,9 +2933,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "cantled-saddles": ([o, n]) => [
+  "cantled-saddles": standardAbility(
+    "",
+    ([o, n]) => [
     // Increase Royal Knights' bonus damage after a charge from +3 to +10.
     {
       property: "meleeAttack",
@@ -2347,9 +2948,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: n - 0,
       type: "bonus",
     },
-  ],
+  ]
+  ),
 
-  chivalry: ([i]) => [
+  "chivalry": standardAbility(
+    "",
+    ([i]) => [
     // Royal Knights regenerate +1 health every  1s seconds when out of combat.
     {
       property: "healingRate",
@@ -2358,9 +2962,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "crossbow-stirrups": ([r]) => [
+  "crossbow-stirrups": standardAbility(
+    "",
+    ([r]) => [
     // Reduce the reload time of Arbalétriers by -25%.
     {
       property: "attackSpeed",
@@ -2369,9 +2976,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseSpeedByPercent(1, r),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "enlistment-incentives": ([r]) => [
+  "enlistment-incentives": standardAbility(
+    "",
+    ([r]) => [
     // Improves the French influence by reducing unit costs by a further -10%.
     {
       property: "unknown",
@@ -2380,9 +2990,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: r,
       type: "influence",
     },
-  ],
+  ]
+  ),
 
-  gambesons: ([i]) => [
+  "gambesons": standardAbility(
+    "",
+    ([i]) => [
     // Increase Arbalétrier melee armor by +5.
     {
       property: "meleeArmor",
@@ -2391,9 +3004,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "long-guns": ([i]) => [
+  "long-guns": standardAbility(
+    "",
+    ([i]) => [
     // Increase the damage of naval cannons by +10%.
     {
       property: "rangedAttack",
@@ -2402,9 +3018,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "royal-bloodlines": ([i]) => [
+  "royal-bloodlines": standardAbility(
+    "",
+    ([i]) => [
     // Increase the health of all cavalry by +35%.
     {
       property: "hitpoints",
@@ -2413,9 +3032,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "merchant-guilds": ([i]) => [
+  "merchant-guilds": standardAbility(
+    "",
+    ([i]) => [
     // Active Traders generate 1 gold every 6 seconds.
     {
       property: "goldGatherRate",
@@ -2424,9 +3046,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "battle-hardened": ([i]) => [
+  "battle-hardened": standardAbility(
+    "",
+    ([i]) => [
     // Increase the health of Palace Guards by +30.
     {
       property: "hitpoints",
@@ -2435,9 +3060,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  explosives: ([i]) => [
+  "explosives": standardAbility(
+    "",
+    ([i]) => [
     // Increase the damage of Incendiary Ships by +40%.
     {
       property: "fireAttack",
@@ -2446,9 +3074,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  incendiaries: ([i]) => [
+  "incendiaries": standardAbility(
+    "",
+    ([i]) => [
     // Incendiary Ships gain +20% explosion range.
     {
       property: "maxRange",
@@ -2457,14 +3088,20 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "naval-arrowslits": ([i]) => [
+  "naval-arrowslits": standardAbility(
+    "",
+    ([i]) => [
     // Add a defensive arrowslit to this Dock which only attacks ships.
-  ],
+  ]
+  ),
 
   // Technically this would increase burst by +1  but we don't have a way to represent that.
-  "extra-hammocks": ([i]) => [
+  "extra-hammocks": standardAbility(
+    "",
+    ([i]) => [
     // Increases the number of arrows fired by Archer Ships by +1.
     {
       property: "rangedAttack",
@@ -2473,9 +3110,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1 + i / 5, // 5 is the default number of arrows
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "heated-shot": ([i]) => [
+  "heated-shot": standardAbility(
+    "",
+    ([i]) => [
     // Archer Ship arrows light enemy Ships on fire, dealing damage over time.
     // (Arrow Ships set enemy ships on fire dealing 30 damage over 10 seconds (not stacking with each arrow).)
     {
@@ -2485,9 +3125,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 30 / 5, // 5 is the default number of arrows
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "extra-materials": ([i]) => [
+  "extra-materials": standardAbility(
+    "",
+    ([i]) => [
     // Stone Wall Towers and Outposts repair nearby damaged Stone Walls. A single section is repaired at a time for +20 health per second.
     {
       property: "healingRate",
@@ -2496,9 +3139,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "influence",
     },
-  ],
+  ]
+  ),
 
-  "imperial-examinations": ([o, n]) => [
+  "imperial-examinations": standardAbility(
+    "",
+    ([o, n]) => [
     // Increase the maximum amount of Gold carried by Imperial Officials from +40 to +80
     {
       property: "carryCapacity",
@@ -2507,9 +3153,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: n - o,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  pyrotechnics: ([i]) => [
+  "pyrotechnics": standardAbility(
+    "",
+    ([i]) => [
     // Increase the range of gunpowder units by 1.5 tiles.
     {
       property: "maxRange",
@@ -2518,9 +3167,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "reload-drills": ([i]) => [
+  "reload-drills": standardAbility(
+    "",
+    ([i]) => [
     // Increase the attack speed of Bombards by +33%
     {
       property: "attackSpeed",
@@ -2529,9 +3181,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseAttackSpeedByPercent(i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "thunderclap-bombs": ([i]) => [
+  "thunderclap-bombs": standardAbility(
+    "",
+    ([i]) => [
     // Warships fire a Nest of Bees attack.
     {
       property: "siegeAttack",
@@ -2540,9 +3195,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: (8 * 8) / 3, // 8 damage of 8 nest of bees arrows / burst
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "additional-barrels": ([d]) => [
+  "additional-barrels": standardAbility(
+    "",
+    ([d]) => [
     // Nest of Bees receive 2 additional Rocket Arrows.
     {
       property: "burst",
@@ -2551,9 +3209,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "adjustable-crossbars": ([i]) => [
+  "adjustable-crossbars": standardAbility(
+    "",
+    ([i]) => [
     // Increase the attack speed of Mangonels by +25%
     {
       property: "attackSpeed",
@@ -2562,9 +3223,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseAttackSpeedByPercent(i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "adjustable-crossbars-improved": ([i, d]) => [
+  "adjustable-crossbars-improved": standardAbility(
+    "",
+    ([i, d]) => [
     // "Reduce the reload time of Mangonels by -35%.
     // If Adjustable Crossbars has already been researched, increase attack speed by +10% instead.
     {
@@ -2574,9 +3238,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseAttackSpeedByPercent(d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "all-seeing-eye": ([i]) => [
+  "all-seeing-eye": standardAbility(
+    "",
+    ([i]) => [
     // Increase the sight range of Scholars by +100%.
     {
       property: "lineOfSight",
@@ -2585,9 +3252,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "armored-beasts": ([hp, armor]) => [
+  "armored-beasts": standardAbility(
+    "",
+    ([hp, armor]) => [
     // Grant +25% health and +4 ranged armor to War Elephants.
     {
       property: "rangedArmor",
@@ -2603,9 +3273,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, hp),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "armored-hull": ([h, a]) => [
+  "armored-hull": standardAbility(
+    "",
+    ([h, a]) => [
     // Increase the health of all military ships by +20% and ranged armor by +1.
     {
       property: "hitpoints",
@@ -2621,9 +3294,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: a,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  biology: ([i]) => [
+  "biology": standardAbility(
+    "",
+    ([i]) => [
     // Increase the health of all cavalry by +20%.
     {
       property: "hitpoints",
@@ -2632,9 +3308,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "biology-improved": ([i, d]) => [
+  "biology-improved": standardAbility(
+    "",
+    ([i, d]) => [
     // Increase the health of all cavalry by +30%.
     // If Biology has already been researched, increase it by + 10 % instead.
     {
@@ -2644,9 +3323,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercentImproved(1, i, d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "boiling-oil": ([]) => [
+  "boiling-oil": standardAbility(
+    "",
+    ([]) => [
     // Towers and Keeps gain a boiling oil attack against nearby units that deals  damage.
     {
       property: "unknown",
@@ -2655,9 +3337,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  chemistry: ([i]) => [
+  "chemistry": standardAbility(
+    "",
+    ([i]) => [
     // Increase the damage of gunpowder units by +20%.
     {
       property: "rangedAttack",
@@ -2673,10 +3358,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "court-architects": ([i]) => [
-    // Increase the health of all buildings by +30%.
+  "court-architects": standardAbility(
+    "Patronage of the finest builders increases all building health by +{1}%.",
+    ([i]) => [
     {
       property: "hitpoints",
       select: { class: [["building"], ["landmark"], ["wonder"]] },
@@ -2684,9 +3371,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "efficient-production": ([i]) => [
+  "efficient-production": standardAbility(
+    "",
+    ([i]) => [
     // Allow Scholars to garrison in military buildings, boosting production speed by +100%.
     {
       property: "productionSpeed",
@@ -2695,9 +3385,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "elite-army-tactics": ([h, d]) => [
+  "elite-army-tactics": standardAbility(
+    "",
+    ([h, d]) => [
     // Increase the health of all melee infantry by +20% and their damage by 20%.
     {
       property: "hitpoints",
@@ -2713,9 +3406,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "elite-army-tactics-improved": ([h, d, delta]) => [
+  "elite-army-tactics-improved": standardAbility(
+    "",
+    ([h, d, delta]) => [
     //  Increase the health of all melee infantry by +30% and their damage by  +30%.
     // If Elite Army Tactics has already been researched, increase health and damage by + 10 % instead.
     {
@@ -2732,9 +3428,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercentImproved(1, d, delta),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "forced-march": ([i, d]) => [
+  "forced-march": standardAbility(
+    "",
+    ([i, d]) => [
     // Infantry units gain the Forced March ability.
     // This ability makes them move +100% faster for  10 seconds, but they cannot attack while it is active.
     {
@@ -2744,9 +3443,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  geometry: ([i]) => [
+  "geometry": standardAbility(
+    "",
+    ([i]) => [
     // Increase the damage of Rams and Trebuchets +30%.
     {
       property: "siegeAttack",
@@ -2755,9 +3457,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "lightweight-beams": ([speed, time]) => [
+  "lightweight-beams": standardAbility(
+    "",
+    ([speed, time]) => [
     // Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.
     {
       property: "attackSpeed",
@@ -2773,9 +3478,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: decreaseByPercent(1, time),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "greased-axles": ([i]) => [
+  "greased-axles": standardAbility(
+    "",
+    ([i]) => [
     // Increase the movement speed of siege engines by +15%.
     {
       property: "moveSpeed",
@@ -2784,9 +3492,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "greased-axles-improved": ([i, d]) => [
+  "greased-axles-improved": standardAbility(
+    "",
+    ([i, d]) => [
     // Increase the movement speed of siege engines by +25%.
     // If Greased Axles has already been researched, increase it by + 10 % instead.
     {
@@ -2796,9 +3507,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, d - i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "hearty-rations": ([i]) => [
+  "hearty-rations": standardAbility(
+    "",
+    ([i]) => [
     // Increase the carrying capacity of Villagers by +5.
     {
       property: "carryCapacity",
@@ -2807,9 +3521,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "herbal-medicine": ([i]) => [
+  "herbal-medicine": standardAbility(
+    "",
+    ([i]) => [
     // Increase the healing rate of religious units by +60%.
     {
       property: "healingRate",
@@ -2818,9 +3535,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "herbal-medicine-improved": ([i, d]) => [
+  "herbal-medicine-improved": standardAbility(
+    "",
+    ([i, d]) => [
     // Increase the healing rate of religious units by +120%.
     // If Herbal Medicine has already been researched, increase it by + 60 % instead.
     {
@@ -2830,9 +3550,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "honed-blades": ([i]) => [
+  "honed-blades": standardAbility(
+    "",
+    ([i]) => [
     // Increase the melee damage of Men-at-Arms and Knights by +3.
     {
       property: "meleeAttack",
@@ -2841,9 +3564,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "manuscript-trade": ([i]) => [
+  "manuscript-trade": standardAbility(
+    "",
+    ([i]) => [
     // Scholars garrisoned in Docks provide +20% faster production speed and contribute to global research.
     {
       property: "productionSpeed",
@@ -2852,9 +3578,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "incendiary-arrows": ([i]) => [
+  "incendiary-arrows": standardAbility(
+    "", // "Flammable munitions grant non-gunpowder ranged units a siege arrow or bolt when attacking buildings and increase their damage by +{1}%."
+    ([i]) => [
     // Increase the damage of ranged units and buildings by +20%. Does not apply to gunpowder units.
     {
       property: "rangedAttack",
@@ -2887,9 +3616,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "lookout-towers": ([sight, range]) => [
+  "lookout-towers": standardAbility(
+    "",
+    ([sight, range]) => [
     // Increase the sight range of Outposts by 50% and weapon range by +1.
     {
       property: "lineOfSight",
@@ -2905,9 +3637,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: range,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  piety: ([i]) => [
+  "piety": standardAbility(
+    "",
+    ([i]) => [
     // Increase the health of religious units by +40.
     {
       property: "hitpoints",
@@ -2916,9 +3651,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "piety-improved": ([i, d]) => [
+  "piety-improved": standardAbility(
+    "",
+    ([i, d]) => [
     // Increase the health of religious units by +60.
     // If Piety has already been researched, increase it by + 20 instead.
     {
@@ -2928,10 +3666,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "professional-scouts": ([i]) => [
-    // Scouts gain the ability to carry animal carcasses and +200% damage against wild animals.
+  "professional-scouts": standardAbility(
+    "Scouts gain the ability to carry animal carcasses and +{1}% damage against wild animals.\nScouts move -{2}% slower while carrying and cannot pick up Boar.",
+    ([i]) => [
     {
       property: "huntCarryCapacity",
       select: { id: ["scout"] },
@@ -2947,9 +3687,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "bonus",
     },
-  ],
+  ]
+  ),
 
-  "professional-scouts-improved": ([i, d]) => [
+  "professional-scouts-improved": standardAbility(
+    "",
+    ([i, d]) => [
     // Scouts gain the ability to carry animal carcasses and +300% damage against wild animals.
     // If Professional Scouts has already been researched, increase increase ranged damage against wild animals by  +100% instead
     {
@@ -2967,9 +3710,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, d),
       type: "bonus",
     },
-  ],
+  ]
+  ),
 
-  "reinforced-foundations": ([hp]) => [
+  "reinforced-foundations": standardAbility(
+    "",
+    ([hp]) => [
     // Villagers and Infantry can garrison inside Houses for protection. Houses gain garrison arrows and +50% Health.
     {
       property: "hitpoints",
@@ -2978,9 +3724,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, hp),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "roller-shutter-triggers": ([r, t]) => [
+  "roller-shutter-triggers": standardAbility(
+    "",
+    ([r, t]) => [
     // Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.
     {
       property: "maxRange",
@@ -2996,9 +3745,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseAttackSpeedByPercent(t),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "roller-shutter-triggers-improved": ([r, t, ri, ti]) => [
+  "roller-shutter-triggers-improved": standardAbility(
+    "",
+    ([r, t, ri, ti]) => [
     // Increase the weapon range of Springalds by +3 tiles and reduce their reload time by  +35%.
     // If Roller Shutter Triggers has already been researched, increase the weapon range of Springalds by +1 tile and reduce their reload time by  +10%.
     {
@@ -3015,9 +3767,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: decreaseByPercentImproved(1, t, t - ti),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  spyglass: ([i]) => [
+  "spyglass": standardAbility(
+    "",
+    ([i]) => [
     // Increase the sight radius of Scouts by 30%.
     {
       property: "lineOfSight",
@@ -3026,9 +3781,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  sanctity: ([i]) => [
+  "sanctity": standardAbility(
+    "",
+    ([i]) => [
     // Allow Scholars to capture Sacred Sites before the Castle Age (III). Sacred Sites generate +100% more Gold.
     {
       property: "goldGeneration",
@@ -3044,9 +3802,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  howdahs: ([hp, armor]) => [
+  "howdahs": standardAbility(
+    "",
+    ([hp, armor]) => [
     // Upgrade Tower Elephants to have Elite Crossbowmen as riders instead of Archers. Tower Elephants gain +30% health and +4 ranged armor.
     {
       property: "rangedAttack",
@@ -3070,9 +3831,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, hp),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "siege-works": ([h, a]) => [
+  "siege-works": standardAbility(
+    "",
+    ([h, a]) => [
     // Increase the health of siege engines by +20% and their ranged armor by  +10.
     {
       property: "hitpoints",
@@ -3088,9 +3852,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: a,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "siege-works-improved": ([h, a, hi, ai]) => [
+  "siege-works-improved": standardAbility(
+    "",
+    ([h, a, hi, ai]) => [
     // Increase the health of siege engines by +30% and their ranged armor by  +4.
     // If Siege Works has already been researched, increase their health by  +10% and ranged armor by  +1 instead.
     {
@@ -3107,9 +3874,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: ai,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "slow-burning-defenses": ([i]) => [
+  "slow-burning-defenses": standardAbility(
+    "",
+    ([i]) => [
     // Increase the fire armor of Stone Wall Towers, Keeps, and Outposts by +10.
     {
       property: "fireArmor",
@@ -3118,9 +3888,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  swiftness: ([i]) => [
+  "swiftness": standardAbility(
+    "",
+    ([i]) => [
     // Increase the movement speed of Scholars by +100%.
     {
       property: "moveSpeed",
@@ -3129,9 +3902,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  textiles: ([i]) => [
+  "textiles": standardAbility(
+    "",
+    ([i]) => [
     // Increase Villagers' health by +25.
     {
       property: "hitpoints",
@@ -3140,9 +3916,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "textiles-improved": ([i, ii]) => [
+  "textiles-improved": standardAbility(
+    "",
+    ([i, ii]) => [
     // Increase Villagers' health by +50, if already researched by +25.
     {
       property: "hitpoints",
@@ -3151,9 +3930,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: ii,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "tithe-barns": ([i]) => [
+  "tithe-barns": standardAbility(
+    "",
+    ([i]) => [
     // Relics placed in a Monastery provide an income of +30 Food, undefined Wood, and undefined Stone every minute.
     {
       property: "unknown",
@@ -3162,9 +3944,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "influence",
     },
-  ],
+  ]
+  ),
 
-  "tithe-barns-improved": ([i]) => [
+  "tithe-barns-improved": standardAbility(
+    "",
+    ([i]) => [
     //  Relics placed in a Prayer Tent provide an income of +20 Food, +20 Wood, and +20 Stone every minute.
     {
       property: "unknown",
@@ -3173,9 +3958,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "influence",
     },
-  ],
+  ]
+  ),
 
-  "tranquil-venue": ([i]) => [
+  "tranquil-venue": standardAbility(
+    "",
+    ([i]) => [
     // Mosques restore +1 health to nearby unit every second.
     {
       property: "healingRate",
@@ -3184,9 +3972,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "village-fortresses": ([]) => [
+  "village-fortresses": standardAbility(
+    "",
+    ([]) => [
     // Keeps act like Town Centers, including unit production, population capacity, and technology.
     {
       property: "unknown",
@@ -3195,9 +3986,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  zeal: ([i, d]) => [
+  "zeal": standardAbility(
+    "",
+    ([i, d]) => [
     // Units healed by Scholars gain +50% attack speed for  3 seconds.
     {
       property: "attackSpeed",
@@ -3206,9 +4000,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseSpeedByPercent(1, i),
       type: "influence",
     },
-  ],
+  ]
+  ),
 
-  agriculture: ([i]) => [
+  "agriculture": standardAbility(
+    "",
+    ([i]) => [
     // Improve Villagers' gathering rate from Farms by +15%.
     {
       property: "foodGatherRate",
@@ -3217,9 +4014,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "armored-caravans": ([i]) => [
+  "armored-caravans": standardAbility(
+    "",
+    ([i]) => [
     // Grant +5 armor to Traders and Trade Ships.
     {
       property: "meleeArmor",
@@ -3235,9 +4035,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "boot-camp": ([i]) => [
+  "boot-camp": standardAbility(
+    "",
+    ([i]) => [
     // Increase the health of all infantry by +15%.
     {
       property: "hitpoints",
@@ -3246,9 +4049,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "camel-rider-barding": ([i]) => [
+  "camel-rider-barding": standardAbility(
+    "",
+    ([i]) => [
     // Increase the armor of camel riders by +2.
     {
       property: "meleeArmor",
@@ -3264,9 +4070,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "camel-handling": ([i]) => [
+  "camel-handling": standardAbility(
+    "",
+    ([i]) => [
     // Increase the movement speed of camel units by +15%.
     {
       property: "moveSpeed",
@@ -3275,9 +4084,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "camel-rider-shields": ([i]) => [
+  "camel-rider-shields": standardAbility(
+    "",
+    ([i]) => [
     // Grant Camel Riders shields, improving their melee armor by +3.
     {
       property: "meleeArmor",
@@ -3286,9 +4098,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "camel-support": ([i]) => [
+  "camel-support": standardAbility(
+    "",
+    ([i]) => [
     // Camels increase the armor of nearby infantry by +2.
     {
       property: "meleeArmor",
@@ -3297,9 +4112,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "influence",
     },
-  ],
+  ]
+  ),
 
-  "composite-bows": ([r]) => [
+  "composite-bows": standardAbility(
+    "",
+    ([r]) => [
     // Increase the attack speed of Archers by +33%.
     {
       property: "attackSpeed",
@@ -3308,9 +4126,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseAttackSpeedByPercent(r),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "culture-wing": ([]) => [
+  "culture-wing": standardAbility(
+    "",
+    ([]) => [
     // Constructs the Culture Wing.
     // The following cultural technologies become available:
     // • Preservation of Knowledge (Feudal Age)
@@ -3323,9 +4144,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 5000,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "economic-wing": ([]) => [
+  "economic-wing": standardAbility(
+    "",
+    ([]) => [
     // Constructs the Economic Wing.
     // The following economic technologies become available:
     // • Fresh Foodstuffs (Feudal Age)
@@ -3338,9 +4162,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 5000,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  faith: ([]) => [
+  "faith": standardAbility(
+    "",
+    ([]) => [
     // Imams can convert units without holding a Relic, but can only target a single unit.
     {
       property: "unknown",
@@ -3349,9 +4176,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "fresh-foodstuffs": ([r]) => [
+  "fresh-foodstuffs": standardAbility(
+    "",
+    ([r]) => [
     // Reduce the cost to produce Villagers by -50%.
     {
       property: "foodCost",
@@ -3360,9 +4190,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: decreaseByPercent(1, r),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "fertile-crescent": ([i]) => [
+  "fertile-crescent": standardAbility(
+    "",
+    ([i]) => [
     // Reduce the cost of Economy buildings and Houses by 25%.
     {
       property: "foodCost",
@@ -3371,9 +4204,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: decreaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "grand-bazaar": ([i]) => [
+  "grand-bazaar": standardAbility(
+    "",
+    ([i]) => [
     // Traders also return with a secondary resource. This resource is 0.25 the base Gold value and is set at the market.
     {
       property: "unknown",
@@ -3382,9 +4218,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "improved-processing": ([i]) => [
+  "improved-processing": standardAbility(
+    "",
+    ([i]) => [
     // Villagers drop off +8% more resources.
     {
       property: "unknown",
@@ -3393,9 +4232,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "medical-centers": ([h]) => [
+  "medical-centers": standardAbility(
+    "",
+    ([h]) => [
     // Keeps heal nearby units for +2 health every  1s second.
     {
       property: "healingRate",
@@ -3404,9 +4246,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: h,
       type: "influence",
     },
-  ],
+  ]
+  ),
 
-  "military-wing": ([]) => [
+  "military-wing": standardAbility(
+    "",
+    ([]) => [
     // Constructs the Military Wing.
     // The following military technologies become available:
     // • Camel Support (Feudal Age)
@@ -3419,9 +4264,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 5000,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  phalanx: ([i]) => [
+  "phalanx": standardAbility(
+    "",
+    ([i]) => [
     // Increase the attack range of Spearmen by +100%.
     {
       property: "maxRange",
@@ -3430,9 +4278,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "preservation-of-knowledge": ([r]) => [
+  "preservation-of-knowledge": standardAbility(
+    "",
+    ([r]) => [
     // Reduce the cost of all technology by -30%.
     {
       property: "goldCost",
@@ -3455,9 +4306,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: decreaseByPercent(1, r),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "spice-roads": ([i]) => [
+  "spice-roads": standardAbility(
+    "",
+    ([i]) => [
     // Increase the Gold income from Traders by +30%.
     {
       property: "goldGatherRate",
@@ -3466,9 +4320,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "teak-masts": ([i]) => [
+  "teak-masts": standardAbility(
+    "",
+    ([i]) => [
     // Increase the health of military ships +10%
     {
       property: "hitpoints",
@@ -3477,9 +4334,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "trade-wing": ([]) => [
+  "trade-wing": standardAbility(
+    "",
+    ([]) => [
     // Constructs the Trade Wing.
     // The following trade technologies become available:
     // • Spice Roads (Feudal Age)
@@ -3492,9 +4352,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 5000,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "canoe-tactics": ([i]) => [
+  "canoe-tactics": standardAbility(
+    "",
+    ([i]) => [
     // Archer Ships fire an additional 2 Javelin weapons.
     // Not in tooltip but in patch notes 'now also gives arrow ships +20 bonus damage when attacking fire ships.'
     {
@@ -3512,9 +4375,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 20,
       type: "bonus",
     },
-  ],
+  ]
+  ),
 
-  "farima-leadership": ([i]) => [
+  "farima-leadership": standardAbility(
+    "",
+    ([i]) => [
     // Sofa increase the movement speed of nearby infantry by +15%.
     {
       property: "moveSpeed",
@@ -3524,9 +4390,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseSpeedByPercent(1, i),
       type: "influence",
     },
-  ],
+  ]
+  ),
 
-  "imported-armor": ([i]) => [
+  "imported-armor": standardAbility(
+    "",
+    ([i]) => [
     // Increase armor of Sofa by +2.
     {
       property: "meleeArmor",
@@ -3542,9 +4411,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "local-knowledge": ([i]) => [
+  "local-knowledge": standardAbility(
+    "",
+    ([i]) => [
     // Musofadi units heal while in Stealth for +2 every 1 seconds.
     {
       property: "healingRate",
@@ -3553,9 +4425,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "poisoned-arrows": ([d]) => [
+  "poisoned-arrows": standardAbility(
+    "",
+    ([d]) => [
     // Archer arrows deal an additional 3 damage over 6 seconds.
     {
       property: "rangedAttack",
@@ -3564,9 +4439,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "precision-training": ([donso, archer, javelin]) => [
+  "precision-training": standardAbility(
+    "",
+    ([donso, archer, javelin]) => [
     // Increase ranged damage of Donso by +6, Archers by +2, and Javelin Throwers by +3.
     {
       property: "rangedAttack",
@@ -3589,13 +4467,19 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: javelin,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "advanced-academy": ([]) => [
+  "advanced-academy": standardAbility(
+    "",
+    ([]) => [
     // Outfits Military Schools with the ability to produce Knights and Janissaries.
-  ],
+  ]
+  ),
 
-  "anatolian-hills": ([s, i]) => [
+  "anatolian-hills": standardAbility(
+    "",
+    ([s, i]) => [
     // Spawn 8 sheep at the Landmark Town Center and increase Villager mining speed by +10%.
     {
       property: "goldGatherRate",
@@ -3611,9 +4495,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseSpeedByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "fast-training": ([i]) => [
+  "fast-training": standardAbility(
+    "",
+    ([i]) => [
     // Increase production of Military Schools by +25%.
 
     {
@@ -3623,9 +4510,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseSpeedByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "field-work": ([imam, i]) => [
+  "field-work": standardAbility(
+    "",
+    ([imam, i]) => [
     // Spawn 2 Imams at the Landmark Town Center. Imams area heal nearby units for 1 health every second.
     // Increases to 2 health in Castle Age and 3 health in Imperial Age.
     {
@@ -3636,9 +4526,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: imam,
       type: "influence",
     },
-  ],
+  ]
+  ),
 
-  "imperial-fleet": ([p, m]) => [
+  "imperial-fleet": standardAbility(
+    "",
+    ([p, m]) => [
     // Increase the production speed of Gunpowder Ships by 15% and their movement speed by 15%.
     {
       property: "productionSpeed",
@@ -3654,13 +4547,19 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseSpeedByPercent(1, m),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "janissary-company": ([i]) => [
+  "janissary-company": standardAbility(
+    "",
+    ([i]) => [
     // Spawn 2 Janissaries for each of your Military Schools at the Landmark Town Center.
-  ],
+  ]
+  ),
 
-  "janissary-guns": ([i]) => [
+  "janissary-guns": standardAbility(
+    "",
+    ([i]) => [
     // Increase Janissary gun damage by +3.
     {
       property: "rangedAttack",
@@ -3669,9 +4568,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "mehter-drums": ([mether, i]) => [
+  "mehter-drums": standardAbility(
+    "",
+    ([mether, i]) => [
     // Spawn 1 Mehter at the Landmark Town Center. Mehters increase move speed to units in the same formation by +15%.
     {
       property: "moveSpeed",
@@ -3681,16 +4583,21 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseSpeedByPercent(1, i),
       type: "influence",
     },
-  ],
+  ]
+  ),
 
-  "military-campus": ([i]) => [
+  "military-campus": standardAbility(
+    "",
+    ([i]) => [
     // Increase Military Schools that can be built by +1.
-  ],
+  ]
+  ),
 
   // Todo, add improved version
 
-  "additional-torches": ([i]) => [
-    // Increase the torch damage of all infantry and cavalry by +3.
+  "additional-torches": standardAbility(
+    "Increase the torch damage of all infantry and cavalry by +{1}.",
+    ([i]) => [
     {
       property: "fireAttack",
       select: { class: [["infantry"], ["cavalry", "melee"]] },
@@ -3698,11 +4605,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "additional-torches-improved": ([i, d]) => [
-    // Increase the torch damage of all infantry and cavalry by +5.
-    // If Additional Torches has already been researched, increase the torch damage from all infantry and cavalry by  +2.
+  "additional-torches-improved": standardAbility(
+    "Increase the torch damage of all infantry and cavalry by +{1}.\nIf Additional Torches has already been researched, increase the torch damage from all infantry and cavalry by +{2}.",
+    ([i, d]) => [
     {
       property: "fireAttack",
       select: { class: [["infantry"], ["cavalry", "melee"]] },
@@ -3710,9 +4618,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "geometry-improved": ([i, d]) => [
+  "geometry-improved": standardAbility(
+    "",
+    ([i, d]) => [
     // Increase damage of Trebuchets by +20%.\nIf Geometry has already been researched, increase their damage by +10% instead.
     {
       property: "rangedAttack",
@@ -3721,9 +4632,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercentImproved(1, i, d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "lightweight-beams-improved": ([as, ct, asd, ctd]) => [
+  "lightweight-beams-improved": standardAbility(
+    "",
+    ([as, ct, asd, ctd]) => [
     // Increase Battering Ram attack speed by +40% and reduce their field construction time by -50%.\nIf Lightweight Beams has already been researched, increase attack speed by +60% and reduce field construction time by -75% instead.
     {
       property: "attackSpeed",
@@ -3739,9 +4653,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: decreaseByPercentImproved(1, ct, ctd),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "monastic-shrines": ([]) => [
+  "monastic-shrines": standardAbility(
+    "",
+    ([]) => [
     // Monasteries allow Improved Production in their districts even without an Ovoo.
     {
       property: "unknown",
@@ -3750,10 +4667,13 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1,
       type: "influence",
     },
-  ],
+  ]
+  ),
 
   // Todo, improve
-  piracy: ([b]) => [
+  "piracy": standardAbility(
+    "",
+    ([b]) => [
     // Gain +50 Wood and  +50 Gold when sinking an enemy ship.
     {
       property: "unknown",
@@ -3762,10 +4682,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: b,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "raid-bounty": ([b]) => [
-    // Increase the raid income for igniting a building to +25 Food and Gold.
+  "raid-bounty": standardAbility(
+    "Increase the raid income for igniting a building to +{1} Food and Gold.",
+    ([b]) => [
     {
       property: "unknown",
       select: { class: [["cavalry"], ["infantry"]] },
@@ -3773,11 +4695,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: b,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "raid-bounty-improved": ([i, d]) => [
-    // Increase the raid income for igniting a building to +50 Food and Gold.
-    // If Raid Bounty has already been researched, increase the raid income for igniting a building by  +25 Food and Gold.
+  "raid-bounty-improved": standardAbility(
+    "Increase the raid income for igniting a building to +{1} Food and Gold.\nIf Raid Bounty has already been researched, increase the raid income for igniting a building by +{2} Food and Gold.",
+    ([i, d]) => [
     {
       property: "unknown",
       select: { class: [["cavalry"], ["infantry"]] },
@@ -3785,9 +4708,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i - d,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "siha-bow-limbs": ([i]) => [
+  "siha-bow-limbs": standardAbility(
+    "",
+    ([i]) => [
     // Increase the ranged damage of Mangudai and the Khan by +1.
     {
       property: "rangedAttack",
@@ -3796,9 +4722,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "siha-bow-limbs-improved": ([i, d]) => [
+  "siha-bow-limbs-improved": standardAbility(
+    "",
+    ([i, d]) => [
     // ncrease the ranged damage of Mangudai and the Khan by +2.
     // If Siha Bow Limbs has already been researched, increase the ranged damage of Mangudai and the Khan by + 1.
     {
@@ -3808,9 +4737,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i - d,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "stone-bounty": ([b]) => [
+  "stone-bounty": standardAbility(
+    "Add +{1} Stone to the raid income for igniting a building.",
+    ([b]) => [
     // Add +75 Stone to the raid income for igniting a building.
     {
       property: "unknown",
@@ -3819,11 +4751,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: b,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "stone-bounty-improved": ([i, d]) => [
-    // Add +125 Stone to the raid income for igniting a building.
-    // If Stone Bounty has already been researched, add  +50 Stone to the raid income for igniting a building.
+  "stone-bounty-improved": standardAbility(
+    "Add +{1} Stone to the raid income for igniting a building.\nIf Stone Bounty has already been researched, add +{2} Stone to the raid income for igniting a building.",
+    ([i, d]) => [
     {
       property: "unknown",
       select: { class: [["cavalry"], ["infantry"]] },
@@ -3831,10 +4764,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i - d,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "stone-commerce": ([]) => [
-    // Traders supply +10% Stone to their trades
+  "stone-commerce": standardAbility(
+    "Traders supply +{1}% Stone to their trades",
+    ([]) => [
     {
       property: "unknown",
       select: { id: ["trader", "trade-ship"] },
@@ -3842,9 +4777,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "stone-commerce-improved": ([]) => [
+  "stone-commerce-improved": standardAbility(
+    "",
+    ([]) => [
     // Traders supply +20% Stone to their trades
     // if Stone Commerce has already been researched, supply +10% Stone instead
     {
@@ -3854,9 +4792,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "superior-mobility": ([i]) => [
+  "superior-mobility": standardAbility(
+    "",
+    ([i]) => [
     // Packed buildings move and pack/unpack 50% faster.
     {
       property: "unknown",
@@ -3865,10 +4806,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseSpeedByPercent(1, i),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "whistling-arrows": ([]) => [
-    // Increase the Khan's Signal Arrow duration by +5 seconds and range by  +2 tiles.
+  "whistling-arrows": standardAbility(
+    "Increase the Khan's Signal Arrow duration by +{1} seconds and range by +{2} tiles.",
+    ([]) => [
     {
       property: "unknown",
       select: { id: ["khan"] },
@@ -3876,11 +4819,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "whistling-arrows-improved": ([]) => [
-    // Increase the Khan's Signal Arrow duration by +7 seconds and range by  +3 tiles.
-    // If Whistling Arrows has already been researched, increase the Khan's Signal Arrow duration by  +2 seconds and range by  +1 tile.
+  "whistling-arrows-improved": standardAbility(
+    "Increase the Khan's Signal Arrow duration by +{1} seconds and range by +{2} tiles.\nIf Whistling Arrows has already been researched, increase the Khan's Signal Arrow duration by +{3} seconds and range by +{4} tile.",
+    ([]) => [
     {
       property: "unknown",
       select: { id: ["khan"] },
@@ -3888,10 +4832,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "yam-network": ([]) => [
-    // Yam speed aura applies to all units instead of just Traders and cavalry units.
+  "yam-network": standardAbility(
+    "Yam speed aura applies to all units instead of just Traders and cavalry units.",
+    ([]) => [
     {
       property: "unknown",
       select: { class: [["infantry"], ["siege"]] },
@@ -3899,9 +4845,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1,
       type: "influence",
     },
-  ],
+  ]
+  ),
 
-  "yam-network-improved": ([hp, s]) => [
+  "yam-network-improved": standardAbility(
+    "",
+    ([hp, s]) => [
     // Yam speed aura applies to all units instead of just Traders and cavalry units.
     // Improved Yam Network allows Traders to regenerate 1 health every 2 seconds while in Yam's aura."
     {
@@ -3911,9 +4860,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: hp,
       type: "influence",
     },
-  ],
+  ]
+  ),
 
-  "steppe-lancers": ([h, r]) => [
+  "steppe-lancers": standardAbility(
+    "",
+    ([h, r]) => [
     // Increase Keshik healing by +1 Health per attack and attack speed by +10%.
     {
       property: "healingRate",
@@ -3929,9 +4881,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseAttackSpeedByPercent(r),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "steppe-lancers-improved": ([oh, or, h, r]) => [
+  "steppe-lancers-improved": standardAbility(
+    "",
+    ([oh, or, h, r]) => [
     // Increase Keshik healing by +1 Health per attack and attack speed by +10%.
     // If Steppe Lancers has already been researched, increase Keshik healing by +20 Health per attack and attack speed by +10%.
     {
@@ -3948,9 +4903,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseAttackSpeedByPercent(r),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "banded-arms": ([r]) => [
+  "banded-arms": standardAbility(
+    "",
+    ([r]) => [
     // Increase the range of Springald by +0.5 tiles.
     {
       property: "maxRange",
@@ -3959,9 +4917,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: r,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "divine-light": ([d]) => [
+  "divine-light": standardAbility(
+    "",
+    ([d]) => [
     // Increase the duration of Saint's Blessing by 10 seconds.
     {
       property: "unknown",
@@ -3970,9 +4931,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "influence",
     },
-  ],
+  ]
+  ),
 
-  "boyars-fortitude": ([h]) => [
+  "boyars-fortitude": standardAbility(
+    "",
+    ([h]) => [
     // Increase the health of Rus cavalry by +20.
     {
       property: "hitpoints",
@@ -3981,9 +4945,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: h,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "adaptable-hulls": ([i]) => [
+  "adaptable-hulls": standardAbility(
+    "",
+    ([i]) => [
     // Converting between Lodya Ship types is 50% faster and no longer has a cost penalty.
     {
       property: "unknown",
@@ -3992,9 +4959,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "cedar-hulls": ([health, armor]) => [
+  "cedar-hulls": standardAbility(
+    "",
+    ([health, armor]) => [
     // Increase the health of Lodya Attack Ships by +200 and their ranged armor by  +1.
     {
       property: "hitpoints",
@@ -4010,9 +4980,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: armor,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "clinker-construction": ([h]) => [
+  "clinker-construction": standardAbility(
+    "",
+    ([h]) => [
     // Increase the health of Lodya Attack Ships by +200.
     {
       property: "hitpoints",
@@ -4021,13 +4994,19 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: h,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "mounted-guns": ([]) => [
+  "mounted-guns": standardAbility(
+    "",
+    ([]) => [
     // Replaces Springald Ship weaponry with Cannons which provide greater range and damage.
-  ],
+  ]
+  ),
 
-  "fine-tuned-guns": ([d, bd]) => [
+  "fine-tuned-guns": standardAbility(
+    "",
+    ([d, bd]) => [
     // Increase damage of Bombards by +20%. Bombards gain +50% damage vs Infantry.
     {
       property: "siegeAttack",
@@ -4044,9 +5023,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseSpeedByPercent(1, bd),
       type: "bonus",
     },
-  ],
+  ]
+  ),
 
-  fervor: ([tiles, damage]) => [
+  "fervor": standardAbility(
+    "",
+    ([tiles, damage]) => [
     //Improve the range of Saint's Blessing by +5 tiles and the damage granted by Saint's Blessing by +1.
     {
       property: "unknown",
@@ -4069,9 +5051,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: damage,
       type: "influence",
     },
-  ],
+  ]
+  ),
 
-  "saints-veneration": ([d]) => [
+  "saints-veneration": standardAbility(
+    "",
+    ([d]) => [
     // Increase the health of Warrior Monks by +100.
     {
       property: "hitpoints",
@@ -4080,9 +5065,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "knight-poleaxes": ([d]) => [
+  "knight-poleaxes": standardAbility(
+    "",
+    ([d]) => [
     // Knights equip a poleax, increasing their melee damage by +4.
     {
       property: "meleeAttack",
@@ -4091,9 +5079,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "mounted-training": ([r]) => [
+  "mounted-training": standardAbility(
+    "",
+    ([r]) => [
     // Increase weapon range of Horse Archers by +1 and unlock the Gallop ability.
     // \nGallop: Activate to move at maximum speed with +2 tile weapon range for 8 seconds.
     {
@@ -4103,9 +5094,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: r,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "siege-crew-training": ([]) => [
+  "siege-crew-training": standardAbility(
+    "",
+    ([]) => [
     // Setup and teardown speed of Trebuchets and Magonels is instant.
     {
       property: "attackSpeed",
@@ -4114,9 +5108,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 0, // Todo, figure out real timings
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "wandering-town": ([d, hp, s]) => [
+  "wandering-town": standardAbility(
+    "",
+    ([d, hp, s]) => [
     // Ram damage increased by +50%. Rams heal 2 health every 1 second.
     {
       property: "siegeAttack",
@@ -4132,10 +5129,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: hp,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "castle-turret": ([i]) => [
-    // Increase the damage of arrows fired from this Wooden Fortress by +2.
+  "castle-turret": standardAbility(
+    "Increase the damage of arrows fired from this Wooden Fortress by +{1}.",
+    ([i]) => [
     {
       property: "rangedAttack",
       select: { id: ["wooden-fortress"] },
@@ -4143,10 +5142,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "castle-watch": ([i]) => [
-    // Increase the sight range of this Wooden Fortress by 6 tiles.
+  "castle-watch": standardAbility(
+    "Increase the sight range of this Wooden Fortress by {1} tiles.",
+    ([i]) => [
     {
       property: "lineOfSight",
       select: { id: ["wooden-fortress"] },
@@ -4154,11 +5155,16 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
   // Todo, these weapons are already on the building, this just unlocks them
-  arrowslits: ([]) => [
-    // Add defensive arrowslits to this structure.
+  "arrowslits": standardAbility(
+    [
+      "Add defensive arrowslits to this structure and increase garrison arrow range by +{1}.",
+      "Add defensive arrowslits to this structure and increase garrison arrow range by +{1}. Only one weapon emplacement can be added."
+    ],
+    ([]) => [
     {
       property: "unknown",
       select: { id: ["wooden-fortress", "outpost"] },
@@ -4166,10 +5172,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "handcannon-slits": ([]) => [
-    // Add defensive handcannon slits to this structure.
+  "handcannon-slits": standardAbility(
+    "Add defensive handcannon slits to this structure and increases garrison arrow range by +{1}. Only one weapon emplacement can be added.",
+    ([]) => [
     {
       property: "unknown",
       select: { id: ["outpost"] },
@@ -4177,9 +5185,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "springald-emplacement": ([]) => [
+  "springald-emplacement": standardAbility(
+    "",
+    ([]) => [
     // Add a defensive springald emplacement to this structure.
     {
       property: "unknown",
@@ -4188,9 +5199,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "cannon-emplacement": ([]) => [
+  "cannon-emplacement": standardAbility(
+    "",
+    ([]) => [
     // Add a defensive cannon emplacement to this structure.
     {
       property: "unknown",
@@ -4199,9 +5213,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: 1,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "fortify-outpost": ([hp, a]) => [
+  "fortify-outpost": standardAbility(
+    "Add +{1} health and +{2} fire armor to this Outpost.",
+    ([hp, a]) => [
     // Add +1000 health and  +5 fire armor to this Outpost.
     {
       property: "hitpoints",
@@ -4217,9 +5234,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: a,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  towara: ([c, s, r]) => [
+  "towara": standardAbility(
+    "",
+    ([c, s, r]) => [
     // Increase the carry capacity of Villagers by +3, their movement speed by +7%, and +25% gather rate from Berry Bushes.
     {
       property: "carryCapacity",
@@ -4242,9 +5262,11 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, r),
       type: "passive",
     },
-  ],
-  takezaiku: ([c, s, r]) => [
-    // Increase the carry capacity of Villagers by +3, their movement speed by +7%, and +25% gather rate from Berry Bushes.
+  ]
+  ),
+  "takezaiku": standardAbility(
+    "Increase the carry capacity of Villagers by +{1}, their movement speed by +{2}%, and +{3}% gather rate from Berry Bushes.",
+    ([c, s, r]) => [
     {
       property: "carryCapacity",
       select: { id: ["villager"] },
@@ -4266,9 +5288,11 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, r),
       type: "passive",
     },
-  ],
-  fudasashi: ([c, s, r]) => [
-    // Increase the carry capacity of Villagers by +3, their movement speed by +7%, and +25% gather rate from Berry Bushes.
+  ]
+  ),
+  "fudasashi": standardAbility(
+    "Increase the carry capacity of Villagers by +{1}, their movement speed by +{2}%, and +{3}% gather rate from Berry Bushes.",
+    ([c, s, r]) => [
     {
       property: "carryCapacity",
       select: { id: ["villager"] },
@@ -4290,9 +5314,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, r),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "copper-plating": ([i]) => [
+  "copper-plating": standardAbility(
+    "",
+    ([i]) => [
     //Improves the fire and ranged armor of ships by +2%.
 
     {
@@ -4309,9 +5336,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  tatara: ([i]) => [
+  "tatara": standardAbility(
+    "",
+    ([i]) => [
     // Increase the melee damage of all non-siege units by +1.
     {
       property: "meleeAttack",
@@ -4320,9 +5350,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  hizukuri: ([i]) => [
+  "hizukuri": standardAbility(
+    "",
+    ([i]) => [
     // Increase the melee damage of all non-siege units by +1.
     {
       property: "meleeAttack",
@@ -4331,9 +5364,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "kobuse-gitae": ([i]) => [
+  "kobuse-gitae": standardAbility(
+    "",
+    ([i]) => [
     // Increase the melee damage of all non-siege units by +1.
     {
       property: "meleeAttack",
@@ -4342,9 +5378,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "yaki-ire": ([i]) => [
+  "yaki-ire": standardAbility(
+    "",
+    ([i]) => [
     // Increase the melee damage of all non-siege units by +1.
     {
       property: "meleeAttack",
@@ -4353,9 +5392,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: i,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "oda-tactics": ([i]) => [
+  "oda-tactics": standardAbility(
+    "",
+    ([i]) => [
     // Increase health, damage, and torch damage of melee infantry by 20%.
 
     {
@@ -4379,9 +5421,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, i),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "daimyo-manor": ([b, hp, fhr]) => [
+  "daimyo-manor": standardAbility(
+    "",
+    ([b, hp, fhr]) => [
     // Increases the production cap of Bannerman Samurai by +1 and provides a free Villager.
     // Increases Town Center health by +1000, adds an additional arrow slit, and adds an aura which enhances Villagers harvest rate from Farms by +25%.
     {
@@ -4398,9 +5443,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, fhr),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "daimyo-palace": ([b, hp, fa, fhr]) => [
+  "daimyo-palace": standardAbility(
+    "",
+    ([b, hp, fa, fhr]) => [
     // Increases the production cap of Bannerman Samurai by +2 and provides a free Villager.
     // Increases Town Center health by +2000, fire armor by +2, adds an additional arrow slit, and adds an aura which enhances Villagers harvest rate from Farms by +50%.
     {
@@ -4424,9 +5472,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, fhr),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "shogunate-castle": ([b, hp, fa, fhr]) => [
+  "shogunate-castle": standardAbility(
+    "",
+    ([b, hp, fa, fhr]) => [
     // Increases the production cap of Bannerman Samurai by +3 and provides a free Villager.
     // Increases Town Center health by +3000, fire armor by +3, adds an aura which enhances Villagers harvest rate from Farms by +75%, and equips a Rocket Emplacement.
     {
@@ -4450,9 +5501,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, fhr),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "kabura-ya-whistling-arrow": ([d]) => [
+  "kabura-ya-whistling-arrow": standardAbility(
+    "",
+    ([d]) => [
     // Onna-Musha fire a whistling arrow when an enemy is seen, increasing move speed for 10 seconds.
     {
       property: "moveSpeed",
@@ -4461,9 +5515,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  odachi: ([d]) => [
+  "odachi": standardAbility(
+    "",
+    ([d]) => [
     // Equip Samurai with an Odachi, a long sword that deals +4 bonus damage against infantry.
     {
       property: "meleeAttack",
@@ -4473,9 +5530,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "do-maru-armor": ([d]) => [
+  "do-maru-armor": standardAbility(
+    "",
+    ([d]) => [
     // Increase Mounted Samurai move speed by +10% while Deflective Armor is active.
     {
       property: "moveSpeed",
@@ -4484,9 +5544,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "nagae-yari": ([r, d]) => [
+  "nagae-yari": standardAbility(
+    "",
+    ([r, d]) => [
     // Spearmen are equipped with a stronger spear that increases weapon range by +20% and damage against cavalry by +20%.
     {
       property: "maxRange",
@@ -4503,9 +5566,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: round(toPercent(d) * 28) + 5, // total bonus vs cav for elite, + elite bonus damage
       type: "bonus",
     },
-  ],
+  ]
+  ),
 
-  "war-horses": ([d]) => [
+  "war-horses": standardAbility(
+    "",
+    ([d]) => [
     // Gilded Knights take -25% damage while charging.
     {
       property: "unknown",
@@ -4514,9 +5580,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: decreaseByPercent(1, d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "dragon-fire": ([d]) => [
+  "dragon-fire": standardAbility(
+    "",
+    ([d]) => [
     // Gilded Spearman torches deal area of effect damage.
     {
       property: "unknown",
@@ -4525,9 +5594,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "golden-cuirass": ([hp, d]) => [
+  "golden-cuirass": standardAbility(
+    "",
+    ([hp, d]) => [
     // Gilded Men-at-Arms who fall below 20% health take -20% damage.
     {
       property: "unknown",
@@ -4536,9 +5608,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: decreaseByPercent(1, d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "dragon-scale-leather": ([r]) => [
+  "dragon-scale-leather": standardAbility(
+    "",
+    ([r]) => [
     // Increase the ranged armor of Gilded Archers by +3.
     {
       property: "rangedArmor",
@@ -4547,9 +5622,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: r,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  zornhau: ([dot, dur]) => [
+  "zornhau": standardAbility(
+    "",
+    ([dot, dur]) => [
     // Gilded Landsknecht equip a halberd weapon that wounds enemies. When struck by this weapon, a unit will bleed for 2 damage every second. Lasts 10 seconds.
     // Any healing effect will remove the bleed.
     {
@@ -4559,9 +5637,12 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: dot,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
-  "bodkin-bolts": ([d]) => [
+  "bodkin-bolts": standardAbility(
+    "",
+    ([d]) => [
     // Gilded Crossbowmen deal +10 damage against Siege units.
     {
       property: "rangedAttack",
@@ -4571,11 +5652,14 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "bonus",
     },
-  ],
+  ]
+  ),
 
   // Zhu xi
 
-  "advanced-administration": ([hp, carryCapacity]) => [
+  "advanced-administration": standardAbility(
+    "",
+    ([hp, carryCapacity]) => [
     // Imperial Officials gain 150 health and their maximum Gold carried is increased by +80. Imperial Official limit increased by +2.
     {
       property: "hitpoints",
@@ -4591,19 +5675,28 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: carryCapacity,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
-  "cloud-of-terro": placeholderAbility({ id: ["bombard"] }),
-  // Adds area of effect damage to Bombards.
+  "cloud-of-terror": placeholderAbility(
+    "Adds area of effect damage to Bombards.",
+    { id: ["bombard"] }
+  ),
 
-  "roar-of-the-dragon": placeholderAbility({ id: ["spearman", "horseman"] }),
-  // Spearmen and Horsemen gain a Fire Lance when charging.
+  "roar-of-the-dragon": placeholderAbility(
+    "Spearmen and Horsemen gain a Fire Lance when charging.",
+    { id: ["spearman", "horseman"] }
+  ),
 
-  "dynastic-protectors": placeholderAbility({ id: ["yuan-raider", "imperial-guard", "stable"] }),
-  // Allows production of unique cavalry units, the Imperial Guard, and the Yuan Raider.
+  "dynastic-protectors": placeholderAbility(
+    "Allows production of unique cavalry units, the Imperial Guard, and the Yuan Raider.",
+    { id: ["yuan-raider", "imperial-guard", "stable"] }
+  ),
 
   // Increase House line of sight by 7 tiles and improve their construction speed by 500%.
-  "border-settlements": ([los]) => [
+  "border-settlements": standardAbility(
+    "Increase House line of sight by {1} tiles and improve their construction speed by {2}%.",
+    ([los, speed]) => [
     {
       property: "lineOfSight",
       select: { id: ["house"] },
@@ -4611,10 +5704,13 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: los,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
   //Horseman damage vs. Workers increased by +2. Workers killed by your Horsemen reward +20 Gold.
-  expilatores: ([d]) => [
+  "expilatores": standardAbility(
+    "",
+    ([d]) => [
     {
       property: "meleeAttack",
       select: { id: ["horseman"] },
@@ -4623,10 +5719,13 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: d,
       type: "bonus",
     },
-  ],
+  ]
+  ),
 
   // Varangian Guard increase their move speed by +30% when activating Berserking.
-  "ferocious-speed": ([ms]) => [
+  "ferocious-speed": standardAbility(
+    "",
+    ([ms]) => [
     {
       property: "moveSpeed",
       select: { id: ["varangian-guard"] },
@@ -4634,10 +5733,13 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseSpeedByPercent(1, ms),
       type: "ability",
     },
-  ],
+  ]
+  ),
 
   // Counterweight Trebuchets deal +30% increased damage and engulf their target with Greek Fire, dealing area damage.
-  "greek-fire-projectiles": ([d]) => [
+  "greek-fire-projectiles": standardAbility(
+    "",
+    ([d]) => [
     {
       property: "siegeAttack",
       select: { id: ["counterweight-trebuchet"] },
@@ -4645,22 +5747,37 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseByPercent(1, d),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
   // Upgrade all Dromons to leave Greek Fire on the surface or ground where they attack. Man The Sails cooldown also reduced to 1 seconds.
-  "heavy-dromon": placeholderAbility({ id: ["dromon"] }),
+  "heavy-dromon": placeholderAbility(
+    "",
+    { id: ["dromon"] }
+  ),
 
   // Demolition ships deal full damage to all enemies in explosion radius.
-  "liquid-explosives": placeholderAbility({ id: ["demolition-ship"] }),
+  "liquid-explosives": placeholderAbility(
+    "",
+    { id: ["demolition-ship"] }
+  ),
 
   // Add a defensive mangonel emplacement to this structure.
-  "mangonel-emplacement": placeholderAbility({ id: ["keep"] }),
+  "mangonel-emplacement": placeholderAbility(
+    "Add a defensive springald emplacement to this structure. Only one weapon emplacement can be added.",
+    { id: ["keep"] }
+  ),
 
   // Enemy units hit by Trample become vulnerable and receive +20% increased damage for 12 seconds.
-  numeri: placeholderAbility({ id: ["cataphract"] }),
+  numeri: placeholderAbility(
+    "",
+    { id: ["cataphract"] }
+  ),
 
   // Increase the armor of Cataphracts by +1, move speed of Limitanei by +15%, and attack speed of Varangian Guard by +15%.
-  "teardrop-shields": ([a, ms, as]) => [
+  "teardrop-shields": standardAbility(
+    "",
+    ([a, ms, as]) => [
     {
       property: "meleeArmor",
       select: { id: ["cataphract"] },
@@ -4682,10 +5799,13 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseAttackSpeedByPercent(as),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
   // Increase Jeanne d'Arc's health and damage by 25% and gain +1 armor. Increase the health and damage of Jeanne's Companions by 20%.
-  "companion-equipment": ([jeanne, armor, companions]) => [
+  "companion-equipment": standardAbility(
+    "",
+    ([jeanne, armor, companions]) => [
     {
       property: "hitpoints",
       select: { id: ["jeannes-champion", "jeannes-rider"] },
@@ -4770,10 +5890,13 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: armor,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
   // Increases Shinto Priest health by +40, healing rate by +60%, and movement speed by +15%.
-  "shinto-rituals": ([hp, hr, ms]) => [
+  "shinto-rituals": standardAbility(
+    "",
+    ([hp, hr, ms]) => [
     {
       property: "hitpoints",
       select: { id: ["shinto-priest"] },
@@ -4795,10 +5918,13 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: increaseSpeedByPercent(1, ms),
       type: "passive",
     },
-  ],
+  ]
+  ),
 
   // Increases the maximum number of Yorishiro by +2. Immediately spawns 2 Yorishiro at the Floating Gate.
-  "bunrei": ([b]) => [
+  "bunrei": standardAbility(
+    "",
+    ([b]) => [
     {
       property: "unknown",
       select: { id: ["floating-gate"] },
@@ -4806,10 +5932,13 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: b,
       type: "ability",
     },
-  ],
+  ]
+  ),
 
   // Increases the Line of Sight of all buildings by +2 tiles. Every 3 minutes, all economic units heal for 100% of their health over 3 seconds.
-  "gion-festival": ([los]) => [
+  "gion-festival": standardAbility(
+    "",
+    ([los]) => [
     {
       property: "lineOfSight",
       select: { class: [["building"]] },
@@ -4817,10 +5946,13 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: los,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
   // Buddhist Monks generate 25 gold every 60 seconds.
-  "zen": ([g]) => [
+  "zen": standardAbility(
+    "",
+    ([g]) => [
     {
       property: "goldGeneration",
       select: { id: ["buddhist-monk"] },
@@ -4828,14 +5960,19 @@ export const technologyModifiers: Record<string, (values: number[], item: Item) 
       value: g,
       type: "passive",
     },
-  ],
+  ]
+  ),
 
   // Buddhist Temples cast Sohei Sutra on a nearby enemy every 6 seconds.
-  "five-mountain-ministries": placeholderAbility({ id: ["buddhist-temple", "temple-of-equality"] }),
+  "five-mountain-ministries": placeholderAbility(
+    "",
+    { id: ["buddhist-temple", "temple-of-equality"] }
+  ),
 
   // Upgrades Buddhist Conversion to Nehan Conversion, which has a 25% shorter cooldown and additionally improves nearby allied units movement speed by +25% when cast.
-  "nehan": placeholderAbility({ id: ["buddhist-monk"] }),
-
-
+  "nehan": placeholderAbility(
+    "",
+    { id: ["buddhist-monk"] }
+  ),
 
 };

@@ -15,6 +15,11 @@ export function getLocale(locale: string) {
   return dictionary.get(locale);
 }
 
+export function getTranslationRaw(id: number, locale = "en") {
+  const translation = getLocale(locale)?.get(id);
+  return translation;
+}
+
 export function getTranslation(id: number, args: string[] = [], locale = "en") {
   const translation = getLocale(locale)?.get(id);
   if (!translation) return NO_TRANSLATION_FOUND + ` (${id})`;

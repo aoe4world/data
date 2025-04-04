@@ -1,0 +1,29 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+    {
+      "type": "npm",
+      "script": "parse",
+      "problemMatcher": [
+        {
+          "owner": "explorer-parser",
+          "fileLocation": "absolute",
+          "pattern": {
+            "regexp": "^\\[(Error|Warning|Info)\\] (.*):(\\d+)(?::(\\d+))?: (.*)",
+            "severity": 1,
+            "file": 2,
+            "line": 3,
+            "column": 4,
+            "message": 5
+          }
+        }
+      ],
+      "label": "yarn: parse - data",
+      "detail": "ts-node ./src/attrib/run.ts --essence",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}

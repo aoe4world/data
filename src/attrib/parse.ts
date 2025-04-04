@@ -1,5 +1,5 @@
 import { ITEM_TYPES } from "../lib/config";
-import { getTranslation, NO_TRANSLATION_FOUND } from "./translations";
+import { getTranslation, getTranslationRaw, NO_TRANSLATION_FOUND } from "./translations";
 import { parseWeapons } from "./weapons";
 import { ignoreForNow } from "./config";
 import { slugify } from "../lib/utils/string";
@@ -104,9 +104,11 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
     };
 
     if (type === ITEM_TYPES.ABILITIES) {
-      const translationParams = (isBuff ? ui_ext.description_formatter : ui_ext.help_text_formatter)?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
+      const translationFormatter = (isBuff ? ui_ext.description_formatter : ui_ext.help_text_formatter);
+      const translationFormat = getTranslationRaw(translationFormatter?.formatter || ui_ext.help_text);
+      const translationParams = translationFormatter?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
       const effectsFactory = abilityModifiers[baseId];
-      const effects = effectsFactory?.(translationParams, item) ?? [];
+      const effects = effectsFactory?.call(translationFormat, translationParams, item) ?? [];
 
       if (isBuff) {
         const ability: Ability = {
@@ -191,9 +193,11 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
     }
 
     if (type === ITEM_TYPES.TECHNOLOGIES) {
-      const translationParams = ui_ext.help_text_formatter?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
+      const translationFormatter = ui_ext.help_text_formatter;
+      const translationFormat = getTranslationRaw(translationFormatter?.formatter || ui_ext.help_text);
+      const translationParams =translationFormatter?.formatter_arguments?.map((x) => Object.values(x)[0] ?? x) ?? [];
       const effectsFactory = technologyModifiers[baseId];
-      const effects = effectsFactory?.(translationParams, item) ?? [];
+      const effects = effectsFactory?.call(translationFormat, translationParams, item) ?? [];
 
       // if (item.id == "upgrade-militia-4-4") {
       if (effects.length == 0) {
