@@ -1,0 +1,96 @@
+{
+  "id": "lancaster-castle-1",
+  "baseId": "lancaster-castle",
+  "type": "building",
+  "name": "Lancaster Castle",
+  "pbgid": 5000041,
+  "attribName": "building_landmark_age1_lancastercastle_lan",
+  "age": 1,
+  "civs": [
+    "hl"
+  ],
+  "description": "Defensive Landmark that can do a one-time muster of units from Manors in each Age.\nGenerates influence that grants nearby Manors +500 health and an arrowslit emplacement.",
+  "classes": [
+    "age",
+    "ii",
+    "-",
+    "military",
+    "landmark"
+  ],
+  "displayClasses": [
+    "Age II - Military Landmark"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 400,
+    "wood": 0,
+    "stone": 0,
+    "gold": 200,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 600,
+    "popcap": 0,
+    "time": 190
+  },
+  "producedBy": [
+    "villager"
+  ],
+  "icon": "https://data.aoe4world.com/images/buildings/lancaster-castle-1.png",
+  "hitpoints": 5000,
+  "weapons": [
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 12,
+      "speed": 1.25,
+      "range": {
+        "min": 0,
+        "max": 8
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.125,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 1,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_castle_lancaster_arrow_lan",
+      "pbgid": 9002024
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 50
+    }
+  ],
+  "sight": {
+    "inner_height": 8,
+    "inner_radius": 40,
+    "outer_height": 0,
+    "outer_radius": 41,
+    "base": 41,
+    "line": 41,
+    "height": 8
+  },
+  "influences": []
+}

@@ -1,0 +1,187 @@
+{
+  "id": "heavy-spearman-4",
+  "baseId": "heavy-spearman",
+  "type": "unit",
+  "name": "Elite Heavy Spearman",
+  "pbgid": 8999909,
+  "attribName": "unit_heavy_spearman_4_tem",
+  "age": 4,
+  "civs": [
+    "kt"
+  ],
+  "description": "Heavy Infantry excellent against mounted units.\n+ Stronger when close to Fortresses\n+ Anti-cavalry specialist\n+ High armor\n+ Has a stronger spearwall\n- Countered by Crossbowmen",
+  "classes": [
+    "heavy",
+    "melee",
+    "infantry"
+  ],
+  "displayClasses": [
+    "Heavy Melee Infantry"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 70,
+    "wood": 0,
+    "stone": 0,
+    "gold": 30,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 100,
+    "popcap": 1,
+    "time": 19
+  },
+  "producedBy": [
+    "barracks"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/heavy-spearman-4.png",
+  "hitpoints": 170,
+  "weapons": [
+    {
+      "name": "Spear",
+      "type": "melee",
+      "damage": 13,
+      "speed": 1.875,
+      "range": {
+        "min": 0,
+        "max": 0.295
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 30,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "war",
+                "elephant"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.75,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0.75
+      },
+      "attribName": "weapon_heavy_spearman_4_tem",
+      "pbgid": 9000017
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch",
+      "pbgid": 123518
+    },
+    {
+      "name": "Spearwall",
+      "type": "melee",
+      "damage": 15,
+      "speed": 1.125,
+      "range": {
+        "min": 0.25,
+        "max": 1.045
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 28,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "war",
+                "elephant"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 1,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_heavy_spearman_4_brace_tem",
+      "pbgid": 9000020
+    }
+  ],
+  "armor": [
+    {
+      "type": "melee",
+      "value": 5
+    },
+    {
+      "type": "ranged",
+      "value": 5
+    }
+  ],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 12,
+    "outer_height": -15,
+    "outer_radius": 36,
+    "base": 21.6,
+    "line": 36,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.125
+  }
+}

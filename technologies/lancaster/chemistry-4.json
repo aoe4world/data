@@ -1,0 +1,70 @@
+{
+  "id": "chemistry-4",
+  "baseId": "chemistry",
+  "type": "technology",
+  "name": "Chemistry",
+  "pbgid": 124734,
+  "attribName": "upgrade_siege_chemistry",
+  "age": 4,
+  "civs": [
+    "hl"
+  ],
+  "description": "Advancements in alchemical research increase the bonus damage of all gunpowder siege weapons by +25%.",
+  "classes": [
+    "gunpowder",
+    "technology"
+  ],
+  "displayClasses": [
+    "Gunpowder Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 200,
+    "wood": 0,
+    "stone": 0,
+    "gold": 650,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 850,
+    "popcap": 0,
+    "time": 60
+  },
+  "producedBy": [
+    "university"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
+  "effects": [
+    {
+      "property": "rangedAttack",
+      "select": {
+        "class": [
+          [
+            "gunpowder"
+          ],
+          [
+            "warship"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.25,
+      "type": "passive"
+    },
+    {
+      "property": "siegeAttack",
+      "select": {
+        "class": [
+          [
+            "gunpowder"
+          ],
+          [
+            "warship"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.25,
+      "type": "passive"
+    }
+  ]
+}

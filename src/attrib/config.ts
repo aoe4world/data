@@ -211,6 +211,11 @@ export const hardcodedDiscovery = {
     "abilities/modal_abilities/chinese/official_supervise_building_target_chi",
     "upgrade/races/chinese_ha_01/research/upgrade_dynasty_econ_bonus_chi_ha_01",
   ],
+  lancaster: [
+  ],
+  templar: [
+
+  ],
 };
 
 export const hardcodedDiscoveryCommon = [

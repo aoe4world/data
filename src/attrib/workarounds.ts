@@ -45,7 +45,7 @@ workaround("Remove all garrison and emplacement weapons from capital town center
     const bow = item.weapons.find((x) => x.name === "Bow");
     if (bow) {
       bow.burst = { count: 3 };
-      if (item.baseId === "capital-town-center" && item.civs.every((c) => c == "en")) bow.burst.count = 6;
+      if (item.baseId === "capital-town-center" && item.civs.every((c) => c == "en"  || c == "hl")) bow.burst.count = 6;
       item.weapons = [bow];
     } else item.weapons = [];
   },
@@ -167,7 +167,7 @@ workaround("Make Delhi Village Fortresses available from Castle Age", {
 });
 
 workaround("Make English Wynguard Forces available from Imperial Age", {
-  ...overrideAge(["wynguard-army", "wynguard-footmen", "wynguard-raiders", "wynguard-rangers"], 4, ["en"]),
+  ...overrideAge(["wynguard-army", "wynguard-footmen", "wynguard-raiders", "wynguard-rangers"], 4, ["en", "hl"]),
 });
 
 //could do this by creating dependency from techs that unlock abilities, but doing workaround for the time being
@@ -241,7 +241,7 @@ workaround("Make Imperial Spies available in Castle Age", {
 });
 
 workaround("Make Abbey Healing available in Feudal Age", {
-  ...overrideAge(["ability-abbey-healing"], 2, ["en"]),
+  ...overrideAge(["ability-abbey-healing"], 2, ["en", "hl"]),
 });
 
 workaround("Make Food Festival available in Imperial Age", {
@@ -1176,7 +1176,7 @@ workaround("Remove torch bonus vs siege from all units except villagers", {
 });
 
 workaround("Remove all weapons but the knife and torch from the villagers, except English", {
-  predicate: (item) => item.type === "unit" && item.baseId === "villager" && !item.civs.includes("en"),
+  predicate: (item) => item.type === "unit" && item.baseId === "villager" && !(item.civs.includes("en") || item.civs.includes("hl")),
   mutator: (item) => {
     item = item as Unit;
     const torch = item.weapons.find((w) => w.name === "Torch")!;
@@ -1187,7 +1187,7 @@ workaround("Remove all weapons but the knife and torch from the villagers, excep
 });
 
 workaround("Remove all weapons but the bow and torch from the English villager", {
-  predicate: (item) => item.type === "unit" && item.baseId === "villager" && item.civs.includes("en"),
+  predicate: (item) => item.type === "unit" && item.baseId === "villager" && (item.civs.includes("en") || item.civs.includes("hl")),
   mutator: (item) => {
     item = item as Unit;
     const bow = item.weapons.find((w) => w.attribName === "weapon_villager_militarized_2_eng")!;

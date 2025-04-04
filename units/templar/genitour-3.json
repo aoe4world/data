@@ -1,0 +1,95 @@
+{
+  "id": "genitour-3",
+  "baseId": "genitour",
+  "type": "unit",
+  "name": "Genitour",
+  "pbgid": 8999907,
+  "attribName": "unit_genitour_3_tem",
+  "age": 3,
+  "civs": [
+    "kt"
+  ],
+  "description": "Highly mobile ranged cavalry that throws javelins.\n+ High mobility\n+ Exceptional versus ranged units\n+ High ranged armor\n- Weak versus Melee",
+  "classes": [
+    "light",
+    "ranged",
+    "cavalry"
+  ],
+  "displayClasses": [
+    "Light Ranged Cavalry"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 60,
+    "wood": 60,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 120,
+    "popcap": 1,
+    "time": 22.5
+  },
+  "producedBy": [
+    "archery-range"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/genitour-3.png",
+  "hitpoints": 100,
+  "weapons": [
+    {
+      "name": "Javelin",
+      "type": "ranged",
+      "damage": 5,
+      "speed": 1.625,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "ranged"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.625,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0.875,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_genitour_3_tem",
+      "pbgid": 9000023
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 4
+    }
+  ],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 10,
+    "outer_height": -15,
+    "outer_radius": 34,
+    "base": 19.6,
+    "line": 34,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.625
+  }
+}

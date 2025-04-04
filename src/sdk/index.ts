@@ -15,9 +15,11 @@ import ch from "../../civilizations/chinese.json";
 import de from "../../civilizations/delhi.json";
 import en from "../../civilizations/english.json";
 import fr from "../../civilizations/french.json";
+import hl from "../../civilizations/lancaster.json";
 import hr from "../../civilizations/hre.json";
 import ja from "../../civilizations/japanese.json";
 import je from "../../civilizations/jeannedarc.json";
+import kt from "../../civilizations/templar.json";
 import ma from "../../civilizations/malians.json";
 import mo from "../../civilizations/mongols.json";
 import od from "../../civilizations/orderofthedragon.json";
@@ -39,9 +41,11 @@ const civilizations: Record<CivAbbr, CivInfo> & { Get: typeof GetCiv; list: CivI
   de,
   en,
   fr,
+  hl,
   hr,
   ja,
   je,
+  kt,
   ma,
   mo,
   od,
@@ -49,7 +53,7 @@ const civilizations: Record<CivAbbr, CivInfo> & { Get: typeof GetCiv; list: CivI
   ru,
   zx,
   Get: GetCiv,
-  list: [ab, ay, by, ch, de, en, fr, hr, ja, je, ma, mo, od, ot, ru, zx],
+  list: [ab, ay, by, ch, de, en, fr, hl, hr, ja, je, kt, ma, mo, od, ot, ru, zx],
 };
 
 function GetCiv(slug: CivSlug | CivAbbr | CivConfig) {

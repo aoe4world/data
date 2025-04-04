@@ -1,0 +1,74 @@
+{
+  "id": "steeled-arrow-2",
+  "baseId": "steeled-arrow",
+  "type": "technology",
+  "name": "Steeled Arrow",
+  "pbgid": 188269,
+  "attribName": "upgrade_ranged_damage_i",
+  "age": 2,
+  "civs": [
+    "kt"
+  ],
+  "description": "Increase the ranged damage of all arrows and bolts by +1.",
+  "classes": [
+    "ranged",
+    "damage",
+    "technology",
+    "1/3"
+  ],
+  "displayClasses": [
+    "Ranged Damage Technology 1/3"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 50,
+    "stone": 0,
+    "gold": 125,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 175,
+    "popcap": 0,
+    "time": 60
+  },
+  "producedBy": [
+    "blacksmith"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/steeled-arrow-2.png",
+  "effects": [
+    {
+      "property": "rangedAttack",
+      "select": {
+        "class": [
+          [
+            "ranged",
+            "cavalry"
+          ],
+          [
+            "archer",
+            "ship"
+          ]
+        ],
+        "id": [
+          "longbowman",
+          "zhuge-nu",
+          "archer",
+          "arbaletrier",
+          "crossbowman",
+          "wynguard-ranger",
+          "javelin-thrower",
+          "gilded-crossbowman",
+          "gilded-archer",
+          "yumi-ashigaru",
+          "zhuge-nu",
+          "bedouin-skirmisher",
+          "desert-raider",
+          "yumi-bannerman"
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "passive"
+    }
+  ]
+}

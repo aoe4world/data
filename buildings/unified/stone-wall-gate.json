@@ -12,9 +12,11 @@
     "de",
     "en",
     "fr",
+    "hl",
     "hr",
     "ja",
     "je",
+    "kt",
     "ma",
     "od",
     "ot",
@@ -805,6 +807,155 @@
       "age": 2,
       "civs": [
         "zx"
+      ],
+      "description": "Heavy defensive gate. Must be built on a Stone Wall segment.\nInfantry can use the gate to access the top of the walls.",
+      "classes": [
+        "defensive",
+        "building"
+      ],
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 50,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 50,
+        "popcap": 0,
+        "time": 30
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-gate-2.png",
+      "hitpoints": 3000,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "inner_height": 8,
+        "inner_radius": 10,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
+        "line": 25,
+        "height": 8
+      },
+      "influences": []
+    },
+    {
+      "id": "stone-wall-gate-2",
+      "baseId": "stone-wall-gate",
+      "type": "building",
+      "name": "Stone Wall Gate",
+      "pbgid": 5000222,
+      "attribName": "building_defense_stone_wall_gate_tem",
+      "age": 2,
+      "civs": [
+        "kt"
+      ],
+      "description": "Heavy defensive gate. Must be built on a Stone Wall segment.\nInfantry can use the gate to access the top of the walls.",
+      "classes": [
+        "defensive",
+        "building"
+      ],
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 50,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 50,
+        "popcap": 0,
+        "time": 30
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-gate-2.png",
+      "hitpoints": 3000,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 8,
+          "speed": 3.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 3.5,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_stone_walls_arrows_tem",
+          "pbgid": 9001829
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "inner_height": 8,
+        "inner_radius": 10,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
+        "line": 25,
+        "height": 8
+      },
+      "influences": [
+        "The Templar Headquarters and Fortresses grant Stone Walls in influence +25% health and an arrowslit emplacement."
+      ]
+    },
+    {
+      "id": "stone-wall-gate-2",
+      "baseId": "stone-wall-gate",
+      "type": "building",
+      "name": "Stone Wall Gate",
+      "pbgid": 5000033,
+      "attribName": "building_defense_wall_gate_lan",
+      "age": 2,
+      "civs": [
+        "hl"
       ],
       "description": "Heavy defensive gate. Must be built on a Stone Wall segment.\nInfantry can use the gate to access the top of the walls.",
       "classes": [

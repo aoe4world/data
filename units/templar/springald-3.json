@@ -1,0 +1,108 @@
+{
+  "id": "springald-3",
+  "baseId": "springald",
+  "type": "unit",
+  "name": "Springald",
+  "pbgid": 8999927,
+  "attribName": "unit_springald_3_tem",
+  "age": 3,
+  "civs": [
+    "kt"
+  ],
+  "description": "Anti-unit siege weapon. Fires bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Trivial damage vs. buildings",
+  "classes": [
+    "siege"
+  ],
+  "displayClasses": [
+    "Siege"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 150,
+    "stone": 0,
+    "gold": 100,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 250,
+    "popcap": 2,
+    "time": 20
+  },
+  "producedBy": [
+    "siege-workshop"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/springald-3.png",
+  "hitpoints": 85,
+  "weapons": [
+    {
+      "name": "Springald",
+      "type": "ranged",
+      "damage": 14,
+      "speed": 3.125,
+      "range": {
+        "min": 0,
+        "max": 8
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "melee",
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 12,
+          "type": "passive"
+        },
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 65,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.125,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 2.125,
+        "setup": 0,
+        "teardown": 0.25,
+        "cooldown": 0
+      },
+      "attribName": "weapon_springald_3",
+      "pbgid": 190303
+    }
+  ],
+  "armor": [
+    {
+      "type": "melee",
+      "value": 3
+    }
+  ],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 32,
+    "outer_height": -15,
+    "outer_radius": 56,
+    "base": 41.6,
+    "line": 56,
+    "height": 10
+  },
+  "movement": {
+    "speed": 0.875
+  }
+}

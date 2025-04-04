@@ -120,6 +120,82 @@
       "shared": {}
     },
     {
+      "id": "additional-barrels",
+      "name": "Additional Barrels",
+      "type": "technology",
+      "civs": [
+        "zx"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Nest of Bees Technology"
+      ],
+      "classes": [
+        "nest",
+        "of",
+        "bees",
+        "technology"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/additional-barrels-4.png",
+      "description": "Nest of Bees receive 3 additional Rocket Arrows.",
+      "variations": [
+        {
+          "id": "additional-barrels-4",
+          "baseId": "additional-barrels",
+          "type": "technology",
+          "name": "Additional Barrels",
+          "pbgid": 217078,
+          "attribName": "upgrade_gunpowder_cost_chi",
+          "age": 4,
+          "civs": [
+            "zx"
+          ],
+          "description": "Nest of Bees receive 3 additional Rocket Arrows.",
+          "classes": [
+            "nest",
+            "of",
+            "bees",
+            "technology"
+          ],
+          "displayClasses": [
+            "Nest of Bees Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 400,
+            "stone": 0,
+            "gold": 800,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 1200,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "siege-workshop"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/additional-barrels-4.png",
+          "effects": [
+            {
+              "property": "burst",
+              "select": {
+                "id": [
+                  "nest-of-bees",
+                  "clocktower-nest-of-bees"
+                ]
+              },
+              "effect": "change",
+              "value": 3,
+              "type": "passive"
+            }
+          ]
+        }
+      ],
+      "shared": {}
+    },
+    {
       "id": "advanced-administration",
       "name": "Advanced Administration",
       "type": "technology",
@@ -519,10 +595,10 @@
       ],
       "unique": false,
       "displayClasses": [
-        "Lancer Technology"
+        "Cavalry Technology"
       ],
       "classes": [
-        "lancer",
+        "cavalry",
         "technology"
       ],
       "minAge": 4,
@@ -542,11 +618,11 @@
           ],
           "description": "Investing in natural sciences increases the health of all cavalry by +25%.",
           "classes": [
-            "lancer",
+            "cavalry",
             "technology"
           ],
           "displayClasses": [
-            "Lancer Technology"
+            "Cavalry Technology"
           ],
           "unique": false,
           "costs": {
@@ -1023,7 +1099,19 @@
             "zhu-xis-library"
           ],
           "icon": "https://data.aoe4world.com/images/technologies/cloud-of-terror-4.png",
-          "effects": []
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "bombard"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability"
+            }
+          ]
         }
       ],
       "shared": {}
@@ -4022,7 +4110,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/technologies/professional-scouts-2.png",
-      "description": "Scouts gain the ability to carry animal carcasses and +100% damage against wild animals.\nScouts move -35% slower while carrying and cannot pick up Boar.",
+      "description": "Scouts gain the ability to carry animal carcasses and +100% damage against wild animals.\nScouts move -55% slower while carrying and cannot pick up Boar.",
       "variations": [
         {
           "id": "professional-scouts-2",
@@ -4035,7 +4123,7 @@
           "civs": [
             "zx"
           ],
-          "description": "Scouts gain the ability to carry animal carcasses and +100% damage against wild animals.\nScouts move -35% slower while carrying and cannot pick up Boar.",
+          "description": "Scouts gain the ability to carry animal carcasses and +100% damage against wild animals.\nScouts move -55% slower while carrying and cannot pick up Boar.",
           "classes": [
             "hunting",
             "technology"
@@ -4046,12 +4134,12 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 100,
+            "wood": 150,
             "stone": 0,
-            "gold": 275,
+            "gold": 300,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 375,
+            "total": 450,
             "popcap": 0,
             "time": 75
           },

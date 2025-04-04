@@ -1,0 +1,131 @@
+{
+  "id": "culverin-4",
+  "baseId": "culverin",
+  "type": "unit",
+  "name": "Culverin",
+  "pbgid": 5000108,
+  "attribName": "unit_siege_culverin_4_lan",
+  "age": 4,
+  "civs": [
+    "hl"
+  ],
+  "description": "Long-range mobile cannon with bonus vs buildings.\n+ Effective against Defenses\n+ Does not require setup to fire",
+  "classes": [
+    "siege",
+    "gunpowder"
+  ],
+  "displayClasses": [
+    "Siege",
+    "Gunpowder"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 325,
+    "stone": 0,
+    "gold": 550,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 875,
+    "popcap": 3,
+    "time": 45
+  },
+  "producedBy": [
+    "siege-workshop"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/culverin-4.png",
+  "hitpoints": 200,
+  "weapons": [
+    {
+      "name": "Cannon",
+      "type": "siege",
+      "damage": 40,
+      "speed": 3.625,
+      "range": {
+        "min": 1.25,
+        "max": 10.5
+      },
+      "modifiers": [
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 230,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 215,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 50,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "war",
+                "elephant"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 35,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0.75,
+        "reload": 2.25,
+        "setup": 0.25,
+        "teardown": 0.25,
+        "cooldown": 0
+      },
+      "attribName": "weapon_culverin_4",
+      "pbgid": 165122
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 40,
+    "outer_height": -15,
+    "outer_radius": 64,
+    "base": 49.6,
+    "line": 64,
+    "height": 10
+  },
+  "movement": {
+    "speed": 0.625
+  }
+}

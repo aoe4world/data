@@ -554,10 +554,10 @@
       ],
       "unique": false,
       "displayClasses": [
-        "Lancer Technology"
+        "Cavalry Technology"
       ],
       "classes": [
-        "lancer",
+        "cavalry",
         "technology"
       ],
       "minAge": 4,
@@ -577,11 +577,11 @@
           ],
           "description": "Investing in natural sciences increases the health of all cavalry by +25%.",
           "classes": [
-            "lancer",
+            "cavalry",
             "technology"
           ],
           "displayClasses": [
-            "Lancer Technology"
+            "Cavalry Technology"
           ],
           "unique": false,
           "costs": {
@@ -938,6 +938,65 @@
               "type": "passive"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "cistercian-abbeys",
+      "name": "Cistercian Abbeys",
+      "type": "technology",
+      "civs": [
+        "hr"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Religious Technology"
+      ],
+      "classes": [
+        "religious",
+        "technology"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/cistercian-abbeys-3.png",
+      "description": "Monasteries become self-sufficient, working their lands through Lay Brothers.\nVillagers can drop off resources in Monasteries.\nPrelates can be garrisoned in Monasteries to inspire all nearby Villagers, increasing their gather speed.",
+      "variations": [
+        {
+          "id": "cistercian-abbeys-3",
+          "baseId": "cistercian-abbeys",
+          "type": "technology",
+          "name": "Cistercian Abbeys",
+          "pbgid": 180214,
+          "attribName": "upgrade_benediction_hre",
+          "age": 3,
+          "civs": [
+            "hr"
+          ],
+          "description": "Monasteries become self-sufficient, working their lands through Lay Brothers.\nVillagers can drop off resources in Monasteries.\nPrelates can be garrisoned in Monasteries to inspire all nearby Villagers, increasing their gather speed.",
+          "classes": [
+            "religious",
+            "technology"
+          ],
+          "displayClasses": [
+            "Religious Technology"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 75,
+            "stone": 0,
+            "gold": 200,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 275,
+            "popcap": 0,
+            "time": 45
+          },
+          "producedBy": [
+            "regnitz-cathedral",
+            "monastery"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/cistercian-abbeys-3.png",
+          "effects": []
         }
       ]
     },
@@ -1347,7 +1406,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/devoutness-3.png",
-      "description": "Inspired Villagers gather resources +10% faster and construct buildings and defenses +25% quicker.",
+      "description": "Inspired Villagers gather resources +5% faster and construct buildings and defenses +25% quicker.",
       "variations": [
         {
           "id": "devoutness-3",
@@ -1360,7 +1419,7 @@
           "civs": [
             "hr"
           ],
-          "description": "Inspired Villagers gather resources +10% faster and construct buildings and defenses +25% quicker.",
+          "description": "Inspired Villagers gather resources +5% faster and construct buildings and defenses +25% quicker.",
           "classes": [
             "prelate",
             "technology"
@@ -1394,7 +1453,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.1,
+              "value": 1.05,
               "type": "influence"
             },
             {
@@ -1405,7 +1464,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.1,
+              "value": 1.05,
               "type": "influence"
             },
             {
@@ -1416,7 +1475,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.1,
+              "value": 1.05,
               "type": "influence"
             },
             {
@@ -1427,7 +1486,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.1,
+              "value": 1.05,
               "type": "influence"
             },
             {
@@ -3950,7 +4009,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/technologies/professional-scouts-2.png",
-      "description": "Scouts gain the ability to carry animal carcasses and +100% damage against wild animals.\nScouts move -35% slower while carrying and cannot pick up Boar.",
+      "description": "Scouts gain the ability to carry animal carcasses and +100% damage against wild animals.\nScouts move -55% slower while carrying and cannot pick up Boar.",
       "variations": [
         {
           "id": "professional-scouts-2",
@@ -3963,7 +4022,7 @@
           "civs": [
             "hr"
           ],
-          "description": "Scouts gain the ability to carry animal carcasses and +100% damage against wild animals.\nScouts move -35% slower while carrying and cannot pick up Boar.",
+          "description": "Scouts gain the ability to carry animal carcasses and +100% damage against wild animals.\nScouts move -55% slower while carrying and cannot pick up Boar.",
           "classes": [
             "hunting",
             "technology"
@@ -3974,12 +4033,12 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 100,
+            "wood": 150,
             "stone": 0,
-            "gold": 275,
+            "gold": 300,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 375,
+            "total": 450,
             "popcap": 0,
             "time": 75
           },
@@ -5045,7 +5104,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/technologies/steel-barding-3.png",
-      "description": "Grants Knights +2 melee and +2 ranged armor.",
+      "description": "Grants Knights and Black Riders +2 melee and +2 ranged armor.",
       "variations": [
         {
           "id": "steel-barding-3",
@@ -5058,7 +5117,7 @@
           "civs": [
             "hr"
           ],
-          "description": "Grants Knights +2 melee and +2 ranged armor.",
+          "description": "Grants Knights and Black Riders +2 melee and +2 ranged armor.",
           "classes": [
             "cavalry",
             "technology"

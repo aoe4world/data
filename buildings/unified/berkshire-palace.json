@@ -5,7 +5,8 @@
   "name": "Berkshire Palace",
   "type": "building",
   "civs": [
-    "en"
+    "en",
+    "hl"
   ],
   "unique": true,
   "displayClasses": [
@@ -60,6 +61,119 @@
         "villager"
       ],
       "icon": "https://data.aoe4world.com/images/buildings/berkshire-palace-3.png",
+      "hitpoints": 6500,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 14,
+          "speed": 0.5,
+          "range": {
+            "min": 0,
+            "max": 15
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.125,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 6
+          },
+          "attribName": "weapon_keep_arrows_incen_a",
+          "pbgid": 2118864
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        },
+        {
+          "type": "fire",
+          "value": 6
+        }
+      ],
+      "sight": {
+        "inner_height": 501,
+        "inner_radius": 60,
+        "outer_height": -15,
+        "outer_radius": 61,
+        "base": 60.97093023255814,
+        "line": 61,
+        "height": 501
+      },
+      "garrison": {
+        "capacity": 20,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk",
+          "cavalry"
+        ]
+      },
+      "influences": []
+    },
+    {
+      "id": "berkshire-palace-4",
+      "baseId": "berkshire-palace",
+      "type": "building",
+      "name": "Berkshire Palace",
+      "pbgid": 5000045,
+      "attribName": "building_landmark_age3_berkshire_lan",
+      "age": 4,
+      "civs": [
+        "hl"
+      ],
+      "description": "Acts as a Keep with increased health and powerful incendiary arrows. All weapons have 14.5 tiles of range.\nIncreases the maximum damage granted by a House Unified to +6.",
+      "classes": [
+        "age",
+        "iv",
+        "-",
+        "defensive",
+        "landmark"
+      ],
+      "displayClasses": [
+        "Age IV - Defensive Landmark"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 2400,
+        "wood": 0,
+        "stone": 0,
+        "gold": 1200,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 3600,
+        "popcap": 0,
+        "time": 250
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/berkshire-palace-4.png",
       "hitpoints": 6500,
       "weapons": [
         {

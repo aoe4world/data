@@ -151,7 +151,7 @@ const round = (n: number) => Math.round(n * 100) / 100; //(100/(100-33))
 export const abilityModifiers: Record<string, EffectsFactory> = {
   "ability-ring-the-town-bell": placeholderAbility(
     "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
-    { id: ["town-center", "capital-town-center"] }
+    { id: ["capital-town-center", "town-center"] }
   ),
 
   "ability-fortress-influence": placeholderAbility(

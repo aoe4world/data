@@ -160,9 +160,11 @@
         "de",
         "en",
         "fr",
+        "hl",
         "hr",
         "ja",
         "je",
+        "kt",
         "ma",
         "mo",
         "od",
@@ -303,6 +305,22 @@
           "civs": [
             "zx"
           ]
+        },
+        {
+          "id": "ability-conversion-1",
+          "pbgid": 192685,
+          "attribName": "monk_conversion",
+          "civs": [
+            "kt"
+          ]
+        },
+        {
+          "id": "ability-conversion-1",
+          "pbgid": 192685,
+          "attribName": "monk_conversion",
+          "civs": [
+            "hl"
+          ]
         }
       ],
       "baseId": "ability-conversion",
@@ -357,9 +375,11 @@
         "de",
         "en",
         "fr",
+        "hl",
         "hr",
         "ja",
         "je",
+        "kt",
         "ma",
         "mo",
         "od",
@@ -499,6 +519,22 @@
           "attribName": "fireship_self_detonate",
           "civs": [
             "zx"
+          ]
+        },
+        {
+          "id": "ability-detonate-1",
+          "pbgid": 2013822,
+          "attribName": "fireship_self_detonate",
+          "civs": [
+            "kt"
+          ]
+        },
+        {
+          "id": "ability-detonate-1",
+          "pbgid": 2013822,
+          "attribName": "fireship_self_detonate",
+          "civs": [
+            "hl"
           ]
         }
       ],
@@ -865,9 +901,11 @@
         "de",
         "en",
         "fr",
+        "hl",
         "hr",
         "ja",
         "je",
+        "kt",
         "ma",
         "mo",
         "od",
@@ -1007,6 +1045,22 @@
           "attribName": "naval_man_the_sails",
           "civs": [
             "zx"
+          ]
+        },
+        {
+          "id": "ability-man-the-sails-1",
+          "pbgid": 2101656,
+          "attribName": "naval_man_the_sails",
+          "civs": [
+            "kt"
+          ]
+        },
+        {
+          "id": "ability-man-the-sails-1",
+          "pbgid": 2101656,
+          "attribName": "naval_man_the_sails",
+          "civs": [
+            "hl"
           ]
         }
       ],
@@ -1248,9 +1302,11 @@
         "de",
         "en",
         "fr",
+        "hl",
         "hr",
         "ja",
         "je",
+        "kt",
         "ma",
         "mo",
         "od",
@@ -1349,10 +1405,6 @@
           "attribName": "town_center_town_bell",
           "civs": [
             "ja"
-          ],
-          "producedBy": [
-            "capital-town-center",
-            "town-center"
           ]
         },
         {
@@ -1418,10 +1470,22 @@
           "attribName": "town_center_town_bell",
           "civs": [
             "zx"
-          ],
-          "producedBy": [
-            "capital-town-center",
-            "town-center"
+          ]
+        },
+        {
+          "id": "ability-ring-the-town-bell-1",
+          "pbgid": 2149990,
+          "attribName": "town_center_town_bell",
+          "civs": [
+            "kt"
+          ]
+        },
+        {
+          "id": "ability-ring-the-town-bell-1",
+          "pbgid": 2149990,
+          "attribName": "town_center_town_bell",
+          "civs": [
+            "hl"
           ]
         }
       ],
@@ -1449,8 +1513,8 @@
           "property": "unknown",
           "select": {
             "id": [
-              "town-center",
-              "capital-town-center"
+              "capital-town-center",
+              "town-center"
             ]
           },
           "effect": "change",
@@ -3943,7 +4007,8 @@
       "name": "Abbey Healing",
       "type": "ability",
       "civs": [
-        "en"
+        "en",
+        "hl"
       ],
       "displayClasses": [],
       "classes": [],
@@ -3953,67 +4018,69 @@
       "variations": [
         {
           "id": "ability-abbey-healing-2",
-          "baseId": "ability-abbey-healing",
-          "type": "ability",
-          "name": "Abbey Healing",
           "pbgid": 202453,
           "attribName": "abbey_of_kings_heal_aura_eng",
-          "age": 2,
           "civs": [
             "en"
-          ],
-          "description": "Heals nearby out of combat units by 6 every 1 seconds.",
-          "classes": [],
-          "displayClasses": [],
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "vizier": 0,
-            "oliveoil": 0,
-            "total": 0,
-            "popcap": 0
-          },
-          "producedBy": [
-            "abbey-of-kings"
-          ],
-          "icon": "https://data.aoe4world.com/images/abilities/ability-abbey-healing-1.png",
-          "active": "always",
-          "auraRange": 7.5,
-          "effects": [
-            {
-              "property": "healingRate",
-              "select": {
-                "class": [
-                  [
-                    "melee"
-                  ],
-                  [
-                    "ranged"
-                  ],
-                  [
-                    "siege"
-                  ],
-                  [
-                    "cavalry"
-                  ]
-                ],
-                "id": [
-                  "villager",
-                  "trader",
-                  "dragon-villager"
-                ]
-              },
-              "effect": "change",
-              "value": 6,
-              "type": "ability"
-            }
-          ],
-          "activatedOn": [
-            "buildings/abbey-of-kings"
+          ]
+        },
+        {
+          "id": "ability-abbey-healing-2",
+          "pbgid": 202453,
+          "attribName": "abbey_of_kings_heal_aura_eng",
+          "civs": [
+            "hl"
           ]
         }
+      ],
+      "baseId": "ability-abbey-healing",
+      "age": 2,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "abbey-of-kings"
+      ],
+      "active": "always",
+      "auraRange": 7.5,
+      "effects": [
+        {
+          "property": "healingRate",
+          "select": {
+            "class": [
+              [
+                "melee"
+              ],
+              [
+                "ranged"
+              ],
+              [
+                "siege"
+              ],
+              [
+                "cavalry"
+              ]
+            ],
+            "id": [
+              "villager",
+              "trader",
+              "dragon-villager"
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "ability"
+        }
+      ],
+      "activatedOn": [
+        "buildings/abbey-of-kings"
       ],
       "shared": {}
     },
@@ -6490,6 +6557,7 @@
           },
           "producedBy": [
             "barracks",
+            "school-of-cavalry",
             "stable"
           ],
           "icon": "https://data.aoe4world.com/images/abilities/ability-jeannes-companions-1.png",
@@ -7645,6 +7713,52 @@
           "unlockedBy": [
             "buildings/griot-bara"
           ]
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "ability--translation-not-found-11166891",
+      "name": "(translation not found) (11166891)",
+      "type": "ability",
+      "civs": [
+        "mo"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "description": "Prayer Tents allow Improved Production within their influence even without an Ovoo.",
+      "variations": [
+        {
+          "id": "ability--translation-not-found-11166891-1",
+          "baseId": "ability--translation-not-found-11166891",
+          "type": "ability",
+          "name": "(translation not found) (11166891)",
+          "pbgid": 190115,
+          "attribName": "buff_spec_monastery_ovoo_bonus_mon",
+          "age": 1,
+          "civs": [
+            "mo"
+          ],
+          "description": "Prayer Tents allow Improved Production within their influence even without an Ovoo.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "prayer-tent"
+          ],
+          "active": "always",
+          "auraRange": 0,
+          "effects": []
         }
       ],
       "shared": {}
@@ -9811,6 +9925,522 @@
               "type": "ability"
             }
           ]
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "ability--translation-not-found-undefined",
+      "name": "(translation not found) (undefined)",
+      "type": "ability",
+      "civs": [
+        "hl",
+        "kt"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability--translation-not-found-undefined-1.png",
+      "description": "(translation not found) (undefined)",
+      "variations": [
+        {
+          "id": "ability--translation-not-found-undefined-1",
+          "pbgid": 5000304,
+          "attribName": "pilgrim_spawn_tem",
+          "civs": [
+            "kt"
+          ]
+        },
+        {
+          "id": "ability--translation-not-found-undefined-1",
+          "pbgid": 5000023,
+          "attribName": "manor_resource_generation_lan",
+          "civs": [
+            "hl"
+          ],
+          "producedBy": [
+            "manor"
+          ],
+          "auraRange": 7.5
+        }
+      ],
+      "baseId": "ability--translation-not-found-undefined",
+      "age": 1,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "capital-town-center",
+        "stone-wall-gate"
+      ],
+      "active": "always",
+      "auraRange": 0,
+      "effects": [],
+      "shared": {}
+    },
+    {
+      "id": "ability-desert-citadels",
+      "name": "Desert Citadels",
+      "type": "ability",
+      "civs": [
+        "kt"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-desert-citadels-1.png",
+      "description": "Improves the range of nearby units by +15% and armor by +1/+1.",
+      "variations": [
+        {
+          "id": "ability-desert-citadels-1",
+          "baseId": "ability-desert-citadels",
+          "type": "ability",
+          "name": "Desert Citadels",
+          "pbgid": 9000069,
+          "attribName": "aura_desert_citadels",
+          "age": 1,
+          "civs": [
+            "kt"
+          ],
+          "description": "Improves the range of nearby units by +15% and armor by +1/+1.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "fortress"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-desert-citadels-1.png",
+          "active": "always",
+          "auraRange": 7,
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "ability-fortress-influence",
+      "name": "Fortress Influence",
+      "type": "ability",
+      "civs": [
+        "kt"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "description": "The Templar Headquarters and Fortresses grant Stone Walls in influence +25% health and an arrowslit emplacement.",
+      "variations": [
+        {
+          "id": "ability-fortress-influence-1",
+          "baseId": "ability-fortress-influence",
+          "type": "ability",
+          "name": "Fortress Influence",
+          "pbgid": 9000058,
+          "attribName": "keep_influence_tem_buff_info",
+          "age": 1,
+          "civs": [
+            "kt"
+          ],
+          "description": "The Templar Headquarters and Fortresses grant Stone Walls in influence +25% health and an arrowslit emplacement.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "capital-town-center",
+            "fortress"
+          ],
+          "active": "always",
+          "auraRange": 0,
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "capital-town-center",
+                  "fortress"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability"
+            }
+          ]
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "ability-pilgrim-destination",
+      "name": "Pilgrim Destination",
+      "type": "ability",
+      "civs": [
+        "kt"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-pilgrim-destination-1.png",
+      "description": "Select a Sacred Site for your Pilgrims to travel to. Pilgrims cannot travel to a Sacred Site captured by an enemy.",
+      "variations": [
+        {
+          "id": "ability-pilgrim-destination-1",
+          "baseId": "ability-pilgrim-destination",
+          "type": "ability",
+          "name": "Pilgrim Destination",
+          "pbgid": 5000303,
+          "attribName": "pilgrim_target_tem",
+          "age": 1,
+          "civs": [
+            "kt"
+          ],
+          "description": "Select a Sacred Site for your Pilgrims to travel to. Pilgrims cannot travel to a Sacred Site captured by an enemy.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "capital-town-center"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-pilgrim-destination-1.png",
+          "active": "manual",
+          "auraRange": 0,
+          "cooldown": 5,
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "ability-pilgrim-loan-large",
+      "name": "Pilgrim Loan (Large)",
+      "type": "ability",
+      "civs": [
+        "kt"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-pilgrim-loan-large-1.png",
+      "description": "Provide a loan to Pilgrims that will be repaid at a rate of 900 gold per minute for 4 minutes",
+      "variations": [
+        {
+          "id": "ability-pilgrim-loan-large-1",
+          "baseId": "ability-pilgrim-loan-large",
+          "type": "ability",
+          "name": "Pilgrim Loan (Large)",
+          "pbgid": 9000133,
+          "attribName": "pilgrim_loan_large_tem",
+          "age": 1,
+          "civs": [
+            "kt"
+          ],
+          "description": "Provide a loan to Pilgrims that will be repaid at a rate of 900 gold per minute for 4 minutes",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 4000,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 4000,
+            "popcap": 0
+          },
+          "producedBy": [
+            "market"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-pilgrim-loan-large-1.png",
+          "active": "manual",
+          "auraRange": 0,
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "ability-pilgrim-loan-medium",
+      "name": "Pilgrim Loan (Medium)",
+      "type": "ability",
+      "civs": [
+        "kt"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-pilgrim-loan-medium-1.png",
+      "description": "Provide a loan to Pilgrims that will be repaid at a rate of 600 gold per minute for 3 minutes",
+      "variations": [
+        {
+          "id": "ability-pilgrim-loan-medium-1",
+          "baseId": "ability-pilgrim-loan-medium",
+          "type": "ability",
+          "name": "Pilgrim Loan (Medium)",
+          "pbgid": 9000132,
+          "attribName": "pilgrim_loan_medium_tem",
+          "age": 1,
+          "civs": [
+            "kt"
+          ],
+          "description": "Provide a loan to Pilgrims that will be repaid at a rate of 600 gold per minute for 3 minutes",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 2500,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 2500,
+            "popcap": 0
+          },
+          "producedBy": [
+            "market"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-pilgrim-loan-medium-1.png",
+          "active": "manual",
+          "auraRange": 0,
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "ability-pilgrim-loan-small",
+      "name": "Pilgrim Loan (Small)",
+      "type": "ability",
+      "civs": [
+        "kt"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-pilgrim-loan-small-1.png",
+      "description": "Provide a loan to Pilgrims that will be repaid at a rate of 300 gold per minute for 2 minutes",
+      "variations": [
+        {
+          "id": "ability-pilgrim-loan-small-1",
+          "baseId": "ability-pilgrim-loan-small",
+          "type": "ability",
+          "name": "Pilgrim Loan (Small)",
+          "pbgid": 9000130,
+          "attribName": "pilgrim_loan_small_tem",
+          "age": 1,
+          "civs": [
+            "kt"
+          ],
+          "description": "Provide a loan to Pilgrims that will be repaid at a rate of 300 gold per minute for 2 minutes",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 1000,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 1000,
+            "popcap": 0
+          },
+          "producedBy": [
+            "market"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-pilgrim-loan-small-1.png",
+          "active": "manual",
+          "auraRange": 0,
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "ability-treasure-towers",
+      "name": "Treasure Towers",
+      "type": "ability",
+      "civs": [
+        "kt"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-treasure-towers-1.png",
+      "description": "Increases the gold generation of Monasteries, Sacred Sites and Pilgrims by 20% within the aura of a Fortress.",
+      "variations": [
+        {
+          "id": "ability-treasure-towers-1",
+          "baseId": "ability-treasure-towers",
+          "type": "ability",
+          "name": "Treasure Towers",
+          "pbgid": 9000148,
+          "attribName": "treasure_tower_tem",
+          "age": 1,
+          "civs": [
+            "kt"
+          ],
+          "description": "Increases the gold generation of Monasteries, Sacred Sites and Pilgrims by 20% within the aura of a Fortress.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "fortress"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-treasure-towers-1.png",
+          "active": "always",
+          "auraRange": 7.5,
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "ability-kings-college",
+      "name": "King's College",
+      "type": "ability",
+      "civs": [
+        "hl"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-kings-college-1.png",
+      "description": "Granted +15% cheaper research costs by the King's College.",
+      "variations": [
+        {
+          "id": "ability-kings-college-1",
+          "baseId": "ability-kings-college",
+          "type": "ability",
+          "name": "King's College",
+          "pbgid": 9001565,
+          "attribName": "kings_college_research_speed",
+          "age": 1,
+          "civs": [
+            "hl"
+          ],
+          "description": "Granted +15% cheaper research costs by the King's College.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "mill",
+            "barracks",
+            "lumber-camp",
+            "dock",
+            "mining-camp",
+            "blacksmith",
+            "archery-range",
+            "stable",
+            "town-center",
+            "capital-town-center",
+            "manor",
+            "kings-college",
+            "the-white-tower",
+            "siege-workshop",
+            "keep",
+            "monastery",
+            "berkshire-palace",
+            "university"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-kings-college-1.png",
+          "active": "always",
+          "auraRange": 0,
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "ability-lancaster-castle",
+      "name": "Lancaster Castle",
+      "type": "ability",
+      "civs": [
+        "hl"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "description": "Manors gain +500 health and an arrowslit emplacement when in influence of the Lancaster Castle.",
+      "variations": [
+        {
+          "id": "ability-lancaster-castle-1",
+          "baseId": "ability-lancaster-castle",
+          "type": "ability",
+          "name": "Lancaster Castle",
+          "pbgid": 9002926,
+          "attribName": "castle_lancaster_influence",
+          "age": 1,
+          "civs": [
+            "hl"
+          ],
+          "description": "Manors gain +500 health and an arrowslit emplacement when in influence of the Lancaster Castle.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "lancaster-castle"
+          ],
+          "active": "always",
+          "auraRange": 0,
+          "effects": []
         }
       ],
       "shared": {}

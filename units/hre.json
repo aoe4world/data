@@ -430,6 +430,92 @@
       }
     },
     {
+      "id": "black-rider-1",
+      "baseId": "black-rider",
+      "type": "unit",
+      "name": "Black Rider",
+      "pbgid": 9002002,
+      "attribName": "unit_black_rider_hre",
+      "age": 1,
+      "civs": [
+        "hr"
+      ],
+      "description": "Expensive cavalry with high armor and a powerful arquebus. Effective against melee units. Has the Caracole ability.\nOnly 5 Riders can be trained for each standing Keep built.\n+ Heavy armor\n- Countered by Crossbowmen",
+      "classes": [
+        "heavy",
+        "ranged",
+        "gunpowder",
+        "cavalry"
+      ],
+      "displayClasses": [
+        "Heavy Ranged Gunpowder Cavalry"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 150,
+        "wood": 0,
+        "stone": 0,
+        "gold": 150,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 300,
+        "popcap": 1,
+        "time": 35
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/black-rider-1.png",
+      "hitpoints": 225,
+      "weapons": [
+        {
+          "name": "Handcannon",
+          "type": "ranged",
+          "damage": 45,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 4
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 1,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_black_rider_4",
+          "pbgid": 9002005
+        }
+      ],
+      "armor": [
+        {
+          "type": "melee",
+          "value": 4
+        },
+        {
+          "type": "ranged",
+          "value": 4
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
+        "line": 28,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.625
+      }
+    },
+    {
       "id": "carrack-4",
       "baseId": "carrack",
       "type": "unit",
@@ -693,8 +779,8 @@
             "aim": 0.25,
             "windup": 0,
             "attack": 0.125,
-            "winddown": 0.5,
-            "reload": 1.25,
+            "winddown": 0,
+            "reload": 1.75,
             "setup": 0,
             "teardown": 0,
             "cooldown": 0
@@ -783,8 +869,8 @@
             "aim": 0.25,
             "windup": 0,
             "attack": 0.125,
-            "winddown": 0.5,
-            "reload": 1.25,
+            "winddown": 0,
+            "reload": 1.75,
             "setup": 0,
             "teardown": 0,
             "cooldown": 0
@@ -1343,9 +1429,9 @@
           ],
           "durations": {
             "aim": 0,
-            "windup": 0.5,
+            "windup": 0.25,
             "attack": 0.125,
-            "winddown": 0,
+            "winddown": 0.25,
             "reload": 0,
             "setup": 0,
             "teardown": 0,
@@ -1474,9 +1560,9 @@
           ],
           "durations": {
             "aim": 0,
-            "windup": 0.5,
+            "windup": 0.25,
             "attack": 0.125,
-            "winddown": 0,
+            "winddown": 0.25,
             "reload": 0,
             "setup": 0,
             "teardown": 0,
@@ -1605,9 +1691,9 @@
           ],
           "durations": {
             "aim": 0,
-            "windup": 0.5,
+            "windup": 0.25,
             "attack": 0.125,
-            "winddown": 0,
+            "winddown": 0.25,
             "reload": 0,
             "setup": 0,
             "teardown": 0,
@@ -2223,7 +2309,7 @@
       "hitpoints": 120,
       "weapons": [
         {
-          "name": "Mace",
+          "name": "Sword",
           "type": "melee",
           "damage": 10,
           "speed": 1.375,
@@ -2244,6 +2330,43 @@
           },
           "attribName": "weapon_manatarms_2",
           "pbgid": 129615
+        },
+        {
+          "name": "Mace",
+          "type": "melee",
+          "damage": 10,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "heavy"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 6,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_2_1handmace_hre",
+          "pbgid": 171908
         },
         {
           "name": "Ax",
@@ -2392,7 +2515,7 @@
       "hitpoints": 155,
       "weapons": [
         {
-          "name": "Mace",
+          "name": "Sword",
           "type": "melee",
           "damage": 12,
           "speed": 1.375,
@@ -2413,6 +2536,43 @@
           },
           "attribName": "weapon_manatarms_3",
           "pbgid": 109253
+        },
+        {
+          "name": "Mace",
+          "type": "melee",
+          "damage": 12,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "heavy"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 6,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_3_1handmace_hre",
+          "pbgid": 171909
         },
         {
           "name": "Ax",
@@ -2561,7 +2721,7 @@
       "hitpoints": 180,
       "weapons": [
         {
-          "name": "Mace",
+          "name": "Sword",
           "type": "melee",
           "damage": 14,
           "speed": 1.375,
@@ -2582,6 +2742,43 @@
           },
           "attribName": "weapon_manatarms_4",
           "pbgid": 127823
+        },
+        {
+          "name": "Mace",
+          "type": "melee",
+          "damage": 14,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "heavy"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 6,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_4_1handmace_hre",
+          "pbgid": 171910
         },
         {
           "name": "Ax",
@@ -3704,7 +3901,7 @@
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 16,
+          "damage": 14,
           "speed": 3.125,
           "range": {
             "min": 0,
@@ -3722,7 +3919,7 @@
                 ]
               },
               "effect": "change",
-              "value": 10,
+              "value": 12,
               "type": "passive"
             },
             {
@@ -3836,7 +4033,7 @@
       "civs": [
         "hr"
       ],
-      "description": "Traders generate Gold when assigned to trade with a Trade Post or another player’s Market. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trader makes repeated trips between its Home Market and the trade target. You can assign a new Home Market if you wish to.",
+      "description": "Traders generate Gold by travelling between their Home Market and a Trade Post or another player's Market. Greater distances between the Home Market and trade destination will generate higher amounts of Gold.\nThe Home Market or Trade destination may be changed at any time.",
       "classes": [
         "worker"
       ],

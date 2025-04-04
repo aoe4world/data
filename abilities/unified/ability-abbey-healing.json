@@ -5,7 +5,8 @@
   "name": "Abbey Healing",
   "type": "ability",
   "civs": [
-    "en"
+    "en",
+    "hl"
   ],
   "displayClasses": [],
   "classes": [],
@@ -23,6 +24,69 @@
       "age": 2,
       "civs": [
         "en"
+      ],
+      "description": "Heals nearby out of combat units by 6 every 1 seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "abbey-of-kings"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-abbey-healing-1.png",
+      "active": "always",
+      "auraRange": 7.5,
+      "effects": [
+        {
+          "property": "healingRate",
+          "select": {
+            "class": [
+              [
+                "melee"
+              ],
+              [
+                "ranged"
+              ],
+              [
+                "siege"
+              ],
+              [
+                "cavalry"
+              ]
+            ],
+            "id": [
+              "villager",
+              "trader",
+              "dragon-villager"
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "ability"
+        }
+      ],
+      "activatedOn": [
+        "buildings/abbey-of-kings"
+      ]
+    },
+    {
+      "id": "ability-abbey-healing-2",
+      "baseId": "ability-abbey-healing",
+      "type": "ability",
+      "name": "Abbey Healing",
+      "pbgid": 202453,
+      "attribName": "abbey_of_kings_heal_aura_eng",
+      "age": 2,
+      "civs": [
+        "hl"
       ],
       "description": "Heals nearby out of combat units by 6 every 1 seconds.",
       "classes": [],

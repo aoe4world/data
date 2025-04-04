@@ -1,0 +1,61 @@
+{
+  "id": "cupellation-4",
+  "baseId": "cupellation",
+  "type": "technology",
+  "name": "Cupellation",
+  "pbgid": 171824,
+  "attribName": "upgrade_econ_resource_gold_harvest_rate_4",
+  "age": 4,
+  "civs": [
+    "kt"
+  ],
+  "description": "Gold gatherers drop off 15% more resources.",
+  "classes": [
+    "mining",
+    "technology",
+    "3/3"
+  ],
+  "displayClasses": [
+    "Mining Technology 3/3"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 250,
+    "stone": 0,
+    "gold": 500,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 750,
+    "popcap": 0,
+    "time": 75
+  },
+  "producedBy": [
+    "mining-camp"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/cupellation-4.png",
+  "effects": [
+    {
+      "property": "goldGatherRate",
+      "select": {
+        "id": [
+          "villager"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.15,
+      "type": "passive"
+    },
+    {
+      "property": "stoneGatherRate",
+      "select": {
+        "id": [
+          "villager"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.15,
+      "type": "passive"
+    }
+  ]
+}

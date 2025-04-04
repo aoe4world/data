@@ -12,9 +12,11 @@
     "de",
     "en",
     "fr",
+    "hl",
     "hr",
     "ja",
     "je",
+    "kt",
     "ma",
     "mo",
     "ot",
@@ -824,8 +826,8 @@
       "baseId": "villager",
       "type": "unit",
       "name": "Villager",
-      "pbgid": 2148179,
-      "attribName": "unit_villager_free_jpn",
+      "pbgid": 7287301,
+      "attribName": "unit_villager_1_jpn",
       "age": 1,
       "civs": [
         "ja"
@@ -839,18 +841,19 @@
       ],
       "unique": false,
       "costs": {
-        "food": 0,
+        "food": 50,
         "wood": 0,
         "stone": 0,
         "gold": 0,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 0,
-        "popcap": 1
+        "total": 50,
+        "popcap": 1,
+        "time": 20
       },
       "producedBy": [
-        "capital-town-center",
-        "town-center"
+        "town-center",
+        "capital-town-center"
       ],
       "icon": "https://data.aoe4world.com/images/units/villager-1.png",
       "hitpoints": 50,
@@ -1411,8 +1414,8 @@
       "baseId": "villager",
       "type": "unit",
       "name": "Villager",
-      "pbgid": 2145865,
-      "attribName": "unit_villager_free_chi_ha_01",
+      "pbgid": 7761185,
+      "attribName": "unit_villager_1_chi_ha_01",
       "age": 1,
       "civs": [
         "zx"
@@ -1426,35 +1429,278 @@
       ],
       "unique": false,
       "costs": {
-        "food": 0,
+        "food": 50,
         "wood": 0,
         "stone": 0,
         "gold": 0,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 0,
-        "popcap": 0
+        "total": 50,
+        "popcap": 1,
+        "time": 20
       },
       "producedBy": [
-        "capital-town-center",
-        "town-center"
+        "town-center",
+        "capital-town-center"
       ],
       "icon": "https://data.aoe4world.com/images/units/villager-1.png",
+      "hitpoints": 50,
       "weapons": [
-        null
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch_weak",
+          "pbgid": 123522
+        },
+        {
+          "name": "Knife",
+          "type": "melee",
+          "damage": 6,
+          "speed": 3.875,
+          "range": {
+            "min": 0,
+            "max": 0.2875
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 1,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_villager_1",
+          "pbgid": 120606
+        }
       ],
       "armor": [],
       "sight": {
-        "inner_height": 0,
-        "inner_radius": 0,
-        "outer_height": 0,
-        "outer_radius": 0,
-        "base": 0,
-        "line": 0,
-        "height": 0
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
+        "line": 28,
+        "height": 10
       },
       "movement": {
-        "speed": null
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "villager-1",
+      "baseId": "villager",
+      "type": "unit",
+      "name": "Villager",
+      "pbgid": 5000197,
+      "attribName": "unit_villager_1_tem",
+      "age": 1,
+      "civs": [
+        "kt"
+      ],
+      "description": "Gathers Wood, Food, Stone, and Gold. Builds and repairs buildings and can repair siege engines and naval units.\n- Weak in combat",
+      "classes": [
+        "worker"
+      ],
+      "displayClasses": [
+        "Worker"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 50,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 50,
+        "popcap": 1,
+        "time": 20
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/villager-1.png",
+      "hitpoints": 50,
+      "weapons": [
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch_weak",
+          "pbgid": 123522
+        },
+        {
+          "name": "Knife",
+          "type": "melee",
+          "damage": 6,
+          "speed": 3.875,
+          "range": {
+            "min": 0,
+            "max": 0.2875
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 1,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_villager_1",
+          "pbgid": 120606
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
+        "line": 28,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "villager-1",
+      "baseId": "villager",
+      "type": "unit",
+      "name": "Villager",
+      "pbgid": 5000017,
+      "attribName": "unit_villager_1_lan",
+      "age": 1,
+      "civs": [
+        "hl"
+      ],
+      "description": "Gathers Wood, Food, Stone, and Gold. Builds and repairs buildings and can repair siege engines and naval units.\n+ Uses a bow to attack\n- Weak in combat",
+      "classes": [
+        "worker"
+      ],
+      "displayClasses": [
+        "Worker"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 50,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 50,
+        "popcap": 1,
+        "time": 20
+      },
+      "producedBy": [
+        "town-center",
+        "capital-town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/villager-1.png",
+      "hitpoints": 50,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 5,
+          "speed": 3.375,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_villager_militarized_2_eng",
+          "pbgid": 128811
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch_weak",
+          "pbgid": 123522
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
+        "line": 28,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
       }
     }
   ]

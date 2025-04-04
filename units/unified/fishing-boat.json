@@ -12,9 +12,11 @@
     "de",
     "en",
     "fr",
+    "hl",
     "hr",
     "ja",
     "je",
+    "kt",
     "ma",
     "mo",
     "od",
@@ -30,7 +32,7 @@
     "worker",
     "ship"
   ],
-  "minAge": 2,
+  "minAge": 1,
   "icon": "https://data.aoe4world.com/images/units/fishing-boat-2.png",
   "description": "Small boat that gathers Food from either Deep Water Fish or Shoreline Fish. Drops off gathered resources at the Dock.\n+ Can repair\n- No combat",
   "variations": [
@@ -283,13 +285,27 @@
         {
           "name": "Bow",
           "type": "ranged",
-          "damage": 6,
+          "damage": 4,
           "speed": 1.875,
           "range": {
             "min": 0,
             "max": 4
           },
-          "modifiers": [],
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 1,
+              "type": "passive"
+            }
+          ],
           "durations": {
             "aim": 0,
             "windup": 0,
@@ -822,6 +838,110 @@
         "dock"
       ],
       "icon": "https://data.aoe4world.com/images/units/fishing-boat-2.png",
+      "hitpoints": 100,
+      "weapons": [],
+      "armor": [],
+      "sight": {
+        "inner_height": 501,
+        "inner_radius": 42,
+        "outer_height": -15,
+        "outer_radius": 33,
+        "base": 33.26162790697674,
+        "line": 33,
+        "height": 501
+      },
+      "movement": {
+        "speed": 1.5
+      }
+    },
+    {
+      "id": "fishing-boat-2",
+      "baseId": "fishing-boat",
+      "type": "unit",
+      "name": "Fishing Boat",
+      "pbgid": 8999919,
+      "attribName": "unit_naval_fishing_boat_2_tem",
+      "age": 2,
+      "civs": [
+        "kt"
+      ],
+      "description": "Small boat that gathers Food from either Deep Water Fish or Shoreline Fish. Drops off gathered resources at the Dock.\n+ Can repair\n- No combat",
+      "classes": [
+        "worker",
+        "ship"
+      ],
+      "displayClasses": [
+        "Worker",
+        "Ship"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 75,
+        "popcap": 1,
+        "time": 30
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/fishing-boat-2.png",
+      "hitpoints": 100,
+      "weapons": [],
+      "armor": [],
+      "sight": {
+        "inner_height": 501,
+        "inner_radius": 42,
+        "outer_height": -15,
+        "outer_radius": 33,
+        "base": 33.26162790697674,
+        "line": 33,
+        "height": 501
+      },
+      "movement": {
+        "speed": 1.5
+      }
+    },
+    {
+      "id": "fishing-boat-1",
+      "baseId": "fishing-boat",
+      "type": "unit",
+      "name": "Fishing Boat",
+      "pbgid": 5000130,
+      "attribName": "unit_naval_fishing_boat_lan",
+      "age": 1,
+      "civs": [
+        "hl"
+      ],
+      "description": "Small boat that gathers Food from either Deep Water Fish or Shoreline Fish. Drops off gathered resources at the Dock.\n+ Can repair\n- No combat",
+      "classes": [
+        "worker",
+        "ship"
+      ],
+      "displayClasses": [
+        "Worker",
+        "Ship"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 75,
+        "popcap": 1,
+        "time": 30
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/fishing-boat-1.png",
       "hitpoints": 100,
       "weapons": [],
       "armor": [],

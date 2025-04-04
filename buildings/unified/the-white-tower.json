@@ -5,7 +5,8 @@
   "name": "The White Tower",
   "type": "building",
   "civs": [
-    "en"
+    "en",
+    "hl"
   ],
   "unique": true,
   "displayClasses": [
@@ -60,6 +61,119 @@
         "villager"
       ],
       "icon": "https://data.aoe4world.com/images/buildings/the-white-tower-2.png",
+      "hitpoints": 5000,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 12,
+          "speed": 0.5,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.125,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_keep_arrows_a",
+          "pbgid": 127372
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        },
+        {
+          "type": "fire",
+          "value": 6
+        }
+      ],
+      "sight": {
+        "inner_height": 501,
+        "inner_radius": 40,
+        "outer_height": -15,
+        "outer_radius": 41,
+        "base": 40.97093023255814,
+        "line": 41,
+        "height": 501
+      },
+      "garrison": {
+        "capacity": 20,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk",
+          "cavalry"
+        ]
+      },
+      "influences": []
+    },
+    {
+      "id": "the-white-tower-3",
+      "baseId": "the-white-tower",
+      "type": "building",
+      "name": "The White Tower",
+      "pbgid": 5000043,
+      "attribName": "building_landmark_age2_white_tower_lan",
+      "age": 3,
+      "civs": [
+        "hl"
+      ],
+      "description": "Acts as a Keep with all the behaviors, technologies, and bonuses.",
+      "classes": [
+        "age",
+        "iii",
+        "-",
+        "defensive",
+        "landmark"
+      ],
+      "displayClasses": [
+        "Age III - Defensive Landmark"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 1200,
+        "wood": 0,
+        "stone": 0,
+        "gold": 600,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 1800,
+        "popcap": 0,
+        "time": 220
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/the-white-tower-3.png",
       "hitpoints": 5000,
       "weapons": [
         {

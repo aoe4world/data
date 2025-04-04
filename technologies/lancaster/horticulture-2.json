@@ -1,0 +1,51 @@
+{
+  "id": "horticulture-2",
+  "baseId": "horticulture",
+  "type": "technology",
+  "name": "Horticulture",
+  "pbgid": 128049,
+  "attribName": "upgrade_econ_resource_food_harvest_rate_2",
+  "age": 2,
+  "civs": [
+    "hl"
+  ],
+  "description": "Increase Villagers' gathering rate for Food by 10%. Does not apply to hunted meat.",
+  "classes": [
+    "food",
+    "gathering",
+    "technology",
+    "1/3"
+  ],
+  "displayClasses": [
+    "Food Gathering Technology 1/3"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 50,
+    "stone": 0,
+    "gold": 100,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 150,
+    "popcap": 0,
+    "time": 45
+  },
+  "producedBy": [
+    "mill"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/horticulture-2.png",
+  "effects": [
+    {
+      "property": "foodGatherRate",
+      "select": {
+        "id": [
+          "villager"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.1,
+      "type": "passive"
+    }
+  ]
+}

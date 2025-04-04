@@ -111,4 +111,18 @@ export const CIVILIZATIONS = {
     attribName: "chinese_ha_01",
     expansion: ["sultans-ascend"],
   },
+  kt: {
+    name: "Knights Templar",
+    abbr: "kt",
+    slug: "templar",
+    attribName: "templar",
+    expansion: ["knights-of-cross-and-rose"],
+  },
+  hl: {
+    name: "House Lancaster",
+    abbr: "hl",
+    slug: "lancaster",
+    attribName: "lancaster",
+    expansion: ["knights-of-cross-and-rose"],
+  },
 } as const;

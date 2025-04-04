@@ -1439,8 +1439,8 @@
                 "aim": 0.25,
                 "windup": 0,
                 "attack": 0.125,
-                "winddown": 0.5,
-                "reload": 1.25,
+                "winddown": 0,
+                "reload": 1.75,
                 "setup": 0,
                 "teardown": 0,
                 "cooldown": 0
@@ -1529,8 +1529,8 @@
                 "aim": 0.25,
                 "windup": 0,
                 "attack": 0.125,
-                "winddown": 0.5,
-                "reload": 1.25,
+                "winddown": 0,
+                "reload": 1.75,
                 "setup": 0,
                 "teardown": 0,
                 "cooldown": 0
@@ -2457,9 +2457,9 @@
               ],
               "durations": {
                 "aim": 0,
-                "windup": 0.5,
+                "windup": 0.25,
                 "attack": 0.125,
-                "winddown": 0,
+                "winddown": 0.25,
                 "reload": 0,
                 "setup": 0,
                 "teardown": 0,
@@ -2588,9 +2588,9 @@
               ],
               "durations": {
                 "aim": 0,
-                "windup": 0.5,
+                "windup": 0.25,
                 "attack": 0.125,
-                "winddown": 0,
+                "winddown": 0.25,
                 "reload": 0,
                 "setup": 0,
                 "teardown": 0,
@@ -2719,9 +2719,9 @@
               ],
               "durations": {
                 "aim": 0,
-                "windup": 0.5,
+                "windup": 0.25,
                 "attack": 0.125,
-                "winddown": 0,
+                "winddown": 0.25,
                 "reload": 0,
                 "setup": 0,
                 "teardown": 0,
@@ -4056,7 +4056,7 @@
             {
               "name": "Springald",
               "type": "ranged",
-              "damage": 16,
+              "damage": 14,
               "speed": 3.125,
               "range": {
                 "min": 0,
@@ -4074,7 +4074,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 10,
+                  "value": 12,
                   "type": "passive"
                 },
                 {
@@ -4123,6 +4123,76 @@
           },
           "movement": {
             "speed": 0.875
+          }
+        }
+      ]
+    },
+    {
+      "id": "trade-caravan",
+      "name": "Trade Caravan",
+      "type": "unit",
+      "civs": [
+        "ab"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Trader"
+      ],
+      "classes": [
+        "trader"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/units/trade-caravan-1.png",
+      "description": "Traders generate Gold by travelling between their Home Market and a Trade Post or another player's Market. Greater distances between the Home Market and trade destination will generate higher amounts of Gold.\nThe Home Market or Trade destination may be changed at any time.",
+      "variations": [
+        {
+          "id": "trade-caravan-1",
+          "baseId": "trade-caravan",
+          "type": "unit",
+          "name": "Trade Caravan",
+          "pbgid": 199744,
+          "attribName": "unit_trade_cart_abb",
+          "age": 1,
+          "civs": [
+            "ab"
+          ],
+          "description": "Traders generate Gold by travelling between their Home Market and a Trade Post or another player's Market. Greater distances between the Home Market and trade destination will generate higher amounts of Gold.\nThe Home Market or Trade destination may be changed at any time.",
+          "classes": [
+            "trader"
+          ],
+          "displayClasses": [
+            "Trader"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 40,
+            "stone": 0,
+            "gold": 40,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 80,
+            "popcap": 1,
+            "time": 30
+          },
+          "producedBy": [
+            "market"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/trade-caravan-1.png",
+          "hitpoints": 60,
+          "weapons": [],
+          "armor": [],
+          "sight": {
+            "inner_height": 10,
+            "inner_radius": 10,
+            "outer_height": -15,
+            "outer_radius": 35,
+            "base": 20,
+            "line": 35,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.5625
           }
         }
       ]
