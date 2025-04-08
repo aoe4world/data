@@ -119,7 +119,7 @@ export const CIVILIZATIONS = {
     expansion: ["knights-of-cross-and-rose"],
   },
   hl: {
-    name: "House Lancaster",
+    name: "House of Lancaster",
     abbr: "hl",
     slug: "lancaster",
     attribName: "lancaster",
