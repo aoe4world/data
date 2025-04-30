@@ -122,6 +122,7 @@ async function buildTechTree(civ: CivConfig, context: RunContext = { debug: fals
       if (dItem && !Object.isFrozen(dItem.producedBy)) {
         dItem.producedBy ??= [];
         dItem.producedBy = [...new Set(dItem.producedBy).add(item.baseId)];
+        sortProducedBy(dItem);
         itemProduces.add(dItem.baseId);
       }
     }
@@ -165,6 +166,13 @@ function ensureFolderStructure() {
 
 export function writeTemp(data: any, name: string) {
   fs.writeFile(path.join(__dirname, ".temp", `${name.split("/").pop()}.json`), JSON.stringify(data, null, 2));
+}
+
+function sortProducedBy(item: any) {
+  if (item.producedBy && Array.isArray(item.producedBy)) {
+    item.producedBy.sort((a: string, b: string) => a.localeCompare(b));
+  }
+  return item;
 }
 
 function findUnits(data: any) {
