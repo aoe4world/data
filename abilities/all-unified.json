@@ -13491,6 +13491,7 @@
       "displayClasses": [],
       "classes": [],
       "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-fortress-influence-1.png",
       "description": "The Templar Headquarters and Fortresses grant Stone Walls in influence +25% health and an arrowslit emplacement.",
       "variations": [
         {
@@ -13521,6 +13522,7 @@
             "capital-town-center",
             "fortress"
           ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-fortress-influence-1.png",
           "active": "always",
           "auraRange": 0,
           "effects": [
@@ -13850,6 +13852,7 @@
       "displayClasses": [],
       "classes": [],
       "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-lancaster-castle-1.png",
       "description": "Manors gain +500 health and an arrowslit emplacement when in influence of the Lancaster Castle.",
       "variations": [
         {
@@ -13879,9 +13882,27 @@
           "producedBy": [
             "lancaster-castle"
           ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-lancaster-castle-1.png",
           "active": "always",
           "auraRange": 0,
-          "effects": []
+          "effects": [
+            {
+              "property": "hitpoints",
+              "select": {
+                "id": [
+                  "lancaster-castle"
+                ]
+              },
+              "target": {
+                "id": [
+                  "manor"
+                ]
+              },
+              "effect": "change",
+              "value": 500,
+              "type": "influence"
+            }
+          ]
         }
       ]
     }

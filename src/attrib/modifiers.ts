@@ -159,6 +159,20 @@ export const abilityModifiers: Record<string, EffectsFactory> = {
     { id: ["capital-town-center", "fortress"] }
   ),
 
+  "ability-lancaster-castle": standardAbility(
+    "Manors gain +{1} health and an arrowslit emplacement when in influence of the Lancaster Castle.",
+    ([h]) => [
+      {
+        property: "hitpoints",
+        select: { id: ["lancaster-castle"] },
+        target: { id: ["manor"] },
+        effect: "change",
+        value: h,
+        type: "influence",
+      },
+    ]
+  ),
+
   "ability-treasure-caravans": placeholderAbility(
     "Select a neutral Trade Post to periodically spawn Treasure Caravans from that location. Caravans can convert into a Trade Ship when instructed to reach Trade Posts over water.",
     { id: ["castle-of-the-crow"] }
