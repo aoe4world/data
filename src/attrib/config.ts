@@ -364,6 +364,8 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "monk_debuff_target_jpn_five_mountain_landmark_version",
   "abilities/always_on_abilities/ottoman/galleass_production_buff_ott",
   "upgrade_free_abbey_trinity_global_discount_rus",
+  "unit_villager_free_chi_ha_01", // Placeholder vil that spawns unit_villager_1_chi_ha_01 as additional squad
+  "unit_villager_free_jpn", // Placeholder vil
 
   "military_school_production_mod_ott", // Advanced Academy bonus to military school production speed
 

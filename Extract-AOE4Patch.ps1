@@ -173,7 +173,7 @@ function Export-Attrib($patch) {
   dotnet $AOEModsEssencePath rgd-decode "$rgdPath\attrib" $attribPath -b -f json
 
   if  ($RemoveTemp) {
-    Remove-Item -Recurse $rawPath
+    Remove-Item -Recurse $rgdPath
   }
 }
 

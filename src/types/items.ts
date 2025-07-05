@@ -75,6 +75,11 @@ export interface PhysicalItem extends Item {
   hitpoints: number;
 
   sight: {
+    inner_height: number;
+    inner_radius: number;
+    outer_height: number;
+    outer_radius: number;
+    base: number;
     line: number;
     height: number;
   };

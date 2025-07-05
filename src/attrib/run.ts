@@ -73,13 +73,13 @@ async function buildTechTree(civ: CivConfig, context: RunContext = { debug: fals
     const item = await parseItemFromAttribFile(file, data, civ, context);
     if (!item) return;
 
-    for (const [override, { predicate, mutator, validator }] of workarounds)
+    for (const [override, { predicate, mutator, validator, callContext }] of workarounds)
       if (predicate(item)) {
         mutator(item);
         debug && console.info(`Overriding ${item.id} with ${override}`);
         if (validator && !validator(item)) {
           console.error(`Invalid item ${item.id} after override ${override}`, item);
-          throw new Error("Error during workarounds");
+          throw new Error("Error during workarounds: " + callContext);
         }
       }
 

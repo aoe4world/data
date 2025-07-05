@@ -1,3 +1,4 @@
+import { captureCallContext } from "../lib/utils/processors";
 import { ItemSlug } from "../sdk/utils";
 import { Ability, Building, Item, ItemType, Modifier, Selector, Technology, Unit, Upgrade } from "../types/items";
 import { KHAGANTE_SPAWN_COUNTS } from "./config";
@@ -1183,7 +1184,7 @@ workaround("Remove all weapons but the knife and torch from the villagers, excep
     const knife = item.weapons.find((w) => w.name === "Knife")!;
     item.weapons = [torch, knife];
   },
-  validator: (item) => (item as Unit).weapons.length == 2,
+  validator: (item) => (item as Unit).weapons.filter(Boolean).length == 2,
 });
 
 workaround("Remove all weapons but the bow and torch from the English villager", {
@@ -1194,7 +1195,7 @@ workaround("Remove all weapons but the bow and torch from the English villager",
     const torch = item.weapons.find((w) => w.name === "Torch")!;
     item.weapons = [bow, torch];
   },
-  validator: (item) => (item as Unit).weapons.length == 2,
+  validator: (item) => (item as Unit).weapons.filter(Boolean).length == 2,
 });
 
 workaround("Remove all weapons except one melee from Scouts", {
@@ -1273,6 +1274,15 @@ workaround("Remove the upgrade locked Javelin/Incendiary from the Hunting Canoe"
     item.weapons = item.weapons.filter((w) => !["weapon_naval_javelin_burst", "weapon_naval_arrow_ship_incendiary"].includes(w.attribName!));
   },
   validator: (item) => (item as Unit).weapons.length == 1,
+});
+
+workaround("Remove leadshot handcannon from any unit", {
+  predicate: (item) => item.type === "unit" && item.weapons.length > 1,
+  mutator: (item) => {
+    item = item as Unit;
+    item.weapons = item.weapons.filter(Boolean).filter((w) => !["weapon_handcannon_4_leadshot"].includes(w.attribName!));
+  },
+  validator: (item) => true,
 });
 
 // This is both the most questionable and most effective way to ensure a simple
@@ -1610,9 +1620,11 @@ interface Override {
   predicate: (item: ItemType) => boolean;
   mutator: (item: ItemType) => void;
   validator?: (item: ItemType) => boolean;
+  callContext?: string;
 }
 
 function workaround(description: string, override: Override) {
+  override.callContext = captureCallContext(1);
   workarounds.set(description, override);
 }
 
