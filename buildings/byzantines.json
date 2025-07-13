@@ -24,8 +24,11 @@
       ],
       "description": "Stone infrastructure to connect water between Cisterns to improve the Water Level of all connected Cisterns. Can be connected to Stone Walls.",
       "classes": [
-        "defensive",
-        "building"
+        "aqueduct",
+        "aqueduct_bastion",
+        "building",
+        "siegeable",
+        "wall"
       ],
       "displayClasses": [
         "Defensive Building"
@@ -78,8 +81,13 @@
       ],
       "description": "Produces ranged infantry units.",
       "classes": [
-        "military",
-        "building"
+        "archery_range",
+        "building",
+        "military_only_production",
+        "military_production_building",
+        "production_building",
+        "scar_archeryrange",
+        "siegeable"
       ],
       "displayClasses": [
         "Military Building"
@@ -134,8 +142,13 @@
       ],
       "description": "Produces melee infantry units.",
       "classes": [
-        "military",
-        "building"
+        "barracks",
+        "building",
+        "military_only_production",
+        "military_production_building",
+        "production_building",
+        "scar_barracks",
+        "siegeable"
       ],
       "displayClasses": [
         "Military Building"
@@ -190,8 +203,11 @@
       ],
       "description": "Houses technology to improve infantry and cavalry.",
       "classes": [
-        "technology",
-        "building"
+        "blacksmith",
+        "building",
+        "research_building",
+        "scar_blacksmith",
+        "siegeable"
       ],
       "displayClasses": [
         "Technology Building"
@@ -246,11 +262,21 @@
       ],
       "description": "All Resources can be dropped off here. Produces Villagers, Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.\nCapital Town Centers can detect units stealth or disguises.",
       "classes": [
-        "economy",
-        "&",
-        "population",
         "building",
-        "landmark"
+        "defensive_structure",
+        "emits_herding_interest",
+        "has_default_building_weapons",
+        "hq",
+        "land_food_deposit_4_by_4",
+        "landmark",
+        "production_building",
+        "resource_drop_off",
+        "select_special_building",
+        "siegeable",
+        "town_bell_target",
+        "town_center",
+        "town_center_capital",
+        "town_center_or_landmark"
       ],
       "displayClasses": [
         "Economy & Population Building",
@@ -317,7 +343,12 @@
       ],
       "description": "Build and defend a Wonder to secure victory. Rival civilizations will be aware of its construction and seek to destroy it.",
       "classes": [
-        "wonder"
+        "audio_production_landmark",
+        "building",
+        "select_special_building",
+        "siegeable",
+        "wonder",
+        "wonder_imperial_age"
       ],
       "displayClasses": [
         "Wonder"
@@ -370,8 +401,9 @@
       ],
       "description": "Improves the gather rate of nearby villagers by +10/14/18/22/26% depending on network level. Generates influence that boosts production, research or defense. Can activate Arkitoi Defense to briefly arm nearby Villagers. \nConnect Cisterns with Aqueducts to enhance their influence and villager gather rate aura.",
       "classes": [
-        "influence",
-        "building"
+        "building",
+        "cistern",
+        "siegeable"
       ],
       "displayClasses": [
         "Influence Building"
@@ -424,11 +456,16 @@
       ],
       "description": "Acts as a Cistern. Unlocks the Pilgrim Flask ability on non-siege military units, which can be activated to increase health regeneration by 25 per second for 6 seconds.\nFlasks refill every 30 seconds to a maximum of 20 active flasks.",
       "classes": [
-        "age",
-        "iii",
-        "-",
-        "influence",
-        "landmark"
+        "age2_landmark1",
+        "audio_production_landmark",
+        "building",
+        "cistern",
+        "landmark",
+        "select_special_building",
+        "siegeable",
+        "town_center_or_landmark",
+        "wonder",
+        "wonder_feudal_age"
       ],
       "displayClasses": [
         "Age III - Influence Landmark"
@@ -481,12 +518,15 @@
       ],
       "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three Fishing Ships.",
       "classes": [
-        "military",
-        "&",
-        "economy",
         "building",
-        "trade",
-        "site"
+        "military_only_production",
+        "naval_production_building",
+        "production_building",
+        "resource_drop_off",
+        "scar_dock",
+        "siegeable",
+        "trade_dock",
+        "trade_post"
       ],
       "displayClasses": [
         "Military & Economy Building",
@@ -548,11 +588,16 @@
       ],
       "description": "Allows production of Nest of Bees, Hui Hui Pao, and Royal Cannons with Olive Oil. Mercenaries receive various unique technologies from their original civilization.",
       "classes": [
-        "age",
-        "iv",
-        "-",
-        "military",
-        "landmark"
+        "age3_landmark1",
+        "audio_production_landmark",
+        "building",
+        "landmark",
+        "select_special_building",
+        "siege_production_landmark",
+        "siegeable",
+        "town_center_or_landmark",
+        "wonder",
+        "wonder_castle_age"
       ],
       "displayClasses": [
         "Age IV - Military Landmark"
@@ -607,11 +652,16 @@
       ],
       "description": "Periodically produces unlocked Mercenary Units for free.",
       "classes": [
-        "age",
-        "iii",
-        "-",
-        "military",
-        "landmark"
+        "age2_landmark1",
+        "audio_production_landmark",
+        "building",
+        "cavalry_production_landmark",
+        "landmark",
+        "select_special_building",
+        "siegeable",
+        "town_center_or_landmark",
+        "wonder",
+        "wonder_feudal_age"
       ],
       "displayClasses": [
         "Age III - Military Landmark"
@@ -664,13 +714,21 @@
       ],
       "description": "Acts as a Mill and Monastery. Nearby Villagers gather +60% Olive Oil from Berry Bushes and Olive Groves. Relics garrisoned generate Olive Oil instead of Gold.",
       "classes": [
-        "age",
-        "ii",
-        "-",
-        "economic",
-        "&",
-        "religious",
-        "landmark"
+        "age1_landmark1",
+        "building",
+        "economy_building",
+        "land_food_deposit_4_by_4",
+        "landmark",
+        "monastery",
+        "relic_dropoff",
+        "resource_drop_off",
+        "select_all_monastery",
+        "select_special_building",
+        "siegeable",
+        "town_center_or_landmark",
+        "winery",
+        "wonder",
+        "wonder_dark_age"
       ],
       "displayClasses": [
         "Age II - Economic & Religious Landmark"
@@ -725,8 +783,10 @@
       ],
       "description": "Increases your maximum Population. Contains the unique Border Settlements technology.",
       "classes": [
-        "population",
-        "building"
+        "building",
+        "house",
+        "scar_house",
+        "siegeable"
       ],
       "displayClasses": [
         "Population Building"
@@ -781,11 +841,18 @@
       ],
       "description": "Acts as a Stable. Contains the Triumph ability that can be activated with Supply Points to increase cavalry melee damage, move speed, and health regeneration. \nComes with 10 Supply Points and generates one every 25 seconds. Earn more points by defeating enemy units.",
       "classes": [
-        "age",
-        "ii",
-        "-",
-        "military",
-        "landmark"
+        "age1_landmark2",
+        "building",
+        "landmark",
+        "military_only_production",
+        "military_production_building",
+        "production_building",
+        "select_special_building",
+        "siegeable",
+        "stable",
+        "town_center_or_landmark",
+        "wonder",
+        "wonder_dark_age"
       ],
       "displayClasses": [
         "Age II - Military Landmark"
@@ -840,8 +907,15 @@
       ],
       "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.",
       "classes": [
-        "defensive",
-        "building"
+        "building",
+        "castle",
+        "defensive_structure",
+        "has_default_building_weapons",
+        "monastery",
+        "relic_dropoff",
+        "scar_keep",
+        "siegeable",
+        "town_bell_target"
       ],
       "displayClasses": [
         "Defensive Building"
@@ -953,8 +1027,12 @@
       ],
       "description": "Villagers can drop off Wood at this building. Houses technologies to improve Wood gathering.",
       "classes": [
-        "economy",
-        "building"
+        "building",
+        "economy_building",
+        "lumber_camp",
+        "resource_drop_off",
+        "scar_lumbercamp",
+        "siegeable"
       ],
       "displayClasses": [
         "Economy Building"
@@ -1009,10 +1087,13 @@
       ],
       "description": "Allows the buying and selling of resources and produces the Trader. Byzantine Traders generate +20% Olive Oil on successful trades.",
       "classes": [
-        "economy",
         "building",
-        "trade",
-        "site"
+        "economy_building",
+        "exchange",
+        "market_keybinding",
+        "scar_market",
+        "siegeable",
+        "trade_post"
       ],
       "displayClasses": [
         "Economy Building",
@@ -1068,8 +1149,13 @@
       ],
       "description": "Produces Mercenary units for Olive Oil after purchasing a Mercenary Contract. One contract can be purchased.\nUnlock another set of Mercenaries with +50% production speed by placing this building near a Trade Post.",
       "classes": [
-        "military",
-        "building"
+        "building",
+        "merc_house",
+        "military_only_production",
+        "military_production_building",
+        "production_building",
+        "scar_barracks",
+        "siegeable"
       ],
       "displayClasses": [
         "Military Building"
@@ -1124,8 +1210,15 @@
       ],
       "description": "Villagers can drop off Food at this building. Houses technologies to improve Food gathering. Byzantine Villagers generate Olive Oil equal to 50% of Food from Berry Bushes, 10% from Fish, and 20% from Olive Groves.",
       "classes": [
-        "economy",
-        "building"
+        "building",
+        "economy_building",
+        "emits_herding_interest",
+        "gristmill",
+        "land_food_deposit_2_by_2",
+        "mill",
+        "resource_drop_off",
+        "scar_gristmill",
+        "siegeable"
       ],
       "displayClasses": [
         "Economy Building"
@@ -1180,8 +1273,14 @@
       ],
       "description": "Villagers can drop off Stone and Gold at this building. Houses technologies to improve mining.",
       "classes": [
-        "economy",
-        "building"
+        "building",
+        "economy_building",
+        "gold_mining_camp",
+        "mining_camp",
+        "resource_drop_off",
+        "scar_miningcamp",
+        "siegeable",
+        "stone_mining_camp"
       ],
       "displayClasses": [
         "Economy Building"
@@ -1236,8 +1335,13 @@
       ],
       "description": "Produces religious units and houses religious technologies. Starting in the Castle Age (III), religious units can pick up Relics and place them in this building to generate Gold.",
       "classes": [
-        "religious",
-        "building"
+        "building",
+        "monastery",
+        "production_building",
+        "relic_dropoff",
+        "scar_monastery",
+        "select_all_monastery",
+        "siegeable"
       ],
       "displayClasses": [
         "Religious Building"
@@ -1292,9 +1396,11 @@
       ],
       "description": "Harvestable Food source. Use a Villager to gather Food from the Olive Grove.\nOnly one Villager can work each Olive Grove.\nByzantine Villagers gather Olive Oil equal to 20% of Food gathered.",
       "classes": [
-        "food",
-        "source",
-        "building"
+        "building",
+        "farm",
+        "farm_field",
+        "resource",
+        "siegeable"
       ],
       "displayClasses": [
         "Food Source",
@@ -1348,8 +1454,16 @@
       ],
       "description": "Offers extensive line of sight and detects units stealth or disguises. Can be upgraded with weaponry and fortifications. Attacks while garrisoned.",
       "classes": [
-        "defensive",
-        "building"
+        "building",
+        "defensive_structure",
+        "military",
+        "monastery",
+        "outpost",
+        "relic_dropoff",
+        "scar_outpost",
+        "siegeable",
+        "tower",
+        "town_bell_target"
       ],
       "displayClasses": [
         "Defensive Building"
@@ -1415,11 +1529,15 @@
       ],
       "description": "When training Limitanei, Varangian Guards, Cataphracts, or Cheirosiphons there is a 30% chance to also spawn one at this Landmark.",
       "classes": [
-        "age",
-        "iv",
-        "-",
-        "military",
-        "landmark"
+        "age3_landmark1",
+        "audio_production_landmark",
+        "building",
+        "landmark",
+        "select_special_building",
+        "siegeable",
+        "town_center_or_landmark",
+        "wonder",
+        "wonder_castle_age"
       ],
       "displayClasses": [
         "Age IV - Military Landmark"
@@ -1474,8 +1592,12 @@
       ],
       "description": "Light defensive gate. Must be built on a Palisade Wall segment.",
       "classes": [
-        "defensive",
-        "building"
+        "building",
+        "defensive_structure",
+        "gate",
+        "palisade_gate",
+        "siegeable",
+        "wall"
       ],
       "displayClasses": [
         "Defensive Building"
@@ -1528,8 +1650,12 @@
       ],
       "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 21 Wood, with each additional section costing 7 Wood.",
       "classes": [
-        "defensive",
-        "building"
+        "building",
+        "defensive_structure",
+        "palisade_wall",
+        "palisade_wall_section",
+        "siegeable",
+        "wall"
       ],
       "displayClasses": [
         "Defensive Building"
@@ -1582,8 +1708,13 @@
       ],
       "description": "Produces siege engines and powerful gunpowder units.",
       "classes": [
-        "military",
-        "building"
+        "building",
+        "military_only_production",
+        "military_production_building",
+        "production_building",
+        "scar_siegeworkshop",
+        "siege_workshop",
+        "siegeable"
       ],
       "displayClasses": [
         "Military Building"
@@ -1638,8 +1769,13 @@
       ],
       "description": "Produces cavalry military units.",
       "classes": [
-        "military",
-        "building"
+        "building",
+        "military_only_production",
+        "military_production_building",
+        "production_building",
+        "scar_stable",
+        "siegeable",
+        "stable"
       ],
       "displayClasses": [
         "Military Building"
@@ -1694,8 +1830,12 @@
       ],
       "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 25% less damage from ranged attacks, 50% less damage from siege attacks, and their range is increased by +1.",
       "classes": [
-        "defensive",
-        "building"
+        "building",
+        "defensive_structure",
+        "siegeable",
+        "stone_wall",
+        "stone_wall_section",
+        "wall"
       ],
       "displayClasses": [
         "Defensive Building"
@@ -1748,8 +1888,12 @@
       ],
       "description": "Heavy defensive gate. Must be built on a Stone Wall segment.\nInfantry can use the gate to access the top of the walls.",
       "classes": [
-        "defensive",
-        "building"
+        "building",
+        "defensive_structure",
+        "gate",
+        "siegeable",
+        "stone_gate",
+        "wall"
       ],
       "displayClasses": [
         "Defensive Building"
@@ -1802,8 +1946,16 @@
       ],
       "description": "Heavy defensive tower that fires a mangonel. Must be built on a Stone Wall. \nCan be used to access the top of walls.",
       "classes": [
-        "defensive",
-        "building"
+        "building",
+        "defensive_structure",
+        "has_default_building_weapons",
+        "military",
+        "monastery",
+        "relic_dropoff",
+        "siegeable",
+        "stone_wall_tower",
+        "tower",
+        "town_bell_target"
       ],
       "displayClasses": [
         "Defensive Building"
@@ -1858,10 +2010,18 @@
       ],
       "description": "All Resources can be dropped off here. Produces Villagers, Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.\nNon-Capital Town Centers can't detect stealth or disguises.",
       "classes": [
-        "economy",
-        "&",
-        "population",
-        "building"
+        "building",
+        "emits_herding_interest",
+        "has_default_building_weapons",
+        "hq",
+        "land_food_deposit_4_by_4",
+        "production_building",
+        "resource_drop_off",
+        "siegeable",
+        "town_bell_target",
+        "town_center",
+        "town_center_non_capital",
+        "town_center_or_landmark"
       ],
       "displayClasses": [
         "Economy & Population Building"
@@ -1927,8 +2087,11 @@
       ],
       "description": "Houses advanced technology that benefit the civilization.",
       "classes": [
-        "technology",
-        "building"
+        "building",
+        "research_building",
+        "scar_university",
+        "siegeable",
+        "university"
       ],
       "displayClasses": [
         "Technology Building"

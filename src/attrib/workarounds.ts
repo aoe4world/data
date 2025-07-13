@@ -716,7 +716,7 @@ workaround("Change Jeanne d'Arc Level Choices to Technology", {
     item.age = 0;
     item.baseId = item.baseId.replace("ability-", `level-${level}-`);
     item.displayClasses = ["Hero Level Up Choice"];
-    item.classes = ["hero", "level-up-choice"];
+    item.classes = ["hero", "level-up-choice"]; // Abilities don't have default classes
     item.description = `Level ${level} option\n\n${item.description}\n\nRequires 500XP`;
     item.id = `${item.baseId}-${item.age}`;
   },
@@ -856,10 +856,10 @@ workaround("Set Bedouin units requirements", {
 workaround("Ayyubid House of Wisdom Wings", {
   predicate: (item) => item.civs[0] == "ay" && item.type === "technology" && item.baseId.includes("-wing-"),
   mutator: (item) => {
-    if (item.classes.includes("ii")) item.age = 1;
-    if (item.classes.includes("iii")) item.age = 2;
-    if (item.classes.includes("iv")) item.age = 3;
-    if (item.classes.includes("bonuses")) item.age = 4;
+    if (item.classes.includes("scar_dark_age_upgrade")) item.age = 1;
+    if (item.classes.includes("scar_feudal_age_upgrade")) item.age = 2;
+    if (item.classes.includes("scar_castle_age_upgrade")) item.age = 3;
+    if (item.classes.includes("scar_imperial_age_upgrade")) item.age = 4;
     item.baseId = ["", "feudal-", "castle-", "imperial-", "bonus-"][item.age] + item.baseId;
     const [wing, name] = item.name.split(": ");
     item.name = `${name}\n(${["", "Feudal", "Castle", "Imperial", "Bonus"][item.age]} ${wing})`;
@@ -1304,7 +1304,7 @@ workaround("Modify King scaling to be more descriptive", {
   predicate: (item) => item.attribName?.startsWith("upgrade_abbey_king_") || false,
   mutator: (item) => {
     const base: Partial<Item> = {
-      classes: ["king", "scaling", "technology"],
+      classes: ["king", "scaling", "technology"], // TODO: Check this with classes vs ebpClasses
       displayClasses: ["King Scaling Technology"],
       icon: "units/king-2.png",
     };
@@ -1338,7 +1338,7 @@ workaround("Modify Militia scaling to be more descriptive", {
   predicate: (item) => item.attribName?.startsWith("upgrade_militia_") || false,
   mutator: (item) => {
     const base: Partial<Item> = {
-      classes: ["Militia", "scaling", "technology"],
+      classes: ["Militia", "scaling", "technology"], // TODO: Check this with classes vs ebpClasses
       displayClasses: ["Militia Scaling Technology"],
       icon: "units/militia-2.png",
     };
@@ -1373,7 +1373,6 @@ workaround("Highlight Khaganate units", {
       item.baseId = `khaganate-${item.baseId}`;
     }
     if (spawnCount > 1) (item as Unit).costs.popcap = spawnCount;
-    item.classes.push("khaganate");
     item.displayClasses.push("Khaganate Unit");
   },
 });
@@ -1437,7 +1436,7 @@ workaround("Modify Shinobi scaling to be more descriptive", {
   predicate: (item) => item.attribName?.startsWith("upgrade_unit_shinobi_") || false,
   mutator: (item) => {
     const base: Partial<Item> = {
-      classes: ["shinobi", "scaling", "technology"],
+      classes: ["shinobi", "scaling", "technology"], // TODO: Check this with classes vs ebpClasses
       displayClasses: ["Shinobi Scaling Technology"],
       icon: "units/shinobi-2.png",
     };

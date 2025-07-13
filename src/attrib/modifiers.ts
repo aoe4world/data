@@ -110,7 +110,7 @@ const common = {
       "yumi-bannerman",
     ],
   } as Required<Modifier>["select"],
-  allMillitaryShips: { class: [["ship", "springald"], ["ship", "archer"], ["ship", "incendiary"], ["warship"]], id: ["galleass", "grand-galley"] } as Required<Modifier>["select"],
+  allMillitaryShips: { class: [["naval_military"]] } as Required<Modifier>["select"],
   allKeepLikeLandmarks: { id: ["berkshire-palace", "elzbach-palace", "kremlin", "spasskaya-tower", "red-palace", "the-white-tower"] } as Required<Modifier>["select"],
   allReligiousUnits: {
     id: ["monk", "scholar", "imam", "dervish", "warrior-monk", "shaman", "prelate", "shinto-priest", "buddhist-monk", "shaolin-monk"],
@@ -4300,7 +4300,7 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
     // Reduce the cost of all technology by -30%.
     {
       property: "goldCost",
-      select: { class: [["technology"]] },
+      select: { class: [["technology"]] }, // TODO: This probably breaks after the ebpClass change, but we need to check whether it applies to type=technology, or also type=upgrade.
       effect: "multiply",
       value: decreaseByPercent(1, r),
       type: "passive",

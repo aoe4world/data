@@ -41,6 +41,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
     const isBuff = file.includes("buff_info/");
 
     let ui_ext;
+    let type_ext;
     let ability_data = type == ITEM_TYPES.ABILITIES && !isBuff ? data.ability_bag ?? data.extensions[0] : undefined;
 
     if (type === ITEM_TYPES.BUILDINGS) ui_ext = ebpExts.ui_ext;
@@ -51,6 +52,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
       ui_ext = maybeOnKey(data.extensions.find((e) => e.squadexts === "sbpextensions/squad_ui_ext")?.race_list[0], "race_data")?.info;
     }
     if (!ui_ext && type === ITEM_TYPES.UNITS && ebpExts.ui_ext) ui_ext = ebpExts.ui_ext;
+    if (!type_ext && ebpExts.type_ext) type_ext = ebpExts.type_ext;
 
     let name = getTranslation(ui_ext?.ui_contextual_info?.screen_name ?? ui_ext?.screen_name ?? ui_ext.title);
     if (name === NO_TRANSLATION_FOUND) name = file.split("/").pop()!;
@@ -58,6 +60,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
     const attribName = file.split("/").pop()!.replace(".xml", "").replace(".json", "");
 
     const squad_requirement_ext = data.extensions.find((e) => e.squadexts == "sbpextensions/squad_requirement_ext");
+    const squad_type_ext = data.extensions.find((e) => e.squadexts == "sbpextensions/squad_type_ext");
 
     const age = parseAge(attribName, squad_requirement_ext?.requirement_table ?? ebpExts?.requirement_ext?.requirement_table ?? data.upgrade_bag?.requirements ?? ability_data?.requirements, data.parent_pbg);
     const baseId = getBasedId(name, type, description);
@@ -67,7 +70,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
       .split(",")
       .map((x) => x.trim());
 
-    const classes = displayClasses.flatMap((x) => x.toLowerCase().split(" ")) as ItemClass[];
+    const classes = convertClasses(type_ext?.unit_type_list ?? squad_type_ext?.squad_type_list ?? data.upgrade_bag?.upgrade_type ?? []);
 
     const unique = parseUnique(ui_ext);
 
@@ -365,6 +368,7 @@ export const damageMap = {
   Ranged: "ranged",
   Fire: "fire",
 };
+
 const armorSort = ["melee", "ranged", "siege", "fire"];
 function parseArmor(health_ext): Armor[] {
   if (!health_ext?.armor_scaler_by_damage_type) return [];
@@ -424,4 +428,22 @@ function parseAbilityActivation(filename: string) {
   if (filename.includes("timed") || filename.includes("modal")) return "manual";
   if (filename.includes("toggle")) return "toggle";
   return "always";
+}
+
+export function convertClasses(classes: string[]) {
+  if (!classes) return classes;
+
+  classes = [...classes];
+
+  // Add back in some of the old identifiers
+  if (classes.includes("war_elephant")) classes.push("elephant");
+  if (classes.includes("leader")) classes.push("hero");
+  if (classes.includes("incendiary_ship")) classes.push("incendiary");
+
+  // TODO: demolition-ship, fishing-boat, trade-ship, transport-ship are the only 'naval_unit' that don't have already ship in them.
+  //       Which means we're technically breaking some abilities, infantry_repair, monk_debuff_target_jpn, weapon_settlement_arrowslits (which has a modify for ship, not naval_unit) etc
+  //       but for now these don't seem to really affect explorer, so I'd recommend we adjust modifiers/workarounds to naval_unit as needed and then remove this mapping.
+  if (classes.includes("naval_unit")) classes.push("ship");
+
+  return [...new Set(classes)].sort((a, b) => a.localeCompare(b));
 }

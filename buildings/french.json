@@ -24,8 +24,13 @@
       ],
       "description": "Produces ranged infantry units.",
       "classes": [
-        "military",
-        "building"
+        "archery_range",
+        "building",
+        "military_only_production",
+        "military_production_building",
+        "production_building",
+        "scar_archeryrange",
+        "siegeable"
       ],
       "displayClasses": [
         "Military Building"
@@ -80,8 +85,13 @@
       ],
       "description": "Produces melee infantry units.",
       "classes": [
-        "military",
-        "building"
+        "barracks",
+        "building",
+        "military_only_production",
+        "military_production_building",
+        "production_building",
+        "scar_barracks",
+        "siegeable"
       ],
       "displayClasses": [
         "Military Building"
@@ -134,8 +144,11 @@
       ],
       "description": "Houses technology to improve infantry and cavalry.",
       "classes": [
-        "technology",
-        "building"
+        "blacksmith",
+        "building",
+        "research_building",
+        "scar_blacksmith",
+        "siegeable"
       ],
       "displayClasses": [
         "Technology Building"
@@ -188,11 +201,21 @@
       ],
       "description": "All Resources can be dropped off here. Produces Villagers, Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.\nCapital Town Centers can detect units stealth or disguises.",
       "classes": [
-        "economy",
-        "&",
-        "population",
         "building",
-        "landmark"
+        "defensive_structure",
+        "emits_herding_interest",
+        "has_default_building_weapons",
+        "hq",
+        "land_food_deposit_4_by_4",
+        "landmark",
+        "production_building",
+        "resource_drop_off",
+        "select_special_building",
+        "siegeable",
+        "town_bell_target",
+        "town_center",
+        "town_center_capital",
+        "town_center_or_landmark"
       ],
       "displayClasses": [
         "Economy & Population Building",
@@ -257,11 +280,18 @@
       ],
       "description": "Acts as a Market. Trains one free Trader for each economic technology researched.",
       "classes": [
-        "age",
-        "ii",
-        "-",
-        "economic",
-        "landmark"
+        "age1_landmark2",
+        "audio_production_landmark",
+        "building",
+        "economy_building",
+        "landmark",
+        "market_fre_discount",
+        "select_special_building",
+        "siegeable",
+        "town_center_or_landmark",
+        "trade_post",
+        "wonder",
+        "wonder_dark_age"
       ],
       "displayClasses": [
         "Age II - Economic Landmark"
@@ -314,11 +344,18 @@
       ],
       "description": "Produces the Royal Artillery versions of the Cannon, Ribauldequin, and Culverin, which do +30% more damage.\nUnlocks the Artillery ability for all Cannons.\nContains Siege and Gunpowder Technologies, trains units and researches technologies 50% faster.",
       "classes": [
-        "age",
-        "iv",
-        "-",
-        "military",
-        "landmark"
+        "age3_landmark2",
+        "audio_production_landmark",
+        "building",
+        "landmark",
+        "military_only_production",
+        "military_production_building",
+        "select_special_building",
+        "siege_production_landmark",
+        "siegeable",
+        "town_center_or_landmark",
+        "wonder",
+        "wonder_castle_age"
       ],
       "displayClasses": [
         "Age IV - Military Landmark"
@@ -371,12 +408,15 @@
       ],
       "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three Fishing Ships.",
       "classes": [
-        "military",
-        "&",
-        "economy",
         "building",
-        "trade",
-        "site"
+        "military_only_production",
+        "naval_production_building",
+        "production_building",
+        "resource_drop_off",
+        "scar_dock",
+        "siegeable",
+        "trade_dock",
+        "trade_post"
       ],
       "displayClasses": [
         "Military & Economy Building",
@@ -436,9 +476,11 @@
       ],
       "description": "Harvestable Food source. Use a Villager to gather Food from the Farm.\nOnly one Villager can work each Farm.",
       "classes": [
-        "food",
-        "source",
-        "building"
+        "building",
+        "farm",
+        "farm_field",
+        "resource",
+        "siegeable"
       ],
       "displayClasses": [
         "Food Source",
@@ -492,10 +534,16 @@
       ],
       "description": "Generates and stores resources over time, the more resources stored the faster they are generated. Select between Food, Wood, Stone, or Gold. Generates stone at half the rate.",
       "classes": [
-        "age",
-        "iii",
-        "-",
-        "landmark"
+        "age2_landmark2",
+        "audio_production_landmark",
+        "building",
+        "landmark",
+        "military_only_production",
+        "select_special_building",
+        "siegeable",
+        "town_center_or_landmark",
+        "wonder",
+        "wonder_feudal_age"
       ],
       "displayClasses": [
         "Age III - Landmark"
@@ -548,8 +596,10 @@
       ],
       "description": "Increases your maximum Population.",
       "classes": [
-        "population",
-        "building"
+        "building",
+        "house",
+        "scar_house",
+        "siegeable"
       ],
       "displayClasses": [
         "Population Building"
@@ -602,8 +652,14 @@
       ],
       "description": "Heavy garrison and defensible position. Can be upgraded with weaponry. Adds additional attacks while garrisoned.",
       "classes": [
-        "defensive",
-        "building"
+        "building",
+        "castle",
+        "defensive_structure",
+        "has_default_building_weapons",
+        "military",
+        "scar_keep",
+        "siegeable",
+        "town_bell_target"
       ],
       "displayClasses": [
         "Defensive Building"
@@ -715,8 +771,12 @@
       ],
       "description": "Villagers can drop off Wood at this building. Houses technologies to improve Wood gathering.",
       "classes": [
-        "economy",
-        "building"
+        "building",
+        "economy_building",
+        "lumber_camp",
+        "resource_drop_off",
+        "scar_lumbercamp",
+        "siegeable"
       ],
       "displayClasses": [
         "Economy Building"
@@ -769,10 +829,14 @@
       ],
       "description": "Allows the buying and selling of resources and produces the Trader.",
       "classes": [
-        "economy",
         "building",
-        "trade",
-        "site"
+        "economy_building",
+        "exchange",
+        "market_fre_discount",
+        "market_keybinding",
+        "scar_market",
+        "siegeable",
+        "trade_post"
       ],
       "displayClasses": [
         "Economy Building",
@@ -826,8 +890,15 @@
       ],
       "description": "Villagers can drop off Food at this building. Houses technologies to improve Food gathering.",
       "classes": [
-        "economy",
-        "building"
+        "building",
+        "economy_building",
+        "emits_herding_interest",
+        "gristmill",
+        "land_food_deposit_2_by_2",
+        "mill",
+        "resource_drop_off",
+        "scar_gristmill",
+        "siegeable"
       ],
       "displayClasses": [
         "Economy Building"
@@ -880,8 +951,14 @@
       ],
       "description": "Villagers can drop off Stone and Gold at this building. Houses technologies to improve mining.",
       "classes": [
-        "economy",
-        "building"
+        "building",
+        "economy_building",
+        "gold_mining_camp",
+        "mining_camp",
+        "resource_drop_off",
+        "scar_miningcamp",
+        "siegeable",
+        "stone_mining_camp"
       ],
       "displayClasses": [
         "Economy Building"
@@ -934,8 +1011,13 @@
       ],
       "description": "Produces religious units and houses religious technologies. Starting in the Castle Age (III), religious units can pick up Relics and place them in this building to generate Gold.",
       "classes": [
-        "religious",
-        "building"
+        "building",
+        "monastery",
+        "production_building",
+        "relic_dropoff",
+        "scar_monastery",
+        "select_all_monastery",
+        "siegeable"
       ],
       "displayClasses": [
         "Religious Building"
@@ -988,7 +1070,12 @@
       ],
       "description": "Build and defend a Wonder to secure victory. Rival civilizations will be aware of its construction and seek to destroy it.",
       "classes": [
-        "wonder"
+        "audio_production_landmark",
+        "building",
+        "select_special_building",
+        "siegeable",
+        "wonder",
+        "wonder_imperial_age"
       ],
       "displayClasses": [
         "Wonder"
@@ -1041,8 +1128,14 @@
       ],
       "description": "Offers extensive line of sight and detects units stealth or disguises. Can be upgraded with weaponry and fortifications. Attacks while garrisoned.",
       "classes": [
-        "defensive",
-        "building"
+        "building",
+        "defensive_structure",
+        "military",
+        "outpost",
+        "scar_outpost",
+        "siegeable",
+        "tower",
+        "town_bell_target"
       ],
       "displayClasses": [
         "Defensive Building"
@@ -1106,8 +1199,12 @@
       ],
       "description": "Light defensive gate. Must be built on a Palisade Wall segment.",
       "classes": [
-        "defensive",
-        "building"
+        "building",
+        "defensive_structure",
+        "gate",
+        "palisade_gate",
+        "siegeable",
+        "wall"
       ],
       "displayClasses": [
         "Defensive Building"
@@ -1160,8 +1257,12 @@
       ],
       "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 21 Wood, with each additional section costing 7 Wood.",
       "classes": [
-        "defensive",
-        "building"
+        "building",
+        "defensive_structure",
+        "palisade_wall",
+        "palisade_wall_section",
+        "siegeable",
+        "wall"
       ],
       "displayClasses": [
         "Defensive Building"
@@ -1214,11 +1315,20 @@
       ],
       "description": "Acts as a Keep. Features high-damage arbalest emplacements. Each garrisoned unit adds an additional arbalest.\nActivates an Arbalest emplacement on all Keeps and Town Centers.",
       "classes": [
-        "age",
-        "iv",
-        "-",
-        "defensive",
-        "landmark"
+        "age3_landmark1",
+        "audio_production_landmark",
+        "building",
+        "castle",
+        "defensive_structure",
+        "has_default_building_weapons",
+        "landmark",
+        "scar_keep",
+        "select_special_building",
+        "siegeable",
+        "town_bell_target",
+        "town_center_or_landmark",
+        "wonder",
+        "wonder_castle_age"
       ],
       "displayClasses": [
         "Age IV - Defensive Landmark"
@@ -1329,11 +1439,14 @@
       ],
       "description": "Houses all technologies unique to the French. Research is -30% cheaper here and ignores Age requirements.",
       "classes": [
-        "age",
-        "iii",
-        "-",
-        "technology",
-        "landmark"
+        "age2_landmark1",
+        "audio_production_landmark",
+        "building",
+        "landmark",
+        "select_special_building",
+        "town_center_or_landmark",
+        "wonder",
+        "wonder_feudal_age"
       ],
       "displayClasses": [
         "Age III - Technology Landmark"
@@ -1386,11 +1499,17 @@
       ],
       "description": "Acts as a Stable. All of your stables produce units +20% faster.",
       "classes": [
-        "age",
-        "ii",
-        "-",
-        "military",
-        "landmark"
+        "age1_landmark1",
+        "audio_production_landmark",
+        "building",
+        "landmark",
+        "military_only_production",
+        "select_special_building",
+        "siegeable",
+        "stable",
+        "town_center_or_landmark",
+        "wonder",
+        "wonder_dark_age"
       ],
       "displayClasses": [
         "Age II - Military Landmark"
@@ -1445,8 +1564,13 @@
       ],
       "description": "Produces siege engines and powerful gunpowder units.",
       "classes": [
-        "military",
-        "building"
+        "building",
+        "military_only_production",
+        "military_production_building",
+        "production_building",
+        "scar_siegeworkshop",
+        "siege_workshop",
+        "siegeable"
       ],
       "displayClasses": [
         "Military Building"
@@ -1499,8 +1623,13 @@
       ],
       "description": "Produces cavalry military units.",
       "classes": [
-        "military",
-        "building"
+        "building",
+        "military_only_production",
+        "military_production_building",
+        "production_building",
+        "scar_stable",
+        "siegeable",
+        "stable"
       ],
       "displayClasses": [
         "Military Building"
@@ -1555,8 +1684,12 @@
       ],
       "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 25% less damage from ranged attacks, 50% less damage from siege attacks, and their range is increased by +1.",
       "classes": [
-        "defensive",
-        "building"
+        "building",
+        "defensive_structure",
+        "siegeable",
+        "stone_wall",
+        "stone_wall_section",
+        "wall"
       ],
       "displayClasses": [
         "Defensive Building"
@@ -1609,8 +1742,12 @@
       ],
       "description": "Heavy defensive gate. Must be built on a Stone Wall segment.\nInfantry can use the gate to access the top of the walls.",
       "classes": [
-        "defensive",
-        "building"
+        "building",
+        "defensive_structure",
+        "gate",
+        "siegeable",
+        "stone_gate",
+        "wall"
       ],
       "displayClasses": [
         "Defensive Building"
@@ -1663,8 +1800,13 @@
       ],
       "description": "Heavy defensive tower that fires a springald. Must be built on a Stone Wall segment.\nInfantry can use the tower to access the top of the walls.",
       "classes": [
-        "defensive",
-        "building"
+        "building",
+        "defensive_structure",
+        "has_default_building_weapons",
+        "military",
+        "siegeable",
+        "stone_wall_tower",
+        "tower"
       ],
       "displayClasses": [
         "Defensive Building"
@@ -1756,10 +1898,19 @@
       ],
       "description": "All Resources can be dropped off here. Produces Villagers, Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.\nNon-Capital Town Centers can't detect stealth or disguises.",
       "classes": [
-        "economy",
-        "&",
-        "population",
-        "building"
+        "building",
+        "defensive_structure",
+        "emits_herding_interest",
+        "has_default_building_weapons",
+        "hq",
+        "land_food_deposit_4_by_4",
+        "production_building",
+        "resource_drop_off",
+        "siegeable",
+        "town_bell_target",
+        "town_center",
+        "town_center_non_capital",
+        "town_center_or_landmark"
       ],
       "displayClasses": [
         "Economy & Population Building"
@@ -1823,8 +1974,11 @@
       ],
       "description": "Houses advanced technology that benefit the civilization.",
       "classes": [
-        "technology",
-        "building"
+        "building",
+        "research_building",
+        "scar_university",
+        "siegeable",
+        "university"
       ],
       "displayClasses": [
         "Technology Building"
