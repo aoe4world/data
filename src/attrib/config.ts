@@ -366,6 +366,7 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "upgrade_free_abbey_trinity_global_discount_rus",
   "unit_villager_free_chi_ha_01", // Placeholder vil that spawns unit_villager_1_chi_ha_01 as additional squad
   "unit_villager_free_jpn", // Placeholder vil
+  "unit_free_dummy_yeoman_lan", // Free age 1 yeoman
 
   "military_school_production_mod_ott", // Advanced Academy bonus to military school production speed
 

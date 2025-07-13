@@ -4344,17 +4344,6 @@
           "icon": "https://data.aoe4world.com/images/technologies/roller-shutter-triggers-4.png",
           "effects": [
             {
-              "property": "maxRange",
-              "select": {
-                "id": [
-                  "springald"
-                ]
-              },
-              "effect": "change",
-              "value": 25,
-              "type": "passive"
-            },
-            {
               "property": "attackSpeed",
               "select": {
                 "id": [
@@ -4362,7 +4351,18 @@
                 ]
               },
               "effect": "multiply",
-              "value": 0.91,
+              "value": 0.8,
+              "type": "passive"
+            },
+            {
+              "property": "rangedResistance",
+              "select": {
+                "id": [
+                  "springald"
+                ]
+              },
+              "effect": "change",
+              "value": 10,
               "type": "passive"
             }
           ]
@@ -4905,18 +4905,6 @@
               },
               "effect": "multiply",
               "value": 1.2,
-              "type": "passive"
-            },
-            {
-              "property": "rangedArmor",
-              "select": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "change",
               "type": "passive"
             }
           ]
@@ -5689,6 +5677,34 @@
               },
               "effect": "change",
               "value": 40,
+              "type": "influence"
+            },
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "monastery",
+                  "mosque",
+                  "prayer-tent",
+                  "regnitz-cathedral"
+                ]
+              },
+              "effect": "change",
+              "value": 40,
+              "type": "influence"
+            },
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "monastery",
+                  "mosque",
+                  "prayer-tent",
+                  "regnitz-cathedral"
+                ]
+              },
+              "effect": "change",
+              "value": 10,
               "type": "influence"
             }
           ]

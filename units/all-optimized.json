@@ -1658,6 +1658,12 @@
         "siege-workshop"
       ],
       "hitpoints": 370,
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 95
+        }
+      ],
       "sight": {
         "inner_height": 10,
         "inner_radius": 8,
@@ -2448,7 +2454,7 @@
         "siege"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/counterweight-trebuchet-4.png",
+      "icon": "https://data.aoe4world.com/images/units/counterweight-trebuchet-3.png",
       "description": "Powerful siege engine effective at destroying buildings and walls over a great distance.\n+ Bonus damage vs buildings\n- Must be set up to fire\n- Inaccurate against units",
       "variations": [
         {
@@ -2891,6 +2897,12 @@
         }
       ],
       "armor": [],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 80
+        }
+      ],
       "sight": {
         "inner_height": 10,
         "inner_radius": 56,
@@ -3728,6 +3740,12 @@
         }
       ],
       "armor": [],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 85
+        }
+      ],
       "sight": {
         "inner_height": 10,
         "inner_radius": 40,
@@ -3894,12 +3912,12 @@
         "incendiary",
         "ship"
       ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/explosive-dhow-3.png",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/explosive-dhow-2.png",
       "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
       "variations": [
         {
-          "id": "explosive-dhow-3",
+          "id": "explosive-dhow-2",
           "pbgid": 199727,
           "attribName": "unit_naval_fireship_3_abb",
           "civs": [
@@ -3907,7 +3925,7 @@
           ]
         },
         {
-          "id": "explosive-dhow-3",
+          "id": "explosive-dhow-2",
           "pbgid": 7949762,
           "attribName": "unit_naval_fireship_3_abb_ha_01",
           "civs": [
@@ -3915,7 +3933,7 @@
           ]
         },
         {
-          "id": "explosive-dhow-3",
+          "id": "explosive-dhow-2",
           "pbgid": 193142,
           "attribName": "unit_naval_fireship_3_sul",
           "civs": [
@@ -3924,7 +3942,7 @@
         }
       ],
       "baseId": "explosive-dhow",
-      "age": 3,
+      "age": 2,
       "costs": {
         "food": 0,
         "wood": 80,
@@ -4593,7 +4611,7 @@
         "je",
         "mo"
       ],
-      "unique": true,
+      "unique": false,
       "displayClasses": [
         "Ranged Gunpowder Infantry"
       ],
@@ -4602,18 +4620,10 @@
         "gunpowder",
         "infantry"
       ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/handcannoneer-3.png",
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/units/handcannoneer-4.png",
       "description": "Powerful all-purpose ranged infantry.\n+ High damage\n- High cost\n- Slow movement speed\n- Countered by Horsemen",
       "variations": [
-        {
-          "id": "handcannoneer-3",
-          "pbgid": 9001958,
-          "attribName": "unit_handcannon_3_lan_college",
-          "civs": [
-            "hl"
-          ]
-        },
         {
           "id": "handcannoneer-4",
           "pbgid": 199714,
@@ -4728,45 +4738,14 @@
         },
         {
           "id": "handcannoneer-4",
-          "pbgid": 5000067,
-          "attribName": "unit_handcannon_4_lan",
+          "name": "Early Handcannoneer",
+          "pbgid": 9001958,
+          "attribName": "unit_handcannon_3_lan_college",
           "civs": [
             "hl"
-          ]
-        }
-      ],
-      "baseId": "handcannoneer",
-      "age": 3,
-      "costs": {
-        "food": 120,
-        "wood": 0,
-        "stone": 0,
-        "gold": 120,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 240,
-        "popcap": 1,
-        "time": 35
-      },
-      "producedBy": [
-        "archery-range"
-      ],
-      "hitpoints": 100,
-      "sight": {
-        "inner_height": 10,
-        "inner_radius": 8,
-        "outer_height": -15,
-        "outer_radius": 32,
-        "base": 17.6,
-        "line": 32,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.125
-      },
-      "shared": {
-        "handcannoneer-3": {
-          "name": "Early Handcannoneer",
+          ],
+          "unique": true,
+          "hitpoints": 100,
           "weapons": [
             {
               "name": "Handcannon",
@@ -4791,45 +4770,65 @@
               "attribName": "weapon_handcannon_3_lan_college",
               "pbgid": 9001959
             }
-          ],
-          "armor": [],
-          "id": "handcannoneer-3"
-        },
-        "handcannoneer-4": {
-          "name": "Handcannoneer",
-          "age": 4,
-          "unique": false,
-          "icon": "https://data.aoe4world.com/images/units/handcannoneer-4.png",
-          "hitpoints": 130,
-          "weapons": [
-            {
-              "name": "Handcannon",
-              "type": "ranged",
-              "damage": 38,
-              "speed": 2.125,
-              "range": {
-                "min": 0,
-                "max": 4
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0.25,
-                "windup": 0,
-                "attack": 0.125,
-                "winddown": 0.5,
-                "reload": 1.25,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "attribName": "weapon_handcannon_4",
-              "pbgid": 127729
-            }
-          ],
-          "armor": [],
-          "id": "handcannoneer-4"
+          ]
         }
-      }
+      ],
+      "baseId": "handcannoneer",
+      "age": 4,
+      "costs": {
+        "food": 120,
+        "wood": 0,
+        "stone": 0,
+        "gold": 120,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 240,
+        "popcap": 1,
+        "time": 35
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "hitpoints": 130,
+      "weapons": [
+        {
+          "name": "Handcannon",
+          "type": "ranged",
+          "damage": 38,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 4
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 1.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_handcannon_4",
+          "pbgid": 127729
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 8,
+        "outer_height": -15,
+        "outer_radius": 32,
+        "base": 17.6,
+        "line": 32,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      },
+      "shared": {}
     },
     {
       "id": "horseman",
@@ -7550,6 +7549,12 @@
         }
       ],
       "armor": [],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 85
+        }
+      ],
       "sight": {
         "inner_height": 10,
         "inner_radius": 28,
@@ -11571,6 +11576,12 @@
           "value": 3
         }
       ],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 55
+        }
+      ],
       "sight": {
         "inner_height": 10,
         "inner_radius": 32,
@@ -11602,12 +11613,12 @@
         "worker",
         "trader"
       ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/trade-caravan-1.png",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/trade-caravan-2.png",
       "description": "Traders generate Gold by travelling between their Home Market and a Trade Post or another player's Market. Greater distances between the Home Market and trade destination will generate higher amounts of Gold.\nThe Home Market or Trade destination may be changed at any time.",
       "variations": [
         {
-          "id": "trade-caravan-1",
+          "id": "trade-caravan-2",
           "pbgid": 199744,
           "attribName": "unit_trade_cart_abb",
           "civs": [
@@ -11615,7 +11626,7 @@
           ]
         },
         {
-          "id": "trade-caravan-1",
+          "id": "trade-caravan-2",
           "pbgid": 2762454,
           "attribName": "unit_trade_cart_abb_ha_01",
           "civs": [
@@ -11624,7 +11635,7 @@
         }
       ],
       "baseId": "trade-caravan",
-      "age": 1,
+      "age": 2,
       "costs": {
         "food": 0,
         "wood": 40,
@@ -11688,7 +11699,7 @@
         "ship"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/trade-ship-3.png",
+      "icon": "https://data.aoe4world.com/images/units/trade-ship-2.png",
       "description": "Trade Ships generate Gold and Wood when assigned to a trade route with a Coastal Trade Post or another player's Dock.\n- No combat",
       "variations": [
         {
@@ -11842,8 +11853,7 @@
           "attribName": "unit_naval_trade_ship_lan",
           "civs": [
             "hl"
-          ],
-          "icon": "https://data.aoe4world.com/images/units/trade-ship-1.png"
+          ]
         }
       ],
       "baseId": "trade-ship",
@@ -11876,250 +11886,6 @@
       },
       "movement": {
         "speed": 1.5
-      },
-      "shared": {}
-    },
-    {
-      "id": "trader",
-      "name": "Trader",
-      "type": "unit",
-      "civs": [
-        "ab",
-        "ay",
-        "by",
-        "ch",
-        "de",
-        "en",
-        "fr",
-        "hl",
-        "hr",
-        "ja",
-        "je",
-        "ma",
-        "mo",
-        "od",
-        "ot",
-        "ru",
-        "zx"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Worker"
-      ],
-      "classes": [
-        "worker"
-      ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/trader-1.png",
-      "description": "Traders generate Gold by travelling between their Home Market and a Trade Post or another player's Market. Greater distances between the Home Market and trade destination will generate higher amounts of Gold.\nThe Home Market or Trade destination may be changed at any time.",
-      "variations": [
-        {
-          "id": "trader-1",
-          "pbgid": 199744,
-          "attribName": "unit_trade_cart_abb",
-          "civs": [
-            "ab"
-          ],
-          "description": "Traders generate Gold when assigned to trade with a Trade Post or another player’s Market. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trader makes repeated trips between its Home Market and the trade target. You can assign a new Home Market if you wish to.",
-          "costs": {
-            "food": 0,
-            "wood": 40,
-            "stone": 0,
-            "gold": 40,
-            "vizier": 0,
-            "oliveoil": 0,
-            "total": 80,
-            "popcap": 1,
-            "time": 30
-          }
-        },
-        {
-          "id": "trader-1",
-          "pbgid": 2762454,
-          "attribName": "unit_trade_cart_abb_ha_01",
-          "civs": [
-            "ay"
-          ],
-          "description": "Traders generate Gold when assigned to trade with a Trade Post or another player’s Market. The distance between the trade target and Market determines the amount of Gold. Once assigned to trade, the Trader makes repeated trips between its Home Market and the trade target. You can assign a new Home Market if you wish to.",
-          "costs": {
-            "food": 0,
-            "wood": 40,
-            "stone": 0,
-            "gold": 40,
-            "vizier": 0,
-            "oliveoil": 0,
-            "total": 80,
-            "popcap": 1,
-            "time": 30
-          }
-        },
-        {
-          "id": "trader-1",
-          "pbgid": 5080225,
-          "attribName": "unit_trade_cart_byz",
-          "civs": [
-            "by"
-          ]
-        },
-        {
-          "id": "trader-1",
-          "pbgid": 143716,
-          "attribName": "unit_trade_cart_chi",
-          "civs": [
-            "ch"
-          ]
-        },
-        {
-          "id": "trader-1",
-          "pbgid": 136076,
-          "attribName": "unit_trade_cart_sul",
-          "civs": [
-            "de"
-          ]
-        },
-        {
-          "id": "trader-1",
-          "pbgid": 166422,
-          "attribName": "unit_trade_cart_eng",
-          "civs": [
-            "en"
-          ]
-        },
-        {
-          "id": "trader-1",
-          "pbgid": 132306,
-          "attribName": "unit_trade_cart_fre",
-          "civs": [
-            "fr"
-          ],
-          "producedBy": [
-            "chamber-of-commerce",
-            "market"
-          ]
-        },
-        {
-          "id": "trader-1",
-          "pbgid": 134750,
-          "attribName": "unit_trade_cart_hre",
-          "civs": [
-            "hr"
-          ]
-        },
-        {
-          "id": "trader-1",
-          "pbgid": 3765649,
-          "attribName": "unit_trade_cart_jpn",
-          "civs": [
-            "ja"
-          ]
-        },
-        {
-          "id": "trader-1",
-          "pbgid": 132306,
-          "attribName": "unit_trade_cart_fre",
-          "civs": [
-            "je"
-          ],
-          "producedBy": [
-            "chamber-of-commerce",
-            "market"
-          ]
-        },
-        {
-          "id": "trader-1",
-          "pbgid": 2201796,
-          "attribName": "unit_trade_cart_mal",
-          "civs": [
-            "ma"
-          ]
-        },
-        {
-          "id": "trader-1",
-          "pbgid": 129600,
-          "attribName": "unit_trade_cart_mon",
-          "civs": [
-            "mo"
-          ],
-          "producedBy": [
-            "market",
-            "the-silver-tree"
-          ]
-        },
-        {
-          "id": "trader-1",
-          "pbgid": 5309942,
-          "attribName": "unit_trade_cart_hre_ha_01",
-          "civs": [
-            "od"
-          ]
-        },
-        {
-          "id": "trader-1",
-          "pbgid": 2046466,
-          "attribName": "unit_trade_cart_ott",
-          "civs": [
-            "ot"
-          ],
-          "producedBy": [
-            "market",
-            "sultanhani-trade-network"
-          ]
-        },
-        {
-          "id": "trader-1",
-          "pbgid": 133488,
-          "attribName": "unit_trade_cart_rus",
-          "civs": [
-            "ru"
-          ]
-        },
-        {
-          "id": "trader-1",
-          "pbgid": 143716,
-          "attribName": "unit_trade_cart_chi",
-          "civs": [
-            "zx"
-          ]
-        },
-        {
-          "id": "trader-1",
-          "pbgid": 5000135,
-          "attribName": "unit_trade_cart_lan",
-          "civs": [
-            "hl"
-          ]
-        }
-      ],
-      "baseId": "trader",
-      "age": 1,
-      "costs": {
-        "food": 0,
-        "wood": 60,
-        "stone": 0,
-        "gold": 60,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 120,
-        "popcap": 1,
-        "time": 30
-      },
-      "producedBy": [
-        "market"
-      ],
-      "hitpoints": 90,
-      "weapons": [],
-      "armor": [],
-      "sight": {
-        "inner_height": 10,
-        "inner_radius": 10,
-        "outer_height": -15,
-        "outer_radius": 35,
-        "base": 20,
-        "line": 35,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1
       },
       "shared": {}
     },
@@ -13604,18 +13370,18 @@
       "classes": [
         "religious"
       ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/dervish-3.png",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/dervish-2.png",
       "description": "Mounted Religious unit. Can pick up Relics, convert enemy units, and capture Sacred Sites.\n+ Uses a powerful Mass Heal ability to heal friendly units in an area.\n+ Gains increased Healing when carrying a relic.\n+ High speed.",
       "variations": [
         {
-          "id": "dervish-3",
+          "id": "dervish-2",
           "baseId": "dervish",
           "type": "unit",
           "name": "Dervish",
           "pbgid": 2528652,
           "attribName": "unit_monk_3_cambulance_abb_ha_01",
-          "age": 3,
+          "age": 2,
           "civs": [
             "ay"
           ],
@@ -13641,7 +13407,7 @@
           "producedBy": [
             "mosque"
           ],
-          "icon": "https://data.aoe4world.com/images/units/dervish-3.png",
+          "icon": "https://data.aoe4world.com/images/units/dervish-2.png",
           "hitpoints": 120,
           "weapons": [],
           "armor": [],
@@ -14361,6 +14127,12 @@
             }
           ],
           "armor": [],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 85
+            }
+          ],
           "sight": {
             "inner_height": 10,
             "inner_radius": 28,
@@ -14480,6 +14252,12 @@
             }
           ],
           "armor": [],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 95
+            }
+          ],
           "sight": {
             "inner_height": 10,
             "inner_radius": 8,
@@ -15120,6 +14898,12 @@
         }
       ],
       "armor": [],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 85
+        }
+      ],
       "sight": {
         "inner_height": 10,
         "inner_radius": 32,
@@ -15155,18 +14939,10 @@
       "classes": [
         "warship"
       ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/carrack-1.png",
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/units/carrack-4.png",
       "description": "Large sailed war vessel armed with broadside cannons.\n+ Anti-structure specialist\n- Low movement speed",
       "variations": [
-        {
-          "id": "carrack-1",
-          "pbgid": 5000127,
-          "attribName": "unit_naval_carrack_lan",
-          "civs": [
-            "hl"
-          ]
-        },
         {
           "id": "carrack-4",
           "pbgid": 2616092,
@@ -15260,10 +15036,18 @@
             "line": 52,
             "height": 10
           }
+        },
+        {
+          "id": "carrack-4",
+          "pbgid": 5000127,
+          "attribName": "unit_naval_carrack_lan",
+          "civs": [
+            "hl"
+          ]
         }
       ],
       "baseId": "carrack",
-      "age": 1,
+      "age": 4,
       "costs": {
         "food": 200,
         "wood": 200,
@@ -15279,6 +15063,54 @@
         "dock"
       ],
       "hitpoints": 700,
+      "weapons": [
+        {
+          "name": "Cannon",
+          "type": "siege",
+          "damage": 45,
+          "speed": 5.625,
+          "range": {
+            "min": 0,
+            "max": 9
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 70,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 5,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_naval_warship_cannon_ai_western",
+          "pbgid": 2033788
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 5
+        }
+      ],
       "sight": {
         "inner_height": 10,
         "inner_radius": 50,
@@ -15291,114 +15123,7 @@
       "movement": {
         "speed": 1.25
       },
-      "shared": {
-        "carrack-1": {
-          "name": "Carrack",
-          "weapons": [
-            {
-              "name": "Cannon",
-              "type": "siege",
-              "damage": 45,
-              "speed": 5.625,
-              "range": {
-                "min": 0,
-                "max": 9
-              },
-              "modifiers": [
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 70,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0.5,
-                "windup": 0,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 5,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "burst": {
-                "count": 3
-              },
-              "attribName": "weapon_naval_warship_cannon_ai_western",
-              "pbgid": 2033788
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 5
-            }
-          ],
-          "id": "carrack-1"
-        },
-        "carrack-4": {
-          "name": "Carrack",
-          "age": 4,
-          "icon": "https://data.aoe4world.com/images/units/carrack-4.png",
-          "weapons": [
-            {
-              "name": "Cannon",
-              "type": "siege",
-              "damage": 45,
-              "speed": 5.625,
-              "range": {
-                "min": 0,
-                "max": 9
-              },
-              "modifiers": [
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 70,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0.5,
-                "windup": 0,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 5,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "burst": {
-                "count": 3
-              },
-              "attribName": "weapon_naval_warship_cannon_ai_western",
-              "pbgid": 2033788
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 5
-            }
-          ],
-          "id": "carrack-4"
-        }
-      }
+      "shared": {}
     },
     {
       "id": "cataphract",
@@ -15741,6 +15466,12 @@
             }
           ],
           "armor": [],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 95
+            }
+          ],
           "sight": {
             "inner_height": 10,
             "inner_radius": 8,
@@ -15790,20 +15521,12 @@
         "incendiary",
         "ship"
       ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/demolition-ship-1.png",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/demolition-ship-2.png",
       "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
       "variations": [
         {
-          "id": "demolition-ship-1",
-          "pbgid": 5000129,
-          "attribName": "unit_naval_demo_lan",
-          "civs": [
-            "hl"
-          ]
-        },
-        {
-          "id": "demolition-ship-3",
+          "id": "demolition-ship-2",
           "pbgid": 4028254,
           "attribName": "unit_naval_fireship_3_byz",
           "civs": [
@@ -15811,7 +15534,7 @@
           ]
         },
         {
-          "id": "demolition-ship-3",
+          "id": "demolition-ship-2",
           "pbgid": 193117,
           "attribName": "unit_naval_fireship_3_eng",
           "civs": [
@@ -15830,7 +15553,7 @@
           }
         },
         {
-          "id": "demolition-ship-3",
+          "id": "demolition-ship-2",
           "pbgid": 193122,
           "attribName": "unit_naval_fireship_3_fre",
           "civs": [
@@ -15838,7 +15561,7 @@
           ]
         },
         {
-          "id": "demolition-ship-3",
+          "id": "demolition-ship-2",
           "pbgid": 193127,
           "attribName": "unit_naval_fireship_3_hre",
           "civs": [
@@ -15846,7 +15569,7 @@
           ]
         },
         {
-          "id": "demolition-ship-3",
+          "id": "demolition-ship-2",
           "pbgid": 193122,
           "attribName": "unit_naval_fireship_3_fre",
           "civs": [
@@ -15854,7 +15577,7 @@
           ]
         },
         {
-          "id": "demolition-ship-3",
+          "id": "demolition-ship-2",
           "pbgid": 2356678,
           "attribName": "unit_naval_fireship_3_mal",
           "civs": [
@@ -15862,7 +15585,7 @@
           ]
         },
         {
-          "id": "demolition-ship-3",
+          "id": "demolition-ship-2",
           "pbgid": 2280488,
           "attribName": "unit_naval_fireship_3_hre_ha_01",
           "civs": [
@@ -15870,7 +15593,7 @@
           ]
         },
         {
-          "id": "demolition-ship-3",
+          "id": "demolition-ship-2",
           "pbgid": 2046448,
           "attribName": "unit_naval_fireship_3_ott",
           "civs": [
@@ -15878,16 +15601,24 @@
           ]
         },
         {
-          "id": "demolition-ship-3",
+          "id": "demolition-ship-2",
           "pbgid": 8999918,
           "attribName": "unit_naval_fireship_3_tem",
           "civs": [
             "kt"
           ]
+        },
+        {
+          "id": "demolition-ship-2",
+          "pbgid": 5000129,
+          "attribName": "unit_naval_demo_lan",
+          "civs": [
+            "hl"
+          ]
         }
       ],
       "baseId": "demolition-ship",
-      "age": 1,
+      "age": 2,
       "costs": {
         "food": 0,
         "wood": 80,
@@ -15903,6 +15634,59 @@
         "dock"
       ],
       "hitpoints": 145,
+      "weapons": [
+        {
+          "name": "Incendiaries",
+          "type": "siege",
+          "damage": 95,
+          "speed": 0.125,
+          "range": {
+            "min": 0,
+            "max": 2
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "massive"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 300,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 300,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_fireship",
+          "pbgid": 196723
+        }
+      ],
+      "armor": [],
       "sight": {
         "inner_height": 10,
         "inner_radius": 8,
@@ -15915,124 +15699,7 @@
       "movement": {
         "speed": 2
       },
-      "shared": {
-        "demolition-ship-1": {
-          "name": "Demolition Ship",
-          "weapons": [
-            {
-              "name": "Incendiaries",
-              "type": "siege",
-              "damage": 95,
-              "speed": 0.125,
-              "range": {
-                "min": 0,
-                "max": 2
-              },
-              "modifiers": [
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "massive"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 300,
-                  "type": "passive"
-                },
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 300,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0,
-                "windup": 0,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "attribName": "weapon_naval_fireship",
-              "pbgid": 196723
-            }
-          ],
-          "armor": [],
-          "id": "demolition-ship-1"
-        },
-        "demolition-ship-3": {
-          "name": "Demolition Ship",
-          "age": 3,
-          "icon": "https://data.aoe4world.com/images/units/demolition-ship-3.png",
-          "weapons": [
-            {
-              "name": "Incendiaries",
-              "type": "siege",
-              "damage": 95,
-              "speed": 0.125,
-              "range": {
-                "min": 0,
-                "max": 2
-              },
-              "modifiers": [
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "massive"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 300,
-                  "type": "passive"
-                },
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 300,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0,
-                "windup": 0,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "attribName": "weapon_naval_fireship",
-              "pbgid": 196723
-            }
-          ],
-          "armor": [],
-          "id": "demolition-ship-3"
-        }
-      }
+      "shared": {}
     },
     {
       "id": "dromon",
@@ -16177,7 +15844,7 @@
         "ship"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/galley-3.png",
+      "icon": "https://data.aoe4world.com/images/units/galley-2.png",
       "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from ranged damage Blacksmith technology",
       "variations": [
         {
@@ -16253,8 +15920,7 @@
           "attribName": "unit_naval_war_galley_lan",
           "civs": [
             "hl"
-          ],
-          "icon": "https://data.aoe4world.com/images/units/galley-1.png"
+          ]
         }
       ],
       "baseId": "galley",
@@ -16746,12 +16412,12 @@
       "classes": [
         "siege"
       ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/huihui-pao-1.png",
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/units/huihui-pao-4.png",
       "description": "Massive siege engine with incredible range, extra effective at destroying buildings and walls.\n+ Extremely long range\n- Must be set up to fire\n\nMercenary that can be purchased for 1000 Olive Oil.",
       "variations": [
         {
-          "id": "huihui-pao-1",
+          "id": "huihui-pao-4",
           "pbgid": 2138873,
           "attribName": "unit_khaganate_great_trebuchet_merc_byz",
           "civs": [
@@ -16759,10 +16425,9 @@
           ]
         },
         {
-          "id": "huihui-pao-1",
+          "id": "huihui-pao-4",
           "pbgid": 2117335,
           "attribName": "unit_khaganate_great_trebuchet_mon",
-          "age": 4,
           "civs": [
             "mo"
           ],
@@ -16846,7 +16511,7 @@
         }
       ],
       "baseId": "huihui-pao",
-      "age": 1,
+      "age": 4,
       "costs": {
         "food": 0,
         "wood": 0,
@@ -16967,6 +16632,12 @@
         }
       ],
       "armor": [],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 80
+        }
+      ],
       "sight": {
         "inner_height": 10,
         "inner_radius": 56,
@@ -19048,16 +18719,21 @@
       "classes": [
         "religious"
       ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/monk-2.png",
-      "description": "Support unit with no combat capability. Can pick up Relics, convert enemy units, and capture Sacred Sites starting in the Castle Age (III).\n+ Heals friendly units\n- Slow movement speed",
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/monk-3.png",
+      "description": "Support unit with no combat capability. Can pick up Relics, convert enemy units, and capture Sacred Sites.\n+ Heals friendly units\n- Slow movement speed",
       "variations": [
         {
-          "id": "monk-2",
+          "id": "monk-3",
           "pbgid": 6782850,
           "attribName": "unit_monk_2_byz",
           "civs": [
             "by"
+          ],
+          "description": "Support unit with no combat capability. Can pick up Relics, convert enemy units, and capture Sacred Sites starting in the Castle Age (III).\n+ Heals friendly units\n- Slow movement speed",
+          "producedBy": [
+            "grand-winery",
+            "monastery"
           ]
         },
         {
@@ -19118,7 +18794,7 @@
         }
       ],
       "baseId": "monk",
-      "age": 2,
+      "age": 3,
       "costs": {
         "food": 0,
         "wood": 0,
@@ -19131,10 +18807,11 @@
         "time": 30
       },
       "producedBy": [
-        "grand-winery",
         "monastery"
       ],
       "hitpoints": 90,
+      "weapons": [],
+      "armor": [],
       "sight": {
         "inner_height": 10,
         "inner_radius": 15,
@@ -19147,26 +18824,7 @@
       "movement": {
         "speed": 1.125
       },
-      "shared": {
-        "monk-2": {
-          "name": "Monk",
-          "weapons": [],
-          "armor": [],
-          "id": "monk-2"
-        },
-        "monk-3": {
-          "name": "Monk",
-          "age": 3,
-          "description": "Support unit with no combat capability. Can pick up Relics, convert enemy units, and capture Sacred Sites.\n+ Heals friendly units\n- Slow movement speed",
-          "producedBy": [
-            "monastery"
-          ],
-          "icon": "https://data.aoe4world.com/images/units/monk-3.png",
-          "weapons": [],
-          "armor": [],
-          "id": "monk-3"
-        }
-      }
+      "shared": {}
     },
     {
       "id": "musofadi-warrior",
@@ -19548,7 +19206,7 @@
         "gunpowder"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/nest-of-bees-4.png",
+      "icon": "https://data.aoe4world.com/images/units/nest-of-bees-3.png",
       "description": "Innovative field weapon capable of firing a barrage of rockets to damage defensive positions and clumped enemy troops.\n+ Good area of effect damage against most targets\n- Slowest movement speed\n- Weak if surrounded",
       "variations": [
         {
@@ -19574,6 +19232,7 @@
           "producedBy": [
             "foreign-engineering-company"
           ],
+          "icon": "https://data.aoe4world.com/images/units/nest-of-bees-4.png",
           "unlockedBy": [
             "buildings/foreign-engineering-company"
           ]
@@ -19669,6 +19328,12 @@
         }
       ],
       "armor": [],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 85
+        }
+      ],
       "sight": {
         "inner_height": 10,
         "inner_radius": 40,
@@ -19701,17 +19366,159 @@
         "siege",
         "gunpowder"
       ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/units/royal-cannon-4.png",
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/royal-cannon-3.png",
       "description": "Most powerful siege cannon. Excellent against buildings or any stubborn targets.\n+ Bonus damage to buildings",
       "variations": [
+        {
+          "id": "royal-cannon-3",
+          "pbgid": 1907351,
+          "attribName": "unit_cannon_4_royal_fre",
+          "civs": [
+            "fr"
+          ]
+        },
+        {
+          "id": "royal-cannon-3",
+          "pbgid": 6131332,
+          "attribName": "unit_cannon_4_royal_fre_ha_01",
+          "civs": [
+            "je"
+          ]
+        },
         {
           "id": "royal-cannon-4",
           "pbgid": 2138874,
           "attribName": "unit_cannon_4_royal_merc_byz",
           "civs": [
             "by"
+          ]
+        }
+      ],
+      "baseId": "royal-cannon",
+      "age": 3,
+      "costs": {
+        "food": 0,
+        "wood": 300,
+        "stone": 0,
+        "gold": 600,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 900,
+        "popcap": 3,
+        "time": 45
+      },
+      "producedBy": [
+        "college-of-artillery"
+      ],
+      "hitpoints": 190,
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 85
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
+        "line": 56,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.875
+      },
+      "shared": {
+        "royal-cannon-3": {
+          "name": "Royal Cannon",
+          "weapons": [
+            {
+              "name": "Cannon",
+              "type": "siege",
+              "damage": 60,
+              "speed": 5.375,
+              "range": {
+                "min": 3.75,
+                "max": 10
+              },
+              "modifiers": [
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "naval",
+                        "unit"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 500,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 450,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "infantry"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 55,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 55,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0.5,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 1.75,
+                "reload": 3,
+                "setup": 0.25,
+                "teardown": 0.25,
+                "cooldown": 0
+              },
+              "attribName": "weapon_cannon_4",
+              "pbgid": 165121
+            }
           ],
+          "armor": [],
+          "id": "royal-cannon-3"
+        },
+        "royal-cannon-4": {
+          "name": "Royal Cannon",
+          "age": 4,
           "description": "Most powerful siege cannon. Excellent against buildings or any stubborn targets.\n+ Bonus damage to buildings\n\nMercenary that can be purchased for 900 Olive Oil.",
           "unique": false,
           "costs": {
@@ -19728,138 +19535,94 @@
           "producedBy": [
             "foreign-engineering-company"
           ],
-          "unlockedBy": [
-            "buildings/foreign-engineering-company"
-          ]
-        },
-        {
-          "id": "royal-cannon-4",
-          "pbgid": 1907351,
-          "attribName": "unit_cannon_4_royal_fre",
-          "civs": [
-            "fr"
-          ]
-        },
-        {
-          "id": "royal-cannon-4",
-          "pbgid": 6131332,
-          "attribName": "unit_cannon_4_royal_fre_ha_01",
-          "civs": [
-            "je"
-          ]
-        }
-      ],
-      "baseId": "royal-cannon",
-      "age": 4,
-      "costs": {
-        "food": 0,
-        "wood": 300,
-        "stone": 0,
-        "gold": 600,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 900,
-        "popcap": 3,
-        "time": 45
-      },
-      "producedBy": [
-        "college-of-artillery"
-      ],
-      "hitpoints": 190,
-      "weapons": [
-        {
-          "name": "Cannon",
-          "type": "siege",
-          "damage": 60,
-          "speed": 5.375,
-          "range": {
-            "min": 3.75,
-            "max": 10
-          },
-          "modifiers": [
+          "icon": "https://data.aoe4world.com/images/units/royal-cannon-4.png",
+          "weapons": [
             {
-              "property": "siegeAttack",
-              "target": {
-                "class": [
-                  [
-                    "naval",
-                    "unit"
-                  ]
-                ]
+              "name": "Cannon",
+              "type": "siege",
+              "damage": 60,
+              "speed": 5.375,
+              "range": {
+                "min": 3.75,
+                "max": 10
               },
-              "effect": "change",
-              "value": 500,
-              "type": "passive"
-            },
-            {
-              "property": "siegeAttack",
-              "target": {
-                "class": [
-                  [
-                    "building"
-                  ]
-                ]
+              "modifiers": [
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "naval",
+                        "unit"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 500,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 450,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "infantry"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 55,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 55,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0.5,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 1.75,
+                "reload": 3,
+                "setup": 0.25,
+                "teardown": 0.25,
+                "cooldown": 0
               },
-              "effect": "change",
-              "value": 450,
-              "type": "passive"
-            },
-            {
-              "property": "siegeAttack",
-              "target": {
-                "class": [
-                  [
-                    "infantry"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 55,
-              "type": "passive"
-            },
-            {
-              "property": "siegeAttack",
-              "target": {
-                "class": [
-                  [
-                    "war",
-                    "elephant"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 55,
-              "type": "passive"
+              "attribName": "weapon_cannon_4",
+              "pbgid": 165121
             }
           ],
-          "durations": {
-            "aim": 0.5,
-            "windup": 0,
-            "attack": 0.125,
-            "winddown": 1.75,
-            "reload": 3,
-            "setup": 0.25,
-            "teardown": 0.25,
-            "cooldown": 0
-          },
-          "attribName": "weapon_cannon_4",
-          "pbgid": 165121
+          "armor": [],
+          "unlockedBy": [
+            "buildings/foreign-engineering-company"
+          ],
+          "id": "royal-cannon-4"
         }
-      ],
-      "armor": [],
-      "sight": {
-        "inner_height": 10,
-        "inner_radius": 32,
-        "outer_height": -15,
-        "outer_radius": 56,
-        "base": 41.6,
-        "line": 56,
-        "height": 10
-      },
-      "movement": {
-        "speed": 0.875
-      },
-      "shared": {}
+      }
     },
     {
       "id": "royal-knight",
@@ -20560,6 +20323,12 @@
       "hitpoints": 480,
       "weapons": [],
       "armor": [],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 95
+        }
+      ],
       "sight": {
         "inner_height": 10,
         "inner_radius": 12,
@@ -21125,7 +20894,7 @@
         "by",
         "de"
       ],
-      "unique": false,
+      "unique": true,
       "displayClasses": [
         "Ranged Cavalry",
         "Elephant"
@@ -21135,10 +20904,18 @@
         "cavalry",
         "elephant"
       ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/units/tower-elephant-4.png",
-      "description": "Powerful ranged cavalry that can fire while moving.\n+ High health\n+ Mounted with powerful Archers\n+ Capable of attacking Stone Walls\n- Slow movement speed\n\nMercenary that can be purchased for 1000 Olive Oil.\n\nRequires the Eastern Mercenary Contract.",
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/tower-elephant-3.png",
+      "description": "Powerful ranged cavalry that can fire while moving.\n+ High health\n+ Mounted with powerful Archers\n+ Capable of attacking Stone Walls\n- Slow movement speed",
       "variations": [
+        {
+          "id": "tower-elephant-3",
+          "pbgid": 136091,
+          "attribName": "unit_war_elephant_tower_4_sul",
+          "civs": [
+            "de"
+          ]
+        },
         {
           "id": "tower-elephant-4",
           "pbgid": 2104184,
@@ -21146,155 +20923,25 @@
           "civs": [
             "by"
           ]
-        },
-        {
-          "id": "tower-elephant-4",
-          "pbgid": 136091,
-          "attribName": "unit_war_elephant_tower_4_sul",
-          "civs": [
-            "de"
-          ],
-          "description": "Powerful ranged cavalry that can fire while moving.\n+ High health\n+ Mounted with powerful Archers\n+ Capable of attacking Stone Walls\n- Slow movement speed",
-          "unique": true,
-          "costs": {
-            "food": 400,
-            "wood": 0,
-            "stone": 0,
-            "gold": 600,
-            "vizier": 0,
-            "oliveoil": 0,
-            "total": 1000,
-            "popcap": 3,
-            "time": 60
-          },
-          "producedBy": [
-            "archery-range"
-          ]
         }
       ],
       "baseId": "tower-elephant",
-      "age": 4,
+      "age": 3,
       "costs": {
-        "food": 0,
+        "food": 400,
         "wood": 0,
         "stone": 0,
-        "gold": 0,
+        "gold": 600,
         "vizier": 0,
-        "oliveoil": 1000,
+        "oliveoil": 0,
         "total": 1000,
         "popcap": 3,
-        "time": 130
+        "time": 60
       },
       "producedBy": [
-        "golden-horn-tower",
-        "mercenary-house"
+        "archery-range"
       ],
       "hitpoints": 600,
-      "weapons": [
-        {
-          "name": "Tusks",
-          "type": "melee",
-          "damage": 30,
-          "speed": 2.875,
-          "range": {
-            "min": 0,
-            "max": 1
-          },
-          "modifiers": [
-            {
-              "property": "meleeAttack",
-              "target": {
-                "class": [
-                  [
-                    "building"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 40,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0.75,
-            "attack": 0.125,
-            "winddown": 2,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0
-          },
-          "attribName": "weapon_tower_war_elephant_melee_sul",
-          "pbgid": 2024371
-        },
-        {
-          "name": "Bow",
-          "type": "ranged",
-          "damage": 15,
-          "speed": 1.375,
-          "range": {
-            "min": 0,
-            "max": 5
-          },
-          "modifiers": [],
-          "durations": {
-            "aim": 0,
-            "windup": 0.25,
-            "attack": 0.125,
-            "winddown": 0.5,
-            "reload": 0.5,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0
-          },
-          "attribName": "weapon_war_elephant_tower_archer_4_sul",
-          "pbgid": 136204
-        },
-        {
-          "name": "Crossbow",
-          "type": "ranged",
-          "damage": 15,
-          "speed": 1.375,
-          "range": {
-            "min": 0,
-            "max": 5
-          },
-          "modifiers": [
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "heavy"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 12,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0.25,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 1,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0
-          },
-          "attribName": "weapon_war_elephant_tower_crossbow_4_sul",
-          "pbgid": 181352
-        }
-      ],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 7
-        }
-      ],
       "sight": {
         "inner_height": 10,
         "inner_radius": 12,
@@ -21307,11 +20954,464 @@
       "movement": {
         "speed": 0.875
       },
-      "unlockedBy": [
-        "technologies/eastern-mercenary-contract",
-        "technologies/elite-contract"
+      "shared": {
+        "tower-elephant-3": {
+          "name": "Tower Elephant",
+          "weapons": [
+            {
+              "name": "Tusks",
+              "type": "melee",
+              "damage": 30,
+              "speed": 2.875,
+              "range": {
+                "min": 0,
+                "max": 1
+              },
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 40,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 2,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_tower_war_elephant_melee_sul",
+              "pbgid": 2024371
+            },
+            {
+              "name": "Bow",
+              "type": "ranged",
+              "damage": 15,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 5
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.25,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 0.5,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_war_elephant_tower_archer_4_sul",
+              "pbgid": 136204
+            },
+            {
+              "name": "Crossbow",
+              "type": "ranged",
+              "damage": 15,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 5
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "heavy"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 12,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.25,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 1,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_war_elephant_tower_crossbow_4_sul",
+              "pbgid": 181352
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 7
+            }
+          ],
+          "id": "tower-elephant-3"
+        },
+        "tower-elephant-4": {
+          "name": "Tower Elephant",
+          "age": 4,
+          "description": "Powerful ranged cavalry that can fire while moving.\n+ High health\n+ Mounted with powerful Archers\n+ Capable of attacking Stone Walls\n- Slow movement speed\n\nMercenary that can be purchased for 1000 Olive Oil.\n\nRequires the Eastern Mercenary Contract.",
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 1000,
+            "total": 1000,
+            "popcap": 3,
+            "time": 130
+          },
+          "producedBy": [
+            "golden-horn-tower",
+            "mercenary-house"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/tower-elephant-4.png",
+          "weapons": [
+            {
+              "name": "Tusks",
+              "type": "melee",
+              "damage": 30,
+              "speed": 2.875,
+              "range": {
+                "min": 0,
+                "max": 1
+              },
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 40,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 2,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_tower_war_elephant_melee_sul",
+              "pbgid": 2024371
+            },
+            {
+              "name": "Bow",
+              "type": "ranged",
+              "damage": 15,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 5
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.25,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 0.5,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_war_elephant_tower_archer_4_sul",
+              "pbgid": 136204
+            },
+            {
+              "name": "Crossbow",
+              "type": "ranged",
+              "damage": 15,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 5
+              },
+              "modifiers": [
+                {
+                  "property": "rangedAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "heavy"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 12,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.25,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 1,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_war_elephant_tower_crossbow_4_sul",
+              "pbgid": 181352
+            }
+          ],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 7
+            }
+          ],
+          "unlockedBy": [
+            "technologies/eastern-mercenary-contract",
+            "technologies/elite-contract"
+          ],
+          "id": "tower-elephant-4"
+        }
+      }
+    },
+    {
+      "id": "trader",
+      "name": "Trader",
+      "type": "unit",
+      "civs": [
+        "by",
+        "ch",
+        "de",
+        "en",
+        "fr",
+        "hl",
+        "hr",
+        "ja",
+        "je",
+        "ma",
+        "mo",
+        "od",
+        "ot",
+        "ru",
+        "zx"
       ],
-      "shared": {}
+      "unique": false,
+      "displayClasses": [
+        "Worker"
+      ],
+      "classes": [
+        "worker"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/units/trader-1.png",
+      "description": "Traders generate Gold by travelling between their Home Market and a Trade Post or another player's Market. Greater distances between the Home Market and trade destination will generate higher amounts of Gold.\nThe Home Market or Trade destination may be changed at any time.",
+      "variations": [
+        {
+          "id": "trader-1",
+          "pbgid": 129600,
+          "attribName": "unit_trade_cart_mon",
+          "civs": [
+            "mo"
+          ]
+        },
+        {
+          "id": "trader-2",
+          "pbgid": 5080225,
+          "attribName": "unit_trade_cart_byz",
+          "civs": [
+            "by"
+          ]
+        },
+        {
+          "id": "trader-2",
+          "pbgid": 143716,
+          "attribName": "unit_trade_cart_chi",
+          "civs": [
+            "ch"
+          ]
+        },
+        {
+          "id": "trader-2",
+          "pbgid": 136076,
+          "attribName": "unit_trade_cart_sul",
+          "civs": [
+            "de"
+          ]
+        },
+        {
+          "id": "trader-2",
+          "pbgid": 166422,
+          "attribName": "unit_trade_cart_eng",
+          "civs": [
+            "en"
+          ]
+        },
+        {
+          "id": "trader-2",
+          "pbgid": 132306,
+          "attribName": "unit_trade_cart_fre",
+          "civs": [
+            "fr"
+          ],
+          "producedBy": [
+            "chamber-of-commerce",
+            "market"
+          ]
+        },
+        {
+          "id": "trader-2",
+          "pbgid": 134750,
+          "attribName": "unit_trade_cart_hre",
+          "civs": [
+            "hr"
+          ]
+        },
+        {
+          "id": "trader-2",
+          "pbgid": 3765649,
+          "attribName": "unit_trade_cart_jpn",
+          "civs": [
+            "ja"
+          ]
+        },
+        {
+          "id": "trader-2",
+          "pbgid": 132306,
+          "attribName": "unit_trade_cart_fre",
+          "civs": [
+            "je"
+          ],
+          "producedBy": [
+            "chamber-of-commerce",
+            "market"
+          ]
+        },
+        {
+          "id": "trader-2",
+          "pbgid": 2201796,
+          "attribName": "unit_trade_cart_mal",
+          "civs": [
+            "ma"
+          ]
+        },
+        {
+          "id": "trader-2",
+          "pbgid": 5309942,
+          "attribName": "unit_trade_cart_hre_ha_01",
+          "civs": [
+            "od"
+          ]
+        },
+        {
+          "id": "trader-2",
+          "pbgid": 2046466,
+          "attribName": "unit_trade_cart_ott",
+          "civs": [
+            "ot"
+          ],
+          "producedBy": [
+            "market",
+            "sultanhani-trade-network"
+          ]
+        },
+        {
+          "id": "trader-2",
+          "pbgid": 133488,
+          "attribName": "unit_trade_cart_rus",
+          "civs": [
+            "ru"
+          ]
+        },
+        {
+          "id": "trader-2",
+          "pbgid": 143716,
+          "attribName": "unit_trade_cart_chi",
+          "civs": [
+            "zx"
+          ]
+        },
+        {
+          "id": "trader-2",
+          "pbgid": 5000135,
+          "attribName": "unit_trade_cart_lan",
+          "civs": [
+            "hl"
+          ]
+        }
+      ],
+      "baseId": "trader",
+      "age": 1,
+      "costs": {
+        "food": 0,
+        "wood": 60,
+        "stone": 0,
+        "gold": 60,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 120,
+        "popcap": 1,
+        "time": 30
+      },
+      "producedBy": [
+        "market",
+        "the-silver-tree"
+      ],
+      "hitpoints": 90,
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 10,
+        "outer_height": -15,
+        "outer_radius": 35,
+        "base": 20,
+        "line": 35,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1
+      },
+      "shared": {
+        "trader-1": {
+          "name": "Trader",
+          "weapons": [],
+          "armor": [],
+          "id": "trader-1"
+        },
+        "trader-2": {
+          "name": "Trader",
+          "age": 2,
+          "producedBy": [
+            "market"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/trader-2.png",
+          "weapons": [],
+          "armor": [],
+          "id": "trader-2"
+        }
+      }
     },
     {
       "id": "varangian-guard",
@@ -22310,6 +22410,12 @@
             }
           ],
           "armor": [],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 95
+            }
+          ],
           "sight": {
             "inner_height": 10,
             "inner_radius": 8,
@@ -22473,6 +22579,12 @@
             }
           ],
           "armor": [],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 85
+            }
+          ],
           "sight": {
             "inner_height": 10,
             "inner_radius": 32,
@@ -22504,7 +22616,7 @@
         "siege"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/clocktower-counterweight-trebuchet-4.png",
+      "icon": "https://data.aoe4world.com/images/units/clocktower-counterweight-trebuchet-3.png",
       "description": "Powerful siege engine effective at destroying buildings and walls over a great distance.\n+ Bonus damage vs buildings\n- Must be set up to fire\n- Inaccurate against units",
       "variations": [
         {
@@ -22540,7 +22652,7 @@
           "producedBy": [
             "astronomical-clocktower"
           ],
-          "icon": "https://data.aoe4world.com/images/units/clocktower-counterweight-trebuchet-4.png",
+          "icon": "https://data.aoe4world.com/images/units/clocktower-counterweight-trebuchet-3.png",
           "hitpoints": 140,
           "weapons": [
             {
@@ -22596,6 +22708,12 @@
             }
           ],
           "armor": [],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 80
+            }
+          ],
           "sight": {
             "inner_height": 10,
             "inner_radius": 56,
@@ -22629,7 +22747,7 @@
         "gunpowder"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/clocktower-nest-of-bees-4.png",
+      "icon": "https://data.aoe4world.com/images/units/clocktower-nest-of-bees-3.png",
       "description": "Innovative field weapon capable of firing a barrage of rockets to damage defensive positions and clumped enemy troops.\n+ Good area of effect damage against most targets\n- Slowest movement speed\n- Weak if surrounded",
       "variations": [
         {
@@ -22667,7 +22785,7 @@
           "producedBy": [
             "astronomical-clocktower"
           ],
-          "icon": "https://data.aoe4world.com/images/units/clocktower-nest-of-bees-4.png",
+          "icon": "https://data.aoe4world.com/images/units/clocktower-nest-of-bees-3.png",
           "hitpoints": 120,
           "weapons": [
             {
@@ -22726,6 +22844,12 @@
             }
           ],
           "armor": [],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 85
+            }
+          ],
           "sight": {
             "inner_height": 10,
             "inner_radius": 40,
@@ -22855,6 +22979,12 @@
               "value": 3
             }
           ],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 55
+            }
+          ],
           "sight": {
             "inner_height": 10,
             "inner_radius": 32,
@@ -22889,12 +23019,12 @@
         "incendiary",
         "ship"
       ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/explosive-junk-3.png",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/explosive-junk-2.png",
       "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
       "variations": [
         {
-          "id": "explosive-junk-3",
+          "id": "explosive-junk-2",
           "pbgid": 193112,
           "attribName": "unit_naval_fireship_3_chi",
           "civs": [
@@ -22913,7 +23043,7 @@
           }
         },
         {
-          "id": "explosive-junk-3",
+          "id": "explosive-junk-2",
           "pbgid": 3737428,
           "attribName": "unit_naval_fireship_3_jpn",
           "civs": [
@@ -22921,7 +23051,7 @@
           ]
         },
         {
-          "id": "explosive-junk-3",
+          "id": "explosive-junk-2",
           "pbgid": 193132,
           "attribName": "unit_naval_fireship_3_mon",
           "civs": [
@@ -22929,7 +23059,7 @@
           ]
         },
         {
-          "id": "explosive-junk-3",
+          "id": "explosive-junk-2",
           "pbgid": 5140347,
           "attribName": "unit_naval_fireship_3_chi_ha_01",
           "civs": [
@@ -22938,7 +23068,7 @@
         }
       ],
       "baseId": "explosive-junk",
-      "age": 3,
+      "age": 2,
       "costs": {
         "food": 0,
         "wood": 80,
@@ -23413,7 +23543,7 @@
         "ship"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/junk-3.png",
+      "icon": "https://data.aoe4world.com/images/units/junk-2.png",
       "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from ranged damage Blacksmith technology",
       "variations": [
         {
@@ -25983,18 +26113,18 @@
         "cavalry",
         "elephant"
       ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/units/sultans-elite-tower-elephant-4.png",
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/sultans-elite-tower-elephant-3.png",
       "description": "Powerful ranged cavalry that can fire while moving.\n+ High health\n+ Mounted with Handcannoneers\n+ Capable of attacking Stone Walls\n- Slow movement speed",
       "variations": [
         {
-          "id": "sultans-elite-tower-elephant-4",
+          "id": "sultans-elite-tower-elephant-3",
           "baseId": "sultans-elite-tower-elephant",
           "type": "unit",
           "name": "Sultan's Elite Tower Elephant",
           "pbgid": 2104689,
           "attribName": "unit_war_elephant_tower2_4_sul",
-          "age": 4,
+          "age": 3,
           "civs": [
             "de"
           ],
@@ -26023,7 +26153,7 @@
           "producedBy": [
             "palace-of-the-sultan"
           ],
-          "icon": "https://data.aoe4world.com/images/units/sultans-elite-tower-elephant-4.png",
+          "icon": "https://data.aoe4world.com/images/units/sultans-elite-tower-elephant-3.png",
           "hitpoints": 600,
           "weapons": [
             {
@@ -26132,18 +26262,10 @@
         "springald",
         "ship"
       ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/hulk-1.png",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/hulk-2.png",
       "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
       "variations": [
-        {
-          "id": "hulk-1",
-          "pbgid": 5000128,
-          "attribName": "unit_naval_hulk_lan",
-          "civs": [
-            "hl"
-          ]
-        },
         {
           "id": "hulk-2",
           "pbgid": 193114,
@@ -26247,10 +26369,18 @@
               "pbgid": 2128677
             }
           ]
+        },
+        {
+          "id": "hulk-2",
+          "pbgid": 5000128,
+          "attribName": "unit_naval_hulk_lan",
+          "civs": [
+            "hl"
+          ]
         }
       ],
       "baseId": "hulk",
-      "age": 1,
+      "age": 2,
       "costs": {
         "food": 110,
         "wood": 200,
@@ -26266,6 +26396,65 @@
         "dock"
       ],
       "hitpoints": 450,
+      "weapons": [
+        {
+          "name": "Ballista",
+          "type": "ranged",
+          "damage": 35,
+          "speed": 4.125,
+          "range": {
+            "min": 0,
+            "max": 6
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "archer",
+                    "ship"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 45,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 55,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 2.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_combat_ship_springald",
+          "pbgid": 2102494
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 3
+        }
+      ],
       "sight": {
         "inner_height": 10,
         "inner_radius": 45,
@@ -26278,136 +26467,7 @@
       "movement": {
         "speed": 1.375
       },
-      "shared": {
-        "hulk-1": {
-          "name": "Hulk",
-          "weapons": [
-            {
-              "name": "Ballista",
-              "type": "ranged",
-              "damage": 35,
-              "speed": 4.125,
-              "range": {
-                "min": 0,
-                "max": 6
-              },
-              "modifiers": [
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "archer",
-                        "ship"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 45,
-                  "type": "passive"
-                },
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 55,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0.5,
-                "windup": 0.25,
-                "attack": 0.125,
-                "winddown": 0.5,
-                "reload": 2.75,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "attribName": "weapon_naval_combat_ship_springald",
-              "pbgid": 2102494
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 3
-            }
-          ],
-          "id": "hulk-1"
-        },
-        "hulk-2": {
-          "name": "Hulk",
-          "age": 2,
-          "icon": "https://data.aoe4world.com/images/units/hulk-2.png",
-          "weapons": [
-            {
-              "name": "Ballista",
-              "type": "ranged",
-              "damage": 35,
-              "speed": 4.125,
-              "range": {
-                "min": 0,
-                "max": 6
-              },
-              "modifiers": [
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "archer",
-                        "ship"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 45,
-                  "type": "passive"
-                },
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 55,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0.5,
-                "windup": 0.25,
-                "attack": 0.125,
-                "winddown": 0.5,
-                "reload": 2.75,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "attribName": "weapon_naval_combat_ship_springald",
-              "pbgid": 2102494
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 3
-            }
-          ],
-          "id": "hulk-2"
-        }
-      }
+      "shared": {}
     },
     {
       "id": "king",
@@ -27199,6 +27259,12 @@
           "value": 10
         }
       ],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 35
+        }
+      ],
       "sight": {
         "inner_height": 10,
         "inner_radius": 15,
@@ -27248,7 +27314,8 @@
           "attribName": "unit_wynguard_army_lan",
           "civs": [
             "hl"
-          ]
+          ],
+          "icon": "https://data.aoe4world.com/images/units/wynguard-army-4.png"
         }
       ],
       "baseId": "wynguard-army",
@@ -27912,6 +27979,12 @@
         }
       ],
       "armor": [],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 85
+        }
+      ],
       "sight": {
         "inner_height": 10,
         "inner_radius": 32,
@@ -27943,7 +28016,7 @@
         "ship"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/galleass-4.png",
+      "icon": "https://data.aoe4world.com/images/units/galleass-3.png",
       "description": "Large oared vessel with a powerful forward mounted bombard.\n+ Long Range\n+ Anti-structure specialist",
       "variations": [
         {
@@ -28042,12 +28115,12 @@
         "siege",
         "gunpowder"
       ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/units/royal-culverin-4.png",
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/royal-culverin-3.png",
       "description": "Long-range mobile cannon with bonus vs buildings.\n+ Effective against Defenses\n+ Does not require setup to fire",
       "variations": [
         {
-          "id": "royal-culverin-4",
+          "id": "royal-culverin-3",
           "pbgid": 1905981,
           "attribName": "unit_culverin_4_royal_fre",
           "civs": [
@@ -28055,7 +28128,7 @@
           ]
         },
         {
-          "id": "royal-culverin-4",
+          "id": "royal-culverin-3",
           "pbgid": 8041328,
           "attribName": "unit_culverin_4_royal_fre_ha_01",
           "civs": [
@@ -28064,7 +28137,7 @@
         }
       ],
       "baseId": "royal-culverin",
-      "age": 4,
+      "age": 3,
       "costs": {
         "food": 0,
         "wood": 325,
@@ -28161,6 +28234,12 @@
         }
       ],
       "armor": [],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 85
+        }
+      ],
       "sight": {
         "inner_height": 10,
         "inner_radius": 40,
@@ -28192,12 +28271,12 @@
         "siege",
         "gunpowder"
       ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/units/royal-ribauldequin-4.png",
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/royal-ribauldequin-3.png",
       "description": "Five-barreled gunpowder weapon effective against massed units. Deals little damage to buildings.\n+ Can hit multiple targets in a single volley\n- Short range\n- Low ranged armor",
       "variations": [
         {
-          "id": "royal-ribauldequin-4",
+          "id": "royal-ribauldequin-3",
           "pbgid": 1905982,
           "attribName": "unit_ribauldequin_4_royal_fre",
           "civs": [
@@ -28205,7 +28284,7 @@
           ]
         },
         {
-          "id": "royal-ribauldequin-4",
+          "id": "royal-ribauldequin-3",
           "pbgid": 6779101,
           "attribName": "unit_ribauldequin_4_royal_fre_ha_01",
           "civs": [
@@ -28214,7 +28293,7 @@
         }
       ],
       "baseId": "royal-ribauldequin",
-      "age": 4,
+      "age": 3,
       "costs": {
         "food": 0,
         "wood": 350,
@@ -28262,6 +28341,12 @@
         {
           "type": "melee",
           "value": 10
+        }
+      ],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 35
         }
       ],
       "sight": {
@@ -28473,18 +28558,18 @@
         "gunpowder",
         "cavalry"
       ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/black-rider-1.png",
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/units/black-rider-4.png",
       "description": "Expensive cavalry with high armor and a powerful arquebus. Effective against melee units. Has the Caracole ability.\nOnly 5 Riders can be trained for each standing Keep built.\n+ Heavy armor\n- Countered by Crossbowmen",
       "variations": [
         {
-          "id": "black-rider-1",
+          "id": "black-rider-4",
           "baseId": "black-rider",
           "type": "unit",
           "name": "Black Rider",
           "pbgid": 9002002,
           "attribName": "unit_black_rider_hre",
-          "age": 1,
+          "age": 4,
           "civs": [
             "hr"
           ],
@@ -28513,7 +28598,7 @@
           "producedBy": [
             "archery-range"
           ],
-          "icon": "https://data.aoe4world.com/images/units/black-rider-1.png",
+          "icon": "https://data.aoe4world.com/images/units/black-rider-4.png",
           "hitpoints": 225,
           "weapons": [
             {
@@ -28594,17 +28679,11 @@
           ]
         },
         {
-          "id": "prelate-1",
+          "id": "prelate-3",
           "pbgid": 5982677,
           "attribName": "unit_monk_1_hre_ha_01",
           "civs": [
             "od"
-          ],
-          "description": "Support unit with no combat capability. Can pick up Relics, convert enemy units, and capture Sacred Sites starting in the Castle Age (III).\n+ Heals friendly units\n- Low health",
-          "producedBy": [
-            "monastery",
-            "palace-of-swabia",
-            "regnitz-cathedral"
           ]
         }
       ],
@@ -28629,8 +28708,6 @@
         "town-center"
       ],
       "hitpoints": 90,
-      "weapons": [],
-      "armor": [],
       "sight": {
         "inner_height": 10,
         "inner_radius": 15,
@@ -28643,7 +28720,28 @@
       "movement": {
         "speed": 1.125
       },
-      "shared": {}
+      "shared": {
+        "prelate-1": {
+          "name": "Prelate",
+          "weapons": [],
+          "armor": [],
+          "id": "prelate-1"
+        },
+        "prelate-3": {
+          "name": "Prelate",
+          "age": 3,
+          "description": "Support unit with no combat capability. Can pick up Relics, convert enemy units, and capture Sacred Sites starting in the Castle Age (III).\n+ Heals friendly units\n- Low health",
+          "producedBy": [
+            "monastery",
+            "palace-of-swabia",
+            "regnitz-cathedral"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/prelate-3.png",
+          "weapons": [],
+          "armor": [],
+          "id": "prelate-3"
+        }
+      }
     },
     {
       "id": "atakebune",
@@ -35405,11 +35503,11 @@
         "khaganate"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/units/horse-archer-1.png",
+      "icon": "https://data.aoe4world.com/images/units/horse-archer-4.png",
       "description": "Highly mobile ranged cavalry effective against slower melee units.\n+ High mobility\n- Weak vs ranged units\n\nRandomly spawns 5 at the time from the Khaganate Palace.",
       "variations": [
         {
-          "id": "khaganate-horse-archer-1",
+          "id": "khaganate-horse-archer-4",
           "baseId": "khaganate-horse-archer",
           "type": "unit",
           "name": "Khaganate Elite Horse Archer",
@@ -35445,7 +35543,7 @@
           "producedBy": [
             "khaganate-palace"
           ],
-          "icon": "https://data.aoe4world.com/images/units/horse-archer-1.png",
+          "icon": "https://data.aoe4world.com/images/units/horse-archer-4.png",
           "hitpoints": 100,
           "weapons": [
             {
@@ -35508,11 +35606,11 @@
         "khaganate"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/units/knight-1.png",
+      "icon": "https://data.aoe4world.com/images/units/knight-4.png",
       "description": "Expensive cavalry with high damage and melee armor. Effective against melee units.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen\n\nRandomly spawns 3 at the time from the Khaganate Palace.",
       "variations": [
         {
-          "id": "khaganate-knight-1",
+          "id": "khaganate-knight-4",
           "baseId": "khaganate-knight",
           "type": "unit",
           "name": "Khaganate Elite Knight",
@@ -35548,7 +35646,7 @@
           "producedBy": [
             "khaganate-palace"
           ],
-          "icon": "https://data.aoe4world.com/images/units/knight-1.png",
+          "icon": "https://data.aoe4world.com/images/units/knight-4.png",
           "hitpoints": 270,
           "weapons": [
             {
@@ -35643,11 +35741,11 @@
         "khaganate"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/units/mangudai-1.png",
+      "icon": "https://data.aoe4world.com/images/units/mangudai-4.png",
       "description": "Confounding mobile ranged cavalry that can fire while moving.\n+ High rate of fire\n- Low weapon range\n\nRandomly spawns from the Khaganate Palace.",
       "variations": [
         {
-          "id": "khaganate-mangudai-1",
+          "id": "khaganate-mangudai-4",
           "baseId": "khaganate-mangudai",
           "type": "unit",
           "name": "Khaganate Elite Mangudai",
@@ -35683,7 +35781,7 @@
           "producedBy": [
             "khaganate-palace"
           ],
-          "icon": "https://data.aoe4world.com/images/units/mangudai-1.png",
+          "icon": "https://data.aoe4world.com/images/units/mangudai-4.png",
           "hitpoints": 120,
           "weapons": [
             {
@@ -35845,6 +35943,12 @@
             }
           ],
           "armor": [],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 85
+            }
+          ],
           "sight": {
             "inner_height": 10,
             "inner_radius": 40,
@@ -35880,11 +35984,11 @@
         "khaganate"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/units/palace-guard-1.png",
+      "icon": "https://data.aoe4world.com/images/units/palace-guard-4.png",
       "description": "Tough infantry with good damage. Move faster than Men-At-Arms, but with reduced armor.\n+ Heavy armor\n- Countered by Knights, Lancers, and Crossbowmen.\n\nRandomly spawns 5 at the time from the Khaganate Palace.",
       "variations": [
         {
-          "id": "khaganate-palace-guard-1",
+          "id": "khaganate-palace-guard-4",
           "baseId": "khaganate-palace-guard",
           "type": "unit",
           "name": "Khaganate Elite Palace Guard",
@@ -35920,7 +36024,7 @@
           "producedBy": [
             "khaganate-palace"
           ],
-          "icon": "https://data.aoe4world.com/images/units/palace-guard-1.png",
+          "icon": "https://data.aoe4world.com/images/units/palace-guard-4.png",
           "hitpoints": 180,
           "weapons": [
             {
@@ -36772,7 +36876,7 @@
       "civs": [
         "mo"
       ],
-      "unique": false,
+      "unique": true,
       "displayClasses": [
         "Siege"
       ],
@@ -36785,116 +36889,22 @@
       "variations": [
         {
           "id": "traction-trebuchet-3",
-          "pbgid": 174217,
-          "attribName": "unit_trebuchet_4_tr_field_construct_mon",
-          "civs": [
-            "mo"
-          ]
-        },
-        {
-          "id": "traction-trebuchet-4",
+          "baseId": "traction-trebuchet",
+          "type": "unit",
+          "name": "Traction Trebuchet",
           "pbgid": 171143,
           "attribName": "unit_trebuchet_4_tr_mon",
+          "age": 3,
           "civs": [
             "mo"
-          ]
-        }
-      ],
-      "baseId": "traction-trebuchet",
-      "age": 3,
-      "costs": {
-        "food": 0,
-        "wood": 300,
-        "stone": 0,
-        "gold": 100,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 400,
-        "popcap": 2,
-        "time": 80
-      },
-      "producedBy": [
-        "archer",
-        "crossbowman",
-        "handcannoneer",
-        "man-at-arms",
-        "spearman"
-      ],
-      "hitpoints": 125,
-      "sight": {
-        "inner_height": 10,
-        "inner_radius": 44,
-        "outer_height": -15,
-        "outer_radius": 68,
-        "base": 53.6,
-        "line": 68,
-        "height": 10
-      },
-      "movement": {
-        "speed": 0.875
-      },
-      "shared": {
-        "traction-trebuchet-3": {
-          "name": "Traction Trebuchet",
-          "weapons": [
-            {
-              "name": "Trebuchet",
-              "type": "siege",
-              "damage": 40,
-              "speed": 8.625,
-              "range": {
-                "min": 2.75,
-                "max": 14
-              },
-              "modifiers": [
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 190,
-                  "type": "passive"
-                },
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "naval",
-                        "unit"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 190,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0.5,
-                "windup": 1.875,
-                "attack": 0.125,
-                "winddown": 5.125,
-                "reload": 1,
-                "setup": 1,
-                "teardown": 1,
-                "cooldown": 0
-              },
-              "attribName": "weapon_trebuchet_4_traction",
-              "pbgid": 127504
-            }
           ],
-          "armor": [],
-          "id": "traction-trebuchet-3"
-        },
-        "traction-trebuchet-4": {
-          "name": "Traction Trebuchet",
-          "age": 4,
+          "description": "Powerful siege engine effective at destroying buildings and walls over a long distance.\n+ Bonus damage vs buildings\n+ High mobility\n- Must be set up to fire\n- Inaccurate against units",
+          "classes": [
+            "siege"
+          ],
+          "displayClasses": [
+            "Siege"
+          ],
           "unique": true,
           "costs": {
             "food": 0,
@@ -36910,7 +36920,8 @@
           "producedBy": [
             "siege-workshop"
           ],
-          "icon": "https://data.aoe4world.com/images/units/traction-trebuchet-4.png",
+          "icon": "https://data.aoe4world.com/images/units/traction-trebuchet-3.png",
+          "hitpoints": 125,
           "weapons": [
             {
               "name": "Trebuchet",
@@ -36965,9 +36976,27 @@
             }
           ],
           "armor": [],
-          "id": "traction-trebuchet-4"
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 80
+            }
+          ],
+          "sight": {
+            "inner_height": 10,
+            "inner_radius": 44,
+            "outer_height": -15,
+            "outer_radius": 68,
+            "base": 53.6,
+            "line": 68,
+            "height": 10
+          },
+          "movement": {
+            "speed": 0.875
+          }
         }
-      }
+      ],
+      "shared": {}
     },
     {
       "id": "gilded-archer",
@@ -39613,189 +39642,6 @@
       }
     },
     {
-      "id": "cavalry-archer",
-      "name": "Cavalry Archer",
-      "type": "unit",
-      "civs": [
-        "ot"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Light Ranged Cavalry"
-      ],
-      "classes": [
-        "light",
-        "ranged",
-        "cavalry"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/cavalry-archer-2.png",
-      "description": "Highly mobile long ranged cavalry which fires two arrows in quick succession. \n+ High mobility\n- Weak vs ranged units",
-      "variations": [
-        {
-          "id": "cavalry-archer-2",
-          "pbgid": 9000524,
-          "attribName": "unit_horsearcher_2_ott",
-          "civs": [
-            "ot"
-          ]
-        },
-        {
-          "id": "cavalry-archer-3",
-          "pbgid": 9000522,
-          "attribName": "unit_horsearcher_3_ott",
-          "civs": [
-            "ot"
-          ]
-        },
-        {
-          "id": "cavalry-archer-4",
-          "pbgid": 9000523,
-          "attribName": "unit_horsearcher_4_ott",
-          "civs": [
-            "ot"
-          ]
-        }
-      ],
-      "baseId": "cavalry-archer",
-      "age": 2,
-      "costs": {
-        "food": 100,
-        "wood": 80,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 180,
-        "popcap": 1,
-        "time": 27
-      },
-      "producedBy": [
-        "military-school",
-        "archery-range"
-      ],
-      "hitpoints": 95,
-      "sight": {
-        "inner_height": 10,
-        "inner_radius": 10,
-        "outer_height": -15,
-        "outer_radius": 34,
-        "base": 19.6,
-        "line": 34,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.625
-      },
-      "shared": {
-        "cavalry-archer-2": {
-          "name": "Cavalry Archer",
-          "weapons": [
-            {
-              "name": "Bow",
-              "type": "ranged",
-              "damage": 7,
-              "speed": 2.625,
-              "range": {
-                "min": 0,
-                "max": 4.5
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0.125,
-                "windup": 0,
-                "attack": 0.25,
-                "winddown": 0.5,
-                "reload": 1.75,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "burst": {
-                "count": 2.25
-              },
-              "attribName": "weapon_horsearcher_2_ott",
-              "pbgid": 9000534
-            }
-          ],
-          "armor": [],
-          "id": "cavalry-archer-2"
-        },
-        "cavalry-archer-3": {
-          "name": "Veteran Cavalry Archer",
-          "age": 3,
-          "icon": "https://data.aoe4world.com/images/units/cavalry-archer-3.png",
-          "hitpoints": 105,
-          "weapons": [
-            {
-              "name": "Bow",
-              "type": "ranged",
-              "damage": 9,
-              "speed": 2.625,
-              "range": {
-                "min": 0,
-                "max": 4.5
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0.125,
-                "windup": 0,
-                "attack": 0.25,
-                "winddown": 0.5,
-                "reload": 1.75,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "burst": {
-                "count": 2.25
-              },
-              "attribName": "weapon_horsearcher_3_ott",
-              "pbgid": 9000530
-            }
-          ],
-          "armor": [],
-          "id": "cavalry-archer-3"
-        },
-        "cavalry-archer-4": {
-          "name": "Elite Cavalry Archer",
-          "age": 4,
-          "icon": "https://data.aoe4world.com/images/units/cavalry-archer-4.png",
-          "hitpoints": 140,
-          "weapons": [
-            {
-              "name": "Bow",
-              "type": "ranged",
-              "damage": 12,
-              "speed": 2.625,
-              "range": {
-                "min": 0,
-                "max": 4.5
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0.125,
-                "windup": 0,
-                "attack": 0.25,
-                "winddown": 0.5,
-                "reload": 1.75,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "burst": {
-                "count": 2.25
-              },
-              "attribName": "weapon_horsearcher_4_ott",
-              "pbgid": 9000531
-            }
-          ],
-          "armor": [],
-          "id": "cavalry-archer-4"
-        }
-      }
-    },
-    {
       "id": "grand-galley",
       "name": "Grand Galley",
       "type": "unit",
@@ -39810,18 +39656,18 @@
         "gunpowder",
         "ship"
       ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/units/grand-galley-4.png",
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/grand-galley-3.png",
       "description": "Large oared vessel which can be upgraded into a naval Military School.\n+ Large hold which can be garrisoned by any unit once upgraded into a Military School\n+ Very long range\n- Lower damage",
       "variations": [
         {
-          "id": "grand-galley-4",
+          "id": "grand-galley-3",
           "baseId": "grand-galley",
           "type": "unit",
           "name": "Grand Galley",
           "pbgid": 2056917,
           "attribName": "unit_naval_galleass_4_ott",
-          "age": 4,
+          "age": 3,
           "civs": [
             "ot"
           ],
@@ -39848,7 +39694,7 @@
           "producedBy": [
             "dock"
           ],
-          "icon": "https://data.aoe4world.com/images/units/grand-galley-4.png",
+          "icon": "https://data.aoe4world.com/images/units/grand-galley-3.png",
           "hitpoints": 750,
           "weapons": [
             {
@@ -40033,6 +39879,12 @@
             }
           ],
           "armor": [],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 85
+            }
+          ],
           "sight": {
             "inner_height": 10,
             "inner_radius": 32,
@@ -40463,18 +40315,18 @@
         "incendiary",
         "ship"
       ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/lodya-demolition-ship-3.png",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/lodya-demolition-ship-2.png",
       "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n+ The Lodya can be converted to any other type of ship\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
       "variations": [
         {
-          "id": "lodya-demolition-ship-3",
+          "id": "lodya-demolition-ship-2",
           "baseId": "lodya-demolition-ship",
           "type": "unit",
           "name": "Lodya Demolition Ship",
           "pbgid": 193137,
           "attribName": "unit_naval_fireship_3_rus",
-          "age": 3,
+          "age": 2,
           "civs": [
             "ru"
           ],
@@ -40501,7 +40353,7 @@
           "producedBy": [
             "dock"
           ],
-          "icon": "https://data.aoe4world.com/images/units/lodya-demolition-ship-3.png",
+          "icon": "https://data.aoe4world.com/images/units/lodya-demolition-ship-2.png",
           "hitpoints": 145,
           "weapons": [
             {
@@ -40662,18 +40514,18 @@
         "archer",
         "ship"
       ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/lodya-galley-3.png",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/lodya-galley-2.png",
       "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from ranged damage Blacksmith technology",
       "variations": [
         {
-          "id": "lodya-galley-3",
+          "id": "lodya-galley-2",
           "baseId": "lodya-galley",
           "type": "unit",
           "name": "Lodya Galley",
           "pbgid": 2102829,
           "attribName": "unit_naval_war_galley_3_rus",
-          "age": 3,
+          "age": 2,
           "civs": [
             "ru"
           ],
@@ -40700,7 +40552,7 @@
           "producedBy": [
             "dock"
           ],
-          "icon": "https://data.aoe4world.com/images/units/lodya-galley-3.png",
+          "icon": "https://data.aoe4world.com/images/units/lodya-galley-2.png",
           "hitpoints": 300,
           "weapons": [
             {
@@ -40784,7 +40636,7 @@
         "ship"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/lodya-trade-ship-3.png",
+      "icon": "https://data.aoe4world.com/images/units/lodya-trade-ship-2.png",
       "description": "Trade Ships generate Gold and Wood when assigned to a trade route with a Coastal Trade Post or another player's Dock.\nThe Lodya can be converted to any other type of ship.",
       "variations": [
         {
@@ -40822,7 +40674,7 @@
           "producedBy": [
             "dock"
           ],
-          "icon": "https://data.aoe4world.com/images/units/lodya-trade-ship-3.png",
+          "icon": "https://data.aoe4world.com/images/units/lodya-trade-ship-2.png",
           "hitpoints": 225,
           "weapons": [],
           "armor": [],
@@ -41197,7 +41049,7 @@
         "cavalry"
       ],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/units/imperial-guard-1.png",
+      "icon": "https://data.aoe4world.com/images/units/imperial-guard-4.png",
       "description": "Expensive cavalry with high damage and melee armor. Effective against melee units.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen\n\nRequires Dynastic Protectors researched at Zhu Xi's Library.",
       "variations": [
         {
@@ -41235,7 +41087,7 @@
           "producedBy": [
             "stable"
           ],
-          "icon": "https://data.aoe4world.com/images/units/imperial-guard-1.png",
+          "icon": "https://data.aoe4world.com/images/units/imperial-guard-4.png",
           "hitpoints": 340,
           "weapons": [
             {
@@ -44401,18 +44253,18 @@
         "force",
         "army"
       ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/earls-retinue-1.png",
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/units/earls-retinue-4.png",
       "description": "Produces an army of 6 Demilancers and 2 Hobelar.",
       "variations": [
         {
-          "id": "earls-retinue-1",
+          "id": "earls-retinue-4",
           "baseId": "earls-retinue",
           "type": "unit",
           "name": "Earl's Retinue",
           "pbgid": 5000292,
           "attribName": "unit_wynguard_earls_retinue_lan",
-          "age": 1,
+          "age": 4,
           "civs": [
             "hl"
           ],
@@ -44440,7 +44292,7 @@
           "producedBy": [
             "wynguard-palace"
           ],
-          "icon": "https://data.aoe4world.com/images/units/earls-retinue-1.png",
+          "icon": "https://data.aoe4world.com/images/units/earls-retinue-4.png",
           "weapons": [],
           "armor": [],
           "sight": {
@@ -44475,18 +44327,18 @@
         "force",
         "army"
       ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/garrison-command-1.png",
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/units/garrison-command-4.png",
       "description": "Produces an army of 8 Spearman and 1 Earl's Guard.",
       "variations": [
         {
-          "id": "garrison-command-1",
+          "id": "garrison-command-4",
           "baseId": "garrison-command",
           "type": "unit",
           "name": "Garrison Command",
           "pbgid": 5000293,
           "attribName": "unit_wynguard_garrison_command_lan",
-          "age": 1,
+          "age": 4,
           "civs": [
             "hl"
           ],
@@ -44514,7 +44366,7 @@
           "producedBy": [
             "wynguard-palace"
           ],
-          "icon": "https://data.aoe4world.com/images/units/garrison-command-1.png",
+          "icon": "https://data.aoe4world.com/images/units/garrison-command-4.png",
           "weapons": [],
           "armor": [],
           "sight": {
@@ -44549,18 +44401,18 @@
         "force",
         "army"
       ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/gunpowder-contingent-1.png",
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/units/gunpowder-contingent-4.png",
       "description": "Produces an army of 2 Ribauldequins and 1 Culverin.",
       "variations": [
         {
-          "id": "gunpowder-contingent-1",
+          "id": "gunpowder-contingent-4",
           "baseId": "gunpowder-contingent",
           "type": "unit",
           "name": "Gunpowder Contingent",
           "pbgid": 5000294,
           "attribName": "unit_wynguard_gunpowder_contingent_lan",
-          "age": 1,
+          "age": 4,
           "civs": [
             "hl"
           ],
@@ -44588,7 +44440,7 @@
           "producedBy": [
             "wynguard-palace"
           ],
-          "icon": "https://data.aoe4world.com/images/units/gunpowder-contingent-1.png",
+          "icon": "https://data.aoe4world.com/images/units/gunpowder-contingent-4.png",
           "weapons": [],
           "armor": [],
           "sight": {
@@ -45265,18 +45117,10 @@
         "ranged",
         "infantry"
       ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/yeoman-1.png",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/yeoman-2.png",
       "description": "Quick and long-ranged infantry with good damage vs. unarmored targets.\n+ Long Range\n+ Fast movement speed\n- Countered by Horsemen",
       "variations": [
-        {
-          "id": "yeoman-1",
-          "pbgid": 9002533,
-          "attribName": "unit_free_dummy_yeoman_lan",
-          "civs": [
-            "hl"
-          ]
-        },
         {
           "id": "yeoman-2",
           "pbgid": 5000059,
@@ -45303,7 +45147,7 @@
         }
       ],
       "baseId": "yeoman",
-      "age": 1,
+      "age": 2,
       "costs": {
         "food": 50,
         "wood": 45,
@@ -45318,6 +45162,7 @@
       "producedBy": [
         "archery-range"
       ],
+      "hitpoints": 70,
       "sight": {
         "inner_height": 10,
         "inner_radius": 20,
@@ -45331,42 +45176,8 @@
         "speed": 1.3125
       },
       "shared": {
-        "yeoman-1": {
-          "name": "Yeoman",
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "vizier": 0,
-            "oliveoil": 0,
-            "total": 0,
-            "popcap": 0
-          },
-          "producedBy": [
-            "lancaster-castle"
-          ],
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "inner_height": 0,
-            "inner_radius": 0,
-            "outer_height": 0,
-            "outer_radius": 0,
-            "base": 0,
-            "line": 0,
-            "height": 0
-          },
-          "movement": {
-            "speed": null
-          },
-          "id": "yeoman-1"
-        },
         "yeoman-2": {
           "name": "Yeoman",
-          "age": 2,
-          "icon": "https://data.aoe4world.com/images/units/yeoman-2.png",
-          "hitpoints": 70,
           "weapons": [
             {
               "name": "Longbow",

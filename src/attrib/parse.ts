@@ -3,7 +3,7 @@ import { getTranslation, getTranslationRaw, NO_TRANSLATION_FOUND } from "./trans
 import { parseWeapons } from "./weapons";
 import { ignoreForNow } from "./config";
 import { slugify } from "../lib/utils/string";
-import { Armor, Building, Item, ItemClass, ModifyableProperty, Technology, Unit, Upgrade, Ability } from "../types/items";
+import { Armor, Building, Item, ItemClass, ModifyableProperty, Technology, Unit, Upgrade, Ability, Resistance } from "../types/items";
 import { CivConfig } from "../types/civs";
 import { prepareIcon } from "./icons";
 import { technologyModifiers, abilityModifiers } from "./modifiers";
@@ -56,7 +56,10 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
     if (name === NO_TRANSLATION_FOUND) name = file.split("/").pop()!;
     const description = parseDescription(ui_ext);
     const attribName = file.split("/").pop()!.replace(".xml", "").replace(".json", "");
-    const age = parseAge(attribName, ebpExts?.requirement_ext?.requirement_table ?? data.upgrade_bag?.requirements ?? ability_data?.requirements, data.parent_pbg);
+
+    const squad_requirement_ext = data.extensions.find((e) => e.squadexts == "sbpextensions/squad_requirement_ext");
+
+    const age = parseAge(attribName, squad_requirement_ext?.requirement_table ?? ebpExts?.requirement_ext?.requirement_table ?? data.upgrade_bag?.requirements ?? ability_data?.requirements, data.parent_pbg);
     const baseId = getBasedId(name, type, description);
     const id = `${baseId}-${age}`;
 
@@ -150,6 +153,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
         hitpoints: parseHitpoints(ebpExts?.health_ext),
         weapons: await parseWeapons(ebpExts.combat_ext, context),
         armor: parseArmor(ebpExts?.health_ext),
+        resistance: parseResistance(ebpExts?.health_ext),
         sight: parseSight(ebpExts?.sight_ext),
         garrison: parseGarrison(ebpExts?.hold_ext),
         influences,
@@ -184,6 +188,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
         hitpoints: parseHitpoints(ebpExts?.health_ext),
         weapons,
         armor: parseArmor(ebpExts?.health_ext),
+        resistance: parseResistance(ebpExts?.health_ext),
         sight: parseSight(ebpExts?.sight_ext),
         movement: parseMovement(ebpExts?.moving_ext),
         garrison: parseGarrison(ebpExts?.hold_ext),
@@ -369,6 +374,15 @@ function parseArmor(health_ext): Armor[] {
       .map(([k, v]) => ({ type: damageMap[k], value: v }))
       .sort((a, b) => armorSort.indexOf(a.type) - armorSort.indexOf(b.type)) ?? []
   );
+}
+
+function parseResistance(health_ext): Resistance[] | undefined {
+  if (!health_ext?.percentage_reduction_armor_by_damage_type) return undefined;
+  const list = Object.entries<number>(health_ext?.percentage_reduction_armor_by_damage_type)
+      ?.filter(([k, v]) => v > 0)
+      .map(([k, v]) => ({ type: damageMap[k], value: v }))
+      .sort((a, b) => armorSort.indexOf(a.type) - armorSort.indexOf(b.type)) ?? [];
+  return list.length ? list : undefined;
 }
 
 function parseMovement(moving_ext: any) {

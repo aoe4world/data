@@ -3728,7 +3728,7 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "reinforced-foundations": standardAbility(
-    "",
+    "Villagers and Infantry can garrison inside Houses for protection. Houses gain garrison arrows and +{1}% Health.",
     ([hp]) => [
     // Villagers and Infantry can garrison inside Houses for protection. Houses gain garrison arrows and +50% Health.
     {
@@ -3742,43 +3742,40 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "roller-shutter-triggers": standardAbility(
-    "",
-    ([r, t]) => [
-    // Increase the weapon range of Springalds by +2 tiles and increase their attack speed by +25%.
-    {
-      property: "maxRange",
-      select: { id: ["springald"] },
-      effect: "change",
-      value: r,
-      type: "passive",
-    },
+    "Increases Springald attack speed by +{1}% and grants +{2}% Ranged Resistance.",
+    ([s, r]) => [
     {
       property: "attackSpeed",
       select: { id: ["springald"] },
       effect: "multiply",
-      value: increaseAttackSpeedByPercent(t),
+      value: increaseAttackSpeedByPercent(s),
+      type: "passive",
+    },
+    {
+      property: "rangedResistance",
+      select: { id: ["springald"] },
+      effect: "change",
+      value: r,
       type: "passive",
     },
   ]
   ),
 
   "roller-shutter-triggers-improved": standardAbility(
-    "",
-    ([r, t, ri, ti]) => [
-    // Increase the weapon range of Springalds by +3 tiles and reduce their reload time by  +35%.
-    // If Roller Shutter Triggers has already been researched, increase the weapon range of Springalds by +1 tile and reduce their reload time by  +10%.
-    {
-      property: "maxRange",
-      select: { id: ["springald"] },
-      effect: "change",
-      value: ri,
-      type: "passive",
-    },
+    "Increases Springald attack speed by +{1}% and grants +{2}% Ranged Resistance.\nIf Roller Shutter Triggers has already been researched, increase by {3}% instead.",
+    ([s, r, si]) => [
     {
       property: "attackSpeed",
       select: { id: ["springald"] },
       effect: "multiply",
-      value: decreaseByPercentImproved(1, t, t - ti),
+      value: decreaseByPercentImproved(1, s, s - si),
+      type: "passive",
+    },
+    {
+      property: "rangedResistance",
+      select: { id: ["springald"] },
+      effect: "change",
+      value: 0, // Improved doesn't apply additional bonus to resistance over the base research
       type: "passive",
     },
   ]
@@ -3849,9 +3846,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "siege-works": standardAbility(
-    "",
-    ([h, a]) => [
-    // Increase the health of siege engines by +20% and their ranged armor by  +10.
+    "New carpentry techniques increase the health of siege units by +{1}%.",
+    ([h]) => [
     {
       property: "hitpoints",
       select: { class: [["siege"]] },
@@ -3859,21 +3855,12 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
       value: increaseByPercent(1, h),
       type: "passive",
     },
-    {
-      property: "rangedArmor",
-      select: { class: [["siege"]] },
-      effect: "change",
-      value: a,
-      type: "passive",
-    },
   ]
   ),
 
   "siege-works-improved": standardAbility(
-    "",
-    ([h, a, hi, ai]) => [
-    // Increase the health of siege engines by +30% and their ranged armor by  +4.
-    // If Siege Works has already been researched, increase their health by  +10% and ranged armor by  +1 instead.
+    "New carpentry techniques increase the health of siege engines by +{1}%.\nIf Siege Works has already been researched, increase their health by +{2}% instead.",
+    ([h, hi]) => [
     {
       property: "hitpoints",
       select: { class: [["siege"]] },
@@ -3881,20 +3868,12 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
       value: increaseByPercentImproved(1, h, h - hi),
       type: "passive",
     },
-    {
-      property: "rangedArmor",
-      select: { class: [["siege"]] },
-      effect: "change",
-      value: ai,
-      type: "passive",
-    },
   ]
   ),
 
   "slow-burning-defenses": standardAbility(
-    "",
+    "Increase the fire armor of Stone Wall Towers, Keeps, and Outposts by +{1}.",
     ([i]) => [
-    // Increase the fire armor of Stone Wall Towers, Keeps, and Outposts by +10.
     {
       property: "fireArmor",
       select: { id: ["stone-wall-tower", "keep", "outpost"] },
@@ -3906,9 +3885,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "swiftness": standardAbility(
-    "",
+    "Increases the movement speed of Scholars by +{1}%.",
     ([i]) => [
-    // Increase the movement speed of Scholars by +100%.
     {
       property: "moveSpeed",
       select: { id: ["scholar"] },
@@ -3920,9 +3898,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "textiles": standardAbility(
-    "",
+    "Increase Villagers' health by +{1}%.",
     ([i]) => [
-    // Increase Villagers' health by +25.
     {
       property: "hitpoints",
       select: { id: ["villager"] },
@@ -3934,9 +3911,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "textiles-improved": standardAbility(
-    "",
+    "Increase Villagers' health by +{1}%.\nIf Textiles has already been researched, increase health by +{2}% instead.",
     ([i, ii]) => [
-    // Increase Villagers' health by +50, if already researched by +25.
     {
       property: "hitpoints",
       select: { id: ["villager"] },
@@ -3948,37 +3924,62 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "tithe-barns": standardAbility(
-    "",
-    ([i]) => [
-    // Relics placed in a Monastery provide an income of +30 Food, undefined Wood, and undefined Stone every minute.
+    "Relics placed in eligible buildings provide an income of +{1} Food, +{2} Wood, and +{3} Stone every minute.",
+    ([f, w, s]) => [
     {
       property: "unknown",
       select: { id: ["monastery", "mosque", "prayer-tent", "regnitz-cathedral"] },
       effect: "change",
-      value: i,
+      value: f,
+      type: "influence",
+    },
+    {
+      property: "unknown",
+      select: { id: ["monastery", "mosque", "prayer-tent", "regnitz-cathedral"] },
+      effect: "change",
+      value: w,
+      type: "influence",
+    },
+    {
+      property: "unknown",
+      select: { id: ["monastery", "mosque", "prayer-tent", "regnitz-cathedral"] },
+      effect: "change",
+      value: s,
       type: "influence",
     },
   ]
   ),
 
   "tithe-barns-improved": standardAbility(
-    "",
-    ([i]) => [
-    //  Relics placed in a Prayer Tent provide an income of +20 Food, +20 Wood, and +20 Stone every minute.
+    "Relics placed in a Prayer Tent provide an income of +{1} Food, +{2} Wood, and +{3} Stone every minute.\nIf Tithe Barns has already been researched, increase the income of Food and Wood by +{4} and Stone by +{5} instead.",
+    ([f, w, s, fi, wi, si]) => [
     {
       property: "unknown",
       select: { id: ["monastery", "mosque", "prayer-tent", "regnitz-cathedral"] },
       effect: "change",
-      value: i,
+      value: fi,
+      type: "influence",
+    },
+    {
+      property: "unknown",
+      select: { id: ["monastery", "mosque", "prayer-tent", "regnitz-cathedral"] },
+      effect: "change",
+      value: wi,
+      type: "influence",
+    },
+    {
+      property: "unknown",
+      select: { id: ["monastery", "mosque", "prayer-tent", "regnitz-cathedral"] },
+      effect: "change",
+      value: si,
       type: "influence",
     },
   ]
   ),
 
   "tranquil-venue": standardAbility(
-    "",
+    "Mosques restore +{1} health every second to units that are out of combat.",
     ([i]) => [
-    // Mosques restore +1 health to nearby unit every second.
     {
       property: "healingRate",
       select: { id: ["mosque"] },
@@ -3990,9 +3991,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "village-fortresses": standardAbility(
-    "",
+    "Keeps act like Town Centers, including unit production, population capacity, and technology.",
     ([]) => [
-    // Keeps act like Town Centers, including unit production, population capacity, and technology.
     {
       property: "unknown",
       select: { id: ["keep"] },
@@ -4018,9 +4018,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "agriculture": standardAbility(
-    "",
+    "Improve Villagers' gathering rate from Farms by +{1}%.",
     ([i]) => [
-    // Improve Villagers' gathering rate from Farms by +15%.
     {
       property: "foodGatherRate",
       select: { id: ["villager", "farm"] },
@@ -4344,7 +4343,7 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
     {
       property: "hitpoints",
       select: common.allMillitaryShips,
-      effect: "change",
+      effect: "multiply",
       value: increaseByPercent(1, i),
       type: "passive",
     },

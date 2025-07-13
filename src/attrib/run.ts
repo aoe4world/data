@@ -52,7 +52,7 @@ async function buildTechTree(civ: CivConfig, context: RunContext = { debug: fals
 
   async function addFile(file: string) {
     if (!file) return;
-    if (context.runner == "essence") file = (await guessAppropriateEssenceFile(file, race)) ?? file;
+    if (context.runner == "essence") file = (await guessAppropriateEssenceFile(file)) ?? file;
     files.add(file);
     return file;
   }
@@ -207,7 +207,7 @@ async function tryFindFile(race: string, paths: string[]) {
     await Promise.all(
       paths.map((path) => {
         if (!path) return undefined;
-        return guessAppropriateEssenceFile(path, race) ?? path;
+        return guessAppropriateEssenceFile(path) ?? path;
       })
     )
   ).filter(Boolean) as string[];

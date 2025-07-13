@@ -555,6 +555,12 @@
             }
           ],
           "armor": [],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 95
+            }
+          ],
           "sight": {
             "inner_height": 10,
             "inner_radius": 8,
@@ -698,189 +704,6 @@
       "shared": {}
     },
     {
-      "id": "cavalry-archer",
-      "name": "Cavalry Archer",
-      "type": "unit",
-      "civs": [
-        "ot"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Light Ranged Cavalry"
-      ],
-      "classes": [
-        "light",
-        "ranged",
-        "cavalry"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/cavalry-archer-2.png",
-      "description": "Highly mobile long ranged cavalry which fires two arrows in quick succession. \n+ High mobility\n- Weak vs ranged units",
-      "variations": [
-        {
-          "id": "cavalry-archer-2",
-          "pbgid": 9000524,
-          "attribName": "unit_horsearcher_2_ott",
-          "civs": [
-            "ot"
-          ]
-        },
-        {
-          "id": "cavalry-archer-3",
-          "pbgid": 9000522,
-          "attribName": "unit_horsearcher_3_ott",
-          "civs": [
-            "ot"
-          ]
-        },
-        {
-          "id": "cavalry-archer-4",
-          "pbgid": 9000523,
-          "attribName": "unit_horsearcher_4_ott",
-          "civs": [
-            "ot"
-          ]
-        }
-      ],
-      "baseId": "cavalry-archer",
-      "age": 2,
-      "costs": {
-        "food": 100,
-        "wood": 80,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 180,
-        "popcap": 1,
-        "time": 27
-      },
-      "producedBy": [
-        "military-school",
-        "archery-range"
-      ],
-      "hitpoints": 95,
-      "sight": {
-        "inner_height": 10,
-        "inner_radius": 10,
-        "outer_height": -15,
-        "outer_radius": 34,
-        "base": 19.6,
-        "line": 34,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.625
-      },
-      "shared": {
-        "cavalry-archer-2": {
-          "name": "Cavalry Archer",
-          "weapons": [
-            {
-              "name": "Bow",
-              "type": "ranged",
-              "damage": 7,
-              "speed": 2.625,
-              "range": {
-                "min": 0,
-                "max": 4.5
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0.125,
-                "windup": 0,
-                "attack": 0.25,
-                "winddown": 0.5,
-                "reload": 1.75,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "burst": {
-                "count": 2.25
-              },
-              "attribName": "weapon_horsearcher_2_ott",
-              "pbgid": 9000534
-            }
-          ],
-          "armor": [],
-          "id": "cavalry-archer-2"
-        },
-        "cavalry-archer-3": {
-          "name": "Veteran Cavalry Archer",
-          "age": 3,
-          "icon": "https://data.aoe4world.com/images/units/cavalry-archer-3.png",
-          "hitpoints": 105,
-          "weapons": [
-            {
-              "name": "Bow",
-              "type": "ranged",
-              "damage": 9,
-              "speed": 2.625,
-              "range": {
-                "min": 0,
-                "max": 4.5
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0.125,
-                "windup": 0,
-                "attack": 0.25,
-                "winddown": 0.5,
-                "reload": 1.75,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "burst": {
-                "count": 2.25
-              },
-              "attribName": "weapon_horsearcher_3_ott",
-              "pbgid": 9000530
-            }
-          ],
-          "armor": [],
-          "id": "cavalry-archer-3"
-        },
-        "cavalry-archer-4": {
-          "name": "Elite Cavalry Archer",
-          "age": 4,
-          "icon": "https://data.aoe4world.com/images/units/cavalry-archer-4.png",
-          "hitpoints": 140,
-          "weapons": [
-            {
-              "name": "Bow",
-              "type": "ranged",
-              "damage": 12,
-              "speed": 2.625,
-              "range": {
-                "min": 0,
-                "max": 4.5
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0.125,
-                "windup": 0,
-                "attack": 0.25,
-                "winddown": 0.5,
-                "reload": 1.75,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "burst": {
-                "count": 2.25
-              },
-              "attribName": "weapon_horsearcher_4_ott",
-              "pbgid": 9000531
-            }
-          ],
-          "armor": [],
-          "id": "cavalry-archer-4"
-        }
-      }
-    },
-    {
       "id": "counterweight-trebuchet",
       "name": "Counterweight Trebuchet",
       "type": "unit",
@@ -895,7 +718,7 @@
         "siege"
       ],
       "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/counterweight-trebuchet-4.png",
+      "icon": "https://data.aoe4world.com/images/units/counterweight-trebuchet-3.png",
       "description": "Powerful siege engine effective at destroying buildings and walls over a great distance.\n+ Bonus damage vs buildings\n- Must be set up to fire\n- Inaccurate against units",
       "variations": [
         {
@@ -932,7 +755,7 @@
             "mehmed-imperial-armory",
             "siege-workshop"
           ],
-          "icon": "https://data.aoe4world.com/images/units/counterweight-trebuchet-4.png",
+          "icon": "https://data.aoe4world.com/images/units/counterweight-trebuchet-3.png",
           "hitpoints": 140,
           "weapons": [
             {
@@ -988,6 +811,12 @@
             }
           ],
           "armor": [],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 80
+            }
+          ],
           "sight": {
             "inner_height": 10,
             "inner_radius": 56,
@@ -1189,18 +1018,18 @@
         "incendiary",
         "ship"
       ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/demolition-ship-3.png",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/demolition-ship-2.png",
       "description": "Small ship packed with explosives. Detonates when killed, damaging any units in the area.\n- Damage is reduced further from the explosion center\n- No weapons other than self-destruction",
       "variations": [
         {
-          "id": "demolition-ship-3",
+          "id": "demolition-ship-2",
           "baseId": "demolition-ship",
           "type": "unit",
           "name": "Demolition Ship",
           "pbgid": 2046448,
           "attribName": "unit_naval_fireship_3_ott",
-          "age": 3,
+          "age": 2,
           "civs": [
             "ot"
           ],
@@ -1227,7 +1056,7 @@
           "producedBy": [
             "dock"
           ],
-          "icon": "https://data.aoe4world.com/images/units/demolition-ship-3.png",
+          "icon": "https://data.aoe4world.com/images/units/demolition-ship-2.png",
           "hitpoints": 145,
           "weapons": [
             {
@@ -1508,18 +1337,18 @@
         "gunpowder",
         "ship"
       ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/units/grand-galley-4.png",
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/grand-galley-3.png",
       "description": "Large oared vessel which can be upgraded into a naval Military School.\n+ Large hold which can be garrisoned by any unit once upgraded into a Military School\n+ Very long range\n- Lower damage",
       "variations": [
         {
-          "id": "grand-galley-4",
+          "id": "grand-galley-3",
           "baseId": "grand-galley",
           "type": "unit",
           "name": "Grand Galley",
           "pbgid": 2056917,
           "attribName": "unit_naval_galleass_4_ott",
-          "age": 4,
+          "age": 3,
           "civs": [
             "ot"
           ],
@@ -1546,7 +1375,7 @@
           "producedBy": [
             "dock"
           ],
-          "icon": "https://data.aoe4world.com/images/units/grand-galley-4.png",
+          "icon": "https://data.aoe4world.com/images/units/grand-galley-3.png",
           "hitpoints": 750,
           "weapons": [
             {
@@ -1731,6 +1560,12 @@
             }
           ],
           "armor": [],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 85
+            }
+          ],
           "sight": {
             "inner_height": 10,
             "inner_radius": 32,
@@ -2782,6 +2617,12 @@
             }
           ],
           "armor": [],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 85
+            }
+          ],
           "sight": {
             "inner_height": 10,
             "inner_radius": 28,
@@ -2997,6 +2838,12 @@
               "value": 10
             }
           ],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 35
+            }
+          ],
           "sight": {
             "inner_height": 10,
             "inner_radius": 15,
@@ -3209,6 +3056,12 @@
           "hitpoints": 480,
           "weapons": [],
           "armor": [],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 95
+            }
+          ],
           "sight": {
             "inner_height": 10,
             "inner_radius": 12,
@@ -4106,6 +3959,12 @@
               "value": 3
             }
           ],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 55
+            }
+          ],
           "sight": {
             "inner_height": 10,
             "inner_radius": 32,
@@ -4148,7 +4007,7 @@
         "ship"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/trade-ship-3.png",
+      "icon": "https://data.aoe4world.com/images/units/trade-ship-2.png",
       "description": "Trade Ships generate Gold and Wood when assigned to a trade route with a Coastal Trade Post or another player's Dock.\n- No combat",
       "variations": [
         {
@@ -4186,7 +4045,7 @@
           "producedBy": [
             "dock"
           ],
-          "icon": "https://data.aoe4world.com/images/units/trade-ship-3.png",
+          "icon": "https://data.aoe4world.com/images/units/trade-ship-2.png",
           "hitpoints": 225,
           "weapons": [],
           "armor": [],
@@ -4220,18 +4079,18 @@
       "classes": [
         "worker"
       ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/trader-1.png",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/trader-2.png",
       "description": "Traders generate Gold by travelling between their Home Market and a Trade Post or another player's Market. Greater distances between the Home Market and trade destination will generate higher amounts of Gold.\nThe Home Market or Trade destination may be changed at any time.",
       "variations": [
         {
-          "id": "trader-1",
+          "id": "trader-2",
           "baseId": "trader",
           "type": "unit",
           "name": "Trader",
           "pbgid": 2046466,
           "attribName": "unit_trade_cart_ott",
-          "age": 1,
+          "age": 2,
           "civs": [
             "ot"
           ],
@@ -4258,7 +4117,7 @@
             "market",
             "sultanhani-trade-network"
           ],
-          "icon": "https://data.aoe4world.com/images/units/trader-1.png",
+          "icon": "https://data.aoe4world.com/images/units/trader-2.png",
           "hitpoints": 90,
           "weapons": [],
           "armor": [],

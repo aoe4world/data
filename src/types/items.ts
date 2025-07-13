@@ -71,6 +71,7 @@ export interface Item {
 export interface PhysicalItem extends Item {
   weapons: Weapon[];
   armor: Armor[];
+  resistance: Resistance[];
 
   hitpoints: number;
 
@@ -161,6 +162,10 @@ export type Armor = {
   value: number;
 };
 
+export type Resistance = {
+  type: "melee" | "ranged" | "fire";
+  value: number;
+};
 export type ItemId = string;
 
 export type ItemType = Building | Unit | Technology | Upgrade | Ability;
@@ -171,11 +176,13 @@ export type ModifyableProperty =
   | "hitpoints"
   | "meleeArmor"
   | "rangedArmor"
+  | "fireArmor"
+  | "meleeResistance"
+  | "rangedResistance"
   | "meleeAttack"
   | "rangedAttack"
   | "siegeAttack"
   | "fireAttack"
-  | "fireArmor"
   | "moveSpeed"
   | "attackSpeed"
   | "minRange"

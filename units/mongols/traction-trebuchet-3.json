@@ -3,8 +3,8 @@
   "baseId": "traction-trebuchet",
   "type": "unit",
   "name": "Traction Trebuchet",
-  "pbgid": 174217,
-  "attribName": "unit_trebuchet_4_tr_field_construct_mon",
+  "pbgid": 171143,
+  "attribName": "unit_trebuchet_4_tr_mon",
   "age": 3,
   "civs": [
     "mo"
@@ -16,7 +16,7 @@
   "displayClasses": [
     "Siege"
   ],
-  "unique": false,
+  "unique": true,
   "costs": {
     "food": 0,
     "wood": 300,
@@ -26,14 +26,10 @@
     "oliveoil": 0,
     "total": 400,
     "popcap": 2,
-    "time": 80
+    "time": 30
   },
   "producedBy": [
-    "archer",
-    "crossbowman",
-    "handcannoneer",
-    "man-at-arms",
-    "spearman"
+    "siege-workshop"
   ],
   "icon": "https://data.aoe4world.com/images/units/traction-trebuchet-3.png",
   "hitpoints": 125,
@@ -86,11 +82,17 @@
         "teardown": 1,
         "cooldown": 0
       },
-      "attribName": "weapon_trebuchet_4_traction",
-      "pbgid": 127504
+      "attribName": "weapon_trebuchet_4_traction_mon",
+      "pbgid": 2033641
     }
   ],
   "armor": [],
+  "resistance": [
+    {
+      "type": "ranged",
+      "value": 80
+    }
+  ],
   "sight": {
     "inner_height": 10,
     "inner_radius": 44,
