@@ -3064,9 +3064,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "battle-hardened": standardAbility(
-    "",
+    "Increase the health of Palace Guards by +{1}.",
     ([i]) => [
-    // Increase the health of Palace Guards by +30.
     {
       property: "hitpoints",
       select: { id: ["palace-guard"] },
@@ -3078,11 +3077,10 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "explosives": standardAbility(
-    "",
+    "Increase the damage of Incendiary Ships by +{1}%.",
     ([i]) => [
-    // Increase the damage of Incendiary Ships by +40%.
     {
-      property: "fireAttack",
+      property: "siegeAttack",
       select: { class: [["incendiary", "ship"]] },
       effect: "multiply",
       value: increaseByPercent(1, i),
