@@ -27,6 +27,11 @@ import ot from "../../civilizations/ottomans.json";
 import ru from "../../civilizations/rus.json";
 import zx from "../../civilizations/zhuxi.json";
 
+import sen from "../../civilizations/sengoku.json";
+import tug from "../../civilizations/tughlaq.json";
+import gol from "../../civilizations/goldenhorde.json";
+import mac from "../../civilizations/macedonian.json";
+
 const units = new ItemList<Unit>(...optimizedToUnified(allUnits.data as unknown as Optimized<Unit>[]));
 const buildings = new ItemList<Building>(...optimizedToUnified(allBuildings.data as unknown as Optimized<Building>[]));
 const technologies = new ItemList<Technology>(...optimizedToUnified(allTechnologies.data as unknown as Optimized<Technology>[]));
@@ -52,8 +57,12 @@ const civilizations: Record<CivAbbr, CivInfo> & { Get: typeof GetCiv; list: CivI
   ot,
   ru,
   zx,
+  sen,
+  tug,
+  gol,
+  mac,
   Get: GetCiv,
-  list: [ab, ay, by, ch, de, en, fr, hl, hr, ja, je, kt, ma, mo, od, ot, ru, zx],
+  list: [ab, ay, by, ch, de, en, fr, hl, hr, ja, je, kt, ma, mo, od, ot, ru, zx, sen, tug, gol, mac],
 };
 
 function GetCiv(slug: CivSlug | CivAbbr | CivConfig) {

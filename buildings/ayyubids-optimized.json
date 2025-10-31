@@ -1573,6 +1573,90 @@
       "shared": {}
     },
     {
+      "id": "palisade",
+      "name": "Palisade",
+      "type": "building",
+      "civs": [
+        "ay"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "classes": [
+        "building",
+        "defensive_structure",
+        "palisade_wall",
+        "palisade_wall_section",
+        "siegeable",
+        "wall"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/buildings/palisade-1.png",
+      "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 21 Wood, with each additional section costing 7 Wood.",
+      "variations": [
+        {
+          "id": "palisade-1",
+          "baseId": "palisade",
+          "type": "building",
+          "name": "Palisade",
+          "pbgid": 5545497,
+          "attribName": "building_defense_palisade_abb_ha_01",
+          "age": 1,
+          "civs": [
+            "ay"
+          ],
+          "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 21 Wood, with each additional section costing 7 Wood.",
+          "classes": [
+            "building",
+            "defensive_structure",
+            "palisade_wall",
+            "palisade_wall_section",
+            "siegeable",
+            "wall"
+          ],
+          "displayClasses": [
+            "Defensive Building"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 7,
+            "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 7,
+            "popcap": 0,
+            "time": 8
+          },
+          "producedBy": [
+            "villager"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/palisade-1.png",
+          "hitpoints": 1250,
+          "weapons": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
+          "sight": {
+            "inner_height": 8,
+            "inner_radius": 6,
+            "outer_height": 0,
+            "outer_radius": 6,
+            "base": 6,
+            "line": 6,
+            "height": 8
+          },
+          "influences": []
+        }
+      ],
+      "shared": {}
+    },
+    {
       "id": "palisade-gate",
       "name": "Palisade Gate",
       "type": "building",
@@ -1649,90 +1733,6 @@
             "outer_radius": 20,
             "base": 20,
             "line": 20,
-            "height": 8
-          },
-          "influences": []
-        }
-      ],
-      "shared": {}
-    },
-    {
-      "id": "palisade-wall",
-      "name": "Palisade Wall",
-      "type": "building",
-      "civs": [
-        "ay"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Defensive Building"
-      ],
-      "classes": [
-        "building",
-        "defensive_structure",
-        "palisade_wall",
-        "palisade_wall_section",
-        "siegeable",
-        "wall"
-      ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/palisade-wall-1.png",
-      "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 21 Wood, with each additional section costing 7 Wood.",
-      "variations": [
-        {
-          "id": "palisade-wall-1",
-          "baseId": "palisade-wall",
-          "type": "building",
-          "name": "Palisade Wall",
-          "pbgid": 5545497,
-          "attribName": "building_defense_palisade_abb_ha_01",
-          "age": 1,
-          "civs": [
-            "ay"
-          ],
-          "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 21 Wood, with each additional section costing 7 Wood.",
-          "classes": [
-            "building",
-            "defensive_structure",
-            "palisade_wall",
-            "palisade_wall_section",
-            "siegeable",
-            "wall"
-          ],
-          "displayClasses": [
-            "Defensive Building"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 7,
-            "stone": 0,
-            "gold": 0,
-            "vizier": 0,
-            "oliveoil": 0,
-            "total": 7,
-            "popcap": 0,
-            "time": 8
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "icon": "https://data.aoe4world.com/images/buildings/palisade-wall-1.png",
-          "hitpoints": 1250,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "sight": {
-            "inner_height": 8,
-            "inner_radius": 6,
-            "outer_height": 0,
-            "outer_radius": 6,
-            "base": 6,
-            "line": 6,
             "height": 8
           },
           "influences": []
@@ -2333,18 +2333,18 @@
         "town_center_non_capital",
         "town_center_or_landmark"
       ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/town-center-2.png",
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
       "description": "All Resources can be dropped off here. Produces Villagers, Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.\nNon-Capital Town Centers can't detect stealth or disguises.",
       "variations": [
         {
-          "id": "town-center-2",
+          "id": "town-center-1",
           "baseId": "town-center",
           "type": "building",
           "name": "Town Center",
           "pbgid": 4105278,
           "attribName": "building_town_center_abb_ha_01",
-          "age": 2,
+          "age": 1,
           "civs": [
             "ay"
           ],
@@ -2384,7 +2384,7 @@
           "producedBy": [
             "villager"
           ],
-          "icon": "https://data.aoe4world.com/images/buildings/town-center-2.png",
+          "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
           "hitpoints": 2500,
           "weapons": [],
           "armor": [

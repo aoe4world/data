@@ -1,0 +1,138 @@
+{
+  "id": "spearman-3",
+  "baseId": "spearman",
+  "type": "unit",
+  "name": "Veteran Spearman",
+  "pbgid": 8136891,
+  "attribName": "unit_spearman_3_mon_ha_gol",
+  "age": 3,
+  "civs": [
+    "gol"
+  ],
+  "description": "Infantry best used against mounted units.\n+ Anti-cavalry specialist\n+ Additional damage against Elephants\n- Weak against heavy infantry\n- Countered by Archers",
+  "classes": [
+    "annihilation_condition",
+    "find_non_siege_land_military",
+    "formational",
+    "human",
+    "included_by_military_hotkeys",
+    "infantry",
+    "infantry_light",
+    "land_military",
+    "light_melee_infantry",
+    "melee",
+    "melee_infantry",
+    "military",
+    "spearman",
+    "torch_thrower"
+  ],
+  "displayClasses": [
+    "Light Melee Infantry"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 60,
+    "wood": 20,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 80,
+    "popcap": 1,
+    "time": 30
+  },
+  "producedBy": [
+    "barracks"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/spearman-3.png",
+  "hitpoints": 110,
+  "weapons": [
+    {
+      "name": "Spear",
+      "type": "melee",
+      "damage": 9,
+      "speed": 1.875,
+      "range": {
+        "min": 0,
+        "max": 0.295
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 23,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "war",
+                "elephant"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 5,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.75,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0.75
+      },
+      "attribName": "weapon_spearman_3",
+      "pbgid": 127826
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch_mon",
+      "pbgid": 135193
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 12,
+    "outer_height": -15,
+    "outer_radius": 36,
+    "base": 21.6,
+    "line": 36,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.25
+  }
+}

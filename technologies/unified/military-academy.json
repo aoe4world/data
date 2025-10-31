@@ -18,9 +18,12 @@
     "je",
     "kt",
     "ma",
+    "mac",
     "mo",
     "od",
     "ru",
+    "sen",
+    "tug",
     "zx"
   ],
   "unique": false,
@@ -47,6 +50,7 @@
     "scar_castle_age_upgrade",
     "scar_military_upgrade",
     "scar_nontiered_upgrade",
+    "scar_rogue_exclude",
     "sultinate_upgrade"
   ],
   "minAge": 3,
@@ -84,7 +88,8 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Production Technology"
@@ -166,7 +171,8 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Production Technology"
@@ -248,7 +254,8 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Production Technology"
@@ -330,7 +337,8 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Production Technology"
@@ -480,7 +488,8 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Production Technology"
@@ -562,7 +571,8 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Production Technology"
@@ -644,7 +654,8 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Production Technology"
@@ -664,6 +675,89 @@
       "producedBy": [
         "blacksmith",
         "meinwerk-palace"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/military-academy-3.png",
+      "effects": [
+        {
+          "property": "buildTime",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ],
+              [
+                "melee",
+                "cavalry"
+              ],
+              [
+                "ranged",
+                "cavalry"
+              ],
+              [
+                "siege"
+              ],
+              [
+                "transport"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.8,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "military-academy-3",
+      "baseId": "military-academy",
+      "type": "technology",
+      "name": "Military Academy",
+      "pbgid": 128454,
+      "attribName": "upgrade_tech_military_academy",
+      "age": 3,
+      "civs": [
+        "hl"
+      ],
+      "description": "Increase the production speed of infantry, cavalry, siege, and transport units at buildings by 33%.\nDoes not affect religious units or other support units.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
+      ],
+      "displayClasses": [
+        "Production Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 250,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 350,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "blacksmith"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/military-academy-3.png",
       "effects": [
@@ -727,7 +821,8 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Production Technology"
@@ -809,7 +904,8 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Production Technology"
@@ -828,6 +924,172 @@
       },
       "producedBy": [
         "blacksmith"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/military-academy-3.png",
+      "effects": [
+        {
+          "property": "buildTime",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ],
+              [
+                "melee",
+                "cavalry"
+              ],
+              [
+                "ranged",
+                "cavalry"
+              ],
+              [
+                "siege"
+              ],
+              [
+                "transport"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.8,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "military-academy-3",
+      "baseId": "military-academy",
+      "type": "technology",
+      "name": "Military Academy",
+      "pbgid": 128454,
+      "attribName": "upgrade_tech_military_academy",
+      "age": 3,
+      "civs": [
+        "kt"
+      ],
+      "description": "Increase the production speed of infantry, cavalry, siege, and transport units at buildings by 33%.\nDoes not affect religious units or other support units.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
+      ],
+      "displayClasses": [
+        "Production Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 250,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 350,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "blacksmith"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/military-academy-3.png",
+      "effects": [
+        {
+          "property": "buildTime",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ],
+              [
+                "melee",
+                "cavalry"
+              ],
+              [
+                "ranged",
+                "cavalry"
+              ],
+              [
+                "siege"
+              ],
+              [
+                "transport"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.8,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "military-academy-3",
+      "baseId": "military-academy",
+      "type": "technology",
+      "name": "Military Academy",
+      "pbgid": 9003740,
+      "attribName": "upgrade_tech_military_academy_byz_ha_mac",
+      "age": 3,
+      "civs": [
+        "mac"
+      ],
+      "description": "Increase the production speed of infantry, cavalry, siege, and transport units at buildings by 33%.\nDoes not affect religious units or other support units.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
+      ],
+      "displayClasses": [
+        "Production Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 250,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 350,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "varangian-arsenal"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/military-academy-3.png",
       "effects": [
@@ -891,7 +1153,8 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Production Technology"
@@ -973,7 +1236,8 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Production Technology"
@@ -1055,7 +1319,8 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Production Technology"
@@ -1138,7 +1403,8 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Production Technology"
@@ -1154,6 +1420,157 @@
         "total": 350,
         "popcap": 0,
         "time": 60
+      },
+      "producedBy": [
+        "blacksmith"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/military-academy-3.png",
+      "effects": [
+        {
+          "property": "buildTime",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ],
+              [
+                "melee",
+                "cavalry"
+              ],
+              [
+                "ranged",
+                "cavalry"
+              ],
+              [
+                "siege"
+              ],
+              [
+                "transport"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.8,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "military-academy-3",
+      "baseId": "military-academy",
+      "type": "technology",
+      "name": "Military Academy",
+      "pbgid": 128454,
+      "attribName": "upgrade_tech_military_academy",
+      "age": 3,
+      "civs": [
+        "sen"
+      ],
+      "description": "Increase the production speed of infantry, cavalry, siege, and transport units at buildings by 33%.\nDoes not affect religious units or other support units.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
+      ],
+      "displayClasses": [
+        "Production Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 100,
+        "stone": 0,
+        "gold": 250,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 350,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "forge"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/military-academy-3.png",
+      "effects": [
+        {
+          "property": "buildTime",
+          "select": {
+            "class": [
+              [
+                "infantry"
+              ],
+              [
+                "melee",
+                "cavalry"
+              ],
+              [
+                "ranged",
+                "cavalry"
+              ],
+              [
+                "siege"
+              ],
+              [
+                "transport"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.8,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "military-academy-3",
+      "baseId": "military-academy",
+      "type": "technology",
+      "name": "Military Academy",
+      "pbgid": 7716650,
+      "attribName": "upgrade_tech_military_academy_sul_ha_tug",
+      "age": 3,
+      "civs": [
+        "tug"
+      ],
+      "description": "Increase the production speed of infantry, cavalry, siege, and transport units at buildings by 33%.\nDoes not affect religious units or other support units.",
+      "classes": [
+        "military_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_nontiered_upgrade",
+        "sultinate_upgrade"
+      ],
+      "displayClasses": [
+        "Production Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 120,
+        "stone": 0,
+        "gold": 300,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 420,
+        "popcap": 0,
+        "time": 5
       },
       "producedBy": [
         "blacksmith"
@@ -1220,171 +1637,8 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Production Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 100,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "blacksmith"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/military-academy-3.png",
-      "effects": [
-        {
-          "property": "buildTime",
-          "select": {
-            "class": [
-              [
-                "infantry"
-              ],
-              [
-                "melee",
-                "cavalry"
-              ],
-              [
-                "ranged",
-                "cavalry"
-              ],
-              [
-                "siege"
-              ],
-              [
-                "transport"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.8,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "military-academy-3",
-      "baseId": "military-academy",
-      "type": "technology",
-      "name": "Military Academy",
-      "pbgid": 128454,
-      "attribName": "upgrade_tech_military_academy",
-      "age": 3,
-      "civs": [
-        "kt"
-      ],
-      "description": "Increase the production speed of infantry, cavalry, siege, and transport units at buildings by 33%.\nDoes not affect religious units or other support units.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Production Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 100,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "blacksmith"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/military-academy-3.png",
-      "effects": [
-        {
-          "property": "buildTime",
-          "select": {
-            "class": [
-              [
-                "infantry"
-              ],
-              [
-                "melee",
-                "cavalry"
-              ],
-              [
-                "ranged",
-                "cavalry"
-              ],
-              [
-                "siege"
-              ],
-              [
-                "transport"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.8,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "military-academy-3",
-      "baseId": "military-academy",
-      "type": "technology",
-      "name": "Military Academy",
-      "pbgid": 128454,
-      "attribName": "upgrade_tech_military_academy",
-      "age": 3,
-      "civs": [
-        "hl"
-      ],
-      "description": "Increase the production speed of infantry, cavalry, siege, and transport units at buildings by 33%.\nDoes not affect religious units or other support units.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Production Technology"

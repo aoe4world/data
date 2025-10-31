@@ -11,6 +11,7 @@
     "de",
     "en",
     "fr",
+    "gol",
     "hl",
     "hr",
     "ja",
@@ -21,6 +22,8 @@
     "od",
     "ot",
     "ru",
+    "sen",
+    "tug",
     "zx"
   ],
   "unique": false,
@@ -47,6 +50,7 @@
     "rus_upgrade",
     "scar_castle_age_upgrade",
     "scar_military_upgrade",
+    "scar_naval_upgrade",
     "scar_nontiered_upgrade",
     "sultinate_upgrade"
   ],
@@ -86,6 +90,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -93,15 +98,15 @@
       ],
       "unique": false,
       "costs": {
-        "food": 100,
+        "food": 75,
         "wood": 0,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -156,6 +161,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -163,15 +169,15 @@
       ],
       "unique": false,
       "costs": {
-        "food": 100,
+        "food": 75,
         "wood": 0,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -226,6 +232,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -233,15 +240,15 @@
       ],
       "unique": false,
       "costs": {
-        "food": 100,
+        "food": 75,
         "wood": 0,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -351,6 +358,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -358,15 +366,15 @@
       ],
       "unique": false,
       "costs": {
-        "food": 100,
+        "food": 75,
         "wood": 0,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -421,6 +429,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -428,15 +437,86 @@
       ],
       "unique": false,
       "costs": {
-        "food": 100,
+        "food": 75,
         "wood": 0,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "incendiary",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "incendiaries-3",
+      "baseId": "incendiaries",
+      "type": "technology",
+      "name": "Incendiaries",
+      "pbgid": 2101633,
+      "attribName": "upgrade_naval_incendiaries",
+      "age": 3,
+      "civs": [
+        "gol"
+      ],
+      "description": "Incendiary Ships gain +20% explosion range.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 75,
+        "wood": 0,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -491,6 +571,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -498,645 +579,15 @@
       ],
       "unique": false,
       "costs": {
-        "food": 100,
+        "food": 75,
         "wood": 0,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "incendiary",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "incendiaries-3",
-      "baseId": "incendiaries",
-      "type": "technology",
-      "name": "Incendiaries",
-      "pbgid": 2101633,
-      "attribName": "upgrade_naval_incendiaries",
-      "age": 3,
-      "civs": [
-        "ja"
-      ],
-      "description": "Incendiary Ships gain +20% explosion range.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 100,
-        "wood": 0,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "incendiary",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "incendiaries-3",
-      "baseId": "incendiaries",
-      "type": "technology",
-      "name": "Incendiaries",
-      "pbgid": 2101633,
-      "attribName": "upgrade_naval_incendiaries",
-      "age": 3,
-      "civs": [
-        "je"
-      ],
-      "description": "Incendiary Ships gain +20% explosion range.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 100,
-        "wood": 0,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "incendiary",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "incendiaries-3",
-      "baseId": "incendiaries",
-      "type": "technology",
-      "name": "Incendiaries",
-      "pbgid": 2101633,
-      "attribName": "upgrade_naval_incendiaries",
-      "age": 3,
-      "civs": [
-        "ma"
-      ],
-      "description": "Incendiary Ships gain +20% explosion range.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 100,
-        "wood": 0,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "incendiary",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "incendiaries-3",
-      "baseId": "incendiaries",
-      "type": "technology",
-      "name": "Incendiaries",
-      "pbgid": 2101633,
-      "attribName": "upgrade_naval_incendiaries",
-      "age": 3,
-      "civs": [
-        "mo"
-      ],
-      "description": "Incendiary Ships gain +20% explosion range.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 100,
-        "wood": 0,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "incendiary",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "incendiaries-3",
-      "baseId": "incendiaries",
-      "type": "technology",
-      "name": "Incendiaries",
-      "pbgid": 2101633,
-      "attribName": "upgrade_naval_incendiaries",
-      "age": 3,
-      "civs": [
-        "od"
-      ],
-      "description": "Incendiary Ships gain +20% explosion range.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 100,
-        "wood": 0,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "incendiary",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "incendiaries-3",
-      "baseId": "incendiaries",
-      "type": "technology",
-      "name": "Incendiaries",
-      "pbgid": 2101633,
-      "attribName": "upgrade_naval_incendiaries",
-      "age": 3,
-      "civs": [
-        "ot"
-      ],
-      "description": "Incendiary Ships gain +20% explosion range.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 100,
-        "wood": 0,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "incendiary",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "incendiaries-3",
-      "baseId": "incendiaries",
-      "type": "technology",
-      "name": "Incendiaries",
-      "pbgid": 2101633,
-      "attribName": "upgrade_naval_incendiaries",
-      "age": 3,
-      "civs": [
-        "ru"
-      ],
-      "description": "Incendiary Ships gain +20% explosion range.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 100,
-        "wood": 0,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "incendiary",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "incendiaries-3",
-      "baseId": "incendiaries",
-      "type": "technology",
-      "name": "Incendiaries",
-      "pbgid": 2101633,
-      "attribName": "upgrade_naval_incendiaries",
-      "age": 3,
-      "civs": [
-        "zx"
-      ],
-      "description": "Incendiary Ships gain +20% explosion range.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 100,
-        "wood": 0,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "incendiary",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "incendiaries-3",
-      "baseId": "incendiaries",
-      "type": "technology",
-      "name": "Incendiaries",
-      "pbgid": 2101633,
-      "attribName": "upgrade_naval_incendiaries",
-      "age": 3,
-      "civs": [
-        "kt"
-      ],
-      "description": "Incendiary Ships gain +20% explosion range.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 100,
-        "wood": 0,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -1191,6 +642,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -1198,15 +650,780 @@
       ],
       "unique": false,
       "costs": {
-        "food": 100,
+        "food": 75,
         "wood": 0,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "incendiary",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "incendiaries-3",
+      "baseId": "incendiaries",
+      "type": "technology",
+      "name": "Incendiaries",
+      "pbgid": 2101633,
+      "attribName": "upgrade_naval_incendiaries",
+      "age": 3,
+      "civs": [
+        "ja"
+      ],
+      "description": "Incendiary Ships gain +20% explosion range.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 75,
+        "wood": 0,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "incendiary",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "incendiaries-3",
+      "baseId": "incendiaries",
+      "type": "technology",
+      "name": "Incendiaries",
+      "pbgid": 2101633,
+      "attribName": "upgrade_naval_incendiaries",
+      "age": 3,
+      "civs": [
+        "je"
+      ],
+      "description": "Incendiary Ships gain +20% explosion range.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 75,
+        "wood": 0,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "incendiary",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "incendiaries-3",
+      "baseId": "incendiaries",
+      "type": "technology",
+      "name": "Incendiaries",
+      "pbgid": 2101633,
+      "attribName": "upgrade_naval_incendiaries",
+      "age": 3,
+      "civs": [
+        "kt"
+      ],
+      "description": "Incendiary Ships gain +20% explosion range.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 75,
+        "wood": 0,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "harbor"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "incendiary",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "incendiaries-3",
+      "baseId": "incendiaries",
+      "type": "technology",
+      "name": "Incendiaries",
+      "pbgid": 2101633,
+      "attribName": "upgrade_naval_incendiaries",
+      "age": 3,
+      "civs": [
+        "ma"
+      ],
+      "description": "Incendiary Ships gain +20% explosion range.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 75,
+        "wood": 0,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "incendiary",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "incendiaries-3",
+      "baseId": "incendiaries",
+      "type": "technology",
+      "name": "Incendiaries",
+      "pbgid": 2101633,
+      "attribName": "upgrade_naval_incendiaries",
+      "age": 3,
+      "civs": [
+        "mo"
+      ],
+      "description": "Incendiary Ships gain +20% explosion range.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 75,
+        "wood": 0,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "incendiary",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "incendiaries-3",
+      "baseId": "incendiaries",
+      "type": "technology",
+      "name": "Incendiaries",
+      "pbgid": 2101633,
+      "attribName": "upgrade_naval_incendiaries",
+      "age": 3,
+      "civs": [
+        "od"
+      ],
+      "description": "Incendiary Ships gain +20% explosion range.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 75,
+        "wood": 0,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "incendiary",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "incendiaries-3",
+      "baseId": "incendiaries",
+      "type": "technology",
+      "name": "Incendiaries",
+      "pbgid": 2101633,
+      "attribName": "upgrade_naval_incendiaries",
+      "age": 3,
+      "civs": [
+        "ot"
+      ],
+      "description": "Incendiary Ships gain +20% explosion range.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 75,
+        "wood": 0,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "incendiary",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "incendiaries-3",
+      "baseId": "incendiaries",
+      "type": "technology",
+      "name": "Incendiaries",
+      "pbgid": 2101633,
+      "attribName": "upgrade_naval_incendiaries",
+      "age": 3,
+      "civs": [
+        "ru"
+      ],
+      "description": "Incendiary Ships gain +20% explosion range.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 75,
+        "wood": 0,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "incendiary",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "incendiaries-3",
+      "baseId": "incendiaries",
+      "type": "technology",
+      "name": "Incendiaries",
+      "pbgid": 2101633,
+      "attribName": "upgrade_naval_incendiaries",
+      "age": 3,
+      "civs": [
+        "sen"
+      ],
+      "description": "Incendiary Ships gain +20% explosion range.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 75,
+        "wood": 0,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "incendiary",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "incendiaries-3",
+      "baseId": "incendiaries",
+      "type": "technology",
+      "name": "Incendiaries",
+      "pbgid": 7522107,
+      "attribName": "upgrade_naval_incendiaries_sul_ha_tug",
+      "age": 3,
+      "civs": [
+        "tug"
+      ],
+      "description": "Incendiary Ships gain +20% explosion range.",
+      "classes": [
+        "military_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_nontiered_upgrade",
+        "sultinate_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 90,
+        "wood": 0,
+        "stone": 0,
+        "gold": 150,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 240,
+        "popcap": 0,
+        "time": 5
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/incendiaries-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "incendiary",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "incendiaries-3",
+      "baseId": "incendiaries",
+      "type": "technology",
+      "name": "Incendiaries",
+      "pbgid": 2101633,
+      "attribName": "upgrade_naval_incendiaries",
+      "age": 3,
+      "civs": [
+        "zx"
+      ],
+      "description": "Incendiary Ships gain +20% explosion range.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 75,
+        "wood": 0,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
       },
       "producedBy": [
         "dock"

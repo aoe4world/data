@@ -12,14 +12,18 @@
     "de",
     "en",
     "fr",
+    "gol",
     "hl",
     "hr",
     "ja",
     "je",
     "ma",
+    "mac",
     "mo",
     "od",
     "ru",
+    "sen",
+    "tug",
     "zx"
   ],
   "unique": false,
@@ -34,10 +38,12 @@
     "chinese_ha_01_upgrade",
     "chinese_upgrade",
     "crusader_cmp_upgrade",
+    "emplacement_upgrade",
     "english_upgrade",
     "french_ha_01_upgrade",
     "french_upgrade",
     "hre_upgrade",
+    "japanese_ha_sen_upgrade",
     "japanese_upgrade",
     "malian_upgrade",
     "military_upgrade",
@@ -45,9 +51,7 @@
     "rus_upgrade",
     "scar_imperial_age_upgrade",
     "sultinate_upgrade",
-    "mongol_upgrade",
-    "scar_military_upgrade",
-    "scar_nontiered_upgrade"
+    "mongol_upgrade"
   ],
   "minAge": 4,
   "icon": "https://data.aoe4world.com/images/technologies/cannon-emplacement-4.png",
@@ -73,10 +77,12 @@
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
+        "emplacement_upgrade",
         "english_upgrade",
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -145,10 +151,12 @@
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
+        "emplacement_upgrade",
         "english_upgrade",
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -217,10 +225,12 @@
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
+        "emplacement_upgrade",
         "english_upgrade",
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -289,10 +299,12 @@
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
+        "emplacement_upgrade",
         "english_upgrade",
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -361,10 +373,12 @@
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
+        "emplacement_upgrade",
         "english_upgrade",
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -433,10 +447,12 @@
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
+        "emplacement_upgrade",
         "english_upgrade",
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -507,10 +523,12 @@
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
+        "emplacement_upgrade",
         "english_upgrade",
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -565,6 +583,63 @@
       "baseId": "cannon-emplacement",
       "type": "technology",
       "name": "Cannon Emplacement",
+      "pbgid": 186400,
+      "attribName": "upgrade_outpost_cannon_mon",
+      "age": 4,
+      "civs": [
+        "gol"
+      ],
+      "description": "Add a defensive cannon emplacement to this structure. Only one weapon emplacement can be added.",
+      "classes": [
+        "emplacement_upgrade",
+        "military_upgrade",
+        "mongol_upgrade"
+      ],
+      "displayClasses": [
+        "Weapon Emplacement"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 375,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 500,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "fortified-outpost"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/cannon-emplacement-4.png",
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "outpost",
+              "keep",
+              "berkshire-palace",
+              "elzbach-palace",
+              "kremlin",
+              "spasskaya-tower",
+              "red-palace",
+              "the-white-tower"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "cannon-emplacement-4",
+      "baseId": "cannon-emplacement",
+      "type": "technology",
+      "name": "Cannon Emplacement",
       "pbgid": 185626,
       "attribName": "upgrade_keep_cannon",
       "age": 4,
@@ -580,10 +655,12 @@
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
+        "emplacement_upgrade",
         "english_upgrade",
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -642,6 +719,82 @@
       "attribName": "upgrade_keep_cannon",
       "age": 4,
       "civs": [
+        "hl"
+      ],
+      "description": "Add a defensive cannon emplacement to this structure.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "emplacement_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_ha_sen_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "sultinate_upgrade"
+      ],
+      "displayClasses": [
+        "Weapon Emplacement"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 375,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 500,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "berkshire-palace",
+        "keep",
+        "the-white-tower"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/cannon-emplacement-4.png",
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "outpost",
+              "keep",
+              "berkshire-palace",
+              "elzbach-palace",
+              "kremlin",
+              "spasskaya-tower",
+              "red-palace",
+              "the-white-tower"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "cannon-emplacement-4",
+      "baseId": "cannon-emplacement",
+      "type": "technology",
+      "name": "Cannon Emplacement",
+      "pbgid": 185626,
+      "attribName": "upgrade_keep_cannon",
+      "age": 4,
+      "civs": [
         "ja"
       ],
       "description": "Add a defensive cannon emplacement to this structure.",
@@ -653,10 +806,12 @@
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
+        "emplacement_upgrade",
         "english_upgrade",
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -726,10 +881,12 @@
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
+        "emplacement_upgrade",
         "english_upgrade",
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -788,6 +945,80 @@
       "attribName": "upgrade_keep_cannon",
       "age": 4,
       "civs": [
+        "mac"
+      ],
+      "description": "Add a defensive cannon emplacement to this structure.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "emplacement_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_ha_sen_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "sultinate_upgrade"
+      ],
+      "displayClasses": [
+        "Weapon Emplacement"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 375,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 500,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "keep"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/cannon-emplacement-4.png",
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "outpost",
+              "keep",
+              "berkshire-palace",
+              "elzbach-palace",
+              "kremlin",
+              "spasskaya-tower",
+              "red-palace",
+              "the-white-tower"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "cannon-emplacement-4",
+      "baseId": "cannon-emplacement",
+      "type": "technology",
+      "name": "Cannon Emplacement",
+      "pbgid": 185626,
+      "attribName": "upgrade_keep_cannon",
+      "age": 4,
+      "civs": [
         "ma"
       ],
       "description": "Add a defensive cannon emplacement to this structure.",
@@ -799,10 +1030,12 @@
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
+        "emplacement_upgrade",
         "english_upgrade",
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -865,11 +1098,9 @@
       ],
       "description": "Add a defensive cannon emplacement to this structure. Only one weapon emplacement can be added.",
       "classes": [
+        "emplacement_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "mongol_upgrade"
       ],
       "displayClasses": [
         "Weapon Emplacement"
@@ -931,10 +1162,12 @@
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
+        "emplacement_upgrade",
         "english_upgrade",
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -1004,6 +1237,156 @@
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
+        "emplacement_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_ha_sen_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "sultinate_upgrade"
+      ],
+      "displayClasses": [
+        "Weapon Emplacement"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 375,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 500,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "keep"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/cannon-emplacement-4.png",
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "outpost",
+              "keep",
+              "berkshire-palace",
+              "elzbach-palace",
+              "kremlin",
+              "spasskaya-tower",
+              "red-palace",
+              "the-white-tower"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "cannon-emplacement-4",
+      "baseId": "cannon-emplacement",
+      "type": "technology",
+      "name": "Cannon Emplacement",
+      "pbgid": 185626,
+      "attribName": "upgrade_keep_cannon",
+      "age": 4,
+      "civs": [
+        "sen"
+      ],
+      "description": "Add a defensive cannon emplacement to this structure.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "emplacement_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_ha_sen_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "sultinate_upgrade"
+      ],
+      "displayClasses": [
+        "Weapon Emplacement"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 375,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 500,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "castle",
+        "castle-of-the-crow"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/cannon-emplacement-4.png",
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "outpost",
+              "keep",
+              "berkshire-palace",
+              "elzbach-palace",
+              "kremlin",
+              "spasskaya-tower",
+              "red-palace",
+              "the-white-tower"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "cannon-emplacement-4",
+      "baseId": "cannon-emplacement",
+      "type": "technology",
+      "name": "Cannon Emplacement",
+      "pbgid": 9001518,
+      "attribName": "upgrade_keep_cannon_sul_ha_tug",
+      "age": 4,
+      "civs": [
+        "tug"
+      ],
+      "description": "Add a defensive cannon emplacement to this structure.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "emplacement_upgrade",
         "english_upgrade",
         "french_ha_01_upgrade",
         "french_upgrade",
@@ -1032,7 +1415,7 @@
         "time": 60
       },
       "producedBy": [
-        "keep"
+        "tughlaqabad-fort"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/cannon-emplacement-4.png",
       "effects": [
@@ -1076,10 +1459,12 @@
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
+        "emplacement_upgrade",
         "english_upgrade",
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -1105,80 +1490,6 @@
       },
       "producedBy": [
         "keep"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/cannon-emplacement-4.png",
-      "effects": [
-        {
-          "property": "unknown",
-          "select": {
-            "id": [
-              "outpost",
-              "keep",
-              "berkshire-palace",
-              "elzbach-palace",
-              "kremlin",
-              "spasskaya-tower",
-              "red-palace",
-              "the-white-tower"
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "cannon-emplacement-4",
-      "baseId": "cannon-emplacement",
-      "type": "technology",
-      "name": "Cannon Emplacement",
-      "pbgid": 185626,
-      "attribName": "upgrade_keep_cannon",
-      "age": 4,
-      "civs": [
-        "hl"
-      ],
-      "description": "Add a defensive cannon emplacement to this structure.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "sultinate_upgrade"
-      ],
-      "displayClasses": [
-        "Weapon Emplacement"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 375,
-        "gold": 125,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 500,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "berkshire-palace",
-        "keep",
-        "the-white-tower"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/cannon-emplacement-4.png",
       "effects": [

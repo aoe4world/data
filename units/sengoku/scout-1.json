@@ -1,0 +1,116 @@
+{
+  "id": "scout-1",
+  "baseId": "scout",
+  "type": "unit",
+  "name": "Scout",
+  "pbgid": 3188784,
+  "attribName": "unit_scout_1_jpn_ha_sen",
+  "age": 1,
+  "civs": [
+    "sen"
+  ],
+  "description": "Lightly armed cavalry effective at exploring the world, hunting wildlife, and herding Sheep.\n+ Able to see into Stealth Forests\n+ Health regeneration\n+ High movement speed\n- Very weak in combat",
+  "classes": [
+    "annihilation_condition",
+    "carrier",
+    "cavalry",
+    "emits_herding_interest",
+    "find_non_siege_land_military",
+    "formational",
+    "horse",
+    "human",
+    "land_military",
+    "melee",
+    "military",
+    "military_cavalry",
+    "scout",
+    "torch_thrower"
+  ],
+  "displayClasses": [
+    "Light Melee Cavalry"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 65,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 65,
+    "popcap": 1,
+    "time": 23
+  },
+  "producedBy": [
+    "capital-town-center",
+    "stable",
+    "town-center"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/scout-1.png",
+  "hitpoints": 110,
+  "weapons": [
+    {
+      "name": "Wakizashi",
+      "type": "melee",
+      "damage": 1,
+      "speed": 2,
+      "range": {
+        "min": 0,
+        "max": 0.2875
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "scout"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 10,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.375,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.5
+      },
+      "attribName": "weapon_scout_1_jpn",
+      "pbgid": 2150566
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "inner_height": 501,
+    "inner_radius": 12,
+    "outer_height": -15,
+    "outer_radius": 41,
+    "base": 40.156976744186046,
+    "line": 41,
+    "height": 501
+  },
+  "movement": {
+    "speed": 1.625
+  }
+}

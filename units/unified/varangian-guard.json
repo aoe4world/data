@@ -5,11 +5,13 @@
   "name": "Varangian Guard",
   "type": "unit",
   "civs": [
-    "by"
+    "by",
+    "mac"
   ],
   "unique": true,
   "displayClasses": [
-    "Heavy Melee Infantry"
+    "Heavy Melee Infantry",
+    "Heavy Melee Varangian Infantry"
   ],
   "classes": [
     "annihilation_condition",
@@ -26,9 +28,12 @@
     "melee_infantry",
     "military",
     "torch_thrower",
-    "varangian_guard"
+    "varangian_guard",
+    "pillager",
+    "runestone",
+    "varangian"
   ],
-  "minAge": 3,
+  "minAge": 2,
   "icon": "https://data.aoe4world.com/images/units/varangian-guard-3.png",
   "description": "Tough infantry with good damage. Can use Berserking to increase damage for reduced armor.\n+ Heavy armor\n+ Increases armor of Transports\n+ Disembarking from Transport Ships grants move speed\n+ Increased armor near allied Wonders\n- Slow move speed\n- Countered by Crossbowmen",
   "variations": [
@@ -225,7 +230,7 @@
         "palatine-school"
       ],
       "icon": "https://data.aoe4world.com/images/units/varangian-guard-4.png",
-      "hitpoints": 170,
+      "hitpoints": 195,
       "weapons": [
         {
           "name": "Sword",
@@ -272,6 +277,606 @@
           },
           "attribName": "weapon_manatarms_4_2handaxe_byz",
           "pbgid": 2105270
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [
+        {
+          "type": "melee",
+          "value": 6
+        },
+        {
+          "type": "ranged",
+          "value": 6
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 36,
+        "base": 21.6,
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "varangian-guard-2",
+      "baseId": "varangian-guard",
+      "type": "unit",
+      "name": "Early Varangian Guard",
+      "pbgid": 9001736,
+      "attribName": "unit_manatarms_2_byz_ha_mac",
+      "age": 2,
+      "civs": [
+        "mac"
+      ],
+      "description": "Tough infantry with good damage. Can use Berserking to increase damage for reduced armor.\n+ Heavy armor\n+ Increases armor of Transports\n+ Disembarking from Transport Ships grants move speed\n+ Increased armor near allied Wonders\n- Slow move speed\n- Countered by Crossbowmen",
+      "classes": [
+        "annihilation_condition",
+        "armored",
+        "find_non_siege_land_military",
+        "formational",
+        "heavy",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "land_military",
+        "manatarms",
+        "melee",
+        "melee_infantry",
+        "military",
+        "pillager",
+        "runestone",
+        "torch_thrower",
+        "varangian",
+        "varangian_guard"
+      ],
+      "displayClasses": [
+        "Heavy Melee Varangian Infantry"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 90,
+        "wood": 0,
+        "stone": 0,
+        "gold": 40,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 130,
+        "popcap": 1,
+        "time": 25
+      },
+      "producedBy": [
+        "varangian-stronghold",
+        "varangian-warcamp"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/varangian-guard-2.png",
+      "hitpoints": 125,
+      "weapons": [
+        {
+          "name": "Sword",
+          "type": "melee",
+          "damage": 12,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_2_byz_ha_mac",
+          "pbgid": 9001749
+        },
+        {
+          "name": "Ax",
+          "type": "melee",
+          "damage": 12,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "infantry",
+                    "light"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_2_2handaxe_byz_ha_mac",
+          "pbgid": 9001751
+        },
+        {
+          "name": "Rhomphaia",
+          "type": "melee",
+          "damage": 12,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "infantry",
+                    "light"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 3,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_2_rhomphaia_byz_ha_mac",
+          "pbgid": 9002985
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [
+        {
+          "type": "melee",
+          "value": 4
+        },
+        {
+          "type": "ranged",
+          "value": 2
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 36,
+        "base": 21.6,
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "varangian-guard-3",
+      "baseId": "varangian-guard",
+      "type": "unit",
+      "name": "Varangian Guard",
+      "pbgid": 9001018,
+      "attribName": "unit_manatarms_3_byz_ha_mac",
+      "age": 3,
+      "civs": [
+        "mac"
+      ],
+      "description": "Tough infantry with good damage. Can use Berserking to increase damage for reduced armor.\n+ Heavy armor\n+ Increases armor of Transports\n+ Disembarking from Transport Ships grants move speed\n+ Increased armor near allied Wonders\n- Slow move speed\n- Countered by Crossbowmen",
+      "classes": [
+        "annihilation_condition",
+        "armored",
+        "find_non_siege_land_military",
+        "formational",
+        "heavy",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "land_military",
+        "manatarms",
+        "melee",
+        "melee_infantry",
+        "military",
+        "pillager",
+        "runestone",
+        "torch_thrower",
+        "varangian",
+        "varangian_guard"
+      ],
+      "displayClasses": [
+        "Heavy Melee Varangian Infantry"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 90,
+        "wood": 0,
+        "stone": 0,
+        "gold": 40,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 130,
+        "popcap": 1,
+        "time": 25
+      },
+      "producedBy": [
+        "varangian-stronghold",
+        "varangian-warcamp"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/varangian-guard-3.png",
+      "hitpoints": 140,
+      "weapons": [
+        {
+          "name": "Sword",
+          "type": "melee",
+          "damage": 13,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_3_byz_ha_mac",
+          "pbgid": 9001632
+        },
+        {
+          "name": "Ax",
+          "type": "melee",
+          "damage": 13,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "infantry",
+                    "light"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_3_2handaxe_byz_ha_mac",
+          "pbgid": 9001634
+        },
+        {
+          "name": "Rhomphaia",
+          "type": "melee",
+          "damage": 13,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "infantry",
+                    "light"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 3,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_3_rhomphaia_byz_ha_mac",
+          "pbgid": 9002987
+        },
+        {
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [
+        {
+          "type": "melee",
+          "value": 5
+        },
+        {
+          "type": "ranged",
+          "value": 4
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 36,
+        "base": 21.6,
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "varangian-guard-4",
+      "baseId": "varangian-guard",
+      "type": "unit",
+      "name": "Elite Varangian Guard",
+      "pbgid": 9001019,
+      "attribName": "unit_manatarms_4_byz_ha_mac",
+      "age": 4,
+      "civs": [
+        "mac"
+      ],
+      "description": "Tough infantry with good damage. Can use Berserking to increase damage for reduced armor.\n+ Heavy armor\n+ Increases armor of Transports\n+ Disembarking from Transport Ships grants move speed\n+ Increased armor near allied Wonders\n- Slow move speed\n- Countered by Crossbowmen",
+      "classes": [
+        "annihilation_condition",
+        "armored",
+        "find_non_siege_land_military",
+        "formational",
+        "heavy",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "land_military",
+        "manatarms",
+        "melee",
+        "melee_infantry",
+        "military",
+        "pillager",
+        "runestone",
+        "torch_thrower",
+        "varangian",
+        "varangian_guard"
+      ],
+      "displayClasses": [
+        "Heavy Melee Varangian Infantry"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 90,
+        "wood": 0,
+        "stone": 0,
+        "gold": 40,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 130,
+        "popcap": 1,
+        "time": 25
+      },
+      "producedBy": [
+        "varangian-stronghold",
+        "varangian-warcamp"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/varangian-guard-4.png",
+      "hitpoints": 195,
+      "weapons": [
+        {
+          "name": "Sword",
+          "type": "melee",
+          "damage": 16,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_4_byz_ha_mac",
+          "pbgid": 9001638
+        },
+        {
+          "name": "Ax",
+          "type": "melee",
+          "damage": 16,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "infantry",
+                    "light"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_4_2handaxe_byz_ha_mac",
+          "pbgid": 9001636
+        },
+        {
+          "name": "Rhomphaia",
+          "type": "melee",
+          "damage": 16,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "infantry",
+                    "light"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 3,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_4_rhomphaia_byz_ha_mac",
+          "pbgid": 9002989
         },
         {
           "name": "Torch",

@@ -5,7 +5,8 @@
   "name": "Liquid Explosives",
   "type": "technology",
   "civs": [
-    "by"
+    "by",
+    "mac"
   ],
   "unique": true,
   "displayClasses": [
@@ -16,6 +17,7 @@
     "military_upgrade",
     "scar_castle_age_upgrade",
     "scar_military_upgrade",
+    "scar_naval_upgrade",
     "scar_nontiered_upgrade"
   ],
   "minAge": 3,
@@ -39,6 +41,7 @@
         "military_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -47,14 +50,67 @@
       "unique": true,
       "costs": {
         "food": 0,
-        "wood": 100,
+        "wood": 75,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/liquid-explosives-3.png",
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "demolition-ship"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "liquid-explosives-3",
+      "baseId": "liquid-explosives",
+      "type": "technology",
+      "name": "Liquid Explosives",
+      "pbgid": 2145611,
+      "attribName": "upgrade_fireship_liquid_explosives_byz",
+      "age": 3,
+      "civs": [
+        "mac"
+      ],
+      "description": "Incendiary Ships deal full damage to all enemies in their explosion radius.",
+      "classes": [
+        "byzantine_upgrade",
+        "military_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
       },
       "producedBy": [
         "dock"

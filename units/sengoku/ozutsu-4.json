@@ -1,0 +1,105 @@
+{
+  "id": "ozutsu-4",
+  "baseId": "ozutsu",
+  "type": "unit",
+  "name": "Ozutsu",
+  "pbgid": 4841179,
+  "attribName": "unit_ozutsu_4_jpn_ha_sen",
+  "age": 4,
+  "civs": [
+    "sen"
+  ],
+  "description": "Ranged infantry equipped with a huge gunpowder weapon that has good weapon range, siege, and splash damage.\n+ Anti-building\n+ Area damage\n- Slow move speed\n- Slow attack speed\n- Countered by Horsemen and Crossbowmen",
+  "classes": [
+    "annihilation_condition",
+    "find_non_siege_land_military",
+    "formational",
+    "gunpowder",
+    "heavy",
+    "human",
+    "included_by_military_hotkeys",
+    "infantry",
+    "land_military",
+    "military",
+    "ozutsu_jpn",
+    "ranged",
+    "ranged_infantry"
+  ],
+  "displayClasses": [
+    "Heavy Ranged Gunpowder Infantry"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 85,
+    "wood": 0,
+    "stone": 0,
+    "gold": 155,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 240,
+    "popcap": 1,
+    "time": 35
+  },
+  "producedBy": [
+    "archery-range"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/ozutsu-4.png",
+  "hitpoints": 160,
+  "weapons": [
+    {
+      "name": "Ozutsu",
+      "type": "ranged",
+      "damage": 28,
+      "speed": 4.75,
+      "range": {
+        "min": 0,
+        "max": 6.5
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 130,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0.125,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 3.5,
+        "setup": 0,
+        "teardown": 0.5,
+        "cooldown": 0
+      },
+      "attribName": "weapon_ozutsu_4_jpn_ha_sen",
+      "pbgid": 9002061
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 4
+    }
+  ],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 8,
+    "outer_height": -15,
+    "outer_radius": 32,
+    "base": 17.6,
+    "line": 32,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "id": "cheirosiphon-3",
+  "baseId": "cheirosiphon",
+  "type": "unit",
+  "name": "Cheirosiphon",
+  "pbgid": 9001048,
+  "attribName": "unit_workshop_fire_ram_3_byz_ha_mac",
+  "age": 3,
+  "civs": [
+    "mac"
+  ],
+  "description": "Durable infantry transport equipped with Greek Fire, effective against Buildings and Walls.\n+ Greek Fire persists on ground\n+ High ranged armor\n+ High health\n- Only attacks buildings\n- Slow move speed",
+  "classes": [
+    "annihilation_condition",
+    "formational",
+    "included_by_military_hotkeys",
+    "land_military",
+    "military",
+    "ram",
+    "ram_greek_fire",
+    "siege",
+    "transport",
+    "workshop_ram"
+  ],
+  "displayClasses": [
+    "Siege"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 0,
+    "wood": 200,
+    "stone": 0,
+    "gold": 60,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 260,
+    "popcap": 1,
+    "time": 35
+  },
+  "producedBy": [
+    "siege-workshop"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/cheirosiphon-3.png",
+  "hitpoints": 310,
+  "weapons": [
+    {
+      "name": "Greek Fire",
+      "type": "siege",
+      "damage": 10,
+      "speed": 8.25,
+      "range": {
+        "min": 0,
+        "max": 2.5
+      },
+      "modifiers": [
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "wall"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 5,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.25,
+        "windup": 0,
+        "attack": 4,
+        "winddown": 2,
+        "reload": 2,
+        "setup": 0,
+        "teardown": 1,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 28
+      },
+      "attribName": "weapon_ram_flame_thrower_byz",
+      "pbgid": 2108831
+    }
+  ],
+  "armor": [],
+  "resistance": [
+    {
+      "type": "ranged",
+      "value": 95
+    }
+  ],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 8,
+    "outer_height": -15,
+    "outer_radius": 30,
+    "base": 16.8,
+    "line": 30,
+    "height": 10
+  },
+  "movement": {
+    "speed": 0.75
+  },
+  "garrison": {
+    "capacity": 16,
+    "classes": [
+      "infantry",
+      "villager",
+      "infantry ranged",
+      "monk"
+    ]
+  }
+}

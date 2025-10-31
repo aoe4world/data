@@ -5,6 +5,7 @@
   "name": "Stone Commerce",
   "type": "technology",
   "civs": [
+    "gol",
     "mo"
   ],
   "unique": true,
@@ -13,8 +14,8 @@
   ],
   "classes": [
     "mongol_upgrade",
+    "scar_economic_upgrade",
     "scar_imperial_age_upgrade",
-    "scar_military_upgrade",
     "scar_nontiered_upgrade"
   ],
   "minAge": 4,
@@ -30,13 +31,65 @@
       "attribName": "upgrade_trader_silkroad_stone_mon",
       "age": 4,
       "civs": [
+        "gol"
+      ],
+      "description": "Traders supply +10% Stone to their trades.",
+      "classes": [
+        "mongol_upgrade",
+        "scar_economic_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Trade Technology"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 700,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 1000,
+        "popcap": 0,
+        "time": 90
+      },
+      "producedBy": [
+        "market"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/stone-commerce-4.png",
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "trader",
+              "trade-ship"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "stone-commerce-4",
+      "baseId": "stone-commerce",
+      "type": "technology",
+      "name": "Stone Commerce",
+      "pbgid": 205556,
+      "attribName": "upgrade_trader_silkroad_stone_mon",
+      "age": 4,
+      "civs": [
         "mo"
       ],
       "description": "Traders supply +10% Stone to their trades.",
       "classes": [
         "mongol_upgrade",
+        "scar_economic_upgrade",
         "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [

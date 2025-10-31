@@ -1,0 +1,52 @@
+{
+  "id": "precision-cross-breeding-4",
+  "baseId": "precision-cross-breeding",
+  "type": "technology",
+  "name": "Precision Cross-Breeding",
+  "pbgid": 2159811,
+  "attribName": "upgrade_econ_resource_food_harvest_rate_4_byz",
+  "age": 4,
+  "civs": [
+    "mac"
+  ],
+  "description": "Increase Villagers' gathering rate for Food by 10%. Does not apply to hunted meat.",
+  "classes": [
+    "byzantine_upgrade",
+    "economic_upgrade",
+    "scar_economic_upgrade",
+    "scar_imperial_age_upgrade",
+    "scar_tiered_upgrade"
+  ],
+  "displayClasses": [
+    "Food Gathering Technology 3/3"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 250,
+    "stone": 0,
+    "gold": 500,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 750,
+    "popcap": 0,
+    "time": 75
+  },
+  "producedBy": [
+    "grand-winery"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/precision-cross-breeding-4.png",
+  "effects": [
+    {
+      "property": "foodGatherRate",
+      "select": {
+        "id": [
+          "villager"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.1,
+      "type": "passive"
+    }
+  ]
+}

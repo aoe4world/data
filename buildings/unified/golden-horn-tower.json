@@ -5,7 +5,8 @@
   "name": "Golden Horn Tower",
   "type": "building",
   "civs": [
-    "by"
+    "by",
+    "mac"
   ],
   "unique": true,
   "displayClasses": [
@@ -16,12 +17,17 @@
     "audio_production_landmark",
     "building",
     "cavalry_production_landmark",
+    "free_passive_unit_production",
     "landmark",
     "select_special_building",
     "siegeable",
     "town_center_or_landmark",
     "wonder",
-    "wonder_feudal_age"
+    "wonder_feudal_age",
+    "castle",
+    "defensive_structure",
+    "scar_keep",
+    "town_bell_target"
   ],
   "minAge": 2,
   "icon": "https://data.aoe4world.com/images/buildings/golden-horn-tower-2.png",
@@ -44,6 +50,7 @@
         "audio_production_landmark",
         "building",
         "cavalry_production_landmark",
+        "free_passive_unit_production",
         "landmark",
         "select_special_building",
         "siegeable",
@@ -86,6 +93,730 @@
         "base": 25,
         "line": 25,
         "height": 8
+      },
+      "influences": []
+    },
+    {
+      "id": "golden-horn-tower-3",
+      "baseId": "golden-horn-tower",
+      "type": "building",
+      "name": "Golden Horn Tower",
+      "pbgid": 9000939,
+      "attribName": "building_landmark_age2_galata_tower_byz_ha_mac",
+      "age": 3,
+      "civs": [
+        "mac"
+      ],
+      "description": "Defensive building equipped with Crossbow emplacements and large Line of Sight. Generates batches of Crossbowman for free over time. \nDetects units in stealth or disguises.",
+      "classes": [
+        "age2_landmark1",
+        "audio_production_landmark",
+        "building",
+        "castle",
+        "defensive_structure",
+        "free_passive_unit_production",
+        "landmark",
+        "scar_keep",
+        "select_special_building",
+        "siegeable",
+        "town_bell_target",
+        "town_center_or_landmark",
+        "wonder",
+        "wonder_feudal_age"
+      ],
+      "displayClasses": [
+        "Age III - Military Landmark"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 1200,
+        "wood": 0,
+        "stone": 0,
+        "gold": 600,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 1800,
+        "popcap": 0,
+        "time": 220
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/golden-horn-tower-3.png",
+      "hitpoints": 5000,
+      "weapons": [
+        {
+          "name": "Crossbow",
+          "type": "ranged",
+          "damage": 30,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 40,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_keep_crossbow_a",
+          "pbgid": 9004621
+        },
+        {
+          "name": "Crossbow",
+          "type": "ranged",
+          "damage": 30,
+          "speed": 1.5,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 40,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.125,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_keep_crossbow_a",
+          "pbgid": 9004621
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 10,
+          "speed": 2.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_keep_arrows_garrison",
+          "pbgid": 171261
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 10,
+          "speed": 2.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_keep_arrows_garrison",
+          "pbgid": 171261
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 10,
+          "speed": 2.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_keep_arrows_garrison",
+          "pbgid": 171261
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 10,
+          "speed": 2.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_keep_arrows_garrison",
+          "pbgid": 171261
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 10,
+          "speed": 2.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_keep_arrows_garrison",
+          "pbgid": 171261
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 10,
+          "speed": 2.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_keep_arrows_garrison",
+          "pbgid": 171261
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 10,
+          "speed": 2.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_keep_arrows_garrison",
+          "pbgid": 171261
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 10,
+          "speed": 2.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_keep_arrows_garrison",
+          "pbgid": 171261
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 10,
+          "speed": 2.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_keep_arrows_garrison",
+          "pbgid": 171261
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 10,
+          "speed": 2.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_keep_arrows_garrison",
+          "pbgid": 171261
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 10,
+          "speed": 2.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_keep_arrows_garrison",
+          "pbgid": 171261
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 10,
+          "speed": 2.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_keep_arrows_garrison",
+          "pbgid": 171261
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 10,
+          "speed": 2.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_keep_arrows_garrison",
+          "pbgid": 171261
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 10,
+          "speed": 2.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_keep_arrows_garrison",
+          "pbgid": 171261
+        },
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 10,
+          "speed": 2.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_keep_arrows_garrison",
+          "pbgid": 171261
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "inner_height": 501,
+        "inner_radius": 35,
+        "outer_height": -20,
+        "outer_radius": 60,
+        "base": 59.04030710172745,
+        "line": 60,
+        "height": 501
+      },
+      "garrison": {
+        "capacity": 10,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk",
+          "cavalry",
+          "khan"
+        ]
       },
       "influences": []
     }

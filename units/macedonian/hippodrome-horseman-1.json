@@ -1,0 +1,145 @@
+{
+  "id": "hippodrome-horseman-1",
+  "baseId": "hippodrome-horseman",
+  "type": "unit",
+  "name": "Hippodrome Horseman",
+  "pbgid": 9004208,
+  "attribName": "unit_dummy_champion_horseman_byz_ha_mac",
+  "age": 1,
+  "civs": [
+    "mac"
+  ],
+  "description": "Fast cavalry that enhances damage of nearby cavalry.\n+ High movement speed\n+ Health regeneration\n- Weak against melee units\n- Countered by Spearmen",
+  "classes": [
+    "annihilation_condition",
+    "cavalry",
+    "cavalry_light",
+    "find_non_siege_land_military",
+    "formational",
+    "horse",
+    "human",
+    "included_by_military_hotkeys",
+    "land_military",
+    "melee",
+    "military",
+    "military_cavalry",
+    "torch_thrower"
+  ],
+  "displayClasses": [
+    "Light Melee Cavalry"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 130,
+    "wood": 30,
+    "stone": 0,
+    "gold": 30,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 190,
+    "popcap": 1,
+    "time": 20
+  },
+  "producedBy": [
+    "imperial-hippodrome"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/hippodrome-horseman-1.png",
+  "hitpoints": 220,
+  "weapons": [
+    {
+      "name": "Spear",
+      "type": "melee",
+      "damage": 13,
+      "speed": 1.75,
+      "range": {
+        "min": 0,
+        "max": 0.375
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "ranged"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 13,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "siege"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 13,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.25,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.125
+      },
+      "attribName": "weapon_horseman_4",
+      "pbgid": 127821
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch_horseman",
+      "pbgid": 127935
+    }
+  ],
+  "armor": [
+    {
+      "type": "melee",
+      "value": 2
+    },
+    {
+      "type": "ranged",
+      "value": 3
+    }
+  ],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 4,
+    "outer_height": -15,
+    "outer_radius": 28,
+    "base": 13.6,
+    "line": 28,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.875
+  }
+}

@@ -918,74 +918,6 @@
       "influences": []
     },
     {
-      "id": "dock-1",
-      "baseId": "dock",
-      "type": "building",
-      "name": "Dock",
-      "pbgid": 5000233,
-      "attribName": "building_dock_tem",
-      "age": 1,
-      "civs": [
-        "kt"
-      ],
-      "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three Fishing Ships.",
-      "classes": [
-        "building",
-        "military_only_production",
-        "naval_production_building",
-        "production_building",
-        "resource_drop_off",
-        "scar_dock",
-        "siegeable",
-        "trade_dock",
-        "trade_post"
-      ],
-      "displayClasses": [
-        "Military & Economy Building",
-        "Trade Site"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 150,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 150,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "villager"
-      ],
-      "icon": "https://data.aoe4world.com/images/buildings/dock-1.png",
-      "hitpoints": 1750,
-      "weapons": [],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 50
-        }
-      ],
-      "sight": {
-        "inner_height": 8,
-        "inner_radius": 20,
-        "outer_height": 0,
-        "outer_radius": 50,
-        "base": 50,
-        "line": 50,
-        "height": 8
-      },
-      "garrison": {
-        "capacity": 3,
-        "classes": [
-          "fishing ship"
-        ]
-      },
-      "influences": []
-    },
-    {
       "id": "farm-1",
       "baseId": "farm",
       "type": "building",
@@ -2152,6 +2084,102 @@
       ]
     },
     {
+      "id": "harbor-1",
+      "baseId": "harbor",
+      "type": "building",
+      "name": "Harbor",
+      "pbgid": 5000233,
+      "attribName": "building_dock_tem",
+      "age": 1,
+      "civs": [
+        "kt"
+      ],
+      "description": "Strong Dock that produces naval units and increases the health of nearby ships.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to 4 Fishing Ships.",
+      "classes": [
+        "building",
+        "military_only_production",
+        "naval_production_building",
+        "production_building",
+        "resource_drop_off",
+        "scar_dock",
+        "siegeable",
+        "trade_dock",
+        "trade_post"
+      ],
+      "displayClasses": [
+        "Military & Economy Building",
+        "Trade Site"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 0,
+        "wood": 250,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 250,
+        "popcap": 0,
+        "time": 35
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/harbor-1.png",
+      "hitpoints": 2250,
+      "weapons": [
+        {
+          "name": "Flaming Ballista",
+          "type": "ranged",
+          "damage": 42,
+          "speed": 3.5,
+          "range": {
+            "min": 0,
+            "max": 11
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0.375,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 2.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_dock_springald_tem",
+          "pbgid": 9004566
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        },
+        {
+          "type": "fire",
+          "value": 2
+        }
+      ],
+      "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 50,
+        "base": 50,
+        "line": 50,
+        "height": 8
+      },
+      "garrison": {
+        "capacity": 4,
+        "classes": [
+          "fishing ship"
+        ]
+      },
+      "influences": []
+    },
+    {
       "id": "house-1",
       "baseId": "house",
       "type": "building",
@@ -2578,6 +2606,64 @@
       "influences": []
     },
     {
+      "id": "palisade-1",
+      "baseId": "palisade",
+      "type": "building",
+      "name": "Palisade",
+      "pbgid": 5000217,
+      "attribName": "building_defense_palisade_wall_tem",
+      "age": 1,
+      "civs": [
+        "kt"
+      ],
+      "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 21 Wood, with each additional section costing 7 Wood.",
+      "classes": [
+        "building",
+        "defensive_structure",
+        "palisade_wall",
+        "palisade_wall_section",
+        "siegeable",
+        "wall"
+      ],
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 7,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 7,
+        "popcap": 0,
+        "time": 8
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/palisade-1.png",
+      "hitpoints": 1250,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "inner_height": 8,
+        "inner_radius": 6,
+        "outer_height": 0,
+        "outer_radius": 6,
+        "base": 6,
+        "line": 6,
+        "height": 8
+      },
+      "influences": []
+    },
+    {
       "id": "palisade-gate-1",
       "baseId": "palisade-gate",
       "type": "building",
@@ -2631,64 +2717,6 @@
         "outer_radius": 20,
         "base": 20,
         "line": 20,
-        "height": 8
-      },
-      "influences": []
-    },
-    {
-      "id": "palisade-wall-1",
-      "baseId": "palisade-wall",
-      "type": "building",
-      "name": "Palisade Wall",
-      "pbgid": 5000217,
-      "attribName": "building_defense_palisade_wall_tem",
-      "age": 1,
-      "civs": [
-        "kt"
-      ],
-      "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 21 Wood, with each additional section costing 7 Wood.",
-      "classes": [
-        "building",
-        "defensive_structure",
-        "palisade_wall",
-        "palisade_wall_section",
-        "siegeable",
-        "wall"
-      ],
-      "displayClasses": [
-        "Defensive Building"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 7,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 7,
-        "popcap": 0,
-        "time": 8
-      },
-      "producedBy": [
-        "villager"
-      ],
-      "icon": "https://data.aoe4world.com/images/buildings/palisade-wall-1.png",
-      "hitpoints": 1250,
-      "weapons": [],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 50
-        }
-      ],
-      "sight": {
-        "inner_height": 8,
-        "inner_radius": 6,
-        "outer_height": 0,
-        "outer_radius": 6,
-        "base": 6,
-        "line": 6,
         "height": 8
       },
       "influences": []
@@ -3110,13 +3138,13 @@
       "influences": []
     },
     {
-      "id": "town-center-2",
+      "id": "town-center-1",
       "baseId": "town-center",
       "type": "building",
       "name": "Town Center",
       "pbgid": 5000199,
       "attribName": "building_town_center_tem",
-      "age": 2,
+      "age": 1,
       "civs": [
         "kt"
       ],
@@ -3154,7 +3182,7 @@
       "producedBy": [
         "villager"
       ],
-      "icon": "https://data.aoe4world.com/images/buildings/town-center-2.png",
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
       "hitpoints": 2500,
       "weapons": [],
       "armor": [

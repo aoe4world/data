@@ -1,0 +1,43 @@
+{
+  "id": "ability-setup-camp-2",
+  "baseId": "ability-setup-camp",
+  "type": "ability",
+  "name": "Setup Camp",
+  "pbgid": 2133269,
+  "attribName": "deploy_campfire_eng",
+  "age": 2,
+  "civs": [
+    "en"
+  ],
+  "description": "Place a Campfire which increases sight range of nearby units by +30% and Villager gather rate for huntable animals by +10%.\nA maximum of 5 Campfires can be lit at any one time. Placing an additional Campfire extinguishes an older one.",
+  "classes": [],
+  "displayClasses": [],
+  "costs": {
+    "food": 0,
+    "wood": 25,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 25,
+    "popcap": 0
+  },
+  "producedBy": [],
+  "icon": "https://data.aoe4world.com/images/abilities/ability-setup-camp-2.png",
+  "active": "manual",
+  "auraRange": 0,
+  "cooldown": 0.125,
+  "effects": [
+    {
+      "property": "lineOfSight",
+      "select": {
+        "id": [
+          "scout"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.3,
+      "type": "ability"
+    }
+  ]
+}

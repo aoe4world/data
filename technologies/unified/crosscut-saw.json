@@ -12,15 +12,18 @@
     "de",
     "en",
     "fr",
+    "gol",
     "hl",
     "hr",
     "ja",
     "je",
     "ma",
+    "mac",
     "mo",
     "od",
     "ot",
     "ru",
+    "sen",
     "zx"
   ],
   "unique": false,
@@ -42,13 +45,13 @@
     "hre_upgrade",
     "japanese_upgrade",
     "malian_upgrade",
-    "mongol_upgrade",
     "ottoman_upgrade",
     "rus_upgrade",
     "scar_economic_upgrade",
     "scar_imperial_age_upgrade",
     "scar_tiered_upgrade",
-    "sultinate_upgrade"
+    "sultinate_upgrade",
+    "japanese_ha_sen_upgrade"
   ],
   "minAge": 4,
   "icon": "https://data.aoe4world.com/images/technologies/crosscut-saw-4.png",
@@ -81,7 +84,6 @@
         "hre_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_economic_upgrade",
@@ -148,7 +150,6 @@
         "hre_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_economic_upgrade",
@@ -215,7 +216,6 @@
         "hre_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_economic_upgrade",
@@ -282,7 +282,6 @@
         "hre_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_economic_upgrade",
@@ -401,7 +400,6 @@
         "hre_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_economic_upgrade",
@@ -468,7 +466,6 @@
         "hre_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_economic_upgrade",
@@ -513,6 +510,72 @@
       "baseId": "crosscut-saw",
       "type": "technology",
       "name": "Crosscut Saw",
+      "pbgid": 9005038,
+      "attribName": "upgrade_econ_resource_wood_harvest_rate_4_mon_ha_gol",
+      "age": 4,
+      "civs": [
+        "gol"
+      ],
+      "description": "Increase Villagers' gathering rate for Wood by 15% and Wood gatherers carry capacity by +5.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "economic_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_economic_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Wood Gathering Technology 3/3"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 250,
+        "wood": 0,
+        "stone": 0,
+        "gold": 500,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 750,
+        "popcap": 0,
+        "time": 75
+      },
+      "producedBy": [
+        "ger"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/crosscut-saw-4.png",
+      "effects": [
+        {
+          "property": "woodGatherRate",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "crosscut-saw-4",
+      "baseId": "crosscut-saw",
+      "type": "technology",
+      "name": "Crosscut Saw",
       "pbgid": 171837,
       "attribName": "upgrade_econ_resource_wood_harvest_rate_4",
       "age": 4,
@@ -535,7 +598,72 @@
         "hre_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
-        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_economic_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Wood Gathering Technology 3/3"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 250,
+        "wood": 0,
+        "stone": 0,
+        "gold": 500,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 750,
+        "popcap": 0,
+        "time": 75
+      },
+      "producedBy": [
+        "lumber-camp"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/crosscut-saw-4.png",
+      "effects": [
+        {
+          "property": "woodGatherRate",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "crosscut-saw-4",
+      "baseId": "crosscut-saw",
+      "type": "technology",
+      "name": "Crosscut Saw",
+      "pbgid": 171837,
+      "attribName": "upgrade_econ_resource_wood_harvest_rate_4",
+      "age": 4,
+      "civs": [
+        "hl"
+      ],
+      "description": "Increase Villagers' gathering rate for Wood by 15% and Wood gatherers carry capacity by +5.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "economic_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_economic_upgrade",
@@ -589,6 +717,7 @@
       "description": "Increase Villagers' gathering rate for Wood by 15% and Wood gatherers carry capacity by +5.",
       "classes": [
         "economic_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "scar_economic_upgrade",
         "scar_imperial_age_upgrade",
@@ -655,7 +784,72 @@
         "hre_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
-        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_economic_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Wood Gathering Technology 3/3"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 250,
+        "wood": 0,
+        "stone": 0,
+        "gold": 500,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 750,
+        "popcap": 0,
+        "time": 75
+      },
+      "producedBy": [
+        "lumber-camp"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/crosscut-saw-4.png",
+      "effects": [
+        {
+          "property": "woodGatherRate",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "crosscut-saw-4",
+      "baseId": "crosscut-saw",
+      "type": "technology",
+      "name": "Crosscut Saw",
+      "pbgid": 171837,
+      "attribName": "upgrade_econ_resource_wood_harvest_rate_4",
+      "age": 4,
+      "civs": [
+        "mac"
+      ],
+      "description": "Increase Villagers' gathering rate for Wood by 15% and Wood gatherers carry capacity by +5.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "economic_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_economic_upgrade",
@@ -722,7 +916,6 @@
         "hre_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_economic_upgrade",
@@ -789,7 +982,6 @@
         "hre_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_economic_upgrade",
@@ -857,7 +1049,6 @@
         "hre_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_economic_upgrade",
@@ -924,7 +1115,6 @@
         "hre_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_economic_upgrade",
@@ -991,9 +1181,61 @@
         "hre_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
+        "scar_economic_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Wood Gathering Technology 3/3"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 250,
+        "wood": 0,
+        "stone": 0,
+        "gold": 500,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 750,
+        "popcap": 0,
+        "time": 75
+      },
+      "producedBy": [
+        "lumber-camp"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/crosscut-saw-4.png",
+      "effects": [
+        {
+          "property": "woodGatherRate",
+          "select": {
+            "id": [
+              "villager"
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.15,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "crosscut-saw-4",
+      "baseId": "crosscut-saw",
+      "type": "technology",
+      "name": "Crosscut Saw",
+      "pbgid": 2136381,
+      "attribName": "upgrade_econ_resource_wood_harvest_rate_4_jpn",
+      "age": 4,
+      "civs": [
+        "sen"
+      ],
+      "description": "Increase Villagers' gathering rate for Wood by 15% and Wood gatherers carry capacity by +5.",
+      "classes": [
+        "economic_upgrade",
+        "japanese_ha_sen_upgrade",
+        "japanese_upgrade",
         "scar_economic_upgrade",
         "scar_imperial_age_upgrade",
         "scar_tiered_upgrade"
@@ -1058,74 +1300,6 @@
         "hre_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_economic_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Wood Gathering Technology 3/3"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 250,
-        "wood": 0,
-        "stone": 0,
-        "gold": 500,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 750,
-        "popcap": 0,
-        "time": 75
-      },
-      "producedBy": [
-        "lumber-camp"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/crosscut-saw-4.png",
-      "effects": [
-        {
-          "property": "woodGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.15,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "crosscut-saw-4",
-      "baseId": "crosscut-saw",
-      "type": "technology",
-      "name": "Crosscut Saw",
-      "pbgid": 171837,
-      "attribName": "upgrade_econ_resource_wood_harvest_rate_4",
-      "age": 4,
-      "civs": [
-        "hl"
-      ],
-      "description": "Increase Villagers' gathering rate for Wood by 15% and Wood gatherers carry capacity by +5.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "economic_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_economic_upgrade",

@@ -27,7 +27,6 @@
         "mongol_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
-        "scar_mongol_improved",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -96,11 +95,11 @@
       "costs": {
         "food": 150,
         "wood": 0,
-        "stone": 500,
+        "stone": 400,
         "gold": 350,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 1000,
+        "total": 900,
         "popcap": 0,
         "time": 45
       },
@@ -279,6 +278,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_tiered_upgrade"
       ],
       "displayClasses": [
@@ -286,15 +286,15 @@
       ],
       "unique": false,
       "costs": {
-        "food": 150,
+        "food": 100,
         "wood": 0,
         "stone": 0,
-        "gold": 350,
+        "gold": 200,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
+        "total": 300,
         "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -342,11 +342,9 @@
       ],
       "description": "Add defensive arrowslits to this structure and increase garrison arrow range by +1. Only one weapon emplacement can be added.",
       "classes": [
+        "emplacement_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
-        "scar_feudal_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "mongol_upgrade"
       ],
       "displayClasses": [
         "Weapon Emplacement"
@@ -406,6 +404,7 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -605,7 +604,6 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
-        "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
         "mongol_upgrade",
@@ -663,11 +661,9 @@
       ],
       "description": "Add a defensive cannon emplacement to this structure. Only one weapon emplacement can be added.",
       "classes": [
+        "emplacement_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "mongol_upgrade"
       ],
       "displayClasses": [
         "Weapon Emplacement"
@@ -813,7 +809,8 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Building Technology"
@@ -884,7 +881,6 @@
         "hre_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_economic_upgrade",
@@ -921,60 +917,6 @@
           },
           "effect": "multiply",
           "value": 1.15,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "crosscut-saw-improved-4",
-      "baseId": "crosscut-saw-improved",
-      "type": "technology",
-      "name": "Crosscut Saw (Improved)",
-      "pbgid": 175068,
-      "attribName": "upgrade_econ_resource_wood_harvest_rate_4_improved_mon",
-      "age": 4,
-      "civs": [
-        "mo"
-      ],
-      "description": "Increase Villagers' gathering rate for Wood by 22.5% and Wood gatherers carry capacity by +5.\nIf Crosscut Saw has already been researched, increase it by 7.5% instead.",
-      "classes": [
-        "economic_upgrade",
-        "mongol_upgrade",
-        "scar_economic_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_mongol_improved",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Wood Gathering Technology 3/3"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 250,
-        "wood": 0,
-        "stone": 750,
-        "gold": 500,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 1500,
-        "popcap": 0,
-        "time": 75
-      },
-      "producedBy": [
-        "ger",
-        "steppe-redoubt"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/crosscut-saw-improved-4.png",
-      "effects": [
-        {
-          "property": "woodGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.07,
           "type": "passive"
         }
       ]
@@ -1039,71 +981,6 @@
           },
           "effect": "multiply",
           "value": 1.15,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "cupellation-improved-4",
-      "baseId": "cupellation-improved",
-      "type": "technology",
-      "name": "Cupellation (Improved)",
-      "pbgid": 175058,
-      "attribName": "upgrade_econ_resource_gold_harvest_rate_4_improved_mon",
-      "age": 4,
-      "civs": [
-        "mo"
-      ],
-      "description": "Gold gatherers drop off 22.5% more resources.\nIf Cupellation has already been researched, increase it by 7.5% instead.",
-      "classes": [
-        "economic_upgrade",
-        "mongol_upgrade",
-        "scar_economic_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_mongol_improved",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Mining Technology 3/3"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 250,
-        "stone": 750,
-        "gold": 500,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 1500,
-        "popcap": 0,
-        "time": 75
-      },
-      "producedBy": [
-        "ger",
-        "steppe-redoubt"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/cupellation-improved-4.png",
-      "effects": [
-        {
-          "property": "goldGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.07,
-          "type": "passive"
-        },
-        {
-          "property": "stoneGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.07,
           "type": "passive"
         }
       ]
@@ -1186,7 +1063,6 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
-        "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
         "mongol_upgrade",
@@ -1310,7 +1186,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Increase Villagers' gathering rate for Wood by 22.5%.\nIf Double Broadax has already been researched, increase it by 7.5% instead.",
+      "description": "Increase Villagers' gathering rate for Wood by 35%.\nIf Double Broadax has already been researched, increase it by 20% instead.",
       "classes": [
         "economic_upgrade",
         "mongol_upgrade",
@@ -1326,11 +1202,11 @@
       "costs": {
         "food": 50,
         "wood": 0,
-        "stone": 150,
+        "stone": 500,
         "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 300,
+        "total": 650,
         "popcap": 0,
         "time": 45
       },
@@ -1348,7 +1224,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 1.07,
+          "value": 1.17,
           "type": "passive"
         }
       ]
@@ -1616,6 +1492,7 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -1766,6 +1643,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -1774,14 +1652,14 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 100,
+        "wood": 75,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -1873,60 +1751,6 @@
       ]
     },
     {
-      "id": "fertilization-improved-3",
-      "baseId": "fertilization-improved",
-      "type": "technology",
-      "name": "Fertilization (Improved)",
-      "pbgid": 171296,
-      "attribName": "upgrade_econ_resource_food_harvest_rate_3_improved_mon",
-      "age": 3,
-      "civs": [
-        "mo"
-      ],
-      "description": "Increase Villagers' gathering rate for Food by 17.5%. Does not apply to hunted meat.\nIf Fertilization has already been researched, increase it by 7.5% instead.",
-      "classes": [
-        "economic_upgrade",
-        "mongol_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_economic_upgrade",
-        "scar_mongol_improved",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Food Gathering Technology 2/3"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 100,
-        "stone": 350,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 700,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "ger",
-        "steppe-redoubt"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/fertilization-improved-3.png",
-      "effects": [
-        {
-          "property": "foodGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.07,
-          "type": "passive"
-        }
-      ]
-    },
-    {
       "id": "fitted-leatherwork-2",
       "baseId": "fitted-leatherwork",
       "type": "technology",
@@ -1950,6 +1774,7 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -2071,7 +1896,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Villagers fell trees in a single chop.",
+      "description": "Villagers fell trees in a single chop.\nWood carry capacity increased by +2.",
       "classes": [
         "economic_upgrade",
         "mongol_upgrade",
@@ -2287,7 +2112,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Increase the movement speed of siege engines by +20%.\nIf Greased Axles has already been researched, increase it by +5% instead.",
+      "description": "Increase the movement speed of siege engines by +25%.\nIf Greased Axles has already been researched, increase it by +10% instead.",
       "classes": [
         "military_upgrade",
         "mongol_upgrade",
@@ -2363,6 +2188,7 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -2417,7 +2243,6 @@
         "abbasid_ha_01_upgrade",
         "abbasid_upgrade",
         "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
@@ -2617,7 +2442,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Increase Villagers' gathering rate for Food by 17.5%. Does not apply to hunted meat.\nIf Horticulture has already been researched, increase it by 7.5% instead.",
+      "description": "Increase Villagers' gathering rate for Food by 30%. Does not apply to hunted meat.\nIf Horticulture has already been researched, increase it by 20% instead.",
       "classes": [
         "economic_upgrade",
         "mongol_upgrade",
@@ -2633,11 +2458,11 @@
       "costs": {
         "food": 0,
         "wood": 50,
-        "stone": 150,
+        "stone": 500,
         "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 300,
+        "total": 650,
         "popcap": 0,
         "time": 45
       },
@@ -2655,7 +2480,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 1.07,
+          "value": 1.18,
           "type": "passive"
         }
       ]
@@ -2692,6 +2517,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -2699,15 +2525,15 @@
       ],
       "unique": false,
       "costs": {
-        "food": 100,
+        "food": 75,
         "wood": 0,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -2843,6 +2669,7 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -2924,6 +2751,7 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -3075,11 +2903,11 @@
       "costs": {
         "food": 0,
         "wood": 300,
-        "stone": 700,
+        "stone": 500,
         "gold": 400,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 1400,
+        "total": 1200,
         "popcap": 0,
         "time": 60
       },
@@ -3181,60 +3009,6 @@
       ]
     },
     {
-      "id": "lumber-preservation-improved-3",
-      "baseId": "lumber-preservation-improved",
-      "type": "technology",
-      "name": "Lumber Preservation (Improved)",
-      "pbgid": 171838,
-      "attribName": "upgrade_econ_resource_wood_harvest_rate_3_improved_mon",
-      "age": 3,
-      "civs": [
-        "mo"
-      ],
-      "description": "Increase Villagers' gathering rate for Wood by 22.5%.\nIf Lumber Preservation has already been researched, increase it by 7.5% instead.",
-      "classes": [
-        "economic_upgrade",
-        "mongol_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_economic_upgrade",
-        "scar_mongol_improved",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Wood Gathering Technology 2/3"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 100,
-        "wood": 0,
-        "stone": 350,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 700,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "ger",
-        "steppe-redoubt"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/lumber-preservation-improved-3.png",
-      "effects": [
-        {
-          "property": "woodGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.07,
-          "type": "passive"
-        }
-      ]
-    },
-    {
       "id": "master-smiths-4",
       "baseId": "master-smiths",
       "type": "technology",
@@ -3331,7 +3105,8 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Production Technology"
@@ -3466,8 +3241,8 @@
       "classes": [
         "military_upgrade",
         "mongol_upgrade",
+        "scar_economic_upgrade",
         "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -3527,6 +3302,7 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -3748,6 +3524,7 @@
         "mongol_upgrade",
         "scar_feudal_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -3888,7 +3665,6 @@
         "hre_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_economic_upgrade",
@@ -3930,60 +3706,6 @@
       ]
     },
     {
-      "id": "precision-cross-breeding-improved-4",
-      "baseId": "precision-cross-breeding-improved",
-      "type": "technology",
-      "name": "Precision Cross-Breeding (Improved)",
-      "pbgid": 175042,
-      "attribName": "upgrade_econ_resource_food_harvest_rate_4_improved_mon",
-      "age": 4,
-      "civs": [
-        "mo"
-      ],
-      "description": "Increase Villagers' gathering rate for Food by 17.5%. Does not apply to hunted meat.\nIf Precision Cross-Breeding has already been researched, increase it by 7.5% instead.",
-      "classes": [
-        "economic_upgrade",
-        "mongol_upgrade",
-        "scar_economic_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_mongol_improved",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Food Gathering Technology 3/3"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 250,
-        "stone": 750,
-        "gold": 500,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 1500,
-        "popcap": 0,
-        "time": 75
-      },
-      "producedBy": [
-        "ger",
-        "steppe-redoubt"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/precision-cross-breeding-improved-4.png",
-      "effects": [
-        {
-          "property": "foodGatherRate",
-          "select": {
-            "id": [
-              "villager"
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.07,
-          "type": "passive"
-        }
-      ]
-    },
-    {
       "id": "professional-scouts-2",
       "baseId": "professional-scouts",
       "type": "technology",
@@ -3994,12 +3716,12 @@
       "civs": [
         "mo"
       ],
-      "description": "Scouts gain the ability to carry animal carcasses and +100% damage against wild animals.\nScouts move -55% slower while carrying and cannot pick up Boar.",
+      "description": "Scouts gain the ability to carry animal carcasses and +100% damage against wild animals.\nScouts move -55% slower while carrying and cannot pick up Boar. Deer slowly decay while being carried.",
       "classes": [
         "military_upgrade",
         "mongol_upgrade",
+        "scar_economic_upgrade",
         "scar_feudal_age_upgrade",
-        "scar_military_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -4055,78 +3777,6 @@
       ]
     },
     {
-      "id": "professional-scouts-improved-2",
-      "baseId": "professional-scouts-improved",
-      "type": "technology",
-      "name": "Professional Scouts (Improved)",
-      "pbgid": 168857,
-      "attribName": "upgrade_scout_forester_improved_mon",
-      "age": 2,
-      "civs": [
-        "mo"
-      ],
-      "description": "Scouts gain the ability to carry animal carcasses and +200% damage against wild animals. Scouts move -55% slower while carrying a carcass and cannot pick up Boar.\nIf Professional Scouts has already been researched, increase damage by +100% instead.",
-      "classes": [
-        "military_upgrade",
-        "mongol_upgrade",
-        "scar_feudal_age_upgrade",
-        "scar_military_upgrade",
-        "scar_mongol_improved",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Hunting Technology"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 150,
-        "stone": 100,
-        "gold": 300,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 550,
-        "popcap": 0,
-        "time": 75
-      },
-      "producedBy": [
-        "ger",
-        "steppe-redoubt"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/professional-scouts-improved-2.png",
-      "effects": [
-        {
-          "property": "huntCarryCapacity",
-          "select": {
-            "id": [
-              "scout"
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        },
-        {
-          "property": "rangedAttack",
-          "target": {
-            "class": [
-              [
-                "hunt"
-              ]
-            ]
-          },
-          "select": {
-            "id": [
-              "scout"
-            ]
-          },
-          "effect": "change",
-          "value": 2,
-          "type": "bonus"
-        }
-      ]
-    },
-    {
       "id": "raid-bounty-2",
       "baseId": "raid-bounty",
       "type": "technology",
@@ -4140,8 +3790,8 @@
       "description": "Increase the raid income for igniting a building to +50 Food and Gold.",
       "classes": [
         "mongol_upgrade",
+        "scar_economic_upgrade",
         "scar_feudal_age_upgrade",
-        "scar_military_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -4197,8 +3847,8 @@
       "description": "Increase the raid income for igniting a building to +75 Food and Gold.\nIf Raid Bounty has already been researched, increase the raid income for igniting a building by +25 Food and Gold.",
       "classes": [
         "mongol_upgrade",
+        "scar_economic_upgrade",
         "scar_feudal_age_upgrade",
-        "scar_military_upgrade",
         "scar_mongol_improved",
         "scar_nontiered_upgrade"
       ],
@@ -4315,7 +3965,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Increases Springald attack speed by +35% and grants +10% Ranged Resistance.\nIf Roller Shutter Triggers has already been researched, increase by 10% instead.",
+      "description": "Increases Springald attack speed by +35%, grants +10% Ranged Resistance, and increases health by +10.\nIf Roller Shutter Triggers has already been researched, increase attack speed by 10% and health by +10 instead.",
       "classes": [
         "military_upgrade",
         "mongol_upgrade",
@@ -4381,20 +4031,9 @@
       ],
       "description": "With new gunpowder, Handcannoneers gain +5 damage against melee infantry and gain a brief increase to their movement speed after firing their weapon.",
       "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "english_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
+        "japanese_ha_sen_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
+        "scar_imperial_age_upgrade",
         "scar_military_upgrade",
         "scar_nontiered_upgrade"
       ],
@@ -4461,48 +4100,6 @@
       "effects": []
     },
     {
-      "id": "shaft-mining-improved-3",
-      "baseId": "shaft-mining-improved",
-      "type": "technology",
-      "name": "Shaft Mining (Improved)",
-      "pbgid": 171826,
-      "attribName": "upgrade_econ_resource_gold_harvest_rate_3_improved_mon",
-      "age": 3,
-      "civs": [
-        "mo"
-      ],
-      "description": "Increase Villagers' gathering rate for Gold by 22.5%.\nIf Acid Distillation has already been researched, increase it by 7.5% instead.",
-      "classes": [
-        "economic_upgrade",
-        "mongol_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_economic_upgrade",
-        "scar_mongol_improved",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Mining Technology 2/3"
-      ],
-      "unique": true,
-      "costs": {
-        "food": 0,
-        "wood": 100,
-        "stone": 350,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 700,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "ger",
-        "steppe-redoubt"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/shaft-mining-improved-3.png",
-      "effects": []
-    },
-    {
       "id": "shipwrights-4",
       "baseId": "shipwrights",
       "type": "technology",
@@ -4534,6 +4131,7 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_tiered_upgrade"
       ],
       "displayClasses": [
@@ -4605,6 +4203,7 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -4613,7 +4212,8 @@
         "rus_upgrade",
         "scar_feudal_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Siege Unit Unlock"
@@ -4667,6 +4267,7 @@
         "mongol_upgrade",
         "scar_feudal_age_upgrade",
         "scar_military_upgrade",
+        "scar_mongol_improved",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -4827,7 +4428,7 @@
       "description": "Increase the ranged damage of Mangudai and the Khan by +1.",
       "classes": [
         "mongol_upgrade",
-        "scar_castle_age_upgrade",
+        "scar_imperial_age_upgrade",
         "scar_military_upgrade",
         "scar_nontiered_upgrade"
       ],
@@ -4880,7 +4481,7 @@
       "description": "Increase the ranged damage of Mangudai and the Khan by +2.\nIf Siha Bow Limbs has already been researched, increase the ranged damage of Mangudai and the Khan by +1.",
       "classes": [
         "mongol_upgrade",
-        "scar_castle_age_upgrade",
+        "scar_imperial_age_upgrade",
         "scar_military_upgrade",
         "scar_mongol_improved",
         "scar_nontiered_upgrade"
@@ -4933,20 +4534,10 @@
       ],
       "description": "Stringing bows with silk grants Archers +1.5 range and Mounted Archers +0.75 range.",
       "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "english_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
+        "japanese_ha_sen_upgrade",
         "military_upgrade",
         "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
+        "scar_imperial_age_upgrade",
         "scar_military_upgrade",
         "scar_nontiered_upgrade"
       ],
@@ -5046,7 +4637,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Increase Villagers' gathering rate for Gold by 22.5%.\nIf Specialized Pick has already been researched, increase it by 7.5% instead.",
+      "description": "Increase Villagers' gathering rate for Gold by 35%.\nIf Specialized Pick has already been researched, increase it by 20% instead.",
       "classes": [
         "economic_upgrade",
         "mongol_upgrade",
@@ -5062,11 +4653,11 @@
       "costs": {
         "food": 0,
         "wood": 50,
-        "stone": 150,
+        "stone": 500,
         "gold": 100,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 300,
+        "total": 650,
         "popcap": 0,
         "time": 45
       },
@@ -5084,7 +4675,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 1.07,
+          "value": 1.17,
           "type": "passive"
         },
         {
@@ -5095,7 +4686,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 1.07,
+          "value": 1.17,
           "type": "passive"
         }
       ]
@@ -5132,6 +4723,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -5139,15 +4731,15 @@
       ],
       "unique": false,
       "costs": {
-        "food": 150,
+        "food": 100,
         "wood": 0,
         "stone": 0,
-        "gold": 350,
+        "gold": 250,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
+        "total": 350,
         "popcap": 0,
-        "time": 35
+        "time": 25
       },
       "producedBy": [
         "dock"
@@ -5197,11 +4789,9 @@
       ],
       "description": "Add a defensive springald emplacement to this structure. Only one weapon emplacement can be added.",
       "classes": [
+        "emplacement_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "mongol_upgrade"
       ],
       "displayClasses": [
         "Weapon Emplacement"
@@ -5263,6 +4853,7 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "military_upgrade",
         "mongol_upgrade",
@@ -5270,7 +4861,8 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Scout Technology"
@@ -5330,6 +4922,7 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -5535,8 +5128,8 @@
       "description": "Add +50 Stone to the raid income for igniting a building.",
       "classes": [
         "mongol_upgrade",
+        "scar_economic_upgrade",
         "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -5592,8 +5185,8 @@
       "description": "Add +75 Stone to the raid income for igniting a building.\nIf Stone Bounty has already been researched, add +25 Stone to the raid income for igniting a building.",
       "classes": [
         "mongol_upgrade",
+        "scar_economic_upgrade",
         "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
         "scar_mongol_improved",
         "scar_nontiered_upgrade"
       ],
@@ -5650,8 +5243,8 @@
       "description": "Traders supply +10% Stone to their trades.",
       "classes": [
         "mongol_upgrade",
+        "scar_economic_upgrade",
         "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -5703,8 +5296,8 @@
       "description": "Traders supply +20% Stone to their trades.\nIf Stone Commerce has already been researched, supply +10% Stone instead.",
       "classes": [
         "mongol_upgrade",
+        "scar_economic_upgrade",
         "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
         "scar_mongol_improved",
         "scar_nontiered_upgrade"
       ],
@@ -5888,7 +5481,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Increase Villagers' hunted meat gather rate by +20%.\nIf Survival Techniques has already been researched, increase hunted meat gather rate by +5% instead.",
+      "description": "Increase Villagers' hunted meat gather rate by +25%.\nIf Survival Techniques has already been researched, increase hunted meat gather rate by +10% instead.",
       "classes": [
         "economic_upgrade",
         "mongol_upgrade",
@@ -5926,7 +5519,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 1.04,
+          "value": 1.09,
           "type": "passive"
         }
       ]
@@ -5963,6 +5556,7 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -6025,6 +5619,7 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -6033,7 +5628,8 @@
         "rus_upgrade",
         "scar_feudal_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
+        "scar_nontiered_upgrade",
+        "scar_rogue_exclude"
       ],
       "displayClasses": [
         "Villager Technology"
@@ -6313,6 +5909,7 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
@@ -6662,7 +6259,7 @@
       "description": "Yam speed aura applies to all units instead of just Traders and cavalry units. Does not apply to siege engines.\nImproved Yam Network allows Traders to regenerate 1 health every 2 seconds while in Yam's aura.",
       "classes": [
         "mongol_upgrade",
-        "scar_castle_age_upgrade",
+        "scar_imperial_age_upgrade",
         "scar_military_upgrade",
         "scar_nontiered_upgrade"
       ],
@@ -6673,11 +6270,11 @@
       "costs": {
         "food": 0,
         "wood": 100,
-        "stone": 350,
+        "stone": 250,
         "gold": 250,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 700,
+        "total": 600,
         "popcap": 0,
         "time": 60
       },

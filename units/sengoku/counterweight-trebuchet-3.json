@@ -1,0 +1,116 @@
+{
+  "id": "counterweight-trebuchet-3",
+  "baseId": "counterweight-trebuchet",
+  "type": "unit",
+  "name": "Counterweight Trebuchet",
+  "pbgid": 4122988,
+  "attribName": "unit_trebuchet_4_cw_jpn_ha_sen",
+  "age": 3,
+  "civs": [
+    "sen"
+  ],
+  "description": "Powerful siege engine effective at destroying buildings and walls over a great distance.\n+ Bonus damage vs buildings\n- Must be set up to fire\n- Inaccurate against units",
+  "classes": [
+    "annihilation_condition",
+    "catapult",
+    "formational",
+    "included_by_military_hotkeys",
+    "land_military",
+    "military",
+    "siege",
+    "siege_range",
+    "trebuchet_counterweight"
+  ],
+  "displayClasses": [
+    "Siege"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 400,
+    "stone": 0,
+    "gold": 150,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 550,
+    "popcap": 2,
+    "time": 30
+  },
+  "producedBy": [
+    "siege-workshop"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/counterweight-trebuchet-3.png",
+  "hitpoints": 140,
+  "weapons": [
+    {
+      "name": "Trebuchet",
+      "type": "siege",
+      "damage": 40,
+      "speed": 11.375,
+      "range": {
+        "min": 2.75,
+        "max": 16
+      },
+      "modifiers": [
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 350,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 200,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0.625,
+        "attack": 0.125,
+        "winddown": 7.375,
+        "reload": 2.75,
+        "setup": 3,
+        "teardown": 2,
+        "cooldown": 0
+      },
+      "attribName": "weapon_trebuchet_4_counterweight",
+      "pbgid": 130952
+    }
+  ],
+  "armor": [],
+  "resistance": [
+    {
+      "type": "ranged",
+      "value": 80
+    }
+  ],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 56,
+    "outer_height": -15,
+    "outer_radius": 80,
+    "base": 65.6,
+    "line": 80,
+    "height": 10
+  },
+  "movement": {
+    "speed": 0.625
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "lightweight-beams-4",
+  "baseId": "lightweight-beams",
+  "type": "technology",
+  "name": "Lightweight Beams",
+  "pbgid": 5588181,
+  "attribName": "upgrade_ram_scaling_sul_ha_tug",
+  "age": 4,
+  "civs": [
+    "tug"
+  ],
+  "description": "Increase Battering Ram attack speed by +20% and reduce their field construction time by -50%.",
+  "classes": [
+    "japanese_ha_sen_upgrade",
+    "military_upgrade",
+    "sultinate_upgrade"
+  ],
+  "displayClasses": [
+    "Battering Ram Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 120,
+    "wood": 0,
+    "stone": 0,
+    "gold": 300,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 420,
+    "popcap": 0,
+    "time": 5
+  },
+  "producedBy": [
+    "siege-workshop"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+  "effects": [
+    {
+      "property": "attackSpeed",
+      "select": {
+        "id": [
+          "battering-ram",
+          "clocktower-battering-ram",
+          "cheirosiphon"
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.83,
+      "type": "passive"
+    },
+    {
+      "property": "buildTime",
+      "select": {
+        "id": [
+          "battering-ram",
+          "clocktower-battering-ram",
+          "cheirosiphon"
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.5,
+      "type": "passive"
+    }
+  ]
+}

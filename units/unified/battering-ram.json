@@ -11,6 +11,7 @@
     "de",
     "en",
     "fr",
+    "gol",
     "hl",
     "hr",
     "ja",
@@ -21,6 +22,8 @@
     "od",
     "ot",
     "ru",
+    "sen",
+    "tug",
     "zx"
   ],
   "unique": false,
@@ -36,7 +39,8 @@
     "ram",
     "siege",
     "transport",
-    "workshop_ram"
+    "workshop_ram",
+    "ranged"
   ],
   "minAge": 1,
   "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
@@ -716,11 +720,234 @@
       "baseId": "battering-ram",
       "type": "unit",
       "name": "Battering Ram",
+      "pbgid": 6684475,
+      "attribName": "unit_workshop_ram_3_mon_ha_gol",
+      "age": 2,
+      "civs": [
+        "gol"
+      ],
+      "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Takes bonus damage from melee attacks\n- Can only attack buildings\n- Slow movement speed",
+      "classes": [
+        "annihilation_condition",
+        "formational",
+        "included_by_military_hotkeys",
+        "land_military",
+        "military",
+        "ram",
+        "ranged",
+        "siege",
+        "transport",
+        "workshop_ram"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 1,
+        "time": 35
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
+      "hitpoints": 370,
+      "weapons": [
+        {
+          "name": "Ram",
+          "type": "siege",
+          "damage": 200,
+          "speed": 5.125,
+          "range": {
+            "min": 0,
+            "max": 0.5375
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "wall"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 300,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.625,
+            "attack": 0.125,
+            "winddown": 0.375,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 4
+          },
+          "attribName": "weapon_ram_3_mon",
+          "pbgid": 2033636
+        }
+      ],
+      "armor": [],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 95
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 8,
+        "outer_height": -15,
+        "outer_radius": 30,
+        "base": 16.8,
+        "line": 30,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.75
+      },
+      "garrison": {
+        "capacity": 16,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk"
+        ]
+      }
+    },
+    {
+      "id": "battering-ram-2",
+      "baseId": "battering-ram",
+      "type": "unit",
+      "name": "Battering Ram",
       "pbgid": 2108172,
       "attribName": "unit_workshop_ram_3_hre",
       "age": 2,
       "civs": [
         "hr"
+      ],
+      "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Takes bonus damage from melee attacks\n- Can only attack buildings\n- Slow movement speed",
+      "classes": [
+        "annihilation_condition",
+        "formational",
+        "included_by_military_hotkeys",
+        "land_military",
+        "military",
+        "ram",
+        "siege",
+        "transport",
+        "workshop_ram"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 1,
+        "time": 35
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
+      "hitpoints": 370,
+      "weapons": [
+        {
+          "name": "Ram",
+          "type": "siege",
+          "damage": 200,
+          "speed": 5.125,
+          "range": {
+            "min": 0,
+            "max": 0.5375
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "wall"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 300,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.625,
+            "attack": 0.125,
+            "winddown": 0.375,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 4
+          },
+          "attribName": "weapon_ram_3",
+          "pbgid": 108918
+        }
+      ],
+      "armor": [],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 95
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 8,
+        "outer_height": -15,
+        "outer_radius": 30,
+        "base": 16.8,
+        "line": 30,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.75
+      },
+      "garrison": {
+        "capacity": 16,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk"
+        ]
+      }
+    },
+    {
+      "id": "battering-ram-2",
+      "baseId": "battering-ram",
+      "type": "unit",
+      "name": "Battering Ram",
+      "pbgid": 5000111,
+      "attribName": "unit_siege_workshop_ram_3_lan",
+      "age": 2,
+      "civs": [
+        "hl"
       ],
       "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Takes bonus damage from melee attacks\n- Can only attack buildings\n- Slow movement speed",
       "classes": [
@@ -943,6 +1170,117 @@
       "age": 2,
       "civs": [
         "je"
+      ],
+      "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Takes bonus damage from melee attacks\n- Can only attack buildings\n- Slow movement speed",
+      "classes": [
+        "annihilation_condition",
+        "formational",
+        "included_by_military_hotkeys",
+        "land_military",
+        "military",
+        "ram",
+        "siege",
+        "transport",
+        "workshop_ram"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 1,
+        "time": 35
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
+      "hitpoints": 370,
+      "weapons": [
+        {
+          "name": "Ram",
+          "type": "siege",
+          "damage": 200,
+          "speed": 5.125,
+          "range": {
+            "min": 0,
+            "max": 0.5375
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "wall"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 300,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.625,
+            "attack": 0.125,
+            "winddown": 0.375,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 4
+          },
+          "attribName": "weapon_ram_3",
+          "pbgid": 108918
+        }
+      ],
+      "armor": [],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 95
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 8,
+        "outer_height": -15,
+        "outer_radius": 30,
+        "base": 16.8,
+        "line": 30,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.75
+      },
+      "garrison": {
+        "capacity": 16,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk"
+        ]
+      }
+    },
+    {
+      "id": "battering-ram-2",
+      "baseId": "battering-ram",
+      "type": "unit",
+      "name": "Battering Ram",
+      "pbgid": 8999947,
+      "attribName": "unit_workshop_ram_3_tem",
+      "age": 2,
+      "civs": [
+        "kt"
       ],
       "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Takes bonus damage from melee attacks\n- Can only attack buildings\n- Slow movement speed",
       "classes": [
@@ -1605,233 +1943,233 @@
       "baseId": "battering-ram",
       "type": "unit",
       "name": "Battering Ram",
+      "pbgid": 5037877,
+      "attribName": "unit_workshop_ram_3_jpn_ha_sen",
+      "age": 2,
+      "civs": [
+        "sen"
+      ],
+      "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Takes bonus damage from melee attacks\n- Can only attack buildings\n- Slow movement speed",
+      "classes": [
+        "annihilation_condition",
+        "formational",
+        "included_by_military_hotkeys",
+        "land_military",
+        "military",
+        "ram",
+        "siege",
+        "transport",
+        "workshop_ram"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 1,
+        "time": 35
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
+      "hitpoints": 370,
+      "weapons": [
+        {
+          "name": "Ram",
+          "type": "siege",
+          "damage": 200,
+          "speed": 5.125,
+          "range": {
+            "min": 0,
+            "max": 0.5375
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "wall"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 300,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.625,
+            "attack": 0.125,
+            "winddown": 0.375,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 4
+          },
+          "attribName": "weapon_ram_3",
+          "pbgid": 108918
+        }
+      ],
+      "armor": [],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 95
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 8,
+        "outer_height": -15,
+        "outer_radius": 30,
+        "base": 16.8,
+        "line": 30,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.75
+      },
+      "garrison": {
+        "capacity": 16,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk"
+        ]
+      }
+    },
+    {
+      "id": "battering-ram-2",
+      "baseId": "battering-ram",
+      "type": "unit",
+      "name": "Battering Ram",
+      "pbgid": 5076870,
+      "attribName": "unit_workshop_ram_3_sul_ha_tug",
+      "age": 2,
+      "civs": [
+        "tug"
+      ],
+      "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Takes bonus damage from melee attacks\n- Can only attack buildings\n- Slow movement speed",
+      "classes": [
+        "annihilation_condition",
+        "formational",
+        "included_by_military_hotkeys",
+        "land_military",
+        "military",
+        "ram",
+        "siege",
+        "transport",
+        "workshop_ram"
+      ],
+      "displayClasses": [
+        "Siege"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 1,
+        "time": 35
+      },
+      "producedBy": [
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
+      "hitpoints": 370,
+      "weapons": [
+        {
+          "name": "Ram",
+          "type": "siege",
+          "damage": 200,
+          "speed": 5.125,
+          "range": {
+            "min": 0,
+            "max": 0.5375
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "wall"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 300,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.625,
+            "attack": 0.125,
+            "winddown": 0.375,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 4
+          },
+          "attribName": "weapon_ram_3",
+          "pbgid": 108918
+        }
+      ],
+      "armor": [],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 95
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 8,
+        "outer_height": -15,
+        "outer_radius": 30,
+        "base": 16.8,
+        "line": 30,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.75
+      },
+      "garrison": {
+        "capacity": 16,
+        "classes": [
+          "infantry",
+          "villager",
+          "infantry ranged",
+          "monk"
+        ]
+      }
+    },
+    {
+      "id": "battering-ram-2",
+      "baseId": "battering-ram",
+      "type": "unit",
+      "name": "Battering Ram",
       "pbgid": 2145222,
       "attribName": "unit_workshop_ram_3_chi_ha_01",
       "age": 2,
       "civs": [
         "zx"
-      ],
-      "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Takes bonus damage from melee attacks\n- Can only attack buildings\n- Slow movement speed",
-      "classes": [
-        "annihilation_condition",
-        "formational",
-        "included_by_military_hotkeys",
-        "land_military",
-        "military",
-        "ram",
-        "siege",
-        "transport",
-        "workshop_ram"
-      ],
-      "displayClasses": [
-        "Siege"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 200,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 200,
-        "popcap": 1,
-        "time": 35
-      },
-      "producedBy": [
-        "siege-workshop"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
-      "hitpoints": 370,
-      "weapons": [
-        {
-          "name": "Ram",
-          "type": "siege",
-          "damage": 200,
-          "speed": 5.125,
-          "range": {
-            "min": 0,
-            "max": 0.5375
-          },
-          "modifiers": [
-            {
-              "property": "siegeAttack",
-              "target": {
-                "class": [
-                  [
-                    "wall"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 300,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0.625,
-            "attack": 0.125,
-            "winddown": 0.375,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 4
-          },
-          "attribName": "weapon_ram_3",
-          "pbgid": 108918
-        }
-      ],
-      "armor": [],
-      "resistance": [
-        {
-          "type": "ranged",
-          "value": 95
-        }
-      ],
-      "sight": {
-        "inner_height": 10,
-        "inner_radius": 8,
-        "outer_height": -15,
-        "outer_radius": 30,
-        "base": 16.8,
-        "line": 30,
-        "height": 10
-      },
-      "movement": {
-        "speed": 0.75
-      },
-      "garrison": {
-        "capacity": 16,
-        "classes": [
-          "infantry",
-          "villager",
-          "infantry ranged",
-          "monk"
-        ]
-      }
-    },
-    {
-      "id": "battering-ram-2",
-      "baseId": "battering-ram",
-      "type": "unit",
-      "name": "Battering Ram",
-      "pbgid": 8999947,
-      "attribName": "unit_workshop_ram_3_tem",
-      "age": 2,
-      "civs": [
-        "kt"
-      ],
-      "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Takes bonus damage from melee attacks\n- Can only attack buildings\n- Slow movement speed",
-      "classes": [
-        "annihilation_condition",
-        "formational",
-        "included_by_military_hotkeys",
-        "land_military",
-        "military",
-        "ram",
-        "siege",
-        "transport",
-        "workshop_ram"
-      ],
-      "displayClasses": [
-        "Siege"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 200,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 200,
-        "popcap": 1,
-        "time": 35
-      },
-      "producedBy": [
-        "siege-workshop"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
-      "hitpoints": 370,
-      "weapons": [
-        {
-          "name": "Ram",
-          "type": "siege",
-          "damage": 200,
-          "speed": 5.125,
-          "range": {
-            "min": 0,
-            "max": 0.5375
-          },
-          "modifiers": [
-            {
-              "property": "siegeAttack",
-              "target": {
-                "class": [
-                  [
-                    "wall"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 300,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0.625,
-            "attack": 0.125,
-            "winddown": 0.375,
-            "reload": 0,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 4
-          },
-          "attribName": "weapon_ram_3",
-          "pbgid": 108918
-        }
-      ],
-      "armor": [],
-      "resistance": [
-        {
-          "type": "ranged",
-          "value": 95
-        }
-      ],
-      "sight": {
-        "inner_height": 10,
-        "inner_radius": 8,
-        "outer_height": -15,
-        "outer_radius": 30,
-        "base": 16.8,
-        "line": 30,
-        "height": 10
-      },
-      "movement": {
-        "speed": 0.75
-      },
-      "garrison": {
-        "capacity": 16,
-        "classes": [
-          "infantry",
-          "villager",
-          "infantry ranged",
-          "monk"
-        ]
-      }
-    },
-    {
-      "id": "battering-ram-2",
-      "baseId": "battering-ram",
-      "type": "unit",
-      "name": "Battering Ram",
-      "pbgid": 5000111,
-      "attribName": "unit_siege_workshop_ram_3_lan",
-      "age": 2,
-      "civs": [
-        "hl"
       ],
       "description": "Durable infantry transport effective against buildings and walls.\n+ High ranged armor\n+ High health\n- Takes bonus damage from melee attacks\n- Can only attack buildings\n- Slow movement speed",
       "classes": [

@@ -12,16 +12,20 @@
     "de",
     "en",
     "fr",
+    "gol",
     "hl",
     "hr",
     "ja",
     "je",
     "kt",
     "ma",
+    "mac",
     "mo",
     "od",
     "ot",
     "ru",
+    "sen",
+    "tug",
     "zx"
   ],
   "unique": false,
@@ -48,6 +52,7 @@
     "rus_upgrade",
     "scar_castle_age_upgrade",
     "scar_military_upgrade",
+    "scar_naval_upgrade",
     "scar_nontiered_upgrade",
     "sultinate_upgrade"
   ],
@@ -87,6 +92,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -95,14 +101,14 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 100,
+        "wood": 75,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -157,6 +163,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -165,14 +172,14 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 100,
+        "wood": 75,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -227,6 +234,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -235,14 +243,14 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 100,
+        "wood": 75,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -297,6 +305,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -305,14 +314,14 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 100,
+        "wood": 75,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -422,6 +431,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -430,14 +440,14 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 100,
+        "wood": 75,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -492,6 +502,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -500,14 +511,85 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 100,
+        "wood": 75,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "extra-hammocks-3",
+      "baseId": "extra-hammocks",
+      "type": "technology",
+      "name": "Extra Hammocks",
+      "pbgid": 2101642,
+      "attribName": "upgrade_naval_extra_hammocks",
+      "age": 3,
+      "civs": [
+        "gol"
+      ],
+      "description": "Increases the number of arrows fired by Archer Ships by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -562,6 +644,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -570,644 +653,14 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 100,
+        "wood": 75,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "extra-hammocks-3",
-      "baseId": "extra-hammocks",
-      "type": "technology",
-      "name": "Extra Hammocks",
-      "pbgid": 2101642,
-      "attribName": "upgrade_naval_extra_hammocks",
-      "age": 3,
-      "civs": [
-        "ja"
-      ],
-      "description": "Increases the number of arrows fired by Archer Ships by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 100,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "extra-hammocks-3",
-      "baseId": "extra-hammocks",
-      "type": "technology",
-      "name": "Extra Hammocks",
-      "pbgid": 2101642,
-      "attribName": "upgrade_naval_extra_hammocks",
-      "age": 3,
-      "civs": [
-        "je"
-      ],
-      "description": "Increases the number of arrows fired by Archer Ships by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 100,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "extra-hammocks-3",
-      "baseId": "extra-hammocks",
-      "type": "technology",
-      "name": "Extra Hammocks",
-      "pbgid": 2101642,
-      "attribName": "upgrade_naval_extra_hammocks",
-      "age": 3,
-      "civs": [
-        "ma"
-      ],
-      "description": "Increases the number of arrows fired by Archer Ships by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 100,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "extra-hammocks-3",
-      "baseId": "extra-hammocks",
-      "type": "technology",
-      "name": "Extra Hammocks",
-      "pbgid": 2101642,
-      "attribName": "upgrade_naval_extra_hammocks",
-      "age": 3,
-      "civs": [
-        "mo"
-      ],
-      "description": "Increases the number of arrows fired by Archer Ships by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 100,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "extra-hammocks-3",
-      "baseId": "extra-hammocks",
-      "type": "technology",
-      "name": "Extra Hammocks",
-      "pbgid": 2101642,
-      "attribName": "upgrade_naval_extra_hammocks",
-      "age": 3,
-      "civs": [
-        "od"
-      ],
-      "description": "Increases the number of arrows fired by Archer Ships by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 100,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "extra-hammocks-3",
-      "baseId": "extra-hammocks",
-      "type": "technology",
-      "name": "Extra Hammocks",
-      "pbgid": 2101642,
-      "attribName": "upgrade_naval_extra_hammocks",
-      "age": 3,
-      "civs": [
-        "ot"
-      ],
-      "description": "Increases the number of arrows fired by Archer Ships by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 100,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "extra-hammocks-3",
-      "baseId": "extra-hammocks",
-      "type": "technology",
-      "name": "Extra Hammocks",
-      "pbgid": 2101642,
-      "attribName": "upgrade_naval_extra_hammocks",
-      "age": 3,
-      "civs": [
-        "ru"
-      ],
-      "description": "Increases the number of arrows fired by Archer Ships by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 100,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "extra-hammocks-3",
-      "baseId": "extra-hammocks",
-      "type": "technology",
-      "name": "Extra Hammocks",
-      "pbgid": 2101642,
-      "attribName": "upgrade_naval_extra_hammocks",
-      "age": 3,
-      "civs": [
-        "zx"
-      ],
-      "description": "Increases the number of arrows fired by Archer Ships by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 100,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "extra-hammocks-3",
-      "baseId": "extra-hammocks",
-      "type": "technology",
-      "name": "Extra Hammocks",
-      "pbgid": 2101642,
-      "attribName": "upgrade_naval_extra_hammocks",
-      "age": 3,
-      "civs": [
-        "kt"
-      ],
-      "description": "Increases the number of arrows fired by Archer Ships by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 100,
-        "stone": 0,
-        "gold": 250,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 350,
-        "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "dock"
@@ -1262,6 +715,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -1270,14 +724,850 @@
       "unique": false,
       "costs": {
         "food": 0,
-        "wood": 100,
+        "wood": 75,
         "stone": 0,
-        "gold": 250,
+        "gold": 125,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 350,
+        "total": 200,
         "popcap": 0,
-        "time": 30
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "extra-hammocks-3",
+      "baseId": "extra-hammocks",
+      "type": "technology",
+      "name": "Extra Hammocks",
+      "pbgid": 2101642,
+      "attribName": "upgrade_naval_extra_hammocks",
+      "age": 3,
+      "civs": [
+        "ja"
+      ],
+      "description": "Increases the number of arrows fired by Archer Ships by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "extra-hammocks-3",
+      "baseId": "extra-hammocks",
+      "type": "technology",
+      "name": "Extra Hammocks",
+      "pbgid": 2101642,
+      "attribName": "upgrade_naval_extra_hammocks",
+      "age": 3,
+      "civs": [
+        "je"
+      ],
+      "description": "Increases the number of arrows fired by Archer Ships by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "extra-hammocks-3",
+      "baseId": "extra-hammocks",
+      "type": "technology",
+      "name": "Extra Hammocks",
+      "pbgid": 2101642,
+      "attribName": "upgrade_naval_extra_hammocks",
+      "age": 3,
+      "civs": [
+        "kt"
+      ],
+      "description": "Increases the number of arrows fired by Archer Ships by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "harbor"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "extra-hammocks-3",
+      "baseId": "extra-hammocks",
+      "type": "technology",
+      "name": "Extra Hammocks",
+      "pbgid": 2101642,
+      "attribName": "upgrade_naval_extra_hammocks",
+      "age": 3,
+      "civs": [
+        "mac"
+      ],
+      "description": "Increases the number of arrows fired by Archer Ships by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "extra-hammocks-3",
+      "baseId": "extra-hammocks",
+      "type": "technology",
+      "name": "Extra Hammocks",
+      "pbgid": 2101642,
+      "attribName": "upgrade_naval_extra_hammocks",
+      "age": 3,
+      "civs": [
+        "ma"
+      ],
+      "description": "Increases the number of arrows fired by Archer Ships by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "extra-hammocks-3",
+      "baseId": "extra-hammocks",
+      "type": "technology",
+      "name": "Extra Hammocks",
+      "pbgid": 2101642,
+      "attribName": "upgrade_naval_extra_hammocks",
+      "age": 3,
+      "civs": [
+        "mo"
+      ],
+      "description": "Increases the number of arrows fired by Archer Ships by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "extra-hammocks-3",
+      "baseId": "extra-hammocks",
+      "type": "technology",
+      "name": "Extra Hammocks",
+      "pbgid": 2101642,
+      "attribName": "upgrade_naval_extra_hammocks",
+      "age": 3,
+      "civs": [
+        "od"
+      ],
+      "description": "Increases the number of arrows fired by Archer Ships by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "extra-hammocks-3",
+      "baseId": "extra-hammocks",
+      "type": "technology",
+      "name": "Extra Hammocks",
+      "pbgid": 2101642,
+      "attribName": "upgrade_naval_extra_hammocks",
+      "age": 3,
+      "civs": [
+        "ot"
+      ],
+      "description": "Increases the number of arrows fired by Archer Ships by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "extra-hammocks-3",
+      "baseId": "extra-hammocks",
+      "type": "technology",
+      "name": "Extra Hammocks",
+      "pbgid": 2101642,
+      "attribName": "upgrade_naval_extra_hammocks",
+      "age": 3,
+      "civs": [
+        "ru"
+      ],
+      "description": "Increases the number of arrows fired by Archer Ships by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "extra-hammocks-3",
+      "baseId": "extra-hammocks",
+      "type": "technology",
+      "name": "Extra Hammocks",
+      "pbgid": 2101642,
+      "attribName": "upgrade_naval_extra_hammocks",
+      "age": 3,
+      "civs": [
+        "sen"
+      ],
+      "description": "Increases the number of arrows fired by Archer Ships by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "extra-hammocks-3",
+      "baseId": "extra-hammocks",
+      "type": "technology",
+      "name": "Extra Hammocks",
+      "pbgid": 5784106,
+      "attribName": "upgrade_naval_extra_hammocks_sul_ha_tug",
+      "age": 3,
+      "civs": [
+        "tug"
+      ],
+      "description": "Increases the number of arrows fired by Archer Ships by +1.",
+      "classes": [
+        "military_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_nontiered_upgrade",
+        "sultinate_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 90,
+        "stone": 0,
+        "gold": 150,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 240,
+        "popcap": 0,
+        "time": 5
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/extra-hammocks-3.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "extra-hammocks-3",
+      "baseId": "extra-hammocks",
+      "type": "technology",
+      "name": "Extra Hammocks",
+      "pbgid": 2101642,
+      "attribName": "upgrade_naval_extra_hammocks",
+      "age": 3,
+      "civs": [
+        "zx"
+      ],
+      "description": "Increases the number of arrows fired by Archer Ships by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 75,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 200,
+        "popcap": 0,
+        "time": 20
       },
       "producedBy": [
         "dock"

@@ -1,0 +1,106 @@
+{
+  "id": "galley-2",
+  "baseId": "galley",
+  "type": "unit",
+  "name": "Galley",
+  "pbgid": 9001030,
+  "attribName": "unit_naval_war_galley_3_byz_ha_mac",
+  "age": 2,
+  "civs": [
+    "mac"
+  ],
+  "description": "Oared war vessel armed with a crew of archers.\n+ Increased maneuverability\n+ Benefits from ranged damage Blacksmith technology",
+  "classes": [
+    "annihilation_condition",
+    "archer_ship",
+    "medium_ship",
+    "military",
+    "naval_military",
+    "naval_unit",
+    "naval_war_galley",
+    "ranged",
+    "ship",
+    "siegeable"
+  ],
+  "displayClasses": [
+    "Archer Ship"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 80,
+    "wood": 150,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 230,
+    "popcap": 3,
+    "time": 25
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/galley-2.png",
+  "hitpoints": 300,
+  "weapons": [
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 6,
+      "speed": 1.5,
+      "range": {
+        "min": 0,
+        "max": 6.5
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "fireship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 18,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.125,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 0.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 5
+      },
+      "attribName": "weapon_naval_arrow_ship_arrow",
+      "pbgid": 2034306
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 1
+    }
+  ],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 48,
+    "outer_height": -15,
+    "outer_radius": 48,
+    "base": 48,
+    "line": 48,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.75
+  }
+}

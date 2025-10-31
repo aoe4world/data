@@ -1,0 +1,121 @@
+{
+  "id": "nest-of-bees-3",
+  "baseId": "nest-of-bees",
+  "type": "unit",
+  "name": "Nest of Bees",
+  "pbgid": 9003232,
+  "attribName": "unit_nest_of_bees_4_merc_byz_ha_mac",
+  "age": 3,
+  "civs": [
+    "mac"
+  ],
+  "description": "Innovative field weapon capable of firing a barrage of rockets to damage defensive positions and clumped enemy troops.\n+ Good area of effect damage against most targets\n- Slowest movement speed\n- Weak if surrounded",
+  "classes": [
+    "annihilation_condition",
+    "formational",
+    "gunpowder",
+    "included_by_military_hotkeys",
+    "land_military",
+    "mercenary_byz",
+    "military",
+    "nest_of_bees",
+    "siege",
+    "siege_range"
+  ],
+  "displayClasses": [
+    "Siege",
+    "Gunpowder"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 600,
+    "total": 600,
+    "popcap": 3,
+    "time": 40
+  },
+  "producedBy": [
+    "foreign-engineering-company"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/nest-of-bees-4.png",
+  "hitpoints": 120,
+  "weapons": [
+    {
+      "name": "Rocket Arrow",
+      "type": "siege",
+      "damage": 6,
+      "speed": 6.5,
+      "range": {
+        "min": 3,
+        "max": 7.5
+      },
+      "modifiers": [
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 4,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "ranged"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 2,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0,
+        "attack": 1,
+        "winddown": 2,
+        "reload": 3,
+        "setup": 0.25,
+        "teardown": 1,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 7
+      },
+      "attribName": "weapon_nest_of_bees_4_chi",
+      "pbgid": 166609
+    }
+  ],
+  "armor": [],
+  "resistance": [
+    {
+      "type": "ranged",
+      "value": 85
+    }
+  ],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 40,
+    "outer_height": -15,
+    "outer_radius": 64,
+    "base": 49.6,
+    "line": 64,
+    "height": 10
+  },
+  "movement": {
+    "speed": 0.8125
+  }
+}

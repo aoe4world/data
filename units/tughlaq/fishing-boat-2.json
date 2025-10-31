@@ -1,0 +1,98 @@
+{
+  "id": "fishing-boat-2",
+  "baseId": "fishing-boat",
+  "type": "unit",
+  "name": "Fishing Boat",
+  "pbgid": 7003469,
+  "attribName": "unit_naval_fishing_boat_2_sul_ha_tug",
+  "age": 2,
+  "civs": [
+    "tug"
+  ],
+  "description": "Small boat that gathers Food from either Deep Water Fish or Shoreline Fish. Drops off gathered resources at the Dock.\n+ Can repair\n+ Fires a low damage arrow",
+  "classes": [
+    "annihilation_condition",
+    "fishing_ship_attack_sul",
+    "naval_fishing_ship",
+    "naval_unit",
+    "non_aggressive",
+    "ranged",
+    "ship",
+    "siegeable",
+    "small_ship",
+    "worker"
+  ],
+  "displayClasses": [
+    "Worker",
+    "Ship"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 0,
+    "wood": 75,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 75,
+    "popcap": 1,
+    "time": 30
+  },
+  "producedBy": [
+    "dock"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/fishing-boat-2.png",
+  "hitpoints": 150,
+  "weapons": [
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 4,
+      "speed": 1.875,
+      "range": {
+        "min": 0,
+        "max": 4
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0.75,
+        "reload": 1,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_naval_fishing_ship_arrow_sul",
+      "pbgid": 2033837
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "inner_height": 501,
+    "inner_radius": 42,
+    "outer_height": -15,
+    "outer_radius": 33,
+    "base": 33.26162790697674,
+    "line": 33,
+    "height": 501
+  },
+  "movement": {
+    "speed": 1.5
+  }
+}

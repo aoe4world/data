@@ -12,6 +12,7 @@
     "de",
     "en",
     "fr",
+    "gol",
     "hl",
     "hr",
     "ja",
@@ -22,6 +23,8 @@
     "od",
     "ot",
     "ru",
+    "sen",
+    "tug",
     "zx"
   ],
   "unique": false,
@@ -40,16 +43,17 @@
     "french_ha_01_upgrade",
     "french_upgrade",
     "hre_upgrade",
+    "japanese_ha_sen_upgrade",
     "japanese_upgrade",
     "malian_upgrade",
     "military_upgrade",
-    "mongol_upgrade",
     "ottoman_upgrade",
     "rus_upgrade",
     "scar_imperial_age_upgrade",
     "scar_military_upgrade",
     "scar_tiered_upgrade",
-    "sultinate_upgrade"
+    "sultinate_upgrade",
+    "mongol_upgrade"
   ],
   "minAge": 4,
   "icon": "https://data.aoe4world.com/images/technologies/platecutter-point-4.png",
@@ -79,10 +83,10 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_imperial_age_upgrade",
@@ -169,10 +173,10 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_imperial_age_upgrade",
@@ -259,10 +263,10 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_imperial_age_upgrade",
@@ -349,10 +353,10 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_imperial_age_upgrade",
@@ -514,10 +518,10 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_imperial_age_upgrade",
@@ -604,10 +608,100 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Ranged Damage Technology 3/3"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 150,
+        "stone": 0,
+        "gold": 350,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 500,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "blacksmith"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/platecutter-point-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "ranged",
+                "cavalry"
+              ],
+              [
+                "archer",
+                "ship"
+              ]
+            ],
+            "id": [
+              "longbowman",
+              "zhuge-nu",
+              "archer",
+              "arbaletrier",
+              "crossbowman",
+              "wynguard-ranger",
+              "javelin-thrower",
+              "gilded-crossbowman",
+              "gilded-archer",
+              "yumi-ashigaru",
+              "zhuge-nu",
+              "bedouin-skirmisher",
+              "desert-raider",
+              "yumi-bannerman"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "platecutter-point-4",
+      "baseId": "platecutter-point",
+      "type": "technology",
+      "name": "Platecutter Point",
+      "pbgid": 188271,
+      "attribName": "upgrade_ranged_damage_iii",
+      "age": 4,
+      "civs": [
+        "gol"
+      ],
+      "description": "Increase the ranged damage of all arrows and bolts by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_ha_sen_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_imperial_age_upgrade",
@@ -694,10 +788,10 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_imperial_age_upgrade",
@@ -770,6 +864,96 @@
       "attribName": "upgrade_ranged_damage_iii",
       "age": 4,
       "civs": [
+        "hl"
+      ],
+      "description": "Increase the ranged damage of all arrows and bolts by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_ha_sen_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Ranged Damage Technology 3/3"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 150,
+        "stone": 0,
+        "gold": 350,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 500,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "blacksmith"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/platecutter-point-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "ranged",
+                "cavalry"
+              ],
+              [
+                "archer",
+                "ship"
+              ]
+            ],
+            "id": [
+              "longbowman",
+              "zhuge-nu",
+              "archer",
+              "arbaletrier",
+              "crossbowman",
+              "wynguard-ranger",
+              "javelin-thrower",
+              "gilded-crossbowman",
+              "gilded-archer",
+              "yumi-ashigaru",
+              "zhuge-nu",
+              "bedouin-skirmisher",
+              "desert-raider",
+              "yumi-bannerman"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "platecutter-point-4",
+      "baseId": "platecutter-point",
+      "type": "technology",
+      "name": "Platecutter Point",
+      "pbgid": 188271,
+      "attribName": "upgrade_ranged_damage_iii",
+      "age": 4,
+      "civs": [
         "ja"
       ],
       "description": "Increase the ranged damage of all arrows and bolts by +1.",
@@ -785,10 +969,10 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_imperial_age_upgrade",
@@ -875,10 +1059,100 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Ranged Damage Technology 3/3"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 150,
+        "stone": 0,
+        "gold": 350,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 500,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "blacksmith"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/platecutter-point-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "ranged",
+                "cavalry"
+              ],
+              [
+                "archer",
+                "ship"
+              ]
+            ],
+            "id": [
+              "longbowman",
+              "zhuge-nu",
+              "archer",
+              "arbaletrier",
+              "crossbowman",
+              "wynguard-ranger",
+              "javelin-thrower",
+              "gilded-crossbowman",
+              "gilded-archer",
+              "yumi-ashigaru",
+              "zhuge-nu",
+              "bedouin-skirmisher",
+              "desert-raider",
+              "yumi-bannerman"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "platecutter-point-4",
+      "baseId": "platecutter-point",
+      "type": "technology",
+      "name": "Platecutter Point",
+      "pbgid": 188271,
+      "attribName": "upgrade_ranged_damage_iii",
+      "age": 4,
+      "civs": [
+        "kt"
+      ],
+      "description": "Increase the ranged damage of all arrows and bolts by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_ha_sen_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_imperial_age_upgrade",
@@ -965,10 +1239,10 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_imperial_age_upgrade",
@@ -1130,10 +1404,10 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_imperial_age_upgrade",
@@ -1221,10 +1495,10 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_imperial_age_upgrade",
@@ -1311,10 +1585,10 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_imperial_age_upgrade",
@@ -1335,6 +1609,171 @@
         "total": 500,
         "popcap": 0,
         "time": 60
+      },
+      "producedBy": [
+        "blacksmith"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/platecutter-point-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "ranged",
+                "cavalry"
+              ],
+              [
+                "archer",
+                "ship"
+              ]
+            ],
+            "id": [
+              "longbowman",
+              "zhuge-nu",
+              "archer",
+              "arbaletrier",
+              "crossbowman",
+              "wynguard-ranger",
+              "javelin-thrower",
+              "gilded-crossbowman",
+              "gilded-archer",
+              "yumi-ashigaru",
+              "zhuge-nu",
+              "bedouin-skirmisher",
+              "desert-raider",
+              "yumi-bannerman"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "platecutter-point-4",
+      "baseId": "platecutter-point",
+      "type": "technology",
+      "name": "Platecutter Point",
+      "pbgid": 188271,
+      "attribName": "upgrade_ranged_damage_iii",
+      "age": 4,
+      "civs": [
+        "sen"
+      ],
+      "description": "Increase the ranged damage of all arrows and bolts by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_ha_sen_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Ranged Damage Technology 3/3"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 150,
+        "stone": 0,
+        "gold": 350,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 500,
+        "popcap": 0,
+        "time": 60
+      },
+      "producedBy": [
+        "forge"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/platecutter-point-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "ranged",
+                "cavalry"
+              ],
+              [
+                "archer",
+                "ship"
+              ]
+            ],
+            "id": [
+              "longbowman",
+              "zhuge-nu",
+              "archer",
+              "arbaletrier",
+              "crossbowman",
+              "wynguard-ranger",
+              "javelin-thrower",
+              "gilded-crossbowman",
+              "gilded-archer",
+              "yumi-ashigaru",
+              "zhuge-nu",
+              "bedouin-skirmisher",
+              "desert-raider",
+              "yumi-bannerman"
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "platecutter-point-4",
+      "baseId": "platecutter-point",
+      "type": "technology",
+      "name": "Platecutter Point",
+      "pbgid": 9003712,
+      "attribName": "upgrade_ranged_damage_iii_sul_ha_tug",
+      "age": 4,
+      "civs": [
+        "tug"
+      ],
+      "description": "Increase the ranged damage of all arrows and bolts by +1.",
+      "classes": [
+        "military_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_tiered_upgrade",
+        "sultinate_upgrade"
+      ],
+      "displayClasses": [
+        "Ranged Damage Technology 3/3"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 180,
+        "stone": 0,
+        "gold": 420,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 600,
+        "popcap": 0,
+        "time": 5
       },
       "producedBy": [
         "blacksmith"
@@ -1401,190 +1840,10 @@
         "french_ha_01_upgrade",
         "french_upgrade",
         "hre_upgrade",
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "malian_upgrade",
         "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Ranged Damage Technology 3/3"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 150,
-        "stone": 0,
-        "gold": 350,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 500,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "blacksmith"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/platecutter-point-4.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "ranged",
-                "cavalry"
-              ],
-              [
-                "archer",
-                "ship"
-              ]
-            ],
-            "id": [
-              "longbowman",
-              "zhuge-nu",
-              "archer",
-              "arbaletrier",
-              "crossbowman",
-              "wynguard-ranger",
-              "javelin-thrower",
-              "gilded-crossbowman",
-              "gilded-archer",
-              "yumi-ashigaru",
-              "zhuge-nu",
-              "bedouin-skirmisher",
-              "desert-raider",
-              "yumi-bannerman"
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "platecutter-point-4",
-      "baseId": "platecutter-point",
-      "type": "technology",
-      "name": "Platecutter Point",
-      "pbgid": 188271,
-      "attribName": "upgrade_ranged_damage_iii",
-      "age": 4,
-      "civs": [
-        "kt"
-      ],
-      "description": "Increase the ranged damage of all arrows and bolts by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Ranged Damage Technology 3/3"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 150,
-        "stone": 0,
-        "gold": 350,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 500,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "blacksmith"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/platecutter-point-4.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "ranged",
-                "cavalry"
-              ],
-              [
-                "archer",
-                "ship"
-              ]
-            ],
-            "id": [
-              "longbowman",
-              "zhuge-nu",
-              "archer",
-              "arbaletrier",
-              "crossbowman",
-              "wynguard-ranger",
-              "javelin-thrower",
-              "gilded-crossbowman",
-              "gilded-archer",
-              "yumi-ashigaru",
-              "zhuge-nu",
-              "bedouin-skirmisher",
-              "desert-raider",
-              "yumi-bannerman"
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "platecutter-point-4",
-      "baseId": "platecutter-point",
-      "type": "technology",
-      "name": "Platecutter Point",
-      "pbgid": 188271,
-      "attribName": "upgrade_ranged_damage_iii",
-      "age": 4,
-      "civs": [
-        "hl"
-      ],
-      "description": "Increase the ranged damage of all arrows and bolts by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
         "ottoman_upgrade",
         "rus_upgrade",
         "scar_imperial_age_upgrade",

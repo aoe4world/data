@@ -1,0 +1,66 @@
+{
+  "id": "iron-undermesh-2",
+  "baseId": "iron-undermesh",
+  "type": "technology",
+  "name": "Iron Undermesh",
+  "pbgid": 4551739,
+  "attribName": "upgrade_ranged_armor_i_sul_ha_tug",
+  "age": 2,
+  "civs": [
+    "tug"
+  ],
+  "description": "Increase the ranged armor of all non-siege units by +1.",
+  "classes": [
+    "military_upgrade",
+    "scar_feudal_age_upgrade",
+    "scar_military_upgrade",
+    "scar_tiered_upgrade",
+    "sultinate_upgrade"
+  ],
+  "displayClasses": [
+    "Ranged Armor Technology 1/3"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 60,
+    "stone": 0,
+    "gold": 150,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 210,
+    "popcap": 0,
+    "time": 5
+  },
+  "producedBy": [
+    "blacksmith"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/iron-undermesh-2.png",
+  "effects": [
+    {
+      "property": "rangedArmor",
+      "select": {
+        "class": [
+          [
+            "infantry"
+          ],
+          [
+            "cavalry"
+          ],
+          [
+            "worker"
+          ],
+          [
+            "religious"
+          ],
+          [
+            "camel"
+          ]
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "passive"
+    }
+  ]
+}

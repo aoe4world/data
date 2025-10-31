@@ -12,15 +12,19 @@
     "de",
     "en",
     "fr",
+    "gol",
     "hl",
     "hr",
     "je",
     "kt",
     "ma",
+    "mac",
     "mo",
     "od",
     "ot",
     "ru",
+    "sen",
+    "tug",
     "zx"
   ],
   "unique": false,
@@ -29,9 +33,7 @@
   ],
   "classes": [
     "abbasid_ha_01_upgrade",
-    "abbasid_upgrade",
     "ayyubid_cmp_upgrade",
-    "byzantine_upgrade",
     "chinese_ha_01_upgrade",
     "chinese_upgrade",
     "crusader_cmp_upgrade",
@@ -50,7 +52,7 @@
     "hre_upgrade",
     "mongol_upgrade"
   ],
-  "minAge": 4,
+  "minAge": 2,
   "icon": "https://data.aoe4world.com/images/technologies/piety-4.png",
   "description": "Increase the health of religious units and healers by +40.",
   "variations": [
@@ -68,9 +70,7 @@
       "description": "Increase the health of religious units and healers by +40.",
       "classes": [
         "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
         "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
@@ -142,9 +142,7 @@
       "description": "Increase the health of religious units and healers by +40.",
       "classes": [
         "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
         "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
@@ -216,9 +214,7 @@
       "description": "Increase the health of religious units and healers by +40.",
       "classes": [
         "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
         "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
@@ -290,9 +286,7 @@
       "description": "Increase the health of religious units and healers by +40.",
       "classes": [
         "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
         "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
@@ -425,9 +419,7 @@
       "description": "Increase the health of religious units and healers by +40.",
       "classes": [
         "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
         "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
@@ -499,9 +491,7 @@
       "description": "Increase the health of religious units and healers by +40.",
       "classes": [
         "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
         "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
@@ -534,6 +524,78 @@
       },
       "producedBy": [
         "monastery"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/piety-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "id": [
+              "monk",
+              "scholar",
+              "imam",
+              "dervish",
+              "warrior-monk",
+              "shaman",
+              "prelate",
+              "shinto-priest",
+              "buddhist-monk",
+              "shaolin-monk"
+            ]
+          },
+          "effect": "change",
+          "value": 40,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "piety-4",
+      "baseId": "piety",
+      "type": "technology",
+      "name": "Piety",
+      "pbgid": 129403,
+      "attribName": "upgrade_unit_religious_piety_4",
+      "age": 4,
+      "civs": [
+        "gol"
+      ],
+      "description": "Increase the health of religious units and healers by +40.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "ayyubid_cmp_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Religious Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 325,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 325,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "prayer-tent"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/piety-4.png",
       "effects": [
@@ -630,14 +692,228 @@
       "attribName": "upgrade_unit_religious_piety_4",
       "age": 4,
       "civs": [
+        "hl"
+      ],
+      "description": "Increase the health of religious units and healers by +40.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "ayyubid_cmp_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Religious Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 325,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 325,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "monastery"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/piety-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "id": [
+              "monk",
+              "scholar",
+              "imam",
+              "dervish",
+              "warrior-monk",
+              "shaman",
+              "prelate",
+              "shinto-priest",
+              "buddhist-monk",
+              "shaolin-monk"
+            ]
+          },
+          "effect": "change",
+          "value": 40,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "piety-4",
+      "baseId": "piety",
+      "type": "technology",
+      "name": "Piety",
+      "pbgid": 129403,
+      "attribName": "upgrade_unit_religious_piety_4",
+      "age": 4,
+      "civs": [
         "je"
       ],
       "description": "Increase the health of religious units and healers by +40.",
       "classes": [
         "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
         "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Religious Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 325,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 325,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "monastery"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/piety-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "id": [
+              "monk",
+              "scholar",
+              "imam",
+              "dervish",
+              "warrior-monk",
+              "shaman",
+              "prelate",
+              "shinto-priest",
+              "buddhist-monk",
+              "shaolin-monk"
+            ]
+          },
+          "effect": "change",
+          "value": 40,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "piety-4",
+      "baseId": "piety",
+      "type": "technology",
+      "name": "Piety",
+      "pbgid": 129403,
+      "attribName": "upgrade_unit_religious_piety_4",
+      "age": 4,
+      "civs": [
+        "kt"
+      ],
+      "description": "Increase the health of religious units and healers by +40.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "ayyubid_cmp_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Religious Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 325,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 325,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "monastery"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/piety-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "id": [
+              "monk",
+              "scholar",
+              "imam",
+              "dervish",
+              "warrior-monk",
+              "shaman",
+              "prelate",
+              "shinto-priest",
+              "buddhist-monk",
+              "shaolin-monk"
+            ]
+          },
+          "effect": "change",
+          "value": 40,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "piety-4",
+      "baseId": "piety",
+      "type": "technology",
+      "name": "Piety",
+      "pbgid": 129403,
+      "attribName": "upgrade_unit_religious_piety_4",
+      "age": 4,
+      "civs": [
+        "mac"
+      ],
+      "description": "Increase the health of religious units and healers by +40.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "ayyubid_cmp_upgrade",
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
@@ -709,9 +985,7 @@
       "description": "Increase the health of religious units and healers by +40.",
       "classes": [
         "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
         "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
@@ -906,9 +1180,7 @@
       "description": "Increase the health of religious units and healers by +40.",
       "classes": [
         "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
         "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
@@ -980,9 +1252,7 @@
       "description": "Increase the health of religious units and healers by +40.",
       "classes": [
         "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
         "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
@@ -1050,14 +1320,146 @@
       "attribName": "upgrade_unit_religious_piety_4",
       "age": 4,
       "civs": [
+        "sen"
+      ],
+      "description": "Increase the health of religious units and healers by +40.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "ayyubid_cmp_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Religious Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 325,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 325,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "buddhist-temple",
+        "temple-of-equality"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/piety-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "id": [
+              "monk",
+              "scholar",
+              "imam",
+              "dervish",
+              "warrior-monk",
+              "shaman",
+              "prelate",
+              "shinto-priest",
+              "buddhist-monk",
+              "shaolin-monk"
+            ]
+          },
+          "effect": "change",
+          "value": 40,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "piety-2",
+      "baseId": "piety",
+      "type": "technology",
+      "name": "Piety",
+      "pbgid": 4179247,
+      "attribName": "upgrade_unit_religious_piety_4_sul_ha_tug",
+      "age": 2,
+      "civs": [
+        "tug"
+      ],
+      "description": "Increase the health of religious units and healers by +40.",
+      "classes": [
+        "military_upgrade",
+        "scar_military_upgrade",
+        "scar_nontiered_upgrade",
+        "sultinate_upgrade"
+      ],
+      "displayClasses": [
+        "Religious Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 520,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 520,
+        "popcap": 0,
+        "time": 5
+      },
+      "producedBy": [
+        "dome-of-the-faith",
+        "mosque"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/piety-2.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "id": [
+              "monk",
+              "scholar",
+              "imam",
+              "dervish",
+              "warrior-monk",
+              "shaman",
+              "prelate",
+              "shinto-priest",
+              "buddhist-monk",
+              "shaolin-monk"
+            ]
+          },
+          "effect": "change",
+          "value": 40,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "piety-4",
+      "baseId": "piety",
+      "type": "technology",
+      "name": "Piety",
+      "pbgid": 129403,
+      "attribName": "upgrade_unit_religious_piety_4",
+      "age": 4,
+      "civs": [
         "zx"
       ],
       "description": "Increase the health of religious units and healers by +40.",
       "classes": [
         "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
         "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
         "chinese_ha_01_upgrade",
         "chinese_upgrade",
         "crusader_cmp_upgrade",
@@ -1091,154 +1493,6 @@
       "producedBy": [
         "monastery",
         "shaolin-monastery"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/piety-4.png",
-      "effects": [
-        {
-          "property": "hitpoints",
-          "select": {
-            "id": [
-              "monk",
-              "scholar",
-              "imam",
-              "dervish",
-              "warrior-monk",
-              "shaman",
-              "prelate",
-              "shinto-priest",
-              "buddhist-monk",
-              "shaolin-monk"
-            ]
-          },
-          "effect": "change",
-          "value": 40,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "piety-4",
-      "baseId": "piety",
-      "type": "technology",
-      "name": "Piety",
-      "pbgid": 129403,
-      "attribName": "upgrade_unit_religious_piety_4",
-      "age": 4,
-      "civs": [
-        "kt"
-      ],
-      "description": "Increase the health of religious units and healers by +40.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Religious Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 325,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 325,
-        "popcap": 0,
-        "time": 45
-      },
-      "producedBy": [
-        "monastery"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/piety-4.png",
-      "effects": [
-        {
-          "property": "hitpoints",
-          "select": {
-            "id": [
-              "monk",
-              "scholar",
-              "imam",
-              "dervish",
-              "warrior-monk",
-              "shaman",
-              "prelate",
-              "shinto-priest",
-              "buddhist-monk",
-              "shaolin-monk"
-            ]
-          },
-          "effect": "change",
-          "value": 40,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "piety-4",
-      "baseId": "piety",
-      "type": "technology",
-      "name": "Piety",
-      "pbgid": 129403,
-      "attribName": "upgrade_unit_religious_piety_4",
-      "age": 4,
-      "civs": [
-        "hl"
-      ],
-      "description": "Increase the health of religious units and healers by +40.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Religious Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 325,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 325,
-        "popcap": 0,
-        "time": 45
-      },
-      "producedBy": [
-        "monastery"
       ],
       "icon": "https://data.aoe4world.com/images/technologies/piety-4.png",
       "effects": [

@@ -11,12 +11,15 @@
     "ch",
     "de",
     "en",
+    "gol",
     "hl",
     "hr",
     "kt",
+    "mac",
     "mo",
     "ot",
     "ru",
+    "tug",
     "zx"
   ],
   "unique": false,
@@ -1263,6 +1266,207 @@
       "baseId": "crossbowman",
       "type": "unit",
       "name": "Crossbowman",
+      "pbgid": 5730234,
+      "attribName": "unit_crossbowman_3_mon_ha_gol",
+      "age": 3,
+      "civs": [
+        "gol"
+      ],
+      "description": "High damage ranged unit best against heavy targets.\n+ Anti-heavy specialist\n- Low health\n- Countered by Horsemen",
+      "classes": [
+        "annihilation_condition",
+        "crossbow_incendiary_3",
+        "crossbowman",
+        "find_non_siege_land_military",
+        "formational",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "infantry_light",
+        "land_military",
+        "military",
+        "ranged",
+        "ranged_infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 80,
+        "wood": 0,
+        "stone": 0,
+        "gold": 40,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 120,
+        "popcap": 1,
+        "time": 45
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/crossbowman-3.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Crossbow",
+          "type": "ranged",
+          "damage": 11,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "heavy"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_crossbow_3_mon",
+          "pbgid": 2033631
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 16,
+        "outer_height": -15,
+        "outer_radius": 40,
+        "base": 25.6,
+        "line": 40,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "crossbowman-4",
+      "baseId": "crossbowman",
+      "type": "unit",
+      "name": "Elite Crossbowman",
+      "pbgid": 2233442,
+      "attribName": "unit_crossbowman_4_mon_ha_gol",
+      "age": 4,
+      "civs": [
+        "gol"
+      ],
+      "description": "High damage ranged unit best against heavy targets.\n+ Anti-heavy specialist\n- Low health\n- Countered by Horsemen",
+      "classes": [
+        "annihilation_condition",
+        "arbalest_animate",
+        "crossbow_incendiary_4",
+        "crossbowman",
+        "find_non_siege_land_military",
+        "formational",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "infantry_light",
+        "land_military",
+        "military",
+        "ranged",
+        "ranged_infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 80,
+        "wood": 0,
+        "stone": 0,
+        "gold": 40,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 120,
+        "popcap": 1,
+        "time": 45
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/crossbowman-4.png",
+      "hitpoints": 95,
+      "weapons": [
+        {
+          "name": "Crossbow",
+          "type": "ranged",
+          "damage": 14,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "heavy"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 12,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_crossbow_4",
+          "pbgid": 127830
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 16,
+        "outer_height": -15,
+        "outer_radius": 40,
+        "base": 25.6,
+        "line": 40,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "crossbowman-3",
+      "baseId": "crossbowman",
+      "type": "unit",
+      "name": "Crossbowman",
       "pbgid": 134717,
       "attribName": "unit_crossbowman_3_hre",
       "age": 3,
@@ -1403,6 +1607,611 @@
       },
       "producedBy": [
         "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/crossbowman-4.png",
+      "hitpoints": 95,
+      "weapons": [
+        {
+          "name": "Crossbow",
+          "type": "ranged",
+          "damage": 14,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "heavy"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 12,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_crossbow_4",
+          "pbgid": 127830
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 16,
+        "outer_height": -15,
+        "outer_radius": 40,
+        "base": 25.6,
+        "line": 40,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "crossbowman-3",
+      "baseId": "crossbowman",
+      "type": "unit",
+      "name": "Crossbowman",
+      "pbgid": 500064,
+      "attribName": "unit_crossbowman_3_lan",
+      "age": 3,
+      "civs": [
+        "hl"
+      ],
+      "description": "High damage ranged unit best against heavy targets.\n+ Anti-heavy specialist\n- Low health\n- Countered by Horsemen",
+      "classes": [
+        "annihilation_condition",
+        "crossbow_incendiary_3",
+        "crossbowman",
+        "find_non_siege_land_military",
+        "formational",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "infantry_light",
+        "land_military",
+        "military",
+        "ranged",
+        "ranged_infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 80,
+        "wood": 0,
+        "stone": 0,
+        "gold": 40,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 120,
+        "popcap": 1,
+        "time": 22.5
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/crossbowman-3.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Crossbow",
+          "type": "ranged",
+          "damage": 11,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "heavy"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_crossbow_3",
+          "pbgid": 108239
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 16,
+        "outer_height": -15,
+        "outer_radius": 40,
+        "base": 25.6,
+        "line": 40,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "crossbowman-4",
+      "baseId": "crossbowman",
+      "type": "unit",
+      "name": "Elite Crossbowman",
+      "pbgid": 5000065,
+      "attribName": "unit_crossbowman_4_lan",
+      "age": 4,
+      "civs": [
+        "hl"
+      ],
+      "description": "High damage ranged unit best against heavy targets.\n+ Anti-heavy specialist\n- Low health\n- Countered by Horsemen",
+      "classes": [
+        "annihilation_condition",
+        "arbalest_animate",
+        "crossbow_incendiary_4",
+        "crossbowman",
+        "find_non_siege_land_military",
+        "formational",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "infantry_light",
+        "land_military",
+        "military",
+        "ranged",
+        "ranged_infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 80,
+        "wood": 0,
+        "stone": 0,
+        "gold": 40,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 120,
+        "popcap": 1,
+        "time": 22.5
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/crossbowman-4.png",
+      "hitpoints": 95,
+      "weapons": [
+        {
+          "name": "Crossbow",
+          "type": "ranged",
+          "damage": 14,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "heavy"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 12,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_crossbow_4",
+          "pbgid": 127830
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 16,
+        "outer_height": -15,
+        "outer_radius": 40,
+        "base": 25.6,
+        "line": 40,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "crossbowman-3",
+      "baseId": "crossbowman",
+      "type": "unit",
+      "name": "Crossbowman",
+      "pbgid": 8999931,
+      "attribName": "unit_crossbowman_3_tem",
+      "age": 3,
+      "civs": [
+        "kt"
+      ],
+      "description": "High damage ranged unit best against heavy targets.\n+ Anti-heavy specialist\n- Low health\n- Countered by Horsemen",
+      "classes": [
+        "annihilation_condition",
+        "crossbow_incendiary_3",
+        "crossbowman",
+        "find_non_siege_land_military",
+        "formational",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "infantry_light",
+        "land_military",
+        "military",
+        "ranged",
+        "ranged_infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 80,
+        "wood": 0,
+        "stone": 0,
+        "gold": 40,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 120,
+        "popcap": 1,
+        "time": 22.5
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/crossbowman-3.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Crossbow",
+          "type": "ranged",
+          "damage": 11,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "heavy"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_crossbow_3_fre",
+          "pbgid": 132316
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 16,
+        "outer_height": -15,
+        "outer_radius": 40,
+        "base": 25.6,
+        "line": 40,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "crossbowman-4",
+      "baseId": "crossbowman",
+      "type": "unit",
+      "name": "Elite Crossbowman",
+      "pbgid": 8999932,
+      "attribName": "unit_crossbowman_4_tem",
+      "age": 4,
+      "civs": [
+        "kt"
+      ],
+      "description": "High damage ranged unit best against heavy targets.\n+ Anti-heavy specialist\n- Low health\n- Countered by Horsemen",
+      "classes": [
+        "annihilation_condition",
+        "arbalest_animate",
+        "crossbow_incendiary_4",
+        "crossbowman",
+        "find_non_siege_land_military",
+        "formational",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "infantry_light",
+        "land_military",
+        "military",
+        "ranged",
+        "ranged_infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 80,
+        "wood": 0,
+        "stone": 0,
+        "gold": 40,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 120,
+        "popcap": 1,
+        "time": 22.5
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/crossbowman-4.png",
+      "hitpoints": 95,
+      "weapons": [
+        {
+          "name": "Crossbow",
+          "type": "ranged",
+          "damage": 14,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "heavy"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 12,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_crossbow_4_fre",
+          "pbgid": 132317
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 16,
+        "outer_height": -15,
+        "outer_radius": 40,
+        "base": 25.6,
+        "line": 40,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "crossbowman-3",
+      "baseId": "crossbowman",
+      "type": "unit",
+      "name": "Crossbowman",
+      "pbgid": 9001008,
+      "attribName": "unit_crossbowman_3_byz_ha_mac",
+      "age": 3,
+      "civs": [
+        "mac"
+      ],
+      "description": "High damage ranged unit best against heavy targets.\n+ Anti-heavy specialist\n- Low health\n- Countered by Horsemen",
+      "classes": [
+        "annihilation_condition",
+        "crossbow_incendiary_3",
+        "crossbowman",
+        "find_non_siege_land_military",
+        "formational",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "infantry_light",
+        "land_military",
+        "military",
+        "ranged",
+        "ranged_infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 80,
+        "wood": 0,
+        "stone": 0,
+        "gold": 40,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 120,
+        "popcap": 1,
+        "time": 22.5
+      },
+      "producedBy": [
+        "archery-range",
+        "golden-horn-tower"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/crossbowman-3.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Crossbow",
+          "type": "ranged",
+          "damage": 11,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "heavy"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_crossbow_3",
+          "pbgid": 108239
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 16,
+        "outer_height": -15,
+        "outer_radius": 40,
+        "base": 25.6,
+        "line": 40,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "crossbowman-4",
+      "baseId": "crossbowman",
+      "type": "unit",
+      "name": "Elite Crossbowman",
+      "pbgid": 9001009,
+      "attribName": "unit_crossbowman_4_byz_ha_mac",
+      "age": 4,
+      "civs": [
+        "mac"
+      ],
+      "description": "High damage ranged unit best against heavy targets.\n+ Anti-heavy specialist\n- Low health\n- Countered by Horsemen",
+      "classes": [
+        "annihilation_condition",
+        "arbalest_animate",
+        "crossbow_incendiary_4",
+        "crossbowman",
+        "find_non_siege_land_military",
+        "formational",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "infantry_light",
+        "land_military",
+        "military",
+        "ranged",
+        "ranged_infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 80,
+        "wood": 0,
+        "stone": 0,
+        "gold": 40,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 120,
+        "popcap": 1,
+        "time": 22.5
+      },
+      "producedBy": [
+        "archery-range",
+        "golden-horn-tower"
       ],
       "icon": "https://data.aoe4world.com/images/units/crossbowman-4.png",
       "hitpoints": 95,
@@ -2069,6 +2878,207 @@
       "baseId": "crossbowman",
       "type": "unit",
       "name": "Crossbowman",
+      "pbgid": 5676717,
+      "attribName": "unit_crossbowman_3_sul_ha_tug",
+      "age": 3,
+      "civs": [
+        "tug"
+      ],
+      "description": "High damage ranged unit best against heavy targets.\n+ Anti-heavy specialist\n- Low health\n- Countered by Horsemen",
+      "classes": [
+        "annihilation_condition",
+        "crossbow_incendiary_3",
+        "crossbowman",
+        "find_non_siege_land_military",
+        "formational",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "infantry_light",
+        "land_military",
+        "military",
+        "ranged",
+        "ranged_infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 80,
+        "wood": 0,
+        "stone": 0,
+        "gold": 40,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 120,
+        "popcap": 1,
+        "time": 22.5
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/crossbowman-3.png",
+      "hitpoints": 80,
+      "weapons": [
+        {
+          "name": "Crossbow",
+          "type": "ranged",
+          "damage": 11,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "heavy"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_crossbow_3",
+          "pbgid": 108239
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 16,
+        "outer_height": -15,
+        "outer_radius": 40,
+        "base": 25.6,
+        "line": 40,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "crossbowman-4",
+      "baseId": "crossbowman",
+      "type": "unit",
+      "name": "Elite Crossbowman",
+      "pbgid": 4649570,
+      "attribName": "unit_crossbowman_4_sul_ha_tug",
+      "age": 4,
+      "civs": [
+        "tug"
+      ],
+      "description": "High damage ranged unit best against heavy targets.\n+ Anti-heavy specialist\n- Low health\n- Countered by Horsemen",
+      "classes": [
+        "annihilation_condition",
+        "arbalest_animate",
+        "crossbow_incendiary_4",
+        "crossbowman",
+        "find_non_siege_land_military",
+        "formational",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "infantry_light",
+        "land_military",
+        "military",
+        "ranged",
+        "ranged_infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 80,
+        "wood": 0,
+        "stone": 0,
+        "gold": 40,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 120,
+        "popcap": 1,
+        "time": 22.5
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/crossbowman-4.png",
+      "hitpoints": 95,
+      "weapons": [
+        {
+          "name": "Crossbow",
+          "type": "ranged",
+          "damage": 14,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "heavy"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 12,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_crossbow_4",
+          "pbgid": 127830
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 16,
+        "outer_height": -15,
+        "outer_radius": 40,
+        "base": 25.6,
+        "line": 40,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "crossbowman-3",
+      "baseId": "crossbowman",
+      "type": "unit",
+      "name": "Crossbowman",
       "pbgid": 5031957,
       "attribName": "unit_crossbowman_3_chi_ha_01",
       "age": 3,
@@ -2214,408 +3224,6 @@
       "age": 4,
       "civs": [
         "zx"
-      ],
-      "description": "High damage ranged unit best against heavy targets.\n+ Anti-heavy specialist\n- Low health\n- Countered by Horsemen",
-      "classes": [
-        "annihilation_condition",
-        "arbalest_animate",
-        "crossbow_incendiary_4",
-        "crossbowman",
-        "find_non_siege_land_military",
-        "formational",
-        "human",
-        "included_by_military_hotkeys",
-        "infantry",
-        "infantry_light",
-        "land_military",
-        "military",
-        "ranged",
-        "ranged_infantry"
-      ],
-      "displayClasses": [
-        "Light Ranged Infantry"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 80,
-        "wood": 0,
-        "stone": 0,
-        "gold": 40,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 120,
-        "popcap": 1,
-        "time": 22.5
-      },
-      "producedBy": [
-        "archery-range"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/crossbowman-4.png",
-      "hitpoints": 95,
-      "weapons": [
-        {
-          "name": "Crossbow",
-          "type": "ranged",
-          "damage": 14,
-          "speed": 2.125,
-          "range": {
-            "min": 0,
-            "max": 5
-          },
-          "modifiers": [
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "heavy"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 12,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0.25,
-            "windup": 0,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 1.75,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0
-          },
-          "attribName": "weapon_crossbow_4",
-          "pbgid": 127830
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "inner_height": 10,
-        "inner_radius": 16,
-        "outer_height": -15,
-        "outer_radius": 40,
-        "base": 25.6,
-        "line": 40,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.125
-      }
-    },
-    {
-      "id": "crossbowman-3",
-      "baseId": "crossbowman",
-      "type": "unit",
-      "name": "Crossbowman",
-      "pbgid": 8999931,
-      "attribName": "unit_crossbowman_3_tem",
-      "age": 3,
-      "civs": [
-        "kt"
-      ],
-      "description": "High damage ranged unit best against heavy targets.\n+ Anti-heavy specialist\n- Low health\n- Countered by Horsemen",
-      "classes": [
-        "annihilation_condition",
-        "crossbow_incendiary_3",
-        "crossbowman",
-        "find_non_siege_land_military",
-        "formational",
-        "human",
-        "included_by_military_hotkeys",
-        "infantry",
-        "infantry_light",
-        "land_military",
-        "military",
-        "ranged",
-        "ranged_infantry"
-      ],
-      "displayClasses": [
-        "Light Ranged Infantry"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 80,
-        "wood": 0,
-        "stone": 0,
-        "gold": 40,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 120,
-        "popcap": 1,
-        "time": 22.5
-      },
-      "producedBy": [
-        "archery-range"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/crossbowman-3.png",
-      "hitpoints": 80,
-      "weapons": [
-        {
-          "name": "Crossbow",
-          "type": "ranged",
-          "damage": 11,
-          "speed": 2.125,
-          "range": {
-            "min": 0,
-            "max": 5
-          },
-          "modifiers": [
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "heavy"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0.25,
-            "windup": 0,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 1.75,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0
-          },
-          "attribName": "weapon_crossbow_3_fre",
-          "pbgid": 132316
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "inner_height": 10,
-        "inner_radius": 16,
-        "outer_height": -15,
-        "outer_radius": 40,
-        "base": 25.6,
-        "line": 40,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.125
-      }
-    },
-    {
-      "id": "crossbowman-4",
-      "baseId": "crossbowman",
-      "type": "unit",
-      "name": "Elite Crossbowman",
-      "pbgid": 8999932,
-      "attribName": "unit_crossbowman_4_tem",
-      "age": 4,
-      "civs": [
-        "kt"
-      ],
-      "description": "High damage ranged unit best against heavy targets.\n+ Anti-heavy specialist\n- Low health\n- Countered by Horsemen",
-      "classes": [
-        "annihilation_condition",
-        "arbalest_animate",
-        "crossbow_incendiary_4",
-        "crossbowman",
-        "find_non_siege_land_military",
-        "formational",
-        "human",
-        "included_by_military_hotkeys",
-        "infantry",
-        "infantry_light",
-        "land_military",
-        "military",
-        "ranged",
-        "ranged_infantry"
-      ],
-      "displayClasses": [
-        "Light Ranged Infantry"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 80,
-        "wood": 0,
-        "stone": 0,
-        "gold": 40,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 120,
-        "popcap": 1,
-        "time": 22.5
-      },
-      "producedBy": [
-        "archery-range"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/crossbowman-4.png",
-      "hitpoints": 95,
-      "weapons": [
-        {
-          "name": "Crossbow",
-          "type": "ranged",
-          "damage": 14,
-          "speed": 2.125,
-          "range": {
-            "min": 0,
-            "max": 5
-          },
-          "modifiers": [
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "heavy"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 12,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0.25,
-            "windup": 0,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 1.75,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0
-          },
-          "attribName": "weapon_crossbow_4_fre",
-          "pbgid": 132317
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "inner_height": 10,
-        "inner_radius": 16,
-        "outer_height": -15,
-        "outer_radius": 40,
-        "base": 25.6,
-        "line": 40,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.125
-      }
-    },
-    {
-      "id": "crossbowman-3",
-      "baseId": "crossbowman",
-      "type": "unit",
-      "name": "Crossbowman",
-      "pbgid": 500064,
-      "attribName": "unit_crossbowman_3_lan",
-      "age": 3,
-      "civs": [
-        "hl"
-      ],
-      "description": "High damage ranged unit best against heavy targets.\n+ Anti-heavy specialist\n- Low health\n- Countered by Horsemen",
-      "classes": [
-        "annihilation_condition",
-        "crossbow_incendiary_3",
-        "crossbowman",
-        "find_non_siege_land_military",
-        "formational",
-        "human",
-        "included_by_military_hotkeys",
-        "infantry",
-        "infantry_light",
-        "land_military",
-        "military",
-        "ranged",
-        "ranged_infantry"
-      ],
-      "displayClasses": [
-        "Light Ranged Infantry"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 80,
-        "wood": 0,
-        "stone": 0,
-        "gold": 40,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 120,
-        "popcap": 1,
-        "time": 22.5
-      },
-      "producedBy": [
-        "archery-range"
-      ],
-      "icon": "https://data.aoe4world.com/images/units/crossbowman-3.png",
-      "hitpoints": 80,
-      "weapons": [
-        {
-          "name": "Crossbow",
-          "type": "ranged",
-          "damage": 11,
-          "speed": 2.125,
-          "range": {
-            "min": 0,
-            "max": 5
-          },
-          "modifiers": [
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "heavy"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0.25,
-            "windup": 0,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 1.75,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0
-          },
-          "attribName": "weapon_crossbow_3",
-          "pbgid": 108239
-        }
-      ],
-      "armor": [],
-      "sight": {
-        "inner_height": 10,
-        "inner_radius": 16,
-        "outer_height": -15,
-        "outer_radius": 40,
-        "base": 25.6,
-        "line": 40,
-        "height": 10
-      },
-      "movement": {
-        "speed": 1.125
-      }
-    },
-    {
-      "id": "crossbowman-4",
-      "baseId": "crossbowman",
-      "type": "unit",
-      "name": "Elite Crossbowman",
-      "pbgid": 5000065,
-      "attribName": "unit_crossbowman_4_lan",
-      "age": 4,
-      "civs": [
-        "hl"
       ],
       "description": "High damage ranged unit best against heavy targets.\n+ Anti-heavy specialist\n- Low health\n- Countered by Horsemen",
       "classes": [

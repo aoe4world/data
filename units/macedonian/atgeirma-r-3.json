@@ -1,0 +1,142 @@
+{
+  "id": "atgeirma-r-3",
+  "baseId": "atgeirma-r",
+  "type": "unit",
+  "name": "Veteran Atgeirmaðr",
+  "pbgid": 9001041,
+  "attribName": "unit_spearman_3_byz_ha_mac",
+  "age": 3,
+  "civs": [
+    "mac"
+  ],
+  "description": "Infantry best used against mounted units. Attacks faster with nearby Varangians.\n+ Anti-cavalry specialist\n+ Additional damage against Elephants\n- Weak against armored infantry\n- Countered by Archers",
+  "classes": [
+    "annihilation_condition",
+    "find_non_siege_land_military",
+    "formational",
+    "human",
+    "included_by_military_hotkeys",
+    "infantry",
+    "infantry_light",
+    "land_military",
+    "light_melee_infantry",
+    "melee",
+    "melee_infantry",
+    "military",
+    "pillager",
+    "runestone",
+    "spearman",
+    "torch_thrower",
+    "varangian"
+  ],
+  "displayClasses": [
+    "Light Melee Varangian Infantry"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 70,
+    "wood": 20,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 90,
+    "popcap": 1,
+    "time": 17
+  },
+  "producedBy": [
+    "varangian-stronghold",
+    "varangian-warcamp"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/atgeirma-r-3.png",
+  "hitpoints": 120,
+  "weapons": [
+    {
+      "name": "Spear",
+      "type": "melee",
+      "damage": 9,
+      "speed": 1.875,
+      "range": {
+        "min": 0,
+        "max": 0.4425
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 23,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "war",
+                "elephant"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 5,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.75,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0.75
+      },
+      "attribName": "weapon_spearman_3_byz",
+      "pbgid": 2136370
+    },
+    {
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch",
+      "pbgid": 123518
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 12,
+    "outer_height": -15,
+    "outer_radius": 36,
+    "base": 21.6,
+    "line": 36,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.25
+  }
+}

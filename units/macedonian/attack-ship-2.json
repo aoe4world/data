@@ -1,0 +1,172 @@
+{
+  "id": "attack-ship-2",
+  "baseId": "attack-ship",
+  "type": "unit",
+  "name": "Attack Ship",
+  "pbgid": 9004104,
+  "attribName": "unit_naval_lodya_attack_byz_ha_mac",
+  "age": 2,
+  "civs": [
+    "mac"
+  ],
+  "description": "Ship equipped with broadside ballistae.\n+ Strong against Arrow Ships\n- Lower maneuverability",
+  "classes": [
+    "annihilation_condition",
+    "lodya_combat_ship",
+    "lodya_ship",
+    "massive",
+    "medium_ship",
+    "military",
+    "naval_broadside",
+    "naval_general_ship",
+    "naval_military",
+    "naval_unit",
+    "ranged",
+    "ship",
+    "ship_medium_sail",
+    "siegeable",
+    "springald_ship"
+  ],
+  "displayClasses": [
+    "Springald Ship"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 110,
+    "wood": 200,
+    "stone": 0,
+    "gold": 30,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 340,
+    "popcap": 3,
+    "time": 30
+  },
+  "producedBy": [
+    "varangian-warcamp"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/attack-ship-2.png",
+  "hitpoints": 450,
+  "weapons": [
+    {
+      "name": "Ballista",
+      "type": "ranged",
+      "damage": 35,
+      "speed": 4.125,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 45,
+          "type": "passive"
+        },
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 55,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 2.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_naval_combat_ship_springald",
+      "pbgid": 2102494
+    },
+    {
+      "name": "Cannon",
+      "type": "siege",
+      "damage": 40,
+      "speed": 4.125,
+      "range": {
+        "min": 0,
+        "max": 8
+      },
+      "modifiers": [
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 45,
+          "type": "passive"
+        },
+        {
+          "property": "siegeAttack",
+          "target": {
+            "class": [
+              [
+                "building"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 80,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.5,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 2.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_naval_mounted_gun",
+      "pbgid": 2101775
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 3
+    }
+  ],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 45,
+    "outer_height": -15,
+    "outer_radius": 45,
+    "base": 45,
+    "line": 45,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.375
+  }
+}

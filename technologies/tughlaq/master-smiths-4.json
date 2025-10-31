@@ -1,0 +1,66 @@
+{
+  "id": "master-smiths-4",
+  "baseId": "master-smiths",
+  "type": "technology",
+  "name": "Master Smiths",
+  "pbgid": 9003710,
+  "attribName": "upgrade_melee_armor_iii_sul_ha_tug",
+  "age": 4,
+  "civs": [
+    "tug"
+  ],
+  "description": "Increase the melee armor of all non-siege units by +1.",
+  "classes": [
+    "military_upgrade",
+    "scar_imperial_age_upgrade",
+    "scar_military_upgrade",
+    "scar_tiered_upgrade",
+    "sultinate_upgrade"
+  ],
+  "displayClasses": [
+    "Melee Armor Technology 3/3"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 180,
+    "wood": 0,
+    "stone": 0,
+    "gold": 420,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 600,
+    "popcap": 0,
+    "time": 5
+  },
+  "producedBy": [
+    "blacksmith"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/master-smiths-4.png",
+  "effects": [
+    {
+      "property": "meleeArmor",
+      "select": {
+        "class": [
+          [
+            "infantry"
+          ],
+          [
+            "cavalry"
+          ],
+          [
+            "worker"
+          ],
+          [
+            "religious"
+          ],
+          [
+            "camel"
+          ]
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "passive"
+    }
+  ]
+}

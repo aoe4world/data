@@ -1,0 +1,128 @@
+{
+  "id": "ballista-elephant-4",
+  "baseId": "ballista-elephant",
+  "type": "unit",
+  "name": "Elite Ballista Elephant",
+  "pbgid": 9001225,
+  "attribName": "unit_war_elephant_ballista_4_sul_ha_tug",
+  "age": 4,
+  "civs": [
+    "tug"
+  ],
+  "description": "Ballista mounted elephant effective at dealing with melee infantry and hitting multiple targets.\n+ High health and armor\n+ Bonus damage vs. melee\n- Slow movement speed",
+  "classes": [
+    "annihilation_condition",
+    "armored",
+    "ballista_elephant",
+    "cavalry",
+    "dynamic_root_war_elephant",
+    "elephant",
+    "find_non_siege_land_military",
+    "formational",
+    "heavy",
+    "included_by_military_hotkeys",
+    "land_military",
+    "military",
+    "siege",
+    "siege_range",
+    "springald",
+    "war_elephant"
+  ],
+  "displayClasses": [
+    "Heavy Cavalry",
+    "Elephant"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 300,
+    "wood": 0,
+    "stone": 0,
+    "gold": 350,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 650,
+    "popcap": 3,
+    "time": 45
+  },
+  "producedBy": [
+    "siege-workshop"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/ballista-elephant-4.png",
+  "hitpoints": 475,
+  "weapons": [
+    {
+      "name": "Ballista",
+      "type": "ranged",
+      "damage": 17,
+      "speed": 3.125,
+      "range": {
+        "min": 0,
+        "max": 7.5
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "melee",
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 14,
+          "type": "passive"
+        },
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 70,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.125,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 2.125,
+        "setup": 0,
+        "teardown": 0.25,
+        "cooldown": 0
+      },
+      "attribName": "weapon_springald_4_elephant_ballista_sul_ha_tug",
+      "pbgid": 9003540
+    }
+  ],
+  "armor": [
+    {
+      "type": "melee",
+      "value": 3
+    },
+    {
+      "type": "ranged",
+      "value": 3
+    }
+  ],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 12,
+    "outer_height": -15,
+    "outer_radius": 36,
+    "base": 21.6,
+    "line": 36,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1
+  }
+}

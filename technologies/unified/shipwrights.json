@@ -12,16 +12,20 @@
     "de",
     "en",
     "fr",
+    "gol",
     "hl",
     "hr",
     "ja",
     "je",
     "kt",
     "ma",
+    "mac",
     "mo",
     "od",
     "ot",
     "ru",
+    "sen",
+    "tug",
     "zx"
   ],
   "unique": false,
@@ -48,6 +52,7 @@
     "rus_upgrade",
     "scar_imperial_age_upgrade",
     "scar_military_upgrade",
+    "scar_naval_upgrade",
     "scar_tiered_upgrade",
     "scar_nontiered_upgrade",
     "sultinate_upgrade"
@@ -88,6 +93,7 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_tiered_upgrade"
       ],
       "displayClasses": [
@@ -170,6 +176,7 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_tiered_upgrade"
       ],
       "displayClasses": [
@@ -252,6 +259,7 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_tiered_upgrade"
       ],
       "displayClasses": [
@@ -334,6 +342,7 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_tiered_upgrade"
       ],
       "displayClasses": [
@@ -483,6 +492,7 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_tiered_upgrade"
       ],
       "displayClasses": [
@@ -565,6 +575,90 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology 2/2"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 550,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 850,
+        "popcap": 0,
+        "time": 50
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "shipwrights-4",
+      "baseId": "shipwrights",
+      "type": "technology",
+      "name": "Shipwrights",
+      "pbgid": 2101643,
+      "attribName": "upgrade_naval_shipwrights",
+      "age": 4,
+      "civs": [
+        "gol"
+      ],
+      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_tiered_upgrade"
       ],
       "displayClasses": [
@@ -647,744 +741,7 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology 2/2"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 300,
-        "wood": 0,
-        "stone": 0,
-        "gold": 550,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 850,
-        "popcap": 0,
-        "time": 50
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
-      "effects": [
-        {
-          "property": "hitpoints",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        },
-        {
-          "property": "rangedArmor",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "shipwrights-4",
-      "baseId": "shipwrights",
-      "type": "technology",
-      "name": "Shipwrights",
-      "pbgid": 2101643,
-      "attribName": "upgrade_naval_shipwrights",
-      "age": 4,
-      "civs": [
-        "ja"
-      ],
-      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology 2/2"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 300,
-        "wood": 0,
-        "stone": 0,
-        "gold": 550,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 850,
-        "popcap": 0,
-        "time": 50
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
-      "effects": [
-        {
-          "property": "hitpoints",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        },
-        {
-          "property": "rangedArmor",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "shipwrights-4",
-      "baseId": "shipwrights",
-      "type": "technology",
-      "name": "Shipwrights",
-      "pbgid": 2101643,
-      "attribName": "upgrade_naval_shipwrights",
-      "age": 4,
-      "civs": [
-        "je"
-      ],
-      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology 2/2"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 300,
-        "wood": 0,
-        "stone": 0,
-        "gold": 550,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 850,
-        "popcap": 0,
-        "time": 50
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
-      "effects": [
-        {
-          "property": "hitpoints",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        },
-        {
-          "property": "rangedArmor",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "shipwrights-4",
-      "baseId": "shipwrights",
-      "type": "technology",
-      "name": "Shipwrights",
-      "pbgid": 2101643,
-      "attribName": "upgrade_naval_shipwrights",
-      "age": 4,
-      "civs": [
-        "ma"
-      ],
-      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology 2/2"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 300,
-        "wood": 0,
-        "stone": 0,
-        "gold": 550,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 850,
-        "popcap": 0,
-        "time": 50
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
-      "effects": [
-        {
-          "property": "hitpoints",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        },
-        {
-          "property": "rangedArmor",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "shipwrights-4",
-      "baseId": "shipwrights",
-      "type": "technology",
-      "name": "Shipwrights",
-      "pbgid": 2101643,
-      "attribName": "upgrade_naval_shipwrights",
-      "age": 4,
-      "civs": [
-        "mo"
-      ],
-      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology 2/2"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 300,
-        "wood": 0,
-        "stone": 0,
-        "gold": 550,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 850,
-        "popcap": 0,
-        "time": 50
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
-      "effects": [
-        {
-          "property": "hitpoints",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        },
-        {
-          "property": "rangedArmor",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "shipwrights-4",
-      "baseId": "shipwrights",
-      "type": "technology",
-      "name": "Shipwrights",
-      "pbgid": 2101643,
-      "attribName": "upgrade_naval_shipwrights",
-      "age": 4,
-      "civs": [
-        "od"
-      ],
-      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology 2/2"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 300,
-        "wood": 0,
-        "stone": 0,
-        "gold": 550,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 850,
-        "popcap": 0,
-        "time": 50
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
-      "effects": [
-        {
-          "property": "hitpoints",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        },
-        {
-          "property": "rangedArmor",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "shipwrights-4",
-      "baseId": "shipwrights",
-      "type": "technology",
-      "name": "Shipwrights",
-      "pbgid": 2101643,
-      "attribName": "upgrade_naval_shipwrights",
-      "age": 4,
-      "civs": [
-        "ot"
-      ],
-      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology 2/2"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 300,
-        "wood": 0,
-        "stone": 0,
-        "gold": 550,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 850,
-        "popcap": 0,
-        "time": 50
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
-      "effects": [
-        {
-          "property": "hitpoints",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        },
-        {
-          "property": "rangedArmor",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "shipwrights-4",
-      "baseId": "shipwrights",
-      "type": "technology",
-      "name": "Shipwrights",
-      "pbgid": 2101643,
-      "attribName": "upgrade_naval_shipwrights",
-      "age": 4,
-      "civs": [
-        "ru"
-      ],
-      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology 2/2"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 300,
-        "wood": 0,
-        "stone": 0,
-        "gold": 550,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 850,
-        "popcap": 0,
-        "time": 50
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
-      "effects": [
-        {
-          "property": "hitpoints",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        },
-        {
-          "property": "rangedArmor",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "shipwrights-4",
-      "baseId": "shipwrights",
-      "type": "technology",
-      "name": "Shipwrights",
-      "pbgid": 2101643,
-      "attribName": "upgrade_naval_shipwrights",
-      "age": 4,
-      "civs": [
-        "zx"
-      ],
-      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_tiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology 2/2"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 300,
-        "wood": 0,
-        "stone": 0,
-        "gold": 550,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 850,
-        "popcap": 0,
-        "time": 50
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
-      "effects": [
-        {
-          "property": "hitpoints",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 1.2,
-          "type": "passive"
-        },
-        {
-          "property": "rangedArmor",
-          "select": {
-            "class": [
-              [
-                "naval_military"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "shipwrights-4",
-      "baseId": "shipwrights",
-      "type": "technology",
-      "name": "Shipwrights",
-      "pbgid": 2101643,
-      "attribName": "upgrade_naval_shipwrights",
-      "age": 4,
-      "civs": [
-        "kt"
-      ],
-      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_tiered_upgrade"
       ],
       "displayClasses": [
@@ -1467,6 +824,987 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology 2/2"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 550,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 850,
+        "popcap": 0,
+        "time": 50
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "shipwrights-4",
+      "baseId": "shipwrights",
+      "type": "technology",
+      "name": "Shipwrights",
+      "pbgid": 2101643,
+      "attribName": "upgrade_naval_shipwrights",
+      "age": 4,
+      "civs": [
+        "ja"
+      ],
+      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology 2/2"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 550,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 850,
+        "popcap": 0,
+        "time": 50
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "shipwrights-4",
+      "baseId": "shipwrights",
+      "type": "technology",
+      "name": "Shipwrights",
+      "pbgid": 2101643,
+      "attribName": "upgrade_naval_shipwrights",
+      "age": 4,
+      "civs": [
+        "je"
+      ],
+      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology 2/2"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 550,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 850,
+        "popcap": 0,
+        "time": 50
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "shipwrights-4",
+      "baseId": "shipwrights",
+      "type": "technology",
+      "name": "Shipwrights",
+      "pbgid": 2101643,
+      "attribName": "upgrade_naval_shipwrights",
+      "age": 4,
+      "civs": [
+        "kt"
+      ],
+      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology 2/2"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 550,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 850,
+        "popcap": 0,
+        "time": 50
+      },
+      "producedBy": [
+        "harbor"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "shipwrights-4",
+      "baseId": "shipwrights",
+      "type": "technology",
+      "name": "Shipwrights",
+      "pbgid": 2101643,
+      "attribName": "upgrade_naval_shipwrights",
+      "age": 4,
+      "civs": [
+        "mac"
+      ],
+      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology 2/2"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 550,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 850,
+        "popcap": 0,
+        "time": 50
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "shipwrights-4",
+      "baseId": "shipwrights",
+      "type": "technology",
+      "name": "Shipwrights",
+      "pbgid": 2101643,
+      "attribName": "upgrade_naval_shipwrights",
+      "age": 4,
+      "civs": [
+        "ma"
+      ],
+      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology 2/2"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 550,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 850,
+        "popcap": 0,
+        "time": 50
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "shipwrights-4",
+      "baseId": "shipwrights",
+      "type": "technology",
+      "name": "Shipwrights",
+      "pbgid": 2101643,
+      "attribName": "upgrade_naval_shipwrights",
+      "age": 4,
+      "civs": [
+        "mo"
+      ],
+      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology 2/2"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 550,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 850,
+        "popcap": 0,
+        "time": 50
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "shipwrights-4",
+      "baseId": "shipwrights",
+      "type": "technology",
+      "name": "Shipwrights",
+      "pbgid": 2101643,
+      "attribName": "upgrade_naval_shipwrights",
+      "age": 4,
+      "civs": [
+        "od"
+      ],
+      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology 2/2"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 550,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 850,
+        "popcap": 0,
+        "time": 50
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "shipwrights-4",
+      "baseId": "shipwrights",
+      "type": "technology",
+      "name": "Shipwrights",
+      "pbgid": 2101643,
+      "attribName": "upgrade_naval_shipwrights",
+      "age": 4,
+      "civs": [
+        "ot"
+      ],
+      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology 2/2"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 550,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 850,
+        "popcap": 0,
+        "time": 50
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "shipwrights-4",
+      "baseId": "shipwrights",
+      "type": "technology",
+      "name": "Shipwrights",
+      "pbgid": 2101643,
+      "attribName": "upgrade_naval_shipwrights",
+      "age": 4,
+      "civs": [
+        "ru"
+      ],
+      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology 2/2"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 550,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 850,
+        "popcap": 0,
+        "time": 50
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "shipwrights-4",
+      "baseId": "shipwrights",
+      "type": "technology",
+      "name": "Shipwrights",
+      "pbgid": 2101643,
+      "attribName": "upgrade_naval_shipwrights",
+      "age": 4,
+      "civs": [
+        "sen"
+      ],
+      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology 2/2"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 300,
+        "wood": 0,
+        "stone": 0,
+        "gold": 550,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 850,
+        "popcap": 0,
+        "time": 50
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "shipwrights-4",
+      "baseId": "shipwrights",
+      "type": "technology",
+      "name": "Shipwrights",
+      "pbgid": 8645640,
+      "attribName": "upgrade_naval_shipwrights_sul_ha_tug",
+      "age": 4,
+      "civs": [
+        "tug"
+      ],
+      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+      "classes": [
+        "military_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_nontiered_upgrade",
+        "sultinate_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology 2/2"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 360,
+        "wood": 0,
+        "stone": 0,
+        "gold": 660,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 1020,
+        "popcap": 0,
+        "time": 5
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/shipwrights-4.png",
+      "effects": [
+        {
+          "property": "hitpoints",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 1.2,
+          "type": "passive"
+        },
+        {
+          "property": "rangedArmor",
+          "select": {
+            "class": [
+              [
+                "naval_military"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "shipwrights-4",
+      "baseId": "shipwrights",
+      "type": "technology",
+      "name": "Shipwrights",
+      "pbgid": 2101643,
+      "attribName": "upgrade_naval_shipwrights",
+      "age": 4,
+      "civs": [
+        "zx"
+      ],
+      "description": "Increase the health of all military ships by +20% and ranged armor by +1.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_tiered_upgrade"
       ],
       "displayClasses": [

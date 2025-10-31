@@ -210,7 +210,6 @@
         "castle",
         "has_default_building_weapons",
         "landmark",
-        "scar_keep",
         "select_special_building",
         "siegeable",
         "town_bell_target",
@@ -878,7 +877,7 @@
       "civs": [
         "hl"
       ],
-      "description": "Defensive Landmark that can do a one-time muster of units from Manors in each Age.\nGenerates influence that grants nearby Manors +500 health and an arrowslit emplacement.",
+      "description": "Defensive Landmark that can do a one-time muster of units from Manors in each Age.\nGrants all Manors +500 health and an arrowslit emplacement.",
       "classes": [
         "age1_landmark2",
         "audio_production_landmark",
@@ -1037,13 +1036,13 @@
       "civs": [
         "hl"
       ],
-      "description": "Passively generates 45 wood and 60 food per minute. Increases your maximum Population by +10.",
+      "description": "Acts as a drop off building for all resource types. Passively generates 10 wood and 30 food per minute. Generates an additional 4 food and 2 wood for each nearby villager. \nIncreases your maximum Population by +10.",
       "classes": [
         "building",
         "economy_building",
         "house",
         "manor",
-        "scar_house",
+        "resource_drop_off",
         "siegeable"
       ],
       "displayClasses": [
@@ -1052,12 +1051,12 @@
       "unique": true,
       "costs": {
         "food": 0,
-        "wood": 200,
+        "wood": 225,
         "stone": 100,
         "gold": 0,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 300,
+        "total": 325,
         "popcap": 0,
         "time": 45
       },
@@ -1121,9 +1120,7 @@
         "line": 15,
         "height": 8
       },
-      "influences": [
-        "Manors gain +500 health and an arrowslit emplacement when in influence of the Lancaster Castle."
-      ]
+      "influences": []
     },
     {
       "id": "market-2",
@@ -1437,6 +1434,64 @@
       "influences": []
     },
     {
+      "id": "palisade-1",
+      "baseId": "palisade",
+      "type": "building",
+      "name": "Palisade",
+      "pbgid": 5000031,
+      "attribName": "building_defense_palisade_lan",
+      "age": 1,
+      "civs": [
+        "hl"
+      ],
+      "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 21 Wood, with each additional section costing 7 Wood.",
+      "classes": [
+        "building",
+        "defensive_structure",
+        "palisade_wall",
+        "palisade_wall_section",
+        "siegeable",
+        "wall"
+      ],
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 7,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 7,
+        "popcap": 0,
+        "time": 8
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/palisade-1.png",
+      "hitpoints": 1250,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "inner_height": 8,
+        "inner_radius": 6,
+        "outer_height": 0,
+        "outer_radius": 6,
+        "base": 6,
+        "line": 6,
+        "height": 8
+      },
+      "influences": []
+    },
+    {
       "id": "palisade-gate-1",
       "baseId": "palisade-gate",
       "type": "building",
@@ -1490,64 +1545,6 @@
         "outer_radius": 20,
         "base": 20,
         "line": 20,
-        "height": 8
-      },
-      "influences": []
-    },
-    {
-      "id": "palisade-wall-1",
-      "baseId": "palisade-wall",
-      "type": "building",
-      "name": "Palisade Wall",
-      "pbgid": 5000031,
-      "attribName": "building_defense_palisade_lan",
-      "age": 1,
-      "civs": [
-        "hl"
-      ],
-      "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 21 Wood, with each additional section costing 7 Wood.",
-      "classes": [
-        "building",
-        "defensive_structure",
-        "palisade_wall",
-        "palisade_wall_section",
-        "siegeable",
-        "wall"
-      ],
-      "displayClasses": [
-        "Defensive Building"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 7,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 7,
-        "popcap": 0,
-        "time": 8
-      },
-      "producedBy": [
-        "villager"
-      ],
-      "icon": "https://data.aoe4world.com/images/buildings/palisade-wall-1.png",
-      "hitpoints": 1250,
-      "weapons": [],
-      "armor": [
-        {
-          "type": "ranged",
-          "value": 50
-        }
-      ],
-      "sight": {
-        "inner_height": 8,
-        "inner_radius": 6,
-        "outer_height": 0,
-        "outer_radius": 6,
-        "base": 6,
-        "line": 6,
         "height": 8
       },
       "influences": []
@@ -1903,7 +1900,6 @@
         "castle",
         "has_default_building_weapons",
         "landmark",
-        "scar_keep",
         "select_special_building",
         "siegeable",
         "town_bell_target",
@@ -2006,13 +2002,13 @@
       "influences": []
     },
     {
-      "id": "town-center-2",
+      "id": "town-center-1",
       "baseId": "town-center",
       "type": "building",
       "name": "Town Center",
       "pbgid": 5000014,
       "attribName": "building_town_center_lan",
-      "age": 2,
+      "age": 1,
       "civs": [
         "hl"
       ],
@@ -2050,7 +2046,7 @@
       "producedBy": [
         "villager"
       ],
-      "icon": "https://data.aoe4world.com/images/buildings/town-center-2.png",
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
       "hitpoints": 2500,
       "weapons": [],
       "armor": [

@@ -10,12 +10,12 @@ type NumberKeys<T> = { [K in keyof T]: T[K] extends number ? K : never }[keyof T
 export type ItemSlug = `${"units" | "buildings" | "technologies" | "upgrades" | "abilities"}/${string}`;
 
 export function getAbbr(civ: CivAbbr | CivSlug | CivConfig): CivAbbr {
-  if (typeof civ === "string") return civ.length == 2 ? civ : CIVILIZATION_BY_SLUG[civ];
+  if (typeof civ === "string") return civ.length <= 3 ? civ : CIVILIZATION_BY_SLUG[civ];
   return civ.abbr;
 }
 
 export function getSlug(civ: CivAbbr | CivSlug | CivConfig): CivSlug {
-  if (typeof civ === "string") return civ.length == 2 ? civ : CIVILIZATION_BY_SLUG[civ];
+  if (typeof civ === "string") return civ.length <= 3 ? civ : CIVILIZATION_BY_SLUG[civ];
   return civ.slug;
 }
 

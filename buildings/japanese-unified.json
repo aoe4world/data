@@ -557,18 +557,18 @@
         "wonder",
         "wonder_castle_age"
       ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/buildings/castle-of-the-crow-4.png",
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/buildings/castle-of-the-crow-3.png",
       "description": "Acts as a Castle. Can periodically spawn Treasure Caravans from selected neutral Trading Posts to provide a large amount of Food, Wood, Gold, and some Stone when reaching the Castle of the Crow.",
       "variations": [
         {
-          "id": "castle-of-the-crow-4",
+          "id": "castle-of-the-crow-3",
           "baseId": "castle-of-the-crow",
           "type": "building",
           "name": "Castle of the Crow",
           "pbgid": 2122037,
           "attribName": "building_landmark_age3_treasure_jpn",
-          "age": 4,
+          "age": 3,
           "civs": [
             "ja"
           ],
@@ -605,7 +605,7 @@
           "producedBy": [
             "villager"
           ],
-          "icon": "https://data.aoe4world.com/images/buildings/castle-of-the-crow-4.png",
+          "icon": "https://data.aoe4world.com/images/buildings/castle-of-the-crow-3.png",
           "hitpoints": 5500,
           "weapons": [
             {
@@ -1974,6 +1974,7 @@
         "mining_camp",
         "research_building",
         "resource_drop_off",
+        "scar_blacksmith",
         "scar_miningcamp",
         "siegeable",
         "stone_mining_camp"
@@ -2002,6 +2003,7 @@
             "mining_camp",
             "research_building",
             "resource_drop_off",
+            "scar_blacksmith",
             "scar_miningcamp",
             "siegeable",
             "stone_mining_camp"
@@ -2524,6 +2526,89 @@
       ]
     },
     {
+      "id": "palisade",
+      "name": "Palisade",
+      "type": "building",
+      "civs": [
+        "ja"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "classes": [
+        "building",
+        "defensive_structure",
+        "palisade_wall",
+        "palisade_wall_section",
+        "siegeable",
+        "wall"
+      ],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/buildings/palisade-1.png",
+      "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 21 Wood, with each additional section costing 7 Wood.",
+      "variations": [
+        {
+          "id": "palisade-1",
+          "baseId": "palisade",
+          "type": "building",
+          "name": "Palisade",
+          "pbgid": 7342620,
+          "attribName": "building_defense_palisade_jpn",
+          "age": 1,
+          "civs": [
+            "ja"
+          ],
+          "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 21 Wood, with each additional section costing 7 Wood.",
+          "classes": [
+            "building",
+            "defensive_structure",
+            "palisade_wall",
+            "palisade_wall_section",
+            "siegeable",
+            "wall"
+          ],
+          "displayClasses": [
+            "Defensive Building"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 7,
+            "stone": 0,
+            "gold": 0,
+            "vizier": 0,
+            "oliveoil": 0,
+            "total": 7,
+            "popcap": 0,
+            "time": 8
+          },
+          "producedBy": [
+            "villager"
+          ],
+          "icon": "https://data.aoe4world.com/images/buildings/palisade-1.png",
+          "hitpoints": 1250,
+          "weapons": [],
+          "armor": [
+            {
+              "type": "ranged",
+              "value": 50
+            }
+          ],
+          "sight": {
+            "inner_height": 8,
+            "inner_radius": 6,
+            "outer_height": 0,
+            "outer_radius": 6,
+            "base": 6,
+            "line": 6,
+            "height": 8
+          },
+          "influences": []
+        }
+      ]
+    },
+    {
       "id": "palisade-gate",
       "name": "Palisade Gate",
       "type": "building",
@@ -2607,89 +2692,6 @@
       ]
     },
     {
-      "id": "palisade-wall",
-      "name": "Palisade Wall",
-      "type": "building",
-      "civs": [
-        "ja"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Defensive Building"
-      ],
-      "classes": [
-        "building",
-        "defensive_structure",
-        "palisade_wall",
-        "palisade_wall_section",
-        "siegeable",
-        "wall"
-      ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/buildings/palisade-wall-1.png",
-      "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 21 Wood, with each additional section costing 7 Wood.",
-      "variations": [
-        {
-          "id": "palisade-wall-1",
-          "baseId": "palisade-wall",
-          "type": "building",
-          "name": "Palisade Wall",
-          "pbgid": 7342620,
-          "attribName": "building_defense_palisade_jpn",
-          "age": 1,
-          "civs": [
-            "ja"
-          ],
-          "description": "Light defensive wall for quickly fortifying an area.\nInitially costs 21 Wood, with each additional section costing 7 Wood.",
-          "classes": [
-            "building",
-            "defensive_structure",
-            "palisade_wall",
-            "palisade_wall_section",
-            "siegeable",
-            "wall"
-          ],
-          "displayClasses": [
-            "Defensive Building"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 7,
-            "stone": 0,
-            "gold": 0,
-            "vizier": 0,
-            "oliveoil": 0,
-            "total": 7,
-            "popcap": 0,
-            "time": 8
-          },
-          "producedBy": [
-            "villager"
-          ],
-          "icon": "https://data.aoe4world.com/images/buildings/palisade-wall-1.png",
-          "hitpoints": 1250,
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "sight": {
-            "inner_height": 8,
-            "inner_radius": 6,
-            "outer_height": 0,
-            "outer_radius": 6,
-            "base": 6,
-            "line": 6,
-            "height": 8
-          },
-          "influences": []
-        }
-      ]
-    },
-    {
       "id": "shinto-shrine",
       "name": "Shinto Shrine",
       "type": "building",
@@ -2705,7 +2707,6 @@
         "monastery",
         "production_building",
         "relic_dropoff",
-        "scar_monastery",
         "select_all_monastery",
         "siegeable"
       ],
@@ -2730,7 +2731,6 @@
             "monastery",
             "production_building",
             "relic_dropoff",
-            "scar_monastery",
             "select_all_monastery",
             "siegeable"
           ],
@@ -3528,24 +3528,25 @@
         "land_food_deposit_4_by_4",
         "production_building",
         "resource_drop_off",
+        "scar_town_center",
         "siegeable",
         "town_bell_target",
         "town_center",
         "town_center_non_capital",
         "town_center_or_landmark"
       ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/buildings/town-center-2.png",
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
       "description": "All Resources can be dropped off here. Produces Villagers, Scouts, and increases your maximum Population. Adds additional attacks while garrisoned.\nNon-Capital Town Centers can't detect stealth or disguises.",
       "variations": [
         {
-          "id": "town-center-2",
+          "id": "town-center-1",
           "baseId": "town-center",
           "type": "building",
           "name": "Town Center",
           "pbgid": 7057070,
           "attribName": "building_town_center_jpn",
-          "age": 2,
+          "age": 1,
           "civs": [
             "ja"
           ],
@@ -3558,6 +3559,7 @@
             "land_food_deposit_4_by_4",
             "production_building",
             "resource_drop_off",
+            "scar_town_center",
             "siegeable",
             "town_bell_target",
             "town_center",
@@ -3582,7 +3584,7 @@
           "producedBy": [
             "villager"
           ],
-          "icon": "https://data.aoe4world.com/images/buildings/town-center-2.png",
+          "icon": "https://data.aoe4world.com/images/buildings/town-center-1.png",
           "hitpoints": 2500,
           "weapons": [],
           "armor": [

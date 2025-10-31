@@ -6,7 +6,8 @@
   "type": "unit",
   "civs": [
     "by",
-    "de"
+    "de",
+    "tug"
   ],
   "unique": false,
   "displayClasses": [
@@ -28,7 +29,8 @@
     "melee",
     "mercenary_byz",
     "military",
-    "war_elephant"
+    "war_elephant",
+    "front_line_elephant"
   ],
   "minAge": 3,
   "icon": "https://data.aoe4world.com/images/units/war-elephant-3.png",
@@ -246,6 +248,7 @@
         "elephant",
         "find_non_siege_land_military",
         "formational",
+        "front_line_elephant",
         "heavy",
         "included_by_military_hotkeys",
         "land_military",
@@ -334,6 +337,169 @@
           },
           "attribName": "weapon_war_elephant_charge_3_sul",
           "pbgid": 184799
+        },
+        {
+          "name": "Spear",
+          "type": "melee",
+          "damage": 25,
+          "speed": 1.875,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 40,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "war",
+                    "elephant"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 6,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0.75
+          },
+          "attribName": "weapon_war_elephant_spear_3_sul",
+          "pbgid": 144673
+        }
+      ],
+      "armor": [
+        {
+          "type": "melee",
+          "value": 4
+        },
+        {
+          "type": "ranged",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 36,
+        "base": 21.6,
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1
+      }
+    },
+    {
+      "id": "war-elephant-3",
+      "baseId": "war-elephant",
+      "type": "unit",
+      "name": "War Elephant",
+      "pbgid": 3577856,
+      "attribName": "unit_war_elephant_3_sul_ha_tug",
+      "age": 3,
+      "civs": [
+        "tug"
+      ],
+      "description": "Heavy cavalry effective against cavalry, siege engines, walls, and buildings. Can use the Trample ability to bypass any unit to deal damage in an area.\n+ High health and armor\n+ Mounted with an advanced Spearman\n+ Capable of attacking Stone Walls\n- Slow movement speed",
+      "classes": [
+        "annihilation_condition",
+        "armored",
+        "cavalry",
+        "cavalry_war_elephant",
+        "dynamic_root_war_elephant",
+        "elephant",
+        "find_non_siege_land_military",
+        "formational",
+        "front_line_elephant",
+        "heavy",
+        "included_by_military_hotkeys",
+        "land_military",
+        "melee",
+        "military",
+        "war_elephant"
+      ],
+      "displayClasses": [
+        "Heavy Melee Cavalry",
+        "Elephant"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 400,
+        "wood": 0,
+        "stone": 0,
+        "gold": 350,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 750,
+        "popcap": 3,
+        "time": 45
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/war-elephant-3.png",
+      "hitpoints": 850,
+      "weapons": [
+        {
+          "name": "Tusks",
+          "type": "melee",
+          "damage": 50,
+          "speed": 2.875,
+          "range": {
+            "min": 0,
+            "max": 0.75
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 45,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 2,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_war_elephant_melee_3_sul_ha_tug",
+          "pbgid": 9002936
         },
         {
           "name": "Spear",

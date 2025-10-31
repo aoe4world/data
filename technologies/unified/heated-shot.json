@@ -12,16 +12,20 @@
     "de",
     "en",
     "fr",
+    "gol",
     "hl",
     "hr",
     "ja",
     "je",
     "kt",
     "ma",
+    "mac",
     "mo",
     "od",
     "ot",
     "ru",
+    "sen",
+    "tug",
     "zx"
   ],
   "unique": false,
@@ -48,6 +52,7 @@
     "rus_upgrade",
     "scar_imperial_age_upgrade",
     "scar_military_upgrade",
+    "scar_naval_upgrade",
     "scar_nontiered_upgrade",
     "sultinate_upgrade"
   ],
@@ -87,6 +92,7 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -157,6 +163,7 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -227,6 +234,7 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -297,6 +305,7 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -422,6 +431,7 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -492,6 +502,78 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 500,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 700,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "heated-shot-4",
+      "baseId": "heated-shot",
+      "type": "technology",
+      "name": "Heated Shot",
+      "pbgid": 2101720,
+      "attribName": "upgrade_naval_heated_shot",
+      "age": 4,
+      "civs": [
+        "gol"
+      ],
+      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -562,636 +644,7 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 200,
-        "stone": 0,
-        "gold": 500,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 700,
-        "popcap": 0,
-        "time": 45
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 6,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "heated-shot-4",
-      "baseId": "heated-shot",
-      "type": "technology",
-      "name": "Heated Shot",
-      "pbgid": 2101720,
-      "attribName": "upgrade_naval_heated_shot",
-      "age": 4,
-      "civs": [
-        "ja"
-      ],
-      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 200,
-        "stone": 0,
-        "gold": 500,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 700,
-        "popcap": 0,
-        "time": 45
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 6,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "heated-shot-4",
-      "baseId": "heated-shot",
-      "type": "technology",
-      "name": "Heated Shot",
-      "pbgid": 2101720,
-      "attribName": "upgrade_naval_heated_shot",
-      "age": 4,
-      "civs": [
-        "je"
-      ],
-      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 200,
-        "stone": 0,
-        "gold": 500,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 700,
-        "popcap": 0,
-        "time": 45
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 6,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "heated-shot-4",
-      "baseId": "heated-shot",
-      "type": "technology",
-      "name": "Heated Shot",
-      "pbgid": 2101720,
-      "attribName": "upgrade_naval_heated_shot",
-      "age": 4,
-      "civs": [
-        "ma"
-      ],
-      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 200,
-        "stone": 0,
-        "gold": 500,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 700,
-        "popcap": 0,
-        "time": 45
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 6,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "heated-shot-4",
-      "baseId": "heated-shot",
-      "type": "technology",
-      "name": "Heated Shot",
-      "pbgid": 2101720,
-      "attribName": "upgrade_naval_heated_shot",
-      "age": 4,
-      "civs": [
-        "mo"
-      ],
-      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 200,
-        "stone": 0,
-        "gold": 500,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 700,
-        "popcap": 0,
-        "time": 45
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 6,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "heated-shot-4",
-      "baseId": "heated-shot",
-      "type": "technology",
-      "name": "Heated Shot",
-      "pbgid": 2101720,
-      "attribName": "upgrade_naval_heated_shot",
-      "age": 4,
-      "civs": [
-        "od"
-      ],
-      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 200,
-        "stone": 0,
-        "gold": 500,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 700,
-        "popcap": 0,
-        "time": 45
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 6,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "heated-shot-4",
-      "baseId": "heated-shot",
-      "type": "technology",
-      "name": "Heated Shot",
-      "pbgid": 2101720,
-      "attribName": "upgrade_naval_heated_shot",
-      "age": 4,
-      "civs": [
-        "ot"
-      ],
-      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 200,
-        "stone": 0,
-        "gold": 500,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 700,
-        "popcap": 0,
-        "time": 45
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 6,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "heated-shot-4",
-      "baseId": "heated-shot",
-      "type": "technology",
-      "name": "Heated Shot",
-      "pbgid": 2101720,
-      "attribName": "upgrade_naval_heated_shot",
-      "age": 4,
-      "civs": [
-        "ru"
-      ],
-      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 200,
-        "stone": 0,
-        "gold": 500,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 700,
-        "popcap": 0,
-        "time": 45
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 6,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "heated-shot-4",
-      "baseId": "heated-shot",
-      "type": "technology",
-      "name": "Heated Shot",
-      "pbgid": 2101720,
-      "attribName": "upgrade_naval_heated_shot",
-      "age": 4,
-      "civs": [
-        "zx"
-      ],
-      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 0,
-        "wood": 200,
-        "stone": 0,
-        "gold": 500,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 700,
-        "popcap": 0,
-        "time": 45
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
-      "effects": [
-        {
-          "property": "rangedAttack",
-          "select": {
-            "class": [
-              [
-                "archer",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 6,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "heated-shot-4",
-      "baseId": "heated-shot",
-      "type": "technology",
-      "name": "Heated Shot",
-      "pbgid": 2101720,
-      "attribName": "upgrade_naval_heated_shot",
-      "age": 4,
-      "civs": [
-        "kt"
-      ],
-      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_imperial_age_upgrade",
-        "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -1262,6 +715,843 @@
         "rus_upgrade",
         "scar_imperial_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 500,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 700,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "heated-shot-4",
+      "baseId": "heated-shot",
+      "type": "technology",
+      "name": "Heated Shot",
+      "pbgid": 2101720,
+      "attribName": "upgrade_naval_heated_shot",
+      "age": 4,
+      "civs": [
+        "ja"
+      ],
+      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 500,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 700,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "heated-shot-4",
+      "baseId": "heated-shot",
+      "type": "technology",
+      "name": "Heated Shot",
+      "pbgid": 2101720,
+      "attribName": "upgrade_naval_heated_shot",
+      "age": 4,
+      "civs": [
+        "je"
+      ],
+      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 500,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 700,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "heated-shot-4",
+      "baseId": "heated-shot",
+      "type": "technology",
+      "name": "Heated Shot",
+      "pbgid": 2101720,
+      "attribName": "upgrade_naval_heated_shot",
+      "age": 4,
+      "civs": [
+        "kt"
+      ],
+      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 500,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 700,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "harbor"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "heated-shot-4",
+      "baseId": "heated-shot",
+      "type": "technology",
+      "name": "Heated Shot",
+      "pbgid": 2101720,
+      "attribName": "upgrade_naval_heated_shot",
+      "age": 4,
+      "civs": [
+        "mac"
+      ],
+      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 500,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 700,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "heated-shot-4",
+      "baseId": "heated-shot",
+      "type": "technology",
+      "name": "Heated Shot",
+      "pbgid": 2101720,
+      "attribName": "upgrade_naval_heated_shot",
+      "age": 4,
+      "civs": [
+        "ma"
+      ],
+      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 500,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 700,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "heated-shot-4",
+      "baseId": "heated-shot",
+      "type": "technology",
+      "name": "Heated Shot",
+      "pbgid": 2101720,
+      "attribName": "upgrade_naval_heated_shot",
+      "age": 4,
+      "civs": [
+        "mo"
+      ],
+      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 500,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 700,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "heated-shot-4",
+      "baseId": "heated-shot",
+      "type": "technology",
+      "name": "Heated Shot",
+      "pbgid": 2101720,
+      "attribName": "upgrade_naval_heated_shot",
+      "age": 4,
+      "civs": [
+        "od"
+      ],
+      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 500,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 700,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "heated-shot-4",
+      "baseId": "heated-shot",
+      "type": "technology",
+      "name": "Heated Shot",
+      "pbgid": 2101720,
+      "attribName": "upgrade_naval_heated_shot",
+      "age": 4,
+      "civs": [
+        "ot"
+      ],
+      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 500,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 700,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "heated-shot-4",
+      "baseId": "heated-shot",
+      "type": "technology",
+      "name": "Heated Shot",
+      "pbgid": 2101720,
+      "attribName": "upgrade_naval_heated_shot",
+      "age": 4,
+      "civs": [
+        "ru"
+      ],
+      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 500,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 700,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "heated-shot-4",
+      "baseId": "heated-shot",
+      "type": "technology",
+      "name": "Heated Shot",
+      "pbgid": 2101720,
+      "attribName": "upgrade_naval_heated_shot",
+      "age": 4,
+      "civs": [
+        "sen"
+      ],
+      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 200,
+        "stone": 0,
+        "gold": 500,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 700,
+        "popcap": 0,
+        "time": 45
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "heated-shot-4",
+      "baseId": "heated-shot",
+      "type": "technology",
+      "name": "Heated Shot",
+      "pbgid": 4192943,
+      "attribName": "upgrade_naval_heated_shot_sul_ha_tug",
+      "age": 4,
+      "civs": [
+        "tug"
+      ],
+      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
+      "classes": [
+        "military_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_nontiered_upgrade",
+        "sultinate_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 240,
+        "stone": 0,
+        "gold": 600,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 840,
+        "popcap": 0,
+        "time": 5
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/heated-shot-4.png",
+      "effects": [
+        {
+          "property": "rangedAttack",
+          "select": {
+            "class": [
+              [
+                "archer",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "heated-shot-4",
+      "baseId": "heated-shot",
+      "type": "technology",
+      "name": "Heated Shot",
+      "pbgid": 2101720,
+      "attribName": "upgrade_naval_heated_shot",
+      "age": 4,
+      "civs": [
+        "zx"
+      ],
+      "description": "Archer Ship arrows light enemy Ships on fire, dealing damage over time.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_imperial_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [

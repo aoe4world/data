@@ -18,9 +18,12 @@
     "je",
     "kt",
     "ma",
+    "mac",
     "od",
     "ot",
     "ru",
+    "sen",
+    "tug",
     "zx"
   ],
   "unique": false,
@@ -515,6 +518,64 @@
       "baseId": "stone-wall",
       "type": "building",
       "name": "Stone Wall",
+      "pbgid": 5000032,
+      "attribName": "building_defense_wall_lan",
+      "age": 2,
+      "civs": [
+        "hl"
+      ],
+      "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 25% less damage from ranged attacks, 50% less damage from siege attacks, and their range is increased by +1.",
+      "classes": [
+        "building",
+        "defensive_structure",
+        "siegeable",
+        "stone_wall",
+        "stone_wall_section",
+        "wall"
+      ],
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 25,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 25,
+        "popcap": 0,
+        "time": 16
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-2.png",
+      "hitpoints": 3000,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "inner_height": 8,
+        "inner_radius": 6,
+        "outer_height": 0,
+        "outer_radius": 6,
+        "base": 6,
+        "line": 6,
+        "height": 8
+      },
+      "influences": []
+    },
+    {
+      "id": "stone-wall-2",
+      "baseId": "stone-wall",
+      "type": "building",
+      "name": "Stone Wall",
       "pbgid": 5958789,
       "attribName": "building_defense_wall_jpn",
       "age": 2,
@@ -605,6 +666,165 @@
       },
       "producedBy": [
         "jeanne-darc-peasant",
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-2.png",
+      "hitpoints": 3000,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "inner_height": 8,
+        "inner_radius": 6,
+        "outer_height": 0,
+        "outer_radius": 6,
+        "base": 6,
+        "line": 6,
+        "height": 8
+      },
+      "influences": []
+    },
+    {
+      "id": "stone-wall-2",
+      "baseId": "stone-wall",
+      "type": "building",
+      "name": "Stone Wall",
+      "pbgid": 5000221,
+      "attribName": "building_defense_stone_wall_tem",
+      "age": 2,
+      "civs": [
+        "kt"
+      ],
+      "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 25% less damage from ranged attacks, 50% less damage from siege attacks, and their range is increased by +1.",
+      "classes": [
+        "building",
+        "defensive_structure",
+        "has_default_building_weapons",
+        "military",
+        "siegeable",
+        "stone_wall",
+        "stone_wall_section",
+        "wall"
+      ],
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 25,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 25,
+        "popcap": 0,
+        "time": 16
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/stone-wall-2.png",
+      "hitpoints": 3000,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 8,
+          "speed": 3.625,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 3.5,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_stone_walls_arrows_tem",
+          "pbgid": 9001829
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "inner_height": 8,
+        "inner_radius": 6,
+        "outer_height": 0,
+        "outer_radius": 6,
+        "base": 6,
+        "line": 6,
+        "height": 8
+      },
+      "influences": [
+        "The Templar Headquarters and Fortresses grant Stone Walls in influence +25% health and an arrowslit emplacement."
+      ]
+    },
+    {
+      "id": "stone-wall-2",
+      "baseId": "stone-wall",
+      "type": "building",
+      "name": "Stone Wall",
+      "pbgid": 9000926,
+      "attribName": "building_defense_wall_byz_ha_mac",
+      "age": 2,
+      "civs": [
+        "mac"
+      ],
+      "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 25% less damage from ranged attacks, 50% less damage from siege attacks, and their range is increased by +1.",
+      "classes": [
+        "building",
+        "defensive_structure",
+        "siegeable",
+        "stone_wall",
+        "stone_wall_section",
+        "wall"
+      ],
+      "displayClasses": [
+        "Defensive Building"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 25,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 25,
+        "popcap": 0,
+        "time": 16
+      },
+      "producedBy": [
         "villager"
       ],
       "icon": "https://data.aoe4world.com/images/buildings/stone-wall-2.png",
@@ -864,11 +1084,11 @@
       "baseId": "stone-wall",
       "type": "building",
       "name": "Stone Wall",
-      "pbgid": 8903393,
-      "attribName": "building_defense_wall_chi_ha_01",
+      "pbgid": 8889006,
+      "attribName": "building_defense_wall_jpn_ha_sen",
       "age": 2,
       "civs": [
-        "zx"
+        "sen"
       ],
       "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 25% less damage from ranged attacks, 50% less damage from siege attacks, and their range is increased by +1.",
       "classes": [
@@ -922,18 +1142,16 @@
       "baseId": "stone-wall",
       "type": "building",
       "name": "Stone Wall",
-      "pbgid": 5000221,
-      "attribName": "building_defense_stone_wall_tem",
+      "pbgid": 2370186,
+      "attribName": "building_defense_wall_sul_ha_tug",
       "age": 2,
       "civs": [
-        "kt"
+        "tug"
       ],
       "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 25% less damage from ranged attacks, 50% less damage from siege attacks, and their range is increased by +1.",
       "classes": [
         "building",
         "defensive_structure",
-        "has_default_building_weapons",
-        "military",
         "siegeable",
         "stone_wall",
         "stone_wall_section",
@@ -959,46 +1177,7 @@
       ],
       "icon": "https://data.aoe4world.com/images/buildings/stone-wall-2.png",
       "hitpoints": 3000,
-      "weapons": [
-        {
-          "name": "Bow",
-          "type": "ranged",
-          "damage": 8,
-          "speed": 3.625,
-          "range": {
-            "min": 0,
-            "max": 8
-          },
-          "modifiers": [
-            {
-              "property": "rangedAttack",
-              "target": {
-                "class": [
-                  [
-                    "naval",
-                    "unit"
-                  ]
-                ]
-              },
-              "effect": "change",
-              "value": 10,
-              "type": "passive"
-            }
-          ],
-          "durations": {
-            "aim": 0,
-            "windup": 0,
-            "attack": 0.125,
-            "winddown": 0,
-            "reload": 3.5,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0
-          },
-          "attribName": "weapon_stone_walls_arrows_tem",
-          "pbgid": 9001829
-        }
-      ],
+      "weapons": [],
       "armor": [
         {
           "type": "ranged",
@@ -1014,20 +1193,18 @@
         "line": 6,
         "height": 8
       },
-      "influences": [
-        "The Templar Headquarters and Fortresses grant Stone Walls in influence +25% health and an arrowslit emplacement."
-      ]
+      "influences": []
     },
     {
       "id": "stone-wall-2",
       "baseId": "stone-wall",
       "type": "building",
       "name": "Stone Wall",
-      "pbgid": 5000032,
-      "attribName": "building_defense_wall_lan",
+      "pbgid": 8903393,
+      "attribName": "building_defense_wall_chi_ha_01",
       "age": 2,
       "civs": [
-        "hl"
+        "zx"
       ],
       "description": "Sturdy wall that cannot be attacked by torches. \nUnits on walls take 25% less damage from ranged attacks, 50% less damage from siege attacks, and their range is increased by +1.",
       "classes": [

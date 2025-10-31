@@ -1,0 +1,98 @@
+{
+  "id": "varangian-stronghold-1",
+  "baseId": "varangian-stronghold",
+  "type": "building",
+  "name": "Varangian Stronghold",
+  "pbgid": 9001600,
+  "attribName": "building_unit_passive_trait_byz_ha_mac",
+  "age": 1,
+  "civs": [
+    "mac"
+  ],
+  "description": "Structure capable of producing any Varangian unit.",
+  "classes": [
+    "barracks",
+    "building",
+    "military_only_production",
+    "military_production_building",
+    "production_building",
+    "scar_barracks",
+    "siegeable"
+  ],
+  "displayClasses": [
+    "Military Building"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 0,
+    "wood": 200,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 200,
+    "popcap": 0,
+    "time": 30
+  },
+  "producedBy": [
+    "villager"
+  ],
+  "icon": "https://data.aoe4world.com/images/buildings/varangian-stronghold-1.png",
+  "hitpoints": 2000,
+  "weapons": [
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 10,
+      "speed": 1.125,
+      "range": {
+        "min": 0,
+        "max": 6
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 8,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0.5,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_varangian_stronghold_arrows_byz_ha_mac",
+      "pbgid": 9003866
+    }
+  ],
+  "armor": [
+    {
+      "type": "ranged",
+      "value": 50
+    }
+  ],
+  "sight": {
+    "inner_height": 8,
+    "inner_radius": 30,
+    "outer_height": -10,
+    "outer_radius": 30,
+    "base": 30,
+    "line": 30,
+    "height": 8
+  },
+  "influences": []
+}

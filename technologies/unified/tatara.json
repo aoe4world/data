@@ -5,16 +5,18 @@
   "name": "Tatara",
   "type": "technology",
   "civs": [
-    "ja"
+    "ja",
+    "sen"
   ],
   "unique": true,
   "displayClasses": [
     "Melee Damage Technology 1/4"
   ],
   "classes": [
+    "japanese_ha_sen_upgrade",
     "japanese_upgrade",
     "military_upgrade",
-    "scar_feudal_age_upgrade",
+    "scar_dark_age_upgrade",
     "scar_military_upgrade",
     "scar_tiered_upgrade"
   ],
@@ -35,9 +37,65 @@
       ],
       "description": "Increase the melee damage of all non-siege units by +1.",
       "classes": [
+        "japanese_ha_sen_upgrade",
         "japanese_upgrade",
         "military_upgrade",
-        "scar_feudal_age_upgrade",
+        "scar_dark_age_upgrade",
+        "scar_military_upgrade",
+        "scar_tiered_upgrade"
+      ],
+      "displayClasses": [
+        "Melee Damage Technology 1/4"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 15,
+        "gold": 35,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 50,
+        "popcap": 0,
+        "time": 15
+      },
+      "producedBy": [
+        "forge"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/tatara-1.png",
+      "effects": [
+        {
+          "property": "meleeAttack",
+          "select": {
+            "class": [
+              [
+                "melee"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "tatara-1",
+      "baseId": "tatara",
+      "type": "technology",
+      "name": "Tatara",
+      "pbgid": 2136857,
+      "attribName": "upgrade_melee_damage_i_jpn",
+      "age": 1,
+      "civs": [
+        "sen"
+      ],
+      "description": "Increase the melee damage of all non-siege units by +1.",
+      "classes": [
+        "japanese_ha_sen_upgrade",
+        "japanese_upgrade",
+        "military_upgrade",
+        "scar_dark_age_upgrade",
         "scar_military_upgrade",
         "scar_tiered_upgrade"
       ],

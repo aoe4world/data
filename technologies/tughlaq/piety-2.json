@@ -1,0 +1,61 @@
+{
+  "id": "piety-2",
+  "baseId": "piety",
+  "type": "technology",
+  "name": "Piety",
+  "pbgid": 4179247,
+  "attribName": "upgrade_unit_religious_piety_4_sul_ha_tug",
+  "age": 2,
+  "civs": [
+    "tug"
+  ],
+  "description": "Increase the health of religious units and healers by +40.",
+  "classes": [
+    "military_upgrade",
+    "scar_military_upgrade",
+    "scar_nontiered_upgrade",
+    "sultinate_upgrade"
+  ],
+  "displayClasses": [
+    "Religious Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 520,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 520,
+    "popcap": 0,
+    "time": 5
+  },
+  "producedBy": [
+    "dome-of-the-faith",
+    "mosque"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/piety-2.png",
+  "effects": [
+    {
+      "property": "hitpoints",
+      "select": {
+        "id": [
+          "monk",
+          "scholar",
+          "imam",
+          "dervish",
+          "warrior-monk",
+          "shaman",
+          "prelate",
+          "shinto-priest",
+          "buddhist-monk",
+          "shaolin-monk"
+        ]
+      },
+      "effect": "change",
+      "value": 40,
+      "type": "passive"
+    }
+  ]
+}

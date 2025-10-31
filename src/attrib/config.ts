@@ -216,6 +216,16 @@ export const hardcodedDiscovery = {
   templar: [
 
   ],
+  sengoku: [
+
+  ],
+  tughlaq: [
+  ],
+  goldenhorde: [
+  ],
+  macedonian: [
+
+  ],
 };
 
 export const hardcodedDiscoveryCommon = [

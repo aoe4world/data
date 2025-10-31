@@ -5,7 +5,8 @@
   "name": "Atakebune",
   "type": "unit",
   "civs": [
-    "ja"
+    "ja",
+    "sen"
   ],
   "unique": true,
   "displayClasses": [
@@ -65,6 +66,109 @@
         "vizier": 0,
         "oliveoil": 0,
         "total": 540,
+        "popcap": 5,
+        "time": 45
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/atakebune-4.png",
+      "hitpoints": 650,
+      "weapons": [
+        {
+          "name": "Rocket",
+          "type": "siege",
+          "damage": 40,
+          "speed": 5.5,
+          "range": {
+            "min": 0,
+            "max": 9
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 50,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 4.875,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_naval_warship_rocket_ai_jpn",
+          "pbgid": 2127414
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 50,
+        "outer_height": -15,
+        "outer_radius": 50,
+        "base": 50,
+        "line": 50,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.25
+      }
+    },
+    {
+      "id": "atakebune-4",
+      "baseId": "atakebune",
+      "type": "unit",
+      "name": "Atakebune",
+      "pbgid": 3280750,
+      "attribName": "unit_naval_combat_warship_4_jpn_ha_sen",
+      "age": 4,
+      "civs": [
+        "sen"
+      ],
+      "description": "Large sailed war vessel armed with rockets.\n+ Anti-structure specialist\n- Vulnerable vs. Incendiary Ships\n- Low movement speed",
+      "classes": [
+        "annihilation_condition",
+        "gunpowder",
+        "massive",
+        "military",
+        "naval_broadside",
+        "naval_military",
+        "naval_unit",
+        "naval_warship",
+        "ranged",
+        "ship",
+        "siegeable"
+      ],
+      "displayClasses": [
+        "Warship"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 170,
+        "wood": 220,
+        "stone": 0,
+        "gold": 220,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 610,
         "popcap": 5,
         "time": 45
       },

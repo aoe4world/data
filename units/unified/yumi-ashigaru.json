@@ -5,7 +5,8 @@
   "name": "Yumi Ashigaru",
   "type": "unit",
   "civs": [
-    "ja"
+    "ja",
+    "sen"
   ],
   "unique": true,
   "displayClasses": [
@@ -529,6 +530,588 @@
           },
           "attribName": "weapon_archer_incendiary_4_jpn",
           "pbgid": 2145561
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 36,
+        "base": 21.6,
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.375
+      }
+    },
+    {
+      "id": "yumi-ashigaru-2",
+      "baseId": "yumi-ashigaru",
+      "type": "unit",
+      "name": "Yumi Ashigaru",
+      "pbgid": 7775331,
+      "attribName": "unit_archer_2_jpn_ha_sen",
+      "age": 2,
+      "civs": [
+        "sen"
+      ],
+      "description": "Quick and cheap ranged infantry with good damage vs. unarmored targets.\n+ Increased move speed\n+ Cheaper than Archers\n- Reduced health\n- Weak against high ranged armor targets\n- Countered by Horsemen",
+      "classes": [
+        "annihilation_condition",
+        "archer",
+        "archer_incendiary_age_2",
+        "find_non_siege_land_military",
+        "formational",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "infantry_light",
+        "land_military",
+        "military",
+        "ranged",
+        "ranged_infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 25,
+        "wood": 35,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 60,
+        "popcap": 1,
+        "time": 13
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/yumi-ashigaru-2.png",
+      "hitpoints": 65,
+      "weapons": [
+        {
+          "name": "Yumi",
+          "type": "ranged",
+          "damage": 4,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 4,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "gunpowder",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 4,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_2_jpn",
+          "pbgid": 2127613
+        },
+        {
+          "name": "Yumi Incendiary",
+          "type": "ranged",
+          "damage": 4,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 4,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "gunpowder",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 4,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_incendiary_2_jpn",
+          "pbgid": 2145559
+        },
+        {
+          "name": "Bow",
+          "type": "siege",
+          "damage": 3,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_incendiary_building_fire",
+          "pbgid": 9000624
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 36,
+        "base": 21.6,
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.375
+      }
+    },
+    {
+      "id": "yumi-ashigaru-3",
+      "baseId": "yumi-ashigaru",
+      "type": "unit",
+      "name": "Veteran Yumi Ashigaru",
+      "pbgid": 5166019,
+      "attribName": "unit_archer_3_jpn_ha_sen",
+      "age": 3,
+      "civs": [
+        "sen"
+      ],
+      "description": "Quick and cheap ranged infantry with good damage vs. unarmored targets.\n+ Increased move speed\n+ Cheaper than Archers\n- Reduced health\n- Weak against high ranged armor targets\n- Countered by Horsemen",
+      "classes": [
+        "annihilation_condition",
+        "archer",
+        "archer_incendiary_age_3",
+        "find_non_siege_land_military",
+        "formational",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "infantry_light",
+        "land_military",
+        "military",
+        "ranged",
+        "ranged_infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 25,
+        "wood": 35,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 60,
+        "popcap": 1,
+        "time": 13
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/yumi-ashigaru-3.png",
+      "hitpoints": 70,
+      "weapons": [
+        {
+          "name": "Yumi",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 6,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "gunpowder",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 6,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_3_jpn",
+          "pbgid": 2127614
+        },
+        {
+          "name": "Yumi Incendiary",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 6,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "gunpowder",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 6,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_incendiary_3_jpn",
+          "pbgid": 2145560
+        },
+        {
+          "name": "Bow",
+          "type": "siege",
+          "damage": 3,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_incendiary_building_fire",
+          "pbgid": 9000624
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 36,
+        "base": 21.6,
+        "line": 36,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.375
+      }
+    },
+    {
+      "id": "yumi-ashigaru-4",
+      "baseId": "yumi-ashigaru",
+      "type": "unit",
+      "name": "Elite Yumi Ashigaru",
+      "pbgid": 7148051,
+      "attribName": "unit_archer_4_jpn_ha_sen",
+      "age": 4,
+      "civs": [
+        "sen"
+      ],
+      "description": "Quick and cheap ranged infantry with good damage vs. unarmored targets.\n+ Increased move speed\n+ Cheaper than Archers\n- Reduced health\n- Weak against high ranged armor targets\n- Countered by Horsemen",
+      "classes": [
+        "annihilation_condition",
+        "archer",
+        "archer_incendiary_age_4",
+        "find_non_siege_land_military",
+        "formational",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "infantry_light",
+        "land_military",
+        "military",
+        "ranged",
+        "ranged_infantry"
+      ],
+      "displayClasses": [
+        "Light Ranged Infantry"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 25,
+        "wood": 35,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 60,
+        "popcap": 1,
+        "time": 13
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/yumi-ashigaru-4.png",
+      "hitpoints": 85,
+      "weapons": [
+        {
+          "name": "Yumi",
+          "type": "ranged",
+          "damage": 7,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 7,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "gunpowder",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 7,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_4_jpn",
+          "pbgid": 2127615
+        },
+        {
+          "name": "Yumi Incendiary",
+          "type": "ranged",
+          "damage": 7,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "melee",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 7,
+              "type": "passive"
+            },
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "light",
+                    "gunpowder",
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 7,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_incendiary_4_jpn",
+          "pbgid": 2145561
+        },
+        {
+          "name": "Bow",
+          "type": "siege",
+          "damage": 3,
+          "speed": 1.625,
+          "range": {
+            "min": 0,
+            "max": 5
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 0.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_archer_incendiary_building_fire",
+          "pbgid": 9000624
         }
       ],
       "armor": [],

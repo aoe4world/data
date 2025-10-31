@@ -1,0 +1,82 @@
+{
+  "id": "lightweight-beams-4",
+  "baseId": "lightweight-beams",
+  "type": "technology",
+  "name": "Lightweight Beams",
+  "pbgid": 2117424,
+  "attribName": "upgrade_ram_scaling",
+  "age": 4,
+  "civs": [
+    "sen"
+  ],
+  "description": "Increase Battering Ram attack speed by +20% and reduce their field construction time by -50%.",
+  "classes": [
+    "abbasid_ha_01_upgrade",
+    "abbasid_upgrade",
+    "ayyubid_cmp_upgrade",
+    "byzantine_upgrade",
+    "chinese_upgrade",
+    "crusader_cmp_upgrade",
+    "english_upgrade",
+    "french_ha_01_upgrade",
+    "french_upgrade",
+    "hre_upgrade",
+    "japanese_ha_sen_upgrade",
+    "japanese_upgrade",
+    "malian_upgrade",
+    "military_upgrade",
+    "ottoman_upgrade",
+    "rus_upgrade",
+    "scar_imperial_age_upgrade",
+    "scar_military_upgrade",
+    "scar_nontiered_upgrade",
+    "sultinate_upgrade"
+  ],
+  "displayClasses": [
+    "Battering Ram Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 300,
+    "stone": 0,
+    "gold": 400,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 700,
+    "popcap": 0,
+    "time": 60
+  },
+  "producedBy": [
+    "siege-workshop"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/lightweight-beams-4.png",
+  "effects": [
+    {
+      "property": "attackSpeed",
+      "select": {
+        "id": [
+          "battering-ram",
+          "clocktower-battering-ram",
+          "cheirosiphon"
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.83,
+      "type": "passive"
+    },
+    {
+      "property": "buildTime",
+      "select": {
+        "id": [
+          "battering-ram",
+          "clocktower-battering-ram",
+          "cheirosiphon"
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.5,
+      "type": "passive"
+    }
+  ]
+}

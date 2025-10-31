@@ -1,0 +1,68 @@
+{
+  "id": "military-academy-3",
+  "baseId": "military-academy",
+  "type": "technology",
+  "name": "Military Academy",
+  "pbgid": 7716650,
+  "attribName": "upgrade_tech_military_academy_sul_ha_tug",
+  "age": 3,
+  "civs": [
+    "tug"
+  ],
+  "description": "Increase the production speed of infantry, cavalry, siege, and transport units at buildings by 33%.\nDoes not affect religious units or other support units.",
+  "classes": [
+    "military_upgrade",
+    "scar_castle_age_upgrade",
+    "scar_military_upgrade",
+    "scar_nontiered_upgrade",
+    "sultinate_upgrade"
+  ],
+  "displayClasses": [
+    "Production Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 120,
+    "stone": 0,
+    "gold": 300,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 420,
+    "popcap": 0,
+    "time": 5
+  },
+  "producedBy": [
+    "blacksmith"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/military-academy-3.png",
+  "effects": [
+    {
+      "property": "buildTime",
+      "select": {
+        "class": [
+          [
+            "infantry"
+          ],
+          [
+            "melee",
+            "cavalry"
+          ],
+          [
+            "ranged",
+            "cavalry"
+          ],
+          [
+            "siege"
+          ],
+          [
+            "transport"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 0.8,
+      "type": "passive"
+    }
+  ]
+}

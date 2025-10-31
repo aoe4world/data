@@ -11,6 +11,7 @@
     "de",
     "en",
     "fr",
+    "gol",
     "hl",
     "hr",
     "ja",
@@ -21,6 +22,8 @@
     "od",
     "ot",
     "ru",
+    "sen",
+    "tug",
     "zx"
   ],
   "unique": false,
@@ -47,6 +50,7 @@
     "rus_upgrade",
     "scar_castle_age_upgrade",
     "scar_military_upgrade",
+    "scar_naval_upgrade",
     "scar_nontiered_upgrade",
     "sultinate_upgrade"
   ],
@@ -86,6 +90,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -93,15 +98,15 @@
       ],
       "unique": false,
       "costs": {
-        "food": 150,
+        "food": 100,
         "wood": 0,
         "stone": 0,
-        "gold": 350,
+        "gold": 250,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
+        "total": 350,
         "popcap": 0,
-        "time": 35
+        "time": 25
       },
       "producedBy": [
         "dock"
@@ -170,6 +175,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -177,15 +183,15 @@
       ],
       "unique": false,
       "costs": {
-        "food": 150,
+        "food": 100,
         "wood": 0,
         "stone": 0,
-        "gold": 350,
+        "gold": 250,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
+        "total": 350,
         "popcap": 0,
-        "time": 35
+        "time": 25
       },
       "producedBy": [
         "dock"
@@ -254,6 +260,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -261,15 +268,15 @@
       ],
       "unique": false,
       "costs": {
-        "food": 150,
+        "food": 100,
         "wood": 0,
         "stone": 0,
-        "gold": 350,
+        "gold": 250,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
+        "total": 350,
         "popcap": 0,
-        "time": 35
+        "time": 25
       },
       "producedBy": [
         "dock"
@@ -407,6 +414,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -414,15 +422,15 @@
       ],
       "unique": false,
       "costs": {
-        "food": 150,
+        "food": 100,
         "wood": 0,
         "stone": 0,
-        "gold": 350,
+        "gold": 250,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
+        "total": 350,
         "popcap": 0,
-        "time": 35
+        "time": 25
       },
       "producedBy": [
         "dock"
@@ -491,6 +499,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -498,15 +507,100 @@
       ],
       "unique": false,
       "costs": {
-        "food": 150,
+        "food": 100,
         "wood": 0,
         "stone": 0,
-        "gold": 350,
+        "gold": 250,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
+        "total": 350,
         "popcap": 0,
-        "time": 35
+        "time": 25
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        },
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.83,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "springald-crews-3",
+      "baseId": "springald-crews",
+      "type": "technology",
+      "name": "Springald Crews",
+      "pbgid": 2101638,
+      "attribName": "upgrade_naval_springald_ship_upgrade_1",
+      "age": 3,
+      "civs": [
+        "gol"
+      ],
+      "description": "Springald Ships gain +1 range and attack 20% faster.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 0,
+        "stone": 0,
+        "gold": 250,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 350,
+        "popcap": 0,
+        "time": 25
       },
       "producedBy": [
         "dock"
@@ -575,6 +669,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -582,771 +677,15 @@
       ],
       "unique": false,
       "costs": {
-        "food": 150,
+        "food": 100,
         "wood": 0,
         "stone": 0,
-        "gold": 350,
+        "gold": 250,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
+        "total": 350,
         "popcap": 0,
-        "time": 35
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        },
-        {
-          "property": "attackSpeed",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.83,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "springald-crews-3",
-      "baseId": "springald-crews",
-      "type": "technology",
-      "name": "Springald Crews",
-      "pbgid": 2101638,
-      "attribName": "upgrade_naval_springald_ship_upgrade_1",
-      "age": 3,
-      "civs": [
-        "ja"
-      ],
-      "description": "Springald Ships gain +1 range and attack 20% faster.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 150,
-        "wood": 0,
-        "stone": 0,
-        "gold": 350,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 500,
-        "popcap": 0,
-        "time": 35
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        },
-        {
-          "property": "attackSpeed",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.83,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "springald-crews-3",
-      "baseId": "springald-crews",
-      "type": "technology",
-      "name": "Springald Crews",
-      "pbgid": 2101638,
-      "attribName": "upgrade_naval_springald_ship_upgrade_1",
-      "age": 3,
-      "civs": [
-        "je"
-      ],
-      "description": "Springald Ships gain +1 range and attack 20% faster.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 150,
-        "wood": 0,
-        "stone": 0,
-        "gold": 350,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 500,
-        "popcap": 0,
-        "time": 35
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        },
-        {
-          "property": "attackSpeed",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.83,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "springald-crews-3",
-      "baseId": "springald-crews",
-      "type": "technology",
-      "name": "Springald Crews",
-      "pbgid": 2101638,
-      "attribName": "upgrade_naval_springald_ship_upgrade_1",
-      "age": 3,
-      "civs": [
-        "ma"
-      ],
-      "description": "Springald Ships gain +1 range and attack 20% faster.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 150,
-        "wood": 0,
-        "stone": 0,
-        "gold": 350,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 500,
-        "popcap": 0,
-        "time": 35
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        },
-        {
-          "property": "attackSpeed",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.83,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "springald-crews-3",
-      "baseId": "springald-crews",
-      "type": "technology",
-      "name": "Springald Crews",
-      "pbgid": 2101638,
-      "attribName": "upgrade_naval_springald_ship_upgrade_1",
-      "age": 3,
-      "civs": [
-        "mo"
-      ],
-      "description": "Springald Ships gain +1 range and attack 20% faster.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 150,
-        "wood": 0,
-        "stone": 0,
-        "gold": 350,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 500,
-        "popcap": 0,
-        "time": 35
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        },
-        {
-          "property": "attackSpeed",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.83,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "springald-crews-3",
-      "baseId": "springald-crews",
-      "type": "technology",
-      "name": "Springald Crews",
-      "pbgid": 2101638,
-      "attribName": "upgrade_naval_springald_ship_upgrade_1",
-      "age": 3,
-      "civs": [
-        "od"
-      ],
-      "description": "Springald Ships gain +1 range and attack 20% faster.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 150,
-        "wood": 0,
-        "stone": 0,
-        "gold": 350,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 500,
-        "popcap": 0,
-        "time": 35
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        },
-        {
-          "property": "attackSpeed",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.83,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "springald-crews-3",
-      "baseId": "springald-crews",
-      "type": "technology",
-      "name": "Springald Crews",
-      "pbgid": 2101638,
-      "attribName": "upgrade_naval_springald_ship_upgrade_1",
-      "age": 3,
-      "civs": [
-        "ot"
-      ],
-      "description": "Springald Ships gain +1 range and attack 20% faster.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 150,
-        "wood": 0,
-        "stone": 0,
-        "gold": 350,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 500,
-        "popcap": 0,
-        "time": 35
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        },
-        {
-          "property": "attackSpeed",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.83,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "springald-crews-3",
-      "baseId": "springald-crews",
-      "type": "technology",
-      "name": "Springald Crews",
-      "pbgid": 2101638,
-      "attribName": "upgrade_naval_springald_ship_upgrade_1",
-      "age": 3,
-      "civs": [
-        "ru"
-      ],
-      "description": "Springald Ships gain +1 range and attack 20% faster.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 150,
-        "wood": 0,
-        "stone": 0,
-        "gold": 350,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 500,
-        "popcap": 0,
-        "time": 35
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        },
-        {
-          "property": "attackSpeed",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.83,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "springald-crews-3",
-      "baseId": "springald-crews",
-      "type": "technology",
-      "name": "Springald Crews",
-      "pbgid": 2101638,
-      "attribName": "upgrade_naval_springald_ship_upgrade_1",
-      "age": 3,
-      "civs": [
-        "zx"
-      ],
-      "description": "Springald Ships gain +1 range and attack 20% faster.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 150,
-        "wood": 0,
-        "stone": 0,
-        "gold": 350,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 500,
-        "popcap": 0,
-        "time": 35
-      },
-      "producedBy": [
-        "dock"
-      ],
-      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
-      "effects": [
-        {
-          "property": "maxRange",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "change",
-          "value": 1,
-          "type": "passive"
-        },
-        {
-          "property": "attackSpeed",
-          "select": {
-            "class": [
-              [
-                "springald",
-                "ship"
-              ]
-            ]
-          },
-          "effect": "multiply",
-          "value": 0.83,
-          "type": "passive"
-        }
-      ]
-    },
-    {
-      "id": "springald-crews-3",
-      "baseId": "springald-crews",
-      "type": "technology",
-      "name": "Springald Crews",
-      "pbgid": 2101638,
-      "attribName": "upgrade_naval_springald_ship_upgrade_1",
-      "age": 3,
-      "civs": [
-        "kt"
-      ],
-      "description": "Springald Ships gain +1 range and attack 20% faster.",
-      "classes": [
-        "abbasid_ha_01_upgrade",
-        "abbasid_upgrade",
-        "ayyubid_cmp_upgrade",
-        "byzantine_upgrade",
-        "chinese_ha_01_upgrade",
-        "chinese_upgrade",
-        "crusader_cmp_upgrade",
-        "english_upgrade",
-        "french_ha_01_upgrade",
-        "french_upgrade",
-        "hre_upgrade",
-        "japanese_upgrade",
-        "malian_upgrade",
-        "military_upgrade",
-        "mongol_upgrade",
-        "ottoman_upgrade",
-        "rus_upgrade",
-        "scar_castle_age_upgrade",
-        "scar_military_upgrade",
-        "scar_nontiered_upgrade"
-      ],
-      "displayClasses": [
-        "Naval Technology"
-      ],
-      "unique": false,
-      "costs": {
-        "food": 150,
-        "wood": 0,
-        "stone": 0,
-        "gold": 350,
-        "vizier": 0,
-        "oliveoil": 0,
-        "total": 500,
-        "popcap": 0,
-        "time": 35
+        "time": 25
       },
       "producedBy": [
         "dock"
@@ -1415,6 +754,7 @@
         "rus_upgrade",
         "scar_castle_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [
@@ -1422,15 +762,934 @@
       ],
       "unique": false,
       "costs": {
-        "food": 150,
+        "food": 100,
         "wood": 0,
         "stone": 0,
-        "gold": 350,
+        "gold": 250,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 500,
+        "total": 350,
         "popcap": 0,
-        "time": 35
+        "time": 25
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        },
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.83,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "springald-crews-3",
+      "baseId": "springald-crews",
+      "type": "technology",
+      "name": "Springald Crews",
+      "pbgid": 2101638,
+      "attribName": "upgrade_naval_springald_ship_upgrade_1",
+      "age": 3,
+      "civs": [
+        "ja"
+      ],
+      "description": "Springald Ships gain +1 range and attack 20% faster.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 0,
+        "stone": 0,
+        "gold": 250,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 350,
+        "popcap": 0,
+        "time": 25
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        },
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.83,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "springald-crews-3",
+      "baseId": "springald-crews",
+      "type": "technology",
+      "name": "Springald Crews",
+      "pbgid": 2101638,
+      "attribName": "upgrade_naval_springald_ship_upgrade_1",
+      "age": 3,
+      "civs": [
+        "je"
+      ],
+      "description": "Springald Ships gain +1 range and attack 20% faster.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 0,
+        "stone": 0,
+        "gold": 250,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 350,
+        "popcap": 0,
+        "time": 25
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        },
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.83,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "springald-crews-3",
+      "baseId": "springald-crews",
+      "type": "technology",
+      "name": "Springald Crews",
+      "pbgid": 2101638,
+      "attribName": "upgrade_naval_springald_ship_upgrade_1",
+      "age": 3,
+      "civs": [
+        "kt"
+      ],
+      "description": "Springald Ships gain +1 range and attack 20% faster.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 0,
+        "stone": 0,
+        "gold": 250,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 350,
+        "popcap": 0,
+        "time": 25
+      },
+      "producedBy": [
+        "harbor"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        },
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.83,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "springald-crews-3",
+      "baseId": "springald-crews",
+      "type": "technology",
+      "name": "Springald Crews",
+      "pbgid": 2101638,
+      "attribName": "upgrade_naval_springald_ship_upgrade_1",
+      "age": 3,
+      "civs": [
+        "ma"
+      ],
+      "description": "Springald Ships gain +1 range and attack 20% faster.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 0,
+        "stone": 0,
+        "gold": 250,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 350,
+        "popcap": 0,
+        "time": 25
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        },
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.83,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "springald-crews-3",
+      "baseId": "springald-crews",
+      "type": "technology",
+      "name": "Springald Crews",
+      "pbgid": 2101638,
+      "attribName": "upgrade_naval_springald_ship_upgrade_1",
+      "age": 3,
+      "civs": [
+        "mo"
+      ],
+      "description": "Springald Ships gain +1 range and attack 20% faster.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 0,
+        "stone": 0,
+        "gold": 250,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 350,
+        "popcap": 0,
+        "time": 25
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        },
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.83,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "springald-crews-3",
+      "baseId": "springald-crews",
+      "type": "technology",
+      "name": "Springald Crews",
+      "pbgid": 2101638,
+      "attribName": "upgrade_naval_springald_ship_upgrade_1",
+      "age": 3,
+      "civs": [
+        "od"
+      ],
+      "description": "Springald Ships gain +1 range and attack 20% faster.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 0,
+        "stone": 0,
+        "gold": 250,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 350,
+        "popcap": 0,
+        "time": 25
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        },
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.83,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "springald-crews-3",
+      "baseId": "springald-crews",
+      "type": "technology",
+      "name": "Springald Crews",
+      "pbgid": 2101638,
+      "attribName": "upgrade_naval_springald_ship_upgrade_1",
+      "age": 3,
+      "civs": [
+        "ot"
+      ],
+      "description": "Springald Ships gain +1 range and attack 20% faster.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 0,
+        "stone": 0,
+        "gold": 250,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 350,
+        "popcap": 0,
+        "time": 25
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        },
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.83,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "springald-crews-3",
+      "baseId": "springald-crews",
+      "type": "technology",
+      "name": "Springald Crews",
+      "pbgid": 2101638,
+      "attribName": "upgrade_naval_springald_ship_upgrade_1",
+      "age": 3,
+      "civs": [
+        "ru"
+      ],
+      "description": "Springald Ships gain +1 range and attack 20% faster.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 0,
+        "stone": 0,
+        "gold": 250,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 350,
+        "popcap": 0,
+        "time": 25
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        },
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.83,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "springald-crews-3",
+      "baseId": "springald-crews",
+      "type": "technology",
+      "name": "Springald Crews",
+      "pbgid": 2101638,
+      "attribName": "upgrade_naval_springald_ship_upgrade_1",
+      "age": 3,
+      "civs": [
+        "sen"
+      ],
+      "description": "Springald Ships gain +1 range and attack 20% faster.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 0,
+        "stone": 0,
+        "gold": 250,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 350,
+        "popcap": 0,
+        "time": 25
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        },
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.83,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "springald-crews-3",
+      "baseId": "springald-crews",
+      "type": "technology",
+      "name": "Springald Crews",
+      "pbgid": 6368415,
+      "attribName": "upgrade_naval_springald_ship_upgrade_1_sul_ha_tug",
+      "age": 3,
+      "civs": [
+        "tug"
+      ],
+      "description": "Springald Ships gain +1 range and attack 20% faster.",
+      "classes": [
+        "military_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_nontiered_upgrade",
+        "sultinate_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 120,
+        "wood": 0,
+        "stone": 0,
+        "gold": 300,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 420,
+        "popcap": 0,
+        "time": 5
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/springald-crews-3.png",
+      "effects": [
+        {
+          "property": "maxRange",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 1,
+          "type": "passive"
+        },
+        {
+          "property": "attackSpeed",
+          "select": {
+            "class": [
+              [
+                "springald",
+                "ship"
+              ]
+            ]
+          },
+          "effect": "multiply",
+          "value": 0.83,
+          "type": "passive"
+        }
+      ]
+    },
+    {
+      "id": "springald-crews-3",
+      "baseId": "springald-crews",
+      "type": "technology",
+      "name": "Springald Crews",
+      "pbgid": 2101638,
+      "attribName": "upgrade_naval_springald_ship_upgrade_1",
+      "age": 3,
+      "civs": [
+        "zx"
+      ],
+      "description": "Springald Ships gain +1 range and attack 20% faster.",
+      "classes": [
+        "abbasid_ha_01_upgrade",
+        "abbasid_upgrade",
+        "ayyubid_cmp_upgrade",
+        "byzantine_upgrade",
+        "chinese_ha_01_upgrade",
+        "chinese_upgrade",
+        "crusader_cmp_upgrade",
+        "english_upgrade",
+        "french_ha_01_upgrade",
+        "french_upgrade",
+        "hre_upgrade",
+        "japanese_upgrade",
+        "malian_upgrade",
+        "military_upgrade",
+        "mongol_upgrade",
+        "ottoman_upgrade",
+        "rus_upgrade",
+        "scar_castle_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 0,
+        "stone": 0,
+        "gold": 250,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 350,
+        "popcap": 0,
+        "time": 25
       },
       "producedBy": [
         "dock"

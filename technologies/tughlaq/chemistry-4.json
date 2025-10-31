@@ -1,0 +1,74 @@
+{
+  "id": "chemistry-4",
+  "baseId": "chemistry",
+  "type": "technology",
+  "name": "Chemistry",
+  "pbgid": 7770237,
+  "attribName": "upgrade_siege_chemistry_sul_ha_tug",
+  "age": 4,
+  "civs": [
+    "tug"
+  ],
+  "description": "Advancements in alchemical research increase the bonus damage of all gunpowder siege weapons by +25%.",
+  "classes": [
+    "military_upgrade",
+    "scar_imperial_age_upgrade",
+    "scar_military_upgrade",
+    "scar_nontiered_upgrade",
+    "sultinate_upgrade"
+  ],
+  "displayClasses": [
+    "Gunpowder Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 240,
+    "wood": 0,
+    "stone": 0,
+    "gold": 780,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 1020,
+    "popcap": 0,
+    "time": 5
+  },
+  "producedBy": [
+    "hisar-academy",
+    "madrasa"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/chemistry-4.png",
+  "effects": [
+    {
+      "property": "rangedAttack",
+      "select": {
+        "class": [
+          [
+            "gunpowder"
+          ],
+          [
+            "warship"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.25,
+      "type": "passive"
+    },
+    {
+      "property": "siegeAttack",
+      "select": {
+        "class": [
+          [
+            "gunpowder"
+          ],
+          [
+            "warship"
+          ]
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.25,
+      "type": "passive"
+    }
+  ]
+}

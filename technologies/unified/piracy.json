@@ -5,6 +5,7 @@
   "name": "Piracy",
   "type": "technology",
   "civs": [
+    "gol",
     "mo"
   ],
   "unique": true,
@@ -16,12 +17,69 @@
     "mongol_upgrade",
     "scar_feudal_age_upgrade",
     "scar_military_upgrade",
+    "scar_naval_upgrade",
     "scar_nontiered_upgrade"
   ],
   "minAge": 2,
   "icon": "https://data.aoe4world.com/images/technologies/piracy-2.png",
   "description": "Gain +25 Wood and +25 Gold when sinking an enemy ship.",
   "variations": [
+    {
+      "id": "piracy-2",
+      "baseId": "piracy",
+      "type": "technology",
+      "name": "Piracy",
+      "pbgid": 2033835,
+      "attribName": "upgrade_naval_piracy_mon",
+      "age": 2,
+      "civs": [
+        "gol"
+      ],
+      "description": "Gain +25 Wood and +25 Gold when sinking an enemy ship.",
+      "classes": [
+        "military_upgrade",
+        "mongol_upgrade",
+        "scar_feudal_age_upgrade",
+        "scar_military_upgrade",
+        "scar_naval_upgrade",
+        "scar_nontiered_upgrade"
+      ],
+      "displayClasses": [
+        "Naval Technology"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 50,
+        "wood": 0,
+        "stone": 0,
+        "gold": 125,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 175,
+        "popcap": 0,
+        "time": 20
+      },
+      "producedBy": [
+        "dock"
+      ],
+      "icon": "https://data.aoe4world.com/images/technologies/piracy-2.png",
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "light-junk",
+              "explosive-junk",
+              "war-junk",
+              "baochuan"
+            ]
+          },
+          "effect": "change",
+          "value": 25,
+          "type": "ability"
+        }
+      ]
+    },
     {
       "id": "piracy-2",
       "baseId": "piracy",
@@ -39,6 +97,7 @@
         "mongol_upgrade",
         "scar_feudal_age_upgrade",
         "scar_military_upgrade",
+        "scar_naval_upgrade",
         "scar_nontiered_upgrade"
       ],
       "displayClasses": [

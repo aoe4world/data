@@ -5,7 +5,8 @@
   "name": "Tower of Victory",
   "type": "building",
   "civs": [
-    "de"
+    "de",
+    "tug"
   ],
   "unique": true,
   "displayClasses": [
@@ -38,6 +39,67 @@
         "de"
       ],
       "description": "Enables Tower of Victory, Mosques, and Madrasas to increase the attack speed of infantry by +20% when produced within their influence.",
+      "classes": [
+        "age1_landmark1",
+        "audio_production_landmark",
+        "building",
+        "landmark",
+        "select_special_building",
+        "siegeable",
+        "town_center_or_landmark",
+        "wonder",
+        "wonder_dark_age"
+      ],
+      "displayClasses": [
+        "Age II - Military Landmark"
+      ],
+      "unique": true,
+      "costs": {
+        "food": 400,
+        "wood": 0,
+        "stone": 0,
+        "gold": 200,
+        "vizier": 0,
+        "oliveoil": 0,
+        "total": 600,
+        "popcap": 0,
+        "time": 190
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/tower-of-victory-1.png",
+      "hitpoints": 5000,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
+        "line": 25,
+        "height": 8
+      },
+      "influences": []
+    },
+    {
+      "id": "tower-of-victory-1",
+      "baseId": "tower-of-victory",
+      "type": "building",
+      "name": "Tower of Victory",
+      "pbgid": 7523918,
+      "attribName": "building_landmark_age1_qutub_minar_control_sul_ha_tug",
+      "age": 1,
+      "civs": [
+        "tug"
+      ],
+      "description": "The Tower of Victory increases the attack speed of Elephants by +15% when produced from buildings within influence.",
       "classes": [
         "age1_landmark1",
         "audio_production_landmark",

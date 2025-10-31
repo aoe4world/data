@@ -1,0 +1,122 @@
+{
+  "id": "bogma-r-2",
+  "baseId": "bogma-r",
+  "type": "unit",
+  "name": "Bogmaðr",
+  "pbgid": 9001003,
+  "attribName": "unit_archer_2_byz_ha_mac",
+  "age": 2,
+  "civs": [
+    "mac"
+  ],
+  "description": "Ranged infantry with good damage vs. unarmored targets. Has an ability to pierce enemy armor for reduced move speed.\n+ High rate of fire\n- Weak against armored targets\n- Countered by Horsemen",
+  "classes": [
+    "annihilation_condition",
+    "archer",
+    "archer_incendiary_age_2",
+    "find_non_siege_land_military",
+    "formational",
+    "human",
+    "included_by_military_hotkeys",
+    "infantry",
+    "infantry_light",
+    "land_military",
+    "military",
+    "pillager",
+    "ranged",
+    "ranged_infantry",
+    "runestone",
+    "varangian"
+  ],
+  "displayClasses": [
+    "Light Ranged Varangian Infantry"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 40,
+    "wood": 50,
+    "stone": 0,
+    "gold": 0,
+    "vizier": 0,
+    "oliveoil": 0,
+    "total": 90,
+    "popcap": 1,
+    "time": 15
+  },
+  "producedBy": [
+    "archery-range",
+    "varangian-stronghold",
+    "varangian-warcamp"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/bogma-r-2.png",
+  "hitpoints": 80,
+  "weapons": [
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 5,
+      "speed": 1.625,
+      "range": {
+        "min": 0,
+        "max": 5
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "light",
+                "melee",
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 5,
+          "type": "passive"
+        },
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "light",
+                "gunpowder",
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 5,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.25,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 0.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_archer_2_byz_ha_mac",
+      "pbgid": 9001625
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 12,
+    "outer_height": -15,
+    "outer_radius": 36,
+    "base": 21.6,
+    "line": 36,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.25
+  }
+}
