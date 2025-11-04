@@ -378,7 +378,35 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "unit_villager_free_jpn", // Placeholder vil
   "unit_free_dummy_yeoman_lan", // Free age 1 yeoman
 
-  "military_school_production_mod_ott", // Advanced Academy bonus to military school production speed
+  // Golden horde always on abilities
+  "always_on_abilities/mongol_ha_gol/golden_tent_rus_resources_mon_ha_gol",
+  "always_on_abilities/mongol_ha_gol/golden_tent_rus_tribute_manager_mon_ha_gol",
+
+  // Inspect later if it's addable
+  "building_carts_mon_ha_gol", 
+  "outpost_edict_display_only_mon_ha_gol",
+  "stockyard_gold_edict_mon_ha_gol",
+  "unit_horsearcher_rally_mon_ha_gol",
+  "sword_hunt_bonus_jpn_ha_sen",
+  "clan_level_takeda_1_jpn_ha_sen",
+  "clan_level_takeda_2_jpn_ha_sen",
+  "clan_level_takeda_3_jpn_ha_sen",
+  "clan_level_oda_1_jpn_ha_sen",
+  "clan_level_oda_2_jpn_ha_sen",
+  "clan_level_oda_3_jpn_ha_sen",
+  "clan_level_hojo_1_jpn_ha_sen",
+  "clan_level_hojo_2_jpn_ha_sen",
+  "clan_level_hojo_3_jpn_ha_sen",
+  "matsuri_sake_aura_jpn_ha_sen",
+  "matsuri_call_yatai_toggle_off_jpn_ha_sen",
+  "equality_temple_ikko_ikki_cost_reduction_jpn_ha_sen",
+  "pilgrim_spawn_tem",
+  "influence_enable_weapons_tem",
+  "military_school_production_mod_ott",
+  "manor_resource_generation_lan",
+  "champion_spawner_byz_ha_mac",
+  "buff_spec_monastery_ovoo_bonus_mon",
+
 
   (file) => file.includes("unit_") && file.includes("_free_abb_ha_01"),
 ];

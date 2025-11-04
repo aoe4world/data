@@ -8,6 +8,7 @@ export function slugify(str: string | number): string {
     .toLowerCase()
     .replace(p, (c: string) => b.charAt(a.indexOf(c))) // Replace special chars with normalized versions
     .replace(`'`, "") // Remove apostrophes
+    .replace(/ð/g, 'd') // Is actually pronounced like a soft 'th' or 'd', so remapping to 'd' in slugs makes sense.
     .replace(/[^a-z0-9]/g, "-") // replace non-alphanumeric characters with a hyphen
     .replace(/\-+/g, "-") // Replace multiple dashes with a single one
     .replace(/\-$/g, ""); // Remove trailing dash
