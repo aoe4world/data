@@ -1572,6 +1572,18 @@ workaround("HRE Civ Bonus: 'Cost of emplacements on Outposts, Wall Towers, and K
   },
 });
 
+workaround("Differentiate Free King from Trainable King", {
+  predicate: (item) => item.type === "unit" && item.attribName === "unit_abbey_king_free_2",
+  mutator: (item) => {
+    item.baseId = "king-free";
+    item.id = `${item.baseId}-${item.age}`;
+    item.name = "King (Free)";
+    item.description += "\n\nAutomatically spawned when Abbey of Kings is completed.";
+    item.costs = { food: 0, wood: 0, stone: 0, gold: 0, vizier: 0, oliveoil: 0, total: 0, time: 0, popcap: 1 };
+  },
+});
+
+
 const MILITIA_COSTS = generateCosts({ food: 20 });
 
 function discountCosts(costs: Item["costs"], discount: number) {
