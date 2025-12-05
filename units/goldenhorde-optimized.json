@@ -382,7 +382,7 @@
             "oliveoil": 0,
             "total": 600,
             "popcap": 5,
-            "time": 90
+            "time": 45
           },
           "producedBy": [
             "dock"
@@ -2423,6 +2423,7 @@
         "infantry",
         "kharash",
         "land_military",
+        "light_melee_infantry",
         "melee",
         "melee_infantry",
         "military",
@@ -2453,6 +2454,7 @@
             "infantry",
             "kharash",
             "land_military",
+            "light_melee_infantry",
             "melee",
             "melee_infantry",
             "military",
@@ -3919,8 +3921,8 @@
           "baseId": "siege-tower",
           "type": "unit",
           "name": "Siege Tower",
-          "pbgid": 133340,
-          "attribName": "unit_siege_tower_3_rus",
+          "pbgid": 8432239,
+          "attribName": "unit_siege_tower_3_mon_ha_gol",
           "age": 2,
           "civs": [
             "gol"
@@ -3955,7 +3957,10 @@
             "archer",
             "crossbowman",
             "handcannoneer",
-            "rus-tribute"
+            "kharash",
+            "man-at-arms",
+            "rus-tribute",
+            "spearman"
           ],
           "icon": "https://data.aoe4world.com/images/units/siege-tower-3.png",
           "hitpoints": 480,
@@ -4125,6 +4130,20 @@
                   "effect": "change",
                   "value": 3,
                   "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "worker",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 20,
+                  "type": "passive"
                 }
               ],
               "durations": {
@@ -4208,6 +4227,20 @@
                   },
                   "effect": "change",
                   "value": 4,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "worker",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 24,
                   "type": "passive"
                 }
               ],
@@ -4293,6 +4326,20 @@
                   "effect": "change",
                   "value": 5,
                   "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "worker",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 28,
+                  "type": "passive"
                 }
               ],
               "durations": {
@@ -4376,6 +4423,20 @@
                   },
                   "effect": "change",
                   "value": 6,
+                  "type": "passive"
+                },
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "worker",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 34,
                   "type": "passive"
                 }
               ],
@@ -4632,12 +4693,12 @@
         "oliveoil": 0,
         "total": 175,
         "popcap": 1,
-        "time": 20
+        "time": 35
       },
       "producedBy": [
         "golden-tent"
       ],
-      "hitpoints": 320,
+      "hitpoints": 300,
       "sight": {
         "inner_height": 10,
         "inner_radius": 4,
@@ -4657,7 +4718,7 @@
             {
               "name": "Mace",
               "type": "melee",
-              "damage": 19,
+              "damage": 17,
               "speed": 1.375,
               "range": {
                 "min": 0,
@@ -4697,13 +4758,13 @@
                 "teardown": 0,
                 "cooldown": 1.25
               },
-              "attribName": "weapon_torch_lancer_mon",
-              "pbgid": 2135368
+              "attribName": "weapon_torch_bodyguard_mon_ha_gol",
+              "pbgid": 9005310
             },
             {
               "name": "Lance",
               "type": "melee",
-              "damage": 30,
+              "damage": 26,
               "speed": 0.525,
               "range": {
                 "min": 0,
@@ -4751,7 +4812,7 @@
             "time": 60
           },
           "icon": "https://data.aoe4world.com/images/units/torguud-3.png",
-          "hitpoints": 240,
+          "hitpoints": 220,
           "weapons": [
             {
               "name": "Mace",
@@ -4796,13 +4857,13 @@
                 "teardown": 0,
                 "cooldown": 1.25
               },
-              "attribName": "weapon_torch_lancer_mon",
-              "pbgid": 2135368
+              "attribName": "weapon_torch_bodyguard_mon_ha_gol",
+              "pbgid": 9005310
             },
             {
               "name": "Lance",
               "type": "melee",
-              "damage": 18,
+              "damage": 15,
               "speed": 0.525,
               "range": {
                 "min": 0,
@@ -5039,12 +5100,12 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 90,
+            "wood": 100,
             "stone": 0,
-            "gold": 90,
+            "gold": 100,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 180,
+            "total": 200,
             "popcap": 2,
             "time": 30
           },
@@ -5203,12 +5264,12 @@
           "unique": false,
           "costs": {
             "food": 0,
-            "wood": 90,
+            "wood": 100,
             "stone": 0,
             "gold": 0,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 90,
+            "total": 100,
             "popcap": 2,
             "time": 20
           },
@@ -5446,7 +5507,7 @@
             "oliveoil": 0,
             "total": 340,
             "popcap": 3,
-            "time": 60
+            "time": 30
           },
           "producedBy": [
             "dock"

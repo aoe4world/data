@@ -4630,12 +4630,6 @@
             "siegeable",
             "university"
           ],
-          "garrison": {
-            "capacity": 20,
-            "classes": [
-              "monk"
-            ]
-          },
           "influences": []
         }
       ],
@@ -10758,7 +10752,7 @@
           "civs": [
             "mac"
           ],
-          "description": "Acts as a Stable. Champions emerge from the trials of the Imperial Hippodrome until each one spawns. \nChampions provide auras that increase damage of torches, enhance damage of cavalry, and inspire infantry to move faster.",
+          "description": "Acts as a Stable. A powerful Champion Scout, Horseman, and Riddari are trained for free over time.\nChampions provide auras that increase damage of torches, enhance damage of cavalry, and inspire infantry to move faster.",
           "influences": []
         }
       ],
@@ -13630,7 +13624,7 @@
           "civs": [
             "tug"
           ],
-          "description": "The Tower of Victory increases the attack speed of Elephants by +15% when produced from buildings within influence."
+          "description": "The Tower of Victory increases the attack speed of Elephants by +20% when produced from buildings within influence."
         }
       ],
       "baseId": "tower-of-victory",
@@ -15846,12 +15840,12 @@
       "age": 1,
       "costs": {
         "food": 0,
-        "wood": 75,
+        "wood": 50,
         "stone": 0,
         "gold": 0,
         "vizier": 0,
         "oliveoil": 0,
-        "total": 75,
+        "total": 50,
         "popcap": 0,
         "time": 20
       },
@@ -15895,7 +15889,6 @@
         "building",
         "golden_tent",
         "landmark",
-        "military_only_production",
         "select_special_building",
         "siegeable",
         "town_center_or_landmark",
@@ -15924,7 +15917,6 @@
             "building",
             "golden_tent",
             "landmark",
-            "military_only_production",
             "select_special_building",
             "siegeable",
             "town_center_or_landmark",
@@ -17299,7 +17291,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/buildings/lancaster-castle-1.png",
-      "description": "Defensive Landmark that can do a one-time muster of units from Manors in each Age.\nGrants all Manors +500 health and an arrowslit emplacement.",
+      "description": "Defensive Landmark that can do a one-time muster of units in each Age. The cost of mustering units is reduced by 50 resources per Manor.\nGrants all Manors +500 health and an arrowslit emplacement.",
       "variations": [
         {
           "id": "lancaster-castle-1",
@@ -17312,7 +17304,7 @@
           "civs": [
             "hl"
           ],
-          "description": "Defensive Landmark that can do a one-time muster of units from Manors in each Age.\nGrants all Manors +500 health and an arrowslit emplacement.",
+          "description": "Defensive Landmark that can do a one-time muster of units in each Age. The cost of mustering units is reduced by 50 resources per Manor.\nGrants all Manors +500 health and an arrowslit emplacement.",
           "classes": [
             "age1_landmark2",
             "audio_production_landmark",
@@ -17426,7 +17418,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/buildings/manor-2.png",
-      "description": "Acts as a drop off building for all resource types. Passively generates 10 wood and 30 food per minute. Generates an additional 4 food and 2 wood for each nearby villager. \nIncreases your maximum Population by +10.",
+      "description": "Acts as a drop off building for all resource types. Passively generates 10 wood and 30 food per minute. Generates an additional 4 food and 2 wood for each nearby villager. \nVillagers only affect one Manor at a time.\nIncreases your maximum Population by +10.",
       "variations": [
         {
           "id": "manor-2",
@@ -17439,7 +17431,7 @@
           "civs": [
             "hl"
           ],
-          "description": "Acts as a drop off building for all resource types. Passively generates 10 wood and 30 food per minute. Generates an additional 4 food and 2 wood for each nearby villager. \nIncreases your maximum Population by +10.",
+          "description": "Acts as a drop off building for all resource types. Passively generates 10 wood and 30 food per minute. Generates an additional 4 food and 2 wood for each nearby villager. \nVillagers only affect one Manor at a time.\nIncreases your maximum Population by +10.",
           "classes": [
             "building",
             "economy_building",
@@ -21867,7 +21859,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/buildings/runestones-1.png",
-      "description": "Carve a Runestone to celebrate honorable victories in combat, enhancing Varangian ranged weapons by 1 tile, melee damage by 1, and move speed by 15%. Lasts 150 seconds.",
+      "description": "Carve a Runestone after defeating 5 military units to celebrate honorable victories in combat, enhancing Varangian ranged weapons by 1 tile, melee damage by 1, and move speed by 15%. Lasts 150 seconds.",
       "variations": [
         {
           "id": "runestones-1",
@@ -21880,7 +21872,7 @@
           "civs": [
             "mac"
           ],
-          "description": "Carve a Runestone to celebrate honorable victories in combat, enhancing Varangian ranged weapons by 1 tile, melee damage by 1, and move speed by 15%. Lasts 150 seconds.",
+          "description": "Carve a Runestone after defeating 5 military units to celebrate honorable victories in combat, enhancing Varangian ranged weapons by 1 tile, melee damage by 1, and move speed by 15%. Lasts 150 seconds.",
           "classes": [
             "runestone",
             "unchargeable"
@@ -21906,8 +21898,26 @@
             "varangian-guard"
           ],
           "icon": "https://data.aoe4world.com/images/buildings/runestones-1.png",
+          "hitpoints": 0,
           "weapons": [],
-          "armor": [],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 1
+            },
+            {
+              "type": "ranged",
+              "value": 1
+            },
+            {
+              "type": "siege",
+              "value": 1
+            },
+            {
+              "type": "fire",
+              "value": 1
+            }
+          ],
           "sight": {
             "inner_height": 0,
             "inner_radius": 0,
@@ -22147,7 +22157,6 @@
         "building",
         "military_only_production",
         "military_production_building",
-        "naval_production_building",
         "production_building",
         "siegeable"
       ],
@@ -22172,7 +22181,6 @@
             "building",
             "military_only_production",
             "military_production_building",
-            "naval_production_building",
             "production_building",
             "siegeable"
           ],
@@ -25691,12 +25699,12 @@
           "unique": true,
           "costs": {
             "food": 0,
-            "wood": 100,
+            "wood": 75,
             "stone": 0,
             "gold": 0,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 100,
+            "total": 75,
             "popcap": 0,
             "time": 35
           },
@@ -26237,9 +26245,9 @@
         "Military Building"
       ],
       "classes": [
-        "barracks",
         "building",
         "daimyo_estate",
+        "daimyo_estate_hojo",
         "military_only_production",
         "military_production_building",
         "production_building",
@@ -26262,9 +26270,9 @@
           ],
           "description": "Increases Hojo Clan support providing bonuses to Barracks Infantry.  \nProduces the Daimyo unit. Hojo Daimyo Estate health is increased +1000 and cost increased x2 Stone and Wood.",
           "classes": [
-            "barracks",
             "building",
             "daimyo_estate",
+            "daimyo_estate_hojo",
             "military_only_production",
             "military_production_building",
             "production_building",
@@ -26276,12 +26284,12 @@
           "unique": true,
           "costs": {
             "food": 0,
-            "wood": 150,
-            "stone": 150,
+            "wood": 125,
+            "stone": 125,
             "gold": 0,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 300,
+            "total": 250,
             "popcap": 0,
             "time": 30
           },
@@ -26421,9 +26429,9 @@
         "Military Building"
       ],
       "classes": [
-        "barracks",
         "building",
         "daimyo_estate",
+        "daimyo_estate_oda",
         "military_only_production",
         "military_production_building",
         "production_building",
@@ -26446,9 +26454,9 @@
           ],
           "description": "Increases Oda Clan support providing bonuses to Archery Range Infantry.\nProduces the Daimyo unit. Oda Daimyo Estate health is increased +1000 and cost increased x2 Stone and Wood.",
           "classes": [
-            "barracks",
             "building",
             "daimyo_estate",
+            "daimyo_estate_oda",
             "military_only_production",
             "military_production_building",
             "production_building",
@@ -26460,12 +26468,12 @@
           "unique": true,
           "costs": {
             "food": 0,
-            "wood": 150,
-            "stone": 150,
+            "wood": 125,
+            "stone": 125,
             "gold": 0,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 300,
+            "total": 250,
             "popcap": 0,
             "time": 30
           },
@@ -26785,9 +26793,9 @@
         "Military Building"
       ],
       "classes": [
-        "barracks",
         "building",
         "daimyo_estate",
+        "daimyo_estate_takeda",
         "military_only_production",
         "military_production_building",
         "production_building",
@@ -26810,9 +26818,9 @@
           ],
           "description": "Increases Takeda Clan support providing bonuses to Stables Cavalry.\nProduces the Daimyo unit. Takeda Daimyo Estate health is increased +1000 and cost increased x2 Stone and Wood.",
           "classes": [
-            "barracks",
             "building",
             "daimyo_estate",
+            "daimyo_estate_takeda",
             "military_only_production",
             "military_production_building",
             "production_building",
@@ -26824,12 +26832,12 @@
           "unique": true,
           "costs": {
             "food": 0,
-            "wood": 150,
-            "stone": 150,
+            "wood": 125,
+            "stone": 125,
             "gold": 0,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 300,
+            "total": 250,
             "popcap": 0,
             "time": 30
           },
@@ -26921,11 +26929,11 @@
           "costs": {
             "food": 0,
             "wood": 0,
-            "stone": 425,
+            "stone": 400,
             "gold": 0,
             "vizier": 0,
             "oliveoil": 0,
-            "total": 425,
+            "total": 400,
             "popcap": 0,
             "time": 135
           },

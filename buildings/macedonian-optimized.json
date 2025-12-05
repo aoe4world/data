@@ -1627,7 +1627,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/buildings/imperial-hippodrome-1.png",
-      "description": "Acts as a Stable. Champions emerge from the trials of the Imperial Hippodrome until each one spawns. \nChampions provide auras that increase damage of torches, enhance damage of cavalry, and inspire infantry to move faster.",
+      "description": "Acts as a Stable. A powerful Champion Scout, Horseman, and Riddari are trained for free over time.\nChampions provide auras that increase damage of torches, enhance damage of cavalry, and inspire infantry to move faster.",
       "variations": [
         {
           "id": "imperial-hippodrome-1",
@@ -1640,7 +1640,7 @@
           "civs": [
             "mac"
           ],
-          "description": "Acts as a Stable. Champions emerge from the trials of the Imperial Hippodrome until each one spawns. \nChampions provide auras that increase damage of torches, enhance damage of cavalry, and inspire infantry to move faster.",
+          "description": "Acts as a Stable. A powerful Champion Scout, Horseman, and Riddari are trained for free over time.\nChampions provide auras that increase damage of torches, enhance damage of cavalry, and inspire infantry to move faster.",
           "classes": [
             "age1_landmark2",
             "building",
@@ -2659,7 +2659,7 @@
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/buildings/runestones-1.png",
-      "description": "Carve a Runestone to celebrate honorable victories in combat, enhancing Varangian ranged weapons by 1 tile, melee damage by 1, and move speed by 15%. Lasts 150 seconds.",
+      "description": "Carve a Runestone after defeating 5 military units to celebrate honorable victories in combat, enhancing Varangian ranged weapons by 1 tile, melee damage by 1, and move speed by 15%. Lasts 150 seconds.",
       "variations": [
         {
           "id": "runestones-1",
@@ -2672,7 +2672,7 @@
           "civs": [
             "mac"
           ],
-          "description": "Carve a Runestone to celebrate honorable victories in combat, enhancing Varangian ranged weapons by 1 tile, melee damage by 1, and move speed by 15%. Lasts 150 seconds.",
+          "description": "Carve a Runestone after defeating 5 military units to celebrate honorable victories in combat, enhancing Varangian ranged weapons by 1 tile, melee damage by 1, and move speed by 15%. Lasts 150 seconds.",
           "classes": [
             "runestone",
             "unchargeable"
@@ -2698,8 +2698,26 @@
             "varangian-guard"
           ],
           "icon": "https://data.aoe4world.com/images/buildings/runestones-1.png",
+          "hitpoints": 0,
           "weapons": [],
-          "armor": [],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 1
+            },
+            {
+              "type": "ranged",
+              "value": 1
+            },
+            {
+              "type": "siege",
+              "value": 1
+            },
+            {
+              "type": "fire",
+              "value": 1
+            }
+          ],
           "sight": {
             "inner_height": 0,
             "inner_radius": 0,
@@ -3480,7 +3498,6 @@
         "building",
         "military_only_production",
         "military_production_building",
-        "naval_production_building",
         "production_building",
         "siegeable"
       ],
@@ -3505,7 +3522,6 @@
             "building",
             "military_only_production",
             "military_production_building",
-            "naval_production_building",
             "production_building",
             "siegeable"
           ],
