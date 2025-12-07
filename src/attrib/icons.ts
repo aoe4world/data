@@ -3,6 +3,26 @@ import { ICON_FOLDER } from "./config";
 import fs from "fs/promises";
 import path from "path";
 import { constants } from "fs";
+import pixelmatch from "pixelmatch";
+import {PNG} from 'pngjs';
+
+const MAX_ICON_PIXEL_DIFF = 5;
+
+async function imageDifferent(img1Path: string, img2Path: string): Promise<boolean> {
+  const img1 = PNG.sync.read(await fs.readFile(img1Path));
+  const img2 = PNG.sync.read(await fs.readFile(img2Path));
+  const {width, height} = img1;
+  
+  if (img1.width !== img2.width || img1.height !== img2.height) {
+    return true;
+  }
+
+  const pixels = pixelmatch(img1.data, img2.data, undefined, width, height);
+
+  //console.log(`Diffing ${img1Path} and ${img2Path}: ${pixels} pixels`);
+
+  return pixels > MAX_ICON_PIXEL_DIFF;
+}
 
 export async function prepareIcon(icon: string, type: ITEM_TYPES, id: string) {
 
@@ -28,17 +48,15 @@ export async function copyIcon(sourcePath, relativeIconPath, overwrite = false) 
   }
 
   const iconPath = path.join(IMG_PATH, relativeIconPath);
-  if (overwrite || !(await fs.stat(iconPath).catch(() => null))) {
-    if (!sourcePath) {
-      return undefined;
-    }
-    const sourceExists = await fs.access(sourcePath).then(() => true).catch(() => false);
-    if (sourceExists) {
-      await fs.copyFile(sourcePath, iconPath, constants.COPYFILE_EXCL);
-    } else {
-      console.error(`Icon ${sourcePath} does not exist for ${iconPath}`);
-      return undefined;
-    }
+  const sourceExists = sourcePath && await fs.access(sourcePath).then(() => true).catch(() => false);
+  const destExists = await fs.access(iconPath).then(() => true).catch(() => false);
+
+  if (overwrite || !destExists || (!overwrite && sourceExists && destExists && await imageDifferent(iconPath, sourcePath))) {
+    console.log(`[Info] Copying icon '${sourcePath}' to '${iconPath}'`);
+    await fs.copyFile(sourcePath, iconPath);
+  } else if (!destExists) {
+    console.error(`Icon ${sourcePath} does not exist for ${iconPath}`);
+    return undefined;
   }
 
   return `${CDN_HOST}/${IMAGE_FOLDER}/${relativeIconPath}`;
