@@ -58,6 +58,7 @@ export interface Item {
     gold: number;
     stone: number;
     oliveoil?: number;
+    silver?: number;
     vizier?: number;
     time: number;
     popcap?: number;

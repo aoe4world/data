@@ -1,10 +1,11 @@
+import { CIVILIZATIONS } from "../lib/config/civs";
 import { captureCallContext } from "../lib/utils/processors";
 import { ItemSlug } from "../sdk/utils";
 import { Ability, Building, Item, ItemType, Modifier, Selector, Technology, Unit, Upgrade } from "../types/items";
 import { KHAGANTE_SPAWN_COUNTS } from "./config";
 
 const workarounds = new Map<string, Override>();
-const NO_COSTS = { food: 0, wood: 0, stone: 0, gold: 0, vizier: 0, oliveoil: 0, total: 0, time: 0, popcap: 0 };
+const NO_COSTS = { food: 0, wood: 0, stone: 0, gold: 0, vizier: undefined, oliveoil: undefined, silver: undefined, total: 0, time: 0, popcap: 0 };
 
 // –––––– Building Emplacements and Garrisons ––––––
 
@@ -295,6 +296,7 @@ workaround("Fix age and add missing info for spirit_way", {
     item.id = `${item.baseId}-${item.age}`;
     item.name = "Spirit Way Ancestors";
     item.description = "When a dynasty unit is killed, nearby units receive +20% attack speed and +20 health over 10 seconds.";
+    item.icon_src = undefined;
     item.icon = "buildings/spirit-way-3.png";
     item.unlockedBy = ["buildings/spirit-way"];
   },
@@ -333,6 +335,7 @@ workaround("Fix age and add missing info for kurultai_healing_aura_mon", {
     item.id = `${item.baseId}-${item.age}`;
     item.name = "Kurultai Aura";
     item.description = "Nearby units within its aura heal +1 health every 1 second and gain an additional +20% damage.";
+    item.icon_src = undefined;
     item.icon = "buildings/kurultai-2.png";
   },
 });
@@ -550,6 +553,7 @@ workaround("Split French Town Center Production Bonus", {
     item.age = age;
     item.id = `${item.baseId}-${age}`;
     item.name = `${ageName} Age Town Center Production Speed`;
+    item.icon_src = undefined;
     item.icon = `buildings/town-center.png`;
   },
 });
@@ -594,6 +598,7 @@ workaround("Fix missing info Golden Age Tier 1", {
     item.id = `${item.baseId}-${item.age}`;
     item.description = "+15% Resource Gathering Rate";
     item.name = "Golden Age Tier 1";
+    item.icon_src = undefined;
     item.icon = "abilities/ability-golden-age-tier-1.png";
   },
 });
@@ -606,6 +611,7 @@ workaround("Fix missing info Golden Age Tier 2", {
     item.id = `${item.baseId}-${item.age}`;
     item.description = "+15% Research Speed";
     item.name = "Golden Age Tier 2";
+    item.icon_src = undefined;
     item.icon = "abilities/ability-golden-age-tier-2.png";
   },
 });
@@ -618,6 +624,7 @@ workaround("Fix missing info Golden Age Tier 3", {
     item.id = `${item.baseId}-${item.age}`;
     item.description = "+20% Production Speed, additional +5% Research Speed, additional +5% Resource Gathering Rate";
     item.name = "Golden Age Tier 3";
+    item.icon_src = undefined;
     item.icon = "abilities/ability-golden-age-tier-3.png";
   },
 });
@@ -816,6 +823,7 @@ workaround("Fix missing info Ayyubid Golden Age Tiers", {
     item.description = tiers[tier].description;
     item.effects = tiers[tier].effects;
     item.unlockedBy = ["buildings/house-of-wisdom"];
+    item.icon_src = undefined;
     item.icon = `abilities/ability-golden-age-tier-${tier}.png`;
   },
 });
@@ -1123,6 +1131,20 @@ workaround("Set Mercenary requirements", {
     else if (unlockedBy.includes("technologies/western-mercenary-contract")) item.description += `\n\nRequires the Western Mercenary Contract.`;
     if (unlockedBy.includes("buildings/trade-post"))
       item.description += `\n\nThis Mercenary can only be purchased on Mercenary Houses built near a neutral Trade Post that list this unit. The chance of this unit being available on a Trade Post is 20%.`;
+  },
+});
+
+workaround("Split up Macedonian Techs since it's two techs per age", {
+  predicate: (item) => item.civs[0] == "mac" && item.type === "technology" && ["fortifications", "blade-inlaying", "scale-barding", "pattern-welding", "butted-chainmail", "sharpening-stones", "lamellar-armor", "iron-fittings"].includes(item.baseId),
+  mutator: (item) => {
+    const level = parseInt(item.attribName?.match(/\d+/)?.at(0) || "1");
+    const code = (level % 2) ? "a" : "b";
+    
+    item.description = item.description + "\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.";
+    item.name = item.name += ` (${level}/6)`;
+    item.id = item.id.replace(/-(\d+)$/, `-tier${level}-\$1`);
+    item.baseId = item.baseId + `-tier${level}`;
+    item.icon = item.icon?.replace(/-(\d+)/, `-tier${level}-\$1`);
   },
 });
 
@@ -1468,6 +1490,7 @@ workaround("Change Mongol Superior Mobility type from upgrade to technology", {
     item.type = "technology";
     item.baseId = "superior-mobility";
     item.id = `${item.baseId}-${item.age}`;
+    item.icon_src = undefined;
     item.icon = `technologies/${item.id}.png`;
   },
 });
@@ -1479,6 +1502,7 @@ workaround("Change Mongol Improved Superior Mobility type from upgrade to techno
     item.type = "technology";
     item.baseId = "superior-mobility-improved";
     item.id = `${item.baseId}-${item.age}`;
+    item.icon_src = undefined;
     item.icon = `technologies/${item.id}.png`;
   },
 });
@@ -1490,6 +1514,7 @@ workaround("Give capital town centers unique id and clear name", {
     item.costs = NO_COSTS;
     item.baseId = "capital-town-center";
     item.id = "capital-town-center-1";
+    item.icon_src = undefined;
     item.icon = 'buildings/capital-town-center.png';
   },
 });
@@ -1581,6 +1606,19 @@ workaround("HRE Civ Bonus: 'Cost of emplacements on Outposts, Wall Towers, and K
   },
 });
 
+// CIV SPECIFIC ICONS
+workaround("Fixup Byzantines Mangudai icon", {
+  ...overrideCivUniqueIcon((item) => item.civs.includes("by") && item.type === "unit" && item.baseId === "mangudai"),
+});
+
+workaround("Fixup Malian Scout icon", {
+  ...overrideCivUniqueIcon((item) => item.type === "unit" && item.baseId === "scout" && !item.icon_src.includes("\\common\\")),
+});
+
+workaround("Fixup Villager icon", {
+  ...overrideCivUniqueIcon((item) => item.type === "unit" && item.baseId === "villager" && !item.icon_src.includes("\\common\\")),
+});
+
 const MILITIA_COSTS = generateCosts({ food: 20 });
 
 function discountCosts(costs: Item["costs"], discount: number) {
@@ -1601,7 +1639,7 @@ function discountCosts(costs: Item["costs"], discount: number) {
 
 function generateCosts(costs: Partial<Item["costs"]>, addTo: Item["costs"] = NO_COSTS) {
   const newCosts = Object.entries(addTo).reduce((acc, [key, value]) => ({ ...acc, [key]: value + (costs[key] || 0) }), {} as Item["costs"]);
-  newCosts.total = newCosts.gold + newCosts.wood + newCosts.food + newCosts.stone + (newCosts.oliveoil ?? 0);
+  newCosts.total = newCosts.gold + newCosts.wood + newCosts.food + newCosts.stone + (newCosts.oliveoil ?? 0) + (newCosts.silver ?? 0);
   return newCosts;
 }
 
@@ -1613,6 +1651,22 @@ function overrideAge(ids: string[], age: number, civs?: string[]) {
       item.id = item.id.split("-").slice(0, -1).join("-") + "-" + age;
     },
   };
+}
+
+function overrideCivUniqueIcon(ids: string[]);
+function overrideCivUniqueIcon(predicate: Function);
+function overrideCivUniqueIcon(ids_or_pred: string[] | Function) {
+  if (ids_or_pred instanceof Function) {
+    return {
+      predicate: ids_or_pred,
+      mutator(item) {
+        if (item.icon) {
+          const civConfig = CIVILIZATIONS[item.civs[0]];
+          item.icon = item.icon.replace(/^(\w+\/)/, "$1" + civConfig.slug + "\/");
+        }
+      }
+    }
+  }
 }
 
 interface Override {

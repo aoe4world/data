@@ -381,6 +381,10 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   // Golden horde always on abilities
   "always_on_abilities/mongol_ha_gol/golden_tent_rus_resources_mon_ha_gol",
   "always_on_abilities/mongol_ha_gol/golden_tent_rus_tribute_manager_mon_ha_gol",
+  "unit_horsearcher_rally_mon_ha_gol",
+  "unit_horseman_rally_mon_ha_gol",
+  "unit_manatarms_rally_mon_ha_gol",
+
 
   // Inspect later if it's addable
   "building_carts_mon_ha_gol", 

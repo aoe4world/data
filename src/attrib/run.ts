@@ -4,31 +4,31 @@ import path from "path";
 import { FOLDERS, ITEM_TYPE_MAP, ITEM_TYPES } from "../lib/config";
 import { CIVILIZATIONS } from "../lib/config/civs";
 import { writeJson } from "../lib/files/writeData";
-import { CIVILIZATION_BY_SLUG, CivConfig } from "../types/civs";
+import { getAllItems } from "../lib/files/readData";
+import { optimizeItems, unifyItems } from "../lib/utils/items";
+import { CIVILIZATION_BY_SLUG, CivConfig, CivSlug } from "../types/civs";
 import { Item } from "../types/items";
 import { hardcodedDiscovery, hardcodedDiscoveryCommon } from "./config";
 import { workarounds } from "./workarounds";
 import { parseItemFromAttribFile, maybeOnKey } from "./parse";
 import { getTranslation as t } from "./translations";
-import { getXmlData, parseXmlFile } from "./xml";
 import { getEssenceData, guessAppropriateEssenceFile } from "./essence";
 import { copyIcon } from "./icons";
 
-const runType = process.argv.some((arg) => arg === "--essence") ? "essence" : "xml";
-let runCiv: CivConfig | undefined;
-if (process.argv.some((arg) => arg === "--civ")) {
-  const runCivString = process.argv[process.argv.findIndex((arg) => arg === "--civ") + 1];
-  runCiv = runCivString?.length == 2 ? CIVILIZATIONS[runCivString] : CIVILIZATION_BY_SLUG[runCivString?.toLowerCase()];
-  if (!runCiv) throw Error(`Could not find civ ${runCivString}, valid options are ${Object.keys(CIVILIZATION_BY_SLUG).join(", ")} or the 2 letter abbreviation`);
+if (process.argv.some((arg) => arg === "--essence")) {
+  console.log(`Warning: --essence is obsolete since it's now the default, and xml parsing is no longer supported`);
 }
 
-const getData = runType == "essence" ? getEssenceData : getXmlData;
+if (process.argv.some((arg) => arg === "--civ")) {
+  throw Error(`--civ is no longer allowed since it could mess up icon conflict resolution`);
+}
+
+const getData = getEssenceData;
 
 export type RunContext = {
   debug: boolean;
-  getData: typeof getXmlData | typeof getEssenceData;
+  getData: typeof getEssenceData;
   race: string;
-  runner: "xml" | "essence";
 };
 
 // 1. For each civ, start at their army file
@@ -36,7 +36,17 @@ export type RunContext = {
 // 3. Then, for each building in their, folllow the building/research options
 // 4. Make a list of all to import items, starting at buildings
 
-async function buildTechTree(civ: CivConfig, context: RunContext = { debug: false, getData, race: civ.attribName, runner: runType }) {
+interface CivTechTree {
+  items: Item[];
+  civ: CivConfig;
+  civOverview: any;
+}
+
+
+async function buildTechTree(
+  civ: CivConfig,
+  context: RunContext = { debug: false, getData, race: civ.attribName! }
+) : Promise<CivTechTree> {
   const techtree = {};
   const files = new Set<string>();
   const items = new Map<string, Item>();
@@ -52,7 +62,7 @@ async function buildTechTree(civ: CivConfig, context: RunContext = { debug: fals
 
   async function addFile(file: string) {
     if (!file) return;
-    if (context.runner == "essence") file = (await guessAppropriateEssenceFile(file)) ?? file;
+    file = (await guessAppropriateEssenceFile(file)) ?? file;
     files.add(file);
     return file;
   }
@@ -88,21 +98,6 @@ async function buildTechTree(civ: CivConfig, context: RunContext = { debug: fals
       debug && console.error(`Skip`, item.id);
       return;
     }
-
-    if (item.icon && !item.icon.startsWith("http")) {
-      // Ideally i'd use useIcon, but the original files use the original 'age' and thus would end up with different filenames now. So instead we let workarounds deal with it case-by-case as they can override 'icon' before it's used here.
-      // But leaving this here so we can opt for having all icon stuff done after mutations are done.
-      //const icon_url = await useIcon(item.icon, ITEM_TYPE_MAP[item.type], item.id);
-      const icon_url = await copyIcon(item.icon_src, item.icon);
-
-      if (icon_url) {
-        item.icon = icon_url;
-      } else {
-         console.log(`undefined icon for ${file}`, item.icon);
-         item.icon = undefined;
-      }
-    }
-    item.icon_src = undefined;
 
     if (items.has(item.id) && items.get(item.id)!.type == item.type) {
       console.error(
@@ -142,8 +137,8 @@ async function buildTechTree(civ: CivConfig, context: RunContext = { debug: fals
     return item;
   }
 
+
   for (const f of files) await parseFileRecursively(f);
-  for (const i of items.values()) persistItem(i, civ);
 
   function fetchTree(id, depth = 0) {
     if (depth > 10 || (id === "villager-1" && depth > 0)) return null;
@@ -154,7 +149,12 @@ async function buildTechTree(civ: CivConfig, context: RunContext = { debug: fals
   }
 
   civOverview.techtree = fetchTree(["villager-1"]);
-  writeJson(`${FOLDERS.CIVILIZATIONS.DATA}/${civ.slug}.json`, civOverview, { log: false });
+
+  return {
+    civ,
+    civOverview,
+    items: [...items.values()]
+  }
 }
 
 function ensureFolderStructure() {
@@ -173,6 +173,24 @@ function sortProducedBy(item: any) {
     item.producedBy.sort((a: string, b: string) => a.localeCompare(b));
   }
   return item;
+}
+
+function groupBy<T>(list: T[], func:(x:T)=>string | undefined): Map<string, T[]> {
+  const result = new Map<string, T[]>();
+
+  list.forEach(item => {
+    const key = func(item);
+    if (key === undefined)
+      return;
+    const collection = result.get(key);
+    if (collection) {
+      collection.push(item);
+    } else {
+      result.set(key, [item]);
+    }
+  });
+
+  return result;
 }
 
 function findUnits(data: any) {
@@ -247,6 +265,95 @@ function persistItem(item: Item, civ: CivConfig) {
   writeJson(`${FOLDERS[itemTypeMap[item.type]].DATA}/${civ.slug}/${item.id}.json`, item, { log: false });
 }
 
-ensureFolderStructure();
-if (runCiv) buildTechTree(runCiv);
-else for (const civ of Object.values(CIVILIZATIONS)) buildTechTree(civ);
+const meta = {
+  __note__: "This is file is autogenerated, do not edit it manually. For more info https://data.aoe4world.com/",
+  __version__: "0.0.2",
+};
+
+/** Creates index files for units */
+async function compile(type: ITEM_TYPES) {
+  const items = await getAllItems(type);
+  if (!items) return;
+  const unified = unifyItems(items);
+  const baseIds = items.reduce((s, item) => { s[item.baseId] = item.name; return s; }, {});
+
+  writeJson(path.join(FOLDERS[type].DATA, "all.json"), { ...meta, data: items });
+  writeJson(path.join(FOLDERS[type].DATA, "all-unified.json"), { ...meta, data: unified });
+  writeJson(path.join(FOLDERS[type].DATA, "all-optimized.json"), { ...meta, data: optimizeItems(unified) });
+  //writeJson(path.join(FOLDERS[type].DATA, "all-baseids.json"), { ...meta, data: baseIds });
+  unified.forEach((u) => writeJson(path.join(FOLDERS[type].DATA, `unified/${u.id}.json`), Object.assign({}, meta, u), { log: false }));
+
+  Object.values(CIVILIZATIONS).forEach((civ) => {
+    const civItems = items.filter((u) => u.civs.includes(civ.abbr));
+    const unified = unifyItems(civItems);
+    writeJson(path.join(FOLDERS[type].DATA, `${civ.slug}.json`), { ...meta, civ: civ, data: civItems });
+    writeJson(path.join(FOLDERS[type].DATA, `${civ.slug}-unified.json`), { ...meta, civ: civ, data: unified });
+    writeJson(path.join(FOLDERS[type].DATA, `${civ.slug}-optimized.json`), { ...meta, civ: civ, data: optimizeItems(unified) });
+  });
+}
+
+(async () => {
+  ensureFolderStructure();
+
+  // Build all the civ tech trees in memory
+  const civTechTreeMap = new Map<string, CivTechTree>();
+  for (const civ of Object.values(CIVILIZATIONS)) {
+    civTechTreeMap.set(civ.abbr, await buildTechTree(civ, undefined));
+  }
+
+  // Detect icon conflicts (and potentially resolve)
+  let iconMap = groupBy([...civTechTreeMap.values()].map(v => v.items).flat(), item => item.icon);
+  for (const [icon_dest, variations] of iconMap) {
+    const icon_srcs = [...new Set(variations.map((v) => v.icon_src).filter(v => v))];
+    if (icon_srcs.length > 1) {
+      resolveIconConflict(icon_dest, variations);
+    }
+  }
+  iconMap = groupBy([...civTechTreeMap.values()].map(v => v.items).flat(), item => item.icon);
+
+  // Copy Icons
+  for (const [icon_dest, variations] of iconMap) {
+    const icon_src = variations.map(v => v.icon_src).filter(v => v)[0];
+    const newIcon = await copyIcon(icon_src, icon_dest);
+    variations.forEach(v => {
+      if (v.icon) {
+        v.icon = newIcon;
+      }
+      delete v['icon_src'];
+    });
+  }
+
+  // Persist Items & Civ
+  for (const [civ, techTree] of civTechTreeMap) {
+    console.log(`Persisting ${techTree.civ.name}...`);
+    techTree.items.forEach(item => {
+      persistItem(item, techTree.civ);
+    });
+    
+    writeJson(`${FOLDERS.CIVILIZATIONS.DATA}/${techTree.civ.slug}.json`, techTree.civOverview, { log: false });
+  }
+
+  [ITEM_TYPES.UNITS, ITEM_TYPES.TECHNOLOGIES, ITEM_TYPES.BUILDINGS, ITEM_TYPES.UPGRADES, ITEM_TYPES.ABILITIES].forEach((type) => compile(type));
+})();
+
+function resolveIconConflict(icon_dest: string, variations: Item[]) {
+  let groups = {};
+  variations.forEach(v => {
+    if (!v.icon_src)
+      return;
+    else if (groups[v.icon_src])
+      groups[v.icon_src].push(v);
+    else
+      groups[v.icon_src] = [v];
+  });
+  console.log(`Icon conflict at ${icon_dest} by: ${JSON.stringify(Object.keys(groups))}`);
+  /*for (const variation of variations) {
+    const civ_abbr = variation.civs[0];
+    const civ = Object.values(CIVILIZATIONS).find((c) => c.abbr === civ_abbr);
+    if (civ && variation.icon) {
+      const path = variation.icon.split("/");
+      path.splice(path.length - 1, 0, civ.slug);
+      variation.icon = path.join("/");
+    }
+  }*/
+}

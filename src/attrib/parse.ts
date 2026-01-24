@@ -1,5 +1,5 @@
 import { ITEM_TYPES } from "../lib/config";
-import { getTranslation, getTranslationRaw, NO_TRANSLATION_FOUND } from "./translations";
+import { getTranslation, getTranslationFormatter, getTranslationRaw, NO_TRANSLATION_FOUND } from "./translations";
 import { parseWeapons } from "./weapons";
 import { ignoreForNow } from "./config";
 import { slugify } from "../lib/utils/string";
@@ -66,7 +66,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
     const baseId = getBasedId(name, type, description);
     const id = `${baseId}-${age}`;
 
-    const displayClasses = getTranslation(ui_ext.extra_text)
+    const displayClasses = getTranslationFormatter(ui_ext.extra_text ?? ui_ext.extra_text_formatter)
       .split(",")
       .map((x) => x.trim());
 
@@ -76,16 +76,17 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
 
     let costs;
     if (isBuff) costs = {};
-    else if (type === ITEM_TYPES.ABILITIES) costs = parseCosts(ability_data.cost_to_player, ability_data.recharge_cost, 0);
+    else if (type === ITEM_TYPES.ABILITIES) costs = parseCosts(ability_data.cost_to_player, ability_data.recharge_cost, civ, 0);
     else
       costs = parseCosts(
         ebpExts?.cost_ext?.time_cost?.cost || data.upgrade_bag?.time_cost?.cost,
         ebpExts?.cost_ext?.time_cost?.time_seconds || data.upgrade_bag?.time_cost?.time_seconds,
+        civ,
         ebpExts?.population_ext?.personnel_pop
       );
 
     const icon_name = isBuff ? ui_ext.icon?.slice(6) : (ui_ext.icon_name ?? ui_ext.icon);
-    const [icon_src, icon] = await prepareIcon(icon_name, type, id);
+    const [icon_src, icon] = await prepareIcon(icon_name, type, baseId, id, civ);
     if (!icon) console.log(`undefined icon for ${file}`, ui_ext.icon_name ?? ui_ext.icon);
 
     const pbgid = data.pbgid;
@@ -307,9 +308,17 @@ function parseHitpoints(health_ext: any) {
   return health_ext?.hitpoints;
 }
 
-function parseCosts(cost: any, time: any, popcap = 0) {
-  const { food, wood, gold, stone, command: vizier, merc_byz: oliveoil } = cost as Record<"food" | "wood" | "gold" | "stone" | "popcap" | "merc_byz" | "command", number>;
-  const costs = { food, wood, stone, gold, vizier, oliveoil, total: food + wood + gold + stone + oliveoil, popcap, time };
+function parseCosts(cost: any, time: any, civ: CivConfig, popcap = 0) {
+  const { food, wood, gold, stone, command: vizier, merc_byz: special } = cost as Record<"food" | "wood" | "gold" | "stone" | "popcap" | "merc_byz" | "command", number>;
+  const costs = {
+    food, wood, stone, gold,
+    vizier: (civ.abbr === 'ot' || vizier) ? vizier : undefined,
+    oliveoil: civ.abbr === 'by' ? special : undefined,
+    silver: civ.abbr === 'mac' ? special : undefined,
+    total: food + wood + gold + stone + special,
+    popcap,
+    time
+  };
   return costs;
 }
 

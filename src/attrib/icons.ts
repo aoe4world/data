@@ -5,6 +5,7 @@ import path from "path";
 import { constants } from "fs";
 import pixelmatch from "pixelmatch";
 import {PNG} from 'pngjs';
+import { CivConfig } from "../types/civs";
 
 const MAX_ICON_PIXEL_DIFF = 5;
 
@@ -19,18 +20,22 @@ async function imageDifferent(img1Path: string, img2Path: string): Promise<boole
 
   const pixels = pixelmatch(img1.data, img2.data, undefined, width, height);
 
-  //console.log(`Diffing ${img1Path} and ${img2Path}: ${pixels} pixels`);
+  if (pixels > MAX_ICON_PIXEL_DIFF)
+    console.log(`Diffing ${img1Path} and ${img2Path}: ${pixels} pixels`);
 
   return pixels > MAX_ICON_PIXEL_DIFF;
 }
 
-export async function prepareIcon(icon: string, type: ITEM_TYPES, id: string) {
+export async function prepareIcon(icon: string, type: ITEM_TYPES, baseId: string, id: string, civ: CivConfig) {
 
   if (!icon) {
     return [];
   }
 
-  const iconFile = `${id}.png`;
+  const civSpecific = false; //['villager', 'scout', 'horsearcher'].includes(baseId) && !icon.includes("/common/");
+  const civId = civ.slug + "/" + id;
+
+  const iconFile = civSpecific ? `${civId}.png` : `${id}.png`;
   const sourcePath = path.join(ICON_FOLDER, `${icon}.png`);
   const relativeIconPath = `${FOLDERS[type].SLUG}/${iconFile}`;
 
@@ -51,8 +56,12 @@ export async function copyIcon(sourcePath, relativeIconPath, overwrite = false) 
   const sourceExists = sourcePath && await fs.access(sourcePath).then(() => true).catch(() => false);
   const destExists = await fs.access(iconPath).then(() => true).catch(() => false);
 
-  if (overwrite || !destExists || (!overwrite && sourceExists && destExists && await imageDifferent(iconPath, sourcePath))) {
+  if (overwrite || !destExists || (!overwrite && sourceExists && destExists && await imageDifferent(sourcePath, iconPath))) {
     console.log(`[Info] Copying icon '${sourcePath}' to '${iconPath}'`);
+    const dirName = path.dirname(iconPath);
+    if (!await fs.access(dirName).then(() => true).catch(() => false)) {
+      await fs.mkdir(dirName);
+    }
     await fs.copyFile(sourcePath, iconPath);
   } else if (!destExists) {
     console.error(`Icon ${sourcePath} does not exist for ${iconPath}`);

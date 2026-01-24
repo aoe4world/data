@@ -46,10 +46,16 @@ export function optimizeItems<T extends Item>(items: UnifiedItem<T>[]): Optimize
     if (item.variations.length <= 1) return { ...item, shared: {} as Optimized<T> };
     let ageBase = [] as Partial<T>[];
     let optimizedVariations: Partial<T>[] = []; // = item.variations.map((variation) => ({ ...variation } as Partial<T>))
-    for (const age of [1, 2, 3, 4]) {
+    let ages = {};
+    item.variations.forEach(v => {
+      if (ages[v.age])
+        ages[v.age].push(v);
+      else
+        ages[v.age] = [v];
+    });
+    for (const age of Object.keys(ages)) {
       const ageId = `${item.id}-${age}`;
-      let ageVariations: Partial<T>[] = item.variations.filter((v) => v.id == ageId) ?? [];
-      if (ageVariations.length == 0) continue;
+      let ageVariations: Partial<T>[] = ages[age];
       const { common, variations } = optimizeItemValues(ageVariations);
       common.id = ageId;
       ageBase.push(common);

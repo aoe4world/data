@@ -89,8 +89,7 @@
             "wood": 1000,
             "stone": 0,
             "gold": 1200,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 2200,
             "popcap": 0,
             "time": 90
@@ -198,8 +197,7 @@
             "wood": 0,
             "stone": 0,
             "gold": 200,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 300,
             "popcap": 0,
             "time": 20
@@ -312,8 +310,7 @@
             "wood": 0,
             "stone": 50,
             "gold": 25,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 75,
             "popcap": 0,
             "time": 30
@@ -341,15 +338,15 @@
       "shared": {}
     },
     {
-      "id": "blade-inlaying",
-      "name": "Blade Inlaying",
+      "id": "blade-inlaying-tier1",
+      "name": "Blade Inlaying (1/6)",
       "type": "technology",
       "civs": [
         "mac"
       ],
       "unique": true,
       "displayClasses": [
-        "(translation not found) (undefined)"
+        "Cavalry Technology 1/6"
       ],
       "classes": [
         "byzantine_ha_mac_upgrade",
@@ -358,87 +355,359 @@
         "scar_unit_upgrade"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/blade-inlaying-2.png",
-      "description": "Increase the damage of all Cavalry by 1.",
+      "icon": "https://data.aoe4world.com/images/technologies/blade-inlaying-tier1-2.png",
+      "description": "Increase the damage of all Cavalry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
       "variations": [
         {
-          "id": "blade-inlaying-2",
-          "pbgid": 9004670,
-          "attribName": "upgrade_arsenal_cavalry_damage_2_byz_ha_mac",
+          "id": "blade-inlaying-tier1-2",
+          "baseId": "blade-inlaying-tier1",
+          "type": "technology",
+          "name": "Blade Inlaying (1/6)",
+          "pbgid": 9003733,
+          "attribName": "upgrade_arsenal_cavalry_damage_byz_ha_mac",
+          "age": 2,
           "civs": [
             "mac"
-          ]
-        },
-        {
-          "id": "blade-inlaying-3",
-          "pbgid": 9004672,
-          "attribName": "upgrade_arsenal_cavalry_damage_4_byz_ha_mac",
-          "civs": [
-            "mac"
-          ]
-        },
-        {
-          "id": "blade-inlaying-4",
-          "pbgid": 9004674,
-          "attribName": "upgrade_arsenal_cavalry_damage_6_byz_ha_mac",
-          "civs": [
-            "mac"
-          ]
-        }
-      ],
-      "baseId": "blade-inlaying",
-      "age": 2,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 350,
-        "total": 350,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "varangian-arsenal"
-      ],
-      "effects": [],
-      "shared": {
-        "blade-inlaying-3": {
-          "name": "Blade Inlaying",
-          "age": 3,
+          ],
+          "description": "Increase the damage of all Cavalry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Cavalry Technology 1/6"
+          ],
+          "unique": true,
           "costs": {
             "food": 0,
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 1400,
+            "silver": 175,
+            "total": 175,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/blade-inlaying-tier1-2.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "blade-inlaying-tier2",
+      "name": "Blade Inlaying (2/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Cavalry Technology 2/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/technologies/blade-inlaying-tier2-2.png",
+      "description": "Increase the damage of all Cavalry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "blade-inlaying-tier2-2",
+          "baseId": "blade-inlaying-tier2",
+          "type": "technology",
+          "name": "Blade Inlaying (2/6)",
+          "pbgid": 9004670,
+          "attribName": "upgrade_arsenal_cavalry_damage_2_byz_ha_mac",
+          "age": 2,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the damage of all Cavalry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Cavalry Technology 2/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 350,
+            "total": 350,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/blade-inlaying-tier2-2.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "blade-inlaying-tier3",
+      "name": "Blade Inlaying (3/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Cavalry Technology 3/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/blade-inlaying-tier3-3.png",
+      "description": "Increase the damage of all Cavalry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "blade-inlaying-tier3-3",
+          "baseId": "blade-inlaying-tier3",
+          "type": "technology",
+          "name": "Blade Inlaying (3/6)",
+          "pbgid": 9004671,
+          "attribName": "upgrade_arsenal_cavalry_damage_3_byz_ha_mac",
+          "age": 3,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the damage of all Cavalry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Cavalry Technology 3/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 700,
+            "total": 700,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/blade-inlaying-tier3-3.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "blade-inlaying-tier4",
+      "name": "Blade Inlaying (4/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Cavalry Technology 4/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/blade-inlaying-tier4-3.png",
+      "description": "Increase the damage of all Cavalry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "blade-inlaying-tier4-3",
+          "baseId": "blade-inlaying-tier4",
+          "type": "technology",
+          "name": "Blade Inlaying (4/6)",
+          "pbgid": 9004672,
+          "attribName": "upgrade_arsenal_cavalry_damage_4_byz_ha_mac",
+          "age": 3,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the damage of all Cavalry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Cavalry Technology 4/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 1400,
             "total": 1400,
             "popcap": 0,
             "time": 60
           },
-          "icon": "https://data.aoe4world.com/images/technologies/blade-inlaying-3.png",
-          "id": "blade-inlaying-3"
-        },
-        "blade-inlaying-4": {
-          "name": "Blade Inlaying",
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/blade-inlaying-tier4-3.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "blade-inlaying-tier5",
+      "name": "Blade Inlaying (5/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Cavalry Technology 5/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/blade-inlaying-tier5-4.png",
+      "description": "Increase the damage of all Cavalry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "blade-inlaying-tier5-4",
+          "baseId": "blade-inlaying-tier5",
+          "type": "technology",
+          "name": "Blade Inlaying (5/6)",
+          "pbgid": 9004673,
+          "attribName": "upgrade_arsenal_cavalry_damage_5_byz_ha_mac",
           "age": 4,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the damage of all Cavalry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Cavalry Technology 5/6"
+          ],
+          "unique": true,
           "costs": {
             "food": 0,
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 3400,
+            "silver": 2400,
+            "total": 2400,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/blade-inlaying-tier5-4.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "blade-inlaying-tier6",
+      "name": "Blade Inlaying (6/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Cavalry Technology 6/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/blade-inlaying-tier6-4.png",
+      "description": "Increase the damage of all Cavalry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "blade-inlaying-tier6-4",
+          "baseId": "blade-inlaying-tier6",
+          "type": "technology",
+          "name": "Blade Inlaying (6/6)",
+          "pbgid": 9004674,
+          "attribName": "upgrade_arsenal_cavalry_damage_6_byz_ha_mac",
+          "age": 4,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the damage of all Cavalry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Cavalry Technology 6/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 3400,
             "total": 3400,
             "popcap": 0,
             "time": 60
           },
-          "icon": "https://data.aoe4world.com/images/technologies/blade-inlaying-4.png",
-          "id": "blade-inlaying-4"
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/blade-inlaying-tier6-4.png",
+          "effects": []
         }
-      }
+      ],
+      "shared": {}
     },
     {
       "id": "boiling-oil",
@@ -518,8 +787,7 @@
             "wood": 0,
             "stone": 200,
             "gold": 500,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 700,
             "popcap": 0,
             "time": 90
@@ -594,8 +862,7 @@
             "wood": 40,
             "stone": 0,
             "gold": 80,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 120,
             "popcap": 0,
             "time": 20
@@ -622,15 +889,15 @@
       "shared": {}
     },
     {
-      "id": "butted-chainmail",
-      "name": "Butted Chainmail",
+      "id": "butted-chainmail-tier1",
+      "name": "Butted Chainmail (1/6)",
       "type": "technology",
       "civs": [
         "mac"
       ],
       "unique": true,
       "displayClasses": [
-        "(translation not found) (undefined)"
+        "Melee Infantry Technology 1/6"
       ],
       "classes": [
         "byzantine_ha_mac_upgrade",
@@ -639,87 +906,359 @@
         "scar_unit_upgrade"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/butted-chainmail-2.png",
-      "description": "Increase the armor of all Melee Infantry by 1 and health by 5%.",
+      "icon": "https://data.aoe4world.com/images/technologies/butted-chainmail-tier1-2.png",
+      "description": "Increase the armor of all Melee Infantry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
       "variations": [
         {
-          "id": "butted-chainmail-2",
-          "pbgid": 9004686,
-          "attribName": "upgrade_arsenal_melee_infantry_survuvability_2_byz_ha_mac",
+          "id": "butted-chainmail-tier1-2",
+          "baseId": "butted-chainmail-tier1",
+          "type": "technology",
+          "name": "Butted Chainmail (1/6)",
+          "pbgid": 9003734,
+          "attribName": "upgrade_arsenal_melee_infantry_survuvability_byz_ha_mac",
+          "age": 2,
           "civs": [
             "mac"
-          ]
-        },
-        {
-          "id": "butted-chainmail-3",
-          "pbgid": 9004688,
-          "attribName": "upgrade_arsenal_melee_infantry_survuvability_4_byz_ha_mac",
-          "civs": [
-            "mac"
-          ]
-        },
-        {
-          "id": "butted-chainmail-4",
-          "pbgid": 9004690,
-          "attribName": "upgrade_arsenal_melee_infantry_survuvability_6_byz_ha_mac",
-          "civs": [
-            "mac"
-          ]
-        }
-      ],
-      "baseId": "butted-chainmail",
-      "age": 2,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 500,
-        "total": 500,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "varangian-arsenal"
-      ],
-      "effects": [],
-      "shared": {
-        "butted-chainmail-3": {
-          "name": "Butted Chainmail",
-          "age": 3,
+          ],
+          "description": "Increase the armor of all Melee Infantry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Melee Infantry Technology 1/6"
+          ],
+          "unique": true,
           "costs": {
             "food": 0,
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 2000,
+            "silver": 250,
+            "total": 250,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/butted-chainmail-tier1-2.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "butted-chainmail-tier2",
+      "name": "Butted Chainmail (2/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Melee Infantry Technology 2/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/technologies/butted-chainmail-tier2-2.png",
+      "description": "Increase the armor of all Melee Infantry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "butted-chainmail-tier2-2",
+          "baseId": "butted-chainmail-tier2",
+          "type": "technology",
+          "name": "Butted Chainmail (2/6)",
+          "pbgid": 9004686,
+          "attribName": "upgrade_arsenal_melee_infantry_survuvability_2_byz_ha_mac",
+          "age": 2,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the armor of all Melee Infantry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Melee Infantry Technology 2/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 500,
+            "total": 500,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/butted-chainmail-tier2-2.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "butted-chainmail-tier3",
+      "name": "Butted Chainmail (3/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Melee Infantry Technology 3/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/butted-chainmail-tier3-3.png",
+      "description": "Increase the armor of all Melee Infantry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "butted-chainmail-tier3-3",
+          "baseId": "butted-chainmail-tier3",
+          "type": "technology",
+          "name": "Butted Chainmail (3/6)",
+          "pbgid": 9004687,
+          "attribName": "upgrade_arsenal_melee_infantry_survuvability_3_byz_ha_mac",
+          "age": 3,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the armor of all Melee Infantry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Melee Infantry Technology 3/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 1000,
+            "total": 1000,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/butted-chainmail-tier3-3.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "butted-chainmail-tier4",
+      "name": "Butted Chainmail (4/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Melee Infantry Technology 4/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/butted-chainmail-tier4-3.png",
+      "description": "Increase the armor of all Melee Infantry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "butted-chainmail-tier4-3",
+          "baseId": "butted-chainmail-tier4",
+          "type": "technology",
+          "name": "Butted Chainmail (4/6)",
+          "pbgid": 9004688,
+          "attribName": "upgrade_arsenal_melee_infantry_survuvability_4_byz_ha_mac",
+          "age": 3,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the armor of all Melee Infantry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Melee Infantry Technology 4/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 2000,
             "total": 2000,
             "popcap": 0,
             "time": 60
           },
-          "icon": "https://data.aoe4world.com/images/technologies/butted-chainmail-3.png",
-          "id": "butted-chainmail-3"
-        },
-        "butted-chainmail-4": {
-          "name": "Butted Chainmail",
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/butted-chainmail-tier4-3.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "butted-chainmail-tier5",
+      "name": "Butted Chainmail (5/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Melee Infantry Technology 5/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/butted-chainmail-tier5-4.png",
+      "description": "Increase the armor of all Melee Infantry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "butted-chainmail-tier5-4",
+          "baseId": "butted-chainmail-tier5",
+          "type": "technology",
+          "name": "Butted Chainmail (5/6)",
+          "pbgid": 9004689,
+          "attribName": "upgrade_arsenal_melee_infantry_survuvability_5_byz_ha_mac",
           "age": 4,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the armor of all Melee Infantry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Melee Infantry Technology 5/6"
+          ],
+          "unique": true,
           "costs": {
             "food": 0,
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 4000,
+            "silver": 3000,
+            "total": 3000,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/butted-chainmail-tier5-4.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "butted-chainmail-tier6",
+      "name": "Butted Chainmail (6/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Melee Infantry Technology 6/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/butted-chainmail-tier6-4.png",
+      "description": "Increase the armor of all Melee Infantry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "butted-chainmail-tier6-4",
+          "baseId": "butted-chainmail-tier6",
+          "type": "technology",
+          "name": "Butted Chainmail (6/6)",
+          "pbgid": 9004690,
+          "attribName": "upgrade_arsenal_melee_infantry_survuvability_6_byz_ha_mac",
+          "age": 4,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the armor of all Melee Infantry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Melee Infantry Technology 6/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 4000,
             "total": 4000,
             "popcap": 0,
             "time": 60
           },
-          "icon": "https://data.aoe4world.com/images/technologies/butted-chainmail-4.png",
-          "id": "butted-chainmail-4"
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/butted-chainmail-tier6-4.png",
+          "effects": []
         }
-      }
+      ],
+      "shared": {}
     },
     {
       "id": "cannon-emplacement",
@@ -801,8 +1340,7 @@
             "wood": 0,
             "stone": 375,
             "gold": 125,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 500,
             "popcap": 0,
             "time": 60
@@ -913,8 +1451,7 @@
             "wood": 0,
             "stone": 0,
             "gold": 500,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 750,
             "popcap": 0,
             "time": 75
@@ -1018,8 +1555,7 @@
             "wood": 250,
             "stone": 0,
             "gold": 500,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 750,
             "popcap": 0,
             "time": 75
@@ -1136,8 +1672,7 @@
             "wood": 0,
             "stone": 0,
             "gold": 100,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 150,
             "popcap": 0,
             "time": 45
@@ -1243,8 +1778,7 @@
             "wood": 150,
             "stone": 0,
             "gold": 350,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 500,
             "popcap": 0,
             "time": 45
@@ -1377,8 +1911,7 @@
             "wood": 0,
             "stone": 0,
             "gold": 350,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 500,
             "popcap": 0,
             "time": 45
@@ -1487,8 +2020,7 @@
             "wood": 75,
             "stone": 0,
             "gold": 175,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 250,
             "popcap": 0,
             "time": 30
@@ -1609,8 +2141,7 @@
             "wood": 75,
             "stone": 0,
             "gold": 125,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 200,
             "popcap": 0,
             "time": 20
@@ -1689,8 +2220,7 @@
             "wood": 100,
             "stone": 0,
             "gold": 250,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 350,
             "popcap": 0,
             "time": 60
@@ -1794,8 +2324,7 @@
             "wood": 0,
             "stone": 0,
             "gold": 50,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 75,
             "popcap": 0,
             "time": 45
@@ -1822,15 +2351,15 @@
       "shared": {}
     },
     {
-      "id": "fortifications",
-      "name": "Fortifications",
+      "id": "fortifications-tier1",
+      "name": "Fortifications (1/6)",
       "type": "technology",
       "civs": [
         "mac"
       ],
       "unique": true,
       "displayClasses": [
-        "(translation not found) (undefined)"
+        "Building Technology 1/6"
       ],
       "classes": [
         "byzantine_ha_mac_upgrade",
@@ -1839,87 +2368,359 @@
         "scar_unit_upgrade"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/fortifications-2.png",
-      "description": "Increase the health of all buildings by 10%.",
+      "icon": "https://data.aoe4world.com/images/technologies/fortifications-tier1-2.png",
+      "description": "Increase the health of all buildings by 10%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
       "variations": [
         {
-          "id": "fortifications-2",
-          "pbgid": 9004665,
-          "attribName": "upgrade_arsenal_building_survivability_2_byz_ha_mac",
+          "id": "fortifications-tier1-2",
+          "baseId": "fortifications-tier1",
+          "type": "technology",
+          "name": "Fortifications (1/6)",
+          "pbgid": 9003737,
+          "attribName": "upgrade_arsenal_building_survivability_byz_ha_mac",
+          "age": 2,
           "civs": [
             "mac"
-          ]
-        },
-        {
-          "id": "fortifications-3",
-          "pbgid": 9004669,
-          "attribName": "upgrade_arsenal_building_survivability_4_byz_ha_mac",
-          "civs": [
-            "mac"
-          ]
-        },
-        {
-          "id": "fortifications-4",
-          "pbgid": 9004668,
-          "attribName": "upgrade_arsenal_building_survivability_6_byz_ha_mac",
-          "civs": [
-            "mac"
-          ]
-        }
-      ],
-      "baseId": "fortifications",
-      "age": 2,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 400,
-        "total": 400,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "varangian-arsenal"
-      ],
-      "effects": [],
-      "shared": {
-        "fortifications-3": {
-          "name": "Fortifications",
-          "age": 3,
+          ],
+          "description": "Increase the health of all buildings by 10%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Building Technology 1/6"
+          ],
+          "unique": true,
           "costs": {
             "food": 0,
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 1600,
+            "silver": 200,
+            "total": 200,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/fortifications-tier1-2.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "fortifications-tier2",
+      "name": "Fortifications (2/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Building Technology 2/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/technologies/fortifications-tier2-2.png",
+      "description": "Increase the health of all buildings by 10%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "fortifications-tier2-2",
+          "baseId": "fortifications-tier2",
+          "type": "technology",
+          "name": "Fortifications (2/6)",
+          "pbgid": 9004665,
+          "attribName": "upgrade_arsenal_building_survivability_2_byz_ha_mac",
+          "age": 2,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the health of all buildings by 10%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Building Technology 2/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 400,
+            "total": 400,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/fortifications-tier2-2.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "fortifications-tier3",
+      "name": "Fortifications (3/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Building Technology 3/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/fortifications-tier3-3.png",
+      "description": "Increase the health of all buildings by 10%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "fortifications-tier3-3",
+          "baseId": "fortifications-tier3",
+          "type": "technology",
+          "name": "Fortifications (3/6)",
+          "pbgid": 9004666,
+          "attribName": "upgrade_arsenal_building_survivability_3_byz_ha_mac",
+          "age": 3,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the health of all buildings by 10%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Building Technology 3/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 800,
+            "total": 800,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/fortifications-tier3-3.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "fortifications-tier4",
+      "name": "Fortifications (4/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Building Technology 4/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/fortifications-tier4-3.png",
+      "description": "Increase the health of all buildings by 10%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "fortifications-tier4-3",
+          "baseId": "fortifications-tier4",
+          "type": "technology",
+          "name": "Fortifications (4/6)",
+          "pbgid": 9004669,
+          "attribName": "upgrade_arsenal_building_survivability_4_byz_ha_mac",
+          "age": 3,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the health of all buildings by 10%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Building Technology 4/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 1600,
             "total": 1600,
             "popcap": 0,
             "time": 60
           },
-          "icon": "https://data.aoe4world.com/images/technologies/fortifications-3.png",
-          "id": "fortifications-3"
-        },
-        "fortifications-4": {
-          "name": "Fortifications",
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/fortifications-tier4-3.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "fortifications-tier5",
+      "name": "Fortifications (5/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Building Technology 5/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/fortifications-tier5-4.png",
+      "description": "Increase the health of all buildings by 10%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "fortifications-tier5-4",
+          "baseId": "fortifications-tier5",
+          "type": "technology",
+          "name": "Fortifications (5/6)",
+          "pbgid": 9004667,
+          "attribName": "upgrade_arsenal_building_survivability_5_byz_ha_mac",
           "age": 4,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the health of all buildings by 10%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Building Technology 5/6"
+          ],
+          "unique": true,
           "costs": {
             "food": 0,
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 3600,
+            "silver": 2600,
+            "total": 2600,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/fortifications-tier5-4.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "fortifications-tier6",
+      "name": "Fortifications (6/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Building Technology 6/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/fortifications-tier6-4.png",
+      "description": "Increase the health of all buildings by 10%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "fortifications-tier6-4",
+          "baseId": "fortifications-tier6",
+          "type": "technology",
+          "name": "Fortifications (6/6)",
+          "pbgid": 9004668,
+          "attribName": "upgrade_arsenal_building_survivability_6_byz_ha_mac",
+          "age": 4,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the health of all buildings by 10%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Building Technology 6/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 3600,
             "total": 3600,
             "popcap": 0,
             "time": 60
           },
-          "icon": "https://data.aoe4world.com/images/technologies/fortifications-4.png",
-          "id": "fortifications-4"
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/fortifications-tier6-4.png",
+          "effects": []
         }
-      }
+      ],
+      "shared": {}
     },
     {
       "id": "fortify-outpost",
@@ -1999,8 +2800,7 @@
             "wood": 0,
             "stone": 100,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 100,
             "popcap": 0,
             "time": 30
@@ -2117,8 +2917,7 @@
             "wood": 150,
             "stone": 0,
             "gold": 350,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 500,
             "popcap": 0,
             "time": 60
@@ -2196,8 +2995,7 @@
             "wood": 0,
             "stone": 0,
             "gold": 250,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 350,
             "popcap": 0,
             "time": 60
@@ -2305,8 +3103,7 @@
             "wood": 200,
             "stone": 0,
             "gold": 500,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 700,
             "popcap": 0,
             "time": 45
@@ -2387,8 +3184,7 @@
             "wood": 100,
             "stone": 0,
             "gold": 250,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 350,
             "popcap": 0,
             "time": 30
@@ -2490,8 +3286,7 @@
             "wood": 0,
             "stone": 0,
             "gold": 275,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 275,
             "popcap": 0,
             "time": 45
@@ -2576,8 +3371,7 @@
             "wood": 50,
             "stone": 0,
             "gold": 100,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 150,
             "popcap": 0,
             "time": 45
@@ -2604,15 +3398,15 @@
       "shared": {}
     },
     {
-      "id": "iron-fittings",
-      "name": "Iron Fittings",
+      "id": "iron-fittings-tier1",
+      "name": "Iron Fittings (1/6)",
       "type": "technology",
       "civs": [
         "mac"
       ],
       "unique": true,
       "displayClasses": [
-        "(translation not found) (undefined)"
+        "Siege Technology 1/6"
       ],
       "classes": [
         "byzantine_ha_mac_upgrade",
@@ -2621,98 +3415,370 @@
         "scar_unit_upgrade"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/iron-fittings-2.png",
-      "description": "Increase the health of all siege units by 5%.",
+      "icon": "https://data.aoe4world.com/images/technologies/iron-fittings-tier1-2.png",
+      "description": "Increase the health of all siege units by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
       "variations": [
         {
-          "id": "iron-fittings-2",
-          "pbgid": 9004701,
-          "attribName": "upgrade_arsenal_siege_survivability_2_byz_ha_mac",
+          "id": "iron-fittings-tier1-2",
+          "baseId": "iron-fittings-tier1",
+          "type": "technology",
+          "name": "Iron Fittings (1/6)",
+          "pbgid": 9003738,
+          "attribName": "upgrade_arsenal_siege_survivability_byz_ha_mac",
+          "age": 2,
           "civs": [
             "mac"
-          ]
-        },
-        {
-          "id": "iron-fittings-3",
-          "pbgid": 9004703,
-          "attribName": "upgrade_arsenal_siege_survivability_4_byz_ha_mac",
-          "civs": [
-            "mac"
-          ]
-        },
-        {
-          "id": "iron-fittings-4",
-          "pbgid": 9004705,
-          "attribName": "upgrade_arsenal_siege_survivability_6_byz_ha_mac",
-          "civs": [
-            "mac"
-          ]
-        }
-      ],
-      "baseId": "iron-fittings",
-      "age": 2,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 450,
-        "total": 450,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "varangian-arsenal"
-      ],
-      "effects": [],
-      "shared": {
-        "iron-fittings-3": {
-          "name": "Iron Fittings",
-          "age": 3,
+          ],
+          "description": "Increase the health of all siege units by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Siege Technology 1/6"
+          ],
+          "unique": true,
           "costs": {
             "food": 0,
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 1800,
+            "silver": 225,
+            "total": 225,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/iron-fittings-tier1-2.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "iron-fittings-tier2",
+      "name": "Iron Fittings (2/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Siege Technology 2/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/technologies/iron-fittings-tier2-2.png",
+      "description": "Increase the health of all siege units by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "iron-fittings-tier2-2",
+          "baseId": "iron-fittings-tier2",
+          "type": "technology",
+          "name": "Iron Fittings (2/6)",
+          "pbgid": 9004701,
+          "attribName": "upgrade_arsenal_siege_survivability_2_byz_ha_mac",
+          "age": 2,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the health of all siege units by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Siege Technology 2/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 450,
+            "total": 450,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/iron-fittings-tier2-2.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "iron-fittings-tier3",
+      "name": "Iron Fittings (3/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Siege Technology 3/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/iron-fittings-tier3-3.png",
+      "description": "Increase the health of all siege units by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "iron-fittings-tier3-3",
+          "baseId": "iron-fittings-tier3",
+          "type": "technology",
+          "name": "Iron Fittings (3/6)",
+          "pbgid": 9004702,
+          "attribName": "upgrade_arsenal_siege_survivability_3_byz_ha_mac",
+          "age": 3,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the health of all siege units by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Siege Technology 3/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 900,
+            "total": 900,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/iron-fittings-tier3-3.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "iron-fittings-tier4",
+      "name": "Iron Fittings (4/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Siege Technology 4/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/iron-fittings-tier4-3.png",
+      "description": "Increase the health of all siege units by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "iron-fittings-tier4-3",
+          "baseId": "iron-fittings-tier4",
+          "type": "technology",
+          "name": "Iron Fittings (4/6)",
+          "pbgid": 9004703,
+          "attribName": "upgrade_arsenal_siege_survivability_4_byz_ha_mac",
+          "age": 3,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the health of all siege units by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Siege Technology 4/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 1800,
             "total": 1800,
             "popcap": 0,
             "time": 60
           },
-          "icon": "https://data.aoe4world.com/images/technologies/iron-fittings-3.png",
-          "id": "iron-fittings-3"
-        },
-        "iron-fittings-4": {
-          "name": "Iron Fittings",
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/iron-fittings-tier4-3.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "iron-fittings-tier5",
+      "name": "Iron Fittings (5/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Siege Technology 5/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/iron-fittings-tier5-4.png",
+      "description": "Increase the health of all siege units by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "iron-fittings-tier5-4",
+          "baseId": "iron-fittings-tier5",
+          "type": "technology",
+          "name": "Iron Fittings (5/6)",
+          "pbgid": 9004704,
+          "attribName": "upgrade_arsenal_siege_survivability_5_byz_ha_mac",
           "age": 4,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the health of all siege units by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Siege Technology 5/6"
+          ],
+          "unique": false,
           "costs": {
             "food": 0,
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 3800,
-            "total": 3800,
+            "silver": 2800,
+            "total": 2800,
             "popcap": 0,
             "time": 60
           },
-          "icon": "https://data.aoe4world.com/images/technologies/iron-fittings-4.png",
-          "id": "iron-fittings-4"
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/iron-fittings-tier5-4.png",
+          "effects": []
         }
-      }
+      ],
+      "shared": {}
     },
     {
-      "id": "lamellar-armor",
-      "name": "Lamellar Armor",
+      "id": "iron-fittings-tier6",
+      "name": "Iron Fittings (6/6)",
       "type": "technology",
       "civs": [
         "mac"
       ],
       "unique": true,
       "displayClasses": [
-        "(translation not found) (undefined)"
+        "Siege Technology 6/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/iron-fittings-tier6-4.png",
+      "description": "Increase the health of all siege units by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "iron-fittings-tier6-4",
+          "baseId": "iron-fittings-tier6",
+          "type": "technology",
+          "name": "Iron Fittings (6/6)",
+          "pbgid": 9004705,
+          "attribName": "upgrade_arsenal_siege_survivability_6_byz_ha_mac",
+          "age": 4,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the health of all siege units by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Siege Technology 6/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 3800,
+            "total": 3800,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/iron-fittings-tier6-4.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "lamellar-armor-tier1",
+      "name": "Lamellar Armor (1/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Ranged Technology 1/6"
       ],
       "classes": [
         "byzantine_ha_mac_upgrade",
@@ -2721,87 +3787,359 @@
         "scar_unit_upgrade"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/lamellar-armor-2.png",
-      "description": "Increase the armor of all Ranged units by 1 and health by 5%.",
+      "icon": "https://data.aoe4world.com/images/technologies/lamellar-armor-tier1-2.png",
+      "description": "Increase the armor of all Ranged units by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
       "variations": [
         {
-          "id": "lamellar-armor-2",
-          "pbgid": 9004696,
-          "attribName": "upgrade_arsenal_ranged_survivability_2_byz_ha_mac",
+          "id": "lamellar-armor-tier1-2",
+          "baseId": "lamellar-armor-tier1",
+          "type": "technology",
+          "name": "Lamellar Armor (1/6)",
+          "pbgid": 9003735,
+          "attribName": "upgrade_arsenal_ranged_survivability_byz_ha_mac",
+          "age": 2,
           "civs": [
             "mac"
-          ]
-        },
-        {
-          "id": "lamellar-armor-3",
-          "pbgid": 9004698,
-          "attribName": "upgrade_arsenal_ranged_survivability_4_byz_ha_mac",
-          "civs": [
-            "mac"
-          ]
-        },
-        {
-          "id": "lamellar-armor-4",
-          "pbgid": 9004700,
-          "attribName": "upgrade_arsenal_ranged_survivability_6_byz_ha_mac",
-          "civs": [
-            "mac"
-          ]
-        }
-      ],
-      "baseId": "lamellar-armor",
-      "age": 2,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 500,
-        "total": 500,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "varangian-arsenal"
-      ],
-      "effects": [],
-      "shared": {
-        "lamellar-armor-3": {
-          "name": "Lamellar Armor",
-          "age": 3,
+          ],
+          "description": "Increase the armor of all Ranged units by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Ranged Technology 1/6"
+          ],
+          "unique": true,
           "costs": {
             "food": 0,
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 2000,
+            "silver": 250,
+            "total": 250,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lamellar-armor-tier1-2.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "lamellar-armor-tier2",
+      "name": "Lamellar Armor (2/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Ranged Technology 2/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/technologies/lamellar-armor-tier2-2.png",
+      "description": "Increase the armor of all Ranged units by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "lamellar-armor-tier2-2",
+          "baseId": "lamellar-armor-tier2",
+          "type": "technology",
+          "name": "Lamellar Armor (2/6)",
+          "pbgid": 9004696,
+          "attribName": "upgrade_arsenal_ranged_survivability_2_byz_ha_mac",
+          "age": 2,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the armor of all Ranged units by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Ranged Technology 2/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 500,
+            "total": 500,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lamellar-armor-tier2-2.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "lamellar-armor-tier3",
+      "name": "Lamellar Armor (3/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Ranged Technology 3/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/lamellar-armor-tier3-3.png",
+      "description": "Increase the armor of all Ranged units by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "lamellar-armor-tier3-3",
+          "baseId": "lamellar-armor-tier3",
+          "type": "technology",
+          "name": "Lamellar Armor (3/6)",
+          "pbgid": 9004697,
+          "attribName": "upgrade_arsenal_ranged_survivability_3_byz_ha_mac",
+          "age": 3,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the armor of all Ranged units by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Ranged Technology 3/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 1000,
+            "total": 1000,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lamellar-armor-tier3-3.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "lamellar-armor-tier4",
+      "name": "Lamellar Armor (4/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Ranged Technology 4/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/lamellar-armor-tier4-3.png",
+      "description": "Increase the armor of all Ranged units by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "lamellar-armor-tier4-3",
+          "baseId": "lamellar-armor-tier4",
+          "type": "technology",
+          "name": "Lamellar Armor (4/6)",
+          "pbgid": 9004698,
+          "attribName": "upgrade_arsenal_ranged_survivability_4_byz_ha_mac",
+          "age": 3,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the armor of all Ranged units by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Ranged Technology 4/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 2000,
             "total": 2000,
             "popcap": 0,
             "time": 60
           },
-          "icon": "https://data.aoe4world.com/images/technologies/lamellar-armor-3.png",
-          "id": "lamellar-armor-3"
-        },
-        "lamellar-armor-4": {
-          "name": "Lamellar Armor",
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lamellar-armor-tier4-3.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "lamellar-armor-tier5",
+      "name": "Lamellar Armor (5/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Ranged Technology 5/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/lamellar-armor-tier5-4.png",
+      "description": "Increase the armor of all Ranged units by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "lamellar-armor-tier5-4",
+          "baseId": "lamellar-armor-tier5",
+          "type": "technology",
+          "name": "Lamellar Armor (5/6)",
+          "pbgid": 9004699,
+          "attribName": "upgrade_arsenal_ranged_survivability_5_byz_ha_mac",
           "age": 4,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the armor of all Ranged units by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Ranged Technology 5/6"
+          ],
+          "unique": true,
           "costs": {
             "food": 0,
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 4000,
+            "silver": 3000,
+            "total": 3000,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lamellar-armor-tier5-4.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "lamellar-armor-tier6",
+      "name": "Lamellar Armor (6/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Ranged Technology 6/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/lamellar-armor-tier6-4.png",
+      "description": "Increase the armor of all Ranged units by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "lamellar-armor-tier6-4",
+          "baseId": "lamellar-armor-tier6",
+          "type": "technology",
+          "name": "Lamellar Armor (6/6)",
+          "pbgid": 9004700,
+          "attribName": "upgrade_arsenal_ranged_survivability_6_byz_ha_mac",
+          "age": 4,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the armor of all Ranged units by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Ranged Technology 6/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 4000,
             "total": 4000,
             "popcap": 0,
             "time": 60
           },
-          "icon": "https://data.aoe4world.com/images/technologies/lamellar-armor-4.png",
-          "id": "lamellar-armor-4"
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/lamellar-armor-tier6-4.png",
+          "effects": []
         }
-      }
+      ],
+      "shared": {}
     },
     {
       "id": "lightweight-beams",
@@ -2883,8 +4221,7 @@
             "wood": 300,
             "stone": 0,
             "gold": 400,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 700,
             "popcap": 0,
             "time": 60
@@ -2977,8 +4314,7 @@
             "wood": 75,
             "stone": 0,
             "gold": 125,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 200,
             "popcap": 0,
             "time": 20
@@ -3084,8 +4420,7 @@
             "wood": 0,
             "stone": 0,
             "gold": 250,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 350,
             "popcap": 0,
             "time": 60
@@ -3157,8 +4492,7 @@
             "wood": 0,
             "stone": 200,
             "gold": 75,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 275,
             "popcap": 0,
             "time": 30
@@ -3264,8 +4598,7 @@
             "wood": 100,
             "stone": 0,
             "gold": 250,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 350,
             "popcap": 0,
             "time": 60
@@ -3385,8 +4718,7 @@
             "wood": 75,
             "stone": 125,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 200,
             "popcap": 0,
             "time": 30
@@ -3401,15 +4733,15 @@
       "shared": {}
     },
     {
-      "id": "pattern-welding",
-      "name": "Pattern Welding",
+      "id": "pattern-welding-tier1",
+      "name": "Pattern Welding (1/6)",
       "type": "technology",
       "civs": [
         "mac"
       ],
       "unique": true,
       "displayClasses": [
-        "(translation not found) (undefined)"
+        "Melee Infantry Technology 1/6"
       ],
       "classes": [
         "byzantine_ha_mac_upgrade",
@@ -3418,87 +4750,359 @@
         "scar_unit_upgrade"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/pattern-welding-2.png",
-      "description": "Increase the damage of all Melee Infantry by 1.",
+      "icon": "https://data.aoe4world.com/images/technologies/pattern-welding-tier1-2.png",
+      "description": "Increase the damage of all Melee Infantry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
       "variations": [
         {
-          "id": "pattern-welding-2",
-          "pbgid": 9004681,
-          "attribName": "upgrade_arsenal_melee_infantry_damage_2_byz_ha_mac",
+          "id": "pattern-welding-tier1-2",
+          "baseId": "pattern-welding-tier1",
+          "type": "technology",
+          "name": "Pattern Welding (1/6)",
+          "pbgid": 9003731,
+          "attribName": "upgrade_arsenal_melee_infantry_damage_byz_ha_mac",
+          "age": 2,
           "civs": [
             "mac"
-          ]
-        },
-        {
-          "id": "pattern-welding-3",
-          "pbgid": 9004683,
-          "attribName": "upgrade_arsenal_melee_infantry_damage_4_byz_ha_mac",
-          "civs": [
-            "mac"
-          ]
-        },
-        {
-          "id": "pattern-welding-4",
-          "pbgid": 9004685,
-          "attribName": "upgrade_arsenal_melee_infantry_damage_6_byz_ha_mac",
-          "civs": [
-            "mac"
-          ]
-        }
-      ],
-      "baseId": "pattern-welding",
-      "age": 2,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 350,
-        "total": 350,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "varangian-arsenal"
-      ],
-      "effects": [],
-      "shared": {
-        "pattern-welding-3": {
-          "name": "Pattern Welding",
-          "age": 3,
+          ],
+          "description": "Increase the damage of all Melee Infantry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Melee Infantry Technology 1/6"
+          ],
+          "unique": true,
           "costs": {
             "food": 0,
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 1400,
+            "silver": 175,
+            "total": 175,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/pattern-welding-tier1-2.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "pattern-welding-tier2",
+      "name": "Pattern Welding (2/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Melee Infantry Technology 2/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/technologies/pattern-welding-tier2-2.png",
+      "description": "Increase the damage of all Melee Infantry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "pattern-welding-tier2-2",
+          "baseId": "pattern-welding-tier2",
+          "type": "technology",
+          "name": "Pattern Welding (2/6)",
+          "pbgid": 9004681,
+          "attribName": "upgrade_arsenal_melee_infantry_damage_2_byz_ha_mac",
+          "age": 2,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the damage of all Melee Infantry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Melee Infantry Technology 2/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 350,
+            "total": 350,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/pattern-welding-tier2-2.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "pattern-welding-tier3",
+      "name": "Pattern Welding (3/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Melee Infantry Technology 3/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/pattern-welding-tier3-3.png",
+      "description": "Increase the damage of all Melee Infantry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "pattern-welding-tier3-3",
+          "baseId": "pattern-welding-tier3",
+          "type": "technology",
+          "name": "Pattern Welding (3/6)",
+          "pbgid": 9004682,
+          "attribName": "upgrade_arsenal_melee_infantry_damage_3_byz_ha_mac",
+          "age": 3,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the damage of all Melee Infantry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Melee Infantry Technology 3/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 700,
+            "total": 700,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/pattern-welding-tier3-3.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "pattern-welding-tier4",
+      "name": "Pattern Welding (4/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Melee Infantry Technology 4/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/pattern-welding-tier4-3.png",
+      "description": "Increase the damage of all Melee Infantry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "pattern-welding-tier4-3",
+          "baseId": "pattern-welding-tier4",
+          "type": "technology",
+          "name": "Pattern Welding (4/6)",
+          "pbgid": 9004683,
+          "attribName": "upgrade_arsenal_melee_infantry_damage_4_byz_ha_mac",
+          "age": 3,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the damage of all Melee Infantry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Melee Infantry Technology 4/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 1400,
             "total": 1400,
             "popcap": 0,
             "time": 60
           },
-          "icon": "https://data.aoe4world.com/images/technologies/pattern-welding-3.png",
-          "id": "pattern-welding-3"
-        },
-        "pattern-welding-4": {
-          "name": "Pattern Welding",
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/pattern-welding-tier4-3.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "pattern-welding-tier5",
+      "name": "Pattern Welding (5/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Melee Infantry Technology 5/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/pattern-welding-tier5-4.png",
+      "description": "Increase the damage of all Melee Infantry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "pattern-welding-tier5-4",
+          "baseId": "pattern-welding-tier5",
+          "type": "technology",
+          "name": "Pattern Welding (5/6)",
+          "pbgid": 9004684,
+          "attribName": "upgrade_arsenal_melee_infantry_damage_5_byz_ha_mac",
           "age": 4,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the damage of all Melee Infantry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Melee Infantry Technology 5/6"
+          ],
+          "unique": true,
           "costs": {
             "food": 0,
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 3400,
+            "silver": 2400,
+            "total": 2400,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/pattern-welding-tier5-4.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "pattern-welding-tier6",
+      "name": "Pattern Welding (6/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Melee Infantry Technology 6/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/pattern-welding-tier6-4.png",
+      "description": "Increase the damage of all Melee Infantry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "pattern-welding-tier6-4",
+          "baseId": "pattern-welding-tier6",
+          "type": "technology",
+          "name": "Pattern Welding (6/6)",
+          "pbgid": 9004685,
+          "attribName": "upgrade_arsenal_melee_infantry_damage_6_byz_ha_mac",
+          "age": 4,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the damage of all Melee Infantry by 1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Melee Infantry Technology 6/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 3400,
             "total": 3400,
             "popcap": 0,
             "time": 60
           },
-          "icon": "https://data.aoe4world.com/images/technologies/pattern-welding-4.png",
-          "id": "pattern-welding-4"
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/pattern-welding-tier6-4.png",
+          "effects": []
         }
-      }
+      ],
+      "shared": {}
     },
     {
       "id": "piety",
@@ -3572,8 +5176,7 @@
             "wood": 0,
             "stone": 0,
             "gold": 325,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 325,
             "popcap": 0,
             "time": 45
@@ -3656,8 +5259,7 @@
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 500,
+            "silver": 500,
             "total": 500,
             "popcap": 0,
             "time": 30
@@ -3721,8 +5323,7 @@
             "wood": 250,
             "stone": 0,
             "gold": 500,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 750,
             "popcap": 0,
             "time": 75
@@ -3800,8 +5401,7 @@
             "wood": 150,
             "stone": 0,
             "gold": 300,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 450,
             "popcap": 0,
             "time": 75
@@ -3893,8 +5493,7 @@
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 1000,
+            "silver": 1000,
             "total": 1000,
             "popcap": 0,
             "time": 60
@@ -3956,8 +5555,7 @@
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 1000,
+            "silver": 1000,
             "total": 1000,
             "popcap": 0,
             "time": 60
@@ -4051,8 +5649,7 @@
             "wood": 150,
             "stone": 0,
             "gold": 350,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 500,
             "popcap": 0,
             "time": 60
@@ -4137,8 +5734,7 @@
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 500,
+            "silver": 500,
             "total": 500,
             "popcap": 0,
             "time": 60
@@ -4200,8 +5796,7 @@
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 750,
+            "silver": 750,
             "total": 750,
             "popcap": 0,
             "time": 30
@@ -4216,15 +5811,15 @@
       "shared": {}
     },
     {
-      "id": "scale-barding",
-      "name": "Scale Barding",
+      "id": "scale-barding-tier1",
+      "name": "Scale Barding (1/6)",
       "type": "technology",
       "civs": [
         "mac"
       ],
       "unique": true,
       "displayClasses": [
-        "(translation not found) (undefined)"
+        "Cavalry Technology 1/6"
       ],
       "classes": [
         "byzantine_ha_mac_upgrade",
@@ -4233,87 +5828,359 @@
         "scar_unit_upgrade"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/scale-barding-2.png",
-      "description": "Increase the armor of all Cavalry by 1 and health by 5%.",
+      "icon": "https://data.aoe4world.com/images/technologies/scale-barding-tier1-2.png",
+      "description": "Increase the armor of all Cavalry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
       "variations": [
         {
-          "id": "scale-barding-2",
-          "pbgid": 9004675,
-          "attribName": "upgrade_arsenal_cavalry_survivability_2_byz_ha_mac",
+          "id": "scale-barding-tier1-2",
+          "baseId": "scale-barding-tier1",
+          "type": "technology",
+          "name": "Scale Barding (1/6)",
+          "pbgid": 9003736,
+          "attribName": "upgrade_arsenal_cavalry_survivability_byz_ha_mac",
+          "age": 2,
           "civs": [
             "mac"
-          ]
-        },
-        {
-          "id": "scale-barding-3",
-          "pbgid": 9004677,
-          "attribName": "upgrade_arsenal_cavalry_survivability_4_byz_ha_mac",
-          "civs": [
-            "mac"
-          ]
-        },
-        {
-          "id": "scale-barding-4",
-          "pbgid": 9004706,
-          "attribName": "upgrade_arsenal_cavalry_survivability_6_byz_ha_mac",
-          "civs": [
-            "mac"
-          ]
-        }
-      ],
-      "baseId": "scale-barding",
-      "age": 2,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 500,
-        "total": 500,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "varangian-arsenal"
-      ],
-      "effects": [],
-      "shared": {
-        "scale-barding-3": {
-          "name": "Scale Barding",
-          "age": 3,
+          ],
+          "description": "Increase the armor of all Cavalry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Cavalry Technology 1/6"
+          ],
+          "unique": true,
           "costs": {
             "food": 0,
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 2000,
+            "silver": 250,
+            "total": 250,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/scale-barding-tier1-2.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "scale-barding-tier2",
+      "name": "Scale Barding (2/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Cavalry Technology 2/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/technologies/scale-barding-tier2-2.png",
+      "description": "Increase the armor of all Cavalry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "scale-barding-tier2-2",
+          "baseId": "scale-barding-tier2",
+          "type": "technology",
+          "name": "Scale Barding (2/6)",
+          "pbgid": 9004675,
+          "attribName": "upgrade_arsenal_cavalry_survivability_2_byz_ha_mac",
+          "age": 2,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the armor of all Cavalry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Cavalry Technology 2/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 500,
+            "total": 500,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/scale-barding-tier2-2.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "scale-barding-tier3",
+      "name": "Scale Barding (3/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Cavalry Technology 3/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/scale-barding-tier3-3.png",
+      "description": "Increase the armor of all Cavalry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "scale-barding-tier3-3",
+          "baseId": "scale-barding-tier3",
+          "type": "technology",
+          "name": "Scale Barding (3/6)",
+          "pbgid": 9004676,
+          "attribName": "upgrade_arsenal_cavalry_survivability_3_byz_ha_mac",
+          "age": 3,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the armor of all Cavalry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Cavalry Technology 3/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 1000,
+            "total": 1000,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/scale-barding-tier3-3.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "scale-barding-tier4",
+      "name": "Scale Barding (4/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Cavalry Technology 4/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/scale-barding-tier4-3.png",
+      "description": "Increase the armor of all Cavalry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "scale-barding-tier4-3",
+          "baseId": "scale-barding-tier4",
+          "type": "technology",
+          "name": "Scale Barding (4/6)",
+          "pbgid": 9004677,
+          "attribName": "upgrade_arsenal_cavalry_survivability_4_byz_ha_mac",
+          "age": 3,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the armor of all Cavalry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Cavalry Technology 4/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 2000,
             "total": 2000,
             "popcap": 0,
             "time": 60
           },
-          "icon": "https://data.aoe4world.com/images/technologies/scale-barding-3.png",
-          "id": "scale-barding-3"
-        },
-        "scale-barding-4": {
-          "name": "Scale Barding",
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/scale-barding-tier4-3.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "scale-barding-tier5",
+      "name": "Scale Barding (5/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Cavalry Technology 5/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/scale-barding-tier5-4.png",
+      "description": "Increase the armor of all Cavalry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "scale-barding-tier5-4",
+          "baseId": "scale-barding-tier5",
+          "type": "technology",
+          "name": "Scale Barding (5/6)",
+          "pbgid": 9004678,
+          "attribName": "upgrade_arsenal_cavalry_survivability_5_byz_ha_mac",
           "age": 4,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the armor of all Cavalry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Cavalry Technology 5/6"
+          ],
+          "unique": true,
           "costs": {
             "food": 0,
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 4000,
+            "silver": 3000,
+            "total": 3000,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/scale-barding-tier5-4.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "scale-barding-tier6",
+      "name": "Scale Barding (6/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Cavalry Technology 6/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/scale-barding-tier6-4.png",
+      "description": "Increase the armor of all Cavalry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "scale-barding-tier6-4",
+          "baseId": "scale-barding-tier6",
+          "type": "technology",
+          "name": "Scale Barding (6/6)",
+          "pbgid": 9004706,
+          "attribName": "upgrade_arsenal_cavalry_survivability_6_byz_ha_mac",
+          "age": 4,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the armor of all Cavalry by 1 and health by 5%.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Cavalry Technology 6/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 4000,
             "total": 4000,
             "popcap": 0,
             "time": 60
           },
-          "icon": "https://data.aoe4world.com/images/technologies/scale-barding-4.png",
-          "id": "scale-barding-4"
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/scale-barding-tier6-4.png",
+          "effects": []
         }
-      }
+      ],
+      "shared": {}
     },
     {
       "id": "shaft-mining",
@@ -4393,8 +6260,7 @@
             "wood": 100,
             "stone": 0,
             "gold": 250,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 350,
             "popcap": 0,
             "time": 60
@@ -4409,15 +6275,15 @@
       "shared": {}
     },
     {
-      "id": "sharpening-stones",
-      "name": "Sharpening Stones",
+      "id": "sharpening-stones-tier1",
+      "name": "Sharpening Stones (1/6)",
       "type": "technology",
       "civs": [
         "mac"
       ],
       "unique": true,
       "displayClasses": [
-        "(translation not found) (undefined)"
+        "Ranged Technology 1/6"
       ],
       "classes": [
         "byzantine_ha_mac_upgrade",
@@ -4426,87 +6292,359 @@
         "scar_unit_upgrade"
       ],
       "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/technologies/sharpening-stones-2.png",
-      "description": "Increase the ranged damage of all arrows and bolts by +1.",
+      "icon": "https://data.aoe4world.com/images/technologies/sharpening-stones-tier1-2.png",
+      "description": "Increase the ranged damage of all arrows and bolts by +1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
       "variations": [
         {
-          "id": "sharpening-stones-2",
-          "pbgid": 9004691,
-          "attribName": "upgrade_arsenal_ranged_damage_2_byz_ha_mac",
+          "id": "sharpening-stones-tier1-2",
+          "baseId": "sharpening-stones-tier1",
+          "type": "technology",
+          "name": "Sharpening Stones (1/6)",
+          "pbgid": 9003732,
+          "attribName": "upgrade_arsenal_ranged_damage_byz_ha_mac",
+          "age": 2,
           "civs": [
             "mac"
-          ]
-        },
-        {
-          "id": "sharpening-stones-3",
-          "pbgid": 9004693,
-          "attribName": "upgrade_arsenal_ranged_damage_4_byz_ha_mac",
-          "civs": [
-            "mac"
-          ]
-        },
-        {
-          "id": "sharpening-stones-4",
-          "pbgid": 9004695,
-          "attribName": "upgrade_arsenal_ranged_damage_6_byz_ha_mac",
-          "civs": [
-            "mac"
-          ]
-        }
-      ],
-      "baseId": "sharpening-stones",
-      "age": 2,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "vizier": 0,
-        "oliveoil": 550,
-        "total": 550,
-        "popcap": 0,
-        "time": 60
-      },
-      "producedBy": [
-        "varangian-arsenal"
-      ],
-      "effects": [],
-      "shared": {
-        "sharpening-stones-3": {
-          "name": "Sharpening Stones",
-          "age": 3,
+          ],
+          "description": "Increase the ranged damage of all arrows and bolts by +1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Ranged Technology 1/6"
+          ],
+          "unique": true,
           "costs": {
             "food": 0,
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 2200,
+            "silver": 275,
+            "total": 275,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/sharpening-stones-tier1-2.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "sharpening-stones-tier2",
+      "name": "Sharpening Stones (2/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Ranged Technology 2/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/technologies/sharpening-stones-tier2-2.png",
+      "description": "Increase the ranged damage of all arrows and bolts by +1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "sharpening-stones-tier2-2",
+          "baseId": "sharpening-stones-tier2",
+          "type": "technology",
+          "name": "Sharpening Stones (2/6)",
+          "pbgid": 9004691,
+          "attribName": "upgrade_arsenal_ranged_damage_2_byz_ha_mac",
+          "age": 2,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the ranged damage of all arrows and bolts by +1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Ranged Technology 2/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 550,
+            "total": 550,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/sharpening-stones-tier2-2.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "sharpening-stones-tier3",
+      "name": "Sharpening Stones (3/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Ranged Technology 3/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/sharpening-stones-tier3-3.png",
+      "description": "Increase the ranged damage of all arrows and bolts by +1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "sharpening-stones-tier3-3",
+          "baseId": "sharpening-stones-tier3",
+          "type": "technology",
+          "name": "Sharpening Stones (3/6)",
+          "pbgid": 9004692,
+          "attribName": "upgrade_arsenal_ranged_damage_3_byz_ha_mac",
+          "age": 3,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the ranged damage of all arrows and bolts by +1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Ranged Technology 3/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 1100,
+            "total": 1100,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/sharpening-stones-tier3-3.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "sharpening-stones-tier4",
+      "name": "Sharpening Stones (4/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Ranged Technology 4/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/technologies/sharpening-stones-tier4-3.png",
+      "description": "Increase the ranged damage of all arrows and bolts by +1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "sharpening-stones-tier4-3",
+          "baseId": "sharpening-stones-tier4",
+          "type": "technology",
+          "name": "Sharpening Stones (4/6)",
+          "pbgid": 9004693,
+          "attribName": "upgrade_arsenal_ranged_damage_4_byz_ha_mac",
+          "age": 3,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the ranged damage of all arrows and bolts by +1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Ranged Technology 4/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 2200,
             "total": 2200,
             "popcap": 0,
             "time": 60
           },
-          "icon": "https://data.aoe4world.com/images/technologies/sharpening-stones-3.png",
-          "id": "sharpening-stones-3"
-        },
-        "sharpening-stones-4": {
-          "name": "Sharpening Stones",
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/sharpening-stones-tier4-3.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "sharpening-stones-tier5",
+      "name": "Sharpening Stones (5/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Ranged Technology 5/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/sharpening-stones-tier5-4.png",
+      "description": "Increase the ranged damage of all arrows and bolts by +1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "sharpening-stones-tier5-4",
+          "baseId": "sharpening-stones-tier5",
+          "type": "technology",
+          "name": "Sharpening Stones (5/6)",
+          "pbgid": 9004694,
+          "attribName": "upgrade_arsenal_ranged_damage_5_byz_ha_mac",
           "age": 4,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the ranged damage of all arrows and bolts by +1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Ranged Technology 5/6"
+          ],
+          "unique": true,
           "costs": {
             "food": 0,
             "wood": 0,
             "stone": 0,
             "gold": 0,
-            "vizier": 0,
-            "oliveoil": 4200,
+            "silver": 3200,
+            "total": 3200,
+            "popcap": 0,
+            "time": 60
+          },
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/sharpening-stones-tier5-4.png",
+          "effects": []
+        }
+      ],
+      "shared": {}
+    },
+    {
+      "id": "sharpening-stones-tier6",
+      "name": "Sharpening Stones (6/6)",
+      "type": "technology",
+      "civs": [
+        "mac"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Ranged Technology 6/6"
+      ],
+      "classes": [
+        "byzantine_ha_mac_upgrade",
+        "military_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/technologies/sharpening-stones-tier6-4.png",
+      "description": "Increase the ranged damage of all arrows and bolts by +1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+      "variations": [
+        {
+          "id": "sharpening-stones-tier6-4",
+          "baseId": "sharpening-stones-tier6",
+          "type": "technology",
+          "name": "Sharpening Stones (6/6)",
+          "pbgid": 9004695,
+          "attribName": "upgrade_arsenal_ranged_damage_6_byz_ha_mac",
+          "age": 4,
+          "civs": [
+            "mac"
+          ],
+          "description": "Increase the ranged damage of all arrows and bolts by +1.\n\nCan be researched twice in Feudal, Castle and Imperial Age, for a total of 6 times.",
+          "classes": [
+            "byzantine_ha_mac_upgrade",
+            "military_upgrade",
+            "scar_tiered_upgrade",
+            "scar_unit_upgrade"
+          ],
+          "displayClasses": [
+            "Ranged Technology 6/6"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "silver": 4200,
             "total": 4200,
             "popcap": 0,
             "time": 60
           },
-          "icon": "https://data.aoe4world.com/images/technologies/sharpening-stones-4.png",
-          "id": "sharpening-stones-4"
+          "producedBy": [
+            "varangian-arsenal"
+          ],
+          "icon": "https://data.aoe4world.com/images/technologies/sharpening-stones-tier6-4.png",
+          "effects": []
         }
-      }
+      ],
+      "shared": {}
     },
     {
       "id": "shipwrights",
@@ -4590,8 +6728,7 @@
             "wood": 0,
             "stone": 0,
             "gold": 550,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 850,
             "popcap": 0,
             "time": 50
@@ -4710,8 +6847,7 @@
             "wood": 50,
             "stone": 0,
             "gold": 125,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 175,
             "popcap": 0,
             "time": 30
@@ -4817,8 +6953,7 @@
             "wood": 50,
             "stone": 0,
             "gold": 100,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 150,
             "popcap": 0,
             "time": 45
@@ -4927,8 +7062,7 @@
             "wood": 100,
             "stone": 0,
             "gold": 50,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 150,
             "popcap": 0,
             "time": 45
@@ -5006,8 +7140,7 @@
             "wood": 0,
             "stone": 50,
             "gold": 100,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 150,
             "popcap": 0,
             "time": 30
@@ -5071,8 +7204,7 @@
             "wood": 25,
             "stone": 0,
             "gold": 75,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 100,
             "popcap": 0,
             "time": 25
@@ -5182,8 +7314,7 @@
             "wood": 0,
             "stone": 0,
             "gold": 100,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 150,
             "popcap": 0,
             "time": 20
@@ -5278,8 +7409,7 @@
             "wood": 0,
             "stone": 0,
             "gold": 500,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 500,
             "popcap": 0,
             "time": 60
@@ -5386,8 +7516,7 @@
             "wood": 50,
             "stone": 0,
             "gold": 150,
-            "vizier": 0,
-            "oliveoil": 0,
+            "silver": 0,
             "total": 200,
             "popcap": 0,
             "time": 90
