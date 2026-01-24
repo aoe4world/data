@@ -331,15 +331,19 @@ function parseAge(name: string, requirements: any, parent_pbg: string) {
   const ageup = ageUpLandmark.find((x) => typeof parent_pbg === "string" && parent_pbg?.endsWith(x.parent));
   if (ageup) return ageup.age;
   let age = 1;
-  const requiredUpgrade = requirements?.find((x) => String(x?.upgrade_name).endsWith("_age"))?.upgrade_name;
-  if (requiredUpgrade?.endsWith("dark_age")) age = 1;
-  else if (requiredUpgrade?.endsWith("feudal_age")) age = 2;
-  else if (requiredUpgrade?.endsWith("castle_age")) age = 3;
-  else if (requiredUpgrade?.endsWith("imperial_age")) age = 4;
+  const requiredUpgrades = requirements?.filter((x) => String(x?.upgrade_name).endsWith("_age") && x?.is_present).map((x) => x.upgrade_name) ?? [];
+
+  if (name.includes("bodyguard"))
+    console.log("Req test", name, requiredUpgrades, parent_pbg);
+  if (requiredUpgrades.some((x) => x.endsWith("imperial_age"))) age = 4;
+  else if (requiredUpgrades.some((x) => x.endsWith("castle_age"))) age = 3;
+  else if (requiredUpgrades.some((x) => x.endsWith("feudal_age"))) age = 2;
+  else if (requiredUpgrades.some((x) => x.endsWith("dark_age"))) age = 1;
   else {
     const nameParts = name!.split("/")!.shift()!.split("_")!;
     for (const p of nameParts.reverse()) {
       if (p.startsWith("0")) continue; // variant civs
+      if (name.includes("_com_") && name.endsWith("_tem")) continue; // Templar Commanderie
       const n = parseFloat(p);
       if (!isNaN(n)) {
         age = n;

@@ -5874,7 +5874,7 @@
         "mo",
         "tug"
       ],
-      "unique": false,
+      "unique": true,
       "displayClasses": [
         "Ranged Gunpowder Infantry"
       ],
@@ -5892,10 +5892,18 @@
         "ranged",
         "ranged_infantry"
       ],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/units/handcannoneer-4.png",
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/handcannoneer-3.png",
       "description": "Powerful all-purpose ranged infantry.\n+ High damage\n- High cost\n- Slow movement speed\n- Countered by Horsemen",
       "variations": [
+        {
+          "id": "handcannoneer-3",
+          "pbgid": 9001958,
+          "attribName": "unit_handcannon_3_lan_college",
+          "civs": [
+            "hl"
+          ]
+        },
         {
           "id": "handcannoneer-4",
           "pbgid": 199714,
@@ -6021,38 +6029,10 @@
         },
         {
           "id": "handcannoneer-4",
-          "name": "Early Handcannoneer",
-          "pbgid": 9001958,
-          "attribName": "unit_handcannon_3_lan_college",
+          "pbgid": 5000067,
+          "attribName": "unit_handcannon_4_lan",
           "civs": [
             "hl"
-          ],
-          "unique": true,
-          "hitpoints": 100,
-          "weapons": [
-            {
-              "name": "Handcannon",
-              "type": "ranged",
-              "damage": 26,
-              "speed": 2.125,
-              "range": {
-                "min": 0,
-                "max": 4
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0.25,
-                "windup": 0,
-                "attack": 0.125,
-                "winddown": 0.5,
-                "reload": 1.25,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "attribName": "weapon_handcannon_3_lan_college",
-              "pbgid": 9001959
-            }
           ]
         },
         {
@@ -6124,7 +6104,7 @@
         }
       ],
       "baseId": "handcannoneer",
-      "age": 4,
+      "age": 3,
       "costs": {
         "food": 120,
         "wood": 0,
@@ -6137,33 +6117,7 @@
       "producedBy": [
         "archery-range"
       ],
-      "hitpoints": 130,
-      "weapons": [
-        {
-          "name": "Handcannon",
-          "type": "ranged",
-          "damage": 38,
-          "speed": 2.125,
-          "range": {
-            "min": 0,
-            "max": 4
-          },
-          "modifiers": [],
-          "durations": {
-            "aim": 0.25,
-            "windup": 0,
-            "attack": 0.125,
-            "winddown": 0.5,
-            "reload": 1.25,
-            "setup": 0,
-            "teardown": 0,
-            "cooldown": 0
-          },
-          "attribName": "weapon_handcannon_4",
-          "pbgid": 127729
-        }
-      ],
-      "armor": [],
+      "hitpoints": 100,
       "sight": {
         "inner_height": 10,
         "inner_radius": 8,
@@ -6176,7 +6130,72 @@
       "movement": {
         "speed": 1.125
       },
-      "shared": {}
+      "shared": {
+        "handcannoneer-3": {
+          "name": "Early Handcannoneer",
+          "weapons": [
+            {
+              "name": "Handcannon",
+              "type": "ranged",
+              "damage": 26,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 4
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0.25,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 1.25,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_handcannon_3_lan_college",
+              "pbgid": 9001959
+            }
+          ],
+          "armor": [],
+          "id": "handcannoneer-3"
+        },
+        "handcannoneer-4": {
+          "name": "Handcannoneer",
+          "age": 4,
+          "unique": false,
+          "icon": "https://data.aoe4world.com/images/units/handcannoneer-4.png",
+          "hitpoints": 130,
+          "weapons": [
+            {
+              "name": "Handcannon",
+              "type": "ranged",
+              "damage": 38,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 4
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0.25,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 1.25,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_handcannon_4",
+              "pbgid": 127729
+            }
+          ],
+          "armor": [],
+          "id": "handcannoneer-4"
+        }
+      }
     },
     {
       "id": "horseman",
@@ -35461,10 +35480,18 @@
         "torch_thrower",
         "xbox_support_quick_find"
       ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/batu-khan-3.png",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/batu-khan-2.png",
       "description": "Melee cavalry leader that buffs the attack damage of nearby allies while the Khan is attacking. Can only be recruited from the Golden Tent.\n+ Durable heavy cavalry\n+ Automatically improves with each Age\n- Only one Khan per Golden Horde player",
       "variations": [
+        {
+          "id": "batu-khan-2",
+          "pbgid": 7207297,
+          "attribName": "unit_khan_2_mon_ha_gol",
+          "civs": [
+            "gol"
+          ]
+        },
         {
           "id": "batu-khan-3",
           "pbgid": 5069738,
@@ -35483,7 +35510,7 @@
         }
       ],
       "baseId": "batu-khan",
-      "age": 3,
+      "age": 2,
       "costs": {
         "food": 0,
         "wood": 0,
@@ -35496,7 +35523,7 @@
       "producedBy": [
         "golden-tent"
       ],
-      "hitpoints": 350,
+      "hitpoints": 190,
       "sight": {
         "inner_height": 10,
         "inner_radius": 4,
@@ -35510,8 +35537,119 @@
         "speed": 1.625
       },
       "shared": {
+        "batu-khan-2": {
+          "name": "Batu Khan",
+          "weapons": [
+            {
+              "name": "Mace",
+              "type": "melee",
+              "damage": 10,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.75
+              },
+              "attribName": "weapon_khan_2_mon_ha_gol",
+              "pbgid": 9001298
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_lancer_mon",
+              "pbgid": 2135368
+            },
+            {
+              "name": "Lance",
+              "type": "melee",
+              "damage": 20,
+              "speed": 0.525,
+              "range": {
+                "min": 0,
+                "max": 1.0375
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.4
+              },
+              "attribName": "weapon_khan_2_charge_mon_ha_gol",
+              "pbgid": 9001299
+            },
+            {
+              "name": "Bow",
+              "type": "ranged",
+              "damage": 5,
+              "speed": 0.875,
+              "range": {
+                "min": 0,
+                "max": 0
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0.125,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 0.125,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_khan_debuff_2_mon_ha_gol",
+              "pbgid": 9002172
+            }
+          ],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 3
+            },
+            {
+              "type": "ranged",
+              "value": 3
+            }
+          ],
+          "id": "batu-khan-2"
+        },
         "batu-khan-3": {
           "name": "Batu Khan",
+          "age": 3,
+          "icon": "https://data.aoe4world.com/images/units/batu-khan-3.png",
+          "hitpoints": 350,
           "weapons": [
             {
               "name": "Mace",
@@ -36491,16 +36629,24 @@
       "variations": [
         {
           "id": "torguud-2",
-          "pbgid": 9001191,
-          "attribName": "unit_bodyguard_4_mon_ha_gol",
+          "pbgid": 9001189,
+          "attribName": "unit_bodyguard_2_mon_ha_gol",
           "civs": [
             "gol"
           ]
         },
         {
           "id": "torguud-3",
-          "pbgid": 9001189,
-          "attribName": "unit_bodyguard_2_mon_ha_gol",
+          "pbgid": 9001190,
+          "attribName": "unit_bodyguard_3_mon_ha_gol",
+          "civs": [
+            "gol"
+          ]
+        },
+        {
+          "id": "torguud-4",
+          "pbgid": 9001191,
+          "attribName": "unit_bodyguard_4_mon_ha_gol",
           "civs": [
             "gol"
           ]
@@ -36515,12 +36661,12 @@
         "gold": 0,
         "total": 175,
         "popcap": 1,
-        "time": 35
+        "time": 60
       },
       "producedBy": [
         "golden-tent"
       ],
-      "hitpoints": 300,
+      "hitpoints": 220,
       "sight": {
         "inner_height": 10,
         "inner_radius": 4,
@@ -36535,104 +36681,7 @@
       },
       "shared": {
         "torguud-2": {
-          "name": "Elite Torguud",
-          "weapons": [
-            {
-              "name": "Mace",
-              "type": "melee",
-              "damage": 17,
-              "speed": 1.375,
-              "range": {
-                "min": 0,
-                "max": 0.2875
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.5,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0.75
-              },
-              "attribName": "weapon_bodyguard_4_mon_ha_gol",
-              "pbgid": 9001309
-            },
-            {
-              "name": "Torch",
-              "type": "fire",
-              "damage": 10,
-              "speed": 2.125,
-              "range": {
-                "min": 0,
-                "max": 1.25
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.75,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 1.25
-              },
-              "attribName": "weapon_torch_bodyguard_mon_ha_gol",
-              "pbgid": 9005310
-            },
-            {
-              "name": "Lance",
-              "type": "melee",
-              "damage": 26,
-              "speed": 0.525,
-              "range": {
-                "min": 0,
-                "max": 1.0375
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0.4
-              },
-              "attribName": "weapon_bodyguard_4_charge_mon_ha_gol",
-              "pbgid": 9001308
-            }
-          ],
-          "armor": [
-            {
-              "type": "melee",
-              "value": 5
-            },
-            {
-              "type": "ranged",
-              "value": 5
-            }
-          ],
-          "id": "torguud-2"
-        },
-        "torguud-3": {
           "name": "Torguud",
-          "age": 3,
-          "costs": {
-            "food": 75,
-            "wood": 0,
-            "stone": 100,
-            "gold": 0,
-            "total": 175,
-            "popcap": 1,
-            "time": 60
-          },
-          "icon": "https://data.aoe4world.com/images/units/torguud-3.png",
-          "hitpoints": 220,
           "weapons": [
             {
               "name": "Mace",
@@ -36714,7 +36763,201 @@
               "value": 3
             }
           ],
+          "id": "torguud-2"
+        },
+        "torguud-3": {
+          "name": "Veteran Torguud",
+          "age": 3,
+          "costs": {
+            "food": 75,
+            "wood": 0,
+            "stone": 100,
+            "gold": 0,
+            "total": 175,
+            "popcap": 1,
+            "time": 45
+          },
+          "icon": "https://data.aoe4world.com/images/units/torguud-3.png",
+          "hitpoints": 260,
+          "weapons": [
+            {
+              "name": "Mace",
+              "type": "melee",
+              "damage": 12,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.75
+              },
+              "attribName": "weapon_bodyguard_3_mon_ha_gol",
+              "pbgid": 9001307
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_bodyguard_mon_ha_gol",
+              "pbgid": 9005310
+            },
+            {
+              "name": "Lance",
+              "type": "melee",
+              "damage": 19,
+              "speed": 0.525,
+              "range": {
+                "min": 0,
+                "max": 1.0375
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.4
+              },
+              "attribName": "weapon_bodyguard_3_charge_mon_ha_gol",
+              "pbgid": 9001306
+            }
+          ],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 4
+            },
+            {
+              "type": "ranged",
+              "value": 4
+            }
+          ],
           "id": "torguud-3"
+        },
+        "torguud-4": {
+          "name": "Elite Torguud",
+          "age": 4,
+          "costs": {
+            "food": 75,
+            "wood": 0,
+            "stone": 100,
+            "gold": 0,
+            "total": 175,
+            "popcap": 1,
+            "time": 35
+          },
+          "icon": "https://data.aoe4world.com/images/units/torguud-4.png",
+          "hitpoints": 300,
+          "weapons": [
+            {
+              "name": "Mace",
+              "type": "melee",
+              "damage": 17,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.75
+              },
+              "attribName": "weapon_bodyguard_4_mon_ha_gol",
+              "pbgid": 9001309
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_bodyguard_mon_ha_gol",
+              "pbgid": 9005310
+            },
+            {
+              "name": "Lance",
+              "type": "melee",
+              "damage": 26,
+              "speed": 0.525,
+              "range": {
+                "min": 0,
+                "max": 1.0375
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.4
+              },
+              "attribName": "weapon_bodyguard_4_charge_mon_ha_gol",
+              "pbgid": 9001308
+            }
+          ],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 5
+            },
+            {
+              "type": "ranged",
+              "value": 5
+            }
+          ],
+          "id": "torguud-4"
         }
       }
     },

@@ -691,10 +691,176 @@
         "torch_thrower",
         "xbox_support_quick_find"
       ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/batu-khan-3.png",
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/batu-khan-2.png",
       "description": "Melee cavalry leader that buffs the attack damage of nearby allies while the Khan is attacking. Can only be recruited from the Golden Tent.\n+ Durable heavy cavalry\n+ Automatically improves with each Age\n- Only one Khan per Golden Horde player",
       "variations": [
+        {
+          "id": "batu-khan-2",
+          "baseId": "batu-khan",
+          "type": "unit",
+          "name": "Batu Khan",
+          "pbgid": 7207297,
+          "attribName": "unit_khan_2_mon_ha_gol",
+          "age": 2,
+          "civs": [
+            "gol"
+          ],
+          "description": "Melee cavalry leader that buffs the attack damage of nearby allies while the Khan is attacking. Can only be recruited from the Golden Tent.\n+ Durable heavy cavalry\n+ Automatically improves with each Age\n- Only one Khan per Golden Horde player",
+          "classes": [
+            "annihilation_condition",
+            "armored",
+            "cavalry",
+            "cavalry_armored",
+            "find_non_siege_land_military",
+            "formational",
+            "heavy",
+            "horse",
+            "human",
+            "included_by_military_hotkeys",
+            "khan",
+            "land_military",
+            "melee",
+            "military",
+            "military_cavalry",
+            "torch_thrower",
+            "xbox_support_quick_find"
+          ],
+          "displayClasses": [
+            "Heavy Melee Cavalry"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 140,
+            "gold": 0,
+            "total": 140,
+            "popcap": 1,
+            "time": 22.5
+          },
+          "producedBy": [
+            "golden-tent"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/batu-khan-2.png",
+          "hitpoints": 190,
+          "weapons": [
+            {
+              "name": "Mace",
+              "type": "melee",
+              "damage": 10,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.75
+              },
+              "attribName": "weapon_khan_2_mon_ha_gol",
+              "pbgid": 9001298
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_lancer_mon",
+              "pbgid": 2135368
+            },
+            {
+              "name": "Lance",
+              "type": "melee",
+              "damage": 20,
+              "speed": 0.525,
+              "range": {
+                "min": 0,
+                "max": 1.0375
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.4
+              },
+              "attribName": "weapon_khan_2_charge_mon_ha_gol",
+              "pbgid": 9001299
+            },
+            {
+              "name": "Bow",
+              "type": "ranged",
+              "damage": 5,
+              "speed": 0.875,
+              "range": {
+                "min": 0,
+                "max": 0
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0.125,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0.5,
+                "reload": 0.125,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0
+              },
+              "attribName": "weapon_khan_debuff_2_mon_ha_gol",
+              "pbgid": 9002172
+            }
+          ],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 3
+            },
+            {
+              "type": "ranged",
+              "value": 3
+            }
+          ],
+          "sight": {
+            "inner_height": 10,
+            "inner_radius": 4,
+            "outer_height": -15,
+            "outer_radius": 28,
+            "base": 13.6,
+            "line": 28,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.625
+          }
+        },
         {
           "id": "batu-khan-3",
           "baseId": "batu-khan",
@@ -5288,153 +5454,10 @@
           "id": "torguud-2",
           "baseId": "torguud",
           "type": "unit",
-          "name": "Elite Torguud",
-          "pbgid": 9001191,
-          "attribName": "unit_bodyguard_4_mon_ha_gol",
-          "age": 2,
-          "civs": [
-            "gol"
-          ],
-          "description": "Expensive cavalry with high health and melee armor. Effective against melee units. Protects the Khan when nearby by redirecting damage to themselves and can heal the Khan while out of combat. \n+ Heavy armor\n+ High Health\n+ Automatically improves with each Age\n- Countered by Spearmen and Crossbowmen",
-          "classes": [
-            "annihilation_condition",
-            "armored",
-            "bodyguard",
-            "cavalry",
-            "cavalry_armored",
-            "find_non_siege_land_military",
-            "formational",
-            "heavy",
-            "horse",
-            "human",
-            "included_by_military_hotkeys",
-            "knight",
-            "land_military",
-            "melee",
-            "military",
-            "military_cavalry",
-            "torch_thrower"
-          ],
-          "displayClasses": [
-            "Heavy Melee Cavalry"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 75,
-            "wood": 0,
-            "stone": 100,
-            "gold": 0,
-            "total": 175,
-            "popcap": 1,
-            "time": 35
-          },
-          "producedBy": [
-            "golden-tent"
-          ],
-          "icon": "https://data.aoe4world.com/images/units/torguud-2.png",
-          "hitpoints": 300,
-          "weapons": [
-            {
-              "name": "Mace",
-              "type": "melee",
-              "damage": 17,
-              "speed": 1.375,
-              "range": {
-                "min": 0,
-                "max": 0.2875
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.5,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0.75
-              },
-              "attribName": "weapon_bodyguard_4_mon_ha_gol",
-              "pbgid": 9001309
-            },
-            {
-              "name": "Torch",
-              "type": "fire",
-              "damage": 10,
-              "speed": 2.125,
-              "range": {
-                "min": 0,
-                "max": 1.25
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.75,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 1.25
-              },
-              "attribName": "weapon_torch_bodyguard_mon_ha_gol",
-              "pbgid": 9005310
-            },
-            {
-              "name": "Lance",
-              "type": "melee",
-              "damage": 26,
-              "speed": 0.525,
-              "range": {
-                "min": 0,
-                "max": 1.0375
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0.4
-              },
-              "attribName": "weapon_bodyguard_4_charge_mon_ha_gol",
-              "pbgid": 9001308
-            }
-          ],
-          "armor": [
-            {
-              "type": "melee",
-              "value": 5
-            },
-            {
-              "type": "ranged",
-              "value": 5
-            }
-          ],
-          "sight": {
-            "inner_height": 10,
-            "inner_radius": 4,
-            "outer_height": -15,
-            "outer_radius": 28,
-            "base": 13.6,
-            "line": 28,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.625
-          }
-        },
-        {
-          "id": "torguud-3",
-          "baseId": "torguud",
-          "type": "unit",
           "name": "Torguud",
           "pbgid": 9001189,
           "attribName": "unit_bodyguard_2_mon_ha_gol",
-          "age": 3,
+          "age": 2,
           "civs": [
             "gol"
           ],
@@ -5474,7 +5497,7 @@
           "producedBy": [
             "golden-tent"
           ],
-          "icon": "https://data.aoe4world.com/images/units/torguud-3.png",
+          "icon": "https://data.aoe4world.com/images/units/torguud-2.png",
           "hitpoints": 220,
           "weapons": [
             {
@@ -5555,6 +5578,292 @@
             {
               "type": "ranged",
               "value": 3
+            }
+          ],
+          "sight": {
+            "inner_height": 10,
+            "inner_radius": 4,
+            "outer_height": -15,
+            "outer_radius": 28,
+            "base": 13.6,
+            "line": 28,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.625
+          }
+        },
+        {
+          "id": "torguud-3",
+          "baseId": "torguud",
+          "type": "unit",
+          "name": "Veteran Torguud",
+          "pbgid": 9001190,
+          "attribName": "unit_bodyguard_3_mon_ha_gol",
+          "age": 3,
+          "civs": [
+            "gol"
+          ],
+          "description": "Expensive cavalry with high health and melee armor. Effective against melee units. Protects the Khan when nearby by redirecting damage to themselves and can heal the Khan while out of combat. \n+ Heavy armor\n+ High Health\n+ Automatically improves with each Age\n- Countered by Spearmen and Crossbowmen",
+          "classes": [
+            "annihilation_condition",
+            "armored",
+            "bodyguard",
+            "cavalry",
+            "cavalry_armored",
+            "find_non_siege_land_military",
+            "formational",
+            "heavy",
+            "horse",
+            "human",
+            "included_by_military_hotkeys",
+            "knight",
+            "land_military",
+            "melee",
+            "military",
+            "military_cavalry",
+            "torch_thrower"
+          ],
+          "displayClasses": [
+            "Heavy Melee Cavalry"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 75,
+            "wood": 0,
+            "stone": 100,
+            "gold": 0,
+            "total": 175,
+            "popcap": 1,
+            "time": 45
+          },
+          "producedBy": [
+            "golden-tent"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/torguud-3.png",
+          "hitpoints": 260,
+          "weapons": [
+            {
+              "name": "Mace",
+              "type": "melee",
+              "damage": 12,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.75
+              },
+              "attribName": "weapon_bodyguard_3_mon_ha_gol",
+              "pbgid": 9001307
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_bodyguard_mon_ha_gol",
+              "pbgid": 9005310
+            },
+            {
+              "name": "Lance",
+              "type": "melee",
+              "damage": 19,
+              "speed": 0.525,
+              "range": {
+                "min": 0,
+                "max": 1.0375
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.4
+              },
+              "attribName": "weapon_bodyguard_3_charge_mon_ha_gol",
+              "pbgid": 9001306
+            }
+          ],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 4
+            },
+            {
+              "type": "ranged",
+              "value": 4
+            }
+          ],
+          "sight": {
+            "inner_height": 10,
+            "inner_radius": 4,
+            "outer_height": -15,
+            "outer_radius": 28,
+            "base": 13.6,
+            "line": 28,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.625
+          }
+        },
+        {
+          "id": "torguud-4",
+          "baseId": "torguud",
+          "type": "unit",
+          "name": "Elite Torguud",
+          "pbgid": 9001191,
+          "attribName": "unit_bodyguard_4_mon_ha_gol",
+          "age": 4,
+          "civs": [
+            "gol"
+          ],
+          "description": "Expensive cavalry with high health and melee armor. Effective against melee units. Protects the Khan when nearby by redirecting damage to themselves and can heal the Khan while out of combat. \n+ Heavy armor\n+ High Health\n+ Automatically improves with each Age\n- Countered by Spearmen and Crossbowmen",
+          "classes": [
+            "annihilation_condition",
+            "armored",
+            "bodyguard",
+            "cavalry",
+            "cavalry_armored",
+            "find_non_siege_land_military",
+            "formational",
+            "heavy",
+            "horse",
+            "human",
+            "included_by_military_hotkeys",
+            "knight",
+            "land_military",
+            "melee",
+            "military",
+            "military_cavalry",
+            "torch_thrower"
+          ],
+          "displayClasses": [
+            "Heavy Melee Cavalry"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 75,
+            "wood": 0,
+            "stone": 100,
+            "gold": 0,
+            "total": 175,
+            "popcap": 1,
+            "time": 35
+          },
+          "producedBy": [
+            "golden-tent"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/torguud-4.png",
+          "hitpoints": 300,
+          "weapons": [
+            {
+              "name": "Mace",
+              "type": "melee",
+              "damage": 17,
+              "speed": 1.375,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.75
+              },
+              "attribName": "weapon_bodyguard_4_mon_ha_gol",
+              "pbgid": 9001309
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_bodyguard_mon_ha_gol",
+              "pbgid": 9005310
+            },
+            {
+              "name": "Lance",
+              "type": "melee",
+              "damage": 26,
+              "speed": 0.525,
+              "range": {
+                "min": 0,
+                "max": 1.0375
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.4
+              },
+              "attribName": "weapon_bodyguard_4_charge_mon_ha_gol",
+              "pbgid": 9001308
+            }
+          ],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 5
+            },
+            {
+              "type": "ranged",
+              "value": 5
             }
           ],
           "sight": {

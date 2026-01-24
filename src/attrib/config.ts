@@ -385,6 +385,10 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "unit_horseman_rally_mon_ha_gol",
   "unit_manatarms_rally_mon_ha_gol",
 
+  // Golden horde UI placeholder for the ageups
+  "age_up_feudal_mon_ha_gol",
+  "age_up_castle_mon_ha_gol",
+  "age_up_imperial_mon_ha_gol",
 
   // Inspect later if it's addable
   "building_carts_mon_ha_gol", 

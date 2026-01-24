@@ -10258,55 +10258,12 @@
           ]
         },
         {
-          "id": "golden-horn-tower-3",
+          "id": "golden-horn-tower-2",
           "pbgid": 9000939,
           "attribName": "building_landmark_age2_galata_tower_byz_ha_mac",
           "civs": [
             "mac"
-          ]
-        }
-      ],
-      "baseId": "golden-horn-tower",
-      "age": 2,
-      "costs": {
-        "food": 1200,
-        "wood": 0,
-        "stone": 0,
-        "gold": 600,
-        "oliveoil": 0,
-        "total": 1800,
-        "popcap": 0,
-        "time": 220
-      },
-      "producedBy": [
-        "villager"
-      ],
-      "hitpoints": 5000,
-      "sight": {
-        "inner_height": 8,
-        "inner_radius": 20,
-        "outer_height": 0,
-        "outer_radius": 25,
-        "base": 25,
-        "line": 25,
-        "height": 8
-      },
-      "influences": [],
-      "shared": {
-        "golden-horn-tower-2": {
-          "name": "Golden Horn Tower",
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
           ],
-          "id": "golden-horn-tower-2"
-        },
-        "golden-horn-tower-3": {
-          "name": "Golden Horn Tower",
-          "age": 3,
           "description": "Defensive building equipped with Crossbow emplacements and large Line of Sight. Generates batches of Crossbowman for free over time. \nDetects units in stealth or disguises.",
           "classes": [
             "age2_landmark1",
@@ -10334,7 +10291,6 @@
             "popcap": 0,
             "time": 220
           },
-          "icon": "https://data.aoe4world.com/images/buildings/golden-horn-tower-3.png",
           "weapons": [
             {
               "name": "Crossbow",
@@ -10983,12 +10939,6 @@
               "pbgid": 171261
             }
           ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
           "sight": {
             "inner_height": 501,
             "inner_radius": 35,
@@ -11008,10 +10958,43 @@
               "cavalry",
               "khan"
             ]
-          },
-          "id": "golden-horn-tower-3"
+          }
         }
-      }
+      ],
+      "baseId": "golden-horn-tower",
+      "age": 2,
+      "costs": {
+        "food": 1200,
+        "wood": 0,
+        "stone": 0,
+        "gold": 600,
+        "oliveoil": 0,
+        "total": 1800,
+        "popcap": 0,
+        "time": 220
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "hitpoints": 5000,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
+        "line": 25,
+        "height": 8
+      },
+      "influences": [],
+      "shared": {}
     },
     {
       "id": "grand-winery",
@@ -14181,11 +14164,26 @@
           ]
         },
         {
-          "id": "berkshire-palace-4",
+          "id": "berkshire-palace-3",
           "pbgid": 5000045,
           "attribName": "building_landmark_age3_berkshire_lan",
           "civs": [
             "hl"
+          ],
+          "description": "Acts as a Keep with increased health and powerful incendiary arrows. All weapons have 14.5 tiles of range.\nIncreases the maximum damage granted by a House Unified to +6. Also grants 3 Earl's Guard upon being fully constructed.",
+          "classes": [
+            "age3_landmark2",
+            "audio_production_landmark",
+            "building",
+            "castle",
+            "has_default_building_weapons",
+            "landmark",
+            "select_special_building",
+            "siegeable",
+            "town_bell_target",
+            "town_center_or_landmark",
+            "wonder",
+            "wonder_castle_age"
           ]
         }
       ],
@@ -14204,6 +14202,59 @@
         "villager"
       ],
       "hitpoints": 6500,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 14,
+          "speed": 0.5,
+          "range": {
+            "min": 0,
+            "max": 15
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.125,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 6
+          },
+          "attribName": "weapon_keep_arrows_incen_a",
+          "pbgid": 2118864
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        },
+        {
+          "type": "fire",
+          "value": 6
+        }
+      ],
       "sight": {
         "inner_height": 501,
         "inner_radius": 60,
@@ -14224,139 +14275,7 @@
         ]
       },
       "influences": [],
-      "shared": {
-        "berkshire-palace-3": {
-          "name": "Berkshire Palace",
-          "weapons": [
-            {
-              "name": "Bow",
-              "type": "ranged",
-              "damage": 14,
-              "speed": 0.5,
-              "range": {
-                "min": 0,
-                "max": 15
-              },
-              "modifiers": [
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "naval",
-                        "unit"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0,
-                "windup": 0.125,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0.25,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "burst": {
-                "count": 6
-              },
-              "attribName": "weapon_keep_arrows_incen_a",
-              "pbgid": 2118864
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            },
-            {
-              "type": "fire",
-              "value": 6
-            }
-          ],
-          "id": "berkshire-palace-3"
-        },
-        "berkshire-palace-4": {
-          "name": "Berkshire Palace",
-          "age": 4,
-          "description": "Acts as a Keep with increased health and powerful incendiary arrows. All weapons have 14.5 tiles of range.\nIncreases the maximum damage granted by a House Unified to +6. Also grants 3 Earl's Guard upon being fully constructed.",
-          "classes": [
-            "age3_landmark2",
-            "audio_production_landmark",
-            "building",
-            "castle",
-            "has_default_building_weapons",
-            "landmark",
-            "select_special_building",
-            "siegeable",
-            "town_bell_target",
-            "town_center_or_landmark",
-            "wonder",
-            "wonder_castle_age"
-          ],
-          "icon": "https://data.aoe4world.com/images/buildings/berkshire-palace-4.png",
-          "weapons": [
-            {
-              "name": "Bow",
-              "type": "ranged",
-              "damage": 14,
-              "speed": 0.5,
-              "range": {
-                "min": 0,
-                "max": 15
-              },
-              "modifiers": [
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "naval",
-                        "unit"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0,
-                "windup": 0.125,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0.25,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "burst": {
-                "count": 6
-              },
-              "attribName": "weapon_keep_arrows_incen_a",
-              "pbgid": 2118864
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            },
-            {
-              "type": "fire",
-              "value": 6
-            }
-          ],
-          "id": "berkshire-palace-4"
-        }
-      }
+      "shared": {}
     },
     {
       "id": "cathedral-of-st-thomas",
@@ -14680,11 +14599,26 @@
           ]
         },
         {
-          "id": "the-white-tower-3",
+          "id": "the-white-tower-2",
           "pbgid": 5000043,
           "attribName": "building_landmark_age2_white_tower_lan",
           "civs": [
             "hl"
+          ],
+          "description": "Acts as a Keep with all the behaviors, technologies, and bonuses.\nGrants 3 Earl's Guard upon being fully constructed.",
+          "classes": [
+            "age2_landmark2",
+            "audio_production_landmark",
+            "building",
+            "castle",
+            "has_default_building_weapons",
+            "landmark",
+            "select_special_building",
+            "siegeable",
+            "town_bell_target",
+            "town_center_or_landmark",
+            "wonder",
+            "wonder_feudal_age"
           ]
         }
       ],
@@ -14703,6 +14637,59 @@
         "villager"
       ],
       "hitpoints": 5000,
+      "weapons": [
+        {
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 12,
+          "speed": 0.5,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.125,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 3
+          },
+          "attribName": "weapon_keep_arrows_a",
+          "pbgid": 127372
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        },
+        {
+          "type": "fire",
+          "value": 6
+        }
+      ],
       "sight": {
         "inner_height": 501,
         "inner_radius": 40,
@@ -14723,139 +14710,7 @@
         ]
       },
       "influences": [],
-      "shared": {
-        "the-white-tower-2": {
-          "name": "The White Tower",
-          "weapons": [
-            {
-              "name": "Bow",
-              "type": "ranged",
-              "damage": 12,
-              "speed": 0.5,
-              "range": {
-                "min": 0,
-                "max": 8
-              },
-              "modifiers": [
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "naval",
-                        "unit"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0,
-                "windup": 0.125,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0.25,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "burst": {
-                "count": 3
-              },
-              "attribName": "weapon_keep_arrows_a",
-              "pbgid": 127372
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            },
-            {
-              "type": "fire",
-              "value": 6
-            }
-          ],
-          "id": "the-white-tower-2"
-        },
-        "the-white-tower-3": {
-          "name": "The White Tower",
-          "age": 3,
-          "description": "Acts as a Keep with all the behaviors, technologies, and bonuses.\nGrants 3 Earl's Guard upon being fully constructed.",
-          "classes": [
-            "age2_landmark2",
-            "audio_production_landmark",
-            "building",
-            "castle",
-            "has_default_building_weapons",
-            "landmark",
-            "select_special_building",
-            "siegeable",
-            "town_bell_target",
-            "town_center_or_landmark",
-            "wonder",
-            "wonder_feudal_age"
-          ],
-          "icon": "https://data.aoe4world.com/images/buildings/the-white-tower-3.png",
-          "weapons": [
-            {
-              "name": "Bow",
-              "type": "ranged",
-              "damage": 12,
-              "speed": 0.5,
-              "range": {
-                "min": 0,
-                "max": 8
-              },
-              "modifiers": [
-                {
-                  "property": "rangedAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "naval",
-                        "unit"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 10,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0,
-                "windup": 0.125,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0.25,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0
-              },
-              "burst": {
-                "count": 3
-              },
-              "attribName": "weapon_keep_arrows_a",
-              "pbgid": 127372
-            }
-          ],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            },
-            {
-              "type": "fire",
-              "value": 6
-            }
-          ],
-          "id": "the-white-tower-3"
-        }
-      }
+      "shared": {}
     },
     {
       "id": "wynguard-palace",
@@ -14989,11 +14844,28 @@
           ]
         },
         {
-          "id": "chamber-of-commerce-2",
+          "id": "chamber-of-commerce-1",
           "pbgid": 4910792,
           "attribName": "building_landmark_age1_chamber_of_commerce_fre_ha_01",
           "civs": [
             "je"
+          ],
+          "classes": [
+            "age1_landmark2",
+            "audio_production_landmark",
+            "building",
+            "economy_building",
+            "landmark",
+            "select_special_building",
+            "siegeable",
+            "town_center_or_landmark",
+            "trade_post",
+            "wonder",
+            "wonder_dark_age"
+          ],
+          "producedBy": [
+            "jeanne-darc-peasant",
+            "villager"
           ]
         }
       ],
@@ -15012,6 +14884,13 @@
         "villager"
       ],
       "hitpoints": 5000,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
       "sight": {
         "inner_height": 8,
         "inner_radius": 20,
@@ -15022,49 +14901,7 @@
         "height": 8
       },
       "influences": [],
-      "shared": {
-        "chamber-of-commerce-1": {
-          "name": "Chamber of Commerce",
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "id": "chamber-of-commerce-1"
-        },
-        "chamber-of-commerce-2": {
-          "name": "Chamber of Commerce",
-          "age": 2,
-          "classes": [
-            "age1_landmark2",
-            "audio_production_landmark",
-            "building",
-            "economy_building",
-            "landmark",
-            "select_special_building",
-            "siegeable",
-            "town_center_or_landmark",
-            "trade_post",
-            "wonder",
-            "wonder_dark_age"
-          ],
-          "producedBy": [
-            "jeanne-darc-peasant",
-            "villager"
-          ],
-          "icon": "https://data.aoe4world.com/images/buildings/chamber-of-commerce-2.png",
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "id": "chamber-of-commerce-2"
-        }
-      }
+      "shared": {}
     },
     {
       "id": "college-of-artillery",
@@ -15105,54 +14942,12 @@
           ]
         },
         {
-          "id": "college-of-artillery-4",
+          "id": "college-of-artillery-3",
           "pbgid": 3621045,
           "attribName": "building_landmark_age3_ecole_de_poudre_a_canon_fre_ha_01",
           "civs": [
             "je"
-          ]
-        }
-      ],
-      "baseId": "college-of-artillery",
-      "age": 3,
-      "costs": {
-        "food": 2400,
-        "wood": 0,
-        "stone": 0,
-        "gold": 1200,
-        "total": 3600,
-        "popcap": 0,
-        "time": 250
-      },
-      "producedBy": [
-        "villager"
-      ],
-      "hitpoints": 5000,
-      "sight": {
-        "inner_height": 8,
-        "inner_radius": 20,
-        "outer_height": 0,
-        "outer_radius": 25,
-        "base": 25,
-        "line": 25,
-        "height": 8
-      },
-      "influences": [],
-      "shared": {
-        "college-of-artillery-3": {
-          "name": "College of Artillery",
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
           ],
-          "id": "college-of-artillery-3"
-        },
-        "college-of-artillery-4": {
-          "name": "College of Artillery",
-          "age": 4,
           "classes": [
             "age3_landmark2",
             "audio_production_landmark",
@@ -15171,18 +14966,42 @@
           "producedBy": [
             "jeanne-darc-peasant",
             "villager"
-          ],
-          "icon": "https://data.aoe4world.com/images/buildings/college-of-artillery-4.png",
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "id": "college-of-artillery-4"
+          ]
         }
-      }
+      ],
+      "baseId": "college-of-artillery",
+      "age": 3,
+      "costs": {
+        "food": 2400,
+        "wood": 0,
+        "stone": 0,
+        "gold": 1200,
+        "total": 3600,
+        "popcap": 0,
+        "time": 250
+      },
+      "producedBy": [
+        "villager"
+      ],
+      "hitpoints": 5000,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 25,
+        "base": 25,
+        "line": 25,
+        "height": 8
+      },
+      "influences": [],
+      "shared": {}
     },
     {
       "id": "guild-hall",
@@ -15539,11 +15358,16 @@
           ]
         },
         {
-          "id": "royal-institute-3",
+          "id": "royal-institute-2",
           "pbgid": 2694641,
           "attribName": "building_landmark_age3_le_grande_university_fre_ha_01",
           "civs": [
             "je"
+          ],
+          "description": "Houses unique technologies. Research is -30% cheaper here and ignores Age requirements.",
+          "producedBy": [
+            "jeanne-darc-peasant",
+            "villager"
           ]
         }
       ],
@@ -15562,6 +15386,13 @@
         "villager"
       ],
       "hitpoints": 5000,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
       "sight": {
         "inner_height": 8,
         "inner_radius": 20,
@@ -15572,37 +15403,7 @@
         "height": 8
       },
       "influences": [],
-      "shared": {
-        "royal-institute-2": {
-          "name": "Royal Institute",
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "id": "royal-institute-2"
-        },
-        "royal-institute-3": {
-          "name": "Royal Institute",
-          "age": 3,
-          "description": "Houses unique technologies. Research is -30% cheaper here and ignores Age requirements.",
-          "producedBy": [
-            "jeanne-darc-peasant",
-            "villager"
-          ],
-          "icon": "https://data.aoe4world.com/images/buildings/royal-institute-3.png",
-          "weapons": [],
-          "armor": [
-            {
-              "type": "ranged",
-              "value": 50
-            }
-          ],
-          "id": "royal-institute-3"
-        }
-      }
+      "shared": {}
     },
     {
       "id": "school-of-cavalry",

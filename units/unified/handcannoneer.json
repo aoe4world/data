@@ -38,7 +38,7 @@
     "ranged",
     "ranged_infantry"
   ],
-  "minAge": 4,
+  "minAge": 3,
   "icon": "https://data.aoe4world.com/images/units/handcannoneer-4.png",
   "description": "Powerful all-purpose ranged infantry.\n+ High damage\n- High cost\n- Slow movement speed\n- Countered by Horsemen",
   "variations": [
@@ -795,13 +795,13 @@
       }
     },
     {
-      "id": "handcannoneer-4",
+      "id": "handcannoneer-3",
       "baseId": "handcannoneer",
       "type": "unit",
       "name": "Early Handcannoneer",
       "pbgid": 9001958,
       "attribName": "unit_handcannon_3_lan_college",
-      "age": 4,
+      "age": 3,
       "civs": [
         "hl"
       ],
@@ -836,7 +836,7 @@
       "producedBy": [
         "archery-range"
       ],
-      "icon": "https://data.aoe4world.com/images/units/handcannoneer-4.png",
+      "icon": "https://data.aoe4world.com/images/units/handcannoneer-3.png",
       "hitpoints": 100,
       "weapons": [
         {
@@ -861,6 +861,89 @@
           },
           "attribName": "weapon_handcannon_3_lan_college",
           "pbgid": 9001959
+        }
+      ],
+      "armor": [],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 8,
+        "outer_height": -15,
+        "outer_radius": 32,
+        "base": 17.6,
+        "line": 32,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "handcannoneer-4",
+      "baseId": "handcannoneer",
+      "type": "unit",
+      "name": "Handcannoneer",
+      "pbgid": 5000067,
+      "attribName": "unit_handcannon_4_lan",
+      "age": 4,
+      "civs": [
+        "hl"
+      ],
+      "description": "Powerful all-purpose ranged infantry.\n+ High damage\n- High cost\n- Slow movement speed\n- Countered by Horsemen",
+      "classes": [
+        "annihilation_condition",
+        "find_non_siege_land_military",
+        "formational",
+        "gunpowder",
+        "handcannon",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "land_military",
+        "military",
+        "ranged",
+        "ranged_infantry"
+      ],
+      "displayClasses": [
+        "Ranged Gunpowder Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 120,
+        "wood": 0,
+        "stone": 0,
+        "gold": 120,
+        "total": 240,
+        "popcap": 1,
+        "time": 35
+      },
+      "producedBy": [
+        "archery-range"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/handcannoneer-4.png",
+      "hitpoints": 130,
+      "weapons": [
+        {
+          "name": "Handcannon",
+          "type": "ranged",
+          "damage": 38,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 4
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0.25,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0.5,
+            "reload": 1.25,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_handcannon_4",
+          "pbgid": 127729
         }
       ],
       "armor": [],

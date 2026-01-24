@@ -1,19 +1,18 @@
 {
-  "id": "torguud-2",
-  "baseId": "torguud",
+  "id": "batu-khan-2",
+  "baseId": "batu-khan",
   "type": "unit",
-  "name": "Torguud",
-  "pbgid": 9001189,
-  "attribName": "unit_bodyguard_2_mon_ha_gol",
+  "name": "Batu Khan",
+  "pbgid": 7207297,
+  "attribName": "unit_khan_2_mon_ha_gol",
   "age": 2,
   "civs": [
     "gol"
   ],
-  "description": "Expensive cavalry with high health and melee armor. Effective against melee units. Protects the Khan when nearby by redirecting damage to themselves and can heal the Khan while out of combat. \n+ Heavy armor\n+ High Health\n+ Automatically improves with each Age\n- Countered by Spearmen and Crossbowmen",
+  "description": "Melee cavalry leader that buffs the attack damage of nearby allies while the Khan is attacking. Can only be recruited from the Golden Tent.\n+ Durable heavy cavalry\n+ Automatically improves with each Age\n- Only one Khan per Golden Horde player",
   "classes": [
     "annihilation_condition",
     "armored",
-    "bodyguard",
     "cavalry",
     "cavalry_armored",
     "find_non_siege_land_military",
@@ -22,31 +21,32 @@
     "horse",
     "human",
     "included_by_military_hotkeys",
-    "knight",
+    "khan",
     "land_military",
     "melee",
     "military",
     "military_cavalry",
-    "torch_thrower"
+    "torch_thrower",
+    "xbox_support_quick_find"
   ],
   "displayClasses": [
     "Heavy Melee Cavalry"
   ],
   "unique": true,
   "costs": {
-    "food": 75,
+    "food": 0,
     "wood": 0,
-    "stone": 100,
+    "stone": 140,
     "gold": 0,
-    "total": 175,
+    "total": 140,
     "popcap": 1,
-    "time": 60
+    "time": 22.5
   },
   "producedBy": [
     "golden-tent"
   ],
-  "icon": "https://data.aoe4world.com/images/units/torguud-2.png",
-  "hitpoints": 220,
+  "icon": "https://data.aoe4world.com/images/units/batu-khan-2.png",
+  "hitpoints": 190,
   "weapons": [
     {
       "name": "Mace",
@@ -68,8 +68,8 @@
         "teardown": 0,
         "cooldown": 0.75
       },
-      "attribName": "weapon_bodyguard_2_mon_ha_gol",
-      "pbgid": 9001304
+      "attribName": "weapon_khan_2_mon_ha_gol",
+      "pbgid": 9001298
     },
     {
       "name": "Torch",
@@ -91,13 +91,13 @@
         "teardown": 0,
         "cooldown": 1.25
       },
-      "attribName": "weapon_torch_bodyguard_mon_ha_gol",
-      "pbgid": 9005310
+      "attribName": "weapon_torch_lancer_mon",
+      "pbgid": 2135368
     },
     {
       "name": "Lance",
       "type": "melee",
-      "damage": 15,
+      "damage": 20,
       "speed": 0.525,
       "range": {
         "min": 0,
@@ -114,8 +114,31 @@
         "teardown": 0,
         "cooldown": 0.4
       },
-      "attribName": "weapon_bodyguard_2_charge_mon_ha_hol",
-      "pbgid": 9001305
+      "attribName": "weapon_khan_2_charge_mon_ha_gol",
+      "pbgid": 9001299
+    },
+    {
+      "name": "Bow",
+      "type": "ranged",
+      "damage": 5,
+      "speed": 0.875,
+      "range": {
+        "min": 0,
+        "max": 0
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0.125,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 0.125,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_khan_debuff_2_mon_ha_gol",
+      "pbgid": 9002172
     }
   ],
   "armor": [
