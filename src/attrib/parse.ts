@@ -331,10 +331,18 @@ function parseAge(name: string, requirements: any, parent_pbg: string) {
   const ageup = ageUpLandmark.find((x) => typeof parent_pbg === "string" && parent_pbg?.endsWith(x.parent));
   if (ageup) return ageup.age;
   let age = 1;
+
+  // Flatten requirements
+  if (requirements) {
+    for (const req of requirements) {
+      if (req.value === 'requirements/required_all_in_list' && req.requirements) {
+        requirements.push(...req.requirements);
+      }
+    }
+  }
+
   const requiredUpgrades = requirements?.filter((x) => String(x?.upgrade_name).endsWith("_age") && x?.is_present).map((x) => x.upgrade_name) ?? [];
 
-  if (name.includes("bodyguard"))
-    console.log("Req test", name, requiredUpgrades, parent_pbg);
   if (requiredUpgrades.some((x) => x.endsWith("imperial_age"))) age = 4;
   else if (requiredUpgrades.some((x) => x.endsWith("castle_age"))) age = 3;
   else if (requiredUpgrades.some((x) => x.endsWith("feudal_age"))) age = 2;

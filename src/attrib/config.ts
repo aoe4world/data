@@ -252,10 +252,6 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "_wall_infantry",
   "_wall_gate_infantry",
 
-  (file) => file.includes("_wing_feudal") && !file.includes("abb_ha_01"),
-  (file) => file.includes("_wing_castle") && !file.includes("abb_ha_01"),
-  (file) => file.includes("_wing_imperial") && !file.includes("abb_ha_01"),
-
   // Field constructed versions of siege, prefer the Siege Workshop version
   "unit_mangonel_3_buildable_abb",
   "unit_mangonel_3_field_construct_mon",
