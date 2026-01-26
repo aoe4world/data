@@ -351,6 +351,7 @@ function parseAge(name: string, requirements: any, parent_pbg: string) {
     const nameParts = name!.split("/")!.shift()!.split("_")!;
     for (const p of nameParts.reverse()) {
       if (p.startsWith("0")) continue; // variant civs
+      if (name.includes("upgrade_tent_") && name.endsWith("_mon_ha_gol")) continue; // Golden Horde
       if (name.includes("_com_") && name.endsWith("_tem")) continue; // Templar Commanderie
       const n = parseFloat(p);
       if (!isNaN(n)) {

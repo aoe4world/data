@@ -7,6 +7,32 @@ import { KHAGANTE_SPAWN_COUNTS } from "./config";
 const workarounds = new Map<string, Override>();
 const NO_COSTS = { food: 0, wood: 0, stone: 0, gold: 0, vizier: undefined, oliveoil: undefined, silver: undefined, total: 0, time: 0, popcap: 0 };
 
+// –––––– Fix Up Landmark ages ––––––
+
+workaround("Fix Golden Tent Age", {
+  predicate: (item) => item.baseId === "golden-tent",
+  mutator: (item) => {
+    item.age = 1;
+    item.id = `${item.baseId}-${item.age}`;
+  }
+});
+
+workaround("Fix Jiangnan Tower Age", {
+  predicate: (item) => item.baseId === "jiangnan-tower",
+  mutator: (item) => {
+    item.age = 1;
+    item.id = `${item.baseId}-${item.age}`;
+  }
+});
+
+workaround("Fix Mount Lu Academy Age", {
+  predicate: (item) => item.baseId === "mount-lu-academy",
+  mutator: (item) => {
+    item.age = 2;
+    item.id = `${item.baseId}-${item.age}`;
+  }
+});
+
 // –––––– Building Emplacements and Garrisons ––––––
 
 workaround("Remove weapons from Chinese Village", {

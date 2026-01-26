@@ -1886,9 +1886,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "steeled-arrow": standardAbility(
-    "",
+    "Increase the ranged damage of all arrows and bolts by +{1}.",
     ([d]) => [
-    // Increase the ranged damage of all non-siege units and buildings by +1.
     {
       property: "rangedAttack",
       select: common.allRangedUnitsAndBuildingsExceptSiege,
@@ -1900,9 +1899,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "balanced-projectiles": standardAbility(
-    "",
+    "Increase the ranged damage of all arrows and bolts by +{1}.",
     ([d]) => [
-    // Increase the ranged damage of all non-siege units and buildings by +1.
     {
       property: "rangedAttack",
       select: common.allRangedUnitsAndBuildingsExceptSiege,
@@ -1914,10 +1912,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "platecutter-point": standardAbility(
-    "",
+    "Increase the ranged damage of all arrows and bolts by +{1}.",
     ([d]) => [
-    // Increase the ranged damage of all non-siege units and buildings by +1.
-
     {
       property: "rangedAttack",
       select: common.allRangedUnitsAndBuildingsExceptSiege,
@@ -1929,10 +1925,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "iron-undermesh": standardAbility(
-    "",
+    "Increase the ranged armor of all non-siege units by +{1}.",
     ([a]) => [
-    // Increase the ranged armor of all non-siege units by +1.
-
     {
       property: "rangedArmor",
       select: common.allNonSiegeUnits,
@@ -1944,10 +1938,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "wedge-rivets": standardAbility(
-    "",
+    "Increase the ranged armor of all non-siege units by +{1}.",
     ([a]) => [
-    // Increase the ranged armor of all non-siege units by +1.
-
     {
       property: "rangedArmor",
       select: common.allNonSiegeUnits,
@@ -1958,9 +1950,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ]
   ),
   "angled-surfaces": standardAbility(
-    "",
+    "Increase the ranged armor of all non-siege units by +{1}.",
     ([a]) => [
-    // Increase the ranged armor of all non-siege units by +1.
     {
       property: "rangedArmor",
       select: common.allNonSiegeUnits,
@@ -1972,10 +1963,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "fitted-leatherwork": standardAbility(
-    "",
+    "Increase the melee armor of all non-siege units by +{1}.",
     ([a]) => [
-    // Increase the melee armor of all non-siege units by +1.
-
     {
       property: "meleeArmor",
       select: common.allNonSiegeUnits,
@@ -1987,10 +1976,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "insulated-helm": standardAbility(
-    "",
+    "Increase the melee armor of all non-siege units by +{1}.",
     ([a]) => [
-    // Increase the melee armor of all non-siege units by +1.
-
     {
       property: "meleeArmor",
       select: common.allNonSiegeUnits,
@@ -2002,9 +1989,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "master-smiths": standardAbility(
-    "",
+    "Increase the melee armor of all non-siege units by +{1}.",
     ([a]) => [
-    // Increase the melee armor of all non-siege units by +1.
     {
       property: "meleeArmor",
       select: common.allNonSiegeUnits,
@@ -2016,9 +2002,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "bloomery": standardAbility(
-    "",
+    "Increase the melee damage of all non-siege units by +{1}.",
     ([d]) => [
-    // Increase the melee damage of all non-siege units by +1.
     {
       property: "meleeAttack",
       select: common.allMeleeUnitsExceptSiege,
@@ -2030,9 +2015,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "damascus-steel": standardAbility(
-    "",
+    "Increase the melee damage of all non-siege units by +{1}.",
     ([d]) => [
-    // Increase the melee damage of all non-siege units by +1.
     {
       property: "meleeAttack",
       select: common.allMeleeUnitsExceptSiege,
@@ -2044,9 +2028,8 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "decarbonization": standardAbility(
-    "",
+    "Increase the melee damage of all non-siege units by +{1}.",
     ([d]) => [
-    // Increase the melee damage of all non-siege units by +1.
     {
       property: "meleeAttack",
       select: common.allMeleeUnitsExceptSiege,

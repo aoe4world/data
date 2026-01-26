@@ -275,12 +275,12 @@ async function compile(type: ITEM_TYPES) {
   const items = await getAllItems(type);
   if (!items) return;
   const unified = unifyItems(items);
-  const baseIds = items.reduce((s, item) => { s[item.baseId] = item.name; return s; }, {});
+  const baseIds = items.reduce((s, item) => { s[`${FOLDERS[type].SLUG}/${item.baseId}`] = item.name; return s; }, {});
 
   writeJson(path.join(FOLDERS[type].DATA, "all.json"), { ...meta, data: items });
   writeJson(path.join(FOLDERS[type].DATA, "all-unified.json"), { ...meta, data: unified });
   writeJson(path.join(FOLDERS[type].DATA, "all-optimized.json"), { ...meta, data: optimizeItems(unified) });
-  //writeJson(path.join(FOLDERS[type].DATA, "all-baseids.json"), { ...meta, data: baseIds });
+  writeJson(path.join(FOLDERS[type].DATA, "all-baseids.json"), { ...meta, data: baseIds });
   unified.forEach((u) => writeJson(path.join(FOLDERS[type].DATA, `unified/${u.id}.json`), Object.assign({}, meta, u), { log: false }));
 
   Object.values(CIVILIZATIONS).forEach((civ) => {
@@ -332,6 +332,8 @@ async function compile(type: ITEM_TYPES) {
     
     writeJson(`${FOLDERS.CIVILIZATIONS.DATA}/${techTree.civ.slug}.json`, techTree.civOverview, { log: false });
   }
+
+writeJson(`${FOLDERS.CIVILIZATIONS.DATA}/civs-index.json`, CIVILIZATIONS, { log: false });
 
   [ITEM_TYPES.UNITS, ITEM_TYPES.TECHNOLOGIES, ITEM_TYPES.BUILDINGS, ITEM_TYPES.UPGRADES, ITEM_TYPES.ABILITIES].forEach((type) => compile(type));
 })();
