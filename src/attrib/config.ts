@@ -274,6 +274,7 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   (file) => file.split("/").pop()!.startsWith("upgrade_unit") && file.endsWith("farimba_mal"),
   "landmarkvariant",
   (file) => file.includes("upgrade_unit_") && file.includes("spirit_way_chi"),
+  "building_landmark_age3_great_wall_control_rogue_chi", // Rogue/Crucible
 
   // Crusador mode landmarks
   (file) => file.includes("_cru"),
