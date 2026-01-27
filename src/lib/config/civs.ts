@@ -1,5 +1,6 @@
 export const CIVILIZATIONS = {
   ab: {
+    id: "abbasid_dynasty",
     name: "Abbasid Dynasty",
     abbr: "ab",
     slug: "abbasid",
@@ -7,6 +8,7 @@ export const CIVILIZATIONS = {
     expansion: ["base"],
   },
   ay: {
+    id: "ayyubids",
     name: "Ayyubids",
     abbr: "ay",
     slug: "ayyubids",
@@ -14,6 +16,7 @@ export const CIVILIZATIONS = {
     expansion: ["sultans-ascend"],
   },
   by: {
+    id: "byzantines",
     name: "Byzantines",
     abbr: "by",
     slug: "byzantines",
@@ -21,6 +24,7 @@ export const CIVILIZATIONS = {
     expansion: ["sultans-ascend"],
   },
   ch: {
+    id: "chinese",
     name: "Chinese",
     abbr: "ch",
     slug: "chinese",
@@ -28,6 +32,7 @@ export const CIVILIZATIONS = {
     expansion: ["base"],
   },
   de: {
+    id: "delhi_sultanate",
     name: "Delhi Sultanate",
     abbr: "de",
     slug: "delhi",
@@ -35,6 +40,7 @@ export const CIVILIZATIONS = {
     expansion: ["base"],
   },
   en: {
+    id: "english",
     name: "English",
     abbr: "en",
     slug: "english",
@@ -42,6 +48,7 @@ export const CIVILIZATIONS = {
     expansion: ["base"],
   },
   fr: {
+    id: "french",
     name: "French",
     abbr: "fr",
     slug: "french",
@@ -49,6 +56,7 @@ export const CIVILIZATIONS = {
     expansion: ["base"],
   },
   gol: {
+    id: "golden_horde",
     name: "Golden Horde",
     abbr: "gol",
     slug: "goldenhorde",
@@ -56,6 +64,7 @@ export const CIVILIZATIONS = {
     expansion: ["dynasties-of-the-east"],
   },
   hr: {
+    id: "holy_roman_empire",
     name: "Holy Roman Empire",
     abbr: "hr",
     slug: "hre",
@@ -63,6 +72,7 @@ export const CIVILIZATIONS = {
     expansion: ["base"],
   },
   hl: {
+    id: "house_of_lancaster",
     name: "House of Lancaster",
     abbr: "hl",
     slug: "lancaster",
@@ -70,6 +80,7 @@ export const CIVILIZATIONS = {
     expansion: ["knights-of-cross-and-rose"],
   },
   ja: {
+    id: "japanese",
     name: "Japanese",
     abbr: "ja",
     slug: "japanese",
@@ -77,6 +88,7 @@ export const CIVILIZATIONS = {
     expansion: ["sultans-ascend"],
   },
   je: {
+    id: "jeanne_darc",
     name: "Jeanne d'Arc",
     abbr: "je",
     slug: "jeannedarc",
@@ -84,6 +96,7 @@ export const CIVILIZATIONS = {
     expansion: ["sultans-ascend"],
   },
   kt: {
+    id: "knights_templar",
     name: "Knights Templar",
     abbr: "kt",
     slug: "templar",
@@ -91,6 +104,7 @@ export const CIVILIZATIONS = {
     expansion: ["knights-of-cross-and-rose"],
   },
   mac: {
+    id: "macedonian_dynasty",
     name: "Macedonian Dynasty",
     abbr: "mac",
     slug: "macedonian",
@@ -98,6 +112,7 @@ export const CIVILIZATIONS = {
     expansion: ["dynasties-of-the-east"],
   },
   ma: {
+    id: "malians",
     name: "Malians",
     abbr: "ma",
     slug: "malians",
@@ -105,6 +120,7 @@ export const CIVILIZATIONS = {
     expansion: ["base"],
   },
   mo: {
+    id: "mongols",
     name: "Mongols",
     abbr: "mo",
     slug: "mongols",
@@ -112,6 +128,7 @@ export const CIVILIZATIONS = {
     expansion: ["base"],
   },
   od: {
+    id: "order_of_the_dragon",
     name: "Order of the Dragon",
     abbr: "od",
     slug: "orderofthedragon",
@@ -119,6 +136,7 @@ export const CIVILIZATIONS = {
     expansion: ["sultans-ascend"],
   },
   ot: {
+    id: "ottomans",
     name: "Ottomans",
     abbr: "ot",
     slug: "ottomans",
@@ -126,6 +144,7 @@ export const CIVILIZATIONS = {
     expansion: ["base"],
   },
   ru: {
+    id: "rus",
     name: "Rus",
     abbr: "ru",
     slug: "rus",
@@ -133,6 +152,7 @@ export const CIVILIZATIONS = {
     expansion: ["base"],
   },
   sen: {
+    id: "sengoku_daimyo",
     name: "Sengoku Daimyo",
     abbr: "sen",
     slug: "sengoku",
@@ -140,6 +160,7 @@ export const CIVILIZATIONS = {
     expansion: ["dynasties-of-the-east"],
   },
   tug: {
+    id: "tughlaq_dynasty",
     name: "Tughlaq Dynasty",
     abbr: "tug",
     slug: "tughlaq",
@@ -147,6 +168,7 @@ export const CIVILIZATIONS = {
     expansion: ["dynasties-of-the-east"],
   },
   zx: {
+    id: "zhu_xis_legacy",
     name: "Zhu Xi's Legacy",
     abbr: "zx",
     slug: "zhuxi",
