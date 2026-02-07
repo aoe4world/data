@@ -22,10 +22,29 @@ This project hosts data on all units, buildings, technologies, upgrades and othe
   "pbgid": 166404,
   "attribName": "unit_manatarms_2_eng",
   "age": 2,
-  "civs": ["en"],
+  "civs": [
+    "en"
+  ],
   "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement\n- Countered by Knights, Lancers, and Crossbowmen",
-  "classes": ["heavy", "melee", "infantry"],
-  "displayClasses": ["Heavy Melee Infantry"],
+  "classes": [
+    "annihilation_condition",
+    "armored",
+    "find_non_siege_land_military",
+    "formational",
+    "heavy",
+    "human",
+    "included_by_military_hotkeys",
+    "infantry",
+    "land_military",
+    "manatarms",
+    "melee",
+    "melee_infantry",
+    "military",
+    "torch_thrower"
+  ],
+  "displayClasses": [
+    "Heavy Melee Infantry"
+  ],
   "unique": false,
   "costs": {
     "food": 100,
@@ -36,7 +55,12 @@ This project hosts data on all units, buildings, technologies, upgrades and othe
     "popcap": 1,
     "time": 15
   },
-  "producedBy": ["barracks", "the-white-tower", "keep", "berkshire-palace"],
+  "producedBy": [
+    "barracks",
+    "berkshire-palace",
+    "keep",
+    "the-white-tower"
+  ],
   "icon": "https://data.aoe4world.com/images/units/man-at-arms-2.png",
   "hitpoints": 120,
   "weapons": [
@@ -98,6 +122,11 @@ This project hosts data on all units, buildings, technologies, upgrades and othe
     }
   ],
   "sight": {
+    "inner_height": 10,
+    "inner_radius": 12,
+    "outer_height": -15,
+    "outer_radius": 36,
+    "base": 21.6,
     "line": 36,
     "height": 10
   },
@@ -111,17 +140,17 @@ This project hosts data on all units, buildings, technologies, upgrades and othe
 
 ### Formats
 
-All units, buildings and technologies are individually available for each civilization that has access to them. Additionally, there's an 'unified' format, that groups together variations of the same item in one file.
+All units, buildings and technologies are individually available for each civilization that has access to them. Additionally, there's a 'unified' format, that groups together variations of the same item in one file.
 
-| Example File                     | Description                                                      |
-| -------------------------------- | ---------------------------------------------------------------- |
-| `/units/english/horseman-2.json` | The English horseman available in Feudal Age                     |
-| `/units/unified/horseman.json`   | All horsemen from all civilizations and all ages                 |
-| `/units/all.json`                | All units from all civilizations and all ages in one list        |
-| `/units/all-unified.json`        | All units from all civilizations and all ages, grouped by unit   |
-| `/buildings/**`                  | Buildings and landmarks                                          |
-| `/technologies/**`               | Technologies, like blacksmith upgrades, uniqiue improvments, etc |
-| `/upgrade/**`                    | Unit upgrades, i.e. veteran horseman to elite horseman           |
+| Example File                     | Description                                                       |
+| -------------------------------- | ----------------------------------------------------------------- |
+| `/units/english/horseman-2.json` | The English horseman available in Feudal Age                      |
+| `/units/unified/horseman.json`   | All horsemen from all civilizations and all ages                  |
+| `/units/all.json`                | All units from all civilizations and all ages in one list         |
+| `/units/all-unified.json`        | All units from all civilizations and all ages, grouped by unit    |
+| `/buildings/**`                  | Buildings and landmarks                                           |
+| `/technologies/**`               | Technologies, like blacksmith upgrades, uniqiue improvments, etc. |
+| `/upgrade/**`                    | Unit upgrades, i.e. veteran horseman to elite horseman            |
 
 ---
 
@@ -132,7 +161,7 @@ The logic to parse game files and output them in our desired format resides in `
 
 ### Contributing and development
 
-Feel free to open PRs or issues for data that is incorrect or missing, if possible please provide a rationale or source. One-off corrections to data are encoded in [src/attrib/workarounds.ts](.src/attrib/workarounds.ts) and technology effects in [src/attrib/technologies.ts](./src/attrib/technologies.ts)
+Feel free to open PRs or issues for data that is incorrect or missing, if possible please provide a rationale or source. One-off corrections to data are encoded in [src/attrib/workarounds.ts](./src/attrib/workarounds.ts) and technology effects in [src/attrib/technologies.ts](./src/attrib/technologies.ts)
 
 ### Updating the data from game files
 You will need raw parsed game files to build and update the data. Those files are not included in the repository due to licensing and copyright issues (you will need your own copy of AoE4). First we unpack the so called Archives (SGA) and then parse them using scripts we wrote to JSON files. 
@@ -140,7 +169,7 @@ You will need raw parsed game files to build and update the data. Those files ar
 **Prerequisites**
 
 1. Download and install the latest version of [AOEMods.Essence](https://github.com/aoemods/AOEMods.Essence/releases), extract into `./source/AOEMods.Essence`
-2. Locate the game files, typically located in `C:\Program Files (x86)\Steam\steamapps\common\Age of Empires IV\`. When you play the gam through XBox, the process is a bit more [involved](https://answers.microsoft.com/en-us/xbox/forum/all/where-do-xbox-gamepass-games-install-to-on-pcs/845ceb04-fea7-4fde-b001-8b63fa52df7b#:~:text=yes%20its%20normal,the%20hidden%20folders) as the game is installed in the hidden and secure `windowsapps` folder.
+2. Locate the game files, typically located in `C:\Program Files (x86)\Steam\steamapps\common\Age of Empires IV\`. When you play the game through XBox, the process is a bit more [involved](https://answers.microsoft.com/en-us/xbox/forum/all/where-do-xbox-gamepass-games-install-to-on-pcs/845ceb04-fea7-4fde-b001-8b63fa52df7b#:~:text=yes%20its%20normal,the%20hidden%20folders) as the game is installed in the hidden and secure `windowsapps` folder.
 
 **Automatic process**
 
@@ -195,9 +224,9 @@ All Parameters:
        └── en
            └── cardinal.en.ucs
    ```
-7. Run `yarn install && yarn parse` to update the data.
-8. Verify the changes. Specifically, the technology effects are currently compiled from translation parameters, of which the order may change. This can easily be spotted by changes in any technology description field. If they changed, update the parameter order or implementation in `effect.ts`.
-9. Run `yarn build` to update the optimzed json files and library.
+6. Run `yarn install && yarn parse` to update the data.
+7. Verify the changes. Specifically, the technology effects are currently compiled from translation parameters, of which the order may change. This can easily be spotted by changes in any technology description field. If they changed, update the parameter order or implementation in `effect.ts`.
+8. Run `yarn build` to update the optimzed json files and library.
 
 #### Just parse one civ
 Parsing can be relatively slow due to the total amount of files involved. If you're just working on data for a specific civ you can add an additional flag to the the parse command to only parse a specific civ. I.e. `yarn parse --civ japanese`
@@ -210,7 +239,7 @@ Created and maintained by [Robert van Hoesel](https://github.com/robertvanhoesel
 
 ## License and rights
 
-All of this data is open source, you may use it in your projects, websites and apps. However, Microsoft owns the Copyright on the game, and for this reason you can't use this data in commercial contexts, excepts as described in Microsoft's [Game Content Usage Rules](https://www.xbox.com/en-US/developers/rules). Whenever you are using the data in this repository or other media from Age of Empires 4, please make sure to abide by the rules.
+All of this data is open source, you may use it in your projects, websites, and apps. However, Microsoft owns the Copyright on the game, and for this reason you can't use this data in commercial contexts, except as described in Microsoft's [Game Content Usage Rules](https://www.xbox.com/en-US/developers/rules). Whenever you are using the data in this repository or other media from Age of Empires 4, please make sure to abide by the rules.
 
 > Age Of Empires 4 © Microsoft Corporation.
 > Aoe4world/data was created under Microsoft's "[Game Content Usage Rules](https://www.xbox.com/en-US/developers/rules)" using assets from Age Of Empires 4, and it is not endorsed by or affiliated with Microsoft.
