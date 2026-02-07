@@ -142,15 +142,15 @@ This project hosts data on all units, buildings, technologies, upgrades and othe
 
 All units, buildings and technologies are individually available for each civilization that has access to them. Additionally, there's a 'unified' format, that groups together variations of the same item in one file.
 
-| Example File                     | Description                                                      |
-| -------------------------------- | ---------------------------------------------------------------- |
-| `/units/english/horseman-2.json` | The English horseman available in Feudal Age                     |
-| `/units/unified/horseman.json`   | All horsemen from all civilizations and all ages                 |
-| `/units/all.json`                | All units from all civilizations and all ages in one list        |
-| `/units/all-unified.json`        | All units from all civilizations and all ages, grouped by unit   |
-| `/buildings/**`                  | Buildings and landmarks                                          |
+| Example File                     | Description                                                       |
+| -------------------------------- | ----------------------------------------------------------------- |
+| `/units/english/horseman-2.json` | The English horseman available in Feudal Age                      |
+| `/units/unified/horseman.json`   | All horsemen from all civilizations and all ages                  |
+| `/units/all.json`                | All units from all civilizations and all ages in one list         |
+| `/units/all-unified.json`        | All units from all civilizations and all ages, grouped by unit    |
+| `/buildings/**`                  | Buildings and landmarks                                           |
 | `/technologies/**`               | Technologies, like blacksmith upgrades, uniqiue improvments, etc. |
-| `/upgrade/**`                    | Unit upgrades, i.e. veteran horseman to elite horseman           |
+| `/upgrade/**`                    | Unit upgrades, i.e. veteran horseman to elite horseman            |
 
 ---
 
