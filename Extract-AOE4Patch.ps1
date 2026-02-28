@@ -21,6 +21,9 @@ Where to extract the data to; defaults to './source/{version}' (and create junct
 .PARAMETER ExtractXml
 Whether to also convert the attribs to xml format (into {OutputPath}/attrib-raw/xml)
 
+.PARAMETER ExtractYaml
+Whether to also convert the attribs to yaml format (into {OutputPath}/attrib-raw/yaml)
+
 .PARAMETER ExtractExtraImages
 Whether to extracts all icons instead of only races, also extracts civ flags & map images.
 
@@ -64,6 +67,7 @@ param(
 
   [String]$OutputPath,
   [Switch]$ExtractXml,
+  [Switch]$ExtractYaml,
   [Switch]$ExtractExtraImages,
   [Switch]$RemoveTemp,
 
@@ -138,6 +142,17 @@ if (-not (Test-Path $AOEModsEssencePath)) {
   return
 }
 
+function Invoke-Essence($command, $source, $destination, $extraArgs) {
+  if (-not (Test-Path $destination)) {
+    $null = [System.IO.Directory]::CreateDirectory($destination)
+  }
+  dotnet $AOEModsEssencePath $command $source $destination $extraArgs
+  if ($LASTEXITCODE -ne 0) {
+    Write-Error "Failed to execute '$command' from '$source' to '$destination' (Exit code: $LASTEXITCODE)"
+    throw
+  }
+}
+
 function Export-Attrib($patch) {
   $sgaPath = "$ArchivesPath\Attrib.sga"
 
@@ -145,6 +160,7 @@ function Export-Attrib($patch) {
   $rawPath = "${outPath}\attrib-raw"
   $rgdPath = "${rawPath}\rgd"
   $xmlPath = "${rawPath}\xml"
+  $yamlPath = "${rawPath}\yaml"
   $attribPath = "${outPath}\attrib"
 
   if (Test-Path $rawPath) {
@@ -157,20 +173,16 @@ function Export-Attrib($patch) {
     Remove-Item -Recurse $attribPath
   }
 
-  $null = [System.IO.Directory]::CreateDirectory($outPath)
-  $null = [System.IO.Directory]::CreateDirectory($rawPath)
-  $null = [System.IO.Directory]::CreateDirectory($rgdPath)
-  if ($ExtractXml) {
-    $null = [System.IO.Directory]::CreateDirectory($xmlPath)
-  }
-  $null = [System.IO.Directory]::CreateDirectory($attribPath)
 
   Write-Host "Unpacking $sgaPath to $rgdPath"
-  dotnet $AOEModsEssencePath sga-unpack $sgaPath $rgdPath
+  Invoke-Essence "sga-unpack" $sgaPath $rgdPath
   if ($ExtractXml) {
-    dotnet $AOEModsEssencePath rgd-decode "$rgdPath\attrib" $xmlPath -b
+    Invoke-Essence "rgd-decode" "$rgdPath\attrib" $xmlPath "-b"
   }
-  dotnet $AOEModsEssencePath rgd-decode "$rgdPath\attrib" $attribPath -b -f json
+  if ($ExtractYaml) {
+    Invoke-Essence "rgd-decode" "$rgdPath\attrib" $yamlPath @("-b", "-f", "yaml")
+  }
+  Invoke-Essence "rgd-decode" "$rgdPath\attrib" $attribPath @("-b", "-f", "json")
 
   if  ($RemoveTemp) {
     Remove-Item -Recurse $rgdPath
@@ -188,11 +200,8 @@ function Export-Locale {
     Remove-Item -Recurse $localePath
   }
 
-  $null = [System.IO.Directory]::CreateDirectory($outPath)
-  $null = [System.IO.Directory]::CreateDirectory($localePath)
-
   Write-Host "Unpacking $sgaPath to $localePath"
-  dotnet $AOEModsEssencePath sga-unpack $sgaPath $localePath
+  Invoke-Essence "sga-unpack" $sgaPath $localePath
 }
 
 function Export-Icons {
@@ -202,10 +211,6 @@ function Export-Icons {
   $uiartPath = "${outPath}\uiart-raw"
 
   $uiPath = "${outPath}\ui"
-  $iconsPath = "${outPath}\ui\icons"
-  $racesPath = "${outPath}\ui\icons\races"
-  $mapsPath = "${outPath}\ui\images\map_gen_layout"
-  $civFlagsPath = "${outPath}\ui\images\civ_flags"
 
   if (Test-Path $uiartPath) {
     Write-Host "Removing existing $uiartPath"
@@ -217,26 +222,21 @@ function Export-Icons {
     Remove-Item -Recurse $uiPath
   }
 
-  $null = [System.IO.Directory]::CreateDirectory($outPath)
-  $null = [System.IO.Directory]::CreateDirectory($uiartPath)
-  $null = [System.IO.Directory]::CreateDirectory($iconsPath)
-  $null = [System.IO.Directory]::CreateDirectory($racesPath)
-  if ($ExtractExtraImages) {
-    $null = [System.IO.Directory]::CreateDirectory($mapsPath)
-    $null = [System.IO.Directory]::CreateDirectory($civFlagsPath)
+  function Convert-Images($subpath) {
+    Invoke-Essence "rrtex-decode" (Join-Path $uiartPath $subpath) (Join-Path $outPath $subpath) "-b"
   }
 
   Write-Host "Unpacking $sgaPath to $uiartPath"
-  dotnet $AOEModsEssencePath sga-unpack $sgaPath $uiartPath
+  Invoke-Essence "sga-unpack" $sgaPath $uiartPath
 
   if ($ExtractExtraImages) {
-    dotnet $AOEModsEssencePath rrtex-decode $uiartPath\ui\icons $iconsPath -b
-    dotnet $AOEModsEssencePath rrtex-decode $uiartPath\ui\images\map_gen_layout $mapsPath -b
-    dotnet $AOEModsEssencePath rrtex-decode $uiartPath\ui\images\civ_flags $civFlagsPath -b
+    Convert-Images "ui\icons"
+    Convert-Images "ui\images\map_gen_layout"
+    Convert-Images "ui\images\civ_flags"
+    Convert-Images "ui\images\fe\dlc"
   } else {
-    dotnet $AOEModsEssencePath rrtex-decode $uiartPath\ui\icons\races $racesPath -b
+    Convert-Images "ui\icons\races"
   }
-  #dotnet $AOEModsEssencePath rrtex-decode $uiartPath $iconsPath -b
 
   if  ($RemoveTemp) {
     Remove-Item -Recurse $uiartPath

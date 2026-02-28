@@ -1,15 +1,5 @@
-import { CIVILIZATIONS } from "../lib/config/civs";
-
-export type CivAbbr = keyof typeof CIVILIZATIONS;
-export type CivSlug = typeof CIVILIZATIONS[CivAbbr]["slug"];
-
-export type CivConfig = {
-  name: string;
-  abbr: CivAbbr;
-  slug: CivSlug;
-  attribName?: string;
-  expansion: readonly string[];
-};
+// @deprecated These types used to live here, use lib/config/civs directly in the data submodule, or ./src/config in explorer itself
+export { type CivAbbr, type CivSlug, type CivConfig } from "../lib/config/civs";
 
 export type CivInfo = {
   name: string;
@@ -18,5 +8,3 @@ export type CivInfo = {
   // backdrop?: string;
   overview: { title: string; description?: string; list?: string[] }[];
 };
-
-export const CIVILIZATION_BY_SLUG: Record<CivSlug, CivConfig> = Object.values(CIVILIZATIONS).reduce((acc, civ) => ({ ...acc, [civ.slug]: civ }), {} as Record<CivSlug, CivConfig>);

@@ -1,4 +1,4 @@
-export const CIVILIZATIONS = {
+const civilizations = {
   ab: {
     id: "abbasid_dynasty",
     name: "Abbasid Dynasty",
@@ -175,4 +175,18 @@ export const CIVILIZATIONS = {
     attribName: "chinese_ha_01",
     expansion: ["sultans-ascend"],
   },
-} as const;
+};
+
+export type CivAbbr = keyof typeof civilizations;
+export type CivSlug = typeof civilizations[CivAbbr]["slug"];
+
+export type CivConfig = {
+  name: string;
+  abbr: CivAbbr;
+  slug: CivSlug;
+  attribName?: string;
+  expansion: readonly string[];
+};
+
+export const CIVILIZATIONS: Record<CivAbbr, CivConfig> = civilizations as Record<CivAbbr, CivConfig>;
+export const CIVILIZATION_BY_SLUG: Record<CivSlug, CivConfig> = Object.values(CIVILIZATIONS).reduce((acc, civ) => ({ ...acc, [civ.slug]: civ }), {} as Record<CivSlug, CivConfig>);
