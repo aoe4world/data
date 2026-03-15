@@ -46,26 +46,27 @@ export function optimizeItems<T extends Item>(items: UnifiedItem<T>[]): Optimize
     if (item.variations.length <= 1) return { ...item, shared: {} as Optimized<T> };
     let ageBase = [] as Partial<T>[];
     let optimizedVariations: Partial<T>[] = []; // = item.variations.map((variation) => ({ ...variation } as Partial<T>))
-    let ages = {};
+    let ages = {} as Record<number, T[]>;
     item.variations.forEach(v => {
       if (ages[v.age])
         ages[v.age].push(v);
       else
         ages[v.age] = [v];
     });
-    for (const age of Object.keys(ages)) {
+    for (const [age, ageVariations] of Object.entries(ages)) {
       const ageId = `${item.id}-${age}`;
-      let ageVariations: Partial<T>[] = ages[age];
-      const { common, variations } = optimizeItemValues(ageVariations);
+      const { common, variations } = optimizeItemValues<T>(ageVariations);
       common.id = ageId;
       ageBase.push(common);
       optimizedVariations.push(...variations);
     }
 
-    const { common, variations } = optimizeItemValues(ageBase, ageBase.length > 1 ? ["weapons", "armor", "name"] : []);
-    const shared = {};
+    const { common, variations } = optimizeItemValues<T>(ageBase, ageBase.length > 1 ? ["weapons", "armor", "name"] : []);
+    const shared = {} as Record<string, Partial<T>>;
 
-    for (const variation of variations) if (Object.entries(variation).filter(([k, v]) => !!v && k != "id").length > 1) shared[variation.id as string] = variation;
+    for (const variation of variations)
+      if (Object.entries(variation).filter(([k, v]) => !!v && k != "id").length > 1)
+        shared[variation.id as string] = variation;
 
     return {
       ...item,

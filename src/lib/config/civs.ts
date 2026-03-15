@@ -175,7 +175,7 @@ const civilizations = {
     attribName: "chinese_ha_01",
     expansion: ["sultans-ascend"],
   },
-};
+} as const;
 
 export type CivAbbr = keyof typeof civilizations;
 export type CivSlug = typeof civilizations[CivAbbr]["slug"];
@@ -188,5 +188,5 @@ export type CivConfig = {
   expansion: readonly string[];
 };
 
-export const CIVILIZATIONS: Record<CivAbbr, CivConfig> = civilizations as Record<CivAbbr, CivConfig>;
-export const CIVILIZATION_BY_SLUG: Record<CivSlug, CivConfig> = Object.values(CIVILIZATIONS).reduce((acc, civ) => ({ ...acc, [civ.slug]: civ }), {} as Record<CivSlug, CivConfig>);
+export const CIVILIZATIONS = civilizations satisfies Record<CivAbbr, CivConfig>;
+export const CIVILIZATION_BY_SLUG = Object.values(CIVILIZATIONS).reduce((acc, civ) => { acc[civ.slug] = civ; return acc; }, {} as any) as { [K in CivAbbr as (typeof civilizations)[K]["slug"]]: (typeof civilizations)[K] };
