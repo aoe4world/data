@@ -711,6 +711,7 @@
         "archer",
         "camel",
         "camel_archer",
+        "camel_handling_merc",
         "cavalry",
         "cavalry_archer",
         "find_non_siege_land_military",
@@ -990,6 +991,7 @@
       "classes": [
         "annihilation_condition",
         "camel",
+        "camel_handling_merc",
         "camel_rider",
         "cavalry",
         "cavalry_light",
@@ -1145,6 +1147,7 @@
           "classes": [
             "annihilation_condition",
             "camel",
+            "camel_handling_merc",
             "camel_rider",
             "cavalry",
             "cavalry_light",
@@ -1238,6 +1241,181 @@
           "id": "camel-rider-4"
         }
       }
+    },
+    {
+      "id": "cannon",
+      "name": "Cannon",
+      "type": "unit",
+      "civs": [
+        "by"
+      ],
+      "unique": false,
+      "displayClasses": [
+        "Siege",
+        "Gunpowder"
+      ],
+      "classes": [
+        "annihilation_condition",
+        "bombard_wheeled",
+        "find_non_siege_land_military",
+        "formational",
+        "gunpowder",
+        "included_by_military_hotkeys",
+        "land_military",
+        "military",
+        "siege",
+        "siege_range"
+      ],
+      "minAge": 4,
+      "icon": "https://data.aoe4world.com/images/units/cannon-4.png",
+      "description": "Most powerful siege cannon. Excellent against buildings or any stubborn targets.\n+ Bonus damage to buildings",
+      "variations": [
+        {
+          "id": "cannon-4",
+          "baseId": "cannon",
+          "type": "unit",
+          "name": "Cannon",
+          "pbgid": 2138874,
+          "attribName": "unit_cannon_4_royal_merc_byz",
+          "age": 4,
+          "civs": [
+            "by"
+          ],
+          "description": "Most powerful siege cannon. Excellent against buildings or any stubborn targets.\n+ Bonus damage to buildings",
+          "classes": [
+            "annihilation_condition",
+            "bombard_wheeled",
+            "find_non_siege_land_military",
+            "formational",
+            "gunpowder",
+            "included_by_military_hotkeys",
+            "land_military",
+            "military",
+            "siege",
+            "siege_range"
+          ],
+          "displayClasses": [
+            "Siege",
+            "Gunpowder"
+          ],
+          "unique": false,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "oliveoil": 900,
+            "total": 900,
+            "popcap": 3,
+            "time": 45
+          },
+          "producedBy": [
+            "foreign-engineering-company"
+          ],
+          "icon": "https://data.aoe4world.com/images/units/cannon-4.png",
+          "hitpoints": 190,
+          "weapons": [
+            {
+              "name": "Cannon",
+              "type": "siege",
+              "damage": 60,
+              "speed": 5.375,
+              "range": {
+                "min": 3.75,
+                "max": 10
+              },
+              "modifiers": [
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "naval",
+                        "unit"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 500,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "building"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 450,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "infantry"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 55,
+                  "type": "passive"
+                },
+                {
+                  "property": "siegeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "war",
+                        "elephant"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 55,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0.5,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 1.75,
+                "reload": 3,
+                "setup": 0.25,
+                "teardown": 0.25,
+                "cooldown": 0
+              },
+              "attribName": "weapon_cannon_4",
+              "pbgid": 165121
+            }
+          ],
+          "armor": [],
+          "resistance": [
+            {
+              "type": "ranged",
+              "value": 85
+            }
+          ],
+          "sight": {
+            "inner_height": 10,
+            "inner_radius": 32,
+            "outer_height": -15,
+            "outer_radius": 56,
+            "base": 41.6,
+            "line": 56,
+            "height": 10
+          },
+          "movement": {
+            "speed": 0.875
+          }
+        }
+      ],
+      "shared": {}
     },
     {
       "id": "carrack",
@@ -3088,7 +3266,7 @@
       ],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/units/ghulam-3.png",
-      "description": "Tough infantry that deal two attacks in rapid succession.\n+ High armor\n+ Higher attack damage on charge\n- Lower base attack damage than a Man-at-Arms\n- Can build Mangonels and Springalds on the field without requiring Siege Engineers\n- Slow movement\n- Countered by Knights, Lancers, and Crossbowmen\n\nMercenary that can be purchased per 3 units for a total of 450 Olive Oil.\n\nRequires the Eastern Mercenary Contract.",
+      "description": "Tough infantry that deal two attacks in rapid succession.\n+ High armor\n+ Higher attack damage on charge\n- Lower base attack damage than a Man-at-Arms\n- Can build Mangonels and Springalds on the field without requiring Siege Engineers\n- Slow movement\n- Countered by Knights, Lancers, and Crossbowmen\n\nMercenary that can be purchased per 3 units for a total of 420 Olive Oil.\n\nRequires the Eastern Mercenary Contract.",
       "variations": [
         {
           "id": "ghulam-3",
@@ -3114,10 +3292,10 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
-        "oliveoil": 150,
-        "total": 150,
+        "oliveoil": 140,
+        "total": 140,
         "popcap": 1,
-        "time": 75
+        "time": 72
       },
       "producedBy": [
         "golden-horn-tower",
@@ -4297,8 +4475,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
-        "oliveoil": 120,
-        "total": 120,
+        "oliveoil": 115,
+        "total": 115,
         "popcap": 1,
         "time": 80
       },
@@ -4577,7 +4755,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/units/keshik-2.png",
-      "description": "Expensive cavalry with high damage and a powerful charge attack. Effective against most units.\n+ Heavy armor\n+ Strong in melee combat\n+ Restores health after every attack\n- Less health than Lancers\n- Countered by Spearmen and Crossbowmen\n\nMercenary that can be purchased per 2 units for a total of 400 Olive Oil.\n\nRequires the Eastern Mercenary Contract.",
+      "description": "Expensive cavalry with high damage and a powerful charge attack. Effective against most units.\n+ Heavy armor\n+ Strong in melee combat\n+ Restores health after every attack\n- Less health than Lancers\n- Countered by Spearmen and Crossbowmen\n\nMercenary that can be purchased per 2 units for a total of 380 Olive Oil.\n\nRequires the Eastern Mercenary Contract.",
       "variations": [
         {
           "id": "keshik-2",
@@ -4611,8 +4789,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
-        "oliveoil": 200,
-        "total": 200,
+        "oliveoil": 190,
+        "total": 190,
         "popcap": 1,
         "time": 66
       },
@@ -4964,7 +5142,7 @@
         "golden-horn-tower",
         "mercenary-house"
       ],
-      "hitpoints": 85,
+      "hitpoints": 90,
       "sight": {
         "inner_height": 10,
         "inner_radius": 12,
@@ -5039,7 +5217,7 @@
           "name": "Elite Landsknecht",
           "age": 4,
           "icon": "https://data.aoe4world.com/images/units/landsknecht-4.png",
-          "hitpoints": 100,
+          "hitpoints": 105,
           "weapons": [
             {
               "name": "Zweihander",
@@ -5482,7 +5660,7 @@
           "name": "Elite Limitanei",
           "age": 4,
           "icon": "https://data.aoe4world.com/images/units/limitanei-4.png",
-          "hitpoints": 140,
+          "hitpoints": 150,
           "weapons": [
             {
               "name": "Spear",
@@ -5574,6 +5752,9 @@
             }
           ],
           "armor": [],
+          "movement": {
+            "speed": 1.3
+          },
           "id": "limitanei-4"
         }
       }
@@ -5604,7 +5785,7 @@
       ],
       "minAge": 2,
       "icon": "https://data.aoe4world.com/images/units/longbowman-2.png",
-      "description": "Cheap long-ranged infantry with good damage vs. unarmored targets.\n+ Long range\n+ Can construct Palings to fend off cavalry charges\n- Slow movement speed\n- Countered by Horsemen\n\nMercenary that can be purchased per 5 units for a total of 470 Olive Oil.\n\nRequires the Western Mercenary Contract.",
+      "description": "Cheap long-ranged infantry with good damage vs. unarmored targets.\n+ Long range\n+ Can construct Palings to fend off cavalry charges\n- Slow movement speed\n- Countered by Horsemen\n\nMercenary that can be purchased per 5 units for a total of 525 Olive Oil.\n\nRequires the Western Mercenary Contract.",
       "variations": [
         {
           "id": "longbowman-2",
@@ -5638,8 +5819,8 @@
         "wood": 0,
         "stone": 0,
         "gold": 0,
-        "oliveoil": 94,
-        "total": 94,
+        "oliveoil": 105,
+        "total": 105,
         "popcap": 1,
         "time": 75
       },
@@ -6011,7 +6192,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 16,
+                  "value": 19,
                   "type": "passive"
                 },
                 {
@@ -6025,7 +6206,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 16,
+                  "value": 19,
                   "type": "passive"
                 }
               ],
@@ -6040,7 +6221,7 @@
                 "cooldown": 0
               },
               "burst": {
-                "count": 12
+                "count": 10
               },
               "attribName": "weapon_mangonel_3_incendiary",
               "pbgid": 127724
@@ -8044,7 +8225,7 @@
             {
               "name": "Springald",
               "type": "ranged",
-              "damage": 14,
+              "damage": 15,
               "speed": 3.125,
               "range": {
                 "min": 0,
@@ -8761,14 +8942,14 @@
       "baseId": "varangian-guard",
       "age": 3,
       "costs": {
-        "food": 90,
+        "food": 80,
         "wood": 0,
         "stone": 0,
         "gold": 40,
         "oliveoil": 0,
-        "total": 130,
+        "total": 120,
         "popcap": 1,
-        "time": 25
+        "time": 22.5
       },
       "producedBy": [
         "barracks",
@@ -8980,7 +9161,8 @@
         "formational",
         "human",
         "villager",
-        "worker"
+        "worker",
+        "WPFGUI_villager_entity"
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/units/villager-1.png",
@@ -9004,7 +9186,8 @@
             "formational",
             "human",
             "villager",
-            "worker"
+            "worker",
+            "WPFGUI_villager_entity"
           ],
           "displayClasses": [
             "Worker"

@@ -82,7 +82,7 @@
       "civs": [
         "ot"
       ],
-      "description": "Military unit production rate increased +20%/+30%/+40% by Age while within the influence of a Blacksmith or University. The Istanbul Observatory increases the bonus to +100%.",
+      "description": "Military unit production rate increased +20%/+30%/+40% by Age while within the influence of a Blacksmith or University. The Istanbul Observatory increases the bonus to +85%.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -195,7 +195,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0,
+          "value": 0.15,
           "type": "ability"
         }
       ]
@@ -306,7 +306,7 @@
       "civs": [
         "ot"
       ],
-      "description": "Gain +50% attack speed and receive +50% damage from melee weapons for 10 seconds.",
+      "description": "Gain +40% attack speed and receive +50% damage from melee weapons for 10 seconds.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -332,7 +332,7 @@
             ]
           },
           "effect": "change",
-          "value": 0.67,
+          "value": 0.71,
           "type": "ability",
           "duration": 10
         },
@@ -619,6 +619,43 @@
           "type": "ability"
         }
       ]
+    },
+    {
+      "id": "ability-sea-gate-castle-1",
+      "baseId": "ability-sea-gate-castle",
+      "type": "ability",
+      "name": "Sea Gate Castle",
+      "pbgid": 9005290,
+      "attribName": "sea_gate_defence_dmg_ott",
+      "age": 1,
+      "civs": [
+        "ot"
+      ],
+      "description": "Increases damage of defensive structures by 20%.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "capital-town-center",
+        "dock",
+        "keep",
+        "outpost",
+        "sea-gate-castle",
+        "stone-wall-tower",
+        "town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-sea-gate-castle-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": []
     },
     {
       "id": "ability-trade-protection-4",

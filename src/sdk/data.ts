@@ -32,13 +32,15 @@ import tug from "../../civilizations/tughlaq.json";
 import gol from "../../civilizations/goldenhorde.json";
 import mac from "../../civilizations/macedonian.json";
 
+import jin from "../../civilizations/jindynasty.json";
+
 const units = new ItemList<Unit>(...optimizedToUnified(allUnits.data as unknown as Optimized<Unit>[]));
 const buildings = new ItemList<Building>(...optimizedToUnified(allBuildings.data as unknown as Optimized<Building>[]));
 const technologies = new ItemList<Technology>(...optimizedToUnified(allTechnologies.data as unknown as Optimized<Technology>[]));
 const upgrades = new ItemList<Upgrade>(...optimizedToUnified(allUpgrades.data as unknown as Optimized<Upgrade>[]));
 const abilities = new ItemList<Ability>(...optimizedToUnified(allAbilities.data as unknown as Optimized<Ability>[]));
 
-const list = [ab, ay, by, ch, de, en, fr, hl, hr, ja, je, kt, ma, mo, od, ot, ru, zx, sen, tug, gol, mac] as CivInfo[];
+const list = [ab, ay, by, ch, de, en, fr, hl, hr, ja, je, kt, ma, mo, od, ot, ru, zx, sen, tug, gol, mac, jin] as CivInfo[];
 
 const civilizations = {
   ab,
@@ -63,6 +65,7 @@ const civilizations = {
   tug,
   gol,
   mac,
+  jin,
   list
 } as Record<CivAbbr, CivInfo> & { list: CivInfo[] };
 

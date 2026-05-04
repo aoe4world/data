@@ -214,17 +214,16 @@ export const hardcodedDiscovery = {
   lancaster: [
   ],
   templar: [
-
   ],
   sengoku: [
-
   ],
   tughlaq: [
   ],
   goldenhorde: [
   ],
   macedonian: [
-
+  ],
+  jindynasty: [
   ],
 };
 
@@ -386,6 +385,15 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "age_up_feudal_mon_ha_gol",
   "age_up_castle_mon_ha_gol",
   "age_up_imperial_mon_ha_gol",
+
+  // Jin Dynasty
+  "meditation_gardens_depletion_bonus",
+  "mountain_hall_monastery_discount",
+  "mountain_hall_karma_manager",
+  "mengan_mouke_point_generator",
+  "mengan_mouke_activation",
+  "horse_grassland_horse_spawn",
+  "pagoda_forest_spawn_jin",
 
   // Inspect later if it's addable
   "building_carts_mon_ha_gol", 

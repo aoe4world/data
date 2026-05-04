@@ -2950,13 +2950,13 @@
           ],
           "unique": false,
           "costs": {
-            "food": 100,
+            "food": 90,
             "wood": 0,
             "stone": 0,
             "gold": 20,
-            "total": 120,
+            "total": 110,
             "popcap": 1,
-            "time": 22.5
+            "time": 20.5
           },
           "producedBy": [
             "barracks"
@@ -3067,13 +3067,13 @@
           ],
           "unique": false,
           "costs": {
-            "food": 100,
+            "food": 90,
             "wood": 0,
             "stone": 0,
             "gold": 20,
-            "total": 120,
+            "total": 110,
             "popcap": 1,
-            "time": 22.5
+            "time": 20.5
           },
           "producedBy": [
             "barracks"
@@ -3308,7 +3308,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 16,
+                  "value": 19,
                   "type": "passive"
                 },
                 {
@@ -3322,7 +3322,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 16,
+                  "value": 19,
                   "type": "passive"
                 }
               ],
@@ -3337,7 +3337,7 @@
                 "cooldown": 0
               },
               "burst": {
-                "count": 12
+                "count": 10
               },
               "attribName": "weapon_mangonel_3_incendiary_rus",
               "pbgid": 133315
@@ -3505,6 +3505,154 @@
           },
           "producedBy": [],
           "icon": "https://data.aoe4world.com/images/units/militia-2.png",
+          "hitpoints": 85,
+          "weapons": [
+            {
+              "name": "Militia Axe",
+              "type": "melee",
+              "damage": 6,
+              "speed": 1.625,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [
+                {
+                  "property": "meleeAttack",
+                  "target": {
+                    "class": [
+                      [
+                        "cavalry"
+                      ]
+                    ]
+                  },
+                  "effect": "change",
+                  "value": 4,
+                  "type": "passive"
+                }
+              ],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0.75,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.25
+              },
+              "attribName": "weapon_shield_militia_2_rus",
+              "pbgid": 2104847
+            },
+            {
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_rus",
+              "pbgid": 133324
+            }
+          ],
+          "armor": [],
+          "sight": {
+            "inner_height": 10,
+            "inner_radius": 12,
+            "outer_height": -15,
+            "outer_radius": 36,
+            "base": 21.6,
+            "line": 36,
+            "height": 10
+          },
+          "movement": {
+            "speed": 1.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "militia-halberdier",
+      "name": "Militia Halberdier",
+      "type": "unit",
+      "civs": [
+        "ru"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Light Melee Infantry"
+      ],
+      "classes": [
+        "annihilation_condition",
+        "formational",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "infantry_light",
+        "light_melee_infantry",
+        "melee",
+        "melee_infantry",
+        "military",
+        "militia",
+        "spearman"
+      ],
+      "minAge": 2,
+      "icon": "https://data.aoe4world.com/images/units/militia-halberdier-2.png",
+      "description": "Light melee infantry equipped with a polearm.\n+ Fast moving\n- Countered by Archers\n- Can't garrison\n- Loses life over time",
+      "variations": [
+        {
+          "id": "militia-halberdier-2",
+          "baseId": "militia-halberdier",
+          "type": "unit",
+          "name": "Militia Halberdier",
+          "pbgid": 2104839,
+          "attribName": "unit_militia_2_rus",
+          "age": 2,
+          "civs": [
+            "ru"
+          ],
+          "description": "Light melee infantry equipped with a polearm.\n+ Fast moving\n- Countered by Archers\n- Can't garrison\n- Loses life over time",
+          "classes": [
+            "annihilation_condition",
+            "formational",
+            "human",
+            "included_by_military_hotkeys",
+            "infantry",
+            "infantry_light",
+            "light_melee_infantry",
+            "melee",
+            "melee_infantry",
+            "military",
+            "militia",
+            "spearman"
+          ],
+          "displayClasses": [
+            "Light Melee Infantry"
+          ],
+          "unique": true,
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 1
+          },
+          "producedBy": [],
+          "icon": "https://data.aoe4world.com/images/units/militia-halberdier-2.png",
           "hitpoints": 85,
           "weapons": [
             {
@@ -3796,7 +3944,7 @@
             "archer",
             "crossbowman",
             "man-at-arms",
-            "militia",
+            "militia-halberdier",
             "spearman",
             "streltsy"
           ],
@@ -4360,7 +4508,7 @@
             "barracks"
           ],
           "icon": "https://data.aoe4world.com/images/units/spearman-4.png",
-          "hitpoints": 130,
+          "hitpoints": 140,
           "weapons": [
             {
               "name": "Spear",
@@ -4462,7 +4610,7 @@
             "height": 10
           },
           "movement": {
-            "speed": 1.25
+            "speed": 1.3
           }
         }
       ]
@@ -4536,7 +4684,7 @@
             {
               "name": "Springald",
               "type": "ranged",
-              "damage": 14,
+              "damage": 15,
               "speed": 3.125,
               "range": {
                 "min": 0,
@@ -4822,7 +4970,8 @@
         "formational",
         "human",
         "villager",
-        "worker"
+        "worker",
+        "WPFGUI_villager_entity"
       ],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/units/villager-1.png",
@@ -4846,7 +4995,8 @@
             "formational",
             "human",
             "villager",
-            "worker"
+            "worker",
+            "WPFGUI_villager_entity"
           ],
           "displayClasses": [
             "Worker"

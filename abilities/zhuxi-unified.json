@@ -134,7 +134,7 @@
       "classes": [],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/abilities/ability-bounty-of-solitude-1.png",
-      "description": "Generates resources depending on the type of resources nearby. Enemy units within 8 tiles reduce the rate at which resources are generated.",
+      "description": "Increases the resource value of nearby gold veins, stone outcroppings, and berry bushes by +5% every 30 seconds up to a maximum of +60%.\nTrees are increased at a lesser rate of +2.5% up to +30%.\nAfter 330 seconds, generates resources equal to 5% of the current resources in those nearby deposits. Additionally generates 5% of the maximum resources of each deposit when fully gathered.",
       "variations": [
         {
           "id": "ability-bounty-of-solitude-1",
@@ -147,7 +147,7 @@
           "civs": [
             "zx"
           ],
-          "description": "Generates resources depending on the type of resources nearby. Enemy units within 8 tiles reduce the rate at which resources are generated.",
+          "description": "Increases the resource value of nearby gold veins, stone outcroppings, and berry bushes by +5% every 30 seconds up to a maximum of +60%.\nTrees are increased at a lesser rate of +2.5% up to +30%.\nAfter 330 seconds, generates resources equal to 5% of the current resources in those nearby deposits. Additionally generates 5% of the maximum resources of each deposit when fully gathered.",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -177,6 +177,52 @@
               "type": "ability"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "ability-city-guard",
+      "name": "City Guard",
+      "type": "ability",
+      "civs": [
+        "zx"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-city-guard-1.png",
+      "description": "Spawns an army of 4 Zhuge Nu and 3 Palace Guards.",
+      "variations": [
+        {
+          "id": "ability-city-guard-1",
+          "baseId": "ability-city-guard",
+          "type": "ability",
+          "name": "City Guard",
+          "pbgid": 9005349,
+          "attribName": "toggle_jiangnan_zhuge",
+          "age": 1,
+          "civs": [
+            "zx"
+          ],
+          "description": "Spawns an army of 4 Zhuge Nu and 3 Palace Guards.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "jiangnan-tower"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-city-guard-1.png",
+          "active": "toggle",
+          "auraRange": 0,
+          "toggleGroup": "temple_of_the_sun",
+          "effects": []
         }
       ]
     },
@@ -610,6 +656,52 @@
       ]
     },
     {
+      "id": "ability-imperial-retinue",
+      "name": "Imperial Retinue",
+      "type": "ability",
+      "civs": [
+        "zx"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-imperial-retinue-1.png",
+      "description": "Spawns an army of 4 Yuan Raiders and 1 Imperial Guard.",
+      "variations": [
+        {
+          "id": "ability-imperial-retinue-1",
+          "baseId": "ability-imperial-retinue",
+          "type": "ability",
+          "name": "Imperial Retinue",
+          "pbgid": 9005352,
+          "attribName": "toggle_jiangnan_yuan",
+          "age": 1,
+          "civs": [
+            "zx"
+          ],
+          "description": "Spawns an army of 4 Yuan Raiders and 1 Imperial Guard.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "jiangnan-tower"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-imperial-retinue-1.png",
+          "active": "toggle",
+          "auraRange": 0,
+          "toggleGroup": "temple_of_the_sun",
+          "effects": []
+        }
+      ]
+    },
+    {
       "id": "ability-man-the-sails",
       "name": "Man The Sails",
       "type": "ability",
@@ -666,6 +758,98 @@
               "duration": 10
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "ability-provincial-levy",
+      "name": "Provincial Levy",
+      "type": "ability",
+      "civs": [
+        "zx"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-provincial-levy-1.png",
+      "description": "Spawns an army of 4 Spearman and 3 Horsemen.",
+      "variations": [
+        {
+          "id": "ability-provincial-levy-1",
+          "baseId": "ability-provincial-levy",
+          "type": "ability",
+          "name": "Provincial Levy",
+          "pbgid": 9005348,
+          "attribName": "toggle_jiangnan_spear",
+          "age": 1,
+          "civs": [
+            "zx"
+          ],
+          "description": "Spawns an army of 4 Spearman and 3 Horsemen.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "jiangnan-tower"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-provincial-levy-1.png",
+          "active": "toggle",
+          "auraRange": 0,
+          "toggleGroup": "temple_of_the_sun",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "ability-ranged-specialists",
+      "name": "Ranged Specialists",
+      "type": "ability",
+      "civs": [
+        "zx"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ranged-specialists-3.png",
+      "description": "Spawns an army of 4 Crossbowmen and 1 Grenadier.",
+      "variations": [
+        {
+          "id": "ability-ranged-specialists-3",
+          "baseId": "ability-ranged-specialists",
+          "type": "ability",
+          "name": "Ranged Specialists",
+          "pbgid": 9005351,
+          "attribName": "toggle_jiangnan_xbow",
+          "age": 3,
+          "civs": [
+            "zx"
+          ],
+          "description": "Spawns an army of 4 Crossbowmen and 1 Grenadier.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "jiangnan-tower"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-ranged-specialists-3.png",
+          "active": "toggle",
+          "auraRange": 0,
+          "toggleGroup": "temple_of_the_sun",
+          "effects": []
         }
       ]
     },

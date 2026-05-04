@@ -17,6 +17,7 @@
     "hr",
     "ja",
     "je",
+    "jin",
     "ma",
     "mac",
     "mo",
@@ -871,6 +872,73 @@
       "baseId": "dock",
       "type": "building",
       "name": "Dock",
+      "pbgid": 9004077,
+      "attribName": "building_dock_1_jin",
+      "age": 1,
+      "civs": [
+        "jin"
+      ],
+      "description": "Produces naval units.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three Fishing Ships.",
+      "classes": [
+        "building",
+        "military_only_production",
+        "naval_production_building",
+        "production_building",
+        "resource_drop_off",
+        "scar_dock",
+        "siegeable",
+        "trade_dock",
+        "trade_post"
+      ],
+      "displayClasses": [
+        "Military & Economy Building",
+        "Trade Site"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 150,
+        "stone": 0,
+        "gold": 0,
+        "total": 150,
+        "popcap": 0,
+        "time": 30
+      },
+      "producedBy": [
+        "mounted-villager",
+        "villager"
+      ],
+      "icon": "https://data.aoe4world.com/images/buildings/dock-1.png",
+      "hitpoints": 1750,
+      "weapons": [],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 50
+        }
+      ],
+      "sight": {
+        "inner_height": 8,
+        "inner_radius": 20,
+        "outer_height": 0,
+        "outer_radius": 50,
+        "base": 50,
+        "line": 50,
+        "height": 8
+      },
+      "garrison": {
+        "capacity": 3,
+        "classes": [
+          "fishing ship"
+        ]
+      },
+      "influences": []
+    },
+    {
+      "id": "dock-1",
+      "baseId": "dock",
+      "type": "building",
+      "name": "Dock",
       "pbgid": 9000950,
       "attribName": "building_unit_naval_byz_ha_mac",
       "age": 1,
@@ -1202,7 +1270,7 @@
         ]
       },
       "influences": [
-        "Military unit production rate increased +20%/+30%/+40% by Age while within the influence of a Blacksmith or University. The Istanbul Observatory increases the bonus to +100%."
+        "Military unit production rate increased +20%/+30%/+40% by Age while within the influence of a Blacksmith or University. The Istanbul Observatory increases the bonus to +85%."
       ]
     },
     {
@@ -1396,9 +1464,8 @@
         "height": 8
       },
       "garrison": {
-        "capacity": 4,
+        "capacity": 3,
         "classes": [
-          "monk",
           "fishing ship"
         ]
       },

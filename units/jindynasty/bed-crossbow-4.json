@@ -1,0 +1,117 @@
+{
+  "id": "bed-crossbow-4",
+  "baseId": "bed-crossbow",
+  "type": "unit",
+  "name": "Elite Bed Crossbow",
+  "pbgid": 9003969,
+  "attribName": "unit_bedcrossbow_4_jin",
+  "age": 4,
+  "civs": [
+    "jin"
+  ],
+  "description": "Anti-melee infantry siege weapon. Fires a burst of bolts that pierce multiple units.\n+ Does not require setup to fire\n+ Bonus damage vs. melee infantry\n- Weak to melee attacks",
+  "classes": [
+    "annihilation_condition",
+    "formational",
+    "included_by_military_hotkeys",
+    "land_military",
+    "military",
+    "siege",
+    "siege_range",
+    "springald"
+  ],
+  "displayClasses": [
+    "Siege"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 0,
+    "wood": 125,
+    "stone": 0,
+    "gold": 100,
+    "total": 225,
+    "popcap": 2,
+    "time": 15
+  },
+  "producedBy": [
+    "machine-workshop"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/bed-crossbow-4.png",
+  "hitpoints": 110,
+  "weapons": [
+    {
+      "name": "Bed Crossbow",
+      "type": "ranged",
+      "damage": 12,
+      "speed": 3.125,
+      "range": {
+        "min": 0,
+        "max": 7.5
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "melee",
+                "infantry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 5,
+          "type": "passive"
+        },
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "naval",
+                "unit"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 20,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.125,
+        "windup": 0.25,
+        "attack": 0.25,
+        "winddown": 0.5,
+        "reload": 2,
+        "setup": 0,
+        "teardown": 0.25,
+        "cooldown": 0
+      },
+      "burst": {
+        "count": 2
+      },
+      "attribName": "weapon_bedcrossbow_4_jin",
+      "pbgid": 9004146
+    }
+  ],
+  "armor": [],
+  "resistance": [
+    {
+      "type": "ranged",
+      "value": 60
+    }
+  ],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 32,
+    "outer_height": -15,
+    "outer_radius": 56,
+    "base": 41.6,
+    "line": 56,
+    "height": 10
+  },
+  "movement": {
+    "speed": 0.91
+  }
+}

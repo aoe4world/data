@@ -527,7 +527,7 @@
         "varangian-warcamp"
       ],
       "icon": "https://data.aoe4world.com/images/units/atgeirmadr-4.png",
-      "hitpoints": 140,
+      "hitpoints": 150,
       "weapons": [
         {
           "name": "Spear",
@@ -629,7 +629,7 @@
         "height": 10
       },
       "movement": {
-        "speed": 1.25
+        "speed": 1.3
       }
     },
     {
@@ -1307,6 +1307,150 @@
       },
       "movement": {
         "speed": 0.75
+      }
+    },
+    {
+      "id": "cannon-4",
+      "baseId": "cannon",
+      "type": "unit",
+      "name": "Cannon",
+      "pbgid": 9003231,
+      "attribName": "unit_cannon_4_royal_merc_byz_ha_mac",
+      "age": 4,
+      "civs": [
+        "mac"
+      ],
+      "description": "Most powerful siege cannon. Excellent against buildings or any stubborn targets.\n+ Bonus damage to buildings",
+      "classes": [
+        "annihilation_condition",
+        "bombard_wheeled",
+        "find_non_siege_land_military",
+        "formational",
+        "gunpowder",
+        "included_by_military_hotkeys",
+        "land_military",
+        "military",
+        "siege",
+        "siege_range"
+      ],
+      "displayClasses": [
+        "Siege",
+        "Gunpowder"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "silver": 900,
+        "total": 900,
+        "popcap": 3,
+        "time": 45
+      },
+      "producedBy": [
+        "foreign-engineering-company"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/cannon-4.png",
+      "hitpoints": 190,
+      "weapons": [
+        {
+          "name": "Cannon",
+          "type": "siege",
+          "damage": 60,
+          "speed": 5.375,
+          "range": {
+            "min": 3.75,
+            "max": 10
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 500,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 450,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 55,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "war",
+                    "elephant"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 55,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 1.75,
+            "reload": 3,
+            "setup": 0.25,
+            "teardown": 0.25,
+            "cooldown": 0
+          },
+          "attribName": "weapon_cannon_4",
+          "pbgid": 165121
+        }
+      ],
+      "armor": [],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 85
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
+        "line": 56,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.875
       }
     },
     {
@@ -2456,7 +2600,7 @@
         "imperial-hippodrome"
       ],
       "icon": "https://data.aoe4world.com/images/units/hippodrome-horseman-1.png",
-      "hitpoints": 220,
+      "hitpoints": 200,
       "weapons": [
         {
           "name": "Spear",
@@ -2607,7 +2751,7 @@
         "imperial-hippodrome"
       ],
       "icon": "https://data.aoe4world.com/images/units/hippodrome-riddari-1.png",
-      "hitpoints": 280,
+      "hitpoints": 250,
       "weapons": [
         {
           "name": "Sword",
@@ -2705,7 +2849,7 @@
       "armor": [
         {
           "type": "melee",
-          "value": 4
+          "value": 3
         },
         {
           "type": "ranged",
@@ -2771,7 +2915,7 @@
         "imperial-hippodrome"
       ],
       "icon": "https://data.aoe4world.com/images/units/hippodrome-scout-1.png",
-      "hitpoints": 220,
+      "hitpoints": 200,
       "weapons": [
         {
           "name": "(translation not found) (undefined)",
@@ -3627,7 +3771,7 @@
                 ]
               },
               "effect": "change",
-              "value": 16,
+              "value": 19,
               "type": "passive"
             },
             {
@@ -3641,7 +3785,7 @@
                 ]
               },
               "effect": "change",
-              "value": 16,
+              "value": 19,
               "type": "passive"
             }
           ],
@@ -3656,7 +3800,7 @@
             "cooldown": 0
           },
           "burst": {
-            "count": 12
+            "count": 10
           },
           "attribName": "weapon_mangonel_3_incendiary",
           "pbgid": 127724
@@ -3982,7 +4126,7 @@
         "varangian-warcamp"
       ],
       "icon": "https://data.aoe4world.com/images/units/riddari-3.png",
-      "hitpoints": 240,
+      "hitpoints": 230,
       "weapons": [
         {
           "name": "Sword",
@@ -4154,7 +4298,7 @@
         "varangian-warcamp"
       ],
       "icon": "https://data.aoe4world.com/images/units/riddari-4.png",
-      "hitpoints": 280,
+      "hitpoints": 270,
       "weapons": [
         {
           "name": "Sword",
@@ -4653,7 +4797,7 @@
         {
           "name": "Springald",
           "type": "ranged",
-          "damage": 14,
+          "damage": 15,
           "speed": 3.125,
           "range": {
             "min": 0,
@@ -4705,7 +4849,7 @@
         {
           "name": "Roman Fire",
           "type": "ranged",
-          "damage": 14,
+          "damage": 15,
           "speed": 2.625,
           "range": {
             "min": 0,
@@ -4723,7 +4867,7 @@
                 ]
               },
               "effect": "change",
-              "value": 12,
+              "value": 13,
               "type": "passive"
             },
             {
@@ -4996,12 +5140,12 @@
       ],
       "unique": true,
       "costs": {
-        "food": 90,
+        "food": 80,
         "wood": 0,
         "stone": 0,
         "gold": 40,
         "silver": 0,
-        "total": 130,
+        "total": 120,
         "popcap": 1,
         "time": 25
       },
@@ -5010,7 +5154,7 @@
         "varangian-warcamp"
       ],
       "icon": "https://data.aoe4world.com/images/units/varangian-guard-2.png",
-      "hitpoints": 125,
+      "hitpoints": 120,
       "weapons": [
         {
           "name": "Sword",
@@ -5195,12 +5339,12 @@
       ],
       "unique": true,
       "costs": {
-        "food": 90,
+        "food": 80,
         "wood": 0,
         "stone": 0,
         "gold": 40,
         "silver": 0,
-        "total": 130,
+        "total": 120,
         "popcap": 1,
         "time": 25
       },
@@ -5394,12 +5538,12 @@
       ],
       "unique": true,
       "costs": {
-        "food": 90,
+        "food": 80,
         "wood": 0,
         "stone": 0,
         "gold": 40,
         "silver": 0,
-        "total": 130,
+        "total": 120,
         "popcap": 1,
         "time": 25
       },
@@ -5574,7 +5718,8 @@
         "formational",
         "human",
         "villager",
-        "worker"
+        "worker",
+        "WPFGUI_villager_entity"
       ],
       "displayClasses": [
         "Worker"

@@ -2353,7 +2353,7 @@
       "civs": [
         "by"
       ],
-      "description": "Enemy cavalry are stunned for 2.5 seconds and take 25 damage.",
+      "description": "Enemy cavalry are stunned for 2.5 seconds and take 19 damage.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -2388,7 +2388,7 @@
           "effect": "change",
           "value": 2.5,
           "type": "ability",
-          "duration": 25
+          "duration": 19
         }
       ]
     },
@@ -3815,7 +3815,7 @@
       "civs": [
         "en"
       ],
-      "description": "Enemy cavalry are stunned for 2.5 seconds and take 25 damage.",
+      "description": "Enemy cavalry are stunned for 2.5 seconds and take 19 damage.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -3849,7 +3849,7 @@
           "effect": "change",
           "value": 2.5,
           "type": "ability",
-          "duration": 25
+          "duration": 19
         }
       ]
     },
@@ -4818,7 +4818,7 @@
       "civs": [
         "gol"
       ],
-      "description": "Activate to increase the production speed of the Golden Tent and Military Buildings within the influence of a Fortified Outpost by +20%.\nOnly one edict can be active.",
+      "description": "Activate to increase the production speed of the Golden Tent and Military Buildings within the influence of a Fortified Outpost by +15%.\nOnly one edict can be active.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -5711,7 +5711,7 @@
       "civs": [
         "hl"
       ],
-      "description": "Granted +15% cheaper research costs by the King's College.",
+      "description": "Granted +20% cheaper research costs by the King's College.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -5898,7 +5898,7 @@
       "civs": [
         "ja"
       ],
-      "description": "Deflective Armor charge can block one melee or ranged attack. Recharges while out of combat for 8 seconds.",
+      "description": "Deflective Armor charge can block one melee or ranged attack. Recharges while out of combat for 15 seconds.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -6753,7 +6753,7 @@
       "civs": [
         "je"
       ],
-      "description": "Jeanne targets an enemy and fires a divine arrow that deals 40 damage.\nCooldown: 8 Seconds.\nRecharge Time: 60 Seconds.\nMax Charges: 4",
+      "description": "Jeanne targets an enemy and fires a divine projectile that deals 40 damage at level 2, 100 damage at level 3, and 150 damage at level 4.\nCooldown: 8 Seconds.\nRecharge Time: 60 Seconds.\nMax Charges: 4",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -6914,7 +6914,7 @@
       "civs": [
         "je"
       ],
-      "description": "Jeanne unleashes a powerful area of effect attack, striking all enemies within 1.25 tiles for 20 damage.\nCooldown: 8 Seconds.\nRecharge Time: 60 Seconds.\nMax Charges: 4.",
+      "description": "Jeanne unleashes a powerful area of effect attack, striking all enemies within 1.25 tiles for 20 damage at level 2, 30 at level 3, and 50 at level 4.\nCooldown: 8 Seconds.\nRecharge Time: 60 Seconds.\nMax Charges: 4.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -7820,6 +7820,435 @@
       "unlockedBy": [
         "technologies/level-4-gunpowder-monarch"
       ]
+    },
+    {
+      "id": "ability-conversion-1",
+      "baseId": "ability-conversion",
+      "type": "ability",
+      "name": "Conversion",
+      "pbgid": 192685,
+      "attribName": "monk_conversion",
+      "age": 1,
+      "civs": [
+        "jin"
+      ],
+      "description": "Attempts to convert enemy units within range of this Monk to your control.\nCooldown: 120 Seconds.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-conversion-1.png",
+      "active": "manual",
+      "auraRange": 4.75,
+      "cooldown": 120,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "monk",
+              "scholar",
+              "imam",
+              "dervish",
+              "warrior-monk",
+              "shaman",
+              "prelate",
+              "shinto-priest",
+              "buddhist-monk",
+              "shaolin-monk"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-detonate-1",
+      "baseId": "ability-detonate",
+      "type": "ability",
+      "name": "Detonate",
+      "pbgid": 2013822,
+      "attribName": "fireship_self_detonate",
+      "age": 1,
+      "civs": [
+        "jin"
+      ],
+      "description": "Detonate the ship.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-detonate-1.png",
+      "active": "manual",
+      "auraRange": 2,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "class": [
+              [
+                "ship",
+                "incendiary"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-flower-garden-1",
+      "baseId": "ability-flower-garden",
+      "type": "ability",
+      "name": "Flower Garden",
+      "pbgid": 9004291,
+      "attribName": "place_garden_jin",
+      "age": 1,
+      "civs": [
+        "jin"
+      ],
+      "description": "Plant a Flower Garden that increases nearby villager gather rate by +25% and non-siege military attack speed by +25%.\nThe Flower Garden will persist until a new Flower Garden is planted.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "flower-pagoda"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-flower-garden-1.png",
+      "active": "manual",
+      "auraRange": 2500,
+      "cooldown": 60,
+      "effects": []
+    },
+    {
+      "id": "ability-grassland-influence-1",
+      "baseId": "ability-grassland-influence",
+      "type": "ability",
+      "name": "Grassland Influence",
+      "pbgid": 9007168,
+      "attribName": "grassland_influence_info_jin",
+      "age": 1,
+      "civs": [
+        "jin"
+      ],
+      "description": "Use a Horse from a Grassland to instantly train Cavalry with a 25 resource discount.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "grassland"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-grassland-influence-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": []
+    },
+    {
+      "id": "ability-karma-1",
+      "baseId": "ability-karma",
+      "type": "ability",
+      "name": "Karma",
+      "pbgid": 9004364,
+      "attribName": "mountain_hall_point_generator",
+      "age": 1,
+      "civs": [
+        "jin"
+      ],
+      "description": "Villagers gathering resources in radius of this religious structure generate Karma.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "monastery",
+        "mountain-hall"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-karma-1.png",
+      "active": "always",
+      "auraRange": 12.5,
+      "effects": []
+    },
+    {
+      "id": "ability-man-the-sails-1",
+      "baseId": "ability-man-the-sails",
+      "type": "ability",
+      "name": "Man The Sails",
+      "pbgid": 2101656,
+      "attribName": "naval_man_the_sails",
+      "age": 1,
+      "civs": [
+        "jin"
+      ],
+      "description": "Activate to move 40% faster for 10 seconds, deactivates early when dealing damage.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-man-the-sails-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 60,
+      "effects": [
+        {
+          "property": "moveSpeed",
+          "select": {
+            "class": [
+              [
+                "ship",
+                "springald"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 40,
+          "type": "ability",
+          "duration": 10
+        }
+      ]
+    },
+    {
+      "id": "ability-ring-the-town-bell-1",
+      "baseId": "ability-ring-the-town-bell",
+      "type": "ability",
+      "name": "Ring the Town Bell",
+      "pbgid": 2149990,
+      "attribName": "town_center_town_bell",
+      "age": 1,
+      "civs": [
+        "jin"
+      ],
+      "description": "Alerts and orders all nearby Villagers to automatically seek shelter in the nearest garrisonable building.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "capital-town-center",
+        "town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ring-the-town-bell-1.png",
+      "active": "manual",
+      "auraRange": 0,
+      "cooldown": 5,
+      "effects": [
+        {
+          "property": "unknown",
+          "select": {
+            "id": [
+              "capital-town-center",
+              "town-center"
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "ability"
+        }
+      ]
+    },
+    {
+      "id": "ability-siege-repairs-1",
+      "baseId": "ability-siege-repairs",
+      "type": "ability",
+      "name": "Siege Repairs",
+      "pbgid": 9005198,
+      "attribName": "machine_workshop_repair_aura_jin",
+      "age": 1,
+      "civs": [
+        "jin"
+      ],
+      "description": "Repairs nearby siege engines for 2 health every second.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "machine-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-siege-repairs-1.png",
+      "active": "always",
+      "auraRange": 4.5,
+      "effects": []
+    },
+    {
+      "id": "ability-spiritual-awakening-1",
+      "baseId": "ability-spiritual-awakening",
+      "type": "ability",
+      "name": "Spiritual Awakening",
+      "pbgid": 9005200,
+      "attribName": "pagoda_forest_conversion_jin",
+      "age": 1,
+      "civs": [
+        "jin"
+      ],
+      "description": "Attempts to convert enemy units to your control in cascading rings around this landmark. Garrisoning monks will add additional rings, up to 3.\nCooldown: 7 minutes.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "pagoda-forest"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-spiritual-awakening-1.png",
+      "active": "manual",
+      "auraRange": 6.25,
+      "cooldown": 420,
+      "effects": []
+    },
+    {
+      "id": "ability-spiritual-awakening-2",
+      "baseId": "ability-spiritual-awakening",
+      "type": "ability",
+      "name": "Spiritual Awakening",
+      "pbgid": 9005201,
+      "attribName": "pagoda_forest_conversion_jin_ring_2",
+      "age": 2,
+      "civs": [
+        "jin"
+      ],
+      "description": "Attempts to convert enemy units to your control in cascading rings around this landmark. Garrisoning monks will add additional rings, up to 3.\nCooldown: 7 minutes.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "pagoda-forest"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-spiritual-awakening-2.png",
+      "active": "manual",
+      "auraRange": 8.75,
+      "cooldown": 420,
+      "effects": []
+    },
+    {
+      "id": "ability-spiritual-awakening-3",
+      "baseId": "ability-spiritual-awakening",
+      "type": "ability",
+      "name": "Spiritual Awakening",
+      "pbgid": 9005202,
+      "attribName": "pagoda_forest_conversion_jin_ring_3",
+      "age": 3,
+      "civs": [
+        "jin"
+      ],
+      "description": "Attempts to convert enemy units to your control in cascading rings around this landmark. Garrisoning monks will add additional rings, up to 3.\nCooldown: 7 minutes.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "pagoda-forest"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-spiritual-awakening-3.png",
+      "active": "manual",
+      "auraRange": 11.25,
+      "cooldown": 420,
+      "effects": []
+    },
+    {
+      "id": "ability-spiritual-awakening-4",
+      "baseId": "ability-spiritual-awakening",
+      "type": "ability",
+      "name": "Spiritual Awakening",
+      "pbgid": 9005203,
+      "attribName": "pagoda_forest_conversion_jin_ring_4",
+      "age": 4,
+      "civs": [
+        "jin"
+      ],
+      "description": "Attempts to convert enemy units to your control in cascading rings around this landmark. Garrisoning monks will add additional rings, up to 3.\nCooldown: 7 minutes.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "pagoda-forest"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-spiritual-awakening-4.png",
+      "active": "manual",
+      "auraRange": 13.75,
+      "cooldown": 420,
+      "effects": []
     },
     {
       "id": "ability-conversion-1",
@@ -10382,7 +10811,7 @@
       "civs": [
         "ot"
       ],
-      "description": "Military unit production rate increased +20%/+30%/+40% by Age while within the influence of a Blacksmith or University. The Istanbul Observatory increases the bonus to +100%.",
+      "description": "Military unit production rate increased +20%/+30%/+40% by Age while within the influence of a Blacksmith or University. The Istanbul Observatory increases the bonus to +85%.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -10495,7 +10924,7 @@
             ]
           },
           "effect": "multiply",
-          "value": 0,
+          "value": 0.15,
           "type": "ability"
         }
       ]
@@ -10606,7 +11035,7 @@
       "civs": [
         "ot"
       ],
-      "description": "Gain +50% attack speed and receive +50% damage from melee weapons for 10 seconds.",
+      "description": "Gain +40% attack speed and receive +50% damage from melee weapons for 10 seconds.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -10632,7 +11061,7 @@
             ]
           },
           "effect": "change",
-          "value": 0.67,
+          "value": 0.71,
           "type": "ability",
           "duration": 10
         },
@@ -10919,6 +11348,43 @@
           "type": "ability"
         }
       ]
+    },
+    {
+      "id": "ability-sea-gate-castle-1",
+      "baseId": "ability-sea-gate-castle",
+      "type": "ability",
+      "name": "Sea Gate Castle",
+      "pbgid": 9005290,
+      "attribName": "sea_gate_defence_dmg_ott",
+      "age": 1,
+      "civs": [
+        "ot"
+      ],
+      "description": "Increases damage of defensive structures by 20%.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "vizier": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "capital-town-center",
+        "dock",
+        "keep",
+        "outpost",
+        "sea-gate-castle",
+        "stone-wall-tower",
+        "town-center"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-sea-gate-castle-1.png",
+      "active": "always",
+      "auraRange": 0,
+      "effects": []
     },
     {
       "id": "ability-trade-protection-4",
@@ -12279,7 +12745,7 @@
       "civs": [
         "zx"
       ],
-      "description": "Generates resources depending on the type of resources nearby. Enemy units within 8 tiles reduce the rate at which resources are generated.",
+      "description": "Increases the resource value of nearby gold veins, stone outcroppings, and berry bushes by +5% every 30 seconds up to a maximum of +60%.\nTrees are increased at a lesser rate of +2.5% up to +30%.\nAfter 330 seconds, generates resources equal to 5% of the current resources in those nearby deposits. Additionally generates 5% of the maximum resources of each deposit when fully gathered.",
       "classes": [],
       "displayClasses": [],
       "costs": {
@@ -12309,6 +12775,37 @@
           "type": "ability"
         }
       ]
+    },
+    {
+      "id": "ability-city-guard-1",
+      "baseId": "ability-city-guard",
+      "type": "ability",
+      "name": "City Guard",
+      "pbgid": 9005349,
+      "attribName": "toggle_jiangnan_zhuge",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "Spawns an army of 4 Zhuge Nu and 3 Palace Guards.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "jiangnan-tower"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-city-guard-1.png",
+      "active": "toggle",
+      "auraRange": 0,
+      "toggleGroup": "temple_of_the_sun",
+      "effects": []
     },
     {
       "id": "ability-conversion-1",
@@ -12650,6 +13147,37 @@
       ]
     },
     {
+      "id": "ability-imperial-retinue-1",
+      "baseId": "ability-imperial-retinue",
+      "type": "ability",
+      "name": "Imperial Retinue",
+      "pbgid": 9005352,
+      "attribName": "toggle_jiangnan_yuan",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "Spawns an army of 4 Yuan Raiders and 1 Imperial Guard.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "jiangnan-tower"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-imperial-retinue-1.png",
+      "active": "toggle",
+      "auraRange": 0,
+      "toggleGroup": "temple_of_the_sun",
+      "effects": []
+    },
+    {
       "id": "ability-man-the-sails-1",
       "baseId": "ability-man-the-sails",
       "type": "ability",
@@ -12693,6 +13221,68 @@
           "duration": 10
         }
       ]
+    },
+    {
+      "id": "ability-provincial-levy-1",
+      "baseId": "ability-provincial-levy",
+      "type": "ability",
+      "name": "Provincial Levy",
+      "pbgid": 9005348,
+      "attribName": "toggle_jiangnan_spear",
+      "age": 1,
+      "civs": [
+        "zx"
+      ],
+      "description": "Spawns an army of 4 Spearman and 3 Horsemen.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "jiangnan-tower"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-provincial-levy-1.png",
+      "active": "toggle",
+      "auraRange": 0,
+      "toggleGroup": "temple_of_the_sun",
+      "effects": []
+    },
+    {
+      "id": "ability-ranged-specialists-3",
+      "baseId": "ability-ranged-specialists",
+      "type": "ability",
+      "name": "Ranged Specialists",
+      "pbgid": 9005351,
+      "attribName": "toggle_jiangnan_xbow",
+      "age": 3,
+      "civs": [
+        "zx"
+      ],
+      "description": "Spawns an army of 4 Crossbowmen and 1 Grenadier.",
+      "classes": [],
+      "displayClasses": [],
+      "costs": {
+        "food": 0,
+        "wood": 0,
+        "stone": 0,
+        "gold": 0,
+        "total": 0,
+        "popcap": 0
+      },
+      "producedBy": [
+        "jiangnan-tower"
+      ],
+      "icon": "https://data.aoe4world.com/images/abilities/ability-ranged-specialists-3.png",
+      "active": "toggle",
+      "auraRange": 0,
+      "toggleGroup": "temple_of_the_sun",
+      "effects": []
     },
     {
       "id": "ability-ring-the-town-bell-1",

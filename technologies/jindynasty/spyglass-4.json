@@ -1,0 +1,53 @@
+{
+  "id": "spyglass-4",
+  "baseId": "spyglass",
+  "type": "technology",
+  "name": "Spyglass",
+  "pbgid": 2126346,
+  "attribName": "upgrade_scout_los_increase_chi",
+  "age": 4,
+  "civs": [
+    "jin"
+  ],
+  "description": "Increase the sight radius of Scouts by 30%.",
+  "classes": [
+    "chinese_ha_01_upgrade",
+    "chinese_upgrade",
+    "military_upgrade",
+    "scar_imperial_age_upgrade",
+    "scar_military_upgrade",
+    "scar_nontiered_upgrade"
+  ],
+  "displayClasses": [
+    "Scout Technology"
+  ],
+  "unique": false,
+  "costs": {
+    "food": 0,
+    "wood": 100,
+    "stone": 0,
+    "gold": 50,
+    "total": 150,
+    "popcap": 0,
+    "time": 45
+  },
+  "producedBy": [
+    "great-pasture",
+    "war-stable"
+  ],
+  "icon": "https://data.aoe4world.com/images/technologies/spyglass-4.png",
+  "effects": [
+    {
+      "property": "lineOfSight",
+      "select": {
+        "id": [
+          "scout",
+          "warrior-scout"
+        ]
+      },
+      "effect": "multiply",
+      "value": 1.3,
+      "type": "passive"
+    }
+  ]
+}

@@ -95,6 +95,14 @@ const civilizations = {
     attribName: "french_ha_01",
     expansion: ["sultans-ascend"],
   },
+  jin: {
+    id: "jin_dynasty",
+    name: "Jin Dynasty",
+    abbr: "jin",
+    slug: "jindynasty",
+    attribName: "jin_dynasty",
+    expansion: ["yue-feis-legacy"],
+  },
   kt: {
     id: "knights_templar",
     name: "Knights Templar",
