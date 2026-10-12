@@ -1,8 +1,12 @@
 import path from "path";
 
 export const IMAGE_FOLDER = "images";
-export const ROOT_FOLDER = path.join(__dirname, "../../../");
-export const IMG_PATH = path.join(ROOT_FOLDER, IMAGE_FOLDER);
+const REPO_FOLDER = path.join(__dirname, "../../../");
+// English data stays where it always was; any other locale gets a folder of its own under locales/.
+// Icons are the same in every locale and stay in the repo root.
+const LOCALE = process.env.AOE4_LOCALE ?? "en";
+export const ROOT_FOLDER = LOCALE === "en" ? REPO_FOLDER : path.join(REPO_FOLDER, "locales", LOCALE);
+export const IMG_PATH = path.join(REPO_FOLDER, IMAGE_FOLDER);
 export const CDN_HOST = "https://data.aoe4world.com";
 
 export const FOLDERS = {

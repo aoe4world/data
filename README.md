@@ -228,6 +228,11 @@ All Parameters:
 7. Verify the changes. Specifically, the technology effects are currently compiled from translation parameters, of which the order may change. This can easily be spotted by changes in any technology description field. If they changed, update the parameter order or implementation in `effect.ts`.
 8. Run `yarn build` to update the optimzed json files and library.
 
+#### Other languages
+`AOE4_LOCALE=de yarn parse` writes the same data in German to `locales/de/` (same layout as the repo root; icons are shared). The locale is the folder name under `source/latest/locale`.
+
+The parser still runs in English, since ids and workarounds rely on English names, and every string is swapped for its translation at the end. Text the workarounds write themselves is not in the game files; it is translated in `src/attrib/locale-overrides/<locale>.json`, keyed by the English text. Strings that stay English are listed in `src/attrib/.temp/untranslated.<locale>.json` after a run.
+
 #### Just parse one civ
 Parsing can be relatively slow due to the total amount of files involved. If you're just working on data for a specific civ you can add an additional flag to the the parse command to only parse a specific civ. I.e. `yarn parse --civ japanese`
 

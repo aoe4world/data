@@ -11,7 +11,8 @@ import { Item } from "../types/items";
 import { hardcodedDiscovery, hardcodedDiscoveryCommon } from "./config";
 import { workarounds } from "./workarounds";
 import { parseItemFromAttribFile, maybeOnKey } from "./parse";
-import { getTranslation as t } from "./translations";
+import { getTranslation as t, setTranslationScope } from "./translations";
+import { localizeItem, localizeString, reportUntranslated } from "./localize";
 import { getEssenceData, guessAppropriateEssenceFile } from "./essence";
 import { copyIcon } from "./icons";
 
@@ -24,6 +25,9 @@ if (process.argv.some((arg) => arg === "--civ")) {
 }
 
 const getData = getEssenceData;
+
+// The attrib file each item was parsed from: the scope its strings were recorded in.
+const itemScopes = new WeakMap<Item, string>();
 
 export type RunContext = {
   debug: boolean;
@@ -80,8 +84,11 @@ async function buildTechTree(
     const data = await getData(file, context);
     if (debug) writeTemp(data, file);
 
+    setTranslationScope(file);
     const item = await parseItemFromAttribFile(file, data, civ, context);
+    setTranslationScope(undefined);
     if (!item) return;
+    itemScopes.set(item, file);
 
     for (const [override, { predicate, mutator, validator, callContext }] of workarounds)
       if (predicate(item)) {
@@ -234,8 +241,9 @@ async function tryFindFile(race: string, paths: string[]) {
 function getCivInfo(army_bag: any, bps_race_bag: any) {
   if (!army_bag || !bps_race_bag) return;
   const overview = army_bag.ui?.global_traits_summary.map((x) => {
-    const title = t(x.title);
-    const description = x.description_formatter?.value ? t(x.description_formatter.formatter, x.description_formatter.formatter_arguments) : t(x.description);
+    const title = localizeString(t(x.title), undefined, "civ");
+    // Localized before the split below, which the translations do not know about.
+    const description = localizeString(x.description_formatter?.value ? t(x.description_formatter.formatter, x.description_formatter.formatter_arguments) : t(x.description), undefined, "civ");
     const list = description.startsWith("• ")
       ? description
           .split("• ")
@@ -246,9 +254,9 @@ function getCivInfo(army_bag: any, bps_race_bag: any) {
     return { title, description };
   });
   return {
-    name: t(bps_race_bag.name),
-    description: t(bps_race_bag.description),
-    classes: t(army_bag.ui?.one_liner),
+    name: localizeString(t(bps_race_bag.name), undefined, "civ"),
+    description: localizeString(t(bps_race_bag.description), undefined, "civ"),
+    classes: localizeString(t(army_bag.ui?.one_liner), undefined, "civ"),
     overview,
   } as any;
 }
@@ -327,6 +335,7 @@ async function compile(type: ITEM_TYPES) {
   for (const [civ, techTree] of civTechTreeMap) {
     console.log(`Persisting ${techTree.civ.name}...`);
     techTree.items.forEach(item => {
+      localizeItem(item, itemScopes.get(item));
       persistItem(item, techTree.civ);
     });
     
@@ -335,6 +344,7 @@ async function compile(type: ITEM_TYPES) {
 
 writeJson(`${FOLDERS.CIVILIZATIONS.DATA}/civs-index.json`, CIVILIZATIONS, { log: false });
 
+  reportUntranslated();
   [ITEM_TYPES.UNITS, ITEM_TYPES.TECHNOLOGIES, ITEM_TYPES.BUILDINGS, ITEM_TYPES.UPGRADES, ITEM_TYPES.ABILITIES].forEach((type) => compile(type));
 })();
 
