@@ -6,7 +6,7 @@ Extracts and prepares Age of Empires IV game assets for use in the aoe4world dat
 Use the assets from the specified game directory. This would be C:\Program Files (x86)\Steam\steamapps\common\Age of Empires IV, if it was installed in the default Steam directory.
 
 .PARAMETER ArchivesPath
-Use the Attrib.sga, UIArt.sga and LocaleEnglish.sga files in the specified directory. defaults to './source' if all 3 files are found there.
+Use the Attrib.sga, UIArt.sga and Locale*.sga files in the specified directory. defaults to './source' if Attrib.sga, UIArt.sga, and Locale*.sga files are found there.
 
 .PARAMETER DataStorePath
 Specifies the directory that contains an archival storage of multiple game versions, it should contain a 'patches\{patch-version}' structure. Use -Patch to specify which patch to extract.
@@ -30,6 +30,18 @@ Whether to extracts all icons instead of only races, also extracts civ flags & m
 .PARAMETER RemoveTemp
 Removes the extracted sga content after conversion (attrib-raw and uiart-raw dirs)
 
+.PARAMETER SkipAttrib
+Skip extracting and converting Attrib.sga.
+
+.PARAMETER SkipIcons
+Skip extracting and converting UIArt.sga.
+
+.PARAMETER SkipLocale
+Skip extracting Locale*.sga archives.
+
+.PARAMETER NoJunction
+Do not update the ./source/latest junction to point to OutputPath.
+
 .PARAMETER AOEModsEssenceDir
 Specify an alternative dir containing 'AOEMods.Essence.CLI.dll'; defaults to './source/AOEMods.Essence'
 
@@ -49,7 +61,7 @@ Extract the required data, but also export map, civ and additional icons (these 
 
 .\Extract-AOE4Patch.ps1 -RemoveTemp
 
-After manually placing Attrib.sga, UIArt.sga and LocaleEnglish.sga in ./sources. This simply extracts the necessary resources and removes the temporary files.
+After manually placing Attrib.sga, UIArt.sga and Locale*.sga in ./sources. This simply extracts the necessary resources and removes the temporary files.
 #>
 [CmdletBinding(DefaultParameterSetName = 'ArchivePath')]
 param(
@@ -70,6 +82,10 @@ param(
   [Switch]$ExtractYaml,
   [Switch]$ExtractExtraImages,
   [Switch]$RemoveTemp,
+  [Switch]$SkipAttrib,
+  [Switch]$SkipIcons,
+  [Switch]$SkipLocale,
+  [Switch]$NoJunction,
 
   [String]$AOEModsEssenceDir
 )
@@ -93,16 +109,16 @@ if ($GamePath) {
 } elseif (-not $ArchivesPath) {
   $ArchivesPath = Join-Path $PSScriptRoot 'source'
   if ((Test-Path (Join-Path $ArchivesPath 'Attrib.sga')) -and
-      (Test-Path (Join-Path $ArchivesPath 'LocaleEnglish.sga')) -and
+      (Test-Path (Join-Path $ArchivesPath 'Locale*.sga')) -and
       (Test-Path (Join-Path $ArchivesPath 'UIArt.sga'))) {
-    Write-Host "Selected $ArchivesPath as default archives directory, since it contained Attrib.sga, LocaleEnglish.sga, and UIArt.sga files. Provide -GamePath or -ArchivesPath if another source is desired."
+    Write-Host "Selected $ArchivesPath as default archives directory, since it contained Attrib.sga, Locale*.sga, and UIArt.sga files. Provide -GamePath or -ArchivesPath if another source is desired."
   }
 }
 
-if (-not (Test-Path (Join-Path $ArchivesPath 'Attrib.sga')) -or
-    -not (Test-Path (Join-Path $ArchivesPath 'LocaleEnglish.sga')) -or
-    -not (Test-Path (Join-Path $ArchivesPath 'UIArt.sga'))) {
-  Write-Error "Specify -GamePath with path the the game; or specify -ArchivesPath with directory containing Attrib.sga, LocaleEnglish.sga, and UIArt.sga; or place those files in $ArchivesPath"
+if ((-not $SkipAttrib -and -not (Test-Path (Join-Path $ArchivesPath 'Attrib.sga'))) -or
+    (-not $SkipLocale -and -not (Test-Path (Join-Path $ArchivesPath 'Locale*.sga'))) -or
+    (-not $SkipIcons -and -not (Test-Path (Join-Path $ArchivesPath 'UIArt.sga')))) {
+  Write-Error "Specify -GamePath with path to the game; or specify -ArchivesPath with directory containing required .sga files (Attrib.sga, Locale*.sga, UIArt.sga); or place those files in $ArchivesPath"
   return
 }
 
@@ -190,8 +206,6 @@ function Export-Attrib($patch) {
 }
 
 function Export-Locale {
-  $sgaPath = "$ArchivesPath\\LocaleEnglish.sga"
-
   $outPath = $OutputPath
   $localePath = "${outPath}\locale"
 
@@ -200,8 +214,16 @@ function Export-Locale {
     Remove-Item -Recurse $localePath
   }
 
-  Write-Host "Unpacking $sgaPath to $localePath"
-  Invoke-Essence "sga-unpack" $sgaPath $localePath
+  $localeSgas = @(Get-ChildItem -Path $ArchivesPath -Filter 'Locale*.sga')
+  if ($localeSgas.Count -eq 0) {
+    Write-Error "No Locale*.sga files found in $ArchivesPath"
+    throw
+  }
+
+  foreach ($localeSga in $localeSgas) {
+    Write-Host "Unpacking $($localeSga.FullName) to $localePath"
+    Invoke-Essence "sga-unpack" $localeSga.FullName $localePath
+  }
 }
 
 function Export-Icons {
@@ -243,11 +265,17 @@ function Export-Icons {
   }
 }
 
-Export-Attrib
-Export-Locale
-Export-Icons
+if (-not $SkipAttrib) {
+  Export-Attrib
+}
+if (-not $SkipLocale) {
+  Export-Locale
+}
+if (-not $SkipIcons) {
+  Export-Icons
+}
 
-if ($OutputLatestPath -ne $OutputPath -and (-not (Test-Path $OutputLatestPath) -or (Get-Item $OutputLatestPath).LinkType -eq 'Junction')) {
+if (-not $NoJunction -and $OutputLatestPath -ne $OutputPath -and (-not (Test-Path $OutputLatestPath) -or (Get-Item $OutputLatestPath).LinkType -eq 'Junction')) {
   Write-Host "Updating $OutputLatestPath to point to $OutputPath"
   if (Test-Path $OutputLatestPath) {
     (Get-Item $OutputLatestPath).Delete()

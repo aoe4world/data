@@ -1435,9 +1435,8 @@ export const abilityModifiers: Record<string, EffectsFactory> = {
   ),
 
   "ability-house-of-wisdom-influence": standardAbility(
-    "",
+    "Buildings within influence gain +{1} Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age and unlock additional bonuses.",
     ([i]) => [
-    // Buildings within influence gain +5 Fire Armor.\nStructures built within House of Wisdom influence area help progress to the Golden Age.
     {
       property: "fireArmor",
       select: { class: [["building"]] },
