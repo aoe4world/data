@@ -18,10 +18,16 @@ export function unifyItems(items: Item[]): UnifiedItem[] {
             minAge: item.age,
             icon: item.icon,
             description: item.description,
+            translations: item.translations ? { ...item.translations } : undefined,
             variations: [item],
           };
         else {
-          if (item.name.length < acc[id].name.length) acc[id].name = item.name;
+          if (item.name.length < acc[id].name.length) {
+            acc[id].name = item.name;
+            if (item.translations) acc[id].translations = { ...item.translations };
+          } else if (!acc[id].translations && item.translations) {
+            acc[id].translations = { ...item.translations };
+          }
           acc[id].variations.push(item);
           acc[id].civs = uniqueArray([...acc[id].civs, ...item.civs]).sort();
           acc[id].classes = uniqueArray([...acc[id].classes, ...item.classes]);

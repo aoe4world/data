@@ -1,11 +1,11 @@
 import path from "path";
 import fs from "fs";
 import { Weapon } from "../types/items";
-import { getTranslation, NO_TRANSLATION_FOUND } from "./translations";
-import { slugify } from "../lib/utils/string";
-import { parseXmlFile } from "./xml";
+import { getTranslation, getTargetLocales, NO_TRANSLATION_FOUND } from "./translations";
+import { recordWeaponTranslation } from "./localize";
 import { damageMap } from "./parse";
 import { RunContext } from "./run";
+import { slugify } from "../lib/utils/string";
 
 export function parseWeapons(combat_ext: any, context: RunContext): Promise<Weapon[]> {
   const weaponList = (combat_ext?.hardpoints.flatMap((h) =>
@@ -36,6 +36,13 @@ async function parseWeapon(file: string, context: RunContext): Promise<Weapon> {
   const nameId = weapon.weapon_bag?.ui_name;
   const name = getTranslation(nameId);
   const id = name && !name.startsWith(NO_TRANSLATION_FOUND) ? slugify(name) : slugify(attribName);
+
+  for (const locale of getTargetLocales()) {
+    const locName = getTranslation(nameId, [], locale);
+    if (locName && locName !== NO_TRANSLATION_FOUND && locName !== name) {
+      recordWeaponTranslation(id, locale, locName);
+    }
+  }
 
   const type = damageMap[weapon.weapon_bag.damage.damage_type];
 

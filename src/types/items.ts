@@ -67,6 +67,7 @@ export interface Item {
 
   pbgid?: number;
   attribName?: string;
+  translations?: Record<string, ItemTranslation>;
 }
 
 export interface PhysicalItem extends Item {
@@ -225,7 +226,17 @@ export interface UnifiedItem<T extends Item = Item> {
   displayClasses: string[];
   icon?: string;
   description?: string;
+  translations?: Record<string, ItemTranslation>;
 }
+
+export type ItemTranslation = {
+  name?: string;
+  description?: string;
+  displayClasses?: string[];
+  influences?: string[];
+};
+
+export type WeaponTranslations = Record<string, Record<string, string>>;
 
 export enum ITEMS {
   UNITS = "units",

@@ -32,3 +32,13 @@ export function getStringWithAlphanumericLike(str: string | number) {
     .replace(/\s+/g, " ")
     .trim();
 }
+
+/** If a description is a single line starting with a bullet or dash, trim the bullet */
+export function cleanDescription(desc: string | undefined): string | undefined {
+  if (!desc) return desc;
+  const trimmed = desc.trim();
+  if (!trimmed.includes("\n") && /^[-–—•]\s+/.test(trimmed)) {
+    return trimmed.replace(/^[-–—•]\s+/, "");
+  }
+  return desc;
+}

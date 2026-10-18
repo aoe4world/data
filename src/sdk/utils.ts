@@ -1,24 +1,94 @@
-import type { CivAbbr, CivSlug, CivConfig } from "../types/civs";
+import type { CivAbbr, CivSlug, CivConfig, CivInfo } from "../types/civs";
 import { CIVILIZATIONS, CIVILIZATION_BY_SLUG } from "../lib/config/civs";
-import { Item, ItemType, Modifier, UnifiedItem } from "../types/items";
+import { Item, ItemType, ItemTranslation, Modifier, UnifiedItem } from "../types/items";
+import { slugify } from "../lib/utils/string";
 
-export { CivSlug, CivAbbr };
+export type { CivSlug, CivAbbr };
 export type ItemGroup<T extends Item> = UnifiedItem<T>;
 
 type NumberKeys<T> = { [K in keyof T]: T[K] extends number ? K : never }[keyof T];
 export type ItemSlug = `${"units" | "buildings" | "technologies" | "upgrades" | "abilities"}/${string}`;
 
-export function getCivConfig(civ: undefined): undefined;
-export function getCivConfig(civ: CivAbbr | CivSlug | CivConfig): CivConfig;
-export function getCivConfig(civ: CivAbbr | CivSlug | CivConfig | string | undefined): CivConfig | undefined;
-export function getCivConfig(civ: CivAbbr | CivSlug | CivConfig | string | undefined): CivConfig | undefined {
+const loadedBundles = new Map<string, {
+  units?: Record<string, any>;
+  buildings?: Record<string, any>;
+  technologies?: Record<string, any>;
+  upgrades?: Record<string, any>;
+  abilities?: Record<string, any>;
+  civilizations?: Record<string, any>;
+  weapons?: Record<string, any>;
+  items?: Record<string, any>;
+}>();
+
+export function loadLocaleBundle(locale: string, bundle?: Record<string, any>) {
+  if (bundle) {
+    loadedBundles.set(locale, bundle);
+    return;
+  }
+  if (!loadedBundles.has(locale) && locale !== "en") {
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      const data = require(`../../locales/${locale}.json`);
+      loadedBundles.set(locale, data);
+    } catch {
+      // Not present or not bundled
+    }
+  }
+}
+
+export function localizeCiv(civ: CivConfig, locale: string): CivConfig;
+export function localizeCiv(civ: CivConfig | undefined, locale: string): CivConfig | undefined;
+export function localizeCiv(civ: CivConfig | undefined, locale: string): CivConfig | undefined {
+  if (!civ || !locale || locale === "en") return civ;
+  if (!loadedBundles.has(locale)) loadLocaleBundle(locale);
+  const bundle = loadedBundles.get(locale);
+  const t = bundle?.civilizations?.[civ.slug];
+  if (t?.name) {
+    return {
+      ...civ,
+      name: t.name,
+    };
+  }
+  return civ;
+}
+
+export function localizeCivInfo(info: CivInfo, locale: string): CivInfo;
+export function localizeCivInfo(info: CivInfo | undefined, locale: string): CivInfo | undefined;
+export function localizeCivInfo(info: CivInfo | undefined, locale: string): CivInfo | undefined {
+  if (!info || !locale || locale === "en") return info;
+  if (!loadedBundles.has(locale)) loadLocaleBundle(locale);
+  const bundle = loadedBundles.get(locale);
+  const t = bundle?.civilizations?.[info.slug];
+  if (!t) return info;
+  return {
+    ...info,
+    ...(t.name ? { name: t.name } : {}),
+    ...(t.classes ? { classes: t.classes } : {}),
+    ...(t.description ? { description: t.description } : {}),
+    ...(t.overview ? { overview: t.overview } : {}),
+  };
+}
+
+export function getCivConfig(civ: undefined, locale?: string): undefined;
+export function getCivConfig(civ: CivAbbr | CivSlug | CivConfig, locale?: string): CivConfig;
+export function getCivConfig(civ: CivAbbr | CivSlug | CivConfig | string | undefined, locale?: string): CivConfig | undefined;
+export function getCivConfig(civ: CivAbbr | CivSlug | CivConfig | string | undefined, locale?: string): CivConfig | undefined {
+  let config: CivConfig | undefined;
   if (!civ) {
     return undefined;
   } else if (typeof civ === "string") {
-    return CIVILIZATIONS[civ as CivAbbr] ?? CIVILIZATION_BY_SLUG[civ as CivSlug];
+    config =
+      CIVILIZATIONS[civ as CivAbbr] ??
+      CIVILIZATION_BY_SLUG[civ as CivSlug] ??
+      Object.values(CIVILIZATIONS).find((c) => c.name.toLowerCase() === civ.toLowerCase() || c.slug === civ || c.abbr === civ);
   } else {
-    return civ;
+    config = civ;
   }
+  return locale ? localizeCiv(config, locale) : config;
+}
+
+export function getCivName(civ: CivAbbr | CivSlug | CivConfig | string | undefined, locale?: string): string {
+  return getCivConfig(civ, locale)?.name ?? "";
 }
 
 export function getAbbr(civ: undefined): undefined;
@@ -80,4 +150,108 @@ export class ItemList<T extends Item> extends Array<ItemGroup<T>> {
     if (typeof id === "number") return this.find((x) => x.variations.some((v) => v.pbgid === id));
     return this.find((x) => x.id === id);
   }
+}
+
+const ITEM_TYPE_TO_CATEGORY: Record<string, "units" | "buildings" | "technologies" | "upgrades" | "abilities"> = {
+  unit: "units",
+  building: "buildings",
+  technology: "technologies",
+  upgrade: "upgrades",
+  ability: "abilities",
+};
+
+export function getItemTranslation(
+  item: Item | UnifiedItem | { id: string; type?: string; baseId?: string } | undefined,
+  locale: string
+): ItemTranslation | undefined {
+  if (!item || !locale || locale === "en") return undefined;
+
+  if (!loadedBundles.has(locale)) loadLocaleBundle(locale);
+  const bundle = loadedBundles.get(locale);
+  if (!bundle) return (item as any).translations?.[locale];
+
+  const categoryKey = item.type ? ITEM_TYPE_TO_CATEGORY[item.type] : undefined;
+  const categoryMap = categoryKey ? bundle[categoryKey] : undefined;
+  const baseId = "baseId" in item ? (item as any).baseId : undefined;
+
+  if (categoryMap) {
+    return (
+      categoryMap[item.id] ??
+      (baseId ? categoryMap[baseId] : undefined) ??
+      (item as any).translations?.[locale]
+    );
+  }
+
+  return (
+    bundle.units?.[item.id] ??
+    bundle.buildings?.[item.id] ??
+    bundle.technologies?.[item.id] ??
+    bundle.upgrades?.[item.id] ??
+    bundle.abilities?.[item.id] ??
+    (baseId
+      ? (bundle.units?.[baseId] ??
+         bundle.buildings?.[baseId] ??
+         bundle.technologies?.[baseId] ??
+         bundle.upgrades?.[baseId] ??
+         bundle.abilities?.[baseId])
+      : undefined) ??
+    (item as any).translations?.[locale]
+  );
+}
+
+export function getItemName(
+  item: (Item | UnifiedItem | { id: string; name: string; type?: string; baseId?: string }) | undefined,
+  locale?: string
+): string {
+  if (!item) return "";
+  if (!locale || locale === "en") return item.name ?? "";
+  return getItemTranslation(item, locale)?.name ?? item.name ?? "";
+}
+
+export function getItemDescription(
+  item: (Item | UnifiedItem | { id: string; description: string; type?: string; baseId?: string }) | undefined,
+  locale?: string
+): string {
+  if (!item) return "";
+  if (!locale || locale === "en") return item.description ?? "";
+  return getItemTranslation(item, locale)?.description ?? item.description ?? "";
+}
+
+export function getItemDisplayClasses(
+  item: (Item | UnifiedItem | { id: string; displayClasses: string[]; type?: string; baseId?: string }) | undefined,
+  locale?: string
+): string[] {
+  if (!item) return [];
+  if (!locale || locale === "en") return item.displayClasses ?? [];
+  return getItemTranslation(item, locale)?.displayClasses ?? item.displayClasses ?? [];
+}
+
+export function getItemInfluences(
+  item: (Item | UnifiedItem | { id: string; influences?: string[]; type?: string; baseId?: string }) | undefined,
+  locale?: string
+): string[] {
+  if (!item) return [];
+  if (!locale || locale === "en") return (item as any).influences ?? [];
+  return getItemTranslation(item, locale)?.influences ?? (item as any).influences ?? [];
+}
+
+export function getWeaponName(
+  weapon: { id?: string; name: string } | string | undefined,
+  locale?: string
+): string {
+  if (!weapon) return "";
+  const name = typeof weapon === "string" ? weapon : weapon.name;
+  const id = typeof weapon === "string" ? undefined : weapon.id;
+  if (!locale || locale === "en") return name ?? "";
+
+  if (!loadedBundles.has(locale)) loadLocaleBundle(locale);
+  const bundle = loadedBundles.get(locale);
+  if (!bundle?.weapons) return name ?? "";
+
+  return (
+    (id ? bundle.weapons[id]?.name : undefined) ??
+    bundle.weapons[slugify(name)]?.name ??
+    name ??
+    ""
+  );
 }

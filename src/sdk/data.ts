@@ -31,7 +31,6 @@ import sen from "../../civilizations/sengoku.json";
 import tug from "../../civilizations/tughlaq.json";
 import gol from "../../civilizations/goldenhorde.json";
 import mac from "../../civilizations/macedonian.json";
-
 import jin from "../../civilizations/jindynasty.json";
 
 const units = new ItemList<Unit>(...optimizedToUnified(allUnits.data as unknown as Optimized<Unit>[]));
@@ -66,7 +65,7 @@ const civilizations = {
   gol,
   mac,
   jin,
-  list
+  list,
 } as Record<CivAbbr, CivInfo> & { list: CivInfo[] };
 
 export const DataRegistry = {

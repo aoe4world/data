@@ -1,5 +1,20 @@
 import type { CivAbbr, CivSlug } from "../types/civs";
-import { getAbbr, ItemSlug } from "./utils";
+import {
+  getAbbr,
+  ItemSlug,
+  localizeCiv,
+  localizeCivInfo,
+  getCivName,
+  getCivConfig,
+  getSlug,
+  loadLocaleBundle,
+  getItemTranslation,
+  getItemName,
+  getItemDescription,
+  getItemDisplayClasses,
+  getItemInfluences,
+  getWeaponName,
+} from "./utils";
 import { CivInfo, CivConfig } from "../types/civs";
 import { DataRegistry } from "./data";
 
@@ -10,7 +25,7 @@ const civilizations: Record<CivAbbr, CivInfo> & { Get: typeof GetCiv; list: CivI
   Get: GetCiv,
 } as Record<CivAbbr, CivInfo> & { Get: typeof GetCiv; list: CivInfo[] };
 
-function GetCiv(slug: CivSlug | CivAbbr | CivConfig) {
+function GetCiv(slug: CivSlug | CivAbbr | CivConfig, locale?: string) {
   if (typeof slug !== "string") slug = slug.abbr;
   const items = {
     units: units.where({ civilization: slug }),
@@ -19,8 +34,9 @@ function GetCiv(slug: CivSlug | CivAbbr | CivConfig) {
     upgrades: upgrades.where({ civilization: slug }),
     abilities: abilities.where({ civilization: slug }),
   };
+  const rawInfo = civilizations[getAbbr(slug)!];
   return {
-    info: civilizations[getAbbr(slug)!],
+    info: locale ? localizeCivInfo(rawInfo, locale) : rawInfo,
     ...items,
     Get: (id: number | ItemSlug) => Get(id, items),
   };
@@ -39,6 +55,46 @@ function Get(id: number | ItemSlug, data = { units, buildings, technologies, upg
   if (type == "abilities") return data.abilities.get(slug);
 }
 
-export { Get, civilizations, units, buildings, technologies, upgrades, abilities };
+export {
+  Get,
+  civilizations,
+  units,
+  buildings,
+  technologies,
+  upgrades,
+  abilities,
+  localizeCiv,
+  localizeCivInfo,
+  getCivName,
+  getCivConfig,
+  getSlug,
+  loadLocaleBundle,
+  getItemTranslation,
+  getItemName,
+  getItemDescription,
+  getItemDisplayClasses,
+  getItemInfluences,
+  getWeaponName,
+};
 
-const Data = { Get, civilizations, units, buildings, technologies, upgrades, abilities };
+const Data = {
+  Get,
+  civilizations,
+  units,
+  buildings,
+  technologies,
+  upgrades,
+  abilities,
+  localizeCiv,
+  localizeCivInfo,
+  getCivName,
+  getCivConfig,
+  getSlug,
+  loadLocaleBundle,
+  getItemTranslation,
+  getItemName,
+  getItemDescription,
+  getItemDisplayClasses,
+  getItemInfluences,
+  getWeaponName,
+};
