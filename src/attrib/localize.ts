@@ -354,7 +354,10 @@ export function applyOverrides(item: Item): void {
     }
 
     if (item.displayClasses?.length) {
-      const translatedClasses = item.displayClasses.map((dc) => localizeTextViaOverrides(dc, locale) ?? dc);
+      // Keep the game translation the parser already recorded for a class without an override:
+      // the list is rebuilt as a whole once any class has one (e.g. "Khaganate Unit" added by a workaround).
+      const existing = item.translations?.[locale]?.displayClasses;
+      const translatedClasses = item.displayClasses.map((dc, i) => localizeTextViaOverrides(dc, locale) ?? existing?.[i] ?? dc);
       if (translatedClasses.some((tc, i) => tc !== item.displayClasses[i])) {
         if (!item.translations) item.translations = {};
         if (!item.translations[locale]) item.translations[locale] = {};
