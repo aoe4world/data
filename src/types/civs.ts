@@ -12,6 +12,7 @@ export type CivOverviewItem = {
 export type CivTranslation = {
   name?: string;
   classes?: string;
+  era?: string;
   description?: string;
   overview?: CivOverviewItem[];
 };
@@ -22,6 +23,7 @@ export type CivInfo = {
   abbr: CivAbbr;
   slug: CivSlug;
   classes: string;
+  era?: string;
   description: string;
   // backdrop?: string;
   overview: CivOverviewItem[];
