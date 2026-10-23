@@ -254,17 +254,21 @@ async function tryFindFile(race: string, paths: string[]) {
   ).filter(Boolean) as string[];
 }
 
+/** A civ bonus text as a list, one bonus per line. Some translations (de) start continuation lines with "- " instead of "• ". */
+function splitBonusList(description: string) {
+  if (!description.startsWith("• ")) return undefined;
+  return description
+    .split("\n")
+    .map((x) => x.replace(/^\s*[•-]\s*/, "").trim())
+    .filter(Boolean);
+}
+
 function getCivInfo(army_bag: any, bps_race_bag: any, civ?: CivConfig) {
   if (!army_bag || !bps_race_bag) return;
   const overview = army_bag.ui?.global_traits_summary.map((x) => {
     const title = t(x.title);
     const description = x.description_formatter?.value ? t(x.description_formatter.formatter, x.description_formatter.formatter_arguments) : t(x.description);
-    const list = description.startsWith("• ")
-      ? description
-          .split("• ")
-          .map((x) => x.trim())
-          .filter(Boolean)
-      : undefined;
+    const list = splitBonusList(description);
     if (list) return { title, list };
     return { title, description };
   });
@@ -274,6 +278,8 @@ function getCivInfo(army_bag: any, bps_race_bag: any, civ?: CivConfig) {
     abbr: civ?.abbr,
     slug: civ?.slug,
     classes: t(army_bag.ui?.one_liner),
+    // The historical era line ("750 - 1517 CE").
+    era: army_bag.ui?.subheader ? t(army_bag.ui.subheader) : undefined,
     description: t(bps_race_bag.description),
     overview,
   };
@@ -292,15 +298,18 @@ function getCivInfo(army_bag: any, bps_race_bag: any, civ?: CivConfig) {
       const locClasses = t(army_bag.ui?.one_liner, [], locale);
       if (locClasses && !locClasses.startsWith("(translation not found)") && locClasses !== civInfo.classes) patch.classes = locClasses;
 
+      if (civInfo.era) {
+        const locEra = t(army_bag.ui.subheader, [], locale);
+        if (locEra && !locEra.startsWith("(translation not found)") && locEra !== civInfo.era) patch.era = locEra;
+      }
+
       if (overview) {
         patch.overview = army_bag.ui?.global_traits_summary.map((x) => {
           const title = t(x.title, [], locale);
           const desc = x.description_formatter?.value
             ? t(x.description_formatter.formatter, x.description_formatter.formatter_arguments, locale)
             : t(x.description, [], locale);
-          const list = desc.startsWith("• ")
-            ? desc.split("• ").map((s) => s.trim()).filter(Boolean)
-            : undefined;
+          const list = splitBonusList(desc);
           if (list) return { title, list };
           return { title, description: desc };
         });

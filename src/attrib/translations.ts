@@ -90,7 +90,8 @@ export function getTranslationFormatter(formatter: TranslationFormatter | number
 export function interpolateString(str: string, values: any[]) {
   values = [...values];
   return str
-    .replace(/%(\d+)(\.\d+)*%/g, (_, x) => values[+x[0] - 1] ?? values.shift() ?? "???")
+    // de writes some placeholders with a space before the closing %: "%1 %%%".
+    .replace(/%(\d+)(\.\d+)* ?%/g, (_, x) => values[+x[0] - 1] ?? values.shift() ?? "???")
     .replace(/%+/g, "%")
     .replace(/(\\+[nr]+)+/g, "\n")
     .trim();
