@@ -106,7 +106,7 @@ async function buildTechTree(
 
     for (const [override, { predicate, mutator, validator, callContext }] of workarounds)
       if (predicate(item)) {
-        mutator(item, { parent, getItem });
+        await mutator(item, { parent, getItem, context });
         debug && console.info(`Overriding ${item.id} with ${override}`);
         if (validator && !validator(item)) {
           console.error(`Invalid item ${item.id} after override ${override}`, item);

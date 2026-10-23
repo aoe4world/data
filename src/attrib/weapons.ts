@@ -28,7 +28,7 @@ export function parseWeapons(combat_ext: any, context: RunContext): Promise<Weap
   return oneWeaponPerType(weapons);
 }
 
-async function parseWeapon(file: string, context: RunContext): Promise<Weapon> {
+export async function parseWeapon(file: string, context: RunContext): Promise<Weapon> {
   const weapon: any = await context.getData(file, context);
   if (context.debug) fs.writeFileSync(path.join(__dirname, "/.temp", file.split("/").pop()! + ".json"), JSON.stringify(weapon ?? {}, null, 2));
 

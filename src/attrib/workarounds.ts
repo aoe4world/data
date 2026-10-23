@@ -4,6 +4,7 @@ import { ItemSlug } from "../sdk/utils";
 import { Ability, Building, Item, ItemType, Modifier, Selector, Technology, Unit, Upgrade } from "../types/items";
 import { KHAGANTE_SPAWN_COUNTS } from "./config";
 import { setLocalized, copyLocalized, appendLocalized, transformLocalized, mutateLocalized, addDisplayClass, resolveOverride } from "./localize";
+import type { RunContext } from "./run";
 
 const workarounds = new Map<string, Override>();
 const NO_COSTS = { food: 0, wood: 0, stone: 0, gold: 0, vizier: undefined, oliveoil: undefined, silver: undefined, total: 0, time: 0, popcap: 0 };
@@ -98,6 +99,27 @@ workaround("Remove all garrison and emplacement weapons from the Japanese Castle
     const rocket = item.weapons.find((x) => x.name === "Rocket")!;
     item.weapons = [rocket];
   },
+});
+
+workaround("Replace Great Wall Bastion generic bedcrossbow with 4 mounted landmark Bed Crossbows", {
+  predicate: (item) => item.baseId === "great-wall-bastion",
+  mutator: async (item, { context }) => {
+    item = item as Building;
+    const { parseWeapon } = await import("./weapons");
+    const bedCrossbow = await parseWeapon("weapon/weapon_landmark_bedcrossbow_jin", context!);
+    const bedCrossbows = Array(4)
+      .fill(null)
+      .map(() => structuredClone(bedCrossbow));
+    const idx = item.weapons.findIndex((w) => w.id === "bed-crossbow");
+    if (idx !== -1) {
+      item.weapons.splice(idx, 1, ...bedCrossbows);
+    } else {
+      item.weapons.push(...bedCrossbows);
+    }
+  },
+  validator: (item) =>
+    (item as Building).weapons.filter((w) => w.attribName === "weapon_landmark_bedcrossbow_jin").length === 4 &&
+    (item as Building).weapons.every((w) => w.attribName !== "weapon_keep_bedcrossbow_jin"),
 });
 
 workaround("Fix incorrect description from 'great bombard' used on regular cannon emplacements", {
@@ -1703,11 +1725,12 @@ function overrideCivUniqueIcon(ids_or_pred: string[] | Function) {
 export type WorkaroundContext = {
   parent?: Item;
   getItem?: (query: string) => Item | undefined;
+  context?: RunContext;
 };
 
 interface Override {
   predicate: (item: ItemType) => boolean;
-  mutator: (item: ItemType, context: WorkaroundContext) => void;
+  mutator: (item: ItemType, context: WorkaroundContext) => any;
   validator?: (item: ItemType) => boolean;
   callContext?: string;
 }
