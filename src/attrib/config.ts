@@ -263,7 +263,6 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "unit_naval_scout_2_ott", // not actually available in game
   "_moving_mon", // packed version
   "_double_mon", // all double produced units
-  "building_unit_religious_district_mon", // Monasteric shrines version of prayer tent
 
   // Research variations available at landmarks, that do not differ
   "upgrade_landmark_cavalry_cantled_saddle_fre",

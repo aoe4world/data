@@ -228,6 +228,23 @@ All Parameters:
 7. Verify the changes. Specifically, the technology effects are currently compiled from translation parameters, of which the order may change. This can easily be spotted by changes in any technology description field. If they changed, update the parameter order or implementation in `effect.ts`.
 8. Run `yarn build` to update the optimzed json files and library.
 
+#### Localization (Translations)
+`yarn parse` automatically discovers and extracts translations for all locales found under `source/latest/locale/` (e.g. `de`, `fr`, etc.). Core entity files (`units/`, `buildings/`, etc.) remain clean and English-only, while translated strings (items, civilizations, and weapons) are emitted into decoupled locale bundles (`locales/<locale>.json`).
+
+CLI Flags:
+- `yarn parse --locales de,fr`: Generate translations only for the specified comma-separated locales.
+- `yarn parse --no-translations`: Skip generating locale bundles.
+- `yarn sync-translations`: Validate and format `src/attrib/locale-overrides.json`, keeping `en` first and reporting missing translations.
+
+Consumers using `@data/sdk` can query localized strings on demand:
+```ts
+import { getItemName, getItemDescription, loadLocaleBundle } from "@data/sdk";
+
+// Automatically queries strings from locales/de.json on demand
+const name = getItemName(unit, "de");
+const description = getItemDescription(unit, "de");
+```
+
 #### Just parse one civ
 Parsing can be relatively slow due to the total amount of files involved. If you're just working on data for a specific civ you can add an additional flag to the the parse command to only parse a specific civ. I.e. `yarn parse --civ japanese`
 

@@ -26034,309 +26034,6 @@
       "shared": {}
     },
     {
-      "id": "royal-cannon",
-      "name": "Royal Cannon",
-      "type": "unit",
-      "civs": [
-        "by",
-        "fr",
-        "je",
-        "mac"
-      ],
-      "unique": true,
-      "displayClasses": [
-        "Siege",
-        "Gunpowder"
-      ],
-      "classes": [
-        "annihilation_condition",
-        "bombard_wheeled",
-        "find_non_siege_land_military",
-        "formational",
-        "gunpowder",
-        "included_by_military_hotkeys",
-        "land_military",
-        "military",
-        "royal_artillery",
-        "siege",
-        "siege_range"
-      ],
-      "minAge": 3,
-      "icon": "https://data.aoe4world.com/images/units/royal-cannon-3.png",
-      "description": "Most powerful siege cannon. Excellent against buildings or any stubborn targets.\n+ Bonus damage to buildings",
-      "variations": [
-        {
-          "id": "royal-cannon-3",
-          "pbgid": 1907351,
-          "attribName": "unit_cannon_4_royal_fre",
-          "civs": [
-            "fr"
-          ]
-        },
-        {
-          "id": "royal-cannon-3",
-          "pbgid": 6131332,
-          "attribName": "unit_cannon_4_royal_fre_ha_01",
-          "civs": [
-            "je"
-          ]
-        },
-        {
-          "id": "royal-cannon-4",
-          "pbgid": 2138874,
-          "attribName": "unit_cannon_4_royal_merc_byz",
-          "civs": [
-            "by"
-          ]
-        },
-        {
-          "id": "royal-cannon-4",
-          "pbgid": 9003231,
-          "attribName": "unit_cannon_4_royal_merc_byz_ha_mac",
-          "civs": [
-            "mac"
-          ],
-          "description": "Most powerful siege cannon. Excellent against buildings or any stubborn targets.\n+ Bonus damage to buildings",
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "silver": 900,
-            "total": 900,
-            "popcap": 3,
-            "time": 45
-          }
-        }
-      ],
-      "baseId": "royal-cannon",
-      "age": 3,
-      "costs": {
-        "food": 0,
-        "wood": 300,
-        "stone": 0,
-        "gold": 600,
-        "total": 900,
-        "popcap": 3,
-        "time": 45
-      },
-      "producedBy": [
-        "college-of-artillery"
-      ],
-      "hitpoints": 190,
-      "resistance": [
-        {
-          "type": "ranged",
-          "value": 85
-        }
-      ],
-      "sight": {
-        "inner_height": 10,
-        "inner_radius": 32,
-        "outer_height": -15,
-        "outer_radius": 56,
-        "base": 41.6,
-        "line": 56,
-        "height": 10
-      },
-      "movement": {
-        "speed": 0.875
-      },
-      "shared": {
-        "royal-cannon-3": {
-          "name": "Royal Cannon",
-          "weapons": [
-            {
-              "id": "cannon",
-              "name": "Cannon",
-              "type": "siege",
-              "damage": 60,
-              "speed": 5.375,
-              "range": {
-                "min": 3.75,
-                "max": 10
-              },
-              "modifiers": [
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "naval",
-                        "unit"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 500,
-                  "type": "passive"
-                },
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 450,
-                  "type": "passive"
-                },
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "infantry"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 55,
-                  "type": "passive"
-                },
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "war",
-                        "elephant"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 55,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0.5,
-                "windup": 0,
-                "attack": 0.125,
-                "winddown": 1.75,
-                "reload": 3,
-                "setup": 0.25,
-                "teardown": 0.25,
-                "cooldown": 0
-              },
-              "attribName": "weapon_cannon_4",
-              "pbgid": 165121
-            }
-          ],
-          "armor": [],
-          "id": "royal-cannon-3"
-        },
-        "royal-cannon-4": {
-          "name": "Royal Cannon",
-          "age": 4,
-          "description": "Most powerful siege cannon. Excellent against buildings or any stubborn targets.\n+ Bonus damage to buildings\n\nMercenary that can be purchased for 900 Olive Oil.",
-          "unique": false,
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "oliveoil": 900,
-            "total": 900,
-            "popcap": 3,
-            "time": 45
-          },
-          "producedBy": [
-            "foreign-engineering-company"
-          ],
-          "icon": "https://data.aoe4world.com/images/units/royal-cannon-4.png",
-          "weapons": [
-            {
-              "name": "Cannon",
-              "type": "siege",
-              "damage": 60,
-              "speed": 5.375,
-              "range": {
-                "min": 3.75,
-                "max": 10
-              },
-              "modifiers": [
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "naval",
-                        "unit"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 500,
-                  "type": "passive"
-                },
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "building"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 450,
-                  "type": "passive"
-                },
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "infantry"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 55,
-                  "type": "passive"
-                },
-                {
-                  "property": "siegeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "war",
-                        "elephant"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 55,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0.5,
-                "windup": 0,
-                "attack": 0.125,
-                "winddown": 1.75,
-                "reload": 3,
-                "setup": 0.25,
-                "teardown": 0.25,
-                "cooldown": 0
-              },
-              "attribName": "weapon_cannon_4",
-              "pbgid": 165121
-            }
-          ],
-          "armor": [],
-          "unlockedBy": [
-            "buildings/foreign-engineering-company"
-          ],
-          "id": "royal-cannon-4"
-        }
-      }
-    },
-    {
       "id": "royal-knight",
       "name": "Royal Knight",
       "type": "unit",
@@ -36666,6 +36363,170 @@
       },
       "movement": {
         "speed": 1
+      },
+      "shared": {}
+    },
+    {
+      "id": "royal-cannon",
+      "name": "Royal Cannon",
+      "type": "unit",
+      "civs": [
+        "fr",
+        "je"
+      ],
+      "unique": true,
+      "displayClasses": [
+        "Siege",
+        "Gunpowder"
+      ],
+      "classes": [
+        "annihilation_condition",
+        "bombard_wheeled",
+        "find_non_siege_land_military",
+        "formational",
+        "gunpowder",
+        "included_by_military_hotkeys",
+        "land_military",
+        "military",
+        "royal_artillery",
+        "siege",
+        "siege_range"
+      ],
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/royal-cannon-3.png",
+      "description": "Most powerful siege cannon. Excellent against buildings or any stubborn targets.\n+ Bonus damage to buildings",
+      "variations": [
+        {
+          "id": "royal-cannon-3",
+          "pbgid": 1907351,
+          "attribName": "unit_cannon_4_royal_fre",
+          "civs": [
+            "fr"
+          ]
+        },
+        {
+          "id": "royal-cannon-3",
+          "pbgid": 6131332,
+          "attribName": "unit_cannon_4_royal_fre_ha_01",
+          "civs": [
+            "je"
+          ]
+        }
+      ],
+      "baseId": "royal-cannon",
+      "age": 3,
+      "costs": {
+        "food": 0,
+        "wood": 300,
+        "stone": 0,
+        "gold": 600,
+        "total": 900,
+        "popcap": 3,
+        "time": 45
+      },
+      "producedBy": [
+        "college-of-artillery"
+      ],
+      "hitpoints": 190,
+      "weapons": [
+        {
+          "id": "cannon",
+          "name": "Cannon",
+          "type": "siege",
+          "damage": 60,
+          "speed": 5.375,
+          "range": {
+            "min": 3.75,
+            "max": 10
+          },
+          "modifiers": [
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 500,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "building"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 450,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "infantry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 55,
+              "type": "passive"
+            },
+            {
+              "property": "siegeAttack",
+              "target": {
+                "class": [
+                  [
+                    "war",
+                    "elephant"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 55,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0.5,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 1.75,
+            "reload": 3,
+            "setup": 0.25,
+            "teardown": 0.25,
+            "cooldown": 0
+          },
+          "attribName": "weapon_cannon_4",
+          "pbgid": 165121
+        }
+      ],
+      "armor": [],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 85
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 32,
+        "outer_height": -15,
+        "outer_radius": 56,
+        "base": 41.6,
+        "line": 56,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.875
       },
       "shared": {}
     },
@@ -60972,159 +60833,6 @@
               "khan",
               "cavalry"
             ]
-          }
-        }
-      ],
-      "shared": {}
-    },
-    {
-      "id": "militia",
-      "name": "Militia",
-      "type": "unit",
-      "civs": [
-        "ru"
-      ],
-      "unique": false,
-      "displayClasses": [
-        "Light Melee Infantry"
-      ],
-      "classes": [
-        "annihilation_condition",
-        "formational",
-        "human",
-        "included_by_military_hotkeys",
-        "infantry",
-        "infantry_light",
-        "light_melee_infantry",
-        "melee",
-        "melee_infantry",
-        "military",
-        "militia",
-        "spearman"
-      ],
-      "minAge": 2,
-      "icon": "https://data.aoe4world.com/images/units/militia-2.png",
-      "description": "Light melee infantry equipped with a polearm.\n+ Fast moving\n- Countered by Archers\n- Can't garrison\n- Loses life over time",
-      "variations": [
-        {
-          "id": "militia-2",
-          "baseId": "militia",
-          "type": "unit",
-          "name": "Militia",
-          "pbgid": 2104839,
-          "attribName": "unit_militia_2_rus",
-          "age": 2,
-          "civs": [
-            "ru"
-          ],
-          "description": "Light melee infantry equipped with a polearm.\n+ Fast moving\n- Countered by Archers\n- Can't garrison\n- Loses life over time",
-          "classes": [
-            "annihilation_condition",
-            "formational",
-            "human",
-            "included_by_military_hotkeys",
-            "infantry",
-            "infantry_light",
-            "light_melee_infantry",
-            "melee",
-            "melee_infantry",
-            "military",
-            "militia",
-            "spearman"
-          ],
-          "displayClasses": [
-            "Light Melee Infantry"
-          ],
-          "unique": false,
-          "costs": {
-            "food": 20,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "vizier": null,
-            "oliveoil": null,
-            "silver": null,
-            "total": null,
-            "time": 0,
-            "popcap": 0
-          },
-          "producedBy": [],
-          "icon": "https://data.aoe4world.com/images/units/militia-2.png",
-          "hitpoints": 85,
-          "weapons": [
-            {
-              "name": "Militia Axe",
-              "type": "melee",
-              "damage": 6,
-              "speed": 1.625,
-              "range": {
-                "min": 0,
-                "max": 0.2875
-              },
-              "modifiers": [
-                {
-                  "property": "meleeAttack",
-                  "target": {
-                    "class": [
-                      [
-                        "cavalry"
-                      ]
-                    ]
-                  },
-                  "effect": "change",
-                  "value": 4,
-                  "type": "passive"
-                }
-              ],
-              "durations": {
-                "aim": 0,
-                "windup": 0.5,
-                "attack": 0.125,
-                "winddown": 0.75,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 0.25
-              },
-              "attribName": "weapon_shield_militia_2_rus",
-              "pbgid": 2104847
-            },
-            {
-              "name": "Torch",
-              "type": "fire",
-              "damage": 10,
-              "speed": 2.125,
-              "range": {
-                "min": 0,
-                "max": 1.25
-              },
-              "modifiers": [],
-              "durations": {
-                "aim": 0,
-                "windup": 0.75,
-                "attack": 0.125,
-                "winddown": 0,
-                "reload": 0,
-                "setup": 0,
-                "teardown": 0,
-                "cooldown": 1.25
-              },
-              "attribName": "weapon_torch_rus",
-              "pbgid": 133324
-            }
-          ],
-          "armor": [],
-          "sight": {
-            "inner_height": 10,
-            "inner_radius": 12,
-            "outer_height": -15,
-            "outer_radius": 36,
-            "base": 21.6,
-            "line": 36,
-            "height": 10
-          },
-          "movement": {
-            "speed": 1.5
           }
         }
       ],

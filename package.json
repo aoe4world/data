@@ -4,6 +4,7 @@
   "description": "Static data files on AOE4 Units, Buildings and more",
   "main": "index.ts",
   "scripts": {
+    "clean": "ts-node -P src/tsconfig.json ./scripts/clean-output.ts",
     "parse": "ts-node ./src/attrib/run.ts",
     "sync-translations": "ts-node -P src/tsconfig.json ./scripts/sync-translations.ts",
     "build": "echo \"The build command is deprecated, use parse instead\" && yarn run parse",
