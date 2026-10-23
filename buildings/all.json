@@ -3686,10 +3686,10 @@
       "costs": {
         "food": 0,
         "wood": 0,
-        "stone": 120,
+        "stone": 100,
         "gold": 0,
         "oliveoil": 0,
-        "total": 120,
+        "total": 100,
         "popcap": 0,
         "time": 15
       },
@@ -4427,11 +4427,11 @@
       "unique": true,
       "costs": {
         "food": 0,
-        "wood": 150,
+        "wood": 100,
         "stone": 0,
         "gold": 0,
         "oliveoil": 0,
-        "total": 150,
+        "total": 100,
         "popcap": 0,
         "time": 30
       },
@@ -4654,7 +4654,7 @@
       "civs": [
         "by"
       ],
-      "description": "Harvestable Food source. Use a Villager to gather Food from the Olive Grove.\nOnly one Villager can work each Olive Grove.\nByzantine Villagers gather Olive Oil equal to 20% of Food gathered.",
+      "description": "Harvestable Food source. Use a Villager to gather Food from the Olive Grove.\nOnly one Villager can work each Olive Grove.\nByzantine Villagers gather Olive Oil equal to 15% of Food gathered.",
       "classes": [
         "building",
         "farm",
@@ -6173,7 +6173,7 @@
         "gold": 0,
         "total": 150,
         "popcap": 0,
-        "time": 13
+        "time": 12.5
       },
       "producedBy": [
         "villager"
@@ -6490,7 +6490,7 @@
         "gold": 0,
         "total": 150,
         "popcap": 0,
-        "time": 18
+        "time": 17.5
       },
       "producedBy": [
         "villager"
@@ -6663,7 +6663,7 @@
         "gold": 0,
         "total": 50,
         "popcap": 0,
-        "time": 8
+        "time": 7.5
       },
       "producedBy": [
         "villager"
@@ -6841,7 +6841,7 @@
         "gold": 0,
         "total": 900,
         "popcap": 0,
-        "time": 180
+        "time": 120
       },
       "producedBy": [
         "villager"
@@ -7197,7 +7197,7 @@
         "gold": 0,
         "total": 200,
         "popcap": 0,
-        "time": 13
+        "time": 12.5
       },
       "producedBy": [
         "villager"
@@ -7257,7 +7257,7 @@
         "gold": 0,
         "total": 100,
         "popcap": 0,
-        "time": 60
+        "time": 40
       },
       "producedBy": [
         "villager"
@@ -7378,7 +7378,7 @@
         "gold": 0,
         "total": 7,
         "popcap": 0,
-        "time": 6
+        "time": 5.33336
       },
       "producedBy": [
         "villager"
@@ -7434,7 +7434,7 @@
         "gold": 0,
         "total": 25,
         "popcap": 0,
-        "time": 7
+        "time": 6.6667
       },
       "producedBy": [
         "villager"
@@ -7491,7 +7491,7 @@
         "gold": 0,
         "total": 250,
         "popcap": 0,
-        "time": 23
+        "time": 22.5
       },
       "producedBy": [
         "villager"
@@ -7668,7 +7668,7 @@
         "gold": 0,
         "total": 25,
         "popcap": 0,
-        "time": 16
+        "time": 10.66667
       },
       "producedBy": [
         "villager"
@@ -8315,7 +8315,7 @@
       "civs": [
         "de"
       ],
-      "description": "Infantry units can build Stone Walls, Gates, and Towers. Reduces Stone cost of buildings and their emplacements by 20%.\nContains defensive technologies that ignore building and Imperial Age (IV) requirements.",
+      "description": "Infantry units can build Stone Walls, Gates, and Towers. Reduces Stone cost of buildings and their emplacements by 25%.\nContains defensive technologies that ignore building and Imperial Age (IV) requirements.",
       "classes": [
         "age2_landmark1",
         "audio_production_landmark",
@@ -10107,12 +10107,14 @@
       "civs": [
         "de"
       ],
-      "description": "Enables Tower of Victory, Mosques, and Madrasas to increase the attack speed of infantry by +20% when produced within their influence.",
+      "description": "Acts as a Blacksmith.\nEnables Tower of Victory, Mosques, and Madrasas to increase the attack speed of infantry by +20% when produced within their influence.",
       "classes": [
         "age1_landmark1",
         "audio_production_landmark",
+        "blacksmith",
         "building",
         "landmark",
+        "research_building",
         "select_special_building",
         "siegeable",
         "town_center_or_landmark",
@@ -12575,7 +12577,7 @@
       "civs": [
         "fr"
       ],
-      "description": "Produces the Royal Artillery versions of the Cannon, Ribauldequin, and Culverin, which do +30% more damage.\nUnlocks the Artillery ability for all Cannons.\nContains Siege and Gunpowder Technologies, trains units and researches technologies 50% faster.",
+      "description": "Produces the Royal versions of the Cannon and Ribauldequin, which do +30% more damage and cost -25% gold.\nRoyal Cannons gain the Artillery Shot ability and Royal Ribauldequins gain the Fortify ability.\nContains Siege and Gunpowder technologies, trains units and researches technologies 50% faster.",
       "classes": [
         "age3_landmark2",
         "audio_production_landmark",
@@ -15589,12 +15591,12 @@
       "unique": true,
       "costs": {
         "food": 0,
-        "wood": 250,
+        "wood": 275,
         "stone": 0,
         "gold": 0,
-        "total": 250,
+        "total": 275,
         "popcap": 0,
-        "time": 20
+        "time": 30
       },
       "producedBy": [
         "villager"
@@ -18577,6 +18579,7 @@
         "landmark",
         "select_special_building",
         "siegeable",
+        "town_bell_target",
         "town_center_or_landmark",
         "wonder",
         "wonder_dark_age"
@@ -18638,6 +18641,318 @@
           },
           "attribName": "weapon_castle_lancaster_arrow_lan",
           "pbgid": 9002024
+        },
+        {
+          "id": "bow",
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.875,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_castle_lancaster_garrison_lan",
+          "pbgid": 9007498
+        },
+        {
+          "id": "bow",
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.875,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_castle_lancaster_garrison_lan",
+          "pbgid": 9007498
+        },
+        {
+          "id": "bow",
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.875,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_castle_lancaster_garrison_lan",
+          "pbgid": 9007498
+        },
+        {
+          "id": "bow",
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.875,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_castle_lancaster_garrison_lan",
+          "pbgid": 9007498
+        },
+        {
+          "id": "bow",
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.875,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_castle_lancaster_garrison_lan",
+          "pbgid": 9007498
+        },
+        {
+          "id": "bow",
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.875,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_castle_lancaster_garrison_lan",
+          "pbgid": 9007498
+        },
+        {
+          "id": "bow",
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.875,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_castle_lancaster_garrison_lan",
+          "pbgid": 9007498
+        },
+        {
+          "id": "bow",
+          "name": "Bow",
+          "type": "ranged",
+          "damage": 6,
+          "speed": 3.875,
+          "range": {
+            "min": 0,
+            "max": 8
+          },
+          "modifiers": [
+            {
+              "property": "rangedAttack",
+              "target": {
+                "class": [
+                  [
+                    "naval",
+                    "unit"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 10,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 1.75,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 2
+          },
+          "attribName": "weapon_castle_lancaster_garrison_lan",
+          "pbgid": 9007498
         }
       ],
       "armor": [
@@ -18654,6 +18969,16 @@
         "base": 41,
         "line": 41,
         "height": 8
+      },
+      "garrison": {
+        "capacity": 8,
+        "classes": [
+          "infantry",
+          "infantry ranged",
+          "villager",
+          "monk",
+          "cavalry"
+        ]
       },
       "influences": []
     },
@@ -18724,7 +19049,7 @@
       "civs": [
         "hl"
       ],
-      "description": "Acts as a drop off building for all resource types. Passively generates 10 wood and 30 food per minute. Generates an additional 4 food and 2 wood for each nearby villager. \nVillagers only affect one Manor at a time.\nIncreases your maximum Population by +10.",
+      "description": "Acts as a drop off building for all resource types. Passively generates 10 wood and 30 food per minute. Generates an additional 3 food and 2 wood for each nearby villager. \nVillagers only affect one Manor at a time.\nIncreases your maximum Population by +10.",
       "classes": [
         "building",
         "economy_building",
@@ -23027,7 +23352,7 @@
       "civs": [
         "je"
       ],
-      "description": "Produces the Royal Artillery versions of the Cannon, Ribauldequin, and Culverin, which do +30% more damage.\nUnlocks the Artillery ability for all Cannons.\nContains Siege and Gunpowder Technologies, trains units and researches technologies 50% faster.",
+      "description": "Produces the Royal versions of the Cannon and Ribauldequin, which do +30% more damage and cost -25% gold.\nRoyal Cannons gain the Artillery Shot ability and Royal Ribauldequins gain the Fortify ability.\nContains Siege and Gunpowder technologies, trains units and researches technologies 50% faster.",
       "classes": [
         "age3_landmark2",
         "audio_production_landmark",
@@ -25192,7 +25517,7 @@
       "civs": [
         "jin"
       ],
-      "description": "Must be constructed on a Grassland Post.\nSpawns a Horse up to the max of 5 every 90/60/45 seconds in Feudal/Castle/Imperial Ages. Each Horse in a Grassland grants +2 maximum Health to all Melee Cavalry and +1 to all Ranged Cavalry.\nHorses can be used by War Stables in Influence to instantly train Cavalry at a 25 resources discount.",
+      "description": "Must be constructed on a Grassland Post.\nSpawns a Horse up to the max of 5 every 75/60/45 seconds in Feudal/Castle/Imperial Ages. Each Horse in a Grassland grants +2 maximum Health to all Melee Cavalry and +1 to all Ranged Cavalry.\nHorses can be used by War Stables in Influence to instantly train Cavalry at a 25 resources discount.",
       "classes": [
         "building",
         "grassland",
@@ -33109,7 +33434,7 @@
       "civs": [
         "mac"
       ],
-      "description": "Carve a Runestone after defeating 5 military units to celebrate honorable victories in combat, enhancing Varangian ranged weapons by 1 tile, melee damage by 1, and move speed by 15%. Lasts 150 seconds.",
+      "description": "Carve a Runestone after defeating 10 military units to celebrate honorable victories in combat, enhancing Varangian ranged weapons by 1 tile, melee damage by 1, and move speed by 15%. Lasts 150 seconds.",
       "classes": [
         "runestone",
         "unchargeable"
@@ -33699,7 +34024,7 @@
       "civs": [
         "mac"
       ],
-      "description": "Increases your maximum Population.\n \nAs the Empire suffers casualties in war, the emperor calls forth more Varangians. \nOnce enough troops are lost in battle, the selected Varangian is reinforced to the battlefield at no cost. If placed on shore near water, Attack Ships or Galleys become available as reinforcements.\n \nReinforcements cost 6 times their value in fallen warriors.",
+      "description": "Increases your maximum Population.\n \nAs the Empire suffers casualties in war, the emperor calls forth more Varangians. \nOnce enough troops are lost in battle, the selected Varangian is reinforced to the battlefield at no cost. If placed on shore near water, Attack Ships or Galleys become available as reinforcements.\n \nReinforcements cost 7 times their value in fallen warriors.",
       "classes": [
         "audio_production_landmark",
         "building",
@@ -36991,7 +37316,7 @@
       "civs": [
         "mo"
       ],
-      "description": "Must be built on a Stone Outcropping.\nHarvests 70/100/130/160 Stone per minute by Age. Houses unique Mongol technologies.\nConstructing a new Ovoo will destroy the prior one.",
+      "description": "Must be built on a Stone Outcropping.\nHarvests 70/100/140/170 Stone per minute by Age. Houses unique Mongol technologies.\nConstructing a new Ovoo will destroy the prior one.",
       "classes": [
         "building",
         "ovoo",
@@ -43582,10 +43907,10 @@
       "unique": true,
       "costs": {
         "food": 0,
-        "wood": 175,
+        "wood": 150,
         "stone": 0,
         "gold": 0,
-        "total": 175,
+        "total": 150,
         "popcap": 0,
         "time": 60
       },
@@ -47775,7 +48100,7 @@
       "civs": [
         "tug"
       ],
-      "description": "Reduces Stone cost of buildings by 20%.\nUnlocks an additional upgrade to each Tughlaqabad Fort which further enhances health and Governor benefits.",
+      "description": "Reduces Stone cost of buildings by 25%.\nUnlocks an additional upgrade to each Tughlaqabad Fort which further enhances health and Governor benefits.",
       "classes": [
         "age2_landmark1",
         "audio_production_landmark",
@@ -47834,7 +48159,7 @@
       "civs": [
         "tug"
       ],
-      "description": "Produces naval units. Generates bonus resources from Elephant Economics when Villagers or Fishing Ships drop off Food.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three Fishing Ships.",
+      "description": "Produces naval units. Generates bonus resources from Elephant Economics when Villagers drop off Food.\nAutomatically repairs nearby damaged naval units.\nCapable of holding up to three Fishing Ships.",
       "classes": [
         "building",
         "military_only_production",
@@ -50532,7 +50857,7 @@
         "gold": 0,
         "total": 150,
         "popcap": 0,
-        "time": 30
+        "time": 15
       },
       "producedBy": [
         "villager"
@@ -50591,7 +50916,7 @@
         "gold": 0,
         "total": 150,
         "popcap": 0,
-        "time": 30
+        "time": 15
       },
       "producedBy": [
         "villager"
@@ -50648,7 +50973,7 @@
         "gold": 0,
         "total": 150,
         "popcap": 0,
-        "time": 25
+        "time": 12.5
       },
       "producedBy": [
         "villager"
@@ -50785,7 +51110,7 @@
         "gold": 0,
         "total": 150,
         "popcap": 0,
-        "time": 30
+        "time": 15
       },
       "producedBy": [
         "villager"
@@ -50847,7 +51172,7 @@
         "gold": 5000,
         "total": 20000,
         "popcap": 0,
-        "time": 600
+        "time": 300
       },
       "producedBy": [
         "villager"
@@ -50903,7 +51228,7 @@
         "gold": 0,
         "total": 75,
         "popcap": 0,
-        "time": 6
+        "time": 3
       },
       "producedBy": [
         "villager"
@@ -50961,7 +51286,7 @@
         "gold": 0,
         "total": 150,
         "popcap": 0,
-        "time": 35
+        "time": 17.5
       },
       "producedBy": [
         "villager"
@@ -51015,7 +51340,7 @@
         "gold": 0,
         "total": 50,
         "popcap": 0,
-        "time": 15
+        "time": 7.5
       },
       "producedBy": [
         "villager"
@@ -51075,7 +51400,7 @@
         "gold": 200,
         "total": 600,
         "popcap": 0,
-        "time": 190
+        "time": 95
       },
       "producedBy": [
         "villager"
@@ -51133,7 +51458,7 @@
         "gold": 0,
         "total": 900,
         "popcap": 0,
-        "time": 180
+        "time": 120
       },
       "producedBy": [
         "villager"
@@ -51247,7 +51572,7 @@
         "gold": 0,
         "total": 50,
         "popcap": 0,
-        "time": 20
+        "time": 10
       },
       "producedBy": [
         "villager"
@@ -51305,7 +51630,7 @@
         "gold": 0,
         "total": 100,
         "popcap": 0,
-        "time": 20
+        "time": 10
       },
       "producedBy": [
         "villager"
@@ -51365,7 +51690,7 @@
         "gold": 200,
         "total": 600,
         "popcap": 0,
-        "time": 190
+        "time": 95
       },
       "producedBy": [
         "villager"
@@ -51424,7 +51749,7 @@
         "gold": 0,
         "total": 50,
         "popcap": 0,
-        "time": 20
+        "time": 10
       },
       "producedBy": [
         "villager"
@@ -51482,7 +51807,7 @@
         "gold": 0,
         "total": 50,
         "popcap": 0,
-        "time": 20
+        "time": 10
       },
       "producedBy": [
         "villager"
@@ -51539,7 +51864,7 @@
         "gold": 0,
         "total": 200,
         "popcap": 0,
-        "time": 25
+        "time": 12.5
       },
       "producedBy": [
         "villager"
@@ -51598,7 +51923,7 @@
         "gold": 600,
         "total": 1800,
         "popcap": 0,
-        "time": 220
+        "time": 110
       },
       "producedBy": [
         "villager"
@@ -51656,7 +51981,7 @@
         "gold": 0,
         "total": 100,
         "popcap": 0,
-        "time": 60
+        "time": 40
       },
       "producedBy": [
         "villager"
@@ -51722,7 +52047,7 @@
         "gold": 0,
         "total": 150,
         "popcap": 0,
-        "time": 40
+        "time": 20
       },
       "producedBy": [
         "villager"
@@ -51778,7 +52103,7 @@
         "gold": 0,
         "total": 7,
         "popcap": 0,
-        "time": 8
+        "time": 5.33336
       },
       "producedBy": [
         "villager"
@@ -51834,7 +52159,7 @@
         "gold": 0,
         "total": 25,
         "popcap": 0,
-        "time": 10
+        "time": 6.6667
       },
       "producedBy": [
         "villager"
@@ -51899,7 +52224,7 @@
         "gold": 600,
         "total": 1800,
         "popcap": 0,
-        "time": 220
+        "time": 110
       },
       "producedBy": [
         "villager"
@@ -51956,7 +52281,7 @@
         "gold": 0,
         "total": 250,
         "popcap": 0,
-        "time": 45
+        "time": 22.5
       },
       "producedBy": [
         "villager"
@@ -52015,7 +52340,7 @@
         "gold": 0,
         "total": 150,
         "popcap": 0,
-        "time": 30
+        "time": 15
       },
       "producedBy": [
         "villager"
@@ -52073,7 +52398,7 @@
         "gold": 0,
         "total": 25,
         "popcap": 0,
-        "time": 16
+        "time": 10.66667
       },
       "producedBy": [
         "villager"
@@ -52129,7 +52454,7 @@
         "gold": 0,
         "total": 50,
         "popcap": 0,
-        "time": 30
+        "time": 20
       },
       "producedBy": [
         "villager"
@@ -52186,7 +52511,7 @@
         "gold": 0,
         "total": 250,
         "popcap": 0,
-        "time": 90
+        "time": 60
       },
       "producedBy": [
         "villager"
@@ -52285,7 +52610,7 @@
         "gold": 1200,
         "total": 3600,
         "popcap": 0,
-        "time": 250
+        "time": 125
       },
       "producedBy": [
         "villager"
@@ -52347,7 +52672,7 @@
         "gold": 0,
         "total": 700,
         "popcap": 0,
-        "time": 150
+        "time": 75
       },
       "producedBy": [
         "villager"
@@ -52413,7 +52738,7 @@
         "gold": 0,
         "total": 450,
         "popcap": 0,
-        "time": 60
+        "time": 30
       },
       "producedBy": [
         "villager"
@@ -52467,7 +52792,7 @@
         "gold": 0,
         "total": 100,
         "popcap": 0,
-        "time": 30
+        "time": 15
       },
       "producedBy": [
         "villager"
@@ -52575,7 +52900,7 @@
         "gold": 1200,
         "total": 3600,
         "popcap": 0,
-        "time": 250
+        "time": 125
       },
       "producedBy": [
         "villager"

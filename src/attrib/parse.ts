@@ -1,4 +1,7 @@
-import { ITEM_TYPES } from "../lib/config";
+import { existsSync, mkdirSync } from "fs";
+import fs from "fs/promises";
+import path from "path";
+import { ITEM_TYPES, ROOT_FOLDER } from "../lib/config";
 import { getTranslation, getTranslationFormatter, getTranslationRaw, getTargetLocales, resolveTranslationParam, NO_TRANSLATION_FOUND } from "./translations";
 import { parseWeapons } from "./weapons";
 import { ignoreForNow } from "./config";
@@ -513,4 +516,15 @@ export function convertClasses(classes: string[]) {
   if (classes.includes("naval_unit")) classes.push("ship");
 
   return [...new Set(classes)].sort((a, b) => a.localeCompare(b));
+}
+
+export async function copyPatchHistory(targetDir?: string) {
+  const destDir = targetDir ?? path.join(ROOT_FOLDER, "overview");
+  if (!existsSync(destDir)) mkdirSync(destDir, { recursive: true });
+  const source = existsSync(path.join(__dirname, "patch-history.json"))
+    ? path.join(__dirname, "patch-history.json")
+    : path.join(ROOT_FOLDER, "attrib/patch-history.json");
+  if (existsSync(source)) {
+    await fs.copyFile(source, path.join(destDir, "patch-history.json"));
+  }
 }

@@ -26,6 +26,7 @@ const civilizations: Record<CivAbbr, CivInfo> & { Get: typeof GetCiv; list: CivI
 } as Record<CivAbbr, CivInfo> & { Get: typeof GetCiv; list: CivInfo[] };
 
 function GetCiv(slug: CivSlug | CivAbbr | CivConfig, locale?: string) {
+  if (!slug) return undefined as any;
   if (typeof slug !== "string") slug = slug.abbr;
   const items = {
     units: units.where({ civilization: slug }),

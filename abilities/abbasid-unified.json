@@ -150,6 +150,67 @@
       ]
     },
     {
+      "id": "ability-city-planning",
+      "name": "City Planning",
+      "type": "ability",
+      "civs": [
+        "ab"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-city-planning-1.png",
+      "description": "Draft a clear plan for constructing the empire, Buildings gain +8% health and +8% work rate for each adjacent similar building.",
+      "variations": [
+        {
+          "id": "ability-city-planning-1",
+          "baseId": "ability-city-planning",
+          "type": "ability",
+          "name": "City Planning",
+          "pbgid": 9007496,
+          "attribName": "city_planning_buff_abb",
+          "age": 1,
+          "civs": [
+            "ab"
+          ],
+          "description": "Draft a clear plan for constructing the empire, Buildings gain +8% health and +8% work rate for each adjacent similar building.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "archery-range",
+            "barracks",
+            "blacksmith",
+            "capital-town-center",
+            "dock",
+            "house",
+            "keep",
+            "lumber-camp",
+            "madrasa",
+            "market",
+            "mill",
+            "mining-camp",
+            "mosque",
+            "outpost",
+            "siege-workshop",
+            "stable",
+            "town-center"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-city-planning-1.png",
+          "active": "always",
+          "auraRange": 0,
+          "effects": []
+        }
+      ]
+    },
+    {
       "id": "ability-conversion",
       "name": "Conversion",
       "type": "ability",
@@ -283,7 +344,7 @@
       "classes": [],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png",
-      "description": "Resource gathering rate improved by 15%",
+      "description": "10 Structures: Villager gathering rate +15% for all resources.",
       "variations": [
         {
           "id": "ability-golden-age-tier-1-1",
@@ -296,7 +357,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Resource gathering rate improved by 15%",
+          "description": "10 Structures: Villager gathering rate +15% for all resources.",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -313,7 +374,10 @@
           "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png",
           "active": "always",
           "auraRange": 12.5,
-          "effects": []
+          "effects": [],
+          "unlockedBy": [
+            "buildings/house-of-wisdom"
+          ]
         }
       ]
     },
@@ -328,7 +392,7 @@
       "classes": [],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-2.png",
-      "description": "Research speed improved by 15%",
+      "description": "20 Structures: Villagers +20% construction rate of buildings.",
       "variations": [
         {
           "id": "ability-golden-age-tier-2-1",
@@ -341,7 +405,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Research speed improved by 15%",
+          "description": "20 Structures: Villagers +20% construction rate of buildings.",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -358,7 +422,10 @@
           "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-2.png",
           "active": "always",
           "auraRange": 12.5,
-          "effects": []
+          "effects": [],
+          "unlockedBy": [
+            "buildings/house-of-wisdom"
+          ]
         }
       ]
     },
@@ -373,7 +440,7 @@
       "classes": [],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-3.png",
-      "description": "+20% Production Speed, additional +5% Research Speed, additional +5% Resource Gathering Rate",
+      "description": "30 Structures: Camel Riders +15% damage.",
       "variations": [
         {
           "id": "ability-golden-age-tier-3-1",
@@ -386,7 +453,7 @@
           "civs": [
             "ab"
           ],
-          "description": "+20% Production Speed, additional +5% Research Speed, additional +5% Resource Gathering Rate",
+          "description": "30 Structures: Camel Riders +15% damage.",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -403,7 +470,106 @@
           "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-3.png",
           "active": "always",
           "auraRange": 12.5,
-          "effects": []
+          "effects": [],
+          "unlockedBy": [
+            "buildings/house-of-wisdom"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ability-golden-age-tier-4",
+      "name": "Golden Age Tier 4",
+      "type": "ability",
+      "civs": [
+        "ab"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-4.png",
+      "description": "50 Structures: Traders generates +20% gold.",
+      "variations": [
+        {
+          "id": "ability-golden-age-tier-4-1",
+          "baseId": "ability-golden-age-tier-4",
+          "type": "ability",
+          "name": "Golden Age Tier 4",
+          "pbgid": 9007493,
+          "attribName": "golden_age_tier_4",
+          "age": 1,
+          "civs": [
+            "ab"
+          ],
+          "description": "50 Structures: Traders generates +20% gold.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "house-of-wisdom"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-4.png",
+          "active": "always",
+          "auraRange": 12.5,
+          "effects": [],
+          "unlockedBy": [
+            "buildings/house-of-wisdom"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ability-golden-age-tier-5",
+      "name": "Golden Age Tier 5",
+      "type": "ability",
+      "civs": [
+        "ab"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-5.png",
+      "description": "75 Structures: Melee Infantry +10% damage.",
+      "variations": [
+        {
+          "id": "ability-golden-age-tier-5-1",
+          "baseId": "ability-golden-age-tier-5",
+          "type": "ability",
+          "name": "Golden Age Tier 5",
+          "pbgid": 9007494,
+          "attribName": "golden_age_tier_5",
+          "age": 1,
+          "civs": [
+            "ab"
+          ],
+          "description": "75 Structures: Melee Infantry +10% damage.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "house-of-wisdom"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-5.png",
+          "active": "always",
+          "auraRange": 12.5,
+          "effects": [],
+          "unlockedBy": [
+            "buildings/house-of-wisdom"
+          ]
         }
       ]
     },
@@ -537,7 +703,7 @@
       "classes": [],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/abilities/ability-medical-centers-1.png",
-      "description": "Town Centers and Keeps heal nearby units for +2 health every 1 second.",
+      "description": "Town Centers and Keeps heal nearby units for +1 health every 1 second.",
       "variations": [
         {
           "id": "ability-medical-centers-1",
@@ -550,7 +716,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Town Centers and Keeps heal nearby units for +2 health every 1 second.",
+          "description": "Town Centers and Keeps heal nearby units for +1 health every 1 second.",
           "classes": [],
           "displayClasses": [],
           "costs": {

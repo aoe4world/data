@@ -12,7 +12,7 @@ import { CIVILIZATION_BY_SLUG, CivConfig, CivSlug } from "../types/civs";
 import { Item } from "../types/items";
 import { hardcodedDiscovery, hardcodedDiscoveryCommon } from "./config";
 import { workarounds } from "./workarounds";
-import { parseItemFromAttribFile, maybeOnKey } from "./parse";
+import { parseItemFromAttribFile, maybeOnKey, copyPatchHistory } from "./parse";
 import { getTranslation as t, setTargetLocales, getTargetLocales, getAvailableLocales } from "./translations";
 import { applyOverrides, recordItemBundle, recordCivBundle, getLocaleBundles } from "./localize";
 import { getEssenceData, guessAppropriateEssenceFile } from "./essence";
@@ -441,6 +441,8 @@ async function compile(type: ITEM_TYPES) {
     );
     writeJson(path.join(localesDir, `${locale}.json`), bundle, { log: true });
   }
+
+  await copyPatchHistory();
 })();
 
 function resolveIconConflict(icon_dest: string, variations: Item[]) {

@@ -423,7 +423,7 @@ export const abilityModifiers: Record<string, EffectsFactory> = {
   ),
 
   "ability-bounty-of-solitude": placeholderAbility(
-    "Generates resources depending on the type of resources nearby. Enemy units within {1} tiles reduce the rate at which resources are generated.",
+    "Increases the resource value of nearby gold veins, stone outcroppings, and berry bushes by +{1}% every {2} seconds up to a maximum of +{3}%.\nTrees are increased at a lesser rate of +{7}% up to +{8}%.\nAfter {4} seconds, generates resources equal to {5}% of the current resources in those nearby deposits. Additionally generates {6}% of the maximum resources of each deposit when fully gathered.",
     { id: ["meditation-gardens"] }
   ),
 
@@ -1285,9 +1285,22 @@ export const abilityModifiers: Record<string, EffectsFactory> = {
     // Loads this Cannon for an Artillery Shot, next shot has greatly increased Area of Effect but no bonus against buildings.
     {
       property: "areaOfEffect",
-      select: { id: ["cannon", "royal-cannon"] },
+      select: { id: ["royal-cannon"] },
       effect: "change",
       value: 0,
+      type: "ability",
+    },
+  ]
+  ),
+
+  "ability-fortify-ribauldequin": standardAbility(
+    "",
+    ([]) => [
+    {
+      property: "weaponRange",
+      select: { id: ["royal-ribauldequin"] },
+      effect: "multiply",
+      value: increaseByPercent(1, 30),
       type: "ability",
     },
   ]
@@ -1794,6 +1807,21 @@ export const abilityModifiers: Record<string, EffectsFactory> = {
   ]
   ),
 
+  "ability-production-festival": standardAbility(
+    "",
+    ([i, j]) => [
+    // Increase production speed of all units except Traders by +100% for 90 seconds.
+    {
+      property: "productionSpeed",
+      select: { class: [["military"], ["building"]], id: ["farimba-garrison"] },
+      effect: "multiply",
+      value: increaseByPercent(1, i),
+      type: "ability",
+      duration: j,
+    },
+  ]
+  ),
+
   "ability-siege-festival": standardAbility(
     "",
     ([i, j]) => [
@@ -1885,7 +1913,7 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "steeled-arrow": standardAbility(
-    "Increase the ranged damage of all arrows and bolts by +{1}.",
+    "Increase the ranged damage of all arrows, bolts, and emplacements by +{1}.",
     ([d]) => [
     {
       property: "rangedAttack",
@@ -1898,7 +1926,7 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "balanced-projectiles": standardAbility(
-    "Increase the ranged damage of all arrows and bolts by +{1}.",
+    "Increase the ranged damage of all arrows, bolts, and emplacements by +{1}.",
     ([d]) => [
     {
       property: "rangedAttack",
@@ -1911,7 +1939,7 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "platecutter-point": standardAbility(
-    "Increase the ranged damage of all arrows and bolts by +{1}.",
+    "Increase the ranged damage of all arrows, bolts, and emplacements by +{1}.",
     ([d]) => [
     {
       property: "rangedAttack",
@@ -3664,7 +3692,7 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "professional-scouts": standardAbility(
-    "Scouts gain the ability to carry animal carcasses and +{1}% damage against wild animals.\nScouts move -{2}% slower while carrying and cannot pick up Boar.",
+    "Scouts gain the ability to carry animal carcasses and +{1}% damage against wild animals.\nScouts move -{2}% slower while carrying and cannot pick up Boar. Deer slowly decay while being carried.",
     ([i]) => [
     {
       property: "huntCarryCapacity",
@@ -3904,7 +3932,10 @@ export const technologyModifiers: Record<string, EffectsFactory> = {
   ),
 
   "tithe-barns": standardAbility(
-    "Relics placed in eligible buildings provide an income of +{1} Food, +{2} Wood, and +{3} Stone every minute.",
+    [
+      "Relics placed in a Monastery provide an income of +{1} Food, +{2} Wood, and +{3} Stone every minute.",
+      "Relics placed in a Mosque provide an income of +{1} Food, +{2} Wood, and +{3} Stone every minute.",
+    ],
     ([f, w, s]) => [
     {
       property: "unknown",

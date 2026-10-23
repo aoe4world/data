@@ -299,8 +299,8 @@ workaround("Make Food Festival available in Imperial Age", {
   ...overrideAge(["ability-food-festival"], 4, ["ma"]),
 });
 
-workaround("Make Military Festival available in Imperial Age", {
-  ...overrideAge(["ability-military-festival"], 4, ["ma"]),
+workaround("Make Military/Production Festival available in Imperial Age", {
+  ...overrideAge(["ability-military-festival", "ability-production-festival"], 4, ["ma"]),
 });
 
 workaround("Make Siege Festival available in Imperial Age", {
@@ -417,6 +417,14 @@ workaround("Set Prosteletize conditions", {
 
 workaround("Add Artillery Shot requirements", {
   predicate: (item) => item.type === "ability" && item.baseId === "ability-artillery-shot",
+  mutator: (item) => {
+    item = item as Ability;
+    item.unlockedBy = ["buildings/college-of-artillery"];
+  },
+});
+
+workaround("Add Fortify Ribauldequin requirements", {
+  predicate: (item) => item.type === "ability" && item.baseId === "ability-fortify-ribauldequin",
   mutator: (item) => {
     item = item as Ability;
     item.unlockedBy = ["buildings/college-of-artillery"];
@@ -642,41 +650,24 @@ workaround("Add requirements to Mill Influence", {
   },
 });
 
-workaround("Fix missing info Golden Age Tier 1", {
-  predicate: (item) => item.type === "ability" && item.attribName === "golden_age_tier_1",
+workaround("Fix missing info Abbasid Golden Age Tiers", {
+  predicate: (item) => item.type === "ability" && item.civs[0] === "ab" && item.attribName?.startsWith("golden_age_tier_")!,
   mutator: (item) => {
-    item.baseId = "ability-golden-age-tier-1";
-    item.id = `${item.baseId}-${item.age}`;
-    setLocalized(item, "description", { id: 11184130, args: [15] });
-    setLocalized(item, "name", { key: "golden_age_tier", args: [1] });
-    item.icon_src = undefined;
-    item.icon = "abilities/ability-golden-age-tier-1.png";
-  },
-});
+    item = item as Ability;
+    const tier = parseInt(item.attribName?.match(/tier_(\d)/)?.[1] || "1");
+    const tierCounts = [10, 20, 30, 50, 75];
+    const tierDescIds = [11258340, 11274103, 11274102, 11274100, 11274101];
+    const count = tierCounts[tier - 1] ?? 10;
+    const descId = tierDescIds[tier - 1] ?? 11258340;
 
-workaround("Fix missing info Golden Age Tier 2", {
-  predicate: (item) => item.type === "ability" && item.attribName === "golden_age_tier_2",
-  mutator: (item) => {
     item.age = 1;
-    item.baseId = "ability-golden-age-tier-2";
+    item.baseId = `ability-golden-age-tier-${tier}`;
     item.id = `${item.baseId}-${item.age}`;
-    setLocalized(item, "description", { id: 11184132, args: [15] });
-    setLocalized(item, "name", { key: "golden_age_tier", args: [2] });
+    setLocalized(item, "name", { key: "golden_age_tier", args: [tier] });
+    setLocalized(item, "description", { key: "structures_count_prefix", args: [count, descId] });
+    item.unlockedBy = ["buildings/house-of-wisdom"];
     item.icon_src = undefined;
-    item.icon = "abilities/ability-golden-age-tier-2.png";
-  },
-});
-
-workaround("Fix missing info Golden Age Tier 3", {
-  predicate: (item) => item.type === "ability" && item.attribName === "golden_age_tier_3",
-  mutator: (item) => {
-    item.age = 1;
-    item.baseId = "ability-golden-age-tier-3";
-    item.id = `${item.baseId}-${item.age}`;
-    setLocalized(item, "name", { key: "golden_age_tier", args: [3] });
-    setLocalized(item, "description", { key: "golden_age_tier_3_buff", args: [20, 5, 5] });
-    item.icon_src = undefined;
-    item.icon = "abilities/ability-golden-age-tier-3.png";
+    item.icon = `abilities/ability-golden-age-tier-${tier}.png`;
   },
 });
 
@@ -685,7 +676,7 @@ workaround("Set Medical Center requirements", {
   mutator: (item) => {
     item = item as Ability;
     item.unlockedBy = ["technologies/medical-centers"];
-    setLocalized(item, "description", { id: 11263628, args: [2, 1] });
+    setLocalized(item, "description", { id: 11263628, args: [1, 1] });
   },
 });
 
@@ -1630,13 +1621,14 @@ workaround("English Civ Bonus: 'Naval units are 10% cheaper.'", {
   },
 });
 
+/* Removed workaround, coz devs changes the base values.
 workaround("Chinese Civ Bonus: 'Villagers construct defenses 50% faster and all other buildings 100% faster.'", {
   predicate: (item) => item.civs.includes("ch") && item.attribName!.startsWith("building_") && !["stone-wall", "palisade-wall", "keep", "outpost"].includes(item.baseId), // walls have a custom balanced build time set
   mutator(item) {
     if (item.attribName!.startsWith("building_defense_")) item.costs.time = Math.ceil(item.costs.time / (1 + 0.5));
     else item.costs.time = Math.ceil(item.costs.time / (1 + 1));
   },
-});
+});*/
 
 workaround("Chinese Civ Bonus: 'Docks work 20% faster.'", {
   predicate: (item) => item.civs.includes("ch") && item.attribName!.startsWith("unit_naval_"),

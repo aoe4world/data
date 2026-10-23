@@ -8,6 +8,7 @@ const FOLDERS_TO_CLEAN = [
   "buildings",
   "civilizations",
   "locales",
+  "overview",
   "technologies",
   "units",
   "upgrades",

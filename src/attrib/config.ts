@@ -128,6 +128,7 @@ export const hardcodedDiscovery = {
     // "abilities/always_on_abilities/french/keep_influence_fre",
     "abilities/modal_abilities/french/deploy_pavise_fre", //misses auto discovery
     "abilities/timed_abilities/french/cannon_swap_fre", //misses auto discovery
+    "abilities/timed_abilities/french/fortify_ribauld_fre",
   ],
   hre: [
     "abilities/always_on_abilities/hre/inspired_infantry_hre", //misses auto discovery; convert to ability from tech
@@ -204,6 +205,7 @@ export const hardcodedDiscovery = {
     "sbps/races/french_ha_01/unit_jeanne_d_arc_4_melee_monarch_fre_ha_01",
     "sbps/races/french_ha_01/unit_jeanne_d_arc_4_ranged_monarch_fre_ha_01",
     "info/buff_info/races/french/lancer_charge_bonus_damage",
+    "abilities/timed_abilities/french/fortify_ribauld_fre",
   ],
   zhuxi: [
     "abilities/always_on_abilities/shaolin_monk_ranged_damage_reduction",
@@ -322,6 +324,7 @@ export const ignoreForNow: (string | ((file: string) => boolean))[] = [
   "proxy_placement_gristmill",
   "golden_age_passive_abb",
   "golden_age_bonus_", //ignore whichever is not as complete, the other is "golden_age_tier_"
+  "how_algebra_resource_generation_abb",
   // "abilities/always_on_abilities/abbasid/medical_centers_abb",
   // "tower_repair_nearby_walls_chi",
   "academy_influence_chi",

@@ -186,6 +186,67 @@
       ]
     },
     {
+      "id": "ability-city-planning",
+      "name": "City Planning",
+      "type": "ability",
+      "civs": [
+        "ab"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-city-planning-1.png",
+      "description": "Draft a clear plan for constructing the empire, Buildings gain +8% health and +8% work rate for each adjacent similar building.",
+      "variations": [
+        {
+          "id": "ability-city-planning-1",
+          "baseId": "ability-city-planning",
+          "type": "ability",
+          "name": "City Planning",
+          "pbgid": 9007496,
+          "attribName": "city_planning_buff_abb",
+          "age": 1,
+          "civs": [
+            "ab"
+          ],
+          "description": "Draft a clear plan for constructing the empire, Buildings gain +8% health and +8% work rate for each adjacent similar building.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "archery-range",
+            "barracks",
+            "blacksmith",
+            "capital-town-center",
+            "dock",
+            "house",
+            "keep",
+            "lumber-camp",
+            "madrasa",
+            "market",
+            "mill",
+            "mining-camp",
+            "mosque",
+            "outpost",
+            "siege-workshop",
+            "stable",
+            "town-center"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-city-planning-1.png",
+          "active": "always",
+          "auraRange": 0,
+          "effects": []
+        }
+      ]
+    },
+    {
       "id": "ability-conversion",
       "name": "Conversion",
       "type": "ability",
@@ -2416,7 +2477,7 @@
       "classes": [],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png",
-      "description": "Resource gathering rate improved by 15%",
+      "description": "10 Structures: Villager gathering rate +15% for all resources.",
       "variations": [
         {
           "id": "ability-golden-age-tier-1-1",
@@ -2429,7 +2490,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Resource gathering rate improved by 15%",
+          "description": "10 Structures: Villager gathering rate +15% for all resources.",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -2446,7 +2507,10 @@
           "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-1.png",
           "active": "always",
           "auraRange": 12.5,
-          "effects": []
+          "effects": [],
+          "unlockedBy": [
+            "buildings/house-of-wisdom"
+          ]
         },
         {
           "id": "ability-golden-age-tier-1-1",
@@ -2518,7 +2582,7 @@
       "classes": [],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-2.png",
-      "description": "Research speed improved by 15%",
+      "description": "20 Structures: Villagers +20% construction rate of buildings.",
       "variations": [
         {
           "id": "ability-golden-age-tier-2-1",
@@ -2531,7 +2595,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Research speed improved by 15%",
+          "description": "20 Structures: Villagers +20% construction rate of buildings.",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -2548,7 +2612,10 @@
           "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-2.png",
           "active": "always",
           "auraRange": 12.5,
-          "effects": []
+          "effects": [],
+          "unlockedBy": [
+            "buildings/house-of-wisdom"
+          ]
         },
         {
           "id": "ability-golden-age-tier-2-2",
@@ -2622,7 +2689,7 @@
       "classes": [],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-3.png",
-      "description": "+20% Production Speed, additional +5% Research Speed, additional +5% Resource Gathering Rate",
+      "description": "30 Structures: Camel Riders +15% damage.",
       "variations": [
         {
           "id": "ability-golden-age-tier-3-1",
@@ -2635,7 +2702,7 @@
           "civs": [
             "ab"
           ],
-          "description": "+20% Production Speed, additional +5% Research Speed, additional +5% Resource Gathering Rate",
+          "description": "30 Structures: Camel Riders +15% damage.",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -2652,7 +2719,10 @@
           "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-3.png",
           "active": "always",
           "auraRange": 12.5,
-          "effects": []
+          "effects": [],
+          "unlockedBy": [
+            "buildings/house-of-wisdom"
+          ]
         },
         {
           "id": "ability-golden-age-tier-3-3",
@@ -2694,6 +2764,219 @@
               },
               "effect": "multiply",
               "value": 1.2,
+              "type": "influence"
+            },
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "house-of-wisdom"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability"
+            }
+          ],
+          "unlockedBy": [
+            "buildings/house-of-wisdom"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ability-golden-age-tier-4",
+      "name": "Golden Age Tier 4",
+      "type": "ability",
+      "civs": [
+        "ab",
+        "ay"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-4.png",
+      "description": "50 Structures: Traders generates +20% gold.",
+      "variations": [
+        {
+          "id": "ability-golden-age-tier-4-1",
+          "baseId": "ability-golden-age-tier-4",
+          "type": "ability",
+          "name": "Golden Age Tier 4",
+          "pbgid": 9007493,
+          "attribName": "golden_age_tier_4",
+          "age": 1,
+          "civs": [
+            "ab"
+          ],
+          "description": "50 Structures: Traders generates +20% gold.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "house-of-wisdom"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-4.png",
+          "active": "always",
+          "auraRange": 12.5,
+          "effects": [],
+          "unlockedBy": [
+            "buildings/house-of-wisdom"
+          ]
+        },
+        {
+          "id": "ability-golden-age-tier-4-4",
+          "baseId": "ability-golden-age-tier-4",
+          "type": "ability",
+          "name": "Golden Age Tier 4",
+          "pbgid": 2146741,
+          "attribName": "golden_age_tier_4_ha_01",
+          "age": 4,
+          "civs": [
+            "ay"
+          ],
+          "description": "50 Structures: Siege units cost 20% less resources to produce.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "house-of-wisdom"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-4.png",
+          "active": "always",
+          "auraRange": 12.5,
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.8,
+              "type": "influence"
+            },
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "house-of-wisdom"
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "ability"
+            }
+          ],
+          "unlockedBy": [
+            "buildings/house-of-wisdom"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ability-golden-age-tier-5",
+      "name": "Golden Age Tier 5",
+      "type": "ability",
+      "civs": [
+        "ab",
+        "ay"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-5.png",
+      "description": "75 Structures: Melee Infantry +10% damage.",
+      "variations": [
+        {
+          "id": "ability-golden-age-tier-5-1",
+          "baseId": "ability-golden-age-tier-5",
+          "type": "ability",
+          "name": "Golden Age Tier 5",
+          "pbgid": 9007494,
+          "attribName": "golden_age_tier_5",
+          "age": 1,
+          "civs": [
+            "ab"
+          ],
+          "description": "75 Structures: Melee Infantry +10% damage.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "house-of-wisdom"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-5.png",
+          "active": "always",
+          "auraRange": 12.5,
+          "effects": [],
+          "unlockedBy": [
+            "buildings/house-of-wisdom"
+          ]
+        },
+        {
+          "id": "ability-golden-age-tier-5-5",
+          "baseId": "ability-golden-age-tier-5",
+          "type": "ability",
+          "name": "Golden Age Tier 5",
+          "pbgid": 2146742,
+          "attribName": "golden_age_tier_5_ha_01",
+          "age": 5,
+          "civs": [
+            "ay"
+          ],
+          "description": "75 Structures: Camel units attack 20% faster.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [
+            "house-of-wisdom"
+          ],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-5.png",
+          "active": "always",
+          "auraRange": 12.5,
+          "effects": [
+            {
+              "property": "unknown",
+              "select": {
+                "id": [
+                  "camel-lancer",
+                  "desert-raider"
+                ]
+              },
+              "effect": "multiply",
+              "value": 0.83,
               "type": "influence"
             },
             {
@@ -3904,7 +4187,7 @@
       "classes": [],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/abilities/ability-medical-centers-1.png",
-      "description": "Town Centers and Keeps heal nearby units for +2 health every 1 second.",
+      "description": "Town Centers and Keeps heal nearby units for +1 health every 1 second.",
       "variations": [
         {
           "id": "ability-medical-centers-1",
@@ -3917,7 +4200,7 @@
           "civs": [
             "ab"
           ],
-          "description": "Town Centers and Keeps heal nearby units for +2 health every 1 second.",
+          "description": "Town Centers and Keeps heal nearby units for +1 health every 1 second.",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -5204,7 +5487,7 @@
       "classes": [],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/abilities/ability-atabeg-supervision-1.png",
-      "description": "Garrison inside of a military production building to grant +20% health to newly trained units. Cannot garrison in Docks.",
+      "description": "Garrison inside of a military production building to grant +25% health to newly trained units. Cannot garrison in Docks.",
       "variations": [
         {
           "id": "ability-atabeg-supervision-1",
@@ -5217,7 +5500,7 @@
           "civs": [
             "ay"
           ],
-          "description": "Garrison inside of a military production building to grant +20% health to newly trained units. Cannot garrison in Docks.",
+          "description": "Garrison inside of a military production building to grant +25% health to newly trained units. Cannot garrison in Docks.",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -5364,151 +5647,6 @@
               "value": 0,
               "type": "ability"
             }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ability-golden-age-tier-4",
-      "name": "Golden Age Tier 4",
-      "type": "ability",
-      "civs": [
-        "ay"
-      ],
-      "displayClasses": [],
-      "classes": [],
-      "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-4.png",
-      "description": "50 Structures: Siege units cost 20% less resources to produce.",
-      "variations": [
-        {
-          "id": "ability-golden-age-tier-4-4",
-          "baseId": "ability-golden-age-tier-4",
-          "type": "ability",
-          "name": "Golden Age Tier 4",
-          "pbgid": 2146741,
-          "attribName": "golden_age_tier_4_ha_01",
-          "age": 4,
-          "civs": [
-            "ay"
-          ],
-          "description": "50 Structures: Siege units cost 20% less resources to produce.",
-          "classes": [],
-          "displayClasses": [],
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "total": 0,
-            "popcap": 0
-          },
-          "producedBy": [
-            "house-of-wisdom"
-          ],
-          "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-4.png",
-          "active": "always",
-          "auraRange": 12.5,
-          "effects": [
-            {
-              "property": "unknown",
-              "select": {
-                "class": [
-                  [
-                    "siege"
-                  ]
-                ]
-              },
-              "effect": "multiply",
-              "value": 0.8,
-              "type": "influence"
-            },
-            {
-              "property": "unknown",
-              "select": {
-                "id": [
-                  "house-of-wisdom"
-                ]
-              },
-              "effect": "change",
-              "value": 0,
-              "type": "ability"
-            }
-          ],
-          "unlockedBy": [
-            "buildings/house-of-wisdom"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ability-golden-age-tier-5",
-      "name": "Golden Age Tier 5",
-      "type": "ability",
-      "civs": [
-        "ay"
-      ],
-      "displayClasses": [],
-      "classes": [],
-      "minAge": 5,
-      "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-5.png",
-      "description": "75 Structures: Camel units attack 20% faster.",
-      "variations": [
-        {
-          "id": "ability-golden-age-tier-5-5",
-          "baseId": "ability-golden-age-tier-5",
-          "type": "ability",
-          "name": "Golden Age Tier 5",
-          "pbgid": 2146742,
-          "attribName": "golden_age_tier_5_ha_01",
-          "age": 5,
-          "civs": [
-            "ay"
-          ],
-          "description": "75 Structures: Camel units attack 20% faster.",
-          "classes": [],
-          "displayClasses": [],
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "total": 0,
-            "popcap": 0
-          },
-          "producedBy": [
-            "house-of-wisdom"
-          ],
-          "icon": "https://data.aoe4world.com/images/abilities/ability-golden-age-tier-5.png",
-          "active": "always",
-          "auraRange": 12.5,
-          "effects": [
-            {
-              "property": "unknown",
-              "select": {
-                "id": [
-                  "camel-lancer",
-                  "desert-raider"
-                ]
-              },
-              "effect": "multiply",
-              "value": 0.83,
-              "type": "influence"
-            },
-            {
-              "property": "unknown",
-              "select": {
-                "id": [
-                  "house-of-wisdom"
-                ]
-              },
-              "effect": "change",
-              "value": 0,
-              "type": "ability"
-            }
-          ],
-          "unlockedBy": [
-            "buildings/house-of-wisdom"
           ]
         }
       ]
@@ -5955,7 +6093,6 @@
               "property": "areaOfEffect",
               "select": {
                 "id": [
-                  "cannon",
                   "royal-cannon"
                 ]
               },
@@ -6000,7 +6137,6 @@
               "property": "areaOfEffect",
               "select": {
                 "id": [
-                  "cannon",
                   "royal-cannon"
                 ]
               },
@@ -6720,7 +6856,7 @@
       "classes": [],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/abilities/ability-olive-harvest-1.png",
-      "description": "Villagers generate Olive Oil equal to 20% of Food gathered when farming.",
+      "description": "Villagers generate Olive Oil equal to 15% of Food gathered when farming.",
       "variations": [
         {
           "id": "ability-olive-harvest-1",
@@ -6733,7 +6869,7 @@
           "civs": [
             "by"
           ],
-          "description": "Villagers generate Olive Oil equal to 20% of Food gathered when farming.",
+          "description": "Villagers generate Olive Oil equal to 15% of Food gathered when farming.",
           "classes": [],
           "displayClasses": [],
           "costs": {},
@@ -7279,7 +7415,7 @@
       "classes": [],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/abilities/ability-trample-1.png",
-      "description": "Charge through enemy units in your path, dealing 12 damage to each one.",
+      "description": "Charge through enemy units in your path, dealing 10 damage to each one.",
       "variations": [
         {
           "id": "ability-trample-1",
@@ -7292,7 +7428,7 @@
           "civs": [
             "by"
           ],
-          "description": "Charge through enemy units in your path, dealing 12 damage to each one.",
+          "description": "Charge through enemy units in your path, dealing 10 damage to each one.",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -7318,7 +7454,7 @@
                 ]
               },
               "effect": "change",
-              "value": 12,
+              "value": 10,
               "type": "ability"
             }
           ]
@@ -7336,7 +7472,7 @@
       "classes": [],
       "minAge": 1,
       "icon": "https://data.aoe4world.com/images/abilities/ability-triumph-1.png",
-      "description": "Consume all Supply Points to increase cavalry damage by +4, move speed by +10%, and health regeneration by +2. \nEach Supply Point increases Triumph's duration by 1 seconds. A maximum of 45 Supply Points can be collected.",
+      "description": "Consume all Supply Points to increase cavalry damage by +4, move speed by +10%, and health regeneration by +2.5. \nEach Supply Point increases Triumph's duration by 1 seconds. A maximum of 45 Supply Points can be collected.",
       "variations": [
         {
           "id": "ability-triumph-1",
@@ -7349,7 +7485,7 @@
           "civs": [
             "by"
           ],
-          "description": "Consume all Supply Points to increase cavalry damage by +4, move speed by +10%, and health regeneration by +2. \nEach Supply Point increases Triumph's duration by 1 seconds. A maximum of 45 Supply Points can be collected.",
+          "description": "Consume all Supply Points to increase cavalry damage by +4, move speed by +10%, and health regeneration by +2.5. \nEach Supply Point increases Triumph's duration by 1 seconds. A maximum of 45 Supply Points can be collected.",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -7405,7 +7541,7 @@
                 ]
               },
               "effect": "change",
-              "value": 2,
+              "value": 2.5,
               "type": "ability"
             }
           ],
@@ -8330,6 +8466,110 @@
               "type": "ability",
               "duration": 30
             }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ability-fortify-ribauldequin",
+      "name": "Fortify Ribauldequin",
+      "type": "ability",
+      "civs": [
+        "fr",
+        "je"
+      ],
+      "displayClasses": [],
+      "classes": [],
+      "minAge": 1,
+      "icon": "https://data.aoe4world.com/images/abilities/ability-fortify-ribauldequin-1.png",
+      "description": "Fortifies this Ribauldequin, gains 30% range and deploys 5 palings around it. Enemy cavalry that charge into the Palings take 19 damage and are stunned for 2.5 seconds. Range returns to normal and Palings are destroyed when moving away from the position.",
+      "variations": [
+        {
+          "id": "ability-fortify-ribauldequin-1",
+          "baseId": "ability-fortify-ribauldequin",
+          "type": "ability",
+          "name": "Fortify Ribauldequin",
+          "pbgid": 9007461,
+          "attribName": "fortify_ribauld_fre",
+          "age": 1,
+          "civs": [
+            "fr"
+          ],
+          "description": "Fortifies this Ribauldequin, gains 30% range and deploys 5 palings around it. Enemy cavalry that charge into the Palings take 19 damage and are stunned for 2.5 seconds. Range returns to normal and Palings are destroyed when moving away from the position.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-fortify-ribauldequin-1.png",
+          "active": "manual",
+          "auraRange": 8.75,
+          "cooldown": 30,
+          "effects": [
+            {
+              "property": "weaponRange",
+              "select": {
+                "id": [
+                  "royal-ribauldequin"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.3,
+              "type": "ability"
+            }
+          ],
+          "unlockedBy": [
+            "buildings/college-of-artillery"
+          ]
+        },
+        {
+          "id": "ability-fortify-ribauldequin-1",
+          "baseId": "ability-fortify-ribauldequin",
+          "type": "ability",
+          "name": "Fortify Ribauldequin",
+          "pbgid": 9007461,
+          "attribName": "fortify_ribauld_fre",
+          "age": 1,
+          "civs": [
+            "je"
+          ],
+          "description": "Fortifies this Ribauldequin, gains 30% range and deploys 5 palings around it. Enemy cavalry that charge into the Palings take 19 damage and are stunned for 2.5 seconds. Range returns to normal and Palings are destroyed when moving away from the position.",
+          "classes": [],
+          "displayClasses": [],
+          "costs": {
+            "food": 0,
+            "wood": 0,
+            "stone": 0,
+            "gold": 0,
+            "total": 0,
+            "popcap": 0
+          },
+          "producedBy": [],
+          "icon": "https://data.aoe4world.com/images/abilities/ability-fortify-ribauldequin-1.png",
+          "active": "manual",
+          "auraRange": 8.75,
+          "cooldown": 30,
+          "effects": [
+            {
+              "property": "weaponRange",
+              "select": {
+                "id": [
+                  "royal-ribauldequin"
+                ]
+              },
+              "effect": "multiply",
+              "value": 1.3,
+              "type": "ability"
+            }
+          ],
+          "unlockedBy": [
+            "buildings/college-of-artillery"
           ]
         }
       ]
@@ -9459,7 +9699,7 @@
       "classes": [],
       "minAge": 3,
       "icon": "https://data.aoe4world.com/images/abilities/ability-inspired-1.png",
-      "description": "Military units deal +15% damage and gain +1 armor.",
+      "description": "Military units deal +10% damage and gain +1 armor.",
       "variations": [
         {
           "id": "ability-inspired-warriors-3",
@@ -9472,7 +9712,7 @@
           "civs": [
             "hr"
           ],
-          "description": "Military units deal +15% damage and gain +1 armor.",
+          "description": "Military units deal +10% damage and gain +1 armor.",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -9548,7 +9788,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.15,
+              "value": 1.1,
               "type": "ability",
               "duration": 60
             },
@@ -9562,7 +9802,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.15,
+              "value": 1.1,
               "type": "ability",
               "duration": 60
             },
@@ -9579,7 +9819,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.15,
+              "value": 1.1,
               "type": "influence",
               "duration": 60
             },
@@ -9593,7 +9833,7 @@
                 ]
               },
               "effect": "multiply",
-              "value": 1.15,
+              "value": 1.1,
               "type": "influence",
               "duration": 60
             }
@@ -10379,7 +10619,7 @@
           "producedBy": [],
           "icon": "https://data.aoe4world.com/images/abilities/ability-shunshin-1.png",
           "active": "manual",
-          "auraRange": 4,
+          "auraRange": 5,
           "cooldown": 30,
           "effects": [
             {
@@ -13200,7 +13440,7 @@
       "classes": [],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/abilities/ability-food-festival-1.png",
-      "description": "Increase villager gather rate and move speed by +50%",
+      "description": "Increase villager Food gather rate by +50%.",
       "variations": [
         {
           "id": "ability-food-festival-4",
@@ -13213,7 +13453,7 @@
           "civs": [
             "ma"
           ],
-          "description": "Increase villager gather rate and move speed by +50%",
+          "description": "Increase villager Food gather rate by +50%.",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -13315,8 +13555,8 @@
       ]
     },
     {
-      "id": "ability-military-festival",
-      "name": "Military Festival",
+      "id": "ability-production-festival",
+      "name": "Production Festival",
       "type": "ability",
       "civs": [
         "ma"
@@ -13324,21 +13564,21 @@
       "displayClasses": [],
       "classes": [],
       "minAge": 4,
-      "icon": "https://data.aoe4world.com/images/abilities/ability-military-festival-1.png",
-      "description": "Increase all unit production speed by +100% for 90 seconds.",
+      "icon": "https://data.aoe4world.com/images/abilities/ability-production-festival-1.png",
+      "description": "Increase the production speed of all units except Traders by +100% for 90 seconds.",
       "variations": [
         {
-          "id": "ability-military-festival-4",
-          "baseId": "ability-military-festival",
+          "id": "ability-production-festival-4",
+          "baseId": "ability-production-festival",
           "type": "ability",
-          "name": "Military Festival",
+          "name": "Production Festival",
           "pbgid": 2062645,
           "attribName": "festival_military_mal",
           "age": 4,
           "civs": [
             "ma"
           ],
-          "description": "Increase all unit production speed by +100% for 90 seconds.",
+          "description": "Increase the production speed of all units except Traders by +100% for 90 seconds.",
           "classes": [],
           "displayClasses": [],
           "costs": {
@@ -13352,7 +13592,7 @@
           "producedBy": [
             "griot-bara"
           ],
-          "icon": "https://data.aoe4world.com/images/abilities/ability-military-festival-1.png",
+          "icon": "https://data.aoe4world.com/images/abilities/ability-production-festival-1.png",
           "active": "manual",
           "auraRange": 0,
           "cooldown": 30,
