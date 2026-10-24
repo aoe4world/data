@@ -256,6 +256,8 @@ function Export-Icons {
     Convert-Images "ui\images\map_gen_layout"
     Convert-Images "ui\images\civ_flags"
     Convert-Images "ui\images\fe\dlc"
+    Convert-Images "ui\images\backgrounds"
+    Convert-Images "ui\images\crucible"
   } else {
     Convert-Images "ui\icons\races"
   }

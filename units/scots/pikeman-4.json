@@ -1,0 +1,153 @@
+{
+  "id": "pikeman-4",
+  "baseId": "pikeman",
+  "type": "unit",
+  "name": "Elite Pikeman",
+  "pbgid": 4491915,
+  "attribName": "unit_spearman_4_sco",
+  "age": 4,
+  "civs": [
+    "sco"
+  ],
+  "description": "Infantry equipped with a long pike, best used against mounted units.\n+ Increased weapon range\n+ Anti-cavalry specialist\n+ Additional damage against Elephants\n- Countered by Archers",
+  "classes": [
+    "annihilation_condition",
+    "find_non_siege_land_military",
+    "formational",
+    "human",
+    "included_by_military_hotkeys",
+    "infantry",
+    "infantry_light",
+    "land_military",
+    "light_melee_infantry",
+    "melee",
+    "melee_infantry",
+    "military",
+    "spearman",
+    "torch_thrower"
+  ],
+  "displayClasses": [
+    "Light Melee Infantry"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 60,
+    "wood": 25,
+    "stone": 0,
+    "gold": 0,
+    "total": 85,
+    "popcap": 1,
+    "time": 15
+  },
+  "producedBy": [
+    "barracks",
+    "mustering-hall"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/pikeman-4.png",
+  "hitpoints": 140,
+  "weapons": [
+    {
+      "id": "spear",
+      "name": "Spear",
+      "type": "melee",
+      "damage": 11,
+      "speed": 1.875,
+      "range": {
+        "min": 0,
+        "max": 0.8
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 28,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "war",
+                "elephant"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 6,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "worker",
+                "elephant"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 34,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.25,
+        "attack": 0.125,
+        "winddown": 0.75,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0.75
+      },
+      "attribName": "weapon_spearman_4_sco",
+      "pbgid": 9006857
+    },
+    {
+      "id": "torch",
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch",
+      "pbgid": 123518
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "inner_height": 100,
+    "inner_radius": 12,
+    "outer_height": -15,
+    "outer_radius": 30.4,
+    "base": 28,
+    "line": 30.4,
+    "height": 100
+  },
+  "movement": {
+    "speed": 1.3
+  }
+}

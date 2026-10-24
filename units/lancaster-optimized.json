@@ -78,7 +78,7 @@
             "siege-workshop"
           ],
           "icon": "https://data.aoe4world.com/images/units/battering-ram-3.png",
-          "hitpoints": 370,
+          "hitpoints": 410,
           "weapons": [
             {
               "id": "ram",
@@ -794,7 +794,7 @@
     },
     {
       "id": "demilancer",
-      "name": "Veteran Demilancer",
+      "name": "Elite Demilancer",
       "type": "unit",
       "civs": [
         "hl"
@@ -804,60 +804,251 @@
         "Heavy Melee Cavalry"
       ],
       "classes": [
-        "spawn_ignored_on_timeline"
+        "annihilation_condition",
+        "armored",
+        "cavalry",
+        "cavalry_armored",
+        "demilancer",
+        "find_non_siege_land_military",
+        "formational",
+        "heavy",
+        "horse",
+        "human",
+        "included_by_military_hotkeys",
+        "knight",
+        "land_military",
+        "melee",
+        "military",
+        "military_cavalry",
+        "torch_thrower"
       ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/demilancer-1.png",
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/demilancer-3.png",
       "description": "Unique heavy cavalry with moderate damage and durability. Effective frontline unit.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen",
       "variations": [
         {
-          "id": "demilancer-1",
-          "baseId": "demilancer",
-          "type": "unit",
-          "name": "Veteran Demilancer",
-          "pbgid": 9002532,
-          "attribName": "unit_free_dummy_mounted_manatarms_lan",
-          "age": 1,
+          "id": "demilancer-3",
+          "pbgid": 5000283,
+          "attribName": "unit_mounted_man_at_arm_3_lan",
           "civs": [
             "hl"
-          ],
-          "description": "Unique heavy cavalry with moderate damage and durability. Effective frontline unit.\n+ Heavy armor\n+ Strong in melee combat\n- Countered by Spearmen and Crossbowmen",
-          "classes": [
-            "spawn_ignored_on_timeline"
-          ],
-          "displayClasses": [
-            "Heavy Melee Cavalry"
-          ],
-          "unique": true,
-          "costs": {
-            "food": 0,
-            "wood": 0,
-            "stone": 0,
-            "gold": 0,
-            "total": 0,
-            "popcap": 0
-          },
-          "producedBy": [
-            "lancaster-castle"
-          ],
-          "icon": "https://data.aoe4world.com/images/units/demilancer-1.png",
-          "weapons": [],
-          "armor": [],
-          "sight": {
-            "inner_height": 0,
-            "inner_radius": 0,
-            "outer_height": 0,
-            "outer_radius": 0,
-            "base": 0,
-            "line": 0,
-            "height": 0
-          },
-          "movement": {
-            "speed": null
-          }
+          ]
+        },
+        {
+          "id": "demilancer-4",
+          "pbgid": 5000284,
+          "attribName": "unit_mounted_man_at_arm_4_lan",
+          "civs": [
+            "hl"
+          ]
         }
       ],
-      "shared": {}
+      "baseId": "demilancer",
+      "age": 3,
+      "costs": {
+        "food": 140,
+        "wood": 0,
+        "stone": 0,
+        "gold": 100,
+        "total": 240,
+        "popcap": 1,
+        "time": 35
+      },
+      "producedBy": [],
+      "hitpoints": 150,
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
+        "line": 28,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.625
+      },
+      "shared": {
+        "demilancer-3": {
+          "name": "Veteran Demilancer",
+          "weapons": [
+            {
+              "id": "sword",
+              "name": "Sword",
+              "type": "melee",
+              "damage": 9,
+              "speed": 1.5,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.875
+              },
+              "attribName": "weapon_mounted_maa_3_lan",
+              "pbgid": 5000287
+            },
+            {
+              "id": "torch",
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_horseman",
+              "pbgid": 127935
+            },
+            {
+              "id": "lance",
+              "name": "Lance",
+              "type": "melee",
+              "damage": 14,
+              "speed": 0.525,
+              "range": {
+                "min": 0,
+                "max": 1.0375
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.4
+              },
+              "attribName": "weapon_mounted_maa_3_charge_lan",
+              "pbgid": 5000288
+            }
+          ],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 3
+            },
+            {
+              "type": "ranged",
+              "value": 3
+            }
+          ],
+          "id": "demilancer-3"
+        },
+        "demilancer-4": {
+          "name": "Elite Demilancer",
+          "age": 4,
+          "icon": "https://data.aoe4world.com/images/units/demilancer-4.png",
+          "hitpoints": 190,
+          "weapons": [
+            {
+              "id": "sword",
+              "name": "Sword",
+              "type": "melee",
+              "damage": 14,
+              "speed": 1.5,
+              "range": {
+                "min": 0,
+                "max": 0.2875
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.5,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.875
+              },
+              "attribName": "weapon_mounted_maa_4_lan",
+              "pbgid": 5000289
+            },
+            {
+              "id": "torch",
+              "name": "Torch",
+              "type": "fire",
+              "damage": 10,
+              "speed": 2.125,
+              "range": {
+                "min": 0,
+                "max": 1.25
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0.75,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 1.25
+              },
+              "attribName": "weapon_torch_horseman",
+              "pbgid": 127935
+            },
+            {
+              "id": "lance",
+              "name": "Lance",
+              "type": "melee",
+              "damage": 21,
+              "speed": 0.525,
+              "range": {
+                "min": 0,
+                "max": 1.0375
+              },
+              "modifiers": [],
+              "durations": {
+                "aim": 0,
+                "windup": 0,
+                "attack": 0.125,
+                "winddown": 0,
+                "reload": 0,
+                "setup": 0,
+                "teardown": 0,
+                "cooldown": 0.4
+              },
+              "attribName": "weapon_mounted_maa_4_charge_lan",
+              "pbgid": 5000290
+            }
+          ],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 5
+            },
+            {
+              "type": "ranged",
+              "value": 5
+            }
+          ],
+          "id": "demilancer-4"
+        }
+      }
     },
     {
       "id": "demolition-ship",
@@ -1316,14 +1507,7 @@
         "Mixed Force Army"
       ],
       "classes": [
-        "archer",
-        "audio_wynguard_footman",
-        "can_be_converted",
-        "infantry",
-        "military",
-        "ranged",
-        "scar_age2",
-        "scar_military"
+        "scar_inflation_include"
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/units/earls-retinue-4.png",
@@ -1342,14 +1526,7 @@
           ],
           "description": "Produces an army of 6 Demilancers and 2 Hobelar.",
           "classes": [
-            "archer",
-            "audio_wynguard_footman",
-            "can_be_converted",
-            "infantry",
-            "military",
-            "ranged",
-            "scar_age2",
-            "scar_military"
+            "scar_inflation_include"
           ],
           "displayClasses": [
             "Mixed Force Army"
@@ -1618,14 +1795,7 @@
         "Mixed Force Army"
       ],
       "classes": [
-        "archer",
-        "audio_wynguard_raiders",
-        "can_be_converted",
-        "infantry",
-        "military",
-        "ranged",
-        "scar_age2",
-        "scar_military"
+        "scar_inflation_include"
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/units/garrison-command-4.png",
@@ -1644,14 +1814,7 @@
           ],
           "description": "Produces an army of 8 Spearman and 1 Earl's Guard.",
           "classes": [
-            "archer",
-            "audio_wynguard_raiders",
-            "can_be_converted",
-            "infantry",
-            "military",
-            "ranged",
-            "scar_age2",
-            "scar_military"
+            "scar_inflation_include"
           ],
           "displayClasses": [
             "Mixed Force Army"
@@ -1700,14 +1863,7 @@
         "Mixed Force Army"
       ],
       "classes": [
-        "archer",
-        "audio_wynguard_rangers",
-        "can_be_converted",
-        "infantry",
-        "military",
-        "ranged",
-        "scar_age2",
-        "scar_military"
+        "scar_inflation_include"
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/units/gunpowder-contingent-4.png",
@@ -1726,14 +1882,7 @@
           ],
           "description": "Produces an army of 2 Ribauldequins and 1 Culverin.",
           "classes": [
-            "archer",
-            "audio_wynguard_rangers",
-            "can_be_converted",
-            "infantry",
-            "military",
-            "ranged",
-            "scar_age2",
-            "scar_military"
+            "scar_inflation_include"
           ],
           "displayClasses": [
             "Mixed Force Army"
@@ -1779,7 +1928,7 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Ranged Gunpowder Infantry"
+        "Medium Gunpowder Infantry"
       ],
       "classes": [
         "annihilation_condition",
@@ -4739,7 +4888,8 @@
               "siege",
               "monk",
               "khan",
-              "cavalry"
+              "cavalry",
+              "cattle"
             ]
           }
         }
@@ -4889,14 +5039,7 @@
         "Mixed Force Army"
       ],
       "classes": [
-        "archer",
-        "audio_wynguard_army",
-        "can_be_converted",
-        "infantry",
-        "military",
-        "ranged",
-        "scar_age2",
-        "scar_military"
+        "scar_inflation_include"
       ],
       "minAge": 4,
       "icon": "https://data.aoe4world.com/images/units/wynguard-army-4.png",
@@ -4915,14 +5058,7 @@
           ],
           "description": "Produces an army of 2 Spearmen, 2 Crossbowmen, and a Trebuchet.",
           "classes": [
-            "archer",
-            "audio_wynguard_army",
-            "can_be_converted",
-            "infantry",
-            "military",
-            "ranged",
-            "scar_age2",
-            "scar_military"
+            "scar_inflation_include"
           ],
           "displayClasses": [
             "Mixed Force Army"
@@ -5078,8 +5214,7 @@
                     "class": [
                       [
                         "light",
-                        "gunpowder",
-                        "infantry"
+                        "gunpowder"
                       ]
                     ]
                   },
@@ -5143,8 +5278,7 @@
                     "class": [
                       [
                         "light",
-                        "gunpowder",
-                        "infantry"
+                        "gunpowder"
                       ]
                     ]
                   },
@@ -5208,8 +5342,7 @@
                     "class": [
                       [
                         "light",
-                        "gunpowder",
-                        "infantry"
+                        "gunpowder"
                       ]
                     ]
                   },

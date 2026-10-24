@@ -1388,11 +1388,18 @@ workaround("Modify King scaling to be more descriptive", {
       id: `upgrade-king-${age}`,
       baseId: `upgrade-king-${age}`,
       age,
-      classes: ["king", "scaling", "technology"], // TODO: Check this with classes vs ebpClasses
-      displayClasses: ["King Scaling Technology"],
+      classes: [
+        "english_upgrade",
+        "military_upgrade",
+        isCastle ? "scar_castle_age_upgrade" : "scar_imperial_age_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade",
+      ],
       icon: "units/king-2.png",
     };
     Object.assign(item, base);
+    item.displayClasses = [];
+    addDisplayClass(item, { key: "king_scaling_technology" });
     setLocalized(item, "name", { key: "unit_age_name", args: [11159580, ageId] });
     setLocalized(item, "description", { key: "unit_age_buff_desc", args: [11159580, ageId] });
     (item as Technology).effects?.forEach((e) => (e.select = { id: ["king"], class: [] }));
@@ -1415,11 +1422,18 @@ workaround("Modify Militia scaling to be more descriptive", {
     const base: Partial<Item> = {
       id: `upgrade-militia-${age}`,
       baseId: `upgrade-militia-${age}`,
-      classes: ["Militia", "scaling", "technology"], // TODO: Check this with classes vs ebpClasses
-      displayClasses: ["Militia Scaling Technology"],
+      classes: [
+        "military_upgrade",
+        "rus_upgrade",
+        isCastle ? "scar_castle_age_upgrade" : "scar_imperial_age_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade",
+      ],
       icon: "units/militia-2.png",
     };
     Object.assign(item, base);
+    item.displayClasses = [];
+    addDisplayClass(item, { key: "militia_scaling_technology" });
     setLocalized(item, "name", { key: "unit_age_name", args: [11246217, ageId] });
     setLocalized(item, "description", { key: "unit_age_buff_desc", args: [11246217, ageId] });
     (item as Technology).effects = (item as Technology).effects
@@ -1512,11 +1526,19 @@ workaround("Modify Shinobi scaling to be more descriptive", {
     const base: Partial<Item> = {
       id: `upgrade-shinobi-${age}`,
       baseId: `upgrade-shinobi-${age}`,
-      classes: ["shinobi", "scaling", "technology"], // TODO: Check this with classes vs ebpClasses
-      displayClasses: ["Shinobi Scaling Technology"],
+      classes: [
+        "japanese_ha_sen_upgrade",
+        "japanese_upgrade",
+        "military_upgrade",
+        isCastle ? "scar_castle_age_upgrade" : "scar_imperial_age_upgrade",
+        "scar_tiered_upgrade",
+        "scar_unit_upgrade",
+      ],
       icon: "units/shinobi-2.png",
     };
     Object.assign(item, base);
+    item.displayClasses = [];
+    addDisplayClass(item, { key: "shinobi_scaling_technology" });
     setLocalized(item, "name", { key: "unit_age_name", args: [11247500, ageId] });
     setLocalized(item, "description", { key: "unit_age_damage_buff_desc", args: [11247500, ageId] });
     (item as Technology).effects = (item as Technology).effects
@@ -1662,6 +1684,380 @@ workaround("Fixup Malian Scout icon", {
 
 workaround("Fixup Villager icon", {
   ...overrideCivUniqueIcon((item) => item.type === "unit" && item.baseId === "villager" && !item.icon_src.includes("\\common\\")),
+});
+
+const scotHighlandPassives: Record<string, { age: 1 | 2 | 3 | 4; landmark: string; ageStringId: number; descId: number }> = {
+  highland_landmark_1_sco: { age: 1, landmark: "abbey-of-the-isles", ageStringId: 11181807, descId: 11274737 },
+  highland_landmark_2_sco: { age: 2, landmark: "tower-of-skye", ageStringId: 11181808, descId: 11274745 },
+  highland_landmark_3_sco: { age: 3, landmark: "three-loch-lookout", ageStringId: 11181809, descId: 11274745 },
+};
+
+workaround("Scot Highland Landmark Passives", {
+  predicate: (item) => item.type === "ability" && !!item.attribName && item.attribName in scotHighlandPassives,
+  mutator: (item) => {
+    item = item as Ability;
+    const config = scotHighlandPassives[item.attribName!];
+    setLocalized(item, "name", { key: "unit_age_name", args: [11274738, config.ageStringId] });
+    setLocalized(item, "description", { id: config.descId, args: [50] });
+    item.baseId = `ability-highland-landmark-${config.age}`;
+    item.age = config.age;
+    item.id = `${item.baseId}-${item.age}`;
+    item.producedBy = [config.landmark];
+    item.generatedBy = [`buildings/${config.landmark}`];
+    item.costs = { ...NO_COSTS, popcap: 0 };
+    item.active = "always";
+    item.effects = [
+      {
+        property: "unknown",
+        select: {
+          id: [config.landmark, "mustering-hall"],
+        },
+        effect: "change",
+        value: 0,
+        type: "ability",
+      },
+    ];
+  },
+});
+
+const scotLowlandPassives: Record<string, { age: 1 | 2 | 3 | 4; landmark: string; ageStringId: number; descId: number }> = {
+  lowland_landmark_1_sco: { age: 1, landmark: "stone-of-destiny", ageStringId: 11181807, descId: 11274734 },
+  lowland_landmark_2_sco: { age: 2, landmark: "snowdoun-gate", ageStringId: 11181808, descId: 11274739 },
+  lowland_landmark_3_sco: { age: 3, landmark: "dhun-eideann", ageStringId: 11181809, descId: 11274739 },
+};
+
+workaround("Scot Lowland Landmark Passives", {
+  predicate: (item) => item.type === "ability" && !!item.attribName && item.attribName in scotLowlandPassives,
+  mutator: (item) => {
+    item = item as Ability;
+    const config = scotLowlandPassives[item.attribName!];
+    setLocalized(item, "name", { key: "unit_age_name", args: [11274736, config.ageStringId] });
+    setLocalized(item, "description", { id: config.descId, args: [50] });
+    item.baseId = `ability-lowland-landmark-${config.age}`;
+    item.age = config.age;
+    item.id = `${item.baseId}-${item.age}`;
+    item.producedBy = [config.landmark];
+    item.generatedBy = [`buildings/${config.landmark}`];
+    item.costs = { ...NO_COSTS, popcap: 0 };
+    item.active = "always";
+    item.effects = [
+      {
+        property: "unknown",
+        select: {
+          id: [config.landmark, "mustering-hall"],
+        },
+        effect: "change",
+        value: 0,
+        type: "ability",
+      },
+    ];
+  },
+});
+
+workaround("Add Tower House to Emplacements", {
+  predicate: (item) => item.type === "technology" && (item.baseId === "springald-emplacement" || item.baseId === "cannon-emplacement") && item.civs.includes("sco"),
+  mutator: (item) => {
+    item.producedBy ??= [];
+    if (!item.producedBy.includes("tower-house")) {
+      item.producedBy.push("tower-house");
+      item.producedBy.sort((a, b) => a.localeCompare(b));
+    }
+  },
+});
+
+const scotHighlanderUnitIds = [
+  "highland-archer",
+  "gallowglass",
+  "cateran",
+  "tacksman",
+];
+
+workaround("Configure Tacksman Fear-Taic Aura", {
+  predicate: (item) => item.type === "ability" && item.attribName === "tacksmen_damage_bonus_sco",
+  mutator: (item) => {
+    item = item as Ability;
+    item.producedBy = ["tacksman"];
+    item.generatedBy = ["units/tacksman"];
+    item.active = "always";
+    item.auraRange = 20;
+    item.effects = [
+      {
+        property: "meleeAttack",
+        select: {
+          id: scotHighlanderUnitIds,
+        },
+        effect: "change",
+        value: 1,
+        type: "ability",
+      },
+      {
+        property: "rangedAttack",
+        select: {
+          id: scotHighlanderUnitIds,
+        },
+        effect: "change",
+        value: 1,
+        type: "ability",
+      },
+    ];
+  },
+});
+
+workaround("Configure Ghillie Stealth Ability", {
+  predicate: (item) => item.type === "ability" && item.attribName === "activate_ghillie_stealth_sco",
+  mutator: (item) => {
+    item = item as Ability;
+    setLocalized(item, "name", 11273657);
+    setLocalized(item, "description", 11273656);
+    item.producedBy = ["scout"];
+    item.active = "toggle";
+    item.effects = [
+      {
+        property: "unknown",
+        select: { id: ["scout"] },
+        effect: "change",
+        value: 0,
+        type: "ability",
+      },
+    ];
+  },
+});
+
+workaround("Configure Stone of Destiny Kings Blessing Aura", {
+  predicate: (item) => item.type === "ability" && item.attribName === "stone_of_destiny_bonus_sco",
+  mutator: (item) => {
+    item = item as Ability;
+    setLocalized(item, "name", 11273638);
+    setLocalized(item, "description", { id: 11273637, args: [15] });
+    item.producedBy = ["stone-of-destiny"];
+    item.generatedBy = ["buildings/stone-of-destiny"];
+    item.active = "always";
+    item.effects = [
+      {
+        property: "attackSpeed",
+        select: { class: [["infantry"]] },
+        effect: "change",
+        value: 15,
+        type: "ability",
+      },
+      {
+        property: "unknown",
+        select: { id: ["stone-of-destiny"] },
+        effect: "change",
+        value: 0,
+        type: "ability",
+      },
+    ];
+  },
+});
+
+workaround("Configure Abbey of the Isles Saint's Relic Abilities", {
+  predicate: (item) =>
+    item.type === "ability" &&
+    (item.attribName === "abbey_of_the_isles_healing_aura_sco" || item.attribName === "abbey_of_the_isles_relic_mover_sco"),
+  mutator: (item) => {
+    item = item as Ability;
+    item.generatedBy = ["buildings/abbey-of-the-isles"];
+    item.effects = [
+      {
+        property: "unknown",
+        select: { id: ["abbey-of-the-isles"] },
+        effect: "change",
+        value: 0,
+        type: "ability",
+      },
+    ];
+  },
+});
+
+const scotMusteringHallUnits = [
+  "kirkman",
+  "tacksman",
+  "cateran",
+  "highland-archer",
+  "pikeman",
+  "gallowglass",
+  "border-reiver",
+  "mangonel",
+];
+
+workaround("Add Mustering Hall to Scots Units producedBy", {
+  predicate: (item) => item.type === "unit" && scotMusteringHallUnits.includes(item.baseId) && item.civs.includes("sco"),
+  mutator: (item) => {
+    item.producedBy ??= [];
+    if (!item.producedBy.includes("mustering-hall")) {
+      item.producedBy.push("mustering-hall");
+      item.producedBy.sort((a, b) => a.localeCompare(b));
+    }
+  },
+});
+
+workaround("Configure Fishpond Relocate Ability", {
+  predicate: (item) => item.type === "ability" && item.attribName === "fish_pond_relocate_sco",
+  mutator: (item) => {
+    item = item as Ability;
+    item.producedBy = ["fishpond"];
+    item.effects = [
+      {
+        property: "unknown",
+        select: { id: ["fishpond"] },
+        effect: "change",
+        value: 0,
+        type: "ability",
+      },
+    ];
+  },
+});
+
+const vikingInfantryUnitIds = [
+  "archer",
+  "berserker",
+  "crossbowman",
+  "handcannoneer",
+  "man-at-arms",
+  "shield-maiden",
+  "spearman",
+];
+
+workaround("Configure Viking Living Off The Land Ability", {
+  predicate: (item) => item.type === "ability" && item.attribName === "living_off_land_vik",
+  mutator: (item) => {
+    item = item as Ability;
+    setLocalized(item, "name", 11273148);
+    setLocalized(item, "description", { id: 11273149, args: [1, 3, 0.4] });
+    item.producedBy = vikingInfantryUnitIds;
+    item.active = "manual";
+    item.effects = [
+      {
+        property: "unknown",
+        select: {
+          id: vikingInfantryUnitIds,
+          class: [["infantry"]],
+        },
+        effect: "change",
+        value: 0,
+        type: "ability",
+      },
+    ];
+  },
+});
+
+workaround("Configure Rikets Nyckel Castle Passive Ability", {
+  predicate: (item) => item.type === "ability" && item.attribName === "rikets_castle_behavior_vik",
+  mutator: (item) => {
+    item = item as Ability;
+    setLocalized(item, "name", 11273289);
+    setLocalized(item, "description", { id: 11273321, args: [10, 50, 10] });
+    item.baseId = "ability-rikets-nyckel-castle";
+    item.age = 3;
+    item.id = `${item.baseId}-${item.age}`;
+    item.icon_src = undefined;
+    item.icon = "buildings/rikets-nyckel-castle-3.png";
+    item.producedBy = ["rikets-nyckel-castle"];
+    item.active = "always";
+    item.effects = [
+      {
+        property: "unknown",
+        select: { id: ["rikets-nyckel-castle"] },
+        effect: "change",
+        value: 0,
+        type: "ability",
+      },
+    ];
+  },
+});
+
+workaround("Configure Baugr Fort Production Ability", {
+  predicate: (item) => item.type === "ability" && item.attribName === "baugr_fort_production_vik",
+  mutator: (item) => {
+    item = item as Ability;
+    setLocalized(item, "name", 11273291);
+    setLocalized(item, "description", { id: 11273292, args: [25] });
+    item.producedBy = ["baugr-fort"];
+    item.active = "always";
+    item.effects = [
+      {
+        property: "unknown",
+        select: { id: ["baugr-fort"] },
+        effect: "change",
+        value: 0,
+        type: "ability",
+      },
+    ];
+  },
+});
+
+const vikingDamageArmorTechs: Record<string, { age: 1 | 2 | 3 | 4 }> = {
+  damage_1_vik: { age: 2 },
+  damage_2_vik: { age: 3 },
+  damage_3_vik: { age: 4 },
+  armor_1_vik: { age: 2 },
+  armor_2_vik: { age: 3 },
+  armor_3_vik: { age: 4 },
+};
+
+workaround("Change Viking Damage and Armor to Technology", {
+  predicate: (item) => item.type === "ability" && !!item.attribName && item.attribName in vikingDamageArmorTechs,
+  mutator: (item) => {
+    const config = vikingDamageArmorTechs[item.attribName!];
+    item.type = "technology";
+    item.baseId = item.baseId.replace(/^ability-/, "");
+    item.age = config.age;
+    item.id = `${item.baseId}-${item.age}`;
+    item.producedBy = ["longhouse"];
+    item.classes = ["technology", "blacksmith"];
+    item.displayClasses = [];
+    addDisplayClass(item, "Blacksmith Technology");
+  },
+});
+
+workaround("Change Viking Sagas to Technology", {
+  predicate: (item) =>
+    item.type === "ability" &&
+    !!item.attribName &&
+    item.attribName.startsWith("saga_") &&
+    item.attribName.endsWith("_info_vik"),
+  mutator: async (item, { context }) => {
+    item.type = "technology";
+    item.baseId = item.baseId.replace(/^ability-/, "");
+    if (!item.baseId.endsWith("-saga")) item.baseId += "-saga";
+    item.id = `${item.baseId}-1`;
+    item.age = 1;
+    item.producedBy = ["saga-pillars"];
+    item.classes = ["technology", "saga"];
+    item.displayClasses = [];
+    addDisplayClass(item, "Saga");
+    item.costs = { ...NO_COSTS, popcap: 0 };
+
+    // Dynamically copy completion requirements and reward description from the unlock ability's help_text_formatter
+    const unlockAttribName = item.attribName!.replace(/^saga_/, "unlock_").replace(/_info_vik$/, "_saga_vik");
+    const unlockFile = `abilities/timed_abilities/vikings/sagas/${unlockAttribName}`;
+    try {
+      if (context) {
+        const unlockData = await context.getData(unlockFile, context);
+        const htf = unlockData?.extensions?.[0]?.ui_info?.help_text_formatter;
+        if (htf?.formatter) {
+          setLocalized(item, "description", {
+            id: htf.formatter,
+            args: htf.formatter_arguments ?? [],
+          });
+        }
+      }
+    } catch {
+      // Keep existing description if unlock file not found
+    }
+  },
+});
+
+workaround("Add Valdemar Castle to Danevirke", {
+  predicate: (item) => item.type === "technology" && item.baseId === "danevirke",
+  mutator: (item) => {
+    item.producedBy ??= [];
+    if (!item.producedBy.includes("valdemar-castle")) {
+      item.producedBy.push("valdemar-castle");
+      item.producedBy.sort((a, b) => a.localeCompare(b));
+    }
+  },
 });
 
 const MILITIA_COSTS = generateCosts({ food: 20 });

@@ -216,7 +216,7 @@
             "machine-workshop"
           ],
           "icon": "https://data.aoe4world.com/images/units/battering-ram-2.png",
-          "hitpoints": 370,
+          "hitpoints": 410,
           "weapons": [
             {
               "id": "ram",
@@ -353,7 +353,7 @@
       "producedBy": [
         "machine-workshop"
       ],
-      "hitpoints": 85,
+      "hitpoints": 90,
       "resistance": [
         {
           "type": "ranged",
@@ -380,7 +380,7 @@
               "id": "bed-crossbow",
               "name": "Bed Crossbow",
               "type": "ranged",
-              "damage": 8,
+              "damage": 10,
               "speed": 3.125,
               "range": {
                 "min": 0,
@@ -398,7 +398,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 4,
+                  "value": 6,
                   "type": "passive"
                 },
                 {
@@ -446,7 +446,7 @@
               "id": "bed-crossbow",
               "name": "Bed Crossbow",
               "type": "ranged",
-              "damage": 10,
+              "damage": 11,
               "speed": 3.125,
               "range": {
                 "min": 0,
@@ -464,7 +464,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 4,
+                  "value": 6,
                   "type": "passive"
                 },
                 {
@@ -499,20 +499,25 @@
               "pbgid": 9004145
             }
           ],
-          "armor": [],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 1
+            }
+          ],
           "id": "bed-crossbow-3"
         },
         "bed-crossbow-4": {
           "name": "Elite Bed Crossbow",
           "age": 4,
           "icon": "https://data.aoe4world.com/images/units/bed-crossbow-4.png",
-          "hitpoints": 110,
+          "hitpoints": 115,
           "weapons": [
             {
               "id": "bed-crossbow",
               "name": "Bed Crossbow",
               "type": "ranged",
-              "damage": 13,
+              "damage": 14,
               "speed": 3.125,
               "range": {
                 "min": 0,
@@ -530,7 +535,7 @@
                     ]
                   },
                   "effect": "change",
-                  "value": 5,
+                  "value": 7,
                   "type": "passive"
                 },
                 {
@@ -565,7 +570,12 @@
               "pbgid": 9004146
             }
           ],
-          "armor": [],
+          "armor": [
+            {
+              "type": "melee",
+              "value": 2
+            }
+          ],
           "id": "bed-crossbow-4"
         }
       }
@@ -982,71 +992,39 @@
         "Worker"
       ],
       "classes": [
-        "spawn_ignored_on_timeline"
+        "annihilation_condition",
+        "emissary",
+        "formational",
+        "human",
+        "scar_inflation_include"
       ],
-      "minAge": 1,
-      "icon": "https://data.aoe4world.com/images/units/emissary-1.png",
-      "description": "Support unit which can establish Tributaries at Trade Posts and Bribe enemy soldiers to revolt.\n+ Powerful Abilities\n- Expensive\n- Build limit of 3\n- Weak to all attacks",
+      "minAge": 3,
+      "icon": "https://data.aoe4world.com/images/units/emissary-3.png",
+      "description": "Support unit which can establish Tributaries at Trade Posts and Bribe enemy soldiers to revolt.\n+ Powerful Abilities\n- Expensive\n- Build limit of 2\n- Weak to all attacks",
       "variations": [
         {
-          "id": "emissary-1",
-          "pbgid": 9005656,
-          "attribName": "unit_free_dummy_emissary_jin",
-          "civs": [
-            "jin"
-          ]
-        },
-        {
           "id": "emissary-3",
+          "baseId": "emissary",
+          "type": "unit",
+          "name": "Emissary",
           "pbgid": 9003970,
           "attribName": "unit_emissary_2_jin",
+          "age": 3,
           "civs": [
             "jin"
-          ]
-        }
-      ],
-      "baseId": "emissary",
-      "age": 1,
-      "costs": {
-        "food": 0,
-        "wood": 0,
-        "stone": 0,
-        "gold": 0,
-        "total": 0,
-        "popcap": 0
-      },
-      "producedBy": [
-        "dragon-pavilion"
-      ],
-      "sight": {
-        "inner_height": 0,
-        "inner_radius": 0,
-        "outer_height": 0,
-        "outer_radius": 0,
-        "base": 0,
-        "line": 0,
-        "height": 0
-      },
-      "movement": {
-        "speed": null
-      },
-      "shared": {
-        "emissary-1": {
-          "name": "Emissary",
-          "weapons": [],
-          "armor": [],
-          "id": "emissary-1"
-        },
-        "emissary-3": {
-          "name": "Emissary",
-          "age": 3,
+          ],
           "description": "Support unit which can establish Tributaries at Trade Posts and Bribe enemy soldiers to revolt.\n+ Powerful Abilities\n- Expensive\n- Build limit of 2\n- Weak to all attacks",
           "classes": [
             "annihilation_condition",
             "emissary",
             "formational",
-            "human"
+            "human",
+            "scar_inflation_include"
           ],
+          "displayClasses": [
+            "Worker"
+          ],
+          "unique": true,
           "costs": {
             "food": 0,
             "wood": 0,
@@ -1076,10 +1054,10 @@
           },
           "movement": {
             "speed": 1.125
-          },
-          "id": "emissary-3"
+          }
         }
-      }
+      ],
+      "shared": {}
     },
     {
       "id": "eruptor",
@@ -1090,7 +1068,7 @@
       ],
       "unique": true,
       "displayClasses": [
-        "Ranged Gunpowder Infantry"
+        "Medium Gunpowder Infantry"
       ],
       "classes": [
         "annihilation_condition",
@@ -1139,7 +1117,7 @@
             "ranged_infantry"
           ],
           "displayClasses": [
-            "Ranged Gunpowder Infantry"
+            "Medium Gunpowder Infantry"
           ],
           "unique": true,
           "costs": {
@@ -1850,7 +1828,7 @@
         "great-pasture",
         "war-stable"
       ],
-      "hitpoints": 200,
+      "hitpoints": 210,
       "sight": {
         "inner_height": 10,
         "inner_radius": 4,
@@ -1871,7 +1849,7 @@
               "id": "podao",
               "name": "Podao",
               "type": "melee",
-              "damage": 16,
+              "damage": 17,
               "speed": 1.5,
               "range": {
                 "min": 0,
@@ -1880,13 +1858,13 @@
               "modifiers": [],
               "durations": {
                 "aim": 0,
-                "windup": 0.75,
+                "windup": 0.5,
                 "attack": 0.125,
                 "winddown": 0,
                 "reload": 0,
                 "setup": 0,
                 "teardown": 0,
-                "cooldown": 0.625
+                "cooldown": 0.875
               },
               "attribName": "weapon_iron_pagoda_2_jin",
               "pbgid": 9004737
@@ -1919,7 +1897,7 @@
               "id": "lance",
               "name": "Lance",
               "type": "melee",
-              "damage": 24,
+              "damage": 25,
               "speed": 0.525,
               "range": {
                 "min": 0,
@@ -1956,13 +1934,13 @@
           "name": "Veteran Iron Pagoda",
           "age": 3,
           "icon": "https://data.aoe4world.com/images/units/iron-pagoda-3.png",
-          "hitpoints": 250,
+          "hitpoints": 255,
           "weapons": [
             {
               "id": "podao",
               "name": "Podao",
               "type": "melee",
-              "damage": 20,
+              "damage": 21,
               "speed": 1.5,
               "range": {
                 "min": 0,
@@ -1971,13 +1949,13 @@
               "modifiers": [],
               "durations": {
                 "aim": 0,
-                "windup": 0.75,
+                "windup": 0.5,
                 "attack": 0.125,
                 "winddown": 0,
                 "reload": 0,
                 "setup": 0,
                 "teardown": 0,
-                "cooldown": 0.625
+                "cooldown": 0.875
               },
               "attribName": "weapon_iron_pagoda_3_jin",
               "pbgid": 9004128
@@ -2010,7 +1988,7 @@
               "id": "lance",
               "name": "Lance",
               "type": "melee",
-              "damage": 30,
+              "damage": 31,
               "speed": 0.525,
               "range": {
                 "min": 0,
@@ -2047,13 +2025,13 @@
           "name": "Elite Iron Pagoda",
           "age": 4,
           "icon": "https://data.aoe4world.com/images/units/iron-pagoda-4.png",
-          "hitpoints": 290,
+          "hitpoints": 295,
           "weapons": [
             {
               "id": "podao",
               "name": "Podao",
               "type": "melee",
-              "damage": 23,
+              "damage": 24,
               "speed": 1.5,
               "range": {
                 "min": 0,
@@ -2062,13 +2040,13 @@
               "modifiers": [],
               "durations": {
                 "aim": 0,
-                "windup": 0.75,
+                "windup": 0.5,
                 "attack": 0.125,
                 "winddown": 0,
                 "reload": 0,
                 "setup": 0,
                 "teardown": 0,
-                "cooldown": 0.625
+                "cooldown": 0.875
               },
               "attribName": "weapon_iron_pagoda_4_jin",
               "pbgid": 9004130
@@ -2101,7 +2079,7 @@
               "id": "lance",
               "name": "Lance",
               "type": "melee",
-              "damage": 35,
+              "damage": 36,
               "speed": 0.525,
               "range": {
                 "min": 0,
@@ -2676,8 +2654,7 @@
                     "class": [
                       [
                         "light",
-                        "gunpowder",
-                        "infantry"
+                        "gunpowder"
                       ]
                     ]
                   },
@@ -2754,8 +2731,7 @@
                     "class": [
                       [
                         "light",
-                        "gunpowder",
-                        "infantry"
+                        "gunpowder"
                       ]
                     ]
                   },
@@ -4699,7 +4675,8 @@
               "siege",
               "monk",
               "khan",
-              "cavalry"
+              "cavalry",
+              "cattle"
             ]
           }
         }

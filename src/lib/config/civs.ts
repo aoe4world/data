@@ -159,6 +159,14 @@ const civilizations = {
     attribName: "rus",
     expansion: ["base"],
   },
+  sco: {
+    id: "scots",
+    name: "Scots",
+    abbr: "sco",
+    slug: "scots",
+    attribName: "scots",
+    expansion: ["raiders-of-the-north"],
+  },
   sen: {
     id: "sengoku_daimyo",
     name: "Sengoku Daimyo",
@@ -174,6 +182,14 @@ const civilizations = {
     slug: "tughlaq",
     attribName: "sultanate_ha_tug",
     expansion: ["dynasties-of-the-east"],
+  },
+  vik: {
+    id: "vikings",
+    name: "Vikings",
+    abbr: "vik",
+    slug: "vikings",
+    attribName: "vikings",
+    expansion: ["raiders-of-the-north"],
   },
   zx: {
     id: "zhu_xis_legacy",

@@ -1,0 +1,200 @@
+{
+  "id": "gallowglass-3",
+  "baseId": "gallowglass",
+  "type": "unit",
+  "name": "Gallowglass",
+  "pbgid": 9006798,
+  "attribName": "unit_gallowglass_3_sco",
+  "age": 3,
+  "civs": [
+    "sco"
+  ],
+  "description": "Heavy melee infantry equipped with a two-handed claymore, effective in mixed armies.\n+ Melee attack deals area damage\n+ Braces for cavalry charges\n- Slow attack speed\n- Countered by Crossbows, Knights",
+  "classes": [
+    "annihilation_condition",
+    "armored",
+    "formational",
+    "gallowglass",
+    "heavy",
+    "human",
+    "included_by_military_hotkeys",
+    "infantry",
+    "land_military",
+    "melee",
+    "melee_infantry",
+    "military",
+    "torch_thrower"
+  ],
+  "displayClasses": [
+    "Heavy Melee Infantry",
+    "Highland Warrior"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 140,
+    "wood": 0,
+    "stone": 0,
+    "gold": 80,
+    "total": 220,
+    "popcap": 1,
+    "time": 28
+  },
+  "producedBy": [
+    "barracks",
+    "mustering-hall"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/gallowglass-3.png",
+  "hitpoints": 180,
+  "weapons": [
+    {
+      "id": "claymore",
+      "name": "Claymore",
+      "type": "melee",
+      "damage": 19,
+      "speed": 1.625,
+      "range": {
+        "min": 0,
+        "max": 0.295
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "war",
+                "elephant"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "attack": 0.125,
+        "winddown": 0.75,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0.25
+      },
+      "attribName": "weapon_gallowglass_3_sco",
+      "pbgid": 9006804
+    },
+    {
+      "id": "torch",
+      "name": "Torch",
+      "type": "fire",
+      "damage": 10,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch",
+      "pbgid": 123518
+    },
+    {
+      "id": "spearwall",
+      "name": "Spearwall",
+      "type": "melee",
+      "damage": 19,
+      "speed": 1.125,
+      "range": {
+        "min": 0.25,
+        "max": 1.045
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "war",
+                "elephant"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 1,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_gallowglass_3_spearwall_sco",
+      "pbgid": 9007222
+    }
+  ],
+  "armor": [
+    {
+      "type": "melee",
+      "value": 3
+    },
+    {
+      "type": "ranged",
+      "value": 2
+    }
+  ],
+  "sight": {
+    "inner_height": 100,
+    "inner_radius": 12,
+    "outer_height": -15,
+    "outer_radius": 30.4,
+    "base": 28,
+    "line": 30.4,
+    "height": 100
+  },
+  "movement": {
+    "speed": 1.125
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "id": "cateran-2",
+  "baseId": "cateran",
+  "type": "unit",
+  "name": "Cateran",
+  "pbgid": 9006761,
+  "attribName": "unit_cateran_2_sco",
+  "age": 2,
+  "civs": [
+    "sco"
+  ],
+  "description": "Swift light melee infantry with bonus damage against workers and buildings.\n+ Fast move speed\n+ Stronger torch\n- Countered by Archers, Knights, Lancers",
+  "classes": [
+    "annihilation_condition",
+    "cateran",
+    "find_non_siege_land_military",
+    "formational",
+    "human",
+    "included_by_military_hotkeys",
+    "infantry",
+    "land_military",
+    "light_melee_infantry",
+    "melee",
+    "melee_infantry",
+    "military",
+    "torch_thrower"
+  ],
+  "displayClasses": [
+    "Light Melee Infantry",
+    "Highland Warrior"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 90,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "total": 90,
+    "popcap": 1,
+    "time": 10
+  },
+  "producedBy": [
+    "barracks",
+    "mustering-hall"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/cateran-2.png",
+  "hitpoints": 110,
+  "weapons": [
+    {
+      "id": "axe",
+      "name": "Axe",
+      "type": "melee",
+      "damage": 9,
+      "speed": 1.375,
+      "range": {
+        "min": 0,
+        "max": 0.295
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "worker"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 4,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0.25
+      },
+      "attribName": "weapon_cateran_2_sco",
+      "pbgid": 9006774
+    },
+    {
+      "id": "basket-hilted-broadsword",
+      "name": "Basket-hilted Broadsword",
+      "type": "melee",
+      "damage": 9,
+      "speed": 1.375,
+      "range": {
+        "min": 0,
+        "max": 0.295
+      },
+      "modifiers": [
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "cavalry"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "worker"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 4,
+          "type": "passive"
+        },
+        {
+          "property": "meleeAttack",
+          "target": {
+            "class": [
+              [
+                "infantry",
+                "light"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 0,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0,
+        "windup": 0.5,
+        "attack": 0.125,
+        "winddown": 0.5,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0.25
+      },
+      "attribName": "weapon_cateran_2_broadsword_sco",
+      "pbgid": 9007344
+    },
+    {
+      "id": "torch",
+      "name": "Torch",
+      "type": "fire",
+      "damage": 14,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 1.25
+      },
+      "modifiers": [],
+      "durations": {
+        "aim": 0,
+        "windup": 0.75,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 0,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 1.25
+      },
+      "attribName": "weapon_torch_cateran_sco",
+      "pbgid": 9007408
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "inner_height": 100,
+    "inner_radius": 12,
+    "outer_height": -15,
+    "outer_radius": 30.4,
+    "base": 28,
+    "line": 30.4,
+    "height": 100
+  },
+  "movement": {
+    "speed": 1.5
+  }
+}

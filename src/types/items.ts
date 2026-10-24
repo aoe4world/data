@@ -145,6 +145,7 @@ export interface Ability extends Item {
   effects?: Modifier[];
   unlockedBy?: ItemSlug[];
   activatedOn?: ItemSlug[];
+  generatedBy?: ItemSlug[];
 }
 
 export type Selector = { class?: ItemClass[][]; id?: ItemId[] };

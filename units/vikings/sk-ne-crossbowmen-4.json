@@ -1,0 +1,100 @@
+{
+  "id": "sk-ne-crossbowmen-4",
+  "baseId": "sk-ne-crossbowmen",
+  "type": "unit",
+  "name": "Elite Skåne Crossbowmen",
+  "pbgid": 9005960,
+  "attribName": "unit_crossbowman_4_vik",
+  "age": 4,
+  "civs": [
+    "vik"
+  ],
+  "description": "High damage ranged unit best against heavy targets. Lower cost but with reduced damage and health. \n+ Anti-heavy specialist\n- Low health\n- Countered by Horsemen",
+  "classes": [
+    "annihilation_condition",
+    "arbalest_animate",
+    "crossbow_incendiary_4",
+    "crossbowman",
+    "find_non_siege_land_military",
+    "formational",
+    "human",
+    "included_by_military_hotkeys",
+    "infantry",
+    "infantry_light",
+    "land_military",
+    "military",
+    "ranged",
+    "ranged_infantry"
+  ],
+  "displayClasses": [
+    "Light Ranged Infantry"
+  ],
+  "unique": true,
+  "costs": {
+    "food": 75,
+    "wood": 0,
+    "stone": 0,
+    "gold": 30,
+    "total": 105,
+    "popcap": 1,
+    "time": 19.5
+  },
+  "producedBy": [
+    "archery-range"
+  ],
+  "icon": "https://data.aoe4world.com/images/units/sk-ne-crossbowmen-4.png",
+  "hitpoints": 85,
+  "weapons": [
+    {
+      "id": "crossbow",
+      "name": "Crossbow",
+      "type": "ranged",
+      "damage": 12,
+      "speed": 2.125,
+      "range": {
+        "min": 0,
+        "max": 5
+      },
+      "modifiers": [
+        {
+          "property": "rangedAttack",
+          "target": {
+            "class": [
+              [
+                "heavy"
+              ]
+            ]
+          },
+          "effect": "change",
+          "value": 12,
+          "type": "passive"
+        }
+      ],
+      "durations": {
+        "aim": 0.25,
+        "windup": 0,
+        "attack": 0.125,
+        "winddown": 0,
+        "reload": 1.75,
+        "setup": 0,
+        "teardown": 0,
+        "cooldown": 0
+      },
+      "attribName": "weapon_crossbow_4_vik",
+      "pbgid": 9006934
+    }
+  ],
+  "armor": [],
+  "sight": {
+    "inner_height": 10,
+    "inner_radius": 16,
+    "outer_height": -15,
+    "outer_radius": 40,
+    "base": 25.6,
+    "line": 40,
+    "height": 10
+  },
+  "movement": {
+    "speed": 1.125
+  }
+}

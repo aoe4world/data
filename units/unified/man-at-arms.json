@@ -16,6 +16,7 @@
     "mo",
     "ot",
     "ru",
+    "sco",
     "tug"
   ],
   "unique": false,
@@ -1958,8 +1959,8 @@
       "baseId": "man-at-arms",
       "type": "unit",
       "name": "Man-at-Arms",
-      "pbgid": 132282,
-      "attribName": "unit_manatarms_3_fre",
+      "pbgid": 5634655,
+      "attribName": "unit_manatarms_3_fre_ha_01",
       "age": 3,
       "civs": [
         "je"
@@ -2077,8 +2078,8 @@
       "baseId": "man-at-arms",
       "type": "unit",
       "name": "Elite Man-at-Arms",
-      "pbgid": 132283,
-      "attribName": "unit_manatarms_4_fre",
+      "pbgid": 3372074,
+      "attribName": "unit_manatarms_4_fre_ha_01",
       "age": 4,
       "civs": [
         "je"
@@ -3382,6 +3383,603 @@
         "base": 21.6,
         "line": 36,
         "height": 10
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "man-at-arms-2",
+      "baseId": "man-at-arms",
+      "type": "unit",
+      "name": "Early Man-at-Arms",
+      "pbgid": 7161837,
+      "attribName": "unit_manatarms_2_sco",
+      "age": 2,
+      "civs": [
+        "sco"
+      ],
+      "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement\n- Countered by Knights, Lancers, and Crossbowmen",
+      "classes": [
+        "annihilation_condition",
+        "armored",
+        "find_non_siege_land_military",
+        "formational",
+        "heavy",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "land_military",
+        "manatarms",
+        "melee",
+        "melee_infantry",
+        "military",
+        "torch_thrower"
+      ],
+      "displayClasses": [
+        "Heavy Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 90,
+        "wood": 0,
+        "stone": 0,
+        "gold": 20,
+        "total": 110,
+        "popcap": 1,
+        "time": 20.5
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/man-at-arms-2.png",
+      "hitpoints": 120,
+      "weapons": [
+        {
+          "id": "sword",
+          "name": "Sword",
+          "type": "melee",
+          "damage": 10,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "war",
+                    "elephant"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_2_sco",
+          "pbgid": 9007689
+        },
+        {
+          "id": "lochaber-axe",
+          "name": "Lochaber Axe",
+          "type": "melee",
+          "damage": 10,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 4,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "war",
+                    "elephant"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 4,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_2_lochaber_axe_sco",
+          "pbgid": 9007224
+        },
+        {
+          "id": "torch",
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [
+        {
+          "type": "melee",
+          "value": 3
+        },
+        {
+          "type": "ranged",
+          "value": 3
+        }
+      ],
+      "sight": {
+        "inner_height": 100,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 30.4,
+        "base": 28,
+        "line": 30.4,
+        "height": 100
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "man-at-arms-3",
+      "baseId": "man-at-arms",
+      "type": "unit",
+      "name": "Man-at-Arms",
+      "pbgid": 3298418,
+      "attribName": "unit_manatarms_3_sco",
+      "age": 3,
+      "civs": [
+        "sco"
+      ],
+      "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement\n- Countered by Knights, Lancers, and Crossbowmen",
+      "classes": [
+        "annihilation_condition",
+        "armored",
+        "find_non_siege_land_military",
+        "formational",
+        "heavy",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "land_military",
+        "manatarms",
+        "melee",
+        "melee_infantry",
+        "military",
+        "torch_thrower"
+      ],
+      "displayClasses": [
+        "Heavy Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 90,
+        "wood": 0,
+        "stone": 0,
+        "gold": 20,
+        "total": 110,
+        "popcap": 1,
+        "time": 20.5
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/man-at-arms-3.png",
+      "hitpoints": 155,
+      "weapons": [
+        {
+          "id": "sword",
+          "name": "Sword",
+          "type": "melee",
+          "damage": 12,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "war",
+                    "elephant"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_3_sco",
+          "pbgid": 9007691
+        },
+        {
+          "id": "lochaber-axe",
+          "name": "Lochaber Axe",
+          "type": "melee",
+          "damage": 12,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 4,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "war",
+                    "elephant"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 4,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_3_lochaber_axe_sco",
+          "pbgid": 9007226
+        },
+        {
+          "id": "torch",
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [
+        {
+          "type": "melee",
+          "value": 4
+        },
+        {
+          "type": "ranged",
+          "value": 4
+        }
+      ],
+      "sight": {
+        "inner_height": 100,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 30.4,
+        "base": 28,
+        "line": 30.4,
+        "height": 100
+      },
+      "movement": {
+        "speed": 1.125
+      }
+    },
+    {
+      "id": "man-at-arms-4",
+      "baseId": "man-at-arms",
+      "type": "unit",
+      "name": "Elite Man-at-Arms",
+      "pbgid": 4042720,
+      "attribName": "unit_manatarms_4_sco",
+      "age": 4,
+      "civs": [
+        "sco"
+      ],
+      "description": "Tough infantry with good damage.\n+ High armor\n- Slow movement\n- Countered by Knights, Lancers, and Crossbowmen",
+      "classes": [
+        "annihilation_condition",
+        "armored",
+        "find_non_siege_land_military",
+        "formational",
+        "heavy",
+        "human",
+        "included_by_military_hotkeys",
+        "infantry",
+        "land_military",
+        "manatarms",
+        "melee",
+        "melee_infantry",
+        "military",
+        "torch_thrower"
+      ],
+      "displayClasses": [
+        "Heavy Melee Infantry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 90,
+        "wood": 0,
+        "stone": 0,
+        "gold": 20,
+        "total": 110,
+        "popcap": 1,
+        "time": 20.5
+      },
+      "producedBy": [
+        "barracks"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/man-at-arms-4.png",
+      "hitpoints": 180,
+      "weapons": [
+        {
+          "id": "sword",
+          "name": "Sword",
+          "type": "melee",
+          "damage": 14,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "war",
+                    "elephant"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 0,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_4_sco",
+          "pbgid": 9007693
+        },
+        {
+          "id": "lochaber-axe",
+          "name": "Lochaber Axe",
+          "type": "melee",
+          "damage": 14,
+          "speed": 1.375,
+          "range": {
+            "min": 0,
+            "max": 0.295
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "cavalry"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 4,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "war",
+                    "elephant"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 4,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.5,
+            "attack": 0.125,
+            "winddown": 0.75,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 0
+          },
+          "attribName": "weapon_manatarms_4_lochaber_axe_sco",
+          "pbgid": 9007228
+        },
+        {
+          "id": "torch",
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch",
+          "pbgid": 123518
+        }
+      ],
+      "armor": [
+        {
+          "type": "melee",
+          "value": 5
+        },
+        {
+          "type": "ranged",
+          "value": 6
+        }
+      ],
+      "sight": {
+        "inner_height": 100,
+        "inner_radius": 12,
+        "outer_height": -15,
+        "outer_radius": 30.4,
+        "base": 28,
+        "line": 30.4,
+        "height": 100
       },
       "movement": {
         "speed": 1.125

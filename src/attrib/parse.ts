@@ -301,7 +301,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
 function guessType(file: string, data: any) {
   const fileName = file.split("/").pop()!;
   if (fileName.startsWith("building_")) return ITEM_TYPES.BUILDINGS;
-  if (fileName.startsWith("unit_")) return ITEM_TYPES.UNITS;
+  if (fileName.startsWith("unit_") || fileName.startsWith("highland_cattle_")) return ITEM_TYPES.UNITS;
   if (fileName.startsWith("herdable_")) return undefined;
   if (fileName.startsWith("gaia_")) return undefined;
 
@@ -352,7 +352,7 @@ function parseHitpoints(health_ext: any) {
 }
 
 function parseCosts(cost: any, time: any, civ: CivConfig, popcap = 0) {
-  const { food, wood, gold, stone, command: vizier, merc_byz: special } = cost as Record<"food" | "wood" | "gold" | "stone" | "popcap" | "merc_byz" | "command", number>;
+  const { food = 0, wood = 0, gold = 0, stone = 0, command: vizier, merc_byz: special = 0 } = (cost ?? {}) as Record<"food" | "wood" | "gold" | "stone" | "popcap" | "merc_byz" | "command", number>;
   const costs = {
     food, wood, stone, gold,
     vizier: (civ.abbr === 'ot' || vizier) ? vizier : undefined,
@@ -521,9 +521,7 @@ export function convertClasses(classes: string[]) {
 export async function copyPatchHistory(targetDir?: string) {
   const destDir = targetDir ?? path.join(ROOT_FOLDER, "overview");
   if (!existsSync(destDir)) mkdirSync(destDir, { recursive: true });
-  const source = existsSync(path.join(__dirname, "patch-history.json"))
-    ? path.join(__dirname, "patch-history.json")
-    : path.join(ROOT_FOLDER, "attrib/patch-history.json");
+  const source = path.join(__dirname, "patch-history.json");
   if (existsSync(source)) {
     await fs.copyFile(source, path.join(destDir, "patch-history.json"));
   }

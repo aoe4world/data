@@ -20,6 +20,8 @@
     "mac",
     "mo",
     "ru",
+    "sco",
+    "vik",
     "zx"
   ],
   "unique": false,
@@ -4016,8 +4018,8 @@
       "baseId": "horseman",
       "type": "unit",
       "name": "Horseman",
-      "pbgid": 132276,
-      "attribName": "unit_horseman_2_fre",
+      "pbgid": 8137971,
+      "attribName": "unit_horseman_2_fre_ha_01",
       "age": 2,
       "civs": [
         "je"
@@ -4158,8 +4160,8 @@
       "baseId": "horseman",
       "type": "unit",
       "name": "Veteran Horseman",
-      "pbgid": 132277,
-      "attribName": "unit_horseman_3_fre",
+      "pbgid": 5400180,
+      "attribName": "unit_horseman_3_fre_ha_01",
       "age": 3,
       "civs": [
         "je"
@@ -4300,8 +4302,8 @@
       "baseId": "horseman",
       "type": "unit",
       "name": "Elite Horseman",
-      "pbgid": 132278,
-      "attribName": "unit_horseman_4_fre",
+      "pbgid": 5028115,
+      "attribName": "unit_horseman_4_fre_ha_01",
       "age": 4,
       "civs": [
         "je"
@@ -6654,6 +6656,852 @@
           },
           "attribName": "weapon_horseman_4_rus",
           "pbgid": 133277
+        },
+        {
+          "id": "torch",
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch_horseman",
+          "pbgid": 127935
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
+        "line": 28,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.875
+      }
+    },
+    {
+      "id": "horseman-2",
+      "baseId": "horseman",
+      "type": "unit",
+      "name": "Horseman",
+      "pbgid": 2899278,
+      "attribName": "unit_horseman_2_sco",
+      "age": 2,
+      "civs": [
+        "sco"
+      ],
+      "description": "Fast cavalry effective at raiding, flanking, and countering ranged units.\n+ High movement speed\n- Weak against melee units\n- Countered by Spearmen",
+      "classes": [
+        "annihilation_condition",
+        "cavalry",
+        "cavalry_light",
+        "find_non_siege_land_military",
+        "formational",
+        "horse",
+        "human",
+        "included_by_military_hotkeys",
+        "land_military",
+        "melee",
+        "military",
+        "military_cavalry",
+        "torch_thrower"
+      ],
+      "displayClasses": [
+        "Light Melee Cavalry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "total": 120,
+        "popcap": 1,
+        "time": 22.5
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/horseman-2.png",
+      "hitpoints": 125,
+      "weapons": [
+        {
+          "id": "spear",
+          "name": "Spear",
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.375
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 9,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 9,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.25,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.125
+          },
+          "attribName": "weapon_horseman_2",
+          "pbgid": 109275
+        },
+        {
+          "id": "torch",
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch_horseman",
+          "pbgid": 127935
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 2
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
+        "line": 28,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.875
+      }
+    },
+    {
+      "id": "horseman-3",
+      "baseId": "horseman",
+      "type": "unit",
+      "name": "Veteran Horseman",
+      "pbgid": 3845616,
+      "attribName": "unit_horseman_3_sco",
+      "age": 3,
+      "civs": [
+        "sco"
+      ],
+      "description": "Fast cavalry effective at raiding, flanking, and countering ranged units.\n+ High movement speed\n- Weak against melee units\n- Countered by Spearmen",
+      "classes": [
+        "annihilation_condition",
+        "cavalry",
+        "cavalry_light",
+        "find_non_siege_land_military",
+        "formational",
+        "horse",
+        "human",
+        "included_by_military_hotkeys",
+        "land_military",
+        "melee",
+        "military",
+        "military_cavalry",
+        "torch_thrower"
+      ],
+      "displayClasses": [
+        "Light Melee Cavalry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "total": 120,
+        "popcap": 1,
+        "time": 22.5
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/horseman-3.png",
+      "hitpoints": 155,
+      "weapons": [
+        {
+          "id": "spear",
+          "name": "Spear",
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.375
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 11,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 11,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.25,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.125
+          },
+          "attribName": "weapon_horseman_3",
+          "pbgid": 127820
+        },
+        {
+          "id": "torch",
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch_horseman",
+          "pbgid": 127935
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 3
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
+        "line": 28,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.875
+      }
+    },
+    {
+      "id": "horseman-4",
+      "baseId": "horseman",
+      "type": "unit",
+      "name": "Elite Horseman",
+      "pbgid": 4630172,
+      "attribName": "unit_horseman_4_sco",
+      "age": 4,
+      "civs": [
+        "sco"
+      ],
+      "description": "Fast cavalry effective at raiding, flanking, and countering ranged units.\n+ High movement speed\n- Weak against melee units\n- Countered by Spearmen",
+      "classes": [
+        "annihilation_condition",
+        "cavalry",
+        "cavalry_light",
+        "find_non_siege_land_military",
+        "formational",
+        "horse",
+        "human",
+        "included_by_military_hotkeys",
+        "land_military",
+        "melee",
+        "military",
+        "military_cavalry",
+        "torch_thrower"
+      ],
+      "displayClasses": [
+        "Light Melee Cavalry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "total": 120,
+        "popcap": 1,
+        "time": 22.5
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/horseman-4.png",
+      "hitpoints": 180,
+      "weapons": [
+        {
+          "id": "spear",
+          "name": "Spear",
+          "type": "melee",
+          "damage": 13,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.375
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 13,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 13,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.25,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.125
+          },
+          "attribName": "weapon_horseman_4",
+          "pbgid": 127821
+        },
+        {
+          "id": "torch",
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch_horseman",
+          "pbgid": 127935
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 5
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
+        "line": 28,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.875
+      }
+    },
+    {
+      "id": "horseman-2",
+      "baseId": "horseman",
+      "type": "unit",
+      "name": "Horseman",
+      "pbgid": 7457014,
+      "attribName": "unit_horseman_2_vik",
+      "age": 2,
+      "civs": [
+        "vik"
+      ],
+      "description": "Fast cavalry effective at raiding, flanking, and countering ranged units.\n+ High movement speed\n- Weak against melee units\n- Countered by Spearmen",
+      "classes": [
+        "annihilation_condition",
+        "cavalry",
+        "cavalry_light",
+        "find_non_siege_land_military",
+        "formational",
+        "horse",
+        "human",
+        "included_by_military_hotkeys",
+        "land_military",
+        "melee",
+        "military",
+        "military_cavalry",
+        "torch_thrower"
+      ],
+      "displayClasses": [
+        "Light Melee Cavalry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "total": 120,
+        "popcap": 1,
+        "time": 22.5
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/horseman-2.png",
+      "hitpoints": 125,
+      "weapons": [
+        {
+          "id": "spear",
+          "name": "Spear",
+          "type": "melee",
+          "damage": 9,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.375
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 9,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 9,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.25,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.125
+          },
+          "attribName": "weapon_horseman_2",
+          "pbgid": 109275
+        },
+        {
+          "id": "torch",
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch_horseman",
+          "pbgid": 127935
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 2
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
+        "line": 28,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.875
+      }
+    },
+    {
+      "id": "horseman-3",
+      "baseId": "horseman",
+      "type": "unit",
+      "name": "Veteran Horseman",
+      "pbgid": 6293137,
+      "attribName": "unit_horseman_3_vik",
+      "age": 3,
+      "civs": [
+        "vik"
+      ],
+      "description": "Fast cavalry effective at raiding, flanking, and countering ranged units.\n+ High movement speed\n- Weak against melee units\n- Countered by Spearmen",
+      "classes": [
+        "annihilation_condition",
+        "cavalry",
+        "cavalry_light",
+        "find_non_siege_land_military",
+        "formational",
+        "horse",
+        "human",
+        "included_by_military_hotkeys",
+        "land_military",
+        "melee",
+        "military",
+        "military_cavalry",
+        "torch_thrower"
+      ],
+      "displayClasses": [
+        "Light Melee Cavalry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "total": 120,
+        "popcap": 1,
+        "time": 22.5
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/horseman-3.png",
+      "hitpoints": 155,
+      "weapons": [
+        {
+          "id": "spear",
+          "name": "Spear",
+          "type": "melee",
+          "damage": 11,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.375
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 11,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 11,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.25,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.125
+          },
+          "attribName": "weapon_horseman_3",
+          "pbgid": 127820
+        },
+        {
+          "id": "torch",
+          "name": "Torch",
+          "type": "fire",
+          "damage": 10,
+          "speed": 2.125,
+          "range": {
+            "min": 0,
+            "max": 1.25
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0.75,
+            "attack": 0.125,
+            "winddown": 0,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.25
+          },
+          "attribName": "weapon_torch_horseman",
+          "pbgid": 127935
+        }
+      ],
+      "armor": [
+        {
+          "type": "ranged",
+          "value": 3
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 4,
+        "outer_height": -15,
+        "outer_radius": 28,
+        "base": 13.6,
+        "line": 28,
+        "height": 10
+      },
+      "movement": {
+        "speed": 1.875
+      }
+    },
+    {
+      "id": "horseman-4",
+      "baseId": "horseman",
+      "type": "unit",
+      "name": "Elite Horseman",
+      "pbgid": 4173222,
+      "attribName": "unit_horseman_4_vik",
+      "age": 4,
+      "civs": [
+        "vik"
+      ],
+      "description": "Fast cavalry effective at raiding, flanking, and countering ranged units.\n+ High movement speed\n- Weak against melee units\n- Countered by Spearmen",
+      "classes": [
+        "annihilation_condition",
+        "cavalry",
+        "cavalry_light",
+        "find_non_siege_land_military",
+        "formational",
+        "horse",
+        "human",
+        "included_by_military_hotkeys",
+        "land_military",
+        "melee",
+        "military",
+        "military_cavalry",
+        "torch_thrower"
+      ],
+      "displayClasses": [
+        "Light Melee Cavalry"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 100,
+        "wood": 20,
+        "stone": 0,
+        "gold": 0,
+        "total": 120,
+        "popcap": 1,
+        "time": 22.5
+      },
+      "producedBy": [
+        "stable"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/horseman-4.png",
+      "hitpoints": 180,
+      "weapons": [
+        {
+          "id": "spear",
+          "name": "Spear",
+          "type": "melee",
+          "damage": 13,
+          "speed": 1.75,
+          "range": {
+            "min": 0,
+            "max": 0.375
+          },
+          "modifiers": [
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "ranged"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 13,
+              "type": "passive"
+            },
+            {
+              "property": "meleeAttack",
+              "target": {
+                "class": [
+                  [
+                    "siege"
+                  ]
+                ]
+              },
+              "effect": "change",
+              "value": 13,
+              "type": "passive"
+            }
+          ],
+          "durations": {
+            "aim": 0,
+            "windup": 0.25,
+            "attack": 0.125,
+            "winddown": 0.25,
+            "reload": 0,
+            "setup": 0,
+            "teardown": 0,
+            "cooldown": 1.125
+          },
+          "attribName": "weapon_horseman_4",
+          "pbgid": 127821
         },
         {
           "id": "torch",

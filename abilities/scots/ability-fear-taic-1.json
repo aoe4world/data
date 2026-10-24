@@ -1,0 +1,62 @@
+{
+  "id": "ability-fear-taic-1",
+  "baseId": "ability-fear-taic",
+  "type": "ability",
+  "name": "Fear-Taic",
+  "pbgid": 9007304,
+  "attribName": "tacksmen_damage_bonus_sco",
+  "age": 1,
+  "civs": [
+    "sco"
+  ],
+  "description": "Increases other nearby Highlanders damage by 1.",
+  "classes": [],
+  "displayClasses": [],
+  "costs": {
+    "food": 0,
+    "wood": 0,
+    "stone": 0,
+    "gold": 0,
+    "total": 0,
+    "popcap": 0
+  },
+  "producedBy": [
+    "tacksman"
+  ],
+  "icon": "https://data.aoe4world.com/images/abilities/ability-fear-taic-1.png",
+  "active": "always",
+  "auraRange": 20,
+  "effects": [
+    {
+      "property": "meleeAttack",
+      "select": {
+        "id": [
+          "highland-archer",
+          "gallowglass",
+          "cateran",
+          "tacksman"
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "ability"
+    },
+    {
+      "property": "rangedAttack",
+      "select": {
+        "id": [
+          "highland-archer",
+          "gallowglass",
+          "cateran",
+          "tacksman"
+        ]
+      },
+      "effect": "change",
+      "value": 1,
+      "type": "ability"
+    }
+  ],
+  "generatedBy": [
+    "units/tacksman"
+  ]
+}

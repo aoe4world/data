@@ -9,7 +9,8 @@
     "fr",
     "ja",
     "je",
-    "ot"
+    "ot",
+    "sco"
   ],
   "unique": false,
   "displayClasses": [
@@ -328,8 +329,8 @@
       "baseId": "ribauldequin",
       "type": "unit",
       "name": "Ribauldequin",
-      "pbgid": 132291,
-      "attribName": "unit_ribauldequin_4_fre",
+      "pbgid": 8752136,
+      "attribName": "unit_ribauldequin_4_fre_ha_01",
       "age": 4,
       "civs": [
         "je"
@@ -525,6 +526,103 @@
           "infantry ranged",
           "monk"
         ]
+      }
+    },
+    {
+      "id": "ribauldequin-4",
+      "baseId": "ribauldequin",
+      "type": "unit",
+      "name": "Ribauldequin",
+      "pbgid": 8044486,
+      "attribName": "unit_ribauldequin_4_sco",
+      "age": 4,
+      "civs": [
+        "sco"
+      ],
+      "description": "Five-barreled gunpowder weapon effective against massed units. Deals little damage to buildings.\n+ Can hit multiple targets in a single volley\n- Short range\n- Low ranged armor",
+      "classes": [
+        "annihilation_condition",
+        "formational",
+        "gunpowder",
+        "included_by_military_hotkeys",
+        "land_military",
+        "military",
+        "ribauldequin",
+        "siege",
+        "siege_range"
+      ],
+      "displayClasses": [
+        "Siege",
+        "Gunpowder"
+      ],
+      "unique": false,
+      "costs": {
+        "food": 0,
+        "wood": 350,
+        "stone": 0,
+        "gold": 500,
+        "total": 850,
+        "popcap": 3,
+        "time": 45
+      },
+      "producedBy": [
+        "dhun-eideann",
+        "siege-workshop"
+      ],
+      "icon": "https://data.aoe4world.com/images/units/ribauldequin-4.png",
+      "hitpoints": 215,
+      "weapons": [
+        {
+          "id": "ribauldequin",
+          "name": "Ribauldequin",
+          "type": "ranged",
+          "damage": 42,
+          "speed": 5.25,
+          "range": {
+            "min": 0,
+            "max": 3.75
+          },
+          "modifiers": [],
+          "durations": {
+            "aim": 0,
+            "windup": 0,
+            "attack": 1,
+            "winddown": 1,
+            "reload": 3.25,
+            "setup": 0.25,
+            "teardown": 0.25,
+            "cooldown": 0
+          },
+          "burst": {
+            "count": 12
+          },
+          "attribName": "weapon_ribauldequin_4",
+          "pbgid": 130925
+        }
+      ],
+      "armor": [
+        {
+          "type": "melee",
+          "value": 10
+        }
+      ],
+      "resistance": [
+        {
+          "type": "ranged",
+          "value": 35
+        }
+      ],
+      "sight": {
+        "inner_height": 10,
+        "inner_radius": 15,
+        "outer_height": -15,
+        "outer_radius": 45,
+        "base": 27,
+        "line": 45,
+        "height": 10
+      },
+      "movement": {
+        "speed": 0.875
       }
     }
   ]
