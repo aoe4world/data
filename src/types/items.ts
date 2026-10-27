@@ -33,6 +33,16 @@ export type ItemClass =
   | "worker"
   | string;
 
+export interface RecruitedUnit {
+  item: ItemSlug;
+  count: number;
+}
+
+export interface ProductionVariation {
+  venue: string;
+  costs: Item["costs"];
+}
+
 export interface Item {
   id: ItemId;
   baseId: ItemId;
@@ -45,12 +55,8 @@ export interface Item {
   age: number;
 
   description: string;
-  icon_src?: string;
-  icon?: string;
 
   unique: boolean;
-
-  producedBy: string[];
 
   costs: {
     food: number;
@@ -60,13 +66,21 @@ export interface Item {
     oliveoil?: number;
     silver?: number;
     vizier?: number;
+    muster_charge?: number;
     time: number;
     popcap?: number;
     total: number;
   };
 
+  producedBy: string[];
+  productionVariations?: ProductionVariation[];
+
+  icon_src?: string;
+  icon?: string;
+
   pbgid?: number;
   attribName?: string;
+  recruits?: RecruitedUnit[];
   translations?: Record<string, ItemTranslation>;
 }
 
@@ -252,3 +266,5 @@ export type ItemTypes = {
   [ITEMS.BUILDINGS]: Building;
   [ITEMS.UPGRADES]: Upgrade;
 };
+
+export * from "./crucible";

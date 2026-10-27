@@ -1,7 +1,7 @@
 import { CIVILIZATIONS } from "../lib/config/civs";
 import { captureCallContext } from "../lib/utils/processors";
 import { ItemSlug } from "../sdk/utils";
-import { Ability, Building, Item, ItemType, Modifier, Selector, Technology, Unit, Upgrade } from "../types/items";
+import { Ability, Building, Item, ItemType, Modifier, RecruitedUnit, Selector, Technology, Unit, Upgrade } from "../types/items";
 import { KHAGANTE_SPAWN_COUNTS } from "./config";
 import { setLocalized, copyLocalized, appendLocalized, transformLocalized, mutateLocalized, addDisplayClass, resolveOverride } from "./localize";
 import type { RunContext } from "./run";
@@ -2109,6 +2109,42 @@ function overrideCivUniqueIcon(ids_or_pred: string[] | Function) {
     }
   }
 }
+
+const scotMusterUnitMapping: Record<string, string[]> = {
+  muster_lowlanders_age2_sco: ["units/pikeman"],
+  muster_highlanders_age2_sco: ["units/cateran"],
+  muster_highlanders_age4_sco: ["units/highland-archer"],
+  muster_highlanders_age3_sco: ["units/gallowglass"],
+  muster_reivers_sco: ["units/border-reiver"],
+  muster_mangonel_sco: ["units/mangonel"],
+  muster_tacksmen_sco: ["units/tacksman"],
+  muster_navy_age4_sco: ["units/galley", "units/hulk", "units/carrack"],
+};
+
+workaround("Configure Scots Royal Summons at Three Loch Lookout", {
+  predicate: (item) => item.type === "technology" && !!item.attribName && item.attribName in scotMusterUnitMapping,
+  mutator: async (item, { context }) => {
+    const unitItems = scotMusterUnitMapping[item.attribName!];
+    const data: any = await context?.getData(`upgrade/${item.attribName!}`, context);
+    const args: number[] = data?.upgrade_bag?.ui_info?.help_text_formatter?.formatter_arguments ?? [];
+    item.recruits = unitItems.map((unitItem, index) => ({
+      item: unitItem,
+      count: args[index] ?? 1,
+    }));
+
+    item.producedBy ??= [];
+    if (item.attribName !== "muster_navy_age4_sco" && !item.producedBy.includes("mustering-hall")) {
+      item.producedBy.push("mustering-hall");
+    }
+    if (!item.producedBy.includes("three-loch-lookout")) {
+      item.producedBy.push("three-loch-lookout");
+    }
+    item.producedBy.sort((a, b) => a.localeCompare(b));
+
+    item.displayClasses = ["Royal Summon"];
+    item.classes = ["technology", "summon"];
+  },
+});
 
 export type WorkaroundContext = {
   parent?: Item;

@@ -7,6 +7,7 @@ const FOLDERS_TO_CLEAN = [
   "abilities",
   "buildings",
   "civilizations",
+  "crucible",
   "locales",
   "overview",
   "technologies",

@@ -378,6 +378,12 @@ export type LocaleBundle = {
   abilities: Record<string, ItemTranslation>;
   civilizations: Record<string, CivTranslation>;
   weapons: Record<string, { name: string }>;
+  crucible: {
+    perks: Record<string, ItemTranslation>;
+    boons: Record<string, { name?: string; tiers?: Record<string, string> }>;
+    mutators: Record<string, ItemTranslation>;
+    talents: Record<string, Record<string, string>>;
+  };
 };
 
 const localeBundles = new Map<string, LocaleBundle>();
@@ -397,6 +403,12 @@ function getOrCreateBundle(locale: string): LocaleBundle {
       abilities: {},
       civilizations: {},
       weapons: {},
+      crucible: {
+        perks: {},
+        boons: {},
+        mutators: {},
+        talents: {},
+      },
     };
     localeBundles.set(locale, bundle);
   }
@@ -440,6 +452,56 @@ export function recordCivBundle(civOverview: any, slug: string): void {
     const bundle = getOrCreateBundle(locale);
     bundle.civilizations[slug] = { ...(bundle.civilizations[slug] ?? {}), ...translation };
   }
+}
+
+export function recordCruciblePerk(baseId: string, locale: string, translation: ItemTranslation): void {
+  if (!baseId || !locale) return;
+  const bundle = getOrCreateBundle(locale);
+  const cleanTranslation = {
+    ...translation,
+    ...(translation.description ? { description: cleanDescription(translation.description) } : {}),
+  };
+  bundle.crucible.perks[baseId] = { ...(bundle.crucible.perks[baseId] ?? {}), ...cleanTranslation };
+}
+
+export function recordCrucibleBoon(
+  baseId: string,
+  locale: string,
+  name?: string,
+  tierKey?: string,
+  tierDesc?: string
+): void {
+  if (!baseId || !locale) return;
+  const bundle = getOrCreateBundle(locale);
+  if (!bundle.crucible.boons[baseId]) {
+    bundle.crucible.boons[baseId] = {};
+  }
+  if (name) bundle.crucible.boons[baseId].name = name;
+  if (tierKey && tierDesc) {
+    if (!bundle.crucible.boons[baseId].tiers) {
+      bundle.crucible.boons[baseId].tiers = {};
+    }
+    bundle.crucible.boons[baseId].tiers![tierKey] = cleanDescription(tierDesc) ?? "";
+  }
+}
+
+export function recordCrucibleMutator(baseId: string, locale: string, translation: ItemTranslation): void {
+  if (!baseId || !locale) return;
+  const bundle = getOrCreateBundle(locale);
+  const cleanTranslation = {
+    ...translation,
+    ...(translation.description ? { description: cleanDescription(translation.description) } : {}),
+  };
+  bundle.crucible.mutators[baseId] = { ...(bundle.crucible.mutators[baseId] ?? {}), ...cleanTranslation };
+}
+
+export function recordCrucibleTalent(civSlug: string, level: number, locale: string, name: string): void {
+  if (!civSlug || !level || !locale || !name) return;
+  const bundle = getOrCreateBundle(locale);
+  if (!bundle.crucible.talents[civSlug]) {
+    bundle.crucible.talents[civSlug] = {};
+  }
+  bundle.crucible.talents[civSlug][String(level)] = name;
 }
 
 export function getLocaleBundles(): Map<string, LocaleBundle> {

@@ -9,7 +9,7 @@ import { getAllItems } from "../lib/files/readData";
 import { optimizeItems, unifyItems } from "../lib/utils/items";
 import { cleanDescription } from "../lib/utils/string";
 import { CIVILIZATION_BY_SLUG, CivConfig, CivSlug } from "../types/civs";
-import { Item } from "../types/items";
+import { Item, ItemSlug, ProductionVariation, RecruitedUnit } from "../types/items";
 import { hardcodedDiscovery, hardcodedDiscoveryCommon } from "./config";
 import { workarounds } from "./workarounds";
 import { parseItemFromAttribFile, maybeOnKey, copyPatchHistory } from "./parse";
@@ -17,6 +17,7 @@ import { getTranslation as t, setTargetLocales, getTargetLocales, getAvailableLo
 import { applyOverrides, recordItemBundle, recordCivBundle, getLocaleBundles } from "./localize";
 import { getEssenceData, guessAppropriateEssenceFile } from "./essence";
 import { copyIcon } from "./icons";
+import { extractCrucible } from "./crucible";
 
 if (process.argv.some((arg) => arg === "--essence")) {
   console.log(`Warning: --essence is obsolete since it's now the default, and xml parsing is no longer supported`);
@@ -93,6 +94,60 @@ async function buildTechTree(
   for (const file of hardcodedDiscovery[civ.slug] ?? []) await addFile(file);
   for (const file of hardcodedDiscoveryCommon ?? []) await addFile(file);
 
+  function getRawAdditionalSquads(file: string): Record<string, string[]> {
+    const jsonPath = path.join(ROOT_FOLDER, "source/latest/attrib", file + ".json");
+    if (!existsSync(jsonPath)) return {};
+    try {
+      const raw = JSON.parse(require("fs").readFileSync(jsonPath, "utf8")).data;
+      const def = raw.find((x: any) => x.key === "default")?.value;
+      const spawner = def?.find((x: any) => x.key === "spawner_ext")?.value?.find((x: any) => x.key === "spawn_items")?.value;
+      if (!spawner) return {};
+      const result: Record<string, string[]> = {};
+      for (const item of spawner) {
+        const val = item.value;
+        const squad = val?.find((x: any) => x.key === "squad")?.value?.find((x: any) => x.key?.includes("PBGNAME"))?.value;
+        const adds = val?.find((x: any) => x.key === "additional_squads")?.value;
+        if (squad && adds && Array.isArray(adds)) {
+          const squadList = adds.map((a: any) => a.value?.find((x: any) => x.key?.includes("PBGNAME"))?.value).filter(Boolean);
+          result[squad] = squadList;
+        }
+      }
+      return result;
+    } catch {
+      return {};
+    }
+  }
+
+  function applyCostAdjustment(baseCosts: Item["costs"], adj: any): Item["costs"] | undefined {
+    if (!adj || !baseCosts) return undefined;
+    const hasAdj = Object.entries(adj).some(([k, v]) => v !== 0);
+    if (!hasAdj) return undefined;
+
+    const food = Math.max(0, (baseCosts.food ?? 0) + (adj.food ?? 0));
+    const wood = Math.max(0, (baseCosts.wood ?? 0) + (adj.wood ?? 0));
+    const gold = Math.max(0, (baseCosts.gold ?? 0) + (adj.gold ?? 0));
+    const stone = Math.max(0, (baseCosts.stone ?? 0) + (adj.stone ?? 0));
+    const oliveoil = baseCosts.oliveoil !== undefined ? Math.max(0, baseCosts.oliveoil + (adj.merc_byz ?? 0)) : undefined;
+    const silver = baseCosts.silver !== undefined ? Math.max(0, baseCosts.silver + (adj.merc_byz ?? 0)) : undefined;
+    const muster_charge = baseCosts.muster_charge !== undefined ? Math.max(0, baseCosts.muster_charge + (adj.action ?? 0)) : (adj.action > 0 ? adj.action : undefined);
+    const vizier = baseCosts.vizier !== undefined ? Math.max(0, baseCosts.vizier + (adj.command ?? 0)) : (adj.command > 0 ? adj.command : undefined);
+    const total = food + wood + gold + stone + (oliveoil ?? 0) + (silver ?? 0);
+
+    return {
+      food,
+      wood,
+      gold,
+      stone,
+      oliveoil,
+      silver,
+      muster_charge,
+      vizier,
+      time: baseCosts.time,
+      popcap: baseCosts.popcap,
+      total,
+    };
+  }
+
   async function parseFileRecursively(file: string, parent?: Item) {
     const matchedFile = await addFile(file);
     if (!matchedFile) return;
@@ -145,6 +200,60 @@ async function buildTechTree(
       }
     }
     techtree[item.id] = discovered.map((d) => filesToItemId.get(d)!);
+
+    const rawAddsMap = getRawAdditionalSquads(file);
+    for (const [mainSquadPbg, squadList] of Object.entries(rawAddsMap)) {
+      if (squadList.length > 0) {
+        const squadCounts: Record<string, number> = {};
+        for (const add of squadList) {
+          const pbg = add?.split("/").pop() ?? add;
+          squadCounts[pbg] = (squadCounts[pbg] || 0) + 1;
+        }
+        const recruits: RecruitedUnit[] = [];
+        for (const [pbg, count] of Object.entries(squadCounts)) {
+          const unitFile = await guessAppropriateEssenceFile(`sbps/${pbg}`);
+          if (unitFile) {
+            const parsedAdd = await parseFileRecursively(unitFile, item);
+            if (parsedAdd) {
+              recruits.push({ item: `units/${parsedAdd.baseId}` as ItemSlug, count });
+            }
+          }
+        }
+        if (recruits.length > 0) {
+          const mainFile = await guessAppropriateEssenceFile(`sbps/${mainSquadPbg}`);
+          if (mainFile) {
+            const mainItem = await parseFileRecursively(mainFile, item);
+            if (mainItem) {
+              mainItem.recruits = recruits;
+            }
+          }
+        }
+      }
+    }
+
+    const spawnerExt = data?.extensions?.find((x: any) => x.exts === "ebpextensions/spawner_ext");
+    if (spawnerExt?.spawn_items) {
+      for (const s of spawnerExt.spawn_items) {
+        const itemObj = s.spawn_item ?? s;
+        const mainSquad = itemObj.squad;
+        const adj = itemObj.item_cost_adjustment;
+        if (mainSquad && adj) {
+          const mainFile = await guessAppropriateEssenceFile(`sbps/${mainSquad.pbgname ?? mainSquad}`);
+          if (mainFile) {
+            const unitItem = await parseFileRecursively(mainFile, item);
+            if (unitItem && unitItem.costs) {
+              const adjustedCosts = applyCostAdjustment(unitItem.costs, adj);
+              if (adjustedCosts) {
+                unitItem.productionVariations ??= [];
+                if (!unitItem.productionVariations.some((v) => v.venue === item.baseId)) {
+                  unitItem.productionVariations.push({ venue: item.baseId, costs: adjustedCosts });
+                }
+              }
+            }
+          }
+        }
+      }
+    }
 
     // const itemProduces = produces.get(item?.id!) ?? produces.set(item?.id!, new Set()).get(item?.id!)!;
     // const discovered = await tryFindFile(race, [findConstructables(data), findUpgrades(data), findUnits(data), findEbpAbilities(data), findSbpAbilities(data)].flat());
@@ -406,6 +515,9 @@ async function compile(type: ITEM_TYPES) {
 
   await Promise.all([ITEM_TYPES.UNITS, ITEM_TYPES.TECHNOLOGIES, ITEM_TYPES.BUILDINGS, ITEM_TYPES.UPGRADES, ITEM_TYPES.ABILITIES].map((type) => compile(type)));
 
+  // Extract Crucible (perks, boons, mutators, talents)
+  await extractCrucible();
+
   // Write decoupled per-locale bundles
   const bundles = getLocaleBundles();
   const localesDir = path.join(ROOT_FOLDER, "locales");
@@ -425,6 +537,12 @@ async function compile(type: ITEM_TYPES) {
       abilities: {},
       civilizations: {},
       weapons: {},
+      crucible: {
+        perks: {},
+        boons: {},
+        mutators: {},
+        talents: {},
+      },
     },
     { log: true }
   );

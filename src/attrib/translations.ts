@@ -45,6 +45,14 @@ export function resolveTranslationParam(x: any, locale = "en"): any {
   if (x && typeof x === "object") {
     if ("locstring_value" in x) return getTranslation(x.locstring_value, [], locale);
     if (x.key === "locstring_value") return getTranslation(x.value, [], locale);
+    if ("key" in x && "value" in x) {
+      const v = x.value;
+      if (typeof v === "number" && v >= MIN_LOCSTRING_ID) {
+        const locStr = getTranslationRaw(v, locale);
+        if (locStr) return getTranslation(v, [], locale);
+      }
+      return v;
+    }
     const val = Object.values(x)[0];
     if (typeof val === "number" && val >= MIN_LOCSTRING_ID) {
       const locStr = getTranslationRaw(val, locale);
@@ -90,6 +98,7 @@ export function getTranslationFormatter(formatter: TranslationFormatter | number
 export function interpolateString(str: string, values: any[]) {
   values = [...values];
   return str
+    .replace(/%(\d+)(?:[A-Za-z_]+)?(?::[^%]+)?%/g, (_, x) => values[+x - 1] ?? values.shift() ?? "???")
     .replace(/%(\d+)(\.\d+)*%/g, (_, x) => values[+x[0] - 1] ?? values.shift() ?? "???")
     .replace(/%+/g, "%")
     .replace(/(\\+[nr]+)+/g, "\n")

@@ -60,7 +60,7 @@ export async function copyIcon(sourcePath, relativeIconPath, overwrite = false) 
     console.log(`[Info] Copying icon '${sourcePath}' to '${iconPath}'`);
     const dirName = path.dirname(iconPath);
     if (!await fs.access(dirName).then(() => true).catch(() => false)) {
-      await fs.mkdir(dirName);
+      await fs.mkdir(dirName, { recursive: true });
     }
     await fs.copyFile(sourcePath, iconPath);
   } else if (!destExists) {

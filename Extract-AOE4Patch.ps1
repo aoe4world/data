@@ -258,6 +258,7 @@ function Export-Icons {
     Convert-Images "ui\images\fe\dlc"
     Convert-Images "ui\images\backgrounds"
     Convert-Images "ui\images\crucible"
+    Convert-Images "ui\images\favor"
   } else {
     Convert-Images "ui\icons\races"
   }

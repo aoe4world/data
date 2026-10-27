@@ -6,7 +6,7 @@ import { getTranslation, getTranslationFormatter, getTranslationRaw, getTargetLo
 import { parseWeapons } from "./weapons";
 import { ignoreForNow } from "./config";
 import { slugify, cleanDescription } from "../lib/utils/string";
-import { Armor, Building, Item, ItemClass, ItemTranslation, ModifyableProperty, Technology, Unit, Upgrade, Ability, Resistance } from "../types/items";
+import { Armor, Building, Item, ItemClass, ItemSlug, ItemTranslation, ModifyableProperty, Technology, Unit, Upgrade, Ability, Resistance } from "../types/items";
 import { CivConfig } from "../types/civs";
 import { prepareIcon } from "./icons";
 import { technologyModifiers, abilityModifiers } from "./modifiers";
@@ -274,6 +274,7 @@ export async function parseItemFromAttribFile(file: string, data: any, civ: CivC
           } else console.log("Unknown float property", id, value, item.attribName, item.id);
         }
       }
+
       const tech: Technology = {
         ...item,
         type: "technology",
@@ -307,7 +308,7 @@ function guessType(file: string, data: any) {
 
   // below is too hacky for my taste, it filters out some wonky things we would call technologies like wheelbarrow and herbal medicine
   if (fileName.startsWith("upgrade_unit") && data?.upgrade_bag?.global_max_limit == 1 && data?.upgrade_bag?.requirements?.length) return ITEM_TYPES.UPGRADES;
-  if (fileName.startsWith("upgrade_")) return ITEM_TYPES.TECHNOLOGIES;
+  if (fileName.startsWith("upgrade_") || fileName.startsWith("muster_")) return ITEM_TYPES.TECHNOLOGIES;
   if (fileName.startsWith("merc_")) return ITEM_TYPES.TECHNOLOGIES;
   if (file.startsWith("abilities")) return ITEM_TYPES.ABILITIES;
   if (file.startsWith("info/buff_info")) return ITEM_TYPES.ABILITIES;
@@ -352,12 +353,13 @@ function parseHitpoints(health_ext: any) {
 }
 
 function parseCosts(cost: any, time: any, civ: CivConfig, popcap = 0) {
-  const { food = 0, wood = 0, gold = 0, stone = 0, command: vizier, merc_byz: special = 0 } = (cost ?? {}) as Record<"food" | "wood" | "gold" | "stone" | "popcap" | "merc_byz" | "command", number>;
+  const { food = 0, wood = 0, gold = 0, stone = 0, command: vizier, merc_byz: special = 0, action: muster_charge } = (cost ?? {}) as Record<"food" | "wood" | "gold" | "stone" | "popcap" | "merc_byz" | "command" | "action", number>;
   const costs = {
     food, wood, stone, gold,
     vizier: (civ.abbr === 'ot' || vizier) ? vizier : undefined,
     oliveoil: civ.abbr === 'by' ? special : undefined,
     silver: civ.abbr === 'mac' ? special : undefined,
+    muster_charge: (civ.abbr === 'sco' && muster_charge) ? muster_charge : undefined,
     total: food + wood + gold + stone + special,
     popcap,
     time
@@ -390,6 +392,7 @@ function parseAge(name: string, requirements: any, parent_pbg: string) {
   else if (requiredUpgrades.some((x) => x.endsWith("castle_age"))) age = 3;
   else if (requiredUpgrades.some((x) => x.endsWith("feudal_age"))) age = 2;
   else if (requiredUpgrades.some((x) => x.endsWith("dark_age"))) age = 1;
+  else if (requirements?.some((x) => x.key === "mustering_hall_level_sco")) age = 2;
   else {
     const nameParts = name!.split("/")!.shift()!.split("_")!;
     for (const p of nameParts.reverse()) {
