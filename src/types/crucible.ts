@@ -23,6 +23,7 @@ export interface CruciblePerk {
 
 export interface CrucibleTalentLevel {
   level: number;
+  talent_points: number;
   name: string;
   pbgid: number;
   attribName: string;
@@ -35,6 +36,7 @@ export interface CrucibleCivTalents {
 }
 
 export interface CrucibleBoonTier {
+  index: number;
   tier: number;
   isAscended: boolean;
   id: string;
@@ -52,15 +54,18 @@ export interface CrucibleBoon {
   categoryWeight: number;
   weight: number;
   icon: string;
+  index: number;
   tiers: CrucibleBoonTier[];
 }
 
 export interface CrucibleMutator {
+  index: number;
   id: string;
   baseId: string;
   name: string;
   attribName: string;
   pbgid: number;
+  action_pbgid?: number;
   description: string;
   durability: number;
   icon: string;

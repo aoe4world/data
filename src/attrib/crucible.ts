@@ -84,7 +84,7 @@ function findFilesRecursive(dir: string, ext = ".json"): string[] {
   return results;
 }
 
-async function extractPerks(context: RunContext, tp: any): Promise<CruciblePerk[]> {
+async function extractPerks(context: RunContext | undefined, tp: any): Promise<CruciblePerk[]> {
   const favorNode = findNodeByKey(tp, "favor_system")?.value;
   const perksNode = favorNode?.find((v: any) => v.key === "perks")?.value;
   const perkEntries: string[] =
@@ -207,7 +207,7 @@ async function extractPerks(context: RunContext, tp: any): Promise<CruciblePerk[
   return perks;
 }
 
-async function extractTalents(context: RunContext, tp: any): Promise<Record<string, CrucibleCivTalents>> {
+async function extractTalents(context: RunContext | undefined, tp: any): Promise<Record<string, CrucibleCivTalents>> {
   const talentGroupsNode = findNodeByKey(tp, "talent_groups")?.value ?? [];
   const raceTalentEntries = talentGroupsNode
     .filter((v: any) => v.key === "race_talent_info")
@@ -216,6 +216,11 @@ async function extractTalents(context: RunContext, tp: any): Promise<Record<stri
       const t = v.value.find((y: any) => y.key === "talent_perk")?.value?.find((z: any) => z.key === "$PBGNAME")?.value;
       return { race: r, talentPerk: t };
     });
+
+  const talentLevelsNode = findNodeByKey(tp, "talent_levels")?.value ?? [];
+  const talentPointsList: number[] = talentLevelsNode
+    .filter((v: any) => v.key === "talent_points")
+    .map((v: any) => v.value);
 
   const targetLocales = getTargetLocales();
   const result: Record<string, CrucibleCivTalents> = {};
@@ -248,9 +253,11 @@ async function extractTalents(context: RunContext, tp: any): Promise<Record<stri
 
         const name = parseUiName(aUi, "en");
         const description = parseUiDescription(aUi, "en");
+        const talentPoints = talentPointsList[l - 1] ?? 0;
 
         levels.push({
           level: l,
+          talent_points: talentPoints,
           name,
           pbgid: aPbgid,
           attribName: `talent_${pad}_${talentPerk}`,
@@ -275,7 +282,7 @@ async function extractTalents(context: RunContext, tp: any): Promise<Record<stri
   return result;
 }
 
-async function extractMutators(context: RunContext, tp: any): Promise<CrucibleMutator[]> {
+async function extractMutators(context: RunContext | undefined, tp: any): Promise<CrucibleMutator[]> {
   const mutatorListNode = findNodeByKey(tp, "mutator_list")?.value ?? [];
   const mutatorEntries: string[] =
     mutatorListNode
@@ -285,7 +292,8 @@ async function extractMutators(context: RunContext, tp: any): Promise<CrucibleMu
   const targetLocales = getTargetLocales();
   const mutators: CrucibleMutator[] = [];
 
-  for (const mName of mutatorEntries) {
+  for (let idx = 0; idx < mutatorEntries.length; idx++) {
+    const mName = mutatorEntries[idx];
     const filePath = path.join(
       ATTRIB_FOLDER,
       "rogue_mode/persistent_perks/persistent_perk_desc/mutators",
@@ -306,6 +314,26 @@ async function extractMutators(context: RunContext, tp: any): Promise<CrucibleMu
     const description = parseUiDescription(ui, "en");
     const durability = bag.find((v: any) => v.key === "durability")?.value ?? 0;
 
+    // Extract action PBGID from levels
+    const levelsNode = bag.find((v: any) => v.key === "levels")?.value ?? [];
+    let actionPbgid: number | undefined;
+    for (const lvl of levelsNode) {
+      const lvlBag = lvl.value ?? [];
+      const actionNode = lvlBag.find((v: any) => v.key === "action")?.value ?? [];
+      const actionPbgName = actionNode.find((v: any) => v.key === "$PBGNAME")?.value;
+      if (actionPbgName) {
+        const actionFile = path.join(
+          ATTRIB_FOLDER,
+          "rogue_mode/persistent_perks/persistent_perk_action/_mutators",
+          `${actionPbgName}.json`
+        );
+        if (existsSync(actionFile)) {
+          const aJson = JSON.parse(await fs.readFile(actionFile, "utf8"));
+          actionPbgid = aJson.data[0].value.find((v: any) => v.key === "pbgid")?.value;
+        }
+      }
+    }
+
     const image = bag.find((v: any) => v.key === "image")?.value;
 
     const iconPath = `crucible/mutators/${baseId}.png`;
@@ -318,11 +346,13 @@ async function extractMutators(context: RunContext, tp: any): Promise<CrucibleMu
     }
 
     mutators.push({
+      index: idx,
       id: baseId,
       baseId,
       name,
       attribName: mName,
       pbgid,
+      ...(actionPbgid ? { action_pbgid: actionPbgid } : {}),
       description,
       durability,
       icon: iconUrl,
@@ -343,9 +373,22 @@ async function extractMutators(context: RunContext, tp: any): Promise<CrucibleMu
   return mutators;
 }
 
-async function extractBoons(context: RunContext, tp: any): Promise<CrucibleBoon[]> {
+async function extractBoons(context: RunContext | undefined, tp: any): Promise<CrucibleBoon[]> {
   const boonsDir = path.join(ATTRIB_FOLDER, "rogue_mode/rogue_boon");
   const allBoonFiles = findFilesRecursive(boonsDir);
+
+  const boonFilesWithPbgid = allBoonFiles
+    .map((filePath) => {
+      const content = JSON.parse(readFileSync(filePath, "utf8"));
+      const pbgid = content.data[0].value.find((v: any) => v.key === "pbgid")?.value ?? 0;
+      return { name: path.basename(filePath, ".json"), pbgid };
+    })
+    .sort((a, b) => a.pbgid - b.pbgid);
+
+  const boonIndexMap = new Map<string, number>();
+  boonFilesWithPbgid.forEach((b, idx) => {
+    boonIndexMap.set(b.name, idx);
+  });
 
   const singleAscMap = new Map<string, string>();
   const tieredAscMap = new Map<string, string>();
@@ -497,8 +540,10 @@ async function extractBoons(context: RunContext, tp: any): Promise<CrucibleBoon[
 
       const description = parseUiDescription(tUpgUi, "en");
       const tierId = isAscended ? `${baseId}-${tierNum}-ascended` : `${baseId}-${tierNum}`;
+      const tierIndex = boonIndexMap.get(tierPbgName) ?? 0;
 
       tiers.push({
+        index: tierIndex,
         tier: tierNum,
         isAscended,
         id: tierId,
@@ -545,6 +590,7 @@ async function extractBoons(context: RunContext, tp: any): Promise<CrucibleBoon[
       categoryWeight,
       weight,
       icon: iconUrl,
+      index: tiers[0]?.index ?? 0,
       tiers,
     });
   }
